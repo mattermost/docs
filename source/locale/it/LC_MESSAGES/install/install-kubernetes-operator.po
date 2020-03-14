@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-kubernetes-operator.rst:4
+msgid "Installing the Operators"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:6
+msgid ""
+"The required operators are installed using kubectl and each operator is "
+"created in its own namespace. Shorter namespace names are recommended. "
+"You can install and run multiple Mattermost installations in the same "
+"cluster using different namespaces."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:9
+msgid ""
+"The steps provided below include database and storage operators. To "
+"install only the Mattermost operator, see `Using a Custom Configuration "
+"<https://kubernetes.github.io/ingress-nginx/deploy/>`__"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:12
+msgid "**1. Install the MySQL Operator**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:19
+msgid "**2. Install the MinIO Operator**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:26
+msgid "**3. Install NGINX Ingress Controller**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:28
+msgid ""
+"Follow the instructions `here <https://kubernetes.github.io/ingress-"
+"nginx/deploy/>`__."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:30
+msgid "**4. Install the Mattermost Operator**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:37
+msgid ""
+"Once completed, the installed components are listed in the configuration "
+"of your cluster."
+msgstr ""
+

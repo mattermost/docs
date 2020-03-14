@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/community-systems.md:1
+msgid "Bugs, Feature Ideas, Troubleshooting"
+msgstr ""
+
+#: ../../source/process/community-systems.md:3
+msgid "Here's how to engage with the Mattermost community:"
+msgstr ""
+
+#: ../../source/process/community-systems.md:5
+msgid "Bugs: Search for existing bugs and file a GitHub issue if your bug is new."
+msgstr ""
+
+#: ../../source/process/community-systems.md:6
+msgid "Feature Ideas: Add a feature idea to be discussed or upvoted."
+msgstr ""
+
+#: ../../source/process/community-systems.md:7
+msgid "Troubleshoot: Search articles and add topic if issue is new."
+msgstr ""
+
+#: ../../source/process/community-systems.md:8
+msgid "General discussion: Join the Mattermost Forum."
+msgstr ""
+
+#: ../../source/process/community-systems.md:9
+msgid ""
+"Contribute code: Select tickets marked Accepting Pull Requests (APR) and "
+"follow guidelines to contribute. Join the APR channel to ask questions "
+"and discuss your work."
+msgstr ""
+
+#: ../../source/process/community-systems.md:10
+msgid ""
+"Contributor and tester discussion: Contributors and testers can use "
+"nightly builds server to work on next release."
+msgstr ""
+
+#: ../../source/process/community-systems.md:11
+msgid ""
+"Integrations: Let us know about your work so we can promote it! Join the "
+"Integrations and Apps channel to discuss your project."
+msgstr ""
+
+#: ../../source/process/community-systems.md:12
+msgid ""
+"Localization: Join the translation server to start translating right "
+"away. If your language isn't yet started, join our Localization channel "
+"to request a new language, or to ask general questions and meet others in"
+" the community. Join language-specific channels to discuss translation "
+"work."
+msgstr ""
+
+#: ../../source/process/community-systems.md:13
+msgid ""
+"Approved changes: See Jira database to view open, in-progress, resolved "
+"and closed tickets."
+msgstr ""
+
+#: ../../source/process/community-systems.md:14
+msgid ""
+"Commercial support: Mattermost Enterprise Edition customers can access "
+"commercial support based on their subscription option."
+msgstr ""
+
+#: ../../source/process/community-systems.md:16
+msgid "How Improvements Are Made to Mattermost"
+msgstr ""
+
+#: ../../source/process/community-systems.md:18
+msgid ""
+"Every month, the Mattermost community plans, builds, tests, documents, "
+"releases, and supports new product improvements for Team Edition to "
+"benefit the user community, and the Mattermost Enterprise Team does the "
+"same for Enterprise Edition to benefit the subscriber community."
+msgstr ""
+
+#: ../../source/process/community-systems.md:20
+msgid ""
+"When a feature idea is within the scope of Team Edition, as defined in "
+"the Mattermost Manifesto and considered a priority, a Jira ticket is "
+"created to define its implementation:"
+msgstr ""
+
+#: ../../source/process/community-systems.md:22
+msgid ""
+"If the change is not complex, a Help Wanted Ticket label may be added to "
+"the Jira ticket for any developer to contribute the change to the "
+"Mattermost Team Edition code base via the contribution process. A list of"
+" tickets accepting pull requests is offered to all contributors who read "
+"the contributors guide, and these provide a steady stream of improvements"
+" to Team Edition month after month."
+msgstr ""
+
+#: ../../source/process/community-systems.md:23
+msgid ""
+"If change is considered high priority without prerequisites, a Fix "
+"Version may be applied to the Jira ticket for the Mattermost core team or"
+" key contributors to add for an upcoming monthly release. Priority "
+"decisions are influenced by discussion and voting in the feature idea "
+"forum and community systems as well as feedback from key contributors."
+msgstr ""
+
+#: ../../source/process/community-systems.md:24
+msgid ""
+"If change is not seen as high priority or has prerequisites, it is "
+"assigned a Fix Version of backlog and will be considered monthly for "
+"inclusion in a future release."
+msgstr ""
+
+#: ../../source/process/community-systems.md:26
+msgid ""
+"When a feature idea does not fit the scope of Team Edition, as defined in"
+" the Mattermost Manifesto, but benefits Enterprise Edition subscribers, a"
+" similar process as above is undertaken by the Enterprise Team."
+msgstr ""
+
+#: ../../source/process/community-systems.md:28
+msgid ""
+"If change is considered high priority without prerequisites, a Fix "
+"Version may be applied to the Jira ticket for the Mattermost Enterprise "
+"Team to add for an upcoming monthly release. Priority decisions are "
+"influenced by discussion with Enterprise Edition subscribers."
+msgstr ""
+
+#: ../../source/process/community-systems.md:29
+msgid ""
+"If change is not seen as high priority or has prerequisites, it is "
+"assigned a Fix Version of backlog until this situation changes."
+msgstr ""
+
+#: ../../source/process/community-systems.md:30
+msgid ""
+"If an existing or potential Enterprise Edition subscriber needs a "
+"specific change that has not yet been assigned a Fix Version, they can "
+"contact the Mattermost Enterprise Team to discuss sponsoring the feature "
+"with Non-Recurring Engineering (NRE) funding to have it delivered before "
+"it would otherwise be added. Feature sponsorship can only be applied to "
+"features where Jira tickets exist."
+msgstr ""
+
+#: ../../source/process/community-systems.md:32
+msgid ""
+"If a feature idea is not within the scope of either Team Edition or "
+"Enterprise Edition, you might consider:"
+msgstr ""
+
+#: ../../source/process/community-systems.md:34
+msgid ""
+"Building an integration using Mattermost webhooks or slash commands. "
+"There are dozens of open source examples to help you start. For example: "
+"Suppose you want a link preview for an esoteric file type that Mattermost"
+" isn't able to support, you can create an outgoing webhook to reply with "
+"an image that offers a preview."
+msgstr ""
+
+#: ../../source/process/community-systems.md:36
+msgid ""
+"Building a client application using the Mattermost Web Service API. This "
+"is useful if you want to customize the user experience to your specific "
+"needs. For example: You can recreate the Mattermost web interface using "
+"Windows controls to define front-end logic, similar to the MattermostWPF "
+"project."
+msgstr ""
+
+#: ../../source/process/community-systems.md:38
+msgid ""
+"Creating an open source variation of Mattermost using the Team Edition "
+"source code. For example: The Mozilla Foundation created their own open "
+"source Mattermost variation, which includes changes specific to their "
+"needs."
+msgstr ""
+
+#: ../../source/process/community-systems.md:40
+msgid "Drafting a Ticket for New Features"
+msgstr ""
+
+#: ../../source/process/community-systems.md:42
+msgid ""
+"Before a new feature can be implemented, it needs a ticket specifying how"
+" it should work. To speed up the process of implementing feature ideas, "
+"community members are welcome to propose what the ticket should say for a"
+" new feature."
+msgstr ""
+
+#: ../../source/process/community-systems.md:44
+msgid "When drafting a ticket for a new feature, please include:"
+msgstr ""
+
+#: ../../source/process/community-systems.md:46
+msgid "Title: A clear, concise title describing the new feature"
+msgstr ""
+
+#: ../../source/process/community-systems.md:47
+msgid "Description: Instructions on how the feature should be implemented."
+msgstr ""
+
+#: ../../source/process/community-systems.md:49
+msgid "When writing the description, the following checklist should be addressed:"
+msgstr ""
+
+#: ../../source/process/community-systems.md:51
+msgid ""
+"Does this feature require an Account Setting, Team Setting, or System "
+"Console Setting?"
+msgstr ""
+
+#: ../../source/process/community-systems.md:52
+msgid ""
+"If \"yes\", please include the proposed: Location, Title, Setting "
+"Options, Default Setting, and Help Text (see example)."
+msgstr ""
+
+#: ../../source/process/community-systems.md:53
+msgid "Is there any ambiguity in the ticket?"
+msgstr ""
+
+#: ../../source/process/community-systems.md:54
+msgid "If \"yes\", please update description to remove ambiguity."
+msgstr ""
+
+#: ../../source/process/community-systems.md:55
+msgid ""
+"The ticket should not include multiple potential solutions. The exception"
+" to this is if a second solution is suggested as an alternative if the "
+"first is too much work."
+msgstr ""
+
+#: ../../source/process/community-systems.md:56
+msgid ""
+"The ticket should include specific numbers where necessary. For example, "
+"it should not say to “increase” or “decrease” the length of something "
+"without specifying what number to increase/decrease it to."
+msgstr ""
+
+#: ../../source/process/community-systems.md:58
+msgid "GitHub Issues Workflow"
+msgstr ""
+
+#: ../../source/process/community-systems.md:60
+msgid ""
+"To minimize response times, templates and automation are used across "
+"community systems for common requests. When misfiled requests are posted "
+"in GitHub close them soon so the community does not confuse them as being"
+" appropriate."
+msgstr ""
+
+#: ../../source/process/community-systems.md:62
+msgid "Category: Issue Submitter Needs to do Something"
+msgstr ""
+
+#: ../../source/process/community-systems.md:64
+msgid "Start with \"Please...\""
+msgstr ""
+
+#: ../../source/process/community-systems.md:66
+msgid "Label: Please move to Troubleshooting forum"
+msgstr ""
+
+#: ../../source/process/community-systems.md:76
+msgid "Label: Please move to Feature Ideas forum"
+msgstr ""
+
+#: ../../source/process/community-systems.md:90
+msgid "Label: Please add repro steps"
+msgstr ""
+
+#: ../../source/process/community-systems.md:98
+msgid "Label: Please rebase"
+msgstr ""
+
+#: ../../source/process/community-systems.md:104
+msgid "Category: We/community need to do something"
+msgstr ""
+
+#: ../../source/process/community-systems.md:106
+msgid "Start with \"Needs...\""
+msgstr ""
+
+#: ../../source/process/community-systems.md:108
+msgid "Label: Needs PR reviewer"
+msgstr ""
+
+#: ../../source/process/community-systems.md:110
+msgid ""
+"Needs Reviewer to add +1 or share feedback to submitter on how to adjust "
+"pull request."
+msgstr ""
+
+#: ../../source/process/community-systems.md:112
+msgid "Label: Needs PR seconder"
+msgstr ""
+
+#: ../../source/process/community-systems.md:114
+msgid ""
+"After code is reviewed, needs \"Seconder\" to add +1 or share feedback to"
+" submitter on how to adjust pull request."
+msgstr ""
+
+#: ../../source/process/community-systems.md:116
+msgid "Label: Needs PM review"
+msgstr ""
+
+#: ../../source/process/community-systems.md:124
+msgid "Label: Needs merge (review complete)"
+msgstr ""
+
+#: ../../source/process/community-systems.md:126
+msgid "PR has been reviewed and seconded and is awaiting merge."
+msgstr ""
+
+#: ../../source/process/community-systems.md:128
+msgid "Label: Needs Jira ticket"
+msgstr ""
+
+#: ../../source/process/community-systems.md:130
+msgid "? + Assign to ?"
+msgstr ""
+
+#: ../../source/process/community-systems.md:132
+msgid "Response after Jira ticket is created:"
+msgstr ""
+
+#: ../../source/process/community-systems.md:138
+msgid "Category: Miscellanous Issues"
+msgstr ""
+
+#: ../../source/process/community-systems.md:140
+msgid "Label: Asking community help to repro"
+msgstr ""
+
+#: ../../source/process/community-systems.md:148
+msgid "Label: Duplicate Jira ticket"
+msgstr ""
+
+#: ../../source/process/community-systems.md:156
+msgid "Label: Setup Test Server"
+msgstr ""
+
+#: ../../source/process/community-systems.md:158
+msgid ""
+"Adding this label sets up a test server, removing it shuts down the test "
+"server."
+msgstr ""
+
+#: ../../source/process/community-systems.md:160
+msgid "Label: Substantial commit"
+msgstr ""
+
+#: ../../source/process/community-systems.md:162
+msgid "A PR that requires careful review due to size."
+msgstr ""
+
+#: ../../source/process/community-systems.md:164
+msgid "Label: DO NOT MERGE"
+msgstr ""
+
+#: ../../source/process/community-systems.md:166
+msgid "A PR submitted for discussion that SHOULD NOT be merged."
+msgstr ""
+

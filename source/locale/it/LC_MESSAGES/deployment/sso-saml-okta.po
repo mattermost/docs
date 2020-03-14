@@ -1,0 +1,654 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/sso-saml-okta.rst:2
+msgid "Configure SAML with Okta"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:4
+msgid ""
+"The following process provides steps to configure SAML 2.0 with Okta for "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:2
+msgid "Before You Begin"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:4
+msgid ""
+"Starting with Mattermost version 5.20, a new SAML library implementation "
+"is available. This implementation does not require the installation of "
+"the XML Security Library. It is recommended that you use this new "
+"implementation as the old implementation will eventually be deprecated."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:6
+msgid ""
+"To use the new implementation, navigate to **System Console > "
+"Experimental > Features > Use Improved SAML Library (Beta)**. Select "
+"``true``, choose **Save**, and restart the server. The configuration "
+"change will not take effect until the server is restarted."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:8
+msgid ""
+"To change the configuration file directly, edit ``UseNewSAMLLibrary`` "
+"using the configuration provided in the `Configuration Settings "
+"documentation <https://docs.mattermost.com/administration/config-"
+"settings.html#saml>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:11
+msgid "To use the existing implementation in versions prior to 5.20:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:13
+msgid ""
+"Make sure you have the `XML Security Library "
+"<https://www.aleksey.com/xmlsec/download.html>`__ installed on your "
+"Mattermost instance. The XML Security Library is usually included as part"
+" of Debian GNU/Linux."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:15
+msgid "Install the *xmlsec1-openssl* library"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:16
+msgid "On Ubuntu: ``sudo apt-get install xmlsec1``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:17
+msgid "On RHEL: ``sudo yum install xmlsec1-openssl``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:19
+msgid "Generate encryption certificates for encrypting the SAML connection."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:20
+msgid ""
+"You can use the `Bash script "
+"<https://github.com/mattermost/docs/tree/master/source/scripts/generate-"
+"certificates>`__ from the *mattermost/docs* repository on GitHub, or any "
+"other suitable method."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:21
+msgid ""
+"Save the two files that are generated. They are the private key and the "
+"public key. In the System Console, they are referred to as the **Service "
+"Provider Private Key** and the **Service Provider Public Certificate** "
+"respectively."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:13
+msgid "Set Up a Connection App for Mattermost SSO"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:15
+msgid "Sign into Okta as an administrator."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:17
+msgid "Go to **Admin Dashboard > Applications > Add Application**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:19
+msgid "Click **Create New App** and choose **SAML 2.0** as the Sign on method."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:23
+msgid ""
+"Enter **General Settings** for the application, including **App name** "
+"and **App logo** (optional). It's recommended to display the application "
+"icon to users, including in the Okta Mobile app."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:25
+msgid ""
+"If you’d like to use a Mattermost logo for the application, you can "
+"download one `from our page <http://www.mattermost.org/brand-"
+"guidelines/>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:29
+msgid "Enter **SAML Settings**, including:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:30
+msgid ""
+"**Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` "
+"where ``https://<your-mattermost-url>`` should typically match the "
+"`Mattermost Site URL <https://docs.mattermost.com/administration/config-"
+"settings.html#site-url>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:31
+msgid "**Audience URI:** For instance, ``mattermost``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:32
+msgid "**Name ID format:** ``unspecified``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:33
+msgid "**Application username:** ``Email``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:37
+msgid ""
+"To set up encryption for your SAML connection select **Show Advanced "
+"Settings**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:41
+msgid ""
+"Set **Assertion Encryption** as **Encrypted** and upload the Service "
+"Provider Public Certificate you generated in step 2 to the **Encryption "
+"Certificate** field."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:45
+msgid ""
+"Enter attribute statements, which will be used to map attributes between "
+"Okta and Mattermost. For more information on which attributes are "
+"configurable, see our :ref:`documentation on SAML configuration settings "
+"<saml-enterprise>`. Email and username attributes are required. For "
+"Mattermost servers running 3.3 and earlier, first name and last name "
+"attributes are also required."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:49
+msgid ""
+"Click **Next**. Then, set Okta support parameters for the application. "
+"Recommended settings:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:50
+msgid "**I’m an Okta customer adding an internal app**"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:51
+msgid "**This is an internal app that we have created**"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:55
+msgid ""
+"Click **Finish**. On the next screen, click the **Sign On** tab and click"
+" **View Setup Instructions**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:56
+msgid ""
+"10.1 Select the **Identity Provider metadata** link and copy the link "
+"from the browser URL box. This will be used during the SAML configuration"
+" steps in the next section."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:60
+msgid ""
+"Take note of **Identity Provider Single Sign-On URL** (also known as "
+"**SAML SSO URL**), and the Identity Provider Issuer, as both may be "
+"needed to configure SAML for Mattermost. Additionally, ensure you "
+"**download the X.509 Certificate file** and save it. You may need to "
+"upload it to Mattermost at a later step."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:65
+msgid "Configure SAML Sign-in for Mattermost"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:67
+msgid ""
+"Start Mattermost server and sign into Mattermost as a System "
+"Administrator. Go to **System Console > Authentication > SAML**, and "
+"paste the copied Identity Provider Metadata URL in the **Identity "
+"Provider Metadata URL** field, then select **Get SAML Metadata from "
+"IdP**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:69
+msgid ""
+"This populates the **SAML SSO URL** and the **Identity Provider Issuer "
+"URL** fields automatically and the Identity Provider Public Certificate "
+"is also downloaded from the server and set locally."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:76
+msgid "Alternatively you can enter the following fields manually:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:72
+msgid ""
+"**SAML SSO URL:** ``Identity Provider Single Sign-On URL`` from Okta, "
+"specified earlier."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:73
+msgid ""
+"**Identity Provider Issuer URL:** ``Identity Provider Issuer`` from Okta,"
+" specified earlier."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:74
+msgid ""
+"**Identity Provider Public Certificate:** X.509 Public Certificate file "
+"you downloaded from Okta earlier."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:78
+msgid ""
+"Configure Mattermost to verify the signature. The **Service Provider "
+"Login URL** is the ``Single sign on URL`` you specified in Okta earlier."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:82
+msgid "Enable encryption based on the parameters provided earlier."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:86
+msgid ""
+"Configure Mattermost to sign SAML requests using the Service Provider "
+"Private Key."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:88
+msgid ""
+"Set attributes for the SAML Assertions, which will be used to update user"
+" information in Mattermost. Attributes for email and username are "
+"required and should match the values you entered in Okta earlier. See "
+":ref:`documentation on SAML configuration settings <saml-enterprise>` for"
+" more detail."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:90
+msgid ""
+"For Mattermost servers running 3.3 and earlier, the first name and last "
+"name attributes are also required fields."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:94
+msgid "(Optional) Customize the login button text."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:98
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:100
+msgid ""
+"(Optional) If you configured First Name Attribute and Last Name "
+"Attribute, go to **System Console** > **Site Configuration** > **Users "
+"and Teams** (or **System Console > General > Users and Teams** in "
+"versions prior to 5.12) and set **Teammate Name Display** to *Show first "
+"and last name*. This is recommended for a better user experience."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:102
+msgid ""
+"Once complete, and to confirm SAML SSO is successfully enabled, switch "
+"your System Administrator account from email to SAML-based authentication"
+" via **Account Settings > General > Sign-in Method > Switch to SAML SSO**"
+" and sign in with your SAML credentials to complete the switch."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:104
+msgid ""
+"It's also recommended to post an announcement for your users to explain "
+"how the migration will work."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-okta.rst:106
+msgid ""
+"You may also configure SAML for Okta by editing ``config.json`` to enable"
+" SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You "
+"must restart the Mattermost server for the changes to take effect."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:2
+msgid "Configure SAML synchronization with AD/LDAP"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:4
+msgid ""
+"In addition to configuring SAML sign-in, you can optionally configure "
+"synchronizing SAML accounts with AD/LDAP. When configured:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:6
+msgid ""
+"Mattermost queries AD/LDAP for relevant account information and updates "
+"SAML accounts based on changes to attributes (first name, last name, and "
+"nickname)"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:7
+msgid ""
+"Accounts disabled in AD/LDAP are made inactive in Mattermost, and their "
+"active sessions are revoked once Mattermost synchronizes attributes."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:9
+msgid "To configure SAML synchronization with AD/LDAP:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:11
+msgid ""
+"Go to **System Console > Authentication > SAML 2.0** (or **System Console"
+" > SAML** in versions prior to 5.12) and set **Enable Synchronizing SAML "
+"Accounts With AD/LDAP** to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:12
+msgid ""
+"Go to  **System Console > Authentication > AD/LDAP** (or **System Console"
+" > AD/LDAP** in versions prior to 5.12) and set **Enable Synchronization "
+"with AD/LDAP** to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:13
+msgid ""
+"Set the rest of the AD/LDAP settings based on `configuration settings "
+"documentation <http://docs.mattermost.com/administration/config-"
+"settings.html#ad-ldap>`__ to connect Mattermost with your AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:15
+msgid ""
+"If you don't want to enable AD/LDAP sign-in, keep **Enable sign-in with "
+"AD/LDAP** as ``false``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:17
+msgid ""
+"Set **Syncronization Interval** to specify how often Mattermost "
+"synchronizes SAML user accounts with AD/LDAP. The default setting is 60 "
+"minutes. If you want to synchronize immediately after disabling an "
+"account, use the \"AD/LDAP Synchronize Now\" button in **System Console >"
+" AD/LDAP** in prior versions or **System Console** > **Authentication** >"
+" **AD/LDAP** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:18
+msgid ""
+"To test Mattermost can successfully connect to your AD/LDAP server, click"
+" the **AD/LDAP Test** button."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:20
+msgid ""
+"Once the synchronization with AD/LDAP is enabled, user attributes are "
+"synchronized with AD/LDAP based on their email address. If a user with a "
+"given email address doesn't have an AD/LDAP account, they will be "
+"deactivated in Mattermost on the next AD/LDAP sync. To re-activate the "
+"account:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:22
+msgid "Add the user to your AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:23
+msgid ""
+"Purge all caches in Mattermost in **System Console > Web Server > Purge "
+"All Caches** (or **System Console > Configuration > Purge All Caches** in"
+" versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:24
+#: ../../source/deployment/sso-saml-ldapsync.rst:51
+msgid ""
+"Run AD/LDAP sync in **System Console > Authentication > AD/LDAP > AD/LDAP"
+" Synchronize Now** (or **System Console > AD/LDAP > AD/LDAP Synchronize "
+"Now** in versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:25
+msgid ""
+"Purge all caches again in Mattermost in **System Console > Web Server > "
+"Purge All Caches** (or **System Console > Configuration > Purge All "
+"Caches** in versions prior to 5.12), which re-activates the account in "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:28
+msgid ""
+"If a user is deactivated from AD/LDAP, they will be deactivated in "
+"Mattermost on the next sync. They will be shown as \"Inactive\" in the "
+"System Console users list, all of their sessions will expire and they "
+"won't be able to log back in to Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:30
+msgid ""
+"If a user is deactivated from SAML, their session won't expire until "
+"they're deactivated from AD/LDAP. However, they won't be able to log back"
+" in to Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:33
+msgid ""
+"SAML synchronization with AD/LDAP is designed to pull user attributes "
+"such as first name and last name from your AD/LDAP, not to control "
+"authentication."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:35
+msgid ""
+"In particular, the user filter cannot be used to control who can log in "
+"to Mattermost, this should be controlled by your SAML service provider's "
+"group permissions."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:37
+msgid ""
+"See :ref:`technical description of SAML synchronization with AD/LDAP "
+"<sso-saml-technical>` for more details."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:40
+msgid "Override SAML Data with AD/LDAP Data"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:42
+msgid ""
+"Alternatively, you can choose to override SAML bind data with AD/LDAP "
+"information. For more infomation on binding a user with the SAML ID "
+"Attribute, please refer to this `documentation "
+"<https://docs.mattermost.com/deployment/sso-saml-okta.html#bind-"
+"authentication-to-id-attribute-instead-of-email>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:44
+msgid ""
+"This process overrides SAML email address with AD/LDAP email address data"
+" or SAML Id Attribute with AD/LDAP Id Attribute if configured. We "
+"recommend using this configuration with the SAML ID Attribute to help "
+"ensure new users are not created when the email address changes for a "
+"user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:46
+msgid ""
+"To ensure existing user accounts do not get disabled in this process, "
+"ensure the SAML IDs match the LDAP IDs by exporting data from both "
+"systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP"
+" and SAML within Mattermost to fields that hold the same data will ensure"
+" the IDs match as well."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:48
+msgid ""
+"Set the SAML ``Id Attribute`` on **System Console > Authentication > SAML"
+" 2.0** > **Id Attribute** (or **System Console > SAML > Id Attribute** in"
+" versions prior to 5.12)"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:49
+msgid ""
+"Set **System Console > Authentication > SAML 2.0 > Override SAML bind "
+"data with AD/LDAP information** (or **System Console > SAML > Override "
+"SAML bind data with AD/LDAP information** in versions prior to 5.12) to "
+"``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:50
+msgid ""
+"Set **System Console** > **Authentication** > **SAML 2.0** > **Enable "
+"Synchronizing SAML Accounts With AD/LDAP** (or **System Console > SAML > "
+"Enable Synchronizing SAML Accounts With AD/LDAP** in versions prior to "
+"5.12) to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:2
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:5
+msgid "How to Bind Authentication to Id Attribute instead of Email"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:7
+msgid ""
+"Alternatively, you can use an Id Attribute instead of email to bind the "
+"user.  We recommend choosing an ID that is unique and will not change "
+"over time."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:9
+msgid ""
+"Configuring with an Id Attribute allows you to reuse an email address for"
+" a new user without the old user's information being exposed. For "
+"instance, if a user with an email address joe.smith@mattermost.com was "
+"once an employee, a new employee named Joe Smith can use the same email. "
+"This configuration is also useful when a user's name changes and their "
+"email needs to be updated."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:11
+msgid ""
+"This process was designed with backwards compatibility to email binding. "
+"Here is the process applied to new account creations and to accounts "
+"logging in after the configuration:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:13
+msgid ""
+"A user authenticated with SAML is bound to the SAML service user using "
+"the Id Attribute (as long as it has been configured) or bound by email "
+"using the email received from SAML."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:14
+msgid ""
+"When the user tries to login and the SAML server responds with a valid "
+"authentication, then the server uses the \"Id\" field of the SAML "
+"authentication to search the user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:15
+msgid "If a user bound to that ID already exists, it logs in as that user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:16
+msgid ""
+"If a user bound to that ID does not exist, it will search base on the "
+"email."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:17
+msgid ""
+"If a user bound to the email exists, it logs in with email and updates "
+"the autentication data to the ID, instead of the email."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:18
+msgid ""
+"If a user bound to the ID or email does not exist, it will create a new "
+"Mattermost account bound to the SAML account by ID and will allow the "
+"user to log in."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:20
+msgid "Note:  Existing accounts will not update until they log in to the server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:23
+msgid ""
+"Can SAML via Microsoft ADFS be configured with Integrated Windows "
+"Authentication (IWA)?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:25
+msgid ""
+"Yes. IWA is supported on the browser, with support added to iOS and "
+"Android mobile apps in Q2/2019 (mobile apps v1.18 and later)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:27
+msgid ""
+"However, IWA is not supported on the Mattermost Desktop Apps due to a "
+"limitation in Electron. As a workaround you may create a browser desktop "
+"shortcut for quick access to Mattermost, just like a Desktop App."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:30
+msgid ""
+"How do I migrate users from one authentication method (e.g. email) to "
+"SAML?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:32
+msgid ""
+"Use the :doc:`mattermost user migrate_auth CLI command <cli-user-migrate-"
+"auth>`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:35
+msgid "How is SAML different from OAuth 2.0 and OpenId Connect?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:37
+msgid ""
+"OAuth 2.0 was primarily intended for delegated authorization, where an "
+"app is authorized to access resources, such as Google contact list. It "
+"doesn’t deal with authentication."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:39
+msgid ""
+"OpenID Connect is built on top of OAuth 2.0, which supports "
+"authentication and thus direct SSO."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:41
+msgid ""
+"SAML is like OpenID Connect, except typically used in enterprise "
+"settings. OpenID Connect is more common in consumer websites and "
+"web/mobile apps."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:43
+msgid ""
+"Learn more at https://hackernoon.com/demystifying-oauth-2-0-and-openid-"
+"connect-and-saml-12aa4cf9fdba."
+msgstr ""
+

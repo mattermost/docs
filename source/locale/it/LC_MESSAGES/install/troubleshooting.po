@@ -1,0 +1,1419 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/troubleshooting.rst:3
+msgid "This document summarizes common troubleshooting issues and techniques."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:5
+msgid ""
+"Depending on the type of error or problem you're experiencing, refer to "
+"the sections below for troubleshooting guidance. If you're a new user, it"
+" might help to go over the installation steps again to confirm the "
+"process. Alternatively, the `Troubleshooting forum "
+"<https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as "
+"someone may have experienced the same error in the past."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:7
+msgid ""
+"If you're an Enterprise Edition subscriber, you may open a support ticket"
+" in the `Enterprise Edition Support portal "
+"<https://mattermost.zendesk.com/hc/en-us/requests/new>`_."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:11
+msgid "Important Notes"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:13
+msgid ""
+"Do not manipulate the Mattermost database directly. Mattermost is "
+"designed to stop working if data integrity is compromised."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:14
+msgid ""
+"Any manipulation of the database must be done using the built in command-"
+"line tools."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:15
+msgid ""
+"Start simple with the step-by-step install guides for your operating "
+"system."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:19
+msgid "General Troubleshooting"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:20
+msgid ""
+"Some of these suggestions can be done directly, and others may need "
+"consultation from your network administrator."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:22
+msgid "Take a look at the logs (``mattermost.log`` and NGINX logs) for errors."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:23
+msgid ""
+"You can also search the error messages online - existing solutions can "
+"often be applied."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:24
+msgid ""
+"Open **System Console > General > Logging** and set File Log Level to "
+"**DEBUG**. Make sure to revert to **INFO** after troubleshooting to save "
+"disk space."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:26
+msgid ""
+"Put together a timeline to eliminate events prior to the error/problem "
+"occurring. For example, if you recently reconfigured your firewall and "
+"are now having connection issues it might be worth reviewing the settings"
+" or rolling back to see whether that resolves the problem."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:31
+msgid ""
+"If the problem occurred subsequent to some period of normal operation, "
+"did anything change in the environment?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:29
+msgid "Was the client, host, or server upgraded?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:30
+msgid "Was an operating system update applied?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:31
+msgid ""
+"Did the network environment change? For example, was a server moved or a "
+"domain migrated?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:32
+msgid "Did the system (client or server) recently fail or abnormally terminate?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:36
+msgid "How many users are impacted?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:34
+msgid "Is this problem affecting one, some, or all users?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:35
+msgid ""
+"Is the problem occurring only for a user who was recently added to the "
+"environment, such as a new employee?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:36
+msgid ""
+"Do differences exist between the users who are affected and the users who"
+" are not affected?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:38
+msgid ""
+"These questions are quite general but should help guide you to a point "
+"where the root cause of the problem can be found. If, after following "
+"these guidelines, you're still facing the issue, visit the "
+"`Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-"
+"troubleshooting-forum/150>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:41
+msgid "Administration Issues"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:44
+msgid "Lost System Administrator Account"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:46
+msgid ""
+"To reset the account, run from the command line: ``./mattermost "
+"-assign_role -team_name=\"yourteam\" -email=\"you@example.com\" "
+"-role=\"system_admin\"``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:48
+msgid "Log out and back in to apply the change."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:51
+msgid "Switching System Administrator Account to Single Sign-on (SSO)"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:53
+msgid ""
+"When Mattermost is initially set up, the first account created becomes "
+"the System Administrator account. This account will typically use email "
+"authentication to sign-in, since it is usually created before other sign-"
+"in methods are configured."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:55
+msgid ""
+"After setting up SSO authentication, it is common for the System "
+"Administrator to want to turn off email sign-in so users will only have "
+"SSO as a sign-in option."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:57
+msgid ""
+"Before doing this, the System Administrator needs to change their sign-in"
+" method to SSO by doing the following:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:59
+msgid "Sign in to Mattermost using an email and password."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:60
+msgid "Go to **Account Settings > Security > Sign-in Method**."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:61
+msgid ""
+"Click the \"Switch\" button to select a sign-in method and complete the "
+"process provided."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:63
+msgid ""
+"The System Administrator can now turn off email sign-in and still access "
+"their account. To avoid locking other existing users out of their "
+"accounts, it is recommended the System Administrator ask them to switch "
+"authentication methods as well."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:66
+msgid "Locked Out of System Administrator Account"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:68
+#: ../../source/install/troubleshooting.rst:95
+msgid ""
+"If the System Administrator is locked out of the system during SAML "
+"configuration process, they can set an existing account to System "
+"Administrator using `a command line tool "
+"<https://docs.mattermost.com/deployment/on-boarding.html#common-"
+"tasks>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:70
+msgid ""
+"If email sign-in was turned off before the System Administrator switched "
+"sign-in methods, sign up for a new account and promote it to System "
+"Administrator from the command line:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:72
+msgid "Sign in to the server Mattermost is running on via ``ssh``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:73
+msgid ""
+"Go to the directory of the Mattermost application. If you've followed our"
+" setup process this is ``/opt/mattermost``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:74
+msgid "Run"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:80
+msgid ""
+"Replace ``{username}`` with the name of the user you'd like to promote to"
+" an admin."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:83
+msgid "SAML Issues"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:86
+msgid "Unable to Switch to SAML Authentication Successfully"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:88
+msgid ""
+"First, ensure you have installed the `XML Security Library "
+"<https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost "
+"instance and that **it is available in your** PATH."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:90
+msgid "Second, ensure you have completed each step of the SAML configuration."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:93
+msgid "System Administrator locks themselves out of the system"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:98
+msgid ""
+"``An account with that username already exists. Please contact your "
+"Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:100
+#: ../../source/install/troubleshooting.rst:107
+msgid ""
+"This usually means an existing account has another authentication method "
+"enabled. If so, the user should sign in using that method (such as email "
+"and password), then change their sign-in method to SAML via **Account "
+"Settings > Security > Sign-in method**."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:102
+msgid ""
+"This error message can also be received if the `Username Attribute` of "
+"their SAML credentials doesn't match the username of their Mattermost "
+"account. If so, the user can update the attribute at their identity "
+"provider (for instance, back to the old value if it had been previously "
+"updated)."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:105
+msgid ""
+"``An account with that email already exists. Please contact your "
+"Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:109
+msgid ""
+"This error message can also be received if the ``Email Attribute`` of "
+"their SAML credentials doesn't match the email address of their "
+"Mattermost account. If so, the user can update the attribute at their "
+"identity provider (for instance, back to the old value if it had been "
+"previously updated)."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:112
+#: ../../source/install/troubleshooting.rst:174
+msgid ""
+"``SAML login was unsuccessful because one of the attributes is incorrect."
+" Please contact your System Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:114
+msgid ""
+"Confirm all attributes, including `Email Attribute` and `Username "
+"Attribute`, are correct in both the Identity Provider configuration and "
+"in **System Console > SAML**."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:118
+msgid "``An error occurred while building Service Provider Metadata.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:120
+msgid ""
+"This error indicates that the installation does not have an Enterprise "
+"license. The error message you receive will look similar to this:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:126
+msgid ""
+"To resolve the issue, install an Enterprise License and restart the "
+"process."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:130
+msgid "``SAML 2.0 is not configured or supported on this server.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:132
+msgid ""
+"The error indicates that the installation is using the Mattermost Team "
+"Edition. The error message you receive will look similar to this:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:138
+msgid "To resolve the issue, install Enterprise Edition and restart the process."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:141
+msgid ""
+"``An error occurred while initiating the request to the Identity "
+"Provider. Please contact your System Administrator``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:143
+msgid ""
+"This error message can have multiple causes. The log messages provide "
+"more information about the root cause and are provided below, along with "
+"a suggested fix."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:145
+msgid "**Issue: Missing a Certificate File.**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:151
+msgid "Install the Identity Provider Certificate and restart the process."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:153
+msgid "**Issue: Missing Service Provider Private Key**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:159
+msgid "Install the Service Provider Private Key and restart the process."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:161
+msgid "**Issue: Missing Service Provider Public Certificate**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:167
+msgid "Install the Service Provider Public Certificate and restart the process."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:171
+msgid ""
+"If making adjustments for these errors within System Console, no restart "
+"is required. However, if making configuration changes outside System "
+"Console, such as moving certificate files to the corrrect path, a server "
+"restart is required."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:176
+msgid ""
+"This error indicates that a required attribute was missing from the "
+"assertion received from the Idp provider, check log file for which "
+"attribute is missing."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:182
+msgid ""
+"To address the issue, update settings on Idp to include the required "
+"attribute."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:186
+msgid "Turning on debug logging will allow the assertion to be logged."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:190
+msgid ""
+"``SAML login was unsuccessful because encryption is not enabled. Please "
+"contact your System Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:192
+msgid ""
+"This error indicates a mismatch between SP Provider (Mattermost) "
+"configuration and Idp Provider configuration. The SP Provider SAML is "
+"configured to expect an unencrypted SAML assertion but the assertion "
+"received was encrypted."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:199
+#: ../../source/install/troubleshooting.rst:212
+msgid "To address this issue, turn on encryption and restart the process."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:203
+msgid ""
+"``SAML login was unsuccessful as the Identity Provider response is not "
+"encrypted. Please contact your System Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:205
+msgid ""
+"This error indicates a mismatch between SP Provider (Mattermost) "
+"configuration and Idp Provider configuration. The SP Provider SAML is "
+"configured to expect an unencrypted SAML Assertion but the assertion "
+"received was encrypted."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:215
+msgid ""
+"``An error occurred while parsing the response from the Identity "
+"Provider. Please contact your System Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:217
+msgid ""
+"This error is caused by a malformed response or certificate issue, see "
+"log file for more information."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:224
+msgid ""
+"``An error occurred while encoding the request for the Identity Provider."
+" Please contact your System Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:226
+msgid ""
+"This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not"
+" installed or the version of ``xmlsec1`` in use does not accept self-"
+"signed certificate."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:233
+msgid ""
+"``SAML login was unsuccessful because an error occurred while decrypting "
+"the response from the Identity Provider. Please contact your System "
+"Administrator``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:235
+msgid ""
+"This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not"
+" installed or the version of ``xmlsec1`` in use does not accept self-"
+"signed certificates."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:242
+msgid ""
+"``An error occurred while validating the response from the Identity "
+"Provider. Please contact your System Administrator.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:244
+msgid ""
+"This error message applies to various validation issues. The log message "
+"provides more information about the cause of the issue."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:250
+msgid "**Parameters**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:252
+msgid ""
+"``unsupported SAML Version``: The assertion xml contains the wrong SAML "
+"version, 2.0 supported."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:254
+msgid ""
+"``missing ID attribute on SAML Response``: The assertion did not contain "
+"an ID attribute. Invalid XML received."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:256
+msgid "``no signature``: No signature, but signature validation required."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:258
+msgid ""
+"``invalid signature reference uri``: Invalid signature tag. Invalid XML "
+"received."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:260
+msgid ""
+"``destination mismatch expected: x not y``: "
+"``AssertionConsumerServiceURL`` did not match expected."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:262
+msgid ""
+"``too soon`` or ``too late``: Assertion ``NotOnOrAfter`` or ``NotBefore``"
+" attribute outside current time."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:266
+msgid "Deployment and Clustering"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:269
+msgid "Red Server Status"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:271
+msgid ""
+"When high availability is enabled, the System Console displays the server"
+" status as red or green, indicating if the servers are communicating "
+"correctly with the cluster. The servers use inter-node communication to "
+"ping the other machines in the cluster, and once a ping is established "
+"the servers exchange information, such as server version and "
+"configuration files."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:273
+msgid "A server status of red can occur for the following reasons:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:275
+msgid ""
+"**Configuration file mismatch**: Mattermost will still attempt the inter-"
+"node communication, but the System Console will show a red status for the"
+" server since the high availability feature assumes the same "
+"configuration file to function properly."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:276
+msgid ""
+"**Server version mismatch**: Mattermost will still attempt the inter-node"
+" communication, but the System Console will show a red status for the "
+"server since the high availability feature assumes the same version of "
+"Mattermost is installed on each server in the cluster. It is recommended "
+"to use the `latest version of Mattermost "
+"<https://www.mattermost.org/download/>`__ on all servers. Follow the "
+"upgrade procedure in :doc:`../administration/upgrade` for any server that"
+" needs to be upgraded."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:277
+msgid ""
+"**Server is down**: If an inter-node communication fails to send a "
+"message it makes another attempt in 15 seconds. If the second attempt "
+"fails, the server is assumed to be down. An error message is written to "
+"the logs and the System Console shows a status of red for that server. "
+"The inter-node communication continues to ping down the server in "
+"15-second intervals. When the server comes back up, any new messages are "
+"sent to it."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:280
+msgid "WebSocket Disconnect"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:282
+msgid ""
+"When a client WebSocket receives a disconnect it will automatically "
+"attempt to re-establish a connection every three seconds with a backoff. "
+"After the connection is established, the client attempts to receive any "
+"messages that were sent while it was disconnected."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:285
+msgid "App Refreshes Continuously"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:287
+msgid ""
+"When configuration settings are modified through the System Console, the "
+"client refreshes every time a user connects to a different app server. "
+"This occurs because the servers have different ``config.json`` files in a"
+" high availability cluster."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:289
+msgid ""
+"Modify configuration settings directly through ``config.json`` `following"
+" these steps <https://docs.mattermost.com/deployment/cluster.html"
+"#updating-configuration-changes-while-operating-continuously>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:292
+msgid "Messages Do Not Post Until After Reloading"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:294
+msgid ""
+"When running in high availability mode, make sure all Mattermost "
+"application servers are running the same version of Mattermost. If they "
+"are running different versions, it can lead to a state where the lower "
+"version app server cannot handle a request and the request will not be "
+"sent until the frontend application is refreshed and sent to a server "
+"with a valid Mattermost version. Symptoms to look for include requests "
+"failing seemingly at random or a single application server having a "
+"drastic rise in goroutines and API errors."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:299
+msgid "Server Administration"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:302
+msgid ""
+"``Please check connection, Mattermost unreachable. If issue persists, ask"
+" administrator to check WebSocket port.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:304
+msgid "Message appears in blue bar on team site."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:305
+msgid ""
+"To check the websocket connection, open the developer console in your "
+"browser and view the **Network** panel. If the WebSocket is not "
+"connecting properly, you will see a pending WebSocket connection show up "
+"in the list. The screenshot below shows an example from Chrome."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:307
+msgid ""
+"**If this issue is reported repeatedly**, the most likely cause is a "
+"proxy being misconfigured somewhere in your infrastructure, and possibly "
+"stripping headers off of WebSocket communications."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:309
+msgid ""
+"Mattermost clients connect to the server using multiple protocols, "
+"``https`` to enable general site functionality, and ``wss`` for real-time"
+" updates. This error message appears when the ``https`` connection is "
+"working, but the ``wss`` connection has issues, most commonly having "
+"headers stripped off by a firewall or proxy that is either misconfigure "
+"or which does not support secure WebSockets."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:311
+msgid ""
+"**Note:** If your ``https`` connection is working and ``wss`` is not, and"
+" you dismiss the blue bar message, your team site will render, but will "
+"not support real time communications (you will need to refresh to see "
+"updates and the system is effectively \"broken\")."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:313
+#: ../../source/install/troubleshooting.rst:327
+#: ../../source/install/troubleshooting.rst:342
+#: ../../source/install/troubleshooting.rst:355
+#: ../../source/install/troubleshooting.rst:364
+#: ../../source/install/troubleshooting.rst:397
+#: ../../source/install/troubleshooting.rst:408
+#: ../../source/install/troubleshooting.rst:420
+msgid "**Solution:**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:315
+msgid ""
+"Follow the `installation guide to set up your WebSocket port properly "
+"<https://docs.mattermost.com/install/install-ubuntu-1604.html#installing-"
+"nginx-server>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:316
+msgid ""
+"Speak with the owner of any other proxies between your device and the "
+"Mattermost server to ensure ``wss`` connections are passing through "
+"without issue."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:318
+msgid ""
+"If this issue is reported rarely, in some cases the issue comes from "
+"*intermittent* internet connectivity, where the initial load works, but "
+"the device then becomes disconnected from the internet and real time "
+"updates over the ``wss`` connection fail repeatedly and the error is "
+"displayed to check if the ``wss`` connection were misconfigured."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:320
+msgid ""
+"If only a small number of users have this issue, it could be from "
+"intermittent internet access, if almost every user has this issue, it's "
+"likely from a misconfiguration of the ``wss`` connection."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:323
+#: ../../source/install/troubleshooting.rst:504
+msgid ""
+"``Cannot connect to the server. Please check your server URL and internet"
+" connection.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:325
+msgid ""
+"This error may appear on some devices when trying to connect to a server "
+"that is using an SSL curve that is not supported by the client device."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:329
+msgid ""
+"If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive "
+"in your site configuration file (for example, in ``/etc/nginx/sites-"
+"available/mattermost``), to a value that is supported by both client and "
+"server. Suggested values for varying levels of compatibility can be found"
+" at `Mozilla's Security/Server Side TLS "
+"<https://wiki.mozilla.org/Security/Server_Side_TLS>`__ page."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:331
+msgid ""
+"As security and encryption standards often change rapidly, it is best to "
+"check for up-to-date information. However, the suggested value as of "
+"January 2018 is to use the curves: prime256v1, secp384r1, secp521r1."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:333
+msgid ""
+"For NGINX, this would translate to ``ssl_ecdh_curve "
+"prime256v1:secp384r1:secp521r1;``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:335
+msgid ""
+"**Note:** Setting multiple curves requires nginx 1.11.0, if you can only "
+"set one curve, the most compatible is prime256v1."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:338
+msgid "``x509: certificate signed by unknown authority``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:340
+msgid ""
+"This error may appear in server logs when attempting to sign-up when "
+"using self-signed certificates to setup SSL, which is not yet supported "
+"by Mattermost."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:344
+msgid ""
+"Set up a load balancer like NGINX `per production install guide "
+"<https://docs.mattermost.com/install/install-ubuntu-1604.html"
+"#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into"
+" allowing self-signed certificates in the future."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:346
+msgid ""
+"As a work around, in **System Console** > **Security** > **Connections** "
+"set ``Enable Insecure Outgoing Connections`` to ``true``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:348
+msgid ""
+"This will allow insecure TLS connections, but be careful in doing so as "
+"it also opens your Mattermost site to man-in-the-middle attacks."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:351
+msgid ""
+"``panic: runtime error: invalid memory address or nil pointer "
+"dereference``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:353
+msgid ""
+"This error can occur if you have manually manipulated the Mattermost "
+"database, typically with deletions. Mattermost is designed to serve as a "
+"searchable archive, and manual manipulation of the database elements "
+"compromises integrity and may prevent upgrade."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:357
+msgid ""
+"Restore from database backup created prior to manual database updates, or"
+" reinstall the system."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:360
+msgid ""
+"``We couldn't find an existing account matching your email address for "
+"this team. This team may require an invite from the team owner to join.``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:362
+msgid ""
+"This error appears when a user tries to sign in, and Mattermost can't "
+"find an account matching the credentials they entered."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:366
+msgid "If you're signing in with email and have previously created an account:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:368
+msgid ""
+"Check that you are using the correct email address. If you can't remember"
+" what email address was used, contact the System Administrator for "
+"assistance."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:370
+msgid "If you haven't signed up for an account on this team yet:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:372
+msgid ""
+"Click the link at the bottom of the sign-in page that says “Don't have an"
+" account? Create one now” to create an account. If the link is not "
+"available, contact a Team or System Administrator for an invitation."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:374
+msgid ""
+"If your account uses a different sign-in method (for example, the account"
+" was created with email but the user is trying to use SSO to sign in):"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:376
+msgid "Check the sign-in page."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:377
+msgid ""
+"If the sign-in method the account was created with is available, use that"
+" to sign in."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:379
+msgid ""
+"**Note:** You may then switch authentication methods from **Account "
+"Settings > Security > Sign-in Method**."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:381
+msgid "If the sign-in method is not available, contact the System Administrator."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:383
+msgid ""
+"This can happen if the site was originally set up to allow an account to "
+"be created using either GitLab or email, but then the System "
+"Administrator turned one of the options off."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:386
+msgid "The System Administrator can fix this issue by:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:388
+msgid "Turning the sign-in option back on."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:389
+msgid ""
+"Asking the user to switch sign-in methods before turning the sign-in "
+"option off."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:393
+msgid "``Failed to upgrade websocket connection``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:395
+msgid ""
+"This error can occur if you're using multiple URLs to reach Mattermost "
+"via proxy forwarding."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:399
+msgid ""
+"Upgrade to a Mattermost server v3.8.0 or later, which adds `WebSocket "
+"CORS support <https://github.com/mattermost/mattermost-"
+"server/pull/5667>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:400
+msgid ""
+"Follow the installation guide to configure `NGINX as a proxy for "
+"Mattermost server <https://docs.mattermost.com/install/install-"
+"ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:401
+msgid ""
+"If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and "
+"enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol "
+"Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80"
+"-websocket-protocol-support>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:404
+msgid "``Websocket closed`` or ``Websocket re-established connection``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:406
+msgid ""
+"This alert can appear every few seconds in the desktop application or web"
+" browser connected to Mattermost."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:410
+msgid ""
+"If you are using an Amazon ELB check that ``Idle Timeout`` is set to "
+"``120s``, if it's significantly lower it will cause an undesireable "
+"websocket disconnections."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:412
+msgid ""
+"If you are using NGINX, make sure you follow the `Mattermost "
+"configuration instructions <https://docs.mattermost.com/install/config-"
+"proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:416
+msgid "``context deadline exceeded``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:418
+msgid ""
+"This error appears when a request from Mattermost to another system, such"
+" as an Elasticsearch server, experiences a connection timeout."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:422
+msgid ""
+"Verify that the Mattermost server is able to connect to the system "
+"referenced in the error message."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:423
+msgid ""
+"Increase the request timeout value for that integration in the Mattermost"
+" ``config.json`` file."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:424
+msgid ""
+"Ensure the target system is behaving properly and has sufficient "
+"resources to handle current load."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:427
+msgid "Settings"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:430
+msgid "User Statuses get Stuck on \"Away\" or \"Offline\" Status"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:432
+msgid ""
+"If you notice more than one user being stuck at an Away or Offline "
+"status, try one of the following steps:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:434
+msgid ""
+"If you are using an NGINX proxy, configure IP Hash load balancing to "
+"determine what server should be selected for the next request (based on "
+"the client’s IP address) `as described here "
+"<http://nginx.org/en/docs/http/load_balancing.html>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:436
+msgid ""
+"If you are using an AWS Application Load Balancer (ALB), enable Sticky "
+"Sessions feature in Amazon EC2’s Elastic Load Balancing `as described "
+"here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-"
+"feature-sticky-sessions/>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:438
+msgid ""
+"If neither of the above steps help resolve the issue, please open a new "
+"topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for "
+"further troubleshooting."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:441
+msgid "System Console Settings Revert to Previous Values after Saving"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:443
+msgid ""
+"If you try to save a System Console page and notice that the settings "
+"revert to previous values, your ``config.json`` file may have a "
+"permissions issue."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:445
+msgid ""
+"Check that the ``config.json`` file is owned by the same user as the "
+"process that runs the Mattermost server. If not, change the owner to be "
+"the Mattermost user and restart the server."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:448
+msgid "Mattermost Can't Connect to LDAP/AD Server"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:450
+msgid ""
+"LDAP and Active Directory troubleshooting can be found on `this page. "
+"<https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-"
+"faq>`__"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:453
+#: ../../source/install/troubleshooting.rst:543
+msgid "Mobile"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:456
+msgid "Login with ADFS/Office365 is Not Working"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:458
+msgid ""
+"In line with Microsoft guidance we recommend `configuring intranet forms-"
+"based authentication for devices that do not support WIA "
+"<https://docs.microsoft.com/en-us/windows-server/identity/ad-"
+"fs/operations/configure-intranet-forms-based-authentication-for-devices-"
+"that-do-not-support-wia>`_."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:461
+msgid "The “Connecting…” Bar Doesn't Clear"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:463
+msgid ""
+"If your app is working properly, you should see a grey “Connecting…” bar "
+"that clears or says “Connected” after the app reconnects."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:465
+msgid ""
+"If you are seeing this message all the time, and your internet connection"
+" seems fine, ask your server administrator whether the server uses NGINX "
+"or another webserver as a reverse proxy. If so, they should check that it"
+" is configured correctly for `supporting the websocket connection for "
+"APIv4 endpoints <https://docs.mattermost.com/install/install-"
+"ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:468
+msgid "I’m Not Receiving Push Notifications on my Device"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:470
+msgid ""
+"If you did not receive a push notification when :doc:`testing push "
+"notifications <mobile-testing-notifications>`, use the following "
+"procedure to troubleshoot:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:472
+msgid ""
+"Under **System Console > Environment > Logging > File Log Level** (or "
+"**System Console > General > Logging > File Log Level** in versions prior"
+" to 5.12) select **DEBUG** in order to watch for push notifications in "
+"the server log."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:474
+msgid "Delete and reinstall your mobile application."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:476
+msgid ""
+"Sign in with \"Account A\" and **confirm you want to receive push "
+"notifications** when prompted by the mobile app."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:478
+msgid ""
+"On desktop, go to **Account Settings > Security > View and Logout of "
+"Active Sessions** and check that there is a session for the native mobile"
+" app matching your login time."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:480
+msgid ""
+"Repeat the procedure for :doc:`testing push notifications <mobile-"
+"testing-notifications>`."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:482
+msgid ""
+"If no push notification appears go to **System Console > Logs** and click"
+" **Reload**. Look at the bottom of the logs for a message similar to:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:484
+msgid ""
+"``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to "
+"608xyz0... wi msg of '@accountb: Hello'``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:486
+msgid ""
+"If the log message appears, it means a message was sent to the HPNS "
+"server and was not received by your mobile application. Please contact "
+"support@mattermost.com with the subject \"HPNS issue on Step 8\" for help"
+" from the commercial support team."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:487
+msgid ""
+"If the log message does not appear, it means no mobile push notification "
+"was sent to “Account A”. Please repeat the process, starting at step 2, "
+"and double check each step."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:489
+msgid ""
+"**IMPORTANT:** After your issue is resolved, go to **System Console > "
+"Environment > Logging > File Log Level** (or **System Console > General >"
+" Logging > File Log Level** in versions prior to 5.12) and select "
+"**ERROR** to switch your logging detail level to Errors Only, instead of "
+"**DEBUG**, in order to conserve disk space."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:492
+msgid ""
+"All Outbound Connections go Through a Proxy. How Can I Connect to the "
+"Mattermost Hosted Push Notification Service?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:494
+msgid ""
+"You can set up an internal server to proxy the connection out of their "
+"network to the Mattermost Hosted Push Notification Service (HPNS) by "
+"following the steps below:"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:496
+msgid ""
+"Make sure your proxy server is properly configured to support SSL. "
+"Confirm it works by checking the URL at https://www.digicert.com/help/."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:497
+msgid "Set up a proxy to forward requests to ``https://push.mattermost.com``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:498
+msgid ""
+"In Mattermost set **System Console > Environment > Push Notification "
+"Server > Enable Push Notifications** (or **System Console > Notification "
+"Settings > Mobile Push > Enable Push Notifications** in versions prior to"
+" 5.12) to **Manually enter Push Notification Service location**."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:499
+msgid "Enter the URL of your proxy in the **Push Notification Server** field."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:501
+msgid ""
+"**Note:** Depending on how your proxy is configured you may need to add a"
+" port number and create a URL like "
+"``https://push.internalproxy.com:8000`` mapped to "
+"``https://push.mattermost.com``."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:506
+msgid ""
+"First, confirm that your server URL has no typos and that it includes "
+"``http://`` or ``https://`` according to the server deployment "
+"configuration."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:508
+msgid ""
+"If the server URL is correct, there could be an issue with the SSL "
+"certificate configuration."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:510
+msgid ""
+"To check your SSL certificate set up, test it by visiting a site such as "
+"`SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an "
+"error about the missing chain or certificate path, there is likely an "
+"intermediate certificate missing that needs to be included."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:512
+msgid ""
+"Please note that the apps cannot connect to servers with self-signed "
+"certificates, consider using `Let's Encrypt "
+"<https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ "
+"instead."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:515
+msgid "Configuration Issues"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:517
+msgid ""
+"In some cases, the configuration from the product’s website differs from "
+"the Mattermost configuration. Review the configuration to ensure it’s "
+"aligned with Mattermost."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:519
+msgid "See detailed client software requirements for PC, mobile, and email."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:520
+msgid ""
+"See detailed server software requirements for operating system and "
+"database."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:521
+msgid ""
+"Check which Mattermost server version you're on, and confirm whether it's"
+" the latest version."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:522
+msgid ""
+"Have you made any changes to the default settings in the System Console "
+"(or in ``config.json`` file)?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:523
+msgid ""
+"What device (webapp, desktop app), browser, and operating system "
+"(Windows, Mac, etc.) are you using?"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:524
+msgid ""
+"Confirm that the SSL/TLS certificate was installed successfully by "
+"entering your Mattermost server URL to Symantec’s online SSL/TLS "
+"certificate checker."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:525
+msgid ""
+"Look for JavaScript errors in the Chrome developer console: Open the "
+"Chrome menu in the top-right of the browser window and select **More "
+"Tools** > **Developer Tools**."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:528
+msgid "Integrations"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:531
+msgid "YouTube Videos Show a \"Video not found\" Preview"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:533
+msgid ""
+"First, make sure the YouTube video exists by pasting a link to the video "
+"into your browser's address bar."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:534
+msgid ""
+"If you are using the Mattermost Desktop App, please ensure you have "
+"installed version 3.5.0 or later."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:535
+msgid ""
+"If you have specified `a Google API key "
+"<https://docs.mattermost.com/administration/config-settings.html#google-"
+"api-key>`__ to enable the display of titles for embedded YouTube video "
+"previews, regenerate the key."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:538
+msgid ""
+"Hitting an Error \"Command with a trigger of failed\" When Configuring "
+"Giphy Integration"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:540
+msgid ""
+"When trying to configure the Giphy integration in Mattermost, you may hit"
+" the error \"Command with a trigger of <keyword> failed\". To solve this,"
+" you need to edit your ``config.json`` and configure "
+"``AllowedUntrustedInternalConnections`` to contain the hostname of the "
+"webhook."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:546
+msgid "Build Gets Stuck at ``bundleReleaseJsAndAssets``"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:548
+msgid "As a workaround, you can bundle the ``js`` manually first with"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:554
+msgid "and then ignore the gradle task with"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:561
+msgid "No Image Previews Available in The Mobile App"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:563
+msgid ""
+"This can happen if the server running Mattermost has its mime types not "
+"set up correctly. A server running Linux has this file located in "
+"``/etc/mime.types``. This might vary depending on your specific OS and "
+"distribution."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:566
+msgid ""
+"Some distributions also ship without ``mailcap`` which can result in "
+"missing or incorrectly configured mime types."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:570
+msgid "None of These Solve my Problem!"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:572
+msgid ""
+"To help us narrow down whether it’s a server configuration issue, device "
+"specific issue, or an issue with the app, please try the following steps "
+"and include the results in your support request or `Troubleshooting forum"
+" <https://forum.mattermost.org/c/trouble-shoot>`__ post."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:574
+msgid "**Connect to another server**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:576
+msgid "Create an account at https://demo.mattermost.com."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:577
+msgid "Erase your mobile application and reinstall it."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:578
+msgid ""
+"In your mobile app, enter the server URL https://demo.mattermost.com and "
+"then your login credentials to test whether the connection is working."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:580
+msgid "**Connect with another device**"
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:582
+msgid ""
+"If you have another mobile device available, try connecting with that to "
+"see if your issue still reproduces."
+msgstr ""
+
+#: ../../source/install/troubleshooting.rst:583
+msgid ""
+"If you don’t have another device available, check with other teammates to"
+" see if they are having the same issue."
+msgstr ""
+

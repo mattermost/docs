@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mobile/mobile-appconfig.rst:2
+msgid "AppConfig for EMM Solutions with Mattermost Mobile Apps"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:5
+msgid "What is AppConfig?"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:7
+msgid ""
+"AppConfig is a standard approach for app configuration and management "
+"introduced by the AppConfig Community, a group of leading EMM providers "
+"and app developers who have come together to make it easier for "
+"developers and customers to drive mobility in business. The community’s "
+"mission is to streamline the adoption and deployment of mobile enterprise"
+" applications by providing a standard approach to app configuration and "
+"management, building upon the extensive app security and configuration "
+"frameworks available in the OS."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:9
+msgid ""
+"AppConfig provides an easy way to configure enterprise mobile "
+"applications with any of the EMM providers listed on the `AppConfig "
+"website <https://www.appconfig.org/members/>`__."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:11
+msgid ""
+"Mattermost mobile apps can be configured in your EMM solution using "
+"AppConfig with the apps on the public app stores (Google Play and Apple "
+"App Store), or as an \"in-house app\" you compile yourself."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:13
+msgid ""
+"For example set up instructions, see our documentation on "
+":doc:`MobileIron <mobile-mobileiron>` and :doc:`Blackberry UEM <mobile-"
+"blackberry>`."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:18
+msgid "Mattermost AppConfig Values"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:20
+msgid ""
+"The following table shows all the configuration options that can be sent "
+"from the EMM provider of your choice to the Mattermost mobile apps. You "
+"can also :download:`download an XML template <mattermost-specfile.xml>` "
+"of the configuration file for use with your EMM provider."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "Key"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "Type"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "Default Value"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "Valid Values"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "iOS Support"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:23
+msgid "Android for Work Support"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:25
+msgid "inAppPinCode"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:25
+msgid ""
+"Require users to authenticate as the owner of the phone before using the "
+"app. Prompts for fingerprint or passcode when the app first opens and "
+"when the app has been in the background for more than 5 minutes."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:25
+#: ../../source/mobile/mobile-appconfig.rst:27
+#: ../../source/mobile/mobile-appconfig.rst:29
+#: ../../source/mobile/mobile-appconfig.rst:31
+#: ../../source/mobile/mobile-appconfig.rst:33
+#: ../../source/mobile/mobile-appconfig.rst:35
+#: ../../source/mobile/mobile-appconfig.rst:37
+#: ../../source/mobile/mobile-appconfig.rst:39
+#: ../../source/mobile/mobile-appconfig.rst:41
+#: ../../source/mobile/mobile-appconfig.rst:43
+msgid "String"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:25
+#: ../../source/mobile/mobile-appconfig.rst:27
+#: ../../source/mobile/mobile-appconfig.rst:29
+#: ../../source/mobile/mobile-appconfig.rst:31
+#: ../../source/mobile/mobile-appconfig.rst:39
+msgid "``false``"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:25
+#: ../../source/mobile/mobile-appconfig.rst:27
+#: ../../source/mobile/mobile-appconfig.rst:29
+#: ../../source/mobile/mobile-appconfig.rst:31
+#: ../../source/mobile/mobile-appconfig.rst:35
+#: ../../source/mobile/mobile-appconfig.rst:39
+msgid "``true | false``"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:25
+#: ../../source/mobile/mobile-appconfig.rst:27
+#: ../../source/mobile/mobile-appconfig.rst:29
+#: ../../source/mobile/mobile-appconfig.rst:31
+#: ../../source/mobile/mobile-appconfig.rst:33
+#: ../../source/mobile/mobile-appconfig.rst:35
+#: ../../source/mobile/mobile-appconfig.rst:37
+#: ../../source/mobile/mobile-appconfig.rst:39
+#: ../../source/mobile/mobile-appconfig.rst:41
+#: ../../source/mobile/mobile-appconfig.rst:43
+msgid "Yes"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:27
+msgid "blurApplicationScreen"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:27
+msgid ""
+"Blur the app when it’s set to background to protect any confidential on-"
+"screen information. On Android, it also prevents taking screenshots of "
+"the app."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:29
+msgid "jailbreakDetection"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:29
+msgid "Disable app launch on jailbroken or rooted devices."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:31
+msgid "copyAndPasteProtection"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:31
+msgid "Disable the ability to copy from or paste into any text inputs in the app."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:31
+msgid "Yes (since v1.24.0)"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:33
+msgid "serverUrl"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:33
+msgid "Set a default Mattermost server URL."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:33
+msgid "URL"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:35
+msgid "allowOtherServers"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:35
+msgid "Allow the user to change the above server URL."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:35
+msgid "``true``"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:37
+msgid "username"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:37
+msgid ""
+"Set the username or email address to use to authenticate against the "
+"Mattermost Server."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:39
+msgid "useVPN"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:39
+msgid ""
+"Enable connection to the Mattermost Server to use a per-app VPN or VPN "
+"on-demand."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:39
+#: ../../source/mobile/mobile-appconfig.rst:41
+msgid "No"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:41
+msgid "timeoutVPN"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:41
+msgid ""
+"Set how long the request waits (in seconds) for an initial VPN connection"
+" to establish before timeout."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:41
+msgid "30"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:43
+msgid "vendor"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:43
+msgid ""
+"Name of the EMM vendor or company deploying the app. Used in help text "
+"when prompting for passcodes so users are aware why the app is being "
+"protected."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:43
+msgid "Mattermost"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:47
+msgid "Other AppConfig Settings"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:49
+msgid ""
+"As part of AppConfig, EMM administrators can set the following additional"
+" configuration options for the Mattermost mobile apps:"
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:51
+msgid ""
+"**App Tunnel:** Leverage the \"Per-app VPN\" capabilities in most "
+"commercial VPN solutions."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:52
+msgid "**Prevent App Backup:** Prevent users from backing up app data."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:53
+msgid ""
+"**Enforce App Encryption:** Set security policies such as requiring "
+"encryption."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:54
+msgid ""
+"**Remotely Wipe App:** Use the EMM tool to distribute the app to devices "
+"as a managed application so it can be remotely wiped. If the app was "
+"previously installed, mark it so the EMM converts the app to a managed "
+"app."
+msgstr ""
+
+#: ../../source/mobile/mobile-appconfig.rst:56
+msgid "Other configurations may be available depending on your EMM provider."
+msgstr ""
+

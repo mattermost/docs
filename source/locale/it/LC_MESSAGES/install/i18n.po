@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/i18n.rst:4
+msgid "Chinese, Japanese and Korean Search"
+msgstr ""
+
+#: ../../source/install/i18n.rst:6
+msgid ""
+"Enabling search for Chinese, Japanese and Korean (CJK) requires special "
+"configuration, since these languages do not contain spaces."
+msgstr ""
+
+#: ../../source/install/i18n.rst:8
+msgid ""
+"See `database requirements documentation "
+"<https://docs.mattermost.com/install/requirements.html#database-"
+"software>`__ for how to setup search for these languages."
+msgstr ""
+
+#: ../../source/install/i18n.rst:11
+msgid "Contents"
+msgstr ""
+
+#: ../../source/install/i18n.rst:13
+msgid ""
+"Below is additional information on how to configure the database for "
+"different languages."
+msgstr ""
+
+#: ../../source/install/i18n.rst:16
+msgid "日本語 / Japanese"
+msgstr ""
+
+#: ../../source/install/i18n.rst:18
+msgid "改善された日本語の翻訳は大歓迎です。完全にここに書かれているものを交換すること自由に感じてください。"
+msgstr ""
+
+#: ../../source/install/i18n.rst:21
+msgid "検索設定"
+msgstr ""
+
+#: ../../source/install/i18n.rst:23
+msgid ""
+"MySQL: `データベース構成に関する日本ご覧ください。ドキュメントを検索するにはMattermostを設定します "
+"<http://docs.mattermost.com/install/requirements.html#database-"
+"software>`__"
+msgstr ""
+
+#: ../../source/install/i18n.rst:26
+msgid ""
+"Postgres: `ここでは、日本のために、より良い検索作業を行うための提案です <https://github.com/mattermost"
+"/mattermost-server/issues/2159#issuecomment-206444074>`__"
+msgstr ""
+
+#: ../../source/install/i18n.rst:29
+msgid "私たちは、検索に日本語ドキュメントの改善を手助けしてください"
+msgstr ""
+
+#: ../../source/install/i18n.rst:32
+msgid "ガイド"
+msgstr ""
+
+#: ../../source/install/i18n.rst:34
+msgid ""
+"`インストールおよび構成のガイドを提供していますQiitta上Mattermost 、詳細については、こちらをご覧ください。 "
+"<http://qiita.com/tags/Mattermost>`__"
+msgstr ""
+
+#: ../../source/install/i18n.rst:38
+msgid "中文 / Chinese"
+msgstr ""
+
+#: ../../source/install/i18n.rst:39
+msgid ""
+"数据库版本请参考： `配置要求 <http://docs.mattermost.com/install/requirements.html"
+"#database-software>`__ 。 其中MySQL的ngram配置可以参考 `Cannot search CJK contents "
+"<https://github.com/mattermost/mattermost-"
+"server/issues/2033#issuecomment-182336690>`__ 。"
+msgstr ""
+
+#: ../../source/install/i18n.rst:42
+msgid ""
+"更多中文相关问题讨论请访问 `中文讨论组 "
+"<https://forum.mattermost.org/c/international/chinese>`__ 。"
+msgstr ""
+
+#: ../../source/install/i18n.rst:44
+msgid "以Ubuntu 14.04 PosgreSQL 9.3 数据库 mattermost 为例。"
+msgstr ""
+
+#: ../../source/install/i18n.rst:47
+msgid "编译scws:"
+msgstr ""
+
+#: ../../source/install/i18n.rst:57
+msgid "编译zhparser:"
+msgstr ""
+
+#: ../../source/install/i18n.rst:66
+msgid "通过 Docker 镜像（mattermost/mattermost-prod-db）应用数据库的用户，请按照下述方法安装依赖。"
+msgstr ""
+
+#: ../../source/install/i18n.rst:74
+msgid "创建extension以及增加解析配置:"
+msgstr ""
+
+#: ../../source/install/i18n.rst:85
+msgid "配置postgresql"
+msgstr ""
+
+#: ../../source/install/i18n.rst:87
+msgid ""
+"将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config "
+"的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart"
+msgstr ""
+
+#: ../../source/install/i18n.rst:90
+msgid "调试"
+msgstr ""
+
+#: ../../source/install/i18n.rst:91
+msgid ""
+"可以打开 mattermost 的配置 config/config.json 中 SqlSettings 的配置 Trace: "
+"true，然后可以在mattermost的标准输出看到执行的SQL语句。"
+msgstr ""
+
+#: ../../source/install/i18n.rst:100
+msgid "한국어 / Korean"
+msgstr ""
+
+#: ../../source/install/i18n.rst:102
+msgid ""
+"이 문제에 대한 논의는 이 `이슈 <https://github.com/mattermost/mattermost-"
+"server/issues/2033>`_ 에서 시작되었습니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:105
+msgid ""
+"한국어 버전 이용 시 문제점을 발견하면 `Localization 채널 "
+"<https://community.mattermost.com/core/channels/localization>`__ 또는 `한국어 "
+"채널 <https://community.mattermost.com/core/channels/i18n-korean>`__ 에서 의견을"
+" 제시할 수 있습니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:109
+msgid "검색을 위한 데이터베이스 설정"
+msgstr ""
+
+#: ../../source/install/i18n.rst:110
+msgid "PostegreSQL : PostegreSQl 데이터베이스에서는 특별한 문제가 없기 때문에 설정이 필요하지 않습니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:112
+msgid "MySQl : MySQL에서는 full-text 검색문제를 해결하기 위해서 추가적인 작업이 필요합니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:117
+msgid "MySQL 해결 방법"
+msgstr ""
+
+#: ../../source/install/i18n.rst:119
+#, python-format
+msgid ""
+"`Ngram parser "
+"<https://mysqlserverteam.com/innodb-%EC%A0%84%EB%AC%B8-%EA%B2%80%EC%83%89-n"
+"-gram-parser/>`__ 를 이용하기 위해서는 MySQL 5.7.6버전 이상이어야 합니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:121
+msgid "Mysql의 구성파일에서 ngram의 최소 토큰 크기를 다음과 같이 설정해줍니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:131
+msgid "데이터 베이스를 재시작 합니다. (이 과정은 매우 중요합니다.)"
+msgstr ""
+
+#: ../../source/install/i18n.rst:134
+msgid "일부 테이블의 full-text 인덱스를 다음과 같이 리빌드합니다."
+msgstr ""
+
+#: ../../source/install/i18n.rst:137
+msgid ""
+"게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost-"
+"server/issues/2033#issuecomment-182336690>`__ )"
+msgstr ""
+
+#: ../../source/install/i18n.rst:147
+msgid ""
+"해시태그 검색을 위한 설정  ( `참조 <https://github.com/mattermost/mattermost-"
+"server/pull/4555>`__ )"
+msgstr ""
+
+#: ../../source/install/i18n.rst:155
+msgid "사용자 검색을 위한 설정"
+msgstr ""
+
+#: ../../source/install/i18n.rst:157
+msgid ""
+"``Users.idx_users_txt_all`` 과 ``Users.idx_users_names_all`` 를 ngram 없이 "
+"리빌드합니다."
+msgstr ""
+

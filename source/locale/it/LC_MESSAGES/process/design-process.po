@@ -1,0 +1,454 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/design-process.rst:2
+msgid "Design Process"
+msgstr ""
+
+#: ../../source/process/design-process.rst:5
+msgid "Goal"
+msgstr ""
+
+#: ../../source/process/design-process.rst:7
+msgid ""
+"The goal of this design process is to increase Mattermost popularity by "
+"improving overall product quality, through a consistent design process "
+"that ensures we are designing the right features at the highest quality "
+"level possible."
+msgstr ""
+
+#: ../../source/process/design-process.rst:10
+msgid "Principles"
+msgstr ""
+
+#: ../../source/process/design-process.rst:11
+msgid "Every feature should have a convincing reason for why it should be built"
+msgstr ""
+
+#: ../../source/process/design-process.rst:12
+msgid "Every design should start with a story"
+msgstr ""
+
+#: ../../source/process/design-process.rst:13
+msgid ""
+"Make time for exploration - it's okay to explore a design that doesn't "
+"work and throw it away, as long as we learn from it"
+msgstr ""
+
+#: ../../source/process/design-process.rst:16
+msgid "Process"
+msgstr ""
+
+#: ../../source/process/design-process.rst:18
+msgid "**Define the \"Why\"**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:20
+msgid "Research customer/user requirements"
+msgstr ""
+
+#: ../../source/process/design-process.rst:21
+msgid ""
+"Write the user stories (potentially for different personas) based on the "
+"requirements"
+msgstr ""
+
+#: ../../source/process/design-process.rst:22
+msgid "Write the goal statement"
+msgstr ""
+
+#: ../../source/process/design-process.rst:23
+msgid "Justify why the feature should be built"
+msgstr ""
+
+#: ../../source/process/design-process.rst:25
+msgid "Link back to customer and user data / feedback"
+msgstr ""
+
+#: ../../source/process/design-process.rst:26
+msgid "Link back to company objectives"
+msgstr ""
+
+#: ../../source/process/design-process.rst:27
+msgid "Explain why it is important and the expected impact"
+msgstr ""
+
+#: ../../source/process/design-process.rst:29
+msgid ""
+"Before continuing with design work, queue a discussion with Product "
+"Managers to review the feature proposal and evaluate whether the feature "
+"should be added to the roadmap"
+msgstr ""
+
+#: ../../source/process/design-process.rst:31
+#: ../../source/process/design-process.rst:46
+#: ../../source/process/design-process.rst:68
+#: ../../source/process/design-process.rst:109
+msgid "*Questions this stage should address:*"
+msgstr ""
+
+#: ../../source/process/design-process.rst:33
+msgid "Who is this for? What do we know about them?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:34
+msgid "What are we trying to build?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:35
+msgid "Why are we building it?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:36
+msgid "Should we build this, or should we not?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:38
+msgid "**Brainstorm**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:40
+msgid "Research a variety of existing solutions"
+msgstr ""
+
+#: ../../source/process/design-process.rst:41
+msgid "Brainstorm different design concepts"
+msgstr ""
+
+#: ../../source/process/design-process.rst:43
+msgid "Consider pair brainstorm"
+msgstr ""
+
+#: ../../source/process/design-process.rst:44
+msgid ""
+"Do not go into depth on any one design, the goal is to identify various "
+"approaches to evaluate later"
+msgstr ""
+
+#: ../../source/process/design-process.rst:48
+msgid "What are the design options for the given scenarios?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:50
+msgid "**Evaluate options**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:52
+msgid "Identify the most promising design concepts"
+msgstr ""
+
+#: ../../source/process/design-process.rst:54
+msgid "Wireframe/develop concepts as needed"
+msgstr ""
+
+#: ../../source/process/design-process.rst:56
+msgid "List pros/cons for each option"
+msgstr ""
+
+#: ../../source/process/design-process.rst:57
+msgid "Evaluate each option based on:"
+msgstr ""
+
+#: ../../source/process/design-process.rst:59
+msgid "How well each design addresses user stories"
+msgstr ""
+
+#: ../../source/process/design-process.rst:60
+msgid "Principles for this plan"
+msgstr ""
+
+#: ../../source/process/design-process.rst:61
+msgid "Mattermost design principles"
+msgstr ""
+
+#: ../../source/process/design-process.rst:63
+msgid "Have pair or group discussions as needed"
+msgstr ""
+
+#: ../../source/process/design-process.rst:65
+msgid "Invite developers into the discussion early"
+msgstr ""
+
+#: ../../source/process/design-process.rst:66
+msgid ""
+"Set the context for meetings, so people understand this is exploratory "
+"design"
+msgstr ""
+
+#: ../../source/process/design-process.rst:70
+msgid "Is this design concept the right approach to the problem?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:71
+msgid "How well does this design work for the given scenarios?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:72
+msgid "What are the constraints we need to consider?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:73
+msgid "How does this design compare to existing solutions?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:75
+msgid "**Develop prototype**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:77
+msgid "Summarize context for the design (preferably in Google Slides), including:"
+msgstr ""
+
+#: ../../source/process/design-process.rst:79
+msgid "Goal/“Why\""
+msgstr ""
+
+#: ../../source/process/design-process.rst:80
+msgid "User Stories"
+msgstr ""
+
+#: ../../source/process/design-process.rst:81
+msgid "Success Metrics"
+msgstr ""
+
+#: ../../source/process/design-process.rst:83
+msgid "Define how the success of the feature will be measured"
+msgstr ""
+
+#: ../../source/process/design-process.rst:85
+msgid "Designs Considered"
+msgstr ""
+
+#: ../../source/process/design-process.rst:87
+msgid "Link back to the various designs considered, and the evaluation"
+msgstr ""
+
+#: ../../source/process/design-process.rst:89
+msgid "Out of Scope"
+msgstr ""
+
+#: ../../source/process/design-process.rst:91
+msgid ""
+"List things that are purposefully left out, to be addressed at another "
+"time"
+msgstr ""
+
+#: ../../source/process/design-process.rst:93
+msgid "Work on prototype/mockups for the selected design"
+msgstr ""
+
+#: ../../source/process/design-process.rst:95
+msgid "Consider pair design"
+msgstr ""
+
+#: ../../source/process/design-process.rst:96
+msgid ""
+"Use mockups (preferably in slideshow or prototyping software), with text "
+"that supports the design"
+msgstr ""
+
+#: ../../source/process/design-process.rst:97
+msgid "Include flow of screens, so transitions are clear"
+msgstr ""
+
+#: ../../source/process/design-process.rst:98
+msgid "Make sure to think about:"
+msgstr ""
+
+#: ../../source/process/design-process.rst:100
+#: ../../source/process/design-process.rst:155
+msgid "Mobile apps (mobile view and tablet view)"
+msgstr ""
+
+#: ../../source/process/design-process.rst:101
+#: ../../source/process/design-process.rst:156
+msgid "Notifications (desktop, email, and push)"
+msgstr ""
+
+#: ../../source/process/design-process.rst:102
+#: ../../source/process/design-process.rst:157
+msgid "Both single and multiple team cases"
+msgstr ""
+
+#: ../../source/process/design-process.rst:103
+#: ../../source/process/design-process.rst:158
+msgid "Potential performance issues"
+msgstr ""
+
+#: ../../source/process/design-process.rst:105
+msgid "Add Questions"
+msgstr ""
+
+#: ../../source/process/design-process.rst:107
+msgid "List out any questions about the design that still need to be answered"
+msgstr ""
+
+#: ../../source/process/design-process.rst:111
+msgid "How is the information structured? What is important to see, and when?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:112
+msgid "What is the layout like?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:113
+msgid "What does the text say?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:114
+msgid "What does the UI look like?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:116
+msgid "**Review, test, and iterate**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:118
+msgid "Pair review with someone"
+msgstr ""
+
+#: ../../source/process/design-process.rst:119
+msgid "Share with team"
+msgstr ""
+
+#: ../../source/process/design-process.rst:121
+msgid ""
+"Post draft with @channel in Spec Review channel, asking to review and add"
+" comments"
+msgstr ""
+
+#: ../../source/process/design-process.rst:122
+msgid ""
+"Set the context for what stage the design is at, and what they should be "
+"reviewing"
+msgstr ""
+
+#: ../../source/process/design-process.rst:124
+msgid "Share with interested customers and users"
+msgstr ""
+
+#: ../../source/process/design-process.rst:125
+msgid "Test the prototype/mockups"
+msgstr ""
+
+#: ../../source/process/design-process.rst:127
+msgid "If possible, find someone to test the design on"
+msgstr ""
+
+#: ../../source/process/design-process.rst:128
+msgid "Give tasks based on the already defined user stories"
+msgstr ""
+
+#: ../../source/process/design-process.rst:129
+msgid "Observe and have them think aloud"
+msgstr ""
+
+#: ../../source/process/design-process.rst:131
+msgid "Iterate based on feedback"
+msgstr ""
+
+#: ../../source/process/design-process.rst:133
+#: ../../source/process/design-process.rst:162
+msgid "*Questions this stage should answer:*"
+msgstr ""
+
+#: ../../source/process/design-process.rst:135
+msgid "Are there any potential issues with the design?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:137
+msgid "**Final review**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:139
+msgid ""
+"Identify people who should sign off on the design before implementation "
+"(include UX Design, PM, Dev, and Test)"
+msgstr ""
+
+#: ../../source/process/design-process.rst:140
+msgid "Hold a meeting to review the design"
+msgstr ""
+
+#: ../../source/process/design-process.rst:142
+msgid ""
+"Set the context that this is a final review, and people should look for "
+"any potential issues"
+msgstr ""
+
+#: ../../source/process/design-process.rst:143
+msgid "Ask people to review the design and add comments/questions beforehand"
+msgstr ""
+
+#: ../../source/process/design-process.rst:144
+msgid ""
+"Define example areas that should be covered (different people may focus "
+"on different things):"
+msgstr ""
+
+#: ../../source/process/design-process.rst:146
+msgid "How well does the design address the listed scenarios?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:147
+msgid "Are there any technical concerns?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:148
+msgid "Potential usability issues?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:149
+msgid "Is the product text clear?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:150
+msgid "Does the design follow UX guidelines?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:151
+msgid "Is it consistent with the rest of the product?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:152
+msgid "How could this design be used in the future?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:153
+msgid "Are all corner cases addressed? Check for:"
+msgstr ""
+
+#: ../../source/process/design-process.rst:160
+msgid "Update design based on feedback until everyone signs off"
+msgstr ""
+
+#: ../../source/process/design-process.rst:164
+msgid "Is this design ready to be implemented?"
+msgstr ""
+
+#: ../../source/process/design-process.rst:166
+msgid "**Break into tickets**"
+msgstr ""
+
+#: ../../source/process/design-process.rst:168
+msgid ""
+"Dev breaks the spec into tickets, and reviews with PM so everyone is on "
+"the same page about the plan"
+msgstr ""
+

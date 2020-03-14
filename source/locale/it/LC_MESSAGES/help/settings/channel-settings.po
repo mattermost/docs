@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/settings/channel-settings.rst:2
+msgid "Channel Settings"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:4
+msgid ""
+"Notification preferences, channel header, channel purpose, and channel "
+"name are customizable for each channel. To access these settings, click "
+"the channel name at the top of the page to open the channel menu."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:9
+msgid "Channel Notification Preferences"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:11
+msgid "Notification preferences can be modified for each channel you belong to."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:14
+msgid "Mute Channel"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:16
+msgid ""
+"By default, channel muting is turned off for all channels. To mute or "
+"unmute a channel, click the channel name at the top of the page to access"
+" the channel menu, then click **Notification Preferences > Mute "
+"channel**."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:22
+msgid "Ignore mentions for @channel, @here and @all"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:24
+msgid ""
+"By default, you will recieve mention notifications for any uses of "
+"@channel, @all or @here in a channel. When enabled, the channel will "
+"ignore mention notifications for channel wide mentions. Any messages "
+"containing @channel, @all or @here will still mark the channel unread, "
+"unless channel mute is enabled."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:27
+msgid "Send Desktop Notifications"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:29
+msgid ""
+"By default, the desktop notification preference assigned in *Account "
+"Settings* is used for all channels. To customize the desktop notification"
+" preference for each channel, click the channel name at the top of the "
+"page to access the channel menu, then click **Notification Preferences > "
+"Send Desktop Notifications**."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:36
+msgid "Send Mobile Push Notifications"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:38
+msgid ""
+"By default, the mobile push notification preference assigned in *Account "
+"Settings* is used for all channels. To customize the mobile push "
+"notification for each channel, click the channel name at the top of the "
+"page to access the channel menu, then click **Notification Preferences > "
+"Send mobile push notifications**."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:41
+msgid "Channel Header"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:43
+msgid ""
+"In the channel menu, select **Edit Channel Header** to change the text "
+"that appears next to the channel name at the top of the screen. It can be"
+" used to summarize the channel topic or provide links to frequently "
+"accessed documents. Any channel member can edit this setting, unless the "
+"System Administrator has `restricted the permissions "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"public-channel-renaming-for>`__."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:50
+msgid "Adding links to the Channel Header"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:52
+msgid ""
+"Frequently used links to documents, video calls, or other sites can be "
+"added to the channel header using markdown."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:54
+msgid ""
+"Example: `Google Hangout "
+"<https://plus.google.com/hangouts/_/store.com/shipping>`_"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:58
+msgid "Channel Purpose"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:60
+msgid ""
+"In the channel menu, select **Edit Channel Purpose** to change the text "
+"that appears in the *More…* menu for channels. The channel purpose is "
+"usually a short description that helps others decide whether to join the "
+"channel. Any channel member can edit this setting, unless the System "
+"Administrator has `restricted the permissions "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"public-channel-renaming-for>`__."
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:67
+msgid "Channel Name"
+msgstr ""
+
+#: ../../source/help/settings/channel-settings.rst:69
+msgid ""
+"In the channel menu, select **Rename Channel** to change the channel name"
+" or handle. Changing the channel handle changes the channel URL. Any "
+"channel member can edit this setting, unless the System Administrator has"
+" `restricted the permissions <https://docs.mattermost.com/administration"
+"/config-settings.html#enable-public-channel-renaming-for>`__."
+msgstr ""
+

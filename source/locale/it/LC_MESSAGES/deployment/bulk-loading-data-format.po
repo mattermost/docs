@@ -1,0 +1,479 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/bulk-loading-data-format.rst:4
+msgid "Data Format"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:6
+msgid ""
+"The input data file must be a valid `JSONL <http://jsonlines.org>`__ file"
+" with the following objects, each on its own line in the file. The "
+"objects must occur in the file in the order listed."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:9
+msgid "Version"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:10
+msgid ""
+"Mandatory. The Version object must be the first line in the file, and "
+"must occur only once. The version is the version of the bulk importer "
+"tool, which is currently ``1``."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:11
+msgid "Scheme"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:12
+msgid ""
+"Optional. If present, Scheme objects must occur after the Version object "
+"but before any Team objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:13
+msgid "Emoji"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:14
+msgid ""
+"Optional. If present, Emoji objects must occur after the Version objects "
+"but before any Team objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:15
+msgid "Team"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:16
+msgid ""
+"Optional. If present, Team objects must occur after any Scheme objects "
+"and before any Channel objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:17
+msgid "Channel"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:18
+msgid ""
+"Optional. If present, Channel objects must occur after all Team objects "
+"and before any User objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:19
+msgid "User"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:20
+msgid ""
+"Optional. If present, User objects must occur after the Team and Channel "
+"objects in the file and before any Post objects. Each User object defines"
+" the teams and channels that the user is a member of. If the "
+"corresponding teams and channels are not in the data file, then they must"
+" exist in the Mattermost database."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:21
+msgid "Post"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:22
+msgid ""
+"Optional. If present, Post objects must occur after the last User object "
+"but before any DirectChannel objects. Each Post object defines the team, "
+"the channel, and the username of the user who posted the message. If the "
+"corresponding team, channel, or user are not in the data file, then they "
+"must exist in the Mattermost database."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:23
+msgid "DirectChannel"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:24
+msgid ""
+"Optional. If present, DirectChannel objects must occur after all Post "
+"objects in the file and before any DirectPost objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+#: ../../source/deployment/bulk-loading-data-format.rst:26
+msgid "DirectPost"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:26
+msgid ""
+"Optional. If present, DirectPost objects must occur after all other "
+"objects in the file. Each DirectPost object defines the usernames of the "
+"channel members and the username of the user who posted the message. If "
+"the corresponding usernames are not in the data file, then they must "
+"exist in the Mattermost database."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:28
+msgid ""
+"With the exception of the Version object, each object has a field or a "
+"combination of fields that is used as the unique identifier of that "
+"object. The bulk loader uses the unique identifier to determine if the "
+"object being imported is a new object or an update to an existing object."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:30
+msgid "The identifiers for each object are listed in the following table:"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:32
+msgid "Objects and their unique identifiers"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Unique Identifier"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Not Applicable"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*name*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Role"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*name*, *team*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*username*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "UserNotifyProps"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "UserTeamMembership"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*team*, *username*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "UserChannelMembership"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*team*, *channel*, *username*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*channel*, *message*, *create_at*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Reply"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*post*, *message*, *create_at*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Reaction"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*post*, *emoji_name*, *create_at*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "Attachment"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*path*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*members*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1
+msgid "*channel_members*, *user*, *message*, *create_at*"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:52
+msgid ""
+"The following fragment is from a file that imports two teams, each with "
+"two channels, many users, and many posts."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:81
+msgid "Version object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:83
+msgid ""
+"The Version object must be the first object in the data file, and can "
+"appear only once.  The version represents the version of the bulk import "
+"tool and currently is ``1``."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:86
+msgid "Example Version object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:88
+#: ../../source/deployment/bulk-loading-data-format.rst:134
+#: ../../source/deployment/bulk-loading-data-format.rst:296
+#: ../../source/deployment/bulk-loading-data-format.rst:345
+#: ../../source/deployment/bulk-loading-data-format.rst:431
+#: ../../source/deployment/bulk-loading-data-format.rst:522
+#: ../../source/deployment/bulk-loading-data-format.rst:1054
+#: ../../source/deployment/bulk-loading-data-format.rst:1323
+#: ../../source/deployment/bulk-loading-data-format.rst:1394
+msgid ""
+"For clarity, the object is shown using regular JSON formatting, but in "
+"the data file it cannot be spread across several lines. It must be all on"
+" one line."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:98
+msgid "Fields of the Version object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:127
+msgid "Scheme object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:129
+msgid ""
+"Scheme objects represent Permissions Schemes in the Mattermost "
+"permissions system. If present, Scheme objects must occur after the "
+"Version object and before any Team objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:132
+msgid "Example Scheme object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:173
+msgid "Fields of the Scheme object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:244
+msgid "Fields of the Role object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:246
+msgid "This object is a member of the Scheme object."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:289
+msgid "Emoji object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:291
+msgid ""
+"Emoji objects represent custom Emoji. If present, Emoji objects must "
+"occur after the Version object and before any Team objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:294
+msgid "Example Emoji object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:309
+msgid "Fields of the Emoji object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:338
+msgid "Team object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:340
+msgid ""
+"If present, Team objects must occur after the Version object and before "
+"any Channel objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:343
+msgid "Example Team object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:361
+msgid "Fields of the Team object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:424
+msgid "Channel object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:426
+msgid ""
+"If present, Channel objects must occur after all Team objects and before "
+"any User objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:429
+msgid "Example Channel object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:448
+msgid "Fields of the Channel object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:515
+msgid "User object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:517
+msgid ""
+"If present, User objects must occur after the Team and Channel objects in"
+" the file and before any Post objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:520
+msgid "Example User object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:584
+msgid "Fields of the User object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:805
+msgid "Fields of the UserNotifyProps object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:807
+#: ../../source/deployment/bulk-loading-data-format.rst:899
+msgid "This object is a member of the User object."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:897
+msgid "Fields of the UserTeamMembership object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:946
+msgid "Fields of the UserChannelMembership object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:948
+msgid "This object is a member of the TeamMembership object."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:998
+msgid "Fields of the ChannelNotifyProps object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1000
+msgid "This object is a member of the ChannelMembership object."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1047
+msgid "Post object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1049
+msgid ""
+"If present, Post objects must occur after the last User object in the "
+"file, but before any DirectChannel objects."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1052
+msgid "Example Post object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1102
+msgid "Fields of the Post object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1188
+msgid "Fields of the Reply object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1190
+#: ../../source/deployment/bulk-loading-data-format.rst:1249
+#: ../../source/deployment/bulk-loading-data-format.rst:1287
+msgid "This object is a member of the Post/DirectPost object."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1247
+msgid "Fields of the Reaction object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1285
+msgid "Fields of the Attachment object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1316
+msgid "DirectChannel object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1318
+msgid ""
+"A direct channel can have from two to eight users as members of the "
+"channel. If there are only two members, Mattermost treats it as a Direct "
+"Message channel. If there are three or more members, Mattermost treats it"
+" as a Group Message channel."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1321
+msgid "Example DirectChannel object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1345
+msgid "Fields of the DirectChannel object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1387
+msgid "DirectPost object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1389
+msgid "DirectPost objects must occur after all other objects in the file."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1392
+msgid "Example DirectPost object"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data-format.rst:1436
+msgid "Fields of the DirectPost object"
+msgstr ""
+

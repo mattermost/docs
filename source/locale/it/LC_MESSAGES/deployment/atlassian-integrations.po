@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/atlassian-integrations.rst:2
+msgid "Atlassian Tools"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:4
+msgid ""
+"Our `Integrations Directory <https://integrations.mattermost.com>`_ has "
+"several integrations to connect Atlassian tools in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:6
+msgid ""
+"Here are some popular options below, including self-hosted on-prem or "
+"self-hosted private cloud solutions, and vendor-hosted SaaS solutions."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:9
+msgid "Jira Plugin"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:11
+msgid "Two-way integration between Mattermost and Jira, developed by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:12
+msgid ""
+"Send event notifications from your Jira projects to Mattermost channels, "
+"with full JQL filtering support."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:13
+msgid ""
+"Create and transition Jira issues, and attach Mattermost messages to Jira"
+" in the Mattermost user interface."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:14
+msgid ""
+"Supports Jira Core and Jira Software products, for Cloud, Server and Data"
+" Center platforms."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:15
+msgid "Source code + docs: https://github.com/mattermost/mattermost-plugin-jira"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:18
+msgid "Jira Atlassian App"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:20
+msgid ""
+"Two-way Atlassian Marketplace application for Jira and Mattermost, "
+"developed by Herzum."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:21
+msgid ""
+"Send event notifications and messages from your Jira projects to "
+"Mattermost channels, and create channels in Jira."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:22
+msgid "Create and view Jira issues in the Mattermost user interface."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:23
+msgid "Supports Jira Core and Jira Software products, for Server platform."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:24
+msgid ""
+"Marketplace download + docs: "
+"https://marketplace.atlassian.com/apps/1220414/amplifier-for-mattermost-"
+"jira"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:27
+msgid "Bitbucket"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:29
+msgid ""
+"Atlassian Marketplace application for Bitbucket and Mattermost, developed"
+" by Herzum."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:30
+msgid ""
+"Send notifications about repository and pull request events from your "
+"Bitbucket projects to Mattermost channels."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:31
+msgid "Supports Bitbucket Server platform."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:32
+msgid ""
+"Marketplace download + docs: "
+"https://marketplace.atlassian.com/apps/1220418/amplifier-for-mattermost-"
+"bitbucket"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:35
+msgid "Confluence"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:37
+msgid ""
+"Atlassian Marketplace application for Confluence and Mattermost, "
+"developed by codefortynine."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:38
+msgid ""
+"Send notifications about page, blogpost, question or comment updates from"
+" your Confluence spaces to Mattermost channels."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:39
+msgid ""
+"Configure notifications for a specific space, and also user notifications"
+" for tasks and mentions."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:40
+msgid "Supports Confluence Cloud, Server and Data Center platforms."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:41
+msgid ""
+"Marketplace download + docs: "
+"https://marketplace.atlassian.com/apps/1215055/slack-for-confluence"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:44
+msgid "Opsgenie"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:46
+msgid ""
+"Two-way integration between Opsgenie and Mattermost, developed by "
+"Opsgenie."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:47
+msgid ""
+"Send alert notifications from your Opsgenie incident boards to Mattermost"
+" channels."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:48
+msgid ""
+"Use slash commands to take quick actions such as acknowledging, "
+"assigning, creating and closing alerts in the Mattermost user interface."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:49
+msgid "Docs: https://docs.opsgenie.com/docs/mattermost-integration"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:52
+msgid "Statuspage"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:54
+msgid ""
+"Send notifications about system outages and partially degraded services "
+"from Statuspage to Mattermost, developed by Carlos Tadeu Panato Junior."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:55
+msgid "Install and configure as a Mattermost plugin within minutes."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:56
+msgid ""
+"Source code + docs: https://github.com/cpanato/mattermost-plugin-"
+"statuspage"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:59
+msgid "Trello"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:61
+msgid ""
+"Send notifications from Trello projects to Mattermost channels, developed"
+" by Lujeni."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:62
+msgid "Deploy via Heroku, Linux Web Server or Docker."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:63
+msgid "Source code + docs: https://github.com/Lujeni/matterllo"
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:65
+msgid ""
+"Have a proposal for an Atlassian integration? `Let us know in the feature"
+" proposal forum "
+"<https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_."
+msgstr ""
+
+#: ../../source/deployment/atlassian-integrations.rst:67
+msgid ""
+"Have built an integration? `Let us know "
+"<https://integrations.mattermost.com/submit-an-integration/>`_ and we'll "
+"share in our `Integrations Directory "
+"<https://integrations.mattermost.com>`_."
+msgstr ""
+

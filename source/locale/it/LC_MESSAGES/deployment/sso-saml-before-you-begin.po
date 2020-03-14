@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:2
+msgid "Before You Begin"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:4
+msgid ""
+"Starting with Mattermost version 5.20, a new SAML library implementation "
+"is available. This implementation does not require the installation of "
+"the XML Security Library. It is recommended that you use this new "
+"implementation as the old implementation will eventually be deprecated."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:6
+msgid ""
+"To use the new implementation, navigate to **System Console > "
+"Experimental > Features > Use Improved SAML Library (Beta)**. Select "
+"``true``, choose **Save**, and restart the server. The configuration "
+"change will not take effect until the server is restarted."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:8
+msgid ""
+"To change the configuration file directly, edit ``UseNewSAMLLibrary`` "
+"using the configuration provided in the `Configuration Settings "
+"documentation <https://docs.mattermost.com/administration/config-"
+"settings.html#saml>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:11
+msgid "To use the existing implementation in versions prior to 5.20:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:13
+msgid ""
+"Make sure you have the `XML Security Library "
+"<https://www.aleksey.com/xmlsec/download.html>`__ installed on your "
+"Mattermost instance. The XML Security Library is usually included as part"
+" of Debian GNU/Linux."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:15
+msgid "Install the *xmlsec1-openssl* library"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:16
+msgid "On Ubuntu: ``sudo apt-get install xmlsec1``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:17
+msgid "On RHEL: ``sudo yum install xmlsec1-openssl``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:19
+msgid "Generate encryption certificates for encrypting the SAML connection."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:20
+msgid ""
+"You can use the `Bash script "
+"<https://github.com/mattermost/docs/tree/master/source/scripts/generate-"
+"certificates>`__ from the *mattermost/docs* repository on GitHub, or any "
+"other suitable method."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:21
+msgid ""
+"Save the two files that are generated. They are the private key and the "
+"public key. In the System Console, they are referred to as the **Service "
+"Provider Private Key** and the **Service Provider Public Certificate** "
+"respectively."
+msgstr ""
+

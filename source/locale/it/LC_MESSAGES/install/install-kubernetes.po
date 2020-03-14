@@ -1,0 +1,894 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-kubernetes.rst:5
+msgid "Installing Mattermost on Kubernetes"
+msgstr ""
+
+#: ../../source/install/install-kubernetes.rst:7
+msgid ""
+"This document describes installing and deploying a production-ready "
+"Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes"
+" operator."
+msgstr ""
+
+#: ../../source/install/install-kubernetes.rst:9
+msgid ""
+"An operator is a set of product- or application-specific instructions "
+"packaged into its own program. It tells an application what to run, where"
+" to find it, and how to configure it. An operator can automate complex "
+"application deployment and operation activities, such as installation, "
+"configuration changes, software updates, failure recovery, and more. The "
+"Mattermost operator does this by interacting with MySQL and MinIO "
+"operators."
+msgstr ""
+
+#: ../../source/install/install-kubernetes.rst:13
+msgid ""
+"Deploying the Mattermost Operator on Kubernetes is the recommended "
+"installation process. It provides a single common installation and "
+"management method that can be implemented in practically any environment "
+"with less IT overhead and more automation."
+msgstr ""
+
+#: ../../source/install/install-kubernetes.rst:16
+msgid ""
+"Tasks such as zero-downtime upgrades, database restore, blue/green "
+"deployments, canary builds, and failure recovery are all managed by the "
+"Mattermost operator."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:4
+msgid "Setting Up a Kubernetes Cluster"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:7
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:9
+msgid ""
+"If you don’t have a production-ready Kubernetes cluster, version 1.12 or "
+"higher, you will need to set one up. If you already have a Kubernetes "
+"cluster you can skip to Confirm Resource Requirements. Note that the "
+"Kubernetes-specific CLI tool, `kubectl "
+"<https://kubernetes.io/docs/reference/kubectl/overview/>`__, also needs "
+"to be installed and configured."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:13
+msgid ""
+"It’s recommended that you have an understanding of basic Kubernetes "
+"concepts (such as deployments, pods) and actions (such as applying "
+"manifests, viewing pod logs). It's also advisable to consult the "
+"`official Kubernetes setup documentation "
+"<https://kubernetes.io/docs/setup/>`__ on how to set up a cluster in your"
+" environment. If you’re unsure about which environment you want to use "
+"for your Kubernetes cluster, we suggest using a managed service such as "
+"as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes "
+"Service <https://azure.microsoft.com/en-ca/services/kubernetes-"
+"service/>`__, `Google Kubernetes Engine <https://cloud.google.com"
+"/kubernetes-engine/>`__, or `DigitalOcean Kubernetes "
+"<https://www.digitalocean.com/products/kubernetes/>`__."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:22
+msgid "Confirm Resource Requirements"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:24
+msgid ""
+"Running Mattermost in Kubernetes requires different resources based on "
+"your total number of users. The table below details the minimum "
+"Kubernetes cluster resources that Mattermost requires at different "
+"scales."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:27
+msgid ""
+"**Note:** These are minimum requirements and yours may differ "
+"significantly."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "User Count"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "Node Count"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "Memory per Node"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "vCPU per Node"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "5,000"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "6"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "8 GB"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "4"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "10,000"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "8"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "16 GB"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "25,000"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:1
+msgid "14"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:36
+msgid "**Note:**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:38
+msgid ""
+"These resources take into account all components required for Mattermost,"
+" including proxy, database and file storage."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:39
+msgid "Resource requirements may vary depending on user usage and bot activity."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:40
+msgid ""
+"For larger installations, it may be beneficial to use nodes for the "
+"databases that have more memory and/or are optimized for memory."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-cluster.rst:41
+msgid ""
+"For installations of more than 25,000 users please `contact us "
+"<https://mattermost.com/contact-us/>`__ for sizing guidelines."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:4
+msgid "Installing the Operators"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:6
+msgid ""
+"The required operators are installed using kubectl and each operator is "
+"created in its own namespace. Shorter namespace names are recommended. "
+"You can install and run multiple Mattermost installations in the same "
+"cluster using different namespaces."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:9
+msgid ""
+"The steps provided below include database and storage operators. To "
+"install only the Mattermost operator, see `Using a Custom Configuration "
+"<https://kubernetes.github.io/ingress-nginx/deploy/>`__"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:12
+msgid "**1. Install the MySQL Operator**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:19
+msgid "**2. Install the MinIO Operator**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:26
+msgid "**3. Install NGINX Ingress Controller**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:28
+msgid ""
+"Follow the instructions `here <https://kubernetes.github.io/ingress-"
+"nginx/deploy/>`__."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:30
+msgid "**4. Install the Mattermost Operator**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-operator.rst:37
+msgid ""
+"Once completed, the installed components are listed in the configuration "
+"of your cluster."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:4
+msgid "Deploying a Mattermost Installation"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:6
+msgid ""
+"This guide describes deploying a complete Mattermost installation in "
+"Kubernetes including a database. In most cases you'll create and apply a "
+"single manifest. In the case of an Enterprise installation, two manifests"
+" will be applied - one for the license and one for the cluster "
+"installation."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:10
+msgid ""
+"Manifest files contain the configurations needed for the operator to "
+"perform tasks and communicate with Kubernetes. Create the manifest file "
+"locally in a text editor, copy and paste the contents, and save the file."
+" Recommended file names are provided, but your naming conventions may "
+"differ."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:14
+msgid "**1. (Enterprise only) Create a Mattermost License Secret**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:16
+#: ../../source/install/install-kubernetes-mattermost.rst:57
+msgid "Open a text editor and create a text file with the following details."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:18
+msgid ""
+"**Note:** Replace ``%LICENSE_FILE_CONTENTS%`` with the contents of your "
+"Mattermost license file."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:30
+msgid ""
+"Save the file as ``mattermost-license-secret.yaml``. Apply the file, "
+"specifying the correct path, using:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:36
+msgid "**2. Create an Installation Manifest File**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:38
+#: ../../source/install/install-kubernetes-mattermost.rst:175
+msgid ""
+"The Mattermost installation manifest contains fields which must be edited"
+" in line with your configuration and environment requirements."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "Field"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "Description"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "Must Edit"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "metadata.name"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The name of your Mattermost as it will be shown in Kubernetes. The "
+"shorter the better."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "Yes"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.size"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The size of your installation. This can be '100users', '1000users, "
+"'5000users', '10000users', or '25000users'."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.ingressName"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "The DNS for your Mattermost installation."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.version"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "The Mattermost version."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "No"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.mattermostLicenseSecret"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The name of the Kubernetes secret containing your license (e.g. "
+"mattermost-license-secret). Required for Enterprise deployments."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.database.storageSize"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The storage size for your database. Your Kubernetes cluster must have "
+"persistent volumes this size or larger."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.minio.storageSize"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The storage size for your file storage. Your Kubernetes cluster must have"
+" persistent volumes this size or larger."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.elasticSearch"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The section for Elasticsearch settings. Remove this section if you will "
+"not be using Elasticsearch."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.elasticSearch.host"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The hostname for your Elasticsearch instance. Remove this section if you "
+"will not be using Elasticsearch"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.elasticSearch.username"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The username for your Elasticsearch instance.Remove this section if you "
+"will not be using Elasticsearch"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid "spec.elasticSearch.password"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:1
+msgid ""
+"The password for your Elasticsearch instance. Remove this section if you "
+"will not be using Elasticsearch"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:55
+msgid ""
+"There are more advanced fields documented `here "
+"<https://raw.githubusercontent.com/mattermost/mattermost-"
+"operator/master/docs/examples/full.yaml>`__."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:81
+msgid "Save the file as ``mattermost-installation.yaml``."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:83
+msgid "**3. Apply the Installation Manifest File**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:85
+msgid ""
+"To initiate deployment, apply the file, specifying the correct path, "
+"using:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:92
+msgid "The deployment process can be monitored in the Kubernetes user interface."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:94
+msgid "**4. Configure DNS and Use Mattermost**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:96
+msgid ""
+"When the deployment is complete, obtain the hostname or IP address of "
+"your Mattermost deployment using the following command:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:102
+msgid ""
+"Copy the resulting hostname or IP address from the ``ADDRESS`` column, "
+"open your browser, and connect to Mattermost."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:104
+msgid ""
+"Use your domain registration service to create a canonical name or IP "
+"address record for the ``ingressName`` in your manifest, pointing to the "
+"address you just copied. For example, on AWS you would do this within a "
+"hosted zone in Route53."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:107
+msgid "Navigate to the ``ingressName`` URL in your browser and use Mattermost."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:110
+msgid "Restoring an Existing Mattermost MySQL Database"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:112
+msgid ""
+"The Mattermost Operator can be used in a backup and restore scenario to "
+"apply an existing Mattermost MySQL database to a new Mattermost "
+"installation, in its own namespace. This can also be helpful in the event"
+" that you need to revert your Mattermost instance's database to the most "
+"recent backup point, on your existing installation. In both cases, you "
+"will need a backup of your database."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:114
+msgid ""
+"The steps you follow to create and upload your backup depends on the "
+"provider you're using and your use case. It's recommended that you "
+"consult the relevant documentation or, if your deployment is managed in a"
+" different way, consult your Administrator."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:116
+msgid ""
+"It is important to note that this process requires the creation of a new "
+"Mattermost installation - editing the existing ``.yaml`` files is not "
+"recommended and can result in data loss."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:119
+msgid ""
+"The process described below needs to be completed prior to proceeding "
+"with the Mattermost deployment."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:121
+msgid "Create a backup of your database (e.g. using *mysqldump*)."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:122
+msgid "Deploy a new server (e.g. an AWS instance)."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:123
+msgid ""
+"Install a backup program and back up the database on the new "
+"server/instance."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:124
+msgid ""
+"Upload the backed up database to your cloud storage provider (e.g. Amazon"
+" S3)."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:125
+msgid "Create a ``secret.yaml`` file:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:127
+msgid ""
+"Open a text editor and create a text file containing your credentials "
+"which will be used to access the uploaded database."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:129
+msgid "Save the file as ``secret.yaml``. The example below is for AWS/S3."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:144
+#: ../../source/install/install-kubernetes-mattermost.rst:195
+#: ../../source/install/use-kubernetes-mattermost.rst:77
+msgid "**Parameters**"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:146
+msgid ""
+"``name``. The name of this manifest which is referenced in the "
+"installation manifest."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:149
+msgid "Create a Mattermost cluster installation manifest."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:151
+msgid ""
+"Open a text editor and create a text file with the following details. "
+"Save the file as ``mattermost-installation.yaml``:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:177
+msgid "Create a restore manifest:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:179
+msgid ""
+"Open a text editor and create a text file with the following details. "
+"Save the file as ``restore.yaml``:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:197
+msgid "``mattermostClusterName``. The ClusterInstallation file name."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:199
+msgid "``restoreSecret``. The location of the backup file."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:201
+msgid "``mattermostDBPassword``. The password used to access the database."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:203
+msgid "``mattermostDBUser``. The username required to access the database."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:205
+msgid ""
+"``initBucketURL``. The URL of the storage instance/server where the "
+"backed up DB is stored."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:207
+msgid ""
+"To initiate deployment, apply the file and specify the path where the "
+"newly-created files have been saved:"
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:216
+msgid ""
+"The deployment process can be monitored in the Kubernetes user interface."
+" If errors or issues are experienced, review the Mattermost, Operator, "
+"and MySQL logs for guidance including error messages. If remediation is "
+"not successful, contact Mattermost customer support for assistance."
+msgstr ""
+
+#: ../../source/install/install-kubernetes-mattermost.rst:219
+msgid ""
+"Once complete, access your Mattermost instance and confirm that the "
+"database has been restored."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:4
+msgid "Using Mattermost Operator Functionality"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:7
+msgid "Rolling Upgrades"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:9
+msgid ""
+"The Mattermost Kubernetes Operator supports rolling upgrades so you can "
+"upgrade your Mattermost deployment with zero downtime. This process "
+"requires at least two replicas as a rolling upgrade cannot be performed "
+"if there is only one pod. Replicas are created when a user count is "
+"selected and exceeds 100."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:14
+msgid ""
+"New Mattermost releases are announced via our community server, as well "
+"as social media and email."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:16
+msgid "**Performing rolling upgrades**"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:18
+msgid "Log in to your Kubernetes instance."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:19
+msgid ""
+"Open the ``mattermost-installation.yaml`` manifest (the one created "
+"during installation)."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:20
+msgid "Update the ``spec.version`` value to the new version."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:21
+msgid "Save the changes."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:23
+msgid "Apply the changes with kubectl using"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:29
+msgid ""
+"The operator initiates a job in the Kubernetes cluster and once migration"
+" is complete the pods are restarted. If necessary, a database migration "
+"is also performed."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:32
+msgid "To view information about the running job, use"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:38
+msgid ""
+"At least one pod is available at all times and once all pods are "
+"restarted with the new version the upgrade is complete."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:40
+msgid "To view the status of the pods and to confirm their state, use"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:46
+msgid ""
+"The *STATUS* of the pods should be running/ready, with an *AGE* of 10-15 "
+"seconds."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:49
+msgid "Blue-green Deployments"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:51
+msgid ""
+"Blue-green deployments can reduce downtime and increase stability during "
+"automated tasks in a production environment. This technique entails "
+"running two identical production environments in tandem, with one acting "
+"as a live environment and one as an idle environment."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:55
+msgid ""
+"An upgrade can be rolled out to the idle environment (“blue”) while the "
+"other (“green”) is the production environment. Once the upgrade has been "
+"successfully rolled out, all traffic can be switched from “green” to "
+"“blue”."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:58
+msgid ""
+"**Note:** Blue-green can be run on a permanent basis but utilizes more "
+"resources in the Kubernetes cluster than normal deployments."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:60
+msgid "**Configuring Blue-green Deployments**"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:62
+msgid ""
+"Open the ``mattermost-installation.yaml`` file and add ``blueGreen`` "
+"under ``spec``."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:79
+msgid ""
+"``enable``. When enabled it ignores the regular ``spec.version`` and "
+"``spec.image``. When set to ``false`` it is ignored."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:80
+msgid ""
+"``productionDeployment``. Set to ``blue`` or ``green`` to route all users"
+" to the specified deployment."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:81
+msgid "``image``.  Optional. Select the image used."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:83
+msgid ""
+"When the manifest is updated, two new ingresses (proxies) are created at "
+"``blue.yourmattermosturl.com`` and ``green.yourmattermosturl.com``."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:85
+msgid ""
+"To access the new ingresses, create CNAME or IP address records in your "
+"DNS registration service for the ``ingressName`` in your manifest, "
+"pointing to the address you just copied."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:88
+msgid ""
+"For example, on AWS you would do this within a hosted zone in Route 53. "
+"Use the required ``ingressName`` URL in your browser to directly access "
+"blue or green at any time."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:90
+msgid ""
+"To update the version of blue or green, change the version in the "
+"manifest to match the current version or the version you’d like to "
+"deploy. This change (regardless of which is the ``productionDeployment``)"
+" initiates a database migration. The schema is backwards and forwards "
+"compatible across minor versions (from 5.9 onwards) and will not disrupt "
+"the production deployment. However, it will auto-upgrade the database."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:98
+msgid "Canary Builds"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:100
+msgid ""
+"A canary build is used to test an experimental or untested build. It's "
+"similar to a blue-green deployment in that multiple environments are run "
+"simultaneously. However, where blue-green deployments have different "
+"URLs, canary builds are set up to direct a random segment of users to the"
+" test environment. Users are not explicitly aware that they're on the "
+"canary build environment."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:104
+msgid "The redirect is managed with a cookie, which is valid for 24 hours."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:106
+msgid ""
+"The Mattermost Operator currently allows segmenting by percentage (i.e., "
+"splitting the user pool between production and the canary build). In "
+"future releases segmentation options will include teams and individual "
+"users."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:109
+msgid ""
+"Configuring canary builds requires an update to the ``mattermost-"
+"installation.yaml`` file and the addition of a plugin via System Console."
+" Before proceeding, first download the `Mattermost Plugin for Canary "
+"Deployments <https://github.com/mattermost/mattermost-plugin-"
+"canary/releases>`__."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:112
+msgid "**Configuring Canary Builds**"
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:114
+msgid ""
+"Open the ``mattermost-installation.yaml`` file and add the following "
+"under ``spec``."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:124
+msgid ""
+"Next, navigate to **System Console > Plugin Management**, enable plugins,"
+" and upload the Mattermost Canary Plugin. Once uploaded, refresh your "
+"page and then select **Settings** from the Canary plugin modal. Enter the"
+" percentage of users you'd like to direct to the canary build."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:127
+msgid ""
+"Once complete, navigate to your Mattermost instance and open the "
+"Developer Tools menu in your browser. The entry for the Mattermost "
+"instance will display *always* or *never* depending on the segment you've"
+" been allocated to."
+msgstr ""
+
+#: ../../source/install/use-kubernetes-mattermost.rst:130
+msgid ""
+"You can disable canary builds in the ``mattermost-installation.yaml`` "
+"file by changing the ``enable`` field to ``false``."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:4
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:7
+msgid "What is the difference between the Mattermost Operator and Helm Charts?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:9
+msgid ""
+"The Mattermost Operater is a self-contained set of application/product-"
+"specific instructions that runs inside Kubernetes and facilitates "
+"application management and deployment."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:12
+msgid ""
+"Helm is a tool used to deploy Kubernetes manifests to a cluster, but does"
+" not facilitate application management."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:15
+msgid "Does the Mattermost Operator replace the Helm Chart?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:17
+msgid ""
+"No. Helm is a good mechanism to deploy operators and other applications "
+"but doesn't facilitate application management."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:21
+msgid "Is minIO the only available storage option?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:23
+msgid "No, other options and operators can be added."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:26
+msgid "Do I have to install a separate SQL server to use the Mattermost Operator?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:28
+msgid ""
+"No, you can use the operator on top of your existing deployment without "
+"setting up another database. We will shortly be providing steps for this "
+"configuration."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:32
+msgid "Can you use blue-green deployments with different database schemas?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:34
+msgid ""
+"Currently this is not supported as it introduces the possiblilty of "
+"missing a data entry in the database."
+msgstr ""
+

@@ -1,0 +1,574 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/metrics.rst:2
+msgid "Performance Monitoring (E20)"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:4
+msgid "*Available in Enterprise Edition E20*."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:6
+msgid ""
+"Performance monitoring support enables a Mattermost server to track "
+"system health for large Enterprise deployments through integrations with "
+"`Prometheus <https://prometheus.io/>`__ and `Grafana "
+"<http://grafana.org/>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:8
+msgid ""
+"The integration supports data collection from several Mattermost servers,"
+" particularly useful if you're running Mattermost `in high availability "
+"mode <https://docs.mattermost.com/deployment/cluster.html>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:11
+msgid "Contents"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:14
+msgid "Deployment Guide"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:15
+msgid "Details on integrating your Mattermost server with Prometheus and Grafana."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:18
+msgid "Installing Prometheus"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:20
+msgid ""
+"1 - `Download a precompiled binary for Prometheus "
+"<https://prometheus.io/download/>`__. Binaries are provided for many "
+"popular distributions, including Darwin, Linux and Windows."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:22
+msgid ""
+"For install instructions, see `Prometheus install guides "
+"<https://prometheus.io/docs/introduction/getting_started/>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:24
+msgid ""
+"2 - The following settings are recommended in the Prometheus "
+"configuration file named ``prometheus.yml``:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:59
+msgid ""
+"The ``<hostname1>:<port>`` parameter has to be replaced with your "
+"Mattermost host ip address and port to scrape the data. It connects to "
+"``/metrics`` using http."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:61
+msgid ""
+"3 - Enable performance monitoring in the Mattermost System Console and "
+"specify the listen address. See more detail in our `configuration "
+"settings documentation <https://docs.mattermost.com/administration"
+"/config-settings.html#performance-monitoring-beta>`__. After enabling "
+"performance monitoring, make sure to reboot Mattermost."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:66
+msgid "4 - To test the server is running, go to ``<ip>:<port>/metrics``."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:68
+msgid "5 - Finally, run ``vi prometheus.yml`` to finish configuring Prometheus."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:70
+msgid ""
+"For starting the Prometheus service, read the `comprehensive guides "
+"provided by Prometheus "
+"<https://prometheus.io/docs/introduction/getting_started/#starting-"
+"prometheus>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:72
+msgid ""
+"6 - Once the service has started, you can access the data in "
+"``<localhost>:<port>/graph``."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:74
+msgid ""
+"While you can use the Prometheus service to create graphs, we'll focus on"
+" creating metric and analytics dashboards in Grafana."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:76
+msgid ""
+"For troubleshooting advice, check the `Prometheus FAQ page "
+"<https://prometheus.io/docs/introduction/faq/>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:79
+msgid "Installing Grafana"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:81
+msgid ""
+"1 - `Download a precompiled binary for Grafana "
+"<http://docs.grafana.org/installation/debian/>`__ on Ubuntu or Debian. "
+"Binaries are also available for other distributions, including Redhat, "
+"Windows and Mac."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:83
+msgid ""
+"For install instructions, see `Grafana install guides "
+"<http://docs.grafana.org/installation/debian/>`__"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:85
+msgid ""
+"2 - The Grafana package is installed as a service, so it is easy to start"
+" the server. See their `install guides "
+"<http://docs.grafana.org/installation/debian/>`__ to learn more."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:87
+msgid ""
+"3 - The default HTTP port is ``3000`` and default username and password "
+"are ``admin``."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:89
+msgid ""
+"4 - A Mattermost data source should be added, with settings defined in "
+"the screenshot below."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:93
+msgid ""
+"For troubleshooting advice, check the `Grafana Troubleshooting page "
+"<http://docs.grafana.org/installation/troubleshooting/>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:95
+msgid ""
+"For user guides and tutorials, check the `Grafana documentation to learn "
+"more <http://docs.grafana.org/guides/basic_concepts/>`__."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:98
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:100
+msgid ""
+"To help you get started, you can download three sample dashboards shared "
+"in Grafana:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:102
+msgid ""
+"`Mattermost Performance KPI Metrics "
+"<https://grafana.com/dashboards/2539>`__, which contains key metrics for "
+"monitoring performance and system health."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:103
+msgid ""
+"`Mattermost Performance Monitoring "
+"<https://grafana.com/dashboards/2542>`__, which contains detailed charts "
+"for performance monitoring."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:104
+msgid ""
+"`Mattermost Performance Monitoring (Bonus Metrics) "
+"<https://grafana.com/dashboards/2545>`__, which contains additional "
+"metrics such as emails sent or files uploaded, which may be important to "
+"monitor in some deployments."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:106
+msgid ""
+"See `this guide <http://docs.grafana.org/reference/export_import/>`__ to "
+"learn how to import Grafana dashboards either from the UI or from the "
+"HTTP API."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:109
+msgid "Statistics"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:111
+msgid ""
+"Mattermost provides the following performance monitoring statistics to "
+"integrate with Prometheus and Grafana."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:114
+msgid "Custom Mattermost Metrics"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:116
+msgid ""
+"The following is a list of custom Mattermost metrics that can be used to "
+"monitor your system's performance:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:118
+msgid "API Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:120
+msgid ""
+"``mattermost_api_time``: The total time in seconds to execute a given API"
+" handler."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:122
+msgid "Caching Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:124
+msgid ""
+"``mattermost_cache_etag_hit_total``: The total number of ETag cache hits "
+"for a specific cache."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:125
+msgid ""
+"``mattermost_cache_etag_miss_total``: The total number of ETag cache "
+"misses for an API call."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:126
+msgid ""
+"``mattermost_cache_mem_hit_total``: The total number of memory cache hits"
+" for a specific cache."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:127
+msgid ""
+"``mattermost_cache_mem_invalidation_total``: The total number of memory "
+"cache invalidations for a specific cache."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:128
+msgid ""
+"``mattermost_cache_mem_miss_total``: The total number of cache misses for"
+" a specific cache."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:130
+msgid ""
+"The above metrics can be used to calculate ETag and memory cache hit "
+"rates over time."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:134
+msgid "Cluster Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:136
+msgid ""
+"``mattermost_cluster_cluster_request_duration_seconds``:  The total "
+"duration in seconds of the inter-node cluster requests."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:137
+msgid ""
+"``mattermost_cluster_cluster_requests_total``: The total number of inter-"
+"node requests."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:138
+msgid ""
+"``mattermost_cluster_event_type_totals``: The total number of cluster "
+"requests sent for any type."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:140
+msgid "Database Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:142
+msgid ""
+"``mattermost_db_master_connections_total``: The total number of "
+"connections to the master database."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:143
+msgid ""
+"``mattermost_db_read_replica_connections_total``: The total number of "
+"connections to all the read replica databases."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:144
+msgid ""
+"``mattermost_db_search_replica_connections_total``: The total number of "
+"connections to all the search replica databases."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:145
+msgid ""
+"``mattermost_db_store_time``: The total time in seconds to execute a "
+"given database store method."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:147
+msgid "HTTP Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:149
+msgid "``mattermost_http_errors_total``: The total number of http API errors."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:150
+msgid ""
+"``mattermost_http_request_duration_seconds``: The total duration in "
+"seconds of the http API requests."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:151
+msgid "``mattermost_http_requests_total``: The total number of http API requests."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:155
+msgid "Login and Session Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:157
+msgid ""
+"``mattermost_http_websockets_total`` The total number of WebSocket "
+"connections to the server."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:158
+msgid "``mattermost_login_logins_fail_total``: The total number of failed logins."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:159
+msgid "``mattermost_login_logins_total``: The total number of successful logins."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:161
+msgid "Messaging Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:163
+msgid ""
+"``mattermost_post_broadcasts_total``: The total number of WebSocket "
+"broadcasts sent because a post was created."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:164
+msgid ""
+"``mattermost_post_emails_sent_total``: The total number of emails sent "
+"because a post was created."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:165
+msgid ""
+"``mattermost_post_file_attachments_total``: The total number of file "
+"attachments created because a post was created."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:166
+msgid ""
+"``mattermost_post_pushes_sent_total``: The total number of mobile push "
+"notifications sent because a post was created."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:167
+msgid "``mattermost_post_total``: The total number of posts created."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:168
+msgid ""
+"``mattermost_post_webhooks_totals``: The total number of webhook posts "
+"created."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:172
+msgid "Process Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:174
+msgid ""
+"``mattermost_process_cpu_seconds_total``: Total user and system CPU time "
+"spent in seconds."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:175
+msgid "``mattermost_process_max_fds``: Maximum number of open file descriptors."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:176
+msgid "``mattermost_process_open_fds``: Number of open file descriptors."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:177
+msgid ""
+"``mattermost_process_resident_memory_bytes``: Resident memory size in "
+"bytes."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:178
+msgid ""
+"``mattermost_process_start_time_seconds``: Start time of the process "
+"since unix epoch in seconds."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:179
+msgid "``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:181
+msgid "Search Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:183
+msgid ""
+"``mattermost_search_posts_searches_duration_seconds_sum``: The total "
+"duration, in seconds, of search query requests."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:184
+msgid ""
+"``mattermost_search_posts_searches_duration_seconds_count``: The total "
+"number of search query requests."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:186
+msgid "WebSocket Metrics:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:188
+msgid ""
+"``mattermost_websocket_broadcasts_total``: The total number of WebSocket "
+"broadcasts sent by type."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:189
+msgid ""
+"``mattermost_websocket_event_total``: The total number of WebSocket "
+"events sent by type."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:192
+msgid "Standard GO Metrics"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:194
+msgid ""
+"The Prometheus integration also provides standard GO metrics for HTTP "
+"server runtime profiling data and system monitoring, such as:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:196
+msgid "``go_memstats_alloc_bytes`` for memory usage"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:197
+msgid "``go_goroutines`` for GO routines"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:198
+msgid "``go_gc_duration_seconds`` for garbage collection duration"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:199
+msgid "``go_memstats_heap_objects`` for object tracking on the heap"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:201
+msgid ""
+"To learn how to set up runtime profiling, see the `pprof package GO "
+"documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also "
+"visit the ``ip:port/metrics`` page for a complete list of metrics with "
+"descriptions."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:203
+msgid "If enabled, you can run the profiler by"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:205
+msgid "``go tool pprof channel http://localhost:<port>/debug/pprof/profile``"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:207
+msgid ""
+"where you can replace ``localhost`` with the server name. The profiling "
+"reports are available at ``<ip>:<port>``, which include:"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:209
+msgid "``/debug/pprof/`` for CPU profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:210
+msgid "``/debug/pprof/cmdline/`` for command line profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:211
+msgid "``/debug/pprof/symbol/`` for symbol profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:212
+msgid "``/debug/pprof/goroutine/`` for GO routine profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:213
+msgid "``/debug/pprof/heap/`` for heap profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:214
+msgid "``/debug/pprof/threadcreate/`` for threads profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:215
+msgid "``/debug/pprof/block/`` for block profiling"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:220
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:223
+msgid "Why Are Chart Labels Difficult To Distinguish?"
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:225
+msgid ""
+"The chart labels used in server filters and legends are based on the "
+"hostname of your machines. If the hostnames are similar, then it will be "
+"difficult to distinguish the labels."
+msgstr ""
+
+#: ../../source/deployment/metrics.rst:227
+msgid ""
+"You can either set more descriptive hostnames for your machines or change"
+" the display name with a ``relabel_config`` in  `Prometheus configuration"
+" "
+"<https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config>`__."
+msgstr ""
+

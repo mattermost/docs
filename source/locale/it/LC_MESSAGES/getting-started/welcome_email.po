@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/getting-started/welcome_email.rst:2
+msgid "Welcome Email to End Users"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:5
+msgid ""
+"To make it easy for your end users to start using Mattermost right away, "
+"we created a sample email template that you can use."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:7
+msgid "Remember to replace all the items below in bold with your information."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:11
+msgid "Email Template"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:13
+msgid "From: **[company name]** IT Team"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:15
+msgid "To: End users"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:17
+msgid "Subject: New Communication Platform - Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:20
+msgid "Hi all,"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:22
+msgid ""
+"As some of you already know, we are moving to Mattermost as our "
+"communication platform. Mattermost is a messaging app where you can talk,"
+" share files, and collaborate on projects or initiatives. Mattermost also"
+" integrates with many of the apps that you use every day, like **[add "
+"apps]**."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:24
+msgid ""
+"We are moving to Mattermost because it will host all our communication in"
+" one place, is instantly searchable and available from all your devices."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:26
+msgid "Some of the major benefits of using Mattermost are:"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:28
+msgid "Direct 1:1 and group messaging"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:30
+msgid "Channels for topic-based, group-based, or meeting-based chat"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:32
+msgid "Streamlined collaboration on projects"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:34
+msgid "Reduced email clutter"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:36
+msgid "Searching across messages and channels"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:38
+msgid "Sharing files"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:40
+msgid "To get started:"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:42
+msgid ""
+"Open a browser on your computer, go to **[Mattermost URL]** and log in "
+"with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to "
+"bookmark the URL so you can use it to log in next time."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:44
+msgid ""
+"`Download <https://about.mattermost.com/download/#mattermostApps>`__ the "
+"Mattermost apps for desktop and mobile. Refer to the `Mattermost Welcome "
+"Guide <https://docs.mattermost.com/help/getting-started/welcome-to-"
+"mattermost.html>`__ on how to get up and running quickly."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:47
+msgid "Start messaging!"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:50
+msgid ""
+"Questions? If you have any questions, feel free to post in the "
+"**[~Mattermost channel]** or email us at **[IT email]**."
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:53
+msgid "Happy messaging!"
+msgstr ""
+
+#: ../../source/getting-started/welcome_email.rst:55
+msgid "**[company name]** IT Team"
+msgstr ""
+

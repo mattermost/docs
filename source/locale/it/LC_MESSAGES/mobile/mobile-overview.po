@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mobile/mobile-overview.rst:2
+msgid "Mobile Applications Guide"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:4
+msgid "There are three main options for deploying the Mattermost Mobile Apps."
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:7
+msgid "Install from Apple App Store and Google Play"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:9
+msgid ""
+"For quick and easy deployment, you can download the Mattermost mobile "
+"apps directly from the Apple App Store and Google Play. Please see our "
+"guide on :doc:`installing from the Apple App Store and Google Play Store "
+"<mobile-appstore-install>` for more details."
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:11
+#: ../../source/mobile/mobile-overview.rst:22
+msgid "This option is recommended for:"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:13
+msgid "Testing out the mobile applications"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:14
+msgid ""
+"Team Edition servers using no push notifications, or push notifications "
+"from Mattermost's :ref:`TPNS <tpns>` (Test Push Notification Service)"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:15
+msgid ""
+"Enterprise Edition servers using push notifications from Mattermost's "
+":doc:`HPNS <mobile-hpns>` (Hosted Push Notification Service)"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:18
+msgid "Build the apps yourself"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:20
+msgid ""
+"To customize the mobile apps, you can fork the open source repository and"
+" :doc:`compile your own versions <mobile-compile-yourself>` of the "
+"Mattermost mobile applications and Mattermost push proxy server."
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:24
+msgid "Organizations that want to customize the mobile apps"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:25
+msgid ""
+"Team Edition and Enterprise Edition servers that prefer to host their own"
+" push proxy server instead of using one of Mattermost's hosted versions"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:28
+msgid "Use an EMM provider with Managed App Configuration"
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:30
+msgid ""
+"To meet other security and compliance policies, you can :doc:`deploy the "
+"Mattermost apps with any EMM provider <mobile-appconfig>` that supports "
+"`AppConfig <https://www.appconfig.org/members/>`__, such as MobileIron, "
+"Blackberry UEM, or Airwatch. You will still need to choose either the App"
+" Store/Google Play versions or apps compiled yourself to use in "
+"conjunction with the EMM provider."
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:32
+msgid ""
+"This option is recommended for organizations that typically use EMM "
+"solutions to deploy mobile apps to meet security and compliance policies."
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:35
+msgid ""
+"App wrapping via an EMM provider is untested, and not supported by "
+"Mattermost. Instead, we recommend using an EMM provider that supports "
+"Managed App Configuration."
+msgstr ""
+
+#: ../../source/mobile/mobile-overview.rst:37
+msgid ""
+"Many app wrapping toolkits, for example `Citrix MDX "
+"<https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html>`_, "
+"also provide `Managed App Configuration options <https://docs.citrix.com"
+"/en-us/xenmobile/server/policies/app-configuration-policy.html>`_. We "
+"recommend contacting your provider for more information on what "
+"deployment options are available."
+msgstr ""
+

@@ -1,0 +1,602 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/developer/bot-accounts.rst:4
+msgid "Bot Accounts"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:6
+msgid ""
+"Use Bot Accounts to integrate with Mattermost through `plugins "
+"<https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost "
+"RESTful API <https://api.mattermost.com>`_. Bot accounts access the "
+"RESTful API on behalf of a bot through the use of the :doc:`personal "
+"access tokens feature <personal-access-tokens>`."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:8
+msgid "Bot accounts are just like user accounts, except they:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:10
+msgid "Cannot be logged into."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:11
+msgid "Cannot be used to create other bot accounts."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:12
+msgid ""
+"Do not count as a registered user and therefore do not count towards the "
+"total users for an Enterprise Edition license."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:14
+msgid "Additional benefits include:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:16
+msgid ""
+"Bot accounts can be enabled to post to any channel in the system by "
+"System Administrators, including a private team, private channel or a "
+"Direct Message channel."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:17
+msgid ""
+"Integrations created by a user and tied to a bot account no longer break "
+"if the user leaves the company."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:18
+msgid ""
+"Once created, bot accounts behave just like regular user accounts and can"
+" be added to teams and channels similar to users."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:19
+msgid ""
+"Bot accounts are a safer way to integrate with Mattermost through the "
+"RESTful API and Plugin API because there is no need to manage shared "
+"logins with these accounts."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:20
+#: ../../source/developer/bot-accounts.rst:177
+msgid ""
+"``BOT`` tag is used everywhere in the UI where bot accounts are "
+"referenced, including messages and user lists."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:22
+msgid "Note that currently:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:24
+msgid ""
+"Bot accounts can only be created or managed by plugins or System "
+"Administrators."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:25
+msgid ""
+"Bot accounts cannot be assigned to webhooks or slash commands. These must"
+" still be created by a user account."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:26
+msgid ""
+"Service accounts without an email address pulled from LDAP or SAML "
+"systems in Enterprise Edition is not yet supported."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:28
+msgid ""
+"If you would like to see improvements to bot accounts, `let us know in "
+"the Feature Proposal Forum <https://mattermost.uservoice.com>`_."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:36
+msgid "Configuration Settings"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:38
+msgid ""
+"By default, plugins can create and manage bot accounts. To enable bot "
+"account creation through the user interface or the RESTful API:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:40
+msgid "Go to **System Console > Integrations > Bot Accounts**."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:41
+msgid "Set **Enable Bot Account Creation** to ``true``."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:43
+msgid ""
+"Once set, System Administrators can create bot accounts for integrations "
+"using the **Integrations > Bot Accounts** link in the description "
+"provided."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:46
+msgid "Bot Account Creation"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:48
+msgid ""
+"Below are different ways to create bot accounts. After the bot account is"
+" created, make sure to:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:50
+msgid "Copy the generated bot access token for your integration."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:51
+msgid "Add the bot account to teams and channels you want it to interact in."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:54
+msgid "User Interface (UI)"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:56
+msgid "Go to **Main Menu > Integrations > Bot Accounts**."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:57
+msgid "Click **Add Bot Account**."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:58
+msgid ""
+"Set the **Username** of the bot. The username must begin with a letter, "
+"and contain between 3 and 22 lowercase characters made up of numbers, "
+"letters, and the symbols \".\", \"-\", and \"_\"."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:59
+msgid ""
+"(Optional) Upload an image for the **Bot Icon**. This will be used as the"
+" profile image of the bot throughout the Mattermost user interface."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:60
+msgid "(Optional) Set a **Display Name** and **Description**."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:61
+msgid ""
+"(Optional) Choose what role the bot should have. Defaults to **Member**. "
+"If you assign **System Admin**, the bot will have access to write in and "
+"read any public channels, private channels and direct messages."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:62
+msgid ""
+"(Optional) Select additional permissions for the account. Enable the bot "
+"to post to all Mattermost channels, or all Mattermost public channels."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:65
+msgid "RESTful API"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:66
+msgid ""
+"Use the RESTful API ``POST /bots`` to create a bot. Must have permissions"
+" to create bots."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:68
+msgid ""
+"See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to "
+"learn more about creating and managing bots through the API."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:70
+msgid ""
+"To authorize your bot via RESTful API use ``curl -i -H 'authorization: "
+"Bearer <Access Token>' http://localhost:8065/api/v4/users/me``. **Access "
+"Token** is not the ``Token ID`` and won't be visible again once created."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:73
+msgid "Command Line Interface (CLI)"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:75
+msgid ""
+"You can use the following CLI command to convert an existing user account"
+" to a bot:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:81
+#: ../../source/developer/bot-accounts.rst:144
+msgid ""
+"In addition to email, you may identify the user by its username or user "
+"ID."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:83
+#: ../../source/developer/bot-accounts.rst:146
+msgid ""
+"Bot accounts which were converted from user accounts will have their "
+"authentication data cleared if they were email/password accounts. Those "
+"synced from LDAP/SAML will not have their authentication data cleared so "
+"that LDAP/SAML sync performs correctly."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:86
+msgid "Plugins"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:88
+msgid ""
+"Plugins can create bot accounts through an ``EnsureBot`` helper function."
+" For an example, see `the Demo Plugin <https://github.com/mattermost"
+"/mattermost-plugin-demo/blob/master/server/configuration.go#L189>`_."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:90
+msgid ""
+"Bots created by a plugin use the plugin's ID as the creator, unless "
+"otherwise specified by the plugin."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:93
+msgid "Technical Notes"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:96
+msgid "Data Model"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:98
+msgid ""
+"Each bot account has a row in the **Users** table and the **Bots** table."
+" The entries are tied together by ``User.Id = Bot.UserId``."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:100
+msgid "The Bots table schema is described as follows:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Field"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Description"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Type"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Required"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "UserId"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "User ID of the bot user"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "string"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Y"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Username"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Username of the bot account"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "DisplayName"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Display name of the bot account"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "N"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Description of the bot account"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "OwnerId"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "User ID of the owner of the bot"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "CreateAt"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Unix timestamp of creation time"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "int64"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "UpdateAt"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Unix timestamp of update time"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "DeleteAt"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:1
+msgid "Unix timestamp of deletion time"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:115
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:118
+msgid "Should I migrate all my integrations to use bot accounts?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:120
+msgid ""
+"For your integrations using RESTful API and plugins, yes. To do so, you "
+"can either convert an existing account to a bot, or create a new bot "
+"account using the steps outlined above."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:122
+msgid ""
+"Once you create a bot account, use the generated token to access the "
+"RESTful API on behalf of a bot and interact in the Mattermost server."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:124
+msgid ""
+"For your webhook and slash command integrations, you cannot migrate them "
+"to use bot accounts, as they require a user account at this time. "
+"However, an option is to migrate the webhooks or slash commands to a "
+"plugin, which in turn can use bot accounts."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:127
+msgid ""
+"What happens if a plugin is using a bot account that already exists as a "
+"user account?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:129
+msgid ""
+"For a concrete example, suppose you enable the `Mattermost GitHub plugin "
+"<https://github.com/mattermost/mattermost-plugin-github>`_, which uses a "
+"``github`` bot account, while an existing ``github`` user account was "
+"created for webhook integrations."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:131
+msgid ""
+"Once the plugin is enabled, the plugin posts as the ``github`` account "
+"but without a `BOT` tag. An error message is logged to the server logs "
+"recommending the System Admin to convert the ``github`` user to a bot "
+"account by running ``mattermost user convert <username> --bot`` in the "
+"CLI."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:133
+msgid ""
+"If the user is an existing user account you want to preserve, change its "
+"username and restart the Mattermost server, after which the plugin will "
+"create a bot account with the name ``github``."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:136
+msgid "How do I convert an existing account to a bot account?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:138
+msgid ""
+"Use the following CLI command to convert an existing user account to a "
+"bot:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:149
+msgid "How can I quickly test if my bot account is working?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:151
+msgid ""
+"Add the bot to a team and channel you belong to, then use the following "
+"curl command to post with the bot:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:157
+msgid "replacing the following parameters:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:159
+msgid "``<channel-id>`` with the channel you added the bot to"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:160
+msgid ""
+"``<bot-access-token>`` with the bot access token generated when you "
+"created the bot account"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:161
+msgid ""
+"``<mattermost-url>`` with your Mattermost domain, e.g. "
+"``https://example.mattermost.com``"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:164
+msgid "Do bot access tokens expire?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:166
+#, python-format
+msgid ""
+"No, but you can automate your integration to cycle its token `through the"
+" REST API "
+"<https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:168
+msgid ""
+"For more information about access tokens, see :doc:`the personal access "
+"tokens documentation <personal-access-tokens>`."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:171
+msgid ""
+"Do bot accounts make it easier to impersonate someone else such as the "
+"CEO or an HR coordinator?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:173
+msgid ""
+"Possibly yes. Currently a System Admin can disable overriding the profile"
+" picture and the username from integrations to help prevent "
+"impersonation, but this is not the case for bot accounts."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:175
+msgid "Mitigations:"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:178
+msgid ""
+"For Direct Message channels, the channel header distinguishes the bot "
+"from a regular user account with a ``BOT`` tag."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:181
+msgid "What happens when a user who owns bot accounts is disabled?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:183
+msgid ""
+"By default, bot accounts managed by the deactivated user are disabled for"
+" enhanced security. Those with permissions to manage bot accounts can re-"
+"enable them in **Main Menu > Integrations > Bot Accounts**."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:185
+msgid ""
+"We strongly recommend creating new tokens for the bot, to ensure the user"
+" who was deactivated no longer has access to read or write data in the "
+"system via the bot access token."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:187
+msgid ""
+"If you prefer to have bot accounts remain enabled after user "
+"deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in "
+"your ``config.json`` file."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:190
+msgid "Can bot accounts edit messages through the RESTful API?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:192
+msgid "Yes. By default, bot accounts can update their own posts."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:194
+msgid ""
+"If you find yourself unable to edit posts as a bot, check the following: "
+"1. Instead of using a slash command to respond directly, use an an API "
+"call for the initial interaction with a user to enable message edits. 2. "
+"If your system is using `advanced permissions "
+"<https://docs.mattermost.com/deployment/advanced-permissions.html>`_, "
+"then post edits could be disabled for users."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:198
+msgid ""
+"If neither of the above help resolve your concern, you also have the "
+"option to choose what role the bot account has. If System Admin is "
+"chosen, then they can update any posts in the system, along with other "
+"System Admin permissions. Note that giving the System Admin role to a bot"
+" account enables them with other System Admin privileges so this should "
+"be done with care."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:201
+msgid ""
+"If AD/LDAP or SAML sync is enabled, do bot accounts need to have an "
+"associated email address in AD/LDAP or SAML?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:203
+msgid ""
+"When AD/LDAP or SAML sync is enabled, you can create bot accounts using "
+"the steps outlined above. These bot accounts won't require an email "
+"address."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:205
+msgid ""
+"If you need to sync service accounts from AD/LDAP or SAML to Mattermost "
+"and use them as bot accounts, `please reach out to us "
+"<https://mattermost.com/contact-us>`_ to discuss in detail. You may not "
+"need to sync service accounts and use them as bot accounts to meet your "
+"use case."
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:208
+msgid "How are bot accounts identified in compliance exports?"
+msgstr ""
+
+#: ../../source/developer/bot-accounts.rst:210
+msgid ""
+"As of v5.14, a field named ``UserType`` is added to Compliance Exports, "
+"including Global Relay, Actiance, and CSV. The field identifies whether a"
+" message was posted by a ``user`` or by a ``bot`` account."
+msgstr ""
+

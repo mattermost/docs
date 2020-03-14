@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/software-requirements.rst:3
+msgid "Mattermost Software Requirements"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:5
+msgid ""
+"This document provides guidelines for determining which software versions"
+" Mattermost requires. For past discussion on why these guidelines were "
+"chosen, see `this conversation "
+"<https://community.mattermost.com/core/pl/sb4fq6qhyfbb5xjdp7x3ud146e>`__."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:7
+msgid ""
+"Current software requirements are `documented here "
+"<https://docs.mattermost.com/install/requirements.html#software-"
+"requirements>`__."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:9
+msgid ""
+"Before submitting software requirement updates to the documentation, the "
+"following steps have to be taken into consideration:"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:11
+#, python-format
+msgid ""
+"Check with Chen in `the Analytics channel "
+"<https://community.mattermost.com/private-"
+"core/pl/qy675c87zbfn7dmzkh919ppmor>`_ to see what % of users and what % "
+"of posts are made by the versions we’re considering to drop support for, "
+"to review potential impact to users."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:12
+msgid ""
+"For versions we are considering dropping support for, ask the customer "
+"support team what the impact is for customers (e.g. if there are known "
+"customers on those versions and if we get customer support tickets "
+"specific to those versions)."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:13
+msgid ""
+"Ask developers what the impact is for us internally if we consider "
+"dropping or continuing support for a version."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:14
+msgid ""
+"If we decide to drop support for a version, work with product managers "
+"and developers to plan for updating the version information in all "
+"relevant places, including but not limited to: in the product itself "
+"(such as the mobile app), Changelogs and README GitHub pages."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:17
+msgid "Desktop Apps"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Operating System"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Guideline"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Windows"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Microsoft - `reference "
+"<https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Mac"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Apple - `reference "
+"<https://en.wikipedia.org/wiki/MacOS_version_history>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Linux"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Fixed to Ubuntu LTS releases 16.04 or later"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:27
+msgid "PC Web"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Browser"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Chrome"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Chromium version of latest Mattermost Desktop App"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Firefox"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Mozilla - `reference <https://www.mozilla.org/en-"
+"US/firefox/organizations/>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Safari"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Safari version available in the minimum supported iOS version - "
+"`reference <https://en.wikipedia.org/wiki/Safari_version_history>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Edge"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Latest release"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:38
+msgid "Mobile Apps"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "iOS"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Latest and next-to-latest versions - `reference "
+"<https://en.wikipedia.org/wiki/IOS_version_history>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Android"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Google - `reference "
+"<https://en.wikipedia.org/wiki/Android_version_history>`__"
+msgstr ""
+

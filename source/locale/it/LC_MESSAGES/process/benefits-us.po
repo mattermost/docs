@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/benefits-us.rst:4
+msgid "Benefits specific to US-based employees"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:6
+msgid ""
+"US-based employees' payroll and benefits are arranged through TriNet. The"
+" most up to date information is available through the TriNet HRPassport "
+"portal and contact forms and numbers listed there."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:8
+msgid ""
+"This overview is a quick reference guide and does not replace the "
+"documentation in TriNet, please contact your TriNet representative for "
+"questions."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:10
+msgid ""
+"**Basic Life Insurance and AD&D** - TriNet offers company paid basic life"
+" and accidental death and dismemberment (AD&D) plans. The Company pays "
+"for basic life insurance coverage valued at $20,000, which includes an "
+"equal amount of AD&D coverage."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:12
+msgid ""
+"**Medical** - TriNet partners with leading carriers, like Aetna, Florida "
+"Blue, Blue Shield of California and Kaiser, to offer a broad range of "
+"medical plans, including high deductible health plans, PPOs and HMOs. "
+"Medical plan options vary by state, and may also include regional "
+"carriers."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:14
+msgid ""
+"**Dental** - TriNet's four dental carriers - Delta Dental, Aetna, "
+"Guardian Dental, and MetLife - offer a high and a low national dental PPO"
+" plan. Aetna and Delta Dental also will make available a DMO plan in many"
+" states."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:16
+msgid ""
+"**Vision** - TriNet also offers a high and a low vision plan nationally "
+"through two different carriers: Aetna and Vision Service Plan (VSP). "
+"These plan options ensure that you can choose the best plan and carrier "
+"for your individual vision needs."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:18
+#, python-format
+msgid ""
+"The Company pays 100% of premiums for medical, 100% of premiums for "
+"dental and 100% of premiums for vision coverage for employee. In "
+"addition, the Company funds 50% of premiums for medical, 50% of premiums "
+"for dental and 50% of premiums for vision coverage for spouse, dependent,"
+" and domestic partner. These contribution amounts are capped at:"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:20
+msgid "**Insurance and Company Contribution Cap**"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:22
+msgid "Medical Employee Only: $593.00"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:23
+msgid "Medical Employee + Spouse: $981.50"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:24
+msgid "Medical Employee + Child(ren):        $901.50"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:25
+msgid "Medical Employee + Spouse + Child(ren):       $1195.00"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:27
+msgid "Group Dental Employee Only: $35.37"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:28
+msgid "Group Dental Employee + Spouse: $53.94"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:29
+msgid "Group Dental Employee + Child(ren): $53.94"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:30
+msgid "Group Dental Employee + Spouse + Child(ren): $72.51"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:32
+msgid "Group Vision Employee Only: $9.17"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:33
+msgid "Group Vision Employee + Spouse: $13.78"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:34
+msgid "Group Vision Employee + Child(ren): $14.42"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:35
+msgid "Group Vision Employee + Spouse + Child(ren): $20.30"
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:37
+msgid ""
+"Employees are responsible for the remainder of the premium cost, if any. "
+"A summary of plan options showing remainder of premium costs after "
+"employer contribution will be provided with your offer."
+msgstr ""
+
+#: ../../source/process/benefits-us.rst:39
+msgid ""
+"**401K** - Our 401K retirement savings program is available through "
+"`Ubiquity <https://www.myubiquity.com/>`__ after 3-months of full-time "
+"employment."
+msgstr ""
+

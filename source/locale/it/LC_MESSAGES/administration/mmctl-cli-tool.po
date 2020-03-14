@@ -1,0 +1,1493 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/mmctl-cli-tool.rst:2
+msgid "mmctl Command Line Tool (Beta)"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:4
+msgid ""
+"The mmctl tool is a remote CLI tool for Mattermost which is installed "
+"locally and uses the Mattermost API. Authentication is done with either "
+"login credentials or an authentication token."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:7
+msgid ""
+"Being installed locally allows a System Admin to run CLI commands even in"
+" instances where there is no access to the server (e.g., via SSH). This "
+"tool is currently in beta and can be used alongside the Mattermost CLI "
+"tool. In the future, the Mattermost CLI tool will be deprecated."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:11
+#, python-format
+msgid ""
+"This feature was developed to a large extent by community contributions "
+"and we'd like to extend our gratitude to the contributors who have worked"
+" on this project. We are currently accepting pull requests for Help "
+"Wanted issues in the `mattermost-server <https://github.com/mattermost"
+"/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__"
+" repo. You can learn more about the unit test coverage campaign for mmctl"
+" in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-"
+"testing-mmctl-commands/>`__ blog post."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:18
+msgid "**Notes**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:20
+msgid "Parameters in CLI commands are order-specific."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:21
+msgid ""
+"If special characters (``!``, ``|``, ``(``, ``)``, ``\\``, ``'``, and "
+"``\"``) are used, the entire argument needs to be surrounded by single "
+"quotes (e.g. ``-password 'mypassword!'``, or the individual characters "
+"need to be escaped out (e.g. ``password mypassword\\!``)."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:22
+msgid ""
+"Team name and channel name refer to the handles, not the display names. "
+"So in the URL ``https://community.mattermost.com/core/channels/town-"
+"square`` team name would be ``core`` and channel name would be ``town-"
+"square``."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:25
+#: ../../source/administration/mmctl-cli-tool.rst:108
+#: ../../source/administration/mmctl-cli-tool.rst:133
+#: ../../source/administration/mmctl-cli-tool.rst:165
+#: ../../source/administration/mmctl-cli-tool.rst:197
+#: ../../source/administration/mmctl-cli-tool.rst:228
+#: ../../source/administration/mmctl-cli-tool.rst:262
+#: ../../source/administration/mmctl-cli-tool.rst:299
+#: ../../source/administration/mmctl-cli-tool.rst:333
+#: ../../source/administration/mmctl-cli-tool.rst:447
+#: ../../source/administration/mmctl-cli-tool.rst:472
+#: ../../source/administration/mmctl-cli-tool.rst:504
+#: ../../source/administration/mmctl-cli-tool.rst:536
+#: ../../source/administration/mmctl-cli-tool.rst:573
+#: ../../source/administration/mmctl-cli-tool.rst:606
+#: ../../source/administration/mmctl-cli-tool.rst:639
+#: ../../source/administration/mmctl-cli-tool.rst:671
+#: ../../source/administration/mmctl-cli-tool.rst:703
+#: ../../source/administration/mmctl-cli-tool.rst:737
+#: ../../source/administration/mmctl-cli-tool.rst:762
+#: ../../source/administration/mmctl-cli-tool.rst:787
+#: ../../source/administration/mmctl-cli-tool.rst:829
+#: ../../source/administration/mmctl-cli-tool.rst:861
+#: ../../source/administration/mmctl-cli-tool.rst:898
+#: ../../source/administration/mmctl-cli-tool.rst:923
+#: ../../source/administration/mmctl-cli-tool.rst:954
+#: ../../source/administration/mmctl-cli-tool.rst:989
+#: ../../source/administration/mmctl-cli-tool.rst:1014
+#: ../../source/administration/mmctl-cli-tool.rst:1045
+#: ../../source/administration/mmctl-cli-tool.rst:1076
+#: ../../source/administration/mmctl-cli-tool.rst:1107
+#: ../../source/administration/mmctl-cli-tool.rst:1131
+#: ../../source/administration/mmctl-cli-tool.rst:1156
+#: ../../source/administration/mmctl-cli-tool.rst:1187
+#: ../../source/administration/mmctl-cli-tool.rst:1218
+#: ../../source/administration/mmctl-cli-tool.rst:1249
+#: ../../source/administration/mmctl-cli-tool.rst:1281
+#: ../../source/administration/mmctl-cli-tool.rst:1298
+#: ../../source/administration/mmctl-cli-tool.rst:1323
+#: ../../source/administration/mmctl-cli-tool.rst:1345
+#: ../../source/administration/mmctl-cli-tool.rst:1370
+#: ../../source/administration/mmctl-cli-tool.rst:1402
+#: ../../source/administration/mmctl-cli-tool.rst:1427
+#: ../../source/administration/mmctl-cli-tool.rst:1451
+#: ../../source/administration/mmctl-cli-tool.rst:1477
+#: ../../source/administration/mmctl-cli-tool.rst:1508
+#: ../../source/administration/mmctl-cli-tool.rst:1540
+#: ../../source/administration/mmctl-cli-tool.rst:1564
+#: ../../source/administration/mmctl-cli-tool.rst:1590
+#: ../../source/administration/mmctl-cli-tool.rst:1622
+#: ../../source/administration/mmctl-cli-tool.rst:1653
+#: ../../source/administration/mmctl-cli-tool.rst:1685
+#: ../../source/administration/mmctl-cli-tool.rst:1716
+#: ../../source/administration/mmctl-cli-tool.rst:1738
+#: ../../source/administration/mmctl-cli-tool.rst:1763
+#: ../../source/administration/mmctl-cli-tool.rst:1797
+#: ../../source/administration/mmctl-cli-tool.rst:1831
+#: ../../source/administration/mmctl-cli-tool.rst:1856
+#: ../../source/administration/mmctl-cli-tool.rst:1889
+#: ../../source/administration/mmctl-cli-tool.rst:1924
+#: ../../source/administration/mmctl-cli-tool.rst:1957
+#: ../../source/administration/mmctl-cli-tool.rst:1988
+#: ../../source/administration/mmctl-cli-tool.rst:2019
+#: ../../source/administration/mmctl-cli-tool.rst:2058
+#: ../../source/administration/mmctl-cli-tool.rst:2090
+#: ../../source/administration/mmctl-cli-tool.rst:2117
+#: ../../source/administration/mmctl-cli-tool.rst:2143
+#: ../../source/administration/mmctl-cli-tool.rst:2183
+#: ../../source/administration/mmctl-cli-tool.rst:2217
+#: ../../source/administration/mmctl-cli-tool.rst:2251
+#: ../../source/administration/mmctl-cli-tool.rst:2282
+#: ../../source/administration/mmctl-cli-tool.rst:2315
+#: ../../source/administration/mmctl-cli-tool.rst:2347
+msgid "**Options**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:49
+msgid "**Commands**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:33
+msgid "`mmctl auth`_ - Authentication Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:34
+msgid "`mmctl channel`_ - Channel Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:35
+msgid "`mmctl command`_ - Command Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:36
+msgid "`mmctl config`_ - Configuration Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:37
+msgid "`mmctl group`_ - Group Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:38
+msgid "`mmctl ldap`_ - LDAP Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:39
+msgid "`mmctl license`_ - License Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:40
+msgid "`mmctl logs`_ - Log Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:41
+msgid "`mmctl permissions`_ - Permissions Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:42
+msgid "`mmctl plugin`_ - Plugin Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:43
+msgid "`mmctl post`_ - Post Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:44
+msgid "`mmctl roles`_ - Roles Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:45
+msgid "`mmctl team`_ - Team Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:46
+msgid "`mmctl user`_ - User Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:47
+msgid "`mmctl version`_ - Version Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:48
+msgid "`mmctl webhook`_ - Webhook Management"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:52
+msgid "Installing mmctl"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:54
+msgid "There are different methods available to install mmctl."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:56
+msgid "**Using brew (Linux, macOS)**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:58
+msgid "Use this option on Linux and macOS if you have Homebrew installed."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:64
+msgid "**Using go get (Linux, macOS, Windows)**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:66
+msgid ""
+"Use this option on Linux, macOS, and Windows if you have a go environment"
+" configured."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:68
+msgid "To add the project in your `$GOPATH` run the following command:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:74
+msgid "**Using release package (Linux, macOS, Windows)**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:76
+msgid ""
+"Vist the `mmctl releases page "
+"<https://github.com/mattermost/mmctl/releases>`__ and download the "
+"appropriate release for your OS, and install the binary."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:80
+msgid "Building mmctl"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:82
+msgid ""
+"The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you "
+"need to have installed ``go`` 1.11 or greater and compile the binary "
+"using:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:91
+msgid "Authenticating and Logging In"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:94
+msgid "mmctl auth"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:96
+#: ../../source/administration/mmctl-cli-tool.rst:117
+#: ../../source/administration/mmctl-cli-tool.rst:149
+#: ../../source/administration/mmctl-cli-tool.rst:181
+#: ../../source/administration/mmctl-cli-tool.rst:212
+#: ../../source/administration/mmctl-cli-tool.rst:243
+#: ../../source/administration/mmctl-cli-tool.rst:283
+#: ../../source/administration/mmctl-cli-tool.rst:317
+#: ../../source/administration/mmctl-cli-tool.rst:456
+#: ../../source/administration/mmctl-cli-tool.rst:487
+#: ../../source/administration/mmctl-cli-tool.rst:519
+#: ../../source/administration/mmctl-cli-tool.rst:557
+#: ../../source/administration/mmctl-cli-tool.rst:589
+#: ../../source/administration/mmctl-cli-tool.rst:622
+#: ../../source/administration/mmctl-cli-tool.rst:655
+#: ../../source/administration/mmctl-cli-tool.rst:687
+#: ../../source/administration/mmctl-cli-tool.rst:719
+#: ../../source/administration/mmctl-cli-tool.rst:771
+#: ../../source/administration/mmctl-cli-tool.rst:845
+#: ../../source/administration/mmctl-cli-tool.rst:907
+#: ../../source/administration/mmctl-cli-tool.rst:938
+#: ../../source/administration/mmctl-cli-tool.rst:998
+#: ../../source/administration/mmctl-cli-tool.rst:1029
+#: ../../source/administration/mmctl-cli-tool.rst:1060
+#: ../../source/administration/mmctl-cli-tool.rst:1091
+#: ../../source/administration/mmctl-cli-tool.rst:1140
+#: ../../source/administration/mmctl-cli-tool.rst:1171
+#: ../../source/administration/mmctl-cli-tool.rst:1202
+#: ../../source/administration/mmctl-cli-tool.rst:1233
+#: ../../source/administration/mmctl-cli-tool.rst:1265
+#: ../../source/administration/mmctl-cli-tool.rst:1307
+#: ../../source/administration/mmctl-cli-tool.rst:1354
+#: ../../source/administration/mmctl-cli-tool.rst:1386
+#: ../../source/administration/mmctl-cli-tool.rst:1417
+#: ../../source/administration/mmctl-cli-tool.rst:1461
+#: ../../source/administration/mmctl-cli-tool.rst:1492
+#: ../../source/administration/mmctl-cli-tool.rst:1524
+#: ../../source/administration/mmctl-cli-tool.rst:1574
+#: ../../source/administration/mmctl-cli-tool.rst:1606
+#: ../../source/administration/mmctl-cli-tool.rst:1637
+#: ../../source/administration/mmctl-cli-tool.rst:1669
+#: ../../source/administration/mmctl-cli-tool.rst:1700
+#: ../../source/administration/mmctl-cli-tool.rst:1747
+#: ../../source/administration/mmctl-cli-tool.rst:1780
+#: ../../source/administration/mmctl-cli-tool.rst:1840
+#: ../../source/administration/mmctl-cli-tool.rst:1872
+#: ../../source/administration/mmctl-cli-tool.rst:1908
+#: ../../source/administration/mmctl-cli-tool.rst:1941
+#: ../../source/administration/mmctl-cli-tool.rst:1972
+#: ../../source/administration/mmctl-cli-tool.rst:2003
+#: ../../source/administration/mmctl-cli-tool.rst:2042
+#: ../../source/administration/mmctl-cli-tool.rst:2074
+#: ../../source/administration/mmctl-cli-tool.rst:2127
+#: ../../source/administration/mmctl-cli-tool.rst:2166
+#: ../../source/administration/mmctl-cli-tool.rst:2200
+#: ../../source/administration/mmctl-cli-tool.rst:2233
+#: ../../source/administration/mmctl-cli-tool.rst:2266
+#: ../../source/administration/mmctl-cli-tool.rst:2298
+#: ../../source/administration/mmctl-cli-tool.rst:2331
+msgid "**Description**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:98
+msgid ""
+"Manages the credentials and authentication methods of the remote "
+"Mattermost instances."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:100
+msgid "`mmctl auth clean`_ - Clean credentials"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:101
+msgid "`mmctl auth current`_ - Display current credentials"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:102
+msgid "`mmctl auth delete`_ - Delete authentication details"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:103
+msgid "`mmctl auth list`_ - List registered credentials"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:104
+msgid "`mmctl auth login`_ - Log into Mattermost instance"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:105
+msgid "`mmctl auth renew`_ - Renew login credentials"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:106
+msgid "`mmctl auth set`_ - Set login credentials"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:115
+msgid "mmctl auth clean"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:119
+msgid "Clean the credentials associated with a Mattermost instance."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:121
+#: ../../source/administration/mmctl-cli-tool.rst:153
+#: ../../source/administration/mmctl-cli-tool.rst:185
+#: ../../source/administration/mmctl-cli-tool.rst:216
+#: ../../source/administration/mmctl-cli-tool.rst:247
+#: ../../source/administration/mmctl-cli-tool.rst:287
+#: ../../source/administration/mmctl-cli-tool.rst:321
+#: ../../source/administration/mmctl-cli-tool.rst:460
+#: ../../source/administration/mmctl-cli-tool.rst:492
+#: ../../source/administration/mmctl-cli-tool.rst:523
+#: ../../source/administration/mmctl-cli-tool.rst:561
+#: ../../source/administration/mmctl-cli-tool.rst:594
+#: ../../source/administration/mmctl-cli-tool.rst:626
+#: ../../source/administration/mmctl-cli-tool.rst:659
+#: ../../source/administration/mmctl-cli-tool.rst:691
+#: ../../source/administration/mmctl-cli-tool.rst:723
+#: ../../source/administration/mmctl-cli-tool.rst:775
+#: ../../source/administration/mmctl-cli-tool.rst:817
+#: ../../source/administration/mmctl-cli-tool.rst:849
+#: ../../source/administration/mmctl-cli-tool.rst:911
+#: ../../source/administration/mmctl-cli-tool.rst:942
+#: ../../source/administration/mmctl-cli-tool.rst:1002
+#: ../../source/administration/mmctl-cli-tool.rst:1033
+#: ../../source/administration/mmctl-cli-tool.rst:1064
+#: ../../source/administration/mmctl-cli-tool.rst:1095
+#: ../../source/administration/mmctl-cli-tool.rst:1144
+#: ../../source/administration/mmctl-cli-tool.rst:1175
+#: ../../source/administration/mmctl-cli-tool.rst:1206
+#: ../../source/administration/mmctl-cli-tool.rst:1237
+#: ../../source/administration/mmctl-cli-tool.rst:1269
+#: ../../source/administration/mmctl-cli-tool.rst:1311
+#: ../../source/administration/mmctl-cli-tool.rst:1358
+#: ../../source/administration/mmctl-cli-tool.rst:1390
+#: ../../source/administration/mmctl-cli-tool.rst:1421
+#: ../../source/administration/mmctl-cli-tool.rst:1465
+#: ../../source/administration/mmctl-cli-tool.rst:1496
+#: ../../source/administration/mmctl-cli-tool.rst:1528
+#: ../../source/administration/mmctl-cli-tool.rst:1578
+#: ../../source/administration/mmctl-cli-tool.rst:1610
+#: ../../source/administration/mmctl-cli-tool.rst:1641
+#: ../../source/administration/mmctl-cli-tool.rst:1673
+#: ../../source/administration/mmctl-cli-tool.rst:1704
+#: ../../source/administration/mmctl-cli-tool.rst:1751
+#: ../../source/administration/mmctl-cli-tool.rst:1784
+#: ../../source/administration/mmctl-cli-tool.rst:1844
+#: ../../source/administration/mmctl-cli-tool.rst:1876
+#: ../../source/administration/mmctl-cli-tool.rst:1912
+#: ../../source/administration/mmctl-cli-tool.rst:1945
+#: ../../source/administration/mmctl-cli-tool.rst:1976
+#: ../../source/administration/mmctl-cli-tool.rst:2007
+#: ../../source/administration/mmctl-cli-tool.rst:2046
+#: ../../source/administration/mmctl-cli-tool.rst:2078
+#: ../../source/administration/mmctl-cli-tool.rst:2131
+#: ../../source/administration/mmctl-cli-tool.rst:2170
+#: ../../source/administration/mmctl-cli-tool.rst:2204
+#: ../../source/administration/mmctl-cli-tool.rst:2238
+#: ../../source/administration/mmctl-cli-tool.rst:2270
+#: ../../source/administration/mmctl-cli-tool.rst:2303
+#: ../../source/administration/mmctl-cli-tool.rst:2335
+msgid "**Format**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:127
+#: ../../source/administration/mmctl-cli-tool.rst:159
+#: ../../source/administration/mmctl-cli-tool.rst:191
+#: ../../source/administration/mmctl-cli-tool.rst:222
+#: ../../source/administration/mmctl-cli-tool.rst:253
+#: ../../source/administration/mmctl-cli-tool.rst:293
+#: ../../source/administration/mmctl-cli-tool.rst:327
+#: ../../source/administration/mmctl-cli-tool.rst:466
+#: ../../source/administration/mmctl-cli-tool.rst:498
+#: ../../source/administration/mmctl-cli-tool.rst:529
+#: ../../source/administration/mmctl-cli-tool.rst:567
+#: ../../source/administration/mmctl-cli-tool.rst:600
+#: ../../source/administration/mmctl-cli-tool.rst:632
+#: ../../source/administration/mmctl-cli-tool.rst:665
+#: ../../source/administration/mmctl-cli-tool.rst:697
+#: ../../source/administration/mmctl-cli-tool.rst:730
+#: ../../source/administration/mmctl-cli-tool.rst:781
+#: ../../source/administration/mmctl-cli-tool.rst:823
+#: ../../source/administration/mmctl-cli-tool.rst:855
+#: ../../source/administration/mmctl-cli-tool.rst:917
+#: ../../source/administration/mmctl-cli-tool.rst:948
+#: ../../source/administration/mmctl-cli-tool.rst:1008
+#: ../../source/administration/mmctl-cli-tool.rst:1039
+#: ../../source/administration/mmctl-cli-tool.rst:1070
+#: ../../source/administration/mmctl-cli-tool.rst:1101
+#: ../../source/administration/mmctl-cli-tool.rst:1150
+#: ../../source/administration/mmctl-cli-tool.rst:1181
+#: ../../source/administration/mmctl-cli-tool.rst:1212
+#: ../../source/administration/mmctl-cli-tool.rst:1243
+#: ../../source/administration/mmctl-cli-tool.rst:1275
+#: ../../source/administration/mmctl-cli-tool.rst:1317
+#: ../../source/administration/mmctl-cli-tool.rst:1364
+#: ../../source/administration/mmctl-cli-tool.rst:1396
+#: ../../source/administration/mmctl-cli-tool.rst:1471
+#: ../../source/administration/mmctl-cli-tool.rst:1502
+#: ../../source/administration/mmctl-cli-tool.rst:1534
+#: ../../source/administration/mmctl-cli-tool.rst:1584
+#: ../../source/administration/mmctl-cli-tool.rst:1616
+#: ../../source/administration/mmctl-cli-tool.rst:1647
+#: ../../source/administration/mmctl-cli-tool.rst:1679
+#: ../../source/administration/mmctl-cli-tool.rst:1710
+#: ../../source/administration/mmctl-cli-tool.rst:1757
+#: ../../source/administration/mmctl-cli-tool.rst:1790
+#: ../../source/administration/mmctl-cli-tool.rst:1850
+#: ../../source/administration/mmctl-cli-tool.rst:1882
+#: ../../source/administration/mmctl-cli-tool.rst:1918
+#: ../../source/administration/mmctl-cli-tool.rst:1951
+#: ../../source/administration/mmctl-cli-tool.rst:1982
+#: ../../source/administration/mmctl-cli-tool.rst:2013
+#: ../../source/administration/mmctl-cli-tool.rst:2052
+#: ../../source/administration/mmctl-cli-tool.rst:2084
+#: ../../source/administration/mmctl-cli-tool.rst:2137
+#: ../../source/administration/mmctl-cli-tool.rst:2176
+#: ../../source/administration/mmctl-cli-tool.rst:2210
+#: ../../source/administration/mmctl-cli-tool.rst:2244
+#: ../../source/administration/mmctl-cli-tool.rst:2276
+#: ../../source/administration/mmctl-cli-tool.rst:2309
+#: ../../source/administration/mmctl-cli-tool.rst:2341
+msgid "**Examples**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:139
+#: ../../source/administration/mmctl-cli-tool.rst:171
+#: ../../source/administration/mmctl-cli-tool.rst:203
+#: ../../source/administration/mmctl-cli-tool.rst:234
+#: ../../source/administration/mmctl-cli-tool.rst:274
+#: ../../source/administration/mmctl-cli-tool.rst:308
+#: ../../source/administration/mmctl-cli-tool.rst:339
+#: ../../source/administration/mmctl-cli-tool.rst:478
+#: ../../source/administration/mmctl-cli-tool.rst:510
+#: ../../source/administration/mmctl-cli-tool.rst:548
+#: ../../source/administration/mmctl-cli-tool.rst:580
+#: ../../source/administration/mmctl-cli-tool.rst:612
+#: ../../source/administration/mmctl-cli-tool.rst:646
+#: ../../source/administration/mmctl-cli-tool.rst:678
+#: ../../source/administration/mmctl-cli-tool.rst:709
+#: ../../source/administration/mmctl-cli-tool.rst:744
+#: ../../source/administration/mmctl-cli-tool.rst:804
+#: ../../source/administration/mmctl-cli-tool.rst:835
+#: ../../source/administration/mmctl-cli-tool.rst:867
+#: ../../source/administration/mmctl-cli-tool.rst:929
+#: ../../source/administration/mmctl-cli-tool.rst:960
+#: ../../source/administration/mmctl-cli-tool.rst:1020
+#: ../../source/administration/mmctl-cli-tool.rst:1051
+#: ../../source/administration/mmctl-cli-tool.rst:1082
+#: ../../source/administration/mmctl-cli-tool.rst:1113
+#: ../../source/administration/mmctl-cli-tool.rst:1162
+#: ../../source/administration/mmctl-cli-tool.rst:1193
+#: ../../source/administration/mmctl-cli-tool.rst:1224
+#: ../../source/administration/mmctl-cli-tool.rst:1255
+#: ../../source/administration/mmctl-cli-tool.rst:1287
+#: ../../source/administration/mmctl-cli-tool.rst:1329
+#: ../../source/administration/mmctl-cli-tool.rst:1376
+#: ../../source/administration/mmctl-cli-tool.rst:1408
+#: ../../source/administration/mmctl-cli-tool.rst:1435
+#: ../../source/administration/mmctl-cli-tool.rst:1483
+#: ../../source/administration/mmctl-cli-tool.rst:1514
+#: ../../source/administration/mmctl-cli-tool.rst:1546
+#: ../../source/administration/mmctl-cli-tool.rst:1596
+#: ../../source/administration/mmctl-cli-tool.rst:1628
+#: ../../source/administration/mmctl-cli-tool.rst:1659
+#: ../../source/administration/mmctl-cli-tool.rst:1691
+#: ../../source/administration/mmctl-cli-tool.rst:1722
+#: ../../source/administration/mmctl-cli-tool.rst:1771
+#: ../../source/administration/mmctl-cli-tool.rst:1806
+#: ../../source/administration/mmctl-cli-tool.rst:1862
+#: ../../source/administration/mmctl-cli-tool.rst:1899
+#: ../../source/administration/mmctl-cli-tool.rst:1931
+#: ../../source/administration/mmctl-cli-tool.rst:1963
+#: ../../source/administration/mmctl-cli-tool.rst:1994
+#: ../../source/administration/mmctl-cli-tool.rst:2025
+#: ../../source/administration/mmctl-cli-tool.rst:2064
+#: ../../source/administration/mmctl-cli-tool.rst:2096
+#: ../../source/administration/mmctl-cli-tool.rst:2157
+#: ../../source/administration/mmctl-cli-tool.rst:2190
+#: ../../source/administration/mmctl-cli-tool.rst:2224
+#: ../../source/administration/mmctl-cli-tool.rst:2257
+#: ../../source/administration/mmctl-cli-tool.rst:2289
+#: ../../source/administration/mmctl-cli-tool.rst:2322
+#: ../../source/administration/mmctl-cli-tool.rst:2354
+msgid "**Options Inherited from Parent Commands**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:147
+msgid "mmctl auth current"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:151
+msgid "Show the currently stored user credentials."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:179
+msgid "mmctl auth delete"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:183
+msgid "Delete a named credential."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:210
+msgid "mmctl auth list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:214
+msgid "Print a list of registered credentials."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:241
+msgid "mmctl auth login"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:245
+msgid "Log in to an instance and store credentials."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:281
+msgid "mmctl auth renew"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:285
+msgid "Renew the credentials for a given server."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:315
+msgid "mmctl auth set"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:319
+msgid "Set credentials to use in the following commands."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:346
+msgid ""
+"Authenticate to a server (e.g. >mmctl auth login "
+"https://test.mattermost.com), then enter your username and password (and "
+"MFA token if MFA is enabled on the account)."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:349
+msgid "Password"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:355
+msgid ""
+"The ``login`` command can also work interactively, so if you leave any "
+"required flag empty, ``mmctl`` will ask you for it interactively:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:364
+msgid "MFA"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:366
+msgid "To log in with MFA, use the ``--mfa-token`` flag:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:373
+msgid "Access Tokens"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:375
+msgid ""
+"You can generate and use a personal access token to authenticate with a "
+"server, instead of using username and password to log in:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:382
+msgid ""
+"Alternatively, you can log in to your Mattermost server with a username "
+"and password:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:389
+msgid "We can check the currently stored credentials with:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:400
+msgid "And now we can run commands normally:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:416
+msgid "Installing Shell Completions"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:418
+msgid ""
+"To install the shell completions for bash, add the following line to your"
+" ``~/.bashrc`` or ``~/.profile`` file:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:424
+msgid "For zsh, add the following line to your ``~/.zshrc`` file:"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:432
+msgid "mmctl channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:434
+msgid "Commands for channel management."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:445
+#: ../../source/administration/mmctl-cli-tool.rst:760
+#: ../../source/administration/mmctl-cli-tool.rst:896
+#: ../../source/administration/mmctl-cli-tool.rst:976
+#: ../../source/administration/mmctl-cli-tool.rst:987
+#: ../../source/administration/mmctl-cli-tool.rst:1129
+#: ../../source/administration/mmctl-cli-tool.rst:1343
+#: ../../source/administration/mmctl-cli-tool.rst:1449
+#: ../../source/administration/mmctl-cli-tool.rst:1562
+#: ../../source/administration/mmctl-cli-tool.rst:1736
+#: ../../source/administration/mmctl-cli-tool.rst:1829
+#: ../../source/administration/mmctl-cli-tool.rst:2037
+#: ../../source/administration/mmctl-cli-tool.rst:2115
+msgid "Child Commands"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:437
+msgid "`mmctl channel add`_ - Add a channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:438
+msgid "`mmctl channel archive`_ - Archive a channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:439
+msgid "`mmctl channel create`_ - Create a channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:440
+msgid "`mmctl channel list`_ - List all channels on specified teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:441
+msgid "`mmctl channel make_private`_ - Set a channel's type to \"private\""
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:442
+msgid "`mmctl channel remove`_ - Remove users from a channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:443
+msgid "`mmctl channel rename`_ - Rename a channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:444
+msgid "`mmctl channel restore`_ - Restore a channel from the archive"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:445
+msgid "`mmctl channel search`_ - Search a channel by name"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:454
+msgid "mmctl channel add"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:458
+msgid ""
+"Add users to a channel. If adding multiple users, use a space-separated "
+"list."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:485
+msgid "mmctl channel archive"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:489
+msgid ""
+"Archive one or multiple channels along with all related information "
+"including posts from the database. Channels can be specified by "
+"``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID)."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:517
+msgid "mmctl channel create"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:521
+msgid "Create a channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:555
+msgid "mmctl channel list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:559
+msgid ""
+"List all channels on specified teams. Archived channels are appended with"
+" '(archived)'."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:587
+msgid "mmctl channel make_private"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:591
+msgid ""
+"Set the type of a channel from public to private. Channel can be "
+"specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel "
+"ID."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:620
+msgid "mmctl channel remove"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:624
+msgid "Remove specified users from a channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:653
+msgid "mmctl channel rename"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:657
+msgid "Rename a channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:685
+msgid "mmctl channel restore"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:689
+msgid ""
+"Restore a previously deleted channel. Channels can be specified by "
+"``[team]:[channel]`` (e.g., myteam:mychannel) or by channel ID."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:717
+msgid "mmctl channel search"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:721
+msgid ""
+"Search a channel by channel name. Channel can be specified by team (e.g.,"
+" ``--team myTeam myChannel```) or by team ID."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:752
+msgid "mmctl command"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:754
+msgid "Management of slash commands."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:757
+msgid "`mmctl command create`_ - Create a custom command"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:758
+msgid "`mmctl command delete`_ - Delete a specified slash command"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:759
+msgid "`mmctl command list`_ - List slash commands on specified teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:769
+msgid "mmctl command create"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:773
+msgid "Create a custom slash command for the specified team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:811
+msgid "mmctl command delete"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:813
+msgid "**Dscription**"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:815
+msgid "Delete a slash command. Commands can be specified by command ID."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:843
+msgid "mmctl command list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:847
+msgid "List all commands on specified teams."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:874
+msgid "mmctl command modify"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:876
+#: ../../source/administration/mmctl-cli-tool.rst:881
+#: ../../source/administration/mmctl-cli-tool.rst:886
+#: ../../source/administration/mmctl-cli-tool.rst:1815
+#: ../../source/administration/mmctl-cli-tool.rst:2363
+#: ../../source/administration/mmctl-cli-tool.rst:2368
+msgid "This command will be available in a future release."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:879
+msgid "mmctl command move"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:884
+msgid "mmctl command show"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:890
+msgid "mmctl config"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:892
+msgid "Configuration settings."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:895
+msgid "`mmctl config get`_ - Get the value of a configuration setting"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:896
+msgid "`mmctl config show`_ - Writes the server configuration to STDOUT"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:905
+msgid "mmctl config get"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:909
+msgid "Gets the value of a config setting by its name in dot notation."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:936
+msgid "mmctl config show"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:940
+msgid "Prints the server configuration and writes to STDOUT in JSON format."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:968
+msgid "mmctl group"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:970
+msgid "Management of groups (channel and teams)."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:973
+msgid "`mmctl group channel`_ - Manage channel groups"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:974
+msgid "`mmctl group team`_ - Manage team groups"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:975
+msgid "`mmctl group list-ldap`_ - List LDAP groups"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:979
+msgid "mmctl group channel"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:981
+msgid "Management of channel groups"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:984
+msgid "`mmctl group channel disable`_ - Disable group channel constrains"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:985
+msgid "`mmctl group channel enable`_ - Enable group channel constrains"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:986
+msgid "`mmctl group channel list`_ - List channel groups"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:987
+msgid "`mmctl group channel status`_ - Check group status"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:996
+msgid "mmctl group channel disable"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1000
+msgid "Disables group constrains in the specified channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1027
+msgid "mmctl group channel enable"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1031
+msgid "Enables group constrains in the specified channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1058
+msgid "mmctl group channel list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1062
+msgid "List the groups associated with a channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1089
+msgid "mmctl group channel status"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1093
+msgid "Shows the group constrain status for the specified channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1121
+msgid "mmctl group team"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1123
+msgid "Management of team groups."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1126
+msgid "`mmctl group team disable`_ - Disable group team constrains"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1127
+msgid "`mmctl group team enable`_ - Enable group team constrains"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1128
+msgid "`mmctl group team list`_ - List team groups"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1129
+msgid "`mmctl group team status`_ - Check group constrain status"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1138
+msgid "mmctl group team disable"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1142
+msgid "Disables group constrains in the specified team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1169
+msgid "mmctl group team enable"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1173
+msgid "Enables group constrains in the specified team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1200
+msgid "mmctl group team list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1204
+msgid "List the groups associated with a team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1231
+msgid "mmctl group team status"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1235
+msgid "Shows the group constrain status for the specified team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1263
+msgid "mmctl group list-ldap"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1267
+msgid "List LDAP groups."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1294
+msgid "mmctl ldap"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1296
+msgid "LDAP related utilities."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1305
+msgid "mmctl ldap sync"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1309
+msgid "Synchronize all LDAP users and groups now."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1337
+msgid "mmctl license"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1339
+msgid "Licensing management commands."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1342
+msgid "`mmctl license remove`_ - Remove current license"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1343
+msgid "`mmctl license upload`_ - Upload a new license"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1352
+msgid "mmctl license remove"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1356
+msgid "Remove the current license and use Mattermost in Team Edition."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1384
+msgid "mmctl license upload"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1388
+msgid "Upload a license. Replaces current license."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1415
+msgid "mmctl logs"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1419
+msgid "Display logs in a human-readable format"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1442
+msgid "mmctl permissions"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1444
+msgid "Management of permissions and roles."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1447
+msgid "`mmctl permissions add`_ - Add permissions"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1448
+msgid "`mmctl permissions remove`_ - Remove permissions"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1449
+msgid "`mmctl permissions show`_ - Show permissions"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1459
+msgid "mmctl permissions add"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1463
+msgid ""
+"Add one or more permissions to an existing role (only available in E10 "
+"and E20)."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1490
+msgid "mmctl permissions remove"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1494
+msgid ""
+"Remove one or more permissions from an existing role (only available in "
+"E10 and E20)."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1522
+msgid "mmctl permissions show"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1526
+msgid "Show all the information about a role."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1553
+msgid "mmctl plugin"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1555
+msgid "Management of plugins."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1558
+msgid "`mmctl plugin add`_ - Add plugins"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1559
+msgid "`mmctl plugin delete`_ - Remove plugins"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1560
+msgid "`mmctl plugin disable`_ - Disable plugins"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1561
+msgid "`mmctl plugin enable`_ - Enable plugins"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1562
+msgid "`mmctl plugin list`_ - List plugins"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1572
+msgid "mmctl plugin add"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1576
+msgid "Add plugins to your Mattermost server."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1604
+msgid "mmctl plugin delete"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1608
+msgid "Delete previously uploaded plugins from your Mattermost server."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1635
+msgid "mmctl plugin disable"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1639
+msgid ""
+"Disable plugins. Disabled plugins are immediately removed from the user "
+"interface and logged out of all sessions."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1667
+msgid "mmctl plugin enable"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1671
+msgid "Enable plugins for use on your Mattermost server."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1698
+msgid "mmctl plugin list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1702
+msgid "List all active and inactive plugins installed on your Mattermost server."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1730
+msgid "mmctl post"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1732
+msgid "Management of posts."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1735
+msgid "`mmctl post create`_ - Create a post"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1736
+msgid "`mmctl post list`_ - List posts"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1745
+msgid "mmctl post create"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1749
+msgid "Create a post."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1778
+msgid "mmctl post list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1782
+msgid "List posts for a channel."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1813
+msgid "mmctl roles"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1818
+msgid "mmctl team"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1820
+msgid "Management of teams."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1823
+msgid "`mmctl team add`_ - Add teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1824
+msgid "`mmctl team create`_ - Create teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1825
+msgid "`mmctl team delete`_ - Delete teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1826
+msgid "`mmctl team list`_ - List teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1827
+msgid "`mmctl team remove`_ - Remove teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1828
+msgid "`mmctl team search`_ - Search teams"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1829
+msgid "`mmctl team users`_ - Manage team users"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1838
+msgid "mmctl team add"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1842
+#: ../../source/administration/mmctl-cli-tool.rst:2044
+msgid "Add specified users to a team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1870
+msgid "mmctl team create"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1874
+msgid "Create a team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1906
+msgid "mmctl team delete"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1910
+msgid ""
+"Permanently deletes a team along with all related information including "
+"posts from the database."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1939
+msgid "mmctl team list"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1943
+msgid "List all teams on the server."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1970
+msgid "mmctl team remove"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:1974
+msgid "Remove specified users from a team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2001
+msgid "mmctl team search"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2005
+msgid "Search for teams based on name."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2033
+msgid "mmctl team users"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2036
+msgid "`mmctl team users add`_ - Add users to a team"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2037
+msgid "`mmctl team users remove`_ - Remove users from a team"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2040
+msgid "mmctl team users add"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2072
+msgid "mmctl team users remove"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2076
+msgid "Remove some users from a team."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2104
+msgid "mmctl user"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2106
+msgid "Management of users."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2109
+msgid "`mmctl user create`_ - Create user"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2110
+msgid "`mmctl user deactivate`_ - Deactivate user"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2111
+msgid "`mmctl user email`_ - Set user email"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2112
+msgid "`mmctl user invite`_ - Invite user"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2113
+msgid "`mmctl user reset_password`_ - Reset user password"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2114
+msgid "`mmctl user resetmfa`_ - Reset user's MFA token"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2115
+msgid "`mmctl user search`_ - Search for a user"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2125
+msgid "mmctl user create"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2129
+msgid "Create a user."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2164
+msgid "mmctl user deactivate"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2168
+msgid ""
+"Deactivate users. Deactivated users are immediately logged out of all "
+"sessions and are unable to log back in."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2198
+msgid "mmctl user email"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2202
+msgid "Change the email address associated with a user."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2231
+msgid "mmctl user invite"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2235
+msgid ""
+"Send an email invite to a user, to join a team. You can invite a user to "
+"multiple teams by listing them. You can specify teams by name or ID."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2264
+msgid "mmctl user reset_password"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2268
+msgid "Send users an email to reset their password."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2296
+msgid "mmctl user resetmfa"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2300
+msgid ""
+"Turn off multi-factor authentication for a user. If MFA enforcement is "
+"enabled, the user will be forced to re-enable MFA as soon as they login."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2329
+msgid "mmctl user search"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2333
+msgid "Search for users based on username, email, or user ID."
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2361
+msgid "mmctl version"
+msgstr ""
+
+#: ../../source/administration/mmctl-cli-tool.rst:2366
+msgid "mmctl webhook"
+msgstr ""
+

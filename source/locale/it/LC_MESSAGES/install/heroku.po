@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/heroku.rst:2
+msgid "Mattermost Preview using Heroku"
+msgstr ""
+
+#: ../../source/install/heroku.rst:4
+msgid ""
+"Quickly set up Mattermost in Preview Mode to explore product "
+"functionality using Heroku."
+msgstr ""
+
+#: ../../source/install/heroku.rst:6
+msgid ""
+"This configuration is not recommended for use in production, as it "
+"currently does not support email notifications. Also note that for "
+"persistent file storage AmazonS3 must be used, as local storage will be "
+"deleted periodically when the Heroku process restarts."
+msgstr ""
+
+#: ../../source/install/heroku.rst:9
+msgid "Heroku Installation"
+msgstr ""
+
+#: ../../source/install/heroku.rst:11
+msgid "Sign up for a free account on `Heroku <https://www.heroku.com/>`__"
+msgstr ""
+
+#: ../../source/install/heroku.rst:13
+msgid "Click the |HerokuDeploy|_ button"
+msgstr ""
+
+#: ../../source/install/heroku.rst:17
+msgid "(Optional) Customize the default settings in Heroku"
+msgstr ""
+
+#: ../../source/install/heroku.rst:18
+msgid ""
+"``App Name``: Optionally select a name for your application (this will be"
+" used in the app URL)"
+msgstr ""
+
+#: ../../source/install/heroku.rst:19
+msgid ""
+"``Runtime Selection``: Select which region your app should run in (United"
+" States or Europe)"
+msgstr ""
+
+#: ../../source/install/heroku.rst:20
+msgid "``Config Variables``:"
+msgstr ""
+
+#: ../../source/install/heroku.rst:22
+msgid ""
+"``MATTERMOST_DOWNLOAD_URI``: The URI to the compiled Mattermost binary "
+"you would like to run. Defaults to current release."
+msgstr ""
+
+#: ../../source/install/heroku.rst:23
+msgid ""
+"``FILE_SETTINGS__DRIVER_NAME``: Select the type of file storage to use "
+"(``local`` or ``amazons3``). AmazonS3 is required for persistent file "
+"storage."
+msgstr ""
+
+#: ../../source/install/heroku.rst:24
+msgid ""
+"``FILE_SETTINGS__AMAZON_S3_ACCESS_KEY_ID``: The access key for your "
+"Amazon S3. Only required for driver name `amazons3`."
+msgstr ""
+
+#: ../../source/install/heroku.rst:25
+msgid ""
+"``FILE_SETTINGS__AMAZON_S3_SECRET_ACCESS_KEY``: The secret access key for"
+" your Amazon S3. Only required for driver name amazons3."
+msgstr ""
+
+#: ../../source/install/heroku.rst:26
+msgid ""
+"``FILE_SETTINGS__AMAZON_S3_BUCKET``: The name you selected for your S3 "
+"bucket in AWS. Only required for driver name amazons3."
+msgstr ""
+
+#: ../../source/install/heroku.rst:27
+msgid ""
+"``FILE_SETTINGS__AMAZON_S3_REGION``: The AWS region you selected when "
+"creating your S3 bucket. Refer to `AWS Reference Documentation "
+"<http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`__ "
+"and choose this variable from the Region column."
+msgstr ""
+
+#: ../../source/install/heroku.rst:28
+msgid "Click **\"Deploy for Free\"**"
+msgstr ""
+
+#: ../../source/install/heroku.rst:31
+msgid ""
+"After Heroku finishes setting up the app, click \"View\" and your "
+"Mattermost Preview should be up and running. You will be taken to the "
+"account creation page, where you can enter credentials to create an "
+"account and get started."
+msgstr ""
+

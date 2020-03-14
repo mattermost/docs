@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/customize-mattermost.rst:2
+msgid "Customizing Mattermost"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:4
+msgid "There are several ways to customize your Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:6
+msgid ""
+"If customizing Mattermost, please avoid branding that could be confused "
+"with the Mattermost brand. For example, it's okay to brand as "
+"\"Healthcare Central\" because it's a completely different brand. "
+"\"Mattermost Healthcare Central\" is not okay, because it can potentially"
+" be confused with the Mattermost brand. Please see the `Mattermost "
+"trademark guidelines <https://www.mattermost.org/trademark-standards-of-"
+"use/>`__ for details."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:8
+msgid ""
+"While you're welcome to add your own copyright notice in the user "
+"interface if you feel it is warranted by your changes, we ask that you do"
+" not remove the Mattermost, Inc. copyright notice from the login footer "
+"or from the About dialog."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:11
+msgid "Mattermost Webapp"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:13
+msgid ""
+"The Mattermost webapp is licensed under the Apache 2.0 license. To modify"
+" and use with the Mattermost server, you can:"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:15
+msgid "Install the Mattermost server by following one of our installation guides"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:16
+msgid ""
+"Fork the `mattermost-webapp <https://github.com/mattermost/mattermost-"
+"webapp>`__ repository"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:17
+msgid "Make your changes"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:18
+msgid "Run ``make package`` to create ``mattermost-webapp.tar.gz``"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:19
+msgid ""
+"Copy ``mattermost-webapp-tar.gz`` to the location Mattermost was "
+"installed in Step 1"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:20
+msgid "Remove the existing ``client`` folder"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:21
+msgid ""
+"Run ``tar -xvf mattermost-webapp.tar.gz`` to extract your new customized "
+"``client`` folder"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:22
+msgid "Restart your Mattermost server"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:24
+msgid ""
+"It is possible to customize certain parts of the webapp without forking "
+"by using our :doc:`Custom Branding <../administration/branding>` "
+"settings."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:26
+msgid ""
+"To replace the logo in email notifications, change the file located in "
+"the ``/images`` directory. To change the app icon, modify the "
+"``/app/components/app_icon.js`` file."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:29
+msgid "Mattermost Server"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:31
+msgid ""
+"There are a few things that can be customized in the Mattermost server "
+"without forking."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:33
+msgid "Modify text in the Mattermost interface by modifying the ``en.json`` file"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:34
+msgid ""
+"Customize or hide help and support links by modifying your "
+":ref:`configuration settings <legal-support-links>`"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:35
+msgid ""
+"Customize the email notifications by editing the HTML files in "
+"``/templates``"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:38
+msgid "Mattermost Mobile Applications"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:40
+msgid ""
+"The Mattermost mobile applications can be customized if you choose to "
+"build the apps yourself."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:42
+msgid "To brand the mobile apps:"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:44
+msgid ""
+"Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-"
+"mobile>`__ repository"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:45
+#: ../../source/deployment/customize-mattermost.rst:59
+msgid "Replace the name, images, and any key text strings"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:46
+msgid ":doc:`Compile the apps <../mobile/mobile-compile-yourself>`"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:47
+msgid "Deploy the apps to an app store"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:49
+msgid ""
+"While most organizations deploy to internal enterprise app stores, you "
+"are welcome to deploy to iTunes and Google Play as long as the branding "
+"is not confusable with official Mattermost products."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:52
+msgid "Mattermost Desktop Applications"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:54
+msgid ""
+"The Mattermost desktop applications can be customized if you choose to "
+"build the apps yourself."
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:56
+msgid "To brand the desktop apps:"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:58
+msgid ""
+"Fork the `mattermost/desktop <https://github.com/mattermost/desktop>`__ "
+"repository"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:60
+msgid ""
+"Refer to `this documentation "
+"<https://github.com/mattermost/desktop/blob/master/docs/development.md>`__"
+" for help with compiling the apps"
+msgstr ""
+
+#: ../../source/deployment/customize-mattermost.rst:61
+msgid "Share the desktop application with your users"
+msgstr ""
+

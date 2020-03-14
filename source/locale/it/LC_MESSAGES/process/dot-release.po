@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/dot-release.md:1
+msgid "Dot Release Process"
+msgstr ""
+
+#: ../../source/process/dot-release.md:3
+msgid "If a bug fix release is required, run through the below steps."
+msgstr ""
+
+#: ../../source/process/dot-release.md:5
+msgid "Release Timeline"
+msgstr ""
+
+#: ../../source/process/dot-release.md:7
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:8
+msgid ""
+"All cut-off dates are based on 10am (San Francisco Time) on the day "
+"stated."
+msgstr ""
+
+#: ../../source/process/dot-release.md:9
+msgid ""
+"T-minus counts are measured in \"working days\" (weekdays other than "
+"major holidays concurrent in US and Canada) prior to release day."
+msgstr ""
+
+#: ../../source/process/dot-release.md:11
+msgid "A. (T-minus 4 working days) Code complete"
+msgstr ""
+
+#: ../../source/process/dot-release.md:13
+#: ../../source/process/dot-release.md:44
+msgid "Release Manager:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:14
+msgid ""
+"Once the list of bugs to be fixed is finalized, post this checklist in "
+"Release Checklist channel"
+msgstr ""
+
+#: ../../source/process/dot-release.md:15
+msgid ""
+"Notify community about upcoming dot release through a Twitter "
+"announcement and in changelog with links to approved fixes and a date "
+"tagged as \"TBD\""
+msgstr ""
+
+#: ../../source/process/dot-release.md:16
+msgid ""
+"Open an issue in the GitLab Omnibus mentioning a dot release is coming. "
+"See example"
+msgstr ""
+
+#: ../../source/process/dot-release.md:17
+msgid ""
+"Work with a developer to submit GitLab MR following this process and test"
+" the upgrade once the GitLab MR is merged and included in their RC."
+msgstr ""
+
+#: ../../source/process/dot-release.md:18
+msgid "Open a ticket to submit Gitlab Omnibus RC install of Mattermost"
+msgstr ""
+
+#: ../../source/process/dot-release.md:19
+msgid ""
+"Make a post in Announcements channel announcing the dot release to the "
+"rest of the team with links to approved tickets and include a link to the"
+" ticket to submit the GitLab MR"
+msgstr ""
+
+#: ../../source/process/dot-release.md:20
+#: ../../source/process/dot-release.md:40
+msgid "Dev:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:21
+msgid "PRs for hotfixes are made to release branch"
+msgstr ""
+
+#: ../../source/process/dot-release.md:22
+msgid ""
+"Review PRs made from release branch and merge changes into the release "
+"branch as required and merge the release branch back into master once per"
+" day"
+msgstr ""
+
+#: ../../source/process/dot-release.md:24
+msgid "B. (T-minus 3 working days) Release Candidate Cut"
+msgstr ""
+
+#: ../../source/process/dot-release.md:26
+msgid "Build:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:27
+msgid ""
+"Verify with Release Manager before cutting any new dot release RCs "
+"(approved fixes should be merged)"
+msgstr ""
+
+#: ../../source/process/dot-release.md:29
+msgid "C. (T-minus 2 working days) Release Candidate Testing"
+msgstr ""
+
+#: ../../source/process/dot-release.md:31
+msgid "QA:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:32
+msgid ""
+"If the dot release takes place during a regular release, update "
+"prev.test.mattermost.com to dot-release RCs for the previous release and "
+"keep rc.test.mattermost.com on the latest regular release version"
+msgstr ""
+
+#: ../../source/process/dot-release.md:33
+msgid "Test the new RC to verify fixes merged to the release branch work"
+msgstr ""
+
+#: ../../source/process/dot-release.md:34
+msgid "Post in Release Discussion channel after testing"
+msgstr ""
+
+#: ../../source/process/dot-release.md:36
+msgid "D. (T-minus 0 working days) Release Build Cut"
+msgstr ""
+
+#: ../../source/process/dot-release.md:38
+msgid "Once bug fix release is ready to cut:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:41
+msgid "Tag a new release (e.g. 1.1.1) and run an official build"
+msgstr ""
+
+#: ../../source/process/dot-release.md:42
+msgid "Verify hashes and GPG signatures are correct, once build is cut"
+msgstr ""
+
+#: ../../source/process/dot-release.md:43
+msgid "Delete RCs after final version is shipped"
+msgstr ""
+
+#: ../../source/process/dot-release.md:45
+msgid "Merge the Changelog PR with notes on patch releases (see example entry)"
+msgstr ""
+
+#: ../../source/process/dot-release.md:46
+msgid "Update the version archive"
+msgstr ""
+
+#: ../../source/process/dot-release.md:47
+msgid ""
+"Update Mattermost server download page with the links to the EE and TE "
+"bits"
+msgstr ""
+
+#: ../../source/process/dot-release.md:48
+msgid "Test the download links before and after updating the page"
+msgstr ""
+
+#: ../../source/process/dot-release.md:49
+msgid ""
+"Confirm that mattermost-docker has been updated to the latest version "
+"(contact the maintainer via direct message on community server if "
+"necessary)"
+msgstr ""
+
+#: ../../source/process/dot-release.md:50
+msgid ""
+"Contact owners of community installers or submit PRs to update install "
+"version number"
+msgstr ""
+
+#: ../../source/process/dot-release.md:51
+msgid ""
+"For Puppet, Heroku and Ansible Playbook, post to Installers and Images "
+"channel announcing the new release. See example."
+msgstr ""
+
+#: ../../source/process/dot-release.md:52
+msgid ""
+"For Chef Cookbook, open a new issue to announce the new release. See "
+"example."
+msgstr ""
+
+#: ../../source/process/dot-release.md:53
+msgid "For Yunohost, open a new pull request to update the version. See example."
+msgstr ""
+
+#: ../../source/process/dot-release.md:54
+msgid "Marketing:"
+msgstr ""
+
+#: ../../source/process/dot-release.md:55
+msgid ""
+"Prepare blog post for mattermost.com and Twitter announcement, and send "
+"for marketing lead to review. Once reviewed, schedule for 08:00 PST on "
+"the day after dot release"
+msgstr ""
+

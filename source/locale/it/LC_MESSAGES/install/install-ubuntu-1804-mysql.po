@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:4
+msgid "Installing MySQL Database Server"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:6
+msgid ""
+"Install and set up the database for use by the Mattermost server. You can"
+" install either MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:8
+msgid "**To install MySQL on Ubuntu Server 18.04:**"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:10
+msgid ""
+"Log into the server that will host the database, and open a terminal "
+"window."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:12
+msgid "Install MySQL."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:14
+msgid "``sudo apt install mysql-server``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:16
+msgid "Run ``mysql_secure_installation`` and follow the instructions."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:18
+msgid "``sudo mysql_secure_installation``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:20
+msgid "Log in to MySQL as root."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:22
+msgid "``sudo mysql``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:24
+msgid "Create the Mattermost user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:26
+msgid "``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:29
+msgid "Use a password that is more secure than 'mmuser-password'."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:30
+msgid ""
+"The '%' means that mmuser can connect from any machine on the network. "
+"However, it's more secure to use the IP address of the machine that hosts"
+" Mattermost. For example, if you install Mattermost on the machine with "
+"IP address 10.10.10.2, then use the following command: ``mysql> create "
+"user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:32
+msgid "Create the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:34
+msgid "``mysql> create database mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:36
+msgid "Grant access privileges to the user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:38
+msgid "``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:41
+msgid ""
+"This query grants the MySQL user we just created all privileges on the "
+"database for convenience. If you need more security you can use this "
+"query to grant the user only the privileges necessary to run Mattermost."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:43
+msgid ""
+"``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE"
+" ON mattermost.* TO 'mmuser'@'%';``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:45
+msgid "Log out of MySQL."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:47
+msgid "``mysql> exit``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:50
+msgid ""
+"If you have installed MySQL on its own server, you need to edit the "
+"``/etc/mysql/mysql.conf.d/mysqld.cnf`` file and comment out the ``bind-"
+"address = 127.0.0.1`` using the ``#`` symbol, then restart your sql "
+"server."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-mysql.rst:55
+msgid ""
+"With the database installed and the initial setup complete, you can now "
+"install the Mattermost server."
+msgstr ""
+

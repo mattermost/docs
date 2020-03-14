@@ -1,0 +1,565 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/guest-accounts.rst:4
+msgid "Guest Accounts (Beta) (E10/E20)"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:6
+msgid ""
+"Available in `Enterprise Edition E10 and higher "
+"<https://about.mattermost.com/pricing/>`__."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:8
+msgid ""
+"Guest Accounts are a new role within Mattermost Enterprise editions which"
+" allow organizations to collaborate with individuals (such as vendors and"
+" contractors) outside of their organization. The Guest Account feature "
+"controls access to channels and other members within the organization."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:11
+msgid ""
+"For example, an organization may use Guest Accounts to work on a website "
+"project with resources from an external design firm. Guest Accounts could"
+" also be used to collaborate with customers on a support issue."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:13
+msgid "Guests can:"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:15
+msgid "Pin messages to channels"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:16
+msgid ""
+"Use slash commands (excluding restricted commands such as invite members,"
+" rename channels, change headers, etc)"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:17
+msgid "Favorite channels"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:18
+msgid "Mute channels"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:19
+msgid "Update their account settings"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:21
+msgid "Guests cannot:"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:23
+msgid "Discover public channels"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:24
+msgid "Join open teams"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:25
+msgid ""
+"Create direct messages or group messages with members who aren’t within "
+"the same channel"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:26
+msgid "Invite people"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:28
+msgid ""
+"Additionally, guests are not automatically added to the default ``Town-"
+"square`` and ``Off-topic`` channels upon logging in.  To access these "
+"channels, they will need to be invited or added to them."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:32
+msgid "Enabling Guest Accounts"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:34
+msgid "Navigate to **System Console > Authentication > Guest Access**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:35
+msgid "Set **Enable Guest Access** to ``True``."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:36
+msgid "(Optional) **Whitelist domains that are acceptable for Guest Access**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:37
+msgid ""
+"This allows the System Administrators to set a list of approved guest "
+"domains. If you have team domain restrictions, you will also need to add "
+"your guest domain to **Team Settings > Allow only users with a specific "
+"email domain to join this team**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:38
+msgid "(Optional) **Enforce Multi-Factor Authentication (MFA) for your Guests**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:39
+msgid ""
+"If you are enforcing MFA for your users, you can optionally choose to "
+"enforce MFA for your guest users."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:42
+msgid "Guest Authentication"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:44
+msgid ""
+"Guests can access the Mattermost server via email invitation, and be "
+"authenticated using AD/LDAP or SAML 2.0. Before you proceed, ensure that "
+"the authentication method you wish to use is correctly configured on your"
+" server and enabled in Mattermost. For configuration steps and technical "
+"documentation, see `Active Directory/LDAP Setup "
+"<https://docs.mattermost.com/deployment/sso-ldap.html>`_ and `SAML "
+"Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`_."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:49
+msgid ""
+"Converting a member user to a guest will not change the channels they are"
+" in; however they will be restricted from discovering additional channels"
+" and unable to direct message / group message users outside of the "
+"channels they are in. They can be added to channels by System Admins and "
+"other roles that have the correct permissions to invite guests."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:53
+msgid "Inviting Guests to the Mattermost Server via Email"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:55
+msgid ""
+"Guests can be invited into one for more Mattermost channels within a team"
+" by System Admins and roles that have the correct permission to invite "
+"guests. A guest can also be invited into channels on multiple teams."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:57
+msgid ""
+"**Note:** Guest invitations will be revoked after 48 hours per the member"
+" email invitation process. If your guest has not accepted the invitation "
+"within that period, please follow the steps below to resend an invitation"
+" to the guest."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:59
+msgid "To invite guests into one or more Mattermost channels:"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:61
+msgid ""
+"Enable email invites from **System Console > Signup > Enable Email "
+"Invitations**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:62
+msgid ""
+"Navigate to **Main Menu > Invite People**.  This is a new invitation "
+"option that combines inviting guests and members and consolidates **Send "
+"Email**, **Get Team Invite Link**, and **Add Members to the Team**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:63
+msgid "Select **Invite Guests**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:64
+msgid "Enter the guest’s email address."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:65
+msgid "Choose the channels the guest can join (excluding managed teams)."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:66
+msgid "(Optional) Enter a custom message."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:71
+msgid "Configuring AD/LDAP Authentication"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:73
+msgid ""
+"When enabled, the **Guest Filter** in Mattermost identifies external "
+"users whose AD/LDAP role is guest and who are invited to join your "
+"Mattermost server. These users will have the Guest role applied "
+"immediately upon first sign-in instead of the default member user role. "
+"This eliminates having to manually assign the role in the System Console."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:77
+#: ../../source/deployment/guest-accounts.rst:100
+msgid "Enable Guest Access via **System Console > Guest Access (Beta)**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:78
+msgid "Navigate to **System Console > Authentication > AD/LDAP**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:79
+msgid "Complete the **Guest Filter** field."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:80
+#: ../../source/deployment/guest-accounts.rst:103
+msgid "Choose **Save**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:82
+#: ../../source/deployment/guest-accounts.rst:105
+msgid ""
+"When a guest logs in for the first time they are presented with a default"
+" landing page until they are added to channels."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:85
+msgid ""
+"If a Mattermost Guest user has the guest role removed in the AD/LDAP "
+"system, the synchronization process will not automatically promote them "
+"to a member user role. This is done manually via **System Console > User "
+"Management**. If a member user has the **Guest Attribute** added, the "
+"synchronization processes will automatically demote the member user to "
+"the guest role."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:90
+msgid "Configuring SAML 2.0 Authentication"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:92
+msgid ""
+"When enabled, the **Guest Attribute** in Mattermost identifies external "
+"users whose SAML assertion is guest and who are invited to join your "
+"Mattermost server. These users will have the Guest role applied "
+"immediately upon first sign-in instead of the default member user role. "
+"This eliminates having to manually assign the role in the System Console."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:96
+msgid ""
+"If a Mattermost Guest user has the guest role removed in the SAML system,"
+" the synchronization processes will not automatically promote them to a "
+"member user role. This is done manually via **System Console > User "
+"Management**. If a member user has the **Guest Attribute** added, the "
+"synchronization processes will automatically demote the member user to "
+"the guest role."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:101
+msgid "Navigate to **System Console > Authentication > SAML 2.0**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:102
+msgid "Complete the **Guest Attribute** field."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:110
+msgid "Guest Permission Settings"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:112
+msgid ""
+"In E10 and E20, you can also control which users can invite guests. By "
+"default, only the System Administrator can invite guests. There are "
+"`additional permissions <https://docs.mattermost.com/deployment/advanced-"
+"permissions.html>`_ in E20 that can be adjusted under **System Console > "
+"Advanced Permissions > System Scheme** to control a guest’s ability to:"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:114
+msgid "Edit posts"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:115
+msgid "Delete posts"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:116
+msgid "Post reactions"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:117
+msgid "Create private channels with members they are allowed to collaborate with"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:120
+msgid "Guest Identification"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:122
+msgid ""
+"Guests are identified with a guest badge. This badge is visible in "
+"various places on the interface and mobile apps such as on a guest’s "
+"profile and next to their name on user lists, including at-mentions and "
+"quick switcher lists. When guests are added to a channel, a system "
+"message informs other channel members that the added user is a guest."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:124
+msgid ""
+"Channels that contain guests will have their header automatically updated"
+" with a message stating: *This channel has guests*."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:129
+msgid "Managing Guests"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:132
+msgid "Adding Guests to Additional Channels"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:134
+msgid ""
+"Users with the permissions to invite guests can use the **Invite Guests**"
+" modal to add a guest to additional channels."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:136
+msgid ""
+"A system message will be posted in the channels to let other members know"
+" a guest user has been added."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:139
+msgid "Removing Guests from Channels and Teams"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:141
+msgid ""
+"Guests can be removed from a channel through the normal **Manage "
+"members** modals, or by using the ``/kick`` or ``/remove`` commands."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:143
+msgid ""
+"When a guest has been removed from all channels within a team and they "
+"belong to other teams, they will default into the last channel on the "
+"last team they have accessed. If they are removed from all channels on "
+"all teams, they will be taken to a screen letting them know they have no "
+"channels assigned."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:146
+msgid "Promoting and Demoting User Roles"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:148
+msgid ""
+"System Administrators can demote a *Member* to *Guest* by updating their "
+"role in **System Console > User Management > Users**. The demoted user "
+"will retain their existing channel and team memberships but will be "
+"restricted from discovering public channels and collaborating with users "
+"outside of the channels they are in.  This is useful if you are already "
+"collaborating with external contractors and want to restrict their "
+"abilities within your Mattermost instance."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:150
+msgid ""
+"System Administrators can also promote a *Guest* to *Member* by updating "
+"their role in **System Console > User Management > Users**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:152
+msgid ""
+"**Note:** You can filter the list in **System Console >  User Management "
+"> Users** to view all guests on the system."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:155
+msgid "Disabling Guest Accounts"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:157
+#: ../../source/deployment/guest-accounts.rst:165
+msgid ""
+"To disable the Guest Accounts feature, go to **System Console > "
+"Authentication > Guest Access > Enable Guest Access** and select "
+"``False``. In versions prior to 5.18, current Guest Accounts will remain "
+"active until guest users are manually marked ``inactive`` in **System "
+"Console > User Management > Users**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:160
+msgid ""
+"From 5.18, if you are using AD/LDAP and the Guest Access setting is "
+"disabled, the Guest Filter and existing guest users in System Console are"
+" deactivated. Additionally, no new guests can be invited or added using "
+"the filter as an authentication method. If a previous guest's credentials"
+" match the user filter (the only filter which is active when Guest Access"
+" is disabled), they will be reactivated and promoted to a member user "
+"upon their next login."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:167
+msgid ""
+"Similarly, for SAML, when the Guest Access setting is disabled, the Guest"
+" Attribute and existing guest users in System Console are deactivated. "
+"Additionally, no new guests can be invited or added using the attribute "
+"as an authentication method. If a previous guest's credentials match the "
+"user attribute (the only attribute which is active when Guest Access is "
+"disabled), they will be reactivated and promoted to a member user upon "
+"their next login."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:172
+msgid ""
+"You can disable individual guest accounts in **System Console > User "
+"Management** via the **Manage Members** modal. In version 5.18, when a "
+"single Guest Account is disabled or the feature is disabled, the guests "
+"will be marked as ``inactive``, be logged out of Mattermost, and all "
+"their sessions will be revoked."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:176
+msgid "Reinstating Guest Accounts"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:178
+msgid ""
+"When Guest Access is re-enabled for AD/LDAP, the Guest Filter is "
+"reinstated. New users matching the Guest Filter will be authenticated as "
+"new guest users on login. Previous guest users will be activated with the"
+" next synchronization. If their credentials still match the Guest filter,"
+" they will retain their guest status. If they no longer match the Guest "
+"Filter but do match the User Filter, they will be not be promoted to "
+"member user automatically on login - this must be done manually. If a "
+"previous guest was reactivated as a member user when Guest Access was "
+"disabled, and now are identified by the Guest Filter once again, they "
+"will automatically be demoted to Guest upon their login."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:181
+msgid ""
+"Similarly, for SAML, when Guest Access is re-enabled, the SAML Guest "
+"Attribute is reinstated. New users matching the Guest Attribute will be "
+"authenticated as new guest users on login. Previous guest users will be "
+"activated with the next synchronization.  If their credentials still "
+"match the Guest Attribute, they will retain their guest status. If they "
+"no longer match the Guest Attribute but do match the User Filter, they "
+"will be not be promoted to member user automatically on login - this must"
+" be done manually. If a previous guest was reactivated as a member user "
+"when Guest Access was disabled, and now are identified by the Guest "
+"Attribute once again, they will automatically be demoted to Guest upon "
+"their login."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:185
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:188
+msgid "How am I charged for Guest Accounts?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:190
+msgid "Guests are charged as a user seat."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:193
+msgid "Why doesn’t Mattermost have single-channel guests?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:195
+msgid ""
+"We wanted to support collaboration with external guests for the broadest "
+"use cases without limiting guests' access to channels. In the future, we "
+"may consider adding single-channel guests."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:198
+msgid "Can I set an expiration date for guests?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:200
+msgid "Currently, you cannot. This feature may be added at a later stage."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:203
+msgid "Can MFA be applied selectively?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:205
+msgid ""
+"If MFA is enforced for your users, it can be applied to Guest Accounts. "
+"Guests can configure MFA in **Account Settings > Security**. If MFA is "
+"not enforced for your users, it can't be applied to Guest Accounts."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:208
+msgid "Why is the Guest Account feature in Beta?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:210
+msgid ""
+"The Guest Account feature is in beta while we address feedback from our "
+"customers on the feature. We anticipate it being in general production in"
+" early 2020."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:213
+msgid "Has the Guest Accounts feature been reviewed by an external security firm?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:215
+msgid ""
+"The Guest Account feature was reviewed by the Mattermost security team. "
+"We do not have an external firm review scheduled but will include this "
+"feature in future reviews."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:218
+msgid "How can I validate my guests' identity?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:220
+msgid ""
+"Guests can be authenticated via SAML and/or AD/LDAP to ensure that only "
+"the named guest can sign in. Alternatively, you can whitelist domains via"
+" **System Console > Guest Access > Whitelisted Guest Domains**."
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:224
+msgid "Can I restrict guests' ability to upload content?"
+msgstr ""
+
+#: ../../source/deployment/guest-accounts.rst:226
+msgid ""
+"It is not currently possible to selectively disable upload/download "
+"functionality as it is a server-wide configuration."
+msgstr ""
+

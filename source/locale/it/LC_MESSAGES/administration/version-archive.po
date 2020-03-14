@@ -1,0 +1,2289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/version-archive.rst:2
+msgid "Version Archive"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:4
+msgid ""
+"If you want to check that the version of Mattermost you are installing is"
+" the official, unmodified version, compare the SHA-265 checksum or the "
+"file's GPG signature with the one published in this version archive. To "
+"verify the GPG signature of a Mattermost release, use the public key "
+"stored in Keybase: https://keybase.io/mattermost."
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:7
+msgid "Mattermost Enterprise Edition"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:11
+msgid ""
+"Mattermost Enterprise Edition v5.20.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-20"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.20.2/mattermost-5.20.2-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:10
+msgid ""
+"``https://releases.mattermost.com/5.20.2/mattermost-5.20.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:11
+msgid ""
+"SHA-256 Checksum: "
+"``20fc3fdbeee5f13371b29c2016a3d42d5a8edf8c2508b43b295dd39c6cd57c90``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:12
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.20.2/mattermost-5.20.2"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:15
+msgid ""
+"Mattermost Enterprise Edition v5.19.1 *Extended Support Release (ESR)* - "
+"`View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-19-esr>`__"
+" - `Download <https://releases.mattermost.com/5.19.1/mattermost-5.19.1"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:14
+msgid ""
+"``https://releases.mattermost.com/5.19.1/mattermost-5.19.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:15
+msgid ""
+"SHA-256 Checksum: "
+"``fe4bf2dc184c17daab3164f68b2e73cc460d60e7c3877b309844240581d13d97``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:16
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.19.1/mattermost-5.19.1"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:19
+msgid ""
+"Mattermost Enterprise Edition v5.18.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-18"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.18.2/mattermost-5.18.2-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:18
+msgid ""
+"``https://releases.mattermost.com/5.18.2/mattermost-5.18.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:19
+msgid ""
+"SHA-256 Checksum: "
+"``e61d6affca5bcf0e85b9152ff280b11135861f1b7b76dd30ad3ca96913c9f7a6``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:20
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.18.2/mattermost-5.18.2"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:23
+msgid ""
+"Mattermost Enterprise Edition v5.17.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-17"
+"-quality-release>`__ - `Download "
+"<https://releases.mattermost.com/5.17.3/mattermost-5.17.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:22
+msgid ""
+"``https://releases.mattermost.com/5.17.3/mattermost-5.17.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:23
+msgid ""
+"SHA-256 Checksum: "
+"``5b02c4e6c6c5735191bbdf46ee9af5aa08f2002e4b41d5ffb7cc39b4c838fadc``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:24
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.17.3/mattermost-5.17.3"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:27
+msgid ""
+"Mattermost Enterprise Edition v5.16.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-16"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.16.5/mattermost-5.16.5-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:26
+msgid ""
+"``https://releases.mattermost.com/5.16.5/mattermost-5.16.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:27
+msgid ""
+"SHA-256 Checksum: "
+"``85dc0ec19fec3573c7331f25c17ad1a35a2db8f9bffa7ef9131dc6f9e00b51cc``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:28
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.16.5/mattermost-5.16.5"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:31
+msgid ""
+"Mattermost Enterprise Edition v5.15.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-15"
+"-quality-release>`__ - `Download "
+"<https://releases.mattermost.com/5.15.5/mattermost-5.15.5-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:30
+msgid ""
+"``https://releases.mattermost.com/5.15.5/mattermost-5.15.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:31
+msgid ""
+"SHA-256 Checksum: "
+"``9676cadb908891227d8bce784643506dd36ba05498c9b3c4ce9d9378eed2b071``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:32
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.15.5/mattermost-5.15.5"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:35
+msgid ""
+"Mattermost Enterprise Edition v5.14.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-14"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.14.5/mattermost-5.14.5-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:34
+msgid ""
+"``https://releases.mattermost.com/5.14.5/mattermost-5.14.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:35
+msgid ""
+"SHA-256 Checksum: "
+"``d8f530ec5540dce20c3ff1a13beb54a8e065cb391247b4d92deb9f8c4adb3d7e``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:36
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.14.5/mattermost-5.14.5"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:39
+msgid ""
+"Mattermost Enterprise Edition v5.13.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-13"
+"-quality-release>`__ - `Download "
+"<https://releases.mattermost.com/5.13.3/mattermost-5.13.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:38
+msgid ""
+"``https://releases.mattermost.com/5.13.3/mattermost-5.13.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:39
+msgid ""
+"SHA-256 Checksum: "
+"``41f40fb7397309aeecdd9c8670e8f137a4892093ec658fc0346c732bca54e8f9``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:40
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.13.3/mattermost-5.13.3"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:43
+msgid ""
+"Mattermost Enterprise Edition v5.12.6 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-12"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.12.6/mattermost-5.12.6-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:42
+msgid ""
+"``https://releases.mattermost.com/5.12.6/mattermost-5.12.6-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:43
+msgid ""
+"SHA-256 Checksum: "
+"``1464e3f970c3b55c9b3ce94925b8d6e4b3b291c05f181498e8ae23822cf1ade4``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:44
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.12.6/mattermost-5.12.6"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:47
+msgid ""
+"Mattermost Enterprise Edition v5.11.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-11"
+"-quality-release>`__ - `Download "
+"<https://releases.mattermost.com/5.11.1/mattermost-5.11.1-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:46
+msgid ""
+"``https://releases.mattermost.com/5.11.1/mattermost-5.11.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:47
+msgid ""
+"SHA-256 Checksum: "
+"``ad2db1a68103fb3ce9383f857eddc817848d548334b510b2dd2491f13f59ea4d``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:48
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.11.1/mattermost-5.11.1"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:51
+msgid ""
+"Mattermost Enterprise Edition v5.10.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-10"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.10.2/mattermost-5.10.2-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:50
+msgid ""
+"``https://releases.mattermost.com/5.10.2/mattermost-5.10.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:51
+msgid ""
+"SHA-256 Checksum: "
+"``7212c63f94c0b3d44c9296e3f7907a2cb651e15f5ac2032f1092223867cdea90``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:52
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.10.2/mattermost-5.10.2"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:55
+msgid ""
+"Mattermost Enterprise Edition v5.9.8 *Extended Support Release (ESR)* - "
+"`View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-9-esr>`__"
+" - `Download <https://releases.mattermost.com/5.9.8/mattermost-5.9.8"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:54
+msgid ""
+"``https://releases.mattermost.com/5.9.8/mattermost-5.9.8-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:55
+msgid ""
+"SHA-256 Checksum: "
+"``393a9803c2d1c28f592d52e43785899f787cccee1a12510a14f1d10e659792fe``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:56
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.9.8/mattermost-5.9.8"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:59
+msgid ""
+"Mattermost Enterprise Edition v5.8.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-8"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.8.2/mattermost-5.8.2-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:58
+msgid ""
+"``https://releases.mattermost.com/5.8.2/mattermost-5.8.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:59
+msgid ""
+"SHA-256 Checksum: "
+"``d681b7a2de4711e39d961598dad3821114c94ff916ec84b7d9965c54ff48cdda``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:60
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.8.2/mattermost-5.8.2"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:63
+msgid ""
+"Mattermost Enterprise Edition v5.7.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-7"
+"-quality-release>`__ - `Download "
+"<https://releases.mattermost.com/5.7.3/mattermost-5.7.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:62
+msgid ""
+"``https://releases.mattermost.com/5.7.3/mattermost-5.7.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:63
+msgid ""
+"SHA-256 Checksum: "
+"``7775e6b38785f1838835fcdd0e64a1c8f718c0071232f31e9a70d83b09384955``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:64
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.7.3/mattermost-5.7.3"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:67
+msgid ""
+"Mattermost Enterprise Edition v5.6.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-6"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.6.5/mattermost-5.6.5-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:66
+msgid ""
+"``https://releases.mattermost.com/5.6.5/mattermost-5.6.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:67
+msgid ""
+"SHA-256 Checksum: "
+"``9705f6befff80451228c12909eed7e36730ffc6a231bcacf1381b9807c7acb91``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:68
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.6.5/mattermost-5.6.5"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:71
+msgid ""
+"Mattermost Enterprise Edition v5.5.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-5"
+"-quality-release>`__ - `Download "
+"<https://releases.mattermost.com/5.5.3/mattermost-5.5.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:70
+msgid ""
+"``https://releases.mattermost.com/5.5.3/mattermost-5.5.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:71
+msgid ""
+"SHA-256 Checksum: "
+"``e568e23f1914b180665089dd711a154f03483bd127d2b037ab4dd35e50e6d567``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:72
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.5.3/mattermost-5.5.3"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:75
+msgid ""
+"Mattermost Enterprise Edition v5.4.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-4"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.4.0/mattermost-5.4.0-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:74
+msgid ""
+"``https://releases.mattermost.com/5.4.0/mattermost-5.4.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:75
+msgid ""
+"SHA-256 Checksum: "
+"``dfbd4a76d640cf2b3fc1d78f3eddd6571669d3d0c27a4bc7166ac06c8d03af19``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:76
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.4.0/mattermost-5.4.0"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:79
+msgid ""
+"Mattermost Enterprise Edition v5.3.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-3"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.3.1/mattermost-5.3.1-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:78
+msgid ""
+"``https://releases.mattermost.com/5.3.1/mattermost-5.3.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:79
+msgid ""
+"SHA-256 Checksum: "
+"``ebe59b38f0c7c1bed2dd94c0f5c64858dd316347418196199d871417747dcf97``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:80
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.3.1/mattermost-5.3.1"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:83
+msgid ""
+"Mattermost Enterprise Edition v5.2.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-2"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.2.2/mattermost-5.2.2-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:82
+msgid ""
+"``https://releases.mattermost.com/5.2.2/mattermost-5.2.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:83
+msgid ""
+"SHA-256 Checksum: "
+"``91c383892e5072b798c828e6c4af19252a03d798bd42757c8a2369946f10ca8f``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:84
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.2.2/mattermost-5.2.2"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:87
+msgid ""
+"Mattermost Enterprise Edition v5.1.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-1"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.1.2/mattermost-5.1.2-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:86
+msgid ""
+"``https://releases.mattermost.com/5.1.2/mattermost-5.1.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:87
+msgid ""
+"SHA-256 Checksum: "
+"``4646910788a177931e6a4c5a0d8751e3d4f10e8083c6078de348e3463b106bb3``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:88
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.1.2/mattermost-5.1.2"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:91
+msgid ""
+"Mattermost Enterprise Edition v5.0.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-0"
+"-feature-release>`__ - `Download "
+"<https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:90
+msgid ""
+"``https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:91
+msgid ""
+"SHA-256 Checksum: "
+"``35863bd376f949d1fd87a012d4f5676e5eb2bdaaccaec4dd9141cf88979af6a6``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:92
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.0.3/mattermost-5.0.3"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:95
+msgid ""
+"Mattermost Enterprise Edition v4.10.10 *Extended Support Release (ESR)* -"
+" `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-10>`__"
+" - `Download <https://releases.mattermost.com/4.10.10/mattermost-4.10.10"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:94
+msgid ""
+"``https://releases.mattermost.com/4.10.10/mattermost-4.10.10-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:95
+msgid ""
+"SHA-256 Checksum: "
+"``57070578ec7580df1a1d28d6248b387ad8be72cb584fd8535483e853b4858b9e``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:96
+msgid ""
+"GPG Signature: https://releases.mattermost.com/4.10.10/mattermost-4.10.10"
+"-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:98
+msgid ""
+"Mattermost Enterprise Edition v4.9.4 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-9>`__"
+" - `Download <https://releases.mattermost.com/4.9.4/mattermost-4.9.4"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:98
+msgid ""
+"``https://releases.mattermost.com/4.9.4/mattermost-4.9.4-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:99
+msgid ""
+"SHA-256 Checksum: "
+"``368419bc8301ae9823c42c2b5ae69a3135b1dc640c94b8280d46941bda1b7b0b``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:101
+msgid ""
+"Mattermost Enterprise Edition v4.8.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-8>`__"
+" - `Download <https://releases.mattermost.com/4.8.2/mattermost-4.8.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:101
+msgid ""
+"``https://releases.mattermost.com/4.8.2/mattermost-4.8.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:102
+msgid ""
+"SHA-256 Checksum: "
+"``61b218111ab336e1ef0dfaa5fa1dfec345b11f7af281fa7e8a76a5bd28ca9ca9``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:104
+msgid ""
+"Mattermost Enterprise Edition v4.7.4 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-7>`__"
+" - `Download <https://releases.mattermost.com/4.7.4/mattermost-4.7.4"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:104
+msgid ""
+"``https://releases.mattermost.com/4.7.4/mattermost-4.7.4-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:105
+msgid ""
+"SHA-256 Checksum: "
+"``6f616c02e6cab054acb80c6d949f12b1874f92a58690931cf3f1890a66c08bcc``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:107
+msgid ""
+"Mattermost Enterprise Edition v4.6.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-6>`__"
+" - `Download <https://releases.mattermost.com/4.6.3/mattermost-4.6.3"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:107
+msgid ""
+"``https://releases.mattermost.com/4.6.3/mattermost-4.6.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:108
+msgid ""
+"SHA-256 Checksum: "
+"``79763620c9a8b32a94193ae88d7fbab2899e3f525737b3e5c20cc5a0b96d19e2``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:110
+msgid ""
+"Mattermost Enterprise Edition v4.5.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-5>`__"
+" - `Download <https://releases.mattermost.com/4.5.2/mattermost-4.5.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:110
+msgid ""
+"``https://releases.mattermost.com/4.5.2/mattermost-4.5.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:111
+msgid ""
+"SHA-256 Checksum: "
+"``cb5b7d5729bb5abda3d89f0263ccb596feee4d4fd015c3c5e0de85792f700494``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:113
+msgid ""
+"Mattermost Enterprise Edition v4.4.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-4-5>`__"
+" - `Download <https://releases.mattermost.com/4.4.5/mattermost-4.4.5"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:113
+msgid ""
+"``https://releases.mattermost.com/4.4.5/mattermost-4.4.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:114
+msgid ""
+"SHA-256 Checksum: "
+"``54c268cb1ace376981ffc6845b18185c287783fad4dfb90969cd6bc459e306ae``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:116
+msgid ""
+"Mattermost Enterprise Edition v4.3.4 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-3-4>`__"
+" - `Download <https://releases.mattermost.com/4.3.4/mattermost-4.3.4"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:116
+msgid ""
+"``https://releases.mattermost.com/4.3.4/mattermost-4.3.4-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:117
+msgid ""
+"SHA-256 Checksum: "
+"``10a30776bfb1af34ab89657f0c77f96eb8be0e2998e8ea50bf3960cc1aacd383``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:119
+msgid ""
+"Mattermost Enterprise Edition v4.2.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-2-2>`__"
+" - `Download <https://releases.mattermost.com/4.2.2/mattermost-4.2.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:119
+msgid ""
+"``https://releases.mattermost.com/4.2.2/mattermost-4.2.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:120
+msgid ""
+"SHA-256 Checksum: "
+"``21d7fa761c2843ba69295cd10c7f4de8969acf57cb53b58be90d42eb6d0a71f7``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:122
+msgid ""
+"Mattermost Enterprise Edition v4.1.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-1-2>`__"
+" - `Download <https://releases.mattermost.com/4.1.2/mattermost-4.1.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:122
+msgid ""
+"``https://releases.mattermost.com/4.1.2/mattermost-4.1.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:123
+msgid ""
+"SHA-256 Checksum: "
+"``e13c33d92ab19e7448ec122925953ab4938a565d7775e237564ebb6e1025f8bd``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:125
+msgid ""
+"Mattermost Enterprise Edition v4.0.5 - `View Changelog "
+"<./changelog.html#release-v4-0-5>`__ - `Download "
+"<https://releases.mattermost.com/4.0.5/mattermost-4.0.5-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:125
+msgid ""
+"``https://releases.mattermost.com/4.0.5/mattermost-4.0.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:126
+msgid ""
+"SHA-256 Checksum: "
+"``9b910bc0f1534852dead573bddcc13eccb3bbc51194cf64da92dadb662a480e8``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:128
+msgid ""
+"Mattermost Enterprise Edition v3.10.3 - `View Changelog "
+"<./changelog.html#release-v3-10-3>`__ - `Download "
+"<https://releases.mattermost.com/3.10.3/mattermost-3.10.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:128
+msgid ""
+"``https://releases.mattermost.com/3.10.3/mattermost-3.10.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:129
+msgid ""
+"SHA-256 Checksum: "
+"``a70a29986f62fdced9195eeb6d26dd3f6dad2bb9fe8badef708f779043e6d438``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:131
+msgid ""
+"Mattermost Enterprise Edition v3.9.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-9-2>`__"
+" - `Download <https://releases.mattermost.com/3.9.2/mattermost-3.9.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:131
+msgid ""
+"``https://releases.mattermost.com/3.9.2/mattermost-3.9.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:132
+msgid ""
+"SHA-256 Checksum: "
+"``49097757a4e97b26339446754859f2589ab420d56a795a57c507fcc1b02ba91b``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:134
+msgid ""
+"Mattermost Enterprise Edition v3.8.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-8-3>`__"
+" - `Download <https://releases.mattermost.com/3.8.3/mattermost-3.8.3"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:134
+msgid ""
+"``https://releases.mattermost.com/3.8.3/mattermost-3.8.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:135
+msgid ""
+"SHA-256 Checksum: "
+"``c223320a82222ebff002071633c6331dce0da6ff6ac8e22d0ab0d7055356ff9c``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:137
+msgid ""
+"Mattermost Enterprise Edition v3.7.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-7-5>`__"
+" - `Download <https://releases.mattermost.com/3.7.5/mattermost-3.7.5"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:137
+msgid ""
+"``https://releases.mattermost.com/3.7.5/mattermost-3.7.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:138
+msgid ""
+"SHA-256 Checksum: "
+"``65e65da661edbc7b7b2b02411f13dbe498fd704d5ae1289789feca79fe00b58a``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:140
+msgid ""
+"Mattermost Enterprise Edition v3.6.7 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-6-7>`__"
+" - `Download <https://releases.mattermost.com/3.6.7/mattermost-3.6.7"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:140
+msgid ""
+"``https://releases.mattermost.com/3.6.7/mattermost-3.6.7-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:141
+msgid ""
+"SHA-256 Checksum: "
+"``8e666708fead5fbfcf1f20617b07fda21cc8cbc85f9690321cbf4a41bfc1dd89``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:143
+msgid ""
+"Mattermost Enterprise Edition v3.5.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-5-1>`__"
+" - `Download <https://releases.mattermost.com/3.5.1/mattermost-3.5.1"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:143
+msgid ""
+"``https://releases.mattermost.com/3.5.1/mattermost-3.5.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:144
+msgid ""
+"SHA-256 Checksum: "
+"``b972ac6f38f8b4c4f364e40a7c0e7819511315a81cb38c8a51c0622d7c5b14a1``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:146
+msgid ""
+"Mattermost Enterprise Edition v3.4.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-4-0>`__"
+" - `Download <https://releases.mattermost.com/3.4.0/mattermost-3.4.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:146
+msgid ""
+"``https://releases.mattermost.com/3.4.0/mattermost-3.4.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:147
+msgid ""
+"SHA-256 Checksum: "
+"``3329fe3ef4d6bd7bd156eec86903b5d9db30d8c62545e4f5ca63633a64559f16``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:149
+msgid ""
+"Mattermost Enterprise Edition v3.3.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-3-0>`__"
+" - `Download <https://releases.mattermost.com/3.3.0/mattermost-3.3.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:149
+msgid ""
+"``https://releases.mattermost.com/3.3.0/mattermost-3.3.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:150
+msgid ""
+"SHA-256 Checksum: "
+"``d12d567c270a0c163e07b38ff41ea1d7839991d31f7c10b6ad1b4ef0f05f4e14``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:152
+msgid ""
+"Mattermost Enterprise Edition v3.2.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-2-0>`__"
+" - `Download <https://releases.mattermost.com/3.2.0/mattermost-3.2.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:152
+msgid ""
+"``https://releases.mattermost.com/3.2.0/mattermost-3.2.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:153
+msgid ""
+"SHA-256 Checksum: "
+"``f66597ad2fa94d3f75f06135129aa91cddd35dd8b94acab4aa15dfa225596422``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:155
+msgid ""
+"Mattermost Enterprise Edition v3.1.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-1-0>`__"
+" - `Download <https://releases.mattermost.com/3.1.0/mattermost-3.1.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:155
+msgid ""
+"``https://releases.mattermost.com/3.1.0/mattermost-3.1.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:156
+msgid ""
+"SHA-256 Checksum: "
+"``9e29525199e25eca6b7fe6422b415f6371d21e22c344ca6febc5e64f69ec670b``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:158
+msgid ""
+"Mattermost Enterprise Edition v3.0.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-0-3>`__"
+" - `Download <https://releases.mattermost.com/3.0.3/mattermost-"
+"enterprise-3.0.3-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:158
+msgid ""
+"``https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3"
+"-linux-amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:159
+msgid ""
+"SHA-256 Checksum: "
+"``3c692f8532b1858aefd2f0c2c22721e6b18734580a84a8ae5d6ce891f0e16f07``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:161
+msgid ""
+"Mattermost Enterprise Edition v2.2.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v2-2-0>`__"
+" - `Download <https://releases.mattermost.com/2.2.0/mattermost-"
+"enterprise-2.2.0-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:161
+msgid ""
+"``https://releases.mattermost.com/2.2.0/mattermost-enterprise-2.2.0"
+"-linux-amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:162
+msgid ""
+"SHA-256 Checksum: "
+"``a7e997526d9204eab70c74a31d51eea693cca0d4bf0f0f71760f14f797fa5477``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:165
+msgid ""
+"Mattermost Enterprise Edition v2.1.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v2-1-0>`__"
+" - `Download <https://releases.mattermost.com/2.1.0/mattermost-"
+"enterprise-2.1.0-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:164
+msgid ""
+"``https://releases.mattermost.com/2.1.0/mattermost-enterprise-2.1.0"
+"-linux-amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:165
+msgid ""
+"SHA-256 Checksum: "
+"``9454c3daacae602025b03950590e3f1ecd540b85a4bb7ad73bdca212ba85cf7a``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:168
+msgid "Mattermost Team Edition Server Archive"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:172
+msgid ""
+"Mattermost Team Edition v5.20.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-20"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.20.2"
+"/mattermost-team-5.20.2-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:171
+msgid ""
+"``https://releases.mattermost.com/5.20.2/mattermost-team-5.20.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:172
+msgid ""
+"SHA-256 Checksum: "
+"``ea8122b2c8839bfba25f8b4c56b7a17c88c12064ead70a9a43aa8c3681af9ba2``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:173
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.20.2/mattermost-"
+"team-5.20.2-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:176
+msgid ""
+"Mattermost Team Edition v5.19.1 *Extended Support Release (ESR)* - `View "
+"Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-19-esr>`__"
+" - `Download <https://releases.mattermost.com/5.19.1/mattermost-"
+"team-5.19.1-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:175
+msgid ""
+"``https://releases.mattermost.com/5.19.1/mattermost-team-5.19.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:176
+msgid ""
+"SHA-256 Checksum: "
+"``e21500333b66b97ff09d3541842da943ce675ac26fb2ba63f8b1333c56b4bb3c``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:177
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.19.1/mattermost-"
+"team-5.19.1-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:180
+msgid ""
+"Mattermost Team Edition v5.18.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-18"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.18.2"
+"/mattermost-team-5.18.2-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:179
+msgid ""
+"``https://releases.mattermost.com/5.18.2/mattermost-team-5.18.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:180
+msgid ""
+"SHA-256 Checksum: "
+"``06db01d79b99f02b80d91e0e2af8907bc04b82d305fdf56d5b797062c023f10f``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:181
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.18.2/mattermost-"
+"team-5.18.2-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:184
+msgid ""
+"Mattermost Team Edition v5.17.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-17"
+"-quality-release>`__ - `Download <https://releases.mattermost.com/5.17.3"
+"/mattermost-team-5.17.3-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:183
+msgid ""
+"``https://releases.mattermost.com/5.17.3/mattermost-team-5.17.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:184
+msgid ""
+"SHA-256 Checksum: "
+"``8189929e301017f384b89d40b3ef90b0355eddf59ed1c4a46fdf591f23c3e870``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:185
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.17.3/mattermost-"
+"team-5.17.3-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:188
+msgid ""
+"Mattermost Team Edition v5.16.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-16"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.16.5"
+"/mattermost-team-5.16.5-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:187
+msgid ""
+"``https://releases.mattermost.com/5.16.5/mattermost-team-5.16.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:188
+msgid ""
+"SHA-256 Checksum: "
+"``442f1faf85037cac187022f8acb362ba84b871f23185ad400fcee7dc07c71672``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:189
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.16.5/mattermost-"
+"team-5.16.5-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:192
+msgid ""
+"Mattermost Team Edition v5.15.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-15"
+"-quality-release>`__ - `Download <https://releases.mattermost.com/5.15.5"
+"/mattermost-team-5.15.5-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:191
+msgid ""
+"``https://releases.mattermost.com/5.15.5/mattermost-team-5.15.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:192
+msgid ""
+"SHA-256 Checksum: "
+"``820dba42b593c000e3288b50ab929ab0107d31410e6b4d032d2c272b8a206b32``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:193
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.15.5/mattermost-"
+"team-5.15.5-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:196
+msgid ""
+"Mattermost Team Edition v5.14.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-14"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.14.5"
+"/mattermost-team-5.14.5-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:195
+msgid ""
+"``https://releases.mattermost.com/5.14.5/mattermost-team-5.14.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:196
+msgid ""
+"SHA-256 Checksum: "
+"``65401dacc38785b8735f8517849ca30a1972713c82eac3862ac1ac917e493d33``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:197
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.14.5/mattermost-"
+"team-5.14.5-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:200
+msgid ""
+"Mattermost Team Edition v5.13.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-13"
+"-quality-release>`__ - `Download <https://releases.mattermost.com/5.13.3"
+"/mattermost-team-5.13.3-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:199
+msgid ""
+"``https://releases.mattermost.com/5.13.3/mattermost-team-5.13.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:200
+msgid ""
+"SHA-256 Checksum: "
+"``bfbcc5b0f56c97104f8e17bf7068225258fdd50ce2171cc16c4fd69cf4fc3e69``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:201
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.13.3/mattermost-"
+"team-5.13.3-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:204
+msgid ""
+"Mattermost Team Edition v5.12.6 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-12"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.12.6"
+"/mattermost-team-5.12.6-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:203
+msgid ""
+"``https://releases.mattermost.com/5.12.6/mattermost-team-5.12.6-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:204
+msgid ""
+"SHA-256 Checksum: "
+"``080fc3644165c313d9ddc7ad83f8c5391fe83df30c7ce58cfbcbe3605351c4af``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:205
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.12.6/mattermost-"
+"team-5.12.6-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:208
+msgid ""
+"Mattermost Team Edition v5.11.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-11"
+"-quality-release>`__ - `Download <https://releases.mattermost.com/5.11.1"
+"/mattermost-team-5.11.1-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:207
+msgid ""
+"``https://releases.mattermost.com/5.11.1/mattermost-team-5.11.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:208
+msgid ""
+"SHA-256 Checksum: "
+"``ae0435ec68d739ac68714b49325d2cd1b7c58524726871cc2cea191c7b3e4085``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:209
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.11.1/mattermost-"
+"team-5.11.1-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:212
+msgid ""
+"Mattermost Team Edition v5.10.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-10"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.10.2"
+"/mattermost-team-5.10.2-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:211
+msgid ""
+"``https://releases.mattermost.com/5.10.2/mattermost-team-5.10.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:212
+msgid ""
+"SHA-256 Checksum: "
+"``8359e0fadb923bdc904c72a7defd9a1f819a7fdc888e62da5c593e30bfb4314d``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:213
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.10.2/mattermost-"
+"team-5.10.2-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:216
+msgid ""
+"Mattermost Team Edition v5.9.8 *Extended Support Release (ESR)* - `View "
+"Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-9-esr>`__"
+" - `Download <https://releases.mattermost.com/5.9.8/mattermost-team-5.9.8"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:215
+msgid ""
+"``https://releases.mattermost.com/5.9.8/mattermost-team-5.9.8-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:216
+msgid ""
+"SHA-256 Checksum: "
+"``74052a54c6b70a223ad2378484ebda7f7f80f855674987dcc2c510b142aa8432``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:217
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.9.8/mattermost-"
+"team-5.9.8-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:220
+msgid ""
+"Mattermost Team Edition v5.8.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-8"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.8.2"
+"/mattermost-team-5.8.2-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:219
+msgid ""
+"``https://releases.mattermost.com/5.8.2/mattermost-team-5.8.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:220
+msgid ""
+"SHA-256 Checksum: "
+"``be9499f24d4b7a38e2f390583a26071626fe8242d8e34fb382228c23012621c7``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:221
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.8.2/mattermost-"
+"team-5.8.2-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:224
+msgid ""
+"Mattermost Team Edition v5.7.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-7"
+"-quality-release>`__ - `Download <https://releases.mattermost.com/5.7.3"
+"/mattermost-team-5.7.3-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:223
+msgid ""
+"``https://releases.mattermost.com/5.7.3/mattermost-team-5.7.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:224
+msgid ""
+"SHA-256 Checksum: "
+"``95e81c3764338df2eefec48a395dd6972877447309570b8843220b952a33fde2``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:225
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.7.3/mattermost-"
+"team-5.7.3-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:228
+msgid ""
+"Mattermost Team Edition v5.6.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-6"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.6.5"
+"/mattermost-team-5.6.5-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:227
+msgid ""
+"``https://releases.mattermost.com/5.6.5/mattermost-team-5.6.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:228
+msgid ""
+"SHA-256 Checksum: "
+"``9bd863f5f52d87ff792b98e67597f193d34969e682f562a40b1542a8f301f008``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:229
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.6.5/mattermost-"
+"team-5.6.5-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:232
+msgid ""
+"Mattermost Team Edition v5.5.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-5"
+"-quality-release>`__ - `Download <https://releases.mattermost.com/5.5.3"
+"/mattermost-team-5.5.3-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:231
+msgid ""
+"``https://releases.mattermost.com/5.5.3/mattermost-team-5.5.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:232
+msgid ""
+"SHA-256 Checksum: "
+"``a47f941509d3b4191e60de487fd27eccc034a7196818ecba5022f09c7718fe09``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:233
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.5.3/mattermost-"
+"team-5.5.3-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:236
+msgid ""
+"Mattermost Team Edition v5.4.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-4"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.4.0"
+"/mattermost-team-5.4.0-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:235
+msgid ""
+"``https://releases.mattermost.com/5.4.0/mattermost-team-5.4.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:236
+msgid ""
+"SHA-256 Checksum: "
+"``6b6f3ea9e0faf3895d71f38cf90737468a8db07b12370762be6cf60c6983355a``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:237
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.4.0/mattermost-"
+"team-5.4.0-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:240
+msgid ""
+"Mattermost Team Edition v5.3.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-3"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.3.1"
+"/mattermost-team-5.3.1-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:239
+msgid ""
+"``https://releases.mattermost.com/5.3.1/mattermost-team-5.3.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:240
+msgid ""
+"SHA-256 Checksum: "
+"``047a78b45293479f69f1cb99169a1c01ee0f90ffaf9dbe145147638fb410526a``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:241
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.3.1/mattermost-"
+"team-5.3.1-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:244
+msgid ""
+"Mattermost Team Edition v5.2.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-2"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.2.2"
+"/mattermost-team-5.2.2-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:243
+msgid ""
+"``https://releases.mattermost.com/5.2.2/mattermost-team-5.2.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:244
+msgid ""
+"SHA-256 Checksum: "
+"``d51adb0f8611bb90641e6169f1a81ed9a43765c1b5d885c3dc98038355cd4429``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:245
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.2.2/mattermost-"
+"team-5.2.2-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:248
+msgid ""
+"Mattermost Team Edition v5.1.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-1"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.1.2"
+"/mattermost-team-5.1.2-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:247
+msgid ""
+"``https://releases.mattermost.com/5.1.2/mattermost-team-5.1.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:248
+msgid ""
+"SHA-256 Checksum: "
+"``2fa5c087b74a41017fc6f38fa1d8d2dbb59adb2b4a70efc38b624c564a572f22``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:249
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.1.2/mattermost-"
+"team-5.1.2-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:252
+msgid ""
+"Mattermost Team Edition v5.0.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v5-0"
+"-feature-release>`__ - `Download <https://releases.mattermost.com/5.0.3"
+"/mattermost-team-5.0.3-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:251
+msgid ""
+"``https://releases.mattermost.com/5.0.3/mattermost-team-5.0.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:252
+msgid ""
+"SHA-256 Checksum: "
+"``b3711ebd0e0240876ba751b18bd7a7349ffbf3f8a02d63ff79303aba98ca02c9``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:253
+msgid ""
+"GPG Signature: https://releases.mattermost.com/5.0.3/mattermost-"
+"team-5.0.3-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:256
+msgid ""
+"Mattermost Team Edition v4.10.10 *Extended Support Release (ESR)* - `View"
+" Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-10>`__"
+" - `Download <https://releases.mattermost.com/4.10.10/mattermost-"
+"team-4.10.10-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:255
+msgid ""
+"``https://releases.mattermost.com/4.10.10/mattermost-team-4.10.10-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:256
+msgid ""
+"SHA-256 Checksum: "
+"``c8a8569e3a65246ab4babc01ce61c52b0ac0b6bd4984ef9896d20ce0ade233c2``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:257
+msgid ""
+"GPG Signature: https://releases.mattermost.com/4.10.10/mattermost-"
+"team-4.10.10-linux-amd64.tar.gz.sig"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:259
+msgid ""
+"Mattermost Team Edition v4.9.4 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-9>`__"
+" - `Download <https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:259
+msgid ""
+"``https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:260
+msgid ""
+"SHA-256 Checksum: "
+"``7b8ed13dc08349bcd7e0886464e7c242f5905bb6685fb28e434a2bd3e3423cfc``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:262
+msgid ""
+"Mattermost Team Edition v4.8.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-8>`__"
+" - `Download <https://releases.mattermost.com/4.8.2/mattermost-team-4.8.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:262
+msgid ""
+"``https://releases.mattermost.com/4.8.2/mattermost-team-4.8.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:263
+msgid ""
+"SHA-256 Checksum: "
+"``192d5b9ce2b1aeb3fc1c8a09ca53e7883b0977d7a37d63ea2f116a13ca5efaf8``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:265
+msgid ""
+"Mattermost Team Edition v4.7.4 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-7>`__"
+" - `Download <https://releases.mattermost.com/4.7.4/mattermost-team-4.7.4"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:265
+msgid ""
+"``https://releases.mattermost.com/4.7.4/mattermost-team-4.7.4-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:266
+msgid ""
+"SHA-256 Checksum: "
+"``caac6f6a612fc50b230e0f77b3ba58c34e7bca86c2c6479e7732dece03cd69dc``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:268
+msgid ""
+"Mattermost Team Edition v4.6.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-6>`__"
+" - `Download <https://releases.mattermost.com/4.6.3/mattermost-team-4.6.3"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:268
+msgid ""
+"``https://releases.mattermost.com/4.6.3/mattermost-team-4.6.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:269
+msgid ""
+"SHA-256 Checksum: "
+"``2583ece515ecd6f9f45f874aa009c8fa8970a273d5d2e3006ee47aad0bac0a3d``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:271
+msgid ""
+"Mattermost Team Edition v4.5.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-5>`__"
+" - `Download <https://releases.mattermost.com/4.5.2/mattermost-team-4.5.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:271
+msgid ""
+"``https://releases.mattermost.com/4.5.2/mattermost-team-4.5.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:272
+msgid ""
+"SHA-256 Checksum: "
+"``756f30c7690c1c3d81470d73f18d87ff99869d130ca2528cb2a97a660ec9b73e``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:274
+msgid ""
+"Mattermost Team Edition v4.4.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-4-5>`__"
+" - `Download <https://releases.mattermost.com/4.4.5/mattermost-team-4.4.5"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:274
+msgid ""
+"``https://releases.mattermost.com/4.4.5/mattermost-team-4.4.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:275
+msgid ""
+"SHA-256 Checksum: "
+"``c261384b2bd8e0472e22307368818eb84b0171e15bdacf7e926187aa846861d7``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:277
+msgid ""
+"Mattermost Team Edition v4.3.4 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-3-4>`__"
+" - `Download <https://releases.mattermost.com/4.3.4/mattermost-team-4.3.4"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:277
+msgid ""
+"``https://releases.mattermost.com/4.3.4/mattermost-team-4.3.4-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:278
+msgid ""
+"SHA-256 Checksum: "
+"``fbc2504cfe417b45ed957c2f45be654849c87fc0d46c14067b8febdbc626f4cc``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:280
+msgid ""
+"Mattermost Team Edition v4.2.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-2-2>`__"
+" - `Download <https://releases.mattermost.com/4.2.2/mattermost-team-4.2.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:280
+msgid ""
+"``https://releases.mattermost.com/4.2.2/mattermost-team-4.2.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:281
+msgid ""
+"SHA-256 Checksum: "
+"``4353f7d77bf5a0bcc1bbce00f2ca60fd14f5fd8caa8b57f4c518dc3ef657c4d6``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:283
+msgid ""
+"Mattermost Team Edition v4.1.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v4-1-2>`__"
+" - `Download <https://releases.mattermost.com/4.1.2/mattermost-team-4.1.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:283
+msgid ""
+"``https://releases.mattermost.com/4.1.2/mattermost-team-4.1.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:284
+msgid ""
+"SHA-256 Checksum: "
+"``1b43c5d1938d17f3ce5d9f90c958a8353639422df48488f002377a30a6d84ae1``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:286
+msgid ""
+"Mattermost Team Edition v4.0.5 - `View Changelog "
+"<./changelog.html#release-v4-0-5>`__ - `Download "
+"<https://releases.mattermost.com/4.0.5/mattermost-team-4.0.5-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:286
+msgid ""
+"``https://releases.mattermost.com/4.0.5/mattermost-team-4.0.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:287
+msgid ""
+"SHA-256 Checksum: "
+"``a7897c6027eb972c0e5d8039862308f1073f1a078e0aa28b3d67f7a5e519dc04``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:289
+msgid ""
+"Mattermost Team Edition v3.10.3 - `View Changelog "
+"<./changelog.html#release-v3-10-3>`__ - `Download "
+"<https://releases.mattermost.com/3.10.3/mattermost-team-3.10.3-linux-"
+"amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:289
+msgid ""
+"``https://releases.mattermost.com/3.10.3/mattermost-team-3.10.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:290
+msgid ""
+"SHA-256 Checksum: "
+"``cdc8c706ccc169c143be87167077171bfcf4bec8d85cc42e2e78c45d483bf0a1``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:292
+msgid ""
+"Mattermost Team Edition v3.9.2 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-9-2>`__"
+" - `Download <https://releases.mattermost.com/3.9.2/mattermost-team-3.9.2"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:292
+msgid ""
+"``https://releases.mattermost.com/3.9.2/mattermost-team-3.9.2-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:293
+msgid ""
+"SHA-256 Checksum: "
+"``f7f878c7d195e1f336b7025fbb4063c1796fa16296ac2d7437d2a5067750966e``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:295
+msgid ""
+"Mattermost Team Edition v3.8.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-8-3>`__"
+" - `Download <https://releases.mattermost.com/3.8.3/mattermost-team-3.8.3"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:295
+msgid ""
+"``https://releases.mattermost.com/3.8.3/mattermost-team-3.8.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:296
+msgid ""
+"SHA-256 Checksum: "
+"``1a5de4052c007c54fce6cd844ab3e89aabc8d1a05b8bac72ef58f6896760c4e1``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:298
+msgid ""
+"Mattermost Team Edition v3.7.5 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-7-5>`__"
+" - `Download <https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:298
+msgid ""
+"``https://releases.mattermost.com/3.7.5/mattermost-team-3.7.5-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:299
+msgid ""
+"SHA-256 Checksum: "
+"``eaee6a57ab9e2924f71853cbebf465d63f7dbf1112716c0e4768984de39f83a2``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:301
+msgid ""
+"Mattermost Team Edition v3.6.7 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-6-7>`__"
+" - `Download <https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:301
+msgid ""
+"``https://releases.mattermost.com/3.6.7/mattermost-team-3.6.7-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:302
+msgid ""
+"SHA-256 Checksum: "
+"``8378f15a6bd070386077798f36d8e521b63844bc838f6553915c6fd4fba3b01d``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:304
+msgid ""
+"Mattermost Team Edition v3.5.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-5-1>`__"
+" - `Download <https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:304
+msgid ""
+"``https://releases.mattermost.com/3.5.1/mattermost-team-3.5.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:305
+msgid ""
+"SHA-256 Checksum: "
+"``2c6bc8b1c25e48d1ac887cd6cbef77df1f80542127b4d98c4d7c0dfbfade04d5``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:307
+msgid ""
+"Mattermost Team Edition v3.4.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-4-0>`__"
+" - `Download <https://releases.mattermost.com/3.4.0/mattermost-team-3.4.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:307
+msgid ""
+"``https://releases.mattermost.com/3.4.0/mattermost-team-3.4.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:308
+msgid ""
+"SHA-256 Checksum: "
+"``c352f6c15466c35787bdb5207a6efe6b471513ccdd5b1f64a91a8bd09c3365da``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:310
+msgid ""
+"Mattermost Team Edition v3.3.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-3-0>`__"
+" - `Download <https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:310
+msgid ""
+"``https://releases.mattermost.com/3.3.0/mattermost-team-3.3.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:311
+msgid ""
+"SHA-256 Checksum: "
+"``09948edb32ebb940708e30a05c269e69568dfd2e0c05495392f353b26139b79a``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:313
+msgid ""
+"Mattermost Team Edition v3.2.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-2-0>`__"
+" - `Download <https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:313
+msgid ""
+"``https://releases.mattermost.com/3.2.0/mattermost-team-3.2.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:314
+msgid ""
+"SHA-256 Checksum: "
+"``14e5c1460a991791ef3dccd6b5aeab40ce903090c5f6c15e7974eb5e4571417a``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:316
+msgid ""
+"Mattermost Team Edition v3.1.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-1-0>`__"
+" - `Download <https://releases.mattermost.com/3.1.0/mattermost-team-3.1.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:316
+msgid ""
+"``https://releases.mattermost.com/3.1.0/mattermost-team-3.1.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:317
+msgid ""
+"SHA-256 Checksum: "
+"``dad164d2382428c36623b6d50e3290336a3be01bae278a465e0d8d94b701e3ff``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:319
+msgid ""
+"Mattermost Team Edition v3.0.3 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v3-0-3>`__"
+" - `Download <https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:319
+msgid ""
+"``https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:320
+msgid ""
+"SHA-256 Checksum: "
+"``b60d26a13927b614e3245384559869ae31250c19790b1218a193d52599c09834``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:322
+msgid ""
+"Mattermost Team Edition v2.2.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v2-2-0>`__"
+" - `Download <https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:322
+msgid ""
+"``https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:323
+msgid ""
+"SHA-256 Checksum: "
+"``d723fe9bf18d2d2a419a8d2aa6ad94fc99f251f8382c4342f08a48813501ca06``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:325
+msgid ""
+"Mattermost Team Edition v2.1.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v2-1-0>`__"
+" - `Download <https://releases.mattermost.com/2.1.0/mattermost-team-2.1.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:325
+msgid ""
+"``https://releases.mattermost.com/2.1.0/mattermost-team-2.1.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:326
+msgid ""
+"SHA-256 Checksum: "
+"``2825434aad23db1181e03b036bd826e66d6d4f21d337d209679a095a3ed9a4d2``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:328
+msgid ""
+"Mattermost Team Edition v2.0.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v2-0-0>`__"
+" - `Download <https://releases.mattermost.com/2.0.0/mattermost-team-2.0.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:328
+msgid ""
+"``https://releases.mattermost.com/2.0.0/mattermost-team-2.0.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:329
+msgid ""
+"SHA-256 Checksum: "
+"``005687c6a8128e1e40d01933f09d7da1a1b70b149a6bef96d923166bc1e7ce8f``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:331
+msgid ""
+"Mattermost Team Edition v1.4.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v1-4-0>`__"
+" - `Download <https://releases.mattermost.com/1.4.0/mattermost-team-1.4.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:331
+msgid ""
+"``https://releases.mattermost.com/1.4.0/mattermost-team-1.4.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:332
+msgid ""
+"SHA-256 Checksum: "
+"``0874dad79415066466c22ac584e599897124106417e774818cf40864d202dbb0``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:334
+msgid ""
+"Mattermost Team Edition v1.3.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v1-3-0>`__"
+" - `Download <https://releases.mattermost.com/1.3.0/mattermost-team-1.3.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:334
+msgid ""
+"``https://releases.mattermost.com/1.3.0/mattermost-team-1.3.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:335
+msgid ""
+"SHA-256 Checksum: "
+"``57af87ae8a98743b5379ed70f93a923654f7b8547f89b7f99ef9a718f472364d``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:337
+msgid ""
+"Mattermost Team Edition v1.2.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v1-2-1>`__"
+" - `Download <https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:337
+msgid ""
+"``https://releases.mattermost.com/1.2.1/mattermost-team-1.2.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:338
+msgid ""
+"SHA-256 Checksum: "
+"``f4cc5b0e1026026ff0cea4cc915b92967f9dfdf497c249731dc804a9a2ff156d``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:340
+msgid ""
+"Mattermost Team Edition v1.1.1 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v1-1-1>`__"
+" - `Download <https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:340
+msgid ""
+"``https://releases.mattermost.com/1.1.1/mattermost-team-1.1.1-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:341
+msgid ""
+"SHA-256 Checksum: "
+"``e6687b9d7f94538e1f4a9f93a0bcb8a66e293e2260433ed648964baa53c3e561``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:343
+msgid ""
+"Mattermost Team Edition v1.0.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html##release-v1-0-0>`__"
+" - `Download <https://releases.mattermost.com/1.0.0/mattermost-team-1.0.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:343
+msgid ""
+"``https://releases.mattermost.com/1.0.0/mattermost-team-1.0.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:344
+msgid ""
+"SHA-256 Checksum: "
+"``208b429cc29119b3d3c686b8973d6100eb02845b1da2f18744195f055521cbc8``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:346
+msgid ""
+"Mattermost Team Edition v0.7.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v0-7-0-beta>`__"
+" - `Download <https://releases.mattermost.com/0.7.0/mattermost-team-0.7.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:346
+msgid ""
+"``https://releases.mattermost.com/0.7.0/mattermost-team-0.7.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:347
+msgid ""
+"SHA-256 Checksum: "
+"``f0a0e5b5fab3aeb5dc638ab3059b3ea5bf7bc1ec5123db1199aa10db41bfffb1``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:349
+msgid ""
+"Mattermost Team Edition v0.6.0 - `View Changelog "
+"<https://docs.mattermost.com/administration/changelog.html#release-v0-6-0-alpha>`__"
+" - `Download <https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0"
+"-linux-amd64.tar.gz>`__"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:349
+msgid ""
+"``https://releases.mattermost.com/0.6.0/mattermost-team-0.6.0-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/administration/version-archive.rst:350
+msgid ""
+"SHA-256 Checksum: "
+"``9eb364f7f963af32d4a9efe3bbb5abb2a21ca5d1a213b50ca461dab047a123b6``"
+msgstr ""
+

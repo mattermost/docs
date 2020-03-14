@@ -1,0 +1,621 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/getting-started/managing-members.rst:4
+msgid "Managing Members"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:7
+msgid "Inviting Team Members"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:9
+msgid ""
+"If you have the required permissions, you can add people to your team via"
+" a direct invite, a public team invite link, or if they already have an "
+"account on the server you can add them to the team yourself."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:11
+msgid ""
+"From version 5.16, your System Admin can `enable guest access to your "
+"server <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A "
+"guest is a special role that is restricted to only the channels they have"
+" been invited to. When this is enabled, you can invite guests or users "
+"external to the organization such as vendors or customers."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:14
+msgid "Direct Invites"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:16
+msgid ""
+"Direct invites are invitation emails sent from your team's server "
+"directly to the invited person's email address. A link within the "
+"invitation directs them to an account creation page. Invitation links "
+"sent by email expire after 48 hours and can only be used once. A System "
+"Admin can invalidate all active invitation links via **System Console > "
+"Authentication > Signup > Invalidate pending email invites** (or **System"
+" Console > Security > Sign Up > Invalidate pending email invites** in "
+"versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:18
+msgid "**To send a direct invite**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:20
+#: ../../source/help/getting-started/managing-members.rst:28
+#: ../../source/help/getting-started/managing-members.rst:56
+msgid "Click your username at the top of the Navigation Panel."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:21
+#: ../../source/help/getting-started/managing-members.rst:29
+#: ../../source/help/getting-started/managing-members.rst:57
+#: ../../source/help/getting-started/managing-members.rst:75
+#: ../../source/help/getting-started/managing-members.rst:83
+msgid "Click **Invite People**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:22
+msgid ""
+"If there is a option to invite members and guests, choose **Invite "
+"Members**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:23
+msgid ""
+"In the **Invite People** field enter the email address of the person you "
+"want to add."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:24
+#: ../../source/help/getting-started/managing-members.rst:78
+msgid "Click **Invite Members**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:26
+msgid "**To send an invite to a guest**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:30
+#: ../../source/help/getting-started/managing-members.rst:84
+msgid ""
+"If there is a option to invite members and guests, choose **Invite "
+"Guests**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:31
+msgid ""
+"In the **Invite People** field enter the email address of guest you want "
+"to add. You can add multiple email addresses to invite more than one "
+"guest."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:32
+msgid "Specify the channels the guest will be able to access."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:33
+msgid ""
+"[Optional] Add a custom message to be included in the invitation to the "
+"guest."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:34
+#: ../../source/help/getting-started/managing-members.rst:87
+msgid "Click **Invite Guests**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:37
+msgid ""
+"If you aren't able to see the **Invite Guests** option, confirm with your"
+" System Admin that you have the correct permissions."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:39
+msgid "**To send a direct invite in versions prior to 5.16**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:41
+#: ../../source/help/getting-started/managing-members.rst:63
+#: ../../source/help/getting-started/managing-members.rst:74
+#: ../../source/help/getting-started/managing-members.rst:82
+#: ../../source/help/getting-started/managing-members.rst:94
+msgid "Click your username, at the top of the Navigation Panel."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:42
+msgid ""
+"Click **Send Email Invite** and enter the person's email address along "
+"with their first and last name."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:43
+msgid "To invite more than one person, click **Add another**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:44
+msgid "Click **Send Invitation**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:47
+msgid ""
+"If you do not see the **Send Email Invite** option, confirm with your "
+"System Admin that **System Console > Authentication > Signup > Enable "
+"Email Invitations** (or **System Console > Security > Sign Up > Enable "
+"Email Invitations** in versions prior to 5.12) is set to ``true``."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:50
+msgid "Team Invite Link"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:52
+msgid ""
+"The team invite link is a unique URL that directs people to an account "
+"creation page for a team. A team invite link can be used by anyone and "
+"does not change unless it is re-generated by a Team Admin or System Admin"
+" via **Team Settings > General > Invite Code**. For example, the team "
+"invite link can be included in a company-wide email to invite all "
+"employees to join a Mattermost team."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:54
+msgid "**To get a team invite link**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:58
+#: ../../source/help/getting-started/managing-members.rst:76
+msgid ""
+"If there is an option to invite members and guests, choose **Invite "
+"Members**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:59
+msgid ""
+"Click the **Copy Link** button to save the URL to your clipboard and "
+"share it with those you want to invite to the team."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:61
+msgid "**To get a team invite link in versions prior to 5.16**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:64
+msgid "Click **Get Team Invite Link**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:65
+msgid ""
+"In the window that opens, copy the link and share it with those you want "
+"to invite to the team."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:68
+msgid "Adding Someone to Your Team"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:70
+msgid ""
+"If someone you want to add to your team already has an account on the "
+"server, you can add them to your team without sending an invitation."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:72
+msgid "**To add someone to your team**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:77
+msgid ""
+"In the **Invite People** menu search for the person you want to add. If "
+"the people you want to add are not on the list, then they do not have an "
+"account on your server."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:80
+msgid "**To add existing guests to your team**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:85
+msgid ""
+"In the **Invite People** menu search for the guest you want to add. If "
+"the people you want to add are not on the list, then they do not have an "
+"account on your server."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:86
+msgid "Specify the channels the guest will have access to."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:90
+msgid ""
+"If you aren't able to see the **Invite Guests** option, confirm with your"
+" System Administrator that you have the correct permissions."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:92
+msgid "**To add someone to your team in versions prior to 5.16**"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:95
+msgid "Click **Add Members to Team**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:96
+msgid ""
+"In the **Add New Members*** window, click the username of the person or "
+"people to add to your team. You can type in the search box to filter the "
+"list. If the people you want to add are not on the list, then they are "
+"either already on your team or they do not have an account on your "
+"server."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:99
+msgid ""
+"System Admins can view and add team membership to individual users on the"
+" user profile page (**System Console > Users > User Profile**) by "
+"clicking **Add Team**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:102
+msgid "User Roles"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:104
+msgid ""
+"There are six types of user roles with different permission levels in "
+"Mattermost: System Admins, Team Admins, Channel Admins, Members, Guests, "
+"and Inactive accounts. To view a list of users on the team and what their"
+" roles are, Team Admins can go to the three dot **Main Menu** and select "
+"**Manage Members**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:107
+msgid "Member"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:109
+msgid ""
+"This is the default role given to users when they join a team. Members "
+"have basic permissions on the Mattermost team."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:112
+msgid "Channel Admin"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:114
+msgid "*Available in Enterprise Edition E10 and higher*"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:116
+msgid ""
+"The person who creates a channel is assigned the Channel Admin role for "
+"that channel. People with the Channel Admin role have the following "
+"privileges:"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:118
+msgid "Ability to assign the Channel Admin role to other members of the channel."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:119
+msgid ""
+"Ability to remove the Channel Admin role from other holders of the "
+"Channel Admin role."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:120
+msgid "Ability to remove members from the channel."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:122
+msgid ""
+"Depending on your system configuration, Channel Admins can be granted "
+"special permissions by the System Admin to rename and delete channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:125
+msgid "Team Admin"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:127
+msgid ""
+"When a team is first created, the person who set it up is made a Team "
+"Admin. It is a team-specific role, meaning that someone can be a Team "
+"Admin for one team but only a Member on another team. Team Admins have "
+"the following privileges:"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:129
+msgid "Access to the **Team Settings** menu from the team site main menu."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:130
+msgid "Ability to change the team name and import data from Slack export files."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:131
+msgid ""
+"Access to the **Manage Members** menu, where they can control whether "
+"team members are a **Member** or a **Team Admin**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:134
+msgid "System Admin"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:136
+msgid ""
+"The first user added to a newly-installed Mattermost system is assigned "
+"the System Admin role."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:138
+msgid ""
+"The System Admin is typically a member of the IT staff and has all the "
+"privileges of a Team Admin, along with the following additional "
+"privileges:"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:140
+msgid "Access to the System Console from the main menu in any team site."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:141
+msgid ""
+"Ability to change any setting on the Mattermost server available in the "
+"System Console."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:142
+msgid ""
+"Ability to promote and demote other users from member role to System "
+"Admin role (and vice versa)."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:143
+msgid "Ability to promote and demote other users to and from Guest role."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:144
+msgid "Ability to deactivate user accounts and to reactivate them."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:145
+msgid ""
+"Access to private channels, but only if given the link to the private "
+"channel."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:147
+msgid ""
+"A System Admin can view and manage users in **System Console > Users**. "
+"They can search users by name, filter users by teams, and filter to view "
+"other System Admins as well as inactive users."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:150
+msgid "Guest"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:152
+msgid ""
+"Guest is a role with restricted permissions, which allow organizations to"
+" collaborate with users outside of their organization, and control what "
+"channels they are in and who they can collaborate with."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:154
+msgid "Guests can:"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:156
+msgid "Pin messages to channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:157
+msgid "Use slash commands (with the exception of those used to invite members)."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:158
+msgid "Favorite channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:159
+msgid "Mute channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:160
+msgid "Update their account settings."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:162
+msgid "Guests cannot:"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:164
+msgid "Discover public channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:165
+msgid "Join open teams."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:166
+msgid ""
+"Create direct messages or group messages with members who aren’t within "
+"the same channel."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:169
+msgid "User With Personal Access Token Permission"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:171
+msgid ""
+"A System Admin can enable `personal access tokens "
+"<https://docs.mattermost.com/developer/personal-access-tokens.html>`__ "
+"and give permissions for that account to create personal access tokens in"
+" **System Console > Users**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:173
+msgid ""
+"In addition, the System Admin can optionally set the following "
+"permissions for the account, useful for integrations and bot accounts:"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:175
+msgid ""
+"**post:all**: Allows the account to post to all Mattermost channels "
+"including direct messages."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:176
+msgid ""
+"**post:channels**: Allows the account to post to all Mattermost public "
+"channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:179
+msgid "Deactivating Users"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:181
+msgid ""
+"A System Admin can deactivate user accounts by going to **System Console "
+"> Users** for a list of all users on the server. The list can be searched"
+" and filtered to make finding users easier. Click the user's role and in "
+"the menu that opens, click **Deactivate**."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:183
+msgid ""
+"When **Deactivate** is selected, the user is logged out of the system, "
+"and receives an error message if they try to log back in. The user no "
+"longer appears in channel member lists, and they are removed from the "
+"team members list. A deactivated account can also be reactivated from the"
+" System Console, in which case the user rejoins channels and teams that "
+"they previously belonged to."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:185
+msgid ""
+"Direct Message channels with deactivated users are hidden in users' "
+"sidebars, but can be reopened using the **More...** button or the Channel"
+" Switcher (CMD/CTRL + K)."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:187
+msgid ""
+"Mattermost is designed as a system-of-record, so there is not an option "
+"to delete users from the Mattermost system, as such an operation could "
+"compromise the integrity of message archives."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:189
+msgid ""
+"Note that AD/LDAP user accounts cannot be deactivated from Mattermost; "
+"they must be deactivated from your Active Directory."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:192
+msgid "Removing a User from a Team or Leaving a Team"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:195
+msgid "Remove from Team"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:197
+msgid ""
+"A Team Admin can remove a user from a team by going to the three dot "
+"**Main Menu > Manage Members**, and selecting **Remove From Team** in the"
+" dropdown menu beside a user entry."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:199
+msgid ""
+"When a user is removed from a team, the team will no longer show up in "
+"their team sidebar. If they currently have the team open, they are "
+"redirected to the first team that appears on their team sidebar. If they "
+"didn't belong to any other teams, the user is sent to the team selection "
+"page."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:201
+msgid ""
+"Removing a user from the team does not deactivate the account. The user "
+"will still be able to sign in to the site, and join other teams. They "
+"will also be able to rejoin the team they were removed from if they "
+"receive another invite, or if the team is set to `\"Allow any user with "
+"an account on this server to join this team\" "
+"<http://docs.mattermost.com/help/settings/team-settings.html#allow-"
+"anyone-to-join-this-team>`__. If the user does rejoin the team, they will"
+" no longer belong to the channels they were previously a part of, and "
+"they will lose all Admin privileges if they had them previously."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:203
+msgid ""
+"A System Admin can also remove users from teams by going to **System "
+"Console > Users**, and selecting the dropdown beside a user entry and "
+"clicking **Manage Teams**. The list of teams an individual user belongs "
+"to can be viewed on the user's profile page via **System Console > "
+"Users** and selecting the member's name from the list provided in the "
+"**User Configuration** screen."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:206
+msgid "Leaving a Team"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:208
+msgid ""
+"Users can also choose to remove themselves from a team, by going to the "
+"three dot **Main Menu > Leave Team**. This will remove the user from the "
+"team, and from all public channels and private channels on the team."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:210
+msgid ""
+"They will only be able to rejoin the team if it is set to `\"Allow any "
+"user with an account on this server to join this team\" "
+"<http://docs.mattermost.com/help/settings/team-settings.html#allow-"
+"anyone-to-join-this-team>`__ team, or if they receive a new invite. If "
+"they do rejoin, they will no longer be a part of their old channels."
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:213
+msgid "Obtaining User ID"
+msgstr ""
+
+#: ../../source/help/getting-started/managing-members.rst:215
+msgid ""
+"A unique user ID is sometimes required for configuring certain plugins "
+"and other administrative tasks that require identifying specific users. "
+"This identifier can be found in both the user list (**System Console > "
+"Users**) as well as the individual profile page for each user (**System "
+"Console > Users**)."
+msgstr ""
+

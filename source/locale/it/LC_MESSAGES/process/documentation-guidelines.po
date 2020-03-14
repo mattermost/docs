@@ -1,0 +1,1227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/documentation-guidelines.rst:3
+msgid "Documentation Guidelines"
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.rst:5
+msgid ""
+"This is the Mattermost style guide for documentation. It acts as a "
+"reference for writers and editors to ensure that the Mattermost "
+"documentation is consistent and clear."
+msgstr ""
+
+#: ../../source/process/documentation-guidelines.rst:8
+msgid ""
+"The style guide is not intended to slow down or otherwise impede "
+"contributions, which are always welcome. No contribution will be rejected"
+" due to non-conforming style, although it might be edited."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:4
+msgid "General Guidelines"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:6
+msgid ""
+"The Mattermost documentation must be of high quality. It must be accurate"
+" and clear, and be presented with a style and tone that is appropriate "
+"for technical content."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:9
+msgid "Style Guide Applicability"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:11
+msgid ""
+"The style guide applies to all end-user, developer, and administrator "
+"documentation that appears on the Mattermost documentation site at "
+"https://docs.mattermost.com."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:13
+msgid "Apply the style guide in the following situations:"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:15
+msgid "When you create a new document."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:16
+msgid "When you convert a document from Markdown to reStructuredText."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:17
+msgid "When you revise a document."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:19
+msgid ""
+"When you revise a document, apply the style guide rules to the part that "
+"you changed. If you have time to update the rest of the document, then do"
+" so. If the scope is significantly greater than you originally "
+"anticipated, then do what you can and what makes sense, and then create "
+"an `issue in GitHub <https://github.com/mattermost/docs/issues>`__. Give "
+"the issue an appropriate title, such as *File XXX converted to .rst, but "
+"needs updating for style guide*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:22
+msgid "Write in the Context of Achievement"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:24
+msgid ""
+"The documentation should help Mattermost users and administrators achieve"
+" their goals. Write imperative sentences as much as possible. Imperative "
+"sentences begin with verbs and give instructions, information, and advice"
+" to help people install, administer, and use Mattermost with success."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:26
+msgid ""
+"Use positive constructs as much as possible, but note that a negative "
+"construct can act as a warning that causes a reader to pay closer "
+"attention to the content, resulting in higher levels of accomplishment."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:30
+msgid "Write to Facilitate Scanning"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:32
+msgid ""
+"Readers need to find information quickly. People don't read documentation"
+" as much as they scan it for solutions to their immediate problem. "
+"Writing and presentation styles that seem redundant in essays or other "
+"texts are often helpful to people scanning for information."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:35
+msgid "Use Headings, Lists, and Emphasis"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:37
+msgid ""
+"Format text to give a visual hierarchy that allows readers to see the "
+"overall content of the page by scanning it. Use headings, lists, and "
+"emphasis to signal importance. Headings should summarize the topic of the"
+" underlying information so that when readers scan a page, they can get an"
+" accurate picture of the contents."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:39
+msgid "Be clear"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:40
+msgid ""
+"Write short, active sentences using everyday vocabulary. Maintain a "
+"visual separation between page elements."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:41
+msgid "Be concise"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:42
+msgid ""
+"Minimize content so it can be found and remembered. Keep pages short, "
+"modular, and focused on a single topic."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:44
+msgid "Be consistent"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:44
+msgid "Refer to one thing or idea with the same word throughout the page."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:47
+msgid "Write for an International Audience"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:49
+msgid ""
+"Mattermost documentation is translated into several languages for use in "
+"many countries and cultures. For this reason, you must consider cultural "
+"differences on a global scale. Names, places, events, and actions should "
+"be chosen as carefully as possible to avoid misunderstanding."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:51
+msgid ""
+"Also remember that English is not the primary language of many readers of"
+" the documentation. Keep the following advice in mind when writing:"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:53
+msgid "Choose words with one or very few meanings."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:54
+msgid ""
+"Use simple verb forms in writing. Most verbs in the simple form are "
+"likely to have an equivalent in another language."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:55
+msgid "Avoid jargon and slang words."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:56
+msgid "Limit difficult words to technical terms where their use is unavoidable."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:57
+msgid "Always make sure that your spelling is correct."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:60
+msgid "Word Usage Guidelines"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:62
+msgid ""
+"To promote consistency and clarity, follow the word usage and spelling "
+"guidelines below."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:65
+msgid "can, might, may"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:65
+msgid ""
+"The word *may* can have several meanings. To avoid ambiguity, use *can* "
+"or *might* instead of *may*. Use *can* to mean *capable of* and *might* "
+"to mean that something is possible. Use *may* only to give permission to "
+"do something."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:68
+msgid "downtime"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:68
+msgid "Use as one word *downtime*, not *down time*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:71
+msgid "emoji, emojis"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:71
+msgid "Use *emojis* as the plural form of *emoji*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:74
+msgid "login, log in, log into"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:74
+msgid ""
+"Use *login* as a noun or adjective, and *log in* and *log into* as verbs."
+" For example: *Log into the Mattermost server using your System Admin "
+"login credentials.*"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:77
+msgid "setup, set up"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:77
+msgid ""
+"Use *setup* as a noun or adjective, and *set up* as a verb. For example: "
+"*Set up your operating system as described in the Ubuntu documentation.*"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:80
+msgid "sign-in, sign in, and sign into"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:80
+msgid ""
+"Use *sign-in* as a noun or adjective, and *sign in* and *sign into* as "
+"verbs. For example: *Sign into your Mattermost account using the sign-in "
+"credentials that were sent to you.*"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:83
+msgid "single sign-on"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:83
+msgid ""
+"Single sign-on is abbreviated as SSO. When using the long form in a "
+"heading with title case, it's *Single Sign-on*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:86
+msgid "Gender-neutral Text"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:88
+msgid ""
+"Avoid constructs where you are forced to write either *he or she* or *his"
+" or her*. You can use *they* or *their* as singular forms instead."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:90
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:24
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:35
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:46
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:57
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:68
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:94
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:155
+msgid "Preferred"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:91
+msgid ""
+"The community manager monitors the forum for well-written questions and "
+"answers, and posts them to the Contributors channel."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:92
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:27
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:38
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:49
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:60
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:71
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:97
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:160
+msgid "Avoid"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:93
+msgid ""
+"The community manager posts questions and answers that they think are "
+"well-written."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:95
+msgid "Do not use"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:95
+msgid ""
+"The community manager posts questions and answers that he or she thinks "
+"are well-written."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:98
+msgid "Pull Request Review Best Practices"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:100
+msgid "**Treat everyone with respect**"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:102
+msgid "Choose positivity over negativity at all times."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:103
+msgid ""
+"Approach the review the same way regardless of whether the pull request "
+"came from a first-time contributor, or a long-time staff member."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:104
+msgid ""
+"If there are multiple instances of an error/issue, summarize expectations"
+" in a general comment vs pointing out the same error/nuance multiple "
+"times."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:105
+msgid ""
+"Be thankful - submitters really respond well to being praised and thanked"
+" for their work."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:107
+msgid ""
+"**Seek first to understand and look for opportunities to help others "
+"learn**"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:109
+msgid ""
+"Don’t be afraid to ask for changes or clarify expectations until all "
+"concerns are addressed but keep a welcoming/inclusive tone."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:110
+msgid "Do your best to link documentation as answers."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:112
+msgid "**Respond promptly to requested reviews**"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:114
+msgid ""
+"Assume the requested review is urgent and blocking unless explicitly "
+"stated otherwise."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:115
+msgid "Read the whole contribution and any existing comments before jumping in."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:116
+msgid "Try to interact with the author within 2 business days."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:117
+msgid ""
+"If the review is large or complex, additional time may be required to "
+"complete your review. Be upfront with the author."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:2
+msgid "Document Structure"
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:4
+msgid ""
+"Structure and organization are an important part of a document's ease of "
+"use and its understandability. Information should be organized and "
+"presented in a logical order, with similar subjects grouped together in "
+"the same section."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:6
+msgid ""
+"In most cases, a document has a title, an introductory paragraph, and one"
+" or more sections."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:8
+msgid ""
+"Try to keep only one topic in a page. Shorter topics are easier to reuse "
+"in other documents, are easier to write and edit, and are easier to "
+"translate."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:11
+msgid "Document Title"
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:13
+msgid ""
+"Use a title that accurately reflects the content of the document. People "
+"scan the table of contents looking for answers; it's often faster than "
+"using the built-in search engine."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:15
+msgid ""
+"Use title case for document titles. For more information and an example "
+"of capitalization, see :ref:`capital`."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:18
+msgid "Introductory Paragraph"
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:20
+msgid ""
+"Each page should have an introduction that acts as a short description of"
+" the document. The short description should be a single paragraph of no "
+"more than three sentences. Keep in mind that the description is displayed"
+" in the search results along with the page title. People read the "
+"description to help them decide if the document is the one that they "
+"want."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:23
+#: ../../source/process/sg_rest_markup.rst:45
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:25
+msgid ""
+"If the document contains more than four sections or subsections, add a "
+"table of contents to help the user navigate the document, see :ref"
+":`table-of-contents`."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:28
+msgid "Document Sections"
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:30
+msgid ""
+"To make pages easier for people to quickly scan for the content that "
+"they're looking for, break your document up into logical sections. Each "
+"section should have a title, and the title should relate to the content "
+"of the section. Use title case for the section title."
+msgstr ""
+
+#: ../../source/process/sg_document-structure.rst:32
+msgid "A section title is not required if you have only one section."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:2
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:81
+msgid "Grammar, Spelling, and Mechanics"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:4
+msgid ""
+"To maintain consistency across all Mattermost technical documentation, "
+"adhere to the guidelines here."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:7
+msgid "Language and Spelling"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:9
+msgid "Write documents in English. Use American spelling."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:12
+msgid "Paragraphs and Sentences"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:14
+msgid ""
+"Paragraphs should express one idea or topic. Long paragraphs are "
+"sometimes difficult to read on screen, so try to keep them to five "
+"sentences or less. Short paragraphs are easier for people to scan "
+"quickly."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:16
+msgid ""
+"Try to keep sentences to 25 words or less in length. Short, single-clause"
+" sentences are often easier to understand and easier to translate. Tools "
+"such as the `Hemingway writing app <http://www.hemingwayapp.com/>`__ can "
+"be helpful in evaluating readability. Target a readability level of Grade"
+" 6."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:19
+msgid "Tone"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:21
+msgid ""
+"Use a direct, impartial tone. Mattermost documentation is written to "
+"answer questions and solve problems, not to entertain."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:24
+msgid ""
+"If login fails due to an invalid password, turn Caps Lock off and then "
+"re-enter your password."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:27
+msgid ""
+"Failed sign in? No problem! Simply enter the correct password and we'll "
+"let you in right away."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:30
+msgid "Voice"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:32
+msgid ""
+"Use active voice in preference to passive voice. Active voice has the "
+"subject of a sentence doing the action. In passive voice, the subject has"
+" an action done to it."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:35
+msgid "The system opens the *Status* pane."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:38
+msgid "The *Status* pane will be opened by the system."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:41
+msgid "Person"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:43
+msgid "Use the second person and avoid the first person."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:46
+msgid "View the status in the *Status* pane."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:49
+msgid "We'll view the status in the *Status* pane."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:52
+msgid "Tense"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:54
+msgid "Use the present tense."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:57
+msgid "Sharing this link lets other users view the linked message."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:60
+msgid "Sharing this link will let other users view the linked message."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:63
+msgid "Commas"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:65
+msgid ""
+"Use the serial comma unless doing so decreases clarity and understanding "
+"of the sentence."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:68
+msgid "The cows ran from wolves, coyotes, and mosquitoes."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:71
+msgid "The cows ran from wolves, coyotes and mosquitoes."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:76
+msgid "Capitalization"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:78
+msgid "Use title case for page titles and section titles."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:81
+msgid "Title case"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:84
+msgid "Sentence case"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:84
+msgid "Language and spelling"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:87
+msgid "Numbers"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:89
+msgid ""
+"Spell out numbers when the number is the first word in a sentence or is "
+"less than or equal to ten, otherwise use numeric digits."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:91
+msgid "Use commas to make long numbers easier to read."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:94
+msgid ""
+"Three cows ran for six kilometers when they saw 2,300,097 mosquitoes "
+"chasing them."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:97
+msgid "3 cows ran for 6 kilometers when they saw 2300097 mosquitoes chasing them."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:100
+msgid "Text Formatting"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:102
+msgid ""
+"Use highlighting of text to visually set off words and phrases that are "
+"important to readers. Content that should be highlighted includes file "
+"names, UI controls, and window titles. The following table has a "
+"comprehensive list with examples."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:105
+msgid "Text"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:105
+msgid "Format"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:105
+msgid "Example"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:107
+msgid "Code samples"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:107
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:108
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:109
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:110
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:111
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:112
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:113
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:114
+msgid "``monospace``"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:107
+msgid "See :ref:`syntax-highlight` for an example."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:108
+msgid "Commands"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:108
+msgid "\"At the command line, type ``sudo apt-get install nginx``.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:109
+msgid "Directory name"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:109
+msgid "``/opt/mattermost``"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:110
+msgid "File name"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:110
+msgid "``config.py``"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:111
+msgid "Inline code"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:111
+#, python-format
+msgid "``fmt.Printf(\"2 times %d = %d\\n\", x, y )``"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:112
+msgid "Keystrokes"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:112
+msgid "\"Type ``https://`` in the string field.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:113
+msgid "Screen output"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:113
+msgid "See :ref:`literal-blocks` for an example."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:114
+msgid "Parameter values"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:114
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:120
+msgid "\"Set the *auto-config* parameter to ``false``\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:115
+msgid "Field names"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:115
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:116
+msgid "**bold**"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:115
+msgid "\"Enter the font in the **Display Font** field.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:116
+msgid "Clickable control"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:116
+msgid "\"Click **File > Save**.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:117
+msgid "Citations"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:117
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:118
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:119
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:120
+msgid "*italic*"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:117
+msgid "\"Read the book *Clean Code* by Robert Martin.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:118
+msgid "Window titles"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:118
+msgid "\"The *Account Settings* window opens.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:119
+msgid "User account names"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:119
+msgid "\"Log in to the *mysql* account.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:120
+msgid "Parameter names"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:121
+msgid "Keyboard buttons"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:121
+msgid "Key1+Key2"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:121
+msgid "\"Press CTRL+U to upload a file.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:122
+msgid "Placeholder field"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:122
+msgid "{placeholder}"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:122
+msgid "\"Use the URL in the form of {hostname}.mattermost.com/{team}.\""
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:126
+#: ../../source/process/sg_rest_markup.rst:69
+msgid "Bullet Lists"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:128
+msgid ""
+"The list items in a bullet list can be either all complete sentences or "
+"all sentence fragments. Don't mix complete sentences and sentence "
+"fragments in a single list. Remember that a complete sentence begins with"
+" an upper case letter and ends with a punctuation mark."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:131
+msgid "Numbered Lists and Procedures"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:133
+msgid ""
+"Create numbered lists and procedure steps using arabic numerals for the "
+"top-level list and lower case alpha characters for the first nested list."
+" For example:"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:136
+msgid "This is the first step."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:137
+msgid "This is the second step."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:139
+msgid "This is a substep."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:140
+msgid "This is another substep."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:142
+msgid "This is the third step."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:145
+#: ../../source/process/sg_rest_markup.rst:97
+msgid "Name-value Groups"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:147
+msgid "Use a name-value group instead of a hand-created list."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:149
+msgid ""
+"A name-value group is typically a group of terms and their corresponding "
+"definitions, but can also be questions and answers, topics and values, or"
+" other name-value groups. In HTML output, a name-value group is "
+"represented as a definition list."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:152
+msgid "Total Users"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:153
+msgid ""
+"The total number of active accounts created on your system. Excludes "
+"inactive accounts."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:155
+msgid "Total Teams"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:155
+msgid "The total number of teams created on your system."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:158
+msgid ""
+"**Total Users:** The total number of active accounts created on your "
+"system. Excludes inactive accounts."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:160
+msgid "**Total Teams:**  The total number of teams created on your system."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:163
+msgid "Document Linking"
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:165
+msgid ""
+"When creating a link to another document in the Mattermost documentation,"
+" create a link with a relative URL. To create relative links in "
+"reStructuredText, see :ref:`relative-links-in-rst`."
+msgstr ""
+
+#: ../../source/process/sg_grammar-spelling-mechanics.rst:167
+msgid ""
+"A link with an absolute URL is not as flexible as a relative URL. "
+"Relative URLs don't break when the documentation is moved to another "
+"host, or if the documentation is hosted on a server that's behind a "
+"firewall without access to the Internet."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:2
+msgid "ReStructuredText Markup"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:4
+msgid ""
+"The reStructuredText specification allows for a certain degree of "
+"flexibility in markup to achieve your goals. For example, you can use any"
+" one of more than a dozen characters for section title underlines, and "
+"you have the option of using an overline in addition to an underline."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:6
+msgid ""
+"However, for consistency and ease of use, the Mattermost documentation "
+"should use a single convention, despite the existence of allowable "
+"alternatives."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:8
+msgid ""
+"For more information about reStructuredText markup, see the "
+"`reStructuredText Markup Specification "
+"<http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`__. "
+"Additional markup constructs are implemented by Sphinx, the documentation"
+" generator used by Mattermost. For information about the additional "
+"constructs, see `Sphinx Markup Constructs <https://www.sphinx-"
+"doc.org/en/1.7/markup/index.html>`__."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:10
+msgid "Use the following markup conventions in Mattermost documentation:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:13
+msgid "Page Titles"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:15
+msgid ""
+"Underline page titles using `=`, with no overline. Underlines should be "
+"as long as the title text. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:23
+msgid "Section Titles"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:25
+msgid "Underline using `-` for section titles. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:32
+msgid ""
+"Underline subsections using `~` for the first subsection level, and `^` "
+"for the second subsection level. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:47
+msgid "Insert a table of contents into a document using the following format:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:55
+msgid "Inline Markup"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:58
+msgid "Bold"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:58
+msgid "Use double asterisks. For example: ``**bold text**``."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:61
+msgid "Italic"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:61
+msgid "Use single asterisk. For example: ``*italic text*``."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:64
+msgid "Monospace"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:64
+msgid "Use double backquotes. For example: ````monospace text````"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:71
+msgid ""
+"For bullet lists and sublists, use ``-`` before the list item. For "
+"example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:82
+msgid "Numbered Lists and Procedure Steps"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:84
+msgid ""
+"Create numbered lists and procedure steps using numbers for the top-level"
+" list and lower case alpha characters for the first nested list. For "
+"example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:99
+msgid ""
+"To create a name-value group such as a definition list, type the term on "
+"a line by itself. On the next line, indent the definition. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:109
+msgid "External Links"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:111
+msgid ""
+"URLs are automatically rendered as links in Sphinx; however, where "
+"possible, it is preferred that hyperlinks are created within the text of "
+"a sentence. Hyperlinks within a sentence can be created using the "
+"following formatting:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:113
+msgid "``Link display text <URL-of-website>`__``, for example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:119
+msgid ""
+"The link renders as: `Mattermost Manifesto "
+"<https://www.mattermost.org/manifesto/>`__"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:124
+msgid "Internal Links to Mattermost Docs"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:126
+msgid ""
+"The Sphinx processor extends reStructuredText to implement references, "
+"called roles, to locations within a documentation set. The two roles that"
+" are relevant in Mattermost documentation are the ``:doc:`` role and the "
+"``:ref:`` role."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:128
+msgid ""
+"The ``:doc:`` role is used for creating relative links to other "
+"documents. The ``:ref:`` role is used for creating relative links to "
+"arbitrary locations within the documentation set, including within the "
+"same document. In both cases, the HTML output is a relative URL for the "
+"target location."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:130
+msgid ""
+"The following example uses the ``:doc:`` role to link to the "
+"`Integrations Overview` page. The source file is called "
+"``integrations.rst`` and is in the ``overview`` directory."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:136
+msgid ""
+"Note that the filename extension is not part of the construct. On output,"
+" the link looks like this: \"For more information about integrating with "
+"Mattermost, see :doc:`../overview/integrations`.\" The Sphinx processor "
+"pulls in the title of the document to use as the link text."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:138
+msgid ""
+"The ``:ref:`` role is a two-part construct. One part is the link itself, "
+"and the other part is the target. The target has the following form, and "
+"should preceed a section title:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:147
+msgid "To generate a link to the section, use the ``:ref:`` role as follows:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:153
+msgid ""
+"The Sphinx processor creates a relative link to the section, and uses the"
+" section title as the link text. On output, the link looks like this: "
+"\"For more information about bullet lists, see :ref:`arbitrary-text-"
+"label`.\""
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:156
+msgid "Images"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:158
+msgid "Use the following construct to insert an image:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:164
+msgid "You should use `alt` tag for all images."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:166
+msgid ""
+"You can also add the following image options: `height`, `width`, `scale`,"
+" `align`, and `target`. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:177
+msgid ""
+"Inserting an inline image is a bit more complicated. It's a two-part "
+"construct that consists of a label and the image directive. Surround the "
+"label text with vertical bars, the ``|`` character. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:183
+msgid "Then insert the following image directive at the bottom of the document:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:194
+msgid "Literal Blocks"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:196
+msgid ""
+"To use a literal block with no syntax highlighting, use the Sphinx code-"
+"block directive with the language set to ``none``. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:205
+msgid "Code Blocks with Syntax Highlighting"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:207
+msgid ""
+"To create a code block with syntax highlighting, use the Sphinx code-"
+"block directive with the language set to the language that you want "
+"highlighted. `Many languages are available "
+"<http://pygments.org/docs/lexers/>`__, but in Mattermost documentation "
+"the most likely ones are as follows:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:209
+msgid "go"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:210
+msgid "rest"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:211
+msgid "html"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:212
+msgid "javascript"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:213
+msgid "coffee"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:214
+msgid "bash"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:216
+msgid ""
+"The following example is a block of Go code using the :linenos: option, "
+"which causes line numbers to be displayed."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:229
+msgid "The example produces the following output:"
+msgstr ""
+

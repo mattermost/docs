@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/guides/branding.rst:3
+msgid "Mattermost Branding and Naming Guidelines"
+msgstr ""
+
+#: ../../source/guides/branding.rst:5
+msgid ""
+"The Mattermost branding and naming guidelines are intended to help keep "
+"users safe and to support the development of community integrations "
+"through a set of consistent guidelines for use of the Mattermost name and"
+" brand."
+msgstr ""
+
+#: ../../source/guides/branding.rst:7
+msgid "OVERVIEW:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:15
+msgid "Mattermost Visual Design Guidelines"
+msgstr ""
+
+#: ../../source/guides/branding.rst:18
+msgid "Mattermost Logo"
+msgstr ""
+
+#: ../../source/guides/branding.rst:20
+msgid ""
+"For details on Mattermost logo usage guidelines please visit: "
+"https://www.mattermost.org/brand-guidelines/"
+msgstr ""
+
+#: ../../source/guides/branding.rst:23
+msgid "Mattermost User Experience"
+msgstr ""
+
+#: ../../source/guides/branding.rst:25
+msgid ""
+"For details on the visual design of the Mattermost user experience, "
+"please see: https://docs.mattermost.com/developer/fx-guidelines.html."
+msgstr ""
+
+#: ../../source/guides/branding.rst:29
+msgid "Naming Usage Guidelines"
+msgstr ""
+
+#: ../../source/guides/branding.rst:31
+msgid ""
+"Using the Mattermost name is generally fine so long as it’s used in a "
+"non-commercial way and does not imply endorsement by Mattermost, Inc."
+msgstr ""
+
+#: ../../source/guides/branding.rst:34
+msgid "Naming Integrations"
+msgstr ""
+
+#: ../../source/guides/branding.rst:36
+msgid ""
+"The following guidelines are intended to help developers of Mattermost "
+"integrations offer clear, consistent naming across the broader community."
+msgstr ""
+
+#: ../../source/guides/branding.rst:38
+msgid ""
+"IMPORTANT: Please do not start with or use the name \"Mattermost\" for "
+"your integration as this may confuse  users on where to find support."
+msgstr ""
+
+#: ../../source/guides/branding.rst:40
+msgid "Community projects may be named using “for Mattermost”, for example:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:42
+msgid ""
+"`GitLab Integration Service for Mattermost <https://github.com/NotSqrt"
+"/mattermost-integration-gitlab>`__"
+msgstr ""
+
+#: ../../source/guides/branding.rst:43
+msgid ""
+"`Giphy Integration Service for Mattermost <https://github.com/numberly"
+"/mattermost-integration-giphy>`__"
+msgstr ""
+
+#: ../../source/guides/branding.rst:45
+msgid ""
+"Alternatively, community projects may concatenate names containing "
+"Mattermost, for example:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:47
+msgid ""
+"`Matterbridge <https://github.com/42wim/matterbridge>`__ – is a "
+"Mattermost bridge connecting with IRC"
+msgstr ""
+
+#: ../../source/guides/branding.rst:48
+msgid ""
+"`Mattersend <https://github.com/mtorromeo/mattersend>`__ – is a "
+"Mattermost integration for sending webhook events"
+msgstr ""
+
+#: ../../source/guides/branding.rst:50
+msgid ""
+"Exception: Please don’t use the name “matterbot”, as that is an internal "
+"service under development."
+msgstr ""
+
+#: ../../source/guides/branding.rst:52
+msgid ""
+"When there are multiple open source projects for similar Mattermost "
+"integrations we ask our community to include the owner of the repo, for "
+"example:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:54
+msgid ""
+"`Hubot Adapter for Mattermost by Heitor Lessa "
+"<https://github.com/renanvicente/hubot-mattermost>`__"
+msgstr ""
+
+#: ../../source/guides/branding.rst:55
+msgid ""
+"`Hubot Adapter for Mattermost by Andy Lo-A-Foe <https://github.com/loafoe"
+"/hubot-matteruser>`__"
+msgstr ""
+
+#: ../../source/guides/branding.rst:58
+msgid "Product Description"
+msgstr ""
+
+#: ../../source/guides/branding.rst:60
+msgid ""
+"Below are optional product descriptions that can be used when referring "
+"to Mattermost from other open source projects or commercial 3rd party "
+"integrations."
+msgstr ""
+
+#: ../../source/guides/branding.rst:63
+msgid "General Mattermost Description"
+msgstr ""
+
+#: ../../source/guides/branding.rst:65
+msgid ""
+"When developing a Mattermost integration, the following description can "
+"be used to describe Mattermost:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:67
+msgid ""
+"Mattermost is an open source Slack-alternative built for enterprise. "
+"Thousands of companies use Mattermost for secure, compliant workplace "
+"messaging across web, PC and phones with archiving, search and "
+"integration with hundreds of third party applications. Available under "
+"MIT license in 16 languages, Mattermost offers peace-of-mind, value, "
+"control, and freedom from lock-in for organizations around the world. "
+"Learn more at https://mattermost.com/"
+msgstr ""
+
+#: ../../source/guides/branding.rst:70
+msgid "Mattermost Team Edition Description"
+msgstr ""
+
+#: ../../source/guides/branding.rst:72
+msgid ""
+"When redistributing the open source Mattermost Team Edition binary, the "
+"following description may be used:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:74
+msgid ""
+"Mattermost Team Edition is an open source, self-hosted alternative to "
+"proprietary SaaS messaging. Mattermost brings all your team communication"
+" into one place, making it searchable and accessible anywhere. Deploys as"
+" single Linux binary on MySQL or PostgreSQL under an MIT license from "
+"`mattermost.com/download <https://about.mattermost.com/download>`__."
+msgstr ""
+
+#: ../../source/guides/branding.rst:78
+msgid "Mattermost Enterprise Edition Description"
+msgstr ""
+
+#: ../../source/guides/branding.rst:80
+msgid ""
+"When redistributing the commercial Mattermost Enterprise Edition binary, "
+"the following description may be used:"
+msgstr ""
+
+#: ../../source/guides/branding.rst:82
+msgid ""
+"Mattermost Enterprise Edition is a secure, configurable, highly scalable "
+"enterprise messaging for private clouds offering corporate directory "
+"integration, advanced access control, performance monitoring, multi-"
+"factor authentication, compliance and auditing support, and sophisticated"
+" configurations for horizontal scaling and high availability deployments."
+msgstr ""
+
+#: ../../source/guides/branding.rst:84
+msgid ""
+"Mattermost Enterprise Edition is free to use in \"team mode\" and is "
+"functionally equivalent to the open source Mattermost Team Edition, with "
+"the added benefit of being able to enable advanced enterprise features "
+"with purchase of an annual subscription."
+msgstr ""
+
+#: ../../source/guides/branding.rst:88
+msgid "Mattermost Trademark Policy"
+msgstr ""
+
+#: ../../source/guides/branding.rst:90
+msgid ""
+"Please see our full trademark policy at: https://www.mattermost.org"
+"/trademark-standards-of-use/"
+msgstr ""
+

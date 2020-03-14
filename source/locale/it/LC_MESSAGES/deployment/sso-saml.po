@@ -1,0 +1,295 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/sso-saml.rst:3
+msgid "SAML Single-Sign-On (E20)"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:5
+msgid ""
+"Mattermost can be configured to act as a SAML 2.0 Service Provider. The "
+"SAML Single-Sign-On integration offers the following benefits:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:7
+msgid ""
+"**Single-sign-on.** Users can sign-in to Mattermost with their SAML "
+"credentials."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:8
+msgid ""
+"**Centralized identity management.** Mattermost accounts automatically "
+"pull user attributes from SAML upon login, such as full name, email and "
+"username."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:9
+msgid ""
+"**Automatic account provisioning.** New Mattermost user accounts are "
+"automatically created the first time a user signs in with their SAML "
+"credentials on the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:10
+msgid ""
+"**Sync groups to predefined roles in Mattermost.** Assign team and "
+"channel roles to groups via LDAP Group Sync."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:11
+msgid ""
+"**Compliance alignment with administrator management.** Manage "
+"Administrator access to Mattermost in the System Console using SAML "
+"attributes."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:13
+msgid ""
+"SAML Single-Sign-On itself does not support periodic updates of user "
+"attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync "
+"can be configured to support these use cases."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:15
+msgid ""
+"For more information about SAML, see `this article from Varonis "
+"<https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual "
+"example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-"
+"saml>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:17
+msgid ""
+"Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the "
+"identity providers (IDPs), please see links below for more details on how"
+" to configure SAML with these providers."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:27
+msgid ""
+"In addition to the officially supported identity providers, you can also "
+"configure SAML for a custom IdP. For instance, customers have "
+"successfully set up Azure AD, DUO, PingFederate and SimpleSAMLphp as a "
+"custom IdPs. You can also set up MFA on top of your SAML provider for "
+"additional security."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:30
+msgid "Using SAML Attributes to Apply Roles"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:32
+msgid ""
+"You can use attributes to assign roles to specified users on login. To "
+"access the SAML attribute settings navigate to **System Console > SAML "
+"2.0**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:35
+msgid "Username Attribute"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:37
+msgid "(Optional) Enter a SAML assertion filter to use when searching for users."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:39
+msgid "Navigate to **System Console > Authentication > SAML**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:40
+msgid "Complete the **Username Attribute** field."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:41
+#: ../../source/deployment/sso-saml.rst:55
+#: ../../source/deployment/sso-saml.rst:71
+msgid "Choose **Save**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:43
+msgid ""
+"When the user accesses the Mattermost URL, they log in with same username"
+" and password that they use for organizational logins."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:46
+msgid "Guest Attribute"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:48
+msgid ""
+"When enabled, the Guest Attribute in Mattermost identifies external users"
+" whose SAML assertion is guest and who are invited to join your "
+"Mattermost server. These users will have the Guest role applied "
+"immediately upon first sign-in instead of the default member user role. "
+"This eliminates having to manually assign the role in the System Console."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:50
+msgid ""
+"If a Mattermost Guest user has the guest role removed in the SAML system,"
+" the synchronization processes will not automatically promote them to a "
+"member user role. This is done manually via **System Console > User "
+"Management**. If a member user has the Guest Attribute added, the "
+"synchronization processes will automatically demote the member user to "
+"the guest role."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:52
+msgid "Enable Guest Access via **System Console > SAML 2.0**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:53
+#: ../../source/deployment/sso-saml.rst:68
+msgid "Navigate to **System Console > Authentication > SAML 2.0**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:54
+msgid "Complete the Guest Attribute field."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:57
+msgid ""
+"When a guest logs in for the first time they are presented with a default"
+" landing page until they are added to channels."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:59
+msgid ""
+"See the `Guest Accounts documentation "
+"<https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more "
+"information about this feature."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:62
+msgid "Admin Attribute"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:64
+msgid ""
+"(Optional) The attribute in the SAML Assertion for designating System "
+"Admins. The users selected by the query will have access to your "
+"Mattermost server as System Admins. By default, System Admins have "
+"complete access to the Mattermost System Console."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:66
+msgid ""
+"Existing members that are identified by this attribute will be promoted "
+"from member to System Admin upon next login. The next login is based upon"
+" Session lengths set in **System Console > Session Lengths**. It is "
+"recommended that users are manually demoted to members in **System "
+"Console > User Management** to ensure access is restricted immediately."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:69
+msgid "Set **Enable Admin Attribute** to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:70
+msgid "Complete the **Admin Attribute** field."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:73
+msgid ""
+"**Note:** If the Admin Attribute is set to ``false`` the member's role as"
+" System Admin is retained. However if the attribute is removed/changed, "
+"System Admins that were promoted via the attribute will be demoted to "
+"members and will not retain access to the System Console. When this "
+"attribute is not in use, System Admins can be manually promoted/demoted "
+"in **System Console > User Management**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:77
+msgid "Roadmap"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:79
+msgid ""
+"In Mattermost v5.14, you can optionally configure Mattermost to sign the "
+"SAML request using a private key to meet InfoSec requirements at your "
+"organization."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:81
+msgid ""
+"In future roadmap, the main consideration is an integration with SCIM, "
+"via plugin. Such an integration allows system administrators to create "
+"SAML provisioned users before their first login, and sync them against "
+"Mattermost permissions."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:83
+msgid ""
+"Currently user provisioning and deprovisioning can be handled with SAML "
+"sync, but relies on AD/LDAP - SCIM enables admins to control user "
+"provisioning and deprovisioning within the IdP itself."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:85
+msgid ""
+"For examples, see `Microsoft Azure AD integration with SCIM "
+"<https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/use-"
+"scim-to-provision-users-and-groups>`_ and `Okta user provisioning with "
+"SCIM <https://www.okta.com/integrate/documentation/scim/>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:88
+msgid "Configuration Assistance"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:90
+msgid ""
+"We are open to providing assistance when configuring your custom IdP by "
+"answering Mattermost technical configuration questions and working with "
+"your IdP provider in support of resolving issues as they relate to "
+"Mattermost SAML configuration settings. However, we cannot guarantee your"
+" connection will work with Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:92
+msgid "For technical documentation on SAML, see :doc:`sso-saml-technical`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:94
+msgid ""
+"To assist with the process of getting a user file for your custom IDP, "
+"please see this `documentation "
+"<https://github.com/icelander/mattermost_generate_user_file>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:96
+msgid ""
+"Please see more information on getting support `here "
+"<https://mattermost.com/support/>`_ and submit requests for official "
+"support of a particular provider on our `feature idea forum "
+"<https://mattermost.uservoice.com>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:98
+msgid ""
+"Please note that we may not be able to guarantee that your connection "
+"will work with Mattermost, however we will consider improvements to our "
+"feature as we are able.  Please submit requests for official support of a"
+" particular provider on our `feature idea forum "
+"<https://mattermost.uservoice.com>`_."
+msgstr ""
+

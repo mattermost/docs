@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mobile/mobile-testing-notifications.rst:2
+msgid "Testing Push Notifications"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:4
+msgid ""
+"First make sure to configure push notifications for the :doc:`Mattermost "
+"App Store and Google Play apps <mobile-appstore-install>`, or for "
+":doc:`apps you compiled yourself <mobile-compile-yourself>`. Then use the"
+" following instructions to confirm they are working properly."
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:6
+msgid ""
+"Sign in to your mobile application with an account on your Mattermost "
+"Server, which we’ll call “Account A”."
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:8
+msgid ""
+"(iOS) When the app asks whether you wish to receive notifications, "
+"**confirm you want to receive notifications**"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:13
+msgid "Confirm push notifications are enabled for “Account A”"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:15
+msgid "Go to the notification settings menu in the mobile app"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:19
+msgid "Check that the mobile push notifications are set to send"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:26
+msgid "Have “Account A” put the app to background or close the app"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:28
+msgid "Using a browser, sign in to “Account B” on the same Mattermost server"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:30
+msgid "Open a Direct Message with “Account A”, and send a message"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:32
+msgid ""
+"A push notification with the message should appear on the mobile device "
+"of “Account A”"
+msgstr ""
+
+#: ../../source/mobile/mobile-testing-notifications.rst:34
+msgid ""
+"If the push notification does not appear, follow :doc:`troubleshooting "
+"steps <mobile-troubleshoot-notifications>` to look for issues."
+msgstr ""
+

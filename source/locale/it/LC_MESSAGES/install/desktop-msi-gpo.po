@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/desktop-msi-gpo.rst:4
+msgid "Desktop MSI Installer and Group Policy Installation Guides (Beta)"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:5
+msgid ""
+"This guide provides steps to install the MSI and use Group Policies in "
+"Windows Pro or Enterprise. The MSI installer package can be downloaded "
+"`here <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`_."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:8
+msgid ""
+"The Mattermost MSI installer and Group Policy (GPO) definitions are in "
+"Beta. Before installing this Beta, please ensure you have reviewed the "
+"following known issues:"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:10
+msgid ""
+"`Clicking a desktop notification does not bring the app into focus "
+"<https://mattermost.atlassian.net/browse/MM-19511>`_"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:11
+msgid ""
+"`Clicking a desktop notification does not switch to the channel the "
+"notification came from "
+"<https://mattermost.atlassian.net/browse/MM-19510>`_"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:13
+msgid ""
+"If you are using this installer or GPOs and have feedback, particularly "
+"if you are an organization executing remote deployments, please contact "
+"us in the `MSI Installer channel on our Community server "
+"<https://community.mattermost.com/core/channels/msi-installer>`_ or on "
+"our `community forum <https://forum.mattermost.org/>`_. We hope to "
+"promote this installer out of Beta when the known issues are addressed "
+"and we are confident that the various deployment scenarios expected in "
+"production environments are tested sufficiently with the help of "
+"organizations using this Beta. Feedback is highly appreciated."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:16
+msgid "Contents"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:19
+msgid "Installation Guide"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:22
+msgid "Download Group Policy and MSI Installer files"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:24
+msgid ""
+"Using a newly created Windows VM or dedicated Windows computer – make "
+"sure to use a Windows version that supports ``Edit group policy`` out of "
+"the box (i.e. Windows 10 Pro or Enterprise)."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:28
+msgid ""
+"Navigate to the `Mattermost Desktop "
+"<https://github.com/mattermost/desktop>`__ repo on `Github.com "
+"<https://github.com/>`__."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:32
+msgid ""
+"Navigate to the release page for `version v4.3.0 "
+"<https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__ and "
+"download the appropriate installer for your version of Windows (32bit vs."
+" 64bit)."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:34
+msgid ""
+"Download the `source.zip "
+"<https://github.com/mattermost/desktop/archive/v4.3.0.zip>`__ file as "
+"well to extract group policy files."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:39
+msgid "Installing Group Policy files locally"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:41
+msgid ""
+"Browse to the folder the above files were downloaded to and unzip the "
+"``desktop-4.3.0.zip`` file in place."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:45
+msgid ""
+"Navigate to the unzipped ``desktop-4.3.0-rc0\\resources\\windows\\gpo`` "
+"folder and copy the contents."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:49
+msgid ""
+"Navigate to the ``C:\\Windows\\PolicyDefinitions`` folder and paste the "
+"files copied in the last step."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:53
+msgid ""
+"Verify the ``mattermost.admx`` file is in the "
+"``C:\\Windows\\PolicyDefinitions`` folder."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:57
+msgid ""
+"Verify the ``mattermost.adml`` file is in the "
+"``C:\\Windows\\PolicyDefinitions\\en-US`` folder."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:61
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:63
+msgid ""
+"``\\\\FQDNDomain\\sysvol\\FQDNDomain\\Policies\\PolicyDefinitions`` can "
+"be used instead of ``C:\\Windows\\PolicyDefinitions`` if available."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:64
+msgid ""
+"``\\\\FQDNDomain\\sysvol\\FQDNDomain\\Policies\\PolicyDefinitions\\en-"
+"US`` can be used instead of ``C:\\Windows\\PolicyDefinitions\\en-US`` if "
+"available."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:67
+msgid "Configure Mattermost using Group Policy settings"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:69
+msgid ""
+"Run the ``Edit group policy`` application by clicking ``Start``, typing "
+"``gpedit`` into the search field and clicking on the resulting ``Edit "
+"group policy`` search option."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:73
+msgid ""
+"In the ``Edit group policy`` window, navigate to ``Local Computer "
+"Policy\\Computer Configuration\\Administrative Templates\\Mattermost``. A"
+" list of the available policies can be found `here "
+"<https://docs.mattermost.com/install/desktop.html#group-policies-gpo-and-"
+"msi-installer-support-alpha>`_. In this example, double click on "
+"``DefaultServerList`` to set one or more default servers that will appear"
+" on app launch."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:77
+msgid ""
+"In the resulting window for ``DefaultServerList``, click on ``Enabled`` "
+"to turn the feature on and then click on the ``Show…`` button in the "
+"``Options:`` section of the window to add default servers."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:81
+msgid ""
+"In the resulting window, add desired Mattermost servers using a memorable"
+" name (i.e. Community) and the web url of the Mattermost server (i.e. "
+"https://community.mattermost.com)."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:83
+msgid ""
+"Click the ``OK`` button twice and close the ``Edit group policy`` "
+"application."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:88
+msgid "Verify Group Policy settings have been applied"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:90
+msgid ""
+"To verify the settings applied correctly, open up the ``Registry Editor``"
+" by clicking on the ``Start`` button, typing ``Registry Editor`` in the "
+"search field and selecting the ``Registry Editor`` option in the search "
+"results."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:94
+msgid ""
+"In the ``Registry Editor`` window, navigate to "
+"``Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Mattermost\\DefaultServerList``"
+" and verify the servers you added using the ``Edit group policy`` app are"
+" listed."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:96
+msgid "Close the ``Registry Editor`` once verified."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:101
+msgid "Install Mattermost Desktop using the MSI installer"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:103
+msgid ""
+"Back in the folder the MSI installer was downloaded to, double click on "
+"the MSI installer to begin the Mattermost Desktop installation process."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:107
+msgid ""
+"Installation of the MSI requires admin permission, so accept the "
+"resulting request to allow the installer to make changes to your device."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:111
+msgid "Click the ``Finish`` button when the installation is complete."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:116
+msgid "Verify Group Policy settings in the installed Desktop app"
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:118
+msgid "Launch the newly installed Mattermost app from the ``Start`` menu."
+msgstr ""
+
+#: ../../source/install/desktop-msi-gpo.rst:120
+msgid ""
+"Verify the app loads the first server defined in the ``Edit group "
+"policy`` app."
+msgstr ""
+

@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:2
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:4
+msgid ""
+"Keyboard shortcuts perform operations in Mattermost to help you navigate "
+"through channels and make a more efficient use of your keyboard. See also"
+" `slash commands <http://docs.mattermost.com/help/messaging/executing-"
+"commands.html>`__ for alternate ways to help carry out actions with a "
+"keyboard instead of a mouse."
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:6
+msgid ""
+"To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on "
+"Mac), or ``/shortcuts``."
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:10
+msgid ""
+"Though Mattermost keyboard shortcuts support standard languages and "
+"keyboard layouts, they may not work if you use keymapping that overwrites"
+" default browser shortcuts."
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:13
+msgid "Navigation"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:16
+#: ../../source/help/messaging/keyboard-shortcuts.rst:43
+#: ../../source/help/messaging/keyboard-shortcuts.rst:52
+#: ../../source/help/messaging/keyboard-shortcuts.rst:73
+msgid "On Windows"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:16
+#: ../../source/help/messaging/keyboard-shortcuts.rst:43
+#: ../../source/help/messaging/keyboard-shortcuts.rst:52
+#: ../../source/help/messaging/keyboard-shortcuts.rst:73
+msgid "On Mac"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:16
+#: ../../source/help/messaging/keyboard-shortcuts.rst:43
+#: ../../source/help/messaging/keyboard-shortcuts.rst:52
+#: ../../source/help/messaging/keyboard-shortcuts.rst:73
+msgid "Description"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:18
+msgid "ALT+UP"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:18
+msgid "OPTION+UP"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:18
+msgid "Previous channel or direct message in left hand sidebar"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:20
+msgid "ALT+DOWN"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:20
+msgid "OPTION+DOWN"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:20
+msgid "Next channel or direct message in left hand sidebar"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:22
+msgid "ALT+SHIFT+UP"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:22
+msgid "OPTION+SHIFT+UP"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:22
+msgid ""
+"Previous channel or direct message in left hand sidebar with unread "
+"messages"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:24
+msgid "ALT+SHIFT+DOWN"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:24
+msgid "OPTION+SHIFT+DOWN"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:24
+msgid "Next channel or direct message in left hand sidebar with unread messages"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:26
+msgid "CTRL+K"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:26
+msgid "CMD+K"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:26
+msgid "Open a quick channel switcher dialog"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:28
+msgid "CTRL+SHIFT+K"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:28
+msgid "CMD+SHIFT+K"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:28
+msgid "Open the Direct Messages dialog"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:30
+msgid "CTRL+SHIFT+A"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:30
+msgid "CMD+SHIFT+A"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:30
+msgid "Open the Account Settings dialog"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:32
+msgid "CTRL+SHIFT+M"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:32
+msgid "CMD+SHIFT+M"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:32
+msgid "Open recent mentions"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:34
+msgid "CTRL+SHIFT+L"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:34
+msgid "CMD+SHIFT+L"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:34
+msgid "Set focus to center channel input field"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:37
+msgid ""
+"Additional navigation keyboard shortcuts for screen reader users can be "
+"found `here <https://docs.mattermost.com/help/getting-"
+"started/accessibility.html>`_."
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:40
+msgid "Files"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:45
+msgid "CTRL+U"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:45
+msgid "CMD+U"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:45
+msgid "Upload a file"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:49
+msgid "Messages"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:54
+msgid "CTRL+UP (in empty input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:54
+msgid "CMD+UP (in empty input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:54
+msgid "Reprint previous message or slash command you entered"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:56
+msgid "CTRL+DOWN (in empty input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:56
+msgid "CMD+DOWN (in empty input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:56
+msgid "Reprint next message or slash command you entered"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:58
+msgid "SHIFT+UP (in empty input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:58
+msgid "Reply to the most recent message in the current channel"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:60
+msgid "UP (in empty input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:60
+msgid "Edit your last message in the current channel"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:62
+msgid "@[character]+TAB"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:62
+msgid "Autocomplete @username beginning with [character]"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:64
+msgid "~[character]+TAB"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:64
+msgid "Autocomplete channel beginning with [character]"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:66
+msgid ":[character]+TAB"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:66
+msgid "Autocomplete emoji beginning with [character]"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:70
+msgid "Browser Built-in"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:75
+msgid "ALT+LEFT"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:75
+msgid "CMD+["
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:75
+msgid "Previous channel in your history"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:77
+msgid "ALT+RIGHT"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:77
+msgid "CMD+]"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:77
+msgid "Next channel in your history"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:79
+msgid "CTRL+PLUS"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:79
+msgid "CMD+PLUS"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:79
+msgid "Increase font size (zoom in)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:81
+msgid "CTRL+MINUS"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:81
+msgid "CMD+MINUS"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:81
+msgid "Decrease font size (zoom out)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:83
+msgid "SHIFT+UP (in input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:83
+msgid "Highlight text to the previous line"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:85
+msgid "SHIFT+DOWN (in input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:85
+msgid "Highlight text to the next line"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:87
+msgid "SHIFT+ENTER (in input field)"
+msgstr ""
+
+#: ../../source/help/messaging/keyboard-shortcuts.rst:87
+msgid "Create a new line"
+msgstr ""
+

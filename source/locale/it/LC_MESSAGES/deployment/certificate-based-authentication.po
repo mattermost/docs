@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/certificate-based-authentication.rst:2
+msgid "Certificate-Based Authentication (Experimental)"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:4
+msgid "*Available as an experimental feature in Enterprise Edition E20.*"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:6
+msgid ""
+"Certificate-based authentication (CBA) can be used to identify a user or "
+"a device before granting access to Mattermost, providing an additional "
+"layer of security to access the system."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:8
+msgid ""
+"Follow these steps to configure user CBA for your browser, Mattermost "
+"Desktop Apps and the Mattermost iOS App. Support for the Mattermost "
+"Android App is planned. It is expected that you can manage certificate "
+"distribution for each personal device (BYOD) and their lifecycle "
+"management with a service like `OpenSSL <https://www.openssl.org/>`__."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:10
+msgid ""
+"Before you begin, follow the `official guides to install Mattermost "
+"<https://docs.mattermost.com/guides/administrator.html#installing-"
+"mattermost>`__ on your system, including NGINX configuration as a proxy "
+"with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:18
+msgid "Set up mutual TLS authentication for the Web App"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:20
+msgid ""
+"This is the first step for setting up certificate-based authentication. "
+"If you haven't set up mutual TLS authentication yet, `see our "
+"documentation to learn more <https://docs.mattermost.com/deployment/ssl-"
+"client-certificate.html>`__."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:23
+msgid "Set up Mattermost server to log in with a client certificate"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:25
+msgid ""
+"Make sure your Mattermost server is licensed with a valid Enterprise "
+"Edition E20 license."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:26
+msgid ""
+"In ``ExperimentalSettings`` of the ``config.json`` file, set "
+"``ClientSideCertEnable`` to ``true`` and ``ClientSideCertCheck`` to one "
+"of the following values:"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:28
+msgid ""
+"``primary`` - After the client side certificate is verified, user's email"
+" is retrieved from the certificate and is used to log in without a "
+"password."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:29
+msgid ""
+"``secondary`` - After the client side certificate is verified, user's "
+"email is retrieved from the certificate and matched against the one "
+"supplied by the user. If they match, the user logs in with regular "
+"email/password credentials."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:31
+msgid "The ``config.json`` file should then have the following lines"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:40
+msgid "Restart the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:42
+msgid "On Ubuntu 14.04 and RHEL 6:"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:48
+msgid "On Ubuntu 16.04, Debian Stretch, and RHEL 7:"
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:54
+msgid ""
+"Go to https://example.mattermost.com and try to log in. The server should"
+" require the x.509 cert to have an ``emailAddress`` equal to the "
+"Mattermost user's email."
+msgstr ""
+
+#: ../../source/deployment/certificate-based-authentication.rst:56
+msgid ""
+"Import the certificate into the Mattermost iOS App and use it for mutual "
+"TLS authentication. You can `watch a demonstration video of this step "
+"here "
+"<https://drive.google.com/file/d/1zzk9XQ6RBvsWbCTrIfgE0484pD7w9Ux1/view>`__."
+msgstr ""
+

@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/mobile-release-process.md:1
+msgid "Mobile App Release Process"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:3
+msgid ""
+"The Mattermost Mobile Apps team works on a monthly release process, with "
+"a new version submitted to the iOS App Store and Google Play Store on the"
+" 16th of each month."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:5
+msgid "Note: iOS App Store approval may take a few days after the 16th."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:7
+msgid "Release Timeline"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:9
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:11
+msgid ""
+"All cut-off dates are based on 10am (San Francisco Time) on the day "
+"stated."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:12
+msgid ""
+"T-minus counts are measured in \"working days\" (weekdays, Monday through"
+" Friday, excluding the listed statutory holidays) prior to release day."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:14
+msgid "A. (T-minus 15 working days) Cut-off for merging major features"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:16
+msgid ""
+"No pull requests for major features should be merged to the current "
+"release after this date. In special cases, exceptions can be made by the "
+"Release Manager."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:18
+#: ../../source/process/mobile-release-process.md:44
+#: ../../source/process/mobile-release-process.md:56
+#: ../../source/process/mobile-release-process.md:74
+#: ../../source/process/mobile-release-process.md:100
+#: ../../source/process/mobile-release-process.md:117
+msgid "Release Manager:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:19
+#: ../../source/process/mobile-release-process.md:45
+#: ../../source/process/mobile-release-process.md:57
+#: ../../source/process/mobile-release-process.md:75
+#: ../../source/process/mobile-release-process.md:101
+#: ../../source/process/mobile-release-process.md:118
+msgid "Post this checklist in Release Checklist channel"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:20
+msgid ""
+"Draft Changelog in a WIP PR with updates for highlights, feature "
+"additions and bug fixes"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:21
+msgid ""
+"Start posting a daily Zero Bug Balance query (posted until zero bugs or "
+"day of release)"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:22
+#: ../../source/process/mobile-release-process.md:49
+#: ../../source/process/mobile-release-process.md:91
+msgid "PM:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:23
+msgid ""
+"Prioritize reviewing major features, ensuring any bugs and UX issues get "
+"fixed"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:24
+#: ../../source/process/mobile-release-process.md:59
+#: ../../source/process/mobile-release-process.md:85
+msgid "Dev:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:25
+#: ../../source/process/mobile-release-process.md:60
+msgid ""
+"Prioritize reviewing, updating, and merging of pull requests for current "
+"release until there are no more tickets in the pull request queue marked "
+"for the current release"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:26
+msgid ""
+"After the cut-off, any PRs that include significant code changes, require"
+" approval of the Release Manager and React Native PM before merging"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:27
+#: ../../source/process/mobile-release-process.md:62
+#: ../../source/process/mobile-release-process.md:88
+#: ../../source/process/mobile-release-process.md:105
+#: ../../source/process/mobile-release-process.md:124
+msgid "Build:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:28
+msgid "Cut a beta build"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:29
+#: ../../source/process/mobile-release-process.md:108
+#: ../../source/process/mobile-release-process.md:134
+msgid "Marketing:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:30
+msgid ""
+"Prepare a list of highlights to be included in the next Mattermost "
+"release announcement"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:32
+msgid "B. (T-minus 14 working days) Major Feature Testing"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:34
+#: ../../source/process/mobile-release-process.md:65
+#: ../../source/process/mobile-release-process.md:79
+#: ../../source/process/mobile-release-process.md:93
+msgid "QA:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:35
+msgid "Prioritize testing merged PRs and resolved tickets"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:36
+msgid "Write and update tests in the Release Testing spreadsheet"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:38
+msgid "C. (T-minus 13 working days) Judgment Day"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:40
+msgid ""
+"Day when PM decides which major features are included in the release, and"
+" which are postponed."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:42
+msgid "(Team) Triage Meeting:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:43
+msgid "Begin daily triage of tickets"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:46
+#: ../../source/process/mobile-release-process.md:58
+#: ../../source/process/mobile-release-process.md:76
+#: ../../source/process/mobile-release-process.md:102
+#: ../../source/process/mobile-release-process.md:119
+msgid "Verify all items in the last posted release checklist are complete"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:47
+msgid "Update Changelog PR based on what's in/out of the release"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:48
+msgid ""
+"Post a link to Native Mobile Apps channel for query of remaining bugs in "
+"this release"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:50
+msgid ""
+"Review the Jira tickets remaining in the current release fix version and "
+"push those that won't make it to the next fix version"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:52
+msgid "D. (T-minus 9 working days) Code Complete and Release Candidate Cut"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:54
+msgid ""
+"Stabilization period begins when all features for release have been "
+"committed. During this period, only bugs can be committed to the release "
+"branch. Non-bug pull requests are tagged for next version. Exceptions can"
+" be made by the Release Manager during triage."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:61
+msgid ""
+"Check the minimum server version required and submit pull request to "
+"update in fastlane files"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:63
+msgid "Create release branch for mattermost-mobile and mattermost-redux"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:64
+msgid "Cut release candidate build"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:66
+msgid "Confirm all pull requests merged into the current release have been tested"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:67
+msgid ""
+"Ensure the release testing spreadsheet covers any changes and new "
+"features, and confirm known issues are listed in the relevant tests"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:68
+msgid ""
+"Assign each area of the spreadsheet to a team member and give the core "
+"team access permissions"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:69
+#: ../../source/process/mobile-release-process.md:110
+msgid "Docs:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:70
+msgid "Submit any remaining documentation PRs for product updates in the release"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:72
+msgid "E. (T-minus 8 working days) Release Candidate Testing"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:77
+msgid "Post list of tickets to be fixed to the Native Mobile Apps channel"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:78
+msgid "Update Changelog for any new bug fixes"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:80
+msgid ""
+"Post release testing instructions and spreadsheet to Release Discussion "
+"channel"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:81
+msgid ""
+"As bug fixes are merged, verify fixes on new builds and post in Native "
+"Mobile Apps channel after testing"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:82
+msgid "Team:"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:83
+msgid ""
+"Test assigned areas of the testing spreadsheet and file any bugs found in"
+" Jira"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:84
+msgid ""
+"Daily triage of hotfix candidates and decide on whether and when to cut "
+"next RC or final"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:86
+msgid "Make pull requests for hotfixes to the release branch"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:87
+msgid ""
+"Review PRs made to release branch and merge changes into the release "
+"branch"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:89
+msgid ""
+"Verify with Release Manager before cutting any new RCs (approved fixes "
+"should be merged)"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:90
+msgid "Push next RC to acceptance and announce in Native Mobile Apps channel"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:92
+msgid "Check that the release candidate is available to beta testers"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:94
+msgid "Test the new RC to verify fixes merged to the release branch work"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:96
+msgid "F. (T-minus 2 working days) Release Build Cut"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:98
+msgid ""
+"The final release is cut. If an urgent and important issue needs to be "
+"addressed between major releases, a bug fix release (e.g., 1.1.1) may be "
+"created."
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:103
+msgid "Submit Changelog PR for review"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:104
+msgid "Merge Changelog PR after review is complete"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:106
+msgid "Tags the release and cuts the final build"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:107
+msgid "Upload the .ipa and .apk files to GitHub"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:109
+msgid "Finish draft of marketing images and send to marketing lead for review"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:111
+msgid "Finalize docs"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:112
+msgid ""
+"If reviews are not complete, hold a 30-minute doc review meeting with PMs"
+" and anyone else who has changed or reviewed docs this release and wants "
+"to join"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:113
+msgid ""
+"Submit a correction PR for any incorrect formatting or other errors "
+"missed during the initial review"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:115
+msgid "G. (T-minus 0 working days) Release Day and Build Submitted to App Stores"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:120
+msgid ""
+"Schedule a release retrospective meeting, to be held within five days "
+"from the release"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:121
+msgid ""
+"Post key dates for the next release in the header of the Native Mobile "
+"Apps channel and remove links to RC candidates and testing spreadsheet"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:122
+msgid ""
+"Make sure that statutory holidays for Canada and US are accounted for in "
+"the release dates"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:123
+msgid ""
+"Check for any UserVoice feature suggestions that were completed in the "
+"current release"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:125
+msgid "Merge the release branch back in to master"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:126
+msgid "Review and update project dependencies as needed"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:127
+msgid "Submit final build to Google Play Store and iTunes Connect"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:128
+msgid "Confirm that minimum server version required is clear in update notes"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:129
+msgid "Create release in GitHub"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:130
+msgid "Close the release in Jira"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:132
+msgid "H. (T-plus X days) Release Marketing"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:135
+msgid ""
+"After the apps are approved and on the App Store (number of days may "
+"vary), send out release marketing"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:136
+msgid "Update the app version on the download page"
+msgstr ""
+
+#: ../../source/process/mobile-release-process.md:137
+msgid "Send out a Twitter announcement"
+msgstr ""
+

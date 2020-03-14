@@ -1,0 +1,2735 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/command-line-tools.rst:2
+msgid "Command Line Tools"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:4
+msgid ""
+"From the directory where the Mattermost server is installed, a "
+"``mattermost`` command is available for configuring the system. For an "
+"overview of the Mattermost command line interface (CLI), `read this "
+"article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-"
+"8cdcef2bd1f6>`__ from Santos."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:6
+msgid "These ``mattermost`` commands include:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:8
+msgid "**General Administration**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:10
+msgid "Creating teams"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:11
+msgid "Creating users"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:12
+msgid "Assigning roles to users"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:13
+msgid "Resetting user passwords"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:14
+msgid "Inviting users to teams"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:16
+msgid "**Advanced Administration**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:18
+msgid ""
+"Permanently deleting users (use cautiously - database backup recommended "
+"before use)"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:20
+msgid ""
+"Permanently deleting teams (use cautiously - database backup recommended "
+"before use)"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:23
+msgid "**Advanced Automation**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:25
+msgid "Creating channels"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:26
+msgid "Inviting users to channels"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:27
+msgid "Removing users from channels"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:28
+msgid "Listing all channels for a team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:29
+msgid "Restoring previously deleted channels"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:30
+msgid "Modifying a channel's public/private type"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:31
+msgid "Migrating sign-in options"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:32
+msgid "Resetting multi-factor authentication for a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:33
+msgid "Creating sample data"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:35
+msgid "**Diagnostics**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:37
+msgid "Analyzing the database for relational consistency"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:44
+msgid "Using the CLI"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:46
+msgid ""
+"To run the CLI commands, you must be in the Mattermost root directory. On"
+" a default installation of Mattermost, the root directory is "
+"``/opt/mattermost``. If you followed our standard `installation process "
+"<../guides/administrator.html#installing-mattermost>`__, you must run the"
+" commands as the user ``mattermost``. The name of the executable is "
+"``mattermost``, and it can be found in the ``/opt/mattermost/bin`` "
+"directory."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:48
+msgid ""
+"**For example, to get the Mattermost version on a default installation of"
+" Mattermost:**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:56
+msgid ""
+"Ensure you run the Mattermost binary as the ``mattermost`` user. Running "
+"it as ``root`` user (for example) may cause complications with "
+"permissions as the binary initiates plugins and accesses various files "
+"when running CLI commands. Running the server as ``root`` may result in "
+"ownership of the plugins and files to be overwritten as well as other "
+"potential permissions errors."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:59
+msgid ""
+"When running CLI commands on a Mattermost installation that has the "
+"configuration stored in the database, you might need to pass the database"
+" connection string as follows: ``bin/mattermost "
+"--config=\"postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\\u0026connect_timeout=10\"``"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:64
+msgid "Using the CLI on GitLab Omnibus"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:66
+msgid ""
+"On GitLab Omnibus, you must be in the following directory when you run "
+"CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must"
+" run the commands as the user *mattermost* and specify the location of "
+"the configuration file. The executable is "
+"``/opt/gitlab/embedded/bin/mattermost``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:68
+msgid "**For example, to get the Mattermost version on GitLab Omnibus:**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:76
+msgid ""
+"The example commands in the documentation are for a default installation "
+"of Mattermost. You must modify the commands so that they work on GitLab "
+"Omnibus."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:79
+msgid "Using the CLI on Docker Install"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:81
+msgid ""
+"On Docker install, the ``/mattermost/bin`` directory was added to "
+"``PATH``, so you can use the CLI directly with the ``docker exec`` "
+"command. Note that the container name may be ``mattermostdocker_app_1`` "
+"if you installed Mattermost with ``docker-compose.yml``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:83
+msgid "**For example, to get the Mattermost version on a Docker install:**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:90
+msgid "Using the CLI on Docker Preview"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:92
+msgid ""
+"The preceding documentation and command reference below also applies to "
+"the `Mattermost docker preview image <https://github.com/mattermost"
+"/mattermost-docker-preview>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:95
+msgid "Mattermost 3.6 and later"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:97
+msgid ""
+"The new CLI tool is supported in Mattermost 3.6 and later. To see "
+"available commands in the old CLI tool, see `Mattermost 3.5 and "
+"earlier`_."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:100
+msgid ""
+"For Mattermost 4.10 and earlier, the commands used the ``platform`` "
+"executable instead of ``mattermost``. For example, to check the "
+"Mattermost version, one would run ``./platform version`` instead of "
+"``./mattermost version``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:102
+#: ../../source/administration/command-line-tools.rst:2504
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:104
+#: ../../source/administration/command-line-tools.rst:2506
+msgid "Parameters in CLI commands are order-specific."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:105
+msgid ""
+"If special characters (``!``, ``|``, ``(``, ``)``, ``\\``, ``'``, and "
+"``\"``) are used, the entire argument needs to be surrounded by single "
+"quotes (e.g. ``-password 'mypassword!'``, or the individual characters "
+"need to be escaped out (e.g. ``-password mypassword\\!``)."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:106
+#: ../../source/administration/command-line-tools.rst:2508
+msgid ""
+"Team name and channel name refer to the handles, not the display names. "
+"So in the url ``https://community.mattermost.com/core/channels/town-"
+"square`` team name would be ``core`` and channel name would be ``town-"
+"square``"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:109
+#: ../../source/administration/command-line-tools.rst:2510
+msgid ""
+"If you automate user creation through the CLI tool with SMTP enabled, "
+"emails will be sent to all new users created. If you run such a load "
+"script, it is best to disable SMTP or to use test accounts so that new "
+"account creation emails aren't unintentionally sent to people at your "
+"organization who aren't expecting them."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:112
+msgid "mattermost"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:115
+#: ../../source/administration/command-line-tools.rst:150
+#: ../../source/administration/command-line-tools.rst:196
+#: ../../source/administration/command-line-tools.rst:218
+#: ../../source/administration/command-line-tools.rst:250
+#: ../../source/administration/command-line-tools.rst:267
+#: ../../source/administration/command-line-tools.rst:288
+#: ../../source/administration/command-line-tools.rst:311
+#: ../../source/administration/command-line-tools.rst:337
+#: ../../source/administration/command-line-tools.rst:364
+#: ../../source/administration/command-line-tools.rst:390
+#: ../../source/administration/command-line-tools.rst:411
+#: ../../source/administration/command-line-tools.rst:438
+#: ../../source/administration/command-line-tools.rst:444
+#: ../../source/administration/command-line-tools.rst:487
+#: ../../source/administration/command-line-tools.rst:507
+#: ../../source/administration/command-line-tools.rst:528
+#: ../../source/administration/command-line-tools.rst:534
+#: ../../source/administration/command-line-tools.rst:569
+#: ../../source/administration/command-line-tools.rst:586
+#: ../../source/administration/command-line-tools.rst:602
+#: ../../source/administration/command-line-tools.rst:635
+#: ../../source/administration/command-line-tools.rst:641
+#: ../../source/administration/command-line-tools.rst:660
+#: ../../source/administration/command-line-tools.rst:681
+#: ../../source/administration/command-line-tools.rst:716
+#: ../../source/administration/command-line-tools.rst:736
+#: ../../source/administration/command-line-tools.rst:742
+#: ../../source/administration/command-line-tools.rst:755
+#: ../../source/administration/command-line-tools.rst:776
+#: ../../source/administration/command-line-tools.rst:797
+#: ../../source/administration/command-line-tools.rst:818
+#: ../../source/administration/command-line-tools.rst:839
+#: ../../source/administration/command-line-tools.rst:862
+#: ../../source/administration/command-line-tools.rst:883
+#: ../../source/administration/command-line-tools.rst:893
+#: ../../source/administration/command-line-tools.rst:926
+#: ../../source/administration/command-line-tools.rst:947
+#: ../../source/administration/command-line-tools.rst:967
+#: ../../source/administration/command-line-tools.rst:983
+#: ../../source/administration/command-line-tools.rst:993
+#: ../../source/administration/command-line-tools.rst:1026
+#: ../../source/administration/command-line-tools.rst:1047
+#: ../../source/administration/command-line-tools.rst:1067
+#: ../../source/administration/command-line-tools.rst:1073
+#: ../../source/administration/command-line-tools.rst:1084
+#: ../../source/administration/command-line-tools.rst:1094
+#: ../../source/administration/command-line-tools.rst:1117
+#: ../../source/administration/command-line-tools.rst:1133
+#: ../../source/administration/command-line-tools.rst:1158
+#: ../../source/administration/command-line-tools.rst:1174
+#: ../../source/administration/command-line-tools.rst:1191
+#: ../../source/administration/command-line-tools.rst:1221
+#: ../../source/administration/command-line-tools.rst:1227
+#: ../../source/administration/command-line-tools.rst:1250
+#: ../../source/administration/command-line-tools.rst:1279
+#: ../../source/administration/command-line-tools.rst:1285
+#: ../../source/administration/command-line-tools.rst:1299
+#: ../../source/administration/command-line-tools.rst:1316
+#: ../../source/administration/command-line-tools.rst:1333
+#: ../../source/administration/command-line-tools.rst:1354
+#: ../../source/administration/command-line-tools.rst:1381
+#: ../../source/administration/command-line-tools.rst:1401
+#: ../../source/administration/command-line-tools.rst:1421
+#: ../../source/administration/command-line-tools.rst:1441
+#: ../../source/administration/command-line-tools.rst:1461
+#: ../../source/administration/command-line-tools.rst:1467
+#: ../../source/administration/command-line-tools.rst:1483
+#: ../../source/administration/command-line-tools.rst:1493
+#: ../../source/administration/command-line-tools.rst:1509
+#: ../../source/administration/command-line-tools.rst:1528
+#: ../../source/administration/command-line-tools.rst:1562
+#: ../../source/administration/command-line-tools.rst:1573
+#: ../../source/administration/command-line-tools.rst:1616
+#: ../../source/administration/command-line-tools.rst:1637
+#: ../../source/administration/command-line-tools.rst:1666
+#: ../../source/administration/command-line-tools.rst:1691
+#: ../../source/administration/command-line-tools.rst:1703
+#: ../../source/administration/command-line-tools.rst:1719
+#: ../../source/administration/command-line-tools.rst:1750
+#: ../../source/administration/command-line-tools.rst:1775
+#: ../../source/administration/command-line-tools.rst:1781
+#: ../../source/administration/command-line-tools.rst:1811
+#: ../../source/administration/command-line-tools.rst:1817
+#: ../../source/administration/command-line-tools.rst:1856
+#: ../../source/administration/command-line-tools.rst:1862
+#: ../../source/administration/command-line-tools.rst:1917
+#: ../../source/administration/command-line-tools.rst:1945
+#: ../../source/administration/command-line-tools.rst:1953
+#: ../../source/administration/command-line-tools.rst:1976
+#: ../../source/administration/command-line-tools.rst:2012
+#: ../../source/administration/command-line-tools.rst:2034
+#: ../../source/administration/command-line-tools.rst:2042
+#: ../../source/administration/command-line-tools.rst:2215
+#: ../../source/administration/command-line-tools.rst:2236
+#: ../../source/administration/command-line-tools.rst:2257
+#: ../../source/administration/command-line-tools.rst:2263
+#: ../../source/administration/command-line-tools.rst:2289
+#: ../../source/administration/command-line-tools.rst:2295
+#: ../../source/administration/command-line-tools.rst:2311
+#: ../../source/administration/command-line-tools.rst:2337
+#: ../../source/administration/command-line-tools.rst:2370
+#: ../../source/administration/command-line-tools.rst:2386
+#: ../../source/administration/command-line-tools.rst:2408
+#: ../../source/administration/command-line-tools.rst:2433
+#: ../../source/administration/command-line-tools.rst:2461
+#: ../../source/administration/command-line-tools.rst:2483
+msgid "Description"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:115
+msgid "Commands for configuring and managing your Mattermost instance and users."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:121
+#: ../../source/administration/command-line-tools.rst:250
+#: ../../source/administration/command-line-tools.rst:311
+#: ../../source/administration/command-line-tools.rst:337
+#: ../../source/administration/command-line-tools.rst:364
+#: ../../source/administration/command-line-tools.rst:390
+#: ../../source/administration/command-line-tools.rst:438
+#: ../../source/administration/command-line-tools.rst:487
+#: ../../source/administration/command-line-tools.rst:562
+#: ../../source/administration/command-line-tools.rst:635
+#: ../../source/administration/command-line-tools.rst:675
+#: ../../source/administration/command-line-tools.rst:696
+#: ../../source/administration/command-line-tools.rst:770
+#: ../../source/administration/command-line-tools.rst:791
+#: ../../source/administration/command-line-tools.rst:812
+#: ../../source/administration/command-line-tools.rst:833
+#: ../../source/administration/command-line-tools.rst:856
+#: ../../source/administration/command-line-tools.rst:1106
+#: ../../source/administration/command-line-tools.rst:1150
+#: ../../source/administration/command-line-tools.rst:1279
+#: ../../source/administration/command-line-tools.rst:1348
+#: ../../source/administration/command-line-tools.rst:1477
+#: ../../source/administration/command-line-tools.rst:1556
+#: ../../source/administration/command-line-tools.rst:1666
+#: ../../source/administration/command-line-tools.rst:1691
+#: ../../source/administration/command-line-tools.rst:1775
+#: ../../source/administration/command-line-tools.rst:1883
+#: ../../source/administration/command-line-tools.rst:1917
+#: ../../source/administration/command-line-tools.rst:1968
+#: ../../source/administration/command-line-tools.rst:1991
+#: ../../source/administration/command-line-tools.rst:2066
+#: ../../source/administration/command-line-tools.rst:2194
+#: ../../source/administration/command-line-tools.rst:2331
+#: ../../source/administration/command-line-tools.rst:2364
+#: ../../source/administration/command-line-tools.rst:2402
+#: ../../source/administration/command-line-tools.rst:2427
+#: ../../source/administration/command-line-tools.rst:2455
+#: ../../source/administration/command-line-tools.rst:2477
+msgid "Options"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:144
+#: ../../source/administration/command-line-tools.rst:163
+#: ../../source/administration/command-line-tools.rst:452
+#: ../../source/administration/command-line-tools.rst:749
+#: ../../source/administration/command-line-tools.rst:866
+#: ../../source/administration/command-line-tools.rst:883
+#: ../../source/administration/command-line-tools.rst:983
+#: ../../source/administration/command-line-tools.rst:1290
+#: ../../source/administration/command-line-tools.rst:1361
+#: ../../source/administration/command-line-tools.rst:1487
+#: ../../source/administration/command-line-tools.rst:1585
+#: ../../source/administration/command-line-tools.rst:1819
+#: ../../source/administration/command-line-tools.rst:2305
+msgid "Child Commands"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:124
+msgid "`mattermost channel`_ - Management of channels"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:125
+msgid "`mattermost command`_ - Management of slash commands"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:126
+msgid "`mattermost config`_ - Work with the configuration file"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:127
+msgid "`mattermost export`_ - Compliance export commands"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:128
+msgid "`mattermost group`_ - Management of Mattermost groups"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:129
+msgid "`mattermost help`_ - Generate full documentation for the CLI"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:130
+msgid "`mattermost import`_ - Import data"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:131
+msgid "`mattermost jobserver`_ - Start the Mattermost job server"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:132
+msgid "`mattermost ldap`_ - AD/LDAP related utilities"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:133
+msgid "`mattermost license`_ - Licensing commands"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:134
+msgid "`mattermost logs`_ - Display human-readable logs"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:135
+msgid "`mattermost permissions`_ - Management of the permissions system"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:136
+msgid "`mattermost plugin`_ - Management of plugins"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:137
+msgid "`mattermost reset`_ - Reset the database to initial state"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:138
+msgid "`mattermost roles`_ - Management of user roles"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:139
+msgid "`mattermost sampledata`_ - Sample data generation"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:140
+msgid "`mattermost server`_ - Run the Mattermost server"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:141
+msgid "`mattermost team`_ - Management of teams"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:142
+msgid "`mattermost user`_ - Management of users"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:143
+msgid "`mattermost version`_ - Display version information"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:144
+msgid "`mattermost webhook`_ - Management of webhooks"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:147
+msgid "mattermost channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:150
+msgid "Commands for channel management."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:153
+msgid "`mattermost channel add`_ - Add users to a channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:154
+msgid "`mattermost channel archive`_ - Archive a channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:155
+msgid "`mattermost channel create`_ - Create a channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:156
+msgid "`mattermost channel delete`_ - Delete a channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:157
+msgid "`mattermost channel list`_ - List all channels on specified teams"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:158
+msgid "`mattermost channel modify`_ - Modify a channel's public/private type"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:159
+msgid "`mattermost channel move`_ - Move a channel to another team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:160
+msgid "`mattermost channel remove`_ - Remove users from a channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:161
+msgid "`mattermost channel rename`_ - Rename a channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:162
+msgid "`mattermost channel restore`_ - Restore a channel from the archive"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:163
+msgid "`mattermost channel search`_ -  Search a channel by name"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:168
+msgid "**{channel} value**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:170
+msgid ""
+"For the *add*, *archive*, *delete*, *remove* and *restore* commands, you "
+"can specfiy the *{channels}* value by {team}:{channel} using the team and"
+" channel URLs, or by using channel IDs. For example, in the following URL"
+" the *{channels}* value is *myteam:mychannel*:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:172
+#: ../../source/administration/command-line-tools.rst:1594
+msgid "``https://example.com/myteam/channels/mychannel``"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:174
+#: ../../source/administration/command-line-tools.rst:1596
+msgid ""
+"Also, the team and channel names in the URL should be written in "
+"lowercase."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:177
+msgid "mattermost channel add"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:181
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel add <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-channel-add>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:185
+msgid ""
+"Add users to a channel. If adding multiple users, use a space-separated "
+"list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:190
+#: ../../source/administration/command-line-tools.rst:212
+#: ../../source/administration/command-line-tools.rst:234
+#: ../../source/administration/command-line-tools.rst:261
+#: ../../source/administration/command-line-tools.rst:283
+#: ../../source/administration/command-line-tools.rst:299
+#: ../../source/administration/command-line-tools.rst:326
+#: ../../source/administration/command-line-tools.rst:352
+#: ../../source/administration/command-line-tools.rst:379
+#: ../../source/administration/command-line-tools.rst:405
+#: ../../source/administration/command-line-tools.rst:426
+#: ../../source/administration/command-line-tools.rst:467
+#: ../../source/administration/command-line-tools.rst:502
+#: ../../source/administration/command-line-tools.rst:523
+#: ../../source/administration/command-line-tools.rst:543
+#: ../../source/administration/command-line-tools.rst:574
+#: ../../source/administration/command-line-tools.rst:591
+#: ../../source/administration/command-line-tools.rst:625
+#: ../../source/administration/command-line-tools.rst:649
+#: ../../source/administration/command-line-tools.rst:665
+#: ../../source/administration/command-line-tools.rst:686
+#: ../../source/administration/command-line-tools.rst:711
+#: ../../source/administration/command-line-tools.rst:731
+#: ../../source/administration/command-line-tools.rst:760
+#: ../../source/administration/command-line-tools.rst:781
+#: ../../source/administration/command-line-tools.rst:802
+#: ../../source/administration/command-line-tools.rst:823
+#: ../../source/administration/command-line-tools.rst:844
+#: ../../source/administration/command-line-tools.rst:901
+#: ../../source/administration/command-line-tools.rst:921
+#: ../../source/administration/command-line-tools.rst:941
+#: ../../source/administration/command-line-tools.rst:962
+#: ../../source/administration/command-line-tools.rst:1001
+#: ../../source/administration/command-line-tools.rst:1021
+#: ../../source/administration/command-line-tools.rst:1041
+#: ../../source/administration/command-line-tools.rst:1062
+#: ../../source/administration/command-line-tools.rst:1078
+#: ../../source/administration/command-line-tools.rst:1099
+#: ../../source/administration/command-line-tools.rst:1122
+#: ../../source/administration/command-line-tools.rst:1138
+#: ../../source/administration/command-line-tools.rst:1163
+#: ../../source/administration/command-line-tools.rst:1196
+#: ../../source/administration/command-line-tools.rst:1216
+#: ../../source/administration/command-line-tools.rst:1245
+#: ../../source/administration/command-line-tools.rst:1268
+#: ../../source/administration/command-line-tools.rst:1304
+#: ../../source/administration/command-line-tools.rst:1321
+#: ../../source/administration/command-line-tools.rst:1338
+#: ../../source/administration/command-line-tools.rst:1376
+#: ../../source/administration/command-line-tools.rst:1396
+#: ../../source/administration/command-line-tools.rst:1416
+#: ../../source/administration/command-line-tools.rst:1436
+#: ../../source/administration/command-line-tools.rst:1456
+#: ../../source/administration/command-line-tools.rst:1472
+#: ../../source/administration/command-line-tools.rst:1498
+#: ../../source/administration/command-line-tools.rst:1514
+#: ../../source/administration/command-line-tools.rst:1533
+#: ../../source/administration/command-line-tools.rst:1567
+#: ../../source/administration/command-line-tools.rst:1611
+#: ../../source/administration/command-line-tools.rst:1632
+#: ../../source/administration/command-line-tools.rst:1652
+#: ../../source/administration/command-line-tools.rst:1681
+#: ../../source/administration/command-line-tools.rst:1708
+#: ../../source/administration/command-line-tools.rst:1724
+#: ../../source/administration/command-line-tools.rst:1745
+#: ../../source/administration/command-line-tools.rst:1765
+#: ../../source/administration/command-line-tools.rst:1786
+#: ../../source/administration/command-line-tools.rst:1806
+#: ../../source/administration/command-line-tools.rst:1850
+#: ../../source/administration/command-line-tools.rst:1869
+#: ../../source/administration/command-line-tools.rst:1899
+#: ../../source/administration/command-line-tools.rst:1932
+#: ../../source/administration/command-line-tools.rst:1958
+#: ../../source/administration/command-line-tools.rst:1981
+#: ../../source/administration/command-line-tools.rst:2007
+#: ../../source/administration/command-line-tools.rst:2028
+#: ../../source/administration/command-line-tools.rst:2056
+#: ../../source/administration/command-line-tools.rst:2183
+#: ../../source/administration/command-line-tools.rst:2210
+#: ../../source/administration/command-line-tools.rst:2231
+#: ../../source/administration/command-line-tools.rst:2252
+#: ../../source/administration/command-line-tools.rst:2268
+#: ../../source/administration/command-line-tools.rst:2289
+#: ../../source/administration/command-line-tools.rst:2316
+#: ../../source/administration/command-line-tools.rst:2342
+#: ../../source/administration/command-line-tools.rst:2375
+#: ../../source/administration/command-line-tools.rst:2391
+#: ../../source/administration/command-line-tools.rst:2413
+#: ../../source/administration/command-line-tools.rst:2438
+#: ../../source/administration/command-line-tools.rst:2466
+#: ../../source/administration/command-line-tools.rst:2488
+msgid "Format"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:196
+#: ../../source/administration/command-line-tools.rst:218
+#: ../../source/administration/command-line-tools.rst:240
+#: ../../source/administration/command-line-tools.rst:267
+#: ../../source/administration/command-line-tools.rst:359
+#: ../../source/administration/command-line-tools.rst:385
+#: ../../source/administration/command-line-tools.rst:411
+#: ../../source/administration/command-line-tools.rst:433
+#: ../../source/administration/command-line-tools.rst:472
+#: ../../source/administration/command-line-tools.rst:507
+#: ../../source/administration/command-line-tools.rst:528
+#: ../../source/administration/command-line-tools.rst:548
+#: ../../source/administration/command-line-tools.rst:580
+#: ../../source/administration/command-line-tools.rst:596
+#: ../../source/administration/command-line-tools.rst:630
+#: ../../source/administration/command-line-tools.rst:653
+#: ../../source/administration/command-line-tools.rst:675
+#: ../../source/administration/command-line-tools.rst:691
+#: ../../source/administration/command-line-tools.rst:716
+#: ../../source/administration/command-line-tools.rst:905
+#: ../../source/administration/command-line-tools.rst:926
+#: ../../source/administration/command-line-tools.rst:947
+#: ../../source/administration/command-line-tools.rst:967
+#: ../../source/administration/command-line-tools.rst:1005
+#: ../../source/administration/command-line-tools.rst:1026
+#: ../../source/administration/command-line-tools.rst:1047
+#: ../../source/administration/command-line-tools.rst:1067
+#: ../../source/administration/command-line-tools.rst:1637
+#: ../../source/administration/command-line-tools.rst:1658
+#: ../../source/administration/command-line-tools.rst:1770
+#: ../../source/administration/command-line-tools.rst:1811
+#: ../../source/administration/command-line-tools.rst:1856
+#: ../../source/administration/command-line-tools.rst:1877
+#: ../../source/administration/command-line-tools.rst:1905
+#: ../../source/administration/command-line-tools.rst:1938
+#: ../../source/administration/command-line-tools.rst:2034
+#: ../../source/administration/command-line-tools.rst:2321
+#: ../../source/administration/command-line-tools.rst:2349
+#: ../../source/administration/command-line-tools.rst:2380
+#: ../../source/administration/command-line-tools.rst:2397
+#: ../../source/administration/command-line-tools.rst:2418
+#: ../../source/administration/command-line-tools.rst:2443
+#: ../../source/administration/command-line-tools.rst:2471
+#: ../../source/administration/command-line-tools.rst:2493
+msgid "Examples"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:199
+msgid "mattermost channel archive"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:203
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel archive <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-archive>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:207
+msgid ""
+"Archive a channel. Archived channels are not accessible to users, but "
+"remain in the database. To restore a channel from the archive, see "
+"`mattermost channel restore`_. Channels can be specified by "
+"{team}:{channel} using the team and channel names, or by using channel "
+"IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:221
+msgid "mattermost channel create"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:225
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel create <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-create>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:229
+msgid "Create a channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:253
+msgid "mattermost channel delete"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:256
+msgid ""
+"Permanently delete a channel along with all related information, "
+"including posts from the database. Channels can be specified by "
+"{team}:{channel} using the team and channel names, or by using channel "
+"IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:270
+msgid "mattermost channel list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:274
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel list <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-list>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:278
+msgid ""
+"List all channels on a specified team. Private channels are appended with"
+" ``(private)`` and archived channels are appended with ``(archived)``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:288
+#: ../../source/administration/command-line-tools.rst:304
+#: ../../source/administration/command-line-tools.rst:332
+#: ../../source/administration/command-line-tools.rst:736
+#: ../../source/administration/command-line-tools.rst:765
+#: ../../source/administration/command-line-tools.rst:786
+#: ../../source/administration/command-line-tools.rst:807
+#: ../../source/administration/command-line-tools.rst:828
+#: ../../source/administration/command-line-tools.rst:849
+#: ../../source/administration/command-line-tools.rst:1111
+#: ../../source/administration/command-line-tools.rst:1127
+#: ../../source/administration/command-line-tools.rst:1143
+#: ../../source/administration/command-line-tools.rst:1168
+#: ../../source/administration/command-line-tools.rst:1201
+#: ../../source/administration/command-line-tools.rst:1221
+#: ../../source/administration/command-line-tools.rst:1250
+#: ../../source/administration/command-line-tools.rst:1273
+#: ../../source/administration/command-line-tools.rst:1309
+#: ../../source/administration/command-line-tools.rst:1326
+#: ../../source/administration/command-line-tools.rst:1343
+#: ../../source/administration/command-line-tools.rst:1381
+#: ../../source/administration/command-line-tools.rst:1401
+#: ../../source/administration/command-line-tools.rst:1421
+#: ../../source/administration/command-line-tools.rst:1441
+#: ../../source/administration/command-line-tools.rst:1461
+#: ../../source/administration/command-line-tools.rst:1503
+#: ../../source/administration/command-line-tools.rst:1519
+#: ../../source/administration/command-line-tools.rst:1538
+#: ../../source/administration/command-line-tools.rst:1616
+#: ../../source/administration/command-line-tools.rst:1686
+#: ../../source/administration/command-line-tools.rst:1713
+#: ../../source/administration/command-line-tools.rst:1730
+#: ../../source/administration/command-line-tools.rst:1750
+#: ../../source/administration/command-line-tools.rst:1791
+#: ../../source/administration/command-line-tools.rst:1963
+#: ../../source/administration/command-line-tools.rst:1986
+#: ../../source/administration/command-line-tools.rst:2012
+#: ../../source/administration/command-line-tools.rst:2060
+#: ../../source/administration/command-line-tools.rst:2188
+#: ../../source/administration/command-line-tools.rst:2215
+#: ../../source/administration/command-line-tools.rst:2236
+#: ../../source/administration/command-line-tools.rst:2257
+#: ../../source/administration/command-line-tools.rst:2273
+msgid "Example"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:291
+msgid "mattermost channel modify"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:294
+msgid "Modify a channel's public/private type."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:314
+msgid "mattermost channel move"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:318
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel move <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-move>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:321
+msgid ""
+"Move channels to another team. The command validates that all users in "
+"the channel belong to the target team. Incoming/Outgoing webhooks are "
+"moved along with the channel. Channels can be specified by "
+"``[team]:[channel]`` or by using channel IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:340
+msgid "mattermost channel remove"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:344
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel remove <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-remove>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:347
+msgid "Remove users from a channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:367
+msgid "mattermost channel rename"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:371
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel rename <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-rename>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:374
+msgid ""
+"Rename a channel. Channels can be specified by *{team}:{channel}* using "
+"the team and channel names, or by using channel IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:393
+msgid "mattermost channel restore"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:397
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel restore <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-restore>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:400
+msgid ""
+"Restore a channel from the archive. Channels can be specified by "
+"{team}:{channel} using the team and channel names, or by using channel "
+"IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:414
+msgid "mattermost channel search"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:418
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl channel search <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-channel-search>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:421
+msgid ""
+"Search for a channel by channel name. Returns channel display name, "
+"channel Id, and indicates if it is private or archived. Private channels "
+"are appended with ``(private)`` and archived channels are appended with "
+"``(archived)``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:441
+msgid "mattermost command"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:444
+msgid "Commands for slash command management."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:447
+msgid ""
+"`mattermost command create`_ - Create a custom slash command for a "
+"specified team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:448
+msgid "`mattermost command delete`_ - Delete a slash command."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:449
+msgid ""
+"`mattermost command list`_ - List all commands on specified teams or all "
+"teams by default."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:450
+msgid "`mattermost command modify`_ - Modify a slash command."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:451
+msgid "`mattermost command move`_ - Move a slash command to a different team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:452
+msgid "`mattermost command show`_ - Show a custom slash command."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:455
+msgid "mattermost command create"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:459
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl command create <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-command-create>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:462
+msgid "Create a custom slash command for a specified team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:490
+msgid "mattermost command delete"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:494
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl command delete <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-command-delete>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:497
+msgid "Delete a slash command. Commands can be specified by command ID."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:510
+msgid "mattermost command list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:514
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl command list <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-command-list>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:518
+msgid "List all commands on specified teams or all teams by default."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:531
+msgid "mattermost command modify"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:534
+msgid "Modify a slash command. Commands can be specified by command ID."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:537
+msgid ""
+"Only fields that you want to modify need to be specified.  Also, when "
+"modifying the command's creator, the new creator specified must have the "
+"permission to create commands."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:566
+msgid "mattermost command move"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:569
+msgid ""
+"Move a slash command to a different team. Commands can be specified by "
+"{team}:{command-trigger-word}, or by using command IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:583
+msgid "mattermost command show"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:586
+msgid ""
+"Show a custom slash command. Commands can be specified by command ID. "
+"Returns command ID, team ID, trigger word, display name and creator "
+"username."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:599
+msgid "mattermost config"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:602
+msgid "Commands for managing the configuration file."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:610
+#: ../../source/administration/command-line-tools.rst:1088
+#: ../../source/administration/command-line-tools.rst:1178
+#: ../../source/administration/command-line-tools.rst:1230
+msgid "Child Command"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:605
+msgid ""
+"`mattermost config get`_ - Retrieve the value of a config setting by its "
+"name in dot notation."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:606
+msgid ""
+"`mattermost config migrate`_ - Migrate a file-based configuration to (or "
+"from) a database-based configuration."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:607
+msgid ""
+"`mattermost config reset`_ - Resets the value of a config setting by its "
+"name in dot notation or a setting section."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:608
+msgid ""
+"`mattermost config set`_ - Set the value of a config setting by its name "
+"in dot notation."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:609
+msgid ""
+"`mattermost config show`_ - Print the current mattermost configuration in"
+" an easy to read format."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:610
+msgid "`mattermost config validate`_ - Validate the configuration file."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:613
+msgid "mattermost config get"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:617
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl config get <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-config-get>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:620
+msgid "Retrieve the value of a config setting by its name in dot notation."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:638
+msgid "mattermost config migrate"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:641
+msgid ""
+"Migrate a file-based configuration to (or from) a database-based "
+"configuration. Point the Mattermost server at the target configuration to"
+" start using it. If using SAML, ensure the SAML certificates and keys are"
+" accessible to also migrate into the database."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:644
+msgid ""
+"If a ``from`` parameter is not specified, the command will fall back to "
+"what is specified in --config."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:657
+msgid "mattermost config reset"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:660
+msgid ""
+"Resets the value of a config setting by its name in dot notation or a "
+"setting section to the default value. Accepts multiple values for array "
+"settings. When no parameters are given, it will reset all config "
+"settings."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:678
+msgid "mattermost config set"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:681
+msgid ""
+"Set the value of a config setting by its name in dot notation. Accepts "
+"multiple values for array settings."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:699
+msgid "mattermost config show"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:703
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl config <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-config-show>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:706
+msgid "Print the current mattermost configuration in an easy to read format."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:719
+msgid "mattermost config validate"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:722
+msgid "Makes sure the configuration file has the following properties:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:724
+msgid "Is valid JSON."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:725
+msgid "Has attributes of the correct type, such as *bool*, *int*, and *str*."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:726
+msgid ""
+"All entries are valid. For example, checks that entries are below the "
+"maximum length."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:739
+msgid "mattermost export"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:742
+msgid ""
+"Commands for exporting data for compliance and for merging multiple "
+"Mattermost instances."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:745
+msgid ""
+"`mattermost export actiance`_ - Export data from Mattermost in Actiance "
+"XML format.  Requires an E20 license"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:746
+msgid ""
+"`mattermost export bulk`_ - Export data to a file compatible with the "
+"Mattermost `Bulk Import format <https://docs.mattermost.com/deployment"
+"/bulk-loading.html>`__"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:747
+msgid ""
+"`mattermost export csv`_ - Export data from Mattermost in CSV format. "
+"Requires an E20 license"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:748
+msgid ""
+"`mattermost export global-relay-zip`_ - Export data from Mattermost into "
+"a zip file containing emails to send to Global Relay for debug and "
+"testing purposes only. Requires an E20 license"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:749
+msgid "`mattermost export schedule`_ - Schedule an export job"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:752
+msgid "mattermost export actiance"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:755
+msgid "Export data from Mattermost in Actiance XML format."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:773
+msgid "mattermost export bulk"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:776
+msgid ""
+"Export data to a file compatible with the Mattermost `Bulk Import format "
+"<https://docs.mattermost.com/deployment/bulk-loading.html>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:794
+msgid "mattermost export csv"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:797
+msgid "Export data from Mattermost in CSV format."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:815
+msgid "mattermost export global-relay-zip"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:818
+msgid ""
+"Export data from Mattermost into a zip file containing emails to send to "
+"Global Relay for debug and testing purposes only. This does not archive "
+"any information in Global Relay."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:836
+msgid "mattermost export schedule"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:839
+msgid ""
+"Schedule an export job in a format suitable for importing into a third-"
+"party archive system."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:859
+msgid "mattermost group"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:862
+msgid ""
+"Commands for managing Mattermost groups.  For more information on "
+"Mattermost groups please see `this documentation. "
+"<https://docs.mattermost.com/deployment/ldap-group-sync.html>`_"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:865
+msgid ""
+"`mattermost group channel`_ - Management of Mattermost groups linked to "
+"channels"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:866
+msgid "`mattermost group team`_ - Management of Mattermost groups linked to teams"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:869
+msgid "mattermost group channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:873
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group channel <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-group-channel>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:877
+msgid "Commands for managing Mattermost groups linked to a channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:880
+msgid ""
+"`mattermost group channel enable`_ - Enables group constraint on the "
+"specified channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:881
+msgid ""
+"`mattermost group channel disable`_ - Disables group constraint on the "
+"specified channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:882
+msgid ""
+"`mattermost group channel list`_ - Lists the groups associated with a "
+"channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:883
+msgid ""
+"`mattermost group channel status`_ - Shows the group constraint status of"
+" the specified channel"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:886
+msgid "mattermost group channel enable"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:890
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group channel enable <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-channel-enable>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:893
+msgid ""
+"Enables group constraint on the specified channel. When a channel is "
+"group constrained, channel membership is managed by linked groups instead"
+" of managed by manually adding and removing users."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:896
+msgid ""
+"To enable a group constraint on a specific channel, you must already have"
+" at least one group associated. See `AD/LDAP Group documentation "
+"<https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-"
+"teams-or-channels-for-the-group>`_ for more details on how to associate a"
+" group to a channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:909
+msgid "mattermost group channel disable"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:913
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group channel disable <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-channel-disable>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:916
+msgid "Disables group constraint on the specified channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:929
+msgid "mattermost group channel list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:933
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group channel list <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-channel-list>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:936
+msgid "Lists the groups associated with a channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:950
+msgid "mattermost group channel status"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:954
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group channel status <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-channel-status>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:957
+msgid ""
+"Shows the group constraint status of the specified channel. Returns "
+"\"Enabled\" when channel membership is managed by linked groups.  Returns"
+" \"Disabled\" when the channel membership is managed by manually adding "
+"and removing users."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:970
+msgid "mattermost group team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:974
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group team <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-group-team>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:977
+msgid "Commands for managing Mattermost groups linked to a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:980
+msgid ""
+"`mattermost group team enable`_ - Enables group constraint on the "
+"specified team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:981
+msgid ""
+"`mattermost group team disable`_ - Disables group constraint on the "
+"specified team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:982
+msgid "`mattermost group team list`_ - Lists the groups associated with a team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:983
+msgid ""
+"`mattermost group team status`_ - Shows the group constraint status of "
+"the specified team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:986
+msgid "mattermost group team enable"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:990
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group team enable <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-team-enable>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:993
+msgid ""
+"Enables group constraint on the specified team. When a team is group "
+"constrained, team membership is managed by linked groups instead of "
+"managed by manually inviting and removing users."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:996
+msgid ""
+"To enable a group constraint on a specific team, you must already have at"
+" least one group associated. See `AD/LDAP Group documentation "
+"<https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-"
+"teams-or-channels-for-the-group>`_ for more details on how to associate a"
+" group to a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1009
+msgid "mattermost group team disable"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1013
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group team disable <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-team-disable>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1016
+msgid "Disables group constraint on the specified team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1029
+msgid "mattermost group team list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1033
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group team list <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-group-team-list>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1036
+msgid "Lists the groups associated with a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1050
+msgid "mattermost group team status"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1054
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl group team status <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-group-team-status>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1057
+msgid ""
+"Shows the group constraint status of the specified team. Returns "
+"\"Enabled\" when team membership is managed by linked groups.  Returns "
+"\"Disabled\" when the team membership is managed by manually inviting and"
+" removing users."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1070
+msgid "mattermost help"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1073
+msgid ""
+"Generate full documentation in Markdown format for the Mattermost command"
+" line tools."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1081
+msgid "mattermost import"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1084
+msgid "Import data into Mattermost."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1087
+msgid "`mattermost import bulk`_ - Import a Mattermost Bulk Import File."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1088
+msgid "`mattermost import slack`_ - Import a team from Slack."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1091
+msgid "mattermost import bulk"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1094
+msgid "Import data from a Mattermost Bulk Import File."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1114
+msgid "mattermost import slack"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1117
+msgid "Import a team from a Slack export zip file."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1130
+msgid "mattermost integrity"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1133
+msgid ""
+"Check database schema integrity as well as referential integrity of "
+"channels, slash commands, webhooks, posts, schemes, sessions, users, and "
+"teams. This process may temporarily affect live system performance, and "
+"should be used during off-peak periods."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1155
+msgid "mattermost jobserver"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1158
+msgid "Start the Mattermost job server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1171
+msgid "mattermost ldap"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1174
+msgid "Commands to configure and synchronize AD/LDAP."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1177
+msgid ""
+"`mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new "
+"value"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1178
+msgid "`mattermost ldap sync`_ - Synchronize now"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1181
+msgid "mattermost ldap idmigrate"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1184
+msgid "Migrate LDAP Id Attribute to new value."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1186
+msgid ""
+"Run this utility to change the value of your ID Attribute without your "
+"users losing their accounts. After running the command you can change the"
+" ID Attribute to the new value in your ``config.json``. For example, if "
+"your current ID Attribute was ``sAMAccountName`` and you wanted to change"
+" it to ``objectGUID``, you would:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1188
+msgid ""
+"Wait for an off-peak time when your users won't be impacted by a server "
+"restart."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1189
+msgid "Run the command ``mattermost ldap idmigrate objectGUID``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1190
+msgid ""
+"Edit your ``config.json`` and change your ``IdAttribute`` field to the "
+"new value ``objectGUID``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1191
+msgid "Restart the Mattermost server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1204
+msgid "mattermost ldap sync"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1208
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl ldap sync <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-ldap-sync>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1211
+msgid "Synchronize all AD/LDAP users now."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1224
+msgid "mattermost license"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1227
+msgid "Commands to manage licensing."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1230
+msgid "`mattermost license upload`_ - Upload a license."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1233
+msgid "mattermost license upload"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1237
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl license upload <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-license-upload>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1240
+msgid ""
+"Upload a license. This command replaces the current license if one is "
+"already uploaded."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1253
+msgid ""
+"The Mattermost server needs to be restarted after uploading a license "
+"file for any changes to take effect. Also, for cluster setups the license"
+" file needs to be uploaded to every node."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1256
+msgid "mattermost logs"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1260
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl logs <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-logs>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1263
+msgid "Displays Mattermost logs in a human-readable format."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1282
+msgid "mattermost permissions"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1285
+msgid "Commands to manage advanced permissions."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1288
+msgid "`mattermost permissions export`_ - Export Schemes and Roles."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1289
+msgid ""
+"`mattermost permissions import`_ - Import Schemes and Roles from a "
+"permissions export."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1290
+msgid ""
+"`mattermost permissions reset`_ - Reset the permissions system to its "
+"default state on new installs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1293
+msgid "mattermost permissions export"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1296
+msgid ""
+"Prints to stdout a jsonl representation of Schemes and Roles from a "
+"Mattermost instance. Used to export Roles and Schemes from one Mattermost"
+" instance to another. The output is a jsonl representation with each line"
+" containing a json representation of a Scheme and its associated Roles. "
+"The output is intended to be used as the input of `mattermost permissions"
+" import`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1312
+msgid "mattermost permissions import"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1315
+msgid ""
+"Creates Roles and Schemes on a Mattermost instance from a jsonl input "
+"file in the format outputted by `mattermost permissions export`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1329
+msgid "mattermost permissions reset"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1332
+msgid ""
+"Reset permissions for all users, including Admins, to their default state"
+" on new installs. Note: **this will delete all custom schemes**."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1351
+msgid "mattermost plugin"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1354
+msgid "Commands to manage plugins."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1357
+msgid "`mattermost plugin add`_ - Add plugins to your Mattermost server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1358
+msgid "`mattermost plugin delete`_ - Delete previously uploaded plugins."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1359
+msgid "`mattermost plugin disable`_ - Disable plugins."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1360
+msgid "`mattermost plugin enable`_ - Enable plugins for use."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1361
+msgid ""
+"`mattermost plugin list`_ - List plugins installed on your Mattermost "
+"server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1364
+msgid "mattermost plugin add"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1368
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl plugin add <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-plugin-add>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1371
+msgid ""
+"Add plugins to your Mattermost server. If adding multiple plugins, use a "
+"space-separated list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1384
+msgid "mattermost plugin delete"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1388
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl plugin delete <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-plugin-delete>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1391
+msgid ""
+"Delete previously uploaded plugins from your Mattermost server. If "
+"deleting multiple plugins, use a space-separated list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1404
+msgid "mattermost plugin disable"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1408
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl plugin disable <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-plugin-disable>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1411
+msgid ""
+"Disable plugins. Disabled plugins are immediately removed from the user "
+"interface and logged out of all sessions. If disabling multiple plugins, "
+"use a space-separated list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1424
+msgid "mattermost plugin enable"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1428
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl plugin enable <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-plugin-enable>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1431
+msgid ""
+"Enable plugins for use on your Mattermost server. If enabling multiple "
+"plugins, use a space-separated list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1444
+msgid "mattermost plugin list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1448
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl plugin list <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-plugin-list>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1451
+msgid "List all active and inactive plugins installed on your Mattermost server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1464
+msgid "mattermost reset"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1467
+msgid ""
+"Completely erase the database causing the loss of all data. This resets "
+"Mattermost to its initial state."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1480
+msgid "mattermost roles"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1483
+msgid "Commands to manage user roles."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1486
+msgid "`mattermost roles member`_ - Remove System Admin privileges from a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1487
+msgid "`mattermost roles system_admin`_ - Make a user into a System Admin"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1490
+msgid "mattermost roles member"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1493
+msgid "Remove system admin privileges from a user."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1506
+msgid "mattermost roles system\\_admin"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1509
+msgid "Promote a user to a System Admin."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1522
+msgid "mattermost sampledata"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1525
+msgid ""
+"Generate sample data and populate the Mattermost database. Supported in "
+"Mattermost v4.7 and later."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1528
+msgid ""
+"The command generates one user as the System Administrator with a "
+"username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are "
+"generated following an index, e.g. with username ``user-1`` and password "
+"``SampleUs@r-1``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1559
+msgid "mattermost server"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1562
+msgid "Runs the Mattermost server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1570
+msgid "mattermost team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1573
+msgid "Commands to manage teams."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1576
+msgid "`mattermost team add`_ - Add users to a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1577
+msgid "`mattermost team archive`_ - Archive teams based on name."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1578
+msgid "`mattermost team create`_ - Create a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1579
+msgid "`mattermost team delete`_ - Delete a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1580
+msgid "`mattermost team list`_ - List all teams."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1581
+msgid "`mattermost team modify`_ - Modify a team's public/private type."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1582
+msgid "`mattermost team remove`_ - Remove users from a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1583
+msgid "`mattermost team rename`_ - Rename a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1584
+msgid "`mattermost team restore`_ - Restore a previously archived team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1585
+msgid "`mattermost team search`_ - Search for teams based on name."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1590
+msgid "**{team-name} value**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1592
+msgid ""
+"For the *add*, *delete*, and *remove* commands, you can determine the "
+"*{team-name}* value from the URLs that you use to access your instance of"
+" Mattermost. For example, in the following URL the *{team-name}* value is"
+" *myteam*:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1599
+msgid "mattermost team add"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1603
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team add <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-add>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1606
+msgid ""
+"Add users to a team. Before running this command, see the :ref:`note "
+"about {team-name} <team-value-note>`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1619
+msgid "mattermost team archive"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1623
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team archive <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-team-archive>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1627
+msgid ""
+"Archive teams based on name. Before running this command, see the "
+":ref:`note about {team-name} <team-value-note>`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1640
+msgid "mattermost team create"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1644
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team create <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-create>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1647
+msgid "Create a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1669
+msgid "mattermost team delete"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1673
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team delete <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-delete>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1676
+msgid ""
+"Permanently delete a team along with all related information, including "
+"posts from the database. Before running this command, see the :ref:`note "
+"about {team-name} <team-value-note>`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1694
+msgid "mattermost team list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1698
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team list <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-list>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1700
+msgid "*Supported in Mattermost v4.10 and later*"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1703
+msgid "List all teams on the server."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1716
+msgid "mattermost team modify"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1719
+msgid "Modify a team's public/private type."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1733
+msgid "mattermost team remove"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1737
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team remove <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-remove>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1740
+msgid ""
+"Remove users from a team. Before running this command, see the :ref:`note"
+" about {team-name} <team-value-note>`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1753
+msgid "mattermost team rename"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1757
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team rename <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-rename>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1760
+msgid "Rename a team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1778
+msgid "mattermost team restore"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1781
+msgid "Restore a previously archived team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1794
+msgid "mattermost team search"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1798
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl team search <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-team-search>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1801
+msgid ""
+"Search for teams based on name. Before running this command, see the "
+":ref:`note about {team-name} <team-value-note>`."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1814
+msgid "mattermost user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1817
+msgid "Commands to manage users."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1821
+msgid "`mattermost user activate`_ - Activate a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1822
+msgid "`mattermost user convert`_ - Convert a user to a bot, or a bot to a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1823
+msgid "`mattermost user create`_ - Create a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1824
+msgid "`mattermost user deactivate`_ - Deactivate a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1825
+msgid "`mattermost user delete`_ - Delete a user and all posts"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1826
+msgid "`mattermost user deleteall`_ - Delete all users and all posts"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1827
+msgid "`mattermost user email`_ - Set a user's email"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1828
+msgid "`mattermost user invite`_ - Send a user an email invitation to a team"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1829
+msgid ""
+"`mattermost user migrate_auth`_ - Mass migrate all user accounts to a new"
+" authentication type"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1830
+msgid "`mattermost user password`_ - Set a user's password"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1831
+msgid "`mattermost user resetmfa`_ - Turn off MFA for a user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1832
+msgid ""
+"`mattermost user search`_ - Search for users based on username, email, or"
+" user ID"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1833
+msgid "`mattermost user verify`_ - Verify email address of a new user"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1838
+msgid "mattermost user activate"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1842
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user activate <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-user-activate>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1845
+msgid ""
+"Activate users that have been deactivated. If activating multiple users, "
+"use a space-separated list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1859
+msgid "mattermost user convert"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1862
+msgid "Convert a user to a bot, or convert a bot to a user account."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1886
+msgid "mattermost user create"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1890
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user create <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-user-create>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1894
+msgid "Create a user."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1920
+msgid "mattermost user deactivate"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1924
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user deactivate <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-user-deactivate>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1927
+msgid ""
+"Deactivate a user. Deactivated users are immediately logged out of all "
+"sessions and are unable to log back in."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1941
+msgid ""
+"Users deactivated via this CLI command can continue to use Mattermost, if"
+" they are already logged in, until the user cache is manually purged or "
+"automatically after 30 minutes. Users who are deactivated when they're "
+"not logged in will not be able to log in to Mattermost again."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1943
+msgid ""
+"If you want to immediately terminate a deactivated user's session, purge "
+"all caches in **System Console > Web Server > Purge All Caches** after "
+"running this command."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1945
+#, python-format
+msgid ""
+"You can also use the `API command "
+"<https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D%2Fdelete>`_"
+" to deactivate a user account and immediately terminate the session."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1948
+msgid "mattermost user delete"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1951
+msgid ""
+"Permanently delete a user and all related information, including posts "
+"from the database."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1953
+msgid ""
+"Does not delete content from the file storage. You can manually delete "
+"all file uploads for a given user as uploads contain the ``CreatorId`` "
+"field. User avatars are stored in ``data/users/<userid>/profile.png``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1971
+msgid "mattermost user deleteall"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1974
+msgid "Permanently delete all users and all related information, including posts."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1976
+msgid ""
+"Does not delete content from the file storage. You can manually delete "
+"all file uploads and avatars. All uploads contain the ``CreatorId`` field"
+" and user avatars are stored in ``data/users/<userid>/profile.png``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1994
+msgid "mattermost user email"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:1998
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user email <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-user-email>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2002
+msgid "Set a user's email."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2015
+msgid "mattermost user invite"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2019
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user invite <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-user-invite>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2023
+msgid ""
+"Send a user an email invite to a team. You can invite a user to multiple "
+"teams by listing the team names or team IDs."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2037
+msgid "mattermost user migrate_auth"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2042
+msgid ""
+"Migrates all existing Mattermost user accounts from one authentication "
+"provider to another. For example, you can upgrade your authentication "
+"provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will "
+"display any accounts that are not migrated successfully. These accounts "
+"might be blocked because of filters in your AD/LDAP configuration in the "
+"System Console."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2044
+msgid "**Migrate to AD/LDAP**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2051
+#: ../../source/administration/command-line-tools.rst:2072
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2047
+msgid ""
+"``from_auth``: The authentication service from which to migrate user "
+"accounts. Supported options: ``email``, ``gitlab``, ``saml``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2049
+msgid ""
+"``to_auth``: The authentication service to which to migrate user "
+"accounts. Supported options: ``ldap``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2051
+msgid ""
+"``match_field``: The field that is guaranteed to be the same in both "
+"authentication services. For example, if the user emails are consistent "
+"set to email. Supported options: ``email``, ``username``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2068
+msgid "**Migrate to SAML**"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2070
+msgid "*Supported in Mattermost v4.8 and later*"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2074
+msgid ""
+"``from_auth``: The authentication service from which to migrate user "
+"accounts. Supported options: ``email``, ``gitlab``. ``ldap``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2076
+msgid ""
+"``to_auth``: The authentication service to which to migrate user "
+"accounts. Supported options: ``saml``."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2078
+msgid ""
+"``users_file``: The path of a JSON file with the usernames and emails of "
+"all users to migrate to SAML. The username and email must be the same as "
+"in your SAML service provider. Moreover, the email must match the email "
+"address of the Mattermost user account. An example of the users file is "
+"below:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2178
+msgid "Users file generation"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2088
+msgid ""
+"Generating the ``users_file`` depends on how the system is configured and"
+" which SAML service provider is used. Below are two sample scripts for "
+"OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP "
+"protocol to directly extract the users information and export it to a "
+"JSON file."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2090
+msgid ""
+"After generating the ``users_file``, you can manually update the file to "
+"obtain a list of Mattermost user accounts you want to migrate to SAML. "
+"Note that users listed in ``users_file`` that do not yet exist in "
+"Mattermost are ignored during the migration process."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2092
+msgid "OneLogin:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2112
+msgid "Okta:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2139
+msgid "ADFS:"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2197
+msgid "mattermost user password"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2201
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user reset_password <https://docs.mattermost.com/administration"
+"/mmctl-cli-tool.html#mmctl-user-reset-password>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2205
+msgid "Set a user's password."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2218
+msgid "mattermost user resetmfa"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2222
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user resetmfa <https://docs.mattermost.com/administration/mmctl-"
+"cli-tool.html#mmctl-user-resetmfa>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2226
+msgid ""
+"Turns off multi-factor authentication for a user. If MFA enforcement is "
+"enabled, the user will be forced to re-enable MFA with a new device as "
+"soon as they log in."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2239
+msgid "mattermost user search"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2243
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl user search <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-user-search>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2247
+msgid "Search for users based on username, email, or user ID."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2260
+msgid "mattermost user verify"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2263
+msgid "Verify the email address of a new user."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2276
+msgid "mattermost version"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2280
+msgid ""
+"This command will be replaced in a future release with the mmctl command "
+"`mmctl version <https://docs.mattermost.com/administration/mmctl-cli-"
+"tool.html#mmctl-version>`__."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2284
+msgid "Displays Mattermost version information."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2292
+msgid "mattermost webhook"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2295
+msgid "Commands to manage webhooks."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2298
+msgid ""
+"`mattermost webhook create-incoming`_ - Create an incoming webhook within"
+" specific channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2299
+msgid ""
+"`mattermost webhook create-outgoing`_ - Create an outgoing webhook within"
+" specific channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2300
+msgid "`mattermost webhook delete`_ - Delete incoming and outgoing webhooks."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2301
+msgid "`mattermost webhook list`_ - List all webhooks."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2302
+msgid ""
+"`mattermost webhook modify-incoming`_ - Modify an existing incoming "
+"webhook by changing its title, description, channel, or icon URL."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2303
+msgid ""
+"`mattermost webhook modify-outgoing`_ - Modify an existing outgoing "
+"webhook by changing its title, description, channel, icon, URL, content-"
+"type, and triggers."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2304
+msgid ""
+"`mattermost webhook move-outgoing`_ - Move an existing outgoing webhook "
+"with an ID."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2305
+msgid ""
+"`mattermost webhook show`_ - Show information about a webhook by "
+"providing the webhook ID."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2308
+msgid "mattermost webhook create-incoming"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2311
+msgid "Create an incoming webhook within specific channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2334
+msgid "mattermost webhook create-outgoing"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2337
+msgid ""
+"Create an outgoing webhook which allows external posting of messages from"
+" a specific channel."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2367
+msgid "mattermost webhook delete"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2370
+msgid ""
+"Delete incoming and outgoing webhooks. If deleting multiple webhooks, use"
+" a space-separated list."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2383
+msgid "mattermost webhook list"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2386
+msgid "List all webhooks."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2405
+msgid "mattermost webhook modify-incoming"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2408
+msgid ""
+"Modify an existing incoming webhook by changing its title, description, "
+"channel or icon url."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2430
+msgid "mattermost webhook modify-outgoing"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2433
+msgid ""
+"Modify an existing outgoing webhook by changing its title, description, "
+"channel, trigger words, icon url, callback url, or content type."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2458
+msgid "mattermost webhook move-outgoing"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2461
+msgid ""
+"Move an existing outgoing webhook to another team by specifying its id. "
+"If the outgoing webhook is triggered by a keyword then assiging a channel"
+" is optional.  If the outgoing webhook is associated to a specific "
+"channel prior to moving, a channel must be specified within the new team."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2480
+msgid "mattermost webhook show"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2483
+msgid ""
+"Show information about a webhook by providing the webhook ID. Returns "
+"display name, channel ID and team ID for both incoming and outgoing "
+"webhooks.  Additionally returns callback URL, username, and icon URL for "
+"outgoing webhooks."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2496
+msgid "Mattermost 3.5 and earlier"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2498
+msgid ""
+"Typing ``./platform -help`` brings up documentation for the CLI tool. To "
+"return the help documentation in GitLab omnibus, type"
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2507
+msgid ""
+"If special characters (``!``, ``|``, ``(``, ``)``, ``\\``, `````, and "
+"``\"``) are used, the entire argument needs to be surrounded by single "
+"quotes (e.g. ``-password 'mypassword!'``, or the individual characters "
+"need to be escaped out (e.g. ``-password mypassword\\!``)."
+msgstr ""
+
+#: ../../source/administration/command-line-tools.rst:2512
+msgid "CLI Documentation:"
+msgstr ""
+
