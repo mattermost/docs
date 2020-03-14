@@ -54,7 +54,7 @@ msgstr "Messaggistica diretta 1:1 e di gruppo con i tuoi colleghi"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:16
 msgid "Channels for topic-based, group-based, or meeting-based chat"
-msgstr "Canali per chat basate su topic, gruppi e meeting."
+msgstr "Canali per chat basate su topic, gruppi e meeting"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:17
 msgid "Streamlined collaboration on projects"
