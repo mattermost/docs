@@ -55,3 +55,17 @@ If you've downloaded the repo and are editing Mattermost documentation on your l
 6. Navigate to the `/build` directory to preview the page/s you've edited. 
 
 The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 
+
+## Translate
+
+1. Install sphinx-intl: `pip install sphinx-intl`.
+2. `cd` into the cloned repository.
+3. Install the required packages: `pipenv install`.
+4. Extract translatable messages into pot files: `make gettext`.
+5. Generate po files: `sphinx-intl update -p build/locale -l it`.
+6. translate po files in `source/locale/it/LC_MESSAGES`.
+7. Build translated document: `make -e SPHINXOPTS="-D language='it'" html`.
+
+* To update po files: `sphinx-intl update -p build/locale`.
+
+For more informations please refer to [https://www.sphinx-doc.org/en/master/usage/advanced/intl.html](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html)
