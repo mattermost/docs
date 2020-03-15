@@ -74,55 +74,59 @@ msgstr "Condivisione di file"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:23
 msgid "The Basics"
-msgstr ""
+msgstr "Le basi"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:25
 msgid "This is a what a typical Mattermost workspace looks like:"
-msgstr ""
+msgstr "Così è come appare un tipico workspace di Mattermost:"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:30
 msgid ""
 "To understand how Mattermost works, below is a list of the main features "
 "of Mattermost with instructions on how to use them:"
-msgstr ""
+msgstr "Per comprendere il funzionamento di Mattemost qui di seguito è presente un lista "
+"delle principali funzionalità di Mattermost con le istruzioni d'uso:"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:32
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:39
 msgid "Teams"
-msgstr ""
+msgstr "Teams"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:33
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:48
 msgid "Channels"
-msgstr ""
+msgstr "Canali"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:34
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:77
 msgid "Messages"
-msgstr ""
+msgstr "Messaggi"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:35
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:97
 msgid "Search"
-msgstr ""
+msgstr "Ricerca"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:36
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:106
 msgid "Notifications"
-msgstr ""
+msgstr "Notifiche"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:40
 msgid ""
 "A team is a digital workspace where you and your teammates can "
 "collaborate in Mattermost. Depending on how Mattermost is set up in your "
 "organization, you can belong to one team or multiple teams."
-msgstr ""
+msgstr "Un team è un workspace in cui tu e i tuoi compagni gi team collaborate"
+" all'interno di Mattermost. A seconda di come Mattermost è stato configurato nella "
+" tua organizzazione, tu puoi appartenere ad un solo team o a più team."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:42
 msgid ""
 "You have the ability to switch back and forth between teams on the Team "
 "Sidebar, located on the upper left side of the app."
-msgstr ""
+msgstr "Per muoverti da un team all'altro puoi usare la voce Team sul menu laterale, "
+"collocato in alto a sinistra dell'app."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:49
 msgid ""
