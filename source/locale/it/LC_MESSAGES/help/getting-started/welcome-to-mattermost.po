@@ -132,34 +132,39 @@ msgstr "Per muoverti da un team all'altro puoi usare la voce Team sul menu later
 msgid ""
 "Channels are used to organize conversations across different topics. They"
 " are located on the left-hand panel of Mattermost."
-msgstr ""
+msgstr "I canali sono usati per organizzare le conversazioni su argomenti differenti. Sono "
+"collocati sul pannello di sinistra di Mattermost."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:51
 msgid ""
 "There are three types of channels: Public Channels, Private Channels, and"
 " Direct Messages."
-msgstr ""
+msgstr "Esitono tre tipi di canali: i Canali Pubblici, i Canali Privati, e"
+" Messaggi Diretti."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:56
 msgid "**Public Channels:**"
-msgstr ""
+msgstr "**Canali Pubblici**"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:58
 msgid ""
 "Public Channels are open to everyone on a team. New team members are "
 "automatically added to two Public Channels when they sign up: Town Square"
 " and Off-Topic."
-msgstr ""
+msgstr "I Canali Pubblici sono aperti a chiunque all'interno di un team. I nuovi membri di un team sono "
+"automaticamente aggiunti a due Canali Pubblici al momento del sign up: Town Square"
+" e Off-Topic."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:60
 msgid "Public Channels are identified with a **globe icon**."
-msgstr ""
+msgstr "I Canali Pubblici sono identifcati da una **icona del globo**."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:62
 msgid ""
 "Click on the **More...** button at the bottom of the Public Channels "
 "section to explore more channels to join!"
-msgstr ""
+msgstr "Clicka sul pulsante **More..** sotto la sezione dei Canali Pubblici "
+"per esplorare altri canali a cui unirti!"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:64
 msgid "**Private Channels:**"
