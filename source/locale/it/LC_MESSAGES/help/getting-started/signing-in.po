@@ -19,13 +19,14 @@ msgstr ""
 
 #: ../../source/help/getting-started/signing-in.rst:2
 msgid "Signing in"
-msgstr ""
+msgstr "Acesso"
 
 #: ../../source/help/getting-started/signing-in.rst:6
 msgid ""
 "To sign in, navigate to the Mattermost sign-in page. You can get the URL "
 "of the sign-in page from your administrator."
-msgstr ""
+msgstr "Per accedere vai alla pagin di sign-in di Mattermost. Puoi ottenere l'URL "
+"della pagina di accesso dal tuo amministratore."
 
 #: ../../source/help/getting-started/signing-in.rst:8
 msgid ""
@@ -33,26 +34,33 @@ msgid ""
 "open.  If you have not joined a team, the Team Selection page opens where"
 " you can view a list of teams that you can join."
 msgstr ""
+"Dopo aver effettuato l'accesso, si aprirà il team che appare per primo nella barra laterale 
+dei team. Se non ti sei unito a nessun team, si apre la pagina Selezione Team dove puoi visualizzare 
+un elenco di team a cui puoi unirti."
 
 #: ../../source/help/getting-started/signing-in.rst:17
 msgid "Sign In Methods"
-msgstr ""
+msgstr "Metodi di Accesso"
 
 #: ../../source/help/getting-started/signing-in.rst:19
 msgid ""
 "There are several options for signing in to your team depending on how "
 "your System Admin has configured your server."
 msgstr ""
+"Eistsono molte opzioni per l'accesso al tua team che dipendono da come l'Amministratore di Sistema "
+"ha configurato il tuo server."
 
 #: ../../source/help/getting-started/signing-in.rst:23
 msgid "Email Address or Username Sign In"
-msgstr ""
+msgstr "Acesso con Indirizzo Email o Username"
 
 #: ../../source/help/getting-started/signing-in.rst:25
 msgid ""
 "When enabled by your System Admin, you can sign in with the username or "
 "email address used to create your account."
 msgstr ""
+"Se abilitato dal tuo Amministratore di Sistema, puoi accedere con username o "
+"l'indirizzo email usato per create il tuo account."
 
 #: ../../source/help/getting-started/signing-in.rst:28
 msgid ""
@@ -60,6 +68,9 @@ msgid ""
 "forgot my password** on the sign in screen, or contact your System Admin "
 "for help resetting your password."
 msgstr ""
+"Se hai dimenticato la password, puoi resettarla clickando su **Password 
+dimenticata** sulla schermata di accesso, o contattare il tuo Amministratore di Sistema "
+"per farti aiutare resettando la tua password."
 
 #: ../../source/help/getting-started/signing-in.rst:37
 msgid "GitLab Single Sign-On (SSO)"
