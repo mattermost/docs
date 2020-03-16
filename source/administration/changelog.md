@@ -42,6 +42,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a user's role was not reflected correctly in the Channel Members Modal when it was updated after the modal was opened.
  - Fixed an issue where a link to Integrations page was not shown if a custom slash command and webhooks were disabled and bot accounts were enabled.
  - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
+ - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
 
 ### Config.json
  - EnableOpenTracing
