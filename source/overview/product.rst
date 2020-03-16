@@ -37,7 +37,7 @@ A free-to-use, open source, self-hosted alternative to proprietary SaaS messagin
 - Multi-factor authentication
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__ and `third party extensions <https://about.mattermost.com/default-app-directory/>`__
-- Easily scalable from dozens to hundreds of users
+- Easily scalable to dozens of users per team, and hundreds of teams 
 - New features and improvements released every two months
 - Multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian
 
@@ -52,7 +52,7 @@ A commercial enterprise messaging solution for teams, groups and departments wor
 - Encrypted push notifications with service level agreements (SLAs) via HPNS
 - Advanced access control policy
 - Next business day support via online ticketing system
-- Scale to handle thousands of users
+- Scale to handle hundreds of users per team 
 
 Get started with a `free trial license <https://about.mattermost.com/trial/>`__. You can later purchase online with a `credit card <https://about.mattermost.com/pricing/>`__ or by `bank transfer <https://about.mattermost.com/quotation/>`__.
 
