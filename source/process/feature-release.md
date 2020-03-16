@@ -65,10 +65,9 @@ No pull requests for major features should be **merged** to the current release 
 ### D. (T-minus 19 working days) Feature Testing
 
 1. QA:
-    - Prioritize testing merged PRs and resolved tickets for this release
+    - Prioritize testing PRs and resolved tickets for this release
     - Ensure that new features are also properly tested on mobile apps
-    - Prioritize updating tests in the Release Testing spreadsheet and in Selenium IDE
-    - Identify most-affected areas and queue Selenium tests to be updated and run
+    - Prioritize updating release tests in test management and automated tests
 
 ### E. (T-minus 15 working days) Judgment Day
 
@@ -108,7 +107,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. QA:
-    - Identify any new teammates who will be joining release testing, DM them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
+    - Identify any new teammates who will be joining release testing, send them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
     - Set up DM/GM channels in preparation for testing auto-closing after 7 days
 
 ### G. (T-minus 9 working days) Release Candidate Cut
@@ -126,15 +125,16 @@ Day when Leads and PMs decide which major features are included in the release, 
       - Space out the ordering of mugs over the next three weeks to prevent mistakes being made by the supplier (e.g., If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next three weeks)
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
 3. QA:
-    - Confirm up to date with testing merged PRs and resolved tickets
-    - Confirm up to date with test updates and known issues in Release Testing spreadsheet
+    - Confirm up to date with testing PRs and resolved tickets
+    - Confirm up to date with test updates and known issues in release test management and automated tests
     - Assign release testing areas to team members
-    - After RC1 is cut: Update rctesting and CI server invite links in Release Testing spreadsheet
-    - After RC1 is cut: Lock Selenium server to RC1 and begin running all Selenium IDE tests
+    - After RC1 is cut: Update test server invite links in Release Testing instructions
+    - After RC1 is cut: Run automated regression tests
 4. Build:
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged
     - Update Redux before each RC and Final build
+    - Update package version in [Mattermost DockerFile](https://github.com/mattermost/mattermost-server/blob/master/build/Dockerfile#L7)
     - Master is tagged and branched and `Release Candidate 1` is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in `mattermost/process`
     - After branching, the database version in `sql_upgrade.go` on master is set to the next scheduled release version (e.g., 3.6.0)
 
@@ -188,13 +188,13 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Send blog post for mattermost.com and all related art work for marketing lead to review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 4. QA:
-    - Midday: Post at-channel reminders about testing, and DM team members whose tests are not marked **Done**
+    - Midday: Post reminders about testing, at-mentioning team members whose tests are not yet complete
     - Find QA or other teammates to help finish unfinished tests if needed
-    - End of day: Verify all release tests are finished
+    - End of day or next morning: Verify all release tests are finished, bring any concerns to Triage / Release meeting
     - Go through all tabs of testing spreadsheet and verify all comments and questions have been filed in Jira as needed
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
-    - As RCs are cut, update `selenium.test.mattermost.com` to latest RC    
+    - After all tickets are verified and closed, run smoke tests on webapp/server, desktop app, and RN apps as appropriate 
 5. Docs:
     - Submit Changelog PR for team review
     - Submit any remaining documentation PRs for product updates in the release
@@ -226,7 +226,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
 2. QA:
     - Verify all PRs and tickets for the release have been tested/closed
     - Verify Selenium server was put on final RC and build passed
-    - Verify smoke tests on platform and RN apps all passed
+    - Verify smoke tests on webapp/server, desktop app, and RN apps all passed
     - Post QA approval in Release Discussion channel
 3. Build:
     - Update Redux before each RC and Final build

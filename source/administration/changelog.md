@@ -4,10 +4,52 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.21 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+**Release day: 2020-03-16**
+
+Mattermost v5.21.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Compatibility
+ - Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in Postgres.
+
+### Bug Fixes
+ - Fixed an issue where bots could not be added to group-synced channels or teams.
+ - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP.
+ - Fixed an issue where lines in over 65536 characters caused bulk import to fail.
+ - Fixed an issue where code block line numbers were copied when pasting into certain applications.
+ - Fixed an issue where the right-hand side reply thread scrolled down after receiving a new message.
+ - Fixed an issue where the post menu opened up in the right-hand side made the menu options float off page if the parent post was short with no replies.
+ - Fixed an issue where enabling and disabling the demo plugin generated a "connection is shutdown" error.
+ - Fixed an issue where deactivated users with whom a user had never interacted in a private message before appeared in the New Direct Message menu.
+ - Fixed an issue where clicking on an image in external image preview opened the image within the desktop app.
+ - Fixed an issue where users were unable to open email links using View in Browsers option in incognito mode.
+ - Fixed an issue where **Invite Guests > Emails** containing upper case letters were rejected.
+ - Fixed an issue where a new user got a "No more channels to join" message while scrolling through the channel list.
+ - Fixed an issue where clicking on "Terms of Service" and "Privacy Policy" on account creation on the desktop app didn't do anything.
+ - Fixed an issue where gendered emojis were rendered with the wrong gender.
+ - Fixed an issue where large video file uploads failed on the right-hand side without an appropriate error.
+ 
+### Known Issues
+ - Verification emails are still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` are disabled in the System Console.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ 
+### Contributors
+ - [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ajh3](https://github.com/ajh3), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [ami9000](https://github.com/ami9000), [amyblais](https://github.com/amyblais), [andreiavrammsd](https://github.com/andreiavrammsd), [AninditaBasu](https://github.com/AninditaBasu), [Apollo9999](https://github.com/Apollo9999), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [asutosh97](https://github.com/asutosh97), [avasconcelos114](https://github.com/avasconcelos114), [bbodenmiller](https://github.com/bbodenmiller), [bolariin](https://github.com/bolariin), [bradjcoughlin](https://github.com/bradjcoughlin), [catalintomai](https://github.com/catalintomai), [checkaayush](https://github.com/checkaayush), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet/), [ctmusicnz](https://github.com/ctmusicnz), [darkdebo](https://github.com/darkdebo), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [dkbhadeshiya](https://github.com/dkbhadeshiya), [dlclark](https://github.com/dlclark), [DSchalla](https://github.com/DSchalla), [emilioicai](https://github.com/emilioicai), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [flynbit](https://translate.mattermost.com/user/flynbit/), [fm2munsh](https://github.com/fm2munsh), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ikeohachidi](https://github.com/ikeohachidi), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [J35u527](https://github.com/J35u527), [jasonblais](https://github.com/jasonblais), [jasonlanderson](https://github.com/jasonlanderson), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnthompson365](https://github.com/johnthompson365), [josephbaylon](https://github.com/josephbaylon), [joshuabezaleel](https://github.com/joshuabezaleel), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [khos2ow](https://github.com/khos2ow), [larkox](https://github.com/larkox), [lawikip](https://github.com/lawikip), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [marianunez](https://github.com/marianunez), [matthewbirtch](https://github.com/matthewbirtch), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [nadalfederer](https://github.com/nadalfederer), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [njkevlani](https://github.com/njkevlani), [nmlc](https://github.com/nmlc), [opllama2](https://github.com/opllama2), [phillipahereza](https://github.com/phillipahereza), [promulo](https://github.com/promulo), [RajatVaryani](https://github.com/RajatVaryani), [ramkumarrn](https://github.com/ramkumarrn), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [Rulikkk](https://github.com/Rulikkk), [RyanCommits](https://github.com/RyanCommits), [s3than](https://github.com/s3than), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [strtw](https://github.com/strtw), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [thePanz](https://github.com/thePanz), [theriverman](https://github.com/theriverman), [Ths2-9Y-LqJt6](https://github.com/Ths2-9Y-LqJt6), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [Unkn0wnCat](https://github.com/Unkn0wnCat), [vesari](https://github.com/vesari), [vespian](https://github.com/vespian), [vovapi](https://github.com/vovapi), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [Willyfrog](https://github.com/Willyfrog)
+
 ## Release v5.20 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.20.2, release day TBD**
-  - Investigating an issue where switching to an unread channel sometimes gets stuck at "Loading...". [MM-22698](https://mattermost.atlassian.net/browse/MM-22698)
+- **v5.20.2, released 2020-03-12**
+  - Fixed an issue where Mattermost server crashed when running a compliance export. [MM-23157](https://mattermost.atlassian.net/browse/MM-23157)
+  - Fixed an issue where switching to an unread channel got stuck at "Loading..." in certain screen resolutions. [MM-22698](https://mattermost.atlassian.net/browse/MM-22698)
 - **v5.20.1, released 2020-02-16**
   - Fixed an issue where upgrading to v5.20 failed on servers running with ``PluginSettings.Enable = false``, and ``LogSettings.EnableDiagnostics = true``.
 - **v5.20.0, released 2020-02-16**

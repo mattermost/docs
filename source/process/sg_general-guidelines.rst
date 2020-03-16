@@ -93,3 +93,27 @@ Avoid
   The community manager posts questions and answers that they think are well-written.
 Do not use
   The community manager posts questions and answers that he or she thinks are well-written.
+
+Pull Request Review Best Practices
+--------------------------------------
+
+**Treat everyone with respect**
+
+ - Choose positivity over negativity at all times.
+ - Approach the review the same way regardless of whether the pull request came from a first-time contributor, or a long-time staff member.
+ - If there are multiple instances of an error/issue, summarize expectations in a general comment vs pointing out the same error/nuance multiple times.
+ - Be thankful - submitters really respond well to being praised and thanked for their work.
+
+**Seek first to understand and look for opportunities to help others learn**
+
+ - Don’t be afraid to ask for changes or clarify expectations until all concerns are addressed but keep a welcoming/inclusive tone.
+ - Do your best to link documentation as answers.
+
+**Respond promptly to requested reviews**
+
+ - Assume the requested review is urgent and blocking unless explicitly stated otherwise.
+ - Read the whole contribution and any existing comments before jumping in.
+ - Try to interact with the author within 2 business days.
+ - If the review is large or complex, additional time may be required to complete your review. Be upfront with the author.
+ 
+
