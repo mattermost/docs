@@ -134,7 +134,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/signing-in.rst:82
 msgid "SAML Single Sign-On (SSO)"
-msgstr ""
+msgstr "SAML Single Sign-On (SSO)"
 
 #: ../../source/help/getting-started/signing-in.rst:85
 msgid ""
@@ -145,6 +145,11 @@ msgid ""
 " (IDP) for SAML, but you may use other SAML IDPs as well. Please see "
 "`documentation`_ to learn more about configuring SAML for Mattermost."
 msgstr ""
+"Se abilitato dall'Amministratore di Sistema, puoi accedere con le credenziali SAML. "
+"Ciò ti consente di utilizzare lo stesso nome utente e password per Mattermost che usi "
+"per vari altri servizi aziendali. Mattermost supporta ufficialmente `Okta`_ e` Microsoft ADFS`_ "
+"come provider di identità (IDP) per SAML, ma è possibile utilizzare anche altri IDP SAML. "
+"Per ulteriori informazioni sulla configurazione di SAML per Mattermost, consultare la `documentazione`."
 
 #: ../../source/help/getting-started/signing-in.rst:98
 msgid "Switching Teams"
