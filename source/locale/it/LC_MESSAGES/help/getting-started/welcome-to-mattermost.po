@@ -168,7 +168,7 @@ msgstr "Clicka sul pulsante **More..** sotto la sezione dei Canali Pubblici "
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:64
 msgid "**Private Channels:**"
-msgstr ""
+msgstr "**Canali Privati:**"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:66
 msgid ""
@@ -176,29 +176,36 @@ msgid ""
 "selected team members. Any member of a Private Channel can add additional"
 " members. Channel members can choose to leave at any time, but only the "
 "channel owner or Team Admin can remove other members."
-msgstr ""
+msgstr "I Canali Privato sono usati per temi sensibili e sono visibili solamente a"
+"a membri selezionati del team. Ogni membro di un Canale Privato può aggiungere altri membri. "
+"I membri del canale possono scegliere di lasciarlo in ogni momento, ma solo il "
+"proprietario del canale o il Team Admin può rimuovere gli altri membri."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:68
 msgid "Private Channels have a **lock icon**."
-msgstr ""
+msgstr "I Canali Privati hanno una **lock icon**."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:70
 msgid "**Direct Messages (DM) and Group Messages (GM)**"
-msgstr ""
+msgstr "**Messaggi Diretti (DM) e Messaggi di Gruppo (GM)**"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:72
 msgid ""
 "Direct Messages are for conversations between two people. Group Messages "
 "are Direct Messages that have conversations among three or more people. "
 "Both are visible only to the people involved."
-msgstr ""
+msgstr "I Messaggi Diretti sono usati per conversazioni tra due persone. I Messaggi di Gruppo "
+"sono Messaggi Diretti per conversazioni tra tre o più persone. "
+"Entrambi sono visibili solo dalle persone coinvolte."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:74
 msgid ""
 "For more information on Channels and how to manage them, `click here "
 "<https://docs.mattermost.com/help/getting-started/organizing-"
 "conversations.html>`__"
-msgstr ""
+msgstr "Per maggiorni informazioni sui Canali e su come gestirli `clicka qui "
+"<https://docs.mattermost.com/help/getting-started/organizing-"
+"conversations.html>`__"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:78
 msgid ""
@@ -206,43 +213,55 @@ msgid ""
 "conversations active with your team. You can edit and delete messages "
 "after you have sent them. You can also share links to any message in "
 "Mattermost."
-msgstr ""
+msgstr "Mandare messaggi e rispondere ai messaggi sono modi importanti per mantenere "
+"attive le conversazioni con il tuo team. Puoi editare e cancellare i messaggi "
+"dopo averli mandati. Puoi anche condividere il link ad ogni messaggio di "
+"Mattermost."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:80
 msgid ""
 "In this example, a team manager is handing out assignments to various "
 "team members to complete as part of a review:"
-msgstr ""
+msgstr "In questo esempio, un team manager sta distribuendo incarichi a vari "
+"membri del team da completare come parte di una review:"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:85
 msgid ""
 "Since messaging is at the core of your Mattermost application, below are "
 "other examples of what you can do:"
-msgstr ""
+msgstr "Poiché la messaggistica è al centro dell'applicazione Mattermost, di seguito "
+"sono riportati altri esempi di cosa puoi fare:"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:87
 msgid ""
 "`Mention teammates so they get notified "
 "<https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__"
-msgstr ""
+msgstr "`Menzionare i compagni di team in modo che essi siano notificati "
+"<https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:88
 msgid ""
 "`Formatting text (styling, emojis, code, and so on) "
 "<https://docs.mattermost.com/help/messaging/formatting-text.html>`__"
 msgstr ""
+"`Formattare il testo (stile, emoji, codice, e così via) "
+"<https://docs.mattermost.com/help/messaging/formatting-text.html>`__"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:89
 msgid ""
 "`Share files <https://docs.mattermost.com/help/messaging/attaching-"
 "files.html>`__"
 msgstr ""
+"`Condividere file <https://docs.mattermost.com/help/messaging/attaching-"
+"files.html>`__"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:90
 msgid ""
 "`Execute commands <https://docs.mattermost.com/help/messaging/executing-"
 "commands.html>`__"
 msgstr ""
+"`Eseguire comandi <https://docs.mattermost.com/help/messaging/executing-"
+"commands.html>`__"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:91
 msgid ""
@@ -250,18 +269,25 @@ msgid ""
 "messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging"
 "/pinning-messages.html>`__ messages"
 msgstr ""
+"`Flaggare <https://docs.mattermost.com/help/messaging/flagging-"
+"messages.html>`__ e `fissare <https://docs.mattermost.com/help/messaging"
+"/pinning-messages.html>`__ messaggi"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:92
 msgid ""
 "`Keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-"
 "shortcuts.html>`__"
 msgstr ""
+"`Scorciatoie da tastiera <https://docs.mattermost.com/help/messaging/keyboard-"
+"shortcuts.html>`__"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:94
 msgid ""
 "`Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ "
 "for a complete list of messaging basics with instructions."
 msgstr ""
+"`Clicka qui <https://docs.mattermost.com/guides/user.html#messaging>`__ "
+"per una lista completa dei concetti di base sulla messaggistica con le istruzioni."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:98
 msgid ""
@@ -269,16 +295,21 @@ msgid ""
 "terms that you enter. All channels that you are a member of in the "
 "current team are searched."
 msgstr ""
+"Usa il box di ricerca per trovare messaggi e risposte corrispondenti alla ricerca "
+"dei termini insertiti. La ricerca avviene in tutti i canali di cui sei membro "
+"del team corrente."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:103
 msgid ""
 "You can also do more advanced search using search modifiers `here "
 "<https://docs.mattermost.com/help/getting-started/searching.html>`__."
 msgstr ""
+"Puoi anche fare ricerche più avanzate usando i modificatori che trovi `qui "
+"<https://docs.mattermost.com/help/getting-started/searching.html>`__."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:107
 msgid "Notifications in Mattermost alert you to unread messages and mentions."
-msgstr ""
+msgstr "Le notifiche in Mattermost ti avvisano di messaggi non letti e menzioni."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:112
 msgid ""
@@ -286,10 +317,13 @@ msgid ""
 " `here <https://docs.mattermost.com/help/getting-started/configuring-"
 "notifications.html>`__."
 msgstr ""
+"Puoi configurare il tuo account Mattermost impostando le tue preferenze per le notifiche "
+" `qui <https://docs.mattermost.com/help/getting-started/configuring-"
+"notifications.html>`__."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:116
 msgid "What's Next?"
-msgstr ""
+msgstr "Cosa viene dopo?"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:117
 msgid ""
@@ -298,4 +332,7 @@ msgid ""
 "`full user guide <https://docs.mattermost.com/guides/user.html>`__ for "
 "more information on how to use Mattermost!"
 msgstr ""
-
+"Sentiti libero di visionare il nostro  `video dimostrativo su Mattermost "
+"<https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ e consultare "
+"`la user guide completa <https://docs.mattermost.com/guides/user.html>`__ per "
+"maggiori informazioni su come usare Mattermost!"
