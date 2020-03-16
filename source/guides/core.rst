@@ -21,6 +21,7 @@ Development Process
    /developer/localization*
    /process/definitions*
    /process/new-bug-tickets*
+   /process/bug-severity-guidelines*
    
 Release Process
 -------------------

@@ -207,11 +207,22 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Find QA or other teammates to help finish unfinished tests if needed
     - End of day or next morning: Verify all release tests are finished, bring any concerns to Triage / Release meeting
     - Go through all tabs of testing spreadsheet and verify all comments and questions have been filed in Jira as needed
+    
+### J. (T-minus 5 working days) Code Freeze
+Day after which only **S1 regressions** should be fixed (crashes, security vulnerabilities) and no other code changes should be committed. Exceptions can be made by the Release Manager during triage on a case-by-case basis. Review the [Bug Severity Guidelines](https://docs.mattermost.com/process/bug-severity-guidelines).
+
+1. **(Team) Daily Release Update Meeting**
+    - Continue to triage Jira tickets
+    - If no blocking issues are found, PM, Dev, and QA sign off on the release and begin final smoke tests
+2. Release Manager:
+    - Post this checklist in Release Checklist channel
+    - Verify all items in the last posted release checklist are complete
+3. QA:
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
     - After all tickets are verified and closed, run smoke tests on webapp/server, desktop app, and RN apps as appropriate
 
-### J. (T-minus 2 working days) Release Build Cut
+### K. (T-minus 2 working days) Release Build Cut
 
 The final release is cut - RC cuts and bug fixes should be completed by this date. Only urgent and critical issues are considered for fixing.
 
@@ -263,7 +274,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update feature lists on https://mattermost.com/pricing/ and https://mattermost.com/product/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
-### K. (T-minus 0 working days) Release Day
+### L. (T-minus 0 working days) Release Day
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
