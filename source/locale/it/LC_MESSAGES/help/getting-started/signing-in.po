@@ -74,47 +74,53 @@ dimenticata** sulla schermata di accesso, o contattare il tuo Amministratore di 
 
 #: ../../source/help/getting-started/signing-in.rst:37
 msgid "GitLab Single Sign-On (SSO)"
-msgstr ""
+msgstr "GitLab Single Sign-On (SSO)"
 
 #: ../../source/help/getting-started/signing-in.rst:39
 msgid ""
 "When enabled by your System Admin, you can sign in using your GitLab "
 "account using a one-click sign in option."
 msgstr ""
+"Se abilitato dal tuo Amministratore di Sistema, puoi accedere usando il tuo account "
+"Gitlab utilizzando un'opzione di accesso con un click."
 
 #: ../../source/help/getting-started/signing-in.rst:47
 msgid "Google Single Sign-On"
-msgstr ""
+msgstr "Google Single Sign-On"
 
 #: ../../source/help/getting-started/signing-in.rst:48
 #: ../../source/help/getting-started/signing-in.rst:59
 #: ../../source/help/getting-started/signing-in.rst:83
 msgid "*Available in Enterprise Edition E20*"
-msgstr ""
+msgstr "*Disponibile nell'Enterprise Edition E20*"
 
 #: ../../source/help/getting-started/signing-in.rst:50
 msgid ""
 "When enabled by your System Admin, you can sign in using your Google "
 "account using a one-click sign in option."
 msgstr ""
+"Se abilitato dall'Amministratore di Sistema, puoi accedere usando il tuo account"
+"Google utilizzando un'opzione di accesso con un clic."
 
 #: ../../source/help/getting-started/signing-in.rst:58
 msgid "Office 365 Single Sign-On"
-msgstr ""
+msgstr "Office 365 Single Sign-On"
 
 #: ../../source/help/getting-started/signing-in.rst:61
 msgid ""
 "When enabled by your System Admin, you can sign in using your Office 365 "
 "account using a one-click sign in option."
 msgstr ""
+"Se abilitato dall'Amministratore di Sistema, puoi accedere usando il tuo account"
+"Office 365 utilizzando un'opzione di accesso con un clic."
 
 #: ../../source/help/getting-started/signing-in.rst:69
 msgid "AD/LDAP Sign In"
-msgstr ""
+msgstr "AD/LDAP Sign In"
 
 #: ../../source/help/getting-started/signing-in.rst:70
 msgid "*Available in Enterprise Edition E10 and E20*"
-msgstr ""
+msgstr "*Disponibile nell'Enterprise Edition E20*"
 
 #: ../../source/help/getting-started/signing-in.rst:72
 msgid ""
@@ -122,6 +128,9 @@ msgid ""
 "credentials. This lets you use the same username and password for "
 "Mattermost that you use for various other company services."
 msgstr ""
+"Se abilitato dall'Amministratore di Sistema, puoi accedere con le tue credenziali AD/LDAP. "
+"Ciò ti permetterà di usare anche per Mattermost lo stesso username e la stessa password "
+"che usi per i vari altri sistemi aziendali."
 
 #: ../../source/help/getting-started/signing-in.rst:82
 msgid "SAML Single Sign-On (SSO)"
