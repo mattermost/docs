@@ -153,17 +153,19 @@ msgstr ""
 
 #: ../../source/help/getting-started/signing-in.rst:98
 msgid "Switching Teams"
-msgstr ""
+msgstr "Switchare Team"
 
 #: ../../source/help/getting-started/signing-in.rst:100
 msgid ""
 "You can switch between teams you have joined using the team sidebar that "
 "appears left of your channel list on the left-hand sidebar."
 msgstr ""
+"Puoi switchare tra i team di cui fai parte usando la la barra laterale che "
+"appare a sinistra della lista dei canali sulla barra laterale di sinistra."
 
 #: ../../source/help/getting-started/signing-in.rst:106
 msgid "Setting Your Status"
-msgstr ""
+msgstr "Impostare il tuo Stato"
 
 #: ../../source/help/getting-started/signing-in.rst:107
 msgid ""
@@ -172,6 +174,10 @@ msgid ""
 "at the top of the channel list. Do not disturb disables desktop, email "
 "and push notifications."
 msgstr ""
+"Puoi impostare il come online, away, do not disturb o offline "
+"selezionando uno stato dal menu che appare quando clicki sul tuo avatar "
+"in cime alla lista dei canali. Lo stato **do not disturb** disabilita le notifiche desktop, "
+"email e push."
 
 #: ../../source/help/getting-started/signing-in.rst:115
 msgid "How Mattermost determines your status"
