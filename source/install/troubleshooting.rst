@@ -543,7 +543,7 @@ When trying to configure the Giphy integration in Mattermost, you may hit the er
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Check if the server has access to the gfycat servers if it's behind a proxy or firewall blocking outgoing connections.
-2. Check if the server reaches the link metadata timeout (see system console -> experimental -> link metadata timeout)
+2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
 
 
 Mobile
