@@ -181,75 +181,75 @@ msgstr ""
 
 #: ../../source/help/getting-started/signing-in.rst:115
 msgid "How Mattermost determines your status"
-msgstr ""
+msgstr "Come Mattermost determina il tuo stato"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "Client"
-msgstr ""
+msgstr "Client"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "**Online**"
-msgstr ""
+msgstr "**Online**"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "**Away**"
-msgstr ""
+msgstr "**Away**"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "**Offline**"
-msgstr ""
+msgstr "**Offline**"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "**Desktop App**"
-msgstr ""
+msgstr "**Desktop App**"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You're interacting with your computer"
-msgstr ""
+msgstr "Stai interagendo con il tuo computer"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You're inactive on your computer for 5 minutes"
-msgstr ""
+msgstr "Sei inattivo sul tuo computer da almeno 5 minuti"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You close Mattermost, sleep or lock your computer"
-msgstr ""
+msgstr "Hai chiuso Mattermost, o il tuo computre è in stato sleep o lockato"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "**Web Browser**"
-msgstr ""
+msgstr "**Web Browser**"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You're interacting with Mattermost in a browser"
-msgstr ""
+msgstr "Stai interagendo con Mattermost nel browser"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You're inactive in the Mattermost browser window for 5 minutes"
-msgstr ""
+msgstr "Sei inattivo in nella finestra del browser di Mattermost da almeno 5 minuti"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You close the Mattermost browser window"
-msgstr ""
+msgstr "Hai chiuso la finestra del browser di Mattermost"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "**Mobile App**"
-msgstr ""
+msgstr "**Mobile App**"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "Mattermost is open"
-msgstr ""
+msgstr "Mattermost è aperto"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "Mattermost is open with 5 minutes of inactivity"
-msgstr ""
+msgstr "Mattermost è aperto con 5 minuti di inattività"
 
 #: ../../source/help/getting-started/signing-in.rst:1
 msgid "You switch apps, close Mattermost, or lock your screen"
-msgstr ""
+msgstr "Hai switchato app, chiuso mattermost o lockato lo schermo"
 
 #: ../../source/help/getting-started/signing-in.rst:125
 msgid "Logging Out"
-msgstr ""
+msgstr "Log Out"
 
 #: ../../source/help/getting-started/signing-in.rst:127
 msgid ""
@@ -257,24 +257,29 @@ msgid ""
 " three dots in the top header on the left side of the screen. Clicking "
 "**Logout** logs you out of all teams on the server."
 msgstr ""
+"Puoi effettuare il log aout dal **Main menu**, che è accessibili clickando i"
+" tre puntini nell'header superiore sulla parte sinistra dello schermo. Clickando "
+"**Logout** effetuerai il log out da tutti i team sul server."
 
 #: ../../source/help/getting-started/signing-in.rst:132
 msgid "iOS Setup"
-msgstr ""
+msgstr "Setup su iOS"
 
 #: ../../source/help/getting-started/signing-in.rst:134
 msgid ""
 "Your Mattermost teams can be accessed on iOS mobile devices by "
 "downloading the Mattermost App."
 msgstr ""
+"I tuuoi team Mattermost possono essere accessibili da dispositivi mobili iOS "
+"scaricando l'App Mattermost."
 
 #: ../../source/help/getting-started/signing-in.rst:137
 msgid "Open the `App Store` on your Apple device running iOS 9.0 or later."
-msgstr ""
+msgstr "Apri l'`App Store` dal tuo dispositivo Apple iOS 9.0 o superiore."
 
 #: ../../source/help/getting-started/signing-in.rst:138
 msgid "Search for “Mattermost” and click **GET** to download the App for free."
-msgstr ""
+msgstr "Cerca “Mattermost” e clicka **Ottieni** per scaricare l'App in modo gratuito."
 
 #: ../../source/help/getting-started/signing-in.rst:140
 #: ../../source/help/getting-started/signing-in.rst:160
@@ -282,6 +287,8 @@ msgid ""
 "Open Mattermost from your homescreen and input your team and account "
 "information to login:"
 msgstr ""
+"Apri Mattermost dalla tua schermata iniziale e immetti il tuo team e le informazioni "
+"sul tuo account per effettuare la login:"
 
 #: ../../source/help/getting-started/signing-in.rst:143
 #: ../../source/help/getting-started/signing-in.rst:163
@@ -291,6 +298,10 @@ msgid ""
 "Admin or by looking at the address bar in a desktop browser tab with "
 "Mattermost open. It is in the form ``https://domain.com``."
 msgstr ""
+"Immetti l'URL del server: l'URL è l'indirizzo web a cui ti colleghi quando vuoi "
+"accedere a Mattermost. Puoi trovare l'URL del server contattando l'Amministratore di Sistema "
+"o controllando la barra degli indirizzi della tab di browser desktop con "
+"Mattermost aperto. L'URL è del tipo ``https://domain.com``."
 
 #: ../../source/help/getting-started/signing-in.rst:148
 #: ../../source/help/getting-started/signing-in.rst:168
@@ -298,24 +309,29 @@ msgid ""
 "Sign in to Mattermost: This is your account login information as "
 "described by one of the sign in methods above."
 msgstr ""
+"Accesso a Mattermost: Sono le informazioni di accesso al tuo account come "
+"come descritto da uno dei metodi di accesso visti in precedenza."
 
 #: ../../source/help/getting-started/signing-in.rst:152
 msgid "Android Setup"
-msgstr ""
+msgstr "Setup su Android"
 
 #: ../../source/help/getting-started/signing-in.rst:154
 msgid ""
 "Your Mattermost teams can be accessed on Android mobile devices by "
 "downloading the Mattermost App."
 msgstr ""
+"Puoi accedere al tuo team Mattermost da dispositivi mobili Android "
+"scaricando l'App Mattermost."
 
 #: ../../source/help/getting-started/signing-in.rst:157
 msgid "Open the `Google Play Store`_ on your Android device."
-msgstr ""
+msgstr "Apri il `Google Play Store`_ sul tuo dispositivo Android."
 
 #: ../../source/help/getting-started/signing-in.rst:158
 msgid ""
 "Search for “Mattermost” and click **INSTALL** to download the App for "
 "free."
 msgstr ""
+"Cerca “Mattermost” and clicka **INSTALLA** per scaricare l'App gratuitamente."
 
