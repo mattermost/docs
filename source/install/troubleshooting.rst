@@ -85,7 +85,7 @@ Password resets
 **Email address or username sign in**
 
 - Password reset request and emails are ONLY applicable to internal users (i.e users who are invited through invite link / email invite) based on documentation - https://docs.mattermost.com/help/getting-started/signing-in.html#email-address-or-username-sign-in.
-- Since Mattermost Support do not have direct access to the server / instance the user has signed up to, we recommend users to get in touch directly to the System Administrator of the system
+Mattermost Support do not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
 If you are not sure who the System Admin is, contact the internal IT team at your organization for further help.
 
 **AD/LDAP users**
