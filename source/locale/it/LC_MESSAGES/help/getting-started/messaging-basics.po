@@ -51,7 +51,7 @@ msgid ""
 "**Format your messages** using Markdown that supports text styling, "
 "headings, links, emojis, code blocks, block quotes, tables, lists and in-"
 "line images."
-msgstr "** Formatta i tuoi messaggi** usando Markdown che supporta stili, titoli, "
+msgstr "**Formatta i tuoi messaggi** usando Markdown che supporta stili, titoli, "
 "collegamenti, emoji, blocchi di codice, virgolette, tabelle, elenchi e immagini in-line."
 
 #: ../../source/help/getting-started/messaging-basics.rst:23
@@ -69,10 +69,10 @@ msgid ""
 "you want to express, you can also create your own `Custom Emoji "
 "<http://docs.mattermost.com/help/settings/custom-emoji.html>`__."
 msgstr ""
-"** Aggiungi rapidamente emoji** digitando \":\" seguito da due caratteri, che "
+"**Aggiungi rapidamente emoji** digitando \":\" seguito da due caratteri, che "
 "aprirà un completamento automatico delle emoji. Se gli emoji esistenti non rappresentano ciò che "
 "vuoi esprimere, puoi anche creare il tuo `Emoji personalizzato "
-"<Http://docs.mattermost.com/help/settings/custom-emoji.html>` __".
+"<Http://docs.mattermost.com/help/settings/custom-emoji.html>`__".
 
 #: ../../source/help/getting-started/messaging-basics.rst:33
 msgid ""
