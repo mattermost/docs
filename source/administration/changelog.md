@@ -8,6 +8,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release day: 2020-04-16**
 
+### Compatibility
+
+### Breaking Changes
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
 ### Highlights
  - Version 2 of the server Audit/Logging System
  - Channel Moderation Settings (Beta)
@@ -17,42 +23,67 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - "Unarchive Channel" option to archived channels menu
 
 ### Improvements
- - Promoted Dutch and Russian to Beta.
- - Enabled notification sounds in Firefox.
+
+#### Languages
+ - Promoted Dutch and Russian languages to Beta.
+
+#### User Interface (UI)
+ - Added several UI improvements, such as added a "Close Group Message" option to Group Message menu.
  - Updated the permalink view.
- - Added a "Close Channel" option to DM menu
- - UI / UX quickwins, such as added a "Close Group Message" option to Group Message menu.
- - Allow searching for files through plugin API.
- - Added support for setting Office365Settings Directory (tenant) Id in config.json.
+ - Added a keyboard shortcut to open/close the right-hand sidebar
+ - Added a keyboard shortcut to add reactions to last message in a channel or a thread.
+ - Added a keyboard shortcut to switch between teams.
+ - Added infinite scroll to Select Teams screen.
+
+#### Notifications
+ - Added support for notification sounds in Firefox.
+
+#### Plugins
+ - Allow searching for files through the plugin API.
+ - Allowed prepackaged and local plugins to set ``ReleaseNotesURL``.
+
+#### Integrations
+ - In interactive dialogs, the autocomplete lists now render below the input field by default.
  - Extended the payload of slash commands to include a map of the users and channels mentioned in the message to their corresponding identifiers.
- - Allowed prepackaged and local plugins to set ReleaseNotesURL.
- - In interactive dialogs, render autocomplete lists below the input field by default.
- - Keyboard shortcut to open/close the right-hand sidebar.
- - Keyboard shortcut for adding reactions to last message in channel or thread.
- - Ability to switch teams via keyboard.
- - Add infinite scroll to Select Teams screen.
+ 
+#### Administration
+ - Added support for setting Office365Settings Directory (tenant) Id in the ``config.json``.
 
 ### Bug Fixes
- - Fixed data race conditions happening when accessing ``Post.Props``.
- - Fixed an issue where Mattermost was unable to start if a configured mail server was listening but not responding.
- - Fixed an issue where LDAP sync did not finish if read database replica was enabled.
- - Fixed a SIGSEGV when exporting to CSV.
- - Fixed an issue where Elasticsearch error was output when running unrelated commands.
  - Fixed an issue where the autoresponder responded to every bot post.
  - Fixed an issue where a user's role was not reflected correctly in the Channel Members Modal when it was updated after the modal was opened.
  - Fixed an issue where a link to Integrations page was not shown if a custom slash command and webhooks were disabled and bot accounts were enabled.
  - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
- - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
- - Fixed an issue where importing from slack crashed due to invalid memory access or nil pointer dereference.
  - Fixed an issue where System Admins could access the Teams menu of the System Console.
-
-### Config.json
- - EnableOpenTracing
+ - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
+ - Fixed data race conditions that occurred when accessing ``Post.Props``.
+ - Fixed an issue where Mattermost was unable to start if a configured mail server was listening but not responding.
+ - Fixed an issue where LDAP sync did not finish if read database replica was enabled.
+ - Fixed a SIGSEGV when exporting to CSV.
+ - Fixed an issue where Elasticsearch error was output when running unrelated commands.
+ - Fixed an issue where importing from slack crashed due to invalid memory access or nil pointer dereference.
  
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - EnableOpenTracing
+
+### Open Source Components
+
+### Database Changes
+
 ### API Changes
  - Added an endpoint to move a command to another team.
  - Added an endpoint to retrieve a command by id.
  - Added a new busy api ``Client.GetServerBusy`` endpoint support for mmctl.
+
+### Websocket Event Changes
+ 
+### Known Issues
+ 
+### Contributors
+
 
 
 ## Release v5.21 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
