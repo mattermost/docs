@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/messaging-basics.rst:2
 msgid "Messaging Basics"
-msgstr ""
+msgstr "Le basi della Messagistica"
 
 #: ../../source/help/getting-started/messaging-basics.rst:6
 msgid ""
@@ -29,29 +29,38 @@ msgid ""
 "to insert new lines go to **Main Menu** > **Account Settings** > "
 "**Advanced** > **Send messages on CTRL+ENTER**."
 msgstr ""
+"**Scrivi i messaggi** usando la casella di testo nella parte inferiore dello schermo. "
+"Premi INVIO per mandadare un messaggio. Usa SHIFT+INVIO per inserire tornare a capo "
+"senza inviare un messaggio. Per mandare un messaggio usando CTRL+INVIO e usare INVIO "
+"per tornare a capo vai in **Main Menu** > **Account Settings** > "
+"**Advanced** > **Send messages on CTRL+ENTER**."
 
 #: ../../source/help/getting-started/messaging-basics.rst:11
 msgid ""
 "**Reply to messages** by clicking the reply arrow next to the message "
 "text."
-msgstr ""
+msgstr "**Rispondi ad un messaggio** clickando sulla freccia reply arrow vicino al testo "
+"del messaggio."
 
 #: ../../source/help/getting-started/messaging-basics.rst:17
 msgid "**Notify teammates** when they are needed by typing ``@username``."
-msgstr ""
+msgstr "**Notifica un componente del team** quando necessario digitando ``@username``."
 
 #: ../../source/help/getting-started/messaging-basics.rst:19
 msgid ""
 "**Format your messages** using Markdown that supports text styling, "
 "headings, links, emojis, code blocks, block quotes, tables, lists and in-"
 "line images."
-msgstr ""
+msgstr "** Formatta i tuoi messaggi** usando Markdown che supporta stili, titoli, "
+"collegamenti, emoji, blocchi di codice, virgolette, tabelle, elenchi e immagini in-line."
 
 #: ../../source/help/getting-started/messaging-basics.rst:23
 msgid ""
 "You can use either ``_`` or ``*`` for italics and bold text. See the "
 "table below for examples."
 msgstr ""
+"Puoi usare ``_`` o ``*`` per i testi in corsivo o in grassetto. Vedi la "
+"tabella in basso per gli esempi."
 
 #: ../../source/help/getting-started/messaging-basics.rst:28
 msgid ""
@@ -60,50 +69,67 @@ msgid ""
 "you want to express, you can also create your own `Custom Emoji "
 "<http://docs.mattermost.com/help/settings/custom-emoji.html>`__."
 msgstr ""
+"** Aggiungi rapidamente emoji** digitando \":\" seguito da due caratteri, che "
+"aprirà un completamento automatico delle emoji. Se gli emoji esistenti non rappresentano ciò che "
+"vuoi esprimere, puoi anche creare il tuo `Emoji personalizzato "
+"<Http://docs.mattermost.com/help/settings/custom-emoji.html>` __".
 
 #: ../../source/help/getting-started/messaging-basics.rst:33
 msgid ""
 "**Attach files** by dragging and dropping them into Mattermost or "
 "clicking the attachment icon in the text input box."
 msgstr ""
+"**Allega file** trascinandoli in Mattermost oppure "
+"clickando sull'icona dell'attachment nella casella per l'insermento dei messaggi."
 
 #: ../../source/help/getting-started/messaging-basics.rst:36
 msgid ""
 "**Flag messages for follow up** by clicking the flag icon next to the "
 "message timestamp."
 msgstr ""
+"**Contrassegna i messaggi per il follow-up** facendo clic sull'icona della bandierina accanto alla "
+"data/ora del messaggio."
 
 #: ../../source/help/getting-started/messaging-basics.rst:42
 msgid "Learn more about:"
-msgstr ""
+msgstr "Per saperne di più:"
 
 #: ../../source/help/getting-started/messaging-basics.rst:44
 msgid ""
 "`Composing Messages and Replies "
 "<http://docs.mattermost.com/help/messaging/sending-messages.html>`__"
 msgstr ""
+"`Comporre Messaggi e Risposte "
+"<http://docs.mattermost.com/help/messaging/sending-messages.html>`__"
 
 #: ../../source/help/getting-started/messaging-basics.rst:45
 msgid ""
 "`Mentioning Teammates <http://docs.mattermost.com/help/messaging"
 "/mentioning-teammates.html>`__"
 msgstr ""
+"`Menzionari gli Appartenenti al Team <http://docs.mattermost.com/help/messaging"
+"/mentioning-teammates.html>`__"
 
 #: ../../source/help/getting-started/messaging-basics.rst:46
 msgid ""
 "`Formatting Messages using Markdown "
 "<http://docs.mattermost.com/help/messaging/formatting-text.html>`__"
 msgstr ""
+"`Formattare Messaggi usando Markdown "
+"<http://docs.mattermost.com/help/messaging/formatting-text.html>`__"
 
 #: ../../source/help/getting-started/messaging-basics.rst:47
 msgid ""
 "`Attaching Files <http://docs.mattermost.com/help/messaging/attaching-"
 "files.html>`__"
 msgstr ""
+"`Allegare File <http://docs.mattermost.com/help/messaging/attaching-"
+"files.html>`__"
 
 #: ../../source/help/getting-started/messaging-basics.rst:48
 msgid ""
 "`Executing Commands <http://docs.mattermost.com/help/messaging/executing-"
 "commands.html>`__"
 msgstr ""
-
+"`Eseguire Comandi <http://docs.mattermost.com/help/messaging/executing-"
+"commands.html>`__"
