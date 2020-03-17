@@ -2,7 +2,7 @@
 Severity Levels for Bug Tickets
 ---------------------------------------------------------
 
-Criteria for Bugs:
+Criteria for Bugs
 ---------------------------------------------------------
 
 “Scale” of impact
@@ -11,7 +11,7 @@ Criteria for Bugs:
    - S3 - Half or less than half of users’ functionality affected (e.g. Cannot create custom emoji if System Admin). Can be fixed anytime until Code Complete deadline.
    - S4 - Other minor (e.g. channel ID is too small in View Info modal). Can be fixed anytime until Code Complete deadline.
 
-Assigning Severity Levels:
+Assigning Severity Levels
 ---------------------------------------------------------
 
 Severity levels on bug tickets are normally assigned by Release Manager and triage team during triage meetings, but can also be modified afterwards by devs upon further investigation. 

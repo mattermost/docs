@@ -194,7 +194,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Go through all tabs of testing spreadsheet and verify all comments and questions have been filed in Jira as needed
     
 ### J. (T-minus 5 working days) Code Freeze
-Day after which only **S1 regressions** should be fixed (crashes, security vulnerabilities) and no other code changes should be committed. Exceptions can be made by the Release Manager during triage on a case-by-case basis. Review the [Bug Severity Guidelines](https://docs.mattermost.com/process/bug-severity-guidelines).
+Day after which only **S1 regressions** should be fixed (crashes, security vulnerabilities) and no other code changes should be committed. Exceptions can be made by the Release Manager during triage on a case-by-case basis. Review the [Bug Severity Guidelines](https://docs.mattermost.com/process/bug-severity-guidelines.html).
 
 1. **(Team) Daily Release Update Meeting**
     - Continue to triage Jira tickets
