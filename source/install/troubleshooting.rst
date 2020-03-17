@@ -91,7 +91,7 @@ Password resets
 **AD/LDAP users**
 
 - Password reset process should be done on the directory level instead of Mattermost UI since Mattermost pulls the information of the credentials from the LDAP directory.
-- If the LDAP user has issues with the password, they should get in touch with the LDAP administrator for further help.
+If you experience issues with your password for your LDAP log in, contact your organization's LDAP administrator for further help.
 
 **SSO users (OneLogin/Okta etc)**
 
