@@ -88,7 +88,7 @@ Password resets
 - Since Mattermost Support do not have direct access to the server / instance the user has signed up to, we recommend users to get in touch directly to the System Administrator of the system
 - If you are not sure who the System Administrator is, we suggest users to get in touch with the internal IT team for further help.
 
-Scenario #2 : AD / LDAP users
+**AD/LDAP users**
 
 - Password reset process should be done on the directory level instead of Mattermost UI since Mattermost pulls the information of the credentials from the LDAP directory.
 - If the LDAP user has issues with the password, they should get in touch with the LDAP administrator for further help.
