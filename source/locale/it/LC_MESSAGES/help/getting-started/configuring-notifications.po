@@ -104,6 +104,10 @@ msgid ""
 "?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and "
 "see what other factors influence if a notification should be triggered."
 msgstr ""
+"**Non ricevi le notifiche desktop?** Leggi le nostre `FAQ per controllare il diagramma di flussoe delle notifiche desktop "
+"<https://docs.mattermost.com/overview/faq.html"
+"?#what-determines-if-a-desktop-notification-should-be-triggered>`_ e "
+"e quali altri fattori influenzano l'invio di una notifica
 
 #: ../../source/help/getting-started/configuring-notifications.rst:28
 msgid ""
