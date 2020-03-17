@@ -95,7 +95,7 @@ Scenario #2 : AD / LDAP users
 
 Scenario #3: SSO Users (OneLogin / Okta / etc)
 
-- Password reset is to be done on the IdP provider side instead of Mattermost.
+The password reset process is completed on the IdP provider side, and not via the Mattermost System Console.
 
 SAML Issues
 -------------------
