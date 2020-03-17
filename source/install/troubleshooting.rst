@@ -82,7 +82,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 Password resets
 ~~~~~~~~~~~~~~~
 
-Scenario #1: Internal users
+**Email address or username sign in**
 
 - Password reset request and emails are ONLY applicable to internal users (i.e users who are invited through invite link / email invite) based on documentation - https://docs.mattermost.com/help/getting-started/signing-in.html#email-address-or-username-sign-in.
 - Since Mattermost Support do not have direct access to the server / instance the user has signed up to, we recommend users to get in touch directly to the System Administrator of the system
