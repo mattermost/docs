@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/configuring-notifications.rst:2
 msgid "Configuring Notifications"
-msgstr ""
+msgstr "Configurare le notifiche"
 
 #: ../../source/help/getting-started/configuring-notifications.rst:4
 msgid ""
@@ -31,14 +31,17 @@ msgstr ""
 #: ../../source/help/getting-started/configuring-notifications.rst:6
 msgid "Direct Messages you"
 msgstr ""
+"Le notifiche push desktop, e-mail e mobile ti avvisano dell'attività in "
+"Mattermost. Quando ti unisci a un team, Mattermost ti avviserà dei messaggi "
+"diretti a te, quando qualcuno:"
 
 #: ../../source/help/getting-started/configuring-notifications.rst:7
 msgid "Mentions your username or first name in a channel"
-msgstr ""
+msgstr "Menziona il tuo username o nome proprio in un canale"
 
 #: ../../source/help/getting-started/configuring-notifications.rst:8
 msgid "Notifies a channel you're in using @channel or @all"
-msgstr ""
+msgstr "Notifica un canale in cui ti trovi usando @channel o @all"
 
 #: ../../source/help/getting-started/configuring-notifications.rst:9
 msgid ""
@@ -46,10 +49,13 @@ msgid ""
 "<https://docs.mattermost.com/help/settings/account-settings.html#words-"
 "that-trigger-mentions>`_"
 msgstr ""
+"Usa una `keywords che tu hai configurato "
+"<https://docs.mattermost.com/help/settings/account-settings.html#words-"
+"that-trigger-mentions>`_"
 
 #: ../../source/help/getting-started/configuring-notifications.rst:12
 msgid "Desktop Notifications"
-msgstr ""
+msgstr "Notifiche Desktop"
 
 #: ../../source/help/getting-started/configuring-notifications.rst:14
 msgid ""
@@ -59,6 +65,11 @@ msgid ""
 "change the default preference to trigger desktop notifications for all "
 "messages sent in channels you're a member of, or turn them off entirely."
 msgstr ""
+"Le notifiche Desktop sono pop-uo che appaiono nell'angolo del tuo monitor "
+"principale quando usi Chrone, Firefox, Edge, Safari o l'`app Desktop per "
+"Mattermost <https://mattermost.com/download/#mattermostApps>`_. Puoi "
+"cambiare le preferenze di default per attivare le notifiche desktop per tutti "
+"i messaggi inviato nei canali di cui sei membro, o spegnerle del tutto."
 
 #: ../../source/help/getting-started/configuring-notifications.rst:18
 msgid ""
@@ -66,18 +77,25 @@ msgid ""
 "**Notifications** > **Desktop Notifications** > **Send Desktop "
 "Notifications**."
 msgstr ""
+"Configura le notifiche desktop in **Account Settings** > "
+"**Notifications** > **Desktop Notifications** > **Send Desktop "
+"Notifications**."
 
 #: ../../source/help/getting-started/configuring-notifications.rst:21
 msgid ""
 "Configure desktop notifications in specific channels in **Channel Menu** "
 "> **Notification Preferences** > **Send Desktop Notifications**."
 msgstr ""
+"Configura le notifiche desktop per canali specifici in **Channel Menu** "
+"> **Notification Preferences** > **Send Desktop Notifications**."
 
 #: ../../source/help/getting-started/configuring-notifications.rst:24
 msgid ""
 "By default, all channels use the global setting configured in *Account "
 "Settings*."
 msgstr ""
+"Per impostazione predefinita, tutti i canali usano le opzioni globali impostate in *Account "
+"Settings*."
 
 #: ../../source/help/getting-started/configuring-notifications.rst:26
 msgid ""
