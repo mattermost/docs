@@ -90,7 +90,7 @@ Password resets
 
 **AD/LDAP users**
 
-- Password reset process should be done on the directory level instead of Mattermost UI since Mattermost pulls the information of the credentials from the LDAP directory.
+The password reset process is performed on the directory level as Mattermost pulls the credential information from the LDAP directory.
 If you experience issues with your password for your LDAP log in, contact your organization's LDAP administrator for further help.
 
 **SSO users (OneLogin/Okta etc)**
