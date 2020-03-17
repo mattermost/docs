@@ -66,6 +66,4 @@ The build process may generate this error: ``WARNING: toctree contains reference
 6. translate po files in `source/locale/it/LC_MESSAGES`.
 7. Build translated document: `make -e SPHINXOPTS="-D language='it'" html`.
 
-* To update po files: `sphinx-intl update -p build/locale`.
-
 For more informations please refer to [https://www.sphinx-doc.org/en/master/usage/advanced/intl.html](https://www.sphinx-doc.org/en/master/usage/advanced/intl.html)
