@@ -97,7 +97,7 @@ Password resets
 
 The password reset process is completed on the IdP provider side, and not via the Mattermost System Console.
 
-SAML Issues
+SAML issues
 -------------------
 
 Unable to Switch to SAML Authentication Successfully
