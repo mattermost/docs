@@ -79,7 +79,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-Password Resets
+Password resets
 ~~~~~~~~~~~~~~~
 
 Scenario #1: Internal users
