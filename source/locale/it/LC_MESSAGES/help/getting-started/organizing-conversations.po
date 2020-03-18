@@ -19,26 +19,28 @@ msgstr ""
 
 #: ../../source/help/getting-started/organizing-conversations.rst:2
 msgid "Organizing Conversations"
-msgstr ""
+msgstr "Organizzare le conversazioni"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:4
 msgid ""
 "Conversations in Mattermost are crucial to company productivity and "
 "success. Keeping information and messages organized in channels creates "
 "an efficient workplace."
-msgstr ""
+msgstr "Le conversazioni in Mattermost sono cruciali per la produttività e il successo "
+"aziendale. Mantenere le informazioni e i messaggi organizzati in canali crea "
+"uno spazio di lavoro efficente."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:6
 msgid "`Channel Types`_"
-msgstr ""
+msgstr "`Tipi di Canale`_"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:7
 msgid "`Managing Channels`_"
-msgstr ""
+msgstr "`Gestione dei Canali`_"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:11
 msgid "Channel Types"
-msgstr ""
+msgstr "Tipi di Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:13
 msgid ""
@@ -46,10 +48,13 @@ msgid ""
 "There are three types of channels: Public Channels, Private Channels, and"
 " Direct Messages."
 msgstr ""
+"I Canali sono usati per organizzare le conversazioni tra argomenti diversi. "
+"Eistono tre tipi di canale: Canali Pubblici, Canali Privati, e "
+"Messaggi Diretti."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:17
 msgid "Public Channels"
-msgstr ""
+msgstr "Canali Pubblici"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:19
 msgid ""
@@ -57,10 +62,12 @@ msgid ""
 "automatically added to two Public Channels when they sign up: Town Square"
 " and Off-Topic."
 msgstr ""
+"I Canali Pubblici sono aperti a chiunque nel team. I nuovi membri del team sono al loro accesso "
+"automaticamente aggiunti a due Canali Pubblici: Town Square e Off-Topic. "
 
 #: ../../source/help/getting-started/organizing-conversations.rst:22
 msgid "Private Channels"
-msgstr ""
+msgstr "Canali Privati"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:24
 msgid ""
@@ -71,10 +78,16 @@ msgid ""
 "Admin <http://docs.mattermost.com/help/getting-started/managing-"
 "members.html#user-roles>`__."
 msgstr ""
+"I Canali Privati sono usati per argomenti sensibili e sono visibili solamente a membri "
+"selezionati del team. Nella Team Edition, ogni membro di un canale Privato può aggiungere o"
+" rimuovere altri membri dai canali Privati, ma solo nella Enterprise Edition "
+"`questi permessi possonon essere ristretti al Channel Admin e al System "
+" Admin <http://docs.mattermost.com/help/getting-started/managing-"
+"members.html#user-roles>`__."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:27
 msgid "Direct Messages and Group Messages"
-msgstr ""
+msgstr "Messaggi Diretti e Messaggi di Gruppo"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:29
 msgid ""
@@ -82,6 +95,9 @@ msgid ""
 "are Direct Messages that have conversations among three or more people. "
 "Both are visible only to the people involved."
 msgstr ""
+"I Messaggi Diretti sono conversazioni tra due persone. I Messaggi di Gruppo "
+"sono Messaggi Diretti per conversazioni tra tre o più persone. "
+"Entrambi i tipi sono visibili solo alle persone coinvolte."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:31
 msgid ""
@@ -90,12 +106,18 @@ msgid ""
 "up to seven other participants. If you want to communicate with more than"
 " seven people, you must create a Private Channel."
 msgstr ""
+"Usa un Messaggio Diretto quando vuoi una conversazioni private con una sola "
+"persona. Usa un Messaggio di Gruppo quando desidere avere una conversazione con "
+"al massimo altre sette persone. Se vuoi comunicare con più di sette persone, "
+"devi creare un Canale Privato."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:33
 msgid ""
 "If your System Administrator has allowed it, you can start a Direct "
 "Message or a Group Message with people on other teams."
 msgstr ""
+"Se il tuo System Administrator ha abilitato questa opzione, puoi inviare Messaggi "
+"Diretti o Messaggi di Gruppo a persone di altr team."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:35
 msgid ""
@@ -105,18 +127,23 @@ msgid ""
 "disturb (red dash indicates disabled desktop and push notifications) and "
 "offline (white circle indicates browser is closed)."
 msgstr ""
+"Controlla l'indicatore di stato online vicino ai nomi nella lista dei Messaggi Diretti. "
+"Viene visualizzato: online (segno di spunta verde indica il browser attivo), "
+"away (l'orologio arancione indica nessuna attività del browser per 5 minuti), do not "
+"disturb (il trattino rosso indica il desktop disabilitato e le notifiche push) e "
+"offline (il cerchio bianco indica che il browser è chiuso)."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:39
 msgid "Managing Channels"
-msgstr ""
+msgstr "Gestire i Canali"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:41
 msgid "Channels can be created, joined, renamed, left and archived."
-msgstr ""
+msgstr "I Canali possono essere creati, ci si può aggiungere, possono essere rinominati, lasciati e archiviati."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:44
 msgid "Creating a Channel"
-msgstr ""
+msgstr "Creare un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:46
 msgid ""
@@ -126,6 +153,11 @@ msgid ""
 "to the *Direct Messages* bar or select **More** at the bottom of the list"
 " to view team members you can message."
 msgstr ""
+"Crea un nuovo Canale Pubblico o Canale Privato selezionando il simbolo "
+"**+** vicino all'intestazione *Channels* o *Private Channels* sul lato "
+"sinistro. Per cominciare un thread di messaggi diretti, clicka sul simbolo **+** "
+"vicino alla barra *Direct Messages* o seleziona **More** sotto la lista "
+"per visualizzare i membri del team a cui puoi mandare un messaggio."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:50
 msgid ""
@@ -134,10 +166,14 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "public-channel-creation-for>`__."
 msgstr ""
+"Chiunque può creare Canali Pubblici o Canali Privati, a meno che l'Amministratore "
+"di Sistema non ha `ristretto i permessi "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"public-channel-creation-for>`__."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:53
 msgid "Joining a Channel"
-msgstr ""
+msgstr "Unirsi a un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:55
 msgid ""
@@ -145,10 +181,13 @@ msgid ""
 "through a list of Public Channels you can join. To join a Private Channel"
 " you need to be added by a member of that channel."
 msgstr ""
+"Clicka su **More** sotto la lista **Channels** per vedere e cercare "
+"nella lista dei Canali Pubblici a cui ti sei unito. Per unirti ad un Canale Privato"
+" è necessario che tu sia aggiunto da un membro di quel canale."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:58
 msgid "Adding Members to a Channel"
-msgstr ""
+msgstr "Aggiungere Membri ad un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:60
 msgid ""
@@ -157,16 +196,23 @@ msgid ""
 "new members by clicking **Add** next to a user's name. Users already "
 "added to the channel will not appear in this modal."
 msgstr ""
+"Fai click sul nome del canale nella parte superiore del riquadro centrale "
+"per accedere al menu a discesa, quindi fai click su **Add Members**. Qualsiasi "
+"membro di un canale può aggiungere nuovi membri facendo click su **Add** accanto "
+"al nome di un utente. Gli utenti già aggiunti al canale non verranno visualizzati in "
+"questa finestra modale."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:64
 msgid ""
 "You can also add users to channels within their profile pop-over by "
 "clicking \"Add to a Channel\" and selecting the channel to add them to."
 msgstr ""
+"Puoi anche aggiungere utenti ai canali dal pop-over del loro profilo "
+"clickando su \"Add to a Channel\" e selezioando il canale a cui aggiungerli."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:69
 msgid "Removing Members from a Channel"
-msgstr ""
+msgstr "Rimuovere Membri da un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:71
 msgid ""
@@ -174,14 +220,17 @@ msgid ""
 "down menu, then click **Manage Members**. Any member of a channel can "
 "remove other members by clicking **Remove** next to a user's name."
 msgstr ""
+"Clicka sul nome del canale in cima al pannello centrale per accere al menu "
+"a discesa, e poi clicka su **Manage Members**. Ogni membro di un canale può "
+"rimuovere altri membri clickando su **Remove** vicino al nome dell'utente."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:74
 msgid "Naming a Channel"
-msgstr ""
+msgstr "Assegnare un Nome ad un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:75
 msgid "Channels can be identified in two ways:"
-msgstr ""
+msgstr "I Canali possono essere identificati in due modi:"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:77
 msgid ""
@@ -193,6 +242,11 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "public-channel-renaming-for>`__."
 msgstr ""
+"Nome visualizzato del canale: questo è il nome del canale che appare nell'interfaccia utente "
+"di Mattermost. Fai click sul nome del canale nella parte superiore del riquadro centrale per "
+"accedere al menu a discesa, quindi fai click su **Rename Channel**. Chiunque può rinominare "
+"i canali a cui appartiene, a meno che l'Amministratore di Sistema non abbia `limitato le autorizzazioni "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:78
 msgid ""
@@ -200,24 +254,29 @@ msgid ""
 "channel handle when renaming a channel, but changing channel handles may "
 "break existing links."
 msgstr ""
+"Handle del Canale: è parte dell'URL del canale. Puoi anche modificare l'handle "
+"del canale quando lo rinomini un canale, ma la modifica degli handle del canale "
+"potrebbe rompere i collegamenti esistenti."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:80
 msgid ""
-"For example, for the following channel: "
+"For example, per il seguente canale: "
 "https://community.mattermost.com/core/channels/ux-design"
 msgstr ""
+"Per esempio, for the following channel: "
+"https://community.mattermost.com/core/channels/ux-design"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:82
 msgid "Channel display name: ``UX Design``"
-msgstr ""
+msgstr "Nome visualizzato del canale: ``UX Design``"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:83
 msgid "Channel handle: ``ux-design``"
-msgstr ""
+msgstr "Handle del canale: ``ux-design``"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:86
 msgid "Leaving a Channel"
-msgstr ""
+msgstr "Lasciare un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:88
 msgid ""
@@ -227,10 +286,15 @@ msgid ""
 "rejoin. Team members will not receive mention notifications from channels"
 " of which they are not members."
 msgstr ""
+"Fai click sul nome del canale nella parte superiore del riquadro centrale "
+"per accedere al menu a discesa, quindi fai click su **Leave Channel*. Qualsiasi "
+"membro del team che lascia un canale privato deve essere aggiunto nuovamente da "
+"un membro del canale se lo desidera ritornare a farne parte. I membri del team "
+"non riceveranno notifiche di menzione dai canali di cui non sono membri. "
 
 #: ../../source/help/getting-started/organizing-conversations.rst:91
 msgid "Archiving a Channel"
-msgstr ""
+msgstr "Archiviare un Canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:93
 msgid ""
@@ -240,6 +304,11 @@ msgid ""
 "Administrator has `restricted the permissions "
 "<https://docs.mattermost.com/administration/config-settings.html#id2>`__."
 msgstr ""
+"Fai click sul nome del canale nella parte superiore del riquadro centrale per "
+"accedere al menu a discesa, quindi fai click su **Archive Channel**. Chiunque "
+"può archiviare i canali pubblici o privati a cui appartiene, a meno che "
+"l'Amministratore di sistema non abbia `limitato autorizzazioni "
+"<https://docs.mattermost.com/administration/config-settings.html#id2>`__."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:95
 msgid ""
@@ -248,6 +317,10 @@ msgid ""
 "Because of this, the URL of a newly created channel cannot be the same "
 "URL name as an archived channel."
 msgstr ""
+"Quando un canale viene archiviato, viene rimosso dall'interfaccia utente, ma "
+"esiste una copia sul server nel caso in cui fosse necessario per motivi di "
+"controllo in un secondo momento. Per questo motivo, l'URL di un canale appena "
+"creato non può avere lo stesso nome URL di un canale archiviato. "
 
 #: ../../source/help/getting-started/organizing-conversations.rst:97
 msgid ""
@@ -255,6 +328,9 @@ msgid ""
 "shared or searched by default. If you want to be able to view or search "
 "the channel later, either"
 msgstr ""
+"Inoltre, quando un canale viene archiviato, i contenuti non possono essere "
+"visualizzati, condivisi o cercati per impostazione predefinita. Se si "
+"desidera poter visualizzare o cercare il canale in un secondo momento,"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:99
 msgid ""
