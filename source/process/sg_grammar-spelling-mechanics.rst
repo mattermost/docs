@@ -75,13 +75,10 @@ Avoid
 Capitalization
 --------------
 
-Use title case for page titles and section titles.
-
-Title case
-  Grammar, Spelling, and Mechanics
+Use sentence case for page titles, headings, and section titles.
 
 Sentence case
-  Language and spelling
+  This article is about language and spelling
 
 Numbers
 -------
