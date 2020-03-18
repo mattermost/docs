@@ -122,7 +122,7 @@ If you're interested in contributing to the process, please join the `Mattermost
     "Português do Brasil - Portuguese", "`Rodrigo Corsi (rodcorsi) <https://github.com/rodcorsi>`__", "`Carlos Tadeu Panato Junior (cpanato) <https://github.com/cpanato>`_"
     "Română - Romanian", "`Viorel-Cosmin Miron (uhlhosting) <https://github.com/uhlhosting>`__", ""
     "Türkçe - Turkish", "`Kaya Zeren <https://twitter.com/kaya_zeren>`__", ""
-    "Pусский - Russian", "_`Alexey Napalkov <https://github.com/flynbit>__", ""
+    "Pусский - Russian", "`Alexey Napalkov <https://github.com/flynbit>`_", ""
     "Yкраїнська - Ukrainian", "TBD (Open Role)", ""
     "한국어 - Korean", "TBD (Open Role)", ""
     "中文 (简体) - Simplified Chinese", "`aeomin <http://translate.mattermost.com/user/aeomin/>`__", ""
