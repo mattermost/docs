@@ -29,6 +29,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Added several UI improvements, such as added a "Close Group Message" option to Group Message menu.
+ - Added the ability to drag and drop teams on the team sidebar.
  - Updated the permalink view.
  - Added a keyboard shortcut to open/close the right-hand sidebar
  - Added a keyboard shortcut to add reactions to last message in a channel or a thread.
@@ -54,6 +55,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a user's role was not reflected correctly in the Channel Members Modal when it was updated after the modal was opened.
  - Fixed an issue where a link to Integrations page was not shown if a custom slash command and webhooks were disabled and bot accounts were enabled.
  - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
+ - Fixed an issue where a user account was still created when inviting a new user to a team with an email address that didn't match the team's allowed domain.
  - Fixed an issue where System Admins could access the Teams menu of the System Console.
  - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
  - Fixed data race conditions that occurred when accessing ``Post.Props``.
