@@ -352,7 +352,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/organizing-conversations.rst:103
 msgid "Converting Public Channels to Private (and vice versa)"
-msgstr ""
+msgstr "Convertire un Canale Pubblico in Provato (e viceversa)"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:105
 msgid ""
