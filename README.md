@@ -56,7 +56,7 @@ If you've downloaded the repo and are editing Mattermost documentation on your l
 
 The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 
 
-## Translate
+## Translating
 
 1. Install sphinx-intl: `pip install sphinx-intl`.
 2. `cd` into the cloned repository.
