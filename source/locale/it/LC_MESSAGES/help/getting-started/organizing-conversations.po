@@ -362,6 +362,11 @@ msgid ""
 "Please note that default channels such as Town Square and Off-Topic "
 "cannot be converted to private channels."
 msgstr ""
+"Fai click sul nome del canale nella parte superiore del riquadro centrale "
+"per accedere al menu a discesa, quindi fai clic su **Convert to Private Channel**. "
+"Gli amministratori di team e di sistema hanno la possibilità di convertire i "
+"canali pubblici in canali privati. Nota che i canali di default come Town Square e "
+"Off-Topic non possono essere convertiti in canali privati."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:107
 msgid ""
@@ -370,6 +375,10 @@ msgid ""
 "private channel history, only System Admins can convert private channels "
 "to public."
 msgstr ""
+"Gli amministratori di sistema possono anche accedere al settaggio in **System Console > Channels"
+" > Edit (Channel Configuration)**. A causa dei problemi di sicurezza derivanti dal condividere "
+"la storia di un canale privato, solamente gli Amministratori di Sistema possono convertire i canali "
+"privati in pubblici."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:109
 msgid ""
@@ -377,6 +386,9 @@ msgid ""
 "Membership in a private channel is by invitation only. Publicly shared "
 "files remain accessible to anyone with the link."
 msgstr ""
+"Quando un canale è convertito, mantiene la storia dei messaggi e i membri. "
+"La partecipazione ad un canale privato è esclusivamente per invito. I file "
+"condivisi pubblicamente rimangono accessibili a chiunque ne abbia il link."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:111
 msgid ""
@@ -385,10 +397,14 @@ msgid ""
 "<https://docs.mattermost.com/administration/command-line-tools.html"
 "#mattermost-channel-modify>`__."
 msgstr ""
+"Nota che la conversione di un canale privato in canale pubblico può essere effettuata "
+"solo da un Amministrazione di Sistema via Console di Sistema o via `comandi CLI "
+"<https://docs.mattermost.com/administration/command-line-tools.html"
+"#mattermost-channel-modify>`__."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:114
 msgid "Favoriting a Channel"
-msgstr ""
+msgstr "Aggiungere un Canale ai Fovoriti"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:116
 msgid ""
@@ -396,16 +412,20 @@ msgid ""
 "which Channels, Private Channels, and Direct Messages are most important "
 "to you."
 msgstr ""
+"I Canali Favoriti sono un modo grandioso per organizzare la tua barra laterale scegliendo "
+"quali Canali, Canali Privati, e Messaggi Diretti sono più importanti "
+"per te."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:118
 msgid "To mark a channel as a favorite, simply open the channel and then:"
-msgstr ""
+msgstr "Per segnare un canale com favorito, semplicemente apri il canale poi: "
 
 #: ../../source/help/getting-started/organizing-conversations.rst:120
 msgid ""
 "**On desktop:** At the top of the page, click on the star next to the "
 "channel name"
 msgstr ""
+"**Su applicazione desktop:** In cima alla pagina, fai click sulla stella vicino al nome del canale"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:125
 msgid ""
@@ -413,16 +433,22 @@ msgid ""
 "sidebar, so it's easy to access. To remove a channel from the "
 "\"Favorites\" section, click the star again."
 msgstr ""
+"Cià aggiungerà il canale alla sezione \"Favorites\" nella parte alte della barra "
+"laterale, in modo da rendere facile l'accesso. Per rimuovere un canale dalla sezione "
+"\"Favorites\", fai di nuovo click sulla stella."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:130
 msgid ""
 "**On mobile:** Open the dropdown list by the channel name, and select "
 "\"Favorite\"."
 msgstr ""
+"**Su mobile:** Apri la lista a discesa dal nome del canale, e seleziona "
+"\"Favorite\"."
 
 #: ../../source/help/getting-started/organizing-conversations.rst:132
 msgid ""
 "To remove a channel from the \"Favorites\" section, select the "
 "\"Favorite\" option again."
 msgstr ""
-
+"Per rimuovere un canale dalla sezione \"Favorites\", seleziona "
+"nuovamente l'opzione \"Favorite\"."
