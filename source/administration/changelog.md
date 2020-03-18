@@ -15,11 +15,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
+ - Channel sidebar reorg (experimental)
  - Version 2 of the server Audit/Logging System
- - Channel Moderation Settings (Beta)
+ - Channel Moderation Settings (Beta) (Read Only channels)
  - Bulk Actions in Mattermost Server
  - Search engine backend
- - Read Only channels
  - "Unarchive Channel" option to archived channels menu
 
 ### Improvements
