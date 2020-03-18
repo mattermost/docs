@@ -539,6 +539,13 @@ Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integ
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
 
+Gfycat gifs are not loading even though they show up in the emoji picker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Check whether the server has access to the Gfycat servers. It may be behind a proxy or firewall which is blocking outgoing connections.
+2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
+
+
 Mobile
 ~~~~~
 
