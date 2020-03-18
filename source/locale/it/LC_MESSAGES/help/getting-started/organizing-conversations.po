@@ -330,7 +330,7 @@ msgid ""
 msgstr ""
 "Inoltre, quando un canale viene archiviato, i contenuti non possono essere "
 "visualizzati, condivisi o cercati per impostazione predefinita. Se si "
-"desidera poter visualizzare o cercare il canale in un secondo momento,"
+"desidera poter visualizzare o cercare il canale in un secondo momento, o"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:99
 msgid ""
@@ -338,12 +338,17 @@ msgid ""
 " to ``true`` in config.json to allow users to view, share and search for "
 "content of channels that have been archived; or"
 msgstr ""
+"Chiedere al tuo Amministratore di Sistema di impostare ``ExperimentalViewArchivedChannels`` "
+"a ``true`` nel file config.json per consentire agli utenti di visualizzare, condividere e cercare "
+"il contenuto dei canali che sono stati archiviati; o"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:100
 msgid ""
 "Leave the channel open, but post a message in the channel saying it's "
 "considered archived, such as ``# This channel is archived.``"
 msgstr ""
+"Lasciare il canale aperto, ma pubblicare un messaggio nel canale dicendo che è"
+"da considerare archiviato, come ``# Questo canale è archiviato.``"
 
 #: ../../source/help/getting-started/organizing-conversations.rst:103
 msgid "Converting Public Channels to Private (and vice versa)"
