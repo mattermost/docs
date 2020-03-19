@@ -143,6 +143,11 @@ First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) 
 2. deploy your own push notification service, or
 3. repackage the mobile apps with BlueCedar or AppDome, which some organizations have successfully deployed with but is not officially supported.
 
+How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server?
+-------------------------------------------------------------------------------------------------------
+
+See our `developer documentation about Push Notification Service with Corporate Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy>`_.
+
 How do I white label the app and customize build settings?
 ----------------------------------------------------------
 

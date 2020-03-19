@@ -435,14 +435,6 @@ The following chart highlights the end user features of Mattermost and their sup
 * X - Full Support
 * O - Partial support
 
-..  _pre-post-proxy:
-What are pre-proxy and post-proxy relays?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A pre-proxy relay accepts network traffic from a source and forwards it to a corporate proxy such as NGINX. The corporate proxy then transmits the traffic to the final destination.
-
-A post-proxy relay accepts network traffic from a corporate proxy such as NGINX, and transmits it to the final destination.
-
 High Trust Questions
 ----------------------
 
