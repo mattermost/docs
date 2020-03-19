@@ -6,10 +6,9 @@ Criteria for Bugs
 ---------------------------------------------------------
 
 “Scale” of impact
-   - S1 - Prevents app use (e.g. Mattermost crash when posting a message) OR functional regressions. These are the only bugs that can be committed after the T-5 Code Freeze deadline.
-   - S2 - Most users’ functionality affected (e.g. Cannot favorite a channel) OR cosmetic/UI regressions. In addition to S1 bugs, these are the only bugs that can be committed after Code Complete deadline until T-5 Code Freeze.
-   - S3 - Half or less than half of users’ functionality affected (e.g. Cannot create custom emoji if System Admin). Can be fixed anytime until Code Complete deadline.
-   - S4 - Other minor (e.g. channel ID is too small in View Info modal). Can be fixed anytime until Code Complete deadline.
+   - S1 - ``Data loss or crash`` - Prevents app use (e.g. Mattermost crash when posting a message). These are the only bugs that can be committed after the T-5 Code Freeze deadline.
+   - S2 - ``Functionality loss or cosmetic regressions`` - Most users’ functionality affected (e.g. Cannot favorite a channel), functional regressions, or cosmetic/UI regressions. In addition to S1 bugs, these are the only bugs that can be committed after Code Complete deadline until T-5 Code Freeze.
+   - S3 - ``Minor issues`` - Half or less than half of users’ functionality affected (e.g. Cannot create custom emoji if System Admin). Can be fixed anytime until Code Complete deadline.
 
 Assigning Severity Levels
 ---------------------------------------------------------
