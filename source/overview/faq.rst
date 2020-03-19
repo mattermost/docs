@@ -120,7 +120,7 @@ What support is available for video and audio calling and screen sharing?
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-For the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions, :doc:`learn more in our admin guide <video-and-audio-calling>`
+For the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions, :doc:`learn more in our admin guide <video-and-audio-calling>`.
 
 Note that you can also neatly link video, audio and screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
