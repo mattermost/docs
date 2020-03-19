@@ -294,22 +294,26 @@ msgid ""
 "you to that channel. You can link to public channels using ``~`` followed"
 " by the channel name, for example ``~marketing``."
 msgstr ""
+"Gli hashtag non linkano i canali. Per esempio, se hai un canale "
+"chiamato “Marketing”, fare click su un hashtag ``#marketing`` non ti redirige a  "
+"quel canale. Puoi linkare un canale pubblico usando ``~`` seguito"
+" dal nome del canale, per esempio ``~marketing``."
 
 #: ../../source/help/getting-started/searching.rst:88
 msgid "Other notes:"
-msgstr ""
+msgstr "Altre note:"
 
 #: ../../source/help/getting-started/searching.rst:90
 msgid "IP addresses, for example ``10.100.200.101``, do not return results."
-msgstr ""
+msgstr "Gli indirizzi IP, per esempio `10.100.200.101``, non ritornano risultati."
 
 #: ../../source/help/getting-started/searching.rst:93
 msgid "Technical Notes"
-msgstr ""
+msgstr "Note Tecniche"
 
 #: ../../source/help/getting-started/searching.rst:96
 msgid "Searching Chinese, Korean and Japanese"
-msgstr ""
+msgstr "Ricerche in Cinese, Coreano e Giapponese"
 
 #: ../../source/help/getting-started/searching.rst:98
 msgid ""
@@ -317,16 +321,21 @@ msgid ""
 "use MySQL 5.7.6 or later with special configuration. Please see "
 "`documentation`_."
 msgstr ""
+"La migliore esperienza di ricerca in Cinese, Coreano e Giapponese si ha usando "
+"MySQL 5.7.6 o versioni successive con una configurazione speciale. "
+"Si prega di consultare la `documentazione`_."
 
 #: ../../source/help/getting-started/searching.rst:101
 msgid ""
 "You can search to some degree without this configuration by adding ``*`` "
 "to the end of search terms."
 msgstr ""
+"Puoi raggiungere un certo grado di efficacia nella ricerca senza questa configurazione aggiungendo ``*`` "
+"alla fine dei termini di ricerca."
 
 #: ../../source/help/getting-started/searching.rst:105
 msgid "Differences between MySQL and Postgres Search"
-msgstr ""
+msgstr "Differenza tra le ricerche con MySQL e Postgres"
 
 #: ../../source/help/getting-started/searching.rst:107
 msgid ""
@@ -335,6 +344,10 @@ msgid ""
 "Check **Main Menu > About Mattermost** to see which database you’re "
 "using."
 msgstr ""
+"Per impostazione predefinita, Mattermost usa il supporto per la ricerca full text incluso in MySQL "
+"e PostgreSQL. Questi database hanno comportamenti di ricerca leggermente diversi. "
+"Controlla **Main Menu > About Mattermost** per vedere quale database stai "
+"usando."
 
 #: ../../source/help/getting-started/searching.rst:112
 msgid ""
