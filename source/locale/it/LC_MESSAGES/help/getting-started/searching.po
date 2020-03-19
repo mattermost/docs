@@ -181,7 +181,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/searching.rst:39
 msgid "Exclusions"
-msgstr ""
+msgstr "Esclusioni"
 
 #: ../../source/help/getting-started/searching.rst:41
 msgid ""
@@ -189,6 +189,9 @@ msgid ""
 "example, ``test -release`` will only return results with the word "
 "``test`` that also do not contain the word ``release``."
 msgstr ""
+"Usa il simbolo ``-`` per escludere dei post dai tuoi risultati di ricerca. Per "
+"esempio, ``test -release`` ritornerà i risultati contenenti la parola "
+"``test`` che non contengono la parola ``release``."
 
 #: ../../source/help/getting-started/searching.rst:43
 msgid ""
@@ -198,14 +201,19 @@ msgid ""
 "``release``, excluding posts made in the ``release-discussion`` channel, "
 "and excluding posts from ``@eric``."
 msgstr ""
+"Questo può essere usato in combinazione con i modificatori per raffinare i risultati della ricerca. "
+"Per esempio, ``test -release -in:release-discussion -from:eric`` "
+"ritornerà tutti i risultati con la parola ``test``, escludendo i post con la parola "
+"``release``, escludendo i post fatti nel canale ``release-discussion``, "
+"e escludendo i post fatti da ``@eric``."
 
 #: ../../source/help/getting-started/searching.rst:46
 msgid "Quotation Marks"
-msgstr ""
+msgstr "Virgolette"
 
 #: ../../source/help/getting-started/searching.rst:48
 msgid "Use quotation marks to return search results for exact terms."
-msgstr ""
+msgstr "Usa le virgolette per ritornare i risultati di ricerca per termini esatti."
 
 #: ../../source/help/getting-started/searching.rst:50
 msgid ""
@@ -213,24 +221,29 @@ msgid ""
 "containing the exact phrase ``Mattermost website``, but not messages "
 "containing ``Mattermost`` and ``website`` separately."
 msgstr ""
+"Per esempio: La ricerca ``\"Mattermost website\"`` ritorna i messaggi che contengono "
+"esattamente la frase ``Mattermost website``, ma non i messaggi che "
+"contengono ``Mattermost`` e ``website`` separatamente."
 
 #: ../../source/help/getting-started/searching.rst:55
 msgid "Wildcard"
-msgstr ""
+msgstr "Wildcard"
 
 #: ../../source/help/getting-started/searching.rst:57
 msgid "Use the ``*`` character for wildcard searches that match within words."
-msgstr ""
+msgstr "Usa il carattere ``*`` per ricerche wildcard con corrispondenze all'interno di parole."
 
 #: ../../source/help/getting-started/searching.rst:59
 msgid ""
 "For example: Searching for ``rea*`` brings back messages containing "
 "``reach``, ``reason`` and other words starting with ``rea``."
 msgstr ""
+"Per esempio: La ricerca per ``rea*`` riporta i messaggi che contengono "
+"``reach``, ``reason`` e altre parole che cominciano con ``rea``."
 
 #: ../../source/help/getting-started/searching.rst:65
 msgid "Hashtags"
-msgstr ""
+msgstr "Hashtag"
 
 #: ../../source/help/getting-started/searching.rst:67
 msgid ""
@@ -240,32 +253,39 @@ msgid ""
 " post by using the pound sign ``#`` followed by alphanumeric or other "
 "unicode characters."
 msgstr ""
+"Gli hashtag sono etichette utilizzabili per le ricerche dei post. Cerca ogni post con contiene"
+" un hashtag facendo click sull'hashtag in un post esistente o digitando l'hashtag "
+" con il simbolo cancelletto nella barra di ricerca. Crea hashtag in un post qualsiasi"
+" usando il simbolo cancelletto ``#`` seguito da caratteri alfanumerici o altri caratteri "
+"unicode."
 
 #: ../../source/help/getting-started/searching.rst:73
 msgid "Valid hashtags:"
-msgstr ""
+msgstr "Hashtag validi:"
 
 #: ../../source/help/getting-started/searching.rst:75
 msgid "Do not start with a number."
-msgstr ""
+msgstr "Non cominciano con un numero."
 
 #: ../../source/help/getting-started/searching.rst:76
 msgid "Are at least 3 characters long, not including the ``#``."
-msgstr ""
+msgstr "Sono lunghi almeno 3 caratteri, non includendo il ``#``."
 
 #: ../../source/help/getting-started/searching.rst:77
 msgid "Are made up of alphanumeric or other unicode characters."
-msgstr ""
+msgstr "Sono fatti di caratteri alfanumerici o altri caratteri unicode."
 
 #: ../../source/help/getting-started/searching.rst:78
 msgid "May contain dots, dashes or underscores."
-msgstr ""
+msgstr "Possono contenere punti, trattini o underscore."
 
 #: ../../source/help/getting-started/searching.rst:80
 msgid ""
 "Examples: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, "
 "``#check-in``, ``#마케팅``"
 msgstr ""
+"Esempi: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, "
+"``#check-in``, ``#마케팅``"
 
 #: ../../source/help/getting-started/searching.rst:83
 msgid ""
