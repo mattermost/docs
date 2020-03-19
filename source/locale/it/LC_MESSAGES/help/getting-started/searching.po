@@ -99,7 +99,7 @@ msgstr "Modificatori di Ricerca"
 
 #: ../../source/help/getting-started/searching.rst:18
 msgid "From: and In:"
-msgstr ""
+msgstr "From: e In:"
 
 #: ../../source/help/getting-started/searching.rst:20
 msgid ""
@@ -107,22 +107,29 @@ msgid ""
 " in specific public or private channels, as well as direct and group "
 "messages.  Channels can be searched by display name or id."
 msgstr ""
+"Usa ``from:`` per trovare post di uno specifico utente e ``in:`` per trovare post"
+" in uno specifico canale pubblico o privato, così come messaggi diretti o di "
+"gruppo. La ricerca sui canali può essere effettuata per nome o per id."
 
 #: ../../source/help/getting-started/searching.rst:22
 msgid ""
 "For example: Searching ``Mattermost in:town-square`` only returns "
 "messages in Town Square that contain ``Mattermost``."
 msgstr ""
+"Per esempio: la ricerca ``Mattermost in:town-square`` ritorna solo "
+"i messaggi in Town Square che contengono ``Mattermost``."
 
 #: ../../source/help/getting-started/searching.rst:23
 msgid ""
 "Searching ``Mattermost in: @john.doe`` returns messages that contain "
 "``Mattermost`` in your direct message history with John Doe."
 msgstr ""
+"La ricerca ``Mattermost in: @john.doe`` ritorna i messaggi che contengono "
+"``Mattermost`` nei i messaggi diretti scambiati con John Doe."
 
 #: ../../source/help/getting-started/searching.rst:26
 msgid "Before:, After: and On:"
-msgstr ""
+msgstr "Before:, After: e On:"
 
 #: ../../source/help/getting-started/searching.rst:28
 msgid ""
