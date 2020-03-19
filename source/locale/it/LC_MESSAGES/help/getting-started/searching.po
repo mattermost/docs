@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/searching.rst:2
 msgid "Searching"
-msgstr ""
+msgstr "Ricerca"
 
 #: ../../source/help/getting-started/searching.rst:4
 msgid ""
@@ -27,16 +27,21 @@ msgid ""
 "terms that you enter. All channels that you are a member of in the "
 "current team are searched."
 msgstr ""
+"Usa la casella di ricerca per trovare messaggi e risposte che corrispondono ai "
+"ai termini di ricerca che hai inserito. Tutti i canali di cui sei membro nel "
+"team corrente saranno presi in considerazione per la ricerca."
 
 #: ../../source/help/getting-started/searching.rst:6
 msgid "Multiple-word search terms return results that contain all of the terms."
-msgstr ""
+msgstr "Le ricerche con più parole chiave di ricerca restituiscono risultati che contengono tutti i termini."
 
 #: ../../source/help/getting-started/searching.rst:7
 msgid ""
 "When results appear, click **Jump** to view that post in the channel "
 "archive."
 msgstr ""
+"Quando appaiono i risultati, fai click su **Jump** per vedere i messaggi nell'archivio del "
+"canale."
 
 #: ../../source/help/getting-started/searching.rst:8
 msgid ""
@@ -44,6 +49,9 @@ msgid ""
 "attachments show up in the search results, it's because they are attached"
 " to messages that match the search query."
 msgstr ""
+"La ricerca non comprende gli allegati e i loro nomi. Se dei file "
+"compaiono tra i risultati della ricerca, ciò avviene perche sono allegati"
+" a messaggi che hanno una corrispondenza con la query di ricerca."
 
 #: ../../source/help/getting-started/searching.rst:9
 msgid ""
