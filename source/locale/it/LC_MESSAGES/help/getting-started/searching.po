@@ -139,18 +139,27 @@ msgid ""
 "from a specific date.  You can use the date picker to select a date or "
 "you can type it in YYYY-MM-DD format. For example:"
 msgstr ""
+"Usa ``before:`` per trovare i post priam di una data specificata e ``after:`` per "
+"trovare i post dopo una data specificata. Usa entrambi ``before:`` e ``after:`` "
+"insieme per effettuare la ricareca in uno specifico range di date.  Usa ``on:`` per trovare i post "
+"di una specifica data.  Puoi usare il date picker per selezionare una data o "
+"digita la data nel formato YYYY-MM-DD. Per esempio:"
 
 #: ../../source/help/getting-started/searching.rst:30
 msgid ""
 "Searching ``website before: 2018-09-01`` will return messages containing "
 "the keyword ``website`` posted prior to September 1, 2018."
 msgstr ""
+"La ricerca ``website before: 2018-09-01`` ritornerà tutti i messaggi che contengono "
+"la keyword ``website`` inviati prima del 1 Settembre 2018."
 
 #: ../../source/help/getting-started/searching.rst:31
 msgid ""
 "Searching ``website after: 2018-08-01`` will return messages containing "
 "the keyword ``website`` posted after August 1, 2018."
 msgstr ""
+"La ricerca ``website after: 2018-08-01`` ritornerà tutti i messaggi che contengono "
+"la keyword ``website`` inviati dopo il 1 Agosto 2018."
 
 #: ../../source/help/getting-started/searching.rst:32
 msgid ""
@@ -158,12 +167,17 @@ msgid ""
 "all messages that contain the keyword ``website`` that were posted "
 "between August 1, 2018 and September 1, 2018."
 msgstr ""
+"La ricerca ``website before: 2018-09-01 after: 2018-08-01`` ritornerà tutti i messaggi che contengono "
+"la keyword ``website`` inviati "
+"tra il 1 Agosto 2018 e il 1 Settembre 2018."
 
 #: ../../source/help/getting-started/searching.rst:33
 msgid ""
 "Searching ``website on: 2018-09-01`` will return messages that contain "
 "the keyword ``website`` that were posted on September 1, 2018."
 msgstr ""
+"La ricerca ``website on: 2018-09-01`` ritornerà tutti i messaggi che contengono "
+"la keyword ``website`` inviati il 1 Settembre 2018."
 
 #: ../../source/help/getting-started/searching.rst:39
 msgid "Exclusions"
