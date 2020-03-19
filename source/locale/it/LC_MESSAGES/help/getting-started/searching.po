@@ -87,10 +87,15 @@ msgid ""
 "many results. See database documentation on `MySQL`_ and `Postgres`_ for "
 "a full list."
 msgstr ""
+"Similmente a ciò che avviene in molti motori di ricerca, parole comuni come ``the``, ``which``, e "
+"``are`` (conosciute come \"stop words\"), così come i termini di riceracd i una e due "
+"lettere, non sono considerati nelle ricerche perché tipicamente ritornerebbero troppi "
+"risultati. Consulta la docuementazione de database `MySQL`_ e `Postgres`_ per una "
+"lista completa."
 
 #: ../../source/help/getting-started/searching.rst:15
 msgid "Search Modifiers"
-msgstr ""
+msgstr "Modificatori di Ricerca"
 
 #: ../../source/help/getting-started/searching.rst:18
 msgid "From: and In:"
