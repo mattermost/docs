@@ -355,34 +355,42 @@ msgid ""
 " of search results. See database documentation on `MySQL`_ and "
 "`Postgres`_ for a full list. Other differences include:"
 msgstr ""
+"Per esempio, differenti database hanno different “stop words” escluse dai"
+" risultati di ricerca. Si veda la documentazione su `MySQL`_ e "
+"`Postgres`_ per un elenco completo. altre differenze includono:"
 
 #: ../../source/help/getting-started/searching.rst:116
 msgid "PostgreSQL:"
-msgstr ""
+msgstr "PostgreSQL:"
 
 #: ../../source/help/getting-started/searching.rst:118
 msgid "Email addresses do not return results."
-msgstr ""
+msgstr "Gli indirizzi email non producono risultati."
 
 #: ../../source/help/getting-started/searching.rst:119
 msgid ""
 "Hashtags or recent mentions of usernames containing a dash do not return "
 "search results."
 msgstr ""
+"Gli hashtag o le menzioni recenti di nomi utente contenenti un "
+"trattino non restituiscono risultati di ricerca."
 
 #: ../../source/help/getting-started/searching.rst:120
 msgid ""
 "Terms containing a dash return incorrect results as dashes are ignored in"
 " the search engine."
 msgstr ""
+"I termini che contengono un trattino restituiscono risultati errati "
+"poiché i trattini vengono ignorati dal motore di ricerca."
 
 #: ../../source/help/getting-started/searching.rst:122
 msgid "MySQL:"
-msgstr ""
+msgstr "MySQL:"
 
 #: ../../source/help/getting-started/searching.rst:124
 msgid ""
 "Hashtags or recent mentions of usernames containing a dot do not return "
 "search results."
 msgstr ""
-
+"Gli hashtag o le menzioni recenti di nomi utente contenenti un "
+"punto non restituiscono risultati di ricerca."
