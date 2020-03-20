@@ -75,10 +75,13 @@ Avoid
 Capitalization
 --------------
 
-Use sentence case for page titles, headings, and section titles.
+Use sentence case for page titles, headings, and section titles. 
 
-Sentence case
-  This article is about language and spelling
+Sentence case example - document title
+  "AppConfig for EMM solutions with Mattermost mobile apps"
+  
+Sentence case example - heading
+  "Multiple read replicas (Enterprise Edition)"
 
 Numbers
 -------
