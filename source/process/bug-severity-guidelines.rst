@@ -26,12 +26,12 @@ Frequently Asked Questions
 
 **What does this change?**
 
- - This doesn't change existing processes, but makes it more official. We have prioritized release bug tickets based on severity before, but this helps make the process more visible.
+ - This doesn't change existing processes, but makes it more official. We have prioritized release bug tickets based on severity before, along with other considerations such as whether the bug is a recent regression or not.
 
 **Will this negatively impact quality?**
 
- - This will not negatively impact quality as this doesn't change existing processes. We have prioritized release bug tickets based on severity before. For example, a fix for an issue where `Mattermost server crashed when running a compliance export <https://mattermost.atlassian.net/browse/MM-23157>`_ was fixed for v5.21 at T-3 because it was deemed a high severity issue.
+ - This will not negatively impact quality as this doesn't change existing processes. We have prioritized release bug tickets based on severity before. For example, a fix for an issue where `Mattermost server crashed when running a compliance export <https://mattermost.atlassian.net/browse/MM-23157>`_ was fixed for v5.21.0 at T-3 because it was deemed a high severity issue.
 
 **Will customer/Enterprise bugs be prioritized any differently?**
 
- - This doesn't change existing processes and customer bugs will continue to be assessed on a case-by-case basis (e.g. how severe and urgent is the issue for the customer). For example, a fix for an issue where `Mattermost server crashed when running a compliance export <https://mattermost.atlassian.net/browse/MM-23157>`_ was fixed for v5.21 at T-3 because it was an urgent, high severity customer bug.
+ - This doesn't change existing processes and customer bugs will continue to be assessed on a case-by-case basis (e.g. how severe and urgent is the issue for the customer). For example, a fix for an issue where `Mattermost server crashed when running a compliance export <https://mattermost.atlassian.net/browse/MM-23157>`_ was fixed for v5.21.0 at T-3 because it was an urgent, high severity customer bug.
