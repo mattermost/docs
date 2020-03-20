@@ -49,16 +49,21 @@ msgid ""
 "from the team sidebar or Main Menu. The person who creates a team will "
 "automatically be assigned the Team Admin role for that team."
 msgstr ""
+"Se la creazione di team è stata abilitata dall'Amministratore di Sistema, i team possono essere creati "
+"dalla barra laterale team o dal Menu Principale. Alla persono che crea un team sarà "
+"automaticamente assegnato il ruolo Team Admin per quel team."
 
 #: ../../source/help/getting-started/creating-teams.rst:14
 msgid "Team Sidebar"
-msgstr ""
+msgstr "Barra Laterale Team"
 
 #: ../../source/help/getting-started/creating-teams.rst:15
 msgid ""
 "If you belong to more than one team, a team sidebar will appear left of "
 "your channel list on the left-hand sidebar."
 msgstr ""
+"Se fai parte di più di un team, una barra laterale team apparirà a sinistra della lista "
+"dei tuoi canali sulla parte sinistra della sidebar."
 
 #: ../../source/help/getting-started/creating-teams.rst:19
 msgid ""
@@ -67,6 +72,10 @@ msgid ""
 "through the rest of the setup steps. If this option is not visible on the"
 " web page, then the System Admin has disabled team creation."
 msgstr ""
+"Fai click sull'icone \"+\" in fondo alla barra laterale team, e quindi fai click "
+"su **Create a New Team** nella pagina di selezione del team, che ti guiderà "
+"attraveros il resto dei passaggi di configurazione. Se questa opzione non èvisibile nella "
+"web page, allora l'Amministratore di Sistema ha disabilitato la creazioni di team."
 
 #: ../../source/help/getting-started/creating-teams.rst:21
 msgid ""
