@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/creating-teams.rst:2
 msgid "Creating Teams"
-msgstr ""
+msgstr "Creare Team"
 
 #: ../../source/help/getting-started/creating-teams.rst:4
 msgid ""
@@ -27,16 +27,21 @@ msgid ""
 "collaborate in Mattermost. Depending on how Mattermost is set up in your "
 "organization, you can belong to one team or multiple teams."
 msgstr ""
+"Un Team è uno spazio di lavoro digitale in cui tu e i componenti del tuo team potete "
+"collaborare in Mattermost. A seconda delle impostazioni di Mattermost nella tua organizzazione, "
+"puoi appartenere a un solo team o a più team."
 
 #: ../../source/help/getting-started/creating-teams.rst:6
 msgid ""
 "New teams can be created if the System Admin has **Enable Team Creation**"
 " set to true in the System Console."
 msgstr ""
+"Nuovi team possono essere creati se l'amministratore di sistema ha impostato a true l'opzione "
+"**Enable Team Creation** nella Console di Sistema."
 
 #: ../../source/help/getting-started/creating-teams.rst:9
 msgid "Methods to Create a Team"
-msgstr ""
+msgstr "Metodi per Creare un Team"
 
 #: ../../source/help/getting-started/creating-teams.rst:11
 msgid ""
