@@ -82,10 +82,12 @@ msgid ""
 "If you have no other teams to join, clicking the \"+\" icon brings you "
 "directly to the team creation page if team creation is enabled."
 msgstr ""
+"Se non hai altri team a cui unirti, facendo click sull'icona \"+\" sarai portato "
+"direttamente alla pagina di creazione di un nuovo team, se la creazione di team è abilitata."
 
 #: ../../source/help/getting-started/creating-teams.rst:24
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu Principale"
 
 #: ../../source/help/getting-started/creating-teams.rst:25
 msgid ""
@@ -93,55 +95,62 @@ msgid ""
 "a New Team**. If this option is not visible in the menu, then the System "
 "Admin has disabled team creation."
 msgstr ""
+"Dal tuo team Mattermost corrente, fai click su **Main Menu** > **Create "
+"a New Team**. Se questa opzione non è visibile nel menu, allora l'Amministratore di "
+"Sistema ha disabilitato la creazione di team."
 
 #: ../../source/help/getting-started/creating-teams.rst:28
 msgid "Team Name and URL Selection"
-msgstr ""
+msgstr "Selezione del Nome del Team e della URL"
 
 #: ../../source/help/getting-started/creating-teams.rst:30
 msgid ""
 "There are a few details and restrictions to consider when selecting a "
 "team name and team URL."
 msgstr ""
+"Ci sono un po' di dettagli e restrizioni da considerare quando si seleziona il "
+"nome di un tema e la URL."
 
 #: ../../source/help/getting-started/creating-teams.rst:33
 msgid "Team Name"
-msgstr ""
+msgstr "Nome del Team"
 
 #: ../../source/help/getting-started/creating-teams.rst:35
 msgid "This is the display name of your team that appears in menus and headings."
-msgstr ""
+msgstr "Questo è il nome visualizzato del tuo team che appare nei menu e nelle intestazioni."
 
 #: ../../source/help/getting-started/creating-teams.rst:37
 msgid "It can contain any letters, numbers or symbols."
-msgstr ""
+msgstr "Può contenere tutte le lettere, numeri o simboli."
 
 #: ../../source/help/getting-started/creating-teams.rst:38
 msgid "It is case sensitive."
-msgstr ""
+msgstr "È case sensitive."
 
 #: ../../source/help/getting-started/creating-teams.rst:39
 #: ../../source/help/getting-started/creating-teams.rst:49
 msgid "It must be 2–15 characters in length."
-msgstr ""
+msgstr "Deve essere lungo da 2 a 5 caratteri."
 
 #: ../../source/help/getting-started/creating-teams.rst:42
 msgid "Team URL"
-msgstr ""
+msgstr "URL del Team"
 
 #: ../../source/help/getting-started/creating-teams.rst:44
 msgid ""
 "The team URL is part of the web address that navigates to your team on "
 "the system domain, ``https://domain.com/teamurl/``."
 msgstr ""
+"L'URL del team URL è parte di un indirzzo web utile a raggiungere il tuo team "
+"nel dominio del sistema, ``https://domain.com/teamurl/``."
 
 #: ../../source/help/getting-started/creating-teams.rst:47
 msgid "It may contain only lowercase letters, numbers and dashes."
-msgstr ""
+msgstr "Puo contenere solo lettere minuscole, numeri e trattini."
 
 #: ../../source/help/getting-started/creating-teams.rst:48
 msgid "It must start with a letter and cannot end in a dash."
-msgstr ""
+msgstr "Deve cominciare con una lettera e non può finire con un trattino."
 
 #: ../../source/help/getting-started/creating-teams.rst:50
 msgid ""
@@ -149,26 +158,33 @@ msgid ""
 "``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``, "
 "``error``, ``help``, ``plugins``"
 msgstr ""
+"Non può cominicare con le seguenti parole riservate: ``signup``, "
+"``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``, "
+"``error``, ``help``, ``plugins``"
 
 #: ../../source/help/getting-started/creating-teams.rst:55
 msgid "Best Practices for Using a Single Team vs. Multiple Teams"
-msgstr ""
+msgstr "Buone Pratiche per l'Uso di un Singolo Team o di Team Multipli"
 
 #: ../../source/help/getting-started/creating-teams.rst:57
 msgid "Mattermost can be deployed both to a single team and to multiple teams."
-msgstr ""
+msgstr "Mattermost può essere installato sia a singolo team e sia a team multipli."
 
 #: ../../source/help/getting-started/creating-teams.rst:59
 msgid ""
 "Currently, we recommend deploying to a single team for the following "
 "reasons:"
 msgstr ""
+"Al momento, raccomandiamo l'installazione a singolo team per le seguenti "
+"ragioni:"
 
 #: ../../source/help/getting-started/creating-teams.rst:61
 msgid ""
 "Single team deployments promote communication across the organization. "
 "When you add multiple teams, groups can become isolated."
 msgstr ""
+"Le installazioni per singolo team promuovono la comunicazione all'interno dell'organizzazione. "
+"Quando aggiungi molti team, i gruppi possono diventare isolati."
 
 #: ../../source/help/getting-started/creating-teams.rst:62
 msgid ""
@@ -176,24 +192,33 @@ msgid ""
 "the cross-team user experience. This includes general searches, flagged "
 "posts and recent mentions."
 msgstr ""
+"Non abbiamo ancora il supporto per la ricerca o i canali tra team diversi, il che può influire "
+"sull'esperienza utente. Ciò include ricerche generali, post "
+"contrassegnati e menzioni recenti."
 
 #: ../../source/help/getting-started/creating-teams.rst:63
 msgid ""
 "Integrations (e.g., webhooks and slash commands) are only persistent "
 "across single team deployments."
 msgstr ""
+"Le integrazioni (per es. webhooks e slash commands) sono persistenti "
+"solo nelle installazioni per singolo team."
 
 #: ../../source/help/getting-started/creating-teams.rst:65
 msgid ""
 "However, some Mattermost customers prefer multiple team deployments for "
 "the following reasons:"
 msgstr ""
+"Tuttavia, qualche cliente Mattermost preferisce l'installazione per team multipli per "
+"le seguenti ragioni:"
 
 #: ../../source/help/getting-started/creating-teams.rst:67
 msgid ""
 "Teams are useful when there is a purpose for each of them. For example, "
 "one team is used for staff members and another team for external users."
 msgstr ""
+"I team sono utili quando c'è uno scopo diverso per ognuno di loro. Per esempio, "
+"un team è usatp per i membri di uno staff e un altro per gli utenti esterni."
 
 #: ../../source/help/getting-started/creating-teams.rst:68
 msgid ""
@@ -202,6 +227,10 @@ msgid ""
 "content to load per team or channel switch and database queries are "
 "faster."
 msgstr ""
+"Le prestazioni sono migliori quando gli utenti sono distribuiti su più team "
+"rispetto a quanto fanno tutti parte dello stesso team. Con più team, ci sono "
+"meno contenuti da caricare per team o switch di canale e le query del database "
+"sono più veloci."
 
 #: ../../source/help/getting-started/creating-teams.rst:69
 msgid ""
@@ -213,4 +242,11 @@ msgid ""
 "<https://docs.mattermost.com/administration/announcement-banner.html>`__ "
 "can be used to provide system wide announcements."
 msgstr ""
+"Creare un team condiviso per tutti gli utenti, e usare i `permessi avanzati "
+"<https://docs.mattermost.com/deployment/advanced-"
+"permissions.html#recipes>`__ per controllare chi può creare canali e aggiungere"
+" membri al team condiviso, migliora la collaborazione tra team collaboration rispetto a quando si usano "
+"più team. Inoltre, può essere usato un `banner informativo "
+"<https://docs.mattermost.com/administration/announcement-banner.html>`__ "
+"per fornire avvisi validi per l'intero sistema."
 
