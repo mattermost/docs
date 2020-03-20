@@ -107,4 +107,4 @@ Prior to v5.20, data retention would delete all user activity corresponding to t
 How does the data retention job affect archived channels? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Posts and attachments in archived channels will be affected by the data retention job. If a post exceeds the age configured for the data retention job it will be deleted from the database.
+Posts and attachments in archived channels are affected by the data retention job. If a post exceeds the age configured for the data retention job it will be deleted from the database.
