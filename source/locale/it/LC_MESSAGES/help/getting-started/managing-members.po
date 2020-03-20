@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/help/getting-started/managing-members.rst:4
 msgid "Managing Members"
-msgstr ""
+msgstr "Gestire i Membri"
 
 #: ../../source/help/getting-started/managing-members.rst:7
 msgid "Inviting Team Members"
-msgstr ""
+msgstr "Inviare i Membri di un Team"
 
 #: ../../source/help/getting-started/managing-members.rst:9
 msgid ""
@@ -31,6 +31,9 @@ msgid ""
 " a direct invite, a public team invite link, or if they already have an "
 "account on the server you can add them to the team yourself."
 msgstr ""
+"Se disponi dei permessi richiesti, puoi aggiungere persone al tuo team via"
+" un invito dietto, il link di invito ad un team pubblico, o se hanno già un "
+"account sul server puoi aggiungerli al team tu stesso."
 
 #: ../../source/help/getting-started/managing-members.rst:11
 msgid ""
@@ -40,10 +43,15 @@ msgid ""
 " been invited to. When this is enabled, you can invite guests or users "
 "external to the organization such as vendors or customers."
 msgstr ""
+"Dalla versione 5.16, il tuo amministratore di Sistema può, `abilitare l'accesso come ospite al tuo "
+"server <https://docs.mattermost.com/deployment/guest-accounts.html>`_. Un "
+"ospite è uno speciale ruolo con accesso limitato ai soli canali a cui è "
+"stato invitato. Quando questa funzione è stata abilitata, puoi invitare ospiti o utenti "
+"esterni all'organizzazione come fornitori o clienti."
 
 #: ../../source/help/getting-started/managing-members.rst:14
 msgid "Direct Invites"
-msgstr ""
+msgstr "Inviti Diretti"
 
 #: ../../source/help/getting-started/managing-members.rst:16
 msgid ""
@@ -56,16 +64,24 @@ msgid ""
 " Console > Security > Sign Up > Invalidate pending email invites** in "
 "versions prior to 5.12)."
 msgstr ""
+"Gli inviti diretti sono email di invito inviati dal tuo server "
+"direttamente all'indirizzo email della persona invitata. Un link all'interno dell'invito "
+"li redirige alla pagina di creazione dell'account. I link di invito "
+"inviati via email sono invalidati dopo 48 ore e possono essere usati una sola volta. Un Amministratore "
+"di Sistema può invalidare tutti i link di invito via **System Console > "
+"Authentication > Signup > Invalidate pending email invites** (or **System"
+" Console > Security > Sign Up > Invalidate pending email invites** nelle "
+"versioni precedenti alla 5.12)."
 
 #: ../../source/help/getting-started/managing-members.rst:18
 msgid "**To send a direct invite**"
-msgstr ""
+msgstr "**Per mandare un invito diretto**"
 
 #: ../../source/help/getting-started/managing-members.rst:20
 #: ../../source/help/getting-started/managing-members.rst:28
 #: ../../source/help/getting-started/managing-members.rst:56
 msgid "Click your username at the top of the Navigation Panel."
-msgstr ""
+msgstr "Fai click sul tuo username in cima al Pannello di Navigazione."
 
 #: ../../source/help/getting-started/managing-members.rst:21
 #: ../../source/help/getting-started/managing-members.rst:29
@@ -73,28 +89,32 @@ msgstr ""
 #: ../../source/help/getting-started/managing-members.rst:75
 #: ../../source/help/getting-started/managing-members.rst:83
 msgid "Click **Invite People**."
-msgstr ""
+msgstr "Fai click su **Invite People**."
 
 #: ../../source/help/getting-started/managing-members.rst:22
 msgid ""
 "If there is a option to invite members and guests, choose **Invite "
 "Members**."
 msgstr ""
+"Se è presente una opzione per invitare membri e ospiti, scegli **Invite "
+"Members**."
 
 #: ../../source/help/getting-started/managing-members.rst:23
 msgid ""
 "In the **Invite People** field enter the email address of the person you "
 "want to add."
 msgstr ""
+"Nel campo **Invite People** inserisci l'indirizzo email e la persona che "
+"vuoi aggiungere."
 
 #: ../../source/help/getting-started/managing-members.rst:24
 #: ../../source/help/getting-started/managing-members.rst:78
 msgid "Click **Invite Members**."
-msgstr ""
+msgstr "Fai click su **Invite Members**."
 
 #: ../../source/help/getting-started/managing-members.rst:26
 msgid "**To send an invite to a guest**"
-msgstr ""
+msgstr "**Per inviare un invito ad un ospite**"
 
 #: ../../source/help/getting-started/managing-members.rst:30
 #: ../../source/help/getting-started/managing-members.rst:84
