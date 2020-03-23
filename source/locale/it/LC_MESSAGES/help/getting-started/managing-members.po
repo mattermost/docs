@@ -122,6 +122,8 @@ msgid ""
 "If there is a option to invite members and guests, choose **Invite "
 "Guests**."
 msgstr ""
+"Se c'è l'opzione per invitare membri e ospiti, scegli **Invite "
+"Guests**."
 
 #: ../../source/help/getting-started/managing-members.rst:31
 msgid ""
@@ -129,31 +131,38 @@ msgid ""
 "to add. You can add multiple email addresses to invite more than one "
 "guest."
 msgstr ""
+"Nel campo **Invite People inserisci l'email dell'opsite che vuoi "
+"aggiungere. Puoi aggiungere più indirizzi email per invitare più di un "
+"opsite."
 
 #: ../../source/help/getting-started/managing-members.rst:32
 msgid "Specify the channels the guest will be able to access."
-msgstr ""
+msgstr "Specifica i canali a cui l'ospite sarà abilitato ad accedere."
 
 #: ../../source/help/getting-started/managing-members.rst:33
 msgid ""
 "[Optional] Add a custom message to be included in the invitation to the "
 "guest."
 msgstr ""
+"[Opzionale] Aggiungi un messaggio personalizzato da includere nell'invito per "
+"l'ospite."
 
 #: ../../source/help/getting-started/managing-members.rst:34
 #: ../../source/help/getting-started/managing-members.rst:87
 msgid "Click **Invite Guests**."
-msgstr ""
+msgstr "Fai click su **Invite Guests**."
 
 #: ../../source/help/getting-started/managing-members.rst:37
 msgid ""
 "If you aren't able to see the **Invite Guests** option, confirm with your"
 " System Admin that you have the correct permissions."
 msgstr ""
+"Se non trovi l'opzione **Invite Guests**, chiedi al tuo "
+"Amministratore di Sistema se hai i permessi corretti."
 
 #: ../../source/help/getting-started/managing-members.rst:39
 msgid "**To send a direct invite in versions prior to 5.16**"
-msgstr ""
+msgstr "**Per mandare un invito diretto in versioni precedenti alla 5.16**"
 
 #: ../../source/help/getting-started/managing-members.rst:41
 #: ../../source/help/getting-started/managing-members.rst:63
@@ -161,21 +170,23 @@ msgstr ""
 #: ../../source/help/getting-started/managing-members.rst:82
 #: ../../source/help/getting-started/managing-members.rst:94
 msgid "Click your username, at the top of the Navigation Panel."
-msgstr ""
+msgstr "Fai click sul tuo username, nella parte alte del Pannello di Navigazione."
 
 #: ../../source/help/getting-started/managing-members.rst:42
 msgid ""
 "Click **Send Email Invite** and enter the person's email address along "
 "with their first and last name."
 msgstr ""
+"Fai click su **Send Email Invite** e inserisci l'indirizzo e-mail della persona "
+"insieme al nome e cognome."
 
 #: ../../source/help/getting-started/managing-members.rst:43
 msgid "To invite more than one person, click **Add another**."
-msgstr ""
+msgstr "Per invitare più di una persona, fai click su **Add another**."
 
 #: ../../source/help/getting-started/managing-members.rst:44
 msgid "Click **Send Invitation**."
-msgstr ""
+msgstr "Fai click su **Send Invitation**."
 
 #: ../../source/help/getting-started/managing-members.rst:47
 msgid ""
