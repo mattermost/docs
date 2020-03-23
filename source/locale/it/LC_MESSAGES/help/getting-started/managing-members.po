@@ -195,10 +195,14 @@ msgid ""
 "Email Invitations** (or **System Console > Security > Sign Up > Enable "
 "Email Invitations** in versions prior to 5.12) is set to ``true``."
 msgstr ""
+"Se non vedi l'opzioone **Send Email Invite**, chiedi conferma al tuo "
+"Amministrazione di Sistema che **System Console > Authentication > Signup > Enable "
+"Email Invitations** (o **System Console > Security > Sign Up > Enable "
+"Email Invitations** nelle versioni precedenti alla 5.12) è impostato a ``true``."
 
 #: ../../source/help/getting-started/managing-members.rst:50
 msgid "Team Invite Link"
-msgstr ""
+msgstr "Link di Inviro al Team"
 
 #: ../../source/help/getting-started/managing-members.rst:52
 msgid ""
@@ -209,10 +213,16 @@ msgid ""
 "invite link can be included in a company-wide email to invite all "
 "employees to join a Mattermost team."
 msgstr ""
+"Il link di invito al team è una URL univoca che redirige le persone alla pagina "
+"di creazione di un'utenza per un team. Un link di invito al team può essere usata da tutti e "
+"non cambia fino a quando non è rigenerato da un Team Admin o dall'Amministrtore di Sistema "
+"via **Team Settings > General > Invite Code**. Per esempio, il link "
+"di invito al team può essere incluso in una email inviata all'intera azienda per invitare tutti "
+"i dipendenti ad unirsi ad un team Mattermost."
 
 #: ../../source/help/getting-started/managing-members.rst:54
 msgid "**To get a team invite link**"
-msgstr ""
+msgstr "**Per ottenere un link di invito al team**"
 
 #: ../../source/help/getting-started/managing-members.rst:58
 #: ../../source/help/getting-started/managing-members.rst:76
@@ -220,40 +230,48 @@ msgid ""
 "If there is an option to invite members and guests, choose **Invite "
 "Members**."
 msgstr ""
+"Se è presente una opzione per invitare membri o ospiti, scegli **Invite "
+"Members**."
 
 #: ../../source/help/getting-started/managing-members.rst:59
 msgid ""
 "Click the **Copy Link** button to save the URL to your clipboard and "
 "share it with those you want to invite to the team."
 msgstr ""
+"Fai click sul bottone **Copy Link** per salvare l'URL negli appunti e "
+"condividerla con chi vuoi invitare al tuo team."
 
 #: ../../source/help/getting-started/managing-members.rst:61
 msgid "**To get a team invite link in versions prior to 5.16**"
-msgstr ""
+msgstr "**Per ottenere un link di invito al team nelle versioni precedenti alla 5.16**"
 
 #: ../../source/help/getting-started/managing-members.rst:64
 msgid "Click **Get Team Invite Link**."
-msgstr ""
+msgstr "Fai click **Get Team Invite Link**."
 
 #: ../../source/help/getting-started/managing-members.rst:65
 msgid ""
 "In the window that opens, copy the link and share it with those you want "
 "to invite to the team."
 msgstr ""
+"Nella finestra che verrà aperta, copia il link e condividilo con chi vuoi "
+"invitare al team."
 
 #: ../../source/help/getting-started/managing-members.rst:68
 msgid "Adding Someone to Your Team"
-msgstr ""
+msgstr "Aggiungere Qualcuno al Tuo Team"
 
 #: ../../source/help/getting-started/managing-members.rst:70
 msgid ""
 "If someone you want to add to your team already has an account on the "
 "server, you can add them to your team without sending an invitation."
 msgstr ""
+"Se chi vuoi invitare al tuo team ha già un'utenza sul "
+"server, puoi aggiungerlo al team senza inviare un invito."
 
 #: ../../source/help/getting-started/managing-members.rst:72
 msgid "**To add someone to your team**"
-msgstr ""
+msgstr "**Per aggiungere qualcuno al tuo team**"
 
 #: ../../source/help/getting-started/managing-members.rst:77
 msgid ""
@@ -261,10 +279,13 @@ msgid ""
 "the people you want to add are not on the list, then they do not have an "
 "account on your server."
 msgstr ""
+"Nel menu **Invite People** cerca le persone che vuoi aggiungere. Se "
+"le persone che vuoi aggiungere non sono nella lista, allora non hanno un "
+"account sul tuo server."
 
 #: ../../source/help/getting-started/managing-members.rst:80
 msgid "**To add existing guests to your team**"
-msgstr ""
+msgstr "**Per aggiungere un ospite al tuo team**"
 
 #: ../../source/help/getting-started/managing-members.rst:85
 msgid ""
@@ -272,24 +293,29 @@ msgid ""
 "the people you want to add are not on the list, then they do not have an "
 "account on your server."
 msgstr ""
+"Nel menu **Invite People** cerca l'ospite che vuoi aggiungere. Se "
+"la persona che vuoi aggiungere non è nella lista, allora non ha un "
+"account sul tuo server."
 
 #: ../../source/help/getting-started/managing-members.rst:86
 msgid "Specify the channels the guest will have access to."
-msgstr ""
+msgstr "Specifica i canali a cui l'ospite avrà accesso."
 
 #: ../../source/help/getting-started/managing-members.rst:90
 msgid ""
 "If you aren't able to see the **Invite Guests** option, confirm with your"
 " System Administrator that you have the correct permissions."
 msgstr ""
+"Se non puoi vedere l'opzione **Invite Guests**, chiedi conferma al tuo "
+"Amministratore di Sistema che hai i permessi corretti."
 
 #: ../../source/help/getting-started/managing-members.rst:92
 msgid "**To add someone to your team in versions prior to 5.16**"
-msgstr ""
+msgstr "**Per aggiungere qualcuno al tuo tema nelle versioni precedenti alla 5.16**"
 
 #: ../../source/help/getting-started/managing-members.rst:95
 msgid "Click **Add Members to Team**."
-msgstr ""
+msgstr "Fai click su **Add Members to Team**."
 
 #: ../../source/help/getting-started/managing-members.rst:96
 msgid ""
