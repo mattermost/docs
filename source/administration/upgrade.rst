@@ -38,25 +38,25 @@ Location of your local storage directory
 
      cd /tmp
 
-#. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+#. Download the latest version of the Mattermost Server. To view other release versions, release notes, and checksums visit `the version archive <./version-archive.html>`__.
 
    *Enterprise Edition*
 
    .. code-block:: sh
 
-     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+     wget http://latest.mattermost.com/server-linux-amd64 -O mattermost-server
 
    *Team Edition*
 
    .. code-block:: sh
 
-    wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
+    wget http://latest.mattermost.com/server-linux-amd64-team -O mattermost-server
 
 #. Extract the Mattermost Server files.
 
    .. code-block:: sh
 
-     tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
+     tar -xf mattermost-server --transform='s,^[^/]\+,\0-upgrade,'
   
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 

@@ -11,13 +11,13 @@ Assume that the IP address of this server is 10.10.10.2.
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
-2. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download the latest version of the Mattermost Server. To view other release versions, release notes, and checksums visit `the version archive <../administration/version-archive.html>`__.
 
-  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
+  ``wget http://latest.mattermost.com/server-linux-amd64 -O mattermost-server``
 
 3. Extract the Mattermost Server files.
 
-  ``tar -xvzf mattermost*.gz``
+  ``tar -xvzf mattermost-server``
 
 4. Move the extracted file to the ``/opt`` directory.
 
