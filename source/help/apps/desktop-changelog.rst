@@ -61,7 +61,7 @@ Mac
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - When minimizing the app and then maximizing it, it doesn't restore to the right position but "jumps" to a different place in the taskbar. [MM-23195](https://mattermost.atlassian.net/browse/MM-23195)
-- The current window frame and server tabs don't work properly on older Windows OS versions or Linux. [MM-22751](https://mattermost.atlassian.net/browse/MM-22751)
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. [MM-22751](https://mattermost.atlassian.net/browse/MM-22751)
 - Desktop client opens to a blank white Window when using GPO-set teams. [MM-23082](https://mattermost.atlassian.net/browse/MM-23082)
 - Google oAuth with Gmail addresses no longer works on the Desktop app. [MM-23057](https://mattermost.atlassian.net/browse/MM-23057)
 - No notification on Windows if the app is closed on the channel where the message is posted. [MM-23215](https://mattermost.atlassian.net/browse/MM-23215)
