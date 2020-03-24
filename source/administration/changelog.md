@@ -46,8 +46,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Integrations
  - In interactive dialogs, the autocomplete lists now render below the input field by default.
  - Extended the payload of slash commands to include a map of the users and channels mentioned in the message to their corresponding identifiers.
+ - Added support for recognizing multi-line slash commands without requiring trailing space after the trigger word.
  
 #### Administration
+ - Added support for exporting and importing the props of a post.
  - Added support for setting Office365Settings Directory (tenant) Id in the ``config.json``.
 
 ### Bug Fixes
