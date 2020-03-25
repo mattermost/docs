@@ -384,7 +384,7 @@ msgid ""
 "The person who creates a channel is assigned the Channel Admin role for "
 "that channel. People with the Channel Admin role have the following "
 "privileges:"
-msgstr ""ù
+msgstr ""
 "All'utente che crea un canale è assegnato il ruolo di Amministratore di Canale per "
 "quel canale. Le persone con il ruolo di Amministratore di Canale hanno i seguenti "
 "privilegi:"
