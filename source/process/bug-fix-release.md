@@ -10,6 +10,9 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
+1. **(Team)**
+    - Release Manager, Dev Leads, QA, and PMs meet to discuss where there were a lot of bugs or challenges from the prior feature release and come to consensus on where we needed to focus quality improvements for the release.
+
 ### B. (T-minus 20 working days) Bug Fixing
 
 1. **(Team) Daily Release Update Meeting (10:00am San Francisco time)**: 
