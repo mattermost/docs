@@ -325,6 +325,11 @@ msgid ""
 "either already on your team or they do not have an account on your "
 "server."
 msgstr ""
+"Nella finestra **Add New Members**, fai click sullo username della persona o "
+"o delle persone che vuoi aggiungere al tuo team. Puoi anche digitare nella casella di ricerca per filtrare la "
+"lista. Se le presone che vuoi aggiungere non sono nella lista, allora o sono "
+"già nel tuo team o non hanno un account sul tuo "
+"server."
 
 #: ../../source/help/getting-started/managing-members.rst:99
 msgid ""
@@ -332,10 +337,13 @@ msgid ""
 " user profile page (**System Console > Users > User Profile**) by "
 "clicking **Add Team**."
 msgstr ""
+"Gli Amministratori di Sistema possono vedere e aggiungere la partecipazione ad un team per singoli utenti dalla "
+"pagina di profilo dell'utente  (**System Console > Users > User Profile**) facendo "
+"click su **Add Team**."
 
 #: ../../source/help/getting-started/managing-members.rst:102
 msgid "User Roles"
-msgstr ""
+msgstr "Ruoli Utente"
 
 #: ../../source/help/getting-started/managing-members.rst:104
 msgid ""
@@ -345,6 +353,11 @@ msgid ""
 " roles are, Team Admins can go to the three dot **Main Menu** and select "
 "**Manage Members**."
 msgstr ""
+"Esistono sei tipi di ruoli utente con diversi livelli di autorizzazione in "
+"Mattermost: Amministratori di Sistema, Amministratori del Team, Amministratori del Canale, Membri, Ospiti "
+"e Account Inattivi. Per visualizzare un elenco degli utenti del team e quali sono i loro "
+"ruoli, gli Amministratori del Team possono andare alla terza voce del **Main Menu** e selezionare "
+"**Manage Members**. "
 
 #: ../../source/help/getting-started/managing-members.rst:107
 msgid "Member"
