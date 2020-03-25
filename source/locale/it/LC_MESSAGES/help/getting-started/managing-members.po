@@ -509,10 +509,13 @@ msgid ""
 "They can search users by name, filter users by teams, and filter to view "
 "other System Admins as well as inactive users."
 msgstr ""
+"Un Amministratore di Sistema può vedere e gestire gli utenti in **System Console > Users**. "
+"Gli utenti possono  essere riceracti per nome, filtrandoli per team e usando filtri per vedere "
+"gli altri Amministratori di Sistema come gli utenti inattivi."
 
 #: ../../source/help/getting-started/managing-members.rst:150
 msgid "Guest"
-msgstr ""
+msgstr "Ospiti"
 
 #: ../../source/help/getting-started/managing-members.rst:152
 msgid ""
@@ -520,52 +523,57 @@ msgid ""
 " collaborate with users outside of their organization, and control what "
 "channels they are in and who they can collaborate with."
 msgstr ""
+"Guest è un ruolo con pemrssi limitati, che permette alle organizzazioni di "
+"collaborare con utenti al di fuori dell'organizzazione stessa, e tenere sotto controllo a quali "
+"canali hanno accesso e con chi collaborano."
 
 #: ../../source/help/getting-started/managing-members.rst:154
 msgid "Guests can:"
-msgstr ""
+msgstr "Gli ospiti possono:"
 
 #: ../../source/help/getting-started/managing-members.rst:156
 msgid "Pin messages to channels."
-msgstr ""
+msgstr "Appuntare messaggi in un canale."
 
 #: ../../source/help/getting-started/managing-members.rst:157
 msgid "Use slash commands (with the exception of those used to invite members)."
-msgstr ""
+msgstr "Usare slash command (ad eccezione di quelli usati per invitare membri)."
 
 #: ../../source/help/getting-started/managing-members.rst:158
 msgid "Favorite channels."
-msgstr ""
+msgstr "Aggiungere canali ai preferiti."
 
 #: ../../source/help/getting-started/managing-members.rst:159
 msgid "Mute channels."
-msgstr ""
+msgstr "Silenziare canali."
 
 #: ../../source/help/getting-started/managing-members.rst:160
 msgid "Update their account settings."
-msgstr ""
+msgstr "Aggiornare il proprio proprio profilo."
 
 #: ../../source/help/getting-started/managing-members.rst:162
 msgid "Guests cannot:"
-msgstr ""
+msgstr "Gli ospiti non possono:"
 
 #: ../../source/help/getting-started/managing-members.rst:164
 msgid "Discover public channels."
-msgstr ""
+msgstr "Trovare canali pubblici."
 
 #: ../../source/help/getting-started/managing-members.rst:165
 msgid "Join open teams."
-msgstr ""
+msgstr "Aggiungersi a team esistenti."
 
 #: ../../source/help/getting-started/managing-members.rst:166
 msgid ""
 "Create direct messages or group messages with members who aren’t within "
 "the same channel."
 msgstr ""
+"Creare messaggi diretti o di gruppo con membri che non sono all'interno "
+"dello stesso canale."
 
 #: ../../source/help/getting-started/managing-members.rst:169
 msgid "User With Personal Access Token Permission"
-msgstr ""
+msgstr "Utenti Con Autorizzazione con Access Token Personale"
 
 #: ../../source/help/getting-started/managing-members.rst:171
 msgid ""
@@ -574,28 +582,39 @@ msgid ""
 "and give permissions for that account to create personal access tokens in"
 " **System Console > Users**."
 msgstr ""
+"Un Amministratore di Sistema può abilitare `i token per l'accesso personale "
+"<https://docs.mattermost.com/developer/personal-access-tokens.html>`__ "
+"e concedere le autorizzazioni per quell'account per creare token di accesso personali in "
+" **System Console > Users**."
 
 #: ../../source/help/getting-started/managing-members.rst:173
 msgid ""
 "In addition, the System Admin can optionally set the following "
 "permissions for the account, useful for integrations and bot accounts:"
 msgstr ""
+"In aggiunta, l'Amministratore di Sistema può opzionalamnete i seguenti "
+"permessi per l'account, utili per le integrazioni e gli account per bot:"
+
 
 #: ../../source/help/getting-started/managing-members.rst:175
 msgid ""
 "**post:all**: Allows the account to post to all Mattermost channels "
 "including direct messages."
 msgstr ""
+"**post:all**: Permette all'account di inviare messaggi a tutti i canali Mattermost "
+"inclusi i messaggi diretti."
 
 #: ../../source/help/getting-started/managing-members.rst:176
 msgid ""
 "**post:channels**: Allows the account to post to all Mattermost public "
 "channels."
 msgstr ""
+"**post:channels**: Permette all'account di inviare messaggi in tutti i canali pubblici di "
+"Mattermost."
 
 #: ../../source/help/getting-started/managing-members.rst:179
 msgid "Deactivating Users"
-msgstr ""
+msgstr "Disattivare utenti"
 
 #: ../../source/help/getting-started/managing-members.rst:181
 msgid ""
