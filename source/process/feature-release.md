@@ -19,6 +19,9 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
+1. **(Team)**
+    - Release Manager, Dev Leads, QA, and PMs to meet to discuss plans for the upcoming release, e.g. share designs, high level thoughts on what would be included along with dependencies.
+
 ### B. (T-minus 23 working days) Cut-off for Submitting Features
 
 No pull requests for major features should be **submitted** to the current release after this date. In special cases, exceptions can be made by the Release Manager. 
