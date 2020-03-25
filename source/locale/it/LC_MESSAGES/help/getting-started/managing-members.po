@@ -614,7 +614,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/managing-members.rst:179
 msgid "Deactivating Users"
-msgstr "Disattivare utenti"
+msgstr "Disattivare Utenti"
 
 #: ../../source/help/getting-started/managing-members.rst:181
 msgid ""
@@ -623,6 +623,10 @@ msgid ""
 " and filtered to make finding users easier. Click the user's role and in "
 "the menu that opens, click **Deactivate**."
 msgstr ""
+"Un Amministratore di Sistema può disattivare un account utente andando in  **System Console "
+"> Users** per ottenere una lista di tutti gli account sul server. Sulla lista possono essre effettuate ricercche "
+"e può essere filtrate per trovare utenti più facilmente. Fare click sul ruolo di un utente e nel "
+"menu che verrà aperto, fare click su **Deactivate**."
 
 #: ../../source/help/getting-started/managing-members.rst:183
 msgid ""
