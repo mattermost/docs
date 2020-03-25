@@ -44,6 +44,18 @@ Production Docker Setup on Ubuntu
        sudo chown -R 2000:2000 ./volumes/app/mattermost/
        docker-compose up -d
 
+   The docker-compose network that is created by the above steps defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that.  If the network is already set up with the above default, you need to run the following command to remove it, so that the a subsequent run will generate it again with the new network setting.
+   
+   .. code:: bash
+ 
+       docker network rm mattermost-server_mm-test
+	   
+   To verify the current docker network use the following command to list it (check out the options `here <https://docs.docker.com/engine/reference/commandline/network_ls/>`__):
+   
+   .. code:: bash
+   
+       docker network ls [OPTIONS]
+
 4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__.
 
 5. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`__.
