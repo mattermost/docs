@@ -746,7 +746,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/managing-members.rst:206
 msgid "Leaving a Team"
-msgstr ""
+msgstr "Lasciare un Team"
 
 #: ../../source/help/getting-started/managing-members.rst:208
 msgid ""
@@ -754,6 +754,10 @@ msgid ""
 "three dot **Main Menu > Leave Team**. This will remove the user from the "
 "team, and from all public channels and private channels on the team."
 msgstr ""
+"Gli utenti possono anche scegliere di rimuovere se stessi da un team, "
+"accedendo alla terza voce **Main Menu > Leave Team**. In questo modo "
+"l'utente verrà rimosso dal team e da tutti i canali pubblici e privati "
+"del team."
 
 #: ../../source/help/getting-started/managing-members.rst:210
 msgid ""
@@ -763,10 +767,15 @@ msgid ""
 "anyone-to-join-this-team>`__ team, or if they receive a new invite. If "
 "they do rejoin, they will no longer be a part of their old channels."
 msgstr ""
+"Saranno in grado di ricongiungersi al team solo se è impostato su`\"Allow any "
+"user with an account on this server to join this team\" "
+"<http://docs.mattermost.com/help/settings/team-settings.html#allow-"
+"anyone-to-join-this-team>`__, o se ricevono un nuovo invito. Se si "
+"ricongiungono, non faranno più parte dei loro vecchi canali."
 
 #: ../../source/help/getting-started/managing-members.rst:213
 msgid "Obtaining User ID"
-msgstr ""
+msgstr "Ottenere lo User ID"
 
 #: ../../source/help/getting-started/managing-members.rst:215
 msgid ""
@@ -776,4 +785,8 @@ msgid ""
 "Users**) as well as the individual profile page for each user (**System "
 "Console > Users**)."
 msgstr ""
-
+"A volte è necessario un ID utente univoco per configurare determinati "
+"plug-in e altre attività amministrative che richiedono l'identificazione "
+"di utenti specifici. Questo identificatore è disponibile sia nella lista "
+"utenti (**System Console > Users**) che nella pagina del profilo "
+"individuale per ogni utente  (**System Console > Users**)."
