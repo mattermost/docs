@@ -637,6 +637,12 @@ msgid ""
 " System Console, in which case the user rejoins channels and teams that "
 "they previously belonged to."
 msgstr ""
+"Quando si seleziona **Deactivate**, l'utente viene disconnesso dal sistema "
+"e riceve un messaggio di errore se tenta di accedere nuovamente. L'utente non "
+"viene più visualizzato negli elenchi dei membri del canale e viene rimosso dalla "
+"lista dei membri del team. Un account disattivato può anche essere riattivato dalla "
+"Console di sistema, nel qual caso l'utente si ricongiunge ai canali e ai team a cui "
+"apparteneva in precedenza. "
 
 #: ../../source/help/getting-started/managing-members.rst:185
 msgid ""
@@ -644,6 +650,9 @@ msgid ""
 "sidebars, but can be reopened using the **More...** button or the Channel"
 " Switcher (CMD/CTRL + K)."
 msgstr ""
+"I canali di messaggi diretti con utenti disattivati sono nascosti "
+"nelle barre laterali degli utenti, ma possono essere riaperti utilizzando "
+"il pulsante **More...** o il selettore di canale (CMD/CTRL + K)."
 
 #: ../../source/help/getting-started/managing-members.rst:187
 msgid ""
@@ -651,20 +660,26 @@ msgid ""
 "to delete users from the Mattermost system, as such an operation could "
 "compromise the integrity of message archives."
 msgstr ""
+"Mattermost è progettato come un sistema di registrazione, quindi non "
+"esiste un'opzione per eliminare gli utenti dal sistema Mattermost, "
+"poiché tale operazione potrebbe compromettere l'integrità degli "
+"archivi dei messaggi."
 
 #: ../../source/help/getting-started/managing-members.rst:189
 msgid ""
 "Note that AD/LDAP user accounts cannot be deactivated from Mattermost; "
 "they must be deactivated from your Active Directory."
 msgstr ""
+"Si noti che gli account utente AD/LDAP non possono essere disattivati "
+"da Mattermost; devono essere disattivati da Active Directory."
 
 #: ../../source/help/getting-started/managing-members.rst:192
 msgid "Removing a User from a Team or Leaving a Team"
-msgstr ""
+msgstr "Rimuovere un Utente da un Team o Lasciare un Team"
 
 #: ../../source/help/getting-started/managing-members.rst:195
 msgid "Remove from Team"
-msgstr ""
+msgstr "Rimouvere dal Team"
 
 #: ../../source/help/getting-started/managing-members.rst:197
 msgid ""
@@ -672,6 +687,9 @@ msgid ""
 "**Main Menu > Manage Members**, and selecting **Remove From Team** in the"
 " dropdown menu beside a user entry."
 msgstr ""
+"Un amministratore del team può rimuovere un utente da un team accedendo "
+"alla terza voce *Main Menu > Manage Members** e selezionando **Remove From Team** "
+"nel menu a discesa accanto all'utente."
 
 #: ../../source/help/getting-started/managing-members.rst:199
 msgid ""
@@ -681,6 +699,11 @@ msgid ""
 "didn't belong to any other teams, the user is sent to the team selection "
 "page."
 msgstr ""
+"Quando un utente viene rimosso da un team, il team non verrà più visualizzato "
+"nella barra laterale di propri team. Se attualmente ha il team aperto, sarà "
+"reindirizzato al primo team che appare sulla barra laterale dei propri team. "
+"Se non appartiene a nessun altro team, l'utente viene reindirizzato alla "
+"pagina di selezione dei team. "
 
 #: ../../source/help/getting-started/managing-members.rst:201
 msgid ""
