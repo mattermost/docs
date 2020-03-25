@@ -361,52 +361,61 @@ msgstr ""
 
 #: ../../source/help/getting-started/managing-members.rst:107
 msgid "Member"
-msgstr ""
+msgstr "Membri"
 
 #: ../../source/help/getting-started/managing-members.rst:109
 msgid ""
 "This is the default role given to users when they join a team. Members "
 "have basic permissions on the Mattermost team."
 msgstr ""
+"Questo è il ruolo di default dato agli utenti quando si uniscono ad un team. I membri "
+"hanno permessi di base su un team Mattermost."
 
 #: ../../source/help/getting-started/managing-members.rst:112
 msgid "Channel Admin"
-msgstr ""
+msgstr "Amministratore di Canale"
 
 #: ../../source/help/getting-started/managing-members.rst:114
 msgid "*Available in Enterprise Edition E10 and higher*"
-msgstr ""
+msgstr "*Disponibile nell'Enterprise Edition E10 e superiori*"
 
 #: ../../source/help/getting-started/managing-members.rst:116
 msgid ""
 "The person who creates a channel is assigned the Channel Admin role for "
 "that channel. People with the Channel Admin role have the following "
 "privileges:"
-msgstr ""
+msgstr ""ù
+"All'utente che crea un canale è assegnato il ruolo di Amministratore di Canale per "
+"quel canale. Le persone con il ruolo di Amministratore di Canale hanno i seguenti "
+"privilegi:"
 
 #: ../../source/help/getting-started/managing-members.rst:118
 msgid "Ability to assign the Channel Admin role to other members of the channel."
-msgstr ""
+msgstr "La possibilità di assegnare il ruolo di Amministratore di Canale ad altri membri del canale."
 
 #: ../../source/help/getting-started/managing-members.rst:119
 msgid ""
 "Ability to remove the Channel Admin role from other holders of the "
 "Channel Admin role."
 msgstr ""
+"La possibilità di rimuovere il ruolo di Amministratore di Canale ad altri utenti che "
+"detengono quel ruolo."
 
 #: ../../source/help/getting-started/managing-members.rst:120
 msgid "Ability to remove members from the channel."
-msgstr ""
+msgstr "La possibilità di rimuovere membri dal canale."
 
 #: ../../source/help/getting-started/managing-members.rst:122
 msgid ""
 "Depending on your system configuration, Channel Admins can be granted "
 "special permissions by the System Admin to rename and delete channels."
 msgstr ""
+"In base alla configurazione del tuo sistme, agli Amministratori di Canale possono essere assegnati "
+"permessi speciali dall'Amministratore di Sistema per rinominare e cancellare i canali."
 
 #: ../../source/help/getting-started/managing-members.rst:125
 msgid "Team Admin"
-msgstr ""
+msgstr "Amministratore del Team"
 
 #: ../../source/help/getting-started/managing-members.rst:127
 msgid ""
