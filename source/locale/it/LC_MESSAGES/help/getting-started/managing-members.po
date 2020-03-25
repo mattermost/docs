@@ -424,30 +424,38 @@ msgid ""
 "Admin for one team but only a Member on another team. Team Admins have "
 "the following privileges:"
 msgstr ""
+"Quando un team è creato la prima volta, la persona che lo ha creato diventa un Amministratore "
+"del Team. Questo è un ruolo specifico per team; ciò significa che qualcuno può essere Amministratore "
+"per un team ma sono Membro in una altro team. Gli Amministratori del Team hanno "
+"i seguenti privilegi:"
 
 #: ../../source/help/getting-started/managing-members.rst:129
 msgid "Access to the **Team Settings** menu from the team site main menu."
-msgstr ""
+msgstr "Accesso al menu **Team Settings** dal menu principale del sito del team."
 
 #: ../../source/help/getting-started/managing-members.rst:130
 msgid "Ability to change the team name and import data from Slack export files."
-msgstr ""
+msgstr "La possibilità di cambiare il nome del team e importare dai file di esportazione di Slack."
 
 #: ../../source/help/getting-started/managing-members.rst:131
 msgid ""
 "Access to the **Manage Members** menu, where they can control whether "
 "team members are a **Member** or a **Team Admin**."
 msgstr ""
+"Accesso al menu **Manage Members**, da dove si può controllare se "
+"i membri del team sono un **Membro** o un **Team Admin**."
 
 #: ../../source/help/getting-started/managing-members.rst:134
 msgid "System Admin"
-msgstr ""
+msgstr "Amministratore di Sistema"
 
 #: ../../source/help/getting-started/managing-members.rst:136
 msgid ""
 "The first user added to a newly-installed Mattermost system is assigned "
 "the System Admin role."
 msgstr ""
+"Al primo utente aggiunto ad un sistema Mattermost appena installato è assegnato "
+"il ruolo di Amministratore di Sistema."
 
 #: ../../source/help/getting-started/managing-members.rst:138
 msgid ""
@@ -455,36 +463,45 @@ msgid ""
 "privileges of a Team Admin, along with the following additional "
 "privileges:"
 msgstr ""
+"L'Amministratore di Sistema è tipicamente un membro dello staff IT e ha tutti i "
+"privilegi di un Ammnistratore di Team con i seguenti privilegi "
+"aggiuntivi:"
 
 #: ../../source/help/getting-started/managing-members.rst:140
 msgid "Access to the System Console from the main menu in any team site."
-msgstr ""
+msgstr "Accesso alla Console di Sistema dal menu principale di un qualsiasi team."
 
 #: ../../source/help/getting-started/managing-members.rst:141
 msgid ""
 "Ability to change any setting on the Mattermost server available in the "
 "System Console."
 msgstr ""
+"La possibilità di cambiare qualsiasi configurazione disponibile sulla Console di Sistema del server "
+"Mattermost."
 
 #: ../../source/help/getting-started/managing-members.rst:142
 msgid ""
 "Ability to promote and demote other users from member role to System "
 "Admin role (and vice versa)."
 msgstr ""
+"La possibilità di assegnare o togliere ai membri il ruolo di Amministratore di 
+Sistema."
 
 #: ../../source/help/getting-started/managing-members.rst:143
 msgid "Ability to promote and demote other users to and from Guest role."
-msgstr ""
+msgstr "La possibilità di assegnare o togliere ad altri utenti il ruolo di Guest."
 
 #: ../../source/help/getting-started/managing-members.rst:144
 msgid "Ability to deactivate user accounts and to reactivate them."
-msgstr ""
+msgstr "La possibilità di disattivare account utenti e riattivarli."
 
 #: ../../source/help/getting-started/managing-members.rst:145
 msgid ""
 "Access to private channels, but only if given the link to the private "
 "channel."
 msgstr ""
+"Accedere a canali privati, ma solo se è dato il link ad un canale "
+"privato."
 
 #: ../../source/help/getting-started/managing-members.rst:147
 msgid ""
