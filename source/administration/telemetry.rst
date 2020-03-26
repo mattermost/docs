@@ -93,7 +93,7 @@ Android Mobile App Performance Monitoring
 To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending `diagnostic information <https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting>`__.
 
 Trace events
-  Includes duration on how long the action took place like startup, team/channel switch, posts loading/update and channel drawer open/close. The naming convention is interpreted as ``[start observation]:[end observation]``, e.g. ``start:overall`` as from app start until fully rendered or ``post_list:thread`` as on press of post at post list until thread is opened.
+  Includes the time taken for the action, such as startup, team/channel switch, posts loading/update and channel drawer open/close, to complete. The naming convention is interpreted as ``[start observation]:[end observation]``, e.g. ``start:overall`` as from app start until fully rendered or ``post_list:thread`` as on press of post at post list until thread is opened.
   Complete list of trace events are the following:
 
   - *start:overall*: Initial start (cold or reload) until the last post of a channel is loaded.
