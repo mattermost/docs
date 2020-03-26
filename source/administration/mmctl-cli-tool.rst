@@ -557,7 +557,7 @@ mmctl channel list
 
 **Description**
 
-  List all channels on specified teams. Archived channels are appended with '(archived)'.
+  List all public and archived channels on specified teams. Archived channels are appended with '(archived)'.
 
 **Format**
 
