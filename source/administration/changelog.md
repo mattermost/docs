@@ -59,6 +59,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
  - Fixed an issue where a user account was still created when inviting a new user to a team with an email address that didn't match the team's allowed domain.
  - Fixed an issue where System Admins could access the Teams menu of the System Console.
+ - Fixed an issue where a channel appeared twice on the channel sidebar if the channels were created with a certain arrangement of characters.
  - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
  - Fixed an issue where users were unable to drag and drop files on Edge.
  - Fixed data race conditions that occurred when accessing ``Post.Props``.
@@ -101,6 +102,7 @@ Mattermost v5.21.0 contains low level security fixes. [Upgrading](http://docs.ma
  - Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in Postgres.
 
 ### Bug Fixes
+ - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading..." on certain screen resolutions.
  - Fixed an issue where bots could not be added to group-synced channels or teams.
  - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP.
  - Fixed an issue where lines in over 65536 characters caused bulk import to fail.
