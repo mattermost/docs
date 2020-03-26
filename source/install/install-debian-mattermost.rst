@@ -21,11 +21,12 @@ Assume that the IP address of this server is 10.10.10.2.
 
   Team Edition
 
-    Note: To enable the unlocking of `enterprise features <https://mattermost.com/pricing-feature-comparison/>`__, you will be required to replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an `upgrade procedure <../administration/upgrade.html#upgrade-team-edition-to-enterprise-edition.html>`__.
-
   .. code-block:: sh
 
     wget http://latest.mattermost.com/server-linux-team -O mattermost-server
+
+  .. note::
+    To enable the unlocking of `enterprise features <https://mattermost.com/pricing-feature-comparison/>`__, you will be required to replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an `upgrade procedure <../administration/upgrade.html#upgrade-team-edition-to-enterprise-edition.html>`__.
 
 3. Extract the Mattermost Server files.
 
