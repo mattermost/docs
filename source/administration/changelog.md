@@ -10,6 +10,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
+ - v5.9.0 ESR support ends
+
 ### Breaking Changes
  
 **IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
