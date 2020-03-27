@@ -38,7 +38,8 @@ Location of your local storage directory
 
      cd /tmp
 
-#. Download the latest version of the Mattermost Server. To view other release versions, release notes, and checksums visit `the version archive <./version-archive.html>`__.
+#. Download the latest version of the Mattermost Server. To view other release versions, release notes, and checksums visit `the version archive <../administration/version-archive.html>`__.
+
 
   Enterprise Edition
 
