@@ -60,6 +60,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a user account was still created when inviting a new user to a team with an email address that didn't match the team's allowed domain.
  - Fixed an issue where System Admins could access the Teams menu of the System Console.
  - Fixed an issue where a channel appeared twice on the channel sidebar if the channels were created with a certain arrangement of characters.
+ - Fixed an issue where pasting a custom theme caused a white screen.
  - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
  - Fixed an issue where users were unable to drag and drop files on Edge.
  - Fixed data race conditions that occurred when accessing ``Post.Props``.
