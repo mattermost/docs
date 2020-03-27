@@ -205,7 +205,7 @@ URL
   The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent. The request contains an ``application/json`` JSON string. As of 5.14, relative URLs are accepted, simplifying the workflow when a plugin handles the action.
 
 Context
-  The requests sent to the specified URL contain the user ID, post ID, channel ID, team ID, and any context that was provided in the action definition. If the post was of type "Message Menus", then context also contains selected_option field with the user selected option value. The post ID can be used to, for example, delete or edit the post after clicking on a message button.
+  The requests sent to the specified URL contain the user ID, post ID, channel ID, team ID, and any context that was provided in the action definition. If the post was of type ``Message Menus``, then context also contains the ``selected_option`` field with the user-selected option value. The post ID can be used to, for example, delete or edit the post after clicking on a message button.
   
   A simple example of a request is given below:
   
