@@ -50,7 +50,7 @@ The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If yo
  
        docker network rm mattermost-server_mm-test
 	   
-   To verify the current docker network use the following command to list it (check out the options `here <https://docs.docker.com/engine/reference/commandline/network_ls/>`__):
+To verify the current Docker network use the following command to list it (you can access information about the options `here <https://docs.docker.com/engine/reference/commandline/network_ls/>`__):
    
    .. code:: bash
    
