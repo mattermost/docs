@@ -44,7 +44,7 @@ Production Docker Setup on Ubuntu
        sudo chown -R 2000:2000 ./volumes/app/mattermost/
        docker-compose up -d
 
-   The docker-compose network that is created by the above steps defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that.  If the network is already set up with the above default, you need to run the following command to remove it, so that the a subsequent run will generate it again with the new network setting.
+The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.
    
    .. code:: bash
  
