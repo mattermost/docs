@@ -73,7 +73,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
     `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator.
 
   .. note::
-    `Custom commands urls do not support basic auth. Commands provide their own authentication level, thats why no need in basic auth support
+    `Custom command URLs do not support basic authentication as the slash commands provide their own authentication level. 
     
 6 - (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 
