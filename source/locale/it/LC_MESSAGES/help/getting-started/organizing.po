@@ -47,7 +47,7 @@ msgstr "`Come navigare tra i canali e organizzarli`_"
 
 #: ../../source/help/getting-started/organizing.rst:11
 msgid "`Channel naming examples`_"
-msgstr "`Esempi di nomi di canali`_"
+msgstr "`Esempi di nomenclatura di canali`_"
 
 #: ../../source/help/getting-started/organizing.rst:15
 msgid "The importance of channel names"
@@ -102,13 +102,15 @@ msgstr ""
 
 #: ../../source/help/getting-started/organizing.rst:31
 msgid "Scoping Names"
-msgstr ""
+msgstr "Ambito dei nomi"
 
 #: ../../source/help/getting-started/organizing.rst:33
 msgid ""
 "It's natural to start with broadly defined channels and let them divide "
 "into narrower topics as discussions progress."
 msgstr ""
+"È naturale iniziare con canali di carattere generale e dividerli successivamente "
+"in argomenti più specifici man mano che le discussioni procedono".
 
 #: ../../source/help/getting-started/organizing.rst:35
 msgid ""
@@ -116,12 +118,18 @@ msgid ""
 "conversations progress, you might divide that channel into: \"Marketing: "
 "Website\", \"Marketing: Social Media\", \"Marketing: General\"."
 msgstr ""
+"Ad esempio, potresti iniziare con un canale \"Marketing\" generico. "
+"Man mano che le conversazioni progrediscono, potresti suddividere quel "
+"canale in: \"Marketing: Website\", \"Marketing: Social Media\", "
+"\"Marketing: General\"."
 
 #: ../../source/help/getting-started/organizing.rst:37
 msgid ""
 "Use colons to separate sections of channel names, rather than `` - `` or "
 "`` > `` which require more spaces to display."
 msgstr ""
+"Usa i due-punti per separare le sezioni del nome di un canale, piuttosto "
+"di `` - `` o `` > `` che richiedono più spazio per essere mostrati."
 
 #: ../../source/help/getting-started/organizing.rst:39
 msgid ""
@@ -129,12 +137,17 @@ msgid ""
 " products and geographies, with channel names like \"US: Marketing\" and "
 "\"UK: Marketing\"."
 msgstr ""
+"Man mano che l'organizzazione cresce, i temi potrebbero dividersi tra unità "
+"aziendali, prodotti e aree geografiche, con nomi di canali come \"US: "
+"Marketing\" e \"UK: Marketing\"."
 
 #: ../../source/help/getting-started/organizing.rst:41
 msgid ""
 "If you need to shorten country names, use standard `2-letter country "
 "codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`__."
 msgstr ""
+"Se hai necessità di accorciare i nomi dei paesi, usa il `codice standard a 2 "
+"lettere <http://www.nationsonline.org/oneworld/country_code_list.htm>`__."
 
 #: ../../source/help/getting-started/organizing.rst:43
 msgid ""
@@ -142,6 +155,9 @@ msgid ""
 " [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social"
 " Media``."
 msgstr ""
+"Puoi fare combinazioni di gerarchie con formati come ``[SUB-TEAM]: [TOPIC]:"
+" [SUB-TOPIC]``. Per esempio: ``US: Mrkt: Website`` e ``UK: Mrkt: Social"
+" Media``."
 
 #: ../../source/help/getting-started/organizing.rst:45
 msgid ""
@@ -149,6 +165,9 @@ msgid ""
 "redundant letter sounds. Example: Turn \"Marketing\" into \"Mrkt\", and "
 "\"Project\" into \"Prjt\"."
 msgstr ""
+"Accorcia le parole, in particolare le categorie, rimuovendo le vocali, i finali e "
+"le lettere dal suono ridondante. Per esempio: trasforma \"Marketing\" in \"Mrkt\", e "
+"\"Project\" in \"Prjt\"."
 
 #: ../../source/help/getting-started/organizing.rst:47
 msgid ""
@@ -157,16 +176,22 @@ msgid ""
 "additional team might need to be created on the server to accommodate the"
 " large number of channels."
 msgstr ""
+"Una buona nomenclatura può portare un team fino a diverse migliaia di "
+"canali senza significative confusioni. Alla fine ogni organizzazione "
+"raggiunge un limite e potrebbe essere necessario creare un team aggiuntivo "
+"sul server per adattarsi al gran numero di canali."
 
 #: ../../source/help/getting-started/organizing.rst:51
 msgid "How to navigate and organize channels"
-msgstr ""
+msgstr "Come navitra e organizzare i canali"
 
 #: ../../source/help/getting-started/organizing.rst:53
 msgid ""
 "With guidance on how to set channel names, here are different navigation "
 "options and types of channels to consider:"
 msgstr ""
+"Con le indicazioni su come impostare i nomi dei canali, ci sono diverse "
+"opzioni  e tipi di navigazione di canali da considerare:"
 
 #: ../../source/help/getting-started/organizing.rst:56
 msgid "Navigating channels using the keyboard"
