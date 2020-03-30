@@ -195,11 +195,11 @@ msgstr ""
 
 #: ../../source/help/getting-started/organizing.rst:56
 msgid "Navigating channels using the keyboard"
-msgstr ""
+msgstr "Navigare i canali usando la tastiera"
 
 #: ../../source/help/getting-started/organizing.rst:58
 msgid "Keyboard shortcuts allow users to jump between channels."
-msgstr ""
+msgstr "Le scorciatoie da tastiera permettono agli utenti di passare da un canale all'altro."
 
 #: ../../source/help/getting-started/organizing.rst:60
 msgid ""
@@ -207,22 +207,29 @@ msgid ""
 "letters of a channel, triggering auto-complete. Pressing ENTER jumps to "
 "the channel directly."
 msgstr ""
+"Digitare CTRL+K fa apparire una finestra di dialogo dove gli utenti possono digitare le prime poche "
+"lettere di un canale, attivando l'auto completamento. Premere tasto ENTER per passare "
+"direttamente al canale."
 
 #: ../../source/help/getting-started/organizing.rst:62
 msgid ""
 "Keeping names clear and short lets users navigate large collections of "
 "channels quickly."
 msgstr ""
+"Matenere i nomi chiari e corti permette agli utenti di navigare velocemente "
+"tra un gran numero di canali."
 
 #: ../../source/help/getting-started/organizing.rst:64
 msgid ""
 "Use ALT+SHIFT+UP and ALT+SHIFT+DOWN to move up and down to the next "
 "channel with an unread message."
 msgstr ""
+"Usa ALT+SHIFT+UP e ALT+SHIFT+DOWN per muoverti su e giù al prossimo "
+"canale con messaggi non letti."
 
 #: ../../source/help/getting-started/organizing.rst:67
 msgid "Topic Channels"
-msgstr ""
+msgstr "Topic Channel"
 
 #: ../../source/help/getting-started/organizing.rst:69
 msgid ""
@@ -230,52 +237,66 @@ msgid ""
 "similar to how a user might create a folder for organizing emails or "
 "documents::"
 msgstr ""
+"I topic sono ampie categorie per l'organizzazione di discussioni. I topic "
+"sono simili a cartelle che un utente potrebbe creare per l'organizzazione "
+"di e-mail o documenti ::"
 
 #: ../../source/help/getting-started/organizing.rst:73
 msgid ""
 "Users can join and leave topic-based channels, as well as add colleagues "
 "to have topic-based discussions."
 msgstr ""
+"Gli utenti possono unirsi o lasciare canali basati su topic, così come "
+"possono aggiungere colleghi per avere discussioni basati su topic. "
 
 #: ../../source/help/getting-started/organizing.rst:75
 msgid ""
 "As teams get larger and the number of channels increase, you may start "
 "naming topics in a hierarchy to make them easier to find::"
 msgstr ""
+"Quando i team diventano grandi e il numero di canali cresce, puoi cominciare "
+"a nominare i topic usando una gerarchia per renderli più facili da trovare::"
 
 #: ../../source/help/getting-started/organizing.rst:80
 msgid "Meeting Channels"
-msgstr ""
+msgstr "Meeting Channel"
 
 #: ../../source/help/getting-started/organizing.rst:82
 msgid ""
 "Meeting channels are often used to organize regular meetings. Members can"
 " add topics as messages to be discussed during the regular meeting time::"
 msgstr ""
+"I Meeting Channel sono spesso usati per organizzare incontri regolari. I "
+"membri possono aggiungere topic come messaggi per essere discussi durante "
+"regolari incontri::"
 
 #: ../../source/help/getting-started/organizing.rst:86
 msgid "There are three built-in features to make meetings in Mattermost easier:"
-msgstr ""
+msgstr "Esistono tre funzionalita precostituite per rendere gli incontri in "
+"Mattermost più semplici:"
 
 #: ../../source/help/getting-started/organizing.rst:88
 msgid "Numbered agenda items in title text"
-msgstr ""
+msgstr "Elementi dell'agenda numerati nel testo del titolo"
 
 #: ../../source/help/getting-started/organizing.rst:90
 msgid ""
 "You can number and format messages as agenda items to discuss for the "
 "next meeting."
 msgstr ""
+"Puoi numerare e formattare i messaggi come una elementi di una agenda per "
+"discuterli al prossimo incontro."
 
 #: ../../source/help/getting-started/organizing.rst:92
 msgid ""
 "Try pasting the following as an example in a channel designated for "
 "meetings::"
-msgstr ""
+msgstr "Prova ad incollare il testo seguente come esempio in un canale "
+"creato per le riunioni::"
 
 #: ../../source/help/getting-started/organizing.rst:97
 msgid "Threaded messaging"
-msgstr ""
+msgstr "Messaggi a Thread"
 
 #: ../../source/help/getting-started/organizing.rst:99
 msgid ""
@@ -283,10 +304,13 @@ msgid ""
 "comments about an agenda item before or after a meeting to extended "
 "discussion."
 msgstr ""
+"Su un messaggio che rappresenta un elemento di agenda, puoi selezionare "
+"``[...] > Reply`` per aggiungere commenti sull'elemento d'agenda o dopo "
+"l'incontro per estendere la discussione."
 
 #: ../../source/help/getting-started/organizing.rst:101
 msgid "Header links"
-msgstr ""
+msgstr "Link dell'Header"
 
 #: ../../source/help/getting-started/organizing.rst:103
 msgid ""
@@ -295,12 +319,19 @@ msgid ""
 "`channel header <https://docs.mattermost.com/help/settings/channel-"
 "settings.html#channel-header>`__."
 msgstr ""
+"Quando l'incontro avviene remotamente, aggiungi un link persistente "
+"alla soluzione per la video o audio conferenza, " 
+"come Zoom, Google Hangouts o BlueJeans nell' "
+"`header del canale <https://docs.mattermost.com/help/settings/channel-"
+"settings.html#channel-header>`__."
 
 #: ../../source/help/getting-started/organizing.rst:105
 msgid ""
 "When it's time to meet, your team can click the conference link to "
 "connect."
 msgstr ""
+"Quando è arrivato il momento della riunione il tuo team può fare click "
+"sul link per connettersi."
 
 #: ../../source/help/getting-started/organizing.rst:108
 msgid "Sub-Team Channels"
