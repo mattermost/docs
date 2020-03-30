@@ -181,7 +181,6 @@ Attendees:
 - All Mattermost Staff
 - Chair: Jason Blais
 - Co-Chairs: Co-founders
-- Vice Chair: Camille Harris
 
 Objectives:
 
@@ -810,7 +809,7 @@ Books
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. `Code Complete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`__ - Best practices and guidelines for writing high quality code.
-2. `Design Patterns,  Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`__ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular.
+2. `Design Patterns, Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`__ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular.
 
 Product Management
 ^^^^^^^^^^^^^^^^^^
@@ -833,7 +832,7 @@ System Security
 
 Papers and Course Materials
 
-1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <https://www.nist.gov/sites/default/files/documents/cyberframework/cybersecurity-framework-021214.pdf>`__ - Standards for internal Mattermost security processes and safeguards.
+1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <http://templatelab.com/cybersecurity-framework/>`__ - Standards for internal Mattermost security processes and safeguards.
 2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`__ - Fundamental challenges with system security.
 3. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`__ - Well written introduction to system security from one of the leaders in the field.
 
