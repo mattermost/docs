@@ -19,75 +19,86 @@ msgstr ""
 
 #: ../../source/help/getting-started/organizing.rst:3
 msgid "Organizing Mattermost"
-msgstr ""
+msgstr "Organizzare Mattermost"
 
 #: ../../source/help/getting-started/organizing.rst:5
 msgid ""
 "The importance of organizing channels increases as Mattermost spreads to "
 "thousands of users."
 msgstr ""
+"L'importanza dell'organizzazione dei canali aumenta man mano che Mattermost "
+"si diffonde a migliaia di utenti"
 
 #: ../../source/help/getting-started/organizing.rst:7
 msgid ""
 "This document shares best practices from various Mattermost deployments "
 "including:"
 msgstr ""
+"Questo documento condivide le migliori pratiche di varie installazioni "
+"di Mattermost, tra cui:"
 
 #: ../../source/help/getting-started/organizing.rst:9
 msgid "`The importance of channel names`_"
-msgstr ""
+msgstr "`L'importanza dei nomi dei canali`_"
 
 #: ../../source/help/getting-started/organizing.rst:10
 msgid "`How to navigate and organize channels`_"
-msgstr ""
+msgstr "`Come navigare tra i canali e organizzarli`_"
 
 #: ../../source/help/getting-started/organizing.rst:11
 msgid "`Channel naming examples`_"
-msgstr ""
+msgstr "`Esempi di nomi di canali`_"
 
 #: ../../source/help/getting-started/organizing.rst:15
 msgid "The importance of channel names"
-msgstr ""
+msgstr "L'importanza dei nomi dei canali"
 
 #: ../../source/help/getting-started/organizing.rst:17
 msgid "Channels organize communication in Mattermost."
-msgstr ""
+msgstr "I canali organizzano le comunicazioni in Mattermost."
 
 #: ../../source/help/getting-started/organizing.rst:19
 msgid "When naming or renaming channels, consider the following:"
-msgstr ""
+msgstr "Quando assegni un nome ai canali o li rinomini, tieni in considerazione i seguenti aspetti:"
 
 #: ../../source/help/getting-started/organizing.rst:22
 msgid "Basic Structure"
-msgstr ""
+msgstr "Struttura di Base"
 
 #: ../../source/help/getting-started/organizing.rst:24
 msgid ""
 "Channel names appear in menus where users select which conversations to "
 "join."
-msgstr ""
+msgstr "I nomi dei canali appaiono nei menu in cui gli utenti selezionano le conversazioni a cui "
+"unirsi."
 
 #: ../../source/help/getting-started/organizing.rst:25
 msgid "Channel names are unique."
-msgstr ""
+msgstr "I nomi dei canali sono univoci."
 
 #: ../../source/help/getting-started/organizing.rst:26
 msgid ""
 "Channel names have a 64 character limit to ensure readability on both "
 "desktop and mobile devices."
 msgstr ""
+"I nomi dei canali hanno un limiti a 64 caratteri per assicurare la leggibilità sia su "
+"desktop che su dispositivi mobili."
 
 #: ../../source/help/getting-started/organizing.rst:27
 msgid ""
 "An additional 128 characters are available to add a \"Channel Purpose\" "
 "visible when users are selecting channels."
 msgstr ""
+"128 caratteri addizionali sono disponibili per aggiungere un \"Channel Purpose\" "
+"visibile quando gli utenti selezionano i canali."
 
 #: ../../source/help/getting-started/organizing.rst:28
 msgid ""
 "An additional 1024 characters are available for describing the channel in"
 " detail in the \"Channel Header\"."
 msgstr ""
+"Altri 1024 caratteri sono disponibili per descrivere il canale in "
+"dettaglio nel  \"Channel Header\"."
 
 #: ../../source/help/getting-started/organizing.rst:31
 msgid "Scoping Names"
