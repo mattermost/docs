@@ -484,8 +484,8 @@ msgid ""
 "Ability to promote and demote other users from member role to System "
 "Admin role (and vice versa)."
 msgstr ""
-"La possibilità di assegnare o togliere ai membri il ruolo di Amministratore di 
-Sistema."
+"La possibilità di assegnare o togliere ai membri il ruolo di Amministratore di "
+"Sistema."
 
 #: ../../source/help/getting-started/managing-members.rst:143
 msgid "Ability to promote and demote other users to and from Guest role."

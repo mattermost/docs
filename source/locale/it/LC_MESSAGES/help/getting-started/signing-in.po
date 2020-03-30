@@ -34,9 +34,9 @@ msgid ""
 "open.  If you have not joined a team, the Team Selection page opens where"
 " you can view a list of teams that you can join."
 msgstr ""
-"Dopo aver effettuato l'accesso, si aprirà il team che appare per primo nella barra laterale 
-dei team. Se non ti sei unito a nessun team, si apre la pagina Selezione Team dove puoi visualizzare 
-un elenco di team a cui puoi unirti."
+"Dopo aver effettuato l'accesso, si aprirà il team che appare per primo nella barra laterale "
+"dei team. Se non ti sei unito a nessun team, si apre la pagina Selezione Team dove puoi visualizzare "
+"un elenco di team a cui puoi unirti."
 
 #: ../../source/help/getting-started/signing-in.rst:17
 msgid "Sign In Methods"
@@ -68,8 +68,8 @@ msgid ""
 "forgot my password** on the sign in screen, or contact your System Admin "
 "for help resetting your password."
 msgstr ""
-"Se hai dimenticato la password, puoi resettarla clickando su **Password 
-dimenticata** sulla schermata di accesso, o contattare il tuo Amministratore di Sistema "
+"Se hai dimenticato la password, puoi resettarla clickando su **Password "
+"dimenticata** sulla schermata di accesso, o contattare il tuo Amministratore di Sistema "
 "per farti aiutare resettando la tua password."
 
 #: ../../source/help/getting-started/signing-in.rst:37
