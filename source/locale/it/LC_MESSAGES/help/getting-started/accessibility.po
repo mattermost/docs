@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/accessibility.rst:2
 msgid "Keyboard Accessibility"
-msgstr ""
+msgstr "Accessibilità da tastiera"
 
 #: ../../source/help/getting-started/accessibility.rst:3
 msgid ""
@@ -27,68 +27,74 @@ msgid ""
 " a mouse. Below is a list of supported shortcuts. Elements in focus have "
 "a colored outline, as shown here:"
 msgstr ""
+"Le scorciatoie da tastiera per la navigazione ti aiutano a utilizzare "
+"Mattermost senza la necessità di un mouse. Di seguito è riportato un elenco "
+"di scorciatoie supportate. Gli elementi a fuoco hanno un contorno colorato, "
+"come mostrato qui:"
 
 #: ../../source/help/getting-started/accessibility.rst:8
 msgid "Shortcut"
-msgstr ""
+msgstr "Scorciatoia"
 
 #: ../../source/help/getting-started/accessibility.rst:8
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #: ../../source/help/getting-started/accessibility.rst:10
 msgid "F6 (CTRL+F6 on Browser)"
-msgstr ""
+msgstr "F6 (CTRL+F6 sul Browser)"
 
 #: ../../source/help/getting-started/accessibility.rst:10
 msgid "Move focus to the next section"
-msgstr ""
+msgstr "Sposta il focus alla sezione successiva"
 
 #: ../../source/help/getting-started/accessibility.rst:12
 msgid "SHIFT+F6 (SHIFT+CTRL+F6 on Browser)"
-msgstr ""
+msgstr "SHIFT+F6 (SHIFT+CTRL+F6 sul Browser)"
 
 #: ../../source/help/getting-started/accessibility.rst:12
 msgid "Move focus to the previous section"
-msgstr ""
+msgstr "Sposta il focus alla sezione precedente"
 
 #: ../../source/help/getting-started/accessibility.rst:14
 msgid "TAB"
-msgstr ""
+msgstr "TAB"
 
 #: ../../source/help/getting-started/accessibility.rst:14
 msgid "Move focus to the next element"
-msgstr ""
+msgstr "Sposta il focus all'elemento successivo"
 
 #: ../../source/help/getting-started/accessibility.rst:16
 msgid "SHIFT+TAB"
-msgstr ""
+msgstr "SHIFT+TAB"
 
 #: ../../source/help/getting-started/accessibility.rst:16
 msgid "Move focus to the previous element"
-msgstr ""
+msgstr "Sposta il focus all'elemento precedente"
 
 #: ../../source/help/getting-started/accessibility.rst:18
 msgid "Up or DOWN"
-msgstr ""
+msgstr "Up o DOWN"
 
 #: ../../source/help/getting-started/accessibility.rst:18
 msgid ""
 "Move focus between messages in the post list or sections in the channel "
 "sidebar"
 msgstr ""
+"Sposta il focus tra i messaggi di una lista o tra le sezioni nella barra "
+"laterale"
 
 #: ../../source/help/getting-started/accessibility.rst:20
 msgid "ENTER"
-msgstr ""
+msgstr "ENTER"
 
 #: ../../source/help/getting-started/accessibility.rst:20
 msgid "Take action on the focused element"
-msgstr ""
+msgstr "Agisce sull'elemnto che ha selezionato"
 
 #: ../../source/help/getting-started/accessibility.rst:25
 msgid "Region Navigation"
-msgstr ""
+msgstr "Aree di Navigazione"
 
 #: ../../source/help/getting-started/accessibility.rst:26
 msgid ""
@@ -96,42 +102,46 @@ msgid ""
 "**F6** (Desktop App) or **CTRL+F6** (Browser) repeatedly to move focus "
 "and loop through the regions in this order:"
 msgstr ""
+"Mattermost ha otto aree che possono essere focalizzate per la "
+"navigazione. Usa **F6** (App desktop) o **CTRL+F6** (Browser) "
+"ripetutamente per spostare lo stato attivo e scorrere le aree in "
+"questo ordine:"
 
 #: ../../source/help/getting-started/accessibility.rst:28
 msgid "Message list region"
-msgstr ""
+msgstr "Area per la lista dei messaggi"
 
 #: ../../source/help/getting-started/accessibility.rst:29
 msgid "Message input region"
-msgstr ""
+msgstr "Area per l'input dei messaggi"
 
 #: ../../source/help/getting-started/accessibility.rst:30
 msgid "Right-hand side message list region"
-msgstr ""
+msgstr "Area a destra della lista dei messaggi"
 
 #: ../../source/help/getting-started/accessibility.rst:31
 msgid "Right-hand side message input region"
-msgstr ""
+msgstr "Area a destra dell'input dei messaggi"
 
 #: ../../source/help/getting-started/accessibility.rst:32
 msgid "Team menu region"
-msgstr ""
+msgstr "Area del menu per i team"
 
 #: ../../source/help/getting-started/accessibility.rst:33
 msgid "Channel sidebar region"
-msgstr ""
+msgstr "Area per la barra laterale del canale"
 
 #: ../../source/help/getting-started/accessibility.rst:34
 msgid "Channel header region"
-msgstr ""
+msgstr "Area per l'header del canale"
 
 #: ../../source/help/getting-started/accessibility.rst:35
 msgid "Search"
-msgstr ""
+msgstr "Ricerca"
 
 #: ../../source/help/getting-started/accessibility.rst:40
 msgid "Message Navigation"
-msgstr ""
+msgstr "Navigazione tra i Messaggi"
 
 #: ../../source/help/getting-started/accessibility.rst:41
 msgid ""
@@ -139,10 +149,13 @@ msgid ""
 " keys to navigate through messages. Press **TAB** to navigate through "
 "message actions."
 msgstr ""
+"Quando l'area dell'elenco messaggi è selezionata, utilizza i tasti freccia "
+"**SU** o **GIÙ** per navigare tra i messaggi. Premi **TAB** per navigare "
+"tra le azioni dei messaggi."
 
 #: ../../source/help/getting-started/accessibility.rst:47
 msgid "Message Composition"
-msgstr ""
+msgstr "Composizione di Messaggi"
 
 #: ../../source/help/getting-started/accessibility.rst:48
 msgid ""
@@ -151,36 +164,42 @@ msgid ""
 "and reading them together in full sentences. Message elements will read "
 "in the following order:"
 msgstr ""
+"Mattermost è compatibile con i più diffusi screen reader. Una "
+"lettura personalizzata è composta per ogni messaggio combinando gli "
+"elementi del messaggio e leggendoli insieme in frasi complete. Gli "
+"elementi del messaggio verranno letti nel seguente ordine:"
 
 #: ../../source/help/getting-started/accessibility.rst:50
 msgid "Header: Author, timestamp, message type (i.e. parent post or reply)"
-msgstr ""
+msgstr "Header: Autore, timestamp, tipo di messaggio (es. post padre o risposta)"
 
 #: ../../source/help/getting-started/accessibility.rst:51
 msgid "Main Content: The message content typed by the author"
-msgstr ""
+msgstr "Contenuto principale: Il contenuto del messaggio digitato dall'autore"
 
 #: ../../source/help/getting-started/accessibility.rst:52
 msgid "Attachments: The number of attachments (if applicable)"
-msgstr ""
+msgstr "Allegati: Il numero di allegati (se applicabile)"
 
 #: ../../source/help/getting-started/accessibility.rst:53
 msgid "Emoji Reactions: The number of unique emoji reactions (if applicable)"
-msgstr ""
+msgstr "Emoji: Il numero di uniche emoji (se applicabile)"
 
 #: ../../source/help/getting-started/accessibility.rst:54
 msgid "Flags/Pins: If a message is pinned or flagged (if applicable)"
-msgstr ""
+msgstr "Flag/Pin: se un messaggio è fissato o contrassegnato (se applicabile)"
 
 #: ../../source/help/getting-started/accessibility.rst:56
 msgid ""
 "For example, a message read by a screen reader may sound like the "
 "following:"
 msgstr ""
+"Ad esempio, un messaggio letto da uno screen reader può apparire "
+"come il seguente:"
 
 #: ../../source/help/getting-started/accessibility.rst:63
 msgid "Channel Sidebar Navigation"
-msgstr ""
+msgstr "Navigazione della Barra Laterale dei Canali"
 
 #: ../../source/help/getting-started/accessibility.rst:64
 msgid ""
@@ -189,4 +208,9 @@ msgid ""
 "Public Channels, Private Channels and Direct Messages. Press **TAB** to "
 "navigate through channels or other buttons within a sidebar section."
 msgstr ""
+"Quando l'area della barra laterale del canale è selezionata, usa i tasti "
+"freccia **SU** o **GIÙ** per selezionare le singole sezioni della barra "
+"laterale, come Preferiti, Canali pubblici, Canali privati e Messaggi diretti. "
+"Premi **TAB** per navigare attraverso i canali o altri pulsanti all'interno "
+"di una sezione della barra laterale. "
 
