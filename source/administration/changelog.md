@@ -10,7 +10,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
- - v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle. v5.19.0 will continue to be our current existing ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
+ - v5.9.0 as our Extended Support Release (ESR) has come to the end of its lifecycle. v5.19.0 will continue to be our current existing ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
 
 ### Breaking Changes
 
