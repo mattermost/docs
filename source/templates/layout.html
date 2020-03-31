@@ -44,10 +44,25 @@
 	gtag('js', new Date());
 
 	gtag('config', 'UA-67846571-1');
+
+	gtag('event', <Click>, {
+   'event_category': <Feedback>,
+   'event_label': <Excellent>,
+   'value': <1>;
+
+	gtag('event', <Click>, {
+	 'event_category': <Feedback>,
+	 'event_label': <Good>,
+   'value': <2>;
+
+	gtag('event', <Click>, {
+	 'event_category': <Feedback>,
+	 'event_label': <Poor>,
+	 'value': <4>;
 	</script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- Second Google Analytics tag to assist mapping with mattermost.com visits --> 
+	<!-- Second Google Analytics tag to assist mapping with mattermost.com visits -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120238482-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
