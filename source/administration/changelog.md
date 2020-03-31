@@ -10,32 +10,29 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
- - v5.9.0 ESR support ends
+ - v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle. v5.19.0 will continue to be our current existing ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
 
 ### Breaking Changes
- 
+
+ - Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable during this time.
+ - The Channel Moderation Settings feature is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.                       
+
 **IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - Channel sidebar reorg (experimental)
- - Version 2 of the server Audit/Logging System
  - Channel Moderation Settings (Beta) (Read Only channels)
- - Bulk Actions in Mattermost Server
- - Search engine backend
  - "Unarchive Channel" option to archived channels menu
+ - Added the ability to drag and drop teams on the team sidebar and added a keyboard shortcut to switch between teams.
+ - Channel sidebar reorg (experimental)
+ - Promoted Dutch and Russian languages to Beta.
 
 ### Improvements
 
-#### Languages
- - Promoted Dutch and Russian languages to Beta.
-
 #### User Interface (UI)
  - Added several UI improvements, such as added a "Close Group Message" option to Group Message menu.
- - Added the ability to drag and drop teams on the team sidebar.
  - Updated the permalink view.
  - Added a keyboard shortcut to open/close the right-hand sidebar
  - Added a keyboard shortcut to add reactions to last message in a channel or a thread.
- - Added a keyboard shortcut to switch between teams.
  - Added infinite scroll to Select Teams screen.
 
 #### Notifications
@@ -55,20 +52,20 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for setting Office365Settings Directory (tenant) Id in the ``config.json``.
 
 ### Bug Fixes
- - Fixed an issue where the autoresponder responded to every bot post.
  - Fixed an issue where a user's role was not reflected correctly in the Channel Members Modal when it was updated after the modal was opened.
  - Fixed an issue where a link to Integrations page was not shown if a custom slash command and webhooks were disabled and bot accounts were enabled.
  - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
  - Fixed an issue where a user account was still created when inviting a new user to a team with an email address that didn't match the team's allowed domain.
- - Fixed an issue where System Admins could access the Teams menu of the System Console.
+ - Fixed an issue where System Admins could not access the Teams menu of the System Console.
  - Fixed an issue where a channel appeared twice on the channel sidebar if the channels were created with a certain arrangement of characters.
  - Fixed an issue where pasting a custom theme caused a white screen.
  - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
  - Fixed an issue where users were unable to drag and drop files on Edge.
+ - Fixed an issue where the autoresponder responded to every bot post.
  - Fixed data race conditions that occurred when accessing ``Post.Props``.
  - Fixed an issue where Mattermost was unable to start if a configured mail server was listening but not responding.
  - Fixed an issue where LDAP sync did not finish if read database replica was enabled.
- - Fixed a SIGSEGV when exporting to CSV.
+ - Fixed a SIGSEGV issue when exporting to CSV.
  - Fixed an issue where Elasticsearch error was output when running unrelated commands.
  - Fixed an issue where importing from slack crashed due to invalid memory access or nil pointer dereference.
  
@@ -90,6 +87,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
+ - 
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  
 ### Contributors
 
