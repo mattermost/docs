@@ -335,7 +335,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/organizing.rst:108
 msgid "Sub-Team Channels"
-msgstr ""
+msgstr "Canali per Sotto-Team"
 
 #: ../../source/help/getting-started/organizing.rst:110
 msgid ""
@@ -343,22 +343,29 @@ msgid ""
 "people with the same manager or other groups brought together for a "
 "shared purpose::"
 msgstr ""
+"I sotto-team possono includere persone interessate alo stesso team, "
+"team di progetto, persone con lo stesso manager o altri gruppi "
+"riuniti per uno scopo condiviso::"
 
 #: ../../source/help/getting-started/organizing.rst:114
 msgid ""
 "As sub-teams grow beyond a manageable size for one channel, they can sub-"
 "divide::"
 msgstr ""
+"Man mano che i sottogruppi crescono oltre una dimensione gestibile per "
+"un canale, possono suddividersi::"
 
 #: ../../source/help/getting-started/organizing.rst:119
 msgid "Project Channels"
-msgstr ""
+msgstr "Canali di Progetto"
 
 #: ../../source/help/getting-started/organizing.rst:121
 msgid ""
 "Project channels discuss how groups of people come together to achieve "
 "specific outcomes::"
 msgstr ""
+"Nei canali di progetto si discute di come gruppi di persone collaborano "
+"per raggiungere risultati specifici::"
 
 #: ../../source/help/getting-started/organizing.rst:125
 msgid ""
@@ -367,10 +374,15 @@ msgid ""
 "channel. The Project Channel is used to do detailed work, and updates are"
 " typically communicated back to larger channels."
 msgstr ""
+"Quelli di progetto sono spesso canali privati anziché canali pubblici e vengono "
+"utilizzati per organizzare un piccolo team attorno a un progetto cresciuto "
+"in un canale più ampio. Il canale di progetto viene utilizzato per eseguire "
+"compiti di dettaglio e gli aggiornamenti vengono in genere riportati in canali "
+"più grandi."
 
 #: ../../source/help/getting-started/organizing.rst:128
 msgid "Location Channels"
-msgstr ""
+msgstr "Canali per Località"
 
 #: ../../source/help/getting-started/organizing.rst:130
 msgid ""
@@ -378,16 +390,21 @@ msgid ""
 "create Location channels to help people coordinate meetings and get-"
 "togethers::"
 msgstr ""
+"Se i tuoi team si trovano in diversi edifici, città o regioni, puoi "
+"creare canali di località per aiutare le persone a coordinare "
+"riunioni e incontri::"
 
 #: ../../source/help/getting-started/organizing.rst:134
 msgid ""
 "This helps share announcements and discussions relevant to only those "
 "locations."
 msgstr ""
+"Questo aiuta a condividere annunci e discussioni pertinenti solo a quelle "
+"località."
 
 #: ../../source/help/getting-started/organizing.rst:137
 msgid "Data Channels"
-msgstr ""
+msgstr "Canali per Dati"
 
 #: ../../source/help/getting-started/organizing.rst:139
 msgid ""
@@ -396,6 +413,11 @@ msgid ""
 "your company name in the news can all be made available in channels your "
 "team chooses to monitor. There is a wide array of options::"
 msgstr ""
+"I canali di dati consentono l'integrazione automatica. Informazioni come "
+"ticket di supporto o segnalazioni di bug nuovi o aggiornati, aggiornamenti "
+"di Twitter o menzioni del nome della tua azienda nelle notizie possono "
+"essere tutti resi disponibili nei canali che il tuo team sceglie di "
+"monitorare. Esiste una vasta gamma di opzioni::"
 
 #: ../../source/help/getting-started/organizing.rst:144
 msgid ""
@@ -404,16 +426,22 @@ msgid ""
 "allow notifications to alert only when their username or certain key "
 "words are mentioned."
 msgstr ""
+"Le persone potrebbero usare questi canali come un quotidiano, leggendo "
+"tutto ciò che è accaduto nell'ultimo giorno, mentre altre configurazioni "
+"permetteno di inviare delle notifiche per avvisare solo quando è citato "
+"il proprio nome utente o determinate parole chiave".
 
 #: ../../source/help/getting-started/organizing.rst:148
 msgid "Channel naming examples"
-msgstr ""
+msgstr "Esempi di nomenclatura di canali"
 
 #: ../../source/help/getting-started/organizing.rst:150
 msgid ""
 "Here is an example of what a marketer's channels might look like in a "
 "small team::"
 msgstr ""
+"Questi sono esempi di come potrebbero essere chiamati i canali di un "
+"piccolo team di un rivenditore::"
 
 #: ../../source/help/getting-started/organizing.rst:172
 msgid ""
@@ -421,4 +449,7 @@ msgid ""
 "was working in the Palo Alto, California, office of a large enterprise, "
 "working on a product called \"Pontoon\"::"
 msgstr ""
+"Questo è un esempio di come potrebbero essere chiamati i canali di un "
+"rivenditore se lavorasse nell'ufficio di una grande impresa di Palo Alto, "
+"California, su un prodotto chiamato \"Pontoon\"::"
 
