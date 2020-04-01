@@ -57,6 +57,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
  - Fixed an issue where a user account was still created when inviting a new user to a team with an email address that didn't match the team's allowed domain.
  - Fixed an issue where System Admins could not access the Teams menu of the System Console.
+ - Fixed an issue where an incorrect time was displayed at midnight when 24-hour clock display was enabled.
  - Fixed an issue where a channel appeared twice on the channel sidebar if the channels were created with a certain arrangement of characters.
  - Fixed an issue where pasting a custom theme caused a white screen.
  - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
