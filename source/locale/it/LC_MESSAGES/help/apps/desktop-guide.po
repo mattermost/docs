@@ -159,32 +159,39 @@ msgid ""
 "<https://docs.mattermost.com/help/settings/account-settings.html>`__ , "
 "the desktop app provides additional options to customize your experience."
 msgstr ""
+"Oltre alle `Impostazioni account di Mattermost "
+"<https://docs.mattermost.com/help/settings/account-settings.html>`__, "
+"l'app desktop offre opzioni aggiuntive per personalizzare la tua "
+"esperienza utente."
 
 #: ../../source/help/apps/desktop-guide.rst:59
 msgid ""
 "The options appear in the Settings page, available on Windows from **... "
 "> File > Settings**, or on Mac from **Mattermost > Preferences**."
 msgstr ""
+"Le opzioni vengono visualizzate nella pagina Settings, disponibile su "
+"Windows in **... > File > Settings** o su Mac in **Mattermost > Preferences**."
 
 #: ../../source/help/apps/desktop-guide.rst:64
 msgid "Start app on login (Windows, Linux only)"
-msgstr ""
+msgstr "Avvia app all'accesso (solo Windows e Linux)"
 
 #: ../../source/help/apps/desktop-guide.rst:62
 msgid ""
 "When enabled, Mattermost application starts when you log in to your "
 "machine."
-msgstr ""
+msgstr "Quando abilitato, l'applicazione Mattermost si avvia quando "
+"effettui l'accesso alla tua macchina."
 
 #: ../../source/help/apps/desktop-guide.rst:64
 #: ../../source/help/apps/desktop-guide.rst:69
 #: ../../source/help/apps/desktop-guide.rst:74
 msgid "This setting is enabled by default."
-msgstr ""
+msgstr "Questo settaggio è abilitato di default."
 
 #: ../../source/help/apps/desktop-guide.rst:69
 msgid "Check spelling"
-msgstr ""
+msgstr "Controllo ortografico"
 
 #: ../../source/help/apps/desktop-guide.rst:67
 msgid ""
