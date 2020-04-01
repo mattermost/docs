@@ -13,7 +13,7 @@ Your Mattermost server must be accessible from the Let's Encrypt CA in order to 
 
 **Configure TLS on the Mattermost Server**:
 
-1. In the **System Console** > **General** > **Configuration** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12.
+1. In **System Console > Environment > Web Server** (or **System Console > General > Configuration** in versions prior to 5.12).
   a. Change the **Listen Address** setting to ``:443``.
   b. Change the **Connection Security** setting to ``TLS``.
   c. Change the **Forward port 80 to 443** setting to ``true``.
