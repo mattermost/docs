@@ -36,7 +36,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance**: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For informaton on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -55,7 +55,7 @@ HTTPS is a secure, encrypted protocol and is highly recommended for production. 
 
 Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
 
-If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
+If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real-time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
 
 .. image:: ../images/architecture_with_protocol.png
 
@@ -81,8 +81,56 @@ Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../images/architecture_high_availability.png
 
-Reference Architecture
+Reference Architectures
 ----------------------------------
+
+The following diagrams show the suggested architecture configurations for E20 enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
+
+There are two versions of each diagram. One is generalized while the other focuses on AWS.
+
+Each generalized diagram represents a full high availability deployment across all critical components. The proxy, database, file storage and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost `HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`__.
+
+Each AWS diagram represents a full high availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
+
+5,000 Users on E20 - General
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment5kUsers.png
+
+5,000 Users on E20 - AWS 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment5kaws.png
+
+10,000 Users on E20 - General
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment10kUsers.png
+
+10,000 Users on E20 - AWS 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment10kaws.png
+
+25,000 Users on E20 - General
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment25kUsers.png
+
+25,000 Users on E20 - AWS 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment25kaws.png
+
+Database with VIPs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following diagram is a suggested configuration for highly-available databases through virtual IPs.
+
+.. image:: ../images/DatabasewithVIPs.png
+
+Load Testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
 

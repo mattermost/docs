@@ -11,11 +11,11 @@ For information on interactive dialogs, :doc:`see here <interactive-dialogs>`.
 
 Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
 
-- mark a task complete in your project management tracker
-- conduct a customer survey or a poll
-- initiate a command to merge a branch into a release
+- Mark a task complete in your project management tracker
+- Conduct a customer survey or a poll
+- Initiate a command to merge a branch into a release
 
-To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`__ to add polling to Mattermost channels via a ``/poll`` slash command.
+To try it out, you can use this `Matterpoll plugin <https://github.com/matterpoll/matterpoll>`__ to add polling to Mattermost channels via a ``/poll`` slash command.
 
 .. image:: ../../source/images/poll.png
 
@@ -131,10 +131,10 @@ The integration can respond with an update to the original post, or with an ephe
     "ephemeral_text": "You updated the post!"
   }
 
-Message menus for channels
+Message Menus for Channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can also provide a list of channels for message menus that the user can choose from. Users can only to select from public channels in their teams.
+You can provide a list of channels for message menus for users to select from. Users can only select from public channels in their teams.
 
 Specify ``channels`` as your action's ``data_source`` as follows:
 
@@ -162,10 +162,10 @@ Specify ``channels`` as your action's ``data_source`` as follows:
     ]
   }
 
-Message menus for users
+Message Menus for Users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Similar to channels, you can also provide a list of users for message menus. The user can choose anyone part of the Mattermost system.
+Similar to channels, you can also provide a list of users for message menus. The user can choose the user who is part of the Mattermost system.
 
 Specify ``users`` as your action's ``data_source`` as follows:
 
@@ -202,10 +202,10 @@ Name
   Give your action a descriptive name.
 
 URL
-  The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string.
+  The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent. The request contains an ``application/json`` JSON string. As of 5.14, relative URLs are accepted, simplifying the workflow when a plugin handles the action.
 
 Context
-  The requests sent to the specified URL contain the user id, post id, channel id, team id, and any context that was provided in the action definition. The post id can be used to, for example, delete or edit the post after clicking on a message button.
+  The requests sent to the specified URL contain the user ID, post ID, channel ID, team ID, and any context that was provided in the action definition. If the post was of type ``Message Menus``, then context also contains the ``selected_option`` field with the user-selected option value. The post ID can be used to, for example, delete or edit the post after clicking on a message button.
   
   A simple example of a request is given below:
   
@@ -241,7 +241,7 @@ Context
       
   In the example above, when the message button is clicked, your integration sends a request to the specified URL with the intention to merge the pull request identified by the context.
 
-  2. **Authenticating the server**. An important property of the context parameter is that it's kept confidential. Hence, if your integration is not behind a firewall, you could add a token to your context without users ever being able to see it:
+  2. **Authenticating the server**. An important property of the context parameter is that it's kept confidential. If your integration is not behind a firewall, you could add a token to your context without users ever being able to see it:
 
     .. code-block:: text
 
@@ -258,7 +258,7 @@ Context
         }
       }
    
-  Then, when your integration receives the request, it can verify that the token matches one that you previously generated and know that the request is legitimately coming from the Mattermost server and not forged.
+  Then, when your integration receives the request, it can verify that the token matches one that you previously generated and know that the request is legitimately coming from the Mattermost server and is not forged.
 
   Depending on the application, integrations can also perform authentication statelessly with cryptographic signatures such as:
 
@@ -291,12 +291,12 @@ Context
         }
       }
 
-  Then, when the integration receives the request, it can act based on the action id.
+  Then, when the integration receives the request, it can act based on the action ID.
 
 Tips and Best Practices
 ------------------------
 
-1. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
+1. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds within the required JSON format.
 2. To get started, you can use this `sample plugin <https://github.com/matterpoll/matterpoll>`__ to add polling to Mattermost channels via a `/poll` slash command.
 
 Share Your Integration
@@ -304,14 +304,27 @@ Share Your Integration
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization, and deployment to your private cloud or on-prem infrastructure.
 
 Slack Compatibility
 --------------------
 
-Like Slack, actions are specified in an "actions" list within the message attachment. Moreover, your integrations can react with ephemeral messages or message updates similar to Slack.
+Like Slack, actions are specified in an **Actions** list within the message attachment. Moreover, your integrations can react with ephemeral messages or message updates similar to Slack.
 
 However, the schema for these objects is slightly different given Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows an integration to create an interactive message without pre-configuration.
+
+If your `ephemeral_text` gets incorrectly handled by the Slack-compatibility logic, send ``"skip_slack_parsing":true`` along your `ephemeral_text` to bypass it.
+
+.. code-block:: text
+
+  {
+    "update": {
+      "message": "Updated!"
+    },
+    "ephemeral_text": "You updated the post!",
+    "skip_slack_parsing": true
+  }
+
 
 Frequently Asked Questions
 ----------------------------------
@@ -337,7 +350,7 @@ It is likely for one of three reasons:
 How do I manage properties of an interactive message?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use ``update.Props`` in the following ways to manage properties (``Props``) of an interactive message after a user does an action via an interactive button or menu:
+Use ``update.Props`` in the following ways to manage properties (``Props``) of an interactive message after a user performs an action via an interactive button or menu:
 
  - ``update.Props == nil`` - Do not update ``Props`` field.
  - ``update.Props == {}`` - Clear all properties, except the username and icon of the original message, as well as whether the message was pinned to channel or contained emoji reactions.

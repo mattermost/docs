@@ -7,7 +7,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 Assume that the IP address of this server is 10.10.10.1
 
-**To install PostgreSQL on Debian Stretch:**
+**To install PostgreSQL on Debian Buster:**
 
 1. Log in to the server that will host the database and issue the following command:
 

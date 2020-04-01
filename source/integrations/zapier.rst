@@ -36,7 +36,7 @@ Register Zapier as an OAuth 2.0 Application
   b. **Display Name**: ``Zapier``
   c. **Description**: ``Application for Zapier integrations``
   d. **Homepage**: ``https://zapier.com/``
-  e. **Icon URL**: ``https://bit.ly/2uGVGeC``
+  e. **Icon URL**: ``https://cdn.zapier.com/zapier/images/logos/zapier-logomark.png``
   f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/MattermostDevAPI/``
 3. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values, or share them with your team to connect Zapier in the steps below.
 
@@ -139,7 +139,7 @@ Cannot connect a Mattermost account
   a. Possible Solution: The **Client Secret** might be incorrect. Verify this value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, or check with your System Admin.
 
   .. image:: ../images/zapier-error4.png
-  
+
 4. **"Error Invalid client id"**
   a. Possible Solution: The **Client ID** and/or **Client Secret** might have trailing spaces in them when copied and pasted into the form. Verify there are no trailing spaces in the **Client ID** and **Client Secret** fields then try again.
 

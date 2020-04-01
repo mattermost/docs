@@ -90,23 +90,25 @@ Click the channel name at the top of the center pane to access the drop-down men
 Archiving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#id2>`__.
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to.  In E10 and E20, the System Administrator is able to `restrict this permission <https://docs.mattermost.com/deployment/advanced-permissions.html#system-scheme-e10>`_.
 
 When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
-Moreover, when a channel is archived, the contents cannot be searched by default. If you want to be able to search the channel later, either
+Moreover, when a channel is archived, the contents cannot be viewed, shared or searched by default. If you want to be able to view or search the channel later, either
 
-1. Ask your System Administrator to set ``ViewArchivedChannels`` to ``true`` in config.json to allow users to view permalinks and search for content of channels that have been archived; or
+1. Ask your System Administrator to set ``ExperimentalViewArchivedChannels`` to ``true`` in config.json to allow users to view, share and search for content of channels that have been archived; or
 2. Leave the channel open, but post a message in the channel saying it's considered archived, such as ``# This channel is archived.``
 
-Converting Public Channels to Private
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Converting Public Channels to Private (and vice versa)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Convert to Private Channel**. Team and System Admins have the ability to convert public channels to private channels. 
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Convert to Private Channel**. Team and System Admins have the ability to convert public channels to private channels.  Please note that default channels such as Town Square and Off-Topic cannot be converted to private channels.
+
+System Admins can also access this setting in **System Console > Channels > Edit (Channel Configuration)**.  Due to security concerns of sharing private channel history, only System Admins can convert private channels to public. 
 
 When a channel is converted, history and membership are preserved. Membership in a private channel is by invitation only. Publicly shared files remain accessible to anyone with the link. 
 
-Note that conversion of private channels to public channels is not supported in the user interface given security concerns of sharing private channel history; however, this function is available via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify>`__.
+Note that conversion of private channels to public channels can only be performed by a System Admin via the System Console or via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-modify>`__.
 
 Favoriting a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

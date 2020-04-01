@@ -15,6 +15,11 @@ Is there a tablet version of the mobile apps?
 
 Our second generation mobile apps (“Mattermost”) have beta support for tablets.
 
+Can the permanent sidebar on tablet devices be disabled?
+--------------------------------------------------------
+
+The permanent sidebar is on by default for tablet sized devices, but it can be disabled from **Settings > Display > Sidebar > Permanent Sidebar**. When disabled, the sidebar behaves similarly to mobile devices where the user must open it using the button in the top-left of the screen.
+
 How is data handled on mobile devices after a user account is deactivated?
 --------------------------------------------------------------------------
 
@@ -50,7 +55,7 @@ The full process is outlined below:
 
 4. Either APNS or FCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android device to be displayed.
 
-.. Note:: The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reasons, there is an option to omit the contents of Mattermost messages from push notifications in order to meet certain compliance requirements.
+.. Note:: The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an `option to omit the contents of Mattermost messages from push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_, or `to configure message content to be fetched from the server <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ when the notification reaches the device (*available in Enterprise Edition E20*) in order to meet certain compliance requirements.
 
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------
@@ -69,9 +74,9 @@ The following post metadata is sent in all push notifications:
 
 Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__:
 
-- **Send generic description with sender and channel names**: ``Channel name`` metadata will be included
-- **Send full message snippet**: ``Post content`` and ``Channel name`` metadata will be included
-
+- **Generic description with sender and channel names**: ``Channel name`` metadata will be included
+- **Full message content sent in the notification payload**: ``Post content`` and ``Channel name`` metadata will be included
+- **Full message content fetched from the server on receipt** (*available in Enterprise Edition E20*): ``Post content`` and ``Channel name`` are not included in the notification payload, instead the ``Post ID`` is used to fetch ``Post content`` and ``Channel name`` from the server after the push notification is received on the device.
 
 What are my options for securing the mobile apps?
 -------------------------------------------------
@@ -107,6 +112,41 @@ The following options are available for securing your push notification service:
   - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise Edition E10 or higher, which offers a :doc:`Hosted Push Notification Service (HPNS) <mobile-hpns>`.
 
 .. Note:: For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`.
+
+Why do I sometimes see a delay in receiving a push notification?
+--------------------------------------------------------------------------
+
+`Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ determine when your device receives a push notification from Mattermost. Thus, a delay is usually as a result of those services.
+
+The technical flow for the device to receive a push notification is as follows:
+
+1. User posts a message in Mattermost.
+2. Mattermost server identifies if notifications needs to be sent.
+3. If yes, Mattermost server sends a paylod containing the push notification to the push proxy.
+4. Push proxy parses the notification and relays it to APNS and FCM.
+5. APNS and FCM informs the relevant devices that there is a push notification for Mattermost. This usually happens almost immediately, but may be delayed by a couple of minutes.
+6. Mattermost processes the notification and displays it on the user's device.
+
+How do I deploy Mattermost with Enterprise Mobility Management providers?
+--------------------------------------------------------------------------
+
+Mattermost enables customers with high privacy and custom security requirements to deploy mobile applications and push notification services using keys that they alone control.
+
+:doc:`Learn more about using AppConfig for EMM providers <mobile-appconfig>`.
+
+How do I host the Mattermost push notification service?
+----------------------------------------------------------
+
+First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>`. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to:
+
+1. customize the `Mattermost mobile apps <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_,
+2. deploy your own push notification service, or
+3. repackage the mobile apps with BlueCedar or AppDome, which some organizations have successfully deployed with but is not officially supported.
+
+How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server?
+-------------------------------------------------------------------------------------------------------
+
+See our `developer documentation about Push Notification Service with Corporate Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy>`_.
 
 How do I white label the app and customize build settings?
 ----------------------------------------------------------

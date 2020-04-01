@@ -54,7 +54,7 @@ account using a one-click sign in option.
   :width: 239px
   :height: 232px
 
-Office 365 Single Sign-On (Beta)
+Office 365 Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -104,12 +104,22 @@ that appears left of your channel list on the left-hand sidebar.
 
 Setting Your Status
 -------------------
-You can set your status as online, away, do not disturb, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list. Do not disturb disables desktop and push notifications.
+You can set your status as online, away, do not disturb, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list. Do not disturb disables desktop, email and push notifications.
 
 .. image:: ../../images/avatar-online-status-218x247.png
   :width: 239px
   :height: 232px
   :alt: Image of avatar showing the status selection menu with the options online, away, and offline
+
+How Mattermost determines your status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table::
+    :header: "Client", "**Online**", "**Away**", "**Offline**"
+
+    "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for 5 minutes", "You close Mattermost, sleep or lock your computer"
+    "**Web Browser**", "You're interacting with Mattermost in a browser", "You're inactive in the Mattermost browser window for 5 minutes", "You close the Mattermost browser window"
+    "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen"
 
 Logging Out
 -----------

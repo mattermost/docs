@@ -8,6 +8,9 @@ Mattermost configuration settings are maintained in the configuration file ``con
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
+**Configuration in Database**
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_. 
+
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
@@ -820,7 +823,6 @@ ________
 
 OAuth 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
 
 Settings to configure OAuth login for account creation and login.
 
@@ -829,9 +831,9 @@ Select OAuth 2.0 service provider:
 Choose whether OAuth can be used for account creation and login. Options include:
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
-    - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
-    - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
-    - **Office 365 (Beta)** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
+    - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
+    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
+    - **Office 365 (Beta)** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -4238,7 +4240,7 @@ When not set, every user is added to ``off-topic`` and ``town-square`` channel b
 Note that even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
+| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
@@ -4425,6 +4427,8 @@ Select the timezone used for timestamps in the user interface and email notifica
 
 Supported Timezones Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in April 16, 2019 release*
+
 Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
 
 The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.

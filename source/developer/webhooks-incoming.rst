@@ -83,7 +83,7 @@ Tips and Best Practices
 
 2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__.
 
-3. You can restrict who can create incoming webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
+3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
 
 4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 
@@ -94,6 +94,8 @@ Tips and Best Practices
 .. code-block:: text
 
   {"text": "Hello, this is some text."}
+
+7. When using the ``icon_emoji`` parameter - the user profile image is replaced by the emoji provided. This will also override the ``icon_url`` parameter if both are provided. 
 
 Share Your Integration
 -----------------------
@@ -106,6 +108,8 @@ Slack Compatibility
 -------------------
 
 Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
+
+Using the Slack ``icon_emoji`` parameter overrides the profile icon and the icon_url parameter and is supported as of v5.14.
 
 Translate Slack's data format to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,12 +139,11 @@ GitLab is the leading open-source alternative to GitHub and offers built-in inte
 Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Using ``icon_emoji`` to override the username is not supported.
-2. Referencing  channels using <#CHANNEL_ID> does not link to the channel.
-3. ``<!everyone>`` and ``<!group>`` are not supported.
-4. Parameters "mrkdwn", "parse", and "link_names" are not supported. Mattermost converts Markdown by default and automatically links @mentions.
-5. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``).
-6. Webhooks cannot direct message the user who created the webhook.
+1. Referencing  channels using <#CHANNEL_ID> does not link to the channel.
+2. ``<!everyone>`` and ``<!group>`` are not supported.
+3. Parameters "mrkdwn", "parse", and "link_names" are not supported. Mattermost converts Markdown by default and automatically links @mentions.
+4. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``).
+5. Webhooks cannot direct message the user who created the webhook.
 
 Troubleshooting
 ---------------

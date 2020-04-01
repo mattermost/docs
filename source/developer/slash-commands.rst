@@ -83,22 +83,25 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 .. code-block:: text
 
-   Content-Length: 244
-   User-Agent: Go 1.1 package http
-   Host: localhost:5000
-   Accept: application/json
-   Content-Type: application/x-www-form-urlencoded
+  POST /slash-command HTTP/1.1
+  Host: example.com
+  User-Agent: Go-http-client/1.1
+  Content-Length: 313
+  Accept: application/json
+  Authorization: Token okwexkjpe7ygb8eq1ww58t483w
+  Content-Type: application/x-www-form-urlencoded
+  Accept-Encoding: gzip
 
-   channel_id=cniah6qa73bjjjan6mzn11f4ie&
-   channel_name=town-square&
-   command=/somecommand&
-   response_url=not+supported+yet&
-   team_domain=someteam&
-   team_id=rdc9bgriktyx9p4kowh3dmgqyc&
-   text=hello+world&
-   token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
-   user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
-   user_name=somename
+  channel_id=jux16pkewjrkfj3ehep1psxyxc&
+  channel_name=town-square&
+  command=%2Ftest&
+  response_url=http%3A%2F%2Flocalhost%3A8065%2Fhooks%2Fcommands%2Fxbrkb8p393gjpq5cawei7npije&
+  team_domain=test&
+  team_id=carya1qs77bemjup96ff538snh&
+  text=asd&
+  token=okwexkjpe7ygb8eq1ww58t483w&
+  user_id=aoa1agao6t8fmx3ikt1j9w5ybw&
+  user_name=somename
 
 If your integration sends back a JSON response, make sure it returns the ``application/json`` content-type.
 
@@ -145,7 +148,7 @@ Tips and Best Practices
 
 2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__.
 
-3. You can restrict who can create slash commands in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
+3. You can restrict who can create slash commands in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
 
 4. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format <https://docs.mattermost.com/developer/slash-commands.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 

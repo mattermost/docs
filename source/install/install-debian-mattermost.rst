@@ -7,7 +7,7 @@ Install Mattermost Server on a 64-bit machine.
 
 Assume that the IP address of this server is 10.10.10.2.
 
-**To install Mattermost Server on Debian Stretch**
+**To install Mattermost Server on Debian Buster**
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
@@ -117,7 +117,7 @@ Assume that the IP address of this server is 10.10.10.2.
 
     ``curl http://localhost:8065``
 
-    You should see the HTML that's returned by the Mattermost server.
+    You should see the HTML that's returned by the Mattermost server. Note: in case firewall is used, external requests to port 8065 may be blocked. Use ``sudo ufw allow 8065`` to open port 8065.
 
   g. Set Mattermost to start on machine start up.
 

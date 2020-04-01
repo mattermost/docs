@@ -91,6 +91,16 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 6 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 
+If you find a string that has not been translated, search for the string in the respective localization file to confirm it's included for translations. You can find the English version for server, webapp and mobile projects below
+
+  - https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json
+  - https://github.com/mattermost/mattermost-webapp/blob/master/i18n/en.json
+  - https://github.com/mattermost/mattermost-mobile/blob/master/i18n/en.json
+
+If it’s included in the file, then most likely it hasn't been translated yet, but is in https://translate.mattermost.com.
+
+If you want to confirm if it's translated, you can check for the respective .json file in ``/i18n`` folder. 
+
 Translation Maintenance
 -----------------------
 
@@ -107,13 +117,13 @@ If you're interested in contributing to the process, please join the `Mattermost
     "Español - Spanish", "`Elias Nahum (enahum) <https://github.com/enahum>`__", "`Jesús Espino <http://github.com/jespino>`_"
     "Français - French", "`William Gathoye (wget) <https://github.com/wget>`__", ""
     "Italiano - Italian", "`Michael Longo (mlongo4290) <https://github.com/mlongo4290>`__, `Ema Panz (thepanz) <https://github.com/thepanz>`__", ""
-    "Nederlands - Dutch", "TBD (Open Role)", ""
+    "Nederlands - Dutch", "`Tom De Moor <https://github.com/ctlaltdieliet>`_", ""
     "Polski - Poland", "`Daniel Burzmiński (hectorskypl) <https://github.com/hectorskypl>`__, `Tomasz Gruca (gruceqq) <https://translate.mattermost.com/user/gruceqq/>`__",
     "Português do Brasil - Portuguese", "`Rodrigo Corsi (rodcorsi) <https://github.com/rodcorsi>`__", "`Carlos Tadeu Panato Junior (cpanato) <https://github.com/cpanato>`_"
-    "Română - Romanian", "`Viorel-Cosmin Miron <https://github.com/uhlhosting>`__", ""
+    "Română - Romanian", "`Viorel-Cosmin Miron (uhlhosting) <https://github.com/uhlhosting>`__", ""
     "Türkçe - Turkish", "`Kaya Zeren <https://twitter.com/kaya_zeren>`__", ""
-    "Pусский - Russian", "TBD (Open Role)", ""
-    "Yкраїнська - Ukrainian", "`Lena <https://translate.mattermost.com/user/Lena/>`__", ""
+    "Pусский - Russian", "`Alexey Napalkov <https://github.com/flynbit>`_", ""
+    "Yкраїнська - Ukrainian", "TBD (Open Role)", ""
     "한국어 - Korean", "TBD (Open Role)", ""
     "中文 (简体) - Simplified Chinese", "`aeomin <http://translate.mattermost.com/user/aeomin/>`__", ""
     "中文 (繁體) - Traditional Chinese", "`Tze-Kei Lee (chikei) <https://github.com/chikei>`__", ""

@@ -26,14 +26,14 @@ Important things to know
 Hiring
 ---------------------------------------------------------
 
-- (People Ops and New Hire) Offer letter accepted via click-sign
-- (Logistics) Mail track jacket and socks 
+- (People Ops and New Hire) Offer letter accepted via click-sign.
+- (Logistics) Mail track jacket and socks.
 
 T-minus 1-3 weeks
 ---------------------------------------------------------
 
-- (People Ops and New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
-- (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
+- (People Ops and New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a MacBook in your local area, for developers budget is cost of a MacBook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to people@mattermost.com as soon as it occurs.
+- (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology, and training materials.
 - (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
  
 T-minus 1 week
@@ -41,14 +41,14 @@ T-minus 1 week
 
 - (People Ops and New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
- - Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer.
+ - Non-US Employee/Non-Canadian Employee, complete bank info form for monthly wire transfer.
  - Non-US Resident Contractor, complete W8-BEN form.
  - US Contractor, complete W-9 form.
 
 First Day
 ---------------------------------------------------------
 
-- (Manager) Posts welcome message in stand-up channel.
+- (Manager) Posts welcome message in Stand-up channel.
 - (Manager) Meets New Hire for first 1-1 meeting.
 - (People Ops) Meets New Hire for check-in meeting.
 - (Buddy) Meets New Hire for first 1-1 meeting.
@@ -59,7 +59,7 @@ First Week
 - (CEO) Meets New Hire for welcome meeting.
 
 
-3 months 
+Three Months 
 ---------------------------------------------------------
 
 - (People Ops) US FTE - Email regarding 401K account set up.
@@ -74,13 +74,14 @@ Whenever possible, we share key updates and have discussions in Mattermost. Some
 - `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ - General questions about Mattermost
 - `Ask R&D <https://community.mattermost.com/core/channels/ask-r-and-d>`_ - Technical questions to the Mattermost R&D team
 - `Customer Feedback <https://community.mattermost.com/private-core/channels/customer-feedback>`_ - Discussion of customer feedback
-- `Customer Success <https://community.mattermost.com/private-core/channels/customer-success>`_ - Updates from and general discussion with the Mattermost customer success team
+- `Customer Success <https://community.mattermost.com/private-core/channels/customer-success>`_ - Updates from, and general discussion with, the Mattermost customer success team
 - `Customer Support <https://community.mattermost.com/private-core/channels/community>`_ - Discussion of customer support ticket escalations
 - `Developers <https://community.mattermost.com/core/channels/developers>`_ - General development help
 - `Marketing <https://community.mattermost.com/private-core/channels/marketing>`_ - Campaign ideas and general marketing team discussions
 - `Marketing Website <https://community.mattermost.com/private-core/channels/marketing-website-priv>`_ - Website bugs, release notes, and web discussions
 - `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
 - `Roadmap <https://community.mattermost.com/private-core/channels/roadmap>`_ - Questions about and discussion of the product roadmap, or to view public roadmap in the header
+- `Sales: General Questions <https://community.mattermost.com/private-core/channels/sales-general-questions>`_ - Discussion of all types of sales inquiries/questions
 - `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
 - `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
 - `UX Design <https://community.mattermost.com/core/channels/ux-design>`_ - Questions and discussion about product design
@@ -95,7 +96,7 @@ This section summarizes norms for public and private meetings for the Mattermost
 Timezones 
 ---------------------------------------------------------
 
-When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`__. Avoid using "UTC", as it has been shown to cause confusion.
+When proposing meetings use famous cities as references for time (e.g. 9am Toronto time), since it's clear and `easy to web search <https://www.google.com/search?ei=8w9nXdn0HMH4-wTH1JrgCA&q=time+in+toronto&oq=time+in+toronto>`__. Avoid using "UTC", as it has been shown to cause confusion.
 
 When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
 
@@ -105,9 +106,9 @@ Scheduling Recurring Group Meetings
 Recurring meetings with more than two people should have one or more regular slots on the calendar reserved so that meetings can be coordinated in a straight-forward way. 
 
 1. Meetings with internal colleagues should be coordinated by checking everyone's availability in G Suite Calendar. 
-2. Meetings with external colleagues should be coordinated manually with one internal person coordinating everyone's G Suite Calendars 
+2. Meetings with external colleagues should be coordinated manually with one internal person coordinating everyone's G Suite Calendars.
 
-For efficiency, when Mattermost works with advisors and consultants who engage with 2 or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
+For efficiency, when Mattermost works with advisors and consultants who engage with two or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
 
 Meeting Etiquette
 ---------------------------------------------------------
@@ -152,17 +153,17 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`__)
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 8:30 AM (`San Francisco Time <http://everytimezone.com/>`__)
 
 - Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
-- Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors and anyone who would like to join.
+- Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors, and anyone who would like to join.
 
 Procedure:
 
 1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://community.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
+      - Join the **Zoom** link found in the header of the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
 
 Mattermost Staff Meetings
@@ -173,17 +174,18 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Customer Obsession All-Hands Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This is our "All Hands" meeting focused on how we're aligning the company to serve our customers. "Customer Obsession" is a key leadership principle and we emphasize its priority when we bring the company together. 
+
 Attendees:
 
 - All Mattermost Staff
 - Chair: Jason Blais
 - Co-Chairs: Co-founders
-- Vice Chair: Camille Harris
 
 Objectives:
 
-- Reaffirm our obsession with making customers safer and more productive
-- Share how we're aligning resources to make customers successful
+- Reaffirm our obsession with making customers safer and more productive.
+- Share how we're aligning resources to make customers successful.
 
 Time:
 
@@ -199,7 +201,8 @@ Procedure:
      - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
 3. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
-4. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
+4. (Vice Chair) Posts a reminder message in the meeting channel about the meeting 24 hours prior to meeting start.
+5. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
 
 **During meeting:**
 
@@ -219,7 +222,7 @@ Procedure:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
   - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
-  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
@@ -236,14 +239,113 @@ Procedure:
 
 2. (Vice Chair) Post recording to Cust Obs Prep channel, with timecode of co-founder's introduction.
 
-3. (Chair & Vice Chair) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
+3. (Chair & Vice Chair) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission, and core values.
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why don't new people introduce themselves?**
 
-Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence, managers intro them.
+Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves. 
+
+Product Training and Q&A Session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These are our product training sessions for the Sales and Customer Success teams, along with QA, focused on frequently asked product areas. They include a functional and technical training session targeted for specific audiences.
+
+Attendees:
+
+- All Sales (including AEs and SAs), Customer Success (including CSMs and Support), and QA staff
+- Chair: Jason Blais
+- Co-Chairs: Product training session leads
+
+Time:
+
+- Every 3 weeks on Wednesdays from 9:00am to 10:30am Palo Alto time.
+
+Procedure:
+
+**Before meeting:**
+
+1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
+
+2. (Co-Chairs) Prepares a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
+
+3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
+
+.. tip :: 
+
+  - When sharing code snippets, highlight the area of focus within the code snippet.
+  - Focus on visuals, diagrams and live demonstrations instead of slides where possible.
+  - Share at least one memorable customer story.
+  - Ensure enough time is given for Q&A.
+  - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
+
+4. (Co-Chairs) Two days prior to the training session, practices a dry run for length and structure of the session. This is optional but recommended.
+
+5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
+
+6. (Chair & Co-Chairs) Signs into their Zoom account via OneLogin to access recording and screenshare capabilities during the meeting.
+
+**During meeting:**
+
+1. (Chair) At 8:58am Palo Alto time on the day the meeting is held, posts a reminder of the session along with a Zoom link to join the call. `See example <https://community.mattermost.com/core/pl/ward3bdkii895kw9g4sigbikwo>`_.
+
+2. (Team) Joins the **Zoom** link in the header of the `Product Training and Q&A channel <https://community-release.mattermost.com/core/channels/product-training-and-qa>`_.
+
+3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
+
+4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of one or more of the following items:
+
+- **Introductions**
+
+- (15 minutes) **Business Use Case**
+
+  - Audience: Everyone, but primarily AEs, CSMs
+  - What does it do, why do people use it, who uses it
+  - Customer use case examples and success stories
+  - Roadmap (status and committed timelines, if any)
+  - Q&A
+
+- (30 minutes) **Live Product Demo**
+
+  - Audience: Everyone
+  - End user demo
+  - Admin configuration demo
+  - Known customer issues and workarounds
+  - Q&A
+
+- (15 minutes) **Technical Overview**
+
+  - Audience: Primarily CSMs, SAs, Support, QA
+  - Technical flow for the feature, data structure, etc.
+  - What to ask for when troubleshooting 
+  - Q&A
+
+- (30 minutes) **Technical Deep Dive** 
+
+  - Audience: Primarily SAs, Support, QA
+  - Deeper technical review of how the feature works and how it was built
+  - Working session on specific customer issues, retros on support tickets, etc.
+  - Q&A
+
+- **Feedback**: At end of meeting, remind to share feedback via survey.
+
+5. (Chair) Encourages questions in Mattermost or Zoom chat throughout the session, but refrains audience from asking during presentation time. Asks back the questions during alloted Q&A time. By reserving questions during Q&A, the session stays on time and sets expectations for attendees on when to join the conversation with questions.
+
+**After meeting:**
+
+1. (Chair) Shares link to feedback survey, tailored for each training session to measure its effectiveness. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
+
+2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29>`_, then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
+
+3. (Chair & Co-Chairs) Holds a retrospective meeting two days after the training session to review feedback and discuss what could have been improved.
+
+4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
+
+5. (Co-Chairs) Updates product documentation or other resources based on the training session.
+
+6. (Chair & Co-Chairs) Shares slides and meeting recording with Marketing team for potential GTM collateral.
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -256,37 +358,31 @@ Sprint Planning
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Triage team - 1-3 hours/week) Tuesdays and Thursdays at 09:30 (`San Francisco Time <http://everytimezone.com/>`__), or daily when a release is upcoming.
+**Mattermost staff-only** - (Triage team - 2-2.5 hours/week) daily at 09:30 or 10:00 (`San Francisco Time <http://everytimezone.com/>`__).
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets.
-- Attendees: One dev representative from each team (ABC, XYZ, ICU), one PM, QA team, Release Manager during release, and optionally leads and other Mattermost staff.
+- Attendees: One dev representative from each development team, at least one PM, QA team, Release Manager, and optionally leads, customer support and other Mattermost staff.
 
 Note:
 
- - ONLY TRIAGE TEAM should set or change the **Fix Version** of a ticket.
-
  - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a Fix Version, Mattermost Team and Sprint. Unclear tickets may be assigned to their creator for more information.
      - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. It is the responsibility of the triage team to make sure tickets are clear before they're assigned a Fix Version.
-     - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team (e.g. ABC) and is later prioritized and assigned to the appropriate people within that team.
+     - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into the current release's Fix Version and the current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team with a "Triage" Fix Version and is later prioritized and assigned to the appropriate people within that team.
      - The **Sprint** determines the time frame in which a dev is responsible for fixing the ticket.
 
- - If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-2 working days.
-     - Note: if the ticket is already assigned to a team and/or sprint, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
-
- - ONLY TRIAGE TEAM can close a ticket resolved as **Won't Fix** or **Won't do**.
-     - These tickets resolved in such a way are reviewed by triage team.
-     - Only resolve a ticket as **Won't Fix** or **Won't Do** if you're highly confident it's the correct decision, otherwise, add "triage" to Fix Version for review. In either case, include a comment with your reason.
+ - If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-6 working days.
+     - Note: if the ticket is already assigned to a team, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
 
 Procedure:
 
 1. (Attendees): Join Zoom meeting link in calendar invitation at scheduled time.
 
-2. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/MM-8015?filter=15011>`__ and assign a development team, sprint and fix version.
+2. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/MM-8015?filter=15011>`__ and assign a development team, sprint, and fix version.
 
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <http://everytimezone.com/>`__)
+**Mattermost staff only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <http://everytimezone.com/>`__)
 
 - Goal: Address leadership and process topics.
 - Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations.
@@ -330,7 +426,7 @@ Procedure:
 ::
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
-   1. @[name], @[name] and @[name] - you're up for ice-breaker
+   1. @[name], @[name] and @[name] - you're up for `ice-breaker <https://docs.mattermost.com/process/training.html#ice-breaker>`__
    2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
    3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
@@ -349,10 +445,11 @@ Procedure:
 Meeting Agenda:
 
 - **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
-- **Roadmap check-in** - Review of roadmap status in current and next release
-- **Team updates** - Each development team gives a short update on their current top priorities
-- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
-- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
+- **Release updates** - Overview of current release status
+- **Announcements** - Short announcements that the entire team needs to know about
+- **Team updates** - Each team lists a short update of their current top priorities which can be read by meeting attendees (not actually reviewed during the meeting)
+- **Demos** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
+- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions. Proposals for items that have already been discussed outside of the meeting can also be queued here
 
 Post Meeting:
 
@@ -367,8 +464,8 @@ Here we summarize meeting elements that can be re-used for meetings across teams
 Ice-breaker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- 2-3 minute exercises designed to learn more about colleagues at the start of a recurring meeting
-- Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc)
+- 2-3 minute exercises designed to learn more about colleagues at the start of a recurring meeting.
+- Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc).
 
 - Examples:
 
@@ -381,6 +478,7 @@ Blind spots, Inspiration, Knowledge Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Exercise to find blindspots in team thinking at the end of a meeting
+- Items for team discussion can also be queued in this section
 - Colleagues share areas of concern and ask questions which invariably disclose blind-spots or are an opportunity to improve communication.
 - Examples of questions:
 
@@ -398,9 +496,9 @@ Mindsets are "tool sets for the mind" that help us find blindspots and increase 
 
 To make the most out of mindsets, remember:
 
-- **Mindsets are tools** - Use common sense to find the right mindset for your situation. Avoid using ones that don't fit.
-- **Mindsets are temporary** - Try on a mindset the way you'd try a tool. You can always put it down if it doesn't work.
-- **Mindsets are not laws** - Mindsets are situation-specific, not universal. Don't use them to debate.
+- **Mindsets are tools:** Use common sense to find the right mindset for your situation. Avoid using ones that don't fit.
+- **Mindsets are temporary:** Try on a mindset the way you'd try a tool. You can always put it down if it doesn't work.
+- **Mindsets are not laws:** Mindsets are situation-specific, not universal. Don't use them to debate.
 
 When you read about great leaders, they share mindsets relevant to success in their specific situations, which differ from their peers. Remember that "advice is personal experience generalized" so be mindful about what you apply.
 
@@ -450,9 +548,9 @@ When a new owner takes over a process or a project from a previous owner, there 
 
 Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete. 
 
-This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#id7>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
+This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#mini-boss-end-boss>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
 
- - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#id9>`__). 
+ - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#dead-tarzan>`__). 
  - Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes. 
 
 Even when not crashing, as part of our `Self Awareness value <https://docs.mattermost.com/process/handbook.html#values>`__, top team members will constantly be seeking feedback and review from people around the company. 
@@ -560,6 +658,11 @@ Bug
 
 An obvious error in Mattermost software. Changes required to accommodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements.
 
+COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+COM is short for `Customer Obsession Meeting <https://docs.mattermost.com/process/training.html?#customer-obsession-all-hands-meeting>`_, which  is our “All Hands” meeting focused on how we’re aligning the company to serve our customers.
+
 Dead Tarzan
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -611,15 +714,42 @@ A one-line change to code can cost more mana than a 100-line change due to risk 
 
 Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions.
 
+MLT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Mattermost Leadership Team". See new handbook: https://handbook.mattermost.com/company/about-mattermost/list-of-terms#mlt
+
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "Right-Hand Sidebar" in the Mattermost team site, used for navigation.
 
-Windows Vista approach
+Spinmint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An attempt to add functionality through a massive, complex one-time re-write hoping to improve the architecture, but which likely ends in repeated delays, wasted effort, buggy code and limited architectural improvement (compared to re-writing the architecture in phases). This tempting, high risk approach is named after Microsoft's "Windows Vista" operating system, one of its most famous examples.
+Old test servers that could be spun up on pull requests to test changes. Name is a throwback to test servers from SpinPunch.
+
+SpinWick
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+New test servers that use the cloud infrastructure and can be spun up on pull requests to test changes. Name is a throwback to "Spinmint" mixed with "John Wick".
+
+YouTweetInFace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A reference to the major social media platforms: 
+
+- YouTube ("You")
+- Twitter ("Tweet")
+- LinkedIn ("In")
+- Facebook ("Face")
+
+The `YouTweetInFace channel <https://community.mattermost.com/private-core/channels/pre-tweet>`_ is used to discuss social media posts before asking contributors and community to engage with the content.
+
+Windows Vista Approach
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An attempt to add functionality through a massive, complex one-time rewrite hoping to improve the architecture, but which likely ends in repeated delays, wasted effort, buggy code and limited architectural improvement (compared to rewriting the architecture in phases). This tempting, high-risk approach is named after Microsoft's "Windows Vista" operating system, one of its most famous examples.
 
 
 
@@ -679,7 +809,7 @@ Books
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. `Code Complete, Steve McConnell <https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670>`__ - Best practices and guidelines for writing high quality code.
-2. `Design Patterns,  Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`__ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular.
+2. `Design Patterns, Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (aka "Group of Four") <https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8>`__ - Fundamental reading on design patterns. Other design pattern books work too, this is one of the most popular.
 
 Product Management
 ^^^^^^^^^^^^^^^^^^
@@ -702,7 +832,7 @@ System Security
 
 Papers and Course Materials
 
-1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <https://www.nist.gov/sites/default/files/documents/cyberframework/cybersecurity-framework-021214.pdf>`__ - Standards for internal Mattermost security processes and safeguards.
+1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <http://templatelab.com/cybersecurity-framework/>`__ - Standards for internal Mattermost security processes and safeguards.
 2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`__ - Fundamental challenges with system security.
 3. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`__ - Well written introduction to system security from one of the leaders in the field.
 
@@ -779,16 +909,16 @@ Example of finished Mattermost Avatar:
 Mattermost Teams and Naming Conventions
 ---------------------------------------------------------
 
-Staff must use their full name for their username, as in ``first.last``, on the community server. Staff are also encouraged to link to their Github account using the command `/github connect` so that your Github handle will appear on your profile popover card.  All Mattermost  staff should be issued a OneLogin account with a username of ``first.last``.  If issued a OneLogin account, you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done, your username will be set from SAML.
+Staff must use their full name for their username, as in ``first.last``, on the community server. Staff are also encouraged to link to their GitHub account using the command `/github connect` so that your GitHub handle will appear on your profile pop-over card.  All Mattermost  staff should be issued a OneLogin account with a username of ``first.last``.  If issued a OneLogin account, you should switch your sign-in method from email/password to OneLogin via **Account Settings > Security > Sign-in Method** page.  Once this is done, your username will be set from SAML.
 
-Contributors team
+Contributors Team
 ---------------------------------------------------------
-This is a team open for any and all to join.  It is the main place where staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+This is a team open for any and all to join.  It is the main place where staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be synced to the appropriate channels based on their LDAP group sync settings.
 
-Staff team
+Staff Team
 ---------------------------------------------------------
-This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff and it is where we discuss internal company matters.  Since this team only includes people with mattermost.com email address, you should prefer creating public channels.  Also, if you find yourself creating a channel here, you should ask yourself if it would be better served to have it in the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff and is where we discuss internal company matters.  Since this team only includes people with mattermost.com email address, you should prefer creating public channels.  Also, if you find yourself creating a channel here, you should ask yourself if it would be better served to have it in the Contributors team.  Mattermost staff will be synced to the appropriate channels based on their LDAP group sync settings.
 
-Partners team
+Partners Team
 ---------------------------------------------------------
-This is an invite only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners. You should prefer public channels when you want partner-to-partner interactions and private channels when you want staff-to-partner interactions.  Remember that any partner added to the team will be able to join any public channel.
+This is an invite-only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners. You should prefer public channels when you want partner-to-partner interactions and private channels when you want staff-to-partner interactions.  Remember that any partner added to the team will be able to join any public channel.

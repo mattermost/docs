@@ -39,3 +39,6 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
     b. Change the **TLS Certificate File** setting to the location of the certificate file.
     c. Change the **TLS Key File** setting to the location of the private key file.
     d. Restart the Mattermost server for these changes to take effect.
+
+.. note::
+   Password-protected certificates are not supported.

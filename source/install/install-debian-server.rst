@@ -1,13 +1,13 @@
 .. _install-debian-server:
 
-Installing Debian Stretch
+Installing Debian Buster
 ========================
 
 Install the 64-bit version of Debian on each machine that hosts one or more of the components.
 
-**To install Debian Stretch:**
+**To install Debian Buster:**
 
-1. To install Debian Stretch, see the `Debian Installation Guide (PDF). <https://www.debian.org/releases/stable/amd64/install.pdf>`__
+1. To install Debian Buster, see the `Debian Installation Guide (PDF). <https://www.debian.org/releases/stable/amd64/install.pdf>`__
 
 2. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands as root:
 
@@ -17,7 +17,7 @@ Install the 64-bit version of Debian on each machine that hosts one or more of t
 
 3. Install *sudo* and *curl* for use later in the installation:
 
-  ``apt-get install sudo curl``
+  ``apt-get install sudo curl gnupg``
 
 4. Add your username to the sudo group. In the following command, replace {username} with your own username.
 

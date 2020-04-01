@@ -35,7 +35,7 @@ To enable email, configure an SMTP email service as follows:
                Mail <https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail>`__
                (DKIM) for your email domain.
 
-         4. Choose an sender address like ``mattermost@example.com`` and
+         4. Choose a sender address like ``mattermost@example.com`` and
             click ``Send a Test Email`` to verify setup is working
             correctly.
 
@@ -161,9 +161,7 @@ Checking your SMTP server is reachable
 -  Attempt to telnet to the email service to make sure the server is
    reachable.
 -  You must run the following commands from the same machine or virtual
-   instance where ``mattermost/bin/mattermost`` is located. So if you're
-   running Mattermost from Docker you need to
-   ``docker exec -ti mattermost-dev /bin/bash``
+   instance where ``mattermost/bin/mattermost`` is located. 
 -  Telnet to the email server with ``telnet mail.example.com 25``. If
    the command works you should see something like
 
@@ -182,6 +180,10 @@ Checking your SMTP server is reachable
        250-STARTTLS
        250-PIPELINING
        250 8BITMIME
+       
+
+.. note:: 
+  As we're not installing telnet by default on the official docker images you either need to use ``ping`` on those or install telnet yourself either directly or by modifying the Dockerfile.
 
 .. note::
   For additional troubleshooting tips, see
