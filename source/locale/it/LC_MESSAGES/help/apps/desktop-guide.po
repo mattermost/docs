@@ -200,12 +200,19 @@ msgid ""
 "right-click inside a message box and navigate to **Spelling Languages** "
 "in the context menu."
 msgstr ""
+"Evidenzia le parole errate nei tuoi messaggi. Disponibile per Inglese, "
+"Francese, Tedesco, Spagnolo e Olandese. Per cambiare la lingua del controllo
+ortografico, fai click con il pulsante destro del mouse all'interno di una "
+"finestra di messaggio e seleziona **Spelling Languages** nel menu "
+"contestuale."
 
 #: ../../source/help/apps/desktop-guide.rst:74
 msgid ""
 "Show red badge on taskbar icon to indicate unread messages (Windows, Mac "
 "only)"
 msgstr ""
+"Mostra badge rosso sull'icona della barra delle applicazioni per indicare "
+"i messaggi non letti (solo Windows, Mac)"
 
 #: ../../source/help/apps/desktop-guide.rst:72
 msgid ""
@@ -214,16 +221,25 @@ msgid ""
 "messages. If disabled, a red badge is only shown for unread mentions "
 "(with a number count)."
 msgstr ""
+"Se abilitato, un badge rosso viene visualizzato sull'icona della "
+"barra delle applicazioni per i messaggi non letti con un contatore "
+"che indica menzioni non lette o messaggi diretti. Se "
+"disabilitato, un badge rosso viene mostrato solo per le menzioni non "
+"lette (con un contatore)."
 
 #: ../../source/help/apps/desktop-guide.rst:79
 msgid "Flash taskbar icon when a new message is received (Windows, Linux only)"
-msgstr ""
+msgstr "Icona della barra delle applicazioni lampeggiante quando viene "
+"ricevuto un nuovo messaggio (solo Windows, Linux)"
 
 #: ../../source/help/apps/desktop-guide.rst:77
 msgid ""
 "Configure whether the taskbar icon flashes for a few messages when a new "
 "message is received on any of your active teams and servers."
 msgstr ""
+"Configura se l'icona della barra delle applicazioni deve lampeggiare per "
+"un po' quando viene ricevuto un nuovo messaggio su uno dei tuoi team e "
+"server attivi."
 
 #: ../../source/help/apps/desktop-guide.rst:79
 #: ../../source/help/apps/desktop-guide.rst:84
@@ -232,39 +248,44 @@ msgstr ""
 #: ../../source/help/apps/desktop-guide.rst:99
 #: ../../source/help/apps/desktop-guide.rst:104
 msgid "This setting is disabled by default."
-msgstr ""
+msgstr "Questa impostazione è disabilitata di deafault."
 
 #: ../../source/help/apps/desktop-guide.rst:84
 msgid "Bounce the Dock icon when receiving a notification (Mac only)"
-msgstr ""
+msgstr "Rimbalzo della icona sul Dock quando si riceve una notifica (solo Mac)"
 
 #: ../../source/help/apps/desktop-guide.rst:82
 msgid ""
 "When enabled, the Dock icon will either bounce once or bounce until the "
 "user opens the app when receiving a notification."
-msgstr ""
+msgstr "Se abilitato, l'icona del Dock rimbalza una volta o rimbalza "
+"finché l'utente non apre l'app quando riceve una notifica."
 
 #: ../../source/help/apps/desktop-guide.rst:89
 msgid "Show Mattermost icon in the menu bar (Mac only)"
-msgstr ""
+msgstr "Mostra l'icona di Mattermost nella barra dei menu (solo Mac)"
 
 #: ../../source/help/apps/desktop-guide.rst:87
 msgid "When enabled, Mattermost icon is added to the Mac menu bar."
-msgstr ""
+msgstr "Se abilitato, l'icona di Mattermost viene aggiunta alla "
+"barra del menu del Mac."
 
 #: ../../source/help/apps/desktop-guide.rst:94
 msgid "Show icon in the notification area (Linux only)"
-msgstr ""
+msgstr "Mostra l'icona nell'area di notifica (solo Linux)"
 
 #: ../../source/help/apps/desktop-guide.rst:92
 msgid "When enabled, Mattermost icon is added to the Linux notification area."
-msgstr ""
+msgstr "Se abilitato, l'icona di Mattermost viene aggiunta all'area di "
+"notifica di Linux."
 
 #: ../../source/help/apps/desktop-guide.rst:99
 msgid ""
 "Leave app running in notification center when application window is "
 "closed (Linux only)"
 msgstr ""
+"Lascia l'app in esecuzione nel centro notifiche quando la finestra "
+"dell'applicazione è chiusa (solo Linux)"
 
 #: ../../source/help/apps/desktop-guide.rst:97
 msgid ""
@@ -272,10 +293,14 @@ msgid ""
 "desktop app running in your notification center. This can be useful if "
 "you want to check for unread mentions while away from the app."
 msgstr ""
+"Se abilitato, la chiusura della finestra dell'applicazione lascerà in "
+"esecuzione l'app desktop di Mattermost nel tuo centro di notifica. "
+"Questo può essere utile se vuoi verificare la presenza di menzioni non "
+"lette mentre sei attivo sull'app."
 
 #: ../../source/help/apps/desktop-guide.rst:104
 msgid "Use GPU hardware acceleration"
-msgstr ""
+msgstr "Usa accelerazione hardware GPU"
 
 #: ../../source/help/apps/desktop-guide.rst:102
 msgid ""
@@ -283,10 +308,13 @@ msgid ""
 "decreased stability for some systems. Setting takes effect after "
 "restarting the app."
 msgstr ""
+"Se abilitato, l'interfaccia utente di Mattermost è resa in modo più "
+"efficiente ma può portare a una stabilità ridotta per alcuni sistemi. "
+"L'impostazione ha effetto dopo il riavvio dell'app."
 
 #: ../../source/help/apps/desktop-guide.rst:107
 msgid "Dark Theme"
-msgstr ""
+msgstr "Tema Dark"
 
 #: ../../source/help/apps/desktop-guide.rst:108
 msgid ""
@@ -295,4 +323,8 @@ msgid ""
 "bar. On Windows, you can toggle the theme of the Mattermost desktop app "
 "title bar in **... > View > Toggle Dark Mode**."
 msgstr ""
-
+"Su macOS, l'app desktop di Mattermost rispetta le impostazioni dell'aspetto "
+"configurate nelle System Preferences del sistema operativo per impostare il "
+"tema della barra del titolo. Su Windows, puoi attivare o disattivare il tema "
+"della barra del titolo dell'app desktop di Mattermost in **... > View > "
+"Toggle Dark Mode**."
