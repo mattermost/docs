@@ -175,7 +175,6 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all items in the last posted release checklist are complete
     - Check that all features are behind a feature flag
     - Confirm all config settings and new features have diagnostics
-    - Verify that the final translations PR for the release is submitted
     - Update https://docs.mattermost.com/administration/open-source-components.html
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
       - Confirm translators and new integrations contributors have been added
@@ -202,6 +201,7 @@ Day after which only **S1 regressions** should be fixed (crashes, security vulne
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - Verify that the final translations PR for the release is submitted
 3. QA:
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
