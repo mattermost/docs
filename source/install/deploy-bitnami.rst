@@ -8,7 +8,6 @@ Deploy your Mattermost Team Edition server in the cloud with one simple click us
 Deployment options include:
 
 - `Amazon Web Services <https://about.mattermost.com/deploy-aws>`__
-- `Oracle Cloud Platform <https://about.mattermost.com/deploy-oraclecloud>`__
 - `Microsoft Azure <https://about.mattermost.com/deploy-azure>`__
 - `Google Cloud Platform <https://about.mattermost.com/deploy-googlecloud>`__
 
