@@ -11,6 +11,6 @@ Deployment options include:
 - `Microsoft Azure <https://about.mattermost.com/deploy-azure>`__
 - `Google Cloud Platform <https://about.mattermost.com/deploy-googlecloud>`__
 
-Alternatively, you may also deploy to `Debian 8 VMware or Oracle VirtualBox virtual machines <https://about.mattermost.com/deploy-debianvirtualmachine>`__.
+Alternatively, you may also deploy to `Debian 8 VMware virtual machines <https://about.mattermost.com/deploy-debianvirtualmachine>`__.
 
 If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide: `Migrating from Bitnami <../administration/migrating.html#migrating-from-bitnami>`__
