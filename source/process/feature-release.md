@@ -147,6 +147,7 @@ Day when Leads and PMs decide which major features are included in the release, 
        - Include a link to the changelog on the documentation branch
        - Update download links and testing server links to the latest RCs
     - After build is cut, tweet announcement that RC1 is ready (see [example](https://community.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
+    - Update https://docs.mattermost.com/administration/open-source-components.html
     - Ask martin.kraft to provide a list of Database changes, API changes, WebSocket event changes, and config.json setting changes for Changelog. [See example request](https://github.com/mattermost/docs/pull/3398#issuecomment-593411501)
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ghe4vz9zd1v))
@@ -175,12 +176,10 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all items in the last posted release checklist are complete
     - Check that all features are behind a feature flag
     - Confirm all config settings and new features have diagnostics
-    - Update https://docs.mattermost.com/administration/open-source-components.html
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
       - Confirm translators and new integrations contributors have been added
       - Confirm Open Source Components changes have been added
       - Update **Known Issues** section with any significant issues that were found and not fixed for the final release
-    - Update Changelog **Known Issues** section with any significant issues that were found and not fixed for the final release
     - Start drafting a release summary for Support/Sales highlighting key things (e.g., new features, breaking changes, things we want feedback on, and potential support issues)
     - Ask UX to [create a "Hero" screenshot as the splash image for the release blog post](https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-release-announcements#one-great-screenshot-a-month)
 3. Marketing:
