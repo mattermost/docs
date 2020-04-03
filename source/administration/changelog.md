@@ -78,6 +78,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - EnableOpenTracing
 
 ### Open Source Components
+ - Added ``core-js`` in https://github.com/mattermost/mattermost-redux.
+ - Added ``@types/redux-mock-store`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``react-beautiful-dnd`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``react-native-hw-keyboard-event`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``react-native-v8`` in https://github.com/mattermost/mattermost-mobile.
+ - Removed ``jsc-android`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
 
