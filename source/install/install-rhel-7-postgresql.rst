@@ -1,6 +1,6 @@
 ..  _install-rhel-7-postgresql:
 
-Installing PostgreSQL Database
+Installing PostgreSQL database
 ==============================
 
 1. Log in to the server that will host the database, and open a terminal window.
@@ -48,7 +48,7 @@ Installing PostgreSQL Database
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-11.  Create the Mattermost user 'mmuser'.
+11.  Create the Mattermost user *mmuser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
@@ -67,9 +67,10 @@ Installing PostgreSQL Database
 
   ``exit``
 
-15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/9.5/main/postgresql.conf`` as
+*root* in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
-  a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor.
+  a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as *root* in a text editor.
 
   b. Find the following line:
 
@@ -87,7 +88,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as *root* in a text editor.
 
     b. Find the following line:
 
@@ -99,7 +100,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as *root* in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 

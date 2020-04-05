@@ -1,17 +1,17 @@
 ..  _smtp-email-setup:
 
-SMTP Email Setup
+SMTP email set up
 ================
 
 To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
 
-How to Enable Email
+How to enable email
 -------------------
 
 To enable email, configure an SMTP email service as follows:
 
 1. **Set up an SMTP email sending service** (if you don't yet have an
-   SMTP service with credentials)
+   SMTP service with credentials).
 
    * Any SMTP email service can be used, you just need the following
       information: ``Server Name``, ``Port``, ``SMTP Username``, and
@@ -35,54 +35,55 @@ To enable email, configure an SMTP email service as follows:
                Mail <https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail>`__
                (DKIM) for your email domain.
 
-         4. Choose a sender address like ``mattermost@example.com`` and
+         4. Choose a sender address such as ``mattermost@example.com`` and
             click ``Send a Test Email`` to verify setup is working
             correctly.
 
 2. **Configure SMTP settings**
 
-   1. Open the **System Console** by logging into an existing team and
-      accessing "System Console" from the main menu.
+   1. Log into an existing team and open the **System Console**.
 
       * Alternatively, if a team doesn't yet exist, go to
          ``http://dockerhost:8065/`` in your browser, create a team,
-         then from the main menu click **System Console**
+         then select **System Console** from the main menu.
 
-   2. Go to the **Authentication** > **Email** tab and configure the following:
+   2. Go to **Authentication > Email** and configure the following:
 
-      1.  **Allow Sign Up With Email:** ``true``
-      
-   3. Go to the **Notifications** > **Email** tab and configure the following:
-   
-      1.  **Send Email Notifications:** ``true``
+      1.  **Allow account creation with email:** ``true``
+
+   3. Go to **Site Configuration > Notifications > Email** and configure the following:
+
+      1.  **Enable Email Notifications:** ``true``
       2.  **Notification Display Name:** Display name on email account
           sending notifications
-      3.  **Notification Email Address:** Email address displayed on
+      3.  **Notification From Address:** Email address displayed on
           email account used to send notifications
-      4.  **SMTP Username**: ``SMTP Username`` from Step 1
-      5.  **SMTP Password**: ``SMTP Password`` from Step 1
-      6.  **SMTP Server**: ``SMTP Server`` from Step 1
-      7.  **SMTP Port**: ``SMTP Port`` from Step 1
+  4. Go to **Environment > SMTP** and configure the following:
+
+      1. **SMTP Server**: ``SMTP Server`` from Step 1
+      2. **SMTP Server Username**: ``SMTP Username`` from Step 1
+      3. **SMTP Server Password**: ``SMTP Password`` from Step 1
+      4. **SMTP Server Port**: ``SMTP Port`` from Step 1
       8. **Connection Security**: ``TLS (Recommended)``
-      9. Then click **Save**
-      10. Then click **Test Connection**
-      11. If the test failed please look in **OTHER** > **Logs** for any
+      9. Select **Save**
+      10. Choose **Test Connection**
+      11. If the test failed please look in **Reporting > Server Logs** for any
           errors that look like ``[EROR] /api/v4/email/test ...``
 
-   4. (Optional) Go to the **Security** > **Sign Up** tab and configure the following:
+   4. (Optional) Go to **Authentication** > **Signup** and configure the following:
 
       1.  **Enable Email Invitations:** ``true``
 
-Sample SMTP Settings
+Sample SMTP settings
 --------------------
 
 Amazon SES
 ^^^^^^^^^^
 
--  Set **SMTP Username** to **[YOUR_SMTP_USERNAME]**
--  Set **SMTP Password** to **[YOUR_SMTP_PASSWORD]**
+-  Set **SMTP Server Username** to **[YOUR_SMTP_USERNAME]**
+-  Set **SMTP Server Password** to **[YOUR_SMTP_PASSWORD]**
 -  Set **SMTP Server** to **email-smtp.us-east-1.amazonaws.com**
--  Set **SMTP Port** to **465**
+-  Set **SMTP Server Port** to **465**
 -  Set **Connection Security** to **TLS**
 
 Postfix
@@ -90,19 +91,19 @@ Postfix
 
 -  Make sure Postfix is installed on the machine where Mattermost is
    installed
--  Set **SMTP Username** to **(empty)**
--  Set **SMTP Password** to **(empty)**
+-  Set **SMTP Server Username** to **(empty)**
+-  Set **SMTP Server Password** to **(empty)**
 -  Set **SMTP Server** to **localhost**
--  Set **SMTP Port** to **25**
+-  Set **SMTP Server Port** to **25**
 -  Set **Connection Security** to **(empty)**
 
 Gmail
 ^^^^^^
 
--  Set **SMTP Username** to **your\_email@gmail.com**
--  Set **SMTP Password** to **your\_password**
+-  Set **SMTP Server Username** to **your\_email@gmail.com**
+-  Set **SMTP Server Password** to **your\_password**
 -  Set **SMTP Server** to **smtp.gmail.com**
--  Set **SMTP Port** to **587**
+-  Set **SMTP Server Port** to **587**
 -  Set **Connection Security** to **STARTTLS**
 
 .. warning::
@@ -113,40 +114,40 @@ Gmail
 Hotmail
 ^^^^^^^
 
--  Set **SMTP Username** to **your\_email@hotmail.com**
--  Set **SMTP Password** to **your\_password**
+-  Set **SMTP Server Username** to **your\_email@hotmail.com**
+-  Set **SMTP Server Password** to **your\_password**
 -  Set **SMTP Server** to **smtp-mail.outlook.com**
--  Set **SMTP Port** to **587**
+-  Set **SMTP Server Port** to **587**
 -  Set **Connection Security** to **STARTTLS**
 
-Office365 / Outlook	
-^^^^^^^^^^^^^^^^^^^^^	
-	
-- Set **SMTP Username** to **your\_email@hotmail.com**	
-- Set **SMTP Password** to **your\_password**	
-- Set **SMTP Server Name** to **smtp.office365.com**	
-- Set **SMTP Port** to **587**	
+Office365 / Outlook
+^^^^^^^^^^^^^^^^^^^^^
+
+- Set **SMTP Server Username** to **your\_email@hotmail.com**
+- Set **SMTP Server Password** to **your\_password**
+- Set **SMTP Server** to **smtp.office365.com**
+- Set **SMTP Server Port** to **587**
 - Set **Connection Security** to **STARTTLS**
 
 Troubleshooting SMTP
 --------------------
 
-TLS/STARTTLS Requirements 
+TLS/STARTTLS requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you fill in **SMTP Username** and **SMTP Password** then you must set
-**Connection Security** to **TLS** or to **STARTTLS**
+If you fill in **SMTP Server Username** and **SMTP Server Password** then you must set
+**Connection Security** to **TLS** or to **STARTTLS**.
 
-Troubleshooting using Logs
+Troubleshooting using logs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have issues with your SMTP install, from your Mattermost team
-site go to the main menu and open **System Console -> Logs** to look for
+site go to the main menu and open **System Console > Reporting > Server Logs** to look for
 error messages related to your setup. You can do a search for the error
 code to narrow down the issue. Sometimes ISPs require nuanced setups for
 SMTP and error codes can hint at how to make the proper adjustments.
 
-For example, if **System Console -> Logs** has an error code reading:
+For example, if **System Console > Reporting > Server Logs** has an error code reading:
 
 ::
 
@@ -155,13 +156,13 @@ For example, if **System Console -> Logs** has an error code reading:
 Search for ``554 5.7.1 error`` and
 ``Client host rejected: Access denied``.
 
-Checking your SMTP server is reachable 
+Checking your SMTP server is reachable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Attempt to telnet to the email service to make sure the server is
    reachable.
 -  You must run the following commands from the same machine or virtual
-   instance where ``mattermost/bin/mattermost`` is located. 
+   instance where ``mattermost/bin/mattermost`` is located.
 -  Telnet to the email server with ``telnet mail.example.com 25``. If
    the command works you should see something like
 
@@ -180,9 +181,9 @@ Checking your SMTP server is reachable
        250-STARTTLS
        250-PIPELINING
        250 8BITMIME
-       
 
-.. note:: 
+
+.. note::
   As we're not installing telnet by default on the official docker images you either need to use ``ping`` on those or install telnet yourself either directly or by modifying the Dockerfile.
 
 .. note::

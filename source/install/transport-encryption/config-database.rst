@@ -9,12 +9,12 @@ server.
 Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Operational Mattermost server or cluster
-- Operational MySQL server
-- Confirmed connectivity between Mattermost and MySQL server
-- Authentication credentials for Mattermost user on MySQL server
+- Operational Mattermost server or cluster.
+- Operational MySQL server.
+- Confirmed connectivity between Mattermost and MySQL server.
+- Authentication credentials for Mattermost user on MySQL server.
 
-Example Environment
+Example environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this scenario there is one Mattermost application server and one MySQL server,
 both running Ubuntu 18.04, with the following IPs:
@@ -25,7 +25,7 @@ both running Ubuntu 18.04, with the following IPs:
 Configuring MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As a first step, connect to both servers with a sudo or root user.
+As a first step, connect to both servers with a *sudo* or *root* user.
 
 Execute the following command to prepare the server for SSL connections:
 
@@ -43,7 +43,7 @@ and append the following line to the file:
 
 Any connection to the MySQL server must now be made with secure transport enabled.
 
-Last but not least, restart the server and confirm it is up and running:
+Last, but not least, restart the server and confirm it is up and running:
 
   .. code-block:: none
 
@@ -74,10 +74,10 @@ value in the ``SqlSettings`` section. It should look similar to this:
 At the end of the line, we can configure that TLS must be turned on with the ``tls`` flag
 which supports the following values:
 
-- true (Require TLS + a trusted certificate)
-- false
-- skip-verify (Require TLS + accept self-signed)
-- preferred (Try TLS, fallback to unencrypted)
+- ``true`` (Require TLS + a trusted certificate)
+- ``false``
+- ``skip-verify`` (require TLS and accept self-signed)
+- ``preferred`` (try TLS, fallback to unencrypted)
 
 In our case we need to use ``skip-verify`` since we use a self-signed certificate.
 The configuration setting will now look like this:

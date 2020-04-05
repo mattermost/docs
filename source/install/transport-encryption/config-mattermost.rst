@@ -11,7 +11,7 @@ Prerequisites
 - Operational Mattermost server or cluster
 - Authentication credentials for Mattermost user on application server
 
-Example Environment
+Example environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this scenario there is one Mattermost application server and one NGINX server,
 both running Ubuntu 18.04, with the following IPs:
@@ -21,7 +21,8 @@ both running Ubuntu 18.04, with the following IPs:
 
 Configuring NGINX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration (Refer to `Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) <https://docs.mattermost.com/install/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for additional information)
+On the NGINX server, connect to both servers with a *sudo* or *root* user. Open the Mattermost proxy configuration
+(Refer to `Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) <https://docs.mattermost.com/install/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for additional information)
 and search for the following line twice:
 
 .. code-block:: none

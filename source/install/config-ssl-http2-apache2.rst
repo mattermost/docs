@@ -1,18 +1,25 @@
 .. _config-ssl-http2-apache2:
 
-Configuring Apache2 with SSL and HTTP/2 (Unofficial)
+Configuring Apache2 with SSL and HTTP/2 (unofficial)
 =====================================================
 
-.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`__.
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet
+officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`__.
 
-In order to use Apache as a reverse proxy for the mattermost server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow the instructions from your linux distribution to do so.
+In order to use Apache as a reverse proxy for the mattermost server, you need to install and
+enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow the
+instructions from your Linux distribution to do so.
 
-Once you've configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL on Apache2 is via Let's Encrypt and `Certbot <https://certbot.eff.org/#ubuntuxenial-apache>`__.
+Once you've configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL
+on Apache2 is via Let's Encrypt and `Certbot <https://certbot.eff.org/#ubuntuxenial-apache>`__.
 
 .. note::
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+   If Let’s Encrypt is enabled, forward port 80 through a firewall,
+   with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting
+   set to ``true`` to complete the Let’s Encrypt certification.
 
-Once installed, run ``$ certbot --apache`` and follow the guide. Afterwards you should find a new configuration file in ``/etc/apache2/sites-available`` which should follow the format ``mysubdomain.mydomain.com-le-ssl.conf``.
+Once installed, run ``$ certbot --apache`` and follow the guide. Afterwards you should find a new
+configuration file in ``/etc/apache2/sites-available`` which should follow the format ``mysubdomain.mydomain.com-le-ssl.conf``.
 
 When opened, edit it to look something like the following:
 
@@ -23,7 +30,7 @@ When opened, edit it to look something like the following:
 		ServerName mysubdomain.mydomain.com
 		ServerAdmin hostmaster@mydomain.com
 		ProxyPreserveHost On
-		
+
 		RewriteEngine On
 		RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
 		RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
@@ -44,12 +51,14 @@ When opened, edit it to look something like the following:
 	</VirtualHost>
 	</IfModule>
 
-1. Restart Apache2
+1. Restart Apache2.
 
     - On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
     - On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart apache2``
 
-2. Test that the site is working, that WebSockets are working, and if you enabled HTTP redirect to HTTPS during Certbot installation that the redirect is working.
+2. Test that the site is working, that WebSockets are working, and if you enabled HTTP redirect to HTTPS during
+Certbot installation that the redirect is working.
+
 3. Lastly, test your SSL configuration with https://www.ssllabs.com/ssltest/index.html.
 
 Using Certbot means that you shouldn't have to do anything in the configuration of Mattermost.

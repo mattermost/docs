@@ -36,7 +36,7 @@ Assume that the IP address of this server is 10.10.10.2
   b. ``sudo chown -R mattermost:mattermost /opt/mattermost``
   c. ``sudo chmod -R g+w /opt/mattermost``
 
-7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
+7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as *root* in a text editor and make the following changes:
 
   -  If you are using PostgreSQL:
     1.  Set ``"DriverName"`` to ``"postgres"``
@@ -49,23 +49,23 @@ Assume that the IP address of this server is 10.10.10.2
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
 
-9. Test the Mattermost server to make sure everything works.
+9. Test the server to make sure everything works.
 
     a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
-    b. Start the Mattermost server as the user *mattermost*:
+    b. Start the server as the user *mattermost*:
 
       ``sudo -u mattermost ./bin/mattermost``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
-10. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
+10. Set up Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
   a. Create the Mattermost configuration file:
 
     ``sudo touch /etc/init/mattermost.conf``
 
-  b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
+  b. Open the configuration file in a text editor, and copy the following lines into the file:
 
     .. code-block:: none
 
@@ -76,7 +76,7 @@ Assume that the IP address of this server is 10.10.10.2
       chdir /opt/mattermost
       exec bin/mattermost
 
-10. Start the Mattermost server.
+10. Start Mattermost.
 
   ``sudo start mattermost``
 
@@ -86,4 +86,4 @@ Assume that the IP address of this server is 10.10.10.2
 
   You should see the HTML that's returned by the Mattermost server.
 
-Now that Mattermost is installed and running, it's time to create the admin user and configure Mattermost for use.
+Now that Mattermost is installed and running, it's time to create the *admin* user and configure Mattermost for use.

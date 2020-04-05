@@ -12,17 +12,17 @@ by no means limited to that amount.
 Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- SSH port whitelisted between each node of the deployment
-- Active ufw/iptables on each node
-- Access to the root/sudo user of each node for configuration
-- A configured Mattermost cluster
-- Mattermost running with a dedicated service user
-- Mattermost service is stopped on each cluster node
+- SSH port whitelisted between each node of the deployment.
+- Active ufw/iptables on each node.
+- Access to the *root*/*sudo* user of each node for configuration.
+- A configured Mattermost cluster.
+- Mattermost running with a dedicated service user.
+- Mattermost service is stopped on each cluster node.
 
 **Note:** Support on the application level is currently in development and will
 deprecate this document.
 
-Example Environment
+Example environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this scenario there are three application nodes in our environment with the following
 hostname/IP mapping:
@@ -34,11 +34,11 @@ hostname/IP mapping:
 Preparations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Connect to each Mattermost server with a sudo or root user
-- Make a note of the IP from each cluster member used for the internal communication
-- Ensure ``AllowTcpForwarding`` is enabled in ``/etc/ssh/sshd_config`` of each cluster node
+- Connect to each Mattermost server with a *sudo* or *root* user.
+- Make a note of the IP from each cluster member used for the internal communication.
+- Ensure ``AllowTcpForwarding`` is enabled in ``/etc/ssh/sshd_config`` of each cluster node.
 
-SSH Authentication
+SSH authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 On each node, generate a SSH key-pair for the service account. In our scenario this is
 called ``mattermost``:
@@ -71,7 +71,7 @@ for the Mattermost ``systemd`` service itself. It is important that it is allowe
 to create a SSH tunnel with port forwarding, but it does not require any additional
 permissions.
 
-ufw Configuration
+ufw configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As a next step, allow SSH access from each of the other member nodes, e.g.:
@@ -164,12 +164,12 @@ created:
 Repeat those steps for every node on the cluster. At the end of this section
 the following should be configured:
 
-- SSH access enabled in firewall from each cluster node to another
-- Per node 2 iptables rules for port 8074 and 8075
-- IP forwarding enabled
+- SSH access enabled in firewall from each cluster node to another.
+- Per node 2 iptables rules for port 8074 and 8075.
+- IP forwarding enabled.
 
 
-SSH Configuration
+SSH configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As a next step, we will ensure that the SSH tunnels are created as part of the Mattermost service
@@ -196,7 +196,7 @@ Afterwards, we set the executable bit on the shell script:
   $ chmod +x /opt/mattermost/bin/pre_start.sh
 
 
-Open the systemd unit file of Mattermost and search for ``Type=Notify``. After this, enter
+Open the ``systemd`` unit file of Mattermost and search for ``Type=Notify``. After this, enter
 a ``ExecStartPre`` script that will be executed before Mattermost itself is started:
 
 .. code-block:: none
@@ -215,7 +215,7 @@ Reload the systemd daemon afterwards:
 Repeat the same steps on each of the member nodes and adapt the node IPs and amount
 of entries for your environment.
 
-Cluster Start
+Cluster start
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once each node is configured, restart the service on each cluster
@@ -232,4 +232,4 @@ and confirm that it's running using the command below:
 
 
 Next, open the Mattermost System Console and confirm that each node is reporting successfully
-in the High Availability section.
+in the **High Availability section**.

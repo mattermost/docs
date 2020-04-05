@@ -1,15 +1,18 @@
-Configuring TLS on Mattermost Server
+Configuring TLS on Mattermost server
 ====================================
 
 You have two options if you want users to connect with HTTPS:
 
-  1. Set up TLS on Mattermost Server.
+  1. Set up TLS on Mattermost server.
   2. Install a proxy such as NGINX and set up TLS on the proxy.
 
-The easiest option is to set up TLS on the Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
+The easiest option is to set up TLS on the Mattermost server, but if you expect to have more than 200 users,
+use a proxy for better performance. A proxy server also provides standard HTTP request logs.
 
 .. note::
-   Your Mattermost server must be accessible from the Let's Encrypt CA in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to ports 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`_.
+   Your Mattermost server must be accessible from the Let's Encrypt CA in order to verify your
+   domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to
+   forward traffic to ports 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`_.
 
 **Configure TLS on the Mattermost Server**:
 
@@ -21,11 +24,13 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 
   ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost``
 
-3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`__ to automatically install and setup the certificate, or you can specify your own certificate.
+3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`__ to automatically install and
+setup the certificate, or you can specify your own certificate.
 
   **To use a Let's Encrypt certificate**:
 
-    The certificate is retrieved the first time that a client tries to connect to the Mattermost server. Certificates are retrieved for any hostname a client tries to reach the server at.
+    The certificate is retrieved the first time that a client tries to connect to the Mattermost server.
+    Certificates are retrieved for any hostname a client tries to reach the server at.
 
     a. Change the **Use Let's Encrypt** setting to ``true``.
     b. Restart the Mattermost server for these changes to take effect.

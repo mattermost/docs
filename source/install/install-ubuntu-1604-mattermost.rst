@@ -30,7 +30,7 @@ Assume that the IP address of this server is 10.10.10.2.
   .. note::
     The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
-6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
+6. Set up a system user and group called *mattermost* that will run this service, and set the ownership and permissions.
 
   a. Create the Mattermost user and group:
     ``sudo useradd --system --user-group mattermost``
@@ -52,20 +52,20 @@ Assume that the IP address of this server is 10.10.10.2.
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
 
-9. Test the Mattermost server to make sure everything works.
+9. Test the Mattermost Server to make sure everything works.
 
     a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
-    b. Start the Mattermost server as the user mattermost:
+    b. Start the Mattermost Server as the user *mattermost*:
       ``sudo -u mattermost ./bin/mattermost``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
-10. Setup Mattermost to use *systemd* for starting and stopping.
+10. Set up Mattermost to use *systemd* for starting and stopping.
 
-  a. Create a *systemd* unit file:
+  a. Create a ``systemd`` unit file:
     ``sudo touch /lib/systemd/system/mattermost.service``
-  b. Open the unit file as root in a text editor, and copy the following lines into the file:
+  b. Open the unit file as *root* in a text editor, and copy the following lines into the file:
 
   .. code-block:: none
 
@@ -90,7 +90,7 @@ Assume that the IP address of this server is 10.10.10.2.
     WantedBy=postgresql.service
 
   .. note::
-    If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section and 1 place in the ``[Install]`` section.
+    If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in two places in the ``[Unit]`` section and one place in the ``[Install]`` section.
 
   .. note::
     If you have installed MySQL or PostgreSQL on a dedicated server, then you need to
@@ -101,7 +101,7 @@ Assume that the IP address of this server is 10.10.10.2.
     or the Mattermost service will not start.
 
   .. note::
-    Setting ``WantedBy`` to your local database service ensures that whenever the database service is started, the Mattermost server starts too. This prevents the Mattermost server from stopping to work after an automatic update of the database.
+    Setting ``WantedBy`` to your local database service ensures that whenever the database service is started, the Mattermost Server starts too. This prevents the Mattermost Server from stopping to work after an automatic update of the database.
 
   c. Make systemd load the new unit.
 
@@ -127,10 +127,10 @@ Assume that the IP address of this server is 10.10.10.2.
 
     ``curl http://localhost:8065``
 
-    You should see the HTML that's returned by the Mattermost server.
+    You should see the HTML that's returned by the Mattermost Server.
 
   g. Set Mattermost to start on machine start up.
 
     ``sudo systemctl enable mattermost.service``
 
-Now that the Mattermost server is up and running, you can do some initial configuration and setup.
+Now that the Mattermost Server is up and running, you can do some initial configuration and setup.

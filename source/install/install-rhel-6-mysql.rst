@@ -1,6 +1,6 @@
 ..  _install-rhel-6-mysql:
 
-Installing MySQL Database Server
+Installing MySQL database server
 ================================
 
 Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL.
@@ -9,7 +9,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 1. Log in to the server that will host the database, and open a terminal window.
 
-2. Download the MySQL Yum repository from dev.mysql.com.
+2. Download the MySQL Yum repository.
 
   ``wget http://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm``
 
@@ -24,7 +24,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 5. Start the MySQL server.
 
   ``sudo service mysqld start``
-  
+
   .. note::
     1. The first time that you start MySQL, the superuser account ``'root'@'localhost'`` is created and a temporary password is generated for it.
     2. Also the first time that you start MySQL, the ``validate_password`` plugin is installed. The plugin forces passwords to contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least 8 characters.
@@ -33,11 +33,11 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo grep 'temporary password' /var/log/mysqld.log``
 
-7. Change the root password. Login with the password that you obtained from the previous step.
+7. Change the root password. Log in with the password that you obtained from the previous step.
 
   ``mysql -u root -p``
 
-8. Change the password. At the mysql prompt, type the following command. Be sure to replace ``Password42!`` with the password that you want to use.
+8. Change the password. At the ``mysql`` prompt, type the following command. Be sure to replace ``Password42!`` with the password that you want to use.
 
   ``mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password42!';``
 
@@ -45,13 +45,13 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo chkconfig mysqld on``
 
-10. Create the Mattermost user 'mmuser'.
+10. Create the Mattermost user *mmuser*.
 
   ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
   .. note::
-    1. Use a password that is more secure than 'mmuser-password'.
-    2. The '%' means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command:
+    1. Use a password that is more secure than *mmuser-password*.
+    2. The '%' means that *mmuser* can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command:
 
     ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``
 
@@ -59,8 +59,8 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql> create database mattermost;``
 
-12. Grant access privileges to the user 'mmuser'.
+12. Grant access privileges to the user *mmuser*.
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
-With the database installed and the initial setup complete, you can now install the Mattermost server.
+With the database installed and the initial setup complete, you can now install Mattermost.

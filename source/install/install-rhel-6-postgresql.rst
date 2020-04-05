@@ -41,12 +41,12 @@ Installing PostgreSQL Database
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-11.  Create the Mattermost user 'mmuser'.
+11.  Create the Mattermost user *muser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
   .. note::
-    Use a password that is more secure than 'mmuser-password'.
+    Use a password that is more secure than *mmuser-password*.
 
 12.  Grant the user access to the Mattermost database.
 
@@ -60,9 +60,9 @@ Installing PostgreSQL Database
 
   ``exit``
 
-15. Allow Postgres to listen on all assigned IP Addresses.
+15. Allow PostgreSQL to listen on all assigned IP addresses.
 
-  a. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor.
+  a. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as *root* in a text editor.
 
   b. Find the following line:
 
@@ -80,7 +80,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as *root* in a text editor.
 
     b. Find the following line:
 
@@ -92,7 +92,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as *root* in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
@@ -117,4 +117,4 @@ Installing PostgreSQL Database
 
   The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
 
-With the database installed and the initial setup complete, you can now install the Mattermost server.
+With the database installed and the initial setup complete, you can now install Mattermost.

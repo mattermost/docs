@@ -5,13 +5,14 @@ Installing Mattermost Server
 
 Install Mattermost Server on a 64-bit machine.
 
-Assume that the IP address of this server is 10.10.10.2
+Assume that the IP address of this server is ``10.10.10.2``.
 
 **To install Mattermost Server on RHEL 7**
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
-2. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`__. In the following command,
+replace ``X.X.X`` with the version that you want to download:
 
   ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 
@@ -30,13 +31,13 @@ Assume that the IP address of this server is 10.10.10.2
   .. note::
     The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
-6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
+6. Set up a system user and group called *mattermost* that will run this service, and set the ownership and permissions.
 
   a. ``sudo useradd --system --user-group mattermost``
   b. ``sudo chown -R mattermost:mattermost /opt/mattermost``
   c. ``sudo chmod -R g+w /opt/mattermost``
 
-7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
+7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as *root* in a text editor and make the following changes:
 
   -  If you are using PostgreSQL:
     1.  Set ``"DriverName"`` to ``"postgres"``
@@ -49,11 +50,11 @@ Assume that the IP address of this server is 10.10.10.2
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
 
-9. Test the Mattermost server to make sure everything works.
+9. Test the Mattermost Server to make sure everything works.
 
     a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
-    b. Start the Mattermost server as the user mattermost:
+    b. Start the Mattermost Server as the user *mattermost*:
 
       ``sudo -u mattermost ./bin/mattermost``
 
@@ -66,7 +67,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo touch /etc/systemd/system/mattermost.service``
 
-  b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
+  b. Open the configuration file in a text editor, and copy the following lines into the file:
 
     .. code-block:: none
 
@@ -101,7 +102,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl enable mattermost``
 
-10. Start the Mattermost server.
+10. Start the Mattermost Server.
 
   ``sudo systemctl start mattermost``
 
@@ -109,6 +110,6 @@ Assume that the IP address of this server is 10.10.10.2
 
   ``curl http://localhost:8065``
 
-  You should see the HTML that's returned by the Mattermost server.
+  You should see the HTML that's returned by the Mattermost Server.
 
 Now that Mattermost is installed and running, it's time to create the admin user and configure Mattermost for use.

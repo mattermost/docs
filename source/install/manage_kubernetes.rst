@@ -1,12 +1,12 @@
 .. _manage_kubernetes:
 
-Managing the Mattermost Kubernetes Operator
+Managing the Mattermost Kubernetes operator
 ============================================
 
 CLI commands
 ------------
 
-You can manage and monitor your Mattermost installation's installation and deployment process in the CLI, using the commands listed below.
+You can manage and monitor your Mattermost instance's installation and deployment process in the CLI, using the commands listed below.
 
 .. code-block:: sh
 

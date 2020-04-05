@@ -1,4 +1,4 @@
-Using Sockets for Database
+Using sockets for database
 ====================
 
 Mattermost requires a database back-end. If you plan to run it on the machine,
@@ -21,17 +21,17 @@ PostgreSQL
 ----------
 
 - Install and configure PostgreSQL.
-- Choose between TCP or UNIX Socket, and jump to the corresponding section.
+- Choose between TCP or UNIX socket, and jump to the corresponding section.
 
 With TCP socket
 ---------------
 
-- Create the new user while connecting to the server as ``postgres`` user
+- Create the new user while connecting to the server as *postgres* user
   (you will be prompted for a password for the new user):
 
   ``sudo -u postgres createuser -P mmuser``
 
-- Create the Mattermost database, owned by ``mmuser`` user:
+- Create the Mattermost database, owned by *mmuser* user:
 
   ``sudo -u postgres createdb -O mmuser mattermostdb``
 
@@ -45,7 +45,7 @@ With TCP socket
 
   You can use '*' to listen on all available addresses.
 
-- Then add a line like the following to the authentication config:
+- Then add a line similar to the following to the authentication config:
 
   .. code-block:: bash
 
@@ -63,25 +63,25 @@ With TCP socket
 With Unix socket
 ----------------
 
-- Create the new user while connecting to the server as ``postgres`` user:
+- Create the new user while connecting to the server as *postgres* user:
 
   .. code-block:: bash
 
      sudo -u postgres createuser mattermost
 
-- Create the Mattermost database, owned by ``mattermost`` user:
+- Create the Mattermost database, owned by *mattermost* user:
 
   .. code-block:: bash
 
      sudo -u postgres createuser mattermost
 
-- Setup the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
+- Set up the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
 
   .. code-block:: bash
 
      local    mattermostdb    mattermost    peer
 
-- Restart postgresql.service.
+- Restart ``postgresql.service``.
 
 - Run the setup using:
 
@@ -102,8 +102,7 @@ Configuring Mattermost
 
   - For MySQL, set it to ``mmuser:mmuser_password@unix(/run/mysqld/mysqld.sock)/mattermostdb?charset=utf8mb4,utf8``.
   - For PostgreSQL
-    
-    - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
-    
-    - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.
 
+    - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``
+
+    - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.

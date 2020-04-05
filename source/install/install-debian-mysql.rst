@@ -7,13 +7,13 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 **To install MySQL on Debian Buster:**
 
-1. Log into the server that will host the database, and open a terminal window.
+1. Log in to the server that will host the database, and open a terminal window.
 
 2. Download the MySQL repository package.
 
   ``wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb``
 
-3. Install the repository
+3. Install the repository.
 
   ``sudo dpkg -i mysql-apt-config*``
 
@@ -26,21 +26,23 @@ Install and set up the database for use by the Mattermost server. You can instal
   ``sudo apt-get install mysql-server``
 
   .. note::
-    During the install, you'll be prompted to create a password for the MySQL root user. Make a note of the password because you'll need it in the next step.
+    During the install, you'll be prompted to create a password for the MySQL root user. Make a
+    note of the password because you'll need it in the next step.
 
-6. Log in to MySQL as root.
+6. Log in to MySQL as *root*.
 
   ``mysql -u root -p``
 
   When prompted, enter the root password that you created when installing MySQL.
 
-7. Create the Mattermost user 'mmuser'.
+7. Create the Mattermost user *mmuser*.
 
   ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
   .. note::
-    1. Use a password that is more secure than 'mmuser-password'.
-    2. The '%' means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command:
+    1. Use a password that is more secure than *mmuser-password*.
+    2. The '%' means that mmuser can connect from any machine on the network. However, it's more secure to use the IP address of
+    the machine that hosts Mattermost. For example, if you install Mattermost on the machine with IP address 10.10.10.2, then use the following command:
 
   ``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-password';``
 
@@ -48,7 +50,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql> create database mattermost;``
 
-9. Grant access privileges to the user 'mmuser'.
+9. Grant access privileges to the user *mmuser*.
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 

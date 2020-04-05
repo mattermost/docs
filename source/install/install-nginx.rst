@@ -1,6 +1,6 @@
 .. _install-nginx:
 
-Installing NGINX Server
+Installing NGINX server
 =======================
 
 In a production setting, use a proxy server for greater security and performance of Mattermost.
@@ -52,4 +52,4 @@ The main benefits of using a proxy are as follows:
 **What to do next**
 
 1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
-2. Configure NGINX to proxy connections from the internet to the Mattermost Server.
+2. Configure NGINX to proxy connections from the internet to the Mattermost server.

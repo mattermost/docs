@@ -4,7 +4,8 @@
 Installing Mattermost on RHEL 6
 =================================
 
-You can also use these instructions to install Mattermost on CentOS 6, Oracle Linux 6, or Scientific Linux 6. With the exception of the operating system that you install, the process is identical.
+You can also use these instructions to install Mattermost on CentOS 6, Oracle Linux 6, or Scientific Linux 6. With the
+exception of the operating system that you install, the process is identical.
 
 .. include:: install-common-intro.rst
 

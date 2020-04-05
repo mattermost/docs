@@ -18,7 +18,7 @@ suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/e
 or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
 
 
-Confirm Resource Requirements
+Confirm resource requirements
 -----------------------------
 
 Running Mattermost in Kubernetes requires different resources based on your total number of users.
@@ -35,7 +35,7 @@ The table below details the minimum Kubernetes cluster resources that Mattermost
 
 **Note:**
 
-- These resources take into account all components required for Mattermost, including proxy, database and file storage.
+- These resources take into account all components required for Mattermost including proxy, database, and file storage.
 - Resource requirements may vary depending on user usage and bot activity.
 - For larger installations, it may be beneficial to use nodes for the databases that have more memory and/or are optimized for memory.
 - For installations of more than 25,000 users please `contact us <https://mattermost.com/contact-us/>`__ for sizing guidelines.

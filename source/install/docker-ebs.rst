@@ -1,6 +1,6 @@
 ..  _docker-ebs:
 
-AWS Elastic Beanstalk Docker Setup
+AWS Elastic Beanstalk Docker set up
 ==================================
 
 The following instructions use Docker to install Mattermost in *Preview
@@ -11,37 +11,37 @@ be used in production.
     console <https://console.aws.amazon.com/console/home>`__ select
     **Elastic Beanstalk** under the Compute section.
 2.  Select **Create New Application** from the top right.
-3.  Name your Elastic Beanstalk application and click **Next**,
+3.  Name your Elastic Beanstalk application and click **Next**.
 4.  Select **Create web server** on the New Environment page.
 5.  If asked, select **Create an IAM role and instance profile**, then
     click **Next**.
-6.  On the Environment Type page,
+6.  On the **Environment Type** page:
 
-    a. Set Predefined Configuration to **Multi-Container Docker** under the generic
+    a. Set **Predefined Configuration** to **Multi-Container Docker** under the generic
        heading in the drop-down list.
     b. Set Environment Type to **Single instance** in the drop-down
        list.
     c. Click **Next**.
 
-7.  For Application Source, select **Upload your own** and upload the
-    Dockerrun.aws.json file from
+7.  For **Application Source**, select **Upload your own** and upload the
+    ``Dockerrun.aws.json`` file from
     https://raw.githubusercontent.com/mattermost/mattermost-docker/master/contrib/aws/Dockerrun.aws.json (select
     version you'd like to use), then click **Next**.
 8.  Type an Environment Name and URL. Make sure the URL is available by
     clicking **Check availability**, then click **Next**.
-9.  The options on the Additional Resources page may be left at default
+9.  The options on the **Additional Resources** page may be left at default
     unless you wish to change them. Click **Next**.
-10. On the Configuration Details page,
+10. On the **Configuration Details** page:
 
-    a. Select an Instance Type of **t2.small** or larger.
+    a. Select an **Instance Type** of **t2.small** or larger.
     b. The remaining options may be left at their default values unless
        you wish to change them. Click **Next**.
 
-11. Environment tags may be left blank. Click **Next**.
+11. **Environment tags** may be left blank. Click **Next**.
 12. You will be asked to review your information, then click **Launch**.
-13. It may take a few minutes for beanstalk to launch your environment.
+13. It may take a few minutes for Beanstalk to launch your environment.
     If the launch is successful, you will see a see a large green
-    checkmark and the Health status should change to “Green”.
+    checkmark and the **Health status** should change to “Green”.
 14. Test your environment by clicking the domain link next to your
     application name at the top of the dashboard. Alternatively, enter
     the domain into your browser in the form
@@ -50,13 +50,13 @@ be used in production.
     correctly, the domain should navigate you to the Mattermost signup
     page. Enjoy exploring Mattermost!
 
-Configuration Settings
+Configuration settings
 ----------------------
 
 See `Configuration Settings <http://docs.mattermost.com/administration/config-settings.html>`__
 documentation to customize your deployment.
 
-(Recommended) Enable Email
+(Recommended) Enable email
 --------------------------
 
 The default Docker instance for Mattermost is designed

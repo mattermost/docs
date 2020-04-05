@@ -106,19 +106,22 @@ pointing to the address you just copied. For example, on AWS you would do this w
 
 Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 
-Restoring an Existing Mattermost MySQL Database
+Restoring an existing Mattermost MySQL database
 -----------------------------------------------
 
-The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database. 
+The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new
+Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost
+instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database.
 
-The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's recommended that you consult the relevant documentation or, if your deployment is managed in a different way, consult your Administrator.
+The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's recommended
+that you consult the relevant documentation or, if your deployment is managed in a different way, consult your Administrator.
 
 It is important to note that this process requires the creation of a new Mattermost
 installation - editing the existing ``.yaml`` files is not recommended and can result in data loss.
 
 The process described below needs to be completed prior to proceeding with the Mattermost deployment.
 
-1. Create a backup of your database (e.g. using *mysqldump*).
+1. Create a backup of your database (e.g. using ``mysqldump``).
 2. Deploy a new server (e.g. an AWS instance).
 3. Install a backup program and back up the database on the new server/instance.
 4. Upload the backed up database to your cloud storage provider (e.g. Amazon S3).
@@ -144,7 +147,6 @@ Save the file as ``secret.yaml``. The example below is for AWS/S3.
 **Parameters**
 
 - ``name``. The name of this manifest which is referenced in the installation manifest.
-
 
 6. Create a Mattermost cluster installation manifest.
 
@@ -194,7 +196,7 @@ Open a text editor and create a text file with the following details. Save the f
 
 **Parameters**
 
-- ``mattermostClusterName``. The ClusterInstallation file name.
+- ``mattermostClusterName``. The ``ClusterInstallation`` file name.
 
 - ``restoreSecret``. The location of the backup file.
 
@@ -202,7 +204,7 @@ Open a text editor and create a text file with the following details. Save the f
 
 - ``mattermostDBUser``. The username required to access the database.
 
-- ``initBucketURL``. The URL of the storage instance/server where the backed up DB is stored.
+- ``initBucketURL``. The URL of the storage instance/server where the backed up database is stored.
 
 8. To initiate deployment, apply the file and specify the path where the newly-created files have been saved:
 
