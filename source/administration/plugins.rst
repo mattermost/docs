@@ -255,7 +255,7 @@ Mattermost ships with a number of pre-packaged plugins written and maintained by
 
 Prior to v5.20, pre-packaged plugins were installed by default and could not be uninstalled without manually modifying the `prepackaged_plugins` directory. Any pre-packaged plugins installed prior to v5.20 and left enabled on upgrade will remain installed, but can now be uninstalled.
 
-Customplugins
+Custom plugins
 ~~~~~~~~~~~~~~
 Installing a custom plugin introduces some risk. As a result, plugin uploads are disabled by default and cannot be enabled via the System Console or REST API.
 
