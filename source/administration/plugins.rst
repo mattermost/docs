@@ -254,7 +254,7 @@ Pre-packaged Plugins
 ~~~~~~~~~~~~~~~~~~~
 Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Install pre-packaged plugins from the Plugin Marketplace, even if your system cannot directly connect to the internet.
 
-As of v5.20, pre-packaged plugins are no longer installed by default, but are available from the plugin marketplace. Installing such plugins from the plugin marketplace works even when your server cannot access the internet by instead installing the version shipped with the server.
+Prior to v5.20, pre-packaged plugins were installed by default and could not be uninstalled without manually modifying the `prepackaged_plugins` directory. Any prepackaged plugins installed prior to v5.20 and left enabled on upgrade will remain installed, but can now be uninstalled.
 
 Custom Plugins
 ~~~~~~~~~~~~~~
