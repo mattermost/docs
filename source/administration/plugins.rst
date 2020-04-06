@@ -256,8 +256,6 @@ Mattermost ships with a number of pre-packaged plugins written and maintained by
 
 As of v5.20, pre-packaged plugins are no longer installed by default, but are available from the plugin marketplace. Installing such plugins from the plugin marketplace works even when your server cannot access the internet by instead installing the version shipped with the server.
 
-Previously enabled, pre-packaged plugins will remain installed on upgrading to v5.20. Any disabled, pre-packaged plugins will not show up in the system console but may be installed from the plugin marketplace.
-
 Custom Plugins
 ~~~~~~~~~~~~~~
 Installing a custom plugin introduces some risk. As a result, plugin uploads are disabled by default and cannot be enabled via the System Console or REST API.
