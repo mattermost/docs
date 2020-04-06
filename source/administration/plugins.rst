@@ -252,7 +252,7 @@ To manage plugins, go to **System Console > Plugins > Plugin Management**. From 
 
 Pre-packaged Plugins
 ~~~~~~~~~~~~~~~~~~~
-Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Pre-packaged plugins can be removed as of 5.20 via the System Console, or by modifying the ``prepackaged_plugins`` directory in your Mattermost installation.
+Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Install pre-packaged plugins from the Plugin Marketplace, even if your system cannot directly connect to the internet.
 
 As of v5.20, pre-packaged plugins are no longer installed by default, but are available from the plugin marketplace. Installing such plugins from the plugin marketplace works even when your server cannot access the internet by instead installing the version shipped with the server.
 
