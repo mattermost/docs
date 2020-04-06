@@ -20,27 +20,27 @@ The Plugin Marketplace is a collection of plugins that can greatly increase the 
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
-Installing a Plugin
+Installing a plugin
 ~~~~~~~~~~~~~~~~
 
 When a new plugin becomes available on the Marketplace, it's listed with an option to **Install**. Select **Install** to download and install the latest plugin binary from its respective GitHub repository. If there's a cluster present, the plugin will be distributed to each server automatically.
 
-Configuring and Enabling a Plugin
+Configuring and enabling a plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once a plugin is installed (or pre-installed if shipped with Mattermost binary release):
 
 1. Select **Configure** to open the **Settings** menu.
-2. Enter the Plugin settings as required.
+2. Enter the plugin settings as required.
 3. Set **Enable Plugin** setting to ``True``. If this flag is not enabled, the plugin will not become active.
 4. Test out the plugin as needed.
 
-Upgrading Plugins
+Upgrading plugins
 ~~~~~~~~~~~~~~~~~
 
 Upgrade a plugin on demand when a new version becomes available. New versions of plugins that you have already installed will display a link to easily install the upgraded plugins. Some plugin versions may have breaking changes; please check the release notes if you are performing a major version change.
 
-Upgrading Plugins (prior to v5.18)
+Upgrading plugins (prior to v5.18)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In v5.16 and v5.17 the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and then upload it in **System Console > Plugin Management**.
@@ -63,17 +63,17 @@ Mattermost Marketplace
 
 The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-marketplace>`__ is a service run by Mattermost that contains listings of plugins that we have reviewed and, in many cases, built. In the future, we plan to include community-developed plugins that will be labeled separately to Mattermost-developed plugins. as well as settings that would restrict which types of plugins you can install. Comments in our forum are welcome as we develop this feature further.
 
-Mattermost Integration Directory
+Mattermost integration directory
 --------------------------------
 
 There are many ways to integrate Mattermost aside from plugins, and we have created a directory of integration "recipes", some of which are scripts, plugins, or instructions on how to connect Mattermost with your Enterprise systems. Many are sourced from our community of customers. You can browse the directory at `https://integrations.mattermost.com/ <https://integrations.mattermost.com/>`__.
 
 
-About Plugins
+About plugins
 -------------
 Plugins may have one or both of the following parts:
 
- - **Webapp plugins**. Customize the Mattermost user interface by adding buttons to the channel header, overriding the ``RHS``, or even rendering a custom post type within the center channel. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
+ - **Web app plugins**. Customize the Mattermost user interface by adding buttons to the channel header, overriding the ``RHS``, or even rendering a custom post type within the center channel. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
  - **Server plugins**. Run a Go process alongside the server, filtering messages, or integrating with third-party systems such as Jira, GitLab or Jenkins. For a sample plugin, see `our Jira plugin <https://github.com/mattermost/mattermost-plugin-jira>`__.
 
 
@@ -86,7 +86,7 @@ While this power enables deep customization and integration, it can be abused in
 
 You should only install custom plugins from sources you trust to avoid compromising the security of your installation.
 
-Plugin Signing
+Plugin signing
 ---------------
 
 The Plugin Marketplace allows system administrators to download and install plugins from a central repository. Plugins installed via the Plugin Marketplace must be signed by a public key certificate trusted by the local Mattermost server.
@@ -103,9 +103,9 @@ Configuring plugin signatures allows finer control over the verification process
 
    PluginSettings.RequirePluginSignature = true
 
-is used to enforce plugin signature verification. With flag on, only marketplace plugins will be installed and verified. With flag off, customers will be able to install plugins manually without signature verification. Note that the marketplace plugins will still be verified even if flag is off.
+This is used to enforce plugin signature verification. With flag on, only Marketplace plugins will be installed and verified. With flag off, customers will be able to install plugins manually without signature verification. Note that the Marketplace plugins will still be verified even if flag is off.
 
-Key Generation
+Key generation
 ~~~~~~~~~~~~~~~
 
 Public and private key pairs are needed to sign and verify plugins. The private key is used for signing and should be kept in a secure location. The public key is used for verification and can be distributed freely. To generate a key pair, run the following command:
@@ -154,7 +154,7 @@ Public and private key pairs are needed to sign and verify plugins. The private 
 .. note::
  Key size should be at least 3072 bits.
 
-Exporting the Private Key
+Exporting the private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Find the ID of your private key first. The ID is a hexadecimal number.
@@ -169,7 +169,7 @@ This is your private key and should be kept secret. Your hexadecimal key ID will
 
   gpg --export-secret-keys F3FACE45E0DE642C8BD6A8E64C7C6562C192CC1F > ./my-priv-key
 
-Exporting the Public Key
+Exporting the public key
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Find the ID of your public key first. The ID is a hexadecimal number.
@@ -182,7 +182,7 @@ Find the ID of your public key first. The ID is a hexadecimal number.
 
   gpg --export F3FACE45E0DE642C8BD6A8E64C7C6562C192CC1F > ./my-pub-key
 
-Importing the Key
+Importing the key
 ~~~~~~~~~~~~~~~~~
 
 If you already have a public and private key pair, you can import them to the GPG.
@@ -193,7 +193,7 @@ If you already have a public and private key pair, you can import them to the GP
 
  gpg --import ./my-pub-gpg-key
 
-Running Plugin Signing
+Running plugin signing
 ^^^^^^^^^^^^^^^^^^^^^^
 
 For plugin signing, you have to know the hexadecimal ID of the private key. Let's assume you want to sign `com.mattermost.demo-plugin-0.1.0.tar.gz` file, run:
@@ -204,10 +204,10 @@ For plugin signing, you have to know the hexadecimal ID of the private key. Let'
 
 This command will generate `com.mattermost.demo-plugin-0.1.0.tar.gz.sig`, which is the signature of your plugin.
 
-Plugin Verification
+Plugin verification
 ^^^^^^^^^^^^^^^^^^^
 
-Mattermost server will verify plugin signatures downloaded from plugin marketplace. To add custom public keys, run the following command on the Mattermost server:
+Mattermost server will verify plugin signatures downloaded from Plugin Marketplace. To add custom public keys, run the following command on the Mattermost server:
 
 .. code-block:: sh
 
@@ -218,7 +218,6 @@ Multiple public keys can be added to the Mattermost server:
 .. code-block:: sh
 
   mattermost plugin add key my-pk-file1 my-pk-file2
-
 
 To list the names of all public keys installed on your Mattermost server, use:
 
@@ -238,7 +237,7 @@ Implementation
 See the `implementation document <https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ>`__ for more information.
 
 
-Set Up Guide
+Set up guide
 ------------
 
 To manage plugins, go to **System Console > Plugins > Plugin Management**. From here, you can:
@@ -250,27 +249,27 @@ To manage plugins, go to **System Console > Plugins > Plugin Management**. From 
   In versions prior to 5.16, go to **System Console > Plugins (Beta) > Configuration**.
 
 
-Pre-packaged Plugins
+Pre-packaged plugins
 ~~~~~~~~~~~~~~~~~~~
 Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Install pre-packaged plugins from the Plugin Marketplace, even if your system cannot directly connect to the internet.
 
-Prior to v5.20, pre-packaged plugins were installed by default and could not be uninstalled without manually modifying the `prepackaged_plugins` directory. Any prepackaged plugins installed prior to v5.20 and left enabled on upgrade will remain installed, but can now be uninstalled.
+Prior to v5.20, pre-packaged plugins were installed by default and could not be uninstalled without manually modifying the `prepackaged_plugins` directory. Any pre-packaged plugins installed prior to v5.20 and left enabled on upgrade will remain installed, but can now be uninstalled.
 
-Custom Plugins
+Customplugins
 ~~~~~~~~~~~~~~
 Installing a custom plugin introduces some risk. As a result, plugin uploads are disabled by default and cannot be enabled via the System Console or REST API.
 
 To enable plugin uploads, manually set **PluginSettings > EnableUploads** to ``true`` in your configuration and restart your server. You can disable plugin uploads at any time without affecting previously uploaded plugins.
 
-With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` files containing the server executables and webapp resources for the plugin. You can also specify a URL to install a plugin bundle from a remote source.
+With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` files containing the server executables and web app resources for the plugin. You can also specify a URL to install a plugin bundle from a remote source.
 
-Note: When **RequirePluginSignature** is `true` - plugin uploads cannot be enabled, and may only be installed via the Marketplace (which verifies Plugin Code Signatures).  
+Note: When **RequirePluginSignature** is `true`, plugin uploads cannot be enabled, and may only be installed via the Marketplace (which verifies Plugin Code Signatures).  
 
 Custom plugins may also be installed via the `command line interface <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-plugin>`__.
 
 While no longer recommended, plugins may also be installed manually by unpacking the plugin bundle inside the `plugins` directory of a Mattermost installation.
 
-Plugin Uploads in High Availability Mode
+Plugin uploads in High Availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Prior to Mattermost 5.14, Mattermost servers configured for `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_ required plugins to be installed manually. As of Mattermost 5.14, plugins uploaded via the System Console or the command line interface are persisted to the configured file store and automatically installed on all servers that join the cluster.
 
@@ -279,7 +278,7 @@ Manually installed plugins remain supported, but must be individually installed 
 Frequently Asked Questions (FAQs)
 ---------------------------------
 
-Where Can I Share Feedback on Plugins?
+Where can I share feedback on plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Join our community server discussion in the `Toolkit channel <https://community.mattermost.com/core/channels/developer-toolkit>`__.
@@ -287,10 +286,10 @@ Join our community server discussion in the `Toolkit channel <https://community.
 Troubleshooting
 -----------------
 
-Plugin Uploads Fail Even Though Uploads are Enabled
+Plugin uploads fail even though uploads are enabled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If plugin uploads fail and you see "permission denied" errors in **System Console > Logs** such as:
+If plugin uploads fail and you see ``permission denied`` errors in **System Console > Logs** such as:
 
 .. code-block:: text
 
