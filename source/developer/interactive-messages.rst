@@ -205,7 +205,7 @@ URL
   The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent. The request contains an ``application/json`` JSON string. As of 5.14, relative URLs are accepted, simplifying the workflow when a plugin handles the action.
 
 Context
-  The requests sent to the specified URL contain the user ID, post ID, channel ID, team ID, and any context that was provided in the action definition. The post ID can be used to, for example, delete or edit the post after clicking on a message button.
+  The requests sent to the specified URL contain the user ID, post ID, channel ID, team ID, and any context that was provided in the action definition. If the post was of type ``Message Menus``, then context also contains the ``selected_option`` field with the user-selected option value. The post ID can be used to, for example, delete or edit the post after clicking on a message button.
   
   A simple example of a request is given below:
   
@@ -312,6 +312,19 @@ Slack Compatibility
 Like Slack, actions are specified in an **Actions** list within the message attachment. Moreover, your integrations can react with ephemeral messages or message updates similar to Slack.
 
 However, the schema for these objects is slightly different given Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows an integration to create an interactive message without pre-configuration.
+
+If your `ephemeral_text` gets incorrectly handled by the Slack-compatibility logic, send ``"skip_slack_parsing":true`` along your `ephemeral_text` to bypass it.
+
+.. code-block:: text
+
+  {
+    "update": {
+      "message": "Updated!"
+    },
+    "ephemeral_text": "You updated the post!",
+    "skip_slack_parsing": true
+  }
+
 
 Frequently Asked Questions
 ----------------------------------
