@@ -14,6 +14,58 @@ footer {
 	padding-bottom: 30px;
 }
 
+/* Thermometer */
+.c-thermometer {
+	padding: 1rem 0;
+    display: block;
+    width: 20em;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    right: 1rem;
+    bottom: 0;
+    background: #fff;
+    border-radius: 20px;
+}
+.c-thermometer__emojis:before {
+	height: 2px;
+	content: '';
+	position: absolute;
+	width: 16rem;
+	background: black;
+	margin-left: 2rem;
+	top: 16px;
+	opacity: .1;
+}
+.c-thermometer__emojis {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.6em;
+}
+.c-thermometer__emojis p {
+	margin: 0;
+	font-size: 0.5em;
+}
+.c-thermometer__emojis a {
+	z-index: 2;
+	position: relative;
+	opacity: .6;
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	filter: grayscale(100%);
+	flex: 1;
+}
+.c-thermometer__emojis a:hover {
+	filter: grayscale(0);
+	opacity: 1;
+}
+/* Thermometer ends */
+
 .features__table {
 	margin-bottom: 50px;
 }
