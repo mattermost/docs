@@ -64,7 +64,7 @@ Channel moderation (Beta) (E20)
 From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include: 
 
 - **Read-only Channels:** The ability for Admins to turn off posting in specified channels.
-- **Restrict Post Reactions:** Turn off the ability for members and guests to post reactions.
+- **Restrict reactions:** Turn off the ability for members and guests to post reactions.
 - **Restrict Channel Mentions:** Turn off the ability for users to post channel wide mentions (@-all/channel/here) in specified channels.
 - **Channel member management:** Restricting adding and removing channel members to Admins only in specified channels.
 
