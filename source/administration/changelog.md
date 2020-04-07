@@ -61,7 +61,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Administration
  - Added support for exporting and importing the props of a post.
- - Added support for setting Office365Settings Directory (tenant) Id in the ``config.json``.
 
 ### Bug Fixes
  - Fixed an issue where a user's role was not reflected correctly in the Channel Members Modal when it was updated after the modal was opened.
@@ -92,8 +91,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``ExperimentalChannelSidebarOrganization``, to 
  - Under ``NotificationLogSettings`` in ``config.json``:
     - Added ``SMTPServerTimeout``, to 
- - Added Office365Settings object
- - Added ExperimentalAuditSettings object
+ - Added ``Office365Settings`` object to add support for Office365Settings Directory (tenant) Id.
+ - Added ``ExperimentalAuditSettings`` object to
 
 ### Open Source Components
  - Added ``core-js`` in https://github.com/mattermost/mattermost-redux.
