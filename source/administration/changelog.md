@@ -21,11 +21,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.21, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - Channel Moderation Settings (Beta) (Read Only channels)
- - "Unarchive Channel" option to archived channels menu
- - Added the ability to drag and drop teams on the team sidebar and added a keyboard shortcut to switch between teams.
- - Channel sidebar reorg (experimental)
- - Promoted Dutch and Russian languages to Beta.
+
+#### Channel moderation settings and read-only channels (E20) (Beta)
+ - System admins can use new channel-specific permissions to create read-only channels, restrict who can post in certain channels, and more. This feature is in beta and ships with Enterprise Edition E20.
+
+#### Multi-team usability improvements
+ - Added the ability to reorder teams on the sidebar via drag-and-drop.
+ - Added new keyboard shortcuts that allow users to switch to the next or previous team using ``Ctrl/⌘ + Alt + Up/Down`` and switch to a specific team using ``Ctrl/⌘ + Alt + #``.
+
+#### Added an Unarchive Channel option to archived channels menu (Beta)
+ - Added the ability for users to restore archived channels via the Mattermost interface.
+ 
+#### Channel sidebar reorganization features (Experimental)
+ - Added improvements to the channel sidebar, including the ability to collapse categories in the sidebar (e.g., favorites, public channels, private channels, and direct messages) to reduce unnecessary scrolling.
 
 ### Improvements
 
@@ -35,6 +43,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added a keyboard shortcut to open/close the right-hand sidebar
  - Added a keyboard shortcut to add reactions to last message in a channel or a thread.
  - Added infinite scroll to Select Teams screen.
+ 
+#### Localization
+ - Promoted Dutch and Russian languages to Beta.
 
 #### Notifications
  - Added support for notification sounds in Firefox.
@@ -93,6 +104,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Removed ``jsc-android`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
+ - 
 
 ### API Changes
  - Added ``GET api/v4/channels/:channels/moderations`` and ``PUT api/v4/channels/:channels/moderations/patch`` to support channel moderation settings.
