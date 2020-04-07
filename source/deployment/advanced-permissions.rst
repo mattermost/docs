@@ -59,9 +59,9 @@ The interface for naming, assigning teams, and editing permissions in a Team Ove
 Channel moderation (Beta) (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available from v5.22*
+*Available in Enterprise Edition E20*
 
-The channel moderation settings allow Admins to restrict actions within specific channels. These actions include: 
+From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include: 
 
 - **Read-only Channels:** The ability for Admins to turn off posting in specified channels.
 - **Restrict Post Reactions:** Turn off the ability for members and guests to post reactions.
@@ -69,6 +69,13 @@ The channel moderation settings allow Admins to restrict actions within specific
 - **Channel member management:** Restricting adding and removing channel members to Admins only in specified channels.
 
 These settings are modified in **System Console > User Management > Channels**. 
+
+**Note:**
+These settings are applicable only to Guests and Members. System, Team, and Channel Admins are not affected. 
+
+The availability of channel moderation settings can also be affected by existing system and team permissions configurations. If there are existing configurations that override the channel settings you would like to apply, it will be indicated in the UI. These settings can then be adjusted in the relevant panel in the **Permissions** section of the System Console. 
+
+This feature includes the ability to set channel moderation settings in the **Team Override Scheme** so Public and Private channels have individual moderation settings. In some cases, permissions applied in the **Team Override Scheme** take precedence and affect the availability of certain settings. This is indicated in the **Channel Moderation (Beta)** UI where applicable.  
 
 
 Supplementary Roles (E20)
@@ -147,8 +154,17 @@ Read only channels
 5. In the **Channel Mentions** panel, uncheck **Guests**. 
 6. Choose **Save**. 
 
-**Create an Announcement Channel where specified members are elevated to channel admin and are able to post.**
+**Create an Announcement Channel where only channel admins are able to post.**
 
+1. Create a new channel (either Public or Private). 
+2. Navigate to **System Console > User Management > Channels** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+2. Select **Edit** next to the name of the channel you just created (you may need to search for it).
+3. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
+4. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
+5. In the **Channel Mentions** panel, uncheck **Guests** and **Members**. 
+6. Choose **Save**. 
+
+The channel is available for all members and guests to access but only admins can post.
 
 Post Management
 ~~~~~~~~~~~~~~~~
