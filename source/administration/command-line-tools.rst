@@ -335,6 +335,7 @@ Description
     .. code-block:: none
 
           --username [REQUIRED] Username of the user who is moving the team.
+          --remove-deactivated-users [OPTIONAL] When moving the channel, remove any users who have been deactivated who may be preventing the move.
 
 mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~~
