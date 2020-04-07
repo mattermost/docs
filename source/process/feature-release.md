@@ -179,8 +179,6 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
       - Confirm translators and new integrations contributors have been added
       - Confirm Open Source Components changes have been added
-      - Update **Known Issues** section with any significant issues that were found and not fixed for the final release
-    - Start drafting a release summary for Support/Sales highlighting key things (e.g., new features, breaking changes, things we want feedback on, and potential support issues)
     - Ask UX to [create a "Hero" screenshot as the splash image for the release blog post](https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-release-announcements#one-great-screenshot-a-month)
 3. Marketing:
     - Send blog post for mattermost.com and all related art work for marketing lead to review
@@ -201,6 +199,8 @@ Day after which only **S1 regressions** should be fixed (crashes, security vulne
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Verify that the final translations PR for the release is submitted
+    - Update **Known Issues** section with any significant issues that were found and not fixed for the final release
+    - Start drafting a release summary for Support/Sales highlighting key things (e.g., new features, breaking changes, things we want feedback on, and potential support issues)
 3. QA:
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
