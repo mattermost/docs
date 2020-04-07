@@ -151,8 +151,7 @@ Read only channels
 2. Select **Edit** next to the name of the channel you want to configure.
 3. In the **Create Posts** panel, uncheck **Guests**. 
 4. In the **Post Reactions** panel, uncheck **Guests** if required. 
-5. In the **Channel Mentions** panel, uncheck **Guests**. 
-6. Choose **Save**. 
+5. Choose **Save**. 
 
 **Create an Announcement Channel where only channel admins are able to post.**
 
@@ -161,8 +160,7 @@ Read only channels
 2. Select **Edit** next to the name of the channel you just created (you may need to search for it).
 3. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
 4. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
-5. In the **Channel Mentions** panel, uncheck **Guests** and **Members**. 
-6. Choose **Save**. 
+5. Choose **Save**. 
 
 The channel is available for all members and guests to access but only admins can post.
 
