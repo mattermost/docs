@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	const customerFeedback = sessionStorage.getItem("customerFeedback");
+ const customerFeedback = sessionStorage.getItem("customerFeedback");
 
 	if (!customerFeedback) {
 		$('body').append("<div class='c-thermometer'><p class='c-thermometer__paragraph'>Is this page helpful?</p> <div class='c-thermometer__emojis'> <a href='javascript:void(0)' onClick='ga('send', 'event', { eventCategory: 'Feedback', eventAction: 'Click', eventLabel: 'Excellent', eventValue: 1});'> <span class='c-thermometer__emoji'>😀</span> <p>Excellent</p> </a> <a href='javascript:void(0)' onClick='ga('send', 'event', { eventCategory: 'Feedback', eventAction: 'Click', eventLabel: 'Average', eventValue: 3});'> <span class='c-thermometer__emoji'>😐</span> <p>Average</p> </a> <a href='javascript:void(0)' onClick='ga('send', 'event', { eventCategory: 'Feedback', eventAction: 'Click', eventLabel: 'Poor', eventValue: 4});'> <span class='c-thermometer__emoji'>🙁</span> <p>Poor</p> </a> </div> </div>");
