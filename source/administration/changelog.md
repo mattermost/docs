@@ -75,7 +75,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - EnableOpenTracing
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableOpenTracing``, to 
+    - Added ``IdleTimeout``, to 
+    - Added ``ExperimentalChannelSidebarOrganization``, to 
+ - Under ``NotificationLogSettings`` in ``config.json``:
+    - Added ``SMTPServerTimeout``, to 
+ - Added Office365Settings object
+ - Added ExperimentalAuditSettings object
 
 ### Open Source Components
  - Added ``core-js`` in https://github.com/mattermost/mattermost-redux.
@@ -88,11 +95,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
 
 ### API Changes
- - Added an endpoint to move a command to another team.
- - Added an endpoint to retrieve a command by id.
- - Added a new busy api ``Client.GetServerBusy`` endpoint support for mmctl.
+ - Added ``GET api/v4/channels/:channels/moderations`` and ``PUT api/v4/channels/:channels/moderations/patch`` to support channel moderation settings.
+ - Added a ``PUT api/v4/commands/move`` endpoint to move a command to another team.
+ - Added a ``GET api/v4/commands`` endpoint to retrieve a command by id.
 
 ### Websocket Event Changes
+ - Added ``channel_scheme_updated`` Websocket Event.
  
 ### Known Issues
  - 
