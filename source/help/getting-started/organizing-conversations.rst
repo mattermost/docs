@@ -135,7 +135,10 @@ To remove a channel from the "Favorites" section, select the "Favorite" option a
 Experimental: Channel Organization Features
 --------------------------------------------
 
-Join us in testing an experimental feature set offering additional functionality for managing channels in your sidebar. The features can be enabled using an opt-in config setting configured by a System Admin: `ExperimentalChannelSidebar <https://docs.mattermost.com/administration/config-settings.html#experimental-channel-sidebar-experimental>`_. Features include:
+Join us in testing an experimental feature set offering additional functionality for managing channels in your sidebar. The features can be enabled using an opt-in config setting configured by a System Admin: `ExperimentalChannelSidebar <https://docs.mattermost.com/administration/config-settings.html#experimental-channel-sidebar-experimental>`_. 
+
+
+When configured by the System Admin, users can enable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include:
 
 **Collapsible categories**: Collapse categories in the sidebar (e.g., favorites, public channels, private channels, and direct messages) to reduce unnecessary scrolling. When collapsed, only unread channels will appear in the corresponding category.
 
