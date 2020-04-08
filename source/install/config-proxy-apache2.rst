@@ -11,10 +11,10 @@ The Apache2 proxy configuration is done through the ``/etc/apache2/sites-availab
 
 Copy the `default` configuration file found in the same directory.
 
-**To configure Apache2 as a proxy**
+**To configure Apache2 as a proxy with or without TLS**
 
 1. SSH into your server.
-2. Make sure the apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
+2. Make sure the apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http``, ``mod_headers`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
 3. Create/open the above mentioned file (000-default or a new subdomain configuration).
 4. Edit your configuration using the guide below:
 
@@ -23,6 +23,8 @@ Copy the `default` configuration file found in the same directory.
 	3. Remember to change the values to match your server's name, etc.
 	4. If you have enabled TLS in the Mattermost settings, you must use the protocol ``wss://`` instead of ``ws://`` in the ``RewriteRule``.
 	5. Save once finished.
+
+*Without TLS*
 
 .. code-block:: apacheconf
 
@@ -49,6 +51,44 @@ Copy the `default` configuration file found in the same directory.
 
 		</VirtualHost>
 
+*With TLS*
+
+.. code-block:: apacheconf
+
+		<VirtualHost *:80>
+		  # If you're not using a subdomain you may need to set a ServerAlias to:
+		  # ServerAlias www.mydomain.com
+		  ServerName mysubdomain.mydomain.com
+		  ServerAdmin hostmaster@mydomain.com
+		  Redirect permanent / https://mysubdomain.mydomain.com/
+		</VirtualHost>
+		<VirtualHost *:443>
+		  # ServerAlias www.mydomain.com
+		  ServerName mysubdomain.mydomain.com
+		  ServerAdmin hostmaster@mydomain.com
+		  SSLEngine on
+		  SSLProtocol +TLSv1.1 +TLSv1.2
+		  SSLCertificateFile /path/to/your/cert.crt
+		  SSLCertificateKeyFile /path/to/your/priv.key
+		  ProxyPreserveHost On
+		  RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+		  RequestHeader set "X-Forwarded-SSL" expr=%{HTTPS}
+		  
+		   # Set web sockets
+		  RewriteEngine On
+		  RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
+		  RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
+		  RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
+		  RewriteRule .* ws://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
+
+		  <Location />
+			Require all granted
+			ProxyPass http://127.0.0.1:8065/
+			ProxyPassReverse http://127.0.0.1:8065/
+			ProxyPassReverseCookieDomain 127.0.0.1 mysubdomain.mydomain.com
+		  </Location>
+
+		</VirtualHost>
 5. Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
 
 6. Restart Apache2
