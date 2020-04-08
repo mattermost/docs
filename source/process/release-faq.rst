@@ -77,7 +77,11 @@ Frequently Asked Questions
 
 **Q: What is community.mattermost kept on?**
  
-- A: For Feature releases community.mattermost is kept on the RCs. For Quality releases keep it on master.
+- A: community.mattermost is kept on the latest released release.
+
+**Q: What is community-release.mattermost kept on?**
+ 
+- A: community-release.mattermost is kept on the currently in progress release. Once the release branch is cut for a release, then community-release.mattermost is updated to that release branch.
  
 **Q: What is community-daily.mattermost kept on?**
  
@@ -115,9 +119,9 @@ Frequently Asked Questions
 
 - A: See instructions here: https://developers.mattermost.com/internal/mobile-build-process/.
 
-**Q: How does updating dependancies work?**
+**Q: How does updating dependencies work?**
  
-- A: Dependancy updates will only occur in feature releases, unless they contain security fixes.
+- A: Dependency updates will only occur in feature releases, unless they contain security fixes.
 
 **Q: What is the process for community PRs?**
 

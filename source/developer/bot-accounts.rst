@@ -63,10 +63,11 @@ User Interface (UI)
 
 RESTful API
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 Use the RESTful API ``POST /bots`` to create a bot. Must have permissions to create bots.
 
 See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to learn more about creating and managing bots through the API.
+
+To authorize your bot via RESTful API use ``curl -i -H 'authorization: Bearer <Access Token>' http://localhost:8065/api/v4/users/me``. **Access Token** is not the ``Token ID`` and won't be visible again once created.
 
 Command Line Interface (CLI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,7 +85,7 @@ Bot accounts which were converted from user accounts will have their authenticat
 Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Plugins can create bot accounts through an ``EnsureBot`` helper function. For an example, see `the Demo Plugin <https://github.com/mattermost/mattermost-plugin-demo/blob/master/server/configuration.go#L189>`_.
+Plugins can create bot accounts through an ``EnsureBot`` helper function. For an example, see `the Demo Plugin <https://github.com/mattermost/mattermost-plugin-demo/blob/master/server/configuration.go#L210-L217>`_.
 
 Bots created by a plugin use the plugin's ID as the creator, unless otherwise specified by the plugin.
 

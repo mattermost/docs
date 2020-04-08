@@ -344,7 +344,7 @@ Mattermost is an open source, self-hosted alternative to proprietary SaaS servic
 
 While you're welcome to use the Mattermost source code under its open source license, Mattermost, Inc. does not offer support or technical advice for proprietary SaaS projects that result in customers potentially being paywalled from their data should they stop paying SaaS fees.
 
-To learn more about why we strongly believe that users and customers should always have access to their data, please read `why we created Mattermost <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__.
+To learn more about why we strongly believe that users and customers should always have access to their data, please read `why we created Mattermost <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`_.
 
 Use Cases
 ------------------
@@ -352,7 +352,7 @@ Use Cases
 Does Mattermost support external guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the _`Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information. 
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
 
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -434,14 +434,6 @@ The following chart highlights the end user features of Mattermost and their sup
 
 * X - Full Support
 * O - Partial support
-
-..  _pre-post-proxy:
-What are pre-proxy and post-proxy relays?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A pre-proxy relay accepts network traffic from a source and forwards it to a corporate proxy such as NGINX. The corporate proxy then transmits the traffic to the final destination.
-
-A post-proxy relay accepts network traffic from a corporate proxy such as NGINX, and transmits it to the final destination.
 
 High Trust Questions
 ----------------------

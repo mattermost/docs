@@ -8,9 +8,12 @@ You have two options if you want users to connect with HTTPS:
 
 The easiest option is to set up TLS on the Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
 
+.. note::
+   Your Mattermost server must be accessible from the Let's Encrypt CA in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to ports 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`_.
+
 **Configure TLS on the Mattermost Server**:
 
-1. In the **System Console** > **General** > **Configuration** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12.
+1. In **System Console > Environment > Web Server** (or **System Console > General > Configuration** in versions prior to 5.12).
   a. Change the **Listen Address** setting to ``:443``.
   b. Change the **Connection Security** setting to ``TLS``.
   c. Change the **Forward port 80 to 443** setting to ``true``.
@@ -36,3 +39,6 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
     b. Change the **TLS Certificate File** setting to the location of the certificate file.
     c. Change the **TLS Key File** setting to the location of the private key file.
     d. Restart the Mattermost server for these changes to take effect.
+
+.. note::
+   Password-protected certificates are not supported.

@@ -1,7 +1,9 @@
 ..  _docker-local-machine:
 
-Production Docker Deployment
+Deploy Mattermost on Docker
 ==============================
+
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback and improvements are welcome and greatly appreciated. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst>`__.
 
 Deploy Mattermost using a multi-node production configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
 
@@ -27,7 +29,7 @@ Production Docker Setup on Ubuntu
 
    .. code:: bash
    
-      curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+      sudo curl -L "https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
 
 3. **Deploy the Mattermost Production Docker** setup by running:
@@ -39,8 +41,20 @@ Production Docker Setup on Ubuntu
        cd mattermost-docker
        docker-compose build
        mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-       chown -R 2000:2000 ./volumes/app/mattermost/
+       sudo chown -R 2000:2000 ./volumes/app/mattermost/
        docker-compose up -d
+
+The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.
+   
+   .. code:: bash
+ 
+       docker network rm mattermost-server_mm-test
+	   
+To verify the current Docker network use the following command to list it (you can access information about the options `here <https://docs.docker.com/engine/reference/commandline/network_ls/>`__):
+   
+   .. code:: bash
+   
+       docker network ls [OPTIONS]
 
 4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__.
 

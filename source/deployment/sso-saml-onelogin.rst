@@ -130,5 +130,3 @@ You can also configure SAML for OneLogin by editing ``config.json`` to enable SA
 .. include:: sso-saml-ldapsync.rst
 
 .. include:: sso-saml-faq.rst
-
-.. include:: sso-saml-troubleshooting.rst

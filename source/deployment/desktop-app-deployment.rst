@@ -105,8 +105,8 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
         echo   "minimizeToTray": false,
         echo   "notifications": {
         echo     "flashWindow": 0,
-                 "bounceIcon": false,
-                 "bounceIconType": 'informational',
+        echo     "bounceIcon": false,
+        echo     "bounceIconType": 'informational',
         echo   },
         echo   "showUnreadBadge": true,
         echo   "useSpellChecker": true,
@@ -123,3 +123,16 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
   4. Use standard software asset management tools to distribute and deploy the batch file to each user.
 
 Once run, the desktop app is added to the user’s local directory, along with the pre-configured config.json file. The installer creates a shortcut for the Desktop App in the user's start menu; if a zip version is used, you need to create the shortcut manually.
+
+Windows App: Silently Removing the app
+------------------------------------------------------
+
+To remove the app silently from the computer of a user, you can run the following command :
+
+  .. code-block:: none
+  
+    %userprofile%\AppData\local\Programs\mattermost-desktop\Uninstall Mattermost.exe /currentuser /S
+    
+  .. note::
+      The exe needs to be closed when this command is run
+  

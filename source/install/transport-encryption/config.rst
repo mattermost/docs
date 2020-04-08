@@ -8,7 +8,7 @@ of the Mattermost cluster, all transports rely on TLS encryption.
 
 **Note:** The transport between the Application servers is not used by default and
 requires additional setup steps. Enhancing the core product to include automatic
-encryption between cluster nodes is in progress and planned for the 5.20 release.
+encryption between cluster nodes is in progress and planned for a later release.
 
 .. figure:: ../../images/transport-encryption.png
 

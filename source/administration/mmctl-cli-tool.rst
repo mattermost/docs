@@ -46,6 +46,7 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
    - `mmctl user`_ - User Management
    - `mmctl version`_ - Version Management
    - `mmctl webhook`_ - Webhook Management
+   - `mmctl websocket`_ - Websocket Management
 
 
 Installing mmctl
@@ -556,7 +557,7 @@ mmctl channel list
 
 **Description**
 
-  List all channels on specified teams. Archived channels are appended with '(archived)'.
+  List all public and archived channels on specified teams. Archived channels are appended with '(archived)'.
 
 **Format**
 
@@ -892,7 +893,10 @@ mmctl config
 Configuration settings.
 
   Child Commands
+    -  `mmctl config edit`_ - Edit the configuration settings
     -  `mmctl config get`_ - Get the value of a configuration setting
+    -  `mmctl config reset`_ - Reset the configuration
+    -  `mmctl config set`_ - Set the value of a configuration
     -  `mmctl config show`_ - Writes the server configuration to STDOUT
 
 **Options**
@@ -900,6 +904,39 @@ Configuration settings.
 .. code-block:: sh
 
    -h, --help   help for config
+
+mmctl config edit
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Opens the editor defined in the EDITOR environment variable to modify the server's configuration and then uploads it.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl config edit [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  config edit
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for edit
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config get
 ^^^^^^^^^^^^^^^^^
@@ -931,6 +968,73 @@ mmctl config get
 .. code-block:: sh
 
    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl config reset
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+ Resets the value of a config setting by its name in dot notation or a setting section. Accepts multiple values for array settings.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl config reset [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  config reset SqlSettings.DriverName LogSettings
+
+**Options**
+
+.. code-block:: sh
+
+  --confirm   Confirm you really want to reset all configuration settings to its default value
+  -h, --help      help for reset
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl config set
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Sets the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl config set [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   config set SqlSettings.DriverName mysql
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for set
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --strict
 
 mmctl config show
 ^^^^^^^^^^^^^^^^^
@@ -1293,7 +1397,10 @@ mmctl group list-ldap
 mmctl ldap
 ----------
 
-LDAP related utilities.
+LDAP-related utilities.
+
+Child Commands
+  -  `mmctl ldap sync`_ - Sync all LDAP users and groups
 
 **Options**
 
@@ -1821,6 +1928,7 @@ Management of teams.
 
 Child Commands
   -  `mmctl team add`_ - Add teams
+  -  `mmctl team archive`_ - Archive some teams
   -  `mmctl team create`_ - Create teams
   -  `mmctl team delete`_ - Delete teams
   -  `mmctl team list`_ - List teams
@@ -1865,6 +1973,39 @@ mmctl team add
 
     --format string   the format of the command output [plain, json] (default "plain")
 
+mmctl team archive
+^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Archives a team along with all related information including posts from the database.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl team archive [teams] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  team archive myteam
+
+**Options**
+
+.. code-block:: sh
+
+  --confirm   Confirm you really want to archive the team and a DB backup has been performed.
+  -h, --help   help for archive
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+ --format string                the format of the command output [plain, json] (default "plain")
+ --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+ --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team create
 ^^^^^^^^^^^^^^^^^^
@@ -2106,6 +2247,7 @@ mmctl user
 Management of users.
 
 Child Commands
+  -  `mmctl user activate`_ - Activate a user
   -  `mmctl user create`_ - Create user
   -  `mmctl user deactivate`_ - Deactivate user
   -  `mmctl user email`_ - Set user email
@@ -2119,6 +2261,42 @@ Child Commands
 .. code-block:: sh
 
    -h, --help       help for user
+
+
+mmctl user activate
+^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+ Activate users that have been deactivated.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user activate [emails, usernames, userIds] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user activate user@example.com
+   user activate username
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help           help for activate
+
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+ --format string                the format of the command output [plain, json] (default "plain")
+ --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+ --strict                       will only run commands if the mmctl version matches the server one
 
 
 mmctl user create
@@ -2360,9 +2538,60 @@ mmctl user search
 mmctl version
 -------------
 
-This command will be available in a future release.
+**Description**
+
+  Prints the version of mmctl.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl version [flags]
+
+**Options**
+
+.. code-block:: sh
+
+    -h, --help       help for version
+
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook
 -------------
 
 This command will be available in a future release.
+
+mmctl websocket
+-------------
+
+**Description**
+
+  Display websocket in a human-readable format.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl websocket [flags]
+
+**Options**
+
+.. code-block:: sh
+
+    -h, --help       help for websocket
+
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --strict                       will only run commands if the mmctl version matches the server one
