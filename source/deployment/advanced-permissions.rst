@@ -75,9 +75,6 @@ These settings are applicable only to Guests and Members. System, Team, and Chan
 
 The availability of channel moderation settings can also be affected by existing system and team permissions configurations. If there are existing configurations that override the channel settings you would like to apply, it will be indicated in the UI. These settings can then be adjusted in the relevant panel in the **Permissions** section of the System Console. 
 
-This feature includes the ability to set channel moderation settings in the **Team Override Scheme** so Public and Private channels have individual moderation settings. In some cases, permissions applied in the **Team Override Scheme** take precedence and affect the availability of certain settings. This is indicated in the **Channel Moderation (Beta)** UI where applicable.  
-
-
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
