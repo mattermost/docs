@@ -13,7 +13,7 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 Replying to Messages
 ---------------------
 
-Click the reply link (arrow icon) next to any message. This keeps conversations organized in threads. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+Click the reply link (arrow icon when hovered over message) next to any message. This keeps conversations organized in threads. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
 Clicking the reply link will open a sidebar on the right-hand side. To expand the right-hand sidebar to its full width, click the expand/shrink icon with two arrows at the top of the sidebar. To shrink the right-hand sidebar to its original width, click the same expand/shrink icon.
 
