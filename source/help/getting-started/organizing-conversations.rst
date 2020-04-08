@@ -131,4 +131,22 @@ This will add the channel to a "Favorites" section in the top of the sidebar, so
 
 To remove a channel from the "Favorites" section, select the "Favorite" option again.
 
+--------------------------------------------
+Experimental: Channel Organization Features
+--------------------------------------------
+
+Join us in testing an experimental feature set offering additional functionality for managing channels in your sidebar. The features can be enabled using an opt-in config setting configured by a System Admin: `ExperimentalChannelSidebar <https://docs.mattermost.com/administration/config-settings.html#experimental-channel-sidebar-experimental>`_. Features include:
+
+**Collapsible categories**: Collapse categories in the sidebar (e.g., favorites, public channels, private channels, and direct messages) to reduce unnecessary scrolling. When collapsed, only unread channels will appear in the corresponding category.
+
+**Unread filter**: Catch up on all your unread channels with a one-click unreads filter. When enabled, you'll see only unread channels in the sidebar.
+
+**History arrows**: Navigate recently viewed channels more easily with arrows to move back and forth through channel history. Available in the Desktop app only.
+
+`Learn more about upcoming additions to this feature set and give us feedback here <https://about.mattermost.com/default-sidebar/>`_.
+
+ .. image:: ../../images/sidebar-phase-1.gif
+       :scale: 10
+
+
    
