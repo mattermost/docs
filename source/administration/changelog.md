@@ -188,6 +188,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.19.2, release day TBD**
+  - Fixing an issue with a data race on post properties. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
+  - Fixing an issue where a channel appears twice in the channel sidebar if the channels are created with a certain arrangement of characters.
 - **v5.19.1, released 2020-01-21**
   - Fixed a regression affecting v5.18 and v5.19 where some users were experiencing client-side performance issues. This was mainly affecting users with more than 100 channels listed in the channel sidebar and with channels sorted alphabetically. [MM-20349](https://mattermost.atlassian.net/browse/MM-20349)
 - **v5.19.0, released 2020-01-16**
