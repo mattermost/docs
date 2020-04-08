@@ -3607,7 +3607,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disabled: Users cannot access the experimental channel sidebar feature set.  
+**Disabled:** Users cannot access the experimental channel sidebar feature set.  
 
 Enabled (Default On): Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_ 
 
