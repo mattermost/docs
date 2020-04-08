@@ -11,7 +11,7 @@ The success of Mattermost as an open source platform for messaging-based workflo
 The Mattermost community has two parts, Users and Contributors, detailed below.
 
 .. tip :: 
-  Interested to contribute to Mattermost? `Learn about all the ways to get involved with our community <https://mattermost.com/contribute/>`_.
+  Interested in contributing to Mattermost? `Learn about all the ways to get involved with our community <https://mattermost.com/contribute/>`_.
 
 .. contents::
   :backlinks: top
