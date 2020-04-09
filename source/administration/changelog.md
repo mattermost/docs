@@ -10,7 +10,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
- - v5.9.0 as our Extended Support Release (ESR) has come to the end of its lifecycle. v5.19.0 will continue to be our current existing ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
+ - v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
 
 ### Breaking Changes
 
@@ -29,7 +29,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability to reorder teams on the sidebar via drag-and-drop.
  - Added new keyboard shortcuts that allow users to switch to the next or previous team using ``Ctrl/⌘ + Alt + Up/Down`` and switch to a specific team using ``Ctrl/⌘ + Alt + #``.
 
-#### Added an Unarchive Channel option to archived channels menu (Beta)
+#### Unarchive Channel option in the archived channels menu (Beta)
  - Added the ability for users to restore archived channels via the Mattermost interface.
  
 #### Channel sidebar reorganization features (Experimental)
