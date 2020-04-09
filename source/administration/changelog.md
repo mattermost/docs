@@ -190,7 +190,7 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
 
 - **v5.19.2, release day TBD**
   - Fixing an issue with a data race on post properties. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
-  - Fixing an issue where a channel appears twice in the channel sidebar if the channels are created with a certain arrangement of characters.
+  - Fixing an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel is created with a certain arrangement of characters. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
 - **v5.19.1, released 2020-01-21**
   - Fixed a regression affecting v5.18 and v5.19 where some users were experiencing client-side performance issues. This was mainly affecting users with more than 100 channels listed in the channel sidebar and with channels sorted alphabetically. [MM-20349](https://mattermost.atlassian.net/browse/MM-20349)
 - **v5.19.0, released 2020-01-16**
