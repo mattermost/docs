@@ -114,7 +114,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``channel_scheme_updated`` Websocket Event.
  
 ### Known Issues
- - 
+ - Batched emails are still sent even if any activity from the user is detected.
+ - Channel description popover is displaced when a banner is present.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
