@@ -4061,18 +4061,18 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
 
 Syslog port
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
+The port that the syslog server is listening on.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogPort": []`` with string array input consisting of a port number.            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog tag
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
+The syslog metadata tag field.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined field tag.             |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined tag field.             |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog cert
@@ -4119,7 +4119,7 @@ This is the maximum age in days a file can reach before triggering rotation. The
 
 File max backups
 ^^^^^^^^^^^^^^
-This is the maximum number of rotated files kept; oldest is deleted first. The default value is 0, indicating no limit on the number of backups. 
+This is the maximum number of rotated files kept; oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxBackups": []`` with numerical input.                                                                             |
