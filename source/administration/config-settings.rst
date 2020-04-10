@@ -28,7 +28,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
-   
+
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
 
@@ -498,7 +498,7 @@ Maximum file size for message attachments entered in megabytes in the System Con
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
-.. note:: 
+.. note::
 If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
 
 
@@ -2207,7 +2207,7 @@ ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
-If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead. 
+If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead.
 Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
 
 If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`__ CLI tool.
@@ -2244,10 +2244,10 @@ Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minute
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
 
-- A value of 0 is unlimited and does not paginate the results. 
-- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting. 
+- A value of 0 is unlimited and does not paginate the results.
+- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input.                                                                                 |
@@ -2472,7 +2472,7 @@ Admin Attribute
 
 (Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
 
-This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used. 
+This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``.                                                     |
@@ -4044,94 +4044,94 @@ The audit settings output audit records to syslog (local or remote server via TL
 Syslog configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: When ``true`` syslog output is enabled. 
-**False**: Syslog output is disabled. 
+**True**: When ``true`` syslog output is enabled.
+**False**: Syslog output is disabled.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogEnabled": []`` with options ``true`` and ``false``.                               |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogEnabled": []`` with options ``true`` and ``false``.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog IP
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
 
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog port
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
 
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog tag
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
 
-+------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined field tag.             |
-+------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog cert
 ^^^^^^^^^^^^^^
 This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
 
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogCert": []`` with string array input consisting of a user-defined field tag.             |
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: When ``true`` file output is enabled. 
-**False**: File output is disabled. 
+**True**: When ``true`` file output is enabled.
+**False**: File output is disabled.
 
-+------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileEnabled": []`` with options ``true`` and ``false``.                               |
-+------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File name
 ^^^^^^^^^^^^^^
 This is the path to the output file location.
 
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileName": []`` with string array input consisting of a user-defined name.                     |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max size MB
 ^^^^^^^^^^^^^^
-This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100. 
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
 
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxSizeMB": []`` with numerical input.                                                    |
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max age days
 ^^^^^^^^^^^^^^
-This is the maximum age in days a file can reach before triggering rotation. There is no default limit, and no limit to the value used. 
+This is the maximum age in days a file can reach before triggering rotation. There is no default limit, and no limit to the value used.
 
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxAgeDays": []`` with numerical input.                                                    |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max backups
 ^^^^^^^^^^^^^^
 This is the maximum number of rotated files kept; oldest is deleted first.
 
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxBackups": []`` with numerical input.                                                    |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File compress
 ^^^^^^^^^^^^^^
 This when “true” rotated files are compressed using ``gzip``.
 
-+------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileCompress": []`` with numerical input.                                                    |
-+------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Settings
 ~~~~~~~~~~~~~~~~~
