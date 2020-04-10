@@ -11,7 +11,7 @@ Mattermost offers a host of options for connecting to systems on your private ne
 
 1. `Open source, self-hosted integrations (private and public cloud)`_.
 2. `Slack-compatible webhooks (private and public cloud)`_.
-3. `700 app integrations using Zapier (public cloud only)`_.
+3. `Over 700 app integrations using Zapier (public cloud only)`_.
 4. `Self-hosted bots interfacing to other systems (private and public cloud)`_.
 
 **Custom integrations options include:** 
