@@ -4080,7 +4080,7 @@ Syslog cert
 This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogCert": []`` with string array input consisting of a user-defined field tag.             |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogCert": []`` with string array input consisting of a path to the location of the certificate.             |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File configuration options
