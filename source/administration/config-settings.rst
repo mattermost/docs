@@ -4061,7 +4061,7 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
 
 Syslog port
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
+The port that the syslog server is listening on.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
