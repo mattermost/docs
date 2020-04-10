@@ -4056,7 +4056,7 @@ Syslog IP
 The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string input consisting of an IP address or domain name.                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog port
@@ -4064,7 +4064,7 @@ Syslog port
 The port that the syslog server is listening on.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogPort": []`` with string array input consisting of a port number.            |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogPort": []`` with string input consisting of a port number.                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog tag
@@ -4072,7 +4072,7 @@ Syslog tag
 The syslog metadata tag field.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined tag field.             |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string input consisting of a user-defined tag field.                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog cert
@@ -4080,7 +4080,7 @@ Syslog cert
 This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SysLogCert": []`` with string array input consisting of a user-defined field tag.                                      |
+| This feature's ``config.json`` setting is ``"SysLogCert": []`` with string input consisting of a user-defined field tag.                                            |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File configuration options
@@ -4098,7 +4098,7 @@ File name
 This is the path to the output file location.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileName": []`` with string array input consisting of a user-defined name.                                              |
+| This feature's ``config.json`` setting is ``"FileName": []`` with string input consisting of a user-defined name.                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max size MB
