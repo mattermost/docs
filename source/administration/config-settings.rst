@@ -4098,7 +4098,7 @@ File name
 This is the path to the output file location.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileName": []`` with string array input consisting of a user-defined name.                     |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileName": []`` with string array input consisting of a user-defined path.                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max size MB
