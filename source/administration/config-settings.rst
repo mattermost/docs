@@ -4039,17 +4039,100 @@ Experimental Settings only in config.json
 
 Audit settings
 ~~~~~~~~~~~~~~~
-The audit settings mirror audit records to a file in the event that a centralized syslog server is not available. The audit settings are restricted by default. 
+The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default.
 
-Available configuration options:
-* File name
-* Max size
-* Max age
+Syslog configuration options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rotation configuration options: 
-* Rotate files based on max size and max age
-* Delete as needed based on max backups
+**True**: When ``true`` syslog output is enabled. 
+**False**: Syslog output is disabled. 
 
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogEnabled": []`` with options ``true`` and ``false``.                               |
++------------------------------------------------------------------------------------------------------------------+
+
+Syslog IP
+^^^^^^^^^^^^^^
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
++------------------------------------------------------------------------------------------------------------------+
+
+Syslog port
+^^^^^^^^^^^^^^
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
++------------------------------------------------------------------------------------------------------------------+
+
+Syslog tag
+^^^^^^^^^^^^^^
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined field tag.             |
++------------------------------------------------------------------------------------------------------------------+
+
+Syslog cert
+^^^^^^^^^^^^^^
+This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogCert": []`` with string array input consisting of a user-defined field tag.             |
++------------------------------------------------------------------------------------------------------------------+
+
+
+File configuration options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: When ``true`` file output is enabled. 
+**False**: File output is disabled. 
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileEnabled": []`` with options ``true`` and ``false``.                               |
++------------------------------------------------------------------------------------------------------------------+
+
+File name
+^^^^^^^^^^^^^^
+This is the path to the output file location.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileName": []`` with string array input consisting of a user-defined name.                     |
++------------------------------------------------------------------------------------------------------------------+
+
+File max size MB
+^^^^^^^^^^^^^^
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100. 
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxSizeMB": []`` with numerical input.                                                    |
++------------------------------------------------------------------------------------------------------------------+
+
+File max age days
+^^^^^^^^^^^^^^
+This is the maximum age in days a file can reach before triggering rotation. There is no default limit, and no limit to the value used. 
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxAgeDays": []`` with numerical input.                                                    |
++------------------------------------------------------------------------------------------------------------------+
+
+File max backups
+^^^^^^^^^^^^^^
+This is the maximum number of rotated files kept; oldest is deleted first.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxBackups": []`` with numerical input.                                                    |
++------------------------------------------------------------------------------------------------------------------+
+
+File compress
+^^^^^^^^^^^^^^
+This when “true” rotated files are compressed using ``gzip``.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileCompress": []`` with numerical input.                                                    |
++------------------------------------------------------------------------------------------------------------------+
 
 Service Settings
 ~~~~~~~~~~~~~~~~~
