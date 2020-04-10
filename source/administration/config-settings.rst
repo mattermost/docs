@@ -4069,7 +4069,7 @@ The port that the syslog server is listening on.
 
 Syslog tag
 ^^^^^^^^^^^^^^
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
+The syslog metadata tag field.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined field tag.             |
