@@ -4080,7 +4080,7 @@ Syslog cert
 This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogCert": []`` with string array input consisting of a user-defined field tag.             |
+| This feature's ``config.json`` setting is ``"SysLogCert": []`` with string array input consisting of a user-defined field tag.                                      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File configuration options
@@ -4090,7 +4090,7 @@ File configuration options
 **False**: File output is disabled.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileEnabled": []`` with options ``true`` and ``false``.                               |
+| This feature's ``config.json`` setting is ``"FileEnabled": []`` with options ``true`` and ``false``.                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File name
@@ -4098,7 +4098,7 @@ File name
 This is the path to the output file location.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileName": []`` with string array input consisting of a user-defined name.                     |
+| This feature's ``config.json`` setting is ``"FileName": []`` with string array input consisting of a user-defined name.                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max size MB
@@ -4106,23 +4106,23 @@ File max size MB
 This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxSizeMB": []`` with numerical input.                                                    |
+| This feature's ``config.json`` setting is ``"FileMaxSizeMB": []`` with numerical input.                                                                             |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max age days
 ^^^^^^^^^^^^^^
-This is the maximum age in days a file can reach before triggering rotation. There is no default limit, and no limit to the value used.
+This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxAgeDays": []`` with numerical input.                                                    |
+| This feature's ``config.json`` setting is ``"FileMaxAgeDays": []`` with numerical input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max backups
 ^^^^^^^^^^^^^^
-This is the maximum number of rotated files kept; oldest is deleted first.
+This is the maximum number of rotated files kept; oldest is deleted first. The default value is 0, indicating no limit on the number of backups. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxBackups": []`` with numerical input.                                                    |
+| This feature's ``config.json`` setting is ``"FileMaxBackups": []`` with numerical input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File compress
@@ -4130,7 +4130,7 @@ File compress
 This when “true” rotated files are compressed using ``gzip``.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileCompress": []`` with numerical input.                                                    |
+| This feature's ``config.json`` setting is ``"FileCompress": []`` with options ``true`` and ``false``.                                                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Settings
