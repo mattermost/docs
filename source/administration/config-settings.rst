@@ -4064,7 +4064,7 @@ Syslog port
 The port that the syslog server is listening on.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogIP": []`` with string array input consisting of an IP address or domain name.            |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogPort": []`` with string array input consisting of a port number.            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog tag
