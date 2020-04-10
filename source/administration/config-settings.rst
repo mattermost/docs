@@ -4072,7 +4072,7 @@ Syslog tag
 The syslog metadata tag field.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined field tag.             |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsSysLogTag": []`` with string array input consisting of a user-defined tag field.             |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog cert
