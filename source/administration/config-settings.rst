@@ -4037,6 +4037,20 @@ Changes to this setting require a server restart before taking effect.
 Experimental Settings only in config.json
 -----------------------------------------
 
+Audit settings
+~~~~~~~~~~~~~~~
+The audit settings mirror audit records to a file in the event that a centralized syslog server is not available. The audit settings are restricted by default. 
+
+Available configuration options:
+* File name
+* Max size
+* Max age
+
+Rotation configuration options: 
+* Rotate files based on max size and max age
+* Delete as needed based on max backups
+
+
 Service Settings
 ~~~~~~~~~~~~~~~~~
 Group Unread Channels (Experimental)
