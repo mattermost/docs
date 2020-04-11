@@ -31,7 +31,6 @@ We have done performance testing of 60,000 concurrent users and 60 million posts
 
 Mattermost provides an open source, well-documented `load test simulator <https://github.com/mattermost/mattermost-load-test>`_ to verify that your Mattermost deployment can achieve the stated scale benchmarks ahead of production deployment.
  
-
 Community Questions
 -------------------
 
@@ -376,16 +375,6 @@ The following chart highlights the end user features of Mattermost and their sup
 .. csv-table::
     :header: "Feature", "Web", "Desktop", "Mobile"
 
-    "**CHANNELS**"
-    "Create a new channel", "X", "X", "X"
-    "Join a channel", "X", "X", "X"
-    "Leave a channel", "X", "X", "X"
-    "Favorite a channel", "X", "X", "X"
-    "Mute a channel", "X", "X", "X"
-    "Manage members", "X", "X", "X"
-    "Add members", "X", "X", "X"
-    "Edit channel", "X", "X", "X"
-    "Archive members", "X", "X", "X"
     **MESSAGES**
     "Threaded messages", "X", "X", "X"
     "Markdown", "X", "X", "O"
@@ -396,11 +385,31 @@ The following chart highlights the end user features of Mattermost and their sup
     "@ mentions", "X", "X", "X"
     "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X", "v1.17"
+    "Search highlighting", "X", "X"
     "View/marking pinned or flagged posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
     "Notifications", "X", "X", "X"
+    "**CHANNELS**"
+    "Create a new channel", "X", "X", "X"
+    "Join a channel", "X", "X", "X"
+    "Leave a channel", "X", "X", "X"
+    "Favorite a channel", "X", "X", "X"
+    "Mute a channel", "X", "X", "X"
+    "Manage members", "X", "X", "X"
+    "Add members", "X", "X", "X"
+    "Edit channel", "X", "X", "X"
+    "Archive members", "X", "X", "X"
+    **TEAMS**
+    "Multi-team support for notifications", "X", "X", "X"
+    "Team switching", "X", "X", "X" 
+    "Team-based theming", "X", "X", "X"
+    "Join existing team", "X", "X", "X"
+    "Create a new team", "X", "X",
+    "Get team invite link", "X", "X",
+    "Add members to team", "X", "X",
+    "Manage members", "X", "X",
+    "Leave team", "X", "X",
     **INTEGRATIONS**
     "Slash commands", "X", "X", "O"
     "Server-side plugins", "X", "X", "X"
@@ -411,21 +420,17 @@ The following chart highlights the end user features of Mattermost and their sup
     "Message attachments", "X", "X", "X"
     "Message buttons", "X", "X", "X"
     "Message menus", "X", "X", "X"
-    **TEAMS**
-    "Multi-team support for notifications", "X", "X", "X"
-    "Team switching", "X", "X", "X" 
-    "Team-based theming", "X", "X", "X"
-    "Create a new team", "X", "X",
-    "Join existing team", "X", "X", "X"
-    "Get team invite link", "X", "X",
-    "Add members to team", "X", "X",
-    "Manage members", "X", "X",
-    "Leave team", "X", "X",
+    **AUTHENTICATION**
+    "Email-password login", "X", "X", "X"
+    "AD/LDAP", "X", "X", "X"
+    "SAML SSO", "X", "X", "X"
+    "GitLab SSO", "X", "X", "X"
+    "Office 365 SSO", "X", "X", "X"
+    "Google SSO", "X", "X"
     **OTHER**
-    "Custom user interface themes", "X", "X", "O"
     "Localization for 16 languages", "X", "X", "X"
+    "Custom user interface themes", "X", "X", "O"
     "Account settings", "X", "X", "O"
-    "OAuth login with Google/Office 365", "X", "X",
 
 **Legend:**
 
