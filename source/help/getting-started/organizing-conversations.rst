@@ -90,7 +90,7 @@ Click the channel name at the top of the center pane to access the drop-down men
 Archiving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to.  In E10 and E20, the System Administrator is able to `restrict this permission <https://docs.mattermost.com/deployment/advanced-permissions.html#system-scheme-e10>`_.
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to. In E10 and E20, the System Administrator is able to `restrict this permission <https://docs.mattermost.com/deployment/advanced-permissions.html#system-scheme-e10>`_.
 
 When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
@@ -98,6 +98,17 @@ Moreover, when a channel is archived, the contents cannot be viewed, shared or s
 
 1. Ask your System Administrator to set ``ExperimentalViewArchivedChannels`` to ``true`` in config.json to allow users to view, share and search for content of channels that have been archived; or
 2. Leave the channel open, but post a message in the channel saying it's considered archived, such as ``# This channel is archived.``
+
+Unarchiving a Channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Unarchive Channel**. Anyone can archive the Public Channels or Private Channels they belong to.
+
+    .. image:: ../../images/unarchive-channel.png
+
+When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :doc:`data retention policy <data-retention>`.
+
+Moreover, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and team admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
 
 Converting Public Channels to Private (and vice versa)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
