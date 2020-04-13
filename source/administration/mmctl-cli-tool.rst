@@ -26,8 +26,10 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
 
 .. code-block:: sh
 
-       --format string    the format of the command output [plain, json] (default "plain")
-       -h, --help         help for mmctl
+       --format string               the format of the command output [plain, json] (default "plain")
+       -h, --help                    help for mmctl
+       --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+       --strict                      will only run commands if the mmctl version matches the server one
 
 **Commands**
    - `mmctl auth`_ - Authentication Management
@@ -88,7 +90,7 @@ The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to ha
   make build
 
 
-Authenticating and Logging In
+Authenticating and logging in
 -----------------------------
 
 mmctl auth
@@ -137,11 +139,13 @@ mmctl auth clean
 
   -h, --help   help for clean
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 
 mmctl auth current
@@ -169,11 +173,13 @@ mmctl auth current
 
      -h, --help   help for current
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 
 mmctl auth delete
@@ -201,11 +207,13 @@ mmctl auth delete
 
      -h, --help   help for delete
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth list
 ^^^^^^^^^^^^^^^^^
@@ -232,11 +240,13 @@ mmctl auth list
 
      -h, --help   help for list
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth login
 ^^^^^^^^^^^^^^^^^
@@ -272,11 +282,13 @@ mmctl auth login
   -p, --password string       Password for the credentials
   -u, --username string       Username for the credentials
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth renew
 ^^^^^^^^^^^^^^^^^
@@ -306,11 +318,13 @@ mmctl auth renew
   -m, --mfa-token string      MFA token for the credentials
   -p, --password string       Password for the credentials
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth set
 ^^^^^^^^^^^^^^^^^
@@ -337,11 +351,13 @@ mmctl auth set
 
    -h, --help   help for set
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 
 Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then enter your username and password
@@ -370,7 +386,7 @@ To log in with MFA, use the ``--mfa-token`` flag:
 
    $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret --mfa-token 123456
 
-Access Tokens
+Access tokens
 ^^^^^^^^^^^^^
 
 You can generate and use a personal access token to authenticate with a server, instead of using username and password to log in:
@@ -413,7 +429,7 @@ And now we can run commands normally:
    auth_service:
 
 
-Installing Shell Completions
+Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
@@ -440,6 +456,7 @@ Commands for channel management.
     -  `mmctl channel create`_ - Create a channel
     -  `mmctl channel list`_ - List all channels on specified teams
     -  `mmctl channel make_private`_ - Set a channel's type to "private"
+    -  `mmctl channel modify`_ - Modify a channel's type (private/public)
     -  `mmctl channel remove`_ - Remove users from a channel
     -  `mmctl channel rename`_ - Rename a channel
     -  `mmctl channel restore`_ - Restore a channel from the archive
@@ -476,11 +493,13 @@ mmctl channel add
 
   -h, --help   help for add
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel archive
 ^^^^^^^^^^^^^^^^^^^^
@@ -508,11 +527,13 @@ mmctl channel archive
 
    -h, --help   help for archive
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel create
 ^^^^^^^^^^^^^^^^^
@@ -546,11 +567,13 @@ mmctl channel create
     --purpose string        Channel purpose
     --team string           Team name or ID
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel list
 ^^^^^^^^^^^^^^^^^
@@ -578,11 +601,13 @@ mmctl channel list
   -h, --help   help for list
 
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-   --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel make_private
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -610,11 +635,49 @@ mmctl channel make_private
 
   -h, --help   help for make_private
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
- --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl channel modify
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+   Change the public/private type of a channel. Channel can be specified by [team]:[channel]. ie. myteam:mychannel or by channel ID.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl channel modify [channel] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    channel modify myteam:mychannel --private
+    channel modify channelId --public
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help    help for modify
+    --private   Convert the channel to a private channel
+    --public    Convert the channel to a public channel
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 
 mmctl channel remove
@@ -644,11 +707,13 @@ mmctl channel remove
   --all-users   Remove all users from the indicated channel
   -h, --help    help for remove
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel rename
 ^^^^^^^^^^^^^^^^^^^
@@ -676,11 +741,13 @@ mmctl channel rename
   --display_name string   Channel Display Name
   -h, --help              help for rename
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel restore
 ^^^^^^^^^^^^^^^^^^^^^
@@ -707,11 +774,13 @@ mmctl channel restore
 
    -h, --help   help for restore
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 
 mmctl channel search
@@ -742,11 +811,13 @@ mmctl channel search
   -h, --help      help for search
   --team string   Team name or ID
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "plain")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --strict                      will only run commands if the mmctl version matches the server one
 
 
 mmctl command
