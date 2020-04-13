@@ -40,7 +40,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### User Interface (UI)
  - Added several UI improvements, such as added a "Close Group Message" option to Group Message menu.
  - Updated the permalink view.
- - Added a keyboard shortcut to open/close the right-hand sidebar
+ - Added a keyboard shortcut to open/close the right-hand sidebar.
  - Added a keyboard shortcut to add reactions to last message in a channel or a thread.
  - Added infinite scroll to Select Teams screen.
  
