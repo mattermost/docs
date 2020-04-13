@@ -221,6 +221,15 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
+Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+
++-----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
++-----------------------------------------------------------------------------------------+
+
+
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in June 16, 2018 release*
