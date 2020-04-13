@@ -69,7 +69,7 @@ From v5.22, the channel moderation settings allow Admins to restrict actions wit
 - **Make channel read-only:** The ability for Admins to turn off posting in specified channels.
 - **Restrict reactions:** Turn off the ability for members and guests to post reactions.
 - **Restrict channel mentions:** Turn off the ability for users to post channel wide mentions (@all/channel/here) in specified channels.
-- **Channel member management:** Only Admins can add and remove channel members in the specified channels.
+- **Channel member management:** Only Admins have the ability to add and remove channel members in the specified channels.
 
 These settings are modified in **System Console > User Management > Channels**. 
 
@@ -147,7 +147,7 @@ Read only channels
 
 **Configure a channel so that members can post/reply/react but guests can only read and react.**
 
-1. Navigate to **System Console > User Management > Channels** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Navigate to **System Console > User Management > Channels**.
 2. Select **Edit** next to the name of the channel you want to configure.
 3. In the **Create Posts** panel, uncheck **Guests**. 
 4. In the **Post Reactions** panel, uncheck **Guests** if required. 
@@ -158,7 +158,7 @@ The channel is available for all members and guests to access, but guests can on
 **Create an Announcement Channel where only channel admins are able to post.**
 
 1. Create a new channel (either Public or Private). 
-2. Navigate to **System Console > User Management > Channels** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+2. Navigate to **System Console > User Management > Channels**.
 2. Select **Edit** next to the name of the channel you just created (you may need to search for it).
 3. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
 4. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
