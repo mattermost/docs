@@ -223,7 +223,7 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 
 Idle Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set an explicit idle timeout in the HTTP server. This is the duration allowed before an idle connection is disconnected.
+Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
