@@ -29,7 +29,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability to reorder teams on the sidebar via drag-and-drop.
  - Added new keyboard shortcuts that allow users to switch to the next or previous team using ``Ctrl/⌘ + Alt + Up/Down`` and switch to a specific team using ``Ctrl/⌘ + Alt + #``.
 
-#### Unarchive Channel option in the archived channels menu (Beta)
+#### Unarchive Channel option in the archived channels menu
  - Added the ability for users to restore archived channels via the Mattermost interface.
  
 #### Channel sidebar reorganization features (Experimental)
