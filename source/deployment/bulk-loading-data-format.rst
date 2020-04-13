@@ -42,7 +42,7 @@ The identifiers for each object are listed in the following table:
   UserNotifyProps, *username*
   UserTeamMembership, "*team*, *username*"
   UserChannelMembership, "*team*, *channel*, *username*"
-  Post, "*channel*, *message*, *create_at*"
+  Post, "*channel*, *message*, *create_at*, *props*"
   Reply, "*post*, *message*, *create_at*"
   Reaction, "*post*, *emoji_name*, *create_at*"
   Attachment, "*path*"
