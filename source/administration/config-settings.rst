@@ -4106,7 +4106,7 @@ File max size MB
 This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxSizeMB": 100`` with numerical input.                                                    |
+| This feature's ``config.json`` setting is ``"ExperimentalAuditSettingsFileMaxSizeMB": 100`` with numerical input.                                                   |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max age days
