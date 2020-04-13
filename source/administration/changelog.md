@@ -86,12 +86,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
     - Added ``EnableOpenTracing``, to 
-    - Added ``IdleTimeout``, to 
+    - Added ``IdleTimeout``, to set an explicit idle timeout in the HTTP server.
     - Added ``ExperimentalChannelSidebarOrganization``, to 
  - Under ``NotificationLogSettings`` in ``config.json``:
     - Added ``SMTPServerTimeout``, to 
- - Added ``Office365Settings`` object to add support for Office365Settings Directory (tenant) Id.
- - Added ``ExperimentalAuditSettings`` object to
+ - Added ``Office365Settings`` object, to add support for Office365Settings Directory (tenant) Id.
+ - Added ``ExperimentalAuditSettings`` object, to enable audit settings to output audit records to syslog (local or remote server via TLS) and/or to a local file.
 
 ### Open Source Components
  - Added ``core-js`` in https://github.com/mattermost/mattermost-redux.
