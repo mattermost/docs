@@ -4084,6 +4084,27 @@ This is the path to the syslog server certificate for TLS connections (``.crt`` 
 | This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate.                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Syslog insecure
+^^^^^^^^^^^^^^
+This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any
+host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks.
+
+**Note**: This should be used only for testing and not in a production environment.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogInsecure": false`` with options ``true`` and ``false``.                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog max queue size
+^^^^^^^^^^^^^^^^^^^^^
+This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records.
+
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogMaxQueueSize": 1000`` with numerical input.                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 File configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4123,7 +4144,7 @@ This is the maximum age in days a file can reach before triggering rotation. The
 
 File max backups
 ^^^^^^^^^^^^^^
-This is the maximum number of rotated files kept; oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input.                                                                              |
@@ -4131,10 +4152,20 @@ This is the maximum number of rotated files kept; oldest is deleted first. The d
 
 File compress
 ^^^^^^^^^^^^^^
-This when “true” rotated files are compressed using ``gzip``.
+When “true” rotated files are compressed using ``gzip``.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``.                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File max queue size
+^^^^^^^^^^^^^^^^^^^
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records.
+
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input.                                                                       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Settings
