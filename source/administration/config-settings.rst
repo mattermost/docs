@@ -4037,10 +4037,12 @@ Experimental Settings only in config.json
 
 Audit settings
 ~~~~~~~~~~~~~~~
-The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default.
+The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
 Syslog configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
 
 **True**: When ``true`` syslog output is enabled.
 
@@ -4084,6 +4086,8 @@ This is the path to the syslog server certificate for TLS connections (``.crt`` 
 
 File configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation.
 
 **True**: When ``true`` file output is enabled.
 
