@@ -159,10 +159,10 @@ The channel is available for all members and guests to access, but guests can on
 
 1. Create a new channel (either Public or Private). 
 2. Navigate to **System Console > User Management > Channels**.
-2. Select **Edit** next to the name of the channel you just created (you may need to search for it).
-3. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
-4. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
-5. Choose **Save**. 
+3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
+4. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
+5. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
+6. Choose **Save**. 
 
 The channel is available for all members and guests to access but only admins can post.
 
