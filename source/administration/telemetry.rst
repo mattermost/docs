@@ -77,7 +77,7 @@ Non-personally Identifiable Error Information, distinguished by end users and Sy
 Non-personally Identifiable Diagnostic Information, distinguished by end users and System Admins
   Boolean when the following events occur:
 
-  - *Team and Account Setup Diagnostics:* Account creation via email, invite or UI, account creation page view, account creation completion; tutorial step and tip completion or opt out, team creation page view, team name and URL entry, team creation completion
+  - *Team and Account Setup Diagnostics:* Account creation via email, invite or UI, account creation page view, account creation completion; tutorial step and tip completion or opt out, team creation page view, team name and URL entry, team creation completion. Click events on signup_email, select_team, display_name and team_url pages.
   - *Sign-in Diagnostics:* Login succeeded or failed for email, LDAP or SAML/SSO; logout succeeded; switched authentication method from email to LDAP or SAML/SSO or vice versa; reset password; updated password
   - *Navigation Discovery Diagnostics:* Joined a channel from the "More" list, through an invite or by clicking a public link; created a channel, direct, or group direct message conversation; renamed, joined, left or deleted an existing channel; updated header or purpose; added or removed members; updated channel notification preferences; loaded more messages in a channel; switched a channel or a team; opened the "More" modal for channels or direct message conversations; updated team name; invited members; updated account settings
   - *Core Feature Discovery Diagnostics:* Created, edited or deleted a message; posted a message containing a hashtag, link, mention or file attachment; searched for a term; searched for flagged posts or recent mentions
@@ -89,6 +89,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system.  Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
   - *Group Discovery Diagnostics (Enterprise Edition Only):* Provides information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members
+  - *System Console Discovery Diagnostics:* click events on the hamburger menu and menu items: Administrator's Guide, Troubleshooting Forum, Commerical Support, About Mattermost; click events on the menu itesm in the left navigation.
 
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting** in prior versions or **System Console > Environment > Logging** in versions after 5.12.
 
