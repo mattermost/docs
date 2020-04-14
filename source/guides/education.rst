@@ -1,7 +1,7 @@
-Customer Education
+Training & Education
 =====================
 
-Educational material and best practices to get the most out of your Mattermost deployment.
+Training and educatinal material to get the most out of your Mattermost deployment.
 
 Deployment Guides
 -----------------
