@@ -493,7 +493,12 @@ Post object
       <td valign="middle">int</td>
       <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
     </tr>
-        <tr class="row-odd">
+    <tr class="row-odd">
+      <td valign="middle">props</td>
+      <td valign="middle">string</td>
+      <td>The props or attachments for a post. Contains additional formatting information used by integrations and bot posts. For a more detailed explanation see the <a href="https://docs.mattermost.com/developer/message-attachments.html">message attachments documentation</a>.</td>
+    </tr>
+    <tr class="row-odd">
       <td valign="middle">reactions</td>
       <td valign="middle">array</td>
       <td>The emoji reactions to this post. Will be an array of Reaction objects.</td>
