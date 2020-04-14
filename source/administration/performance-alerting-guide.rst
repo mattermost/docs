@@ -115,6 +115,12 @@ Here’s how it’s set on our community server:
 
 .. image:: ../images/perf-9-b.png
 
+Plugin Hooks
+-------------
+
+Number of PLugin hooks called per second...
+
+
 Other Alerts
 -------------
 
