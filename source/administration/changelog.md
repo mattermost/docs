@@ -8,6 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release day: 2020-04-16**
 
+Mattermost v5.22.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Compatibility
 
  - v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
@@ -102,7 +104,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Removed ``jsc-android`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
- - 
+ - Various indexes were added.
 
 ### API Changes
  - Added ``GET api/v4/channels/:channels/moderations`` and ``PUT api/v4/channels/:channels/moderations/patch`` to support channel moderation settings.
