@@ -89,7 +89,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system.  Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
   - *Group Discovery Diagnostics (Enterprise Edition Only):* Provides information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members
-  - *System Console Discovery Diagnostics:* click events on the hamburger menu and menu items: Administrator's Guide, Troubleshooting Forum, Commerical Support, About Mattermost; click events on the menu itesm in the left navigation.
+  - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
 
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting** in prior versions or **System Console > Environment > Logging** in versions after 5.12.
 
