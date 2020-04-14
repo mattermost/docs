@@ -3613,9 +3613,9 @@ Experimental Sidebar Features (Experimental)
 
 **Enabled (Default Off):** Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSidebarFeatures": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
