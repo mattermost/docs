@@ -118,7 +118,7 @@ Here’s how it’s set on our community server:
 Plugin Hooks
 -------------
 
-Number of PLugin hooks called per second...
+Number of Plugin hooks called per second...?
 
 
 Other Alerts
