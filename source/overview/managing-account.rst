@@ -1,17 +1,31 @@
 Account Management
 ----------------------
 
-Mattermost offers a self-service portal where you can manage your subscription and licenses. 
+Mattermost offers a self-service portal where you can manage your Mattermost:
 
-How does the licensing key work?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Subscription purchases
+* Licenses 
+* Account password
+* Organization information
+* Payment methods
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`__.
+How do I get help?
+~~~~~~~~~~~~~~~~~~~~~
+
+My card was declined
+~~~~~~~~~~~~~~~~~~~~~
+
+How do I apply my license key?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How do I delete my account? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 How do I renew the Enterprise Edition subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to `https://licensing.mattermost.com/renew <https://licensing.mattermost.com/renew>`__ and specify the Enterprise Edition you want to renew, the user count, and your contact information. To find the user count you want to renew for, log in to Mattermost as a System Admin and go to **System Console > Site Statistics**, where **Total Active Users** displays the user count on your server.
+Log in to the Customer Portal and select the Enterprise Edition you want to renew, the user count, and your contact information. To find the user count you want to renew for, log in to Mattermost as a System Admin and go to **System Console > Site Statistics**, where **Total Active Users** displays the user count on your server.
 
 After submitting the renewal form, our renewal team will get in contact with you about your new subscription.
 
@@ -22,7 +36,7 @@ For information on what happens when the Enterprise Edition subscription expires
 What happens when the Enterprise Edition subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`__.
+
 
 How is user defined for Enterprise Edition subscriptions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
