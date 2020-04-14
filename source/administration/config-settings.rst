@@ -2704,7 +2704,7 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 Directory (tenant) ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this value by registering Mattermost as an application in your Microsoft or Office account. 
+This value is the ID of the application's AAD directory. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input.                                                                                   |
