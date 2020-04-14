@@ -192,8 +192,8 @@ Description
  Examples
    .. code-block:: none
 
-      ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
-      ./mattermost channel add myteam:mychannel user@example.com username
+      bin/mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      bin/mattermost channel add myteam:mychannel user@example.com username
 
 mattermost channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,8 +214,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost channel archive 8soyabwthjnf9qibfztje5a36h
-      ./mattermost channel archive myteam:mychannel
+      bin/mattermost channel archive 8soyabwthjnf9qibfztje5a36h
+      bin/mattermost channel archive myteam:mychannel
 
 mattermost channel create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,8 +236,8 @@ Description
  Examples
    .. code-block:: none
 
-      ./mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      ./mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+      bin/mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      bin/mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
  Options
    .. code-block:: none
@@ -263,8 +263,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost channel delete 8soyabwthjnf9qibfztje5a36h
-      ./mattermost channel delete myteam:mychannel
+      bin/mattermost channel delete 8soyabwthjnf9qibfztje5a36h
+      bin/mattermost channel delete myteam:mychannel
 
 mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -285,7 +285,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost channel list myteam
+      bin/mattermost channel list myteam
 
 mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -301,7 +301,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost channel modify myteam:mychannel --username myusername --private
+      bin/mattermost channel modify myteam:mychannel --username myusername --private
 
   Options
     .. code-block:: none
@@ -328,8 +328,8 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
-      ./mattermost channel move newteam myteam:mychannel --username myusername
+      bin/mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+      bin/mattermost channel move newteam myteam:mychannel --username myusername
 
   Options
     .. code-block:: none
@@ -355,9 +355,9 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
-      ./mattermost channel remove myteam:mychannel user@example.com username
-      ./mattermost channel remove myteam:mychannel --all-users
+      bin/mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      bin/mattermost channel remove myteam:mychannel user@example.com username
+      bin/mattermost channel remove myteam:mychannel --all-users
 
   Options
     .. code-block:: none
@@ -382,8 +382,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
-      ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+      bin/mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+      bin/mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
 
   Options
     .. code-block:: none
@@ -408,8 +408,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
-      ./mattermost channel restore myteam:mychannel
+      bin/mattermost channel restore 8soyabwthjnf9qibfztje5a36h
+      bin/mattermost channel restore myteam:mychannel
 
 mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,9 +429,9 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost channel search mychannel
-      ./mattermost channel search --team myteam mychannel
-      ./mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
+      bin/mattermost channel search mychannel
+      bin/mattermost channel search --team myteam mychannel
+      bin/mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
 
   Options
     .. code-block:: none
@@ -470,7 +470,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+       bin/mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
   Options
     .. code-block:: none
@@ -505,7 +505,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost command delete commandID
+       bin/mattermost command delete commandID
 
 mattermost command list
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -526,7 +526,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost command list myteam
+       bin/mattermost command list myteam
 
 mattermost command modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -546,7 +546,7 @@ mattermost command modify
   Examples
     .. code-block:: none
 
-       ./mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+       bin/mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
   Options
     .. code-block:: none
@@ -577,8 +577,8 @@ mattermost command move
   Examples
     .. code-block:: none
 
-      ./mattermost command move newteam oldteam:command-trigger-word
-      ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
+      bin/mattermost command move newteam oldteam:command-trigger-word
+      bin/mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 
 mattermost command show
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -594,7 +594,7 @@ mattermost command show
   Examples
     .. code-block:: none
 
-      ./mattermost command show commandID
+      bin/mattermost command show commandID
 
 mattermost config
 -----------------
@@ -628,7 +628,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost config get SqlSettings.DriverName
+       bin/mattermost config get SqlSettings.DriverName
 
  Options
     .. code-block:: none
@@ -652,7 +652,7 @@ mattermost config migrate
   Examples
     .. code-block:: none
 
-       ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+       bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
        
 mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -668,7 +668,7 @@ mattermost config reset
   Examples
     .. code-block:: none
 
-       ./mattermost config reset SqlSettings.DriverName LogSettings
+       bin/mattermost config reset SqlSettings.DriverName LogSettings
        
    Options
     .. code-block:: none
@@ -689,7 +689,7 @@ mattermost config set
   Examples
     .. code-block:: none
 
-       ./mattermost config set SqlSettings.DriverName mysql
+       bin/mattermost config set SqlSettings.DriverName mysql
 
  Options
     .. code-block:: none
@@ -714,7 +714,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost config show
+       bin/mattermost config show
 
 mattermost config validate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -734,7 +734,7 @@ mattermost config validate
     Example
       .. code-block:: none
 
-        ./mattermost config validate
+        bin/mattermost config validate
 
 mattermost export
 -----------------
@@ -763,7 +763,7 @@ mattermost export actiance
   Example
     .. code-block:: none
 
-      ./mattermost export actiance --exportFrom=1513102632
+      bin/mattermost export actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -784,7 +784,7 @@ mattermost export bulk
   Example
     .. code-block:: none
 
-      ./mattermost export bulk file.json --all-teams
+      bin/mattermost export bulk file.json --all-teams
 
   Options
     .. code-block:: none
@@ -805,7 +805,7 @@ mattermost export csv
   Example
     .. code-block:: none
 
-      ./mattermost export csv --exportFrom=1513102632
+      bin/mattermost export csv --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -826,7 +826,7 @@ mattermost export global-relay-zip
   Example
     .. code-block:: none
 
-      ./mattermost export global-relay-zip --exportFrom=1513102632
+      bin/mattermost export global-relay-zip --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -847,7 +847,7 @@ mattermost export schedule
   Example
     .. code-block:: none
 
-      ./mattermost export schedule --format=actiance --exportFrom=1513102632
+      bin/mattermost export schedule --format=actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -904,7 +904,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group channel enable myteam:mychannel
+      bin/mattermost group channel enable myteam:mychannel
 
 mattermost group channel disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -924,7 +924,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group channel disable myteam:mychannel
+      bin/mattermost group channel disable myteam:mychannel
 
 mattermost group channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -944,7 +944,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group channel list myteam:mychannel
+      bin/mattermost group channel list myteam:mychannel
 
 
 mattermost group channel status
@@ -965,7 +965,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group channel status myteam:mychannel
+      bin/mattermost group channel status myteam:mychannel
 
 mattermost group team
 ------------------------
@@ -1004,7 +1004,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group team enable myteam
+      bin/mattermost group team enable myteam
 
 mattermost group team disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1024,7 +1024,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group team disable myteam
+      bin/mattermost group team disable myteam
 
 mattermost group team list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1044,7 +1044,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group team list myteam
+      bin/mattermost group team list myteam
 
 
 mattermost group team status
@@ -1065,7 +1065,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost group team status myteam
+      bin/mattermost group team status myteam
 
 mattermost help
 ---------------
@@ -1109,7 +1109,7 @@ mattermost import bulk
   Example
     .. code-block:: none
 
-      ./mattermost import bulk bulk-file.jsonl
+      bin/mattermost import bulk bulk-file.jsonl
 
 mattermost import slack
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1125,7 +1125,7 @@ mattermost import slack
   Example
     .. code-block:: none
 
-      ./mattermost import slack myteam slack_export.zip
+      bin/mattermost import slack myteam slack_export.zip
 
 mattermost integrity
 --------------------
@@ -1141,7 +1141,7 @@ mattermost integrity
   Example
     .. code-block:: none
 
-      ./mattermost integrity --confirm --verbose
+      bin/mattermost integrity --confirm --verbose
 
   Options
     .. code-block:: none
@@ -1166,7 +1166,7 @@ mattermost jobserver
   Example
     .. code-block:: none
 
-      ./mattermost jobserver
+      bin/mattermost jobserver
 
 mattermost ldap
 ---------------
@@ -1199,7 +1199,7 @@ mattermost ldap idmigrate
   Example
     .. code-block:: none
 
-      ./mattermost ldap idmigrate objectGUID
+      bin/mattermost ldap idmigrate objectGUID
 
 mattermost ldap sync
 ~~~~~~~~~~~~~~~~~~~~
@@ -1219,7 +1219,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost ldap sync
+      bin/mattermost ldap sync
 
 mattermost license
 ------------------
@@ -1248,7 +1248,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
+      bin/mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
 .. note::
   The Mattermost server needs to be restarted after uploading a license file for any changes to take effect. Also, for cluster setups the license file needs to be uploaded to every node.
@@ -1271,7 +1271,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost logs --logrus
+      bin/mattermost logs --logrus
 
   Options
     .. code-block:: none
@@ -1307,7 +1307,7 @@ mattermost permissions export
   Example
     .. code-block:: none
 
-      ./mattermost permissions export > my-permissions-export.jsonl
+      bin/mattermost permissions export > my-permissions-export.jsonl
 
 mattermost permissions import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1324,7 +1324,7 @@ mattermost permissions import
   Example
     .. code-block:: none
 
-      ./mattermost permissions import my-permissions-export.jsonl
+      bin/mattermost permissions import my-permissions-export.jsonl
 
 mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1341,7 +1341,7 @@ mattermost permissions reset
   Example
     .. code-block:: none
 
-      ./mattermost permissions reset
+      bin/mattermost permissions reset
 
   Options
     .. code-block:: none
@@ -1379,7 +1379,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
+      bin/mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1399,7 +1399,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost plugin delete hovercardexample pluginexample
+      bin/mattermost plugin delete hovercardexample pluginexample
 
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1419,7 +1419,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost plugin disable hovercardexample pluginexample
+      bin/mattermost plugin disable hovercardexample pluginexample
 
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1439,7 +1439,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost plugin enable hovercardexample pluginexample
+      bin/mattermost plugin enable hovercardexample pluginexample
 
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1459,7 +1459,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost plugin list
+      bin/mattermost plugin list
 
 mattermost reset
 ----------------
@@ -1501,7 +1501,7 @@ mattermost roles member
   Example
     .. code-block:: none
 
-      ./mattermost roles member user1
+      bin/mattermost roles member user1
 
 mattermost roles system\_admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1517,7 +1517,7 @@ mattermost roles system\_admin
   Example
     .. code-block:: none
 
-      ./mattermost roles system_admin user1
+      bin/mattermost roles system_admin user1
 
 mattermost sampledata
 ---------------------
@@ -1536,7 +1536,7 @@ mattermost sampledata
   Example
     .. code-block:: none
 
-      ./mattermost sampledata --seed 10 --teams 4 --users 30
+      bin/mattermost sampledata --seed 10 --teams 4 --users 30
 
   Options
     .. code-block:: none
@@ -1614,7 +1614,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost team add myteam user@example.com username
+      bin/mattermost team add myteam user@example.com username
 
 mattermost team archive
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1635,7 +1635,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost team archive team1
+       bin/mattermost team archive team1
 
 mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1655,8 +1655,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost team create --name mynewteam --display_name "My New Team"
-      ./mattermost teams create --name private --display_name "My New Private Team" --private
+      bin/mattermost team create --name mynewteam --display_name "My New Team"
+      bin/mattermost teams create --name private --display_name "My New Private Team" --private
 
   Options
     .. code-block:: none
@@ -1684,7 +1684,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost team delete myteam
+      bin/mattermost team delete myteam
 
   Options
     .. code-block:: none
@@ -1711,7 +1711,7 @@ mattermost team list
   Example
     .. code-block:: none
 
-      ./mattermost team list
+      bin/mattermost team list
 
 mattermost team modify
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1727,8 +1727,8 @@ mattermost team modify
   Example
     .. code-block:: none
 
-      ./mattermost team myteam --private
-      ./mattermost team myteam --public
+      bin/mattermost team myteam --private
+      bin/mattermost team myteam --public
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1748,7 +1748,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost team remove myteam user@example.com username
+      bin/mattermost team remove myteam user@example.com username
 
 mattermost team rename
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1768,7 +1768,7 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost team rename myteam newteamname --display_name "New Display Name"
+      bin/mattermost team rename myteam newteamname --display_name "New Display Name"
 
   Options
     .. code-block:: none
@@ -1789,7 +1789,7 @@ mattermost team restore
   Example
     .. code-block:: none
 
-      ./mattermost team restore myteam
+      bin/mattermost team restore myteam
 
 mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1809,7 +1809,7 @@ Description
   Examples
     .. code-block:: none
 
-       ./mattermost team search team1
+       bin/mattermost team search team1
 
 mattermost user
 ---------------
@@ -1853,8 +1853,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost user activate user@example.com
-      ./mattermost user activate username1 username2
+      bin/mattermost user activate user@example.com
+      bin/mattermost user activate username1 username2
 
 mattermost user convert
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1872,9 +1872,9 @@ mattermost user convert
   Examples
     .. code-block:: none
 
-      ./mattermost user convert user@example.com --bot
-      ./mattermost user convert username1 username2 --bot
-      ./mattermost user convert old_bot --user --email real_user@example.com --password Password1
+      bin/mattermost user convert user@example.com --bot
+      bin/mattermost user convert username1 username2 --bot
+      bin/mattermost user convert old_bot --user --email real_user@example.com --password Password1
 
 
   Options
@@ -1902,8 +1902,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost user create --email user@example.com --username userexample --password Password1
-      ./mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+      bin/mattermost user create --email user@example.com --username userexample --password Password1
+      bin/mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
     .. code-block:: none
@@ -1935,8 +1935,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost user deactivate user@example.com
-      ./mattermost user deactivate username
+      bin/mattermost user deactivate user@example.com
+      bin/mattermost user deactivate username
 
   .. note::
     Users deactivated via this CLI command can continue to use Mattermost, if they are already logged in, until the user cache is manually purged or automatically after 30 minutes. Users who are deactivated when they're not logged in will not be able to log in to Mattermost again.
@@ -1961,7 +1961,7 @@ mattermost user delete
   Example
     .. code-block:: none
 
-      ./mattermost user delete user@example.com
+      bin/mattermost user delete user@example.com
 
   Options
     .. code-block:: none
@@ -1984,7 +1984,7 @@ mattermost user deleteall
   Example
     .. code-block:: none
 
-      ./mattermost user deleteall
+      bin/mattermost user deleteall
 
   Options
     .. code-block:: none
@@ -2010,7 +2010,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost user email user@example.com newuser@example.com
+      bin/mattermost user email user@example.com newuser@example.com
 
 mattermost user invite
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2031,8 +2031,8 @@ Description
   Examples
     .. code-block:: none
 
-      ./mattermost user invite user@example.com myteam
-      ./mattermost user invite user@example.com myteam1 myteam2
+      bin/mattermost user invite user@example.com myteam
+      bin/mattermost user invite user@example.com myteam1 myteam2
 
 mattermost user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2059,7 +2059,7 @@ mattermost user migrate_auth
   Example
     .. code-block:: none
 
-      ./mattermost user migrate_auth email ldap email
+      bin/mattermost user migrate_auth email ldap email
   Options
     .. code-block:: none
 
@@ -2186,7 +2186,7 @@ mattermost user migrate_auth
   Example
     .. code-block:: none
 
-      ./mattermost user migrate_auth email saml users.json
+      bin/mattermost user migrate_auth email saml users.json
 
   Options
     .. code-block:: none
@@ -2213,7 +2213,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost user password user@example.com Password1
+      bin/mattermost user password user@example.com Password1
 
 mattermost user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2234,7 +2234,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost user resetmfa user@example.com
+      bin/mattermost user resetmfa user@example.com
 
 mattermost user search
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2255,7 +2255,7 @@ Description
   Example
     .. code-block:: none
 
-      ./mattermost user search user1@example.com user2@example.com
+      bin/mattermost user search user1@example.com user2@example.com
 
 mattermost user verify
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -2271,7 +2271,7 @@ mattermost user verify
   Example
     .. code-block:: none
 
-      ./mattermost user verify user1
+      bin/mattermost user verify user1
 
 mattermost version
 ------------------
@@ -2319,7 +2319,7 @@ mattermost webhook create-incoming
   Examples
     .. code-block:: none
 
-       ./mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+       bin/mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
   Options
     .. code-block:: none
@@ -2345,9 +2345,9 @@ mattermost webhook create-outgoing
   Examples
     .. code-block:: none
 
-       ./mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
+       bin/mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
 
-       ./mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
+       bin/mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
 
   Options
     .. code-block:: none
@@ -2378,7 +2378,7 @@ mattermost webhook delete
    Examples
      .. code-block:: none
 
-        ./mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
+        bin/mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
 
 mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2394,8 +2394,8 @@ mattermost webhook list
   Examples
     .. code-block:: none
 
-       ./mattermost webhook list team1
-       ./mattermost webhook list
+       bin/mattermost webhook list team1
+       bin/mattermost webhook list
 
   Options
     .. code-block:: none
@@ -2416,7 +2416,7 @@ mattermost webhook modify-incoming
   Examples
     .. code-block:: none
 
-       ./mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+       bin/mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
   Options
     .. code-block:: none
@@ -2441,7 +2441,7 @@ mattermost webhook modify-outgoing
   Examples
     .. code-block:: none
 
-       ./mattermost webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start`
+       bin/mattermost webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start`
 
   Options
     .. code-block:: none
@@ -2469,7 +2469,7 @@ mattermost webhook move-outgoing
   Examples
     .. code-block:: none
 
-       ./mattermost webhook move-outgoing newteam oldteam:[webhookId] --channel [channelId or channelName]
+       bin/mattermost webhook move-outgoing newteam oldteam:[webhookId] --channel [channelId or channelName]
 
   Options
     .. code-block:: none
@@ -2491,7 +2491,7 @@ mattermost webhook show
   Examples
     .. code-block:: none
 
-       ./mattermost webhook show [webhookId]
+       bin/mattermost webhook show [webhookId]
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
