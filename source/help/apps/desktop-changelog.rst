@@ -8,11 +8,10 @@ Release v4.4.0
 
 - **v4.4.1, release day TBD**
  - Fixing an issue where the Desktop client opens to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
- - Fixing an issue where Google oAuth with Gmail addresses no longer works on the Desktop app. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
+ - Fixing an issue where Google oAuth with Gmail addresses no longer works on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
  - Fixing an issue where the app sometimes doesn't restore to the right position but "jumps" to a different place in the taskbar when minimizing the app and then maximizing it. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
  - Fixing an issue where users are not able to paste text into the login screen. `MM-23784 <https://mattermost.atlassian.net/browse/MM-23784>`_
  - Fixing an issue where back/forward navigation on the OAuth window causes the app to crash. `MM-23153 <https://mattermost.atlassian.net/browse/MM-23153>`_
- - Fixing an issue where a Desktop notification is not shown when session expires on Windows 10. `MM-23806 <https://mattermost.atlassian.net/browse/MM-23806>`_
  - Fixing crash issues that might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - **v4.4.0, release day 2020-02-16**
  - Original v4.4.0 release
