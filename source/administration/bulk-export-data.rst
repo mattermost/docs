@@ -495,8 +495,8 @@ Post object
     </tr>
     <tr class="row-odd">
       <td valign="middle">props</td>
-      <td valign="middle">string</td>
-      <td>The props or attachments for a post. Contains additional formatting information used by integrations and bot posts. For a more detailed explanation see the <a href="https://docs.mattermost.com/developer/message-attachments.html">message attachments documentation</a>.</td>
+      <td valign="middle">object</td>
+      <td>The props for a post. Contains additional formatting information used by integrations and bot posts. For a more detailed explanation see the <a href="https://docs.mattermost.com/developer/message-attachments.html">message attachments documentation</a>.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">reactions</td>
