@@ -24,12 +24,12 @@ Mattermost v5.22.0 contains a low level security fix. [Upgrading](http://docs.ma
 
 ### Highlights
 
-#### Channel moderation settings and read-only channels (E20) (Beta)
+#### Read-only channels and channel moderation settings (E20) (Beta)
  - System admins can use new channel-specific permissions to create read-only channels, restrict who can post in certain channels, and more. This feature is in beta and ships with Enterprise Edition E20.
 
-#### Multi-team usability improvements
- - Added the ability to reorder teams on the sidebar via drag-and-drop.
+#### Team switch shortcuts
  - Added new keyboard shortcuts that allow users to switch to the next or previous team using ``Ctrl/⌘ + Alt + Up/Down`` and switch to a specific team using ``Ctrl/⌘ + Alt + #``.
+ - Also added the ability to reorder teams on the sidebar via drag-and-drop.
 
 #### Unarchive Channel option in the archived channels menu
  - Added the ability for users to restore archived channels via the Mattermost interface.
@@ -41,10 +41,10 @@ Mattermost v5.22.0 contains a low level security fix. [Upgrading](http://docs.ma
 
 #### User Interface (UI)
  - Added several UI improvements, such as added a "Close Group Message" option to Group Message menu.
- - Updated the permalink view.
  - Added a keyboard shortcut to open/close the right-hand sidebar.
  - Added a keyboard shortcut to add reactions to last message in a channel or a thread.
  - Added infinite scroll to Select Teams screen.
+ - Updated the message permalink view.
  
 #### Localization
  - Promoted Dutch and Russian languages to Beta.
@@ -61,7 +61,7 @@ Mattermost v5.22.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Extended the payload of slash commands to include a map of the users and channels mentioned in the message to their corresponding identifiers.
  - Added support for recognizing multi-line slash commands without requiring trailing space after the trigger word.
  
-#### Administration
+#### Bulk Import
  - Added support for exporting and importing the props of a post.
 
 ### Bug Fixes
@@ -75,10 +75,9 @@ Mattermost v5.22.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Fixed an issue where a modified Edit Post dialog silently closed on a mouse click outside it.
  - Fixed an issue where users were unable to drag and drop files on Edge.
  - Fixed an issue where the autoresponder responded to every bot post.
- - Fixed data race conditions that occurred when accessing ``Post.Props``.
  - Fixed an issue where Mattermost was unable to start if a configured mail server was listening but not responding.
  - Fixed an issue where LDAP sync did not finish if read database replica was enabled.
- - Fixed a SIGSEGV issue when exporting to CSV.
+ - Fixed a SIGSEGV crash issue when exporting to CSV.
  - Fixed an issue where Elasticsearch error was output when running unrelated commands.
  - Fixed an issue where importing from slack crashed due to invalid memory access or nil pointer dereference.
  
@@ -87,13 +86,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``EnableOpenTracing``, to 
+    - Added ``EnableOpenTracing``, to enable a Jaeger client to be instantiated and used to trace each HTTP request as it goes through App and Store layers.
     - Added ``IdleTimeout``, to set an explicit idle timeout in the HTTP server.
-    - Added ``ExperimentalChannelSidebarOrganization``, to 
+    - Added ``ExperimentalChannelSidebarOrganization``, to enable accessing the experimental channel sidebar feature set.
  - Under ``NotificationLogSettings`` in ``config.json``:
-    - Added ``SMTPServerTimeout``, to 
- - Added ``Office365Settings`` object, to add support for Office365Settings Directory (tenant) Id.
- - Added ``ExperimentalAuditSettings`` object, to enable audit settings to output audit records to syslog (local or remote server via TLS) and/or to a local file.
+    - Added ``SMTPServerTimeout``, to enable the maximum amount of time (in seconds) allowed for establishing a TCP connection between Mattermost and the SMTP server, to be idle before being terminated.
+ - Added ``DirectoryId`` object, to enable the ID of the application's AAD directory. 
+ - Added ``ExperimentalAuditSettings`` object, to enable the audit settings to output audit records to syslog (local or remote server via TLS) and/or to a local file.
 
 ### Open Source Components
  - Added ``core-js`` in https://github.com/mattermost/mattermost-redux.
