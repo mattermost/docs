@@ -75,7 +75,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
   .. code-block:: none
 
-    $ sudo ./mattermost roles system_admin {username}
+    $ sudo -u mattermost bin/mattermost roles system_admin {username}
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
