@@ -22,7 +22,7 @@ Create the System Admin user and set up Mattermost for general use.
     - Set **Notification Display Name** to *No-Reply*
     - Set **Notification From Address** to *{your-domain-name}* For example, *example.com*
 
-    B. In **System Console > Environment > SMTP** (or the **NOTIFICATIONS** section in versions prior to 5.12), also make the following changes:
+    B. In **System Console > Environment > SMTP** (or the **Notifications** section in versions prior to 5.12), also make the following changes:
 
     - Set **SMTP Server Username** to *{SMTP-username}* For example, *admin@example.com*
     - Set **SMTP Server Password** to *{SMTP-password}*
