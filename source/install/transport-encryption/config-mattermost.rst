@@ -56,7 +56,7 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
 
 **Before**
 
-.. codeblock:: none
+.. code-block:: json
 
   {
       "ServiceSettings": {
@@ -67,10 +67,15 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
           "ConnectionSecurity": "",
           "TLSCertFile": "",
           "TLSKeyFile": "",
+          "...":"..."
+      },
+      "...":"..."
+  }
+
 
 **After**
 
-.. codeblock:: none
+.. code-block:: json
 
   {
       "ServiceSettings": {
@@ -83,6 +88,8 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
           "TLSKeyFile": "/opt/mattermost/config/key.pem",
           "...":"..."
       },
+      "...":"..."
+  }
 
 
 Restart the Mattermost server and ensure it's up and running:

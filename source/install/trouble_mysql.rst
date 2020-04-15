@@ -3,8 +3,8 @@ MySQL Installation Troubleshooting
 
 Before you can run the Mattermost server, you must first install and
 configure a database. You can start Mattermost by navigating to the
-``/opt/mattermost/bin`` directory and entering the command
-``sudo -u mattermost ./platform``. If the Mattermost server cannot
+``/opt/mattermost`` directory and entering the command
+``sudo -u mattermost bin/mattermost``. If the Mattermost server cannot
 connect to the database, it will fail to start. This section deals with
 MySQL database issues that you may encounter when you start up
 Mattermost for the first time.
@@ -87,8 +87,8 @@ If you accidentally created a database with the wrong name, you can
 remove it by issuing the command: :samp:`drop database {misnamed};`.
 
 After creating of the database, attempt to restart the Mattermost server
-by navigating to the ``/opt/mattermost/bin`` directory and entering the
-command ``sudo -u mattermost ./platform``.
+by navigating to the ``/opt/mattermost`` directory and entering the
+command ``sudo -u mattermost bin/mattermost``.
 
 **The mattermost Database Exists**
 
@@ -105,8 +105,8 @@ You should also confirm that ``DriverName`` element (found immediately
 above the ``DataSource`` element) is set to ``mysql``.
 
 If you correct an error, restart the Mattermost server by navigating to
-the ``/opt/mattermost/bin`` directory and entering the command
-``sudo -u mattermost ./platform``.
+the ``/opt/mattermost`` directory and entering the command
+``sudo -u mattermost bin/mattermost``.
 
 The Database User
 -----------------
@@ -183,8 +183,8 @@ file and search for ``DataSource``. Its value should be:
      "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
 
 If you correct an error, restart the Mattermost server by navigating to
-the ``/opt/mattermost/bin`` directory and issuing the command:
-``sudo -u mattermost ./platform``.
+the ``/opt/mattermost`` directory and issuing the command:
+``sudo -u mattermost bin/mattermost``.
 
 The User Password
 -----------------
@@ -209,8 +209,8 @@ file references the ``mmuser`` password. Open this file and search for
      "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
 
 Check that the password is correct. If you correct an error, restart the
-Mattermost server by navigating to ``/opt/mattermost/bin`` and issuing
-the command: ``sudo -u mattermost ./platform``.
+Mattermost server by navigating to ``/opt/mattermost`` and issuing
+the command: ``sudo -u mattermost bin/mattermost``.
 
 **Unsure of Password**
 
@@ -281,5 +281,5 @@ exit from MySQL and then log in again as root. Issue the command
 all rights on ``mattermost`` to ``mmuser``.
 
 Restart the Mattermost server by navigating to the
-``/opt/mattermost/bin`` directory and entering the command
-``sudo -u mattermost ./platform``.
+``/opt/mattermost`` directory and entering the command
+``sudo -u mattermost bin/mattermost``.

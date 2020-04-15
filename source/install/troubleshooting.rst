@@ -75,11 +75,29 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
   .. code-block:: none
 
-    $ sudo ./mattermost roles system_admin {username}
+    $ sudo -u mattermost bin/mattermost roles system_admin {username}
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-SAML Issues
+Password resets
+~~~~~~~~~~~~~~~
+
+**Email address or username sign in**
+
+If you sign in to Mattermost using an email address or username, you can send a password reset request by selecting **I forgot my password**. 
+The Mattermost Support team does not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
+If you are not sure who the System Admin is, contact the internal IT team at your organization for further help.
+
+**AD/LDAP users**
+
+The password reset process is performed on the directory level as Mattermost pulls the credential information from the LDAP directory.
+If you experience issues with your password for your LDAP log in, contact your organization's LDAP administrator for further help.
+
+**SSO users (OneLogin/Okta etc)**
+
+The password reset process is completed on the IdP provider side, and not via the Mattermost System Console.
+
+SAML issues
 -------------------
 
 Unable to Switch to SAML Authentication Successfully
@@ -99,7 +117,7 @@ If the System Administrator is locked out of the system during SAML configuratio
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-This error message can also be received if the `Username Attribute` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+This error message can also be received if the ``Username Attribute`` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
 ``An account with that email already exists. Please contact your Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,7 +129,7 @@ This error message can also be received if the ``Email Attribute`` of their SAML
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console > SAML**.
+Confirm all attributes, including ``Email Attribute`` and ``Username Attribute``, are correct in both the Identity Provider configuration and in **System Console > SAML**.
 
 
 ``An error occurred while building Service Provider Metadata.``
@@ -320,7 +338,7 @@ If this issue is reported rarely, in some cases the issue comes from *intermitte
 If only a small number of users have this issue, it could be from intermittent internet access, if almost every user has this issue, it's likely from a misconfiguration of the ``wss`` connection.
 
 ``Cannot connect to the server. Please check your server URL and internet connection.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
 
@@ -335,7 +353,7 @@ For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521
 **Note:** Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.
 
 ``x509: certificate signed by unknown authority``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
@@ -343,7 +361,7 @@ This error may appear in server logs when attempting to sign-up when using self-
 
 Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future.
 
-As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
+As a work around, in **System Console > Security > Connections** set **Enable Insecure Outgoing Connections** to ``true``.
 
 This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
@@ -401,7 +419,7 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`__.
 
 ``Websocket closed`` or ``Websocket re-established connection``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This alert can appear every few seconds in the desktop application or web browser connected to Mattermost.
 
@@ -413,7 +431,7 @@ If you are using NGINX, make sure you follow the `Mattermost configuration instr
 
 
 ``context deadline exceeded``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
 
@@ -538,6 +556,13 @@ Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integ
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
+
+Gfycat gifs are not loading even though they show up in the emoji picker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Check whether the server has access to the Gfycat servers. It may be behind a proxy or firewall which is blocking outgoing connections.
+2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
+
 
 Mobile
 ~~~~~

@@ -5,7 +5,7 @@ Configuring Apache2 with SSL and HTTP/2 (Unofficial)
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`__.
 
-In order to use Apache as a reverse proxy for the mattermost server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow the instructions from your linux distribution to do so.
+In order to use Apache as a reverse proxy for the Mattermost Server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http``, ``mod_headers``, and ``mod_proxy_wstunnel``. Follow the installation instructions for your Linux distribution.
 
 Once you've configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL on Apache2 is via Let's Encrypt and `Certbot <https://certbot.eff.org/#ubuntuxenial-apache>`__.
 
@@ -23,6 +23,8 @@ When opened, edit it to look something like the following:
 		ServerName mysubdomain.mydomain.com
 		ServerAdmin hostmaster@mydomain.com
 		ProxyPreserveHost On
+		RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+		RequestHeader set "X-Forwarded-SSL" expr=%{HTTPS}
 		
 		RewriteEngine On
 		RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
