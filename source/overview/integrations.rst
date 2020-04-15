@@ -1,5 +1,5 @@
 
-Integrations overview 
+Integrations Overview 
 =====================
 
   .. note::
