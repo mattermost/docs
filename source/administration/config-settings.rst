@@ -221,6 +221,15 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
+Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+
++-----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
++-----------------------------------------------------------------------------------------+
+
+
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in June 16, 2018 release*
@@ -777,8 +786,8 @@ If you want to increase this value, the recommendation is to increase it a littl
 
 To confirm push notifications are working:
 
-1. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
-2. Set **Push Notification Server** to *https://push.mattermost.com* if using Enterprise Edition. If using Team Edition, set the value to *https://push-test.mattermost.com*.
+1. Go to **System Console > Notifications > Environment > Push Notification Server > Enable Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
+2. Set **Push Notification Server** to ``https://push.mattermost.com`` if using Enterprise Edition. If using Team Edition, set the value to ``https://push-test.mattermost.com``.
 3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__ and log in to your team site.
 4. Close the app on your device, and close any other connections to your team site.
 5. Wait 5 minutes and have another team member send you a direct message, which should trigger a push notification to the Mattermost app on your mobile device.
@@ -786,9 +795,9 @@ To confirm push notifications are working:
 
 If you did not receive an alert:
 
-1. Set **System Console > General > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
+1. Set **System Console > Environment > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
 2. Repeat the above steps.
-3. Go to **System Console > Logs** and copy the log output into a file.
+3. Go to **System Console > Reporting > Server Logs** and copy the log output into a file.
 4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
 
 .. _high-availability:
@@ -2547,7 +2556,7 @@ OAuth 2.0
 
 Settings to configure OAuth login for account creation and login.
 
-Select OAuth 2.0 service provider:
+Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose whether OAuth can be used for account creation and login. Options include:
 
@@ -2676,7 +2685,7 @@ Office 365
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 
-Enable authentication with Office 365 by selecting ``Office 365`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
 
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-office.html>`__ for more detail.
 
@@ -2700,6 +2709,14 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Directory (tenant) ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This value is the ID of the application's AAD directory. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 User API Endpoint
