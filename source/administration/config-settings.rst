@@ -675,7 +675,7 @@ SMTP Server Timeout
 The maximum amount of time (in seconds) allowed for establishing a TCP connection between Mattermost and the SMTP server, to be idle before being terminated.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPServerTimeout": 10`` with numerical input.                                                                           |
+| This feature's ``config.json`` setting is ``"SMTPServerTimeout": 10`` with numerical input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable SMTP Authentication
