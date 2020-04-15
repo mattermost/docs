@@ -1,7 +1,7 @@
 Advanced Permissions (E10/E20)
-===============================
+===============================================
 
-Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interface can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interfaces can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12). The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
 .. note::
 
@@ -56,16 +56,27 @@ The interface for naming, assigning teams, and editing permissions in a Team Ove
 
 .. image:: ../images/team-scheme.png
 
-Channel Override Permissions (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Channel Permissions 
+---------------------------
 
-*Available in a future release of Enterprise Edition E20*
+Channel Moderation (Beta) (E20)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Allows Admins to restrict permissions within specific channels. Permissions under consideration for this phase include:
+*Available in Enterprise Edition E20*
 
-- **Read-only Channels:** The ability for Admins to turn off posting in specified channels.
-- **Restrict Channel Mentions:** Turn off the ability for users to post channel wide mentions (@-all/channel/here) in specified channels.
-- **Channel member management:** Restricting adding and removing channel members to Admins only in specified channels.
+From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include: 
+
+- **Make channel read-only:** The ability for Admins to turn off posting in specified channels.
+- **Restrict reactions:** Turn off the ability for members and guests to post reactions.
+- **Restrict channel mentions:** Turn off the ability for users to post channel wide mentions (@all/channel/here) in specified channels.
+- **Channel member management:** Only Admins have the ability to add and remove channel members in the specified channels.
+
+These settings are modified in **System Console > User Management > Channels**. 
+
+**Note:**
+These settings are applicable only to Guests and Members. System, Team, and Channel Admins are not affected. If you wish to grant posting ability to a specific member, you must first promote that member to Channel Admin.
+
+The availability of channel moderation settings can also be affected by existing system and team permissions configurations. If there are existing configurations that override the channel settings you would like to apply, it will be indicated in the user interface. These settings can then be adjusted in the relevant panel in the **Permissions** section of the System Console. 
 
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +87,7 @@ Allows Admins to grant additional permissions to specific users or to a group of
 
 Recipes
 --------
-This section provides some examples of common permissions use cases and how to accomplish them using the **Advanced Permissions System Console interface**.
+This section provides some examples of common permissions use cases for team management, channel management, and overall permissions. 
 
 Team Management
 ~~~~~~~~~~~~~~~~
@@ -130,6 +141,30 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.   
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
+  
+Read only channels
+~~~~~~~~~~~~~~~~~~
+
+**Configure a channel so that members can post/reply/react but guests can only read and react.**
+
+1. Navigate to **System Console > User Management > Channels**.
+2. Select **Edit** next to the name of the channel you want to configure.
+3. In the **Create Posts** panel, uncheck **Guests**. 
+4. In the **Post Reactions** panel, uncheck **Guests** if required. 
+5. Choose **Save**. 
+
+The channel is available for all members and guests to access, but guests can only read messages and react to them.
+
+**Create an Announcement Channel where only channel admins are able to post.**
+
+1. Create a new channel (either Public or Private). 
+2. Navigate to **System Console > User Management > Channels**.
+3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
+4. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
+5. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
+6. Choose **Save**. 
+
+The channel is available for all members and guests to access but only admins can post.
 
 Post Management
 ~~~~~~~~~~~~~~~~

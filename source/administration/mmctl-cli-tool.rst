@@ -42,6 +42,7 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
    - `mmctl plugin`_ - Plugin Management
    - `mmctl post`_ - Post Management
    - `mmctl roles`_ - Roles Management
+   - `mmctl system`_ - System Management
    - `mmctl team`_ - Team Management
    - `mmctl user`_ - User Management
    - `mmctl version`_ - Version Management
@@ -1920,6 +1921,132 @@ mmctl roles
 -----------
 
 This command will be available in a future release.
+
+mmctl system
+------------
+
+System management commands for interacting with the server state and configuration.
+
+Child Commands
+  -  `mmctl system clearbusy`_ - Clears the busy state
+  -  `mmctl system getbusy`_ - Get the current busy state
+  -  `mmctl system setbusy`_ - Set the busy state to ``true``
+  
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for system
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl system clearbusy
+^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Clear the busy state which re-enables non-critical services.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl system clearbusy [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    system clearbusy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for clearbusy
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl system getbusy
+^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+ Gets the server busy state (high load) and timestamp corresponding to when the server busy flag will be automatically cleared.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl system getbusy [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   system getbusy
+
+**Options**
+
+.. code-block:: sh
+
+    -h, --help   help for getbusy
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --strict                       will only run commands if the mmctl version matches the server one
+    
+
+mmctl system setbusy
+^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+ Set the busy state to ``true`` for the specified number of seconds, which disables non-critical services.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl system setbusy -s [seconds] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   system setbusy -s 3600
+
+**Options**
+
+.. code-block:: sh
+
+    -h, --help   help for setbusy
+    -s, --seconds uint   Number of seconds until server is automatically marked as not busy. (default 3600)
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --strict                       will only run commands if the mmctl version matches the server one
+
 
 mmctl team
 ----------
