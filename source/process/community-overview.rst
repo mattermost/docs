@@ -6,9 +6,12 @@ At Mattermost, we be believe workplace messaging will become a leading platform 
 
 We consider people who share these beliefs, and who seek to benefit from or influence the Mattermost open source project, to be part of the "Mattermost Community". 
 
-The success of Mattermost as an open source platform for messaging-based workflow and business process depends on empowering our community to build with us towards a shared vision. 
+The success of Mattermost as an open source platform for messaging-based workflow and business process depends on empowering our community to build with us towards a shared vision.
 
-The Mattermost community has two parts, Users and Contributors, detailed below. 
+The Mattermost community has two parts, Users and Contributors, detailed below.
+
+.. tip :: 
+  Interested in contributing to Mattermost? `Learn about all the ways to get involved with our community <https://mattermost.com/contribute/>`_.
 
 .. contents::
   :backlinks: top

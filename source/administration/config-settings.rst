@@ -141,7 +141,7 @@ The address and port to which to bind and listen. Specifying ":8065" will bind t
 
 If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port.
 
-On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/mattermost`` to allow Mattermost to bind to well-known ports.
+On Linux you can use: ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost`` to allow Mattermost to bind to well-known ports.
 
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input. |
@@ -3603,6 +3603,19 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+Experimental Sidebar Features (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Disabled:** Users cannot access the experimental channel sidebar feature set.  
+
+**Enabled (Default On):** Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+
+**Enabled (Default Off):** Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

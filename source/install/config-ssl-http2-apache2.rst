@@ -30,7 +30,8 @@ When opened, edit it to look something like the following:
 		ServerName mysubdomain.mydomain.com
 		ServerAdmin hostmaster@mydomain.com
 		ProxyPreserveHost On
-
+		RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+		RequestHeader set "X-Forwarded-SSL" expr=%{HTTPS}
 		RewriteEngine On
 		RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
 		RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
