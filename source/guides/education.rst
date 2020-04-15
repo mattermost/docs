@@ -1,7 +1,7 @@
 Training & Education
 =====================
 
-Training and educatinal material to get the most out of your Mattermost deployment.
+Training and educational material to help you get the most out of your Mattermost deployment.
 
 Deployment Guides
 -----------------
