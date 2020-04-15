@@ -429,7 +429,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Google SSO", "X", "X"
     **OTHER**
     "Localization for 16 languages", "X", "X", "X"
-    "Custom user interface themes", "X", "X", "O"
+    "Custom user interface themes", "X", "X", "X"
     "Account settings", "X", "X", "O"
 
 **Legend:**
