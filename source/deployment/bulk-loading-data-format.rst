@@ -1062,6 +1062,12 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       "channel": "channel-name",
       "user": "username",
       "message": "The post message",
+      "props": {
+        "attachments": [{
+          "pretext": "This is the attachment pretext.",
+          "text": "This is the attachment text."
+        }]
+      },
       "create_at": 140012340013,
       "flagged_by": [
         "username1",
@@ -1144,6 +1150,13 @@ Fields of the Post object
       <td valign="middle">message</td>
       <td valign="middle">string</td>
       <td>The message that the post contains.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">props</td>
+      <td valign="middle">object</td>
+      <td>The props for a post. Contains additional formatting information used by integrations and bot posts. For a more detailed explanation see the <a href="https://docs.mattermost.com/developer/message-attachments.html">message attachments documentation</a>.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
