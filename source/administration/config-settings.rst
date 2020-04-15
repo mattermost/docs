@@ -3866,7 +3866,7 @@ Enable API Team Deletion
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: A Jaeger client is instantiated and each HTTP request wraps App and Store in OpenTracing layers.
+**True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
 Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
 
 By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported. 
