@@ -85,7 +85,7 @@ Password resets
 **Email address or username sign in**
 
 If you sign in to Mattermost using an email address or username, you can send a password reset request by selecting **I forgot my password**. 
-Mattermost Support do not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
+The Mattermost Support team does not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
 If you are not sure who the System Admin is, contact the internal IT team at your organization for further help.
 
 **AD/LDAP users**
