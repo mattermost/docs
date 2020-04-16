@@ -158,4 +158,3 @@ When configured by the System Admin, users can enable the features in **Account 
 `Learn more about upcoming additions to this feature set and give us feedback here <https://about.mattermost.com/default-sidebar/>`_.
 
  .. image:: ../../images/sidebar-phase-1.gif
-       :scale: 10
