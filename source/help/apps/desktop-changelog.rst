@@ -6,7 +6,15 @@ Release v4.4.0
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.0>`_
 
+- **v4.4.1, release day TBD**
+ - Fixing an issue where the Desktop client opens to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
+ - Fixing an issue where Google oAuth with Gmail addresses no longer works on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
+ - Fixing an issue where Windows Desktop notifications are delayed. `MM-22552 <https://mattermost.atlassian.net/browse/MM-22552>`_
+ - Fixing an issue where the app sometimes doesn't restore to the right position but "jumps" to a different place in the taskbar when minimizing the app and then maximizing it. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
+ - Fixing an issue where users are not able to paste text into the login screen. `MM-23784 <https://mattermost.atlassian.net/browse/MM-23784>`_
+ - Fixing an issue where back/forward navigation on the OAuth window causes the app to crash. `MM-23153 <https://mattermost.atlassian.net/browse/MM-23153>`_
 - **v4.4.0, release day 2020-02-16**
+ - Original v4.4.0 release
 
 **Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
 
@@ -65,7 +73,7 @@ Known Issues
 - Google oAuth with Gmail addresses no longer works on the Desktop app. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
 - When minimizing the app and then maximizing it, it sometimes doesn't restore to the right position but "jumps" to a different place in the taskbar. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
 - No notification on Windows if the app is closed on the channel where the message is posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
-- Segmentation Fault crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
 - The confirmation dialog from UAC names MSI installers with random numbers.
