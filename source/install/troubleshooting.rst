@@ -19,9 +19,40 @@ General Troubleshooting
 -----------------------
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors.
-- You can also search the error messages online - existing solutions can often be applied.
-- Open **System Console > General > Logging** and set File Log Level to **DEBUG**. Make sure to revert to **INFO** after troubleshooting to save disk space.
+Take a Look at the Logs
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This article covers accessing the numerous logs created by Mattermost applications.
+
+**Mattermost Server**
+
+1. In the *System Console* go to *Environment > Logging* and note down the path to the *File Log Directory*
+2. The server log file is called *mattermost.log* and can be opened with a standard text editor or shared directly.
+
+.. Note::
+   Make sure to verify **logging to a file** is enabled by confirming **System Console > Environment > Logging > Output logs to file** is set to **true**. Open **System Console > Environment > Logging** and set File Log Level to **DEBUG**. Make sure to revert to **INFO** after troubleshooting to save disk space. Logging can be set to output plain text or JSON here as well.
+
+If filesystem access is not possible the current server logs can be found and copied from the *System Console* under *Reporting > Server Logs*.
+
+`More <https://docs.mattermost.com/administration/config-settings.html#logging>`_
+
+**Mattermost Desktop App**
+
+The desktop app log file can be found in the user directory:
+
+- **Windows:** `%userprofile%\AppData\Roaming\Mattermost\logs`
+- **Linux:** `~/.local/share/Mattermsot/logs`
+
+**Mattermost Browser App**
+
+The browser based app does not produce additional log files. If the app has to be debugged use the development tools integrated into the browser in use.
+
+**Mattermost Push Notification Service**
+
+Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to `/var/log/syslog`.
+
+Take a Look at the Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
 
@@ -35,6 +66,7 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
+You can also search the error messages online - existing solutions can often be applied.
 These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
 Administration Issues
