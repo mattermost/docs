@@ -12,11 +12,11 @@ If team creation is enabled by the System Admin, teams can be created from the t
 
 Team Sidebar
 ~~~~~~~~~~~~~~~~~~~~
-If you belong to more than one team, a team sidebar will appear left of your channel list on the left-hand sidebar.
+If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`_ to switch teams.
 
-.. image:: ../../images/team-sidebar.png
+.. image:: ../../images/team-sidebar.gif
 
-Click the "+" icon at the bottom of the team sidebar, then click **Create a New Team** on the team selection page, which guides you through the rest of the setup steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
+If you have appropriate permissions, click the "+" icon at the bottom of the team sidebar, then click **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 
 If you have no other teams to join, clicking the "+" icon brings you directly to the team creation page if team creation is enabled.
 

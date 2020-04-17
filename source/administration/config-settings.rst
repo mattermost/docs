@@ -28,7 +28,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
-   
+
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
 
@@ -141,7 +141,7 @@ The address and port to which to bind and listen. Specifying ":8065" will bind t
 
 If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port.
 
-On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/mattermost`` to allow Mattermost to bind to well-known ports.
+On Linux you can use: ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost`` to allow Mattermost to bind to well-known ports.
 
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input. |
@@ -221,6 +221,15 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
+Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+
++-----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
++-----------------------------------------------------------------------------------------+
+
+
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in June 16, 2018 release*
@@ -262,7 +271,7 @@ Reload Configuration from Disk
 *Available in Enterprise Edition E20*
 
 
-The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database section**.
+The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database** section.
 
 Purge All Caches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -498,7 +507,7 @@ Maximum file size for message attachments entered in megabytes in the System Con
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
-.. note:: 
+.. note::
 If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
 
 
@@ -558,7 +567,7 @@ The secret access key associated with your Amazon S3 Access Key ID.
 Enable Secure Amazon S3 Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables only secure Amazon S3 Connections.
+**True**: Enables only secure Amazon S3 connections.
 
 **False**: Allows insecure connections to Amazon S3.
 
@@ -577,7 +586,7 @@ Enable Server-Side Encryption for Amazon S3
 **False**: Doesn't encrypt files in Amazon S3.
 
 .. note::
-  Server-Side Encryption only works with Amazon S3.
+  Server-Side encryption only works with Amazon S3.
 
 +-------------------------+-----------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SSE``                               |
@@ -669,6 +678,15 @@ Port of SMTP email server.
 | This feature's ``config.json`` setting is ``"SMTPPort": ""`` with string input.                                                                                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+SMTP Server Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The maximum amount of time (in seconds) allowed for establishing a TCP connection between Mattermost and the SMTP server, to be idle before being terminated.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SMTPServerTimeout": 10`` with numerical input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable SMTP Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -750,8 +768,8 @@ Location of Mattermost Push Notification Service (MPNS), which re-sends push not
 
 To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__:
 
-- For Enterprise Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/``
-- For Team Edition, enter ``https://push-test.mattermost.com``
+- For Enterprise Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/``.
+- For Team Edition, enter ``https://push-test.mattermost.com``.
 
 Please review full documentation on `push notifications and mobile applications <http://docs.mattermost.com/deployment/push.html>`__ including guidance on compiling your own mobile apps and MPNS before deploying to production.
 
@@ -777,8 +795,8 @@ If you want to increase this value, the recommendation is to increase it a littl
 
 To confirm push notifications are working:
 
-1. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
-2. Set **Push Notification Server** to *https://push.mattermost.com* if using Enterprise Edition. If using Team Edition, set the value to *https://push-test.mattermost.com*.
+1. Go to **System Console > Notifications > Environment > Push Notification Server > Enable Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
+2. Set **Push Notification Server** to ``https://push.mattermost.com`` if using Enterprise Edition. If using Team Edition, set the value to ``https://push-test.mattermost.com``.
 3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__ and log in to your team site.
 4. Close the app on your device, and close any other connections to your team site.
 5. Wait 5 minutes and have another team member send you a direct message, which should trigger a push notification to the Mattermost app on your mobile device.
@@ -786,9 +804,9 @@ To confirm push notifications are working:
 
 If you did not receive an alert:
 
-1. Set **System Console > General > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
+1. Set **System Console > Environment > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
 2. Repeat the above steps.
-3. Go to **System Console > Logs** and copy the log output into a file.
+3. Go to **System Console > Reporting > Server Logs** and copy the log output into a file.
 4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
 
 .. _high-availability:
@@ -1206,7 +1224,7 @@ Some examples of when you may want to modify this setting include:
 This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 .. note::
-   Use whitespaces instead of commas to list the hostnames, IP addresses or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
+   Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
@@ -1380,7 +1398,6 @@ Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum number of users per team, excluding inactive users.
 
-
 The **Max Users Per Team** refers to the size of the "team site" which is workspace a "team of people" inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project.
 
 The default maximum of 50 people, is at the extreme high end of a single team of people. At this point organizations are more often "multiple teams of people" and investments in explicitly defining etiquette, such as `channel organization <https://docs.mattermost.com/help/getting-started/organizing.html>`__ or turning on `policy features <https://docs.mattermost.com/administration/config-settings.html#policy>`__ in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.
@@ -1417,9 +1434,9 @@ Allow Team Administrators to edit others posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *This permission is stored in the database and can be modified using the System Console user interface.*
 
-**True**: Team Administrators and System Administrators can edit other users' posts.
+**True**: Team Admins and System Admins can edit other users' posts.
 
-**False**: Only System Administrators can edit other users' posts.
+**False**: Only System Admins can edit other users' posts.
 
 .. note::
    This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
@@ -1851,7 +1868,7 @@ Enable Team Creation
 
 **True**: Ability to create a new team is enabled for all users.
 
-**False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
+**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``.                                                        |
@@ -2207,7 +2224,7 @@ ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
-If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead. 
+If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead.
 Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
 
 If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`__ CLI tool.
@@ -2244,10 +2261,10 @@ Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minute
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
 
-- A value of 0 is unlimited and does not paginate the results. 
-- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting. 
+- A value of 0 is unlimited and does not paginate the results.
+- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input.                                                                                 |
@@ -2472,7 +2489,7 @@ Admin Attribute
 
 (Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
 
-This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used. 
+This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``.                                                     |
@@ -2547,7 +2564,7 @@ OAuth 2.0
 
 Settings to configure OAuth login for account creation and login.
 
-Select OAuth 2.0 service provider:
+Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose whether OAuth can be used for account creation and login. Options include:
 
@@ -2572,11 +2589,11 @@ Enable authentication with GitLab
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**Note**: For Enterprise, GitLab settigs can be found under **OAuth 2.0**
+**Note**: For Enterprise, GitLab settings can be found under **OAuth 2.0**
 
 Application ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
+Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
@@ -2584,7 +2601,7 @@ Obtain this value by logging into your GitLab account. Go to Profile Settings > 
 
 Application Secret Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
+Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
@@ -2675,8 +2692,7 @@ Office 365
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-
-Enable authentication with Office 365 by selecting ``Office 365`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
 
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-office.html>`__ for more detail.
 
@@ -2700,6 +2716,14 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Directory (tenant) ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This value is the ID of the application's AAD directory. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 User API Endpoint
@@ -2771,7 +2795,7 @@ Plugin Management
 Enable Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins>`__ to learn more.
+**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins>`__ to learn more.
 
 **False**: Disables plugins on your Mattermost server.
 
@@ -2793,9 +2817,9 @@ Automatic Prepackaged Plugins
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables Plugin Marketplace on your Mattermost server for all System Administrators.
+**True**: Enables Plugin Marketplace on your Mattermost server for all System Admins.
 
-**False**: Disables Plugin Marketplace on your Mattermost server for all System Administrators.
+**False**: Disables Plugin Marketplace on your Mattermost server for all System Admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
@@ -2842,7 +2866,7 @@ Lists installed plugins on your Mattermost server and whether they are enabled. 
 Require Plugin Signature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Prepackaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
 **False**: Do not require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
@@ -2900,7 +2924,7 @@ Developers building integrations can create webhook URLs for public channels and
 
 **True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any public or private channels that you have access to.
 
-**False**: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
+**False**: The **Integrations > Incoming Webhooks** section of Account Settings is hidden and all incoming webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
@@ -2914,7 +2938,7 @@ Developers building integrations can create webhook tokens for public channels. 
 
 **True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**.
 
-**False**: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
+**False**: The **Integrations > Outgoing Webhooks** section of Account Settings is hidden and all outgoing webhooks are disabled.
 
 Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
@@ -2926,9 +2950,9 @@ Enable Custom Slash Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Slash commands send events to external integrations that send a response back to Mattermost.
 
-**True**: Allow users to create custom slash commands from **Main Menu** > **Integrations** > **Commands**.
+**True**: Allow users to create custom slash commands from **Main Menu > Integrations > Commands**.
 
-**False**: Slash Commands are hidden in the **Integrations** user interface.
+**False**: Slash commands are hidden in the **Integrations** user interface.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false``.                                                           |
@@ -2950,7 +2974,7 @@ Restrict managing integrations to Admins
 
 **True**: When true, webhooks and slash commands can only be created, edited and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
-**False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu** > **Integrations**.
+**False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu > Integrations**.
 
 .. note::
   OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
@@ -3102,7 +3126,7 @@ Message Retention
 ^^^^^^^^^^^^^^^^^^
 Set how long Mattermost keeps messages in channels and direct messages.
 
-If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.
+If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set, will be deleted nightly. The minimum time is one day.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``.                                                             |
@@ -3264,7 +3288,7 @@ Enable Custom Terms of Service
 
   This page can only be modified using the System Console user interface.
 
-**True**: When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web or mobile. Existing users must accept them after login or a page refresh. To update terms of service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
+**True**: When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh. To update terms of service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
 
 **False**: During account creation or login, users can review terms of service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
 
@@ -3327,7 +3351,7 @@ Allow Authentication Transfer (Experimental)
 Autoclose Direct Messages in Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings** > **Sidebar**.
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings > Sidebar**.
 
 **False**: Conversations remain in the sidebar until they are manually closed.
 
@@ -3488,9 +3512,9 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 Enable Preview Features (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Preview features can be enabled from **Account Settings** > **Advanced** > **Preview pre-release features**.
+**True**: Preview features can be enabled from **Account Settings > Advanced > Preview pre-release features**.
 
-**False**: Disables and hides preview features from **Account Settings** > **Advanced** > **Preview pre-release features**.
+**False**: Disables and hides preview features from **Account Settings > Advanced > Preview pre-release features**.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false``.                                                    |
@@ -3500,9 +3524,9 @@ Enable Theme Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True:** Enables the **Display** > **Theme** tab in Account Settings so users can select their theme.
+**True:** Enables the **Display > Theme** tab in Account Settings so users can select their theme.
 
-**False:** Users cannot select a different theme. The **Display** > **Theme** tab is hidden in Account Settings.
+**False:** Users cannot select a different theme. The **Display > Theme** tab is hidden in Account Settings.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
@@ -3512,9 +3536,9 @@ Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True:** Enables the **Display** > **Theme** > **Custom Theme** section in Account Settings.
+**True:** Enables the **Display > Theme > Custom Theme** section in Account Settings.
 
-**False:** Users cannot use a custom theme. The **Display** > **Theme** > **Custom Theme** section is hidden in Account Settings.
+**False:** Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in Account Settings.
 
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
@@ -3620,9 +3644,9 @@ Experimental Sidebar Features (Experimental)
 Sidebar Organization (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
+**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
 
-**False**: Hides the channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting**.
+**False**: Hides the channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``.                                         |
@@ -3867,6 +3891,20 @@ Enable API Team Deletion
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``.                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable OpenTracing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
+Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
+
+By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported. 
+
+**False**: OpenTracing is not enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -3943,9 +3981,9 @@ Amazon S3 Signature V2
 
 By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
 
-**True**: Use Signature Version 2 Signing Process
+**True**: Use Signature Version 2 Signing Process.
 
-**False**: Use Signature Version 4 Signing Process
+**False**: Use Signature Version 4 Signing Process.
 
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
@@ -4050,6 +4088,139 @@ Changes to this setting require a server restart before taking effect.
 Experimental Settings only in config.json
 -----------------------------------------
 
+Audit settings
+~~~~~~~~~~~~~~~
+The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
+
+Syslog configuration options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
+
+**True**: When ``true`` syslog output is enabled.
+
+**False**: Syslog output is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogEnabled": false`` with options ``true`` and ``false``.                                                         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog IP
+^^^^^^^^^^^^^^
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name.                                      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog port
+^^^^^^^^^^^^^^
+The port that the syslog server is listening on. The default port is 6514.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number.                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog tag
+^^^^^^^^^^^^^^
+The syslog metadata tag field.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogTag": ""`` with string input consisting of a user-defined tag field.                                            |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog cert
+^^^^^^^^^^^^^^
+This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate.                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog insecure
+^^^^^^^^^^^^^^
+This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any
+host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks.
+
+**Note**: This should be used only for testing and not in a production environment.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogInsecure": false`` with options ``true`` and ``false``.                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog max queue size
+^^^^^^^^^^^^^^^^^^^^^
+This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records.
+
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogMaxQueueSize": 1000`` with numerical input.                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File configuration options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation.
+
+**True**: When ``true`` file output is enabled.
+
+**False**: File output is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileEnabled": false`` with options ``true`` and ``false``.                                                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File name
+^^^^^^^^^^^^^^
+This is the path to the output file location.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).                                    |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File max size MB
+^^^^^^^^^^^^^^
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input.                                                                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File max age days
+^^^^^^^^^^^^^^
+This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File max backups
+^^^^^^^^^^^^^^
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File compress
+^^^^^^^^^^^^^^
+When “true” rotated files are compressed using ``gzip``.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``.                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File max queue size
+^^^^^^^^^^^^^^^^^^^
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records.
+
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input.                                                                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Service Settings
 ~~~~~~~~~~~~~~~~~
 Group Unread Channels (Experimental)
@@ -4058,9 +4229,9 @@ Group Unread Channels (Experimental)
 
 **Disabled**: Unread channels section is disabled for all users.
 
-**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings** > **Sidebar**.
+**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings > Sidebar**.
 
-**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings** > **Sidebar**.
+**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings > Sidebar**.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``"disabled"``, ``"default_on"``, and ``"default_off"``.                          |
@@ -4108,7 +4279,7 @@ Restrict System Admin (Experimental)
 **False**: No restrictions are applied to the System Admin role.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false``.                                                  |
+| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``.                                                  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
