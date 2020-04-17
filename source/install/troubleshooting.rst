@@ -22,17 +22,17 @@ Some of these suggestions can be done directly, and others may need consultation
 Take a Look at the Logs
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This article covers accessing the numerous logs created by Mattermost applications.
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have System Admin permissions. 
 
 **Mattermost Server**
 
-1. In the *System Console* go to *Environment > Logging* and note down the path to the *File Log Directory*
-2. The server log file is called *mattermost.log* and can be opened with a standard text editor or shared directly.
+1. Navigate to **System Console > Environment > Logging** and note down the path to the **File Log Directory**.
+2. The server log file is called ``mattermost.log`` and can be opened with a text editor or shared directly.
 
 .. Note::
    Make sure to verify **logging to a file** is enabled by confirming **System Console > Environment > Logging > Output logs to file** is set to **true**. Open **System Console > Environment > Logging** and set File Log Level to **DEBUG**. Make sure to revert to **INFO** after troubleshooting to save disk space. Logging can be set to output plain text or JSON here as well.
 
-If filesystem access is not possible the current server logs can be found and copied from the *System Console* under *Reporting > Server Logs*.
+If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
 `More <https://docs.mattermost.com/administration/config-settings.html#logging>`_
 
@@ -40,16 +40,16 @@ If filesystem access is not possible the current server logs can be found and co
 
 The desktop app log file can be found in the user directory:
 
-- **Windows:** `%userprofile%\AppData\Roaming\Mattermost\logs`
-- **Linux:** `~/.local/share/Mattermsot/logs`
+- **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
+- **Linux:** ``~/.local/share/Mattermost/logs``
 
 **Mattermost Browser App**
 
-The browser based app does not produce additional log files. If the app has to be debugged use the development tools integrated into the browser in use.
+The browser-based app does not produce additional log files. If the app has to be debugged use the development tools integrated in your browser.
 
 **Mattermost Push Notification Service**
 
-Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to `/var/log/syslog`.
+Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
 
 Take a Look at the Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
