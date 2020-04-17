@@ -54,6 +54,24 @@ footer {
 	margin-bottom: 0.8rem;
 }
 
+.c-thermometer__close {
+    cursor: pointer;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 1.4rem;
+    right: 0.4rem;
+    top: 0.4rem;
+}
+
+.c-thermometer__close:hover {
+	color: #444;
+}
+
 .c-thermometer__popup {
 	display: none;
 	position: absolute;
