@@ -26,18 +26,7 @@ Development Process
 Release Process
 -------------------
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
-
-   /process/release-faq*
-   /process/feature-release*
-   /process/bug-fix-release*
-   /process/dot-release*
-   /process/security-release*
-   /process/mobile-release*
-   /process/release-tips*
-   /process/release-scorecard-definitions*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/release-process>`__.
 
 Community Process
 -------------------
