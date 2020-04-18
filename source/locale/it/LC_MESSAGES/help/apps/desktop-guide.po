@@ -201,8 +201,8 @@ msgid ""
 "in the context menu."
 msgstr ""
 "Evidenzia le parole errate nei tuoi messaggi. Disponibile per Inglese, "
-"Francese, Tedesco, Spagnolo e Olandese. Per cambiare la lingua del controllo
-ortografico, fai click con il pulsante destro del mouse all'interno di una "
+"Francese, Tedesco, Spagnolo e Olandese. Per cambiare la lingua del controllo "
+"ortografico, fai click con il pulsante destro del mouse all'interno di una "
 "finestra di messaggio e seleziona **Spelling Languages** nel menu "
 "contestuale."
 
