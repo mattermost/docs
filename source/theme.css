@@ -47,7 +47,7 @@ footer {
 	filter: grayscale(0);
 }
 .c-thermometer__popup p {
-	margin: 0;
+	margin: 0 2rem;
 }
 
 .c-thermometer .c-thermometer__paragraph {
@@ -77,7 +77,7 @@ footer {
 	position: absolute;
     bottom: 5rem;
     right: 2rem;
-    width: 19rem;
+    min-width: 19rem;
     height: auto;
     background: #fff;
     padding: 1rem;
