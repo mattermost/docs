@@ -317,7 +317,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.19.2, released 2020-04-20**
+- **v5.19.2, released 2020-04-21**
   - Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. The available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
   - Fixed an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel name is 40 characters long. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
 - **v5.19.1, released 2020-01-21**
