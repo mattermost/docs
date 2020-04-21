@@ -17,6 +17,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Improvements
 
 ### Bug Fixes
+ - Fixed an issue where no channel suggestions were displayed for ``in:`` search modifier for Guest Accounts.
+ - Fixed an issue where a "this user didn't get notified" system message if an at-mention was followed by a period and the user was not in the channel.
+ - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
+ - Fixed an issue where a thread title was missing when initial message in a thread continuation shows as "message deleted".
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
