@@ -6,6 +6,11 @@ For organizations who require multi-factor authentication ("MFA") as part of the
 
 Supported smartphones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`__. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
 
+Pre-requisite
+-------------
+Ensure that your server system time is accurate as the MFA is a time-based system. 
+
+
 Enabling MFA
 ------------
 
