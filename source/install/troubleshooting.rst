@@ -19,10 +19,10 @@ General Troubleshooting
 -----------------------
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-Take a Look at the Logs
+Review Mattermost Logs
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have System Admin permissions. 
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_. 
 
 **Mattermost Server**
 
@@ -51,7 +51,7 @@ The browser-based app does not produce additional log files. If the app has to b
 
 Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
 
-Take a Look at the Environment
+Review Mattermost Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
