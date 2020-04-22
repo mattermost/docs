@@ -8,7 +8,7 @@ Supported smartphones include iOS, Android, Blackberry and Windows Phone devices
 
 Pre-requisite
 -------------
-Ensure that your server system time is accurate as the MFA is a time-based system. 
+Ensure that your server system time is accurate as the MFA implementation is relying on Time-based One-time passwords (TOTP).
 
 
 Enabling MFA
@@ -28,7 +28,6 @@ When MFA enforcement is set to true, all users with email or LDAP authentication
 Users will not be able to remove MFA from their account while enforcement is on.
 
 Since turning on MFA enforcement prevents users from accessing the site until set up is complete, it is recommended you turn on enforcement during non-peak hours when people are less likely to be using the system.
-
 
 
 
