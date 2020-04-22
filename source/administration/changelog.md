@@ -6,6 +6,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.22 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.22.1, release day TBD**
+  - Investigating an issue where Amazon S3 file storage with IAM credentials fails due to a bug in the ``minio-go`` library. [MM-24388](https://mattermost.atlassian.net/browse/MM-24388)
+- **v5.22.0, released 2020-02-16**
+  - Original 5.22.0 release
+
 **Release day: 2020-04-16**
 
 Mattermost v5.22.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
@@ -317,9 +322,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.19.2, release day TBD**
-  - Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. The available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
-  - Fixing an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel is created with a certain arrangement of characters. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
+- **v5.19.2, released 2020-04-21**
+  - Fixed an issue with unexpected crashes related to any action taken to modify post properties such as push notifications. Note for developers: Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. To avoid crash issues, the available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
+  - Fixed an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel name is 40 characters long. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
 - **v5.19.1, released 2020-01-21**
   - Fixed a regression affecting v5.18 and v5.19 where some users were experiencing client-side performance issues. This was mainly affecting users with more than 100 channels listed in the channel sidebar and with channels sorted alphabetically. [MM-20349](https://mattermost.atlassian.net/browse/MM-20349)
 - **v5.19.0, released 2020-01-16**
