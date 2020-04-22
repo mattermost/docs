@@ -4,7 +4,7 @@ Desktop Application Changelog
 Release v4.4.0
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.0>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.1>`_
 
 - **v4.4.1, release day 2020-04-22**
  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
@@ -69,9 +69,6 @@ Mac
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
-- Desktop client opens to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
-- Google oAuth with Gmail addresses no longer works on the Desktop app. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
-- When minimizing the app and then maximizing it, it sometimes doesn't restore to the right position but "jumps" to a different place in the taskbar. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
 - No notification on Windows if the app is closed on the channel where the message is posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
 - Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
