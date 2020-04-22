@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/signing-in.rst:2
 msgid "Signing in"
-msgstr "Acesso"
+msgstr "Accesso"
 
 #: ../../source/help/getting-started/signing-in.rst:6
 msgid ""
@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/signing-in.rst:23
 msgid "Email Address or Username Sign In"
-msgstr "Acesso con Indirizzo Email o Username"
+msgstr "Accesso con Indirizzo Email o Username"
 
 #: ../../source/help/getting-started/signing-in.rst:25
 msgid ""

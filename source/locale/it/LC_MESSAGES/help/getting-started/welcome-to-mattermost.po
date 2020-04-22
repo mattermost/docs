@@ -90,7 +90,7 @@ msgstr "Per comprendere il funzionamento di Mattemost qui di seguito è presente
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:32
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:39
 msgid "Teams"
-msgstr "Teams"
+msgstr "Team"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:33
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:48
