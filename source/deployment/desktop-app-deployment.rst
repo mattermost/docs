@@ -68,7 +68,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 
       enableServerManagement: true
 
-2. To build the application, follow the `Mattermost Desktop Development Guide <https://github.com/yuya-oc/desktop/blob/master/docs/development.md>`__.
+2. To build the application, follow the `Mattermost Desktop Development Guide <https://github.com/mattermost/desktop/blob/master/docs/development.md>`__.
 
 Windows App: Pre-Configuration and Silent Deployment
 ------------------------------------------------------

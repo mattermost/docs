@@ -102,6 +102,10 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
   token=okwexkjpe7ygb8eq1ww58t483w&
   user_id=aoa1agao6t8fmx3ikt1j9w5ybw&
   user_name=somename
+  channel_mentions=["saepe-5", "aut-8"]
+  channel_mentions_ids=["r3j6sby343fpfdxcbwqg95rfsa", "ehjj46yk7ifptr5bpfb966s6mc"]
+  user_mentions=["aaron.peterson", "aaron.medina"]
+  user_mentions_ids=["q5s3b7xzgprp5eid8h66j9epsy", "czwmumrmw7dfxecww7qibkkoor"]
 
 If your integration sends back a JSON response, make sure it returns the ``application/json`` content-type.
 

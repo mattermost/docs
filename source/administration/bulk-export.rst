@@ -28,12 +28,12 @@ The export command runs in the `CLI <https://docs.mattermost.com/administration/
 
 To run the export command: 
 
-1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``.
+1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost``.
 2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an absolute or relative path to dictate where the file is exported. 
   
-  ``sudo ./mattermost export bulk file.json --all-teams``
+  ``sudo -u mattermost bin/mattermost export bulk file.json --all-teams``
 
-  ``sudo ./mattermost export bulk /home/user/bulk_data.json --all-teams``
+  ``sudo -u mattermost bin/mattermost export bulk /home/user/bulk_data.json --all-teams``
   
 3.  Retrieve your file from the location you specified.  
 

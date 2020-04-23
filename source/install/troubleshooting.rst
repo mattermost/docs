@@ -75,11 +75,29 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
   .. code-block:: none
 
-    $ sudo ./mattermost roles system_admin {username}
+    $ sudo -u mattermost bin/mattermost roles system_admin {username}
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-SAML Issues
+Password resets
+~~~~~~~~~~~~~~~
+
+**Email address or username sign in**
+
+If you sign in to Mattermost using an email address or username, you can send a password reset request by selecting **I forgot my password**. 
+The Mattermost Support team does not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
+If you are not sure who the System Admin is, contact the internal IT team at your organization for further help.
+
+**AD/LDAP users**
+
+The password reset process is performed on the directory level as Mattermost pulls the credential information from the LDAP directory.
+If you experience issues with your password for your LDAP log in, contact your organization's LDAP administrator for further help.
+
+**SSO users (OneLogin/Okta etc)**
+
+The password reset process is completed on the IdP provider side, and not via the Mattermost System Console.
+
+SAML issues
 -------------------
 
 Unable to Switch to SAML Authentication Successfully
