@@ -9,8 +9,17 @@ Mattermost offers a self-service portal where you can manage your Mattermost:
 * Organization information
 * Payment methods
 
-How do I get help?
-~~~~~~~~~~~~~~~~~~~~~
+How do I purchase a subscription?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Is my subscription active immediately?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Is there a limit to the subscription value I can purchase?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How many users can have access to an account?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 My card was declined
 ~~~~~~~~~~~~~~~~~~~~~
@@ -18,8 +27,6 @@ My card was declined
 How do I apply my license key?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-How do I delete my account?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 How do I renew the Enterprise Edition subscription?
@@ -71,3 +78,10 @@ What happens if my department buys Mattermost Enterprise Edition and then centra
 Mattermost Enterprise Edition subscriptions and support benefits are licensed per production instance.
 
 When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
+
+
+How do I delete my account?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What happens when I delete my account?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
