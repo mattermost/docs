@@ -13,6 +13,7 @@ Use the following materials as a template to help you plan and document the impl
    :glob:
 
    /getting-started/enterprise-roll-out-checklist.rst
+   /deployment/enterprise-deployment-guide.rst
    /deployment/on-boarding.rst
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
