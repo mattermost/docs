@@ -1,4 +1,4 @@
-Account Management 
+Account Management
 ----------------------
 
 Mattermost offers a self-service portal where you can manage your Mattermost:
@@ -9,14 +9,29 @@ Mattermost offers a self-service portal where you can manage your Mattermost:
 * Organization information
 * Payment methods
 
+The self-service portal applies to on-premises Mattermost deployments only. Cloud deployments will be supported in a future release.
+
 How do I purchase a subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Log in to your Mattermost customer profile. If you haven't created a profile, follow the steps provided on the landing page, validate your email address, and then log in.
+2. Choose a subscription type, enter the number of users in the **Order summary** field.
+3. (Optional for E20) You can add Premier Support, the cost of which is automatically added to your order total.
+4. Select **Next Step**.
+5. Enter your billing and payment information.
+6. Accept the **Terms**
+6. Select **Complete**.
+
 
 Is my subscription active immediately?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Yes, once your payment is successfully processed your license is immediately available in your account.
+
 Is there a limit to the subscription value I can purchase?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. The current limit is $5000
 
 How many users can have access to an account?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,9 +39,18 @@ How many users can have access to an account?
 My card was declined
 ~~~~~~~~~~~~~~~~~~~~~
 
+
+
 How do I apply my license key?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+   If you are not a System Admin, you will not have access to the System Console to apply the license.
+
+
+Navigate to the **Subscriptions** page of your Mattermost account. Select **Download License** to download the license key for your subscription. Then, in Mattermost,
+open **System Console > About > Edition and License**. Follow the steps provided to apply your license key.
 
 
 How do I renew the Enterprise Edition subscription?

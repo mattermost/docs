@@ -1,4 +1,4 @@
-# Deployment Overview
+# Deployment 
 
 The below diagram illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
@@ -47,22 +47,22 @@ Typically a "Mattermost unreachable" error message will be displayed warning use
 
 WSS is a secure, encrypted connection and is highly recommended. An unencrypted WSS connection may be used in initial testing and configuration but it is not recommended for production.
 
-## Network Access and Multi-Factor Authentication 
+## Network Access and Multi-Factor Authentication
 
 ### Behind a VPN
 
-Mattermost is intended to be installed within a private network which can offer multiple factors of authentication, including secure access to computing devices and physical locations. 
+Mattermost is intended to be installed within a private network which can offer multiple factors of authentication, including secure access to computing devices and physical locations.
 
-If outside access is required, a virtual private network client (VPN), such as [OpenVPN](https://openvpn.net/), with additional authentication used to connect to Mattermost for web, desktop, and mobile experiences, is recommended. 
+If outside access is required, a virtual private network client (VPN), such as [OpenVPN](https://openvpn.net/), with additional authentication used to connect to Mattermost for web, desktop, and mobile experiences, is recommended.
 
-### Non-VPN Setup 
+### Non-VPN Setup
 
 If Mattermost is accessible from the open internet, the following is recommended:
 
-1. An IT admin should be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://about.mattermost.com/security-bulletin/) and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html). 
-2. The organization upgrades to [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) to enable SAML single sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended. 
+1. An IT admin should be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://about.mattermost.com/security-bulletin/) and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html).
+2. The organization upgrades to [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) to enable SAML single sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended.
 
-If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential. 
+If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential.
 
 **Note:** Not-for-profit and academic institutions are eligible for special [not-for-profit](https://about.mattermost.com/mattermost-mondays/) and [academic pricing](https://about.mattermost.com/modern-learning/) for Mattermost Enterprise Edition.
 
@@ -129,7 +129,7 @@ Connects to and manages supported databases.
 
 ### High Availability (Enterprise Edition)
 
-Large organizations needing sophisticated, high scale, high availability configurations can set up a [highly available, horizontally scalable](https://docs.mattermost.com/deployment/cluster.html) deployment. Contact the [enterprise team](https://about.mattermost.com/contact/) for guidance on configuring and sizing Mattermost Enterprise Edition to support your specific needs. 
+Large organizations needing sophisticated, high scale, high availability configurations can set up a [highly available, horizontally scalable](https://docs.mattermost.com/deployment/cluster.html) deployment. Contact the [enterprise team](https://about.mattermost.com/contact/) for guidance on configuring and sizing Mattermost Enterprise Edition to support your specific needs.
 
 ## Data Stores
 
@@ -183,4 +183,4 @@ For support for certificate-based authentication for mobile devices, [contact th
 
 ### Mobile Devices with an EMM Provider
 
-Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/mobile/mobile-appconfig.html) such as Blackberry UEM, Mobileiron, and Airwatch. EMM solutions typically offer "App Tunnel" or per-app VPN capabilities that can be used to connect to mobile apps behind a VPN. 
+Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/mobile/mobile-appconfig.html) such as Blackberry UEM, Mobileiron, and Airwatch. EMM solutions typically offer "App Tunnel" or per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.
