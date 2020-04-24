@@ -12,11 +12,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Breaking Changes
 
-### Highlights
-
-### Improvements
-
 ### Bug Fixes
+ - Fixed an issue where using slash command ``/leave`` failed to leave the channel on webapp.
  - Fixed an issue where no channel suggestions were displayed for ``in:`` search modifier for Guest Accounts.
  - Fixed an issue where a "this user didn't get notified" system message if an at-mention was followed by a period and the user was not in the channel.
  - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
