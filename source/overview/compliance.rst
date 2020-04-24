@@ -1,51 +1,51 @@
 ========================================
-Certifications and Compliance Overview
+Certifications and Compliance
 ========================================
 
-This overview summarizes various compliances and certifications Mattermost is designed to support, including: 
+This overview summarizes various compliances and certifications Mattermost is designed to support, including:
 
 - GDPR Compliance
-- U.S. Export Compliance 
+- U.S. Export Compliance
 
-GDPR Compliance 
+GDPR Compliance
 -----------------------------------------------
 
 The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)
 
-Continual Commitment to the Principles of GDPR 
+Continual Commitment to the Principles of GDPR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost completes this mission through the use of: 
+Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost completes this mission through the use of:
 
-- **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities 
+- **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities
 - **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://about.mattermost.com/terms>`__
 - **Privacy Measures** - Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 - **Product Features** to ensure data management and data portability
 
-To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__. 
+To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__.
 
-Security Infrastructure 
+Security Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure that has been developed with a high standard of security. The features of this security infrastructure include: 
+Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure that has been developed with a high standard of security. The features of this security infrastructure include:
 
 - **Security Features** in Mattermost open source and commercial offerings that enable deployment of your organization’s own infrastructure
-- **Responsible Disclosure Policy** for security researchers around the world to confidentially report suspected vulnerabilities, which can be addressed in updates to Mattermost software 
+- **Responsible Disclosure Policy** for security researchers around the world to confidentially report suspected vulnerabilities, which can be addressed in updates to Mattermost software
 - **Security Reviews** conducted by both our own internal security review team and external security researchers
 - **ISO 27001 Standards** which are met to achieve alignment with international security guidelines
 
-Contractual Obligations 
+Contractual Obligations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost adheres to contractual obligations for ensuring the proper management of data through: 
+Mattermost adheres to contractual obligations for ensuring the proper management of data through:
 
 - **GDPR-Compliant Data Processing Addendum** included with Mattermost’s standard terms
-- **Mattermost Privacy Policy** sharing how data is handled on the online infrastructure controlled by Mattermost, Inc. 
+- **Mattermost Privacy Policy** sharing how data is handled on the online infrastructure controlled by Mattermost, Inc.
 
-Privacy Measures 
+Privacy Measures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy Shield** principles of notice, choice, onward transfer, security, data integrity, access and enforcement for personal data submitted by our customers and partners. 
+Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy Shield** principles of notice, choice, onward transfer, security, data integrity, access and enforcement for personal data submitted by our customers and partners.
 
 Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
@@ -71,18 +71,18 @@ Data Portability
 - **Data Export**: Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
 
 
-Accessibility Compliance 
+Accessibility Compliance
 -----------------------------------------------
 
-Compliance with accessibility standards is achieved in the following ways: 
+Compliance with accessibility standards is achieved in the following ways:
 
 - **508 Compliance** - For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
 
-- **WCAG 2.0** - For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.  
+- **WCAG 2.0** - For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.
 
-- **ADA** - Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools. 
+- **ADA** - Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 
-- **Remediation** - Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`__ so that it may be resolved. 
+- **Remediation** - Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`__ so that it may be resolved.
 
 U.S. Export Compliance Overview
 -----------------------------------------------
@@ -103,7 +103,7 @@ Summary Table
 |                                               | and fully available to compile from publicly available source code at https://github.com/mattermost/                                            |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Overview 
+Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The U.S. government regulates the transfer of information, commodities, technology and software considered
@@ -111,9 +111,9 @@ to be strategically important to the U.S. in the interest of national security, 
 concerns. Many countries outside of the U.S. have similar controls on exports for the same reasons.
 
 There is a complex network of U.S. agencies and inter-related regulations that govern exports collectively referred
-to as “Export Controls." 
+to as “Export Controls."
 
-It is the policy of Mattermost to comply with all export compliance laws in all countries in which it transacts 
+It is the policy of Mattermost to comply with all export compliance laws in all countries in which it transacts
 business. Because Mattermost is a U.S.-based global company, our products, collectively referred to as “Commodities,"
 which include our software as well as our equipment, materials and services, are subject to the export laws and regulations
 of every country in which we conduct business. Non-compliance with export control regulations can subject Mattermost
@@ -129,7 +129,7 @@ General Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`__ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
-the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”). 
+the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”).
 
 Export Classification and Licensing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ technology can be found within the `Commerce Control List <https://www.bis.doc.g
 
 At Mattermost, our Team Edition software is `outside the scope of the EAR <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1-encryption-items-not-subject-to-the-ear>`__, as it is derived from publicly available encryption source code and the complete software package for both the source code (https://github.com/mattermost/) and binary versions are publicly available. Mattermost enterprise software is found in `Category 5, Part 2 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__ of the CCL as Telecommunications and Information Security items (hardware, software and technology). Most items in this category have encryption.
 
-Often a license exception under `Part 740 <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ is available where a Commerce Control List item lists the available license exception(s) specific to an Export Control Classification Number (ECCN), based on a combination of factors. 
+Often a license exception under `Part 740 <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ is available where a Commerce Control List item lists the available license exception(s) specific to an Export Control Classification Number (ECCN), based on a combination of factors.
 
 Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__, with a license exception available from `“ENC” <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ for our E10 and E20 software, with encryption features derived from open-source software. Encryption products, under the export regulations, have multiple levels of controls and requirements. BIS has a separate section of their website that has an overview, and many links, covering encryption under `Policy Guidelines <https://www.bis.doc.gov/index.php/policy-guidance/encryption>`__ that you may want to review. These guidelines include helpful flow charts for determining if an item is subject to encryption controls, tables and other details.
 
@@ -165,8 +165,8 @@ person’s country or countries of nationality and is found in `734.2(b) <https:
 Disclaimer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost makes this data available for informational purposes only. It may not reflect the most current legal 
-developments, and Mattermost does not represent, warrant or guarantee that it is complete, accurate or up to date. 
+Mattermost makes this data available for informational purposes only. It may not reflect the most current legal
+developments, and Mattermost does not represent, warrant or guarantee that it is complete, accurate or up to date.
 This information is subject to change without notice. The materials on this site are not intended to constitute legal
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
@@ -181,11 +181,11 @@ Based on our interpretation of GDPR, it is not required to hide message contents
 
 1. Every user has the ability to disable email notifications in their Account Settings. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
 
-2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server. 
+2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server.
 
-3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to :ref:`disable notifications completely <email-notification-config>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <email-preview-mode-banner-config>`. 
+3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to :ref:`disable notifications completely <email-notification-config>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <email-preview-mode-banner-config>`.
 
-Are the server access logs containing IP addresses a GDPR compliance issue? 
+Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_, processing personal data for the purpose of ensuring network and information security is acceptable. Moreover:
@@ -196,5 +196,4 @@ Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/le
 
 Do you have Fed or Department of Defense (DOD) Certification?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We are in the process of acquiring Authority to Operate (ATO) and Certificate of Networthiness (CON) certifications.  
-
+We are in the process of acquiring Authority to Operate (ATO) and Certificate of Networthiness (CON) certifications.

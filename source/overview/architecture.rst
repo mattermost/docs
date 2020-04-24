@@ -1,4 +1,4 @@
-Architecture Overview
+Architecture
 =====================
 
 This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`__.
@@ -13,7 +13,7 @@ At its core, Mattermost is a single-compiled Go binary that is exposed as a Rest
 
 It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`__ and provides the following:
 
-- **Authentication client**, which provides the functionality for users to log into Mattermost via email address and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin and Okta. 
+- **Authentication client**, which provides the functionality for users to log into Mattermost via email address and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin and Okta.
 - **Authentication provider**, which enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
 - **Notification service**, which sends notifications via SMTP or a Push Notification Service for mobile applications.
 - **Data management service**, which connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data to and from them.
@@ -36,7 +36,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance**: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__.
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -55,7 +55,7 @@ HTTPS is a secure, encrypted protocol and is highly recommended for production. 
 
 Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
 
-If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real-time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
+If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real-time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested.
 
 .. image:: ../images/architecture_with_protocol.png
 
@@ -97,7 +97,7 @@ Each AWS diagram represents a full high availability deployment on Amazon Web Se
 
 .. image:: ../images/MattermostDeployment5kUsers.png
 
-5,000 Users on E20 - AWS 
+5,000 Users on E20 - AWS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/MattermostDeployment5kaws.png
@@ -107,7 +107,7 @@ Each AWS diagram represents a full high availability deployment on Amazon Web Se
 
 .. image:: ../images/MattermostDeployment10kUsers.png
 
-10,000 Users on E20 - AWS 
+10,000 Users on E20 - AWS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/MattermostDeployment10kaws.png
@@ -117,7 +117,7 @@ Each AWS diagram represents a full high availability deployment on Amazon Web Se
 
 .. image:: ../images/MattermostDeployment25kUsers.png
 
-25,000 Users on E20 - AWS 
+25,000 Users on E20 - AWS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/MattermostDeployment25kaws.png

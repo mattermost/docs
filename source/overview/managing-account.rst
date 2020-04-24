@@ -1,4 +1,4 @@
-Account Management Overview
+Account Management 
 ----------------------
 
 Mattermost offers a self-service portal where you can manage your Mattermost:
