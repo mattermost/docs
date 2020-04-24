@@ -1,0 +1,1 @@
+sphinx-sitemap==1.0.1
