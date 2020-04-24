@@ -35,7 +35,7 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_
+You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_.
 
 **Mattermost Desktop App**
 
