@@ -1,7 +1,71 @@
 Desktop Application Changelog
 ========================================
 
-Release v4.4.0
+Release v4.5
+----------------------------
+
+**Release date:** June 16th, 2020
+
+**Download Binaries:** 
+
+
+**Breaking Changes** 
+
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added a spell checker for Polish language. 
+- Added support for triggering a desktop notification when downloading a file is complete.
+- Added support for the cursor focus to be on the Server Name field when clicking on the ``+`` tab to add a new server.
+- Defaulted "Flash app window and taskbar icon when a new message is received" setting to ``True``.
+- Migrated some operations to promises. (?)
+
+Mac
+^^^^^^^^^^^^^
+
+- On Mac, a closed window now reopens with CMD+Tab.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v7.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where no notification appeared if the app was closed on a channel where the message was posted.
+- Fixed an issue where trusting self-signed certificates kept asking for trust.
+- Fixed an issue where a link to the root of a server if the URL didn't end with a ``/`` caused a "Channel not Found" error.
+- Fixed an issue where OneLogin links opened up in the app itself making it impossible to go back to the app.
+
+Windows
+^^^^^^^^^^^^^
+- Fixed an issue where Windows Desktop notifications were delayed compared to other notification channels.
+- Fixed an issue where Windows Desktop Menu option was read as "Unlabel 0 button".
+
+Mac
+^^^^^^^^^^^^^
+- Fixed an issue where double clicking the top bar no longer minimized or maximized the window.
+- Fixed an issue where users were unable to reposition the app by using click, hold and drag on the left side of the header.
+- Fixed an issue where server display name field lost focus when using CMD+Tab to navigate away and back to the app.
+- Fixed an issue where a long server address didn't wrap correctly in the new server settings page.
+- Fixed an issue where copy and pasting into Atlassian login fields pasted text in the wrong place.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contributors
+~~~~~~~~~~~~~~~
+
+
+Release v4.4
 ----------------------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.1>`_
@@ -83,7 +147,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
 
-Release v4.3.0
+Release v4.3
 ----------------------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__
