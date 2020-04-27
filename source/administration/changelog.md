@@ -13,18 +13,20 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Breaking Changes
 
 ### Bug Fixes
- - Fixed an issue where using slash command ``/leave`` failed to leave the channel on webapp.
- - Fixed an issue where clicking on a channel link from a Direct Message while on a different team resolved to a "page not found" error.
- - Fixed an issue where ''Guest'' tags were not shown in Group Message channel header.
+ - Fixed an issue where using slash command ``/leave`` failed to leave the channel.
+ - Fixed an issue where clicking on a channel link from a Direct Message channel that linked to a different team resolved in a "page not found" error.
  - Fixed an issue where reloading a channel caused the channel to be shown as read-only for a few seconds.
  - Fixed an issue where no channel suggestions were displayed for ``in:`` search modifier for Guest Accounts.
- - Fixed an issue where a "this user didn't get notified" system message if an at-mention was followed by a period and the user was not in the channel.
+ - Fixed an issue where ``Guest`` tags were not shown in Group Message channel header.
+ - Fixed an issue where guest permissions could not be set in Team Override Schemes.
+ - Fixed an issue where a "this user didn't get notified" system message was missing if an at-mention was followed by a period and the user was not in the channel.
  - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
  - Fixed an issue where mentions in header-changed system messages weren't highlighted.
- - Fixed an issue where a thread title was missing when initial message in a thread continuation shows as "message deleted".
+ - Fixed an issue where a thread title was missing when initial message in a thread showed as "message deleted".
+ - Fixed an issue on Firefox where using Alt+arrow stopped working on read-only channels.
  - Fixed an issue where muted channels on another team appeared as unread in team sidebar and browser tab.
- - Fixed an issue where guest permissions could not be set in Team Override Schemes.
  - Fixed an issue where the URL field on Rename Channel modal allowed more than two underscores.
+ - Fixed an issue with a "Failed to get membership" log spam for bot posts.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
