@@ -21,6 +21,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a thread title was missing when initial message in a thread continuation shows as "message deleted".
  - Fixed an issue where muted channels on another team appeared as unread in team sidebar and browser tab.
  - Fixed an issue where guest permissions could not be set in Team Override Schemes.
+ - Fixed an issue where the URL field on Rename Channel modal allowed more than two underscores.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
