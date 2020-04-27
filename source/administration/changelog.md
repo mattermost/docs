@@ -6,6 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.22 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.22.2, release day TBD**
+  - Fixing an issue where ``Create posts`` permission is missing from the User Interface. There are no known issues that require this change but if there were issues, this change would provide customers with a means to diagnose and solve the problem. Workarounds include using the "Reset to Defaults" button for a system scheme and deleting and re-creating the button for team scheme.
 - **v5.22.1, released 2020-04-23**
   - Fixed an issue where Amazon S3 file storage with IAM credentials failed due to a bug in the ``minio-go`` library. [MM-24388](https://mattermost.atlassian.net/browse/MM-24388)
 - **v5.22.0, released 2020-04-16**
