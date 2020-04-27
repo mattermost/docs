@@ -18,7 +18,7 @@ Read these instructions carefully from start to finish. Make sure that you under
   Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
   
 .. important::
-  If you're upgrading from a version older than 5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. `/opt/mattermost`) and your binary should point to the `mattermost` binary (i.e. `/opt/mattermost/bin/mattermost`).
+  If you're upgrading from a version prior to v5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. `/opt/mattermost`) and your binary should point to the `mattermost` binary (i.e. `/opt/mattermost/bin/mattermost`).
 
 You should gather the following information before starting the upgrade:
 
