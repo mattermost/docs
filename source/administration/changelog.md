@@ -14,6 +14,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Bug Fixes
  - Fixed an issue where using slash command ``/leave`` failed to leave the channel on webapp.
+ - Fixed an issue where clicking on a channel link from a Direct Message while on a different team resolved to a "page not found" error.
+ - Fixed an issue where ''Guest'' tags were not shown in Group Message channel header.
+ - Fixed an issue where reloading a channel caused the channel to be shown as read-only for a few seconds.
  - Fixed an issue where no channel suggestions were displayed for ``in:`` search modifier for Guest Accounts.
  - Fixed an issue where a "this user didn't get notified" system message if an at-mention was followed by a period and the user was not in the channel.
  - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
