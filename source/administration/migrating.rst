@@ -169,7 +169,7 @@ The following limitations are present when importing from Slack:
 Migrating from Slack using the Mattermost Web App
 `````````````````````````````````````````````````
 
-.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool <https://docs.mattermost.com/administration/migrating.html#Migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
+.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
 
