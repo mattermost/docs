@@ -20,12 +20,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``Guest`` tags were not shown in Group Message channel header.
  - Fixed an issue where guest permissions could not be set in Team Override Schemes.
  - Fixed an issue where a "this user didn't get notified" system message was missing if an at-mention was followed by a period and the user was not in the channel.
+ - Fixed an issue where batched emails were still sent even if there was activity from the user.
  - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
  - Fixed an issue where mentions in header-changed system messages weren't highlighted.
  - Fixed an issue where a thread title was missing when initial message in a thread showed as "message deleted".
  - Fixed an issue on Firefox where using Alt+arrow stopped working on read-only channels.
  - Fixed an issue where muted channels on another team appeared as unread in team sidebar and browser tab.
  - Fixed an issue where the URL field on Rename Channel modal allowed more than two underscores.
+ - Fixed an issue where pasting text from a GitHub code block erased post textbox contents.
+ - Fixed an issue where keyboard shortcuts to move between teams conflicted with a native Linux OS shortcut for switching virtual desktops.
  - Fixed an issue with a "Failed to get membership" log spam for bot posts.
  
 ### config.json
