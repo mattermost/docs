@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 - **v5.22.1, released 2020-04-23**
   - Fixed an issue where Amazon S3 file storage with IAM credentials failed due to a bug in the ``minio-go`` library. [MM-24388](https://mattermost.atlassian.net/browse/MM-24388)
-- **v5.22.0, released 2020-02-16**
+- **v5.22.0, released 2020-04-16**
   - Original 5.22.0 release
 
 **Release day: 2020-04-16**
