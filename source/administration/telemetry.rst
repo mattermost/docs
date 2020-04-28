@@ -45,7 +45,7 @@ Mattermost error and diagnostic data is collected for the following purposes:
   - To make design decisions for future releases
 
 .. note:: 
-Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. The segment endpoint is being deprecated in favor of ``cdn.rudderlabs.com`` starting in Mattermost version 5.23. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
+Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. The segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain, starting in Mattermost version 5.23. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
 
 The following data is sent once every 24 hours:
