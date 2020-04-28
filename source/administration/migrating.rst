@@ -193,7 +193,9 @@ Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
 `````````````````````````````````````````````````````````````````````
 .. note:: This method is the recommended way to import Slack's corporate export file.
 
-1. Use the `mmetl tool <https://github.com/mattermost/mmetl>`_ to transform Slack's corporate export file into the ``jsonl`` format required by the bulk import tool.
+1. Use the `slack-advanced-exporter <https://github.com/grundleborg/slack-advanced-exporter>`_ to download attachments and add users' email addresses to your Slack corporate export file.
+
+2. Use the `mmetl tool <https://github.com/mattermost/mmetl>`_ to transform Slack's corporate export file into the ``jsonl`` format required by the bulk import tool.
 
 2. Bulk load the files using the steps provided in the `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data>`_. 
    
