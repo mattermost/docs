@@ -20,6 +20,19 @@ The Plugin Marketplace is a collection of plugins that can greatly increase the 
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
+Plugin Labels
+~~~~~~~~~~~~~~~~
+
+Plugins in the Marketplace are labeled to make it easier for administrators to choose plugins that fit their company's security and risk policies if they do not allow for community plugins to be used. 
+
+**Community Plugins**
+
+Plugins identified as "Community" are produced by the open-source community or partners and the features/roadmap are not controlled directly by Mattermost.  Prior to being listed on the Plugin Marketplace, they are reviewed by the Mattermost development team and code-signed to ensure the code Mattermost reviewed, is delivered.  Mattermost does not directly support these plugins in production environments.
+
+**Beta Plugins**
+
+Plugins may be labeled as "Beta" if they are released to the Plugin Marketplace early for customer previews.  We do not recommend running Beta plugins on production servers.
+
 Installing a plugin
 ~~~~~~~~~~~~~~~~
 
