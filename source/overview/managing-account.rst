@@ -65,13 +65,6 @@ New users added during the subscription period will have a retroactive charge. `
 Managing license renewals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When your subscription is due for renewal, you'll receive a reminder email a month prior to the expiry date. You can then
-log into your Mattermost account on the Customer Portal, navigate to **Subscriptions**, and choose **Renew** next to the relevant
-subscription. The renewal can be done a month in advance and will be in effect from the previous expiry date. You do not
-have to download a new license.
-< If a customer renews early, how is that renewal provisioned? Is it possible to renew early or do we just recommend
-auto-renewal? What about mid-term renewals if they want to add seats? >
-
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,10 +72,6 @@ Frequently Asked Questions
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use Stripe to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card
-are authenticated using 3D Secure.
-
-Should you wish to make payment using another method, please contact our Billing team <>
 
 Can I download the Privacy Policy?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,8 +114,7 @@ No, there is no limit to the subscription value or number of users you can purch
 How many users can have access to an account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-< This should possibly be removed as it may open up a dialog around the fact that multiple people can use the same
-account by sharing the username/password >
+
 
 What happens if my department buys Mattermost Enterprise Edition and then central IT buys a high volume license that also covers my department?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
