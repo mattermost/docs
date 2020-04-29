@@ -9,6 +9,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **Release day: 2020-05-16**
 
 ### Compatibility
+ - Support for Postgres 9.4 will be removed in the near future. We currently support versions 9.5+ and highly recommend upgrading to versions 10+.
 
 ### Breaking Changes
 
