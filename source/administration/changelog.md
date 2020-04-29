@@ -24,6 +24,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
  - Fixed an issue where mentions in header-changed system messages weren't highlighted.
  - Fixed an issue where a thread title was missing when initial message in a thread showed as "message deleted".
+ - Fixed an issue where there was no hover effect when mousing over options in Search.
  - Fixed an issue on Firefox where using Alt+arrow stopped working on read-only channels.
  - Fixed an issue where muted channels on another team appeared as unread in team sidebar and browser tab.
  - Fixed an issue where the URL field on Rename Channel modal allowed more than two underscores.
