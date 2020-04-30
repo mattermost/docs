@@ -25,7 +25,7 @@ To backup your Mattermost server:
      - If you use local storage using a non-default directory specified in the ``Directory`` setting in ``config.json``, back up files in that location.
      - If you store your files in S3, you can typically keep the files where they are located without backup.
      
-Please note that to make a 'clean' backup you need to stop mattermost during the duration of the backup otherwise the database and files may become out of sync.
+Please note that to make a 'clean' backup you need to stop Mattermost during the duration of the backup otherwise the database and files may become out of sync.
 
 To restore a Mattermost instance from backup, restore your database, ``config.json`` file and optionally locally stored user files into the locations from which they were backed up. 
 
@@ -99,7 +99,6 @@ Once IT is contacted about an SSO outage issue, they can temporarily change a us
 If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 It is highly important after the outage to switch everyone back to SSO from email-password to maintain consistency and security.
-
 
 
 
