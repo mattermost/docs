@@ -2,12 +2,16 @@ Licensing and Subscription
 ----------------------
 
 Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions for your on-premises deployments.
+All your licenses are listed in the portal, including their start and end dates, providing you with an at-a-glance overview of your account, making it easier to manage purchases and renewal dates.
 
+You can access your account to view information about your:
 - Subscription purchases
 - Licenses
 - Account password
 - Organization information
 - Payment methods
+- Renewals (available in a future release)
+- Active users (available in a future release)
 
 
 Purchasing an Enterprise license
@@ -23,8 +27,8 @@ Purchasing an Enterprise license
 
 Choose **Download the license key**, and navigate to the Mattermost System Console to apply it.
 
-If you experience any problems with your transaction, please contact our Support Team. If possible, keep the error message/number
-that you received on hand as it may assist with their investigation.
+If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal.
+If possible, keep the error message/number that you received on hand as it may assist with their investigation.
 
 Applying the license key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,9 +37,10 @@ Applying the license key
 
    If you are not a System Admin, you will not have access to the System Console to apply the license.
 
+Navigate to the **Subscriptions** page of your Mattermost account. Select **Download License** to download the license key for your subscription.
 
-Navigate to the **Subscriptions** page of your Mattermost account. Select **Download License** to download the license key for your subscription. Then, in Mattermost,
-open **System Console > About > Edition and License**. Follow the steps provided to apply your license key.
+You can apply the license in the Mattermost System Console: **System Console > About > Edition and License**. Follow the steps provided to apply your license key.
+You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#changing-a-license-key>`__ to apply the license.
 
 Viewing license information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,15 +59,8 @@ cost per user.
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Log in to the Customer Portal and select the Enterprise Edition you want to renew, the user count, and your contact information. To find the user count you want to renew for, log in to Mattermost as a System Admin and go to **System Console > Site Statistics**, where **Total Active Users** displays the user count on your server.
-
-After submitting the renewal form, our renewal team will get in contact with you about your new subscription.
-
-New users added during the subscription period will have a retroactive charge. `Learn more here <https://docs.mattermost.com/overview/faq.html#how-can-i-add-more-users-to-my-subscription>`__.
-
-
-Managing license renewals
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+The ability to renew your license in the Customer Portal will be available in a future release.
+To renew your license in the meantime, contact your CSM to start the renewal process.
 
 
 Frequently Asked Questions
@@ -71,13 +69,11 @@ Frequently Asked Questions
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+We use `Stripe <https://stripe.com/payments>`_` to process credit card transactions. We do not store any credit card details at any stage.
+Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__`
+which is PCI-DSS compliant.
 
-Can I download the Privacy Policy?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-Where are my details stored and can I access them for GDPR requirements?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Should you wish to make payment using another method, please contact our Billing team.
 
 
 How is user defined for Enterprise Edition subscriptions?
@@ -110,9 +106,10 @@ Is there a limit to the subscription value I can purchase?
 
 No, there is no limit to the subscription value or number of users you can purchase per product.
 
-How many users can have access to an account?
+Can other members of my organization use this account to manage our subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
 
 What happens if my department buys Mattermost Enterprise Edition and then central IT buys a high volume license that also covers my department?
@@ -131,5 +128,5 @@ Please contact Mattermost Support for assistance with deleting your account.
 What happens to my license when I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an account is deleted, the license remains valid. However, auto-renewal is cancelled. When the license
+When an account is deleted, the license remains valid. When the license
 is close to expiring, you will need to create a new profile in order to purchase a new license.
