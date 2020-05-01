@@ -98,7 +98,12 @@ For more information, please see:
 Security Policies
 ------------------------------------
 
-For information on internal security policies, development guidelines, business continuity plans, and common security-related questions from enterprises, please see our `Security Policies <https://docs.mattermost.com/process/security.html>`__ documentation.
+For information on internal security policies, development guidelines, business continuity plans, and common security-related questions from enterprises, please see our Security Policies documentation.
+
+.. toctree::
+  :titlesonly:
+
+  Security Policies <security>
 
 Moreover, Mattermost performs a penetration test on the software no less than once per twelve (12) month period. Customers may request a copy of any penetration test results upon five (5) day written notice at any time, but no more than once per twelve (12) month period.
 
