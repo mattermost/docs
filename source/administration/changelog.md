@@ -40,6 +40,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
 ### Open Source Components
+ - Added ``react-native-mmkv-storage`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``redux-action-buffer`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``redux-reset`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``serialize-error`` in https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
 
