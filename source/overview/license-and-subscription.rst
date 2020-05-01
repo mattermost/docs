@@ -13,7 +13,6 @@ You can access your account to view information about your:
 - Renewals (available in a future release)
 - Active users (available in a future release)
 
-
 Purchasing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -62,16 +61,12 @@ Renewing an Enterprise license
 The ability to renew your license in the Customer Portal will be available in a future release.
 To renew your license in the meantime, contact your CSM to start the renewal process.
 
-
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use `Stripe <https://stripe.com/payments>`_` to process credit card transactions. We do not store any credit card details at any stage.
-Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__`
-which is PCI-DSS compliant.
+We use `Stripe <https://stripe.com/payments>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__ which is PCI-DSS compliant.
 
 Should you wish to make payment using another method, please contact our Billing team.
 
@@ -118,7 +113,6 @@ What happens if my department buys Mattermost Enterprise Edition and then centra
 Mattermost Enterprise Edition subscriptions and support benefits are licensed per production instance.
 
 When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
-
 
 How do I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
