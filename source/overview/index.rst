@@ -14,7 +14,7 @@ Below is an overview of our features, security, account management, deployment, 
    /overview/architecture*
    /deployment/deployment*
    /overview/integrations*
-   /overview/managing-account*
+   /overview/license-and-subscription*
    /overview/auth*
    /overview/compliance*
    /overview/faq*
