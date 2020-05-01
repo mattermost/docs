@@ -1,7 +1,13 @@
-Account Management
+Licensing and Subscription
 ----------------------
 
-Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions. 
+Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions for your on-premises deployments.
+
+- Subscription purchases
+- Licenses
+- Account password
+- Organization information
+- Payment methods
 
 
 Purchasing an Enterprise license

@@ -11,10 +11,10 @@ Below is an overview of our features, security, account management, deployment, 
 
    /overview/product*
    /overview/security*
-   /overview/managing-account*
    /overview/architecture*
    /deployment/deployment*
    /overview/integrations*
+   /overview/managing-account*
    /overview/auth*
    /overview/compliance*
    /overview/faq*
