@@ -44,7 +44,9 @@ You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#c
 Viewing license information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can view your license start date, expiry date, number of users and license type in your account under **Subscription**.
+For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users and license type in your account under **Subscription**.
+
+If you are not able to view this information, please contact your CSM. 
 
 Adding more users to a purchased license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
