@@ -2,7 +2,7 @@ Licensing and Subscription
 ----------------------
 
 Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions for your on-premises deployments.
-All your licenses are listed in the portal, including their start and end dates, providing you with an at-a-glance overview of your account, making it easier to manage purchases and renewal dates.
+Licenses purchased via the Customer Portal are listed in the portal, including their start and end dates, providing you with an at-a-glance overview of your account, making it easier to manage purchases and renewal dates.
 
 You can access your account to view information about your:
 - Subscription purchases
