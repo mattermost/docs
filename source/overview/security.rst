@@ -4,7 +4,7 @@ Security Overview
 
 Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
 
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features: 
+Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features:
 
 .. contents::
     :backlinks: top
@@ -46,7 +46,7 @@ Integrity and Audit Controls
 
    - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users' ability to edit and delete their messages after they are posted.
    - Use an `antivirus plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ to scan for viruses before uploading a file to Mattermost. Supports `ClamAV anti-virus software <https://www.clamav.net/>`__ across browser, Desktop App, and Mobile Apps.
-   - Custom `data retention policies on messages and file uploads <https://docs.mattermost.com/administration/data-retention.html>`__ is available (E20). A daily data deletion job can be scheduled that deletes messages from the database and user interface, and file uploads from local file storage or Amazon S3, which exceed the specified retention period. 
+   - Custom `data retention policies on messages and file uploads <https://docs.mattermost.com/administration/data-retention.html>`__ is available (E20). A daily data deletion job can be scheduled that deletes messages from the database and user interface, and file uploads from local file storage or Amazon S3, which exceed the specified retention period.
    - The `output and archives of server logs <https://docs.mattermost.com/administration/config-settings.html#file-log-directory>`__ can be saved to a directory of your choice. Mattermost server logs plus logs from your web proxy can provide an end-to-end history of system usage.
    - `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/administration/compliance.html>`__ are available (E20). To protect against unauthorized use, all ad hoc report requests are logged.
    - Daily compliance reports compatible with third-party compliance solutions such as `Global Relay and Actiance <https://docs.mattermost.com/administration/compliance-export.html>`__ are also available (E20).
@@ -64,15 +64,15 @@ Authentication Safeguards
 Access Control Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To prevent account enumeration, if a user logs in and enters incorrect login details a generic error is presented. 
+To prevent account enumeration, if a user logs in and enters incorrect login details a generic error is presented.
 
-Security is a top concern for organizations who deploy Mattermost in a private network. While running under existing policies and auth protocols of the private network, we prioritize a better user experience (telling a user what went wrong on login) ahead of preventing users on the private network from enumerating accounts. 
+Security is a top concern for organizations who deploy Mattermost in a private network. While running under existing policies and auth protocols of the private network, we prioritize a better user experience (telling a user what went wrong on login) ahead of preventing users on the private network from enumerating accounts.
 
-Mattermost is optimized to be deployed in a highly secure environment. However, admins are given a choice as to the deployment environment. 
+Mattermost is optimized to be deployed in a highly secure environment. However, admins are given a choice as to the deployment environment.
 
-When Mattermost is deployed outside a firewall, Admins must be aware that their system is exposed to issues inherent in public cloud deployments. In this case, we generally follow the standards of leading online services. For example, Gmail offers APIs that not only confirm whether an email account exists, but also displays user's profile picture by default. 
+When Mattermost is deployed outside a firewall, Admins must be aware that their system is exposed to issues inherent in public cloud deployments. In this case, we generally follow the standards of leading online services. For example, Gmail offers APIs that not only confirm whether an email account exists, but also displays user's profile picture by default.
 
-Mattermost undergoes extensive penetration testing, security reviews, and `security updates <http://about.mattermost.com/security-updates>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided: 
+Mattermost undergoes extensive penetration testing, security reviews, and `security updates <http://about.mattermost.com/security-updates>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided:
 
    - Limit communications to specific users, private channels, or team-wide public channels
    - Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.org", etc."
@@ -103,7 +103,7 @@ For information on internal security policies, development guidelines, business 
 .. toctree::
   :titlesonly:
 
-  Security Policies <security>
+  Internal Security Policies <internal-security-policies>
 
 Moreover, Mattermost performs a penetration test on the software no less than once per twelve (12) month period. Customers may request a copy of any penetration test results upon five (5) day written notice at any time, but no more than once per twelve (12) month period.
 
@@ -147,9 +147,9 @@ FINRA reviews a firm’s ability to protect the confidentiality, integrity and a
 
 - The `Securities Exchange Act of 1934 (17 CFR §240.17a-4(f)) <https://www.ecfr.gov/cgi-bin/text-idx?SID=b6b7a79d18d000a733725e88d333ddb5&mc=true&node=pt17.4.240&rgn=div5#se17.4.240_117a_64>`__, which requires firms to preserve electronically stored records in a non-rewriteable, non-erasable format.
 
-Mattermost supports FINRA compliance as part of a customer's integrated operations in the following ways: 
+Mattermost supports FINRA compliance as part of a customer's integrated operations in the following ways:
 
-- **Continous archiving** - Configuration as a non-rewriteable, non-erasable system of record for all messages and files entered into the system. Moreover, automated compliance exports and integration support for Smarsh/Actiance and Global Relay provide third-party eDiscovery options.  
+- **Continous archiving** - Configuration as a non-rewriteable, non-erasable system of record for all messages and files entered into the system. Moreover, automated compliance exports and integration support for Smarsh/Actiance and Global Relay provide third-party eDiscovery options.
 - **Secure deployment** - Deployment within private, public and on-premesis networks with existing FINRA-compliant safeguards and infrastructure to protect customer information from cyber attack.
-- **Support for intrusion detection** - Ability to support multi-layered intrusion detection from authentication systems to application servers to database access, including configuration of proxy, application, and database logging to deeply audit system interactions.  
+- **Support for intrusion detection** - Ability to support multi-layered intrusion detection from authentication systems to application servers to database access, including configuration of proxy, application, and database logging to deeply audit system interactions.
 - **Multi-layered disaster recovery** - High availability configuration, automated data back up, and enterprise information archiving integration to prevent data loss and recover from disaster.
