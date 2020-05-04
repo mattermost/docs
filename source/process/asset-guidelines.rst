@@ -1,6 +1,8 @@
-============================================================
 Mattermost Asset Guidelines
 ============================================================
+
+.. note::
+  This page is largely out-of-date and is stored for record-keeping purposes. For latest marketing processes and guidelines, see the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math>`_.
 
 The following guidelines are intended to help queue and prepare marketing assets for community projects by the Mattermost core committers and the Mattermost community.
 
