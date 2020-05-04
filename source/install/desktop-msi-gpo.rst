@@ -42,7 +42,7 @@ Installing Group Policy files locally
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
 
-2. Navigate to the unzipped ``desktop-4.4.1-rc0\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-4.4.1\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
 
