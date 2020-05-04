@@ -1,19 +1,21 @@
 Desktop Application Changelog
 ========================================
 
-Release v4.4.0
+Release v4.4
 ----------------------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.1>`_
 
-- **v4.4.1, release day 2020-04-22**
+- **v4.4.2, release day TBD**
+ - Fixing an issue on MacOS Catalina where notifications are disabled by default in v4.4 on a fresh install. `MM-24744 <https://mattermost.atlassian.net/browse/MM-24744>`_
+- **v4.4.1, released 2020-04-22**
  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
  - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
  - Fixed an issue where Windows Desktop notifications were delayed. `MM-22552 <https://mattermost.atlassian.net/browse/MM-22552>`_
  - Fixed an issue where the app sometimes didn't restore to the right position but "jumped" to a different place in the display when minimizing the app and then maximizing it. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
  - Fixed an issue where users were not able to paste text into the login screen. `MM-23784 <https://mattermost.atlassian.net/browse/MM-23784>`_
  - Fixed an issue where back/forward navigation on the OAuth window caused the app to crash. `MM-23153 <https://mattermost.atlassian.net/browse/MM-23153>`_
-- **v4.4.0, release day 2020-02-16**
+- **v4.4.0, released 2020-02-16**
  - Original v4.4.0 release
 
 **Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
@@ -83,7 +85,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
 
-Release v4.3.0
+Release v4.3
 ----------------------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__
