@@ -1,7 +1,9 @@
 Mattermost Performance Alerting Guide
 ======================================
 
-Mattermost uses Prometheus and Grafana to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard.
+Mattermost recommends using Prometheus and Grafana to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard.  
+
+.. note:: We highly recommend setting up performance alerting for deployments above 5,000 users, where additional servers have been added for performance load-balancing.
 
 **Prerequisites**
 
@@ -118,4 +120,4 @@ Here’s how it’s set on our community server:
 Other Alerts
 -------------
 
-If you want more alerts, you can set them up on any of the Grafana charts you'd like.
+If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/deployment/metrics.html#statistics>`_.
