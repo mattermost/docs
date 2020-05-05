@@ -120,4 +120,4 @@ Here’s how it’s set on our community server:
 Other Alerts
 -------------
 
-If you want more alerts, you can set them up on any of the Grafana charts you'd like.  We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/deployment/metrics.html#statistics>`_.
+If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/deployment/metrics.html#statistics>`_.
