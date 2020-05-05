@@ -4,20 +4,9 @@ Internal Security Policies
 This document summarizes the internal security policies at Mattermost,
 Inc.
 
-- `Security benefits of the Mattermost open source platform <#security-benefits-of-an-open-source-platform>`_
-- `Mattermost Development Guidelines <#mattermost-development-guidelines>`_
-   - `Security Review Checklist <#security-review-checklist>`_
-- `Common Security Related Questions for Enterprises <#common-security-related-questions-for-enterprises>`_
-   - `Governance <#governance>`_
-   - `Access Control <#access-control>`_
-   - `Operational Security <#operational-security>`_
-   - `Software Development Life Cycle (SDLC) <#software-development-life-cycle-sdlc>`_
-   - `Training <#training>`_
-   - `Validation <#validation>`_
-   - `Security Response <#security-response>`_
-   - `Business Resiliency <#business-resiliency>`_
-   - `Compliance <#compliance>`_
-- `Business Continuity Plan <#business-continuity-plan>`_
+.. contents::
+    :backlinks: top
+
 
 Security benefits of an open source platform
 --------------------------------------------
@@ -286,7 +275,7 @@ to maintain and review the policy?
 
 -  Yes.
 
-7. Is there an operational change management / change control policy or
+7. Is there an operational change management/change control policy or
    program that has been approved by management, communicated to
    appropriate personnel and has an owner to maintain and review the
    policy?
@@ -305,8 +294,7 @@ to maintain and review the policy?
 
 -  Yes.
 
-11. Are vulnerability assessments, scans or penetration tests performed
-   on internal or external networks?
+11. Are vulnerability assessments, scans or penetration tests performed on internal or external networks?
 
 -  Yes.
 
@@ -370,8 +358,7 @@ Plan <https://docs.mattermost.com/process/security.html#business-continuity-plan
 
 -  Yes.
 
-10. Is there insurance coverage for business interruptions or general
-   services interruption?
+10. Is there insurance coverage for business interruptions or general services interruption?
 
 -  Yes.
 
@@ -465,11 +452,10 @@ Software Development Life Cycle (SDLC)
 9. Do you work with third parties that may have access to your IP and
    sensitive data?
 
--  Yes, we may employ vendors and consultants, including 3rd party
+-  Yes, we may employ vendors and consultants, including third-party
    security analysts.
 
-10. If so, is access to data controlled by terms of Non-Disclosure
-   Agreements?
+10. If so, is access to data controlled by terms of Non-Disclosure Agreements?
 
 -  Yes.
 
@@ -511,7 +497,7 @@ Validation
 3. Is some form of static code scanning performed as part of the release
    acceptance? What tools are used?
 
--  Yes, static analysis tools include ESLint and gofmt
+-  Yes, static analysis tools include ESLint and gofmt.
 
 4. Is some form of dynamic code scanning performed as part of the
    release acceptance? What tools are used?
@@ -623,10 +609,9 @@ or natural disasters. Even so, threats considered in the context of
 business continuity are categorized by impact of the disruption.
 
 Priority 1: Outages that would have immediate impact on a Mattermost customer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Key support staff unavailable in case of customer emergency.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Key support staff unavailable in case of customer emergency.**
 
 Effect: - Emergency response times exceed expectations
 
@@ -645,8 +630,7 @@ multiple timezones to increase availability, reduce response times and
 to reduce the risk that key support staff would be unavailable to
 service emergency requests.
 
-Downtime for Mattermost Hosted Push Notification Service (HPNS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Downtime for Mattermost Hosted Push Notification Service (HPNS)**
 
 Effect: - End users at customer sites deploying on HPNS do not receive
 mobile push notifications.
@@ -659,8 +643,7 @@ GitHub.com <https://github.com/mattermost/push-proxy>`__, allowing
 enterprises an option to compile and self-host the service, should they
 choose not to use HPNS hosted by Mattermost, Inc.
 
-Disruption of infrastructure providing support over email, online tickets or Mattermost messaging during customer emergency
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Disruption of infrastructure providing support over email, online tickets or Mattermost messaging during customer emergency**
 
 Effect: - Unable to communicate with Mattermost, Inc. support team
 during emergency
@@ -671,10 +654,9 @@ and (for customers who have purchased core access premium support)
 online message via Mattermost.
 
 Priority 2: Outages having immediate impact on business continuity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Outage due to malicious software (viruses, works, trojans and similar)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Outage due to malicious software (viruses, works, trojans and similar)**
 
 Effect: - Reduced capacity to continue business operations, depending on
 attack.
@@ -686,8 +668,7 @@ Moreover, the company uses a range of Windows, Mac and Linux-based
 workstations, reducing the probability of a company-wide disruption from
 a single strain of malicious software.
 
-Outage due to online attacks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Outage due to online attacks**
 
 Effect: - Reduced capacity to continue business operations, depending on
 attack.
@@ -698,8 +679,7 @@ to minimize downtime from potential online threats.
 | - Should our self-hosted Mattermost instance be disrupted we can, if
 needed, quickly re-deploy the solution within our VPN.
 
-Disruption due to influenza pandemic or infectious disease outbreak
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Disruption due to influenza pandemic or infectious disease outbreak**
 
 Effect: - Reduced capacity to continue business operations
 
@@ -709,10 +689,9 @@ disruption that an influenza pandemic or infectious disease outbreak
 would cause to business operations.
 
 Priority 3: Outages greater than 72 hours impacting business continuity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Outage of online CRM system
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Outage of online CRM system**
 
 Effect: - Reduced ability to continue sales operations
 
@@ -722,10 +701,9 @@ used by thousands of other organizations--and believe the probability of
 sustained outage is low.
 
 Priority 4: Outages greater than 10 days impacting business continuity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Outage of online HR and intranet systems
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Outage of online HR and intranet systems**
 
 Effect: - Reduced ability to continue HR and internal operations
 
