@@ -13,15 +13,7 @@ Development Process
    :maxdepth: 2
    :glob:
 
-   /process/overview*
-   /process/deprecated-features*
-   /process/software-requirements*
-   /developer/style*
-   /developer/fx*
-   /developer/localization*
-   /process/definitions*
-   /process/new-bug-tickets*
-   /process/bug-severity-guidelines*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/development-process>`__.
    
 Release Process
 -------------------
@@ -47,8 +39,7 @@ Product Management Handbook
    :maxdepth: 2
    :glob:
 
-   /process/product-manager-hiring*
-   /process/pm-faq*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook>`__.
 
 Core Developer Handbook
 -----------------------
@@ -91,12 +82,7 @@ Marketing
    :maxdepth: 2
    :glob:
 
-   /process/casestudy*
-   /process/guest-article*
-   /process/marketing-guidelines*
-   /process/asset-guidelines*
-   /process/end-user-documentation*
-   /process/integrations-directory*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math>`__.
 
    
 Partners
