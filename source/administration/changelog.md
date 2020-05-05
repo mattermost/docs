@@ -6,8 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.22 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.22.2, release day TBD**
-  - Fixing an issue where message reply threads do not get correctly imported via [bulk loading tool](https://docs.mattermost.com/deployment/bulk-loading.html). [MM-24707](https://mattermost.atlassian.net/browse/MM-24707)
+- **v5.22.2, released 2020-05-05**
+  - Fixed an issue where message reply threads did not get correctly imported via [bulk loading tool](https://docs.mattermost.com/deployment/bulk-loading.html). [MM-24707](https://mattermost.atlassian.net/browse/MM-24707)
 - **v5.22.1, released 2020-04-23**
   - Fixed an issue where Amazon S3 file storage with IAM credentials failed due to a bug in the ``minio-go`` library. [MM-24388](https://mattermost.atlassian.net/browse/MM-24388)
 - **v5.22.0, released 2020-04-16**
