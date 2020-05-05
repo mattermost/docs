@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Internet Explorer (IE11) is removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+   Support for Postgres 9.4 will be removed in the near future. We currently support versions 9.5+ and highly recommend upgrading to versions 10+.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
