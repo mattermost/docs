@@ -33,11 +33,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where keyboard shortcuts to move between teams conflicted with a native Linux OS shortcut for switching virtual desktops.
  - Fixed an issue with errors appearing in logs when sending a direct message to your own account.
  - Fixed an issue with a "Failed to get membership" log spam for bot posts.
- 
-### config.json
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
 
 ### Open Source Components
  - Added ``react-native-mmkv-storage`` in https://github.com/mattermost/mattermost-mobile.
@@ -45,11 +40,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``redux-reset`` in https://github.com/mattermost/mattermost-mobile.
  - Added ``serialize-error`` in https://github.com/mattermost/mattermost-mobile.
 
-### Database Changes
-
 ### API Changes
+ - Added a new API endpoint ``GET /api/v4/users/known`` to get the list of user IDs of users with any direct relationship with a user. That means any user sharing any channel, including direct and group channels.
+ - ``GET /api/v4/teams/:team_id/channels`` no longer requires the ``list_team_channels`` permission.
 
 ### Websocket Event Changes
+ - Added a new ``update_team_scheme`` Websocket Event.
  
 ### Known Issues
  
