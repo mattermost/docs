@@ -1,15 +1,15 @@
 Licensing and Subscription
 ----------------------
 
-Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions.
+Mattermost offers a secure self-service portal where you can easily purchase and manage your Mattermost Enterprise subscriptions.
 
-Licenses purchased via the Customer Portal are listed in the portal, including their start and end dates, providing you with an at-a-glance overview of your account, making it easier to manage purchases and renewal dates.
+Licenses purchased via the Customer Portal are stored and listed in the portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history  making it easier to manage purchases and renewal dates.
 
-You can access your account to view information about your:
+You can access your Customer Portal account to view information about your:
 
 - Subscription purchases
 - Licenses
-- Account password
+- Customer Portal account password
 - Organization information
 - Payment methods
 - Renewals (available in a future release)
