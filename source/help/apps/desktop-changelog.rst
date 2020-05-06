@@ -7,6 +7,7 @@ Release v4.4
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.1>`_
 
 - **v4.4.2, release day TBD**
+ - Fixing an issue on Windows where no notification is received if the app is closed on a channel where the message is posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
  - Fixing an issue on MacOS Catalina where notifications are disabled by default in v4.4 on a fresh install. `MM-24744 <https://mattermost.atlassian.net/browse/MM-24744>`_
 - **v4.4.1, released 2020-04-22**
  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
