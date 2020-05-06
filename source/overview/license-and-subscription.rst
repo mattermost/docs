@@ -1,10 +1,12 @@
 Licensing and Subscription
 ----------------------
 
-Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions for your on-premises deployments.
+Mattermost offers a secure self-service portal where you can manage your Mattermost Enterprise subscriptions.
+
 Licenses purchased via the Customer Portal are listed in the portal, including their start and end dates, providing you with an at-a-glance overview of your account, making it easier to manage purchases and renewal dates.
 
 You can access your account to view information about your:
+
 - Subscription purchases
 - Licenses
 - Account password
@@ -16,46 +18,54 @@ You can access your account to view information about your:
 Purchasing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Log in to your Mattermost customer profile. If you haven't created a profile, follow the steps provided on the landing page, validate your email address, and then log in.
-2. Choose a subscription type, enter the number of users in the **Order summary** field.
-3. (Optional for E20) You can add Premier Support, the cost of which is automatically added to your order total.
+**If you don't have a customer portal account**
+
+To create a Customer Portal account, navigate to the **landing page**. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
+
+**If you have an existing customer portal account**
+
+1. Log in to your Mattermost Customer Portal account. 
+2. Choose a subscription type and enter the number of users in the **Order summary** field.
+   - This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_. 
+3. (Optional for E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
 4. Select **Next Step**.
 5. Enter your billing and payment information.
-6. Accept the **Terms**
+6. Accept the **Terms**.
 7. Select **Complete**.
+8. Choose **Download the license key**.
 
-Choose **Download the license key**, and navigate to the Mattermost System Console to apply it.
-
-If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal.
-If possible, keep the error message/number that you received on hand as it may assist with their investigation.
+If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
 
 Applying the license key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
+Your Mattermost Enterprise license is ready for use immediately, and is applied via the Mattermost System Console. 
 
-   If you are not a System Admin, you will not have access to the System Console to apply the license.
+System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your Mattermost System Admin. 
+   
+**For existing Mattermost deployments** 
 
-Navigate to the **Subscriptions** page of your Mattermost account. Select **Download License** to download the license key for your subscription.
+On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can apply the license in the Mattermost System Console: **System Console > About > Edition and License**. Follow the steps provided to apply your license key.
 You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#changing-a-license-key>`__ to apply the license.
+
+**For new Mattermost deployments**
+
+If you have not yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deployment/deployment.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/deployment/on-boarding.html>`_ documentation. 
 
 Viewing license information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users and license type in your account under **Subscription**.
 
-If you are not able to view this information, please contact your CSM. 
+If you are not able to view this information, please contact your Customer Success Manager. 
 
 Adding more users to a purchased license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can add more users during your subscription period without requesting a license.
 
-During the annual renewal, a retroactive charge will be placed for any unique users added during the past subscription period that is
-above the licensed total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription
-cost per user.
+During the annual renewal, a retroactive charge will be placed for any unique users added during the past subscription period that is above the licensed total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
