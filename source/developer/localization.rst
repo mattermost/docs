@@ -69,6 +69,12 @@ Alpha
 
 An official language may be changed back to Beta or Alpha if the specified requirements are not met for a release. Similarly, Beta-quality language may be dropped back to Alpha.
 
+Message Syntax 
+-----------------
+
+To format localized messages, `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ uses the `react-intl <https://formatjs.io/docs/react-intl>`_ library from `FormatJS <https://formatjs.io/>`_ using the `ICU Message syntax <https://formatjs.io/docs/icu-syntax>`_. Follow the links to read about placeholders and arguments, or experiment with one of their `live editors <https://formatjs.io/docs/intl-messageformat>`_.
+
+
 Test Translations
 -----------------
 
