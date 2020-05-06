@@ -46,7 +46,7 @@ The desktop app log file can be found in the user directory:
 
 **Mattermost Browser App**
 
-The browser-based app does not produce additional log files. If the app has to be debugged use the development tools integrated in your browser.
+The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser.
 
 **Mattermost Push Notification Service**
 
