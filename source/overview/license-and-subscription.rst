@@ -108,7 +108,7 @@ Is my subscription active immediately?
 
 Yes, once your payment is successfully processed your license is immediately available in your account.
 
-Is there a limit to the subscription value I can purchase?
+Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No, there is no limit to the subscription value or number of users you can purchase per product.
