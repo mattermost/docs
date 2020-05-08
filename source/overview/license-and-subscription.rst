@@ -20,7 +20,7 @@ Purchasing an Enterprise license
 
 **If you don't have a customer portal account**
 
-To create a Customer Portal account, navigate to the **landing page**. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
+Create a `Customer Portal account <https://customers.mattermost.com>`__. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
 
 **If you have an existing customer portal account**
 
