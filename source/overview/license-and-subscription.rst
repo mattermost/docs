@@ -65,7 +65,7 @@ Adding more users to a purchased license
 
 You can add more users during your subscription period without requesting a license.
 
-During the annual renewal, a retroactive charge will be placed for any unique users added during the past subscription period that is above the licensed total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
+You may incur retroactive charges for any unique users added that exceed the licensed total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
