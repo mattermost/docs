@@ -103,7 +103,7 @@ License keys for unlocking the advanced features in Mattermost Enterprise Editio
 
 Customers who purchase the Premier Support add-on to E20 are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
 
-Is my subscription active immediately?
+Is my license available immediately?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, once your payment is successfully processed your license is immediately available to download.
