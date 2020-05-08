@@ -106,7 +106,7 @@ Customers who purchase the Premier Support add-on to E20 are licensed to run wit
 Is my subscription active immediately?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, once your payment is successfully processed your license is immediately available in your account.
+Yes, once your payment is successfully processed your license is immediately available to download.
 
 Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
