@@ -71,7 +71,7 @@ Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ability to renew your license in the Customer Portal will be available in a future release.
-To renew your license in the meantime, contact your CSM to start the renewal process.
+To renew your license in the meantime, contact your Customer Success Manager to start the renewal process. Alternatively, `contact us <https://mattermost.com/contact-us/>`_ for assistance. 
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
