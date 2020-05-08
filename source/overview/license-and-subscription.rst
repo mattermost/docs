@@ -43,7 +43,7 @@ Your Mattermost Enterprise license is ready to use and be applied via the Matter
 
 System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin. 
    
-**For existing Mattermost deployments** 
+**If you already have Mattermost installed** 
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
