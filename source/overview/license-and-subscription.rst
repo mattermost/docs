@@ -1,7 +1,7 @@
 Licensing and Subscription
 ----------------------
 
-Mattermost offers a secure self-service portal where you can easily purchase and manage your Mattermost Enterprise subscriptions.
+Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`_ where you can easily purchase and manage your Mattermost Enterprise subscriptions.
 
 Licenses purchased via the Customer Portal are stored and listed in the portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history  making it easier to manage purchases and renewal dates.
 
@@ -18,13 +18,13 @@ You can access your Customer Portal account to view information about your:
 Purchasing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**If you don't have a customer portal account**
+**If you don't have a Customer Portal account**
 
-Create a `Customer Portal account <https://customers.mattermost.com>`__. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
+Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
 
-**If you have an existing customer portal account**
+**If you have an existing Customer Portal account**
 
-1. Log in to your Mattermost Customer Portal account. 
+1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account. 
 2. Choose a subscription type and enter the number of users in the **Order summary** field.
    - This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_. 
 3. (Optional for E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
