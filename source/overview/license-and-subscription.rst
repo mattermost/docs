@@ -63,7 +63,7 @@ If you have an existing subscription and license, not purchased via the Customer
 Adding more users to a purchased license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can add more users during your subscription period without requesting a license.
+To add more users to your existing license, `contact us <https://mattermost.com/contact-us/>`_.
 
 You may incur retroactive charges for any unique users added that exceed the licensed total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
