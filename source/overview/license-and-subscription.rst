@@ -49,7 +49,7 @@ On the Customer Portal **Subscriptions** page, select **Download License** to do
 
 You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#changing-a-license-key>`__ to apply the license.
 
-**For new Mattermost deployments**
+**If you don't have Mattermost installed**
 
 If you have not yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deployment/deployment.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/deployment/on-boarding.html>`_ documentation. 
 
