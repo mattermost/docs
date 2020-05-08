@@ -41,9 +41,11 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Fixed an issue where no notification appeared if the app was closed on a channel where the message was posted.
+- Fixed an issue where right clicking and then clicking "Save Image" didn't work.
 - Fixed an issue where trusting self-signed certificates kept asking for trust.
 - Fixed an issue where a link to the root of a server if the URL didn't end with a ``/`` caused a "Channel not Found" error.
 - Fixed an issue where OneLogin links opened up in the app itself making it impossible to go back to the app.
+- Fixed an issue where links on "Cannot connect to Mattermost" error didn't work.
 
 Windows
 ^^^^^^^^^^^^^
