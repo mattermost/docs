@@ -80,7 +80,7 @@ Are my credit card details safe?
 
 We use `Stripe <https://stripe.com/payments>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__, which is PCI-DSS compliant.
 
-Should you wish to make payment using another method, please contact our Billing team.
+Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
 
 How is user defined for Enterprise Edition subscriptions?
