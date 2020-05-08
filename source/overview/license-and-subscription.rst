@@ -58,7 +58,7 @@ Viewing license information
 
 For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users and license type in your account under **Subscription**.
 
-If you are not able to view this information, please contact your Customer Success Manager. 
+If you have an existing subscription and license, not purchased via the Customer Portal, this information will not be listed.
 
 Adding more users to a purchased license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
