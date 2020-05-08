@@ -129,7 +129,7 @@ When the subscription term for your department's production instance expires, yo
 How do I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please contact Mattermost Support for assistance with deleting your account.
+Please contact Mattermost Support for assistance with deleting your Customer Portal account.
 
 What happens to my license when I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
