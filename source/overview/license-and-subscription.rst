@@ -39,7 +39,7 @@ If you experience any problems with your transaction, please contact our Support
 Applying the license key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your Mattermost Enterprise license is ready for use immediately, and is applied via the Mattermost System Console. 
+Your Mattermost Enterprise license is ready to use and be applied via the Mattermost System Console. 
 
 System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your Mattermost System Admin. 
    
