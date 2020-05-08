@@ -17,6 +17,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where using slash command ``/leave`` failed to leave the channel.
  - Fixed an issue where clicking on a channel link from a Direct Message channel that linked to a different team resolved in a "page not found" error.
  - Fixed an issue where reloading a channel caused the channel to be shown as read-only for a few seconds.
+ - Fixed an issue where the Channel Export plugin bot channel did not appear on the left-hand side channel sidebar until the user switched to a different channel.
  - Fixed an issue where no channel suggestions were displayed for ``in:`` search modifier for Guest Accounts.
  - Fixed an issue where ``Guest`` tags were not shown in Group Message channel header.
  - Fixed an issue where guest permissions could not be set in Team Override Schemes.
