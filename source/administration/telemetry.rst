@@ -46,8 +46,12 @@ Mattermost error and diagnostic data is collected for the following purposes:
 .. note:: 
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
+Reporting Frequency
+  - Every 10 minutes for the first hour after ther server is booted up for the first time
+  - Every hour thereafter for the first 12 hours
+  - At the 24 hour mark and every 24 hours after
 
-The following data is sent once every 24 hours:
+The following data is sent:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deployment Configuration Information
