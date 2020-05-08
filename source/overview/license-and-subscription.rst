@@ -101,7 +101,7 @@ Can I use the same license key on multiple Enterprise Edition servers?
 
 License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server, or multiple linked Mattermost application servers in a high availability configuration with access to a single database.
 
-For E10 deployments and deployments where no dremier Support add-on is included, license keys for unlocking the advanced features in Mattermost Enterprise Edition may only be applied to a single deployment. A deployment consists of either a single Mattermost application server, or multiple linked Mattermost application servers in a high availability configuration.
+Customers who purchase the Premier Support add-on to E20 are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
 
 Is my subscription active immediately?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
