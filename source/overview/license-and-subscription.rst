@@ -126,7 +126,7 @@ Mattermost Enterprise Edition subscriptions and support benefits are licensed pe
 
 When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
 
-How do I delete my account?
+How do I delete my Customer Portal account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Please contact Mattermost Support for assistance with deleting your Customer Portal account.
