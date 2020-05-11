@@ -7,7 +7,7 @@ Release v4.4
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.1>`_
 
 - **v4.4.2, release day TBD**
- - Fixing an issue on Windows where a channel is marked as read if the app is closed on a channel where the message is posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
+ - Fixed an issue on Windows where a channel was marked as read if the app was closed on a channel where the message was posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
 - **v4.4.1, released 2020-04-22**
  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
  - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
