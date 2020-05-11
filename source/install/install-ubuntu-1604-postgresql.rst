@@ -101,7 +101,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
   
-13. (Optional) Postgres recommends the standard way to pass passwords is through a ``.pgpass`` file. It is a special file that HAS to be 0600 in permissions otherwise it doesnt work. One can also pass the location of the file using the ``PGPASS`` env variable.
+13. (Optional) If you don't want to enter your password at each login, you can use a ``.pgpass`` file . It is a special file which has to be assigned ``0600`` in permissions otherwise it will not work. One can also pass the location of the file using the ``PGPASSFILE`` env variable.
 
 This leaves the security to the user running the application. If you run it as a service, then you need *sudo* permissions to start a service file. As a result only *root* user has read-write access. 
 
