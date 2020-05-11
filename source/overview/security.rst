@@ -144,7 +144,7 @@ FINRA reviews a firm’s ability to protect the confidentiality, integrity and a
 
 Mattermost supports FINRA compliance as part of a customer's integrated operations in the following ways:
 
-- **Continous archiving** - Configuration as a non-rewriteable, non-erasable system of record for all messages and files entered into the system. Moreover, automated compliance exports and integration support for Smarsh/Actiance and Global Relay provide third-party eDiscovery options.
+- **Continuous archiving** - Configuration as a non-rewriteable, non-erasable system of record for all messages and files entered into the system. Moreover, automated compliance exports and integration support for Smarsh/Actiance and Global Relay provide third-party eDiscovery options.
 - **Secure deployment** - Deployment within private, public and on-premesis networks with existing FINRA-compliant safeguards and infrastructure to protect customer information from cyber attack.
 - **Support for intrusion detection** - Ability to support multi-layered intrusion detection from authentication systems to application servers to database access, including configuration of proxy, application, and database logging to deeply audit system interactions.
 - **Multi-layered disaster recovery** - High availability configuration, automated data back up, and enterprise information archiving integration to prevent data loss and recover from disaster.
