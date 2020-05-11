@@ -46,13 +46,12 @@ Mattermost error and diagnostic data is collected for the following purposes:
 .. note:: 
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
-Reporting Frequency
-  - Every 10 minutes for the first hour after ther server is booted up for the first time
-  - Every hour thereafter for the first 12 hours
-  - At the 24 hour mark and every 24 hours after
-
-The following data is sent:
+Deployment and Server Configuration snapshots
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reporting Frequency
+  - Upon booting up the server for the first time: every 10 minutes for the first hour, then every hour for the first 12 hours 
+  - At the 24 hour mark and every 24 hours 
 
 Deployment Configuration Information
   Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts
@@ -90,8 +89,11 @@ Permissions Configuration Information (Enterprise Edition Only)
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, and bots.
 
-The following information is sent when the specified event occurs:
+Event data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reporting Frequency
+  - Immediately after the specific event occurs
 
   .. note::
     Majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`_.
