@@ -1,5 +1,5 @@
 ========================================
-Certifications and Compliance
+Certifications and Compliance Overview
 ========================================
 
 This overview summarizes various compliances and certifications Mattermost is designed to support, including:
