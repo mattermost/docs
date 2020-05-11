@@ -1,4 +1,4 @@
-Architecture
+Architecture Overview
 =====================
 
 This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`__.
