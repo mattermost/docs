@@ -29,7 +29,7 @@ Deleting Custom Emojis
 
 You can delete Custom Emojis that you created. 
 
-.. image:: ../images/Delete_Custom_Emoji.png
+.. image:: ../images/delete_custom_emoji.png
 
 1. Open the **Main Menu** at the top-right of the channels sidebar.
 2. Select **Custom Emoji**.
