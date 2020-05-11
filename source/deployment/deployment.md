@@ -1,4 +1,4 @@
-# Deployment 
+# Deployment Overview
 
 The below diagram illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
