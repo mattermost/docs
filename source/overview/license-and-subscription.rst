@@ -45,6 +45,8 @@ Applying the license key
 
 Your Mattermost Enterprise license is ready to use and be applied via the Mattermost System Console. 
 
+.. image:: ../images/mattermost_enterprise_license.png
+
 System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin. 
    
 **If you already have Mattermost installed** 
