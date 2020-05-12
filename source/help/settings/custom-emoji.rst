@@ -13,6 +13,8 @@ Creating Custom Emojis
 
 Small, square pictures work best when selecting an image. The file can be any JPG, GIF, or PNG and up to 1 MB in size.
 
+.. image:: ../../images/add_custom_emoji.png
+
 1. Open the **Main Menu** at the top-right of the channels sidebar.
 2. Select **Custom Emoji**.
 3. Choose **Add Custom Emoji**.
