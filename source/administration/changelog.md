@@ -49,7 +49,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added a new ``update_team_scheme`` Websocket Event.
  
 ### Known Issues
- - XXXX Will add more if other known issues come up XXXXX
+ - "Copy Theme Colors" button on custom theme Display Settings modal is not themed correctly on Mattermost dark theme.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
