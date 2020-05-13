@@ -6,8 +6,7 @@ Installing the Operators
 The required operators are installed using kubectl and each operator is created in its own namespace. Shorter namespace names
 are recommended. You can install and run multiple Mattermost installations in the same cluster using different namespaces.
 
-The steps provided below include database and storage operators. To install only the Mattermost operator, see `Using a Custom Configuration <https://kubernetes.github.io/ingress-nginx/deploy/>`__
-
+The steps provided below include database and storage operators. 
 
 **1. Install the MySQL Operator**
 
