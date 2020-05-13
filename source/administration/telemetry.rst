@@ -50,7 +50,7 @@ Deployment and Server Configuration snapshots
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reporting Frequency
-  - Upon booting up the server for the first time: every 10 minutes for the first hour, then every hour for the first 12 hours 
+  - When booting up the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
   - At the 24 hour mark and every 24 hours 
 
 Deployment Configuration Information
