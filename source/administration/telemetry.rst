@@ -96,7 +96,7 @@ Reporting Frequency
   - Immediately after the specific event occurs.
 
   .. note::
-    Majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`_.
+The majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`_.
 
 Non-personally Identifiable Error Information, distinguished by end users and System Admins
   Boolean when the following events occur:
