@@ -54,7 +54,7 @@ Reporting Frequency
   - At the 24 hour mark and every 24 hours thereafter.
 
 Deployment Configuration Information
-  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts
+  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
 
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of ``type`` ("enumerated integer" or "enumerated boolean") values, ``true/false`` ("boolean"), and ``count`` ("integer"). Specifically these include:
