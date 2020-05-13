@@ -11,9 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.23.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
- - Support for Postgres 9.4 will be removed in the near future. We currently support versions 9.5+ and highly recommend upgrading to versions 10+.
-
-### Breaking Changes
+ - We will be deprecating support for PostgreSQL 9.4 in the near future and highly recommend upgrading to PostgreSQL 10+.
 
 ### Bug Fixes
  - Fixed an issue where using slash command ``/leave`` failed to leave the channel.
