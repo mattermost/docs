@@ -50,7 +50,7 @@ Mattermost v5.23.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Added a new ``update_team_scheme`` Websocket Event.
  
 ### Known Issues
- - "Copy Theme Colors" button on custom theme Display Settings modal is not themed correctly on Mattermost dark theme.
+ - **Copy Theme Colors** button on custom theme Display Settings modal is not themed correctly on Mattermost dark theme.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
