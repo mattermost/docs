@@ -1,5 +1,5 @@
 =====================================
-Security
+Security Overview
 =====================================
 
 Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
