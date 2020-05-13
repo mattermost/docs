@@ -32,6 +32,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the URL field on Rename Channel modal allowed more than two underscores.
  - Fixed an issue where pasting text from a GitHub code block erased post textbox contents.
  - Fixed an issue where keyboard shortcuts to move between teams conflicted with a native Linux OS shortcut for switching virtual desktops.
+ - Fixed an issue where incoming webhooks that contained certain sized attachments resulted in an infinite loop, causing a memory leak.
  - Fixed an issue with errors appearing in logs when sending a direct message to your own account.
  - Fixed an issue with a "Failed to get membership" log spam for bot posts.
 
