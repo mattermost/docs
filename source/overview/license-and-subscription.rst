@@ -5,8 +5,6 @@ Mattermost offers a `secure self-service Customer Portal <https://customers.matt
 
 When you purchase a subscription, a license is generated. This license gives you access to Mattermost's Enterprise features. Subscriptions purchased via the Customer Portal are stored and listed in the portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history  making it easier to manage purchases and renewal dates.
 
-.. image:: ../images/Customer_Portal_Subscriptions.png
-
 You can access your Customer Portal account to view information about your:
 
 - Subscription purchases
@@ -27,10 +25,7 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 **If you have an existing Customer Portal account**
 
 1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account. 
-2. Choose a subscription type and enter the number of users in the **Order summary** field.
-
-- This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_. 
-
+2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_. 
 3. (Optional for E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
 4. Select **Next Step**.
 5. Enter your billing and payment information.
