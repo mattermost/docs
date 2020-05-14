@@ -121,11 +121,9 @@ For new users, default teams and channels will be added when they log in for the
 It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6 seconds for an organization with 200,000 users and 30,000 linked groups.
 
 .. note::
-   Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
+   Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. They will not be re-added if they were manually removed or removed themselves. To manage a team or private channel membership with synchronized groups, please see `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
-
-To manage a team or private channel with synchronized groups, please see `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
 
 Removing Configured Teams and Channels From a Group
 -------------------------------------------------
