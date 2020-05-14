@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Postgres 9.4 will be removed in the near future. We currently support versions 9.5+ and highly recommend upgrading to versions 10+.
+   PostgresSQL ended long-term support for `version 9.4 in February <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting Postgres version 10 with the Mattermost v5.26 release. New installs will require Postgres version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgresSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgresSQL 9.4. We highly recommend upgrading to PostgresSQL version 10+ after August.  Please follow the instructions under the Upgrading Section within `the PostgresSQL documentation <https://www.postgresql.org/support/versioning/>`_.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
