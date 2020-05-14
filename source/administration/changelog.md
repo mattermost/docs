@@ -11,27 +11,42 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 ### Breaking Changes
+ - Note about Prometheus metrics being removed to be replaced by better ones
 
 ### Highlights
- - Group Mentions
+ - Group Mentions (EE)
 
 ### Improvements
+ - Restricted Database read/search replicas to be only available on E10 and E20.
+ - Added Accessibility Support in Invite Members & Invite Guest Flow.
  - Mention notification settings for "case sensitive first name" and "non-case sensitive username" are now disabled by default.
+ - Added ability to bulk create/update/delete team members and channel members in the store, as well as bulk import users belonging to different teams and channels.
+ - Added auditing support to all CLI API’s.
  - Replaced "Back to Mattermost" with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
+ - Centralize ID validation to a single function.
 
 ### Bug Fixes
  - Fixed an issue where a user's role was not reflected correctly in the Team Members Modal when the user's role was updated after the modal was opened.
+ - Fixed an issue where empty strings for ``auth_data`` created invalid users for LDAP sync during bulk import.
+ - Fixed an issue where Compliance Export reported "success" when failing to export a missing file.
+ - Fixed an issue where Unicode characters appeared in display names.
+ - Fixed an issue where a failed plugin installation from marketplace retried automatically.
+ - Fixed an issue where markdown images hosted by plugins did not show if local image proxy was enabled.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
+ - DisableDatabaseSearch to to disable database search in case
+ - ServiceSettings.ExtendSessionLengthWithActivity to extend session timeouts based on user activity
 
 ### Open Source Components
 
 ### Database Changes
 
 ### API Changes
+ - Added API to Server to enable modifying teams with mmctl
+ - Added API to Server needed to enable restoring a team with mmctl
 
 ### Websocket Event Changes
  
