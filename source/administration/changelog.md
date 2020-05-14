@@ -4,6 +4,43 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+**Release day: 2020-06-16**
+
+### Compatibility
+
+### Breaking Changes
+
+### Highlights
+ - Group Mentions
+
+### Improvements
+ - Mention notification settings for "case sensitive first name" and "non-case sensitive username" are now disabled by default.
+ - Replaced "Back to Mattermost" with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
+
+### Bug Fixes
+ - Fixed an issue where a user's role was not reflected correctly in the Team Members Modal when the user's role was updated after the modal was opened.
+ 
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### Open Source Components
+
+### Database Changes
+
+### API Changes
+
+### Websocket Event Changes
+ 
+### Known Issues
+ 
+### Contributors
+
+
+
 ## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 **Release day: 2020-05-16**
