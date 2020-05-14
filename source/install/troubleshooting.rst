@@ -19,9 +19,41 @@ General Troubleshooting
 -----------------------
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors.
-- You can also search the error messages online - existing solutions can often be applied.
-- Open **System Console > General > Logging** and set File Log Level to **DEBUG**. Make sure to revert to **INFO** after troubleshooting to save disk space.
+Review Mattermost Logs
+~~~~~~~~~~~~~~~~~~~~~~~
+
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_. 
+
+**Mattermost Server**
+
+- Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
+- You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
+The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
+
+.. Note::
+For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
+
+If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
+
+You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_.
+
+**Mattermost Desktop App**
+
+The desktop app log file can be found in the user directory:
+
+- **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
+- **Linux:** ``~/.local/share/Mattermost/logs``
+
+**Mattermost Browser App**
+
+The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser.
+
+**Mattermost Push Notification Service**
+
+Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
+
+Review Mattermost Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
 
@@ -35,7 +67,7 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
+You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ can often be found and applied.
 
 Administration Issues
 -----------------------------
