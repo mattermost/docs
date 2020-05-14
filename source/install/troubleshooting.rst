@@ -26,8 +26,8 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 
 **Mattermost Server**
 
-#. Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
-#. You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
+- Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
+- You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
 The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
 
 .. Note::
