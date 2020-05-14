@@ -15,18 +15,37 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
  - Group Mentions (EE)
+ - Quick wins UX
 
 ### Improvements
- - Restricted Database read/search replicas to be only available on E10 and E20.
- - Added Accessibility Support in Invite Members & Invite Guest Flow.
+
+#### User Interface (UI)
+ - Added a count for pinned posts header icon.
+ - Added the ability to view user profile pop-over when clicking the profile picture or username from the View/Manage Members modals.
+ - Improved keyboard usability between the emoji picker and the search bar.
+ - Improved profile popover for posts with overwritten username or icon.
+
+#### Notifications
  - Mention notification settings for "case sensitive first name" and "non-case sensitive username" are now disabled by default.
+ 
+#### Search
+ - Added support for searching by position in user lists.
+
+#### Administration
+ - Added Accessibility Support in Invite Members & Invite Guest Flow.
  - Added ability to bulk create/update/delete team members and channel members in the store, as well as bulk import users belonging to different teams and channels.
  - Added auditing support to all CLI API’s.
  - Replaced "Back to Mattermost" with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
  - Centralize ID validation to a single function.
 
+#### Enterprise Edition (EE)
+ - Restricted Database read/search replicas to be only available on E10 and E20.
+ - Added Accessibility Support in Invite Members & Invite Guest Flow.
+
 ### Bug Fixes
  - Fixed an issue where a user's role was not reflected correctly in the Team Members Modal when the user's role was updated after the modal was opened.
+ - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on Add user to a channel modal.
+ - Fixed an issue where Member and Team Admin roles only saw Integrations option if oAuth2 permission was granted.
  - Fixed an issue where empty strings for ``auth_data`` created invalid users for LDAP sync during bulk import.
  - Fixed an issue where Compliance Export reported "success" when failing to export a missing file.
  - Fixed an issue where Unicode characters appeared in display names.
