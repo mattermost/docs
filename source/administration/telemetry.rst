@@ -47,12 +47,15 @@ Mattermost error and diagnostic data is collected for the following purposes:
 .. note:: 
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. The segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain, starting in Mattermost version 5.23. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
-
-The following data is sent once every 24 hours:
+Deployment and Server Configuration Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Reporting Frequency
+  - When starting the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
+  - At the 24 hour mark and every 24 hours thereafter.
+
 Deployment Configuration Information
-  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts
+  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
 
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of ``type`` ("enumerated integer" or "enumerated boolean") values, ``true/false`` ("boolean"), and ``count`` ("integer"). Specifically these include:
@@ -87,11 +90,14 @@ Permissions Configuration Information (Enterprise Edition Only)
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, guest accounts, and bots.
 
-The following information is sent when the specified event occurs:
+Event data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Reporting Frequency
+  - Immediately after the specific event occurs.
+
   .. note::
-    Majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`_.
+The majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`_.
 
 Non-personally Identifiable Error Information, distinguished by end users and System Admins
   Boolean when the following events occur:
