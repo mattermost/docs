@@ -110,7 +110,6 @@ Slack offers two ways to `export your data from their product <https://get.slack
 
 2. You can request a "Corporate Export" from Slack directly to get a larger export including private channels, direct, and group messages. 
 
-Both exports from Slack use the same processes when importing into Mattermost. 
 
 .. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`__.
 
@@ -170,7 +169,7 @@ The following limitations are present when importing from Slack:
 Migrating from Slack using the Mattermost Web App
 `````````````````````````````````````````````````
 
-.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`__.
+.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
 
@@ -190,7 +189,16 @@ Migrating from Slack Using the Mattermost CLI
    
 .. note:: To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
 
+Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
+`````````````````````````````````````````````````````````````````````
+.. note:: This method is the recommended way to import Slack's corporate export file.
 
+1. Use the `slack-advanced-exporter <https://github.com/grundleborg/slack-advanced-exporter>`_ to download attachments and add users' email addresses to your Slack corporate export file.
+
+2. Use the `mmetl tool <https://github.com/mattermost/mmetl>`_ to transform Slack's corporate export file into the ``jsonl`` format required by the bulk import tool.
+
+3. Bulk load the files using the steps provided in the `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data>`_. 
+   
 Using the Imported Team
 ````````````````````````
 

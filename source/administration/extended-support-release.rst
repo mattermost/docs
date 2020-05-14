@@ -3,7 +3,7 @@ Extended Support Release
 
 What is an Extended Support Release?
 ------------------------------------
-During each monthly release, Mattermost backports security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.  
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.  
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -43,7 +43,7 @@ What are the current supported Extended Support Release versions?
 +=============+================+==================+==================+============================================================================================+=================================================+
 | 5.25        | Quality        | July 16, 2020    | April 15, 2021   |                                                                                            |                                                 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
-| 5.19        | Quality        | January 16, 2020 | October 15, 2020 | `5.19.1 <https://releases.mattermost.com/5.19.1/mattermost-5.19.1-linux-amd64.tar.gz>`_    |                                                 |
+| 5.19        | Quality        | January 16, 2020 | October 15, 2020 | `5.19.2 <https://releases.mattermost.com/5.19.2/mattermost-5.19.2-linux-amd64.tar.gz>`_    |                                                 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 | 5.9         | Quality        | April 16, 2019   | April 15, 2020   | `5.9.8 <https://releases.mattermost.com/5.9.8/mattermost-5.9.8-linux-amd64.tar.gz>`_       | Please upgrade to 5.0 prior to upgrading to 5.9 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
@@ -62,3 +62,12 @@ If we increase the support window, it decreases how much we can develop the prod
 Can customers pay for extended support?
 ---------------------------------------
 At this point, we are not planning on letting customers pay for extended support, but we are open to discuss options for this. Please speak to your Customer Success Manager if you have additional requirements for extended support.
+
+How do we notify customers about new and deprecated Extended Support Releases?
+------------------------------------------------------------------------------
+
+For a new upcoming ESR, we send out an email announcement 2 months in advance. We also add a reminder on our release announcement, changelog and via a Forum post (`see example <https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526>`_).
+
+For a deprecated ESR, we send out an email announcement 3 months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.org/>`_.
+
+To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`_.

@@ -131,12 +131,10 @@ To mark a channel as a favorite, open the channel:
 **On desktop:** At the top of the page, select on the star icon next to the channel name
 
     .. image:: ../../images/favorite_channels_desktop.png
-       :scale: 35
        
 This will add the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again. 
 
  .. image:: ../../images/favorite_channels_sidebar.png
-       :scale: 35
        
 **On mobile:** Open the dropdown list by the channel name, and select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
 
@@ -158,4 +156,3 @@ When configured by the System Admin, users can enable the features in **Account 
 `Learn more about upcoming additions to this feature set and give us feedback here <https://about.mattermost.com/default-sidebar/>`_.
 
  .. image:: ../../images/sidebar-phase-1.gif
-       :scale: 10

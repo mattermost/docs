@@ -2,19 +2,39 @@
 Custom Emoji
 ------------------
 
-Settings for Custom Emoji are accessible from the **Main Menu** by clicking the hamburger menu at the top of the channels sidebar. Clicking **Custom Emoji** opens a page where you can view existing Custom Emojis and create new ones.
+You can create Custom Emojis which are available to everyone on your Mattermost server. 
 
-To create a Custom Emoji:
+To create and find Custom Emojis, open the **Main Menu** at the top right of the channels sidebar and select **Custom Emoji**.
 
-1. Click on the hamburger menu at the top of the channels sidebar to open the **Main Menu**.
+**Note:** If you cannot see the **Custom Emoji** option in the menu, then your Mattermost System Admin may have restricted access to certain users. Contact your Mattermost System Admin for help.
+
+Creating Custom Emojis
+^^^^^^^^^^^^^^^^^^^^^^
+
+Small, square pictures work best when selecting an image. The file can be any JPG, GIF, or PNG and up to 1 MB in size.
+
+1. Open the **Main Menu** at the top-right of the channels sidebar.
 2. Select **Custom Emoji**.
-3. Click **Add Custom Emoji**.
-4. Enter a name for your Custom Emoji. (This is the name that will show up in the emoji autocomplete).
-5. Click **Select**, and choose what image to use for the emoji.
-6. Click **Save**.
+3. Choose **Add Custom Emoji**.
+4. Enter a name for your Custom Emoji. This is the name that will show up in the emoji autocomplete.
+5. Choose **Select**, and choose what image to use for the emoji. 
+6. Choose **Save**.
 
-Small, square pictures work best when selecting an image. The file can be any JPG, GIF, or PNG.
+.. image:: ../../images/add_custom_emoji.png
 
-After saving, your emoji will show up in the list of Custom Emoji. To add your Custom Emoji to a message, simply type ":" followed by your emoji name to bring it up in the emoji autocomplete. Other users on the site will also be able to see your emoji in the autocomplete, and will be able to use it in their own messages.
+Once saved, your emoji will be added to the list of Custom Emoji. 
 
-Note: If you cannot see the **Custom Emoji** option in the menu, then your System Administrator may have restricted access to certain users. Contact your System Administrator for help.
+To use your Custom Emoji in a message, simply type ":" followed by your emoji name to bring it up in the emoji autocomplete. Other users on the site will also be able to see your emoji in the autocomplete, and will be able to use it in their own messages.
+
+Deleting Custom Emojis
+^^^^^^^^^^^^^^^^^^^^^^^
+
+You can delete Custom Emojis that you created. 
+
+1. Open the **Main Menu** at the top-right of the channels sidebar.
+2. Select **Custom Emoji**.
+3. If required, use the Search Bar to find your Custom Emoji in the list.
+4. Under **Actions** select **Delete**. 
+5. Choose **Delete** to confirm. 
+
+.. image:: ../../images/delete_custom_emoji.png

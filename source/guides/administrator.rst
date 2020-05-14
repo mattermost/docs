@@ -63,7 +63,6 @@ Learn how to host Mattermost to meet your networking requirements.
 
    /deployment/deployment.md
    /deployment/desktop-app-deployment*
-   /deployment/mobile-app-deployment*
    /mobile/mobile-appconfig.rst
    /administration/image-proxy*
    /administration/encryption*
@@ -189,7 +188,6 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
-   /administration/incident-response-application*
    /deployment/atlassian-integrations*
    /deployment/ci-cd-tools*
    /deployment/incident-response-and-monitoring*

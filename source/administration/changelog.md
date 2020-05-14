@@ -4,7 +4,77 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+**Release day: 2020-05-16**
+
+Mattermost v5.23.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Compatibility
+ - PostgresSQL ended long-term support for [version 9.4 in February](https://www.postgresql.org/support/versioning).  Mattermost will officially be supporting Postgres version 10 with the Mattermost v5.26 release. New installs will require Postgres version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgresSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgresSQL 9.4. We highly recommend upgrading to PostgresSQL version 10+ after August.  Please follow the instructions under the Upgrading Section within [the PostgresSQL documentation](https://www.postgresql.org/support/versioning/).
+
+### Bug Fixes
+ - Fixed an issue where using slash command ``/leave`` failed to leave the channel.
+ - Fixed an issue where clicking on a channel link from a Direct Message channel that linked to a different team resulted in a "Page not Found" error.
+ - Fixed an issue where reloading a channel caused the channel to be shown as read-only for a few seconds.
+ - Fixed an issue where the Channel Export plugin bot channel did not appear on the left-hand side channel sidebar until the user switched to a different channel.
+ - Fixed an issue where no channel suggestions were displayed for ``in:`` search modifier for Guest Accounts.
+ - Fixed an issue where ``Guest`` tags were not shown in Group Message channel header.
+ - Fixed an issue where guest permissions could not be set in Team Override Schemes.
+ - Fixed an issue where a "this user didn't get notified" system message was missing if an at-mention was followed by a period and the user was not in the channel.
+ - Fixed an issue where batched emails were still sent even if there was activity from the user.
+ - Fixed an issue where ``/me`` messages weren't formatted in the right-hand side.
+ - Fixed an issue where mentions in header-changed system messages weren't highlighted.
+ - Fixed an issue where a thread title was missing when initial message in a thread showed as "message deleted".
+ - Fixed an issue where there was no hover effect when mousing over options in Search.
+ - Fixed an issue on Firefox where using Alt+arrow stopped working on read-only channels.
+ - Fixed an issue where muted channels on another team appeared as unread in team sidebar and browser tab.
+ - Fixed an issue where the URL field on Rename Channel modal allowed more than two underscores.
+ - Fixed an issue where pasting text from a GitHub code block erased post textbox contents.
+ - Fixed an issue where keyboard shortcuts to move between teams conflicted with a native Linux OS shortcut for switching virtual desktops.
+ - Fixed an issue where incoming webhooks that contained certain sized attachments resulted in an infinite loop, causing a memory leak.
+ - Fixed an issue with errors appearing in logs when sending a direct message to your own account.
+ - Fixed an issue with a "Failed to get membership" log spam for bot posts.
+
+### Open Source Components
+ - Added ``react-native-mmkv-storage`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``redux-action-buffer`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``redux-reset`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``serialize-error`` in https://github.com/mattermost/mattermost-mobile.
+
+### API Changes
+ - Added a new API endpoint ``GET /api/v4/users/known`` to get the list of user IDs of users with any direct relationship with a user. That means any user sharing any channel, including direct and group channels.
+ - ``GET /api/v4/teams/:team_id/channels`` no longer requires the ``list_team_channels`` permission.
+
+### Websocket Event Changes
+ - Added a new ``update_team_scheme`` Websocket Event.
+ 
+### Known Issues
+ - **Copy Theme Colors** button on custom theme Display Settings modal is not themed correctly on Mattermost dark theme.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+
+ - [aaronrothschild](https://github.com/aaronrothschild), [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [akarikuu](https://github.com/akarikuu), [Akendo](https://github.com/Akendo), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [AninditaBasu](https://github.com/AninditaBasu), [asaadmahmood](https://github.com/asaadmahmood), [attilamolnar](https://github.com/attilamolnar), [avasconcelos114](https://github.com/avasconcelos114), [avddvd](https://github.com/avddvd), [bakurits](https://github.com/bakurits), [bbodenmiller](https://github.com/bbodenmiller), [bolariin](https://github.com/bolariin), [bradjcoughlin](https://github.com/bradjcoughlin), [cadavre](https://github.com/cadavre), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [ckavili](https://github.com/ckavili), [clarmso](https://github.com/clarmso), [cpanato](https://github.com/cpanato), [cpurta](https://github.com/cpurta), [craigwillis-mm](https://github.com/craigwillis-mm), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [curiousercreative](https://github.com/curiousercreative), [danger89](https://github.com/danger89), [Danziger](https://github.com/Danziger), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [dhadiseputro](https://github.com/dhadiseputro), [DHaussermann](https://github.com/DHaussermann), [ebaker](https://github.com/ebaker), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [fedealconada](https://github.com/fedealconada), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gnello](https://github.com/gnello), [gramakri](https://github.com/gramakri), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hajowieland](https://github.com/hajowieland), [hanzei](https://github.com/hanzei), [haydenhw](https://github.com/haydenhw), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [iamsayantan](https://github.com/iamsayantan), [icelander](https://github.com/icelander), [igor47](https://github.com/igor47), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnthompson365](https://github.com/johnthompson365), [josephbaylon](https://github.com/josephbaylon), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [justledbetter](https://github.com/justledbetter), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lynn915](https://github.com/lynn915), [marianunez](https://github.com/marianunez), [MatthewDorner](https://github.com/MatthewDorner), [mbecca](https://github.com/mbecca), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mo2menelzeiny](https://github.com/mo2menelzeiny), [moussetc](https://github.com/moussetc), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [Nirei](https://github.com/Nirei), [nvjacobo](https://github.com/nvjacobo), [oguera](https://github.com/oguera), [Pafzedog](https://github.com/Pafzedog), [popstr](https://github.com/popstr), [promulo](https://github.com/promulo), [Qovaros](https://github.com/Qovaros), [rahimrahman](https://github.com/rahimrahman), [rajeshkp](https://github.com/rajeshkp), [rakhi2104](https://github.com/rakhi2104), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shred86](https://github.com/shred86), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [syuo7](https://github.com/syuo7), [T0biii](https://github.com/T0biii), [theo-o](https://github.com/theo-o), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [vespian](https://github.com/vespian), [VishalSwarnkar](https://github.com/VishalSwarnkar), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [ztrayner](https://github.com/ztrayner)
+
 ## Release v5.22 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+- **v5.22.3, released 2020-05-11**
+  - Fixed an issue where channels were shown as read-only when [Channel Moderation feature](https://docs.mattermost.com/deployment/advanced-permissions.html#channel-moderation-beta-e20) was used in High Availability environments. [MM-24987](https://mattermost.atlassian.net/browse/MM-24987)
+- **v5.22.2, released 2020-05-05**
+  - Fixed an issue where message reply threads did not get correctly imported via [bulk loading tool](https://docs.mattermost.com/deployment/bulk-loading.html). [MM-24707](https://mattermost.atlassian.net/browse/MM-24707)
+- **v5.22.1, released 2020-04-23**
+  - Fixed an issue where Amazon S3 file storage with IAM credentials failed due to a bug in the ``minio-go`` library. [MM-24388](https://mattermost.atlassian.net/browse/MM-24388)
+- **v5.22.0, released 2020-04-16**
+  - Original 5.22.0 release
 
 **Release day: 2020-04-16**
 
@@ -317,9 +387,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.19.2, release day TBD**
-  - Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. The available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
-  - Fixing an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel is created with a certain arrangement of characters. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
+- **v5.19.2, released 2020-04-21**
+  - Fixed an issue with unexpected crashes related to any action taken to modify post properties such as push notifications. Note for developers: Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. To avoid crash issues, the available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
+  - Fixed an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel name is 40 characters long. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
 - **v5.19.1, released 2020-01-21**
   - Fixed a regression affecting v5.18 and v5.19 where some users were experiencing client-side performance issues. This was mainly affecting users with more than 100 channels listed in the channel sidebar and with channels sorted alphabetically. [MM-20349](https://mattermost.atlassian.net/browse/MM-20349)
 - **v5.19.0, released 2020-01-16**
