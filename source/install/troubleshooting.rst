@@ -31,7 +31,7 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
 
 .. Note::
-   For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
+For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
