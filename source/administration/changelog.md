@@ -24,6 +24,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the View/Manage Members modals.
  - Improved keyboard usability between the emoji picker and the search bar.
  - Improved profile popover for posts with overwritten username or icon.
+ - Added support for code highlighting of TypeScript files.
 
 #### Notifications
  - Mention notification settings for "case sensitive first name" and "non-case sensitive username" are now disabled by default.
