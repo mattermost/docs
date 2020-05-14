@@ -257,7 +257,7 @@ Inline image with hover text
 
   .. raw:: html
 
-    <img src="../../_images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
+    <img src="../../images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
 
 Inline image with link
   Note the extra set of square brackets.
@@ -282,7 +282,7 @@ Inline image displayed at 50 pixels wide and 76 pixels high
 
   .. raw:: html
 
-    <img alt="Mattermost" src="../../_images/icon-50x76.png" title="Mattermost Icon">
+    <img alt="Mattermost" src="../../images/icon-50x76.png" title="Mattermost Icon">
 
 Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. code-block:: none
@@ -293,7 +293,7 @@ Inline image displayed at 50 pixels wide and the height adjusted to suit
 
   .. raw:: html
 
-    <img src="../../_images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
+    <img src="../../images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
 
 Lines
 -----
