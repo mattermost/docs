@@ -70,7 +70,7 @@ To mute a channel, click the channel name at the top of the page and navigate to
 Ignoring Mentions
 -----------------
 
-To turn off notifications for channel-wide mentions for @channel, @here, and @all navigate to **Notification Preferences > Ignore mentions for @channel, @here and @all**. Choose **Edit**, select **On**, and then select **Save**. 
+To turn off notifications for channel-wide mentions for @channel, @here, and @all, navigate to **Notification Preferences > Ignore mentions for @channel, @here and @all**. Choose **Edit**, select **On**, and then select **Save**. 
 
 When this setting is on you will still receive notifications for direct mentions. 
 
