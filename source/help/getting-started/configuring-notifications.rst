@@ -61,7 +61,7 @@ Muting a Channel
 
 Channels in the sidebar are **bold** when there are unread messages in the channel and show a badge count if you are mentioned specifically. 
 
-When you mute a channel, you do not receive any notifications (desktop, email, or push) for any mentions (whether they are channel-wide to directed at you). However, if you are mentioned while the channel is muted the mention badge will be displayed in the sidebar with the channel displaying at reduced opacity.  
+When you mute a channel, you do not receive any notifications (desktop, email, or push) for any mentions (whether they are channel-wide or directed at you). However, if you are mentioned while the channel is muted, the mention badge will be displayed in the sidebar with the channel displaying at reduced opacity.
 
 To mute a channel, click the channel name at the top of the page and navigate to **Notification Preferences > Mute channel**, where you can edit the notification settings for that channel. You can also click on the channel name and select **Mute Channel**. To unmute it, click on the channel name and select **Unmute Channel**.
 
