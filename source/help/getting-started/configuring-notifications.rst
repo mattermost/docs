@@ -52,7 +52,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 Browser Tab Notifications
 ----------------------------------------
 
-If Mattermost is open in a browser tab, the favicon updates to notify you of unread messages (\*) and a count of mentions or Direct Messages. Browser tab notifications are available on Firefox and Chrome.
+If Mattermost is open in a browser tab, the favicon updates to notify you of unread messages (\*) and a count of mentions or Direct Messages. Browser tab notifications are available on Chrome, Edge, Firefox, Safari.
 
 .. image:: ../../images/browser_notification.png
 
