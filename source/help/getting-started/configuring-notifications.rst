@@ -3,7 +3,7 @@ Configuring Notifications
 
 Desktop, email, and mobile push notifications notify you of activity in Mattermost. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
 
-- Direct Messages you
+- Sends you a Direct Messages
 - Mentions your username or first name in a channel
 - Notifies a channel you're in using @channel or @all
 - Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
@@ -43,7 +43,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 .. image:: ../../images/push_notification.png
 
 -  Configure push notifications in **Account Settings > Notifications > Mobile push notifications > Send mobile push notifications**.
--  Configure when push notifications are sent depending on your status in **Account Settings > Notifications > Mobile push notifications** > **Trigger push notifications when**.
+-  Configure when push notifications are sent depending on your status in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
    
 **Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.   
 
@@ -59,8 +59,21 @@ If Mattermost is open in a browser tab, the favicon updates to notify you of unr
 Muting a Channel
 ----------------------------------------
 
-Channels in the sidebar are **bold** when there are unread messages in the channel and show a badge count if you are mentioned specifically. To mute a channel so it does not appear as unread unless you are mentioned, click the channel name at the top of the page and navigate to **Notification Preferences > Mute channel**, where you can edit the notification settings for that channel. 
+Channels in the sidebar are **bold** when there are unread messages in the channel and show a badge count if you are mentioned specifically. 
 
-You can also click on the channel name and select **Mute Channel**. To unmute it, click on the channel name and select **Unmute Channel**.
+When you mute a channel, you do not receive any notifications (desktop, email, or push) for any mentions (whether they are channel-wide to directed at you). However, if you are mentioned while the channel is muted the mention badge will be displayed in the sidebar with the channel displaying at reduced opacity.  
+
+To mute a channel, click the channel name at the top of the page and navigate to **Notification Preferences > Mute channel**, where you can edit the notification settings for that channel. You can also click on the channel name and select **Mute Channel**. To unmute it, click on the channel name and select **Unmute Channel**.
 
 .. tip :: Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_. Learn more about `mentioning teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
+
+Ignoring Mentions
+-----------------
+
+To turn off notifications for channel-wide mentions for @channel, @here, and @all navigate to **Notification Preferences > Ignore mentions for @channel, @here and @all**. Choose **Edit**, select **On**, and then select **Save**. 
+
+When this setting is on you will still receive notifications for direct mentions. 
+
+**Note:** If you have muted a channel and also enabled **Ignore mentions for @channel, @here and @all** then you will not receive any notifications (whether they're direct or channel-wide). However, if you are directly mentioned in the muted channel a badge counter will be displayed in the sidebar. 
+
+You can also view the `notifications flow charts <https://docs.mattermost.com/overview/faq.html?#notifications>`_ for more information about notification behavior in Mattermost.  
