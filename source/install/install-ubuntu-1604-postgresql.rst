@@ -105,4 +105,6 @@ Assume that the IP address of this server is 10.10.10.1
 
 This leaves the security to the user running the application. If you run it as a service, then you need *sudo* permissions to start a service file. As a result only *root* user has read-write access. 
 
+For further info on the pgpass file please refer to `the official PostgreSQL documentation<https://www.postgresql.org/docs/9.4/libpq-pgpass.html>`_.
+
 With the database installed and the initial setup complete, you can now install the Mattermost server.
