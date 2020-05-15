@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Internet Explorer (IE11) is removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+   PostgresSQL ended long-term support for `version 9.4 in February <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting Postgres version 10 with the Mattermost v5.26 release. New installs will require Postgres version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgresSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgresSQL 9.4. We highly recommend upgrading to PostgresSQL version 10+ after August.  Please follow the instructions under the Upgrading Section within `the PostgresSQL documentation <https://www.postgresql.org/support/versioning/>`_.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |

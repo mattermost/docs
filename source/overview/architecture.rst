@@ -122,6 +122,11 @@ Each AWS diagram represents a full high availability deployment on Amazon Web Se
 
 .. image:: ../images/MattermostDeployment25kaws.png
 
+50,000 Users on E20 - AWS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment50kaws.png
+
 Database with VIPs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
