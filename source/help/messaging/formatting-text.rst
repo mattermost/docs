@@ -269,9 +269,8 @@ Inline image with link
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
-     :alt: MatterMost Icon 76X76
-    :alt: Mattermost
     :target: https://github.com/mattermost/mattermost-server
+   
 
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
