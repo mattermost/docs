@@ -100,5 +100,11 @@ Assume that the IP address of this server is 10.10.10.1
       You might have to install the PostgreSQL client software to use the command.
 
   The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
+  
+13. (Optional) If you don't want to enter your password at each login, you can use a ``.pgpass`` file . It is a special file which has to be assigned ``0600`` in permissions otherwise it will not work. One can also pass the location of the file using the ``PGPASSFILE`` env variable.
+
+This leaves the security to the user running the application. If you run it as a service, then you need *sudo* permissions to start a service file. As a result only *root* user has read-write access. 
+ 
+For further info on the pgpass file please refer to `the official PostgreSQL documentation   <https://www.postgresql.org/docs/9.4/libpq-pgpass.html>`_
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
