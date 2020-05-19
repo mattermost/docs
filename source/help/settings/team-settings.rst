@@ -3,7 +3,7 @@ Team Settings
 
 --------------
 
-The Team Settings menu offers Team Administrators and System Administrators the ability to adjust settings applied to a specific team. To access the settings open the main menu at the top of the left sidebar and select **Team Settings**. 
+The Team Settings menu offers Team Administrators and System Administrators the ability to adjust settings applied to a specific team. To access the settings, open the main menu at the top of the left sidebar and select **Team Settings**. 
 
 General
 -------
