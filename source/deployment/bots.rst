@@ -30,7 +30,7 @@ Sample Golang bot
 Hubot Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Hubot adapter for Mattermost written in Javascript that uses Web API and Websockets, developed by Andy Lo-A-Foe.
+ - Hubot adapter for Mattermost written in JavaScript that uses Web API and Websockets, developed by Andy Lo-A-Foe.
  - Use the bot to listen for commands and to execute actions based on your requests.
  - Invite your bot to any Mattermost channel just like a regular user.
  - Source code + docs: https://github.com/loafoe/hubot-matteruser
