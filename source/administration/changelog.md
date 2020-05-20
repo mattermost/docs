@@ -18,6 +18,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Quick wins UX
  - Bleve search engine
  - mmctl local mode
+ - LDAP sync profile image
 
 ### Improvements
 
@@ -46,6 +47,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added Accessibility Support in Invite Members & Invite Guest Flow.
 
 ### Bug Fixes
+ - Fixed an issue where Session Idle Timeout expiration also unexpectedly logged user out from the mobile app.
  - Fixed an issue where a user's role was not reflected correctly in the Team Members Modal when the user's role was updated after the modal was opened.
  - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on Add user to a channel modal.
  - Fixed an issue where Member and Team Admin roles only saw Integrations option if oAuth2 permission was granted.
@@ -61,6 +63,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  - DisableDatabaseSearch to to disable database search in case
  - ServiceSettings.ExtendSessionLengthWithActivity to extend session timeouts based on user activity
+ - PictureAttribute
 
 ### Open Source Components
 
