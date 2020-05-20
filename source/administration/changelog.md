@@ -16,6 +16,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
  - Group Mentions (EE)
  - Quick wins UX
+ - Bleve search engine
+ - mmctl local mode
 
 ### Improvements
 
