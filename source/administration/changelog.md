@@ -19,6 +19,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Bleve search engine
  - mmctl local mode
  - LDAP sync profile image
+ - Session expiry
+ - Team & channel pages
 
 ### Improvements
 
@@ -34,6 +36,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Search
  - Added support for searching by position in user lists.
+ 
+#### Integrations
+ - Support different interactive message button styles.
 
 #### Administration
  - Added Accessibility Support in Invite Members & Invite Guest Flow.
@@ -64,6 +69,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - DisableDatabaseSearch to to disable database search in case
  - ServiceSettings.ExtendSessionLengthWithActivity to extend session timeouts based on user activity
  - PictureAttribute
+ - Changed the default config for mobile push notification contents to "Send full message contents" on new installs.
+ - Enabled config for link previews by default on new installs.
 
 ### Open Source Components
 
