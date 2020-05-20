@@ -337,7 +337,9 @@ Renders as:
 Math Formulas
 -------------
 
-Create formulas by using LaTeX in a ``latex`` `Code Block`_. This is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting to use this feature.
+Create formulas by using LaTeX in a ``latex`` `Code Block`_. 
+
+Note: This feature is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting to use this feature.
 
 .. code-block:: none
 
