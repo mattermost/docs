@@ -8,6 +8,8 @@ Important Upgrade Notes
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
 | v5.24.0                                            | Some Prometheus metrics being removed to be replaced by better ones                                                                                              |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Performance schema upgrade note similar to v5.22                                                                                                                 |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.22.0                                            | Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in  |
 |                                                    | environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially |
