@@ -28,7 +28,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
- - Improved keyboard usability between the emoji picker and the search bar.
+ - Improved keyboard usability in the emoji picker search bar.
  - Improved profile popover for posts with overwritten username or icon.
  - Added support for code highlighting of TypeScript files.
 
@@ -36,17 +36,16 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Mention notification settings for "Case sensitive first name" and "Non-case sensitive username" are now disabled by default.
  
 #### Search
- - Added support for searching by position in user lists.
+ - Added support for searching by position in user lists such as the **Add Members** menu.
  
 #### Integrations
- - Support different interactive message button styles.
+ - Added support for different interactive message button styles.
 
 #### Administration
- - Added Accessibility Support in Invite Members & Invite Guest Flow.
- - Added ability to bulk create/update/delete team members and channel members in the store, as well as bulk import users belonging to different teams and channels.
- - Added auditing support to all CLI API’s.
- - Replaced "Back to Mattermost" with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
- - Centralize ID validation to a single function.
+ - Added the ability to bulk create, update, and delete team members and channel members in the store, as well as bulk import users belonging to different teams and channels.
+ - Added auditing support to all Comman Line Interface (CLI) API’s.
+ - Replaced "Back to Mattermost" button with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
+ - Centralized ID validation to a single function.
 
 #### Enterprise Edition (EE)
  - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
