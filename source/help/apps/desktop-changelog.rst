@@ -19,7 +19,7 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Added a spell checker for Polish language. 
-- Added support for triggering a desktop notification when downloading a file is complete.
+- Added support for triggering a desktop notification when a file download is complete.
 - Added support for the cursor focus to be on the Server Name field when clicking on the ``+`` tab to add a new server.
 - Defaulted "Flash app window and taskbar icon when a new message is received" setting to ``True``.
 - Migrated some operations to promises. (?)
@@ -27,7 +27,7 @@ All Platforms
 Mac
 ^^^^^^^^^^^^^
 
-- On Mac, a closed window now reopens with CMD+Tab.
+- On Mac, a closed window now reopens with ``CMD+Tab`` keyboard shortcut.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,10 +40,9 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Fixed an issue where no notification appeared if the app was closed on a channel where the message was posted.
-- Fixed an issue where right clicking and then clicking "Save Image" didn't work.
+- Fixed an issue where right-clicking and then clicking "Save Image" didn't work.
 - Fixed an issue where trusting self-signed certificates kept asking for trust.
-- Fixed an issue where a link to the root of a server if the URL didn't end with a ``/`` caused a "Channel not Found" error.
+- Fixed an issue where a link to the root of a server caused a "Channel not Found" error if the URL didn't end with a ``/``.
 - Fixed an issue where OneLogin links opened up in the app itself making it impossible to go back to the app.
 - Fixed an issue where links on "Cannot connect to Mattermost" error didn't work.
 
@@ -56,7 +55,7 @@ Mac
 ^^^^^^^^^^^^^
 - Fixed an issue where double clicking the top bar no longer minimized or maximized the window.
 - Fixed an issue where users were unable to reposition the app by using click, hold and drag on the left side of the header.
-- Fixed an issue where server display name field lost focus when using CMD+Tab to navigate away and back to the app.
+- Fixed an issue where server display name field lost focus when using ``CMD+Tab`` to navigate away and back to the app.
 - Fixed an issue where a long server address didn't wrap correctly in the new server settings page.
 - Fixed an issue where copy and pasting into Atlassian login fields pasted text in the wrong place.
 
