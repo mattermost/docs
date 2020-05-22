@@ -11,7 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 ### Breaking Changes
- - Note about Prometheus metrics being removed to be replaced by better ones
+ - 
 
 ### Highlights
  - Group Mentions (EE)
@@ -27,13 +27,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
- - Added the ability to view user profile pop-over when clicking the profile picture or username from the View/Manage Members modals.
+ - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
  - Improved keyboard usability between the emoji picker and the search bar.
  - Improved profile popover for posts with overwritten username or icon.
  - Added support for code highlighting of TypeScript files.
 
 #### Notifications
- - Mention notification settings for "case sensitive first name" and "non-case sensitive username" are now disabled by default.
+ - Mention notification settings for "Case sensitive first name" and "Non-case sensitive username" are now disabled by default.
  
 #### Search
  - Added support for searching by position in user lists.
@@ -49,19 +49,18 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Centralize ID validation to a single function.
 
 #### Enterprise Edition (EE)
- - Restricted Database read/search replicas to be only available on E10 and E20.
- - Added Accessibility Support in Invite Members & Invite Guest Flow.
+ - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
 
 ### Bug Fixes
- - Fixed an issue where Session Idle Timeout expiration also unexpectedly logged user out from the mobile app.
- - Fixed an issue where a user's role was not reflected correctly in the Team Members Modal when the user's role was updated after the modal was opened.
- - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on Add user to a channel modal.
- - Fixed an issue where Member and Team Admin roles only saw Integrations option if oAuth2 permission was granted.
+ - Fixed an issue where Session Idle Timeout setting also unexpectedly affected the mobile app session expiry.
+ - Fixed an issue where a user's role was not reflected correctly in the **Team Members** modal when the user's role was updated after the modal was opened.
+ - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on **Add user to a channel** modal.
+ - Fixed an issue where Integrations menu was available for member and team admin roles only if with oAuth2 permission.
  - Fixed an issue where empty strings for ``auth_data`` created invalid users for LDAP sync during bulk import.
  - Fixed an issue where Compliance Export reported "success" when failing to export a missing file.
- - Fixed an issue where Unicode characters appeared in display names.
- - Fixed an issue where a failed plugin installation from marketplace retried automatically.
- - Fixed an issue where markdown images hosted by plugins did not show if local image proxy was enabled.
+ - Fixed an issue where Unicode characters appeared in users' display names.
+ - Fixed an issue where a failed plugin installation from the plugin marketplace retried automatically.
+ - Fixed an issue where markdown images hosted by plugins did not appear if local image proxy was enabled.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
