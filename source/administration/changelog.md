@@ -13,7 +13,7 @@ Mattermost v5.23.0 contains a low level security fix. [Upgrading](http://docs.ma
 ### Compatibility
 PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost will officially be supporting PostgreSQL version 10 with the Mattermost v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. 
 
-We highly recommend upgrading to PostgreSQL version 10+ after August 2020. Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
+We highly recommend upgrading to PostgreSQL version 10+. Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
 
 ### Bug Fixes
  - Fixed an issue where using slash command ``/leave`` failed to leave the channel.
