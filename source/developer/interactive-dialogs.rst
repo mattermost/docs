@@ -66,6 +66,7 @@ Each dialog supports elements for users to enter information.
 - **text**: Single-line plain text field. Use this for inputs such as names, email addresses or phone numbers.
 - **textarea**: Multi-line plain text field. Use this field when the answer is expected to be longer than 150 characters. 
 - **select**: Message menu. Use this for pre-selected choices. Can either be static menus or dynamic menus generated from users and public channels of the system. For more information on message menus, see :doc:`the documentation <interactive-messages>`.
+- **bool**: Checkbox option. Use this for binary selection.
 - **radio**: Radio button option. Use this to quickly select an option from pre-selected choices.
 
 Each element is required by default. Otherwise the client will return an error as shown below. Note that the error message will appear below the help text, if one is specified. To make an element optional, set the field ``"optional": "true"``.
