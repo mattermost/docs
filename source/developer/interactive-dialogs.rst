@@ -66,6 +66,7 @@ Each dialog supports elements for users to enter information.
 - **text**: Single-line plain text field. Use this for inputs such as names, email addresses or phone numbers.
 - **textarea**: Multi-line plain text field. Use this field when the answer is expected to be longer than 150 characters. 
 - **select**: Message menu. Use this for pre-selected choices. Can either be static menus or dynamic menus generated from users and public channels of the system. For more information on message menus, see :doc:`the documentation <interactive-messages>`.
+- **radio**: Radio button option. Use this to quickly select an option from pre-selected choices.
 
 Each element is required by default. Otherwise the client will return an error as shown below. Note that the error message will appear below the help text, if one is specified. To make an element optional, set the field ``"optional": "true"``.
 
@@ -213,7 +214,7 @@ The list of supported fields for the ``select`` type element is included below:
 Checkbox Element
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In Mattermost version 5.16 and later, you can use checkbox elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a checkbox element that asks for meeting feedback:
+In Mattermost version 5.16 and later, you can use checkbox elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a checkbox element that asks for meeting feedback.
 
 .. image:: ../../source/images/interactive-dialog-bool.png
 
@@ -239,6 +240,48 @@ The full list of supported fields are included below:
     "default", "String", "(Optional) Set a default value for this form element. True or false."
     "placeholder", "String", "(Optional) A string displayed to include a label besides the checkbox. Maximum 150 characters."
     
+
+Radio Element
+^^^^^^^^^^^^^^^^^^^^^^^
+
+In Mattermost version 5.16 and later, you can use radio elements. It looks like a plain text field with a radio button to be selected. Below is an example of a radio element that asks for a department.
+
+.. image:: ../../source/images/interactive-dialog-radio.png
+
+.. code-block:: json
+
+  {
+    "display_name": "What department do you work in?",
+    "name": "department",
+    "type": "radio",
+    "options": [
+      {
+        "text": "Engineering",
+        "value": "engineering"
+      },
+      {
+        "text": "Sales",
+        "value": "sales"
+      },
+      {
+        "text": "Administration",
+        "value": "administration"
+      }
+    ]
+  }
+
+The full list of supported fields are included below:
+
+.. csv-table::
+    :header: "Field", "Type", "Description"
+
+    "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
+    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "type", "String", "Set this value to ``radio`` for a radio element."
+    "options", "String", "(Optional) An array of options for the radio element."
+    "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
+    "default", "String", "(Optional) Set a default value for this form element."
+
 
 Dialog Submission
 -----------------------
