@@ -206,7 +206,7 @@ The list of supported fields for the ``select`` type element is included below:
     "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
     "type", "String", "Set this value to ``select`` for a select element."
     "data_source", "String", "(Optional) One of ``users``, or ``channels``. If none specified, assumes a manual list of options is provided by the integration."
-    "options", "String", "(Optional) An array of options for the select element. Not applicable for ``users`` or ``channels`` data sources."
+    "options", "Array", "(Optional) An array of options for the select element. Not applicable for ``users`` or ``channels`` data sources."
     "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
     "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
     "default", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
@@ -281,7 +281,7 @@ The full list of supported fields are included below:
     "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
     "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
     "type", "String", "Set this value to ``radio`` for a radio element."
-    "options", "String", "(Optional) An array of options for the radio element."
+    "options", "Array", "(Optional) An array of options for the radio element."
     "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
     "default", "String", "(Optional) Set a default value for this form element."
 
