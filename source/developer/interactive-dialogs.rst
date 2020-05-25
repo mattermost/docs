@@ -252,7 +252,7 @@ In Mattermost version 5.16 and later, you can use radio elements. It looks like 
 .. code-block:: json
 
   {
-    "display_name": "What department do you work in?",
+    "display_name": "Which department do you work in?",
     "name": "department",
     "type": "radio",
     "options": [
@@ -268,7 +268,9 @@ In Mattermost version 5.16 and later, you can use radio elements. It looks like 
         "text": "Administration",
         "value": "administration"
       }
-    ]
+    ],
+    "help_text": "Please indicate your department as of January 1.",
+    "default": "engineering"
   }
 
 The full list of supported fields are included below:
