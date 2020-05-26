@@ -363,7 +363,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Multi-team support for notifications", "X", "X", "X"
     "Team switching", "X", "X", "X"
     "Team-based theming", "X", "X", "X"
-    "Team Settings", "X", "X"
+    "Team settings", "X", "X"
     "Join existing team", "X", "X", "X"
     "Create a new team", "X", "X"
     "Get team invite link", "X", "X",
