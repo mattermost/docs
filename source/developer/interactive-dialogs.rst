@@ -245,7 +245,7 @@ The full list of supported fields are included below:
 Radio Element
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In Mattermost version 5.16 and later, you can use radio elements. It looks like a plain text field with a radio button to be selected. Below is an example of a radio element that asks for a department.
+From Mattermost 5.16 you can use radio elements. It looks like a plain text field with a radio button to be selected. Below is an example of a radio element that asks for a department.
 
 .. image:: ../../source/images/interactive-dialog-radio.png
 
