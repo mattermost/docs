@@ -363,12 +363,13 @@ The following chart highlights the end user features of Mattermost and their sup
     "Multi-team support for notifications", "X", "X", "X"
     "Team switching", "X", "X", "X"
     "Team-based theming", "X", "X", "X"
+    "Team Settings", "X", "X"
     "Join existing team", "X", "X", "X"
-    "Create a new team", "X", "X",
+    "Create a new team", "X", "X"
     "Get team invite link", "X", "X",
     "Add members to team", "X", "X",
-    "Manage members", "X", "X",
-    "Leave team", "X", "X",
+    "Manage team members", "X", "X",
+    "Leave team", "X", "X"
     **INTEGRATIONS**
     "Slash commands", "X", "X", "O"
     "Server-side plugins", "X", "X", "X"
@@ -385,7 +386,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "SAML SSO", "X", "X", "X"
     "GitLab SSO", "X", "X", "X"
     "Office 365 SSO", "X", "X", "X"
-    "Google SSO", "X", "X"
+    "Google SSO", "X", "X",
     **OTHER**
     "Localization for 16 languages", "X", "X", "X"
     "Custom user interface themes", "X", "X", "X"
