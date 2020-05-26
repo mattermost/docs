@@ -215,7 +215,7 @@ The list of supported fields for the ``select`` type element is included below:
 Checkbox Element
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In Mattermost version 5.16 and later, you can use checkbox elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a checkbox element that asks for meeting feedback.
+From Mattermost 5.16 you can use checkbox elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a checkbox element that asks for meeting feedback.
 
 .. image:: ../../source/images/interactive-dialog-bool.png
 
