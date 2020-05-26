@@ -6,7 +6,7 @@ Options to protect your Mattermost server from different types of failures range
 Backup
 ------
 
-The state of your Mattermost server is contained in multiple data stores that need to be separately backed-up and restored to fully recover your system from failure. 
+The state of your Mattermost server is contained in multiple data stores that need to be separately backed up and restored to fully recover your system from failure. 
 
 To backup your Mattermost server: 
 
@@ -99,7 +99,6 @@ Once IT is contacted about an SSO outage issue, they can temporarily change a us
 If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 It is highly important after the outage to switch everyone back to SSO from email-password to maintain consistency and security.
-
 
 
 
