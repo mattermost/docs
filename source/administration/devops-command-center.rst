@@ -1,5 +1,6 @@
+=====================
 DevOps Command Center
------------------------
+=====================
 
 
 .. contents:: Contents
@@ -10,16 +11,198 @@ DevOps Command Center
 Overview
 ^^^^^^^
 
-Incident Response is a Mattermost plugin designed to help organizations monitor, coordinate, and measure their incident response
-process so that it can be more transparent and effective.
-
 Workplace messaging is often process-driven rather than completely ad-hoc, and these processes could be organizationally critical in crisis situations. Help
 teams collaborate to solve problems that are time-sensitive, recurring, situational.
 
+Incident Response is a Mattermost plugin designed to help organizations monitor, coordinate,
+and measure their incident response processes, increasing transparency, maximizing effectiveness, and ultimately saving costs by cutting down time taken to respond and resolve incidents.
+
+
+User's Guide
+^^^^^^^^^^^^^
+
+Starting incidents
+~~~~~~~~~~~~~~~~~~
+
+The incident channel is the central place for discussion related to the incident. You can start an incident in one of three ways:
+
+- Use the slash command */incident start* from any channel.
+- Use the message actions dropdown menu and select **Start incident**.
+- Use the context menu of a post and select **Start incident**.
+
+Creating an incident prompts for a channel name and optional playbook. The channel name can be used to search for the channel, and is also the name appended to the archived logs. If a playbook is selected, the corresponding checklist is used as a template to start the incident. If no playbook is selected, the incident starts with an empty checklist.
+
+The creator of an incident automatically becomes the incident Commander, responsible for managing the incident.
+
+The Commander of the incident can:
+
+- Select Playbooks
+- Create checklists
+- Invite people to the channel
+- Hand over the Commander role to another channel member
+
+The Commander of the channel must be a team/channel admin, and if the role is handed to another member they must also be a team/channel admin. To change Commanders,
+select the current Commander’s name and use the search bar to locate the username of the new Commander. Only members of the channel may be selected as commanders. To assign a
+Commander not in the team, that user must first be invited to the channel using the existing Mattermost user interface (**Manage Members** in the channel header, or the /invite slash command)
+Changing the Commander takes effect immediately, and members are notified of the change in the channel.
+
+Active incidents
+~~~~~~~~~~~~~~~~
+
+To view details about active incidents, click the **!** icon in the channel header to bring up the right-hand side panel that shows a list of current
+active incidents. Select an incident to see its Commander, channel, and checklist.
+
+When an incident has started and the incident channel is created, the channel header is updated to reflect its origin and
+a message from the incident bot is also posted to the incident channel naming the creator of the incident. If an incident is started
+from the context of a post, the channel header includes a link to the post and the text of the post is also posted to the channel alongside a permalink.
+
+Incidents are displayed in the RHS even if the active user is not a member of the corresponding incident channel.
+Closed incidents are never displayed in the RHS. Incidents from teams other than the currently selected team are never displayed in the RHS.
+
+Using Playbooks
+~~~~~~~~~~~~~~~~
+
+Playbooks are templates which are applied to an incident and define a set of steps to be followed in order to resolve the incident. Playbooks can be
+refined over a period of time to match the changing parameters of related incidents.
+
+The set of steps contained within a playbook is called a checklist.
+
+Viewing and creating Playbooks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the Playbooks icon **()** in the RHS to open the Playbooks backstage and list all Playbooks associated with the current team.
+Select **+ New Playbook** to start a new Playbook and checklist. The Save Playbook button is greyed out until the Playbook is modified from its previous state.
+For a new Playbook, this requires providing at least a Playbook name.
+
+Creating checklists
+~~~~~~~~~~~~~~~~~~~
+
+Checklists are created within a Playbook and provide steps to follow during an incident. Checklists can be created ahead of time, or during an incident.
+They can be edited during an incident as well as when not associated with an active incident. Hover over an input box and select the **X** to remove the checklist item.
+Drag the hamburger menu to rearrange the checklist items. Editing the input text updates the checklist items.
+
+Editing checklists
+~~~~~~~~~~~~~~~~~~~
+
+Checking or unchecking an item in the list takes effect immediately, notifying members of the channel accordingly. Existing checklist items may be edited,
+rearranged, or deleted by clicking (edit) and entering the checklist edit mode.
+
+Ending incidents
+~~~~~~~~~~~~~~~~
+
+There are two ways to end an incident:
+
+- Using slash command */incident end* from within the incident channel.
+- Using the **End Incident** button in the right-hand side panel while in the incident channel.
+
+The incident will become inactive, removed from the list of active incidents, and moved to the backstage archive.
+
+
+Administrator's Guide
+^^^^^^^^^^^^^^^^^^^^^^
+
+Permissions
+~~~~~~~~~~~~~~~~~~~~~
+
+Incidents and Playbooks are associated with Teams in Mattermost, and permissions are assigned based on the Permission scheme used in Mattermost. Incidents
+are directly tied to a specific team and channel. This could be an existing channel or a new one.
+
+Incident management
+~~~~~~~~~~~~~~~~~~~~~
+
+Incidents are events within Mattermost that are initiated to manage a specific situation/response in real-time. When the situation/response is complete, the incident is ended.
+Incident details are stored as logs, and events that occurred within the incident can be reused in future incidents as playbooks and checklists.
+
+Filtering incidents
+~~~~~~~~~~~~~~~~~~~~~
+
+Incidents can be filtered by incident name, Commander, and incident status.
+
+Browsing Related Channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Incident members see a link to the incident channel at the bottom of the incident details. Clicking the channel name navigates to the incident channel.
+This section is omitted when the active user is not an incident member.
+
+Public incidents
+~~~~~~~~~~~~~~~~~~~~~
+
+Public incidents are incidents where anyone with access to the team the incident channel is created on can join the incident as a participant by joining the channel
+the incident is in. Anyone on the team can join the primary channel and become an incident participant. Just like public channels, public incidents appear for everyone
+in the team they are created in.
+
+Private incidents
+~~~~~~~~~~~~~~~~~~~~~
+
+Private incidents are invite-only. Participants can be added by inviting them to the incident's primary channel. Like private channels, private incidents do not appear on
+the incident list of users who are not participants.
+
+To view incidents associated with your Mattermost team, select the **Incidents** icon in the channel header to open the RHS menu. If there are no active incidents, you can
+start one or you can view incident logs.
+
+
+Incidents Backstage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select Incidents & Playbooks from the Main Menu to open the Incidents backstage, which lists all incidents associated with the current team. This main menu item is available to all Mattermost users.
+
+All incidents for the current team are listed for review, with the current team name in parentheses next to the title.
+
+The list contains the following details for each incident:
+
+- Incident name
+- Status (**Ongoing** or **Ended**)
+- Start Date
+- End Date, if ended, otherwise --
+- Current Commander
+
+All dates are rendered as per the locale and timezone of the active user.
+
+Viewing incident details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Clicking an incident from the list in the RHS surfaces details of the selected incident.
+
+The details shown include:
+
+- The current Commander’s profile picture and username
+- Zero or more checklist items
+- The channels associated with the incident
+- A button to end the incident
+
+The incident details may only be modified while in the corresponding incident channel. Otherwise, the edit controls are disabled and the user is prompted to contact the Commander to request access.
+
+Clicking an incident in the list view drills down into the details, including the following information:
+
+- A back icon to return to the list view (<)
+- Incident name
+- A link icon to open the corresponding incident channel
+- Status (**Ongoing** or **Ended**)
+- The Commander, including profile picture and username
+- A prompt to export the incident channel
+- The total duration
+- The number of members involved in the incident
+- The number of messages posted to the channel, including another prompt to open the corresponding incident channel
+
+The **Duration** widget shows a humanized length of time the incident lasted. While the incident is ongoing, the end time is displayed as Ongoing. When the incident has ended, it
+shows the end time inline using the user's current locale and timezone. The **Members Involved** widget indicates the total number of users that participated in the channel, either
+by posting a message, being assigned as Commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
+
+The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
+
+Exporting channels
+^^^^^^^^^^^^^^^^^
+
+If your server is licensed for E20, and has activated the channel export plugin you can select Export Incident Channel to download the contents of the incident channel
+as a CSV, excluding attachments, but including system messages. If you have an E20 license but the channel export plugin is not installed, or if you don’t have an E20 license
+it’s not possible to select the Export Incident Channel option.
+
+Telemetry
+^^^^^^^^^^
 
 
 Glossary
-~~~~~~~~~
+^^^^^^^^
 
 * **Incident**: An event requiring the coordinated actions of one or more Mattermost users. An incident is either ongoing or closed.
 * **Playbook**: A a set of steps to execute as part of resolving an incident. It consists of one or more checklists, with each checklist item representing a single step.
@@ -28,28 +211,3 @@ Glossary
 * **Incident member**: A Mattermost user with access to the corresponding incident channel.
 * **The RHS**: The incident list and incident details displayed on the right hand side of the webapp. It is not available on mobile.
 * **The backstage**: The full-screen analytics and configuration screens accessible from the webapp. It is not available on mobile.
-
-
-Permissions
-^^^^^^^^^^^
-
-Creating checklists
-^^^^^^^^^^^^^^^^^^
-
-Creating playbooks
-^^^^^^^^^^^^^^^^
-
-Incident management
-^^^^^^^^^^^^^^^
-
-Starting incidents
-~~~~~~~~~~~~~~~~~~
-
-Active incidents
-~~~~~~~~~~~~~~~~
-
-Ending incidents
-~~~~~~~~~~~~~~~~~
-
-Exporting channels
-^^^^^^^^^^^^^^^^^^
