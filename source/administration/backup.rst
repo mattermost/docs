@@ -40,7 +40,7 @@ Automated backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Automating backup for a Mattermost server provides a copy of the server's state at a particular point in time, which can be restored if a failure in the future leads to loss of data. Options include: 
 
-- Automation to periodically backup the Mattermost server, which may include all the components listed above or a subset depending on what you choose to protect.
+- Automation to periodically back up the Mattermost server, which may include all the components listed above or a subset depending on what you choose to protect.
 - Automation to restore a server from backup, or deploy a new server, to reduce recovery time.
 - Automation to verify a backup has been successfully produced to protect against backup automation failures.
 - Storing backups off-site, to protect against physical loss of onsite systems.
@@ -99,7 +99,6 @@ Once IT is contacted about an SSO outage issue, they can temporarily change a us
 If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 It is highly important after the outage to switch everyone back to SSO from email-password to maintain consistency and security.
-
 
 
 
