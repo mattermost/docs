@@ -52,6 +52,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Bug Fixes
  - Fixed an issue where Session Idle Timeout setting also unexpectedly affected the mobile app session expiry.
+ - Fixed an issue where an unread channel disappeared from a list of unread channels immediately.
  - Fixed an issue where a user's role was not reflected correctly in the **Team Members** modal when the user's role was updated after the modal was opened.
  - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on **Add user to a channel** modal.
  - Fixed an issue where Integrations menu was available for member and team admin roles only if with oAuth2 permission.
