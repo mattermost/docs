@@ -21,6 +21,9 @@ and measure their incident response processes, increasing transparency, maximizi
 User's Guide
 ^^^^^^^^^^^^^
 
+Incidents are events within Mattermost that are initiated to manage a specific situation/response in real-time. When the situation/response is complete, the incident is ended.
+Incident details are stored as logs, and events that occurred within the incident can be reused in future incidents as Playbooks and checklists.
+
 Starting incidents
 ~~~~~~~~~~~~~~~~~~
 
@@ -99,9 +102,9 @@ Ending incidents
 There are two ways to end an incident:
 
 - Using slash command */incident end* from within the incident channel.
-- Using the **End Incident** button in the right-hand side panel while in the incident channel.
+- Using the **End Incident** button in the RHS panel while in the incident channel.
 
-The incident will become inactive, removed from the list of active incidents, and moved to the Backstage archive.
+The incident will become inactive, be removed from the list of active incidents, and the associated channel is archived.
 
 
 Administrator's Guide
@@ -110,25 +113,8 @@ Administrator's Guide
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-Incidents and Playbooks are associated with Teams in Mattermost, and permissions are assigned based on the Permission scheme used in Mattermost. Incidents
-are directly tied to a specific team and channel. This could be an existing channel or a new one.
-
-Incident management
-~~~~~~~~~~~~~~~~~~~~~
-
-Incidents are events within Mattermost that are initiated to manage a specific situation/response in real-time. When the situation/response is complete, the incident is ended.
-Incident details are stored as logs, and events that occurred within the incident can be reused in future incidents as playbooks and checklists.
-
-Filtering incidents
-~~~~~~~~~~~~~~~~~~~~~
-
-Incidents can be filtered by incident name, Commander, and incident status.
-
-Browsing Related Channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Incident members see a link to the incident channel at the bottom of the incident details. Clicking the channel name navigates to the incident channel.
-This section is omitted when the active user is not an incident member.
+Incidents and Playbooks are associated with teams in Mattermost, and permissions are assigned based on the Permission scheme used in Mattermost. Incidents
+are directly tied to a specific team and channel.
 
 Public incidents
 ~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +132,6 @@ the incident list of users who are not participants.
 To view incidents associated with your Mattermost team, select the **Incidents** icon in the channel header to open the RHS menu. If there are no active incidents, you can
 start one or you can view incident logs.
 
-
 Incidents Backstage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -157,7 +142,7 @@ All incidents for the current team are listed for review with the following deta
 - Name
 - Status (**Ongoing** or **Ended**)
 - Start Date
-- End Date, if ended, otherwise --
+- End Date, if ended, otherwise **--**
 - Commander
 
 All dates are rendered as per the locale and timezone of the active user.
@@ -196,6 +181,15 @@ by posting a message, being assigned as Commander, or interacting with a checkli
 
 The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
 
+**Filtering incidents**
+
+Incidents can be filtered by incident name, Commander, and incident status.
+
+**Browsing related channels**
+
+Incident members see a link to the incident channel at the bottom of the incident details. Clicking the channel name navigates to the incident channel.
+This section is omitted when the active user is not an incident member.
+
 Exporting channels
 ^^^^^^^^^^^^^^^^^
 
@@ -203,7 +197,7 @@ If your server is licensed for E20, and the channel export plugin is installed a
 then choose **Export Incident Channel** in the top-right corner to download the contents of the incident channel as a CSV. The file excludes attachments, but includes system messages.
 If you have an E20 license but the channel export plugin is not installed, or the plugin is installed but not enabled, it’s not possible to select **Export Incident Channel**.
 
-The install and activate the plugin, navigate to the plugins menu and follow the steps provided.
+To install and activate the plugin, navigate to the plugins menu and follow the steps provided.
 
 Telemetry
 ^^^^^^^^^^
