@@ -97,13 +97,6 @@ Location of your local storage directory
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
     
-#. Rename the ``plugins`` directories so they do not interfere with the upgrade.
-
-   .. code-block:: sh
-
-     sudo mv mattermost/plugins/ mattermost/plugins~
-     sudo mv mattermost/client/plugins/ mattermost/client/plugins~
-    
 #. Change ownership of the new files before copying them.
 
    .. code-block:: sh
