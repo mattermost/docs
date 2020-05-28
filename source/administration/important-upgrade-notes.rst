@@ -3,6 +3,9 @@ Important Upgrade Notes
 
 .. important::
    PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting PostgreSQL version 10 with the Mattermost v5.26 release. New installs will require PostgreSQL version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. We highly recommend upgrading to PostgreSQL version 10+ after August 2020. Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
+   
+.. important::
+   Upgrade to server version v5.19 or later is required. Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See [this blog post](https://mattermost.com/blog/support-for-esr-5-9-has-ended/) for more details on why you should upgrade and how to upgrade in quick, simple steps.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
