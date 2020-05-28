@@ -40,6 +40,8 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
+- Fixed an issue where the Desktop app could not authenticate with SAML with an IdP relay.
+- Fixed an issue where a moved server tab did not stay in focus.
 - Fixed an issue where right-clicking and then clicking "Save Image" didn't work.
 - Fixed an issue where trusting self-signed certificates kept asking for trust.
 - Fixed an issue where a link to the root of a server caused a "Channel not Found" error if the URL didn't end with a ``/``.
@@ -50,6 +52,7 @@ Windows
 ^^^^^^^^^^^^^
 - Fixed an issue where Windows Desktop notifications were delayed compared to other notification channels.
 - Fixed an issue where Windows Desktop Menu option was read as "Unlabel 0 button".
+- Fixed an issue where a white bar was present on the right-hand side of the Settings screen when Add Server modal was open.
 
 Mac
 ^^^^^^^^^^^^^
