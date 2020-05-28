@@ -30,7 +30,9 @@ The incident channel is the central place for discussion related to the incident
 - Use the message actions dropdown menu and select **Start incident**.
 - Use the context menu of a post and select **Start incident**.
 
-Creating an incident prompts for a channel name and optional playbook. The channel name can be used to search for the channel, and is also the name appended to the archived logs. If a playbook is selected, the corresponding checklist is used as a template to start the incident. If no playbook is selected, the incident starts with an empty checklist.
+When you create an incident, the name provided is applied to the new incident channel that is created. You can also select an optional Playbook. The channel name can be used to
+search for the channel, and is also the name appended to the archived logs. If a Playbook is selected,
+the corresponding checklist is used as a template to start the incident. If no Playbook is selected, the incident starts with an empty checklist.
 
 The creator of an incident automatically becomes the incident Commander, responsible for managing the incident.
 
@@ -56,8 +58,8 @@ When an incident has started and the incident channel is created, the channel he
 a message from the incident bot is also posted to the incident channel naming the creator of the incident. If an incident is started
 from the context of a post, the channel header includes a link to the post and the text of the post is also posted to the channel alongside a permalink.
 
-Incidents are displayed in the RHS even if the active user is not a member of the corresponding incident channel.
-Closed incidents are never displayed in the RHS. Incidents from teams other than the currently selected team are never displayed in the RHS.
+Incidents are displayed in the RHS and visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It
+is not possible to view incidents from teams other than the currently selected team.
 
 Using Playbooks
 ~~~~~~~~~~~~~~~~
@@ -65,27 +67,31 @@ Using Playbooks
 Playbooks are templates which are applied to an incident and define a set of steps to be followed in order to resolve the incident. Playbooks can be
 refined over a period of time to match the changing parameters of related incidents.
 
-The set of steps contained within a playbook is called a checklist.
+The set of steps contained within a Playbook is called a checklist.
 
 Viewing and creating Playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Select the Playbooks icon **()** in the RHS to open the Playbooks backstage and list all Playbooks associated with the current team.
-Select **+ New Playbook** to start a new Playbook and checklist. The Save Playbook button is greyed out until the Playbook is modified from its previous state.
-For a new Playbook, this requires providing at least a Playbook name.
+Select **+ New Playbook** to start a new Playbook and checklist. Enter a Playbook name and choose **Save Playbook**.
 
 Creating checklists
 ~~~~~~~~~~~~~~~~~~~
 
-Checklists are created within a Playbook and provide steps to follow during an incident. Checklists can be created ahead of time, or during an incident.
-They can be edited during an incident as well as when not associated with an active incident. Hover over an input box and select the **X** to remove the checklist item.
-Drag the hamburger menu to rearrange the checklist items. Editing the input text updates the checklist items.
+Checklists are created within a Playbook and provide steps to follow during an incident. Checklists can be created ahead of time as part of a Playbook, or during an incident.
+
 
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-Checking or unchecking an item in the list takes effect immediately, notifying members of the channel accordingly. Existing checklist items may be edited,
-rearranged, or deleted by clicking (edit) and entering the checklist edit mode.
+Checklists can be edited during an incident as well as when not associated with an active incident.
+
+To edit a checklist, choose **Edit**.
+- Hover over an input box and select the **X** to remove the checklist item.
+- Drag the hamburger menu to rearrange the checklist items.
+
+Choose **Done** to save the changes.
+
 
 Ending incidents
 ~~~~~~~~~~~~~~~~
@@ -95,7 +101,7 @@ There are two ways to end an incident:
 - Using slash command */incident end* from within the incident channel.
 - Using the **End Incident** button in the right-hand side panel while in the incident channel.
 
-The incident will become inactive, removed from the list of active incidents, and moved to the backstage archive.
+The incident will become inactive, removed from the list of active incidents, and moved to the Backstage archive.
 
 
 Administrator's Guide
@@ -144,37 +150,37 @@ start one or you can view incident logs.
 Incidents Backstage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select Incidents & Playbooks from the Main Menu to open the Incidents backstage, which lists all incidents associated with the current team. This main menu item is available to all Mattermost users.
+To open the Incidents backstage Select **Incidents & Playbooks** from the Main Menu , which lists all incidents associated with the current team. This main menu item is available to all Mattermost users.
 
-All incidents for the current team are listed for review, with the current team name in parentheses next to the title.
+All incidents for the current team are listed for review with the following details for each incident:
 
-The list contains the following details for each incident:
-
-- Incident name
+- Name
 - Status (**Ongoing** or **Ended**)
 - Start Date
 - End Date, if ended, otherwise --
-- Current Commander
+- Commander
 
 All dates are rendered as per the locale and timezone of the active user.
 
 Viewing incident details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Clicking an incident from the list in the RHS surfaces details of the selected incident.
+To view details of active incidents, select **Incidents** from the plugin menu to open the RHS panel.
 
-The details shown include:
+Listed incidents include the following information:
 
 - The current Commander’s profile picture and username
 - Zero or more checklist items
 - The channels associated with the incident
 - A button to end the incident
 
-The incident details may only be modified while in the corresponding incident channel. Otherwise, the edit controls are disabled and the user is prompted to contact the Commander to request access.
+If the incident is active, but in a private channel, you won't be able to see the incident channel name or select **End Incident**. However, the Commander name and incident
+checlist will be visible. If you're a participant in an incident channel, you can modify incident details from within that channel.
 
-Clicking an incident in the list view drills down into the details, including the following information:
+You can view all incidents in the incident Backstage via **Main Menu > Incidents & Playbooks**.
 
-- A back icon to return to the list view (<)
+Select an incident to view:
+
 - Incident name
 - A link icon to open the corresponding incident channel
 - Status (**Ongoing** or **Ended**)
@@ -184,8 +190,8 @@ Clicking an incident in the list view drills down into the details, including th
 - The number of members involved in the incident
 - The number of messages posted to the channel, including another prompt to open the corresponding incident channel
 
-The **Duration** widget shows a humanized length of time the incident lasted. While the incident is ongoing, the end time is displayed as Ongoing. When the incident has ended, it
-shows the end time inline using the user's current locale and timezone. The **Members Involved** widget indicates the total number of users that participated in the channel, either
+The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it
+shows the end time (in the user's timezone). The **Members Involved** widget indicates the total number of users that participated in the channel, either
 by posting a message, being assigned as Commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
 
 The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
@@ -193,9 +199,11 @@ The total number of messages displayed includes messages posted by both users an
 Exporting channels
 ^^^^^^^^^^^^^^^^^
 
-If your server is licensed for E20, and has activated the channel export plugin you can select Export Incident Channel to download the contents of the incident channel
-as a CSV, excluding attachments, but including system messages. If you have an E20 license but the channel export plugin is not installed, or if you don’t have an E20 license
-it’s not possible to select the Export Incident Channel option.
+If your server is licensed for E20, and the channel export plugin is installed and active, navigate to **Main Menu > Incidents & Playbooks**, select an incident, and
+then choose **Export Incident Channel** in the top-right corner to download the contents of the incident channel as a CSV. The file excludes attachments, but includes system messages.
+If you have an E20 license but the channel export plugin is not installed, or the plugin is installed but not enabled, it’s not possible to select **Export Incident Channel**.
+
+The install and activate the plugin, navigate to the plugins menu and follow the steps provided.
 
 Telemetry
 ^^^^^^^^^^
