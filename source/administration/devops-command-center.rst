@@ -48,7 +48,7 @@ The Commander of the incident can:
 
 The Commander of the channel must be a team/channel admin, and if the role is handed to another member they must also be a team/channel admin. To change Commanders,
 select the current Commander’s name and use the search bar to locate the username of the new Commander. Only members of the channel may be selected as commanders. To assign a
-Commander not in the team, that user must first be invited to the channel using the existing Mattermost user interface (**Manage Members** in the channel header, or the /invite slash command)
+Commander not in the channel, that user must first be invited to the channel using the existing Mattermost user interface (**Manage Members** in the channel header, or the /invite slash command).
 Changing the Commander takes effect immediately, and members are notified of the change in the channel.
 
 Active incidents
