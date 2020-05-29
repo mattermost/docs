@@ -152,7 +152,7 @@ All dates are rendered as per the locale and timezone of the active user.
 Viewing incident details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To view details of active incidents, select **Incidents** from the plugin menu to open the RHS panel.
+To view details of active incidents, select **! Incidents** from the plugin menu to open the RHS panel.
 
 Listed incidents include the following information:
 
