@@ -170,7 +170,7 @@ Select an incident to view:
 - The total duration
 - The number of members involved in the incident
 - The number of messages posted to the channel, including another prompt to open the corresponding incident channel
-- A graph depicting when each checklist item was created or completed
+- A graph depicting when each checklist item was completed
 
 The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it
 shows the end time (in the user's timezone). The **Members Involved** widget indicates the total number of users that participated in the channel, either
