@@ -68,7 +68,7 @@ Using Playbooks
 ~~~~~~~~~~~~~~~~
 
 Playbooks are templates which are applied to an incident and define a set of steps to be followed in order to resolve the incident. Playbooks can be
-refined over a period of time to match the changing parameters of related incidents.
+refined over a period of time to match the changing parameters of future related incidents.
 
 The set of steps contained within a Playbook is called a checklist.
 
