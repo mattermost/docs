@@ -87,7 +87,7 @@ Checklists are created within a Playbook and provide steps to follow during an i
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-Checklists can be edited during an incident as well as when not associated with an active incident.
+You can add steps and edit checklist items during an active incident. You can also edit checklist items in Playbooks that are not being used in active incidents. 
 
 To edit a checklist, choose **Edit**.
 
