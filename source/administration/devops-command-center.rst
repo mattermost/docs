@@ -131,7 +131,7 @@ Private incidents
 Private incidents are invite-only. Participants can be added by inviting them to the incident's primary channel. Like private channels, private incidents do not appear on
 the incident list of users who are not participants.
 
-To view incidents associated with your Mattermost team, select the **Incidents** icon in the channel header to open the RHS menu. If there are no active incidents, you can
+To view incidents associated with your Mattermost team, select **! Incidents** from the plugin menu in the channel header to open the RHS menu. If there are no active incidents, you can
 start one or you can view incident logs.
 
 Incidents Backstage
