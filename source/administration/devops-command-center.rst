@@ -160,7 +160,7 @@ Listed incidents include the following information:
 - A button to end the incident
 
 If the incident is active, but in a private channel, you won't be able to see the incident channel name or select **End Incident**. However, the Commander name and incident
-checlist will be visible. If you're a participant in an incident channel, you can modify incident details from within that channel.
+checklist will be visible. If you're a participant in an incident channel, you can modify incident details from within that channel.
 
 You can view all incidents in the incident Backstage via **Main Menu > Incidents & Playbooks**.
 
