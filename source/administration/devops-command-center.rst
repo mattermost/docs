@@ -90,6 +90,8 @@ Editing checklists
 Checklists can be edited during an incident as well as when not associated with an active incident.
 
 To edit a checklist, choose **Edit**.
+
+- Select the text field to edit the item details. 
 - Hover over an input box and select the **X** to remove the checklist item.
 - Drag the hamburger menu to rearrange the checklist items.
 
