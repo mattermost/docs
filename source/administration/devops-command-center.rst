@@ -46,23 +46,17 @@ The Commander of the incident can:
 - Invite people to the channel
 - Hand over the Commander role to another channel member
 
-The Commander of the channel must be a team/channel admin, and if the role is handed to another member they must also be a team/channel admin. To change Commanders,
-select the current Commander’s name and use the search bar to locate the username of the new Commander. Only members of the channel may be selected as commanders. To assign a
-Commander not in the channel, that user must first be invited to the channel using the existing Mattermost user interface (**Manage Members** in the channel header, or the /invite slash command).
-Changing the Commander takes effect immediately, and members are notified of the change in the channel.
+To change Commanders, select the current Commander’s name and use the search bar to locate the username of the new Commander. Only members of the channel may be selected as commanders. To assign a Commander not in the channel, that user must first be invited to the channel using the existing Mattermost user interface (**Manage Members** in the channel header, or the /invite slash command). Changing the Commander takes effect immediately, and members are notified of the change in the channel.
 
 Active incidents
 ~~~~~~~~~~~~~~~~
 
-To view details about active incidents, click the **!** icon in the channel header to bring up the right-hand side (RHS) panel that shows a list of current
-active incidents. Select an incident to see its Commander, channel, and checklist.
+To view details about active incidents, click the **!** icon in the channel header to bring up the right-hand side (RHS) panel that shows a list of current active incidents. Select an incident to see its Commander, channel, and checklist.
 
 When an incident has started and the incident channel is created, the channel header is updated to reflect its origin and
-a message from the incident bot is also posted to the incident channel naming the creator of the incident. If an incident is started
-from the context of a post, the channel header includes a link to the post and the text of the post is also posted to the channel alongside a permalink.
+a message from the incident bot is also posted to the incident channel naming the creator of the incident. If an incident is started from the context of a post, the channel header includes a link to the post and the text of the post is also posted to the channel alongside a permalink.
 
-Incidents are displayed in the RHS and visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It
-is not possible to view incidents from teams other than the currently selected team.
+Incidents are displayed in the RHS and visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It is not possible to view incidents from teams other than the currently selected team.
 
 Using Playbooks
 ~~~~~~~~~~~~~~~~
