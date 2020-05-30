@@ -79,9 +79,6 @@ This eliminates having to manually assign the role in the System Console.
 3. Complete the **Guest Filter** field.
 4. Choose **Save**.
 
-When a guest logs in for the first time they are presented with a default landing page until
-they are added to channels.
-
 If a Mattermost Guest user has the guest role removed in the AD/LDAP system, the synchronization process
 will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a
 member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
