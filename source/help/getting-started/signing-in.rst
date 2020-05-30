@@ -121,6 +121,16 @@ How Mattermost determines your status
     "**Web Browser**", "You're interacting with Mattermost in a browser", "You're inactive in the Mattermost browser window for 5 minutes", "You close the Mattermost browser window"
     "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen"
 
+Desktop v4.4+ bases activity on any user interaction on the computer, so if you are typing or using your mouse, your status will remain online. Your status will be set to away only after 5 minutes of inactivity.
+
+Browser is based on activity in Mattermost itself, meaning you are set to away when:
+
+#. You have not typed or switched channels for 5 minutes
+#. The tab is unfocused for 5 minutes
+#. The browser is in the background or minimized for 5 minutes
+
+
+
 Logging Out
 -----------
 
