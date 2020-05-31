@@ -258,7 +258,7 @@ Respond to the issue with the following note:
 
   Thanks, appreciate your feedback @{username}.  
 
-  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted, and considered for a [help wanted ticket](https://docs.mattermost.com/process/help-wanted.html)?
+  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted, and considered for a [help wanted ticket](https://handbook.mattermost.com/contributors/contributors/help-wanted)?
 
   Please include a link back to this GitHub issue. If you're interested in implementing, please say so and we'll prioritize the review. 
 
