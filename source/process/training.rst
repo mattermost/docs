@@ -693,7 +693,7 @@ If something is extremely difficult to understand, and yet still justified in th
 HW - Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Help Wanted tickets <http://docs.mattermost.com/process/help-wanted.html>`__, which are vetted changes to the source code open for community contributions.
+`Help Wanted tickets <https://handbook.mattermost.com/contributors/contributors/help-wanted>`__, which are vetted changes to the source code open for community contributions.
 
 Improvement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
