@@ -53,7 +53,7 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 1. Go to **System Console > Authentication > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to `true`.
 
-2. Scroll down to **Syncronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. *Note: profile picture attribute is synchronized upon user login only*
+2. Scroll down to **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
 
 If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
 
