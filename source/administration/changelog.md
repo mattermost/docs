@@ -74,6 +74,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Enabled config for link previews by default on new installs.
 
 ### Open Source Components
+ - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp
+ - Added ``p-queue`` in https://github.com/mattermost/mattermost-webapp
+ - Added ``@react-native-community/cookies`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``@react-native-community/masked-view`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``analytics-react-native`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-elements`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-file-viewer`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-localize`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-reanimated`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-safe-area-context`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-screens`` in https://github.com/mattermost/mattermost-mobile
 
 ### Database Changes
 
