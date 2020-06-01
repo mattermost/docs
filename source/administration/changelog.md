@@ -6,7 +6,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Release day: 2020-05-16**
+- **v5.23.1, release day TBD**
+  - Fixing an issue where ``Content-Type`` is no longer optional in incoming webhook requests and leads to errors. As a workaround, set the ``Content-Type`` in the webhook request header. [MM-25677](https://mattermost.atlassian.net/browse/MM-25677)
+- **v5.23.0, released 2020-05-16**
+  - Original 5.23.0 release
 
 Mattermost v5.23.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
