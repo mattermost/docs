@@ -2219,7 +2219,7 @@ The attribute in the AD/LDAP server used to synchronize (and lock) the profile p
 The Mattermost server will replace the user’s profile image upon login (not at the sync interval as with other attributes). The sync will not occur if the current profile image matches the image associated with that user in AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PictureAttribute": ""`` with string input.                                                                                |
+| This feature's ``config.json`` setting is ``"PictureAttribute": ""`` with string input.                                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Username Attribute
@@ -2734,7 +2734,7 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 Directory (tenant) ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This value is the ID of the application's AAD directory. 
+This value is the ID of the application's AAD directory.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input.                                                                                   |
@@ -3645,7 +3645,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Disabled:** Users cannot access the experimental channel sidebar feature set.  
+**Disabled:** Users cannot access the experimental channel sidebar feature set.
 
 **Enabled (Default On):** Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
@@ -3911,7 +3911,7 @@ Enable OpenTracing
 **True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
 Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
 
-By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported. 
+By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported.
 
 **False**: OpenTracing is not enabled.
 
