@@ -50,6 +50,20 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
 .. code-block:: none
 
   @here can someone do a quick review of this?
+  
+@groupname (BETA)(E20)
+~~~~~
+
+System admins can enable mentions for [LDAP synced groups](https://docs.mattermost.com/deployment/ldap-group-sync.html) via the group configuration page. Once enabled for a specific group, users will be able to mention and notify the entire group  (similar to @channel or @all). Every member of that group who is also present in the channel the mention was posted, will receive a notification. The user who's post included the mention will have the option to invite group members who are not already members of the channel in which the post was made. 
+
+Group mention identfiers (slugs) use the LDAP group name by defualt, but they can also be custmoized/renamed. 
+
+As with @username mentions, type @ to bring up a list of groups who can be mentioned. To filter the list, type the first few letters of any group. Use the UP and DOWN arrow keys to scroll through entries in the list, and then press ENTER to select the group to mention. *note: this functionality is not yet supported on mobile.*
+
+.. code-block:: none
+
+  @dev-managers great work hitting all of our code coverage goals this quarter!
+
 
 Words That Trigger Mentions
 ---------------------------
@@ -61,4 +75,18 @@ You can add a list of customized words to get mention notifications for by typin
 Recent Mentions
 ---------------
 
-Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions. Click **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
+Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions. Click **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention. *Note: this does not include LDAP group mentions*
+
+Confirmation dialogue warnings
+---------------
+
+Any mention that will trigger notifications for over five users, a confirmation dialog will appear requiring confirmation from the user posting the mention before sending notifications to those users. 
+*Dialog will only appear when the following setting is enabled: TeamSettings.EnableConfirmNotificationsToChannel*
+*This warning is not displayed for group mentions on mobile*
+
+Highlighting
+---------------
+
+All valid mentions will have highlighted font text (with some exceptions, for example if mentions are disabled at the channel level). This text becomes a hyperlink when it displays a username. When clicked, the profile popover is displayed. 
+
+All mentions that trigger a notification, the user who is being notified will see highlighted font text and highlighted font background. This functions as an identifier of what mentions in the post triggered a notification for the user.
