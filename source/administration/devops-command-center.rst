@@ -101,17 +101,7 @@ Administrator's Guide
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-Incidents and Playbooks are associated with teams in Mattermost, and permissions are assigned based on the Permission scheme used in Mattermost. Incidents are directly tied to a specific team and channel.
-
-Public incidents
-~~~~~~~~~~~~~~~~~~~~~
-
-Public incidents are incidents where anyone with access to the team the incident channel is created on can join the incident as a participant by joining the incident channel. Like public channels, public incidents appear for everyone in the team they are created in. Any member of the team can join the primary channel and become an incident participant. 
-
-Private incidents
-~~~~~~~~~~~~~~~~~~~~~
-
-Private incidents are invite-only. Participants can be added by inviting them to the incident's primary channel. Like private channels, private incidents do not appear on the incident list of users who are not participants.
+Incidents and Playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel. 
 
 To view incidents associated with your Mattermost team, select **! Incidents** from the plugin menu in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view incident logs.
 
