@@ -11,17 +11,37 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 ### Breaking Changes
- - 
+ - The ``mattermost_http_request_duration_seconds`` histogram metric (in Enterprise Edition) has been removed. This information was already captured by ``mattermost_api_time``, which also contains the api handler name, HTTP method, and the response code. As an example, if you are using ``rate(mattermost_http_request_duration_seconds_sum{server=~"$var"}[5m]) /   rate(mattermost_http_request_duration_seconds_count{server=~"$var"}[5m])`` to measure average call duration, it needs to be replaced with ``sum(rate(mattermost_api_time_sum{server=~"$var"}[5m])) by (instance) /   sum(rate(mattermost_api_time_count{server=~"$var"}[5m])) by (instance)``.
+ - Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable during this time.
+ - On mobile apps, users will not be able to see LDAP group mentions (E20 feature) in the autocomplete dropdown. Users will still receive notifications if they are part of an LDAP group. However, the group mention keyword will not be highlighted.
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.23, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - Group Mentions (EE)
- - Quick wins UX
- - Bleve search engine
- - mmctl local mode
- - LDAP sync profile image
- - Session expiry
- - Team & channel pages
- - Slash command autocomplete
+
+#### Notify AD/LDAP Groups with a single @mention (E20) 
+ - Ability to enable mentions for LDAP-synced groups so users can notify the entire group at the same time.
+
+#### Manage users from the System Console (E20)
+ - Ability to drill into each team or channel configuration page to view and manage members directly in the System Console.
+
+#### Sync profile images from LDAP (E10) 
+ - Ability to ensure compliance with corporate policies by automatically syncing profile images from LDAP.
+
+#### Extend sessions automatically
+ - Ability to enable a feature that automatically extends session lengths when users are active on Mattermost apps.
+
+#### Access CLI remotely
+ - Ability to manage Mattermost without having direct access to the server with a new Local Mode for mmctl.
+
+#### Slash command autocomplete framework (Beta)
+ - Ability to make slash commands easier to use and increase discoverability with a new slash command autocomplete framework for plugins.
+
+#### Improved search experience
+ - Ability to use the mouse or keyboard to select search filters instead of typing them manually.
+
+#### Full-text search and indexing (Experimental)
+ - Ability to use Bleve to execute search functionality instead of the database.
 
 ### Improvements
 
