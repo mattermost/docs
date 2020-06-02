@@ -19,7 +19,7 @@ Incident Response is a Mattermost plugin designed to help organizations monitor,
 User's Guide
 ^^^^^^^^^^^^^
 
-Incidents are events within Mattermost that are initiated to manage a specific situation/response in real-time. When the situation/response is complete, the incident is ended. Incident details are stored as logs, and events that occurred within the incident can be reused in future incidents as Playbooks and checklists.
+Incidents are events within Mattermost that are initiated to manage a specific situation/response in real-time. When the situation/response is complete, the incident is ended. Incident details are stored as logs, and events that occurred within the incident can be reused in future incidents as playbooks and checklists.
 
 Starting incidents
 ~~~~~~~~~~~~~~~~~~
@@ -27,16 +27,16 @@ Starting incidents
 The incident channel is the central place for discussion related to the incident. You can start an incident in one of three ways:
 
 - Use the slash command */incident start* from any channel.
-- Use the message actions dropdown menu and select **Start incident**.
+- Select **! Incidents** from the plugin menu in the channel header.
 - Use the context menu of a post and select **Start incident**.
 
-When you create an incident, the name provided is applied to the new incident channel that is created. The channel name can be used to search for the channel, and is also the name appended to the archived logs. You can also select an optional Playbook. If a Playbook is selected, the corresponding checklist is used as a template to start the incident. If no Playbook is selected, the incident starts with an empty checklist.
+When you create an incident, the name provided is applied to the new incident channel that is created. The channel name can be used to search for the channel, and is also the name appended to the archived logs. You can also select an optional playbook. If a playbook is selected, the corresponding checklist is used as a template to start the incident. If no playbook is selected, the incident starts with an empty checklist.
 
 The creator of an incident automatically becomes the incident Commander, responsible for managing the incident.
 
 The Commander of the incident can:
 
-- Select a Playbook when starting an incident
+- Select a playbook when starting an incident
 - Create checklists
 - Invite people to the channel
 - Hand over the Commander role to another channel member
@@ -48,33 +48,32 @@ Active incidents
 
 To view details about active incidents, select **! Incidents** from the plugin menu in the channel header to open the right-hand side (RHS) panel and list of current active incidents. Select an incident to see its Commander, channel, and checklist.
 
-When an incident has started and the incident channel is created, the channel header is updated to reflect its origin and
-a message from the incident bot is also posted to the incident channel naming the creator of the incident. If an incident is started from the context of a post, the channel header includes a link to the post and the text of the post is also posted to the channel alongside a permalink.
+When an incident has started and the incident channel is created, a message from the incident bot is posted to the incident channel naming the creator of the incident. If an incident is started from the context of a post, the text of the post is posted to the channel along with a permalink.
 
 Incidents are displayed in the RHS are visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It is not possible to view incidents from teams other than the currently selected team.
 
-Using Playbooks
+Using playbooks
 ~~~~~~~~~~~~~~~~
 
 Playbooks are templates which are applied to an incident and define a set of steps to be followed in order to resolve the incident. Playbooks can be refined over a period of time to match the changing parameters of future related incidents.
 
-The set of steps contained within a Playbook is called a checklist.
+The set of steps contained within a playbook is called a checklist.
 
-Viewing and creating Playbooks
+Viewing and creating playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select **! Incidents** from the plugin menu in the channel header to open the RHS panel. Select the Playbooks icon to open the Playbooks backstage and list all Playbooks associated with the current team. Select **+ New Playbook** to start a new Playbook and checklist. Enter a Playbook name and choose **Save Playbook**.
+Select **! Incidents** from the plugin menu in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
 
 Creating checklists
 ~~~~~~~~~~~~~~~~~~~
 
-Checklists are created within a Playbook and provide steps to follow during an incident. Checklists can be created ahead of time as part of a Playbook, or during an incident.
+Checklists are created within a playbook and provide steps to follow during an incident. Checklists can be created ahead of time as part of a playbook, or during an incident.
 
 
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-You can add steps and edit checklist items during an active incident. You can also edit checklist items in Playbooks that are not being used in active incidents. 
+You can add steps and edit checklist items during an active incident. You can also edit checklist items in playbooks that are not being used in active incidents. 
 
 To edit a checklist, choose **Edit**.
 
@@ -101,7 +100,7 @@ Administrator's Guide
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-Incidents and Playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel. 
+Incidents and playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel. 
 
 To view incidents associated with your Mattermost team, select **! Incidents** from the plugin menu in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view incident logs.
 
@@ -235,15 +234,15 @@ Every event we track is accompanied with metadata that help us identify each eve
     - ``IncidentID``: Unique identifier of the incident where the item is.
     - ``UserID``: Unique identifier of the user that checked the item."
      "Playbook created.", "- Any user clicks on the ``+ New Playbook`` button on the backstage and saves it.", "
-    - ``PlaybookID``: Unique identifier of the Playbook.
-    - ``TeamID``: Unique identifier of the team where the Playbook is created.
-    - ``NumChecklists``: Number of checklists this Playbook has after the update.
-    - ``TotalChecklistItems``: Number of checklist items, among all checklists, this Playbook has after the update."
-     "Playbook deleted.", "- Any user clicks on the ``Delete`` button next to a Playbook on the Backstage and confirms.", "
-    - ``PlaybookID``: Unique identifier of the Playbook.
-    - ``TeamID``: Unique identifier of the team where the Playbook lived.
-    - ``NumChecklists``: Number of checklists this Playbook had immediately prior to deletion.
-    - ``TotalChecklistItems``: Number of checklist items, among all checklists, this Playbook had immediately prior to deletion."
+    - ``PlaybookID``: Unique identifier of the playbook.
+    - ``TeamID``: Unique identifier of the team where the playbook is created.
+    - ``NumChecklists``: Number of checklists this playbook has after the update.
+    - ``TotalChecklistItems``: Number of checklist items, among all checklists, this playbook has after the update."
+     "Playbook deleted.", "- Any user clicks on the ``Delete`` button next to a playbook on the Backstage and confirms.", "
+    - ``PlaybookID``: Unique identifier of the playbook.
+    - ``TeamID``: Unique identifier of the team where the playbook was located.
+    - ``NumChecklists``: Number of checklists this playbook had immediately prior to deletion.
+    - ``TotalChecklistItems``: Number of checklist items, among all checklists, this playbook had immediately prior to deletion."
     
     
 Glossary
