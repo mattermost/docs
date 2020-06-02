@@ -3,7 +3,7 @@
 General Guidelines
 ==================
 
-The Mattermost documentation must be of high quality. It must be accurate and clear, and be presented with a style and tone that is appropriate for technical content.
+The Mattermost documentation must be of high quality. It must be accurate and clear, and be presented with a style and tone that is appropriate for technical content. An exception to this are educational guides, they have to be presented in a style and tone appropriate for educational content.
 
 Style Guide Applicability
 -------------------------

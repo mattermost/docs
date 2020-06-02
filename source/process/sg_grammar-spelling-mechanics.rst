@@ -26,6 +26,8 @@ Preferred
 Avoid
   Failed sign in? No problem! Simply enter the correct password and we'll let you in right away.
 
+Educational guides are an exception, as they need to keep the reader interested in the subject.
+
 Voice
 ~~~~~~
 
@@ -47,6 +49,8 @@ Preferred
 
 Avoid
   We'll view the status in the *Status* pane.
+
+Educational guides are an exception. First person can be used to make the reader more comfortable with the document.
 
 Tense
 ~~~~~~

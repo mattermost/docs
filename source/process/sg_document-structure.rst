@@ -3,9 +3,11 @@ Document Structure
 
 Structure and organization are an important part of a document's ease of use and its understandability. Information should be organized and presented in a logical order, with similar subjects grouped together in the same section.
 
-In most cases, a document has a title, an introductory paragraph, and one or more sections.
+In most cases, a document has a title, an introductory paragraph, and one or more sections. 
 
 Try to keep only one topic in a page. Shorter topics are easier to reuse in other documents, are easier to write and edit, and are easier to translate.
+
+An exception are educational guides. These guides have a title, set clear expectations for a well defined target audience and explain the matter step by step.
 
 Document Title
 --------------
