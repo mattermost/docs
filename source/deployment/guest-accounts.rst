@@ -99,8 +99,7 @@ If a member user has the **Guest Attribute** added, the synchronization processe
 3. Complete the **Guest Attribute** field.
 4. Choose **Save**.
 
-When a guest logs in for the first time they are presented with a default landing page until
-they are added to channels.
+If a guest logs in without any channels assigned, they are presented with a blank page - aside from the name of the server and an alert advising them to contact an administrator as they have no channels assigned. 
 
 
 Guest Permission Settings
