@@ -83,6 +83,8 @@ If a Mattermost Guest user has the guest role removed in the AD/LDAP system, the
 will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a
 member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
+If a guest logs in without any channels assigned, they are presented with a blank page - aside from the name of the server and an alert advising them to contact an administrator as they have no channels assigned. 
+
 Configuring SAML 2.0 Authentication
 ------------------------------------
 
