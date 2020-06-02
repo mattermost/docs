@@ -101,7 +101,7 @@ If a member user has the **Guest Attribute** added, the synchronization processe
 3. Complete the **Guest Attribute** field.
 4. Choose **Save**.
 
-If a guest logs in without any channels assigned, they are presented with a blank page - aside from the name of the server and an alert advising them to contact an administrator as they have no channels assigned. 
+When a guest logs in without having any channels assigned to their account, they are presented with an alert advising them to contact an administrator. 
 
 
 Guest Permission Settings
