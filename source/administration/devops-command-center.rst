@@ -41,7 +41,7 @@ The creator of an incident automatically becomes the incident Commander, respons
 
 The Commander of the incident can:
 
-- Select Playbooks
+- Select a Playbook when starting an incident
 - Create checklists
 - Invite people to the channel
 - Hand over the Commander role to another channel member
