@@ -45,6 +45,7 @@ All Platforms
 - Fixed an issue where right-clicking and then clicking "Save Image" didn't work.
 - Fixed an issue where trusting self-signed certificates kept asking for trust.
 - Fixed an issue where a link to the root of a server caused a "Channel not Found" error if the URL didn't end with a ``/``.
+- Fixed an issue where using ESC or Cancel to close the Add Server modal did not return focus to previously selected text input.
 - Fixed an issue where OneLogin links opened up in the app itself making it impossible to go back to the app.
 - Fixed an issue where links on "Cannot connect to Mattermost" error didn't work.
 
