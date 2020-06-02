@@ -146,16 +146,6 @@ Location of your local storage directory
 
    Your current settings are preserved, and new settings are added with default values.
 
-#. Reinstate the ``plugins`` directories, then restart the mattermost service.
-
-   .. code-block:: sh
-
-     cd {install-path}/mattermost
-     sudo rsync -au plugins~/ plugins
-     sudo rm -rf plugins~
-     sudo rsync -au client/plugins~/ client/plugins
-     sudo rm -rf client/plugins~
-
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
 Upgrading Team Edition to Enterprise Edition
