@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,13 +19,15 @@ msgstr ""
 
 #: ../../source/developer/oauth-2-0-applications.rst:2
 msgid "OAuth 2.0 Applications"
-msgstr ""
+msgstr "OAuth 2.0 アプリケーション"
 
 #: ../../source/developer/oauth-2-0-applications.rst:4
 msgid ""
 "OAuth 2.0 is a protocol that allows Mattermost to authorize API requests "
 "from external applications. The authorization allows"
 msgstr ""
+"OAuth 2.0はMattermostが外部アプリケーションからのAPIリクエストを認可できる"
+"ようにするプロトコルです。認可により次のことが可能となります。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:6
 msgid ""
@@ -34,6 +36,10 @@ msgid ""
 "Mattermost here <https://github.com/enahum/mattermost-oauth2-client-"
 "sample>`__ to test the functionality."
 msgstr ""
+"Mattermostサーバー上にアカウントを持つユーザーが3rdパーティーアプリケーションに"
+"サインインする。機能的なテストのための `MattermostのOAuth2クライアント"
+"アプリケーションのサンプル <https://github.com/enahum/mattermost-oauth2-client-"
+"sample>`__ はここにあります。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:8
 msgid ""
@@ -43,26 +49,33 @@ msgid ""
 "`Zapier documentation "
 "<https://docs.mattermost.com/integrations/zapier.html>`__ to learn more."
 msgstr ""
+"Mattermostサーバーが3rdパーティーAPIへのリクエストを認証する。人気のある"
+"アプリケーションのひとつに、700以上のアプリケーションをMattermostと統合できる"
+"Zapierの統合機能があります。詳細は `Zapierのドキュメント <https://docs.mattermost.com/"
+"integrations/zapier.html>`__ を参照ください。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:10
 msgid "This documentation includes the following details:"
-msgstr ""
+msgstr "ここでは次の詳細を説明します："
 
 #: ../../source/developer/oauth-2-0-applications.rst:12
 msgid ""
 "`Register your application in Mattermost "
 "<https://docs.mattermost.com/developer/oauth-2-0-applications.html#id1>`__"
 msgstr ""
+"`Mattermostにアプリケーションを登録する "
+"<https://docs.mattermost.com/developer/oauth-2-0-applications.html#id1>`__"
 
 #: ../../source/developer/oauth-2-0-applications.rst:13
 msgid ""
 "`Granting permissions to your application "
 "<https://docs.mattermost.com/developer/oauth-2-0-applications.html#id3>`__"
 msgstr ""
+"アプリケーションに許可を与える"
 
 #: ../../source/developer/oauth-2-0-applications.rst:16
 msgid "Register your application in Mattermost"
-msgstr ""
+msgstr "Mattermostにアプリケーションを登録する"
 
 #: ../../source/developer/oauth-2-0-applications.rst:18
 msgid ""
@@ -71,6 +84,10 @@ msgid ""
 "authenticate API calls to Mattermost, and which Mattermost uses to "
 "authorize API requests from the application."
 msgstr ""
+"アプリケーションがMattermostからのAPI呼び出しを認証するために使い、"
+"MattermostがアプリケーションからのAPIリクエストを認可するために使う"
+"OAuth 2.0のクレデンシャル（クライアントIDとシークレット）を生成するため、"
+"Mattermostにアプリケーションを登録する必要があります。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:20
 msgid ""
@@ -78,20 +95,26 @@ msgid ""
 "`Zapier documentation "
 "<https://docs.mattermost.com/integrations/zapier.html>`__ to learn more."
 msgstr ""
+"OAuth 2.0を使ってZapier統合機能をセットアップするなら、より深く知るために "
+"`Zapierドキュメント <https://docs.mattermost.com/integrations/zapier.html>`__ "
+"を参照ください。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:23
 msgid "Enable OAuth 2.0 Applications"
-msgstr ""
+msgstr "OAuth 2.0アプリケーションを有効にする"
 
 #: ../../source/developer/oauth-2-0-applications.rst:25
 msgid ""
 "OAuth 2.0 applications are off by default and can be enabled by the "
 "System Administrator as follows:"
 msgstr ""
+"デフォルトではOAuth 2.0アプリケーションは無効になっていますが、"
+"次のようにシステム管理者により有効化できます："
 
 #: ../../source/developer/oauth-2-0-applications.rst:27
 msgid "1 - Login to your Mattermost server as the System Administrator."
 msgstr ""
+"1 - Mattermostサーバーにシステム管理者としてログインする"
 
 #: ../../source/developer/oauth-2-0-applications.rst:29
 msgid ""
@@ -99,6 +122,9 @@ msgid ""
 "Integrations** in prior versions or **System Console > Integrations > "
 "Integration Management** in versions after 5.12."
 msgstr ""
+"2 - 以前のバージョンでは **メインメニュー > システムコンソール > 統合機能 > "
+"カスタム統合機能** 、5.12以降のバージョンでは **システムコンソール > "
+"統合機能 > 統合機能管理** に行きます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:31
 msgid ""
@@ -106,6 +132,9 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "oauth-2-0-service-provider>`__ to **True**."
 msgstr ""
+"3 - `OAuth 2.0サービスプロバイダを有効にする <https://docs.mattermost.com/"
+"administration/config-settings.html#enable-oauth-2-0-service-provider>`__ を "
+"**True** にセットする"
 
 #: ../../source/developer/oauth-2-0-applications.rst:33
 msgid ""
@@ -119,6 +148,14 @@ msgid ""
 "webhooks-and-slash-commands-to-override-profile-picture-iconss>`__ to "
 "**True**."
 msgstr ""
+"4 - （オプション）外部アプリケーションに、ユーザー名とプロファイル画像を"
+"カスタマイズした投稿を許可する場合は、 `ユーザー名をオーバーライドするための"
+"統合機能を有効 <https://docs.mattermost.com/administration/config-settings.html#enable-"
+"webhooks-and-slash-commands-to-override-usernames>`__ にすると、 "
+"`プロフィール画像アイコンをオーバーライドするための統合機能を有効 <https://"
+"docs.mattermost.com/administration/config-settings.html#enable-webhooks-"
+"and-slash-commands-to-override-profile-picture-iconss>`__ にするを **True** "
+"にする。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:35
 msgid ""
@@ -128,20 +165,26 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html"
 "#restrict-managing-integrations-to-admins>`__ to **False**."
 msgstr ""
+"5 - （オプション）システム管理者でないユーザーがOAuth 2.0アプリケーションを"
+"作成することを許可する場合は、 `統合機能の管理を管理者に制限する <https://"
+"docs.mattermost.com/administration/config-settings.html#restrict-managing-"
+"integrations-to-admins>`__ を **False** に設定します。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:38
 msgid "Register an OAuth 2.0 Application"
-msgstr ""
+msgstr "OAuth 2.0アプリケーションを登録する"
 
 #: ../../source/developer/oauth-2-0-applications.rst:39
 msgid "1 - Go to **Main Menu** > **Integrations**"
-msgstr ""
+msgstr "1 - **メインメニュー > 統合機能** を開き"
 
 #: ../../source/developer/oauth-2-0-applications.rst:41
 msgid ""
 "2 - Click **OAuth 2.0 Applications**, then click **Add OAuth 2.0 "
 "Application**"
 msgstr ""
+"2 - **OAuth 2.0アプリケーション** をクリックして、 **OAuth 2.0"
+"アプリケーションを追加する** をクリックする"
 
 #: ../../source/developer/oauth-2-0-applications.rst:43
 msgid ""
@@ -151,10 +194,15 @@ msgid ""
 "When set to **No**, users will be provided with the following page to "
 "accept or deny authorization when authenticating for the first time."
 msgstr ""
+"3 - **信頼済み** をセットする： **Yes** に設定すると、アプリケーションは"
+"Mattermostにより信頼されていると見なされる。これによりユーザーが3rdパーティー"
+"アプリケーションにサインインするときにMattermostは認可を要求しなくなる。 "
+"**NO** にセットした時は、初めて認証するときに認可を許可するか拒否するかを"
+"確認するための次のようなページをユーザーに提供する。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:47
 msgid "Only System Admins can set OAuth 2.0 applications as trusted."
-msgstr ""
+msgstr "システム管理者だけがOAuth 2.0アプリを信頼済みとしてセットできます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:49
 msgid ""
@@ -165,6 +213,11 @@ msgid ""
 "viewing a list of OAuth 2.0 applications in **Main Menu** > "
 "**Integrations**."
 msgstr ""
+"4 - **表示名** を指定する：アプリケーションの名前を64文字以内で設定できます。"
+"この名前はユーザーがアプリケーションのアクセスを許可するとき、 **アカウント設定 >"
+"セキュリティ > OAuth 2.0アプリケーション** で認可済みアプリケーションのリストを"
+"表示するとき、 **メインメニュー > 統合機能** でOAuth 2.0アプリケーションを"
+"リスト表示するときにユーザーが目にします。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:51
 msgid ""
@@ -172,6 +225,9 @@ msgid ""
 "that users will see when viewing a list of authorized applications in "
 "**Account Settings > Security > OAuth 2.0 Applications**."
 msgstr ""
+"5 - **説明** の追加：これは **アカウント設定 > セキュリティ > OAuth 2.0"
+"アプリケーション** で認可済みアプリケーションのリストを表示するとき"
+"ユーザーが目にします。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:53
 msgid ""
@@ -180,6 +236,10 @@ msgid ""
 " The URL must be a valid URL and start with ``http://`` or ``https://`` "
 "depending on your server configuration."
 msgstr ""
+"6 - **ホームページ** を指定する：これはOAuth 2.0アプリケーションの"
+"ホームページです。ユーザーがそのアプリページを訪れて何ができるのかの詳細を"
+"確認することができます。URLは有効なURLであり、サーバー構成に応じて "
+"``http://`` または ``https://`` で始まる必要があります。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:55
 msgid ""
@@ -189,6 +249,11 @@ msgid ""
 "**Main Menu** > **Integrations**. Must be a valid URL and start with "
 "``http://`` or ``https://``."
 msgstr ""
+"7 - （オプション） **アイコンURL** の追加： **アカウント設定 > セキュリティ "
+"> OAuth 2.0アプリケーション** で認可済みアプリケーションのリスト表示をするとき、 "
+"**メインメニュー > 統合機能** でOAuth 2.0アプリケーションのリスト表示をするときに"
+"ユーザーが見るイメージです。有効なURLであり、 ``http://`` または ``https://`` "
+"で始まる必要があります。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:57
 msgid ""
@@ -200,10 +265,15 @@ msgid ""
 " URL must be on a separate line and start with ``http://`` or "
 "``https://``."
 msgstr ""
+"8 - **コールバックURL** の追加：Mattermostがアプリケーションの認可を許可または"
+"拒否した後ユーザーにリダイレクトするURLであり、認可コードまたはアクセストークン"
+"を処理する唯一のURLです。複数のURLを指定した時は、ユーザーはアプリケーションの"
+"初回の認証で使用されたURLへリダイレクトされます。書くURLは別々の行に記載し、 "
+"``http://`` または ``https://`` で始まる必要があります。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:59
 msgid "9 - Click **Save** to create the application."
-msgstr ""
+msgstr "9 - アプリケーションを作成するために **保存** をクリックする。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:63
 msgid ""
@@ -211,6 +281,9 @@ msgid ""
 " authorized redirect URLs. Save these values and use them in your "
 "application to connect it to Mattermost."
 msgstr ""
+"10 - **クライアントID** 、 **クライアントシークレット** および"
+"認可されたリダイレクトURLが提供されます。これらの値を保存し、アプリケーションで"
+"使用することでMattermostに接続します。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:67
 msgid ""
@@ -220,16 +293,23 @@ msgid ""
 " new authorizations and requests for new tokens will fail until the "
 "client secret has been updated in your app configuration."
 msgstr ""
+"注意： **クライアントシークレット** はアプリケーションの作成者または"
+"システム管理者により再生成することができます。古いシークレットで作成された"
+"トークンは有効なままで既存のユーザーの認可は引き続き動作します；しかしながら、"
+"クライアントシークレットがアプリの構成の中で更新されない限り、新しいトークン"
+"に対する新しい認可と要求は失敗します。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:72
 msgid "Granting permissions to your application"
-msgstr ""
+msgstr "アプリケーションに権限を与える"
 
 #: ../../source/developer/oauth-2-0-applications.rst:74
 msgid ""
 "Once you have created an OAuth 2.0 application, all users on the "
 "Mattermost server are automatically given access to it."
 msgstr ""
+"一度 OAuth 2.0アプリケーションを生成したら、Mattermost上の全てのユーザーは"
+"自動的にアクセスの許可が与えられます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:76
 msgid ""
@@ -238,6 +318,9 @@ msgid ""
 "through the OAuth flow, which could be the user who registers the app or "
 "anyone else on the system."
 msgstr ""
+"アプリケーションにはアプリを登録したユーザーに基づいた権限が自動的に"
+"付与されません - 権限はアプリを登録したユーザーもしくはシステム上の他の誰か"
+"OAuthのフローを通したユーザーに基づいて付与されます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:78
 msgid ""
@@ -246,6 +329,10 @@ msgid ""
 "the following page will be provided to accept or deny authorization when "
 "authenticating the app for the first time."
 msgstr ""
+"アプリケーションがMattermostサーバー上で信頼済みのOAuth 2.0アプリケーション"
+"として登録されていれば、ユーザーからの承認は必要ありません。一方で、"
+"初回のアプリ認証の際には認可を許可するか拒否するかを選択する次のページが"
+"表示されます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:82
 msgid ""
@@ -253,6 +340,9 @@ msgid ""
 "requests on behalf of that user. The application can then perform any "
 "action for which the user has permission."
 msgstr ""
+"一度認可されると、アプリケーションはアクセストークンを受け取り、そのユーザーに"
+"代わってリクエストを実行します。アプリケーションはそのユーザーが許可する"
+"任意のアクションを実行することができます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:84
 msgid ""
@@ -260,18 +350,20 @@ msgid ""
 "Security > OAuth 2.0 Applications**, and revoke authorization from this "
 "setting."
 msgstr ""
+"ユーザーは **アカウント設定 > セキュリティ > OAuth 2.0アプリケーション** "
+"から認可されたアプリのリストを表示したり、認可を取り消すことができます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:89
 msgid "Deleting your application"
-msgstr ""
+msgstr "アプリケーションの削除"
 
 #: ../../source/developer/oauth-2-0-applications.rst:91
 msgid "Deleting the application will revoke access from all users."
-msgstr ""
+msgstr "アプリケーションを削除すると全てのユーザーからアクセスを無効にできます。"
 
 #: ../../source/developer/oauth-2-0-applications.rst:93
 msgid ""
 "Only the user who created the application or a System Administrator can "
 "delete the app."
 msgstr ""
-
+"アプリケーションを作成したユーザーまたはシステム管理者だけがアプリを削除できます。"

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:4
 msgid "Interactive Dialogs"
-msgstr ""
+msgstr "インタラクティブダイヤログ"
 
 #: ../../source/developer/interactive-dialogs.rst:6
 msgid ""
@@ -29,6 +29,10 @@ msgid ""
 "integration. Use them to gather structured information from the end user "
 "to perform an action or a request."
 msgstr ""
+"インタラクティブダイヤログはMattermostサーバーと統合するアプリケーション"
+"で使用されます。統合機能はユーザーから形式化された入力を受け取り、入力を"
+"統合機能へ再び送信するためのメソッドを提供します。アクションやリクエストを"
+"実行するためエンドユーザーから構造化された情報を収集するために使用します。"
 
 #: ../../source/developer/interactive-dialogs.rst:8
 msgid ""
@@ -38,6 +42,11 @@ msgid ""
 " message buttons or select an option from a menu <interactive-messages>`,"
 " or use a :doc:`custom slash command <slash-commands>`."
 msgstr ""
+"統合機能はHTTP POSTのリクエストボディーにデータを入れてMattermostサーバーの"
+"エンドポイントへ送信することでダイヤログを開きます。統合機能はこのエンド"
+"ポイントをユーザーが :doc:`メッセージボタンをクリックまたはメニューから"
+"オプションを選択 <interactive-messages>` 、または :doc:`カスタムスラッシュ"
+"コマンド <slash-commands>` を使ったとき、ダイヤログを開くために使います。"
 
 #: ../../source/developer/interactive-dialogs.rst:10
 msgid ""
@@ -45,16 +54,21 @@ msgid ""
 " based on user actions. For instance, if a plugin adds a button in the "
 "channel header, clicking that button may open a dialog."
 msgstr ""
+"さらに、 :doc:`プラグイン <../administration/plugins>` はユーザーのアクションに"
+"基づいてダイヤログをトリガーすることができます。例えば、プラグインがチャンネル"
+"ヘッダーにボタンを追加すれば、そのボタンをクリックしてダイヤログを開くということが"
+"できるでしょう。"
 
 #: ../../source/developer/interactive-dialogs.rst:12
 msgid ""
 "Here is an example of what a dialog looks like for creating a JIRA issue "
 "within the Mattermost user interface:"
 msgstr ""
+"下記はMattermostのUIを使ってJIRAのイシューを作成するようなダイヤログの例です。"
 
 #: ../../source/developer/interactive-dialogs.rst:22
 msgid "Opening a Dialog"
-msgstr ""
+msgstr "ダイヤログを開く"
 
 #: ../../source/developer/interactive-dialogs.rst:24
 msgid ""
@@ -62,6 +76,9 @@ msgid ""
 "from the Mattermost server. This request will be triggered by a slash "
 "command or an interactive message. It will include a trigger ID."
 msgstr ""
+"ダイヤログを開くには、最初に統合機能がMattermostサーバーからHTTPリクエストを"
+"受け取る必要があります。このリクエストはスラッシュコマンドやインタラクティブ"
+"メッセージによりトリガーされます。それにはトリガーIDを含みます。"
 
 #: ../../source/developer/interactive-dialogs.rst:26
 msgid ""
@@ -70,26 +87,30 @@ msgid ""
 "url>/api/v4/actions/dialogs/open``. See the below section for what to "
 "include in the body of that HTTP request."
 msgstr ""
+"トリガーIDを使うと ``https://<your-mattermost-url>/api/v4/actions/dialogs/"
+"open`` へのHTTP POSTリクエストを送信することでインタラクティブダイヤログを"
+"開くことができます。HTTPリクエストのボディーに何が含まれるのかについては"
+"以下のセクションを参照してください。"
 
 #: ../../source/developer/interactive-dialogs.rst:29
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: ../../source/developer/interactive-dialogs.rst:31
 msgid "Interactive dialogs support the following parameters:"
-msgstr ""
+msgstr "インタラクティブダイヤログは以下のパラメータをサポートしています："
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Parameter"
-msgstr ""
+msgstr "パラメータ"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Description"
-msgstr ""
+msgstr "内容"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "title"
@@ -97,11 +118,11 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "String"
-msgstr ""
+msgstr "文字列"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Title of the dialog. Maximum 24 characters."
-msgstr ""
+msgstr "ダイヤログのタイトル。最大24文字。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "elements"
@@ -109,7 +130,7 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Array"
-msgstr ""
+msgstr "配列"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid ""
@@ -117,6 +138,9 @@ msgid ""
 "elements. If none are supplied - the dialog box acts as a simple "
 "confirmation"
 msgstr ""
+"ダイヤログに対して5要素まで。要素についての詳細は下記を参照。"
+"noneを指定すると、ダイヤログボックスは簡単な確認ダイヤログとして"
+"振る舞います。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "url"
@@ -124,7 +148,7 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "The URL to send the submitted dialog payload to."
-msgstr ""
+msgstr "送信されたダイヤログペイロードの送信先URL"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "icon_url"
@@ -135,6 +159,7 @@ msgid ""
 "(Optional) The URL of the icon used for your dialog. If none specified, "
 "no icon is displayed."
 msgstr ""
+"（オプション）ダイヤログで使われるアイコンのURL。noneを指定するとアイコンは表示されない。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "submit_label"
@@ -145,6 +170,7 @@ msgid ""
 "(Optional) Label of the button to complete the dialog. Default is "
 "``Submit``."
 msgstr ""
+"（オプション）ダイヤログを閉じるためのボタンのラベル。デフォルトは ``送信`` 。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "notify_on_cancel"
@@ -156,6 +182,9 @@ msgid ""
 "there's a user-induced dialog cancellation. No other data is sent back "
 "with the event. Default is ``false``."
 msgstr ""
+"（オプション）trueの場合は、ユーザーがダイヤログをキャンセルするたびに"
+"イベントを統合機能へ送り返します。イベントには他のデータは含まれません。"
+"デフォルトは ``false`` です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "state"
@@ -166,6 +195,8 @@ msgid ""
 "(Optional) String provided by the integration that will be echoed back "
 "with dialog submission. Default is the empty string."
 msgstr ""
+"（オプション）ダイヤログの送信でエコーバックされる統合機能が提供する文字列。"
+"デフォルトは空文字列。"
 
 #: ../../source/developer/interactive-dialogs.rst:44
 msgid ""
@@ -173,26 +204,33 @@ msgid ""
 "defined by the integration. You must also include the trigger ID you "
 "received from the slash command or interactive message."
 msgstr ""
+"JSONの例は下記の通りです。送信フォームが統合機能により指定されたURLに"
+"送り返されます。スラッシュコマンドまたはインタラクティブメッセージから"
+"受信したトリガーIDを含める必要があります。"
 
 #: ../../source/developer/interactive-dialogs.rst:62
 msgid "Elements"
-msgstr ""
+msgstr "エレメント"
 
 #: ../../source/developer/interactive-dialogs.rst:64
 msgid "Each dialog supports elements for users to enter information."
-msgstr ""
+msgstr "ユーザーが情報を入力するためにダイヤログは下記エレメントをサポートしています。"
 
 #: ../../source/developer/interactive-dialogs.rst:66
 msgid ""
 "**text**: Single-line plain text field. Use this for inputs such as "
 "names, email addresses or phone numbers."
 msgstr ""
+"**text**: 1行のプレーンテキストフィールド。名前、メールアドレスまたは"
+"電話番号のような入力項目に使います。"
 
 #: ../../source/developer/interactive-dialogs.rst:67
 msgid ""
 "**textarea**: Multi-line plain text field. Use this field when the answer"
 " is expected to be longer than 150 characters."
 msgstr ""
+"**textarea**: 複数行のプレーンテキストフィールド。返答が150文字を超えそうな"
+"場合に使います。"
 
 #: ../../source/developer/interactive-dialogs.rst:68
 msgid ""
@@ -201,41 +239,64 @@ msgid ""
 " of the system. For more information on message menus, see :doc:`the "
 "documentation <interactive-messages>`."
 msgstr ""
+"**select**: メッセージメニュー。予め用意された選択肢から選択する場合に"
+"使います。静的なメニューまたはシステムのユーザーや公開チャンネルから生成される"
+"動的なメニューどちらも利用可能です。メッセージメニューに関する詳細は、 "
+":doc:`こちらの文書 <interactive-messages>` を参照ください。"
+
+#: ../../source/developer/interactive-dialogs.rst:69
+msgid "**bool**: Checkbox option. Use this for binary selection."
+msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:70
+msgid ""
+"**radio**: Radio button option. Use this to quickly select an option from"
+" pre-selected choices."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:72
 msgid ""
 "Each element is required by default. Otherwise the client will return an "
 "error as shown below. Note that the error message will appear below the "
 "help text, if one is specified. To make an element optional, set the "
 "field ``\"optional\": \"true\"``."
 msgstr ""
-
-#: ../../source/developer/interactive-dialogs.rst:75
-msgid "Text Elements"
-msgstr ""
+"各エレメントはデフォルトで必須です。入力しないと下記のようにエラーとなります。"
+"ヘルプテキストが指定されている場合、エラーメッセージはその下に表示されます。"
+"エレメントをオプション扱いにするには、 ``\"optional\": \"true\"`` とセットしてください。"
 
 #: ../../source/developer/interactive-dialogs.rst:77
+msgid "Text Elements"
+msgstr "テキストエレメント"
+
+#: ../../source/developer/interactive-dialogs.rst:79
 msgid ""
 "Text elements are single-line plain text fields. Below is an example of a"
 " text element that asks for an email address."
 msgstr ""
+"テキストエレメントは単一行のプレーンテキストフィールドです。下記はメールアドレスを"
+"訊ねるテキストエレメントの一例です。"
 
-#: ../../source/developer/interactive-dialogs.rst:91
+#: ../../source/developer/interactive-dialogs.rst:93
 msgid ""
 "There is an optional ``\"subtype\": \"email\"`` field in the above "
 "example, which specifies the keyboard layout used on mobile. For this "
 "example, the email keypad is shown to the user given the subtype is set "
 "to ``email``."
 msgstr ""
+"上記の例ではモバイルで使われるキーボードレイアウトを指定するためのオプション "
+"``\"subtype\": \"email\"`` フィールドがあります。この例では、メールキーパッドが"
+"ユーザーに表示されます。"
 
-#: ../../source/developer/interactive-dialogs.rst:93
-#: ../../source/developer/interactive-dialogs.rst:229
+#: ../../source/developer/interactive-dialogs.rst:95
+#: ../../source/developer/interactive-dialogs.rst:231
+#: ../../source/developer/interactive-dialogs.rst:276
 msgid "The full list of supported fields are included below:"
-msgstr ""
+msgstr "サポートされているフィールドの全リストは下記の通りです："
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Field"
-msgstr ""
+msgstr "フィールド"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "display_name"
@@ -246,6 +307,7 @@ msgid ""
 "Display name of the field shown to the user in the dialog. Maximum 24 "
 "characters."
 msgstr ""
+"ダイヤログに表示されるフィールドの表示名です。最大24文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "name"
@@ -256,6 +318,8 @@ msgid ""
 "Name of the field element used by the integration. Maximum 300 "
 "characters. You should use unique “name” fields in the same dialog."
 msgstr ""
+"統合機能で使用されるフィールドエレメントの名前です。最大300文字です。"
+"同じダイヤログ内ではユニークな “name” フィールドを使用する必要があります。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "type"
@@ -263,7 +327,7 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Set this value to ``text`` for a text element."
-msgstr ""
+msgstr "テキストエレメントに対しては ``text`` に設定します。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "subtype"
@@ -275,6 +339,10 @@ msgid ""
 "v5.14),``tel``, or ``url``. Default is ``text``. Use this to set which "
 "keypad is presented to users on mobile when entering the field."
 msgstr ""
+"（オプション） ``text``, ``email``, ``number``, ``password`` ("
+"v5.14以降), ``tel``, または ``url`` のいずれかを指定します。"
+"デフォルトは ``text`` です。このフィールドを使用して、モバイルでどの"
+"キーパッドを表示するかを指定します。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "min_length"
@@ -282,11 +350,11 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Integer"
-msgstr ""
+msgstr "整数"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "(Optional) Minimum input length allowed for an element. Default is 0."
-msgstr ""
+msgstr "（オプション）エレメントに許容される最小の文字列長です。デフォルトは0です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "max_length"
@@ -298,6 +366,9 @@ msgid ""
 "If you expect the input to be greater 150 characters, consider using a "
 "``textarea`` type element instead."
 msgstr ""
+"（オプション）エレメントに許容される最大の文字列長です。デフォルトは150です。"
+"150文字以上になる場合は、代わりに ``textarea`` タイプエレメントの使用を考慮"
+"してください。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "optional"
@@ -305,13 +376,15 @@ msgstr ""
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Boolean"
-msgstr ""
+msgstr "ブーリアン"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid ""
 "(Optional) Set to true if this form element is not required. Default is "
 "``false``."
 msgstr ""
+"（オプション）このフォームエレメントが必須ではない場合にtrueに設定します。"
+"デフォルトは ``false`` です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "help_text"
@@ -320,6 +393,8 @@ msgstr ""
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "(Optional) Set help text for this form element. Maximum 150 characters."
 msgstr ""
+"（オプション）このフォームエレメントにヘルプテキストを設定します。"
+"最大150文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "default"
@@ -330,6 +405,8 @@ msgid ""
 "(Optional) Set a default value for this form element. Maximum 150 "
 "characters."
 msgstr ""
+"（オプション）このフォームエレメントにデフォルト値を設定します。"
+"最大150文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "placeholder"
@@ -340,30 +417,35 @@ msgid ""
 "(Optional) A string displayed to help guide users in completing the "
 "element. Maximum 150 characters."
 msgstr ""
-
-#: ../../source/developer/interactive-dialogs.rst:110
-msgid "Textarea Elements"
-msgstr ""
+"（オプション）エレメントへの入力を完成させるためのガイド文字列表示。"
+"最大150文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:112
+msgid "Textarea Elements"
+msgstr "テキストエリアエレメント"
+
+#: ../../source/developer/interactive-dialogs.rst:114
 msgid ""
 "Textarea elements are multi-line plain text fields. A sample JSON is "
 "provided below:"
 msgstr ""
-
-#: ../../source/developer/interactive-dialogs.rst:123
-msgid "The maximum length for a textarea is 3,000 characters."
-msgstr ""
+"テキストエリアエレメントは複数行プレーンテキストフィールドです。"
+"下記にサンプルのJSONを示します："
 
 #: ../../source/developer/interactive-dialogs.rst:125
+msgid "The maximum length for a textarea is 3,000 characters."
+msgstr "テキストエリアの最大文字数は3,000文字です。"
+
+#: ../../source/developer/interactive-dialogs.rst:127
 msgid ""
 "The list of supported fields is the same as for the ``textarea`` type "
 "element."
 msgstr ""
+"サポートされているフィールドのリストは ``text`` タイプエレメントと同じです。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Set this value to ``textarea`` for a textarea element."
-msgstr ""
+msgstr "テキストエリアエレメントに対してはこの値を ``textarea`` にセットします。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid ""
@@ -371,63 +453,78 @@ msgid ""
 "Default is ``text``. Use this to set which keypad is presented to users "
 "on mobile when entering the field."
 msgstr ""
+"（オプション） ``text``, ``email``, ``number``, ``tel``, や ``url`` のいずれかを"
+"指定します。デフォルトは ``text`` です。このフィールドを使用して、モバイルでどの"
+"キーパッドを表示するかを指定します。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "(Optional) Maximum input length allowed for an element. Default is 3,000."
 msgstr ""
+"（オプション）このエレメントに許容されている最大入力長です。デフォルトは"
+"3,000文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid ""
 "(Optional) Set a default value for this form element. Maximum 3,000 "
 "characters."
 msgstr ""
+"（オプション）このエレメントのデフォルト値をセットします。最大3,000文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid ""
 "(Optional) A string displayed to help guide users in completing the "
 "element. Maximum 3,000 characters."
 msgstr ""
-
-#: ../../source/developer/interactive-dialogs.rst:142
-msgid "Select Elements"
-msgstr ""
+"（オプション）このフォームエレメントにデフォルト値を設定します。"
+"最大3,000文字です"
 
 #: ../../source/developer/interactive-dialogs.rst:144
+msgid "Select Elements"
+msgstr "セレクトエレメント"
+
+#: ../../source/developer/interactive-dialogs.rst:146
 msgid ""
 "Select elements are message menus that allow users to select one "
 "predefined option from a list. Below is an example of a select element "
 "that asks for one of three different options."
 msgstr ""
+"セレクトエレメントは予め用意されたオプションをリストから選択するための"
+"メッセージメニューです。下記は、3つの異なるオプションから1つを選択する"
+"セレクトエレメントの例です。"
 
-#: ../../source/developer/interactive-dialogs.rst:172
+#: ../../source/developer/interactive-dialogs.rst:174
 msgid ""
 "Note that the JSON payload for ``select`` type elements matches "
 ":doc:`interactive message menus <interactive-messages>`."
 msgstr ""
+"注意： ``select`` タイプエレメントのJSONペイロードは :doc:`インタラクティブ"
+"メッセージメニュー <interactive-messages>` に合致します。"
 
-#: ../../source/developer/interactive-dialogs.rst:174
+#: ../../source/developer/interactive-dialogs.rst:176
 msgid ""
 "The select element can also be generated dynamically from users and "
 "channels of the system."
 msgstr ""
+"セレクトエレメントはシステム内のユーザーやチャンネルから動的に生成されます。"
 
-#: ../../source/developer/interactive-dialogs.rst:176
+#: ../../source/developer/interactive-dialogs.rst:178
 msgid "For users, use"
-msgstr ""
+msgstr "ユーザーに対しては下記のように使います。"
 
-#: ../../source/developer/interactive-dialogs.rst:187
+#: ../../source/developer/interactive-dialogs.rst:189
 msgid "and for public channels, use"
-msgstr ""
+msgstr "そして公開チャンネルに対しては、下記のように使います。"
 
-#: ../../source/developer/interactive-dialogs.rst:198
+#: ../../source/developer/interactive-dialogs.rst:200
 msgid ""
 "The list of supported fields for the ``select`` type element is included "
 "below:"
 msgstr ""
+"``select`` タイプエレメントがサポートするフィールドは下記の通りです："
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Set this value to ``select`` for a select element."
-msgstr ""
+msgstr "セレクトエレメントに対してはこの値を ``select`` にセットします。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "data_source"
@@ -438,6 +535,9 @@ msgid ""
 "(Optional) One of ``users``, or ``channels``. If none specified, assumes "
 "a manual list of options is provided by the integration."
 msgstr ""
+"（オプション） ``users`` か ``channels`` のいずれかを使用します。"
+"指定されていない場合は、オプションのリストが統合機能により提供されるものと"
+"見なされます。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "options"
@@ -448,63 +548,100 @@ msgid ""
 "(Optional) An array of options for the select element. Not applicable for"
 " ``users`` or ``channels`` data sources."
 msgstr ""
+"（オプション）セレクトエレメントについてはオプションの配列です。"
+"データソースを ``users`` もしくは ``channels`` にした場合は無効です。"
 
-#: ../../source/developer/interactive-dialogs.rst:214
+#: ../../source/developer/interactive-dialogs.rst:216
 msgid "Checkbox Element"
 msgstr ""
 
-#: ../../source/developer/interactive-dialogs.rst:216
+#: ../../source/developer/interactive-dialogs.rst:218
 msgid ""
-"In Mattermost version 5.16 and later, you can use checkbox elements. It "
-"looks like a plain text field with a checkbox to be selected. Below is an"
-" example of a checkbox element that asks for meeting feedback:"
+"From Mattermost 5.16 you can use checkbox elements. It looks like a plain"
+" text field with a checkbox to be selected. Below is an example of a "
+"checkbox element that asks for meeting feedback."
 msgstr ""
+"Mattermostバージョンが5.16以降から、チェックボックスエレメントが利用可能です。"
+"選択可能なチェックボックス月のプレーンテキストフィールドのような見た目です。"
+"下記は、会議のフィードバックを訊ねるチェックボックスエレメントの例です。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "Set this value to ``bool`` for a checkbox element."
-msgstr ""
+msgstr "チェックボックスエレメントに対してはこの値を ``bool`` にセットします。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid "(Optional) Set a default value for this form element. True or false."
-msgstr ""
+msgstr "（オプション）デフォルト値をセットします。"
+"True もしくは false が使用できます。"
 
 #: ../../source/developer/interactive-dialogs.rst:1
 msgid ""
 "(Optional) A string displayed to include a label besides the checkbox. "
 "Maximum 150 characters."
 msgstr ""
-
-#: ../../source/developer/interactive-dialogs.rst:244
-msgid "Dialog Submission"
-msgstr ""
+"（オプション）チェックボックスのよきに表示されるラベル文字列。"
+"最大150文字です。"
 
 #: ../../source/developer/interactive-dialogs.rst:246
+msgid "Radio Element"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:248
+msgid ""
+"From Mattermost 5.16 you can use radio elements. It looks like a plain "
+"text field with a radio button to be selected. Below is an example of a "
+"radio element that asks for a department."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Set this value to ``radio`` for a radio element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "(Optional) An array of options for the radio element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "(Optional) Set a default value for this form element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:290
+msgid "Dialog Submission"
+msgstr "ダイヤログサブミッション"
+
+#: ../../source/developer/interactive-dialogs.rst:292
 msgid ""
 "When a user submits a dialog, Mattermost will perform client-side input "
 "validation to make sure"
 msgstr ""
+"ユーザーがダイヤログを送信するときに、Mattermostが下記の観点でクライアント側"
+"入力の妥当性確認を行います。"
 
-#: ../../source/developer/interactive-dialogs.rst:248
+#: ../../source/developer/interactive-dialogs.rst:294
 msgid "All required fields are filled"
-msgstr ""
+msgstr "全ての必須フィールドが入力されている。"
 
-#: ../../source/developer/interactive-dialogs.rst:249
+#: ../../source/developer/interactive-dialogs.rst:295
 msgid "All formats are correct (e.g. email, telephone number, etc.)"
-msgstr ""
+msgstr "全てのフォーマットが正しい（電子メール、電話番号等）"
 
-#: ../../source/developer/interactive-dialogs.rst:251
+#: ../../source/developer/interactive-dialogs.rst:297
 msgid "The submission payload sent to the integration is:"
-msgstr ""
+msgstr "統合機能に送信されるサブミッションのペイロードは下記の通りです："
 
-#: ../../source/developer/interactive-dialogs.rst:269
+#: ../../source/developer/interactive-dialogs.rst:315
 msgid ""
 "Optionally, the dialog can send an event back to the integration if "
 "``notify_on_cancel`` parameter is set to true. If this happens, "
 "``cancelled`` will be set to true on the above payload, and "
 "``submission`` will be empty."
 msgstr ""
+"オプションで ``notify_on_cancel`` パラメータをtrueにセットすれば、"
+"ダイヤログから統合機能へイベントを返すことができます。その時は、上の"
+"ペイロードで ``cancelled`` がtrueにセットされ、 ``submission`` が空に"
+"なっています。"
 
-#: ../../source/developer/interactive-dialogs.rst:271
+#: ../../source/developer/interactive-dialogs.rst:317
 msgid ""
 "Moreover, Mattermost also allows the integration itself to perform input "
 "validation. This can be done by responding to the dialog submission "
@@ -515,8 +652,16 @@ msgid ""
 " number between 0 and 10 by returning the following response body if the "
 "condition isn't satisfied:"
 msgstr ""
+"さらにMattermostは統合機能それ自身で入力の検証を実行することもできます。"
+"`error` フィールドを含むJSONボディーを持つダイヤログサブミッション"
+"のリクエストに応答することでそれを実現します。 `error` フィールドには、"
+"ユーザーに表示したいエラーメッセージ文字列に入力フィールド名をマップした"
+"JSONオブジェクトを含めることができます。例えば、 `num_between_0_and_10` "
+"というフィールド名があり、ここには0から10までの間の数字を入力するように"
+"強制したい場合、条件を満足していない場合は次のようなレスポンスボディーを"
+"返します。"
 
-#: ../../source/developer/interactive-dialogs.rst:277
+#: ../../source/developer/interactive-dialogs.rst:323
 msgid ""
 "The integration may also return a generic error message to the user that "
 "is not attached to a specific field. This can be done by responding to "
@@ -525,12 +670,17 @@ msgid ""
 "to display to the user. For example, if a server-side error occurs, you "
 "can return a message explaining it:"
 msgstr ""
+"統合機能は特定のフィールドに依らない一般的なエラーメッセージをユーザーに"
+"返すこともできます。ダイヤログサブミッションのリクエストに　`error` フィールド"
+"を含むJSONボディーで応答することでそれが可能です。 `error` フィールドは"
+"エラーメッセージとしてユーザーに表示する文字列であるべきです。例えば、"
+"サーバー側でエラーが発生した場合は、それを説明するようなメッセージを返します:"
 
-#: ../../source/developer/interactive-dialogs.rst:283
+#: ../../source/developer/interactive-dialogs.rst:329
 msgid "Support for generic error messages was added in Mattermost 5.18."
 msgstr ""
 
-#: ../../source/developer/interactive-dialogs.rst:285
+#: ../../source/developer/interactive-dialogs.rst:331
 #, python-format
 msgid ""
 "Finally, once the request is submitted, we recommend the integration to "
@@ -543,96 +693,130 @@ msgid ""
 "<https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_"
 " if you are developing a plugin."
 msgstr ""
+"最後に、リクエストが送信されたら、システムメッセージか送信を確認する"
+"エフェメラルメッセージで応答することを推奨します。これは、一度ダイヤログからの"
+"送信リクエストをサービスが受け取って応答し、Mattermostへ別のリクエストとなります。 "
+"`REST API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_ か"
+"プラグインを開発している場合は、 `プラグインAPI <https://developers.mattermost.com/extend/"
+"plugins/server/reference/#API.SendEphemeralPost>`_ 経由で利用できます。"
 
-#: ../../source/developer/interactive-dialogs.rst:289
+#: ../../source/developer/interactive-dialogs.rst:335
 msgid ""
 "If the dialog is closed by clicking the \"Cancel\" button or by clicking "
 "the \"X\", no data will be submitted. If a user clicks away from the "
 "dialog, the dialog won’t close to prevent accidentally losing any answers"
 " they've made to an unsubmitted dialog."
 msgstr ""
+"ダイヤログが \"キャンセル\" ボタンで閉じられたか、 \"X\" がクリックされたら"
+"データは送信されません。ユーザーがダイヤログから離れると、未送信のダイヤログ"
+"の回答が誤って失われないようにダイヤログは閉じられません。"
 
-#: ../../source/developer/interactive-dialogs.rst:292
+#: ../../source/developer/interactive-dialogs.rst:338
 msgid "Example"
-msgstr ""
+msgstr "例"
 
-#: ../../source/developer/interactive-dialogs.rst:294
+#: ../../source/developer/interactive-dialogs.rst:340
 msgid ""
 "Below is a full example of a JSON payload that creates an interactive "
 "dialog in Mattermost:"
 msgstr ""
+"下記にMattermostのインタラクティブダイヤログを生成するJSONペイロードの"
+"全ての例を示します。"
 
-#: ../../source/developer/interactive-dialogs.rst:427
+#: ../../source/developer/interactive-dialogs.rst:473
 msgid "Share Your Integration"
-msgstr ""
+msgstr "統合機能の共有"
 
-#: ../../source/developer/interactive-dialogs.rst:429
+#: ../../source/developer/interactive-dialogs.rst:475
 msgid ""
 "If you've built an integration for Mattermost, please consider `sharing "
 "your work <https://www.mattermost.org/share-your-mattermost-projects/>`__"
 " in our `app directory <https://about.mattermost.com/default-app-"
 "directory/>`__."
 msgstr ""
+"Mattermostの統合機能を作成したら、`app directory "
+"<https://about.mattermost.com/default-app-directory/>`__ で"
+" `あなたの成果を共有 <https://www.mattermost.org/share-your-mattermost-projects/>`__ しましょう。"
 
-#: ../../source/developer/interactive-dialogs.rst:431
+#: ../../source/developer/interactive-dialogs.rst:477
 msgid ""
 "The `app directory <https://about.mattermost.com/default-app-"
 "directory/>`__ lists open source integrations developed by the Mattermost"
 " community and are available for download, customization and deployment "
 "to your private cloud or on-prem infrastructure."
 msgstr ""
+"`app directory <https://about.mattermost.com/default-app-directory/>`__ は"
+"Mattermostコミュニティによるオープンソースの統合機能を列挙しており"
+"ダウンロード、カスタマイゼーション、プライベートクラウドもしくはオンプレ環境へのデプロイも可能です。"
 
-#: ../../source/developer/interactive-dialogs.rst:434
+#: ../../source/developer/interactive-dialogs.rst:480
 msgid "Slack Compatibility"
-msgstr ""
+msgstr "Slack互換性"
 
-#: ../../source/developer/interactive-dialogs.rst:436
+#: ../../source/developer/interactive-dialogs.rst:482
 msgid ""
 "Like Slack, dialogs are triggered by an interactive message menu or "
 "button, or by a custom slash command. Additionally, Mattermost can "
 "trigger dialogs via plugins."
 msgstr ""
+"Slackのように、ダイヤログはインタラクティブメッセージかボタン、または"
+"カスタムスラッシュコマンドによりトリガーされます。さらに、Mattermostでは"
+"プラグイン経由でダイヤログをトリガーすることができます。"
 
-#: ../../source/developer/interactive-dialogs.rst:438
+#: ../../source/developer/interactive-dialogs.rst:484
 msgid ""
 "The schema for these objects is the same as Slack's, except for the "
 "following differences:"
 msgstr ""
+"これらオブジェクトに対するスキーマは下記のものを除きSlackのものと同じです。"
 
-#: ../../source/developer/interactive-dialogs.rst:440
+#: ../../source/developer/interactive-dialogs.rst:486
 msgid ""
 "``url`` field must be specified for Mattermost dialogs, which specifies "
 "where the request is sent to. In Slack, this is handled by specifying the"
 " URL within the Slack app that uses the dialog."
 msgstr ""
+"``url`` フィールドはどこにリクエストを送信するかを示すためにMattermost"
+"ダイヤログ用に指定します。Slackでは、ダイヤログを使用するSlackアプリ内で"
+"URLを指定しています。"
 
-#: ../../source/developer/interactive-dialogs.rst:441
+#: ../../source/developer/interactive-dialogs.rst:487
 msgid ""
 "``icon_url`` is an optional field to set the icon for Mattermost dialogs."
 " In Slack, the dialogs use the icon set for the app that uses the dialog."
 msgstr ""
+"``icon_url`` はMattermostダイヤログのアイコン用のオプションフィールドです。"
+"Slackでは、ダイヤログを使うアプリにセットされたアイコンを使用します。"
 
-#: ../../source/developer/interactive-dialogs.rst:442
+#: ../../source/developer/interactive-dialogs.rst:488
 msgid ""
 "``label`` in Slack dialogs is ``display_name`` in Mattermost dialogs for "
 "a more consistent naming convention with other integration types."
 msgstr ""
+"Slackダイヤログでの ``label`` は他の統合機能の命名規則としての一貫性のため"
+"Mattermostダイヤログでは ``display_name`` としています。"
 
-#: ../../source/developer/interactive-dialogs.rst:443
+#: ../../source/developer/interactive-dialogs.rst:489
 msgid ""
 "``hint`` in Slack dialogs is ``help_text`` in Mattermost dialogs for a "
 "more consistent naming convention with other integration types."
 msgstr ""
+"Slackダイヤログの ``hint`` は他の統合機能の命名規則としての一貫性のため"
+"Mattermostダイヤログでは ``help_text`` としています。"
 
-#: ../../source/developer/interactive-dialogs.rst:444
+#: ../../source/developer/interactive-dialogs.rst:490
 msgid ""
 "``value`` in Slack dialogs is ``default`` in Mattermost dialogs for a "
 "more consistent naming convention with other integration types."
 msgstr ""
+"Slackダイヤログの ``value`` は他の統合機能の命名規則としての一貫性のため"
+"Mattermostダイヤログでは ``default`` としています。"
 
-#: ../../source/developer/interactive-dialogs.rst:446
+#: ../../source/developer/interactive-dialogs.rst:492
 msgid ""
 "Moreover, the JSON payload for ``select`` type elements matches "
 ":doc:`interactive message menus <interactive-messages>`."
 msgstr ""
+"更に、 ``select`` タイプのエレメントに対するJSONペイロードは "
+":doc:`インタラクティブメッセージメニュー <interactive-messages>` と一致します。"
 

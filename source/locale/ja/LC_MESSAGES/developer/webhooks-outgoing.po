@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/webhooks-outgoing.rst:4
 msgid "Outgoing Webhooks"
-msgstr ""
+msgstr "外向きのウェブフック"
 
 #: ../../source/developer/webhooks-outgoing.rst:7
 msgid ""
@@ -27,12 +27,16 @@ msgid ""
 "developer looking to build an integration, see `our developer "
 "documentation <https://developers.mattermost.com/integrate>`__."
 msgstr ""
+"これは外向きのウェブフックの管理者ドキュメントです。統合機能のビルド方法を"
+"お探しの場合は `開発者ドキュメント <https://developers.mattermost.com/integrate>`__ "
+"を参照ください。"
 
 #: ../../source/developer/webhooks-outgoing.rst:9
 msgid ""
 "Mattermost supports webhooks to easily integrate external applications "
 "into the server."
 msgstr ""
+"Mattermostは外部アプリケーションと簡単にインテグレートするためのウェブフックをサポートしています。"
 
 #: ../../source/developer/webhooks-outgoing.rst:11
 msgid ""
@@ -41,16 +45,21 @@ msgid ""
 "and process a response back to Mattermost when a message matches one or "
 "both of the following conditions:"
 msgstr ""
+"ユーザーの投稿に対して自動でレスポンスを投稿するために外向きのウェブフックを使います。"
+"外向きのウェブフックはHTTP POSTリクエストをウェブサーバーへ送信し、メッセージが次の条件の"
+"1つまたは両方に合致するときにレスポンスをMattermostに返します。"
 
 #: ../../source/developer/webhooks-outgoing.rst:13
 msgid "It is posted in a specified channel"
-msgstr ""
+msgstr "指定されたチャンネルへの投稿"
 
 #: ../../source/developer/webhooks-outgoing.rst:14
 msgid ""
 "The first word matches or starts with one of the defined trigger words, "
 "such as ``gif``"
 msgstr ""
+"最初の単語が ``gif`` のように定義されたトリガー単語と一致するか"
+"トリガー単語で始まる場合"
 
 #: ../../source/developer/webhooks-outgoing.rst:16
 #: ../../source/developer/webhooks-outgoing.rst:119
@@ -60,6 +69,10 @@ msgid ""
 "using a `slash command <https://docs.mattermost.com/developer/slash-"
 "commands.html>`__ instead."
 msgstr ""
+"外向きのウェブフックは公開チャンネルでしかサポートされていません。非公開チャンネル、"
+"もしくはダイレクトメッセージでトリガー単語が必要な場合は、代わりに `スラッシュコマンド "
+"<https://docs.mattermost.com/developer/slash-commands.html>`__ を使用することを"
+"検討して下さい。"
 
 #: ../../source/developer/webhooks-outgoing.rst:19
 msgid ""
@@ -68,10 +81,13 @@ msgid ""
 "next to posts coming from webhooks regardless of what username is "
 "specified."
 msgstr ""
+"悪意のあるユーザーからの `フィッシング攻撃 <https://en.wikipedia.org/wiki/Phishing>`__ "
+"を防ぐために、指定されたユーザー名に関係なくウェブフックからの投稿の横には *BOT* と"
+"表示されます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:25
 msgid "Create an Outgoing Webhook"
-msgstr ""
+msgstr "外向きのウェブフックを作成する"
 
 #: ../../source/developer/webhooks-outgoing.rst:27
 msgid ""
@@ -79,12 +95,16 @@ msgid ""
 "software tests after someone posts a message starting with the word "
 "``#build`` in the ``town-square`` channel."
 msgstr ""
+"誰かが ``タウンスクウェア`` チャンネルに ``#build`` という単語で始まるメッセージを"
+"投稿したらソフトウェアテストを実行するような外部アプリケーションを書きたいと仮定します。"
 
 #: ../../source/developer/webhooks-outgoing.rst:29
 msgid ""
 "You can follow these general guidelines to set up a Mattermost outgoing "
 "webhook for your application."
 msgstr ""
+"以下のような一般的なガイドラインに従って、Mattermostの外向きウェブフックを"
+"セットアップすることができます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:31
 msgid ""
@@ -96,28 +116,41 @@ msgid ""
 "Integration Management** in versions after 5.12 or ask your System "
 "Administrator to do so."
 msgstr ""
+"1 - 始めに、 **メインメニュー > 統合機能 > 外向きのウェブフック** を開きます。"
+"メインメニューに **統合機能** オプションが無ければ、Mattermostサーバー側で"
+"外向きのウェブフックが有効化されてないか、管理者以外には無効化されているかもしれません。"
+"以前のバージョンの場合は、 **システムコンソール > 統合機能 > カスタム統合機能** 、"
+"5.12以降のバージョンの場合は、 **システムコンソール > 統合機能 > 統合機能管理** から"
+"機能を有効化するか、システム管理者に有効にするよう依頼してください。"
 
 #: ../../source/developer/webhooks-outgoing.rst:33
 msgid ""
 "2 - Click **Add Outgoing Webhook** and add name and description for the "
 "webhook. The description can be up to 500 characters."
 msgstr ""
+"2 - **外向きのウェブフックを追加する** をクリックし、ウェブフックに対する名前と"
+"説明を追加してください。説明は500文字まで入力可能です。"
 
 #: ../../source/developer/webhooks-outgoing.rst:35
 msgid "3 - Choose the content type by which the request will be sent."
 msgstr ""
+"3 - 送信されるリクエストのコンテントタイプを選択して下さい。"
 
 #: ../../source/developer/webhooks-outgoing.rst:37
 msgid ""
 "If ``application/x-www-form-urlencoded`` is chosen, the server will "
 "encode the parameters in a URL format in the request body."
 msgstr ""
+"``application/x-www-form-urlencoded`` が選択された場合、サーバーはパラメータを"
+"リクエストボディーの中にURL形式でエンコードします。"
 
 #: ../../source/developer/webhooks-outgoing.rst:38
 msgid ""
 "If ``application/json`` is chosen, the server will format the request "
 "body as JSON."
 msgstr ""
+"``application/json`` が選択された場合、サーバーはリクエストボディーをJSONとして"
+"フォーマットします。"
 
 #: ../../source/developer/webhooks-outgoing.rst:40
 msgid ""
@@ -127,40 +160,54 @@ msgid ""
 "for the outgoing webhook, or both. If both are specified, then the "
 "message must match both values."
 msgstr ""
+"4 - ウェブフックのレスポンスを受け取る公開チャンネルを選択するか、HTTP POST"
+"リクエストを送るための1つまたはそれ以上のトリガー単語を選択してください。"
+"チャンネルもしくはトリガー単語のどちらか一方、または両方を設定するかもしれません。"
+"もし両方指定したら、メッセージは両方の値に合致しなければなりません。"
 
 #: ../../source/developer/webhooks-outgoing.rst:42
 msgid ""
 "In our example, we would set the channel to ``town-square`` and specify "
 "``#build`` as the trigger word."
 msgstr ""
+"例では、チャンネルに ``タウンスクウェア`` 、トリガー単語として ``#build`` をセット"
+"したとします。"
 
 #: ../../source/developer/webhooks-outgoing.rst:45
 msgid ""
 "If you leave the channel field blank, the webhook will respond to trigger"
 " words in all public channels of your team."
 msgstr ""
+"チャンネルフィールドを空白にすると、ウェブフックはチームの全ての公開チャンネルに"
+"投稿されたトリガー単語に応答します。"
 
 #: ../../source/developer/webhooks-outgoing.rst:47
 msgid ""
 "Similarly, if you don't specify trigger words, then the webhook will "
 "respond to all messages in the selected public channel."
 msgstr ""
+"同様に、トリガー単語を指定しない場合は、ウェブフックは指定した公開チャンネルの"
+"全てのメッセージに応答します。"
 
 #: ../../source/developer/webhooks-outgoing.rst:49
 msgid ""
 "5 - If you specified one or more trigger words on the previous step, "
 "choose when to trigger the outgoing webhook."
 msgstr ""
+"5 - 前述のステップで１つまたは複数のトリガー単語を指定した場合は、外向きの"
+"ウェブフックのきっかけを選びます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:51
 msgid ""
 "If the first word of a message matches one of the trigger words exactly, "
 "or"
 msgstr ""
+"メッセージの最初の単語がトリガー単語のひとつに正確に一致するとき"
 
 #: ../../source/developer/webhooks-outgoing.rst:52
 msgid "If the first word of a message starts with one of the trigger words."
 msgstr ""
+"メッセージの最初の単語がトリガー単語のひとつから始まるとき"
 
 #: ../../source/developer/webhooks-outgoing.rst:54
 msgid ""
@@ -169,12 +216,19 @@ msgid ""
 " internal connection <https://about.mattermost.com/default-allow-"
 "internal-connections-settings-documentation/>`__."
 msgstr ""
+"6 - 最後に、HTTP POSTリクエストが送られるひとつまたは複数のコールバックURLを"
+"セットして、 **保存する** を押してください。URLがプライベートアドレスの場合、"
+" `信頼された内部接続 <https://about.mattermost.com/default-allow-"
+"internal-connections-settings-documentation/>`__ としてそのアドレスを"
+"追加してください。"
 
 #: ../../source/developer/webhooks-outgoing.rst:56
 msgid ""
 "7 - On the next page, copy the **Token** value. This will be used in a "
 "later step."
 msgstr ""
+"7 - 次のページで、 **トークン** の値をコピーしてください。これは最後のステップで"
+"使われます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:61
 msgid ""
@@ -182,12 +236,16 @@ msgid ""
 "receives HTTP POST requests from Mattermost. The function should look "
 "something like this:"
 msgstr ""
+"8 - 次に、外部アプリケーションを用意します。MattermostからのHTTP POSTリクエスト"
+"を受け取るための機能を準備します。その機能は下記のようなものです。"
 
 #: ../../source/developer/webhooks-outgoing.rst:83
 msgid ""
 "If your integration sends back a JSON response, make sure it returns the "
 "``application/json`` content-type."
 msgstr ""
+"統合機能がJSONレスポンスを返す場合は、``application/json`` コンテンツタイプを"
+"返すことを確認してください。"
 
 #: ../../source/developer/webhooks-outgoing.rst:85
 msgid ""
@@ -195,16 +253,21 @@ msgid ""
 "and set it to the **Token** value from step 7. This value will be used by"
 " your application to confirm the HTTP POST request came from Mattermost."
 msgstr ""
+"9 - アプリケーションに、設定可能な *MATTERMOST_TOKEN* 変数を追加して、ステップ"
+"7の **トークン** の値をセットします。この値はMattermostからのHTTP POSTリクエスト"
+"を確認するために使用します。"
 
 #: ../../source/developer/webhooks-outgoing.rst:87
 msgid ""
 "10 - To have your application post a message back to ``town-square``, it "
 "can respond to the HTTP POST request with a JSON response such as:"
 msgstr ""
+"10 - アプリケーションが ``タウンスクウェア`` へメッセージを送り返す場合、"
+"次のようなJSONレスポンスを持つHTTP POSTリクエストを送ることができます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:99
 msgid "which would render in Mattermost as:"
-msgstr ""
+msgstr "Mattermostでは次のように表示されます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:103
 msgid ""
@@ -215,6 +278,12 @@ msgid ""
 "post as, or specify a custom post type when sending a webhook message for"
 " use by `plugins <https://about.mattermost.com/default-plugins>`__."
 msgstr ""
+"11 - これで完了です！ 外向きのウェブフックでどのようなパラメータがサポートされて"
+"いるかは `開発者ドキュメント <https://developers.mattermost.com/integrate/"
+"outgoing-webhooks/>`__ で詳細を確認してください。"
+"例えば、メッセージを投稿するユーザー名とプロファイル画像をオーバーライドしたり"
+" `プラグイン <https://about.mattermost.com/default-plugins>`__ が使用する"
+"ウェブフックメッセージを送信するときカスタム投稿タイプを指定することができます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:105
 msgid ""
@@ -222,6 +291,9 @@ msgid ""
 ":doc:`attachment array <message-attachments>` and :doc:`interactive "
 "message buttons <interactive-messages>` in the JSON payload."
 msgstr ""
+"JSONペーロードに :doc:`アタッチメント配列 <message-attachments>` と "
+":doc:`インタラクティブメッセージボタン <interactive-messages>` を使って"
+"高度なフォーマットのメッセージを作成することができます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:108
 msgid ""
@@ -234,6 +306,13 @@ msgid ""
 "or ask your System Administrator. If not enabled, the username is set to "
 "`webhook`."
 msgstr ""
+"ユーザー名をオーバーライドするためには `ユーザー名をオーバーライドするために統合"
+"機能を有効にする <https://docs.mattermost.com/administration/config-settings"
+".html#enable-integrations-to-override-usernames>`__ 設定を `config.json` にて"
+" `true` にセットする必要があります。以前のバージョンでは **システムコンソール > "
+"統合機能 > カスタム統合機能** にて、5.12移行のバージョンでは、 **システムコンソール"
+" > 統合機能 > 統合機能管理** にて設定を有効にするか、システム管理者に依頼してください。"
+"設定が有効化されてない場合は、 `ウェブフック` にセットされます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:110
 msgid ""
@@ -246,10 +325,18 @@ msgid ""
 "or ask your System Administrator. If not enabled, the icon of the creator"
 " of the webhook URL is used to post messages."
 msgstr ""
+"同様に、プロファイル画像をオーバーライドするためには、 `プロファイル画像をオーバライド"
+"するために統合機能を有効にする <https://docs.mattermost.com/administration/config-"
+"settings.html#enable-integrations-to-override-profile-picture-icons>`__ を"
+" `config.json` にて `true` にセットする必要があります。以前のバージョンでは、 "
+"**システムコンソール > 統合機能 > カスタム統合機能** にて、5.12移行のバージョン"
+"では、 **システムコンソール > 統合機能 > 統合機能管理** にて設定を有効にするか、"
+"システム管理者に依頼してください。設定が有効化されてない場合は、ウェブフックURLの"
+"作成者のアイコンが投稿メッセージに使われます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:113
 msgid "Tips and Best Practices"
-msgstr ""
+msgstr "ヒントとベストプラクティス"
 
 #: ../../source/developer/webhooks-outgoing.rst:115
 msgid ""
@@ -257,6 +344,9 @@ msgid ""
 "actions such as channel creation, you must also use the `Mattermost APIs "
 "<https://api.mattermost.com>`__."
 msgstr ""
+"ウェブフックを使えばメッセージを簡単に投稿することができます。チャンネル作成"
+"のような他のアクションに関しては `Mattermost APIs <https://api.mattermost.com>`__ "
+"を使うこともできます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:117
 msgid ""
@@ -267,6 +357,10 @@ msgid ""
 "<https://docs.mattermost.com/administration/important-upgrade-"
 "notes.html>`__."
 msgstr ""
+"JSONレスポンスのテキストが投稿の許容文字列を超えている場合はメッセージが"
+"許容範囲内の文字数で分割されます。Mattermostサーバー v5.0以降の場合は、 "
+"`16383文字まで投稿することができます <https://docs.mattermost.com/"
+"administration/important-upgrade-notes.html>`__ 。"
 
 #: ../../source/developer/webhooks-outgoing.rst:121
 msgid ""
@@ -275,6 +369,9 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html"
 "#restrict-managing-integrations-to-admins>`__."
 msgstr ""
+"`システムコンソール > 統合機能 > 統合機能管理 <https://docs.mattermost.com/"
+"administration/config-settings.html#restrict-managing-integrations-to-admins>`__ "
+"にて外向きのウェブフックを作成できるユーザーを制限することができます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:123
 #, python-format
@@ -287,6 +384,11 @@ msgid ""
 "outgoing.html?highlight=translate%20slack%20data%20format%20mattermost"
 "#translate-slack-s-data-format-to-mattermost>`__."
 msgstr ""
+"Mattermostの外向きのウェブフックはSlack互換です。Slackの外向きのウェブフック"
+"で使われていたコードをコピー＆ペーストしてMattermost統合機能を作成することができます。"
+"Mattermostは `自動的にSlack独自のJSONレスポンス形式を変換します <https://docs.mattermost.com/"
+"developer/webhooks-outgoing.html?highlight=translate%20slack%20data%20format%20mattermost"
+"#translate-slack-s-data-format-to-mattermost>`__ 。"
 
 #: ../../source/developer/webhooks-outgoing.rst:125
 msgid ""
@@ -295,10 +397,13 @@ msgid ""
 "Mattermost server, and send an HTTP POST in the required JSON format as a"
 " response."
 msgstr ""
+"外部のアプリケーションは任意のプログラミング言語で書くことができます。"
+"Mattermostサーバーから送られたリクエストに応答するためのURLを提供し"
+"レスポンスとして要求されたJSON形式でHTTP POSTを送信することが必要です。"
 
 #: ../../source/developer/webhooks-outgoing.rst:128
 msgid "Share Your Integration"
-msgstr ""
+msgstr "統合機能の共有"
 
 #: ../../source/developer/webhooks-outgoing.rst:130
 msgid ""
@@ -307,6 +412,10 @@ msgid ""
 " in our `app directory <https://about.mattermost.com/default-app-"
 "directory/>`__."
 msgstr ""
+"Mattermostの統合機能を作ったら、`その成果 <https://www.mattermost.org/"
+"share-your-mattermost-projects/>`__ を `アプリディレクトリ <https://"
+"about.mattermost.com/default-app-directory/>`__ で共有することを検討して"
+"ください。"
 
 #: ../../source/developer/webhooks-outgoing.rst:132
 msgid ""
@@ -315,54 +424,69 @@ msgid ""
 " community and are available for download, customization and deployment "
 "to your private cloud or on-prem infrastructure."
 msgstr ""
+"`アプリディレクトリ <https://about.mattermost.com/default-app-directory/>`__ "
+"はMattermostコミュニティで開発されたオープンソースの統合機能を列挙しており"
+"ダウンロードして、プライベートクラウドやオンプレ環境でカスタマイズしたり"
+"導入することができます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:135
 msgid "Slack Compatibility"
-msgstr ""
+msgstr "Slack互換性"
 
 #: ../../source/developer/webhooks-outgoing.rst:137
 msgid ""
 "Mattermost makes it easy to migrate integrations written for Slack to "
 "Mattermost."
 msgstr ""
+"MattermostはSlack用に記述された統合機能を簡単移行できます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:140
 msgid "Translate Slack's data format to Mattermost"
-msgstr ""
+msgstr "Slackデータ形式のMattermostへの変換"
 
 #: ../../source/developer/webhooks-outgoing.rst:142
 msgid "Mattermost automatically translates the data coming from Slack:"
-msgstr ""
+msgstr "MattermostはSlackのデータを自動的に変換します。"
 
 #: ../../source/developer/webhooks-outgoing.rst:144
 msgid ""
 "JSON responses written for Slack, that contain the following, are "
 "translated to Mattermost markdown and rendered equivalently to Slack:"
 msgstr ""
+"次のような内容のSlack用に作られたJSONレスポンスはMattermostのマークダウンに"
+"変換され、Slackと同等にレンダリングされます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:146
 msgid ""
 "``<>`` to denote a URL link, such as ``{\"text\": "
 "\"<http://www.mattermost.com/>\"}``"
 msgstr ""
+"``{\"text\": \"<http://www.mattermost.com/>\"}`` のようなURLリンクを示す"
+" ``<>``"
 
 #: ../../source/developer/webhooks-outgoing.rst:147
 msgid ""
 "``|`` within a ``<>`` to define linked text, such as ``{\"text\": \"Click"
 " <http://www.mattermost.com/|here> for a link.\"}``"
 msgstr ""
+"``{\"text\": \"Click <http://www.mattermost.com/|here> for a link.\"}`` "
+"のようなリンク付きテキストを示す ``<>`` 内の ``|``"
 
 #: ../../source/developer/webhooks-outgoing.rst:148
 msgid ""
 "``<userid>``  to trigger a mention to a user, such as ``{\"text\": "
 "\"<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification.\"}``"
 msgstr ""
+"``{\"text\": \"<5fb5f7iw8tfrfcwssd1xmx3j7y> これは通知です。\"}`` のような"
+"ユーザーへのメンションのトリガーとなる ``<userid>``"
 
 #: ../../source/developer/webhooks-outgoing.rst:149
 msgid ""
 "``<!channel>``, ``<!here>`` or ``<!all>`` to trigger a mention to a "
 "channel, such as ``{\"text\": \"<!channel> this is a notification.\"}``"
 msgstr ""
+"``{\"text\": \"<!channel> これは通知です。\"}`` のようなチャンネルメンバー"
+"へのメンションのトリガーとなる ``<!channel>`` 、 ``<!here>`` や ``<!all>``"
 
 #: ../../source/developer/webhooks-outgoing.rst:151
 msgid ""
@@ -370,6 +494,9 @@ msgid ""
 " Slack's. This means your Slack integration's receiving function does not"
 " need change to be compatible with Mattermost."
 msgstr ""
+"ウェブサービスへのHTTP POSTリクエストボディーはSlackと同様のフォーマットで"
+"送信されます。これはSlack統合機能を受けとる機能をMattermostとの互換性のために"
+"変更する必要が無いことを意味しています。"
 
 #: ../../source/developer/webhooks-outgoing.rst:153
 msgid ""
@@ -377,46 +504,56 @@ msgid ""
 "They also add support for mentions with `<@userid>` and announcement "
 "tokens (eg. `<!here>`) in the outgoing webhook responses."
 msgstr ""
+"SlackアタッチメントはSlack互換の外向きのウェブフックでサポートされています。"
+"外向きのウェブフックのレスポンスに `<@userid>` やアナウンストークン（例えば、 "
+"`<!here>` ）を使ったメンションもサポートされています。"
 
 #: ../../source/developer/webhooks-outgoing.rst:156
 msgid "Known Slack compatibility issues"
-msgstr ""
+msgstr "よく知られたSlack互換性の問題"
 
 #: ../../source/developer/webhooks-outgoing.rst:158
 msgid "Using ``icon_emoji`` to override the username is not supported."
 msgstr ""
+"ユーザー名をオーバーライドするための ``icon_emoji`` の使用は非サポートです。"
 
 #: ../../source/developer/webhooks-outgoing.rst:159
 msgid ""
 "Referencing  channels using ``<#CHANNEL_ID>`` does not link to the "
 "channel."
 msgstr ""
+"``<#CHANNEL_ID>`` を使った参照はチャンネルにリンクしません。"
 
 #: ../../source/developer/webhooks-outgoing.rst:160
 msgid "``<!everyone>`` and ``<!group>`` are not supported."
-msgstr ""
+msgstr "``<!everyone>`` と ``<!group>`` は非サポートです。"
 
 #: ../../source/developer/webhooks-outgoing.rst:161
 msgid ""
 "Parameters \"mrkdwn\", \"parse\", and \"link_names\" are not supported "
 "(Mattermost always converts markdown and automatically links @mentions)."
 msgstr ""
+"パラメータ\"mrkdwn\"、\"parse\"、や\"link_names\"は非サポートです。"
+"（Mattermostはマークダウンを常に変換し自動的に @mentions にリンクします。）"
 
 #: ../../source/developer/webhooks-outgoing.rst:162
 msgid ""
 "Bold formatting supplied as ``*bold*`` is not supported (must be done as "
 "``**bold**``)."
 msgstr ""
+"太文字書式の ``*bold*`` はサポートされません（ ``**bold**`` とする必要があります）。"
 
 #: ../../source/developer/webhooks-outgoing.rst:163
 msgid ""
 "Advanced formatting using :doc:`attachments <message-attachments>` is not"
 " yet supported."
 msgstr ""
+":doc:`アタッチメント <message-attachments>` を使った高度なフォーマットは"
+"未だサポートしていません。"
 
 #: ../../source/developer/webhooks-outgoing.rst:166
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #: ../../source/developer/webhooks-outgoing.rst:168
 msgid ""
@@ -424,22 +561,29 @@ msgid ""
 "Console > Logging > Enable Webhook Debugging** to ``true`` and set "
 "**System Console > Logging > Console Log Level** to ``DEBUG``."
 msgstr ""
+"**System Console > Logs** を利用して外向きウェブフックをデバッグするために"
+" **System Console > Logging > Enable Webhook Debugging** を ``true`` にセットして"
+" **System Console > Logging > Console Log Level** を ``DEBUG`` にします。"
 
 #: ../../source/developer/webhooks-outgoing.rst:170
 msgid ""
 "When ``TRUE``, as of v5.14 all outgoing webhooks are logged and include a"
 " ``request_id`` value in the log file."
 msgstr ""
+"``TRUE`` としたとき、v5.14以降、全ての外向きのウェブフックはログに記録され"
+"ログファイルに ``request_id`` 値が記録されます。"
 
 #: ../../source/developer/webhooks-outgoing.rst:173
 msgid "My integration prints the JSON data in a Mattermost channel"
-msgstr ""
+msgstr "MattermostチャンネルにJSONデータを出力する統合機能"
 
 #: ../../source/developer/webhooks-outgoing.rst:175
 msgid ""
 "Mattermost handles multiple content types for integrations, including "
 "plain text content type."
 msgstr ""
+"Mattermostは統合機能のためにプレインテキストコンテントタイプを含む"
+"多数のコンテントタイプを扱います。"
 
 #: ../../source/developer/webhooks-outgoing.rst:177
 msgid ""
@@ -447,4 +591,6 @@ msgid ""
 "generated message, make sure your integration is returning the "
 "``application/json`` content-type."
 msgstr ""
-
+"生成したメッセージをレンダリングする代わりにJSONデータを出力する"
+"統合機能の場合は、 ``application/json`` content-typeを返すように"
+"確認してください。"

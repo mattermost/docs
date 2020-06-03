@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:4
 msgid "Bot Accounts"
-msgstr ""
+msgstr "ボットアカウント"
 
 #: ../../source/developer/bot-accounts.rst:6
 msgid ""
@@ -29,28 +29,35 @@ msgid ""
 "RESTful API on behalf of a bot through the use of the :doc:`personal "
 "access tokens feature <personal-access-tokens>`."
 msgstr ""
+"`プラグイン <https://developers.mattermost.com/extend/plugins/>`_ や "
+"`Mattermost RESTful API <https://api.mattermost.com>`_ を通してMattermostと"
+"統合するためにボットアカウントを使います。ボットアカウントは  :doc:`パーソナル"
+"アクセストークン機能 <personal-access-tokens>` を使って、ボットに代わって"
+"RESTful APIにアクセスします。"
 
 #: ../../source/developer/bot-accounts.rst:8
 msgid "Bot accounts are just like user accounts, except they:"
-msgstr ""
+msgstr "ボットアカウントは次の点を除いてユーザーアカウントと同じです："
 
 #: ../../source/developer/bot-accounts.rst:10
 msgid "Cannot be logged into."
-msgstr ""
+msgstr "ログインできない"
 
 #: ../../source/developer/bot-accounts.rst:11
 msgid "Cannot be used to create other bot accounts."
-msgstr ""
+msgstr "他のボットアカウントを作成できない"
 
 #: ../../source/developer/bot-accounts.rst:12
 msgid ""
 "Do not count as a registered user and therefore do not count towards the "
 "total users for an Enterprise Edition license."
 msgstr ""
+"正規のユーザーとしてカウントされない。そのため、エンタープライズ版"
+"ライセンスのトータルユーザー数にはカウントされません。"
 
 #: ../../source/developer/bot-accounts.rst:14
 msgid "Additional benefits include:"
-msgstr ""
+msgstr "次のような利点があります："
 
 #: ../../source/developer/bot-accounts.rst:16
 msgid ""
@@ -58,18 +65,25 @@ msgid ""
 "System Administrators, including a private team, private channel or a "
 "Direct Message channel."
 msgstr ""
+"ボットアカウントはシステム管理者によりシステム内の非公開チーム、非公開"
+"チャンネル、またはダイレクトメッセージチャンネルを含む任意のチャンネルに"
+"投稿できるように設定可能です。"
 
 #: ../../source/developer/bot-accounts.rst:17
 msgid ""
 "Integrations created by a user and tied to a bot account no longer break "
 "if the user leaves the company."
 msgstr ""
+"ユーザーが作成しボットアカウントに紐づけた統合機能はそのユーザーが離職しても"
+"使用できなくなることはありません。"
 
 #: ../../source/developer/bot-accounts.rst:18
 msgid ""
 "Once created, bot accounts behave just like regular user accounts and can"
 " be added to teams and channels similar to users."
 msgstr ""
+"一度作成すればボットアカウントは正規のユーザーアカウントと同じように振る舞い、"
+"他のユーザーと同様にチームやチャンネルに追加することができます。"
 
 #: ../../source/developer/bot-accounts.rst:19
 msgid ""
@@ -77,59 +91,75 @@ msgid ""
 "RESTful API and Plugin API because there is no need to manage shared "
 "logins with these accounts."
 msgstr ""
+"ボットアカウントはRESTful APIやプラグインAPIを介してMattermostと統合するための"
+"安全な手段です。なぜなら、これらアカウントと共有ログインを管理する必要が無い"
+"からです。"
 
 #: ../../source/developer/bot-accounts.rst:20
-#: ../../source/developer/bot-accounts.rst:176
+#: ../../source/developer/bot-accounts.rst:177
 msgid ""
 "``BOT`` tag is used everywhere in the UI where bot accounts are "
 "referenced, including messages and user lists."
 msgstr ""
+"``BOT`` タグはメッセージやユーザリストを含むボットアカウントが参照する"
+"どのUIにも使用されます。"
 
 #: ../../source/developer/bot-accounts.rst:22
 msgid "Note that currently:"
-msgstr ""
+msgstr "現状の注意点："
 
 #: ../../source/developer/bot-accounts.rst:24
 msgid ""
 "Bot accounts can only be created or managed by plugins or System "
 "Administrators."
 msgstr ""
+"ボットアカウントはプラグインまたはシステム管理者にだけが作成し管理する"
+"事ができます。"
 
 #: ../../source/developer/bot-accounts.rst:25
 msgid ""
 "Bot accounts cannot be assigned to webhooks or slash commands. These must"
 " still be created by a user account."
 msgstr ""
+"ボットアカウントをウェブフックやスラッシュコマンドに割り当てることができません。"
+"それら機能はまだユーザーアカウントによってのみ作成できます。"
 
 #: ../../source/developer/bot-accounts.rst:26
 msgid ""
 "Service accounts without an email address pulled from LDAP or SAML "
 "systems in Enterprise Edition is not yet supported."
 msgstr ""
+"エンタープライズ版において、LDAPやSAMLシステムから連携した"
+"メールアドレスの無いサービスアカウントは未サポートです。"
 
 #: ../../source/developer/bot-accounts.rst:28
 msgid ""
 "If you would like to see improvements to bot accounts, `let us know in "
 "the Feature Proposal Forum <https://mattermost.uservoice.com>`_."
 msgstr ""
+"ボットアカウントの改善を参照したい場合は、 `機能提案フォーラムにお知らせください "
+" <https://mattermost.uservoice.com>`_ 。"
 
 #: ../../source/developer/bot-accounts.rst:36
 msgid "Configuration Settings"
-msgstr ""
+msgstr "コンフィグレーション設定"
 
 #: ../../source/developer/bot-accounts.rst:38
 msgid ""
 "By default, plugins can create and manage bot accounts. To enable bot "
 "account creation through the user interface or the RESTful API:"
 msgstr ""
+"デフォルトでプラグインでボットアカウントを作成及び管理ができます。"
+"ユーザーインターフェースもしくはRESTful APIを通してボットアカウントの"
+"作成を有効にするには："
 
 #: ../../source/developer/bot-accounts.rst:40
 msgid "Go to **System Console > Integrations > Bot Accounts**."
-msgstr ""
+msgstr "**システムコンソール > 統合機能 > ボットアカウント** を開く。"
 
 #: ../../source/developer/bot-accounts.rst:41
 msgid "Set **Enable Bot Account Creation** to ``true``."
-msgstr ""
+msgstr "**ボットアカウントの作成を有効にする** を ``true`` にセットする。"
 
 #: ../../source/developer/bot-accounts.rst:43
 msgid ""
@@ -137,36 +167,40 @@ msgid ""
 "using the **Integrations > Bot Accounts** link in the description "
 "provided."
 msgstr ""
+"設定すると、システム管理者は説明が提供されている **統合機能 > ボットアカウント** "
+"リンクを使用して統合機能からボットアカウントを作成することができます。"
 
 #: ../../source/developer/bot-accounts.rst:46
 msgid "Bot Account Creation"
-msgstr ""
+msgstr "ボットアカウントの作成"
 
 #: ../../source/developer/bot-accounts.rst:48
 msgid ""
 "Below are different ways to create bot accounts. After the bot account is"
 " created, make sure to:"
 msgstr ""
+"下記はボットアカウントを作成する別の方法です。ボットアカウントを作成したら"
+"次の点を確認してください："
 
 #: ../../source/developer/bot-accounts.rst:50
 msgid "Copy the generated bot access token for your integration."
-msgstr ""
+msgstr "統合機能用に生成されたボットアカウントのアクセストークンをコピーする。"
 
 #: ../../source/developer/bot-accounts.rst:51
 msgid "Add the bot account to teams and channels you want it to interact in."
-msgstr ""
+msgstr "やり取りしたいチームとチャンネルにボットアカウントを追加する。"
 
 #: ../../source/developer/bot-accounts.rst:54
 msgid "User Interface (UI)"
-msgstr ""
+msgstr "ユーザーインターフェース（UI）"
 
 #: ../../source/developer/bot-accounts.rst:56
 msgid "Go to **Main Menu > Integrations > Bot Accounts**."
-msgstr ""
+msgstr "**メインメニュー > 統合機能 > ボットアカウント** を開く。"
 
 #: ../../source/developer/bot-accounts.rst:57
 msgid "Click **Add Bot Account**."
-msgstr ""
+msgstr "**ボットアカウントを追加する** をクリックする。"
 
 #: ../../source/developer/bot-accounts.rst:58
 msgid ""
@@ -174,16 +208,22 @@ msgid ""
 "and contain between 3 and 22 lowercase characters made up of numbers, "
 "letters, and the symbols \".\", \"-\", and \"_\"."
 msgstr ""
+"ボットの **ユーザー名** をセットします。ユーザー名は文字で始まり、数字、"
+"文字、そして \".\", \"-\", と \"_\" の記号からなる3から22の小文字の文字列"
+"でなければなりません。"
 
 #: ../../source/developer/bot-accounts.rst:59
 msgid ""
 "(Optional) Upload an image for the **Bot Icon**. This will be used as the"
 " profile image of the bot throughout the Mattermost user interface."
 msgstr ""
+"（オプション） **ボットアイコン** のイメージをアップロードする。これは"
+"Mattermostのユーザーインターフェース上でボットのプロファイルイメージとして"
+"使われます。"
 
 #: ../../source/developer/bot-accounts.rst:60
 msgid "(Optional) Set a **Display Name** and **Description**."
-msgstr ""
+msgstr "（オプション） **表示名** と **説明** をセットする。"
 
 #: ../../source/developer/bot-accounts.rst:61
 msgid ""
@@ -191,105 +231,128 @@ msgid ""
 "If you assign **System Admin**, the bot will have access to write in and "
 "read any public channels, private channels and direct messages."
 msgstr ""
+"（オプション）ボットに持たせる役割を選択する。デフォルトは **Member** です。 "
+"**System Admin** を割当てると、ボットは任意の公開チャンネル、非公開チャンネルそして"
+"ダイレクトメッセージに書込みと読出のアクセス権を持ちます。"
 
 #: ../../source/developer/bot-accounts.rst:62
 msgid ""
 "(Optional) Select additional permissions for the account. Enable the bot "
 "to post to all Mattermost channels, or all Mattermost public channels."
 msgstr ""
+"（オプション）アカウントに対する追加の権限を選択します。全てのMattermost"
+"チャンネルへ投稿可能とするか、または全てのMattermost公開チャンネルへ"
+"投稿可能とします。"
 
 #: ../../source/developer/bot-accounts.rst:65
 msgid "RESTful API"
 msgstr ""
 
-#: ../../source/developer/bot-accounts.rst:67
+#: ../../source/developer/bot-accounts.rst:66
 msgid ""
 "Use the RESTful API ``POST /bots`` to create a bot. Must have permissions"
 " to create bots."
 msgstr ""
+"ボットを作成するにはRESTful API ``POST /bots`` を使います。ボットを作成するための"
+"権限が必要です。"
 
-#: ../../source/developer/bot-accounts.rst:69
+#: ../../source/developer/bot-accounts.rst:68
 msgid ""
 "See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to "
 "learn more about creating and managing bots through the API."
 msgstr ""
+"APIを使ったボットの作成と管理についての詳細は `APIドキュメント <https://api."
+"mattermost.com/#tag/bots>`_ を参照してください。"
 
-#: ../../source/developer/bot-accounts.rst:72
+#: ../../source/developer/bot-accounts.rst:73
 msgid "Command Line Interface (CLI)"
-msgstr ""
+msgstr "コマンドラインインターフェース（CLI）"
 
-#: ../../source/developer/bot-accounts.rst:74
+#: ../../source/developer/bot-accounts.rst:75
 msgid ""
 "You can use the following CLI command to convert an existing user account"
 " to a bot:"
 msgstr ""
+"存在するユーザーアカウントをボットに変換するには次のCLIコマンドを使います："
 
-#: ../../source/developer/bot-accounts.rst:80
-#: ../../source/developer/bot-accounts.rst:143
+#: ../../source/developer/bot-accounts.rst:81
+#: ../../source/developer/bot-accounts.rst:144
 msgid ""
 "In addition to email, you may identify the user by its username or user "
 "ID."
 msgstr ""
+"電子メールに加えて、ユーザー名またはユーザーIDでユーザーを識別することができます。"
 
-#: ../../source/developer/bot-accounts.rst:82
-#: ../../source/developer/bot-accounts.rst:145
+#: ../../source/developer/bot-accounts.rst:83
+#: ../../source/developer/bot-accounts.rst:146
 msgid ""
 "Bot accounts which were converted from user accounts will have their "
 "authentication data cleared if they were email/password accounts. Those "
 "synced from LDAP/SAML will not have their authentication data cleared so "
 "that LDAP/SAML sync performs correctly."
 msgstr ""
+"電子メール／パスワードタイプのアカウントの場合、ユーザーアカウントから"
+"変換されたボットアカウントは認証データがクリアされます。LDAP/SAMLから"
+"同期したアカウントは同期を正しく実行するために認証データはクリアされません。"
 
-#: ../../source/developer/bot-accounts.rst:85
+#: ../../source/developer/bot-accounts.rst:86
 msgid "Plugins"
-msgstr ""
+msgstr "プラグイン"
 
-#: ../../source/developer/bot-accounts.rst:87
+#: ../../source/developer/bot-accounts.rst:88
 msgid ""
 "Plugins can create bot accounts through an ``EnsureBot`` helper function."
 " For an example, see `the Demo Plugin <https://github.com/mattermost"
-"/mattermost-plugin-demo/blob/master/server/configuration.go#L189>`_."
+"/mattermost-plugin-demo/blob/master/server/configuration.go#L210-L217>`_."
 msgstr ""
+"プラグインでは、 ``EnsureBot`` ヘルパー関数を通してボットアカウントを"
+"作成します。例としては、 `デモプラグイン <https://github.com/mattermost"
+"/mattermost-plugin-demo/blob/master/server/configuration.go#L210-L217>`_ "
+"を参照ください。"
 
-#: ../../source/developer/bot-accounts.rst:89
+#: ../../source/developer/bot-accounts.rst:90
 msgid ""
 "Bots created by a plugin use the plugin's ID as the creator, unless "
 "otherwise specified by the plugin."
 msgstr ""
+"プラグインにより作成されたボットは、プラグインにより他のものが指定されない"
+"限り作成者としてプラグインIDを使用します。"
 
-#: ../../source/developer/bot-accounts.rst:92
+#: ../../source/developer/bot-accounts.rst:93
 msgid "Technical Notes"
-msgstr ""
+msgstr "テクニカルノート"
 
-#: ../../source/developer/bot-accounts.rst:95
+#: ../../source/developer/bot-accounts.rst:96
 msgid "Data Model"
-msgstr ""
+msgstr "データモデル"
 
-#: ../../source/developer/bot-accounts.rst:97
+#: ../../source/developer/bot-accounts.rst:98
 msgid ""
 "Each bot account has a row in the **Users** table and the **Bots** table."
 " The entries are tied together by ``User.Id = Bot.UserId``."
 msgstr ""
+"各ボットアカウントには **Users** テーブルと **Bots** テーブルに行があります。"
+"エントリーは ``User.Id = Bot.UserId`` により紐づいています。"
 
-#: ../../source/developer/bot-accounts.rst:99
+#: ../../source/developer/bot-accounts.rst:100
 msgid "The Bots table schema is described as follows:"
-msgstr ""
+msgstr "ボットテーブルスキーマは次の通りです："
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Field"
-msgstr ""
+msgstr "フィールド"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Required"
-msgstr ""
+msgstr "必須"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "UserId"
@@ -297,7 +360,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "User ID of the bot user"
-msgstr ""
+msgstr "ボットユーザーのユーザーID"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "string"
@@ -313,7 +376,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Username of the bot account"
-msgstr ""
+msgstr "ボットアカウントのユーザー名"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "DisplayName"
@@ -321,7 +384,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Display name of the bot account"
-msgstr ""
+msgstr "ボットアカウントの表示名"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "N"
@@ -329,7 +392,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Description of the bot account"
-msgstr ""
+msgstr "ボットアカウントの説明"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "OwnerId"
@@ -337,7 +400,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "User ID of the owner of the bot"
-msgstr ""
+msgstr "ボットオーナーのユーザーID"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "CreateAt"
@@ -345,7 +408,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Unix timestamp of creation time"
-msgstr ""
+msgstr "作成日時のUnixタイムスタンプ"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "int64"
@@ -357,7 +420,7 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Unix timestamp of update time"
-msgstr ""
+msgstr "更新日時のUnixタイムスタンプ"
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "DeleteAt"
@@ -365,52 +428,63 @@ msgstr ""
 
 #: ../../source/developer/bot-accounts.rst:1
 msgid "Unix timestamp of deletion time"
-msgstr ""
+msgstr "削除日時のUnixタイムスタンプ"
 
-#: ../../source/developer/bot-accounts.rst:114
+#: ../../source/developer/bot-accounts.rst:115
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "よくある質問"
 
-#: ../../source/developer/bot-accounts.rst:117
+#: ../../source/developer/bot-accounts.rst:118
 msgid "Should I migrate all my integrations to use bot accounts?"
-msgstr ""
+msgstr "ボットアカウントを使うために全ての統合機能を移行する必要がありますか？"
 
-#: ../../source/developer/bot-accounts.rst:119
+#: ../../source/developer/bot-accounts.rst:120
 msgid ""
 "For your integrations using RESTful API and plugins, yes. To do so, you "
 "can either convert an existing account to a bot, or create a new bot "
 "account using the steps outlined above."
 msgstr ""
+"RESTful APIやプラグインを使った統合機能の場合は、Yesです。そのためには"
+"現存するアカウントをボットに変換するか、前述のステップに従い新しい"
+"ボットアカウントを作成することができます。"
 
-#: ../../source/developer/bot-accounts.rst:121
+#: ../../source/developer/bot-accounts.rst:122
 msgid ""
 "Once you create a bot account, use the generated token to access the "
 "RESTful API on behalf of a bot and interact in the Mattermost server."
 msgstr ""
+"ボットアカウントを作ったら、ボットの代わりにRESTful APIにアクセスするために"
+"生成されたトークンを使い、Mattermostサーバーに統合します。"
 
-#: ../../source/developer/bot-accounts.rst:123
+#: ../../source/developer/bot-accounts.rst:124
 msgid ""
 "For your webhook and slash command integrations, you cannot migrate them "
 "to use bot accounts, as they require a user account at this time. "
 "However, an option is to migrate the webhooks or slash commands to a "
 "plugin, which in turn can use bot accounts."
 msgstr ""
+"ウェブフックやスラッシュコマンド統合機能に対しては、現時点ではユーザー"
+"アカウントが必要なため、ボットアカウントの使用へ移行することはできません。"
 
-#: ../../source/developer/bot-accounts.rst:126
+#: ../../source/developer/bot-accounts.rst:127
 msgid ""
 "What happens if a plugin is using a bot account that already exists as a "
 "user account?"
 msgstr ""
+"ユーザーアカウントとして既に存在するボットアカウントを使うと何が起きますか？"
 
-#: ../../source/developer/bot-accounts.rst:128
+#: ../../source/developer/bot-accounts.rst:129
 msgid ""
 "For a concrete example, suppose you enable the `Mattermost GitHub plugin "
 "<https://github.com/mattermost/mattermost-plugin-github>`_, which uses a "
 "``github`` bot account, while an existing ``github`` user account was "
 "created for webhook integrations."
 msgstr ""
+"具体例として、 ``github`` ボットアカウントを使った `Mattermost GitHubプラグイン "
+"<https://github.com/mattermost/mattermost-plugin-github>`_ を有効にして、"
+"ウェブフック統合機能用に既存の ``github`` ユーザーアカウントを作成したとします。"
 
-#: ../../source/developer/bot-accounts.rst:130
+#: ../../source/developer/bot-accounts.rst:131
 msgid ""
 "Once the plugin is enabled, the plugin posts as the ``github`` account "
 "but without a `BOT` tag. An error message is logged to the server logs "
@@ -418,129 +492,162 @@ msgid ""
 "account by running ``mattermost user convert <username> --bot`` in the "
 "CLI."
 msgstr ""
+"プラグインが有効化されると、プラグインは ``github`` アカウントとして"
+"投稿しますが、 `BOT` タグは付きません。システム管理者にCLIで ``mattermost "
+"user convert <username> --bot`` を実行して、 ``github`` ユーザーを"
+"ボットアカウントに変換するよう推奨するエラーメッセージがサーバーログに"
+"記録されます。"
 
-#: ../../source/developer/bot-accounts.rst:132
+#: ../../source/developer/bot-accounts.rst:133
 msgid ""
 "If the user is an existing user account you want to preserve, change its "
 "username and restart the Mattermost server, after which the plugin will "
 "create a bot account with the name ``github``."
 msgstr ""
+"そのユーザーが保持しておきたい既存のユーザーアカウントである場合、"
+"そのユーザー名を変更してMattermostサーバーを再起動します。"
+"その後、プラグインは ``github`` という名前でボットアカウントを作成します。"
 
-#: ../../source/developer/bot-accounts.rst:135
+#: ../../source/developer/bot-accounts.rst:136
 msgid "How do I convert an existing account to a bot account?"
-msgstr ""
+msgstr "既存のアカウントをボットアカウントに変換する方法は？"
 
-#: ../../source/developer/bot-accounts.rst:137
+#: ../../source/developer/bot-accounts.rst:138
 msgid ""
 "Use the following CLI command to convert an existing user account to a "
 "bot:"
 msgstr ""
+"既存のユーザーアカウントをボットアカウントに変換するには、次のCLIコマンドを"
+"使います："
 
-#: ../../source/developer/bot-accounts.rst:148
+#: ../../source/developer/bot-accounts.rst:149
 msgid "How can I quickly test if my bot account is working?"
-msgstr ""
+msgstr "ボットアカウントが動いていることを手早くテストする方法は？"
 
-#: ../../source/developer/bot-accounts.rst:150
+#: ../../source/developer/bot-accounts.rst:151
 msgid ""
 "Add the bot to a team and channel you belong to, then use the following "
 "curl command to post with the bot:"
 msgstr ""
+"所属しているチームとチャンネルにボットを追加して次のcurlコマンドを使って"
+"ボットに投稿させます："
 
-#: ../../source/developer/bot-accounts.rst:156
+#: ../../source/developer/bot-accounts.rst:157
 msgid "replacing the following parameters:"
-msgstr ""
-
-#: ../../source/developer/bot-accounts.rst:158
-msgid "``<channel-id>`` with the channel you added the bot to"
-msgstr ""
+msgstr "次のパラメータを置き換えてください："
 
 #: ../../source/developer/bot-accounts.rst:159
-msgid ""
-"``<bot-access-token>`` with the bot access token generated when you "
-"created the bot account"
-msgstr ""
+msgid "``<channel-id>`` with the channel you added the bot to"
+msgstr "ボットを追加したチャンネルの ``<channel-id>``"
 
 #: ../../source/developer/bot-accounts.rst:160
 msgid ""
+"``<bot-access-token>`` with the bot access token generated when you "
+"created the bot account"
+msgstr "ボットアカウントを作成した時に生成されたボットのアクセストークン "
+"``<bot-access-token>``"
+
+#: ../../source/developer/bot-accounts.rst:161
+msgid ""
 "``<mattermost-url>`` with your Mattermost domain, e.g. "
 "``https://example.mattermost.com``"
-msgstr ""
+msgstr "Mattermostドメインとして ``<mattermost-url>`` 、例えば、 "
+"``https://example.mattermost.com``"
 
-#: ../../source/developer/bot-accounts.rst:163
+#: ../../source/developer/bot-accounts.rst:164
 msgid "Do bot access tokens expire?"
-msgstr ""
+msgstr "ボットのアクセストークンの期限は？"
 
-#: ../../source/developer/bot-accounts.rst:165
+#: ../../source/developer/bot-accounts.rst:166
 #, python-format
 msgid ""
 "No, but you can automate your integration to cycle its token `through the"
 " REST API "
 "<https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_."
 msgstr ""
+"ありませんが、 `REST APIを使って <https://api.mattermost.com/#tag/users%2Fpaths%2F~"
+"1users~1%7Buser_id%7D~1tokens%2Fpost>`_ トークンを循環し統合を自動化することができます。"
 
-#: ../../source/developer/bot-accounts.rst:167
+#: ../../source/developer/bot-accounts.rst:168
 msgid ""
 "For more information about access tokens, see :doc:`the personal access "
 "tokens documentation <personal-access-tokens>`."
 msgstr ""
+"アクセストークンについての詳しい情報は  :doc:`パーソナルアクセストークンのドキュメント "
+"<personal-access-tokens>` を参照下さい。"
 
-#: ../../source/developer/bot-accounts.rst:170
+#: ../../source/developer/bot-accounts.rst:171
 msgid ""
 "Do bot accounts make it easier to impersonate someone else such as the "
 "CEO or an HR coordinator?"
 msgstr ""
+"ボットアカウントを使うとCEOやHRコーディネーターのような他の誰かになりすましやすくなりますか？"
 
-#: ../../source/developer/bot-accounts.rst:172
+#: ../../source/developer/bot-accounts.rst:173
 msgid ""
 "Possibly yes. Currently a System Admin can disable overriding the profile"
 " picture and the username from integrations to help prevent "
 "impersonation, but this is not the case for bot accounts."
 msgstr ""
+"恐らくはい。現在、システム管理者はなりすましを防止するために、統合機能からの"
+"プロファイル画像とユーザー名のオーバーライドを無効化することができますが、"
+"ボットアカウントの場合はこれは使えません。"
 
-#: ../../source/developer/bot-accounts.rst:174
+#: ../../source/developer/bot-accounts.rst:175
 msgid "Mitigations:"
-msgstr ""
+msgstr "緩和策："
 
-#: ../../source/developer/bot-accounts.rst:177
+#: ../../source/developer/bot-accounts.rst:178
 msgid ""
 "For Direct Message channels, the channel header distinguishes the bot "
 "from a regular user account with a ``BOT`` tag."
 msgstr ""
+"ダイレクトメッセージチャンネルの場合は、ボットに ``BOT`` タグをつけて正規の"
+"ユーザーアカウントとチャンネルヘッダーで区別します。"
 
-#: ../../source/developer/bot-accounts.rst:180
+#: ../../source/developer/bot-accounts.rst:181
 msgid "What happens when a user who owns bot accounts is disabled?"
-msgstr ""
+msgstr "ボットアカウントを所有しているユーザーが無効化されると何が起こりますか？"
 
-#: ../../source/developer/bot-accounts.rst:182
+#: ../../source/developer/bot-accounts.rst:183
 msgid ""
 "By default, bot accounts managed by the deactivated user are disabled for"
 " enhanced security. Those with permissions to manage bot accounts can re-"
 "enable them in **Main Menu > Integrations > Bot Accounts**."
 msgstr ""
+"デフォルトでは、非アクティベートされたユーザーが管理するボットアカウントは"
+"セキュリティ強化のため無効化されます。ボットアカウントを管理するための権限を持つ"
+"ユーザーは **メインメニュー > 統合機能 > ボットアカウント** で有効化できます。"
 
-#: ../../source/developer/bot-accounts.rst:184
+#: ../../source/developer/bot-accounts.rst:185
 msgid ""
 "We strongly recommend creating new tokens for the bot, to ensure the user"
 " who was deactivated no longer has access to read or write data in the "
 "system via the bot access token."
 msgstr ""
+"非アクティベートされたユーザーがボットのアクセストークンを使ってシステム内のデータを"
+"読み書きできないようにするため、そのボットに対して新しいトークンを作成することを"
+"強く推奨します。"
 
-#: ../../source/developer/bot-accounts.rst:186
+#: ../../source/developer/bot-accounts.rst:187
 msgid ""
 "If you prefer to have bot accounts remain enabled after user "
 "deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in "
 "your ``config.json`` file."
 msgstr ""
+"ユーザーが非アクティベートされた後もボットアカウントを有効にしておきたい場合は、 "
+"``config.json`` ファイルにある ``DisableBotsWhenOwnerIsDeactivated`` を "
+"``false`` に設定します。"
 
-#: ../../source/developer/bot-accounts.rst:189
+#: ../../source/developer/bot-accounts.rst:190
 msgid "Can bot accounts edit messages through the RESTful API?"
-msgstr ""
+msgstr "ボットアカウントはRESTful APIを通してメッセージを編集できますか？"
 
-#: ../../source/developer/bot-accounts.rst:191
+#: ../../source/developer/bot-accounts.rst:192
 msgid "Yes. By default, bot accounts can update their own posts."
-msgstr ""
+msgstr "はい。デフォルトで、ボットアカウントは自身の投稿を更新できます。"
 
-#: ../../source/developer/bot-accounts.rst:193
+#: ../../source/developer/bot-accounts.rst:194
 msgid ""
 "If you find yourself unable to edit posts as a bot, check the following: "
 "1. Instead of using a slash command to respond directly, use an an API "
@@ -549,8 +656,13 @@ msgid ""
 "<https://docs.mattermost.com/deployment/advanced-permissions.html>`_, "
 "then post edits could be disabled for users."
 msgstr ""
+"もしボットとして投稿を編集できない場合は、次の事項を確認してください。"
+"1. スラッシュコマンドを使って直接応答する代わりに、ユーザーとの最初の対話に"
+"APIを使ってメッセージの編集を可能にします。2. システムが `高度な許可 <https://"
+"docs.mattermost.com/deployment/advanced-permissions.html>`_ を使っている場合"
+"ユーザーの投稿編集は出来ない可能性があります。"
 
-#: ../../source/developer/bot-accounts.rst:197
+#: ../../source/developer/bot-accounts.rst:198
 msgid ""
 "If neither of the above help resolve your concern, you also have the "
 "option to choose what role the bot account has. If System Admin is "
@@ -559,21 +671,30 @@ msgid ""
 " account enables them with other System Admin privileges so this should "
 "be done with care."
 msgstr ""
+"上記のどちらでも懸念が解消しない場合は、ボットアカウントの役割を変更する"
+"という方法もあります。System Adminの場合、他のシステム管理者権限と同様に"
+"システム内の任意の投稿を更新できます。System Adminの役割をボットアカウントに"
+"与えると他のSystem Admin権限も与えることになるため注意が必要です。"
 
-#: ../../source/developer/bot-accounts.rst:200
+#: ../../source/developer/bot-accounts.rst:201
 msgid ""
 "If AD/LDAP or SAML sync is enabled, do bot accounts need to have an "
 "associated email address in AD/LDAP or SAML?"
 msgstr ""
+"AD/LDAPまたはSAML同期が有効な場合、ボットアカウントにもAD/LDAPまたはSAMLに"
+"連携した電子メールが必要ですか？"
 
-#: ../../source/developer/bot-accounts.rst:202
+#: ../../source/developer/bot-accounts.rst:203
 msgid ""
 "When AD/LDAP or SAML sync is enabled, you can create bot accounts using "
 "the steps outlined above. These bot accounts won't require an email "
 "address."
 msgstr ""
+"AD/LDAPもしくはSAML同期が有効になっている場合、上記の手順を使ってボット"
+"アカウントを作成することができます。これらのボットアカウントには電子メール"
+"アドレスは必要ありません。"
 
-#: ../../source/developer/bot-accounts.rst:204
+#: ../../source/developer/bot-accounts.rst:205
 msgid ""
 "If you need to sync service accounts from AD/LDAP or SAML to Mattermost "
 "and use them as bot accounts, `please reach out to us "
@@ -581,15 +702,22 @@ msgid ""
 "need to sync service accounts and use them as bot accounts to meet your "
 "use case."
 msgstr ""
+"AD/LDAPまたはSAMLからMattermostにサービスアカウントを同期して、そのアカウントを"
+"ボットアカウントとして利用する必要がある場合、詳細を議論するために `問い合わせ "
+"<https://mattermost.com/contact-us>`_ をお願いします。ユースケースによっては"
+"サービスアカウントの同期を必要としない場合があります。"
 
-#: ../../source/developer/bot-accounts.rst:207
+#: ../../source/developer/bot-accounts.rst:208
 msgid "How are bot accounts identified in compliance exports?"
-msgstr ""
+msgstr "コンプライアンスエクスポートでボットアカウントはどのように識別されますか？"
 
-#: ../../source/developer/bot-accounts.rst:209
+#: ../../source/developer/bot-accounts.rst:210
 msgid ""
 "As of v5.14, a field named ``UserType`` is added to Compliance Exports, "
 "including Global Relay, Actiance, and CSV. The field identifies whether a"
 " message was posted by a ``user`` or by a ``bot`` account."
 msgstr ""
+"v5.14から、フィールド名 ``UserType`` がグローバルリレー、アクティアンス、CSV"
+"等のコンプライアンスエクスポートに追加されました。そのフィールドを使って "
+"``user`` と ``bot`` どちらのアカウントで投稿されたかを識別します。"
 

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/integration-faq.md:1
 msgid "Integrations FAQ"
-msgstr ""
+msgstr "統合機能FAQ"
 
 #: ../../source/developer/integration-faq.md:4
 msgid ""
@@ -29,14 +29,19 @@ msgid ""
 "discussions and our \"Integrations\" channel for all integrations and "
 "plugins discussions."
 msgstr ""
+"コミュニティーのメンバーやMattermostコアチームと議論ができるデイリービルド"
+"サーバーにある \"Contributors\" コミュニティーチャンネルに参加しましょう。"
+"技術的な議論を行う \"Developers\" チャンネルや、全ての統合機能やプラグイン"
+"について議論する \"Integrations\" チャンネルに参加しましょう。"
 
 #: ../../source/developer/integration-faq.md:6
 msgid "What's the difference between incoming and outgoing webhooks?"
-msgstr ""
+msgstr "内向きと外向きのウェブフックの違いは？"
 
 #: ../../source/developer/integration-faq.md:8
 msgid "A webhook is a way for one app to send real-time data to another app."
 msgstr ""
+"ウェブフックはあるアプリから別のアプリへリアルタイムにデータを送信する一つの手段です。"
 
 #: ../../source/developer/integration-faq.md:10
 msgid ""
@@ -44,6 +49,9 @@ msgid ""
 "and make a post in a specified channel. They're great for setting up "
 "notifications when something happens in an external application."
 msgstr ""
+"Mattermostでは、内向きのウェブフックを使って、外部アプリケーションから"
+"データを受け取って、特定のチャンネルへ投稿します。外部アプリケーションで"
+"何かが起こるとその通知を知らせるために最適な手段です。"
 
 #: ../../source/developer/integration-faq.md:12
 msgid ""
@@ -52,10 +60,14 @@ msgid ""
 "Mattermost. They're great for listening in on channels, and then "
 "notifying external applications when a trigger word is said."
 msgstr ""
+"外向きのウェブフックはMattermostからデータを取得しそれを外部アプリケーションへ"
+"送信します。その後、外向きのウェブフックはMattermostへレスポンスを投稿することができます。"
+"チャンネルを監視してトリガーワードが発せられた時に外部アプリケーションへ"
+"通知する最適な手段です。"
 
 #: ../../source/developer/integration-faq.md:14
 msgid "What is a slash command?"
-msgstr ""
+msgstr "スラッシュコマンドって何ですか？"
 
 #: ../../source/developer/integration-faq.md:16
 msgid ""
@@ -64,26 +76,34 @@ msgid ""
 "type in a slash command it will not be posted to a channel, whereas an "
 "outgoing webhook is only triggered by posted messages."
 msgstr ""
+"スラッシュコマンドは外向きのウェブフックと似ていますが、チャンネルを監視する"
+"代わりにコマンドツールとして使われます。つまり、スラッシュコマンドを"
+"入力してもチャンネルに投稿はされないですが、一方で外向きのウェブフックは"
+"投稿されたメッセージによってのみトリガーされます。"
 
 #: ../../source/developer/integration-faq.md:18
 msgid "What does Slack-compatible mean?"
-msgstr ""
+msgstr "Slack互換はどういう意味ですか？"
 
 #: ../../source/developer/integration-faq.md:20
 msgid ""
 "Slack compatible means that Mattermost accepts integrations that have a "
 "payload in the same format as Slack."
 msgstr ""
+"Slack互換とはMattermostがSlackと同じフォーマットのペイロードを持つ"
+"統合機能を受け入れることを意味します。"
 
 #: ../../source/developer/integration-faq.md:22
 msgid ""
 "If you have a Slack integration, you should be able to set it up in "
 "Mattermost without changing the format."
 msgstr ""
+"Slackの統合機能があれば、フォーマットを変更することなくMattermostに"
+"それを設定することができます。"
 
 #: ../../source/developer/integration-faq.md:24
 msgid "What if I have a webhook from somewhere other than Slack?"
-msgstr ""
+msgstr "Slack以外からのウェブフックがある場合は？"
 
 #: ../../source/developer/integration-faq.md:26
 msgid ""
@@ -93,16 +113,21 @@ msgid ""
 " no general standard for webhook formatting, this is unavoidable and just"
 " a part of how webhooks work."
 msgstr ""
+"異なるフォーマットのペイロードを出力する統合機能があるなら、それをMattermostが"
+"使用するフォーマットに変換する変換レイヤーとしての中間アプリを用意する必要が"
+"あります。現在、ウェブフックのフォーマットに関して標準的なフォーマットが"
+"無いので、これは避けられないことでありウェブフックの仕様の一部となります。"
 
 #: ../../source/developer/integration-faq.md:28
 msgid ""
 "If there's no translation layer, Mattermost won't understand the data "
 "you're sending."
 msgstr ""
+"変換レイヤーが無い場合は、Mattermostは送られたデータ解釈することができない。"
 
 #: ../../source/developer/integration-faq.md:30
 msgid "What are attachments?"
-msgstr ""
+msgstr "アタッチメントとは何ですか？"
 
 #: ../../source/developer/integration-faq.md:32
 msgid ""
@@ -111,16 +136,21 @@ msgid ""
 "optionally added as an array in the data sent by an integration, and are "
 "used to customize the formatting of the message."
 msgstr ""
+"統合ドキュメントに述べられている \"attachments\" は、Slackメッセージ"
+"アタッチメントを指しています。これら \"attachments\" はオプションで統合機能"
+"から送られるデータに配列を追加することで、メッセージのフォーマットを"
+"カスタマイズするのに使われます。"
 
 #: ../../source/developer/integration-faq.md:34
 msgid ""
 "We currently don't support the ability to attach files to a post made by "
 "an integration."
 msgstr ""
+"現在、統合機能によって作られた投稿にファイルを添付することはでません。"
 
 #: ../../source/developer/integration-faq.md:36
 msgid "Where can I find existing integrations?"
-msgstr ""
+msgstr "既にある統合機能はどこで探せますか？"
 
 #: ../../source/developer/integration-faq.md:38
 msgid ""
@@ -130,10 +160,15 @@ msgid ""
 "communication tools (Email, IRC, XMPP, Threema) that are freely available"
 " for use and customization."
 msgstr ""
+"アプリディレクトリにアクセスしてください。Jira、Jenkins、GitLab、Trac、Redmineや"
+"Bitbucketのような一般的なツールの数多くのオープンソースの統合機能、"
+"対話型ボットアプリケーション（Hubot、mattermost-bot）、及びその他の"
+"コミュニケーションツール（Email、IRC、XPP、Treema）など利用もカスタマイズも"
+"自由に行えます。"
 
 #: ../../source/developer/integration-faq.md:40
 msgid "Where should I install my integrations?"
-msgstr ""
+msgstr "統合機能はどこにインストールすべきですか？"
 
 #: ../../source/developer/integration-faq.md:42
 msgid ""
@@ -144,38 +179,52 @@ msgid ""
 "if you're self-hosting a Jira server you could deploy a Jira integration "
 "on the Jira server itself."
 msgstr ""
+"小規模にセルフホストで展開するような場合は、Mattermostがインストールされている"
+"同一サーバー上で統合機能をホストすることができます。大規模な展開では"
+"統合機能用に別のサーバーをセットアップすることもできます。外部のアプリケーションが"
+"ホストされているサーバーに追加することもできます。例えば、Jiraサーバーを"
+"セルフホストしている場合はJiraサーバーの上にJira統合機能を展開できます。"
 
 #: ../../source/developer/integration-faq.md:44
 msgid ""
 "When self-hosting restrictions are less strict, AWS, Heroku and other "
 "public cloud options could also be used."
 msgstr ""
+"セルフホストの制限が厳しくないときには、AWS、Herokuや他のパブリッククラウド"
+"オプションも利用できます。"
 
 #: ../../source/developer/integration-faq.md:46
 msgid "How do I create a bot account with personal access tokens?"
-msgstr ""
+msgstr "ボットアカウントのパーソナルアクセストークンをどうやって作ればいいですか？"
 
 #: ../../source/developer/integration-faq.md:48
 msgid ""
 "See bot accounts documentation to learn more about how to create and "
 "manage bot accounts in Mattermost."
 msgstr ""
+"Mattermostのボットアカウントの作成と使い方についての詳細はボットアカウントの"
+"ドキュメントを参照ください。"
 
 #: ../../source/developer/integration-faq.md:50
 msgid ""
 "In version 5.11 and earlier, follow these steps to create a bot account "
 "with personal access tokens:"
 msgstr ""
+"バージョン5.11以前では、パーソナルアクセストークンを持つボットアカウント"
+"の作成方法は次のステップに従ってください："
 
 #: ../../source/developer/integration-faq.md:52
 msgid ""
 "Create a bot account using any authentication method, including email and"
 " password, AD/LDAP, or SAML."
 msgstr ""
+"電子メールとパスワード、AD/LDAPやSAMLを含む任意の認証方法を使ってボット"
+"アカウントを作成します。"
 
 #: ../../source/developer/integration-faq.md:53
 msgid "Create a personal access token for the account using the steps here."
 msgstr ""
+"ここに記載の手順でアカウントに対するパーソナルアクセストークンを作成します。"
 
 #: ../../source/developer/integration-faq.md:54
 msgid ""
@@ -183,12 +232,17 @@ msgid ""
 " channel in your Mattermost server, including direct messages, or to any "
 "public channel."
 msgstr ""
+"この手順ではダイレクトメッセージを含むMattermostサーバーの任意のチャンネル"
+"または任意の公開チャンネルに投稿するためのアカウントの権限を与える方法についての"
+"概要も説明されています。"
 
 #: ../../source/developer/integration-faq.md:55
 msgid ""
 "Include the personal access token from step 2 as part of the "
 "Authorization header on API requests from your integration."
 msgstr ""
+"統合機能からのAPIリクエストにある ``Authorization`` ヘッダーの一部として手順２の"
+"パーソナルアクセストークンを挿入します。"
 
 #: ../../source/developer/integration-faq.md:56
 #: ../../source/developer/integration-faq.md:105
@@ -198,10 +252,16 @@ msgid ""
 "<yourtokenhere> in the header. If it returns a 200 with the bot's user "
 "object in the response, the API request was made successfully."
 msgstr ""
+"トークンが機能していることを確認するために、ヘッダーに ``Autorization: bearer "
+"<トークンをここに>`` を付けて ``/api/v4/users/me`` へ簡単な ``GET`` リクエストを"
+"行うボットを作ることができます。レスポンスとしてボットのユーザーオブジェクトを"
+"200応答で返ってくればAPIリクエストは成功しています。"
 
 #: ../../source/developer/integration-faq.md:63
 msgid "How do I create a bot account without personal access tokens or webhooks?"
 msgstr ""
+"パーソナルアクセストークンやウェブフック無しでボットアカウントをどうやって"
+"作成できますか？"
 
 #: ../../source/developer/integration-faq.md:65
 msgid ""
@@ -209,10 +269,15 @@ msgid ""
 "reasons and do not want to use personal access tokens with no expiry "
 "time, can use the following approach:"
 msgstr ""
+"セキュリティ上の理由のためウェブフック経由でボットアカウントを作成することが"
+"できないので、期限なしでパーソナルアクセストークンを使いたくない場合は"
+"次のアプローチを使うことができます："
 
 #: ../../source/developer/integration-faq.md:67
 msgid "Create a bot account using a secure email and strong password."
 msgstr ""
+"安全な電子メールアドレスと強固なパスワードを使ってボットアカウントを"
+"作成します。"
 
 #: ../../source/developer/integration-faq.md:68
 msgid ""
@@ -220,6 +285,9 @@ msgid ""
 " your deployment has a lot of teams or channels, you may create a CLI "
 "script to automate the process."
 msgstr ""
+"アクセスが必要な全てのチームとチャンネルにアカウントを手動で追加します。"
+"チームやチャンネルが非常に多い場合は、プロセスの自動化のためにCLIスクリプトを"
+"作ることができます。"
 
 #: ../../source/developer/integration-faq.md:69
 msgid ""
@@ -227,12 +295,17 @@ msgid ""
 "Admin, giving the bot permissions to post to any channel. Not recommended"
 " in production due to potential security vulnerabilities."
 msgstr ""
+"テスト環境では、ボットに任意のチャンネルへの投稿を許可するためにボット"
+"アカウントをシステム管理者として作成することもできます。潜在的なセキュリティの"
+"脆弱性の懸念があるため商用環境では推奨されません。"
 
 #: ../../source/developer/integration-faq.md:70
 msgid ""
 "Provide the email and password to your integration, and store it in a "
 "secure location with restricted access."
 msgstr ""
+"統合機能に電子メールとパスワードを提供し、それをアクセスの制限された"
+"安全な場所に保存します。"
 
 #: ../../source/developer/integration-faq.md:71
 msgid ""
@@ -240,6 +313,9 @@ msgid ""
 "endpoint to retrieve a session token. The session token is used to "
 "authenticate to the Mattermost system."
 msgstr ""
+"統合機能はセッショントークンを得るために ``/api/v4/login`` エンドポイントに"
+"電子メールとパスワードを使います。セッショントークンはMattermostシステムで"
+"認証するために使われます。"
 
 #: ../../source/developer/integration-faq.md:72
 msgid ""
@@ -247,24 +323,33 @@ msgid ""
 "url.com/api/v4/users/login with a JSON body, including the bot account's "
 "email and password."
 msgstr ""
+"ボットアカウントの電子メールとパスワードを含めたJSONをボディとして "
+"``your-mattermost-url.com/api/v4/users/login`` へHTTP POSTを送るボットを"
+"設定します。"
 
 #: ../../source/developer/integration-faq.md:83
 msgid ""
 "where we assume there is a Mattermost instance running at "
 "http://localhost:8065."
 msgstr ""
+"ここでMattermostのインスタンスが http://localhost:8065 で動いているものと"
+"仮定します。"
 
 #: ../../source/developer/integration-faq.md:84
 msgid ""
 "If successful, the response will contain a Token header and a user object"
 " in the body:"
 msgstr ""
+"成功するとTokenヘッダーとボディにユーザーオブジェクトを含むレスポンスが"
+"返されます。"
 
 #: ../../source/developer/integration-faq.md:102
 msgid ""
 "The bot should retrieve the session token from the Token header and store"
 " it in memory for use with future requests."
 msgstr ""
+"ボットはTokenヘッダからセッショントークンを取得したら、将来のリクエストで"
+"利用するためにそれを保存しておきます。"
 
 #: ../../source/developer/integration-faq.md:103
 msgid ""
@@ -275,12 +360,20 @@ msgid ""
 " logic (using the above steps) to get another session token. Then re-send"
 " the request that received the 401 status code."
 msgstr ""
+"注意：各セッショントークンには有効期限があり、サーバーの設定で決められています。"
+"ボットのセッショントークンの期限が切れると、そのトークンを使ったリクエストは"
+"401 Unauthorizedレスポンスを受けることになります。ボットが児のレスポンスを"
+"受け取った場合は、再度セッショントークンを取得するために（上記の手順を使って）"
+"ログイン処理を再び実行する必要があります。そして、401のステータスコードを"
+"受け取ったリクエストを再送信します。"
 
 #: ../../source/developer/integration-faq.md:104
 msgid ""
 "Include the Token as part of the Authorization header on API requests "
 "from your integration."
 msgstr ""
+"統合機能からのAPIリクエストの ``Authorization`` ヘッダーの一部として ``Token`` "
+"を入れます。"
 
 #: ../../source/developer/integration-faq.md:112
 msgid ""
@@ -288,22 +381,29 @@ msgid ""
 " token, which allows you to authenticate the bot account via the API "
 "token rather than retrieving a session token from a user account."
 msgstr ""
+"注意：Mattermostの開発チームは、ユーザーアカウントからセッショントークンを"
+"取得するよりAPIトークンを介してボットアカウントを認証できるようなAPI開発者"
+"トークンにも取り組んでいます。"
 
 #: ../../source/developer/integration-faq.md:114
 msgid ""
 "How should I automate the install and upgrade of Mattermost when included"
 " in another application?"
 msgstr ""
+"別のアプリケーションに含まれる場合、Mattermostのインストールとアップグレードを"
+"どのように自動化すべきですか？"
 
 #: ../../source/developer/integration-faq.md:116
 msgid "Automating Mattermost installation within another application:"
-msgstr ""
+msgstr "他のアプリケーション内でのMattermostインストールの自動化："
 
 #: ../../source/developer/integration-faq.md:118
 msgid ""
 "Review the Mattermost installation guides to understand configuration "
 "steps of the production deployment"
 msgstr ""
+"商用デプロイの設定手順を理解するためにMattermostインストールガイドを"
+"確認します。"
 
 #: ../../source/developer/integration-faq.md:119
 msgid ""
@@ -311,12 +411,17 @@ msgid ""
 "decompressing the tar.gz file of the latest release for your target "
 "platform (for example linux-amd64)."
 msgstr ""
+"ターゲットとなるプラットフォーム（例えば `linux-amd64` ）に対する"
+"最新のリリース ``tar.gz`` ファイルを解凍して、Mattermostファイルを "
+"専用の ``/opt/mattermost`` ディレクトリにインストールします。"
 
 #: ../../source/developer/integration-faq.md:120
 msgid ""
 "Review Configuration Settings in config.json and set your automation to "
 "customize your Mattermost deployment based on your requirements."
 msgstr ""
+"config.jsonの設定を確認し、要求に合うMattermostのデプロイをカスタマイズ"
+"できるように自動化の設定を行います。"
 
 #: ../../source/developer/integration-faq.md:121
 msgid ""
@@ -325,64 +430,81 @@ msgid ""
 "you can redefine those locations in your config.json settings and move "
 "the directories."
 msgstr ""
+"ローカルファイルストレージディレクトリ（ ``./data/`` ）やログディレクトリ"
+"（ ``./logs`` ）のように ``config.json`` に定義されているディレクトリの場所"
+"に対して、 ``config.json`` 設定でそれらの場所を再定義してディレクトリを"
+"移動することができます。"
 
 #: ../../source/developer/integration-faq.md:122
 msgid "All other directories should remain as they are in /mattermost"
-msgstr ""
+msgstr "他の全てのディレクトリは ``/mattermost`` に残すべきです。"
 
 #: ../../source/developer/integration-faq.md:123
 msgid "Test that your Mattermost server is running with your new configuration."
-msgstr ""
+msgstr "Mattermostサーバーが新しい構成で実行されていることをテストします。"
 
 #: ../../source/developer/integration-faq.md:124
 msgid ""
 "Also, from the commandline run ./bin/mattermost -version to test that the"
 " commandline interface is functioning properly."
 msgstr ""
+"コマンドラインインターフェースが適切に機能しているかをテストするために"
+"コマンドラインから ``./bin/mattermost -version`` を実行します。"
 
 #: ../../source/developer/integration-faq.md:126
 msgid "Automating Mattermost upgrade within another application:"
-msgstr ""
+msgstr "他のアプリケーション内でのMattermostアップグレードの自動化："
 
 #: ../../source/developer/integration-faq.md:128
 msgid "Review the upgrade guide for an overview of the upgrade procedure."
 msgstr ""
+"アップグレード手順の概要については、アップグレードガイドを確認します。"
 
 #: ../../source/developer/integration-faq.md:129
 msgid "Create automation to upgrade to the next Mattermost versions:"
 msgstr ""
+"次のMattermostバージョンにアップグレードするための自動化を作成します："
 
 #: ../../source/developer/integration-faq.md:130
 msgid "backup the config.json file to preserve any settings a user may have made."
 msgstr ""
+"ユーザーが作成したかもしれない設定を保護するため ``config.json`` をバックアップします。"
 
 #: ../../source/developer/integration-faq.md:131
 msgid "backup the ./data directory if local storage is used for files."
 msgstr ""
+"ローカルストレージが使われていれば、``./data`` ディレクトリをバックアップします。"
 
 #: ../../source/developer/integration-faq.md:132
 msgid ""
 "replace the contents of /mattermost directory with the decompressed "
 "contents of the latest release."
 msgstr ""
+"最新のリリースの解凍されたコンテンツを ``/mattermost`` ディレクトリのコンテンツと"
+"入替えます。"
 
 #: ../../source/developer/integration-faq.md:133
 msgid ""
 "restore config.json and ./data to their previous locations (which may "
 "have been overwritten)."
 msgstr ""
+"``config.json`` と ``./data`` を以前の場所（オーバーライドされる）にリストアします。"
 
 #: ../../source/developer/integration-faq.md:134
 msgid ""
 "if you need to overwrite any config.json parameters use a sed command or "
 "similar tool to update config.json"
 msgstr ""
+"``config.json`` にあるパラメータをオーバライドする必要がある場合は、 "
+"``sed`` コマンドか同等のツールを使って ``config.json`` を更新します。"
 
 #: ../../source/developer/integration-faq.md:135
 msgid ""
 "starting the Mattermost server to upgrade the database, config.json file,"
 " and ./data as necessary."
 msgstr ""
+"Mattermostサーバーを起動して、必要に応じてデータベース、 ``config.json`` "
+"ファイルと ``./data`` をアップグレードします。"
 
 #: ../../source/developer/integration-faq.md:136
 msgid ""
@@ -390,4 +512,5 @@ msgid ""
 "across an arbitrary number of Mattermost versions rather than to just the"
 " latest release."
 msgstr ""
-
+"オプションでアップグレード手順をチェーン化して最新のリリースだけではなく"
+"任意のMattermostバージョン間でアップグレードできるようにすることができます。"

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,22 @@ msgstr ""
 
 #: ../../source/integrations/embedding.rst:3
 msgid "Embedding Mattermost in other applications"
-msgstr ""
+msgstr "Mattermostを他のアプリケーションに埋め込む"
 
 #: ../../source/integrations/embedding.rst:5
 msgid ""
 "This guide discusses how to embed Mattermost into other applications in "
 "different ways."
 msgstr ""
+"このガイドではMattermostを他のアプリケーションに埋め込むいくつかの方法を解説します。"
 
 #: ../../source/integrations/embedding.rst:8
 msgid "Contents"
-msgstr ""
+msgstr "コンテンツ"
 
 #: ../../source/integrations/embedding.rst:11
 msgid "Launching Mattermost from a button click"
-msgstr ""
+msgstr "ボタンクリックでMattermostを起動する"
 
 #: ../../source/integrations/embedding.rst:13
 msgid ""
@@ -42,20 +43,25 @@ msgid ""
 " or tab, with a link to a specific Mattermost channel to begin "
 "discussion."
 msgstr ""
+"他のアプリケーションへMattermostを統合する最も一般的な方法は新たにブラウザの"
+"ウィンドウもしくはタブが開いて、特定のMattermostチャンネルを開くリンクやボタンを"
+"用意することです。"
 
 #: ../../source/integrations/embedding.rst:15
 msgid "Optionally, single-sign-on can be added to make the experience seamless."
-msgstr ""
+msgstr "オプションでユーザー体験をシームレスにするためにシングルサインオンを追加することもできます。"
 
 #: ../../source/integrations/embedding.rst:18
 msgid "Mattermost Launch Button Example in HTML"
-msgstr ""
+msgstr "HTMLを使ったMattermost起動ボタンの例"
 
 #: ../../source/integrations/embedding.rst:20
 msgid ""
 "Save the below HTML code in a file called ``mattermost-button-"
 "example.html`` then open the file in a browser as an example."
 msgstr ""
+"例として、 ``mattermost-button-example.html`` という名前で次のHTMLコードを"
+"保存して、ブラウザでそのファイルを開きます。"
 
 #: ../../source/integrations/embedding.rst:22
 msgid "<script>"
@@ -116,7 +122,7 @@ msgstr ""
 
 #: ../../source/integrations/embedding.rst:54
 msgid "Embedding Mattermost in web applications using an iframe"
-msgstr ""
+msgstr "iframeを使ってウェブアプリケーションにMattermostを埋め込む"
 
 #: ../../source/integrations/embedding.rst:56
 msgid ""
@@ -128,22 +134,30 @@ msgid ""
 " instructions we highly recommend it is done only on a private network "
 "that you control."
 msgstr ""
+"iframeを使て任意のウェブアプリケーションを他のアプリケーションを埋め込むことは "
+"`クリックジャッキング <https://en.wikipedia.org/wiki/Clickjacking>`__ "
+"として知られる悪用のように、組込みアプリケーションへの全てのユーザー入力を"
+"外部アプリケーションが横取りされるセキュリティ上悪用のリスクがあります。"
+"デフォルトでは、Mattermost埋め込みを無効にしています。"
 
 #: ../../source/integrations/embedding.rst:58
 msgid ""
 "To embed Mattermost in an iframe by overriding Mattermost security "
 "features:"
 msgstr ""
+"Mattermostのセキュリティ機能をオーバーライドしてiframeへMattermostを埋め込むには："
 
 #: ../../source/integrations/embedding.rst:60
 msgid ""
 "On your Mattermost server, change the HTML template to remove the anti-"
 "Clickjacking security feature"
 msgstr ""
+"Mattermostサーバーで、クリックジャック防止セキュリティ機能を削除するためHTML"
+"テンプレートを編集します。"
 
 #: ../../source/integrations/embedding.rst:62
 msgid "Find the file ``/mattermost/mattermost/web/templates/head.html``"
-msgstr ""
+msgstr "``/mattermost/mattermost/web/templates/head.html`` というファイルを探します。"
 
 #: ../../source/integrations/embedding.rst:63
 msgid ""
@@ -151,22 +165,28 @@ msgid ""
 "id=\"antiClickjack\">body{display:none !important;}</style>`` to ``<!-- "
 "<style id=\"antiClickjack\">body{display:none !important;}</style> -->``"
 msgstr ""
+"``<style id=\"antiClickjack\">body{display:none !important;}</style>`` を ``<!-- "
+"<style id=\"antiClickjack\">body{display:none !important;}</style> -->`` に"
+"変更してセキュリティ機能をコメントアウトします。"
 
 #: ../../source/integrations/embedding.rst:65
 msgid ""
 "Update your NGINX configuration to strip out the security policy settings"
 " in the HTTP header."
 msgstr ""
+"HTTPヘッダーのセキュリティポリシー設定を削除するためNGINXの設定を更新します。"
 
 #: ../../source/integrations/embedding.rst:67
 msgid ""
 "See `community example <https://forum.mattermost.org/t/how-can-we-load-"
 "mattermost-in-iframe/165/6>`__ for details."
 msgstr ""
+"詳細は `コミュニティの事例 <https://forum.mattermost.org/t/how-can-we-load-"
+"mattermost-in-iframe/165/6>`__ を参照ください。"
 
 #: ../../source/integrations/embedding.rst:70
 msgid "Embedding Mattermost in mobile applications"
-msgstr ""
+msgstr "モバイルアプリケーションでのMattermostの埋め込み"
 
 #: ../../source/integrations/embedding.rst:72
 msgid ""
@@ -175,16 +195,22 @@ msgid ""
 "Driver is used to connect with the Mattermost server and product the "
 "interactivity for these applications."
 msgstr ""
+"オープンソースのモバイルアプリケーションはMattermostをモバイルアプリケーションに"
+"埋め込むためのガイドもしくは事始めのコードとして利用できます。Mattermost "
+"JavascriptドライバはMattermostサーバーとの接続し、これらのアプリケーションとの"
+"インタラクティブ性を提供するために使われます。"
 
 #: ../../source/integrations/embedding.rst:74
 msgid ""
 "The mobile applications also provide full source code for push "
 "notifications."
 msgstr ""
+"モバイルアプリケーションはプッシュ通知を利用するための完全なソースコードも"
+"提供します。"
 
 #: ../../source/integrations/embedding.rst:77
 msgid "Mobile applications offering Mattermost as a web view:"
-msgstr ""
+msgstr "MattermostをWebビューとして提供するモバイルアプリケーション："
 
 #: ../../source/integrations/embedding.rst:79
 msgid "https://github.com/mattermost/ios"
@@ -196,7 +222,7 @@ msgstr ""
 
 #: ../../source/integrations/embedding.rst:84
 msgid "Mobile applications offering Mattermost with React Native components:"
-msgstr ""
+msgstr "MattermostをReact Nativeコンポーネントとして提供するモバイルアプリケーション："
 
 #: ../../source/integrations/embedding.rst:86
 msgid "https://github.com/mattermost/mattermost-mobile"

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/administration/plugins.rst:2
 msgid "Plugins (Beta)"
-msgstr ""
+msgstr "プラグイン（ベータ）"
 
 #: ../../source/administration/plugins.rst:5
 msgid ""
@@ -27,6 +27,9 @@ msgid ""
 "looking to build a plugin, see `our developer documentation "
 "<https://developers.mattermost.com/extend/plugins>`__."
 msgstr ""
+"これはプラグインに関する管理者用ドキュメントです。プラグインをビルド"
+"しようとする開発者は `開発者ドキュメント <https://developers."
+"mattermost.com/extend/plugins>`__ をご覧ください。"
 
 #: ../../source/administration/plugins.rst:7
 msgid ""
@@ -36,34 +39,43 @@ msgid ""
 "your own plugin, consult our `starter template "
 "<https://github.com/mattermost/mattermost-plugin-starter-template>`__."
 msgstr ""
+"Mattermostはプラットフォームをカスタマイズ及び拡張するためのプラグインを"
+"サポートしています。Mattermostプラグインの可能性を示唆する `デモプラグイン "
+"<https://github.com/mattermost/mattermost-plugin-demo>`__ をご覧ください。"
+"自分でプラグインを作成するには、 `スターターテンプレート <https://github.com/"
+"mattermost/mattermost-plugin-starter-template>`__ を確認してください。"
 
 #: ../../source/administration/plugins.rst:9
 msgid "Consider using a plugin in the following scenarios:"
-msgstr ""
+msgstr "次のシナリオでプラグインを使うケースを考えます："
 
 #: ../../source/administration/plugins.rst:11
 msgid "When you want to customize the Mattermost user interface."
-msgstr ""
+msgstr "Mattermostのユーザーインターフェースをカスタマイズしたい。"
 
 #: ../../source/administration/plugins.rst:12
 msgid ""
 "When you want to extend Mattermost functionality to meet a specific, "
 "complex requirement."
 msgstr ""
+"特定の複雑な要求を満たすようにMattermostを機能的に拡張したい"
 
 #: ../../source/administration/plugins.rst:13
 msgid ""
 "When you want to build integrations that are managed by your Mattermost "
 "server."
 msgstr ""
+"統合機能を構築したい"
 
 #: ../../source/administration/plugins.rst:15
 msgid "Plugins are fully supported in both Team and Enterprise Editions."
 msgstr ""
+"プラグインはチームエディション、エンタープライズエディションどちらも"
+"フル機能がサポートされています。"
 
 #: ../../source/administration/plugins.rst:18
 msgid "Plugin Marketplace"
-msgstr ""
+msgstr "プラグインマーケットプレイス"
 
 #: ../../source/administration/plugins.rst:19
 msgid ""
@@ -77,12 +89,56 @@ msgid ""
 "continue to expand as we add new features and plugins that our customers "
 "request."
 msgstr ""
+"プラグインマーケットプレイスはMattermostの価値と可能性を飛躍的に向上させる"
+"ことができるプラグインのコレクションです。エンドユーザーはJira、Zoom、Webexや"
+"GitHubのようなシステムに簡単にアクセスできるようになり生産性が向上します。"
+"Mattermostの管理者は新しいプラグインを発見してサーバー（高可用性クラスタを"
+"含む）に迅速に展開することができます。マーケットプレイスは5.16以上のバージョンで"
+"利用可能です。 **メインメニュー > プラグインマーケットプレイス** からアクセス"
+"できます。マーケットプレイスのリストは顧客が要求する新しい機能とプラグインを"
+"追加するにつれて拡張し続けます。"
 
 #: ../../source/administration/plugins.rst:24
-msgid "Installing a Plugin"
+msgid "Plugin Labels"
 msgstr ""
 
 #: ../../source/administration/plugins.rst:26
+msgid ""
+"Plugins in the Marketplace are labeled to make it easier for "
+"administrators to choose plugins that fit their company's security and "
+"risk policies if they do not allow for community plugins to be used."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:28
+msgid "**Community Plugins**"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:30
+msgid ""
+"Plugins identified as \"Community\" are produced by the open-source "
+"community or partners and the features/roadmap are not controlled "
+"directly by Mattermost.  Prior to being listed on the Plugin Marketplace,"
+" they are reviewed by the Mattermost development team and code-signed to "
+"ensure the code Mattermost reviewed, is delivered.  Mattermost does not "
+"directly support these plugins in production environments."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:32
+msgid "**Beta Plugins**"
+msgstr "プラグインについて"
+
+#: ../../source/administration/plugins.rst:34
+msgid ""
+"Plugins may be labeled as \"Beta\" if they are released to the Plugin "
+"Marketplace early for customer previews.  We do not recommend running "
+"Beta plugins on production servers."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:37
+msgid "Installing a plugin"
+msgstr "プラグインをインストールする"
+
+#: ../../source/administration/plugins.rst:39
 msgid ""
 "When a new plugin becomes available on the Marketplace, it's listed with "
 "an option to **Install**. Select **Install** to download and install the "
@@ -90,80 +146,105 @@ msgid ""
 "cluster present, the plugin will be distributed to each server "
 "automatically."
 msgstr ""
+"新しいプラグインがマーケットプレイスで利用可能になるとリストに **インストール** "
+"オプションが付きます。 **インストール** を押すと、それぞれのGitHubレポジトリから"
+"最新のプラグインバイナリがダウンロードされインストールされます。クラスタを構成"
+"している場合、プラグインは各サーバーへ自動的に配布されます。"
 
-#: ../../source/administration/plugins.rst:29
-msgid "Configuring and Enabling a Plugin"
-msgstr ""
+#: ../../source/administration/plugins.rst:42
+msgid "Configuring and enabling a plugin"
+msgstr "プラグインの有効化と設定"
 
-#: ../../source/administration/plugins.rst:31
+#: ../../source/administration/plugins.rst:44
 msgid ""
 "Once a plugin is installed (or pre-installed if shipped with Mattermost "
 "binary release):"
 msgstr ""
+"プラグインをインストール（Mattermostバイナリリリースをお使いの場合はプリインストール）"
+"したら："
 
-#: ../../source/administration/plugins.rst:33
+#: ../../source/administration/plugins.rst:46
 msgid "Select **Configure** to open the **Settings** menu."
-msgstr ""
+msgstr "**システムコンソール** を開き **プラグイン管理** を選択します。"
 
-#: ../../source/administration/plugins.rst:34
-msgid "Enter the Plugin settings as required."
-msgstr ""
+#: ../../source/administration/plugins.rst:47
+msgid "Enter the plugin settings as required."
+msgstr "必要に応じてプラグインの設定を行います。"
 
-#: ../../source/administration/plugins.rst:35
+#: ../../source/administration/plugins.rst:48
 msgid ""
 "Set **Enable Plugin** setting to ``True``. If this flag is not enabled, "
 "the plugin will not become active."
 msgstr ""
+"**プラグインを有効にする** 設定を ``有効`` にセットします。有効でない場合は"
+"プラグインがアクティブになりません。"
 
-#: ../../source/administration/plugins.rst:36
+#: ../../source/administration/plugins.rst:49
 msgid "Test out the plugin as needed."
+msgstr "必要に応じてプラグインをテストします。"
+
+#: ../../source/administration/plugins.rst:52
+msgid "Upgrading plugins"
+msgstr "プラグインのアップグレード"
+
+#: ../../source/administration/plugins.rst:54
+msgid ""
+"Upgrade a plugin on demand when a new version becomes available. New "
+"versions of plugins that you have already installed will display a link "
+"to easily install the upgraded plugins. Some plugin versions may have "
+"breaking changes; please check the release notes if you are performing a "
+"major version change."
 msgstr ""
 
-#: ../../source/administration/plugins.rst:39
-msgid "Upgrading Plugins"
-msgstr ""
+#: ../../source/administration/plugins.rst:57
+msgid "Upgrading plugins (prior to v5.18)"
+msgstr "プラグインをアップグレードする（v5.18以前）"
 
-#: ../../source/administration/plugins.rst:41
-msgid "Upgrade a plugin on demand when a new version becomes available."
-msgstr ""
-
-#: ../../source/administration/plugins.rst:44
-msgid "Upgrading Plugins (prior to v5.18)"
-msgstr ""
-
-#: ../../source/administration/plugins.rst:46
+#: ../../source/administration/plugins.rst:59
 msgid ""
 "In v5.16 and v5.17 the Marketplace only supports the installation of new "
 "plugins. To upgrade a plugin, you need to manually update it by "
 "downloading the binary file from the GitHub repository and then upload it"
 " in **System Console > Plugin Management**."
 msgstr ""
+"v5.16とv5.17ではマーケットプレイスは新規のプラグインインストールのみを"
+"サポートしています。プラグインをアップグレードするには、GitHubレポジトリから"
+"バイナリファイルをダウンロードして **システムコンソール > プラグイン管理** "
+"からファイルをアップロードして手動で更新する必要があります。"
 
-#: ../../source/administration/plugins.rst:49
+#: ../../source/administration/plugins.rst:62
 msgid "Marketplace Server"
-msgstr ""
+msgstr "マーケットプレイスサーバー"
 
-#: ../../source/administration/plugins.rst:51
+#: ../../source/administration/plugins.rst:64
 msgid ""
 "There are two Marketplace settings in **System Console > Plugin "
 "management**:"
 msgstr ""
+"**システムコンソール > プラグイン管理** には2つのマーケットプレイス設定が"
+"あります。"
 
-#: ../../source/administration/plugins.rst:55
+#: ../../source/administration/plugins.rst:68
 msgid ""
 "**Enable Marketplace**. Turns the Marketplace user interface on or off "
 "for all users (including System Admins)."
 msgstr ""
+"**マーケットプレイスを有効にする** 。マーケットプレイスのUIを全てのユーザー"
+"（システム管理者を含む）に対してオンまたはオフに切替えます。"
 
-#: ../../source/administration/plugins.rst:56
+#: ../../source/administration/plugins.rst:69
 msgid ""
 "**Marketplace URL**. The location of the Marketplace server to query for "
 "new plugins. Mattermost hosts a Plugin Marketplace for the community and "
 "this is the default value for this field. You can also set up your own "
 "Marketplace server."
 msgstr ""
+"**マーケットプレイスURL** 。新しいプラグインを探すためのマーケットプレイス"
+"サーバーの場所です。Mattermostはコミュニティに対してプラグインマーケットプレイス"
+"をホストしており、これがデフォルト値です。あなた自身のマーケットプレイスサーバー"
+"をセットアップすることもできます。"
 
-#: ../../source/administration/plugins.rst:58
+#: ../../source/administration/plugins.rst:71
 msgid ""
 "When you first access the Marketplace, your Mattermost server will "
 "attempt to contact the Mattermost Marketplace server and return a list of"
@@ -177,12 +258,22 @@ msgid ""
 "/mattermost-marketplace>`__ is available as an open source project and "
 "can be used to setup your own private Marketplace if desired."
 msgstr ""
+"マーケットプレイスへの最初のアクセスの時にMattermostサーバーはMattermost"
+"マーケットプレイスサーバーにコンタクトを試みて、現在稼働中のサーバーの"
+"バージョンにあった利用可能なプラグインのリストを返えします。"
+"サーバーのバージョンと検索クエリだけがMattermostマーケットプレイスへ"
+"渡されます； `テレメトリー <https://docs.mattermost.com/administration/"
+"telemetry.html>`__ をオプトアウトしない限り、新しいプラグインがインストール"
+"される度に製品分析のための匿名レコードを記録します。 `プラグインマーケット"
+"プレイスサーバーコード <https://github.com/mattermost/mattermost-marketplace>`__ "
+"はオープンソースプロジェクトとして利用可能です。必要に応じて、独自のプライベート"
+"マーケットプレイスのセットアップに使用できます。"
 
-#: ../../source/administration/plugins.rst:62
+#: ../../source/administration/plugins.rst:75
 msgid "Mattermost Marketplace"
-msgstr ""
+msgstr "Mattermostマーケットプレイス"
 
-#: ../../source/administration/plugins.rst:64
+#: ../../source/administration/plugins.rst:77
 msgid ""
 "The `Mattermost Plugin Marketplace <https://github.com/mattermost"
 "/mattermost-marketplace>`__ is a service run by Mattermost that contains "
@@ -192,12 +283,19 @@ msgid ""
 "that would restrict which types of plugins you can install. Comments in "
 "our forum are welcome as we develop this feature further."
 msgstr ""
+"`Mattermostプラグインマーケットプレイス <https://github.com/mattermost"
+"/mattermost-marketplace>`__　はレビューされ（多くの場合）ビルド済みの"
+"プラグインのリストを含み、Mattermostにより運用されているサービスです。"
+"将来的には、Mattermost開発プラグインとは別のラベルを付けたコミュニティ"
+"開発プラグインも扱う予定です。インストールできるプラグインの種類を制限"
+"する設定も導入する予定です。この機能の更なる開発のためフォーラムでの"
+"コメントを歓迎します。"
 
-#: ../../source/administration/plugins.rst:67
-msgid "Mattermost Integration Directory"
-msgstr ""
+#: ../../source/administration/plugins.rst:80
+msgid "Mattermost integration directory"
+msgstr "Mattermost統合機能ディレクトリ"
 
-#: ../../source/administration/plugins.rst:69
+#: ../../source/administration/plugins.rst:82
 msgid ""
 "There are many ways to integrate Mattermost aside from plugins, and we "
 "have created a directory of integration \"recipes\", some of which are "
@@ -206,46 +304,65 @@ msgid ""
 " can browse the directory at `https://integrations.mattermost.com/ "
 "<https://integrations.mattermost.com/>`__."
 msgstr ""
+"プラグインの他にもMattermostをインテグレートする方法は多数あり、スクリプト、"
+"プラグインや、Mattermostをエンタープライズシステムへ接続するための説明書など"
+"統合機能 \"レシピ\" のディレクトリを作成しています。多くはお客様のコミュニティ"
+"から寄せられたものです。 `https://integrations.mattermost.com/ <https://"
+"integrations.mattermost.com/>`__ にてディレクトリを閲覧できます。"
 
-#: ../../source/administration/plugins.rst:73
-msgid "About Plugins"
-msgstr ""
+#: ../../source/administration/plugins.rst:86
+msgid "About plugins"
+msgstr "プラグインについて"
 
-#: ../../source/administration/plugins.rst:74
+#: ../../source/administration/plugins.rst:87
 msgid "Plugins may have one or both of the following parts:"
-msgstr ""
+msgstr "プラグインは下記のパートの1つまたは両方からなります："
 
-#: ../../source/administration/plugins.rst:76
+#: ../../source/administration/plugins.rst:89
 msgid ""
-"**Webapp plugins**. Customize the Mattermost user interface by adding "
+"**Web app plugins**. Customize the Mattermost user interface by adding "
 "buttons to the channel header, overriding the ``RHS``, or even rendering "
 "a custom post type within the center channel. All this is possible "
 "without having to fork the source code and rebase on every Mattermost "
 "release. For a sample plugin, see `our Zoom plugin "
 "<https://github.com/mattermost/mattermost-plugin-zoom>`__."
 msgstr ""
+"**ウェブアプリプラグイン** 。MattermostのUIをカスタマイズします。チャンネル"
+"ヘッダにボタンを追加したり、 ``RHS`` をオーバーライドしたり、真ん中の"
+"チャンネル内にカスタム投稿タイプをレンダリングすることができます。"
+"これらの変更は全てMattermostのリリース毎にソースコードをフォークしてリベース"
+"することなく実現可能です。サンプルとして `Zoomプラグイン <https://"
+"github.com/mattermost/mattermost-plugin-zoom>`__ を参照ください。"
 
-#: ../../source/administration/plugins.rst:77
+#: ../../source/administration/plugins.rst:90
 msgid ""
 "**Server plugins**. Run a Go process alongside the server, filtering "
 "messages, or integrating with third-party systems such as Jira, GitLab or"
 " Jenkins. For a sample plugin, see `our Jira plugin "
 "<https://github.com/mattermost/mattermost-plugin-jira>`__."
 msgstr ""
+"**サーバープラグイン**。サーバー環境でGoプロセスを実行し、メッセージ"
+"フィルターや、Jira、GitLab、またはJenkinsのような3rdパーティシステムとの"
+"統合機能を構築できます。サンプルとして `Jiraプラグイン <https://github.com/"
+"mattermost/mattermost-plugin-jira>`__ を参照ください。"
 
-#: ../../source/administration/plugins.rst:82
+#: ../../source/administration/plugins.rst:95
 msgid "Security"
-msgstr ""
+msgstr "セキュリティ"
 
-#: ../../source/administration/plugins.rst:83
+#: ../../source/administration/plugins.rst:96
 msgid ""
 "Plugins are intentionally powerful and not artificially sandboxed in any "
 "way and effectively become part of the Mattermost server. Server plugins "
 "can execute arbitrary code alongside your server and webapp plugins can "
 "deploy arbitrary code in client browsers."
 msgstr ""
+"プラグインはパワフルであり、サンドボックス化されることなく、事実上"
+"Mattermostの一部となります。サーバープラグインはサーバーサイドで任意の"
+"コードを実行でき、ウェブアプリプラグインはクライアントブラウザで任意の"
+"コードをデプロイできます。"
 
-#: ../../source/administration/plugins.rst:85
+#: ../../source/administration/plugins.rst:98
 msgid ""
 "While this power enables deep customization and integration, it can be "
 "abused in the wrong hands. Plugins have full access to your server "
@@ -253,26 +370,36 @@ msgid ""
 " any message in any channel, or perform any action on behalf of any user "
 "in the webapp."
 msgstr ""
+"より強力なカスタマイズと統合機能が利用できますが、悪用の可能性もあります。"
+"プラグインはサーバーの設定やMattermostデータベースにもフルアクセス可能です。"
+"プラグインは任意のチャンネルの任意のメッセージを読むことができ、ウェブアプリ"
+"内ではあらゆるユーザーに変わって任意のアクションを実行できます。"
 
-#: ../../source/administration/plugins.rst:87
+#: ../../source/administration/plugins.rst:100
 msgid ""
 "You should only install custom plugins from sources you trust to avoid "
 "compromising the security of your installation."
 msgstr ""
+"不用意にインストールのセキュリティを脅かさないように信頼できるソースからのみ"
+"カスタムプラグインをインストールすべきです。"
 
-#: ../../source/administration/plugins.rst:90
-msgid "Plugin Signing"
-msgstr ""
+#: ../../source/administration/plugins.rst:103
+msgid "Plugin signing"
+msgstr "プラグイン署名"
 
-#: ../../source/administration/plugins.rst:92
+#: ../../source/administration/plugins.rst:105
 msgid ""
 "The Plugin Marketplace allows system administrators to download and "
 "install plugins from a central repository. Plugins installed via the "
 "Plugin Marketplace must be signed by a public key certificate trusted by "
 "the local Mattermost server."
 msgstr ""
+"プラグインマーケットプレイスを通してシステム管理者は中央レポジトリから"
+"プラグインをダウンロードしてインストールすることができます。プラグイン"
+"マーケットプレイスを通してインストールされたプラグインはローカル"
+"Mattermostサーバーが信頼する公開鍵証明書によって証明される必要があります。
 
-#: ../../source/administration/plugins.rst:94
+#: ../../source/administration/plugins.rst:107
 msgid ""
 "While the server ships with a default certificate used to verify plugins "
 "from the default Mattermost plugin marketplace, the server can be "
@@ -282,219 +409,283 @@ msgid ""
 "marketplace. It assumes access to the `GNU Privacy Guard (GPG) "
 "<https://gnupg.org>`__ tool."
 msgstr ""
+"サーバーにはデフォルトのMattermostプラグインマーケットプレイス経由のプラグ"
+"インを検証するためのデフォルト証明書が付いていますが、サーバーは別の証明書を"
+"信頼したり、別のプラグインマーケットプレイスを指すように構成することができます。"
+"このドキュメントでは公開鍵証明書を生成し、カスタムプラグインマーケットプレイス"
+"で使使用するプラグインに署名する手順を説明します。 `GNU Privacy Guard (GPG) "
+"<https://gnupg.org>`__ ツールを使うことを想定しています。"
 
-#: ../../source/administration/plugins.rst:98
+#: ../../source/administration/plugins.rst:111
 msgid "Configuration"
-msgstr ""
+msgstr "構成"
 
-#: ../../source/administration/plugins.rst:100
+#: ../../source/administration/plugins.rst:113
 msgid ""
 "Configuring plugin signatures allows finer control over the verification "
 "process:"
 msgstr ""
+"プラグインの署名を設定すると検証プロセスをより細かく制御できるようになります。"
 
-#: ../../source/administration/plugins.rst:106
+#: ../../source/administration/plugins.rst:119
 msgid ""
-"is used to enforce plugin signature verification. With flag on, only "
-"marketplace plugins will be installed and verified. With flag off, "
+"This is used to enforce plugin signature verification. With flag on, only"
+" Marketplace plugins will be installed and verified. With flag off, "
 "customers will be able to install plugins manually without signature "
-"verification. Note that the marketplace plugins will still be verified "
+"verification. Note that the Marketplace plugins will still be verified "
 "even if flag is off."
 msgstr ""
+"これは、プラグイン署名検証を強制するために使用されます。フラグをオンにすると"
+"マーケットプレイスプラグインだけがインストールされ検証されるようになります。"
+"フラグをオフにすると、利用者は署名検証無しでプラグインを手動でインストール"
+"することができます。ただし、フラグがオフの場合でも、マーケットプレイス"
+"プラグインは検証されます。"
 
-#: ../../source/administration/plugins.rst:109
-msgid "Key Generation"
-msgstr ""
+#: ../../source/administration/plugins.rst:122
+msgid "Key generation"
+msgstr "鍵の生成"
 
-#: ../../source/administration/plugins.rst:111
+#: ../../source/administration/plugins.rst:124
 msgid ""
 "Public and private key pairs are needed to sign and verify plugins. The "
 "private key is used for signing and should be kept in a secure location. "
 "The public key is used for verification and can be distributed freely. To"
 " generate a key pair, run the following command:"
 msgstr ""
+"公開鍵と秘密鍵のペアはプラグインの署名と検証に必要です。秘密鍵は署名に"
+"使用され安全な場所に保存差なければなりません。公開鍵は検証に使用され"
+"自由に配布することができます。鍵ペアを生成するために次のコマンド実行します："
 
-#: ../../source/administration/plugins.rst:155
+#: ../../source/administration/plugins.rst:168
 msgid "Key size should be at least 3072 bits."
-msgstr ""
+msgstr "鍵のサイズは少なくとも3072ビットであるべきです。"
 
-#: ../../source/administration/plugins.rst:158
-msgid "Exporting the Private Key"
-msgstr ""
+#: ../../source/administration/plugins.rst:171
+msgid "Exporting the private key"
+msgstr "秘密鍵のエクスポート"
 
-#: ../../source/administration/plugins.rst:160
+#: ../../source/administration/plugins.rst:173
 msgid "Find the ID of your private key first. The ID is a hexadecimal number."
-msgstr ""
+msgstr "最初に秘密鍵のIDを探します。IDは16進数です。"
 
-#: ../../source/administration/plugins.rst:166
+#: ../../source/administration/plugins.rst:179
 msgid ""
 "This is your private key and should be kept secret. Your hexadecimal key "
 "ID will, of course, be different."
 msgstr ""
-
-#: ../../source/administration/plugins.rst:173
-msgid "Exporting the Public Key"
-msgstr ""
-
-#: ../../source/administration/plugins.rst:175
-msgid "Find the ID of your public key first. The ID is a hexadecimal number."
-msgstr ""
+"これは秘密鍵なので秘密にしておくべきです。16進数の鍵IDはもちろん異なります。"
 
 #: ../../source/administration/plugins.rst:186
-msgid "Importing the Key"
-msgstr ""
+msgid "Exporting the public key"
+msgstr "公開鍵のエクスポート"
 
 #: ../../source/administration/plugins.rst:188
+msgid "Find the ID of your public key first. The ID is a hexadecimal number."
+msgstr "最初に公開鍵のIDを探します。IDは16進数です。"
+
+#: ../../source/administration/plugins.rst:199
+msgid "Importing the key"
+msgstr "鍵のインポート"
+
+#: ../../source/administration/plugins.rst:201
 msgid ""
 "If you already have a public and private key pair, you can import them to"
 " the GPG."
 msgstr ""
+"公開・秘密鍵ペアを既に持っているなら、それらをGPGにインポートできます。"
 
-#: ../../source/administration/plugins.rst:197
-msgid "Running Plugin Signing"
-msgstr ""
+#: ../../source/administration/plugins.rst:210
+msgid "Running plugin signing"
+msgstr "プラグイン署名の実行"
 
-#: ../../source/administration/plugins.rst:199
+#: ../../source/administration/plugins.rst:212
 msgid ""
 "For plugin signing, you have to know the hexadecimal ID of the private "
 "key. Let's assume you want to sign `com.mattermost.demo-"
 "plugin-0.1.0.tar.gz` file, run:"
 msgstr ""
+"プラグインの署名には秘密鍵の16進数IDを知る必要があります。 `com.mattermost."
+"demo-plugin-0.1.0.tar.gz` ファイルに署名すると仮定します。次のコマンドを"
+"実行します："
 
-#: ../../source/administration/plugins.rst:205
+#: ../../source/administration/plugins.rst:218
 msgid ""
 "This command will generate `com.mattermost.demo-plugin-0.1.0.tar.gz.sig`,"
 " which is the signature of your plugin."
 msgstr ""
+"このコマンドはプラグインの署名である `com.mattermost.demo-plugin-0.1.0."
+"tar.gz.sig` を生成します。"
 
-#: ../../source/administration/plugins.rst:208
-msgid "Plugin Verification"
-msgstr ""
-
-#: ../../source/administration/plugins.rst:210
-msgid ""
-"Mattermost server will verify plugin signatures downloaded from plugin "
-"marketplace. To add custom public keys, run the following command on the "
-"Mattermost server:"
-msgstr ""
-
-#: ../../source/administration/plugins.rst:216
-msgid "Multiple public keys can be added to the Mattermost server:"
-msgstr ""
+#: ../../source/administration/plugins.rst:221
+msgid "Plugin verification"
+msgstr "プラグイン検証"
 
 #: ../../source/administration/plugins.rst:223
+msgid ""
+"Mattermost server will verify plugin signatures downloaded from Plugin "
+"Marketplace. To add custom public keys, run the following command on the "
+"Mattermost server:"
+msgstr ""
+"Mattermostサーバーはプラグインマーケットプレイスからダウンロードされた"
+"プラグイン署名を検証します。カスタム公開鍵を追加するために、Mattermost"
+"サーバーで次のコマンドを実行します："
+
+#: ../../source/administration/plugins.rst:229
+msgid "Multiple public keys can be added to the Mattermost server:"
+msgstr "複数の公開鍵をMattermostサーバーに追加できます："
+
+#: ../../source/administration/plugins.rst:235
 msgid ""
 "To list the names of all public keys installed on your Mattermost server,"
 " use:"
 msgstr ""
+"Mattermostサーバーにインストールされた全ての公開鍵名をリストするには"
+"次のコマンドを使います："
 
-#: ../../source/administration/plugins.rst:229
+#: ../../source/administration/plugins.rst:241
 msgid "To delete public key(s) from your Mattermost server, use:"
-msgstr ""
+msgstr "Mattermostサーバーから公開鍵を削除するには、次のコマンドを使います："
 
-#: ../../source/administration/plugins.rst:236
+#: ../../source/administration/plugins.rst:248
 msgid "Implementation"
-msgstr ""
+msgstr "実装"
 
-#: ../../source/administration/plugins.rst:238
+#: ../../source/administration/plugins.rst:250
 msgid ""
 "See the `implementation document "
 "<https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ>`__"
 " for more information."
 msgstr ""
+"詳細は `実装ドキュメント <https://docs.google.com/document/d/1qABE7VEx4k_"
+"ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ>`__ を参照ください。"
 
-#: ../../source/administration/plugins.rst:242
-msgid "Set Up Guide"
-msgstr ""
+#: ../../source/administration/plugins.rst:254
+msgid "Set up guide"
+msgstr "セットアップガイド"
 
-#: ../../source/administration/plugins.rst:244
+#: ../../source/administration/plugins.rst:256
 msgid ""
 "To manage plugins, go to **System Console > Plugins > Plugin "
 "Management**. From here, you can:"
 msgstr ""
+"プラグインを管理するために、 **システムコンソール > プラグイン > プラグ"
+"イン管理** を開くと、次の設定できます："
 
-#: ../../source/administration/plugins.rst:246
+#: ../../source/administration/plugins.rst:258
 msgid "Enable or disable pre-packaged plugins."
-msgstr ""
+msgstr "予めパッケージ化されたプラグインの有効、無効化"
 
-#: ../../source/administration/plugins.rst:247
+#: ../../source/administration/plugins.rst:259
 msgid "Install and manage custom plugins."
-msgstr ""
+msgstr "カスタムプラグインのインストールと管理"
 
-#: ../../source/administration/plugins.rst:250
+#: ../../source/administration/plugins.rst:262
 msgid ""
 "In versions prior to 5.16, go to **System Console > Plugins (Beta) > "
 "Configuration**."
 msgstr ""
+"5.16以前のバージョンでは、 **システムコンソール > プラグイン（ベータ版） "
+"> プラグイン管理**"
 
-#: ../../source/administration/plugins.rst:254
-msgid "Pre-packaged Plugins"
-msgstr ""
+#: ../../source/administration/plugins.rst:266
+msgid "Pre-packaged plugins"
+msgstr "予めパッケージ化されたプラグイン"
 
-#: ../../source/administration/plugins.rst:255
+#: ../../source/administration/plugins.rst:267
 msgid ""
 "Mattermost ships with a number of pre-packaged plugins written and "
 "maintained by Mattermost. Instead of building these features directly "
 "into the product, you can selectively enable the functionality your "
-"installation requires. Pre-packaged plugins cannot be removed via the "
-"System Console, but can be customized by modifying the "
-"``prepackaged_plugins`` directory in your Mattermost installation."
+"installation requires. Install pre-packaged plugins from the Plugin "
+"Marketplace, even if your system cannot directly connect to the internet."
+msgstr ""
+"Mattermostには、Mattermostにより作成及び管理された多数の予めパッケージ化"
+"されたプラグインが付属しています。これらの機能を直接製品内にビルドする"
+"代わりに、必要な機能を選択的に有効にできます。システムが直接インターネットにつながっていなくても"
+"プラグインマーケットプレイスからパッケージ化されたプラグインをインストールできます。"
+
+#: ../../source/administration/plugins.rst:269
+msgid ""
+"Prior to v5.20, pre-packaged plugins were installed by default and could "
+"not be uninstalled without manually modifying the `prepackaged_plugins` "
+"directory. Any pre-packaged plugins installed prior to v5.20 and left "
+"enabled on upgrade will remain installed, but can now be uninstalled."
 msgstr ""
 
-#: ../../source/administration/plugins.rst:258
-msgid "Custom Plugins"
-msgstr ""
+#: ../../source/administration/plugins.rst:272
+msgid "Custom plugins"
+msgstr "カスタムプラグイン"
 
-#: ../../source/administration/plugins.rst:259
+#: ../../source/administration/plugins.rst:273
 msgid ""
 "Installing a custom plugin introduces some risk. As a result, plugin "
 "uploads are disabled by default and cannot be enabled via the System "
 "Console or REST API."
 msgstr ""
+"カスタムプラグインの導入にはリスクが伴います。そのため、プラグインの"
+"アップロードはデフォルトでは無効化されており、システムコンソール"
+"もしくはREST API経由で有効化することができます。"
 
-#: ../../source/administration/plugins.rst:261
+#: ../../source/administration/plugins.rst:275
 msgid ""
 "To enable plugin uploads, manually set **PluginSettings > EnableUploads**"
 " to ``true`` in your configuration and restart your server. You can "
 "disable plugin uploads at any time without affecting previously uploaded "
 "plugins."
 msgstr ""
+"プラグインのアップロードを有効にするには、手動で **PluginSettings > "
+"EnableUploads** を ``true`` にセットしサーバーを再起動します。既に"
+"アップロードされたプラグインに影響を与えることなくいつでもプラグインの"
+"アップロードを無効化することができます。"
 
-#: ../../source/administration/plugins.rst:263
+#: ../../source/administration/plugins.rst:277
 msgid ""
 "With plugin uploads enabled, navigate to **System Console > Plugins > "
 "Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` "
-"files containing the server executables and webapp resources for the "
+"files containing the server executables and web app resources for the "
 "plugin. You can also specify a URL to install a plugin bundle from a "
 "remote source."
 msgstr ""
+"プラグインアップロードを有効にして、 **システムコンソール > プラグイン > "
+"プラグイン管理** からプラグインバンドルをアップロードします。プラグイン"
+"バンドルはサーバー実行ファイルとウェブアプリのリソースを含む ``*.tar.gz`` "
+"ファイルです。リモートソースからプラグインバンドルをインストールするため"
+"URLを指定することもできます。"
 
-#: ../../source/administration/plugins.rst:265
+#: ../../source/administration/plugins.rst:279
 msgid ""
-"Note: When **RequirePluginSignature** is `true` - plugin uploads cannot "
-"be enabled, and may only be installed via the Marketplace (which verifies"
-" Plugin Code Signatures)."
+"Note: When **RequirePluginSignature** is `true`, plugin uploads cannot be"
+" enabled, and may only be installed via the Marketplace (which verifies "
+"Plugin Code Signatures)."
 msgstr ""
+"注： **RequirePluginSignature** が `true` で、プラグインのアップロード"
+"が有効にできないときは、（プラグインコード署名を検証する）マーケットプレイス経由"
+"でのみインストールできます。"
 
-#: ../../source/administration/plugins.rst:267
+#: ../../source/administration/plugins.rst:281
 msgid ""
 "Custom plugins may also be installed via the `command line interface "
 "<https://docs.mattermost.com/administration/command-line-tools.html"
 "#mattermost-plugin>`__."
 msgstr ""
+"カスタムプラグインは `コマンドラインインターフェース <https://docs.mattermost.com/"
+"administration/command-line-tools.html#mattermost-plugin>`__ 経由でもインストール"
+"することができます。"
 
-#: ../../source/administration/plugins.rst:269
+#: ../../source/administration/plugins.rst:283
 msgid ""
 "While no longer recommended, plugins may also be installed manually by "
 "unpacking the plugin bundle inside the `plugins` directory of a "
 "Mattermost installation."
 msgstr ""
+"推奨はされなくなりましたが、Mattermostがインストールされた `plugins` ディレクトリ"
+"の中にプラグインバンドルを解凍して手動でインストールすることもできます。"
 
-#: ../../source/administration/plugins.rst:272
-msgid "Plugin Uploads in High Availability Mode"
-msgstr ""
+#: ../../source/administration/plugins.rst:286
+msgid "Plugin uploads in High Availability mode"
+msgstr "高可用性モードにおけるプラグインアップロード"
 
-#: ../../source/administration/plugins.rst:273
+#: ../../source/administration/plugins.rst:287
 msgid ""
 "Prior to Mattermost 5.14, Mattermost servers configured for `High "
 "Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_"
@@ -503,76 +694,97 @@ msgid ""
 " persisted to the configured file store and automatically installed on "
 "all servers that join the cluster."
 msgstr ""
+"5.14以前は、高可用性モードで構成されたMattermostサーバーにはプラグインの"
+"インストールを手動で実施するよう要求されていました。5.14で、プラグインは"
+"システムコンソールもしくはコマンドラインインターフェースでアップロードされ"
+"構成されたファイルストアに永続化されクラスタに接続する全てのサーバーに"
+"自動的にインストールされます。"
 
-#: ../../source/administration/plugins.rst:275
+#: ../../source/administration/plugins.rst:289
 msgid ""
 "Manually installed plugins remain supported, but must be individually "
 "installed on each server in the cluster."
 msgstr ""
+"手動でのプラグインのインストールはまだサポートされていますが、"
+"クラスタ内の各サーバーに個別にインストールする必要があります。"
 
-#: ../../source/administration/plugins.rst:278
+#: ../../source/administration/plugins.rst:292
 msgid "Frequently Asked Questions (FAQs)"
-msgstr ""
+msgstr "よくある質問（FAQ）"
 
-#: ../../source/administration/plugins.rst:281
-msgid "Where Can I Share Feedback on Plugins?"
-msgstr ""
+#: ../../source/administration/plugins.rst:295
+msgid "Where can I share feedback on plugins?"
+msgstr "プラグインに対するフィードバックはどこでできますか？"
 
-#: ../../source/administration/plugins.rst:283
+#: ../../source/administration/plugins.rst:297
 msgid ""
 "Join our community server discussion in the `Toolkit channel "
 "<https://community.mattermost.com/core/channels/developer-toolkit>`__."
 msgstr ""
+"`ツールキットチャンネル <https://community.mattermost.com/core/channels/"
+"developer-toolkit>`__ にあるコミュニティサーバーの議論に参加してください。"
 
-#: ../../source/administration/plugins.rst:286
+#: ../../source/administration/plugins.rst:300
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
-#: ../../source/administration/plugins.rst:289
-msgid "Plugin Uploads Fail Even Though Uploads are Enabled"
-msgstr ""
+#: ../../source/administration/plugins.rst:303
+msgid "Plugin uploads fail even though uploads are enabled"
+msgstr "アップロードを有効にしているにもかかわらずプラグインのアップロードが失敗する"
 
-#: ../../source/administration/plugins.rst:291
+#: ../../source/administration/plugins.rst:305
 msgid ""
-"If plugin uploads fail and you see \"permission denied\" errors in "
+"If plugin uploads fail and you see ``permission denied`` errors in "
 "**System Console > Logs** such as:"
 msgstr ""
+"プラグインのアップロードに失敗し、 **システムコンソール > ログ** "
+"に下記のような \"permission denied\" エラーが出ていたら"
 
-#: ../../source/administration/plugins.rst:297
+#: ../../source/administration/plugins.rst:311
 msgid ""
 "the Mattermost server doesn't have the necessary permissions for "
 "uploading plugins. Ensure the Mattermost server has write access to the "
 "``mattermost/client`` directory."
 msgstr ""
+"Mattermostサーバーがプラグインのアップロードに必要な権限を有していません。"
+"Mattermostサーバーが ``mattermost/client`` ディレクトリに書込みアクセス"
+"できることを確認してください。"
 
-#: ../../source/administration/plugins.rst:299
+#: ../../source/administration/plugins.rst:313
 msgid ""
 "It may also be that the working directory for the service running "
 "Mattermost is not correct. On Ubuntu you might see"
 msgstr ""
+"Mattermostサービスを実行している作業ディレクトリが正しくないかもしれません。"
+"Ubuntuでは下記のようなログが出ます。"
 
-#: ../../source/administration/plugins.rst:305
+#: ../../source/administration/plugins.rst:319
 msgid ""
 "This can be fixed on Ubuntu 16.04 and RHEL by opening the service "
 "configuration file and setting ``WorkingDirectory`` to the path to "
 "Mattermost (generally it's ``/opt/mattermost``)."
 msgstr ""
+"Ubuntu16.04とRHELでは、これはサービスの設定ファイルを開き、 "
+"``WorkingDirectory`` にMattermostのパス（通常は ``/opt/mattermost``）を"
+"設定すると解決します。"
 
-#: ../../source/administration/plugins.rst:307
+#: ../../source/administration/plugins.rst:321
 msgid "A similar problem can occur on Windows:"
-msgstr ""
+msgstr "同様の問題はWindowsでも発生します："
 
-#: ../../source/administration/plugins.rst:313
+#: ../../source/administration/plugins.rst:327
 msgid ""
 "To fix this, set the ``AppDirectory`` of your service using ``nssm set "
 "mattermost AppDirectory c:\\mattermost``."
 msgstr ""
+"これを解決するには、 ``nssm set mattermost AppDirectory c:\\mattermost`` "
+"を使ってサービスの ``AppDirectory`` をセットします。"
 
-#: ../../source/administration/plugins.rst:316
+#: ../../source/administration/plugins.rst:330
 msgid "``x509: certificate signed by unknown authority``"
 msgstr ""
 
-#: ../../source/administration/plugins.rst:318
+#: ../../source/administration/plugins.rst:332
 msgid ""
 "If you're seeing ``x509: certificate signed by unknown authority`` in "
 "your server logs, it usually means that the CA for a self-signed "
@@ -580,8 +792,12 @@ msgid ""
 "added to your local trust store of the machine the Mattermost server is "
 "running on."
 msgstr ""
+"サーバーログで ``x509: certificate signed by unknown authority`` "
+"が出る場合は、通常、プラグインがアクセスしようとしているサーバーの"
+"自己署名証明書に対するCAがMattermostサーバーが稼働しているマシンの"
+"証明書ストアに追加されていないことを意味しています。"
 
-#: ../../source/administration/plugins.rst:320
+#: ../../source/administration/plugins.rst:334
 msgid ""
 "You can add one in Linux `following instructions in this StackExchange "
 "article <https://unix.stackexchange.com/questions/90450/adding-a-self-"
@@ -589,4 +805,8 @@ msgid ""
 " NGINX per :doc:`production install guide <config-ssl-http2-nginx>` to "
 "resolve the issue."
 msgstr ""
+"`StackExchangeの記事にある手順に従い "
+"<https://unix.stackexchange.com/questions/90450/adding-a-self-signed-"
+"certificate-to-the-trusted-list>`_ Linuxに1行追加するか、 :doc:`商用インストールガイド "
+"<config-ssl-http2-nginx>` 毎にNGINGなどのロードバランサーをセットアップすることで問題を解決できます。"
 

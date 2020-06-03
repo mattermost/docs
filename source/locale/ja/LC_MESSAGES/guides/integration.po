@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,35 +19,36 @@ msgstr ""
 
 #: ../../source/guides/integration.rst:2
 msgid "Mattermost Integration Guide"
-msgstr ""
+msgstr "Mattermost統合機能ガイド"
 
 #: ../../source/guides/integration.rst:4
 msgid "**Are you looking to install an integration?**"
-msgstr ""
+msgstr "**統合機能をインストールしようとしていますか？**"
 
 #: ../../source/guides/integration.rst:6
 msgid ""
 "See one of the sample integrations below or visit the `Mattermost "
 "Integrations Directory <https://integrations.mattermost.com/>`__."
-msgstr ""
+msgstr "下記の統合機能サンプルを参照するか、もしくは `Mattermost統合機能"
+"ディレクトリ <https://integrations.mattermost.com/>`__ を参照してください。"
 
 #: ../../source/guides/integration.rst:16
 msgid "**Are you looking to develop an integration?**"
-msgstr ""
+msgstr "**統合機能を開発しようとしていますか？**"
 
 #: ../../source/guides/integration.rst:18
 msgid "See `our developer documentation <https://developers.mattermost.com/>`__."
-msgstr ""
+msgstr "`開発者ドキュメント <https://developers.mattermost.com/>`__ を参照してください。"
 
 #: ../../source/guides/integration.rst:20
 msgid ""
 "**Are you looking for an overview of what capabilities Mattermost offers "
 "for integrations?**"
-msgstr ""
+msgstr "**統合機能に関して Mattermost が提供している機能を概観しようとしていますか？**"
 
 #: ../../source/guides/integration.rst:22
 msgid "See our documentation below."
-msgstr ""
+msgstr "各種ドキュメントは下記を参照"
 
 #: ../../source/guides/integration.rst:42
 msgid ""
@@ -60,4 +61,9 @@ msgid ""
 "<https://community.mattermost.com/core/channels/developer-toolkit>`__ for"
 " all integrations and plugins discussions."
 msgstr ""
-
+"`我々のコミュニティーサーバーにある \"Contributors\" コミュニティーチャンネル"
+" <https://community.mattermost.com/core/channels/tickets>`__ に参加してください、"
+"ここではコミュニティーメンバーや Mattermost コアチームと議論できます。技術的な議論は  "
+"`\"Developers\" チャンネル <https://community.mattermost.com/core/channels/developers>`__ "
+"に参加してください。統合機能やプラグインの議論は、`\"Developer Toolkit\" チャンネル "
+"<https://community.mattermost.com/core/channels/developer-toolkit>`__ でできます。"

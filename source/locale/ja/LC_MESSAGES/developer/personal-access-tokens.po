@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/personal-access-tokens.rst:4
 msgid "Personal Access Tokens"
-msgstr ""
+msgstr "パーソナルアクセストークン"
 
 #: ../../source/developer/personal-access-tokens.rst:6
 msgid ""
@@ -28,10 +28,13 @@ msgid ""
 "<https://about.mattermost.com/default-api-authentication>`__. It is the "
 "most commonly used type of token for integrations."
 msgstr ""
+"パーソナルアクセストークン機能はセッショントークンと同様に機能し、 `REST API "
+"の認証 <https://about.mattermost.com/default-api-authentication>`__ に使われます。"
+"統合機能で最も一般的に使われるトークンのタイプです。"
 
 #: ../../source/developer/personal-access-tokens.rst:14
 msgid "Creating a Personal Access Token"
-msgstr ""
+msgstr "パーソナルアクセストークンを作成する"
 
 #: ../../source/developer/personal-access-tokens.rst:16
 msgid ""
@@ -39,6 +42,9 @@ msgid ""
 "Custom Integrations** in prior versions or **System Console > "
 "Integrations > Integration Management** in versions after 5.12."
 msgstr ""
+"1 - 以前のバージョンでは **システムコンソール > 統合機能 > カスタム統合機能** "
+"で、5.12以降のバージョンでは **システムコンソール > 統合機能 > 統合機能管理** "
+"にて、パーソナルアクセストークンを有効化します。"
 
 #: ../../source/developer/personal-access-tokens.rst:18
 msgid ""
@@ -47,6 +53,10 @@ msgid ""
 "as for a bot account. By default, only System Admins have permissions to "
 "create a personal access token."
 msgstr ""
+"2 - パーソナルアクセストークンを作成したいアカウントを指定します。必要に応じて"
+"統合機能のためにボットアカウントの時のように新たなユーザーアカウントを作成する"
+"こともできます。デフォルトでは、システム管理者のみがパーソナルアクセストークンを"
+"作成する許可を持っています。"
 
 #: ../../source/developer/personal-access-tokens.rst:20
 msgid ""
@@ -55,10 +65,16 @@ msgid ""
 "search for the user account, and select **Manage Roles** from the "
 "dropdown."
 msgstr ""
+"3 - 非管理者アカウントのアクセストークンを作るためには、最初に適切な"
+"許可を与える必要があります。 **システムコンソール > ユーザー** を開き、"
+"ユーザーアカウントを探して、ドロップダウンリストから **役割の管理** を"
+"選択します。"
 
 #: ../../source/developer/personal-access-tokens.rst:25
 msgid "4 - Select **Allow this account to generate personal access tokens.**"
 msgstr ""
+"4 - **このアカウントがパーソナルアクセストークンを生成できるようにする** "
+"を選択します。"
 
 #: ../../source/developer/personal-access-tokens.rst:30
 msgid ""
@@ -67,26 +83,34 @@ msgid ""
 " role. **post:channels** role allows the account to post to any public "
 "channel in the Mattermost server."
 msgstr ""
+"**投稿:全て** を選択して、ダイレクトメッセージを含むMattermostサーバーの"
+"任意のチャンネルに投稿できることアカウントにすることもできます。 **投稿:"
+"チャンネル** は、Mattermostサーバー内の任意の公開チャンネルへ投稿を可能とします。"
 
 #: ../../source/developer/personal-access-tokens.rst:32
 msgid "Then hit **Save**."
-msgstr ""
+msgstr "**保存** を押します。"
 
 #: ../../source/developer/personal-access-tokens.rst:34
 msgid "5 - Sign in to the user account to create a personal access token."
 msgstr ""
+"5 - パーソナルアクセストークンを作成するためにそのユーザーアカウントでサインインします。"
 
 #: ../../source/developer/personal-access-tokens.rst:36
 msgid ""
 "6 - Go to **Account Settings > Security > Personal Access Tokens** and "
 "click **Create New Token**."
 msgstr ""
+"6 - **アカウント設定 > セキュリティ > パーソナルアクセストークン** を開き "
+"**新しいトークンを生成する** をクリックします。"
 
 #: ../../source/developer/personal-access-tokens.rst:38
 msgid ""
 "7 - Enter a description for the token, so you remember what it's used "
 "for. Then hit **Save**."
 msgstr ""
+"7 - トークンの説明を入力して、何のために使うものかを思い出せるようにします。 "
+"**保存** を押します。"
 
 #: ../../source/developer/personal-access-tokens.rst:41
 msgid ""
@@ -94,18 +118,24 @@ msgid ""
 "extra careful who you share it with. The token enables a user to have "
 "full access to the account, including System Admin privileges."
 msgstr ""
+"システム管理者アカウントのパーソナルアクセストークンを作る場合は、それを"
+"誰と共有するか特に注意が必要です。そのトークンによりシステム管理者権限を"
+"含めアカウントにフルアクセスすることができます。"
 
 #: ../../source/developer/personal-access-tokens.rst:43
 msgid ""
 "It is recommended to create a personal access token for non-admin "
 "accounts."
 msgstr ""
+"非管理者のパーソナルアクセストークンを作成することを推奨します。"
 
 #: ../../source/developer/personal-access-tokens.rst:45
 msgid ""
 "8 - Copy the access token now for your integration and store it in a "
 "secure location. You won't be able to see it again!"
 msgstr ""
+"8 - 統合機能のために作成した新たなアクセストークンをコピーして安全な場所に"
+"保存します。再びトークンを見ることはできません。"
 
 #: ../../source/developer/personal-access-tokens.rst:47
 msgid ""
@@ -114,10 +144,14 @@ msgid ""
 "against the Mattermost REST API <https://about.mattermost.com/default-"
 "api-authentication>`__."
 msgstr ""
+"9 - 準備完了です！これで統合機能用パーソナルアクセストークンを使って、"
+"Mattermostサーバーとやり取りし、 `Mattermost REST API <https://about."
+"mattermost.com/default-api-authentication>`__ に対して認証できるように"
+"なります。"
 
 #: ../../source/developer/personal-access-tokens.rst:53
 msgid "Revoking a Personal Access Token"
-msgstr ""
+msgstr "パーソナルアクセストークンを取り消す"
 
 #: ../../source/developer/personal-access-tokens.rst:55
 msgid ""
@@ -126,6 +160,10 @@ msgid ""
 " sessions using the token are deleted, and any attempts to use the token "
 "to interact with the Mattermost server are blocked."
 msgstr ""
+"ユーザーのアカウント設定もしくはシステムコンソールからトークンを削除することで"
+"パーソナルアクセストークンを取り消すことができます。一度削除すると、そのトークンを"
+"使った全てのセッションが削除され、トークンを使ってMattermostサーバーとやりとりする"
+"試みは全てブロックされます。"
 
 #: ../../source/developer/personal-access-tokens.rst:57
 msgid ""
@@ -134,16 +172,22 @@ msgid ""
 " any attempts to use the token to interact with the Mattermost server are"
 " blocked. However, the token can be reactivated at any time."
 msgstr ""
+"トークンはユーザーのアカウント設定から一時的に非アクティベートすることもできます。"
+"一度非アクティベートすると、そのトークンを使った全てのセッションは削除され、"
+"そのトークンを使ってMattermostサーバーとやりとりする試みは全てブロックされます。"
+"しかしながら、そのトークンはいつでも再度アクティベートすることができます。"
 
 #: ../../source/developer/personal-access-tokens.rst:60
 msgid "Account Settings"
-msgstr ""
+msgstr "アカウント設定"
 
 #: ../../source/developer/personal-access-tokens.rst:62
 msgid ""
 "1 - Sign in to the user account and go to **Account Settings > Security >"
 " Personal Access Tokens**."
 msgstr ""
+"1 - ユーザーアカウントにサインインし、 **アカウント設定 > セキュリティ >"
+" パーソナルアクセストークン** を開きます。"
 
 #: ../../source/developer/personal-access-tokens.rst:64
 #: ../../source/developer/personal-access-tokens.rst:71
@@ -151,24 +195,28 @@ msgid ""
 "2 - Identify the access token you want to revoke and hit **Delete**. "
 "Confirm the deletion."
 msgstr ""
+"2 - 取消戴アクセストークンを指定し、 **削除** を押して削除を確認します。"
 
 #: ../../source/developer/personal-access-tokens.rst:67
 msgid "System Console"
-msgstr ""
+msgstr "システムコンソール"
 
 #: ../../source/developer/personal-access-tokens.rst:69
 msgid ""
 "1 - Go to **System Console > Users**, search for the user account which "
 "the token belongs to, and select **Manage Tokens** from the dropdown."
 msgstr ""
+"1 - **システムコンソール > ユーザー** を開き、トークンが属するユーザー"
+"アカウントを探して、ドロップダウンメニューから **トークンの管理** を"
+"選択します。"
 
 #: ../../source/developer/personal-access-tokens.rst:74
 msgid "Frequently Asked Questions (FAQ)"
-msgstr ""
+msgstr "よくある質問（FAQ）"
 
 #: ../../source/developer/personal-access-tokens.rst:77
 msgid "How do personal access tokens differ from regular session tokens?"
-msgstr ""
+msgstr "パーソナルアクセストークンは正規のセッショントークンとどのように異なりますか？"
 
 #: ../../source/developer/personal-access-tokens.rst:79
 msgid ""
@@ -177,12 +225,17 @@ msgid ""
 "the System Console <https://docs.mattermost.com/administration/config-"
 "settings.html#sessions>`__."
 msgstr ""
+"パーソナルアクセストークンは期限がありません。結果として、 `システムコンソールで"
+"設定されたセッションの長さ制限  <https://docs.mattermost.com/administration/"
+"config-settings.html#sessions>`__ をバイパスしてMattermostとより簡単に統合できます。"
 
 #: ../../source/developer/personal-access-tokens.rst:80
 msgid ""
 "Personal access tokens can be used to authenticate against the API more "
 "easily, including with AD/LDAP and SAML accounts."
 msgstr ""
+"パーソナルアクセストークンを利用すれば、AD/LDAPやSAMLアカウントを含めAPIに"
+"対する認証をより簡単に行うことができます。"
 
 #: ../../source/developer/personal-access-tokens.rst:81
 msgid ""
@@ -190,6 +243,9 @@ msgid ""
 "personal access tokens. This lets the account post to any channel in "
 "Mattermost, including direct messages."
 msgstr ""
+"オプションでパーソナルアクセストークンを作成するアカウントに追加の役割を"
+"割当てることができます。これにより、そのアカウントはダイレクトメッセージを"
+"含むMattermost内の任意のチャンネルへ投稿することができます。"
 
 #: ../../source/developer/personal-access-tokens.rst:83
 msgid ""
@@ -198,10 +254,13 @@ msgid ""
 "different from a user's regular session token created after logging in to"
 " Mattermost."
 msgstr ""
+"上記のような差異はありますが、パーソナルアクセストークンは正規のセッショントークンと"
+"全く同じです。暗号化されたランダムなIDであり、Mattermostにログインした後生成される"
+"ユーザーの正規のセッショントークンとの差異はありません。"
 
 #: ../../source/developer/personal-access-tokens.rst:86
 msgid "Can I set personal access tokens to expire?"
-msgstr ""
+msgstr "パーソナルアクセストークンの期限を設定できますか？"
 
 #: ../../source/developer/personal-access-tokens.rst:88
 #, python-format
@@ -210,16 +269,21 @@ msgid ""
 "token `through the REST API "
 "<https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`__."
 msgstr ""
+"Mattermostではできませんが、`REST APIを使えば <https://api.mattermost.com/#tag/"
+"users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`__ トークンを循環するように"
+"統合機能を自動化することもできます。"
 
 #: ../../source/developer/personal-access-tokens.rst:91
 msgid "How do I identify a badly behaving personal access token?"
-msgstr ""
+msgstr "行儀の悪いパーソナルアクセストークンをどのように識別できますか？"
 
 #: ../../source/developer/personal-access-tokens.rst:93
 msgid ""
 "Best option is to go to **System Console > Logs** and finding error "
 "messages relating to a particular token ID."
 msgstr ""
+"最良の方法は **システムコンソール > ログ** を開き、特定のトークンIDに"
+"関するエラーメッセージを探すことです。"
 
 #: ../../source/developer/personal-access-tokens.rst:95
 msgid ""
@@ -227,16 +291,22 @@ msgid ""
 "to in **System Console > Users** and revoke it through the **Manage "
 "Tokens** dropdown option."
 msgstr ""
+"特定できれば、 **システムコンソール > ユーザー** でそのトークンIDを持つ"
+"ユーザーアカウントを検索することができ、 **トークンの管理** ドロップダウン"
+"メニューで取り消すことができます。"
 
 #: ../../source/developer/personal-access-tokens.rst:98
 msgid "Do personal access tokens continue to work if the user is deactivated?"
 msgstr ""
+"ユーザーが非アクティベートされてもパーソナルアクセストークンは使い続けられますか？"
 
 #: ../../source/developer/personal-access-tokens.rst:100
 msgid ""
 "No. The session used by the personal access token is revoked immediately "
 "after a user is deactivated, and a new session won't be created."
 msgstr ""
+"いいえ。ユーザーが非アクティブになると、新しいセッションは作成されず、"
+"パーソナルアクセストークンが使われているセッションは直ぐに無効化されます"
 
 #: ../../source/developer/personal-access-tokens.rst:102
 msgid ""
@@ -244,4 +314,6 @@ msgid ""
 "re-activated. This is useful when a bot account is temporarily "
 "deactivated for troubleshooting, for instance."
 msgstr ""
-
+"ユーザーアカウントが再びアクティベートされると、トークンは保持され、機能も"
+"続行されます。例えば、トラブルシューティングのためにボットアカウントが"
+"一時的に非アクティベートされた場合にも便利です。"

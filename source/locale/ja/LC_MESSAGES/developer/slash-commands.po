@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:4
 msgid "Slash Commands"
-msgstr ""
+msgstr "スラッシュコマンド"
 
 #: ../../source/developer/slash-commands.rst:7
 msgid ""
@@ -27,6 +27,9 @@ msgid ""
 " looking to build an integration, see `our developer documentation "
 "<https://developers.mattermost.com/integrate>`__."
 msgstr ""
+"これはスラッシュコマンドに関する管理者用ドキュメントです。統合機能のビルド方法を"
+"お探しの場合は `開発者ドキュメント <https://developers.mattermost.com/integrate>`__ "
+"を参照ください。"
 
 #: ../../source/developer/slash-commands.rst:9
 msgid ""
@@ -35,6 +38,10 @@ msgid ""
 "webhooks <../developer/webhooks-outgoing/>`, except they can be used in "
 "any channel, including private channels and direct messages."
 msgstr ""
+"Mattermostは外部アプリケーションと簡単にインテグレートするためにスラッシュ"
+"コマンドをサポートしています。 :doc:`外向きのウェブフック <../developer/"
+"webhooks-outgoing/>` と同様に機能しますが、非公開チャンネルやダイレクトメッセージを"
+"含む任意のチャンネルで使用することができる点が異なります。"
 
 #: ../../source/developer/slash-commands.rst:11
 msgid ""
@@ -46,6 +53,12 @@ msgid ""
 "<https://docs.mattermost.com/developer/slash-commands.html#custom-slash-"
 "command>`__."
 msgstr ""
+"``/`` で始まるメッセージはスラッシュコマンドとして解釈されます。コマンドは"
+"外部のウェブサービスへHTTP POSTとして送信され、Mattermostへそのレスポンスが戻され"
+"ます。Mattermostは `内蔵 <https://docs.mattermost.com/developer/slash-"
+"commands.html#built-in-commands>`__ と `カスタムスラッシュコマンド <https:"
+"//docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`__ "
+"の両方をサポートしています。"
 
 #: ../../source/developer/slash-commands.rst:14
 msgid ""
@@ -54,10 +67,13 @@ msgid ""
 "next to posts coming from webhooks regardless of what username is "
 "specified."
 msgstr ""
+"悪意のあるユーザーからの `フィッシング攻撃 <https://en.wikipedia.org/wiki/Phishing>`__ "
+"を防ぐために、指定されたユーザー名に関係なくスラッシュコマンドからの投稿の横には "
+"*BOT* と表示されます。"
 
 #: ../../source/developer/slash-commands.rst:20
 msgid "Built-in Commands"
-msgstr ""
+msgstr "内蔵コマンド"
 
 #: ../../source/developer/slash-commands.rst:22
 msgid ""
@@ -65,18 +81,21 @@ msgid ""
 " are ready to use. These commands are available in the `latest Mattermost"
 " release <https://about.mattermost.com/download/>`__:"
 msgstr ""
+"各Mattermostのインストールには直ぐに利用できる内蔵スラッシュコマンドが"
+"予め組み込まれています。以下のコマンドは `最新のMattermostリリース <https://"
+"about.mattermost.com/download/>`__ にて利用可能です。"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Command"
-msgstr ""
+msgstr "コマンド"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Example"
-msgstr ""
+msgstr "例"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/away"
@@ -84,7 +103,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Set your status away"
-msgstr ""
+msgstr "離席状態に設定する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/offline"
@@ -92,7 +111,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Set your status offline"
-msgstr ""
+msgstr "オフライン状態に設定する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/online"
@@ -100,7 +119,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Set your status online"
-msgstr ""
+msgstr "オンライン状態に設定する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/dnd"
@@ -108,7 +127,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Set your status to Do Not Disturb"
-msgstr ""
+msgstr "取込み中に設定する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/code *{text}*"
@@ -116,7 +135,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Display text as a code block"
-msgstr ""
+msgstr "テキストをコードブロックとして表示する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/code File bugs"
@@ -128,7 +147,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Turn on auto-collapsing of image previews"
-msgstr ""
+msgstr "画像プレビューの自動折り畳みをオンにする"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/expand"
@@ -136,7 +155,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Turn off auto-collapsing of image previews"
-msgstr ""
+msgstr "画像プレビューの自動折り畳みをオフにする"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/echo *{message}* *{delay in seconds}*"
@@ -144,7 +163,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Echo back text from your account"
-msgstr ""
+msgstr "あなたのアカウントからテキストをエコーバックする"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/echo Hello World 5"
@@ -156,7 +175,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Edit the channel header"
-msgstr ""
+msgstr "チャンネルヘッダーを編集する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/header File bugs here"
@@ -168,7 +187,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Invite user to the channel"
-msgstr ""
+msgstr "チャンネルへユーザーを招待する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/invite @john ~sampleChannel"
@@ -180,7 +199,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Edit the channel purpose"
-msgstr ""
+msgstr "チャンネルの目的を編集する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/purpose A channel to discuss bugs"
@@ -192,7 +211,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Rename the channel"
-msgstr ""
+msgstr "チャンネル名を変更する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/rename Developers"
@@ -204,7 +223,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Open the Mattermost help page"
-msgstr ""
+msgstr "Mattermostのヘルプページを開く"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/invite_people *{name@domain.com ...}*"
@@ -212,7 +231,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Send an email invite to your Mattermost team"
-msgstr ""
+msgstr "あなたのMattermostへの招待メールを送る"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/invite_people john@example.com"
@@ -224,7 +243,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Remove a member from a public or private channel"
-msgstr ""
+msgstr "公開または非公開チャンネルからメンバーを削除する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/kick @alice"
@@ -236,7 +255,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Join the given channel"
-msgstr ""
+msgstr "指定されたチャンネルに参加する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/join off-topic"
@@ -248,7 +267,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Leave the current channel"
-msgstr ""
+msgstr "現在のチャンネルから脱退する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/mute"
@@ -258,7 +277,8 @@ msgstr ""
 msgid ""
 "Turns off desktop, email and push notifications for the current channel "
 "or the [channel] specified"
-msgstr ""
+msgstr "現座のチャンネルまたは指定したチャンネルへのデスクトップ、メール、"
+"及びプッシュ通知をオフにする"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/mute ~[channel]"
@@ -270,7 +290,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Log out of Mattermost"
-msgstr ""
+msgstr "Mattermostからログアウトする"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/me *{message}*"
@@ -278,7 +298,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Do an action"
-msgstr ""
+msgstr "アクションを実行する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/me Hello World"
@@ -290,7 +310,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Send a Direct Message to a user"
-msgstr ""
+msgstr "指定したユーザーにダイレクトメッセージを送る"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/msg @alice hello"
@@ -302,7 +322,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Sends a Group Message to the specified users"
-msgstr ""
+msgstr "指定したユーザーにグループメッセージを送る"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/groupmsg @alice, @bob hello"
@@ -314,7 +334,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Search text in messages"
-msgstr ""
+msgstr "メッセージ内のテキストを検索する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/search meeting"
@@ -326,7 +346,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Open the Account Settings dialog"
-msgstr ""
+msgstr "アカウント設定ダイヤログを開く"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/shortcuts"
@@ -334,7 +354,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Display a list of keyboard shortcuts"
-msgstr ""
+msgstr "キーボードショートカットのリストを表示する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/shrug *{message}*"
@@ -342,7 +362,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "Add ``¯\\_(ツ)_/¯`` to your message"
-msgstr ""
+msgstr "メッセージに ``¯\\_(ツ)_/¯`` を追加する"
 
 #: ../../source/developer/slash-commands.rst:1
 msgid "/shrug oh well"
@@ -350,7 +370,7 @@ msgstr ""
 
 #: ../../source/developer/slash-commands.rst:56
 msgid "Custom Slash Command"
-msgstr ""
+msgstr "カスタムスラッシュコマンド"
 
 #: ../../source/developer/slash-commands.rst:58
 msgid ""
@@ -360,12 +380,18 @@ msgid ""
 "command, you can let your users check the weather in their city using "
 "your command, say ``/weather toronto week``."
 msgstr ""
+"ある特定の街の天気をチェックする外部アプリケーションを作成すると仮定します。"
+"カスタムスラッシュコマンドを作成し、コマンドからのHTTP POSTまたはGETを"
+"処理するアプリケーションをセットアップすることで、 ``/weather toronto week`` "
+"のようなコマンドを使ってユーザーが街の天気を確認することができます。"
 
 #: ../../source/developer/slash-commands.rst:60
 msgid ""
 "You can follow these general guidelines to set up a custom Mattermost "
 "slash command for your application."
 msgstr ""
+"下記のガイドラインに従って、カスタムMattermostスラッシュコマンドを"
+"アプリケーションにセットアップすることができます。"
 
 #: ../../source/developer/slash-commands.rst:62
 msgid ""
@@ -377,12 +403,20 @@ msgid ""
 "Integration Management** in versions after 5.12 or ask your System "
 "Administrator to do so."
 msgstr ""
+"1 - 始めに、 **メインメニュー > 統合機能 > スラッシュコマンド** を開きます。"
+"メインメニューに **統合機能** オプションが無ければ、Mattermostサーバー側で"
+"外向きのウェブフックが有効化されてないか、管理者以外には無効化されているかもしれません。"
+"以前のバージョンの場合は、 **システムコンソール > 統合機能 > カスタム統合機能** 、"
+"5.12以降のバージョンの場合は、 **システムコンソール > 統合機能 > 統合機能管理** から"
+"機能を有効化するか、システム管理者に有効にするよう依頼してください。"
 
 #: ../../source/developer/slash-commands.rst:64
 msgid ""
 "2 - Click **Add Slash Command** and add name and description for the "
 "command."
 msgstr ""
+"2 - **スラッシュコマンドを追加する** をクリックし、コマンドのタイトルと"
+"説明を追加してください。"
 
 #: ../../source/developer/slash-commands.rst:66
 msgid ""
@@ -391,6 +425,10 @@ msgid ""
 "of the `built-in commands <https://docs.mattermost.com/help/messaging"
 "/executing-commands.html#built-in-commands>`__."
 msgstr ""
+"3 - **コマンドトリガーワード** をセットしてください。トリガーワードは"
+"重複が許されずスラッシュで始めることや、空白を含めることはできません。"
+" `内蔵コマンド <https://docs.mattermost.com/help/messaging/executing-"
+"commands.html#built-in-commands>`__ と同じにすることもできません。"
 
 #: ../../source/developer/slash-commands.rst:68
 msgid ""
@@ -399,6 +437,10 @@ msgid ""
 "request method is either POST or GET and specifies the type of request "
 "sent to the request URL."
 msgstr ""
+"4 - **リクエストURL** または **リクエストメソッド** をセットします。リクエスト"
+"URLはMattermostがアプリケーションにアクセスするためのエンドポイントであり、"
+"リクエストメソッドはPOSTもしくはGET、そしてリクエストURLへ送られるリクエストの"
+"タイプを指定するものです。"
 
 #: ../../source/developer/slash-commands.rst:70
 msgid ""
@@ -406,6 +448,9 @@ msgid ""
 "messages as in Mattermost. If not set, the command will use your username"
 " and profile picture."
 msgstr ""
+"5 - （オプション）Mattermostに投稿するメッセージのユーザー名とアイコンを"
+"セットしてください。セットされてない場合は、あなたのユーザー名とプロフィール"
+"画像を使用します。"
 
 #: ../../source/developer/slash-commands.rst:73
 msgid ""
@@ -419,6 +464,14 @@ msgid ""
 "versions or **System Console > Integrations > Integration Management** in"
 " versions after 5.12 or ask your System Administrator."
 msgstr ""
+"ユーザー名をオーバーライドするためには `ユーザー名をオーバーライドするために統合"
+"機能を有効にする <https://docs.mattermost.com/administration/config-settings"
+".html#enable-integrations-to-override-usernames>`__ 設定を `config.json` にて"
+" `true` にセットする必要があります。 `プロフィール画像アイコンも同様です <https:"
+"//docs.mattermost.com/administration/config-settings.html#enable-integrations-to-"
+"override-profile-picture-icons>`__ 。以前のバージョンでは **システムコンソール > "
+"統合機能 > カスタム統合機能** にて、5.12移行のバージョンでは、 **システムコンソール"
+" > 統合機能 > 統合機能管理** にて設定を有効にするか、システム管理者に依頼してください。"
 
 #: ../../source/developer/slash-commands.rst:75
 msgid ""
@@ -428,12 +481,17 @@ msgid ""
 " hint listing the arguments of your command and a short description "
 "displayed in the autocomplete list."
 msgstr ""
+"6 - （オプション）スラッシュコマンドをコマンドの自動補完リスト（空の入力ボックスに ``/`` と"
+"タイプした時に表示される）に含めると、チームメイトがコマンドを見つけやすくなります。"
+"自動補完リストにコマンドの引数と説明を表示させてヒントを与えることもできます。"
 
 #: ../../source/developer/slash-commands.rst:77
 msgid ""
 "7 - Hit **Save**. On the next page, copy the **Token** value. This will "
 "be used in a later step."
 msgstr ""
+"7 - **保存する** をクリックします。次のページで **トークン** 値をコピーしてください。"
+"後ほど使用します。"
 
 #: ../../source/developer/slash-commands.rst:82
 msgid ""
@@ -441,32 +499,41 @@ msgid ""
 "receives HTTP POST or HTTP GET requests from Mattermost. The request will"
 " look something like this:"
 msgstr ""
+"8 - 次に外部アプリケーションを作成します。MattermostからのHTTP POSTまたはGETリクエストを"
+"受けとるための機能を用意します。リクエストは次のような内容です。"
 
-#: ../../source/developer/slash-commands.rst:106
+#: ../../source/developer/slash-commands.rst:110
 msgid ""
 "If your integration sends back a JSON response, make sure it returns the "
 "``application/json`` content-type."
 msgstr ""
+"JSONレスポンスを返す場合は、コンテントタイプとして ``application/json`` を"
+"返していることを確認してください。"
 
-#: ../../source/developer/slash-commands.rst:108
+#: ../../source/developer/slash-commands.rst:112
 msgid ""
 "9 - Add a configurable *MATTERMOST_TOKEN* variable to your application "
 "and set it to the **Token** value from step 7. This value will be used by"
 " your application to confirm the HTTP POST or GET request came from "
 "Mattermost."
 msgstr ""
+"9 - アプリケーションに *MATTERMOST_TOKEN* 変数を追加し、その変数にステップ7の "
+"**トークン** 値を設定します。この値はMattermostからのHTTP POSTまたはGETリクエスト"
+"であることを確認するために使われます。"
 
-#: ../../source/developer/slash-commands.rst:110
+#: ../../source/developer/slash-commands.rst:114
 msgid ""
 "10 - To have your application post a message back to ``town-square``, it "
 "can respond to the HTTP POST request with a JSON response such as:"
 msgstr ""
+"10 - アプリケーションが ``タウンスクウェア`` にメッセージを返す場合は、"
+"HTTP POSTリクエストへの応答として下記のようなJSONレスポンスを返すことができます。"
 
-#: ../../source/developer/slash-commands.rst:130
+#: ../../source/developer/slash-commands.rst:134
 msgid "which would render in Mattermost as"
-msgstr ""
+msgstr "Mattermostは次のように表示します。"
 
-#: ../../source/developer/slash-commands.rst:135
+#: ../../source/developer/slash-commands.rst:139
 msgid ""
 "11 - You're all set! See `developer documentation "
 "<https://developers.mattermost.com/integrate/slash-commands>`__ for "
@@ -475,15 +542,23 @@ msgid ""
 "or specify a custom post type when sending a webhook message for use by "
 "`plugins <https://about.mattermost.com/default-plugins>`__."
 msgstr ""
+"11 - これで完了です！ スラッシュコマンドによりサポートされるパラメータの詳細は "
+"`開発者ドキュメント <https://developers.mattermost.com/integrate/slash-commands>`__ "
+"を参照ください。例えば、ユーザー名やプロファイル画像をオーバーライドしたり、 "
+"`プラグイン <https://about.mattermost.com/default-plugins>`__ で使われる"
+"ウェブフックメッセージを送信するときのカスタムポストタイプを指定することができます。"
 
-#: ../../source/developer/slash-commands.rst:137
+#: ../../source/developer/slash-commands.rst:141
 msgid ""
 "Messages with advanced formatting can be created by including an "
 ":doc:`attachment array <message-attachments>` and :doc:`interactive "
 "message buttons <interactive-messages>` in the JSON payload."
 msgstr ""
+"JSONペーロードに :doc:`アタッチメント配列 <message-attachments>` と "
+":doc:`インタラクティブメッセージボタン <interactive-messages>` を使って"
+"高度なフォーマットのメッセージを作成することができます。"
 
-#: ../../source/developer/slash-commands.rst:140
+#: ../../source/developer/slash-commands.rst:144
 msgid ""
 "`Enable integrations to override usernames "
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
@@ -494,8 +569,15 @@ msgid ""
 "or ask your System Administrator. If not enabled, the username is set to "
 "`webhook`."
 msgstr ""
+"ユーザー名をオーバーライドするためには `ユーザー名をオーバーライドするために統合"
+"機能を有効にする <https://docs.mattermost.com/administration/config-settings"
+".html#enable-integrations-to-override-usernames>`__ 設定を `config.json` にて"
+" `true` にセットする必要があります。以前のバージョンでは **システムコンソール > "
+"統合機能 > カスタム統合機能** にて、5.12移行のバージョンでは、 **システムコンソール"
+" > 統合機能 > 統合機能管理** にて設定を有効にするか、システム管理者に依頼してください。"
+"設定が有効化されてない場合は、 `ウェブフック` にセットされます。"
 
-#: ../../source/developer/slash-commands.rst:142
+#: ../../source/developer/slash-commands.rst:146
 msgid ""
 "Similarly, `Enable integrations to override profile picture icons "
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
@@ -506,19 +588,30 @@ msgid ""
 "or ask your System Administrator. If not enabled, the icon of the creator"
 " of the webhook URL is used to post messages."
 msgstr ""
+"同様に、プロファイル画像をオーバーライドするためには、 `プロファイル画像をオーバライド"
+"するために統合機能を有効にする <https://docs.mattermost.com/administration/config-"
+"settings.html#enable-integrations-to-override-profile-picture-icons>`__ を"
+" `config.json` にて `true` にセットする必要があります。以前のバージョンでは、 "
+"**システムコンソール > 統合機能 > カスタム統合機能** にて、5.12移行のバージョン"
+"では、 **システムコンソール > 統合機能 > 統合機能管理** にて設定を有効にするか、"
+"システム管理者に依頼してください。設定が有効化されてない場合は、ウェブフックURLの"
+"作成者のアイコンが投稿メッセージに使われます。"
 
-#: ../../source/developer/slash-commands.rst:145
+#: ../../source/developer/slash-commands.rst:149
 msgid "Tips and Best Practices"
-msgstr ""
+msgstr "ヒントとベストプラクティス"
 
-#: ../../source/developer/slash-commands.rst:147
+#: ../../source/developer/slash-commands.rst:151
 msgid ""
 "Slash commands are designed to easily allow you to post messages. For "
 "other actions such as channel creation, you must also use the `Mattermost"
 " APIs <https://api.mattermost.com>`__."
 msgstr ""
+"Slashコマンドはメッセージを投稿しやすくするように設計されています。"
+"チャンネル作成のような他のアクションに対しては、 `Mattermost APIs "
+"<https://api.mattermost.com>`__ を使うこともできます。"
 
-#: ../../source/developer/slash-commands.rst:149
+#: ../../source/developer/slash-commands.rst:153
 msgid ""
 "If the text is longer than the allowable character limit per post, the "
 "message is split into multiple consecutive posts, each within the "
@@ -527,16 +620,23 @@ msgid ""
 "<https://docs.mattermost.com/administration/important-upgrade-"
 "notes.html>`__."
 msgstr ""
+"テキストが投稿の許容文字列を超えている場合はメッセージが"
+"許容範囲内の文字数で分割されます。Mattermostサーバー v5.0以降の場合は、 "
+"`16383文字まで投稿することができます <https://docs.mattermost.com/"
+"administration/important-upgrade-notes.html>`__ 。"
 
-#: ../../source/developer/slash-commands.rst:151
+#: ../../source/developer/slash-commands.rst:155
 msgid ""
 "You can restrict who can create slash commands in `System Console > "
 "Integrations > Integration Management "
 "<https://docs.mattermost.com/administration/config-settings.html"
 "#restrict-managing-integrations-to-admins>`__."
 msgstr ""
+"`システムコンソール > 統合機能 > 統合機能管理 <https://docs.mattermost.com/"
+"administration/config-settings.html#restrict-managing-integrations-to-admins>`__ "
+"にてスラッシュコマンドを作成できるユーザーを制限することができます。"
 
-#: ../../source/developer/slash-commands.rst:153
+#: ../../source/developer/slash-commands.rst:157
 #, python-format
 msgid ""
 "Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste"
@@ -546,132 +646,170 @@ msgid ""
 "commands.html?highlight=translate%20slack%20data%20format%20mattermost"
 "#translate-slack-s-data-format-to-mattermost>`__."
 msgstr ""
+"Mattermostの外向きのウェブフックはSlack互換です。Slackの外向きのウェブフック"
+"で使われていたコードをコピー＆ペーストしてMattermost統合機能を作成することができます。"
+"Mattermostは `自動的にSlack独自のJSONレスポンス形式を変換します <https://docs.mattermost.com/"
+"developer/webhooks-outgoing.html?highlight=translate%20slack%20data%20format%20mattermost"
+"#translate-slack-s-data-format-to-mattermost>`__ 。"
 
-#: ../../source/developer/slash-commands.rst:155
+#: ../../source/developer/slash-commands.rst:159
 msgid ""
 "The external application may be written in any programming language. It "
 "needs to provide a URL which receives the request sent by your Mattermost"
 " server and responds with in the required JSON format."
 msgstr ""
+"外部のアプリケーションは任意のプログラミング言語で書くことができます。"
+"Mattermostサーバーから送られたリクエストに応答するためのURLを提供し"
+"レスポンスとして要求されたJSON形式でHTTP POSTを送信することが必要です。"
 
-#: ../../source/developer/slash-commands.rst:158
+#: ../../source/developer/slash-commands.rst:162
 msgid "Share Your Integration"
-msgstr ""
+msgstr "統合機能の共有"
 
-#: ../../source/developer/slash-commands.rst:160
+#: ../../source/developer/slash-commands.rst:164
 msgid ""
 "If you've built an integration for Mattermost, please consider `sharing "
 "your work <https://www.mattermost.org/share-your-mattermost-projects/>`__"
 " in our `app directory <https://about.mattermost.com/default-app-"
 "directory/>`__."
 msgstr ""
+"Mattermostの統合機能を作ったら、`その成果 <https://www.mattermost.org/"
+"share-your-mattermost-projects/>`__ を `アプリディレクトリ <https://"
+"about.mattermost.com/default-app-directory/>`__ で共有することを検討して"
+"ください。"
 
-#: ../../source/developer/slash-commands.rst:162
+#: ../../source/developer/slash-commands.rst:166
 msgid ""
 "The `app directory <https://about.mattermost.com/default-app-"
 "directory/>`__ lists open source integrations developed by the Mattermost"
 " community and are available for download, customization and deployment "
 "to your private cloud or on-prem infrastructure."
 msgstr ""
+"`アプリディレクトリ <https://about.mattermost.com/default-app-directory/>`__ "
+"はMattermostコミュニティで開発されたオープンソースの統合機能を列挙しており"
+"ダウンロードして、プライベートクラウドやオンプレ環境でカスタマイズしたり"
+"導入することができます。"
 
-#: ../../source/developer/slash-commands.rst:165
+#: ../../source/developer/slash-commands.rst:169
 msgid "Slack Compatibility"
-msgstr ""
+msgstr "Slack互換性"
 
-#: ../../source/developer/slash-commands.rst:167
+#: ../../source/developer/slash-commands.rst:171
 msgid ""
 "Mattermost makes it easy to migrate integrations written for Slack to "
 "Mattermost."
 msgstr ""
-
-#: ../../source/developer/slash-commands.rst:170
-msgid "Translate Slack's data format to Mattermost"
-msgstr ""
-
-#: ../../source/developer/slash-commands.rst:172
-msgid "Mattermost automatically translates the data coming from Slack:"
-msgstr ""
+"MattermostはSlack用に記述された統合機能を簡単移行できます。"
 
 #: ../../source/developer/slash-commands.rst:174
+msgid "Translate Slack's data format to Mattermost"
+msgstr "Slackデータ形式のMattermostへの変換"
+
+#: ../../source/developer/slash-commands.rst:176
+msgid "Mattermost automatically translates the data coming from Slack:"
+msgstr "MattermostはSlackのデータを自動的に変換します。"
+
+#: ../../source/developer/slash-commands.rst:178
 msgid ""
 "JSON responses written for Slack, that contain the following, are "
 "translated to Mattermost Markdown and rendered equivalently to Slack:"
 msgstr ""
+"次のような内容のSlack用に作られたJSONレスポンスはMattermostのマークダウンに"
+"変換され、Slackと同等にレンダリングされます。"
 
-#: ../../source/developer/slash-commands.rst:176
+#: ../../source/developer/slash-commands.rst:180
 msgid ""
 "``<>`` to denote a URL link, such as ``{\"text\": "
 "\"<http://www.mattermost.com/>\"}``"
 msgstr ""
+"``{\"text\": \"<http://www.mattermost.com/>\"}`` のようなURLリンクを示す"
+" ``<>``"
 
-#: ../../source/developer/slash-commands.rst:177
+#: ../../source/developer/slash-commands.rst:181
 msgid ""
 "``|`` within a ``<>`` to define linked text, such as ``{\"text\": \"Click"
 " <http://www.mattermost.com/|here> for a link.\"}``"
 msgstr ""
+"``{\"text\": \"Click <http://www.mattermost.com/|here> for a link.\"}`` "
+"のようなリンク付きテキストを示す ``<>`` 内の ``|``"
 
-#: ../../source/developer/slash-commands.rst:178
+#: ../../source/developer/slash-commands.rst:182
 msgid ""
 "``<userid>``  to trigger a mention to a user, such as ``{\"text\": "
 "\"<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification.\"}``"
 msgstr ""
+"``{\"text\": \"<5fb5f7iw8tfrfcwssd1xmx3j7y> これは通知です。\"}`` のような"
+"ユーザーへのメンションのトリガーとなる ``<userid>``"
 
-#: ../../source/developer/slash-commands.rst:179
+#: ../../source/developer/slash-commands.rst:183
 msgid ""
 "``<!channel>``, ``<!here>`` or ``<!all>`` to trigger a mention to a "
 "channel, such as ``{\"text\": \"<!channel> this is a notification.\"}``"
 msgstr ""
+"``{\"text\": \"<!channel> これは通知です。\"}`` のようなチャンネルメンバー"
+"へのメンションのトリガーとなる ``<!channel>`` 、 ``<!here>`` や ``<!all>``"
 
-#: ../../source/developer/slash-commands.rst:181
+#: ../../source/developer/slash-commands.rst:185
 msgid ""
 "Both the HTTP POST and GET request bodies sent to a web service are "
 "formatted the same as Slack's. This means your Slack integration's "
 "receiving function does not need change to be compatible with Mattermost."
 msgstr ""
+"ウェブサービスへのHTTP POST及びGETリクエストボディーはSlackと同様のフォーマットで"
+"送信されます。これはSlack統合機能を受けとる機能をMattermostとの互換性のために"
+"変更する必要が無いことを意味しています。"
 
-#: ../../source/developer/slash-commands.rst:184
+#: ../../source/developer/slash-commands.rst:188
 msgid "Known Slack compatibility issues"
-msgstr ""
+msgstr "よく知られたSlack互換性の問題"
 
-#: ../../source/developer/slash-commands.rst:186
+#: ../../source/developer/slash-commands.rst:190
 msgid "Using ``icon_emoji`` to override the username is not supported."
 msgstr ""
+"ユーザー名をオーバーライドするための ``icon_emoji`` の使用は非サポートです。"
 
-#: ../../source/developer/slash-commands.rst:187
+#: ../../source/developer/slash-commands.rst:191
 msgid ""
 "Referencing  channels using ``<#CHANNEL_ID>`` does not link to the "
 "channel."
 msgstr ""
+"``<#CHANNEL_ID>`` を使った参照はチャンネルにリンクしません。"
 
-#: ../../source/developer/slash-commands.rst:188
+#: ../../source/developer/slash-commands.rst:192
 msgid "``<!everyone>`` and ``<!group>`` are not supported."
-msgstr ""
+msgstr "``<!everyone>`` と ``<!group>`` は非サポートです。"
 
-#: ../../source/developer/slash-commands.rst:189
+#: ../../source/developer/slash-commands.rst:193
 msgid ""
 "Parameters \"mrkdwn\", \"parse\", and \"link_names\" are not supported "
 "(Mattermost always converts markdown and automatically links @mentions)."
 msgstr ""
+"パラメータ\"mrkdwn\"、\"parse\"、や\"link_names\"は非サポートです。"
+"（Mattermostはマークダウンを常に変換し自動的に @mentions にリンクします。）"
 
-#: ../../source/developer/slash-commands.rst:190
+#: ../../source/developer/slash-commands.rst:194
 msgid ""
 "Bold formatting supplied as ``*bold*`` is not supported (must be done as "
 "``**bold**``)."
 msgstr ""
+"太文字書式の ``*bold*`` はサポートされません（ ``**bold**`` とする必要があります）。"
 
-#: ../../source/developer/slash-commands.rst:191
+#: ../../source/developer/slash-commands.rst:195
 msgid ""
 "Slack assumes default values for some fields if they are not specified by"
 " the integration, while Mattermost does not."
 msgstr ""
+"一部のフィールドが統合機能により指定されない場合、Slackはデフォルト値を想定しますが、"
+"Mattermostは想定しません。"
 
-#: ../../source/developer/slash-commands.rst:194
+#: ../../source/developer/slash-commands.rst:198
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
-#: ../../source/developer/slash-commands.rst:196
+#: ../../source/developer/slash-commands.rst:200
 msgid ""
 "See `developer documentation <https://developers.mattermost.com/integrate"
 "/slash-commands>`__ for troubleshooting help."
 msgstr ""
-
+"トラブルシューティングのヘルプについては、`開発者ドキュメント <https://"
+"developers.mattermost.com/integrate/slash-commands>`__ を参照ください。"

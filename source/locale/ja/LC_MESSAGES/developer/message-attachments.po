@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/developer/message-attachments.rst:2
 msgid "Message Attachments"
-msgstr ""
+msgstr "メッセージアタッチメント"
 
 #: ../../source/developer/message-attachments.rst:4
 msgid ""
@@ -28,6 +28,9 @@ msgid ""
 "more information about formatting, see :doc:`../help/messaging"
 "/formatting-text`."
 msgstr ""
+"太字、イタリック体、見出し、インライン画像やテーブル等の多様な"
+"リッチテキスト形式オプションが統合機能で利用可能です。フォーマットの"
+"詳細については :doc:`../help/messaging/formatting-text` を参照ください。"
 
 #: ../../source/developer/message-attachments.rst:6
 msgid ""
@@ -35,6 +38,9 @@ msgid ""
 "markdown integrations, an ``attachments`` array can be sent by "
 "integrations and rendered by Mattermost."
 msgstr ""
+"その他の形式のオプションやSlackの非マークダウン統合機能との互換性のために "
+"``アタッチメント`` 配列は、統合機能によって送信されて、Mattermostにより"
+"レンダリングされます。"
 
 #: ../../source/developer/message-attachments.rst:8
 msgid ""
@@ -43,22 +49,33 @@ msgid ""
 "Mattermost conversations, increasing user engagement and productivity. "
 "For more information, see :doc:`documentation <interactive-messages>`."
 msgstr ""
+"アタッチメントの一部としてインタラクティブメッセージボタンを追加することも"
+"可能です。それらは、Mattermostとの内部的な対話にある共通タスクを完了し、"
+"ユーザーエンゲージメントと生産性を増すことで、統合機能をさらにリッチに"
+"することを可能とします。詳細については、 :doc:`インタラクティブメッセージ "
+"<interactive-messages>` を参照ください。"
 
 #: ../../source/developer/message-attachments.rst:11
 msgid "Attachment Options"
-msgstr ""
+msgstr "アタッチメントオプション"
 
 #: ../../source/developer/message-attachments.rst:13
 msgid ""
 "When sending an attachment, you can use any of the following to format "
 "how you want the posted message to look."
 msgstr ""
+"アタッチメントを送信する際、次のいずれかを使用して投稿されたメッセージの"
+"外観をフォーマットすることができます。"
 
 #: ../../source/developer/message-attachments.rst:15
 msgid ""
-"``fallback``: A required plain-text summary of the post. This is used in "
-"notifications, and in clients that don’t support formatted text (eg IRC)."
+"``fallback``: A required plain-text summary of the attachment. This is "
+"used in notifications, and in clients that don’t support formatted text "
+"(e.g. IRC)."
 msgstr ""
+"``フォールバック`` ：アタッチメントに要求されるプレーンテキストの要約。これは通知や"
+"フォーマット化されたテキストをサポートしない（例えばIRC）クライアントに"
+"使われる。"
 
 #: ../../source/developer/message-attachments.rst:17
 msgid ""
@@ -66,12 +83,15 @@ msgid ""
 "for the attachment. If not specified, it will default to match the left "
 "hand sidebar header background color."
 msgstr ""
+"``color`` ：アタッチメントの左の境界線の色として使用される16進数の色コード。"
+"指定されない場合は、デフォルトで左のサイドバーヘッダーの背景色と同じ色です。"
 
 #: ../../source/developer/message-attachments.rst:21
 msgid ""
 "``pretext``: An optional line of text that will be shown above the "
 "attachment."
 msgstr ""
+"``pretext`` ：アタッチメントの上部に表示されるオプションのテキスト行。"
 
 #: ../../source/developer/message-attachments.rst:25
 msgid ""
@@ -80,88 +100,113 @@ msgid ""
 "texts, the message is collapsed and a “Show More” link is added to expand"
 " the message."
 msgstr ""
+"``text`` ：アタッチメントに含まれるテキスト。 :doc:`マークダウン <../help/"
+"messaging/formatting-text>` を使ったフォーマットを利用可能です。"
+"長文の場合メッセージは折りたたまれるため、広げるための「もっと見る（"
+"Show more....）」リンクが追加されます。"
 
 #: ../../source/developer/message-attachments.rst:30
 msgid "Author Details"
-msgstr ""
+msgstr "著者詳細"
 
 #: ../../source/developer/message-attachments.rst:32
 msgid ""
 "``author_name``: An optional name used to identify the author. It will be"
 " included in a small section at the top of the attachment."
 msgstr ""
+"``author_name`` ：著者を指定するために使われるオプションの名前。"
+"アタッチメントの上部の小さなセクション内に表示されます。"
 
 #: ../../source/developer/message-attachments.rst:34
 msgid ""
 "``author_link``: An optional URL used to hyperlink the ``author_name``. "
 "If no ``author_name`` is specified, this field does nothing."
 msgstr ""
+"``author_link`` ：``author_name`` のハイパーリンクに使用されるオプション"
+"のURL。 ``author_name`` が指定されていない場合、このフィールドは機能しません。"
 
 #: ../../source/developer/message-attachments.rst:36
 msgid ""
 "``author_icon``: An optional URL used to display a 16x16 pixel icon "
 "beside the ``author_name``."
 msgstr ""
+"``author_icon`` ：``author_name`` の横に表示する16x16ピクセルのアイコンに"
+"使われるオプションのURL。"
 
 #: ../../source/developer/message-attachments.rst:41
 msgid "Titles"
-msgstr ""
+msgstr "タイトル"
 
 #: ../../source/developer/message-attachments.rst:43
 msgid ""
 "``title``: An optional title displayed below the author information in "
 "the attachment."
 msgstr ""
+"``title`` ：アタッチメントの著者情報の下に表示されるオプションのタイトル。"
 
 #: ../../source/developer/message-attachments.rst:45
 msgid ""
 "``title_link``: An optional URL used to hyperlink the ``title``. If no "
 "``title`` is specified, this field does nothing."
 msgstr ""
+"``title_link`` ： ``titl`` のハイパーリンクに使われるオプションのURL。 "
+"``title`` が指定されていない場合、このフィールドは機能しません。"
 
 #: ../../source/developer/message-attachments.rst:50
 msgid "Fields"
-msgstr ""
+msgstr "フィールド"
 
 #: ../../source/developer/message-attachments.rst:52
 msgid ""
 "Fields can be included as an optional array within ``attachments``, and "
 "are used to display information in a table format inside the attachment."
 msgstr ""
+"フィールドは ``attachments`` 内にオプションで配列を含めることができます。"
+"これはアタッチメント内部のテーブルフォーマットとして表示されます。"
 
 #: ../../source/developer/message-attachments.rst:54
 msgid ""
 "``title``: A title shown in the table above the ``value``.  As of v5.14 a"
 " title will render emojis properly."
 msgstr ""
+"``title`` ： ``value`` 上部のテーブルに表示されるタイトル。v5.14以降では"
+"タイトルに絵文字が適切にレンダーされます。"
 
 #: ../../source/developer/message-attachments.rst:56
 msgid ""
 "``value``: The text value of the field. It can be formatted using "
 ":doc:`Markdown <../help/messaging/formatting-text>`."
 msgstr ""
+"``value`` ：フィールドのテキスト値。 :doc:`マークダウン <../help/messaging/"
+"formatting-text>` でフォーマット可能です。"
 
 #: ../../source/developer/message-attachments.rst:58
 msgid ""
 "``short``: Optionally set to true or false (boolean) to indicate whether "
 "the ``value`` is short enough to be displayed beside other values."
 msgstr ""
+"``short`` ：オプションでtrueかfalse（ブーリアン）を設定して、 ``value`` が"
+"他の値の横に表示できるぐらい小さいかを指定します。"
 
 #: ../../source/developer/message-attachments.rst:63
 msgid "Images"
-msgstr ""
+msgstr "イメージ"
 
 #: ../../source/developer/message-attachments.rst:65
 msgid ""
 "``image_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or "
 "SVG) that is displayed inside a message attachment."
 msgstr ""
+"``image_url`` ：メッセージアタッチメント内部に表示されるイメージファイル（"
+"GIF、JPEG、PNG、BMPまたはSVG）へのオプションのURL。"
 
 #: ../../source/developer/message-attachments.rst:67
 msgid ""
 "Large images are resized to a maximum width of 400px or a maximum height "
 "of 300px, while still maintaining the original aspect ratio."
 msgstr ""
+"大きなイメージはそのアスペクト比を維持したまま最大幅480px、もしくは最大高"
+"300pxにリサイズされます。"
 
 #: ../../source/developer/message-attachments.rst:71
 msgid ""
@@ -170,22 +215,25 @@ msgid ""
 "an attachment. We recommend using an image that is already 75x75 pixels, "
 "but larger images will be scaled down with the aspect ratio maintained."
 msgstr ""
+"``thumb_url`` ：アタッチメントの右側に75x75ピクセルのサムネイルとして"
+"表示されるイメージファイル（GIF、JPEG、PNG、BMPまたはSVG）へのオプションの"
+"URL。"
 
 #: ../../source/developer/message-attachments.rst:76
 msgid "Example Message Attachment"
-msgstr ""
+msgstr "メッセージアタッチメントの例"
 
 #: ../../source/developer/message-attachments.rst:78
 msgid "Here is an example message attachment:"
-msgstr ""
+msgstr "メッセージアタッチメントの例を次に示します："
 
 #: ../../source/developer/message-attachments.rst:123
 msgid "And here is how it renders in Mattermost:"
-msgstr ""
+msgstr "さらにMattermostでどのようにレンダーされるかを下記に示します："
 
 #: ../../source/developer/message-attachments.rst:128
 msgid "Footer"
-msgstr ""
+msgstr "フッター"
 
 #: ../../source/developer/message-attachments.rst:130
 msgid ""
@@ -193,6 +241,8 @@ msgid ""
 " of the attachment. Footers with more than 300 characters will be "
 "truncated with an ellipsis (``…``)."
 msgstr ""
+"``footer`` ：アタッチメントの下部に表示されるテキストのオプション行。"
+"300文字以上のフッターは省略記号（ ``…`` ）で切り捨てられます。"
 
 #: ../../source/developer/message-attachments.rst:132
 msgid ""
@@ -200,26 +250,29 @@ msgid ""
 "or SVG) that is displayed as a 16x16 pixel thumbnail before the footer "
 "text."
 msgstr ""
+"``footer_icon`` ：フッターテキストの前に16x16ピクセルのサムネイルとして"
+"表示されるイメージファイル（GIF、JPEG、PNG、BMPまたはSVG）へのオプション"
+"URL。"
 
 #: ../../source/developer/message-attachments.rst:137
 msgid "Known Issues"
-msgstr ""
+msgstr "既知の問題"
 
 #: ../../source/developer/message-attachments.rst:139
 msgid "The footer timestamp field (``ts``) is not yet supported"
-msgstr ""
+msgstr "フッターのタイムスタンプフィールド（ ``ts`` ）は未サポートです。"
 
 #: ../../source/developer/message-attachments.rst:140
 msgid "Message Attachment contents do not show up in search"
-msgstr ""
+msgstr "メッセージアタッチメントは検索にはヒットしません。"
 
 #: ../../source/developer/message-attachments.rst:143
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "よくある質問"
 
 #: ../../source/developer/message-attachments.rst:146
 msgid "Can I send a message attachment via the API?"
-msgstr ""
+msgstr "API経由でメッセージアタッチメントを送信できますか？"
 
 #: ../../source/developer/message-attachments.rst:148
 #, python-format
@@ -227,6 +280,8 @@ msgid ""
 "Yes, you can use the `create post RESTful API "
 "<https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts%2Fpost>`_."
 msgstr ""
+"はい。 `投稿を生成するRESTful API <https://api.mattermost.com/"
+"#tag/posts%2Fpaths%2F~1posts%2Fpost>`_ が利用可能です。"
 
 #: ../../source/developer/message-attachments.rst:150
 msgid ""
@@ -234,8 +289,10 @@ msgid ""
 " value is an array of message attachments you want attached to the post. "
 "See below for an example curl command."
 msgstr ""
+"投稿のJSONフィールドpropsに \"attachment\" キーの追加が必要です。"
+"値は投稿に添付したいメッセージアタッチメントの配列です。"
 
 #: ../../source/developer/message-attachments.rst:156
 msgid "Below is an example HTTP request:"
-msgstr ""
+msgstr "下記がHTTPリクエストの例です。"
 

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/integrations/webhook.rst:3
 msgid "Using Mattermost with Webhook"
-msgstr ""
+msgstr "Mattermostをウェブフックで使う"
 
 #: ../../source/integrations/webhook.rst:5
 msgid ""
@@ -28,16 +28,21 @@ msgid ""
 "provides a simple way to trigger events on a server while keeping it "
 "separate from your web server."
 msgstr ""
+"`ウェブフック <https://github.com/adnanh/webhook>`__ は最小の構成でサーバーに"
+"ウェブフックをセットアップするためのGo言語アプリケーションです。ウェブサーバーとは"
+"別にサーバー上でイベントをトリガーするためのシンプルな方法を提供します。"
 
 #: ../../source/integrations/webhook.rst:7
 msgid ""
 "Mattermost's outgoing webhooks feature  can be used with this fairly "
 "easily as long as you take a few things into account."
 msgstr ""
+"Mattermostの外向きのウェブフック機能はいくつかのことを考慮すればかなり簡単に"
+"使用できます。"
 
 #: ../../source/integrations/webhook.rst:10
 msgid "Sending information from Mattermost"
-msgstr ""
+msgstr "Mattermostから情報を送信する"
 
 #: ../../source/integrations/webhook.rst:12
 msgid ""
@@ -47,6 +52,10 @@ msgid ""
 "following configuration, which will pass the entire payload to your "
 "script as a string:"
 msgstr ""
+"Mattermostの :doc:`インタラクティブメッセージボタン <../developer/interactive-"
+"messages>` は \"コンテキスト\" と呼ばれるパラメータを使って情報を送信します。"
+"Mattermostからの全ての情報を取得するもっとも簡単な方法は、ペイロード全体を"
+"文字列としてスクリプトに渡す次のような構成にすることです。"
 
 #: ../../source/integrations/webhook.rst:15
 msgid "{"
@@ -65,7 +74,7 @@ msgstr ""
 
 #: ../../source/integrations/webhook.rst:21
 msgid "Responding to the request"
-msgstr ""
+msgstr "リクエストに応答する"
 
 #: ../../source/integrations/webhook.rst:23
 msgid ""
@@ -73,6 +82,8 @@ msgid ""
 "Mattermost logs that looks like ``Action integration error [details: "
 "err=EOF]``."
 msgstr ""
+"リクエストに応答しない場合、 ``Action integration error [details: err=EOF]`` "
+"のようなエラーがMattermostログに出力されるでしょう。"
 
 #: ../../source/integrations/webhook.rst:25
 msgid ""
@@ -80,6 +91,8 @@ msgid ""
 "send back a response to prevent this. This response is sent immediately "
 "after receiving the webhook."
 msgstr ""
+"この問題を解決するには、これを保護するレスポンスを返すため ``response-message`` "
+"構成プロパティを使います。このレスポンスはウェブフックを受けた後すぐに送られます。"
 
 #: ../../source/integrations/webhook.rst:27
 msgid ""
@@ -87,10 +100,13 @@ msgid ""
 "command-output-in-response`` property to send that output to the "
 "Mattermost server."
 msgstr ""
+"もしスクリプトの実行がそれほど時間のかからないものであれば、その出力を"
+"Mattermostサーバーに送信するため ``include-command-output-in-response`` "
+"プロパティを使うことができます。"
 
 #: ../../source/integrations/webhook.rst:30
 msgid "Authenticating Requests"
-msgstr ""
+msgstr "リクエストの認証"
 
 #: ../../source/integrations/webhook.rst:32
 msgid ""
@@ -98,6 +114,9 @@ msgid ""
 "make sure that your webhook only responds to authorized requests. To "
 "enable this, use the following in your webhook configuration:"
 msgstr ""
+"認可されたリクエストにのみウェブフックが応答をすることを確かめるために"
+"外向きのウェブフックを使ってトークンを送信するようにMattermostを設定できます。"
+"これを有効にするには、次のウェブフック設定を使います。"
 
 #: ../../source/integrations/webhook.rst:35
 msgid "\"trigger-rule\": {"

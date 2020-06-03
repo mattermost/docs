@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015-2019 Mattermost
+# Copyright (C) 2015-2020 Mattermost
 # This file is distributed under the same license as the Mattermost package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mattermost 5.18\n"
+"Project-Id-Version: Mattermost 5.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"POT-Creation-Date: 2020-06-02 10:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/integrations/zapier.rst:2
 msgid "Zapier Integration"
-msgstr ""
+msgstr "Zapier統合機能"
 
 #: ../../source/integrations/zapier.rst:4
 msgid ""
@@ -33,6 +33,15 @@ msgid ""
 "<https://zapier.com/zapbook/gmail/>`__ and `many more "
 "<https://zapier.com/zapbook/>`__, using Zapier integration."
 msgstr ""
+"Mattermostには、`Email <https://zapier.com/zapbook/email-parser/>`__ 、 "
+"`GitHub <https://zapier.com/zapbook/github/>`__ 、 "
+"`Jira <https://zapier.com/zapbook/jira/>`__ 、"
+"`Wufoo <https://zapier.com/zapbook/wufoo/>`__ 、 "
+"`Salesforce <https://zapier.com/zapbook/salesforce/>`__ 、 "
+"`Twitter <https://zapier.com/zapbook/twitter/>`__ 、 "
+"`Gmail <https://zapier.com/zapbook/gmail/>`__ 、 "
+"`他多数 <https://zapier.com/zapbook/>`__ のZapier統合機能を使った"
+"700以上のアプリがあります。"
 
 #: ../../source/integrations/zapier.rst:6
 msgid ""
@@ -42,10 +51,13 @@ msgid ""
 "checks your trigger for new data and automatically performs the action "
 "for you."
 msgstr ""
+"`Zapier <https://zapier.com/>`__ はウェブアプリ間のタスクを自動化するサービスです。"
+"繰り返し実行したいタスクに対するトリガーとアクションである \"zaps\" を作成することができます。"
+"Zapierはデータの中からトリガーをチェックして自動的にアクションを実行します。"
 
 #: ../../source/integrations/zapier.rst:8
 msgid "This documentation includes:"
-msgstr ""
+msgstr "ここでは次の項目を説明します："
 
 #: ../../source/integrations/zapier.rst:10
 msgid ""
@@ -54,6 +66,8 @@ msgid ""
 "Instructions on registering the Zapier app on your server and creating a "
 "zap."
 msgstr ""
+"`Zapierセットアップガイド <https://docs.mattermost.com/integrations/"
+"zapier.html#id1>`__ － サーバーへのZapierアプリの登録とzapの作成方法"
 
 #: ../../source/integrations/zapier.rst:11
 msgid ""
@@ -61,6 +75,9 @@ msgid ""
 "<https://docs.mattermost.com/integrations/zapier.html#id6>`__ - Tips from"
 " the Mattermost team on formatting Zapier integration messages."
 msgstr ""
+"`メッセージ形式のヒント <https://docs.mattermost.com/integrations/"
+"zapier.html#id6>`__ － Zapier統合機能メッセージのフォーマットに関するMattermost"
+"チームからのヒント"
 
 #: ../../source/integrations/zapier.rst:12
 msgid ""
@@ -68,10 +85,12 @@ msgid ""
 "<https://docs.mattermost.com/integrations/zapier.html#id8>`__ - Advice on"
 " troubleshooting common setup issues."
 msgstr ""
+"`トラブルシューティングガイド <https://docs.mattermost.com/integrations/"
+"zapier.html#id8>`__ － 一般的なセットアップ問題のトラブルシューティングのアドバイス"
 
 #: ../../source/integrations/zapier.rst:15
 msgid "Zapier Setup Guide"
-msgstr ""
+msgstr "Zapierセットアップガイド"
 
 #: ../../source/integrations/zapier.rst:16
 msgid ""
@@ -80,10 +99,13 @@ msgid ""
 "then optionally allow any users with a Zapier account to create "
 "integrations."
 msgstr ""
+"ZapierはOAuth2.0を使って認証します。セットアップガイドでは、システム管理者が"
+"MattermostサーバーにZapierアプリを登録し、オプションでZapierアカウントを持つ"
+"任意のユーザーが統合機能を作成できるように求めます。"
 
 #: ../../source/integrations/zapier.rst:19
 msgid "Enable Zapier on your Mattermost Instance"
-msgstr ""
+msgstr "Mattermostインスタンス上でZapierを有効にする"
 
 #: ../../source/integrations/zapier.rst:20
 msgid ""
@@ -91,6 +113,9 @@ msgid ""
 "required to enable an OAuth 2.0 application which can be used by everyone"
 " on your server. Your System Admin must execute these steps."
 msgstr ""
+"Mattermostインスタンス上でZapierを初めてセットアップする際は、サーバー上で"
+"誰もが利用できるOAuth 2.0アプリケーションを有効にすることを求められるでしょう。"
+"システム管理者はこれらのステップを実行する必要があります。"
 
 #: ../../source/integrations/zapier.rst:22
 msgid ""
@@ -98,20 +123,25 @@ msgid ""
 "they have access to, see the `OAuth 2.0 documentation "
 "<https://docs.mattermost.com/developer/oauth-2-0-applications.html>`__."
 msgstr ""
+"OAuth 2.0アプリケーションやパーミッションについて詳しく知るには `OAuth 2.0の"
+"ドキュメント <https://docs.mattermost.com/developer/oauth-2-0-applications.html>`__ " 
+"を参照ください。"
 
 #: ../../source/integrations/zapier.rst:25
 msgid "Enable OAuth 2.0"
-msgstr ""
+msgstr "OAuth 2.0を有効にする"
 
 #: ../../source/integrations/zapier.rst:26
 msgid "Go to the **Main Menu** > **System Console**"
-msgstr ""
+msgstr "**メインメニュー** > **システムコンソール** を開く"
 
 #: ../../source/integrations/zapier.rst:27
 msgid ""
 "Under **Integrations** > **Custom Integrations** in prior versions or "
 "**Integrations** > **Integration Management** in versions after 5.12"
 msgstr ""
+"以前のバージョンでは **統合機能** > **カスタム統合機能** 、5.12以降のバージョン"
+"では **統合機能** > **統合機能管理** にある"
 
 #: ../../source/integrations/zapier.rst:28
 msgid ""
@@ -119,6 +149,9 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "oauth-2-0-service-provider>`__ to **True**."
 msgstr ""
+"`OAuth 2.0サービスプロバイダを有効にする <https://docs.mattermost.com/"
+"administration/config-settings.html#enable-oauth-2-0-service-provider>`__ "
+"を **True** にセットする"
 
 #: ../../source/integrations/zapier.rst:29
 msgid ""
@@ -130,46 +163,59 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "integrations-to-override-profile-picture-iconss>`__ to **True**."
 msgstr ""
+"Zapier統合機能でカスタマイズ可能なユーザー名とプロファイル画像の投稿をできるように"
+"するには、 `ユーザー名をオーバーライドする統合機能を有効にする <https://docs."
+"mattermost.com/administration/config-settings.html#enable-integrations-to-"
+"override-usernames>`__ や `プロファイル画像アイコンをオーバーライドする統合機能を"
+"有効にする <https://docs.mattermost.com/administration/config-settings.html"
+"#enable-integrations-to-override-profile-picture-iconss>`__ を **True** にします。"
 
 #: ../../source/integrations/zapier.rst:32
 msgid "Register Zapier as an OAuth 2.0 Application"
-msgstr ""
+msgstr "OAuth 2.0アプリケーションとしてZapierを登録する"
 
 #: ../../source/integrations/zapier.rst:33
 msgid "Go to **Main Menu** > **Integrations**"
-msgstr ""
+msgstr "**メインメニュー** > **統合機能** を開き"
 
 #: ../../source/integrations/zapier.rst:34
 msgid ""
 "Click **OAuth 2.0 Applications**, then click **Add OAuth 2.0 "
 "Application** and enter the following fields:"
 msgstr ""
+"**OAuth 2.0アプリケーション** をクリックし、 **OAuth 2.0アプリケーション** "
+"をクリックして次のフィールドに入力します。"
 
 #: ../../source/integrations/zapier.rst:35
 msgid "**Is Trusted**: No"
-msgstr ""
+msgstr "**信頼済み** ：いいえ"
 
 #: ../../source/integrations/zapier.rst:36
 msgid "**Display Name**: ``Zapier``"
-msgstr ""
+msgstr "**表示名** ： ``Zapier``"
 
 #: ../../source/integrations/zapier.rst:37
 msgid "**Description**: ``Application for Zapier integrations``"
-msgstr ""
+msgstr "**説明** ： ``Zapier統合機能のアプリケーション``"
 
 #: ../../source/integrations/zapier.rst:38
 msgid "**Homepage**: ``https://zapier.com/``"
-msgstr ""
+msgstr "**ホームページ** ： ``https://zapier.com/``"
 
 #: ../../source/integrations/zapier.rst:39
-msgid "**Icon URL**: ``https://bit.ly/2uGVGeC``"
+msgid ""
+"**Icon URL**: ``https://cdn.zapier.com/zapier/images/logos/zapier-"
+"logomark.png``"
 msgstr ""
+"**アイコンURL** ： ``https://cdn.zapier.com/zapier/images/logos/zapier-logomark.png``"
 
 #: ../../source/integrations/zapier.rst:40
 msgid ""
 "**Callback URLs**: "
 "``https://zapier.com/dashboard/auth/oauth/return/MattermostDevAPI/``"
 msgstr ""
+"**コールバックURL** ： ``https://zapier.com/dashboard/auth/oauth/return/"
+"MattermostDevAPI/``"
 
 #: ../../source/integrations/zapier.rst:41
 msgid ""
@@ -177,28 +223,36 @@ msgid ""
 "**Client ID** and **Client Secret**. Save these values, or share them "
 "with your team to connect Zapier in the steps below."
 msgstr ""
+"アプリケーションを作成するため **保存** をクリックします。 **クライアントID** と "
+"**クライアントシークレット** が提供されるので、その値を保存し、下記のステップで"
+"Zapierと接続するためにチーム内でその値を共有します。"
 
 #: ../../source/integrations/zapier.rst:46
 msgid "Create a Zap"
-msgstr ""
+msgstr "Zapを作成する"
 
 #: ../../source/integrations/zapier.rst:47
 msgid ""
 "`Sign up <https://zapier.com/sign-up/>`__ for a free Zapier account or "
 "`login <https://zapier.com/app/login>`__ if you already have one."
 msgstr ""
+"フリーのZapierアカウントに `サインアップ <https://zapier.com/sign-up/>`__ するか"
+"既に所有しているアカウントで `ログイン <https://zapier.com/app/login>`__ します。"
 
 #: ../../source/integrations/zapier.rst:48
 msgid ""
 "On your `Zapier dashboard <https://zapier.com/app/dashboard>`__ click "
 "**Make a Zap!**."
 msgstr ""
+"`Zapierダッシュボード <https://zapier.com/app/dashboard>`__ にある **Zapを作成する！** "
+"をクリックします。"
 
 #: ../../source/integrations/zapier.rst:49
 msgid ""
 "**Trigger App**: Events in this app will trigger new messages in "
 "Mattermost."
 msgstr ""
+"**トリガーアプリ** ：このアプリのイベントがMattermostで新しいメッセージをトリガーします。"
 
 #: ../../source/integrations/zapier.rst:50
 msgid ""
@@ -207,6 +261,9 @@ msgid ""
 "firing in-app events to a Gmail account and then connecting Gmail to "
 "Mattermost using Zapier."
 msgstr ""
+"**トリガーアプリを選択する** ことによりMattermostで新しいメッセージをとリーがします。"
+"接続を試みるアプリがZapierでサポートされていない場合は、アプリ内イベントをGmailアカウントへ"
+"送信してGmailからZapierを使ってMattermostへ接続するよう検討してください。"
 
 #: ../../source/integrations/zapier.rst:51
 msgid ""
@@ -214,6 +271,8 @@ msgid ""
 "depending on these selected events in conjunction with any filters you "
 "apply."
 msgstr ""
+"**トリガーイベントを選択する** 。Mattermostの新しいメッセージは適用したフィルターに"
+"より選択されたイベントに従って送信されます。"
 
 #: ../../source/integrations/zapier.rst:52
 msgid ""
@@ -221,6 +280,8 @@ msgid ""
 "like to trigger events and **Test** it to ensure Zapier can connect "
 "successfully."
 msgstr ""
+"**トリガーアカウントに接続する** 。イベントをトリガーしたいアカウントに接続し"
+"Zapierが接続に成功するように **テスト** します。"
 
 #: ../../source/integrations/zapier.rst:53
 msgid ""
@@ -228,38 +289,49 @@ msgid ""
 "messages. Learn more about using `Zapier custom filtering "
 "<https://zapier.com/learn/how-to-use-zapier/custom-filters/>`__."
 msgstr ""
+"**フィルタリング** （オプション）：新しいメッセージのトリガーから特定のイベントを除外します。"
+"`Zapierカスタムフィルタリング <https://zapier.com/learn/how-to-use-zapier/custom-filters/>`__ "
+"の利用に関する詳細。"
 
 #: ../../source/integrations/zapier.rst:54
 msgid "Add a filter by clicking the small **+** icon before the **Action** step."
-msgstr ""
+msgstr "**アクション** の前に、小さな **+** アイコンをクリックしてフィルタを追加します。"
 
 #: ../../source/integrations/zapier.rst:55
 msgid ""
 "Zapier supports **AND** and **OR** filters. Use the dropdown selectors to"
 " choose what events will allow the trigger to send a Mattermost message."
 msgstr ""
+"Zapierは **AND** と **OR** フィルタをサポートします。Mattermostメッセージを"
+"送信するためにどのイベントをトリガーとするか選択するためにドロップダウンセレクターを"
+"使用します。"
 
 #: ../../source/integrations/zapier.rst:56
 msgid ""
 "**Mattermost Action**: Connect your Mattermost Account and then specify "
 "posting details."
 msgstr ""
+"**Mattermostアクション** ：Mattermostアカウントと接続して投稿の詳細を指定します。"
 
 #: ../../source/integrations/zapier.rst:57
 msgid "**Select the Action App**. Search for “Mattermost”."
-msgstr ""
+msgstr "**アクションアプリの選択** 。“Mattermost” を検索します。"
 
 #: ../../source/integrations/zapier.rst:58
 msgid ""
 "**Select the Action Event**. Select **Post a Message**. The Mattermost "
 "team plans to expand the actions available here."
 msgstr ""
+"**アクションイベントの選択** 。**メッセージを投稿する** を選択します。Mattermost"
+"チームはここでアクションを利用できるような拡張を計画しています。"
 
 #: ../../source/integrations/zapier.rst:59
 msgid ""
 "**Connect the Action Account**. Click **Connect a New Account** and enter"
 " the following fields:"
 msgstr ""
+"**アクションアカウントを接続する** 。**新しいアカウントを接続する** をクリックし"
+"次のフィールドに入力します："
 
 #: ../../source/integrations/zapier.rst:60
 msgid ""
@@ -270,6 +342,11 @@ msgid ""
 "Contributors team on our community server. The **Mattermost URL** entered"
 " here would be ``https://community.mattermost.com``."
 msgstr ""
+"**Mattermost URL** ：Mattermostサイトにアクセスするために使うURLです。URLの"
+"最後はスラッシュを含まず、サーバーURLの最後にチームを追加してはいけません。例えば、"
+"``https://community.mattermost.com/core`` はコミュニティサーバー上の"
+"コントリビューターチームへの完全なURLですが、ここに入力する **Mattermost URL** は "
+"``https://community.mattermost.com`` であるべきです。"
 
 #: ../../source/integrations/zapier.rst:61
 msgid ""
@@ -279,6 +356,9 @@ msgid ""
 "**OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app,"
 " then obtain the Client ID and Client Secret."
 msgstr ""
+"**クライアントID/シークレット** ：前述の手順でZapierがOAuthアプリケーションとして"
+"有効になっている場合、これらの値は **メインメニュー** > **統合機能** > **OAuth 2.0"
+"アプリケーション** から、Mattermostチームのひとつにナビゲートすることで見つけることができます。"
 
 #: ../../source/integrations/zapier.rst:62
 msgid ""
@@ -288,24 +368,34 @@ msgid ""
 "`troubleshooting guide "
 "<https://docs.mattermost.com/integrations/zapier.html#id6>`__."
 msgstr ""
+"**Mattermostへログインする** 。上記のフィールドへの入力が完了したら、まだログイン"
+"していない場合、Mattermostアカウントにログインするようプロンプトされます。"
+"もし接続がうまくいかない場合は、 `トラブルシューティングガイド <https://docs.mattermost.com/"
+"integrations/zapier.html#id6>`__ を参照してください。"
 
 #: ../../source/integrations/zapier.rst:63
 msgid ""
 "You'll then be prompted to allow Zapier to access your Mattermost "
 "account. Click **Allow**."
 msgstr ""
+"MattermostアカウントへアクセスをZapierに許可するように求められるので、 "
+"**許可** をクリックします。"
 
 #: ../../source/integrations/zapier.rst:64
 msgid ""
 "**Message Post Details**: Specify the formatting of the messages and the "
 "team/channel where messages will post."
 msgstr ""
+"**メッセージ投稿の詳細** ：メッセージのフォーマットと投稿されるチーム／チャンネルを"
+"指定します。"
 
 #: ../../source/integrations/zapier.rst:65
 msgid ""
 "**Team**: Choose the team where new messages will post. The dropdown "
 "should contain all teams you have access to on Mattermost."
 msgstr ""
+"**チーム** ：メッセージが投稿されるチームを選択します。ドロップダウンリストには"
+"アクセスできるMattermostの全チームを含みます。"
 
 #: ../../source/integrations/zapier.rst:66
 msgid ""
@@ -313,6 +403,8 @@ msgid ""
 "dropdown contains all channels that you belong to. Zapier cannot post "
 "into Direct Message channels."
 msgstr ""
+"**チャンネル** ：メッセージが投稿されるチャンネルを選択します。ドロップダウンリストは"
+"属している全てのチャンネルを含みます。Zapierはダイレクトメッセージには投稿できません。"
 
 #: ../../source/integrations/zapier.rst:67
 msgid ""
@@ -323,6 +415,11 @@ msgid ""
 " `message formatting tips "
 "<https://docs.mattermost.com/integrations/zapier.html#id4>`__ below."
 msgstr ""
+"**メッセージテキスト** ：Mattermostに投稿されるメッセージテキストを入力します。"
+"このテキストは `マークダウン <https://docs.mattermost.com/help/messaging/"
+"formatting-text.html>`__ を使ってフォーマットすることができ、選択したトリガー"
+"アプリにより提供される動的フィールドを含めることができます。下記の `メッセージフォーマットの"
+"ヒント <https://docs.mattermost.com/integrations/zapier.html#id4>`__ を参照ください。"
 
 #: ../../source/integrations/zapier.rst:71
 msgid ""
@@ -333,6 +430,11 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "integrations-to-override-usernames>`__ to **True**."
 msgstr ""
+"**ユーザー名** ：Zapierが投稿するユーザー名です。Zapier統合機能からの投稿には"
+"常にユーザー名の横に ``BOT`` タグがつきます。認証されたユーザーのユーザー名を"
+"オーバーラードするためには、システム管理者が `統合機能をユーザー名でオーバーライドする "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"integrations-to-override-usernames>`__ を **True** にセットしなければなりません。"
 
 #: ../../source/integrations/zapier.rst:72
 msgid ""
@@ -343,22 +445,31 @@ msgid ""
 "<https://docs.mattermost.com/administration/config-settings.html#enable-"
 "integrations-to-override-profile-picture-iconss>`__ to **True**."
 msgstr ""
+"**アイコンURL** ：Zapierが投稿するボットのプロフィール画像です。認証されたユーザー"
+"のプロフィール画像でオーバーライドするためには、システム管理者が `統合機能を"
+"プロフィール画像アイコンでオーバーライドする <https://docs.mattermost.com/"
+"administration/config-settings.html#enable-integrations-to-override-profile-"
+"picture-iconss>`__ を **True** にセットしなければなりません。"
 
 #: ../../source/integrations/zapier.rst:73
 msgid ""
 "**Test the Zap**: You may want to test your zap formatting in a Private "
 "Channel before posting in a channel that is visible to your entire team."
 msgstr ""
+"**Zapをテストする** ：チーム全体が見えるチャンネルに投稿する前に非公開チャンネルに"
+"フォーマットしたzapの投稿をテストしたいかもしれません。"
 
 #: ../../source/integrations/zapier.rst:78
 msgid "Message Formatting Tips"
-msgstr ""
+msgstr "メッセージフォーマットのヒント"
 
 #: ../../source/integrations/zapier.rst:80
 msgid ""
 "Here are some useful tips we recommend to get the most out of Zapier "
 "integration:"
 msgstr ""
+"ここではZapier統合機能を最大限に活用するために推奨されるいくつかの役立つヒントを"
+"紹介します。"
 
 #: ../../source/integrations/zapier.rst:82
 msgid ""
@@ -368,12 +479,17 @@ msgid ""
 "<https://docs.mattermost.com/help/messaging/formatting-"
 "text.html#headings>`__ for JIRA issue titles."
 msgstr ""
+"**マークダウン** ：MattermostはZapier統合機能で `マークダウン <https://docs."
+"mattermost.com/help/messaging/formatting-text.html>`__ をサポートします。"
+"例えば、JIRAイシュータイトルに対して `ヘッディングマークダウン <https://docs."
+"mattermost.com/help/messaging/formatting-text.html#headings>`__ を使います。"
 
 #: ../../source/integrations/zapier.rst:83
 msgid ""
 "**Custom Icons**: Use different icons for different services and Zapier "
 "integrations."
 msgstr ""
+"**カスタムアイコン** ：異なるサービスやZapie統合機能に異なるアイコンを使います。"
 
 #: ../../source/integrations/zapier.rst:84
 msgid ""
@@ -383,6 +499,11 @@ msgid ""
 "JIRA ticket number in hashtags. This makes all conversation on a specific"
 " ticket instantly searchable by clicking the hashtag."
 msgstr ""
+"**ハッシュタグ** ：Zapier投稿を検索するためにハッシュタグを使います。"
+"異なるサービスとZapier統合機能に異なるハッシュタグを使います。例えば、ハッシュタグに"
+"JIRAのチケット番号を含めるために利用可能なZapierの動的フィールドを使います。"
+"これにより特定のチケットでの全て会話をハッシュタグをクリックすることですぐに検索する"
+"ことができます。"
 
 #: ../../source/integrations/zapier.rst:85
 msgid ""
@@ -392,10 +513,14 @@ msgid ""
 "text.html#links>`__. For example, in our zaps we embed a link back to the"
 " service within the timestamp so it’s easy to take action on any zap."
 msgstr ""
+"**クイックリンク** ：マークダウンの `埋め込みリンク <https://docs.mattermost.com/"
+"help/messaging/formatting-text.html#links>`__ を利用してzapを起動したサービスへ"
+"リンクします。例えば、zapではタイムスタンプ内にサービスへのリンクを埋め込んで"
+"任意のzapでアクションをとりやすくします。"
 
 #: ../../source/integrations/zapier.rst:88
 msgid "Examples"
-msgstr ""
+msgstr "例"
 
 #: ../../source/integrations/zapier.rst:90
 msgid ""
@@ -407,65 +532,74 @@ msgid ""
 "accessible location. These zaps are formatted in two ways depending on "
 "the service:"
 msgstr ""
+"Mattermostチームは内部コミュニケーションやコントリビューターとのやり取りに使っている "
+"`コミュニティコントリビューターチーム <https://community.mattermost.com/core/>`__ には"
+"統合された50を超えるzapがあります。`コミュニティハートビートチャンネル <https://community."
+"mattermost.com/core/channels/community-heartbeat>`__ は全てのコミュニティサービスを"
+"1つのアクセス可能な場所に統合します。これらのzapはサービスに応じて2つの方法でフォーマット"
+"されています。"
 
 #: ../../source/integrations/zapier.rst:92
 msgid ""
 "**GitHub Issues and Comments, UserVoice Suggestions and Comments, GitLab "
 "MM Issues, GitLab Omnibus MM Issues:**"
 msgstr ""
+"**GitHubのイシューとコメント、UserVoiceの提案とコメント、GitLabのMMイシュー、GitLabのオムニバスMMイシュー：**"
 
 #: ../../source/integrations/zapier.rst:105
 msgid "**Forum Posts, Jira Comments, Hacker News Mentions, Tweets:**"
-msgstr ""
+msgstr "**フォーラムの投稿、Jiraコメント、Hackerのニュースメンション、ツイート：**"
 
 #: ../../source/integrations/zapier.rst:118
 msgid "Troubleshooting Guide"
-msgstr ""
+msgstr "トラブルシューティングガイド"
 
 #: ../../source/integrations/zapier.rst:119
 msgid "Possible solutions to common issues encountered during setup."
-msgstr ""
+msgstr "セットアップ中に発生する一般的な問題と考えられる解決法です。"
 
 #: ../../source/integrations/zapier.rst:122
 msgid "Cannot connect a Mattermost account"
-msgstr ""
+msgstr "Mattermostアカウントに接続できない"
 
 #: ../../source/integrations/zapier.rst:124
 msgid "**\"Token named access_token was not found in oauth response!\"**"
-msgstr ""
+msgstr "**\"access_tokenと名づけられたトークンがOAuthのレスポンスの中に見つからない！\"**"
 
 #: ../../source/integrations/zapier.rst:125
 msgid ""
 "Possible Solution: Try removing any trailing ``/``'s on the end of your "
 "**Mattermost URL**."
 msgstr ""
+"考えらえる解決法：MattermostのURLの最後にある ``/`` を取り除きましょう。"
 
 #: ../../source/integrations/zapier.rst:126
 #: ../../source/integrations/zapier.rst:133
 msgid "Correct: ``https://community.mattermost.com``"
-msgstr ""
+msgstr "正解： ``https://community.mattermost.com``"
 
 #: ../../source/integrations/zapier.rst:127
 msgid "Incorrect: ``https://community.mattermost.com/``"
-msgstr ""
+msgstr "不正解： ``https://community.mattermost.com/``"
 
 #: ../../source/integrations/zapier.rst:131
 msgid "**\"[Server URL] returned (404)\"**"
-msgstr ""
+msgstr "**\"[Server URL] が (404) を返す\"**"
 
 #: ../../source/integrations/zapier.rst:132
 msgid ""
 "Possible Solution: The **Mattermost URL** cannot have a team appended to "
 "the end of the server URL."
 msgstr ""
+"考えられる解決法： **Mattermost URL** がサーバーURLにはチームを追加できません。"
 
 #: ../../source/integrations/zapier.rst:134
 msgid "Incorrect: ``https://community.mattermost.com/core``"
-msgstr ""
+msgstr "不正解： ``https://community.mattermost.com/core``"
 
 #: ../../source/integrations/zapier.rst:138
 msgid "**\"[Server URL] returned (500) Internal Server Error\"**"
-msgstr ""
+msgstr "**\"[Server URL] が (500) Internal Server Error を返す\"**"
 
 #: ../../source/integrations/zapier.rst:139
 msgid ""
@@ -473,10 +607,13 @@ msgid ""
 "value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, "
 "or check with your System Admin."
 msgstr ""
+"考えられる解決法： **クライアントシークレット** が正しくない可能性があります。 "
+"**メインメニュー** > **統合機能** > **OAuth 2.0 アプリケーション** でこの値を"
+"確認するか、システム管理者にチェックしてもらってください。"
 
 #: ../../source/integrations/zapier.rst:143
 msgid "**\"Error Invalid client id\"**"
-msgstr ""
+msgstr "**\"Invalid client id のエラー表示\"**"
 
 #: ../../source/integrations/zapier.rst:144
 msgid ""
@@ -485,10 +622,15 @@ msgid ""
 "there are no trailing spaces in the **Client ID** and **Client Secret** "
 "fields then try again."
 msgstr ""
+"考えらえる解決法： **クライアントID** 、 **クライアントシークレット** のどちらか"
+"または両方がフォーム内でコピー＆ペーストされたとき末尾にスペースが混入したかもしれません。 "
+"**クライアントID** 及び **クライアントシークレット** の末尾にスペースがないか再度確認"
+"してください。"
+
 
 #: ../../source/integrations/zapier.rst:148
 msgid "**\"Mattermost needs your help: We couldn't find the requested app\"**"
-msgstr ""
+msgstr "**\"Mattermostがあなたの助けを必要としています：リクエストされたアプリが見つかりません\"**"
 
 #: ../../source/integrations/zapier.rst:149
 msgid ""
@@ -496,10 +638,13 @@ msgid ""
 "value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, "
 "or check with your System Admin."
 msgstr ""
+"考えられる解決法： **クライアントID** が不正である可能性があります。 **メインメニュー** > "
+"**統合機能** > **OAuth 2.0 アプリケーション** でこの値を確認するか、システム管理者に"
+"チェックしてもらってください。"
 
 #: ../../source/integrations/zapier.rst:154
 msgid "Deauthorize the Zapier App"
-msgstr ""
+msgstr "Zapierアプリの認証を解除する"
 
 #: ../../source/integrations/zapier.rst:156
 msgid ""
@@ -507,4 +652,6 @@ msgid ""
 " connected account, go to **Account Settings** > **Security** > **OAuth "
 "2.0 Applications**, then click **Deauthorize** on the Zapier app."
 msgstr ""
-
+"接続アカウントから投稿できないようにZapierの認証を解除するためには、**アカウント設定** > "
+"**セキュリティ** > **OAuth 2.0 アプリケーション** にてZapiereアプリの **認証の解除** を"
+"クリックします。"
