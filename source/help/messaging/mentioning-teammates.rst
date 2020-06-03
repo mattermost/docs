@@ -86,7 +86,6 @@ Confirmation dialog warnings
 
 For any mention that will trigger notifications for more than five users, the user posting the mention must confirm the action before sending the notifications. 
 This confirmation dialog only appears when ``TeamSettings.EnableConfirmNotificationsToChannel`` in ``config.json`` is enabled and is not displayed for group mentions on mobile. 
-*This warning is not displayed for group mentions on mobile*
 
 Highlighting
 ---------------
