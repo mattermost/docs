@@ -62,8 +62,6 @@ Once enabled for a specific group, users will be able to mention and notify the 
 
 Group mention identifiers (slugs) use the LDAP group name by default, but they can be customized and renamed.
 
-Group mention identfiers (slugs) use the LDAP group name by defualt, but they can also be custmoized/renamed. 
-
 As with @username mentions, use *@* to bring up a list of groups that can be mentioned. To filter the list, type the first few letters of any group. Use the UP and DOWN arrow keys to scroll through entries in the list, and then press ENTER to select the group to mention.
 
 .. code-block:: none
