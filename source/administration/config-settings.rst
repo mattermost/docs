@@ -2216,7 +2216,7 @@ Profile Picture Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
 
-The Mattermost server will replace the user’s profile image upon login (not at the sync interval as with other attributes). The sync will not occur if the current profile image matches the image associated with that user in AD/LDAP.
+The Mattermost server will replace the user’s profile image upon login (not at the sync interval as with other attributes). The sync will not occur if the current Mattermost profile image matches the image associated with that user in AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PictureAttribute": ""`` with string input.                                                                              |
