@@ -83,7 +83,7 @@ Recent Mentions
 
 Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). Click **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
-Confirmation dialogue warnings
+Confirmation dialog warnings
 ---------------
 
 Any mention that will trigger notifications for over five users, a confirmation dialog will appear requiring confirmation from the user posting the mention before sending notifications to those users. 
