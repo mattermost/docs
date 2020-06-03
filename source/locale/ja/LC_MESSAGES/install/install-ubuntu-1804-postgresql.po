@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:4
+msgid "Installing PostgreSQL Database Server"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:6
+msgid ""
+"Install and set up the database for use by the Mattermost server. You can"
+" install either PostgreSQL or MySQL."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:8
+msgid "Assume that the IP address of this server is 10.10.10.1."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:10
+msgid "**To install PostgreSQL on Ubuntu Server 18.04:**"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:12
+msgid ""
+"Log in to the server that will host the database and issue the following "
+"command:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:14
+msgid "``sudo apt install postgresql postgresql-contrib``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:16
+msgid ""
+"When the installation is complete, the PostgreSQL server is running, and "
+"a Linux user account called *postgres* has been created."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:18
+msgid "Log in to the *postgres* account."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:20
+msgid "``sudo --login --user postgres``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:22
+msgid "Start the PostgreSQL interactive terminal."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:24
+msgid "``psql``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:26
+msgid "Create the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:28
+msgid "``postgres=# CREATE DATABASE mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:30
+msgid "Create the Mattermost user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:32
+msgid "``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:35
+msgid "Use a password that is more secure than 'mmuser-password'."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:37
+msgid "Grant the user access to the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:39
+msgid "``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:41
+msgid "Exit the PostgreSQL interactive terminal."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:43
+msgid "``postgres=# \\q``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:45
+msgid "Log out of the *postgres* account."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:47
+msgid "``exit``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:49
+msgid ""
+"(Optional) If you use a different server for your database and the "
+"Mattermost app server, you may allow PostgreSQL to listen on all assigned"
+" IP Addresses. To do so, open ``/etc/postgresql/10/main/postgresql.conf``"
+" as root in a text editor. As a best practice, ensure that only the "
+"Mattermost server is able to connect to the PostgreSQL port using a "
+"firewall."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:51
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:69
+msgid "Find the following line:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:53
+msgid "``#listen_addresses = 'localhost'``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:55
+msgid "Uncomment the line and change ``localhost`` to ``*``:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:57
+msgid "``listen_addresses = '*'``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:59
+msgid "Restart PostgreSQL for the change to take effect:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:61
+msgid "``sudo systemctl restart postgresql``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:63
+msgid ""
+"Modify the file ``pg_hba.conf`` to allow the Mattermost server to "
+"communicate with the database."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:65
+msgid "**If the Mattermost server and the database are on the same machine**:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:67
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:79
+msgid "Open ``/etc/postgresql/10/main/pg_hba.conf`` as root in a text editor."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:71
+msgid "``local   all             all                        peer``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:73
+msgid "Change ``peer`` to ``trust``:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:75
+msgid "``local   all             all                        trust``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:77
+msgid "**If the Mattermost server and the database are on different machines**:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:81
+msgid ""
+"Add the following line to the end of the file, where *{mattermost-server-"
+"IP}* is the IP address of the machine that contains the Mattermost "
+"server."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:83
+msgid "``host all all {mattermost-server-IP}/32 md5``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:85
+msgid "Reload PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:87
+msgid "``sudo systemctl reload postgresql``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:89
+msgid "Verify that you can connect with the user *mmuser*."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:91
+msgid ""
+"If the Mattermost server and the database are on the same machine, use "
+"the following command:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:93
+msgid "``psql --dbname=mattermost --username=mmuser --password``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:95
+msgid ""
+"If the Mattermost server is on a different machine, log into that machine"
+" and use the following command:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:97
+msgid ""
+"``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser "
+"--password``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:100
+msgid ""
+"You might have to install the PostgreSQL client software to use the "
+"command."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:102
+msgid ""
+"The PostgreSQL interactive terminal starts. To exit the PostgreSQL "
+"interactive terminal, type ``\\q`` and press **Enter**."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1804-postgresql.rst:104
+msgid ""
+"With the database installed and the initial setup complete, you can now "
+"install the Mattermost server."
+msgstr ""
+

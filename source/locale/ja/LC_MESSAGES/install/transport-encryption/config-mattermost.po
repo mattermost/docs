@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:3
+msgid "Configuring Proxy to Mattermost Transport Encryption"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:5
+msgid ""
+"Mattermost is able to encrypt the traffic between the proxy and the "
+"application server using TLS."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:9
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:11
+msgid "Operational Mattermost server or cluster"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:12
+msgid "Authentication credentials for Mattermost user on application server"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:15
+msgid "Example Environment"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:16
+msgid ""
+"In this scenario there is one Mattermost application server and one NGINX"
+" server, both running Ubuntu 18.04, with the following IPs:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:19
+msgid "**transport-encryption-mattermost1:** 10.10.250.146"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:20
+msgid "**transport-encryption-nginx:** 10.10.250.107"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:23
+msgid "Configuring NGINX"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:24
+msgid ""
+"On the NGINX server, connect to both servers with a sudo or root user. "
+"Open the Mattermost proxy configuration (Refer to `Configuring NGINX with"
+" SSL and HTTP/2 (End-User - Proxy) <https://docs.mattermost.com/install"
+"/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for "
+"additional information) and search for the following line twice:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:31
+msgid "Change the protocol from ``http`` to ``https``:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:37
+msgid ""
+"Afterwards do not reload the NGINX server yet to minimize the downtime of"
+" the service."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:40
+msgid "Configuring Mattermost"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:41
+msgid ""
+"On the Mattermost server, change to the config directory of Mattermost "
+"and generate a self-signed certificate that will be used to encrypt the "
+"traffic between the proxy server and the application server."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:44
+msgid "**Note:** Alternatively you can sign a certificate from your company's CA."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:54
+msgid ""
+"Once complete, open the file ``config.json`` and modify the values "
+"``ConnectionSecurity``, ``TLSCertFile`` and ``TLSKeyFile`` in the "
+"``ServiceSettings`` section."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:57
+msgid "**Before**"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:71
+msgid "**After**"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:88
+msgid "Restart the Mattermost server and ensure it's up and running:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-mattermost.rst:99
+msgid ""
+"Finally, on the **NGINX server**, reload the configuration to ensure that"
+" requests are sent on HTTPS:"
+msgstr ""
+

@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/mobile/mobile-hpns.rst:2
+msgid "Hosted Push Notification Service"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:5
+msgid "Securing your Mattermost Push Notification Service"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:7
+msgid ""
+"When using Mattermost mobile apps in the Apple App Store and Google Play,"
+" purchase an annual subscription to `Mattermost Enterprise Edition E10 "
+"<https://about.mattermost.com/pricing/>`__ or higher to receive access to"
+" our Hosted Push Notification Service (HPNS)."
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:9
+msgid "Our Hosted Push Notification Service offers:"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:11
+msgid ""
+"Access to a publicly-hosted Mattermost Push Notification Service (MPNS) "
+"offering an explicit `privacy policy <https://about.mattermost.com/hpns-"
+"privacy/>`__ where the contents of unencrypted messages are not examined "
+"or stored"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:12
+msgid ""
+"Encrypted TLS connections between HPNS and Apple Push Notification "
+"Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS "
+"and your Mattermost server"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:13
+msgid "Production-level uptime expectation"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:15
+msgid ""
+"After purchasing a subscription to Mattermost E10 or higher from "
+"Mattermost, Inc. follow the instructions below to set up and test your "
+"system."
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:17
+msgid ""
+"Both TPNS and HPNS only work with the Mattermost Apple App Store and "
+"Google Play apps. If you have compiled the apps yourselves, you must also"
+" host your own Mattermost push proxy server. See our FAQ on :ref:`how "
+"push notifications work <push-faq>` for more details. Our push proxy "
+"server is `available on Github. <https://github.com/mattermost"
+"/mattermost-push-proxy>`__"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:19
+msgid ""
+"If you use HPNS you need to ensure that the push proxy can be reached on "
+"port 443 from the Mattermost server, for TPNS it is port 80. If you host "
+"your own proxy server the default port is 8086."
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:21
+msgid ""
+"Mattermost, Inc. also offers a free basic hosted service for testing "
+"setups called the Test Push Notification Service (TPNS). It does not "
+"offer a production-level uptime service level agreements (SLAs)."
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:25
+msgid "Setting up HPNS push notifications in Enterprise Edition"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:27
+msgid "Follow these steps to set up HPNS:"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:29
+msgid ""
+"Follow the instructions to `install or upgrade to Enterprise Edition "
+"<http://docs.mattermost.com/install/ee-install.html>`__"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:31
+msgid ""
+"Go to **System Console** > **Notifications** > **Mobile Push** > **Send "
+"Push Notifications** in prior versions or **System Console > Environment "
+"> Push Notification Server** in versions after 5.12"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:33
+msgid ""
+"Select \"Use encrypted, production-quality HPNS connection to iOS and "
+"Android apps\" (this option appears only in Enterprise Edition)"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:37
+msgid ""
+"Check the box \"I understand and accept the Mattermost Hosted Push "
+"Notification Service Terms of Service and Privacy Policy\" after reading "
+"the documents referenced"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:39
+msgid ""
+"The default **Push Notification Server** address is "
+"https://push.mattermost.com and the server is hosted inside the United "
+"States. Mattermost also offers a push notification server hosted in "
+"Germany. If you wish to use that server, please update the **Push "
+"Notification Server** address to https://hpns-de.mattermost.com/."
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:41
+msgid "Click **Save**"
+msgstr ""
+
+#: ../../source/mobile/mobile-hpns.rst:43
+msgid ""
+"After setup, :doc:`test push notifications <mobile-testing-"
+"notifications>` to confirm they are working."
+msgstr ""
+

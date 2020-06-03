@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/toolkit.rst:2
+msgid "Mattermost Developer Toolkit"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:5
+msgid "More Power for Developers"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:7
+msgid ""
+"This document is a work in progress, summarizing developer toolkit "
+"capabilities currently under development. For developer-focused "
+"documentation, see `developers.mattermost.com/extend "
+"<https://developers.mattermost.com/extend/plugins/>`__."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:9
+msgid ""
+"The Mattermost Developer Toolkit gives community and in-house customer "
+"developers the power to integrate deeply with, and extend, Mattermost "
+"servers and clients in order to meet their particular requirements - "
+"without “reinventing the wheel”. We are still in the early stages of "
+"architecting the toolkit so what follows is a non-definitive list of the "
+"features we would like to offer."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:11
+msgid ""
+"If you have ideas on additional features that you would like to see in "
+"our Developer Toolkit, `please get in touch "
+"<https://community.mattermost.com/core/channels/developer-toolkit>`__."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:14
+msgid "Better Control for System Admins"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:16
+msgid ""
+"The main benefits of the Mattermost Developer Toolkit from a system "
+"administration perspective are first, that it puts all of the resources "
+"and information that developers will need in one central location and "
+"second, it simplifies integrations with Mattermost."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:18
+msgid ""
+"Consequently this will save time for system administrators as well as "
+"developers."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:21
+msgid "Features of the Developer Toolkit"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:23
+msgid ""
+"Below is a list of planned features of the developer toolkit with "
+"estimated time of delivery."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:25
+msgid "Completed:"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:27
+msgid ""
+"Webhooks and slash commands to allow easy, low-effort extension and "
+"integration."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:28
+msgid ""
+"Mattermost HTTP REST APIv4 allowing for much more powerful server "
+"interaction."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:29
+msgid "Mattermost Webapp moved over to Redux infrustructure."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:30
+msgid ""
+"API developer token to provide a simple method to authenticate to the "
+"Mattermost REST API."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:31
+msgid ""
+"The ability to build webapp client plugins to override existing UI "
+"components (replace posts with your custom components, use your own video"
+" services etc.), modify/extend client drivers to interact with custom "
+"server API endpoints, and add whole new UI views in predetermined places."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:32
+msgid ""
+"The ability to build server plugins to hook directly into server events "
+"(think new post events, user update events, etc.), have some form of "
+"database access (possibly access to certain tables, and the ability to "
+"create new tables) and to add custom endpoints to extend the Mattermost "
+"REST API."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:34
+msgid "Upcoming:"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:35
+msgid ""
+"The ability to build plugins similar to the webapp but for React Native "
+"apps for iOS and Android."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:36
+msgid ""
+"A system or architecture to combine the above plugins into one easy-to-"
+"share and easy-to-install package."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:37
+msgid ""
+"A market or directory to find official and/or certified by Mattermost "
+"plugins and a process to get your plugin certified."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:38
+msgid ""
+"A guide or system to enable the embedding of Mattermost into other apps "
+"as a chat service."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:40
+msgid ""
+"All of the documentation required to support the use and building of the "
+"toolkit will be done as we work through the above systems."
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:43
+msgid "Example Uses"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:45
+msgid "Examples of uses for the plugin architecture include:"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:47
+msgid ""
+"Building common integrations such as Jira and Github, and including them "
+"as default integrations for Mattermost"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:51
+msgid "Providing tools to interact with user posts"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:55
+msgid ""
+"Redesigning the current video and audio calling to use the plugin "
+"architecture, and offering it as one of many video and audio calling "
+"solutions"
+msgstr ""
+
+#: ../../source/developer/toolkit.rst:57
+msgid ""
+"Incorporating other third-party applications such as annual performance "
+"reviews right from the Mattermost interface"
+msgstr ""
+

@@ -1,0 +1,290 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/getting-started/signing-in.rst:2
+msgid "Signing in"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:6
+msgid ""
+"To sign in, navigate to the Mattermost sign-in page. You can get the URL "
+"of the sign-in page from your administrator."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:8
+msgid ""
+"After signing in, the team that appears first on your team sidebar will "
+"open.  If you have not joined a team, the Team Selection page opens where"
+" you can view a list of teams that you can join."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:17
+msgid "Sign In Methods"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:19
+msgid ""
+"There are several options for signing in to your team depending on how "
+"your System Admin has configured your server."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:23
+msgid "Email Address or Username Sign In"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:25
+msgid ""
+"When enabled by your System Admin, you can sign in with the username or "
+"email address used to create your account."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:28
+msgid ""
+"If you have forgotten your password, you can reset it by clicking **I "
+"forgot my password** on the sign in screen, or contact your System Admin "
+"for help resetting your password."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:37
+msgid "GitLab Single Sign-On (SSO)"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:39
+msgid ""
+"When enabled by your System Admin, you can sign in using your GitLab "
+"account using a one-click sign in option."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:47
+msgid "Google Single Sign-On"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:48
+#: ../../source/help/getting-started/signing-in.rst:59
+#: ../../source/help/getting-started/signing-in.rst:83
+msgid "*Available in Enterprise Edition E20*"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:50
+msgid ""
+"When enabled by your System Admin, you can sign in using your Google "
+"account using a one-click sign in option."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:58
+msgid "Office 365 Single Sign-On"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:61
+msgid ""
+"When enabled by your System Admin, you can sign in using your Office 365 "
+"account using a one-click sign in option."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:69
+msgid "AD/LDAP Sign In"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:70
+msgid "*Available in Enterprise Edition E10 and E20*"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:72
+msgid ""
+"When enabled by your System Admin, you can sign in with your AD/LDAP "
+"credentials. This lets you use the same username and password for "
+"Mattermost that you use for various other company services."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:82
+msgid "SAML Single Sign-On (SSO)"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:85
+msgid ""
+"When enabled by your System Admin, you can sign in with your SAML "
+"credentials. This lets you use the same username and password for "
+"Mattermost that you use for various other company services. Mattermost "
+"officially supports `Okta`_ and `Microsoft ADFS`_ as an identity provider"
+" (IDP) for SAML, but you may use other SAML IDPs as well. Please see "
+"`documentation`_ to learn more about configuring SAML for Mattermost."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:98
+msgid "Switching Teams"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:100
+msgid ""
+"You can switch between teams you have joined using the team sidebar that "
+"appears left of your channel list on the left-hand sidebar."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:106
+msgid "Setting Your Status"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:107
+msgid ""
+"You can set your status as online, away, do not disturb, or offline by "
+"selecting a status from the menu that appears when you click your avatar "
+"at the top of the channel list. Do not disturb disables desktop, email "
+"and push notifications."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:115
+msgid "How Mattermost determines your status"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "Client"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "**Online**"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "**Away**"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "**Offline**"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "**Desktop App**"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You're interacting with your computer"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You're inactive on your computer for 5 minutes"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You close Mattermost, sleep or lock your computer"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "**Web Browser**"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You're interacting with Mattermost in a browser"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You're inactive in the Mattermost browser window for 5 minutes"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You close the Mattermost browser window"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "**Mobile App**"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "Mattermost is open"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "Mattermost is open with 5 minutes of inactivity"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:1
+msgid "You switch apps, close Mattermost, or lock your screen"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:125
+msgid "Logging Out"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:127
+msgid ""
+"You can log out from the **Main Menu**, which is accessed by clicking the"
+" three dots in the top header on the left side of the screen. Clicking "
+"**Logout** logs you out of all teams on the server."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:132
+msgid "iOS Setup"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:134
+msgid ""
+"Your Mattermost teams can be accessed on iOS mobile devices by "
+"downloading the Mattermost App."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:137
+msgid "Open the `App Store` on your Apple device running iOS 9.0 or later."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:138
+msgid "Search for “Mattermost” and click **GET** to download the App for free."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:140
+#: ../../source/help/getting-started/signing-in.rst:160
+msgid ""
+"Open Mattermost from your homescreen and input your team and account "
+"information to login:"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:143
+#: ../../source/help/getting-started/signing-in.rst:163
+msgid ""
+"Enter Server URL: This is the web address you go to when you want to "
+"access Mattermost. You can find the Server URL by asking your System "
+"Admin or by looking at the address bar in a desktop browser tab with "
+"Mattermost open. It is in the form ``https://domain.com``."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:148
+#: ../../source/help/getting-started/signing-in.rst:168
+msgid ""
+"Sign in to Mattermost: This is your account login information as "
+"described by one of the sign in methods above."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:152
+msgid "Android Setup"
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:154
+msgid ""
+"Your Mattermost teams can be accessed on Android mobile devices by "
+"downloading the Mattermost App."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:157
+msgid "Open the `Google Play Store`_ on your Android device."
+msgstr ""
+
+#: ../../source/help/getting-started/signing-in.rst:158
+msgid ""
+"Search for “Mattermost” and click **INSTALL** to download the App for "
+"free."
+msgstr ""
+

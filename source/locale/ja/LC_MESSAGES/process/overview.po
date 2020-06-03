@@ -1,0 +1,342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/overview.rst:2
+msgid "Development Process Overview"
+msgstr ""
+
+#: ../../source/process/overview.rst:4
+msgid ""
+"This document describes the process through which feedback and design "
+"discussions flow into community systems, then into tickets, then into "
+"pull requests, then into monthly releases based on product purpose."
+msgstr ""
+
+#: ../../source/process/overview.rst:7
+msgid "Purpose"
+msgstr ""
+
+#: ../../source/process/overview.rst:9
+msgid ""
+"The core offer for users of Mattermost is: **All your team communication "
+"in one place, searchable and accessible anywhere.**"
+msgstr ""
+
+#: ../../source/process/overview.rst:11
+#, python-format
+msgid ""
+"The design is successful if 100% of team members use Mattermost for "
+"internal communications, and are largely off of email and proprietary "
+"SaaS products that lock-in user data as part of their business model."
+msgstr ""
+
+#: ../../source/process/overview.rst:13
+msgid ""
+"See `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`__ for "
+"more details."
+msgstr ""
+
+#: ../../source/process/overview.rst:16
+msgid "Community Systems"
+msgstr ""
+
+#: ../../source/process/overview.rst:18
+msgid ""
+"Please see `Community Systems <http://docs.mattermost.com/process"
+"/community-systems.html>`__ documentation for how feedback from community"
+" constituents is processed into `tickets accepting pull requests. "
+"<http://docs.mattermost.com/process/accepting-pull-request.html>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:21
+msgid "Tickets"
+msgstr ""
+
+#: ../../source/process/overview.rst:23
+msgid ""
+"Mattermost priorities are managed in Jira tickets, which are created by "
+"the core team via feedback from community systems as well as through the "
+"planning processes."
+msgstr ""
+
+#: ../../source/process/overview.rst:26
+msgid "Triage"
+msgstr ""
+
+#: ../../source/process/overview.rst:28
+msgid ""
+"On non-holiday weekdays new tickets are reviewed in a process called "
+"\"triage\", and assigned a Fix Version of \"unscheduled\", indicating the"
+" ticket has enough specificity that it can be assigned to a developer to "
+"be completed. If the ticket is a bug, it is assigned the Fix Version for "
+"the current release."
+msgstr ""
+
+#: ../../source/process/overview.rst:30
+msgid ""
+"By default, all tickets are created as public unless they contain "
+"sensitive information. The triage process reviews them for sufficient "
+"specificity. If the ticket is unclear, triage may reassign the ticket "
+"back to the original reporter to add more details."
+msgstr ""
+
+#: ../../source/process/overview.rst:33
+msgid ""
+"View `current issues scheduled for the next triage meeting "
+"<https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`__."
+msgstr ""
+
+#: ../../source/process/overview.rst:36
+msgid "Re-triage"
+msgstr ""
+
+#: ../../source/process/overview.rst:38
+msgid ""
+"If someone feels an existing ticket should be re-examined, they can add "
+"\"triage\" to the Fix Version and it will be routed to the triage team "
+"for review at the next meeting."
+msgstr ""
+
+#: ../../source/process/overview.rst:41
+msgid "Release Planning"
+msgstr ""
+
+#: ../../source/process/overview.rst:43
+msgid ""
+"Release planning sets the \"Fix Version\" of tickets to one of the "
+"upcoming monthly releases. The Fix Version is an estimate of when a "
+"feature might ship, which may change as the planning process continues, "
+"until the ticket is scheduled for a Sprint."
+msgstr ""
+
+#: ../../source/process/overview.rst:47
+msgid "Sprint Planning"
+msgstr ""
+
+#: ../../source/process/overview.rst:49
+msgid ""
+"Tickets to be completed in the upcoming week are organized on Tuesdays, "
+"with input from developers."
+msgstr ""
+
+#: ../../source/process/overview.rst:52
+msgid "Pull Requests"
+msgstr ""
+
+#: ../../source/process/overview.rst:55
+msgid "Core Team Weekly Rhythm"
+msgstr ""
+
+#: ../../source/process/overview.rst:57
+msgid ""
+"Core team work on tickets in the active sprint on a weekly basis, which "
+"flow into GitHub Pull Requests."
+msgstr ""
+
+#: ../../source/process/overview.rst:59
+msgid ""
+"Each Pull Request needs a minimum of two reviews by other core team "
+"developers before it is merged, with possible feedback shared as reviews "
+"happen."
+msgstr ""
+
+#: ../../source/process/overview.rst:61
+msgid ""
+"Key contributors might also pick up tickets, or through conversations "
+"with the core team contribute pull requests as needed."
+msgstr ""
+
+#: ../../source/process/overview.rst:64
+msgid "Community Contributions"
+msgstr ""
+
+#: ../../source/process/overview.rst:66
+msgid ""
+"Community members following the `Contribution Guidelines "
+"<https://developers.mattermost.com/contribute/getting-started/>`__ might "
+"also submit pull requests. Pull requests that significantly change the "
+"user experience are opened `via the feature ideas process "
+"<http://www.mattermost.org/feature-requests/>`__."
+msgstr ""
+
+#: ../../source/process/overview.rst:69
+msgid "Bug Fixes"
+msgstr ""
+
+#: ../../source/process/overview.rst:71
+msgid ""
+"If you see an obvious bug and want to submit a fix, pull requests "
+"following the `contribution guidelines "
+"<https://developers.mattermost.com/contribute/getting-started/>`__ are "
+"gladly accepted."
+msgstr ""
+
+#: ../../source/process/overview.rst:73 ../../source/process/overview.rst:97
+#: ../../source/process/overview.rst:116
+msgid "Examples:"
+msgstr ""
+
+#: ../../source/process/overview.rst:75
+msgid ""
+"`Fix: Unable to change password #1390 <https://github.com/mattermost"
+"/mattermost-server/pull/1390>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:76
+msgid ""
+"`Fix isBrowserEdge typo #1260 <https://github.com/mattermost/mattermost-"
+"server/pull/1260>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:79
+msgid "Tickets Accepting Pull Requests"
+msgstr ""
+
+#: ../../source/process/overview.rst:81
+msgid ""
+"If you'd like to improve the product beyond bug fixes, you can select "
+"from a list of tickets accepting pull requests prepared by the core team."
+msgstr ""
+
+#: ../../source/process/overview.rst:83
+msgid ""
+"`Help Wanted GitHub issues <https://mattermost.com/pl/help-wanted>`__ and"
+" `Accepting Pull Requests "
+"<https://mattermost.atlassian.net/issues/?filter=10101>`__ (APR) tickets "
+"are intended to be unambiguous projects that could be reasonably "
+"completed by contributors outside the core team and are welcome "
+"contributions."
+msgstr ""
+
+#: ../../source/process/overview.rst:85
+msgid ""
+"You can choose any ticket marked \"Open\", even if it's assigned, and "
+"comment to let people know you're working on it. If you have questions "
+"post in `Mattermost forum <http://forum.mattermost.org/>`__ or join the "
+"`Contributors <https://community.mattermost.com/core/channels/tickets>`__"
+" channel."
+msgstr ""
+
+#: ../../source/process/overview.rst:87
+msgid ""
+"It's okay to submit PRs to fix obvious bugs or add small improvements, "
+"but anything that significantly changes behavior or user expectations "
+"`requires an APR ticket opened by the core team "
+"<http://docs.mattermost.com/process/accepting-pull-request.html>`__ so "
+"that the change can be tested, documented and supported."
+msgstr ""
+
+#: ../../source/process/overview.rst:90
+msgid "Documentation Improvements"
+msgstr ""
+
+#: ../../source/process/overview.rst:92
+msgid "Improvements to documentation are highly welcome."
+msgstr ""
+
+#: ../../source/process/overview.rst:94
+msgid ""
+"Please see `documentation contribution guidelines "
+"<https://forum.mattermost.org/t/help-improve-mattermost-"
+"documentation/194>`__ for more details."
+msgstr ""
+
+#: ../../source/process/overview.rst:99
+msgid ""
+"`Production installation instructions for Debian Jessie with Systemd "
+"#1134 <https://github.com/mattermost/mattermost-server/pull/1134>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:100
+msgid ""
+"`Fix dead link to AWS file in doc #622 <https://github.com/mattermost"
+"/mattermost-server/pull/622>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:103
+msgid "Documentation Pull Request Review"
+msgstr ""
+
+#: ../../source/process/overview.rst:105
+msgid ""
+"If you're assigned to a documentation pull request made by a core "
+"contributor and you see any minor grammar or spelling fixes, please make "
+"a commit to fix them to save time instead of including them in a review. "
+"Note that this should only be done for changes submitted by people "
+"familiar with the review process."
+msgstr ""
+
+#: ../../source/process/overview.rst:108
+msgid "Minor Improvements"
+msgstr ""
+
+#: ../../source/process/overview.rst:110
+msgid ""
+"Minor improvements without an Accepting Pull Request ticket may be "
+"accepted if:"
+msgstr ""
+
+#: ../../source/process/overview.rst:112
+msgid "The contribution aligns with product scope"
+msgstr ""
+
+#: ../../source/process/overview.rst:113
+msgid ""
+"The change is high quality, and does not impose a significant burden    "
+"for others to test, document and maintain your change."
+msgstr ""
+
+#: ../../source/process/overview.rst:114
+msgid ""
+"The change aligns with the `fast, obvious,    forgiving "
+"<http://www.mattermost.org/design-principles/>`__ design principle."
+msgstr ""
+
+#: ../../source/process/overview.rst:118
+msgid ""
+"`Do not clear LastActivityAt for GetProfiles #1396 "
+"<https://github.com/mattermost/mattermost-server/pull/1396/files>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:119
+msgid ""
+"`Update to proxy\\_pass #1331 <https://github.com/mattermost/mattermost-"
+"server/pull/1331>`__"
+msgstr ""
+
+#: ../../source/process/overview.rst:122
+msgid "Release"
+msgstr ""
+
+#: ../../source/process/overview.rst:124
+msgid ""
+"Mattermost ships stable releases on the 16th of every month. Releases "
+"begin with a planning process reviewing internal designs and community "
+"feedback in the context of the product purpose. Feature development is "
+"done in weekly sprints, and releases end with feature complete, "
+"stabilization, code complete and release candidate milestones prior to "
+"final release."
+msgstr ""
+
+#: ../../source/process/overview.rst:126
+msgid ""
+"See `release process documentation <http://docs.mattermost.com/process"
+"/release-process.html#release-process>`__ for more details."
+msgstr ""
+

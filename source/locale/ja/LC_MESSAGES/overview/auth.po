@@ -1,0 +1,244 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/overview/auth.rst:3
+msgid "Corporate Directory Integration"
+msgstr ""
+
+#: ../../source/overview/auth.rst:5
+msgid ""
+"Mattermost Enterprise Edition offers advanced security and authentication"
+" options for integrating with corporate directories. This guide outlines "
+"the options available."
+msgstr ""
+
+#: ../../source/overview/auth.rst:8
+msgid "Basic authentication"
+msgstr ""
+
+#: ../../source/overview/auth.rst:10
+msgid ""
+"By default Mattermost offers authentication via email and password, which"
+" offers basic features including:"
+msgstr ""
+
+#: ../../source/overview/auth.rst:12
+msgid "Account sign-up using email and password"
+msgstr ""
+
+#: ../../source/overview/auth.rst:13
+msgid "Password reset via email"
+msgstr ""
+
+#: ../../source/overview/auth.rst:14
+msgid ""
+"Ability to use same credentials to sign-in to web, desktop app and mobile"
+" app experiences"
+msgstr ""
+
+#: ../../source/overview/auth.rst:15
+msgid "Ability to use username and password in place of email and password"
+msgstr ""
+
+#: ../../source/overview/auth.rst:18
+msgid "Security features for authentication"
+msgstr ""
+
+#: ../../source/overview/auth.rst:20
+msgid ""
+"A core set of features is available with all authentication options to "
+"help increase security:"
+msgstr ""
+
+#: ../../source/overview/auth.rst:22
+msgid ""
+"Ability to `set session length "
+"<https://docs.mattermost.com/administration/config-settings.html#id33>`__"
+" to define how long a user can use Mattermost before needing to re-enter "
+"credentials."
+msgstr ""
+
+#: ../../source/overview/auth.rst:23
+msgid "Ability for users to remotely sign-out of devices."
+msgstr ""
+
+#: ../../source/overview/auth.rst:24
+msgid "Ability for IT admin to force sign-out of a user from devices."
+msgstr ""
+
+#: ../../source/overview/auth.rst:25
+msgid ""
+"Ability to set rate limits on authentication API calls to deter password-"
+"guessing attacks."
+msgstr ""
+
+#: ../../source/overview/auth.rst:26
+msgid "Ability to require multi-factor authentication on sign-in."
+msgstr ""
+
+#: ../../source/overview/auth.rst:27
+msgid ""
+"For advanced deployments, password requirements for length and special "
+"characters can be added."
+msgstr ""
+
+#: ../../source/overview/auth.rst:30
+msgid "Active Directory / LDAP authentication"
+msgstr ""
+
+#: ../../source/overview/auth.rst:32
+msgid ""
+"AD/LDAP is the most popular corporate directory integration option for "
+"deploying Mattermost behind a corporate firewall. Features include:"
+msgstr ""
+
+#: ../../source/overview/auth.rst:34
+msgid "Account creation using AD/LDAP credentials"
+msgstr ""
+
+#: ../../source/overview/auth.rst:35
+msgid ""
+"AD/LDAP user filters to define which users get access to Mattermost in "
+"the form of a query"
+msgstr ""
+
+#: ../../source/overview/auth.rst:36
+msgid ""
+"Ability to use a low-privileged AD/LDAP account to run queries over a "
+"secure TLS or STARTTLS connection"
+msgstr ""
+
+#: ../../source/overview/auth.rst:37
+msgid ""
+"Attribute mapping to place First Name, Last Name, Nickname and other "
+"attributes from AD/LDAP into Mattermost"
+msgstr ""
+
+#: ../../source/overview/auth.rst:38
+msgid ""
+"Customization of login screen to specify whether users are logging in "
+"with email, username or other attribute"
+msgstr ""
+
+#: ../../source/overview/auth.rst:39
+msgid ""
+"Synchronization with AD/LDAP to disable, enable and update Mattermost "
+"users based on AD/LDAP"
+msgstr ""
+
+#: ../../source/overview/auth.rst:41
+msgid "Note:"
+msgstr ""
+
+#: ../../source/overview/auth.rst:43
+msgid ""
+"New user accounts are created when new users sign-in with their AD/LDAP "
+"credentials. You can optionally pre-create user accounts using the `bulk "
+"loading <https://docs.mattermost.com/deployment/bulk-loading.html>`__ "
+"tool."
+msgstr ""
+
+#: ../../source/overview/auth.rst:44
+msgid ""
+"If you're using email or username and password authentication `users can "
+"switch to AD/LDAP manually <https://docs.mattermost.com/deployment/sso-"
+"ldap.html#configure-ad-ldap-using-the-system-console-user-interface>`__, "
+"and the `conversion to AD/LDAP can also be done using the command line "
+"interface <https://docs.mattermost.com/administration/command-line-"
+"tools.html#mattermost-user-migrate-auth>`__ by an IT admin."
+msgstr ""
+
+#: ../../source/overview/auth.rst:46
+msgid ""
+"For very large AD/LDAP instances you can also configure max page size to "
+"divide a Mattermost AD/LDAP query into several pieces to not over-tax the"
+" authentication server when synchronizing."
+msgstr ""
+
+#: ../../source/overview/auth.rst:49
+msgid "Authentication options outside of a private network"
+msgstr ""
+
+#: ../../source/overview/auth.rst:51
+msgid ""
+"When deploying Mattermost to a DMZ location outside the security of a "
+"private network, additional authentication options include:"
+msgstr ""
+
+#: ../../source/overview/auth.rst:53
+msgid ""
+"`Okta integration via SAML <https://docs.mattermost.com/deployment/sso-"
+"saml-okta.html>`__"
+msgstr ""
+
+#: ../../source/overview/auth.rst:54
+msgid ""
+"`OneLogin integration via SAML <https://docs.mattermost.com/deployment"
+"/sso-saml-onelogin.html>`__"
+msgstr ""
+
+#: ../../source/overview/auth.rst:55
+msgid ""
+"`Active Directory Federation Services via SAML "
+"<https://docs.mattermost.com/deployment/sso-saml-adfs.html>`__"
+msgstr ""
+
+#: ../../source/overview/auth.rst:56
+msgid ""
+"`SAML 2.0 authentication <https://docs.mattermost.com/deployment/sso-"
+"saml.html>`__"
+msgstr ""
+
+#: ../../source/overview/auth.rst:57
+msgid "`Google Apps <https://docs.mattermost.com/deployment/sso-google.html>`__"
+msgstr ""
+
+#: ../../source/overview/auth.rst:58
+msgid "`Office 365 <https://docs.mattermost.com/deployment/sso-office.html>`__"
+msgstr ""
+
+#: ../../source/overview/auth.rst:60
+msgid "Generic OAuth and OpenID are not currently supported."
+msgstr ""
+
+#: ../../source/overview/auth.rst:63
+msgid "Future authentication methods"
+msgstr ""
+
+#: ../../source/overview/auth.rst:65
+msgid ""
+"Mattermost Enterprise Edition releases new improvements monthly. Several "
+"additional authentication methods are planned, but not yet scheduled. If "
+"you're an enterprise interested in deploying with one of the following "
+"options, or another option not yet listed, please contact "
+"sales@mattermost.com to start a discussion."
+msgstr ""
+
+#: ../../source/overview/auth.rst:67
+msgid "Certificate-based authentication"
+msgstr ""
+
+#: ../../source/overview/auth.rst:68
+msgid "Authentication via reverse proxy"
+msgstr ""
+
+#: ../../source/overview/auth.rst:69
+msgid "Kerberos-based authentication"
+msgstr ""
+

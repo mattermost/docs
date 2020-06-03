@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/branding.rst:2
+msgid "Custom Branding Tools"
+msgstr ""
+
+#: ../../source/administration/branding.rst:4
+msgid ""
+"Use custom branding tools to present a Mattermost experience that is "
+"tailored to the branding of your organization."
+msgstr ""
+
+#: ../../source/administration/branding.rst:9
+msgid "Enable Custom Branding"
+msgstr ""
+
+#: ../../source/administration/branding.rst:11
+msgid ""
+"Go to **System Console > Site Configuration > Customization > Enable "
+"Custom Branding** (or **System Console > Customization > Custom "
+"Branding** in versions prior to 5.12) and set the value to ``true``."
+msgstr ""
+
+#: ../../source/administration/branding.rst:12
+msgid ""
+"Choose a **Site Name**, upload a **Custom Brand Image**, and enter "
+"**Custom Brand Text**."
+msgstr ""
+
+#: ../../source/administration/branding.rst:13
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/administration/branding.rst:15
+msgid ""
+"Users should see your new custom branding on the login page of your "
+"Mattermost server the next time they sign in."
+msgstr ""
+
+#: ../../source/administration/branding.rst:17
+msgid ""
+"From version 5.16, you can remove the custom brand image by selecting the"
+" **X** in the top right corner of the image. To apply the change, choose "
+"**Save**. Note that the value must be set to ``true`` in order to perform"
+" this step."
+msgstr ""
+
+#: ../../source/administration/branding.rst:19
+msgid "More about settings available in **Customer Branding Tools**:"
+msgstr ""
+
+#: ../../source/administration/branding.rst:22
+msgid "Site Name"
+msgstr ""
+
+#: ../../source/administration/branding.rst:23
+msgid ""
+"Choose the name of your Mattermost site to be shown in the UI. The site "
+"name appears in the header and footer of the site login page, team "
+"selection page, team creation page, account creation page, email "
+"invitations and replaces \"Mattermost\" on the **About** page. Note that "
+"the site name applies to the entire site and not just a specific team on "
+"the site. The site name is limited to 30 characters or less."
+msgstr ""
+
+#: ../../source/administration/branding.rst:26
+msgid "Custom Branding Image"
+msgstr ""
+
+#: ../../source/administration/branding.rst:27
+msgid ""
+"Upload a company logo or custom image representative of your site that is"
+" displayed on the left side of the site login page. Supported image "
+"formats are JPG, PNG, TIFF, and BMP. The recommended image size is "
+"200-500px in width and height, and less than 2 MB since it is loaded for "
+"every user who logs in on desktop."
+msgstr ""
+
+#: ../../source/administration/branding.rst:30
+msgid "Custom Brand Text"
+msgstr ""
+
+#: ../../source/administration/branding.rst:31
+msgid ""
+"Write custom text to display your company tagline or a welcome prompt. "
+"Custom text will be shown below the custom brand image on the left side "
+"of site login page on desktop. You can format this text to a maximum of "
+"500 characters using the same `Markdown formatting syntax "
+"<http://docs.mattermost.com/help/messaging/formatting-text.html>`__ as "
+"used in Mattermost messages."
+msgstr ""
+
+#: ../../source/administration/branding.rst:34
+msgid "Site Description"
+msgstr ""
+
+#: ../../source/administration/branding.rst:35
+msgid ""
+"Use this field to describe the purpose of your site. The site description"
+" is shown below the site name on the login page.  This text defaults to "
+"``All team communication in one place, searchable and accessible "
+"anywhere``. This text can be a maximum of 1024 characters and is not "
+"formatted with Markdown."
+msgstr ""
+

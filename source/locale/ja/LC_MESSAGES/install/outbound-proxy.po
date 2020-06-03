@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/outbound-proxy.rst:4
+msgid "Using an Outbound Proxy"
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:6
+msgid ""
+"In some scenarios, you may wish to use Mattermost behind a proxy. This "
+"can be used to do things such as monitoring outbound traffic from "
+"Mattermost or controlling which websites can appear in link previews and "
+"other embedded content."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:9
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:11
+msgid ""
+"Mattermost's use of a proxy is configured using the ``HTTP_PROXY``, "
+"``HTTPS_PROXY`` and ``NO_PROXY`` environment variables."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:14
+msgid "``HTTP_PROXY`` and ``HTTPS_PROXY``"
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:16
+msgid ""
+"The ``HTTP_PROXY`` and ``HTTPS_PROXY`` environment variables store the "
+"address of the proxy server for HTTP and HTTPS requests respectively. "
+"This value should include the protocol and port of the proxy such as "
+"``http://192.168.4.5:3128``."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:18
+msgid ""
+"If you wish to have Mattermost authenticate with your proxy, it supports "
+"HTTP basic authentication by specifying the address of the proxy such as "
+"``http://mattermost:password@192.168.4.5:3128``."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:20
+msgid ""
+"Note that when proxying HTTPS resources, you will need to configure your "
+"Mattermost server with the root certificate of the proxy. Otherwise, "
+"Mattermost will refuse any response from the proxy as it will detect that"
+" its connection has been intercepted."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:23
+msgid "``NO_PROXY``"
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:25
+msgid ""
+"The ``NO_PROXY`` environment variable can be set to prevent certain "
+"requests from going through the proxy, such as to an SSO provider (such "
+"as GitLab or SAML) or to intranet sites that should be accessible in link"
+" previews. It can be configured as a set of comma-separted IP addresses "
+"(e.g. 1.2.3.4), IP address ranges specified in CIDR notation (e.g. "
+"1.2.3.4/8), or domain names. An IP address or domain name can also "
+"include a port number."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:27
+msgid ""
+"When specifying a domain name, that domain name also matches its sub "
+"domains as well. A domain name with a leading ``.`` matches only sub "
+"domains. For example, ``example.com`` matches both ``example.com`` as "
+"well as ``sub.example.com`` while ``.example.com`` only matches the "
+"latter."
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:30
+msgid "Sample Configuration"
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:32
+msgid ""
+"To set these environment variables while running the Mattermost server "
+"via ``systemd``, modify the ``mattermost.service`` like this:"
+msgstr ""
+
+#: ../../source/install/outbound-proxy.rst:35
+msgid ""
+"Be sure to replace `127.0.0.1:3128` with the correct values for your "
+"proxy servers."
+msgstr ""
+

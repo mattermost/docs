@@ -1,0 +1,931 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/customize-email.rst:2
+msgid "Email Templates"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:4
+msgid ""
+"Mattermost has a few email templates that are sent out when a specific "
+"event occurs. Most of the time these templates do not need to be "
+"modified. In case additional modifications are necessary, all available "
+"props in each email are listed below. The 'Content'-Field is just to give"
+" a quick description of the prop. Please check the i18n strings for the "
+"exact wording."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:9
+msgid ""
+"The email templates are located in the Mattermost server directory in the"
+" ``templates`` folder. The corresponding strings for each prop can be "
+"found in the ``i18n`` folder."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:13
+msgid ""
+"The props between different email templates are not interchangable "
+"without additional server code changes."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:16
+msgid ""
+"Changes made inside of the ``templates`` or ``i18n`` folder might get "
+"overwritten during a server update. Please make sure to backup them "
+"accordingly."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:21
+msgid "Available templates"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:24
+msgid "Email Footer"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:26
+msgid "**Purpose**: This is appended to all outgoing emails sent by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:29
+msgid "**Props**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:32
+#: ../../source/deployment/customize-email.rst:57
+#: ../../source/deployment/customize-email.rst:78
+#: ../../source/deployment/customize-email.rst:101
+#: ../../source/deployment/customize-email.rst:122
+#: ../../source/deployment/customize-email.rst:145
+#: ../../source/deployment/customize-email.rst:166
+#: ../../source/deployment/customize-email.rst:185
+#: ../../source/deployment/customize-email.rst:204
+#: ../../source/deployment/customize-email.rst:225
+#: ../../source/deployment/customize-email.rst:246
+#: ../../source/deployment/customize-email.rst:271
+#: ../../source/deployment/customize-email.rst:286
+#: ../../source/deployment/customize-email.rst:307
+#: ../../source/deployment/customize-email.rst:328
+#: ../../source/deployment/customize-email.rst:355
+#: ../../source/deployment/customize-email.rst:372
+#: ../../source/deployment/customize-email.rst:387
+#: ../../source/deployment/customize-email.rst:400
+#: ../../source/deployment/customize-email.rst:415
+#: ../../source/deployment/customize-email.rst:428
+#: ../../source/deployment/customize-email.rst:443
+msgid "Prop"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:32
+#: ../../source/deployment/customize-email.rst:57
+#: ../../source/deployment/customize-email.rst:78
+#: ../../source/deployment/customize-email.rst:101
+#: ../../source/deployment/customize-email.rst:122
+#: ../../source/deployment/customize-email.rst:145
+#: ../../source/deployment/customize-email.rst:166
+#: ../../source/deployment/customize-email.rst:185
+#: ../../source/deployment/customize-email.rst:204
+#: ../../source/deployment/customize-email.rst:225
+#: ../../source/deployment/customize-email.rst:246
+#: ../../source/deployment/customize-email.rst:271
+#: ../../source/deployment/customize-email.rst:286
+#: ../../source/deployment/customize-email.rst:307
+#: ../../source/deployment/customize-email.rst:328
+#: ../../source/deployment/customize-email.rst:355
+#: ../../source/deployment/customize-email.rst:372
+#: ../../source/deployment/customize-email.rst:387
+#: ../../source/deployment/customize-email.rst:400
+#: ../../source/deployment/customize-email.rst:415
+#: ../../source/deployment/customize-email.rst:428
+#: ../../source/deployment/customize-email.rst:443
+msgid "Content"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:32
+#: ../../source/deployment/customize-email.rst:57
+#: ../../source/deployment/customize-email.rst:78
+#: ../../source/deployment/customize-email.rst:101
+#: ../../source/deployment/customize-email.rst:122
+#: ../../source/deployment/customize-email.rst:145
+#: ../../source/deployment/customize-email.rst:166
+#: ../../source/deployment/customize-email.rst:185
+#: ../../source/deployment/customize-email.rst:204
+#: ../../source/deployment/customize-email.rst:225
+#: ../../source/deployment/customize-email.rst:246
+#: ../../source/deployment/customize-email.rst:271
+#: ../../source/deployment/customize-email.rst:286
+#: ../../source/deployment/customize-email.rst:307
+#: ../../source/deployment/customize-email.rst:328
+#: ../../source/deployment/customize-email.rst:355
+#: ../../source/deployment/customize-email.rst:372
+#: ../../source/deployment/customize-email.rst:387
+#: ../../source/deployment/customize-email.rst:400
+#: ../../source/deployment/customize-email.rst:415
+#: ../../source/deployment/customize-email.rst:428
+#: ../../source/deployment/customize-email.rst:443
+msgid "i18n String"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:34
+msgid "Footer"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:34
+#: ../../source/deployment/customize-email.rst:374
+#: ../../source/deployment/customize-email.rst:389
+#: ../../source/deployment/customize-email.rst:402
+#: ../../source/deployment/customize-email.rst:417
+#: ../../source/deployment/customize-email.rst:430
+msgid "Message intro"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:34
+msgid "api.templates.email_footer"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:36
+msgid "Organization"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:36
+msgid "Name of Organization"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:36
+msgid "api.templates.email_organization"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:38
+msgid "EmailInfo1"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:38
+msgid "First line of footer"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:38
+msgid "api.templates.email_info1"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:40
+msgid "EmailInfo2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:40
+msgid "Second line of footer"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:40
+msgid "api.templates.email_info2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:42
+msgid "EmailInfo3"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:42
+msgid "Third line of footer"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:42
+msgid "api.templates.email_info3"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:44
+msgid "SupportEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:44
+msgid "Email for Mattermost support"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:44
+#: ../../source/deployment/customize-email.rst:59
+#: ../../source/deployment/customize-email.rst:80
+#: ../../source/deployment/customize-email.rst:86
+#: ../../source/deployment/customize-email.rst:103
+#: ../../source/deployment/customize-email.rst:124
+#: ../../source/deployment/customize-email.rst:130
+#: ../../source/deployment/customize-email.rst:147
+#: ../../source/deployment/customize-email.rst:168
+#: ../../source/deployment/customize-email.rst:189
+#: ../../source/deployment/customize-email.rst:191
+#: ../../source/deployment/customize-email.rst:206
+#: ../../source/deployment/customize-email.rst:227
+#: ../../source/deployment/customize-email.rst:248
+#: ../../source/deployment/customize-email.rst:256
+#: ../../source/deployment/customize-email.rst:273
+#: ../../source/deployment/customize-email.rst:288
+#: ../../source/deployment/customize-email.rst:309
+#: ../../source/deployment/customize-email.rst:330
+#: ../../source/deployment/customize-email.rst:340
+#: ../../source/deployment/customize-email.rst:342
+#: ../../source/deployment/customize-email.rst:357
+#: ../../source/deployment/customize-email.rst:361
+#: ../../source/deployment/customize-email.rst:380
+#: ../../source/deployment/customize-email.rst:404
+#: ../../source/deployment/customize-email.rst:408
+#: ../../source/deployment/customize-email.rst:436
+msgid "--"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:49
+msgid "SendChangeUsernameEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:51
+msgid "**Purpose**: Sent to the user when username has been changed."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:54
+#: ../../source/deployment/customize-email.rst:75
+#: ../../source/deployment/customize-email.rst:98
+#: ../../source/deployment/customize-email.rst:119
+#: ../../source/deployment/customize-email.rst:142
+#: ../../source/deployment/customize-email.rst:163
+#: ../../source/deployment/customize-email.rst:201
+#: ../../source/deployment/customize-email.rst:222
+#: ../../source/deployment/customize-email.rst:243
+#: ../../source/deployment/customize-email.rst:304
+#: ../../source/deployment/customize-email.rst:325
+#: ../../source/deployment/customize-email.rst:352
+msgid "**Body Props**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:59
+#: ../../source/deployment/customize-email.rst:80
+#: ../../source/deployment/customize-email.rst:103
+#: ../../source/deployment/customize-email.rst:124
+#: ../../source/deployment/customize-email.rst:147
+#: ../../source/deployment/customize-email.rst:168
+#: ../../source/deployment/customize-email.rst:206
+#: ../../source/deployment/customize-email.rst:227
+#: ../../source/deployment/customize-email.rst:248
+#: ../../source/deployment/customize-email.rst:273
+#: ../../source/deployment/customize-email.rst:288
+#: ../../source/deployment/customize-email.rst:309
+#: ../../source/deployment/customize-email.rst:330
+#: ../../source/deployment/customize-email.rst:357
+msgid "SiteURL"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:59
+#: ../../source/deployment/customize-email.rst:80
+#: ../../source/deployment/customize-email.rst:103
+#: ../../source/deployment/customize-email.rst:124
+#: ../../source/deployment/customize-email.rst:147
+#: ../../source/deployment/customize-email.rst:168
+#: ../../source/deployment/customize-email.rst:206
+#: ../../source/deployment/customize-email.rst:227
+#: ../../source/deployment/customize-email.rst:248
+#: ../../source/deployment/customize-email.rst:273
+#: ../../source/deployment/customize-email.rst:288
+#: ../../source/deployment/customize-email.rst:309
+#: ../../source/deployment/customize-email.rst:330
+#: ../../source/deployment/customize-email.rst:357
+#: ../../source/deployment/customize-email.rst:445
+msgid "URL of the Mattermost server"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:61
+#: ../../source/deployment/customize-email.rst:82
+#: ../../source/deployment/customize-email.rst:105
+#: ../../source/deployment/customize-email.rst:126
+#: ../../source/deployment/customize-email.rst:149
+#: ../../source/deployment/customize-email.rst:170
+#: ../../source/deployment/customize-email.rst:208
+#: ../../source/deployment/customize-email.rst:229
+#: ../../source/deployment/customize-email.rst:250
+#: ../../source/deployment/customize-email.rst:275
+#: ../../source/deployment/customize-email.rst:290
+#: ../../source/deployment/customize-email.rst:311
+#: ../../source/deployment/customize-email.rst:332
+msgid "Title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:61
+#: ../../source/deployment/customize-email.rst:82
+#: ../../source/deployment/customize-email.rst:105
+#: ../../source/deployment/customize-email.rst:126
+#: ../../source/deployment/customize-email.rst:149
+#: ../../source/deployment/customize-email.rst:170
+#: ../../source/deployment/customize-email.rst:208
+#: ../../source/deployment/customize-email.rst:229
+#: ../../source/deployment/customize-email.rst:250
+#: ../../source/deployment/customize-email.rst:275
+#: ../../source/deployment/customize-email.rst:290
+#: ../../source/deployment/customize-email.rst:311
+#: ../../source/deployment/customize-email.rst:332
+#: ../../source/deployment/customize-email.rst:447
+msgid "Message heading"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:61
+msgid "api.templates.username_change_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:63
+#: ../../source/deployment/customize-email.rst:84
+#: ../../source/deployment/customize-email.rst:107
+#: ../../source/deployment/customize-email.rst:128
+#: ../../source/deployment/customize-email.rst:151
+#: ../../source/deployment/customize-email.rst:172
+#: ../../source/deployment/customize-email.rst:210
+#: ../../source/deployment/customize-email.rst:231
+#: ../../source/deployment/customize-email.rst:277
+#: ../../source/deployment/customize-email.rst:292
+#: ../../source/deployment/customize-email.rst:313
+#: ../../source/deployment/customize-email.rst:391
+#: ../../source/deployment/customize-email.rst:419
+#: ../../source/deployment/customize-email.rst:447
+msgid "Info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:63
+#: ../../source/deployment/customize-email.rst:84
+#: ../../source/deployment/customize-email.rst:107
+#: ../../source/deployment/customize-email.rst:128
+#: ../../source/deployment/customize-email.rst:151
+#: ../../source/deployment/customize-email.rst:172
+#: ../../source/deployment/customize-email.rst:210
+#: ../../source/deployment/customize-email.rst:231
+#: ../../source/deployment/customize-email.rst:252
+#: ../../source/deployment/customize-email.rst:277
+#: ../../source/deployment/customize-email.rst:292
+#: ../../source/deployment/customize-email.rst:313
+#: ../../source/deployment/customize-email.rst:334
+msgid "Message body"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:63
+msgid "api.templates.username_change_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:65
+#: ../../source/deployment/customize-email.rst:109
+#: ../../source/deployment/customize-email.rst:153
+#: ../../source/deployment/customize-email.rst:212
+#: ../../source/deployment/customize-email.rst:233
+#: ../../source/deployment/customize-email.rst:279
+#: ../../source/deployment/customize-email.rst:294
+#: ../../source/deployment/customize-email.rst:315
+msgid "Warning"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:65
+#: ../../source/deployment/customize-email.rst:109
+#: ../../source/deployment/customize-email.rst:153
+#: ../../source/deployment/customize-email.rst:212
+#: ../../source/deployment/customize-email.rst:233
+#: ../../source/deployment/customize-email.rst:279
+#: ../../source/deployment/customize-email.rst:294
+#: ../../source/deployment/customize-email.rst:315
+msgid "Warning text"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:65
+#: ../../source/deployment/customize-email.rst:109
+#: ../../source/deployment/customize-email.rst:153
+#: ../../source/deployment/customize-email.rst:212
+#: ../../source/deployment/customize-email.rst:233
+#: ../../source/deployment/customize-email.rst:279
+#: ../../source/deployment/customize-email.rst:294
+msgid "api.templates.email_warning"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:70
+msgid "SendEmailChangeVerifyEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:72
+msgid ""
+"**Purpose**: Sent to the user when email change has been requested. "
+"Contains verification link and button."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:82
+msgid "api.templates.email_change_verify_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:84
+msgid "api.templates.email_change_verify_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:86
+#: ../../source/deployment/customize-email.rst:130
+#: ../../source/deployment/customize-email.rst:191
+msgid "VerifyUrl"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:86
+#: ../../source/deployment/customize-email.rst:130
+msgid "URL for email verification"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:88
+msgid "VerifyButton"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:88
+msgid "Button for email verification"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:88
+msgid "api.templates.email_change_verify_body.button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:93
+msgid "SendEmailChangeEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:95
+msgid "**Purpose**: Sent to the user when email has been changed succesfully."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:105
+msgid "api.templates.email_change_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:107
+msgid "api.templates.email_change_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:114
+msgid "SendVerifyEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:116
+msgid ""
+"**Purpose**: Sent to the user upon account creation to verify email "
+"address."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:126
+msgid "api.templates.verify_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:128
+msgid "api.templates.verify_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:132
+#: ../../source/deployment/customize-email.rst:174
+#: ../../source/deployment/customize-email.rst:258
+#: ../../source/deployment/customize-email.rst:336
+#: ../../source/deployment/customize-email.rst:359
+msgid "Button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:132
+msgid "Button for email verfication"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:132
+msgid "api.templates.verify_body.button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:137
+msgid "SendSignInChangeEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:139
+msgid ""
+"**Purpose**: Sent to the user when sign-in method has been changed (i.e. "
+"from email to LDAP, etc.)"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:149
+msgid "api.templates.signin_change_email.body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:151
+msgid "api.templates.signin_change_email.body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:158
+msgid "SendWelcomeEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:160
+msgid ""
+"**Purpose**: Sent to the user when account has been created. May also "
+"contain download links to Apps as well as email verification links."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:170
+msgid "api.templates.welcome_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:172
+msgid "api.templates.welcome_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:174
+#: ../../source/deployment/customize-email.rst:258
+#: ../../source/deployment/customize-email.rst:336
+msgid "Button for confirmation"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:174
+msgid "api.templates.welcome_body.button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:176
+#: ../../source/deployment/customize-email.rst:254
+#: ../../source/deployment/customize-email.rst:378
+#: ../../source/deployment/customize-email.rst:406
+#: ../../source/deployment/customize-email.rst:434
+msgid "Info2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:176
+#: ../../source/deployment/customize-email.rst:178
+#: ../../source/deployment/customize-email.rst:254
+msgid "Continuation of message body"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:176
+msgid "api.templates.welcome_body.info2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:178
+msgid "Info3"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:178
+msgid "api.templates.welcome_body.info3"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:182
+msgid "**Optional Props**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:187
+msgid "AppDownloadInfo"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:187
+msgid "Info for App Downloads"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:187
+msgid "api.templates.welcome_body.app_download_info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:189
+msgid "AppDownloadLink"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:189
+msgid "Download link for Apps"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:191
+msgid "Link for verification"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:196
+msgid "SendPasswordChangeEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:198
+msgid "**Purpose**: Sent to the user when password has been changed."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:208
+msgid "api.templates.password_change_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:210
+msgid "api.templates.password_change_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:217
+msgid "SendAccessTokenEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:219
+msgid ""
+"**Purpose**: Sent to the user when an access token has been added to the "
+"account."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:229
+msgid "api.templates.user_access_token_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:231
+msgid "api.templates.user_access_token_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:238
+msgid "SendPasswordResetEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:240
+msgid "**Purpose**: Sent to the user when password request has been initiated."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:250
+msgid "api.templates.reset_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:252
+#: ../../source/deployment/customize-email.rst:334
+#: ../../source/deployment/customize-email.rst:376
+#: ../../source/deployment/customize-email.rst:404
+#: ../../source/deployment/customize-email.rst:432
+msgid "Info1"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:252
+msgid "api.templates.reset_body.info1"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:254
+msgid "api.templates.reset_body.info2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:256
+msgid "ResetUrl"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:256
+msgid "URL to reset password"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:258
+msgid "api.templates.reset_body.button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:263
+msgid "SendMfaChangeEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:265
+msgid ""
+"**Purpose**: Sent to the user when multi-factor authentication method has"
+" been changed."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:268
+msgid "**Body Props when MFA is activated**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:275
+msgid "api.templates.mfa_activated_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:277
+msgid "api.templates.mfa_activated_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:283
+msgid "**Body Props when MFA is deactivated**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:290
+msgid "api.templates.mfa_deactivated_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:292
+msgid "api.templates.mfa_deactivated_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:299
+msgid "SendDeactivateAccountEmail"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:301
+msgid "**Purpose**: Sent to the user when account has been deactivated."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:311
+msgid "api.templates.deactivate_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:313
+msgid "api.templates.deactivate_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:315
+msgid "api.templates.deactivate_body.warning"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:320
+msgid "SendInviteEmails"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:322
+msgid "**Purpose**: Sent to the user when team invite via email has been used."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:332
+msgid "api.templates.invite_body.title"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:334
+msgid "api.templates.invite_body.info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:336
+msgid "api.templates.invite_body.button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:338
+msgid "ExtraInfo"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:338
+msgid "Additional info about Mattermost"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:338
+msgid "api.templates.invite_body.extra_info"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:340
+msgid "TeamURL"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:340
+msgid "URL to the team the user has been invited to"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:342
+msgid "Link"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:342
+msgid "URL for team invite confirmation (not to be confused with TeamURL)"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:347
+msgid "NotificationEmailBody"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:349
+msgid ""
+"**Purpose**: Sent to the user as a notification for new messages or "
+"mentions."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:359
+msgid "Button to post"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:359
+msgid "api.templates.post_body.button"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:361
+msgid "TeamLink"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:361
+msgid "URL to Team"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:365
+msgid ""
+"This email can change depending on settings and type of channel the "
+"notification is sent for."
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:367
+msgid "**For group channels**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:369
+#: ../../source/deployment/customize-email.rst:397
+#: ../../source/deployment/customize-email.rst:425
+msgid "**With full notification contents enabled**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:374
+#: ../../source/deployment/customize-email.rst:389
+#: ../../source/deployment/customize-email.rst:402
+#: ../../source/deployment/customize-email.rst:417
+#: ../../source/deployment/customize-email.rst:430
+#: ../../source/deployment/customize-email.rst:445
+msgid "BodyText"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:374
+msgid "app.notification.body.intro.group_message.full"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:376
+#: ../../source/deployment/customize-email.rst:432
+msgid "Channel name"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:376
+msgid "app.notification.body.text.group_message.full"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:378
+#: ../../source/deployment/customize-email.rst:406
+#: ../../source/deployment/customize-email.rst:434
+msgid "Message contents"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:378
+msgid "app.notification.body.text.group_message.full2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:380
+#: ../../source/deployment/customize-email.rst:408
+#: ../../source/deployment/customize-email.rst:436
+msgid "SenderName"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:380
+#: ../../source/deployment/customize-email.rst:408
+#: ../../source/deployment/customize-email.rst:436
+msgid "Name of sender"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:384
+#: ../../source/deployment/customize-email.rst:412
+#: ../../source/deployment/customize-email.rst:440
+msgid "**Without**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:389
+msgid "app.notification.body.intro.group_message.generic"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:391
+#: ../../source/deployment/customize-email.rst:419
+msgid "Timestamp"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:391
+msgid "app.notification.body.text.group_message.generic"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:395
+msgid "**For direct messages**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:402
+msgid "app.notification.body.intro.direct.full"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:404
+msgid "Empty for direct messages"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:406
+msgid "app.notification.body.text.direct.full"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:417
+msgid "app.notification.body.intro.direct.generic"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:419
+msgid "app.notification.body.text.direct.generic"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:423
+msgid "**Notifications**:"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:430
+msgid "app.notification.body.intro.notification.full"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:432
+msgid "app.notification.body.text.notification.full"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:434
+msgid "app.notification.body.text.notification.full2"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:445
+msgid "app.notification.body.intro.notification.generic"
+msgstr ""
+
+#: ../../source/deployment/customize-email.rst:447
+msgid "app.notification.body.text.notification.generic"
+msgstr ""
+

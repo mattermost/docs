@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:4
+msgid "Installing Mattermost Server"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:6
+msgid "Install Mattermost Server on a 64-bit machine."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:8
+msgid "Assume that the IP address of this server is 10.10.10.2."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:10
+msgid "**To install Mattermost Server on Ubuntu**"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:12
+msgid ""
+"Log in to the server that will host Mattermost Server and open a terminal"
+" window."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:14
+msgid ""
+"Download `the latest version of the Mattermost Server "
+"<https://about.mattermost.com/download/>`__. In the following command, "
+"replace ``X.X.X`` with the version that you want to download:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:16
+msgid ""
+"``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:18
+msgid "Extract the Mattermost Server files."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:20
+msgid "``tar -xvzf mattermost*.gz``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:22
+msgid "Move the extracted file to the ``/opt`` directory."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:24
+msgid "``sudo mv mattermost /opt``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:26
+msgid "Create the storage directory for files."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:28
+msgid "``sudo mkdir /opt/mattermost/data``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:31
+msgid ""
+"The storage directory will contain all the files and images that your "
+"users post to Mattermost, so you need to make sure that the drive is "
+"large enough to hold the anticipated number of uploaded files and images."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:33
+msgid ""
+"Set up a system user and group called ``mattermost`` that will run this "
+"service, and set the ownership and permissions."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:35
+msgid "Create the Mattermost user and group:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:36
+msgid "``sudo useradd --system --user-group mattermost``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:37
+msgid "Set the user and group *mattermost* as the owner of the Mattermost files:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:38
+msgid "``sudo chown -R mattermost:mattermost /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:39
+msgid "Give write permissions to the *mattermost* group:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:40
+msgid "``sudo chmod -R g+w /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:42
+msgid ""
+"Set up the database driver in the file "
+"``/opt/mattermost/config/config.json``. Open the file in a text editor "
+"and make the following changes:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:44
+msgid "If you are using PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:45
+msgid "Set ``\"DriverName\"`` to ``\"postgres\"``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:46
+msgid ""
+"Set ``\"DataSource\"`` to the following value, replacing ``<mmuser-"
+"password>``  and ``<host-name-or-IP>`` with the appropriate values:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:47
+msgid ""
+"``\"postgres://mmuser:<mmuser-password>@<host-name-or-"
+"IP>:5432/mattermost?sslmode=disable&connect_timeout=10\"``."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:48
+msgid "If you are using MySQL:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:49
+msgid "Set ``\"DriverName\"`` to ``\"mysql\"``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:50
+msgid ""
+"Set ``\"DataSource\"`` to the following value, replacing ``<mmuser-"
+"password>``  and ``<host-name-or-IP>`` with the appropriate values. Also "
+"make sure that the database name is ``mattermost`` instead of "
+"``mattermost_test``:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:51
+msgid ""
+"``\"mmuser:<mmuser-password>@tcp(<host-name-or-"
+"IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s\"``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:53
+msgid ""
+"Also set ``\"SiteURL\"`` to the full base URL of the site (e.g. "
+"``\"https://mattermost.example.com\"``)."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:55
+msgid "Test the Mattermost server to make sure everything works."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:57
+msgid "Change to the ``mattermost`` directory:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:58
+msgid "``cd /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:59
+msgid "Start the Mattermost server as the user mattermost:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:60
+msgid "``sudo -u mattermost ./bin/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:62
+msgid ""
+"When the server starts, it shows some log information and the text "
+"``Server is listening on :8065``. You can stop the server by pressing "
+"CTRL+C in the terminal window."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:64
+msgid "Setup Mattermost to use *systemd* for starting and stopping."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:66
+msgid "Create a *systemd* unit file:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:67
+msgid "``sudo touch /lib/systemd/system/mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:68
+msgid ""
+"Open the unit file as root in a text editor, and copy the following lines"
+" into the file:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:93
+msgid ""
+"If you are using MySQL, replace ``postgresql.service`` with "
+"``mysql.service`` in 2 places in the ``[Unit]`` section and 1 place in "
+"the ``[Install]`` section."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:96
+msgid ""
+"If you have installed MySQL or PostgreSQL on a dedicated server, then you"
+" need to"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:98
+msgid ""
+"remove ``After=postgresql.service`` and ``Requires=postgresql.service`` "
+"or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the "
+"``[Unit]`` section, and"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:99
+msgid ""
+"replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service``"
+" line in the ``[Install]`` section with ``WantedBy=multi-user.target``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:101
+msgid "or the Mattermost service will not start."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:104
+msgid ""
+"Setting ``WantedBy`` to your local database service ensures that whenever"
+" the database service is started, the Mattermost server starts too. This "
+"prevents the Mattermost server from stopping to work after an automatic "
+"update of the database."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:106
+msgid "Make systemd load the new unit."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:108
+msgid "``sudo systemctl daemon-reload``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:110
+msgid "Check to make sure that the unit was loaded."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:112
+msgid "``sudo systemctl status mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:114
+msgid "You should see an output similar to the following:"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:122
+msgid "Start the service."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:124
+msgid "``sudo systemctl start mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:126
+msgid "Verify that Mattermost is running."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:128
+msgid "``curl http://localhost:8065``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:130
+msgid "You should see the HTML that's returned by the Mattermost server."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:132
+msgid "Set Mattermost to start on machine start up."
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:134
+msgid "``sudo systemctl enable mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-ubuntu-1604-mattermost.rst:136
+msgid ""
+"Now that the Mattermost server is up and running, you can do some initial"
+" configuration and setup."
+msgstr ""
+

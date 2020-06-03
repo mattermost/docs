@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/bulk-loading-data.rst:4
+msgid "Running the bulk loading command"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:6
+msgid ""
+"Before running the bulk loading command, you must first create a `JSONL "
+"<http://jsonlines.org>`__ file that contains the data that you want to "
+"import. After you create the file, run the bulk load command in "
+"validation mode. In this mode, the data is checked for correctness, but "
+"is not written to the database. After validating, run the command in "
+"apply mode, which saves the data to the database."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:9
+msgid "**To bulk load data**:"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:11
+msgid ""
+"1. Create the `JSONL <http://jsonlines.org>`__ data file in your "
+"Mattermost ``bin`` directory. The file can have any name, but in this "
+"procedure it's called ``data.jsonl``. The format of the file is described"
+" in the :ref:`data-format` section."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:14
+msgid "Validate that the file is correct:"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:16
+msgid "Change to the Mattermost ``bin`` directory."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:18
+msgid ""
+"``cd /opt/mattermost/bin`` (the location might be different on your "
+"system)"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:20
+msgid "Run the following command:"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:22
+msgid "``sudo ./mattermost import bulk data.jsonl --validate``"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:24
+msgid ""
+"Resolve any errors that are reported, and validate the file again. Do not"
+" go to the next step until you can run the validate command without "
+"errors."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:26
+msgid "Run the bulk load command in apply mode:"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:28
+msgid "``sudo ./mattermost import bulk data.jsonl --apply``"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:30
+msgid ""
+"When the bulk load command completes, clear all caches. Open the System "
+"Console, and click **General > Configuration > Purge All Caches** in "
+"prior versions or **System Console** > **Environment** > **Web Server** "
+"in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-data.rst:33
+msgid ""
+"Owner for ``data`` directory and all its content has to change to "
+"Mattermost user for it to work correctly. Otherwise, Mattermost cannot "
+"fetch the files created in ``data`` dir after the import tool has run, "
+"since all files created in ``data`` dir are owned by ``root`` as the tool"
+" was run as ``sudo``."
+msgstr ""
+

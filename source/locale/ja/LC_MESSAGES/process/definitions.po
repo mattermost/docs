@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/definitions.rst:4
+msgid "Levels of Feature Quality, Development, and Support Eligibility"
+msgstr ""
+
+#: ../../source/process/definitions.rst:6
+msgid ""
+"This document defines the terminology that is used when communicating "
+"status of features to the Mattermost community. The terminology applies "
+"to all editions of Mattermost server and to Mattermost apps."
+msgstr ""
+
+#: ../../source/process/definitions.rst:13
+msgid "Feature Quality Levels"
+msgstr ""
+
+#: ../../source/process/definitions.rst:15
+msgid ""
+"This list describes the quality levels of Mattermost features, and what "
+"can be expected at each level."
+msgstr ""
+
+#: ../../source/process/definitions.rst:21
+msgid "Production Level Quality"
+msgstr ""
+
+#: ../../source/process/definitions.rst:18
+msgid "Recommended for use in production environments"
+msgstr ""
+
+#: ../../source/process/definitions.rst:19
+msgid ""
+"Eligible for commercial support by `Mattermost, Inc. "
+"<https://about.mattermost.com/support/>`__"
+msgstr ""
+
+#: ../../source/process/definitions.rst:20
+msgid "Documentation is complete"
+msgstr ""
+
+#: ../../source/process/definitions.rst:21
+msgid "Included in security reviews"
+msgstr ""
+
+#: ../../source/process/definitions.rst:22
+msgid "Tested on several platforms"
+msgstr ""
+
+#: ../../source/process/definitions.rst:27
+msgid "Beta Level Quality"
+msgstr ""
+
+#: ../../source/process/definitions.rst:24
+msgid "Is a work in progress"
+msgstr ""
+
+#: ../../source/process/definitions.rst:25
+msgid ""
+"Not recommended in production without `Premier Support "
+"<https://about.mattermost.com/support/>`__ engagement with Mattermost, "
+"Inc."
+msgstr ""
+
+#: ../../source/process/definitions.rst:26
+msgid "Minimal documentation"
+msgstr ""
+
+#: ../../source/process/definitions.rst:27
+#: ../../source/process/definitions.rst:34
+msgid "Disabled by default and must be turned on with a run-time feature flag"
+msgstr ""
+
+#: ../../source/process/definitions.rst:28
+msgid ""
+"Tested thoroughly on a small set of platforms, with tickets and work "
+"items drafted, and made available for testing and feedback on additional "
+"platforms"
+msgstr ""
+
+#: ../../source/process/definitions.rst:34
+msgid "Experimental Level Quality"
+msgstr ""
+
+#: ../../source/process/definitions.rst:30
+msgid "Not recommended for use in production"
+msgstr ""
+
+#: ../../source/process/definitions.rst:31
+msgid "Unknown level of stability"
+msgstr ""
+
+#: ../../source/process/definitions.rst:32
+#: ../../source/process/definitions.rst:43
+msgid "Minimal feature set that is not yet complete"
+msgstr ""
+
+#: ../../source/process/definitions.rst:33
+msgid "Little or no documentation available"
+msgstr ""
+
+#: ../../source/process/definitions.rst:37
+msgid "Feature Development Levels"
+msgstr ""
+
+#: ../../source/process/definitions.rst:39
+msgid ""
+"This list describes what can be expected at the various states of "
+"development of Mattermost products and features."
+msgstr ""
+
+#: ../../source/process/definitions.rst:42
+msgid "Initial Development"
+msgstr ""
+
+#: ../../source/process/definitions.rst:42
+msgid "Experimental or Beta quality"
+msgstr ""
+
+#: ../../source/process/definitions.rst:46
+msgid "Active Development"
+msgstr ""
+
+#: ../../source/process/definitions.rst:45
+#: ../../source/process/definitions.rst:50
+msgid "Production Level quality"
+msgstr ""
+
+#: ../../source/process/definitions.rst:46
+msgid "Tested and released in one or more Mattermost products"
+msgstr ""
+
+#: ../../source/process/definitions.rst:47
+msgid "Improvements and maintenance changes accepted"
+msgstr ""
+
+#: ../../source/process/definitions.rst:50
+msgid "Maintenance Mode"
+msgstr ""
+
+#: ../../source/process/definitions.rst:49
+msgid "Feature complete, with no updates planned"
+msgstr ""
+
+#: ../../source/process/definitions.rst:51
+msgid "Maintenance changes accepted (bug fixes, security fixes)"
+msgstr ""
+
+#: ../../source/process/definitions.rst:54
+msgid "Deprecated Feature"
+msgstr ""
+
+#: ../../source/process/definitions.rst:53
+msgid "Will be discontinued"
+msgstr ""
+
+#: ../../source/process/definitions.rst:54
+msgid ""
+"Exists only for backwards compatibility with released and supported "
+"features"
+msgstr ""
+
+#: ../../source/process/definitions.rst:57
+msgid "Support Eligibility Levels"
+msgstr ""
+
+#: ../../source/process/definitions.rst:59
+msgid ""
+"The following list describes the support levels that are available. Not "
+"all features and configurations are eligible for paid support."
+msgstr ""
+
+#: ../../source/process/definitions.rst:61
+msgid ""
+"Eligible for official support - Feature is production quality and in "
+"either Active Development or Maintenance Mode - Commercial `Enterprise "
+"Edition support <https://about.mattermost.com/support/>`__ is able to "
+"cover this feature area - Community pull requests for fixes are tested "
+"and merged"
+msgstr ""
+
+#: ../../source/process/definitions.rst:66
+msgid ""
+"Eligible for Premier Support only - Early or custom features developed "
+"for a specific enterprise (Experimental quality?) - Beta Level Quality - "
+"Not eligible for standard `Enterprise Edition support "
+"<https://about.mattermost.com/support/>`__, only supported via Premier "
+"Support agreement"
+msgstr ""
+
+#: ../../source/process/definitions.rst:71
+msgid ""
+"Eligible for peer-to-peer support - Configuration is unofficial, for "
+"example, deployment to an operating system that is not officially "
+"supported. - `Enterprise Edition support "
+"<https://about.mattermost.com/support/>`__ will not support the "
+"configuration."
+msgstr ""
+

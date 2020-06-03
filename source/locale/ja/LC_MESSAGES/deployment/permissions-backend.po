@@ -1,0 +1,784 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/permissions-backend.rst:2
+msgid "Advanced Permissions: Backend Infrastructure"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:4
+msgid ""
+"This document outlines the backend server infrastructure for permissions "
+"in Mattermost and is recommended only for technical Admins or developers "
+"looking to make modifications to their installation."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:9
+msgid ""
+"The contents of this document apply to Mattermost Server version 5.0 and "
+"later."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:17
+msgid "Entity Definitions"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:20
+#: ../../source/deployment/permissions-backend.rst:59
+msgid "Permissions"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:22
+msgid ""
+"A **permission** describes a permitted action which may be carried out on"
+" an object. It describes the action that users may perform in the context"
+" in which they have been assigned the role granting the permission."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:25
+msgid "Roles"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:27
+msgid ""
+"A **role** is something to which permissions are granted, that is then "
+"assigned to users in contexts in order to grant them the assigned "
+"permissions in that context. One user may end up with different sets of "
+"permissions granted by different roles in different contexts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:30
+#: ../../source/deployment/permissions-backend.rst:66
+msgid "Scope"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:32
+msgid ""
+"Permissions live within a given scope. There are three scopes in the "
+"Mattermost system: System, Team and Channel. Permissions cascade down the"
+" scopes from the context in which they are applied. For example, if a "
+"“Channel” scoped permission is applied to a “Team” context, the "
+"permission applies to any channels within that team. A permission is "
+"considered,"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:34
+msgid ""
+"**System scope** if it makes sense only on the system level. For example,"
+" ``manage_oauth``."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:35
+msgid ""
+"**Team scope** if it makes sense at the team level and system level. For "
+"example, ``create_public_channel``."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:36
+msgid ""
+"**Channel scope** if it makes sense at channel, team and system level. "
+"For example, ``manage_public_channel_properties``."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:39
+msgid "Context"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:41
+msgid ""
+"A **context** is an instance of a scope. For example, a channel called "
+"\"Developers Hangout\" is an instance of channel scope. Contexts have "
+"hierarchical relationships between them that reflect the hierarchical "
+"ordering of scopes. Each context has one parent, and may have multiple "
+"children, with the ultimate parent context being the system context:"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:43
+msgid ""
+"A channel context has a parent team context, whose parent is the system "
+"context. For example, the \"Developers Hangout\" channel is the channel "
+"context, with parent team context \"Contributors Team\", with parent "
+"system context."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:44
+msgid ""
+"A team context has a parent system context and child channel contexts. "
+"For example, the \"Contributors Team\" is the team context, with parent "
+"system context, and with children channel contexts such as \"Developers "
+"Hangout\", \"Reception\" and \"Marketing\"."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:46
+msgid ""
+"When determining whether a user is allowed to carry out a given action in"
+" a given context, the union of the permissions of all roles that user has"
+" been assigned in the current context and its parent contexts is "
+"calculated. This enables permissions to cascade down the scope hierarchy."
+" For example, if a users is granted the "
+"``manage_public_channel_properties`` permission in a role in the system "
+"context, then the user has permissions to manage public channel "
+"properties in all channels, in all teams, of which they are a member."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:49
+msgid "Schemes"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:51
+msgid ""
+"Schemes describe the default roles applied to users in a context, and all"
+" child contexts. Schemes are either defined specifically for a context, "
+"or if they are not specified, the relevant parts of the parent context’s "
+"scheme are applied, ultimately climbing the hierarchy to the System "
+"Scheme, which serves the purpose of providing the system-wide defaults. "
+"For example, if Team A does not have a team-scoped scheme defined, the "
+"System Scheme will provide the defaults for all contexts in Team A."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:53
+msgid ""
+"Additionally, the lowest-scoped scheme always takes precedence in the "
+"context. For example, if Team B has a team-scoped scheme, that scheme "
+"takes precedence over the System Scheme defaults for all contexts in Team"
+" B."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:56
+msgid "Data Structure"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:61
+msgid ""
+"Permissions in Mattermost are a property of the server code base and are "
+"not created or modified dynamically. The current set of permissions are "
+"as described in the table below."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:63
+msgid "**Mattermost Permissions**"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:66
+msgid "Name (i18n)"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:66
+msgid "Description"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:68
+msgid "invite_user"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:68
+#: ../../source/deployment/permissions-backend.rst:70
+#: ../../source/deployment/permissions-backend.rst:78
+#: ../../source/deployment/permissions-backend.rst:80
+#: ../../source/deployment/permissions-backend.rst:90
+#: ../../source/deployment/permissions-backend.rst:104
+#: ../../source/deployment/permissions-backend.rst:106
+#: ../../source/deployment/permissions-backend.rst:126
+#: ../../source/deployment/permissions-backend.rst:128
+#: ../../source/deployment/permissions-backend.rst:130
+#: ../../source/deployment/permissions-backend.rst:146
+#: ../../source/deployment/permissions-backend.rst:150
+#: ../../source/deployment/permissions-backend.rst:154
+#: ../../source/deployment/permissions-backend.rst:156
+msgid "team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:68
+msgid "Invite users to the team using Send Email Invite or Get Team Invite Link."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:70
+msgid "add_user_to_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:70
+msgid "Add existing server users to the current team."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:72
+msgid "use_slash_commands"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:72
+#: ../../source/deployment/permissions-backend.rst:82
+#: ../../source/deployment/permissions-backend.rst:84
+#: ../../source/deployment/permissions-backend.rst:92
+#: ../../source/deployment/permissions-backend.rst:100
+#: ../../source/deployment/permissions-backend.rst:102
+#: ../../source/deployment/permissions-backend.rst:108
+#: ../../source/deployment/permissions-backend.rst:110
+#: ../../source/deployment/permissions-backend.rst:114
+#: ../../source/deployment/permissions-backend.rst:116
+#: ../../source/deployment/permissions-backend.rst:118
+#: ../../source/deployment/permissions-backend.rst:120
+#: ../../source/deployment/permissions-backend.rst:136
+#: ../../source/deployment/permissions-backend.rst:138
+#: ../../source/deployment/permissions-backend.rst:140
+#: ../../source/deployment/permissions-backend.rst:142
+#: ../../source/deployment/permissions-backend.rst:144
+msgid "channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:72
+msgid "Use slash commands."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:74
+msgid "manage_slash_commands"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:74
+#: ../../source/deployment/permissions-backend.rst:76
+#: ../../source/deployment/permissions-backend.rst:86
+#: ../../source/deployment/permissions-backend.rst:88
+#: ../../source/deployment/permissions-backend.rst:94
+#: ../../source/deployment/permissions-backend.rst:96
+#: ../../source/deployment/permissions-backend.rst:98
+#: ../../source/deployment/permissions-backend.rst:112
+#: ../../source/deployment/permissions-backend.rst:122
+#: ../../source/deployment/permissions-backend.rst:124
+#: ../../source/deployment/permissions-backend.rst:132
+#: ../../source/deployment/permissions-backend.rst:134
+#: ../../source/deployment/permissions-backend.rst:148
+#: ../../source/deployment/permissions-backend.rst:152
+#: ../../source/deployment/permissions-backend.rst:158
+#: ../../source/deployment/permissions-backend.rst:160
+#: ../../source/deployment/permissions-backend.rst:162
+#: ../../source/deployment/permissions-backend.rst:164
+#: ../../source/deployment/permissions-backend.rst:166
+#: ../../source/deployment/permissions-backend.rst:168
+#: ../../source/deployment/permissions-backend.rst:170
+#: ../../source/deployment/permissions-backend.rst:172
+msgid "system"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:74
+msgid "Create, edit and delete your own slash commands."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:76
+msgid "manage_others_slash_commands"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:76
+msgid "Edit or delete other users slash commands."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:78
+msgid "create_public_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:78
+msgid "Create public channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:80
+msgid "create_private_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:80
+msgid "Create private channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:82
+msgid "manage_public_channel_members"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:82
+msgid "Manage public channel members."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:84
+msgid "manage_private_channel_members"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:84
+msgid "Manage private channel members."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:86
+msgid "assign_system_admin_role"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:86
+msgid "Grant other users System Admin role."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:88
+msgid "manage_roles"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:88
+msgid "Manage other users system-wide roles."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:90
+msgid "manage_team_roles"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:90
+msgid "Add and remove team members."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:92
+msgid "manage_channel_roles"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:92
+msgid "Add and remove channel members."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:94
+msgid "manage_system"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:94
+msgid "Access to System Console."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:96
+msgid "create_direct_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:96
+msgid "Open direct message channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:98
+msgid "create_group_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:98
+msgid "Open group message channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:100
+msgid "manage_public_channel_properties"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:100
+msgid "Edit public channel name, header and purpose."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:102
+msgid "manage_private_channel_properties"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:102
+msgid "Edit private channel name, header and purpose."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:104
+msgid "list_team_channels"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:104
+msgid "List public channels in a team."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:106
+msgid "join_public_channels"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:106
+msgid "Join public channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:108
+msgid "delete_public_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:108
+msgid "Archive public channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:110
+msgid "delete_private_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:110
+msgid "Archive private channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:112
+msgid "edit_other_users"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:112
+msgid "Edit values on the `user` object of other users."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:114
+msgid "read_channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:114
+msgid "View posts in a channel."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:116
+msgid "add_reaction"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:116
+msgid "Add emoji reactions to posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:118
+msgid "remove_reaction"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:118
+msgid "Remove emoji reactions from posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:120
+msgid "remove_others_reactions"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:120
+msgid "Remove other users emoji reactions from posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:122
+msgid "permanent_delete_user"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:122
+msgid "Permanently delete other users."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:124
+msgid "upload_file"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:124
+msgid "Upload file attachements to posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:126
+msgid "manage_incoming_webhooks"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:126
+msgid "Create, edit and delete your own incoming webhooks."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:128
+msgid "manage_outgoing_webhooks"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:128
+msgid "Create, edit and delete your own outgoing webhooks."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:130
+msgid "manage_others_webhooks"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:130
+msgid "Edit and delete other users incoming or outgoing webhooks."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:132
+msgid "manage_oauth"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:132
+msgid "Create, edit and delete your own OAuth 2.0 apps."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:134
+msgid "manage_system_wide_oauth"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:134
+msgid "Edit or delete other users' OAuth 2.0 apps."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:136
+msgid "create_post"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:136
+msgid "Post in channels."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:138
+msgid "edit_post"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:138
+msgid ""
+"Authors edit their own posts. Edit post time limit is controlled by the "
+"``\"PostEditTimeLimit\"`` `config "
+"<https://docs.mattermost.com/administration/config-settings.html#post-"
+"edit-time-limit>`__."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:140
+msgid "edit_others_posts"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:140
+msgid "Edit other users posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:142
+msgid "delete_post"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:142
+msgid "Authors delete their own posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:144
+msgid "delete_others_posts"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:144
+msgid "Delete other users' posts."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:146
+msgid "remove_user_from_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:146
+msgid "Remove users from team."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:148
+msgid "create_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:148
+msgid "Create teams."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:150
+msgid "manage_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:150
+msgid "Access Team Settings."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:152
+msgid "import_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:152
+msgid "Import teams in Team Settings."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:154
+msgid "view_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:154
+msgid "Read the Team Object"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:156
+msgid "view_members"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:156
+msgid "List all members on the team."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:158
+msgid "list_users_without_team"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:158
+msgid "List users without a team."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:160
+msgid "create_user_access_token"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:160
+msgid "Create user access tokens."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:162
+msgid "read_user_access_token"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:162
+msgid "Read user access tokens by ID."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:164
+msgid "revoke_user_access_token"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:164
+msgid "Revoke user access tokens."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:166
+msgid "manage_jobs"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:166
+msgid "Create and cancel jobs."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:168
+msgid "create_emojis"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:168
+msgid "Create custom emoji."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:170
+msgid "delete_emojis"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:170
+msgid "Delete own custom emoji."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:172
+msgid "delete_others_emojis"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:172
+msgid "Delete custom emoji created by others."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:176
+msgid "``Roles`` Field"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:178
+msgid ""
+"Roles are applied to objects that represents that user’s membership in a "
+"context. These are referenced in the ``Roles`` field of the ``User``, "
+"``TeamMember``, ``ChannelMember`` and ``Schemes`` Tables."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:180
+msgid ""
+"In the ``TeamMember`` and ``ChannelMember`` tables, it's the ``Roles`` "
+"field that contains custom roles and the ``SchemeAdmin`` and "
+"``SchemeUser`` booleans that indicate the member object should inherit "
+"the respective roles from the relevant scheme, either the default or "
+"custom scheme assigned to the relevant team."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:183
+msgid "``Roles`` Table"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:185
+msgid ""
+"Roles are dynamic and user configurable, necessitating a database table "
+"with the following fields:"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:187
+#: ../../source/deployment/permissions-backend.rst:202
+msgid "``Id`` (Autoincrement, Primary Key)"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:188
+msgid "``Name`` (Unique String with Character Constraints, e.g. “team_user”)."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:189
+msgid "``Display Name`` (String)"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:190
+#: ../../source/deployment/permissions-backend.rst:205
+msgid "``Description`` (String)"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:191
+msgid "``Permissions`` (String): Space-separated permissions names"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:192
+msgid ""
+"``Scheme Managed`` (bool): Indicates whether this role is managed as part"
+" of a scheme."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:193
+msgid ""
+"``BuiltIn`` (bool): Indicates if this role is built in to the Mattermost "
+"system and not removable by the user."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:195
+msgid ""
+"The System Scheme is built in to the product and it's roles are defined "
+"as ``BuiltIn: true`` in the ``Roles`` table."
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:198
+msgid "``Schemes`` Table"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:200
+msgid ""
+"Schemes are dynamic and user configurable, necessitating a database table"
+" with the following fields:"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:203
+msgid ""
+"``Name`` (Unique String with Character Constraints, e.g. "
+"“corporate_scheme”)"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:204
+msgid "``Display`` Name"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:206
+msgid "``Scope`` (String): Team or Channel"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:207
+msgid "``Team Admin Role`` (String): Empty if Channel Scope"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:208
+msgid "``Team User Role`` (String): Empty if Channel Scope"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:209
+msgid "``Channel Admin Role`` (String): Always provided"
+msgstr ""
+
+#: ../../source/deployment/permissions-backend.rst:210
+msgid "``Channel User Role`` (String): Always provided"
+msgstr ""
+

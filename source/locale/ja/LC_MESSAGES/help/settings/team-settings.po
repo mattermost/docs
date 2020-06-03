@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/settings/team-settings.rst:2
+msgid "Team Settings"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:6
+msgid ""
+"The Team Settings menu offers Team Administrators and System "
+"Administrators the ability to adjust settings applied to a specific team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:8
+msgid ""
+"The following settings are found in a Team Site from the **Three-Dot** "
+"menu at the top of the left sidebar under **Team Settings**."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:11
+msgid "General"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:13
+msgid ""
+"General settings under the **Team Settings** > **General** configure how "
+"a team is displayed to users."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:16
+msgid "Team Name"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:18
+msgid ""
+"Your **Team Name** is displayed on the sign-in page, and in the top of "
+"the left-hand sidebar for your team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:20
+msgid ""
+"You can enter a name up to 15 characters in length. The length of team "
+"names is limited to ensure readability."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:23
+msgid "Team Description"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:25
+msgid ""
+"Your **Team Description** is displayed when viewing the list of teams "
+"available to join and in the tooltip when hovering over the team name in "
+"the team sidebar."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:27
+msgid "You can enter a description up to 50 characters in length."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:30
+msgid "Team Icon"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:32
+msgid ""
+"Your **Team Icon** appears in the team sidebar, visible if users are "
+"members of more than one team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:34
+msgid ""
+"You can upload a team icon in BMP, JPG or PNG format. Square images with "
+"a solid background color are recommended, since transparency in PNG icons"
+" fills with a white background in the Team Sidebar. Removing the team "
+"icon resets it to the default icon that contains the first two letters of"
+" the team name."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:37
+msgid "Allow only users with a specific email domain to join this team"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:39
+msgid ""
+"Specifying domains in this setting prevents users from joining the team "
+"when their email domain is not on the list. Only users that have an email"
+" domain matching the defined domains may join the team."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:41
+msgid ""
+"Users without a matching domain on the team prior to the domain being "
+"specified will not be removed after the domain is added."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:44
+msgid "Allow anyone to join this team"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:46
+msgid ""
+"After a user logs in to the site, they are shown a Team Selection page if"
+" they don't belong to a team. Any team with **Allow anyone to join this "
+"team** option set to **Yes** will show up on this page under \"Teams you "
+"can join\"."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:48
+msgid ""
+"A user can access the Team Selection page by also clicking the \"+\" icon"
+" at the bottom of their team sidebar or from the **Main Menu** > **Join "
+"Another Team**."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:51
+msgid "Invite Code"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:53
+msgid ""
+"The **Invite Code** is used as part of the URL in the team invitation "
+"link retrieved from the **Main Menu** > **Get Team Invite Link**. Click "
+"**Regenerate** to generate a new team invitation link and invalidate the "
+"previous link."
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:56
+msgid "Import"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:59
+msgid "Import from Slack (Beta)"
+msgstr ""
+
+#: ../../source/help/settings/team-settings.rst:61
+msgid ""
+"You can import channels and users from Slack into Mattermost from "
+"**Slack** > **Administration** > **Workspace settings** > **Import/Export"
+" Data** > **Export** > **Start Export**. Please review our documentation "
+"on `Slack Import "
+"<https://docs.mattermost.com/administration/migrating.html#migrating-"
+"from-slack>`__ for more details."
+msgstr ""
+

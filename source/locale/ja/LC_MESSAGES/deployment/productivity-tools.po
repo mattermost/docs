@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/productivity-tools.rst:2
+msgid "Productivity Tools"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:4
+msgid ""
+"Our `Integrations Directory <https://integrations.mattermost.com>`_ has "
+"several integrations to connect productivity tools in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:6
+msgid ""
+"Here are some popular options below, including self-hosted on-prem or "
+"self-hosted private cloud solutions, and vendor-hosted SaaS solutions."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:9
+msgid "Matterpoll for polls"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:11
+msgid ""
+"Create a poll by using a slash command, developed by Hanzei and Yusuke "
+"Nemoto."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:12
+msgid ""
+"Polls can be created in different languages, including English, French, "
+"German and Japanese."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:13
+msgid "Source code + docs: https://github.com/matterpoll/matterpoll"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:16
+msgid "Google Calendar"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:18
+msgid "Time management tool for Google Calendar, developed by Wasim Thabraze."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:19
+msgid ""
+"Get reminders about appointments and meetings from a configured Google "
+"Calendar to any Mattermost channel."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:20
+msgid ""
+"Source code + docs: https://github.com/waseem18/mattermost-plugin-google-"
+"calendar"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:23
+msgid "CloudApp"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:25
+msgid ""
+"Tool for screen recording, screenshots, and GIF creation in the cloud, "
+"developed by CloudApp team."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:26
+msgid ""
+"Record a screen, generate a GIF or create a screenshot, and share in "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:27
+msgid "Docs: https://www.getcloudapp.com/integrations/mattermost"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:30
+msgid "Gyazo"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:32
+msgid "Screenshot application, developed by Sean Sackowitz."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:33
+msgid ""
+"Take screenshots, screen GIFs and full page captures, and share in "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:34
+msgid "Source code: https://github.com/seansackowitz/mattermost-plugin-gyazo"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:37
+msgid "Autotranslation Plugin"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:39
+msgid ""
+"Leverage the translation capabilities of Amazon AWS Translate and "
+"Mattermost, developed by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:40
+msgid ""
+"Instantly translate messages to other languages with supported "
+"translations available between English and French, German, and others."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:41
+msgid ""
+"Source code + docs: https://github.com/mattermost/mattermost-plugin-"
+"autotranslate"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:44
+msgid "Remind Plugin"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:46
+msgid ""
+"A Mattermost plugin that sets reminders for users and channels, developed"
+" by Scott Lee Davis."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:47
+msgid ""
+"Set reminders for one-time or recurring events and tasks in any "
+"Mattermost channel."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:48
+msgid ""
+"Source code + docs: https://github.com/scottleedavis/mattermost-plugin-"
+"remind"
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:50
+msgid ""
+"Have a proposal for a productivity integration? `Let us know in the "
+"feature proposal forum "
+"<https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_."
+msgstr ""
+
+#: ../../source/deployment/productivity-tools.rst:52
+msgid ""
+"Have built an integration? `Let us know "
+"<https://integrations.mattermost.com/submit-an-integration/>`_ and we'll "
+"share in our `Integrations Directory "
+"<https://integrations.mattermost.com>`_."
+msgstr ""
+

@@ -1,0 +1,867 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/community-guidelines.rst:3
+msgid "Community Playbook"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:5
+msgid "This document provides easy-to-follow community guidelines for:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:15
+msgid "How to get community involved in a campaign?"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:17
+msgid "Examples include React Native Apps, Redux and APIv4 campaigns."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:20
+msgid "On-boarding"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:22
+msgid ""
+"Create a blog post for the `Developer Blog "
+"<https://developers.mattermost.com/blog/>`_ letting developers know about"
+" the campaign and ways to contribute."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:23
+msgid "Create a contribution guide. This can be part of the blog post."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:24
+msgid "Create help wanted tickets that a community member could work on."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:26
+msgid ""
+"For a high priority Help Wanted ticket, reach out to contributors "
+"directly in the GitHub repository for best engagement"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:29
+msgid "Retention"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:31
+msgid "Identify active contributors and thank them personally for their work"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:32
+msgid ""
+"For work in progress tickets or submitted pull requests, follow up with "
+"contributor once a week for status updates and questions to make sure "
+"contributors aren't blocked and feel more comfortable to ask questions. "
+"If there hasn't been activity in more than two weeks, ask if you can help"
+" them in some way."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:33
+msgid ""
+"Recognize everyone’s contributions (either intrinsic rewards like having "
+"their name listed on a contributor’s page or tangible like swag or gift "
+"cards)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:34
+msgid ""
+"If applicable, assign roles to top contributors (such as team lead, code "
+"reviewer, tester) to give a sense of ownership to the contributor"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:37
+msgid "Off-boarding"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:39
+msgid ""
+"When a campaign is finished, offer suggestions for other campaigns or "
+"projects they might be interested in."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:42
+msgid "How to run a community design meeting?"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:45
+msgid "Objectives"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:46
+msgid ""
+"Avoid blindspots in design by shaping requirements and use cases with "
+"user communities."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:47
+msgid ""
+"Confirm proposed approach for design aligns with solving the problem "
+"discussed."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:48
+msgid "Brainstorm ideas for solving open design questions."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:51
+msgid "Preparations"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:52
+msgid ""
+"Research existing solutions to understand potential use cases brought up "
+"by communities."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:53
+msgid ""
+"Draft a proposed design for the problem - this can be a rough outline, "
+"more concrete mockups or final design."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:54
+msgid ""
+"Decide two meeting times: one for European and Asian communities, another"
+" for North and South American communities."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:56
+msgid "Avoid regional holidays"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:57
+msgid "Aim for typical working hours in the regions"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:59
+msgid "Prepare agenda."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:61
+msgid "Introductions of Mattermost team members part of the meeting"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:62
+msgid "Review of use cases"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:63
+msgid "Review of proposed design approach"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:64
+msgid "Open discussion and Q&A"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:65
+msgid "Actions and decisions"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:66
+msgid "Review of next steps"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:68
+msgid ""
+"Create a public meeting link everyone has permission to access, such as a"
+" Zoom link."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:69
+msgid ""
+"Prepare an RSVP form for customers, see `example here "
+"<https://docs.google.com/forms/d/e/1FAIpQLSdg5NWkI4JcAmGwL3KgoYdtirXTS4wb1GJRXd_20kX2lTo3mw/viewform>`_."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:72
+msgid "Announce"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:73
+msgid ""
+"Prepare a forum post, see `example here <https://forum.mattermost.org/t"
+"/community-design-meeting-folded-reply-threads/6729>`_."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:74
+msgid ""
+"Tweet about it, see `example here "
+"<https://twitter.com/mattermost/status/1100235276436365312>`_."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:75
+msgid "Post in appropriate channels on https://community.mattermost.com."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:76
+msgid ""
+"Post in UserVoice if related to an existing feature proposal, see "
+"`example here "
+"<https://mattermost.uservoice.com/forums/306457-general/suggestions/19572469"
+"-make-threads-collapsible#{toggle_previous_statuses}>`_."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:77
+msgid "Ask customer success teams to share with interested customers."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:80
+msgid "Holding the Meeting"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:81
+msgid "Record the meeting. Mention that sharing video is optional."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:82
+msgid "Follow the agenda."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:83
+msgid "Thank everyone for joining the call."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:86
+msgid "After the Meeting"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:87
+msgid ""
+"Share a summary in all respective channels, including the meeting "
+"recording."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:88
+msgid ""
+"Send a survey asking how valuable the meeting was, feedback on additional"
+" use cases and feedback on improving the meeting in the future. `See "
+"example here "
+"<https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:91
+msgid "Tips"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:92
+msgid "Do not use your personal Zoom meeting link for the call."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:93
+msgid "Note in all announcements that sharing video is optional."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:94
+msgid ""
+"Use `Mattermost` in your name to identify staff from community members on"
+" the call."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:95
+msgid "Consider sequencing design review meetings with design priorities."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:96
+msgid "Encourage less vocal attendees to share feedback via written chat."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:99
+msgid "How to run a Hackathon?"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:101
+msgid "See :doc:`How to Run a Hackathon page <how-to-run-a-hackathon>`."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:104
+msgid "GitHub Help Wanted Issues in Mattermost-Server Repository"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:107
+msgid "Goal"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:109
+msgid ""
+"Increase Mattermost usage through larger and more numerous deployments "
+"via a vibrant open source community that contributes features that would "
+"not otherwise be offered."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:112
+#: ../../source/process/community-guidelines.rst:186
+#: ../../source/process/community-guidelines.rst:316
+msgid "Principles"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:114
+msgid ""
+"Contributors get a worthwhile benefit from their contributions, from the "
+"feature directly and/or from social recognition"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:115
+msgid "Community members should have a low barrier to contribute"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:116
+msgid "Community development workflow should be clear, efficient and effective"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:117
+msgid ""
+"Help Wanted issues should avoid updates to the Enterprise repository due "
+"to complexity in code changes and unit tests."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:120
+msgid "Creating Help Wanted Issues"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:122
+msgid ""
+"To create a Help Wanted issue in the `mattermost-server repository "
+"<https://github.com/mattermost/mattermost-server>`__, follow these steps:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:124
+msgid "1 - Create a ticket in Jira that is well-defined and unambiguous."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:126
+msgid ""
+"The issue should be written with the mindset that the contributor might "
+"have no or limited experience with the Mattermost code base and limited "
+"exposure to the Mattermost product."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:129
+msgid ""
+"Below are a few reasons why Jira tickets for Help Wanted issues are "
+"recommended:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:131
+msgid ""
+"Jira tickets can be used to prioritize Help Wanted issues internally and "
+"are easily searchable by Mattermost staff, community, and customers"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:132
+msgid ""
+"Each Jira ticket goes through the  `triage meeting "
+"<https://docs.mattermost.com/process/training.html#triage-meeting>`__ for"
+" dev and PM approval"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:133
+msgid ""
+"Zapier integration automatically creates GitHub Help Wanted issues from "
+"labelled Jira tickets, requiring no additional mana"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:134
+msgid ""
+"Resolved Jira tickets are automatically assigned to a QA, who tests them "
+"against the ``master`` branch."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:136
+msgid ""
+"2 - After creating the ticket, add \"(Proposed APR)\" to its title, so "
+"the triage team knows to consider it for a ``help-wanted`` label."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:138
+msgid ""
+"3 - If the Jira ticket is accepted as a Help Wanted issue during `triage "
+"<https://docs.mattermost.com/process/training.html#triage-meeting>`__, a "
+"``help-wanted`` label is added. This action automatically triggers a zap "
+"that creates a new issue in the `mattermost-server repository "
+"<https://github.com/mattermost/mattermost-server>`__."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:140
+msgid ""
+"To accept a ticket as a Help Wanted issue, the description should be "
+"unambiguous, and include UI description and help text so the change can "
+"be implemented and tested by any contributor"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:141
+msgid ""
+"The triage team also adds the appropriate difficulty level (one of "
+"``Introductory``, ``Intermediate`` and ``Advanced``) and programming "
+"language (``Go`` and ``ReactJS``) to the description of the Jira ticket"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:143
+msgid ""
+"4 - After triage, PM on community rotation reviews formatting of the "
+"GitHub issue and adds appropriate labels for difficulty level and "
+"programming language as defined by the triage team."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:145
+msgid ""
+"`See an example Help Wanted issue here <https://github.com/mattermost"
+"/mattermost-server/issues/4755>`__."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:148
+msgid "Managing Help Wanted Issues"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:150
+msgid ""
+"Once a Help Wanted issue is added, the PM on community rotation is "
+"responsible for:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:152
+msgid ""
+"answering questions from community members, which get automatically "
+"posted in the `Community Heartbeat channel "
+"<https://community.mattermost.com/core/channels/community-heartbeat>`__"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:153
+msgid ""
+"following up with a community member if there hasn't been a response for "
+"more than two weeks"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:156
+msgid "Closing Help Wanted Issues"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:158
+msgid ""
+"Once a pull request for an open GitHub Help Wanted issue is merged, "
+"please ensure:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:160
+msgid ""
+"the corresponding GitHub Help Wanted issue is closed, thanking the "
+"contributor"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:161
+msgid "the corresponding JIRA ticket is resolved"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:164
+msgid "Help Wanted Issue Links"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:166
+msgid "Below is a list of permanent redirects to Help Wanted issue queries:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:168
+#, python-format
+msgid ""
+"`mattermost` - https://mattermost.com/pl/help-wanted which redirects to "
+"`https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22"
+" "
+"<https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22>`_"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:170
+#, python-format
+msgid ""
+"`mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-"
+"mattermost-server which redirects to `https://github.com/mattermost"
+"/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue"
+" <https://github.com/mattermost/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:172
+#, python-format
+msgid ""
+"`mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop "
+"which redirects to "
+"`https://github.com/mattermost/desktop/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue"
+" "
+"<https://github.com/mattermost/desktop/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:174
+#, python-format
+msgid ""
+"`mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-"
+"mattermost-mobile which redirects to `https://github.com/mattermost"
+"/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue"
+" <https://github.com/mattermost/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:176
+#, python-format
+msgid ""
+"`mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-"
+"mattermost-webapp which redirects to `https://github.com/mattermost"
+"/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReactJS%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue"
+" <https://github.com/mattermost/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReactJS%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:178
+#, python-format
+msgid ""
+"`mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-"
+"mattermost-redux which redirects to `https://github.com/mattermost"
+"/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FRedux%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue"
+" <https://github.com/mattermost/mattermost-"
+"server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FRedux%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:181
+msgid "Mattermost Community Forums"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:183
+msgid ""
+"Guidelines for Mattermost `community forums "
+"<https://forum.mattermost.org>`__ and public Mattermost `GitHub "
+"repositories <https://github.com/mattermost>`__."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:188
+msgid "Support (answer everything correctly)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:189
+msgid "Prioritize (focus help on those who help others)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:190
+msgid "Empower (give them time to answer)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:191
+msgid "Elevate (thank, recognize and approve their work)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:192
+msgid "Grow (invite people to help as experts, promote people)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:195
+#: ../../source/process/community-guidelines.rst:325
+msgid "Response Writing Tips"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:197
+msgid ""
+"**Don't answer if unsure** - Ask someone who knows for sure instead of "
+"replying with an assumption or incomplete understanding - Don't be afraid"
+" to re-route if you don't have the answer and are having trouble figuring"
+" it out"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:200
+msgid ""
+"**Don't make promises** - Don’t say “we’ll work on it” or something "
+"similar that sets expectations that aren’t met later (e.g. after "
+"presenting to core team it turns out you can’t do it) - Be careful saying"
+" “that’s a good idea”, don’t just say it to be polite. Instead say "
+"something akin to “thanks for the idea”"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:203
+msgid ""
+"**Choose positivity over negativity** - Avoid excuses like “we’re busy”, "
+"or “our team is small” and turn a missing feature into an invitation to "
+"share a feature idea to be upvoted"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:205
+msgid ""
+"**Do your best to link documentation as answers** - Allows answers to be "
+"easily updated dynamically as documentation is updated - Any questions "
+"that should be answered in docs that aren’t should turn into tickets to "
+"create that documentation (and post ticket in response)"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:208
+msgid ""
+"**Keep community end-user information secure** - If you come across a "
+"post that includes the person's IP address, domain name, or other "
+"information you think should not be disclosed publicly, edit the post to "
+"remove this information. Then click the **hide revision** button so that "
+"your edits won't be visible to others on the forum."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:210
+msgid ""
+"**Be thankful** - Communities really respond well to being praised and "
+"thanked for their work"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:214
+#: ../../source/process/community-guidelines.rst:338
+msgid "Sample Responses"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:217
+msgid "General Issues"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:219
+msgid ""
+"If an issue has a PR submitted by community, but no associated Jira "
+"ticket, leave it open until the PR is merged"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:221
+msgid ""
+"If an issue has a Jira ticket with a ``help-wanted`` label, there is a "
+"Help Wanted ticket in GitHub. It can be closed with the following note:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:229
+msgid ""
+"If an issue has a Jira ticket without a ``help-wanted`` label and "
+"assigned to the current release fix version for a developer to fix, it "
+"can be closed with the following note:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:237
+msgid ""
+"If an issue has a Jira ticket without a ``help-wanted`` label but not "
+"assigned to the current release fix version, queue Jira ticket back to "
+"triage to ask if a help wanted issue could be created for it."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:239
+msgid ""
+"If the reporter doesn’t respond in two weeks, close the issue with the "
+"following note:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:250
+msgid "Feature Requests"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:252
+msgid "Respond to the issue with the following note:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:265
+msgid "Licensing"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:267
+msgid ""
+"To ask someone to add a license to a GitHub repo, open an issue with the "
+"following note, titled ``Add an open source license?``:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:288
+msgid "Difficult Questions"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:290
+msgid ""
+"To respond to tough questions, use the `SCIPAB method "
+"<https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`__ to "
+"help formulate a response and send for community lead to review."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:293
+msgid "Situation:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:293
+msgid ""
+"State what you know about your listeners' circumstances that are relevant"
+" to your discussion or presentation, e.g., current state of their "
+"business, technology, industry, or plans."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:296
+msgid "Complication:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:296
+msgid ""
+"Identify the critical issues (changes, pressures, demands, etc.) that are"
+" impacting the Situation and creating problems, challenges, or "
+"opportunities."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:299
+msgid "Implication:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:299
+msgid ""
+"Show the personal or business consequences of failing to act on the "
+"problems or opportunities described in the Complication."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:302
+msgid "Position:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:302
+msgid ""
+"State clearly and confidently your opinion about what needs to be done to"
+" solve your listeners' problem."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:305
+msgid "Action:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:305
+msgid ""
+"Help listeners understand the role you want them to play, or the "
+"questions you'd like them to consider, during your presentation or "
+"conversation."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:308
+msgid "Benefit:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:308
+msgid ""
+"Describe how your recommended Position and Action will address listeners'"
+" specific needs. State the results clearly and quantifiably."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:311
+msgid "Mattermost Twitter"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:313
+msgid ""
+"Guidelines for Mattermost `Twitter responses "
+"<https://twitter.com/mattermost>`__."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:318
+msgid ""
+"**Avoid acronyms**. Avoid acronyms when possible. For example, say \"pull"
+" request\" instead of \"PR\", since only a subset of tweet readers are "
+"active GitHub users."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:319
+msgid ""
+"**Use the active voice**. Avoid \"has\", \"was\", \"have been\" when "
+"possible. For example, instead of \"Hackfest has started!\" say "
+"\"Hackfest starts now!\""
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:320
+msgid ""
+"**Include at most one link**. To provide a clear call to action, include "
+"at most one link per tweet and place it near the end of the tweet."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:321
+msgid ""
+"**Use exclamation marks only for exciting announcements**. An exclamation"
+" mark can be used when the announcement is exciting, but using an "
+"exclamation mark should be avoided when it can be confused with a signal "
+"for community to panic, e.g. \"Security update released!\"."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:322
+msgid ""
+"**Be welcoming**. When asking someone to take action, use \"Would you be "
+"open to\" instead of \"Would you like to\"."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:327
+msgid "When to like (heart) a tweet where Mattermost is mentioned?"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:329
+msgid "Our team is on site at an event and tags our handle."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:330
+msgid ""
+"A community member shares an event we are at, received a Mattermug, or "
+"shared a positive experience and mentions us."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:332
+msgid "When to retweet a post?"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:334
+msgid "A community member released an integration and mentions us."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:335
+msgid "Mattermug tweets from community members."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:340
+msgid "Requests for more information such as a preview of our product."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:346
+msgid "Requests for a specific feature or group of features."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:348
+msgid "Multiple Feature Requests:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:356
+msgid "Single Feature Request:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:364
+msgid "Planned Feature Request:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:370
+msgid "Shipped Feature Request:"
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:376
+msgid "Feedback about their experience, not specific to a feature or a product."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:386
+msgid "Tweet of forum post, asking someone from Mattermost team to respond."
+msgstr ""
+
+#: ../../source/process/community-guidelines.rst:396
+msgid ""
+"Customer requesting help to address an issue they are having with a "
+"deployment or specific feature in the system."
+msgstr ""
+

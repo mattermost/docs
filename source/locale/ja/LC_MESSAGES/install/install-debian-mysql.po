@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-debian-mysql.rst:4
+msgid "Installing MySQL Database Server"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:6
+msgid ""
+"Install and set up the database for use by the Mattermost server. You can"
+" install either MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:8
+msgid "**To install MySQL on Debian Buster:**"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:10
+msgid ""
+"Log into the server that will host the database, and open a terminal "
+"window."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:12
+msgid "Download the MySQL repository package."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:14
+msgid "``wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:16
+msgid "Install the repository"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:18
+msgid "``sudo dpkg -i mysql-apt-config*``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:20
+msgid "Update your local package list."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:22
+msgid "``sudo apt-get update``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:24
+msgid "Add the MySQL repo MySQL."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:26
+msgid "``sudo apt-get install mysql-server``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:29
+msgid ""
+"During the install, you'll be prompted to create a password for the MySQL"
+" root user. Make a note of the password because you'll need it in the "
+"next step."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:31
+msgid "Log in to MySQL as root."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:33
+msgid "``mysql -u root -p``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:35
+msgid ""
+"When prompted, enter the root password that you created when installing "
+"MySQL."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:37
+msgid "Create the Mattermost user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:39
+msgid "``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:42
+msgid "Use a password that is more secure than 'mmuser-password'."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:43
+msgid ""
+"The '%' means that mmuser can connect from any machine on the network. "
+"However, it's more secure to use the IP address of the machine that hosts"
+" Mattermost. For example, if you install Mattermost on the machine with "
+"IP address 10.10.10.2, then use the following command:"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:45
+msgid ""
+"``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-"
+"password';``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:47
+msgid "Create the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:49
+msgid "``mysql> create database mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:51
+msgid "Grant access privileges to the user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:53
+msgid "``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:55
+msgid "Log out of MySQL."
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:57
+msgid "``mysql> exit``"
+msgstr ""
+
+#: ../../source/install/install-debian-mysql.rst:59
+msgid ""
+"With the database installed and the initial setup complete, you can now "
+"install the Mattermost server."
+msgstr ""
+

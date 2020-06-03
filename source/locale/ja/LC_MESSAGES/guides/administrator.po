@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/guides/administrator.rst:2
+msgid "Administrator's Guide"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:4
+msgid ""
+"In-depth documentation on installation, deployment and administration of "
+"Mattermost system."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:7
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:9
+msgid ""
+"Use the following materials as a template to help you plan and document "
+"the implementation of Mattermost at your organization."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:20
+msgid "Installing Mattermost"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:22
+msgid "Learn how to get Mattermost running on your environment."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:56
+msgid "Deployment"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:58
+msgid "Learn how to host Mattermost to meet your networking requirements."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:73
+msgid "Configure Mattermost"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:75
+msgid "Learn how to configure settings to meet your unique requirements."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:90
+msgid "Mobile Apps"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:92
+msgid "Learn how to configure and administer Mattermost apps."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:105
+msgid "Onboard Users"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:107
+msgid "Learn how to get your users into and comfortable using Mattermost."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:133
+msgid "Administration"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:135
+msgid "Learn how to maintain your Mattermost system."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:150
+msgid "Upgrade Mattermost"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:152
+msgid "Learn how to keep Mattermost current with fixes and new features."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:169
+msgid "Mattermost Integrations"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:171
+msgid "Learn how to extend Mattermost by integrating your workflows."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:187
+msgid "Mattermost Compliance"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:189
+msgid "Learn how to adhere to your security and regulations."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:202
+msgid "Scaling Mattermost"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:204
+msgid "Learn how to support growth within Mattermost."
+msgstr ""
+
+#: ../../source/guides/administrator.rst:217
+msgid "Unofficial Enhancements"
+msgstr ""
+
+#: ../../source/guides/administrator.rst:219
+msgid "Documentation on early previews and unofficial functionality."
+msgstr ""
+

@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/sg_rest_markup.rst:2
+msgid "ReStructuredText Markup"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:4
+msgid ""
+"The reStructuredText specification allows for a certain degree of "
+"flexibility in markup to achieve your goals. For example, you can use any"
+" one of more than a dozen characters for section title underlines, and "
+"you have the option of using an overline in addition to an underline."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:6
+msgid ""
+"However, for consistency and ease of use, the Mattermost documentation "
+"should use a single convention, despite the existence of allowable "
+"alternatives."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:8
+msgid ""
+"For more information about reStructuredText markup, see the "
+"`reStructuredText Markup Specification "
+"<http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`__. "
+"Additional markup constructs are implemented by Sphinx, the documentation"
+" generator used by Mattermost. For information about the additional "
+"constructs, see `Sphinx Markup Constructs <https://www.sphinx-"
+"doc.org/en/1.7/markup/index.html>`__."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:10
+msgid "Use the following markup conventions in Mattermost documentation:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:13
+msgid "Page Titles"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:15
+msgid ""
+"Underline page titles using `=`, with no overline. Underlines should be "
+"as long as the title text. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:23
+msgid "Section Titles"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:25
+msgid "Underline using `-` for section titles. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:32
+msgid ""
+"Underline subsections using `~` for the first subsection level, and `^` "
+"for the second subsection level. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:45
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:47
+msgid "Insert a table of contents into a document using the following format:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:55
+msgid "Inline Markup"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:58
+msgid "Bold"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:58
+msgid "Use double asterisks. For example: ``**bold text**``."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:61
+msgid "Italic"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:61
+msgid "Use single asterisk. For example: ``*italic text*``."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:64
+msgid "Monospace"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:64
+msgid "Use double backquotes. For example: ````monospace text````"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:69
+msgid "Bullet Lists"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:71
+msgid ""
+"For bullet lists and sublists, use ``-`` before the list item. For "
+"example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:82
+msgid "Numbered Lists and Procedure Steps"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:84
+msgid ""
+"Create numbered lists and procedure steps using numbers for the top-level"
+" list and lower case alpha characters for the first nested list. For "
+"example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:97
+msgid "Name-value Groups"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:99
+msgid ""
+"To create a name-value group such as a definition list, type the term on "
+"a line by itself. On the next line, indent the definition. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:109
+msgid "External Links"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:111
+msgid ""
+"URLs are automatically rendered as links in Sphinx; however, where "
+"possible, it is preferred that hyperlinks are created within the text of "
+"a sentence. Hyperlinks within a sentence can be created using the "
+"following formatting:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:113
+msgid "``Link display text <URL-of-website>`__``, for example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:119
+msgid ""
+"The link renders as: `Mattermost Manifesto "
+"<https://www.mattermost.org/manifesto/>`__"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:124
+msgid "Internal Links to Mattermost Docs"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:126
+msgid ""
+"The Sphinx processor extends reStructuredText to implement references, "
+"called roles, to locations within a documentation set. The two roles that"
+" are relevant in Mattermost documentation are the ``:doc:`` role and the "
+"``:ref:`` role."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:128
+msgid ""
+"The ``:doc:`` role is used for creating relative links to other "
+"documents. The ``:ref:`` role is used for creating relative links to "
+"arbitrary locations within the documentation set, including within the "
+"same document. In both cases, the HTML output is a relative URL for the "
+"target location."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:130
+msgid ""
+"The following example uses the ``:doc:`` role to link to the "
+"`Integrations Overview` page. The source file is called "
+"``integrations.rst`` and is in the ``overview`` directory."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:136
+msgid ""
+"Note that the filename extension is not part of the construct. On output,"
+" the link looks like this: \"For more information about integrating with "
+"Mattermost, see :doc:`../overview/integrations`.\" The Sphinx processor "
+"pulls in the title of the document to use as the link text."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:138
+msgid ""
+"The ``:ref:`` role is a two-part construct. One part is the link itself, "
+"and the other part is the target. The target has the following form, and "
+"should preceed a section title:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:147
+msgid "To generate a link to the section, use the ``:ref:`` role as follows:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:153
+msgid ""
+"The Sphinx processor creates a relative link to the section, and uses the"
+" section title as the link text. On output, the link looks like this: "
+"\"For more information about bullet lists, see :ref:`arbitrary-text-"
+"label`.\""
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:156
+msgid "Images"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:158
+msgid "Use the following construct to insert an image:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:164
+msgid "You should use `alt` tag for all images."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:166
+msgid ""
+"You can also add the following image options: `height`, `width`, `scale`,"
+" `align`, and `target`. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:177
+msgid ""
+"Inserting an inline image is a bit more complicated. It's a two-part "
+"construct that consists of a label and the image directive. Surround the "
+"label text with vertical bars, the ``|`` character. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:183
+msgid "Then insert the following image directive at the bottom of the document:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:194
+msgid "Literal Blocks"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:196
+msgid ""
+"To use a literal block with no syntax highlighting, use the Sphinx code-"
+"block directive with the language set to ``none``. For example:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:205
+msgid "Code Blocks with Syntax Highlighting"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:207
+msgid ""
+"To create a code block with syntax highlighting, use the Sphinx code-"
+"block directive with the language set to the language that you want "
+"highlighted. `Many languages are available "
+"<http://pygments.org/docs/lexers/>`__, but in Mattermost documentation "
+"the most likely ones are as follows:"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:209
+msgid "go"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:210
+msgid "rest"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:211
+msgid "html"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:212
+msgid "javascript"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:213
+msgid "coffee"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:214
+msgid "bash"
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:216
+msgid ""
+"The following example is a block of Go code using the :linenos: option, "
+"which causes line numbers to be displayed."
+msgstr ""
+
+#: ../../source/process/sg_rest_markup.rst:229
+msgid "The example produces the following output:"
+msgstr ""
+

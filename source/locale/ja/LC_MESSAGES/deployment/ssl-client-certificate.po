@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/ssl-client-certificate.rst:2
+msgid "SSL Client Certificate Setup (Beta)"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:4
+msgid ""
+"Follow these steps to configure SSL client certificates for your browser "
+"and the Mattermost Desktop Apps on Windows, Mac and Linux. SSL client "
+"certificates are not yet supported on the Mattermost mobile apps."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:6
+msgid ""
+"Before you begin, follow the `official guides to install Mattermost "
+"<https://docs.mattermost.com/guides/administrator.html#installing-"
+"mattermost>`__ on your system, including NGINX configuration as a proxy "
+"with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:8
+msgid ""
+"For the purposes of this guide, the Mattermost server domain name is "
+"``example.mattermost.com``, and the user account is ``mmuser`` with email"
+" ``mmuser@mattermost.com`` and password ``mmuser-password``."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:11
+msgid ""
+"Generating the client certificates in this section is optional if you "
+"have already generated them before."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:14
+msgid "Set up mutual TLS authentication for the Web App"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:16
+msgid ""
+"Create a `certificate authority (CA) key "
+"<https://en.wikipedia.org/wiki/Certificate_authority>`__ and a "
+"certificate for signing the client certificate. When establishing a TLS "
+"connection, the NGINX proxy server requests and validates a client "
+"certificate provided by the web app."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:37
+msgid ""
+"Create the client side key for ``mmuser`` with a passphrase, and the "
+"certificate signing request:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:59
+msgid ""
+"Sign the user's client certificate with the previously created CA "
+"certificate:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:65
+msgid "Check the newly generated client certificate for ``mmuser``:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:71
+msgid ""
+"Open the file ``/etc/nginx/sites-available/mattermost`` and modify the "
+"following lines, so that the NGINX proxy server requests and verifies the"
+" client certificate:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:96
+msgid ""
+"Confirm the CA key for ``mmuser`` works by the following curl command to "
+"the proxy:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:102
+msgid "You should see the Mattermost login page. If you see:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:104
+msgid ""
+"``No required SSL certificate was sent``, something went wrong. Review "
+"the above steps and try again."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:105
+msgid ""
+"``Error reading X.509 key or certificate file: Decryption has failed.``, "
+"make sure the passphrase is included together with the certificate, "
+"because curl doesn't prompt for it separately."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:107
+msgid ""
+"Generate a PKCS12 file from the CA key and certificate, to install the "
+"certificate into your client machine for your browser to use:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:115
+msgid "Repeat steps 2-7 above for other users as needed."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:117
+msgid ""
+"Import the generated .p12 file in step 7 into your key chain. In the "
+"Chrome browser on macOS:"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:119
+msgid ""
+"Go to **Settings > Advanced > Privacy and security > Manage "
+"certificates**. This opens the Keychain Access app."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:120
+msgid ""
+"Go to **File > Import Items** and select the ``mmuser-mattermost.p12`` "
+"file."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:122
+msgid ""
+"Go to https://example.mattermost.com. You should see a popup for the "
+"client certificate request."
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:125
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/deployment/ssl-client-certificate.rst:127
+msgid ""
+"`Follow this process <https://www.mattermost.org/troubleshoot/>`__ to "
+"resolve configuration issues and to ask for help."
+msgstr ""
+

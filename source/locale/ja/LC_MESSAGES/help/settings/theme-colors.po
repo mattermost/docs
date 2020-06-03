@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/settings/theme-colors.rst:4
+msgid "Theme Colors"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:6
+msgid ""
+"The colors of the Mattermost user interface are customizable in **Account"
+" Settings > Display > Theme**. You can import your theme colors from "
+"Slack, customize the colors yourself, or choose from four standard themes"
+" designed by the Mattermost team."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:8
+msgid ""
+"Any changes you make are applied to all teams that you belong to. In "
+"Enterprise Edition, you can choose to apply the theme to the current team"
+" only, allowing you to have a different theme for each team."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:11
+msgid "Standard Themes"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:13
+msgid ""
+"Select **Theme Colors** to choose from four standard themes designed by "
+"the Mattermost team. To make custom adjustments on the four standard "
+"theme colors, click a standard theme and then select **Custom Theme** to "
+"load the standard theme into the custom theme color selectors."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:16
+msgid "Import Theme from Slack"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:18
+msgid ""
+"To import a theme, go to **Preferences > Sidebar Theme** from within "
+"Slack, open the custom theme option, copy the theme color vector and then"
+" paste it into the *Input Slack Theme* input box in Mattermost. Any theme"
+" settings that are not customizable in Slack will default to the "
+"“Mattermost” standard theme settings."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:21
+msgid "Custom Themes"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:23
+msgid ""
+"Observe a live preview as you customize theme colors and then click "
+"**Save** to confirm your changes. Discard your changes by exiting the "
+"settings window and clicking **Yes, Discard**."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:26
+msgid "Sidebar Styles"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:28
+msgid "Sidebar BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:29
+msgid ""
+"Background color of the Channels pane, and Account and Team settings "
+"navigation sidebars."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:30
+msgid "Sidebar Text"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:31
+msgid ""
+"Text color of read channels in the Channels pane, and tabs in the Account"
+" and Team settings navigation sidebar."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:32
+msgid "Sidebar Header BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:33
+msgid ""
+"Background color of the header above the Channels pane and all dialog "
+"window headers."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:34
+msgid "Sidebar Header Text"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:35
+msgid ""
+"Text color of the header above the Channels pane and all dialog window "
+"headers."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:36
+msgid "Sidebar Unread Text"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:37
+msgid "Text color of unread channels in the Channels pane."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:38
+msgid "Sidebar Text Hover BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:39
+msgid ""
+"Background color behind channel names and settings tabs as you hover over"
+" them."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:40
+msgid "Sidebar Text Active Border"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:41
+msgid ""
+"Color of the rectangular marker on the left side of the Channels pane or "
+"Settings sidebar indicating the active channel or tab."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:42
+msgid "Sidebar Text Active Color"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:43
+msgid ""
+"Text color of the active channel or tab in the Channels pane or Settings "
+"sidebar."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:44
+msgid "Online Indicator"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:45
+msgid ""
+"Color of the online indicator appearing next to team members names in the"
+" Direct Messages list."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:46
+msgid "Away Indicator"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:47
+msgid ""
+"Color of the away indicator appearing next to team members names in the "
+"Direct Messages list when they have had no browser activity for 5 "
+"minutes."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:48
+msgid "Do Not Disturb Indicator"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:49
+msgid ""
+"Color of the do not disturb indicator appearing next to team members "
+"names in the Direct Messages list."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:50
+msgid "Mention Jewel BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:51
+msgid ""
+"Background color of the jewel indicating unread mentions that appears to "
+"the right of the channel name. This is also the background color of the "
+"“Unread Posts Below/Above” indicator appearing at the top or bottom of "
+"the Channels pane on shorter browser windows."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:53
+msgid "Mention Jewel Text"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:53
+msgid ""
+"Text color on the mention jewel indicating the number of unread mentions."
+" This is also the text color on the “Unread Posts Below/Above” indicator."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:56
+msgid "Center Channel Styles"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:58
+msgid "Center Channel BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:59
+msgid ""
+"Color of the center pane, right-hand sidebar and all dialog window "
+"backgrounds."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:60
+msgid "Center Channel Text"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:61
+msgid ""
+"Color of all the text - with the exception of mentions, links, hashtags "
+"and code blocks - in the center pane, right-hand sidebar, and dialogs."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:62
+msgid "New Message Separator"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:63
+msgid ""
+"The new massage separator appears below the last read message when you "
+"click into a channel with unread messages."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:64
+msgid "Mention Highlight BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:65
+msgid ""
+"Highlight color behind your words that trigger mentions in the center "
+"pane and right-hand sidebar."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:66
+msgid "Mention Highlight Link"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:67
+msgid ""
+"Text color of your words that trigger mentions in the center pane and "
+"right-hand sidebar."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:69
+msgid "Code Theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:69
+msgid "Background and syntax colors for all code blocks."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:72
+msgid "Link and Button Styles"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:74
+msgid "Link Color"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:75
+msgid ""
+"Text color of all links, hashtags, teammate mentions, and low priority UI"
+" buttons."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:76
+msgid "Button BG"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:77
+msgid "Color of the rectangular background behind all high priority UI buttons."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:79
+msgid "Button Text"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:79
+msgid ""
+"Text color appearing on the rectangular background for all high priority "
+"UI buttons."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:82
+msgid "Exporting a Custom Theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:84
+msgid ""
+"You can export a theme by copying the \"Theme Code\" from the Custom "
+"Theme menu."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:86
+msgid ""
+"Go to **Account Settings > Display > Custom Theme > Copy and paste to "
+"share theme colors** and copy the theme code to export it."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:89
+msgid "Importing a Custom Theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:91
+msgid ""
+"You can import a theme by pasting a \"Theme Code\" into the Custom Theme "
+"menu."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:93
+msgid ""
+"Go to **Account Settings > Display > Custom Theme > Copy and paste to "
+"share theme colors** and paste a theme code to import it, then click "
+"**Save**."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:96
+msgid "Custom Theme Examples"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:98
+msgid ""
+"Customize your theme colors and share them with others by copying and "
+"pasting theme vectors into the input box. Below are some example themes "
+"with their corresponding theme vectors."
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:101
+msgid "GitHub theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:111
+msgid "Monokai theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:121
+msgid "Solarized Dark theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:131
+msgid "Gruvbox Dark theme"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:141
+msgid "One Dark"
+msgstr ""
+
+#: ../../source/help/settings/theme-colors.rst:146
+msgid "`GitHub <https://github.com/georgewitteman/one-dark-mattermost>`_"
+msgstr ""
+

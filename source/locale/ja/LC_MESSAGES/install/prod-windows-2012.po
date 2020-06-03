@@ -1,0 +1,896 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/prod-windows-2012.rst:4
+msgid "Production Install on Windows Server (Unofficial)"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:6
+msgid "Install Mattermost in production mode on one, two or three machines."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:8
+msgid ""
+"This unofficial guide is maintained by the Mattermost community and this "
+"deployment configuration is not yet officially supported by Mattermost, "
+"Inc. `Community testing, feedback and improvements are welcome and "
+"greatly appreciated. <https://github.com/mattermost/docs/issues/360>`__"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:11
+msgid "Contents"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:14
+msgid "Install Windows Server 2012+"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:16
+msgid ""
+"Set up 3 machines with any edition of Windows Server 2012+ (except core) "
+"with 2GB of RAM or more. The servers will be used for the Web Proxy and "
+"SSL Termination, Mattermost, and Database.  The screenshots used in this "
+"guide are from Microsoft Server 2012, but similar steps should work for "
+"other versions."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:20
+msgid ""
+"**Optional:** You can also use a single machine for all 3 components in "
+"this install guide, depending on the standards of your data center.  In "
+"this case, replace all 10.0.0.* IP addresses with a single/common "
+"address."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:25
+msgid ""
+"Make sure the systems are up to date with the most recent security "
+"patches by executing Windows Update."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:29
+msgid "Set up Database Server"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:31
+msgid ""
+"Login to the database server.  For the purposes of this guide we will "
+"assume this server has an IP address of 10.0.0.1."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:35
+msgid "Install and Configure MySQL"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:37
+msgid ""
+"`Download the MySQL 5.6+ "
+"<http://dev.mysql.com/downloads/windows/installer/>`__ installer, or "
+"(PostgreSQL 9.3+). For the purposes of this guide, we'll be downloading "
+"and installing the latest version of MySQL Community Server Edition MSI-"
+"installer (version 5.7 at the time of writing this guide). Note that the "
+"appropriate link refers to 32-bit (as shown in the figure below); "
+"however, this installer is 32-bit but is capable of installing the 64-bit"
+" version of MySQL."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:43
+msgid "Launch the installer."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:45
+msgid ""
+"On the **License Agreement** page, Check the box to accept the license "
+"terms and press Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:47
+msgid ""
+"On the **Choosing a Setup Type** choose **Custom** so you can decide "
+"exactly which packages to install. This is the only place where you can "
+"specify whether to install 32-bit or 64-bit MySQL Server."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:50
+msgid ""
+"On the **Select Products and Features** page, select the **64bit** "
+"version of MySQL Server."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:52
+msgid ""
+"On the **Check Requirements** page, install any missing requirements by "
+"pressing the Execute button, or go back to the previous page and change "
+"the packages that will be installed to remove the requirement. Once all "
+"of the requirements are met, press the Next button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:56
+msgid ""
+"On the **Installation** page, you will be shown a list of software that "
+"will be installed. Press the Execute button to begin the installation.  "
+"Once the installations have completed, press the Next button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:59
+msgid ""
+"On the **Product Configuration** page, press the Next button to begin the"
+" MySQL Server Configuration Wizard."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:61
+msgid ""
+"On the **Type and Networking** page, select the appropriate **Config "
+"Type** based on your desired usage."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:62
+msgid ""
+"On the **Accounts and Roles** page, enter a MySQL Root password and press"
+" the Next button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:63
+msgid ""
+"On the **Windows Service** page, keep the defaults and press the Next "
+"button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:64
+msgid ""
+"On the **Plugins and Extensions** page, keep the defaults and press the "
+"Next button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:65
+msgid ""
+"On the **Apply Server Configuration** page, press the Execute button to "
+"configure the MySQL Server installation."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:67
+msgid "Returning to the **Product Configuration** page, press the Next button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:69
+msgid "On the **Installation Complete** page, press the Finish button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:72
+msgid "Configure Windows PATH"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:74
+msgid ""
+"Adding MySQL to the Windows PATH variable will allow you run various "
+"commands from the console, and allow 3rd party applications to execute "
+"various MySQL commands."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:77
+msgid ""
+"Press the ``WIN + PAUSEBREAK`` key combination to open the **System** "
+"Control Panel Applet."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:79
+msgid "Select the **Advanced System Settings** link."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:81
+msgid "Select the **Advanced** tab."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:83
+msgid "Press the **Environment Variables** button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:85
+msgid ""
+"In the **System Variables** section, select the **Path** variable in the "
+"list, then press the Edit button."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:87
+msgid ""
+"Append the path to your MySQL Server bin directory (make sure to add a "
+"semi-colon after any existing items in the path before appending the new "
+"path). The default path for a 64-bit installation is ``C:\\Program "
+"Files\\MySQL\\MySQL Server 5.7\\bin``."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:92
+msgid "Create Mattermost Database"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:94
+msgid ""
+"Now that MySQL has been installed and configured, a database and user "
+"account must be provisioned for Mattermost to utilize."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:97
+msgid ""
+"Open a command prompt and enter ``mysql -u root -p`` to connect to the "
+"MySQL server"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:99
+msgid "When prompted, enter the password created in step 9.a."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:101
+msgid ""
+"At the ``mysql>`` prompt, execute the following commands to create the "
+"database and user account"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:110
+msgid "To confirm the database and user were configured correctly"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:112
+msgid ""
+"Connect to the MySQL server/datbase by executing ``mysql -u mmuser -p "
+"mattermost``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:113
+msgid "When prompted, entering ``mmuser-password``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:114
+msgid "If If successful, you will be at the ``mysql>`` prompt"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:115
+msgid "Type ``exit`` to finish"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:118
+msgid "Set up Mattermost Server"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:120
+msgid ""
+"For the purposes of this guide we will assume this server has an IP "
+"address of 10.0.0.2"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:123
+msgid ""
+"`Download <https://www.mattermost.org/download/>`__ the latest Mattermost"
+" Server by opening your favorite browser and navigating to "
+"``https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-windows-"
+"amd64.zip`` where `X.X.X` is the latest Mattermost release version. For "
+"example, 3.4.0."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:128
+msgid ""
+"Create the storage directory for files. We assume you will have attached "
+"a large drive for storage of images and files. For this setup we will "
+"assume the directory is located at ``c:\\mattermost\\data``. Your "
+"directory structure should look similar to the image below."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:134
+msgid ""
+"Configure Mattermost Server by editing the config.json file at "
+"``c:\\mattermost\\config\\config.json``."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:136
+msgid "Update database name and server in the the connection string:"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:138
+msgid ""
+"Old: ``\"DataSource\": "
+"\"mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8\"``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:139
+msgid ""
+"New: ``\"DataSource\": \"mmuser:mmuser-"
+"password@tcp(10.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\"``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:141
+msgid ""
+"Optionally you may continue to edit configuration settings in "
+"``config.json`` or use the System Console described in a later section to"
+" finish the configuration."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:144
+msgid "Test the Mattermost Server"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:146
+msgid ""
+"Open a command prompt, and execute ``cd c:\\mattermost\\bin`` to change "
+"your working directory"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:148
+msgid "Execute ``mattermost.exe``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:150
+msgid ""
+"Verify that mattermost is running and connected to the database "
+"successfully by confirmed a console log like ``Server is listening on "
+":8065`` letting you know the service is running."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:155
+msgid "Stop the server by pressing CTRL+C"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:158
+msgid "Configure the Firewall"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:160
+msgid "This is not required if you are installing on a single server."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:162
+msgid "Open a command prompt as an administrator"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:164
+msgid "Execute the following command to allow inbound traffic to Mattermost"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:171
+msgid "Establish a Windows Service"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:173
+msgid ""
+"Establishing a windows service to supervise the Mattermost process is "
+"recommended to prevent the need to manually start/stop Mattermost.  The "
+"included binary cannot be directly registered as a windows service; "
+"therefore, a wrapper-utility must be used."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:177
+msgid ""
+"Download the latest version of `NSSM (Non-Sucking Service Manager) "
+"<https://nssm.cc/download>`__."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:179
+msgid ""
+"From the downloaded zip-file, extract ``win64\\nssm.exe`` to "
+"``C:\\mattermost\\bin\\``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:181
+msgid "Open a command line as an administrator"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:183
+msgid "To create the windows service, execute the following"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:191
+msgid "Start the service by executing the following"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:199
+msgid "Verify Mattermost Connectivity"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:201
+msgid ""
+"To verify all steps executed thus far, we'll attempt to access Mattermost"
+" through standard HTTP traffic.  To perform this step, you'll need access"
+" to a client machine with a compatible browser (e.g. Safari, Firefox, "
+"Edge, Chrome, etc)."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:204
+msgid ""
+"From a client workstation meeting the criteria above, launch your "
+"favorite web browser."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:206
+msgid ""
+"Navigate to ``http://10.0.0.2:8065``.  If successful, you should reach an"
+" initialization web-page similar to the screenshot below."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:211
+msgid ""
+"Assuming your test was successful, close the browser as we'll finish "
+"initializing Mattermost later in this guide."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:214
+msgid "Set up Web Proxy Server"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:216
+msgid "A reverse proxy is recommended in order to provide:"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:218
+msgid "SSL termination"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:219
+msgid "HTTP to HTTPS redirection"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:220
+msgid "Port mapping :80/:443 to :8065"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:221
+msgid "Standard request logs"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:222
+msgid "Load balancing (not described in this guide)."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:224
+msgid ""
+"Internet Information Server (IIS) for Windows Server is the standard "
+"capability provided out-of-the-box that provides this function."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:227
+msgid ""
+"For the purposes of this guide we will assume this server has an IP "
+"address of 10.0.0.3."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:230
+msgid ""
+"Map a FQDN (fully qualitified domain name), like "
+"**mattermost.example.com** to the proxy server (e.g. 10.0.0.2)."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:233
+msgid "Install IIS"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:235
+#: ../../source/install/prod-windows-2012.rst:280
+msgid ""
+"On the **Start** page, click the **Server Manager** tile, and then click "
+"OK."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:237
+msgid ""
+"In **Server Manager**, select **Dashboard**, and click **Add roles and "
+"features**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:239
+msgid ""
+"In the **Add Roles and Features Wizard**, on the **Before you begin** "
+"page, click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:241
+msgid ""
+"On the **Select installation type** page, select Role-based or feature-"
+"based installation, and click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:243
+msgid ""
+"On the **Select destination server** page, select **Select a server from "
+"the server pool**, select your server, and click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:246
+msgid "On the **Select server roles** page, select **Web Server (IIS)**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:248
+msgid ""
+"Expand **Web Server (IIS) > Web Server > Application Development** and "
+"select **WebSockets Protocol**, and then click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:250
+msgid ""
+"On the **Add Roles and Features Wizard** popup dialog, click Add "
+"Features, and then click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:252
+msgid "On the **Select features** page, click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:254
+msgid "On the **Web Server Role (IIS)** page, click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:256
+msgid ""
+"On the **Select role services** page, accept the default selections, and "
+"click Next."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:258
+msgid "On the **Summary of Features to Install** page, click Install."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:260
+msgid ""
+"On the Installation progress page, confirm that your installation of the "
+"Web Server (IIS) role and required role services completed successfully, "
+"and then click Close."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:263
+msgid ""
+"To verify that IIS installed successfully, navigate to "
+"``http://localhost`` in a web browser on the server, and confirm the "
+"default IIS Welcome page is displayed."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:267
+msgid "Configure Reverse Proxy"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:269
+msgid ""
+"Reverse proxying involves rewriting an HTTP request and relaying it to a "
+"back-end server.  IIS does not natively support this; however, Microsoft "
+"provides a `URL Rewrite <http://www.iis.net/learn/extensions/url-rewrite-"
+"module>`__ module and an `Application Request Routing "
+"<http://www.iis.net/downloads/microsoft/application-request-routing>`__ "
+"module which, when combined, are capable of performing these functions. "
+"We'll start by installing these module, and then configure the proxy."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:274
+msgid ""
+"`Download <http://go.microsoft.com/fwlink/?LinkID=615137>`__ the URL "
+"Rewrite 2.0 x64 module."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:276
+msgid ""
+"`Download <http://go.microsoft.com/fwlink/?LinkID=615136>`__ the "
+"Application Request Routing 3.0 x64 module."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:278
+msgid ""
+"Install the modules (trivial installers with no customizations or options"
+" to select)."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:282
+msgid ""
+"Expand the **Tools** menu, and select **Information Information Services "
+"(IIS) Manager**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:286
+#: ../../source/install/prod-windows-2012.rst:337
+msgid ""
+"In the left-hand navigation tree, expand the server node, expand "
+"**Sites**, and select **Default Web Site**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:288
+msgid "Double-click the URL Rewrite feature, as shown below."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:292
+msgid "In the actions pane (far-right), select **Add Rule(s)...**"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:294
+msgid "Select **Reverse Proxy** and press OK."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:296
+msgid "If prompted to enable proxy functionality, press OK."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:298
+msgid "In the **Add Reverse Proxy Rules** dialog,"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:300
+msgid ""
+"Enter ``10.0.0.2:8065`` in the **Enter the server name or IP address "
+"where HTTP requests will be forwarded** field."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:302
+msgid "Ensure the **Enable SSL Offloading** option is checked."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:304
+msgid "Check **Rewrite the domain names of the links in HTTP responses**"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:306
+msgid "Enter ``10.0.0.2:8065`` in the **From** field."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:308
+msgid "Enter ``mattermost.example.com`` in the **To** field."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:310
+msgid "Press OK"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:312
+msgid ""
+"At this point, your configuration will relay all incoming traffic from "
+"`http://mattermost.example.com` to `http://10.0.0.2:8065/`.  To confirm "
+"this, open your favorite browser and attempt to access "
+"`http://mattermost.example.com`, and upon success, you'll see the "
+"Mattermost initialization screen."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:317
+msgid "Configure SSL"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:319
+msgid ""
+"SSL communication requires that the web server have a well-formed and "
+"trusted certificate.  A common freely-available SSL encryption and "
+"certificate managemet is Let's Encrypt; however, this service does not "
+"formally support the Windows Operating system. A number of third-parties "
+"have created clients to support this, and you are free to try out any of "
+"them.  This section assumes that you have taken the necessary steps to "
+"obtain a web-server certificate that will be trusted by your users."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:325
+msgid ""
+"Within the IIS Manager, select the server node in the left-hand "
+"connections pane."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:327
+msgid "Double-click the **Server Certificates** option."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:329
+msgid "Select **Import...** from the list of actions on the right-hand-side."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:331
+msgid "Press the ... button to locate your PFX formatted certificate."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:333
+msgid "Enter the password to the certificate file."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:335
+msgid "Select the **Web Hosting** certificate store, and press OK."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:339
+msgid "In the right-hand-side **Actions** pane, select **Bindings...**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:341
+msgid "Press **Add**"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:343
+msgid ""
+"In the **Add Site Binding** dialog, Set the type to **https** and set the"
+" **SSL Certificate** to the certificate loaded previously.  Press OK."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:346
+msgid "Redirect HTTP to HTTPS"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:348
+msgid ""
+"In the left-hand navigation tree, expand the server node, expand "
+"**Sites** and select **Default Web Site**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:350
+msgid "Double-click to open the Url Rewrite feature."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:352
+msgid "In the actions-pane (far-right), select **Add Rule(s)..**"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:354
+msgid "Under the **Inbound Rules** section, select **Blank rule** and press OK."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:356
+msgid "Populate the fields in the rule to match the screenshot below"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:360
+msgid "Press **Apply** and then press **Back to Rules**."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:362
+msgid ""
+"Ensure that the **HTTP to HTTPS Redirect** rule is at the top of the list"
+" of inbound rules.  If nceessary, you can select a rule and use the "
+"**Move Up** and **Move Down** actions to reorganize."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:364
+msgid ""
+"On a client workstation, open your favorite browser and navigate to "
+"`http://mattermost.example.com` and confirm that you are redirected to "
+"`https://mattermost.example.com`."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:367
+msgid "Finish Mattermost Server Setup"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:369
+msgid "Navigate to ``https://mattermost.example.com`` and create a user and team."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:371
+msgid ""
+"The first user in the system is automatically granted the "
+"``system_admin`` role, which gives you access to the System Console."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:374
+msgid ""
+"From the ``town-square`` channel click the dropdown next to your team "
+"name and choose the ``System Console`` option"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:377
+msgid ""
+"Update **General** > **Configuration** settomgs in prior versions or "
+"**Environment** > **Web Server** in versions after 5.12 to properly "
+"configure your reverse proxy by entering `https://mattermost.example.com`"
+" as the **Site URL**"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:379
+msgid ""
+"Failure to properly set the Site URL properly __will__ result in "
+"unexpected behavior."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:381
+msgid ""
+"Update **Notification** > **Email** settings in prior versions or "
+"**Authentication** > **SMTP** in versions after 5.12 to setup an SMTP "
+"email service. The example below assumes AmazonSES."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:383
+msgid "Set **SMTP Username** to ``[YOUR_SMTP_USERNAME]``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:384
+msgid "Set **SMTP Password** to ``[YOUR_SMTP_PASSWORD]``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:385
+msgid "Set **SMTP Server** to ``email-smtp.us-east-1.amazonaws.com``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:386
+msgid "Set **SMTP Port** to ``465``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:387
+msgid "Set **Connection Security** to ``TLS``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:388
+msgid ""
+"Set **Send Email Notifications** to ``true`` (located at **Site "
+"Configuration** > **Notifications** in versions after 5.12)"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:389
+msgid ""
+"Set **Notification Display Name** to ``No-Reply`` (located at **Site "
+"Configuration** > **Notifications** in versions after 5.12)"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:390
+msgid ""
+"Set **Notification From Address** to ``mattermost@example.com`` (located "
+"at **Site Configuration** > **Notifications** in versions after 5.12)"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:391
+msgid ""
+"Set **Require Email Verification** to ``true`` (located at "
+"**Authentication** > **Email** in versions after 5.12)"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:393
+msgid ""
+"(Optional) Update **Security** > **Sign Up** settings in prior versions "
+"or **Authentication** > **Signup** in versions after 5.12:"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:395
+msgid "Set **Enable Email Invitations** to ``true``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:397
+msgid ""
+"Update **File** > **Storage** settings in prior versions or "
+"**Environment** > **File Storage** in versions after 5.12:"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:399
+msgid ""
+"Change **Local Directory Location** from ``./data/`` to "
+"``/mattermost/data``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:402
+msgid "Update **General** > **Logging** settings:"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:404
+msgid "Set **Log to The Console** to ``false``"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:406
+msgid ""
+"Update **Advanced** > **Rate Limiting** settings in prior versions or  "
+"**Environment** > **Rate Limiting** settings in versions after 5.12:"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:408
+msgid "Set **Vary By Remote Address** to false"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:409
+msgid "Set **Vary By HTTP Header** to X-Real-IP"
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:411
+msgid "Feel free to modify other settings."
+msgstr ""
+
+#: ../../source/install/prod-windows-2012.rst:413
+msgid ""
+"Login to the Mattermost server (10.0.0.2) and restart the Mattermost "
+"Service by typing the following into a command line"
+msgstr ""
+

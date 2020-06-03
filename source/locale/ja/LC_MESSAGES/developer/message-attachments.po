@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/message-attachments.rst:2
+msgid "Message Attachments"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:4
+msgid ""
+"A wide range of rich text formatting options, including bold, italic, "
+"headings, in-line images, and tables, can be used in integrations. For "
+"more information about formatting, see :doc:`../help/messaging"
+"/formatting-text`."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:6
+msgid ""
+"For additional formatting options, and for compatibility with Slack non-"
+"markdown integrations, an ``attachments`` array can be sent by "
+"integrations and rendered by Mattermost."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:8
+msgid ""
+"You can also add interactive message buttons as part of attachments. They"
+" help make your integrations richer by completing common tasks inside "
+"Mattermost conversations, increasing user engagement and productivity. "
+"For more information, see :doc:`documentation <interactive-messages>`."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:11
+msgid "Attachment Options"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:13
+msgid ""
+"When sending an attachment, you can use any of the following to format "
+"how you want the posted message to look."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:15
+msgid ""
+"``fallback``: A required plain-text summary of the post. This is used in "
+"notifications, and in clients that don’t support formatted text (eg IRC)."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:17
+msgid ""
+"``color``: A hex color code that will be used as the left border color "
+"for the attachment. If not specified, it will default to match the left "
+"hand sidebar header background color."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:21
+msgid ""
+"``pretext``: An optional line of text that will be shown above the "
+"attachment."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:25
+msgid ""
+"``text``: The text to be included in the attachment. It can be formatted "
+"using :doc:`Markdown <../help/messaging/formatting-text>`. For long "
+"texts, the message is collapsed and a “Show More” link is added to expand"
+" the message."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:30
+msgid "Author Details"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:32
+msgid ""
+"``author_name``: An optional name used to identify the author. It will be"
+" included in a small section at the top of the attachment."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:34
+msgid ""
+"``author_link``: An optional URL used to hyperlink the ``author_name``. "
+"If no ``author_name`` is specified, this field does nothing."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:36
+msgid ""
+"``author_icon``: An optional URL used to display a 16x16 pixel icon "
+"beside the ``author_name``."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:41
+msgid "Titles"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:43
+msgid ""
+"``title``: An optional title displayed below the author information in "
+"the attachment."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:45
+msgid ""
+"``title_link``: An optional URL used to hyperlink the ``title``. If no "
+"``title`` is specified, this field does nothing."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:50
+msgid "Fields"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:52
+msgid ""
+"Fields can be included as an optional array within ``attachments``, and "
+"are used to display information in a table format inside the attachment."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:54
+msgid ""
+"``title``: A title shown in the table above the ``value``.  As of v5.14 a"
+" title will render emojis properly."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:56
+msgid ""
+"``value``: The text value of the field. It can be formatted using "
+":doc:`Markdown <../help/messaging/formatting-text>`."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:58
+msgid ""
+"``short``: Optionally set to true or false (boolean) to indicate whether "
+"the ``value`` is short enough to be displayed beside other values."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:63
+msgid "Images"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:65
+msgid ""
+"``image_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or "
+"SVG) that is displayed inside a message attachment."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:67
+msgid ""
+"Large images are resized to a maximum width of 400px or a maximum height "
+"of 300px, while still maintaining the original aspect ratio."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:71
+msgid ""
+"``thumb_url``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or "
+"SVG)  that is displayed as a 75x75 pixel thumbnail on the right side of "
+"an attachment. We recommend using an image that is already 75x75 pixels, "
+"but larger images will be scaled down with the aspect ratio maintained."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:76
+msgid "Example Message Attachment"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:78
+msgid "Here is an example message attachment:"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:123
+msgid "And here is how it renders in Mattermost:"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:128
+msgid "Footer"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:130
+msgid ""
+"``footer``: An optional line of text that will be displayed at the bottom"
+" of the attachment. Footers with more than 300 characters will be "
+"truncated with an ellipsis (``…``)."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:132
+msgid ""
+"``footer_icon``: An optional URL to an image file (GIF, JPEG, PNG, BMP, "
+"or SVG) that is displayed as a 16x16 pixel thumbnail before the footer "
+"text."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:137
+msgid "Known Issues"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:139
+msgid "The footer timestamp field (``ts``) is not yet supported"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:140
+msgid "Message Attachment contents do not show up in search"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:143
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:146
+msgid "Can I send a message attachment via the API?"
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:148
+#, python-format
+msgid ""
+"Yes, you can use the `create post RESTful API "
+"<https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts%2Fpost>`_."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:150
+msgid ""
+"You need to add an \"attachment\" key to the post's props JSON field. The"
+" value is an array of message attachments you want attached to the post. "
+"See below for an example curl command."
+msgstr ""
+
+#: ../../source/developer/message-attachments.rst:156
+msgid "Below is an example HTTP request:"
+msgstr ""
+

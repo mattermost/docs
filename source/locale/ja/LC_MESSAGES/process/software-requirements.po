@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/software-requirements.rst:3
+msgid "Mattermost Software Requirements"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:5
+msgid ""
+"This document provides easy-to-follow guidelines for determining which "
+"software versions Mattermost requires. For past discussion on why these "
+"guidelines were chosen, see `this conversation "
+"<https://community.mattermost.com/core/pl/sb4fq6qhyfbb5xjdp7x3ud146e>`__."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:7
+msgid ""
+"Current software requirements are `documented here "
+"<https://docs.mattermost.com/install/requirements.html#software-"
+"requirements>`__."
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:10
+msgid "Desktop Apps"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Operating System"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Guideline"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Windows"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Microsoft - `reference "
+"<https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Mac"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Apple - `reference "
+"<https://en.wikipedia.org/wiki/MacOS_version_history>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Linux"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Fixed to Ubuntu LTS releases 16.04 or later"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:20
+msgid "PC Web"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Browser"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Chrome"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Chromium version of latest Mattermost Desktop App"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Firefox"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Mozilla - `reference <https://www.mozilla.org/en-"
+"US/firefox/organizations/>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Safari"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Safari version available in the minimum supported iOS version - "
+"`reference <https://en.wikipedia.org/wiki/Safari_version_history>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Edge"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Latest release"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:31
+msgid "Mobile Apps"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "iOS"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Latest and next-to-latest versions - `reference "
+"<https://en.wikipedia.org/wiki/IOS_version_history>`__"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid "Android"
+msgstr ""
+
+#: ../../source/process/software-requirements.rst:1
+msgid ""
+"Supported versions by Google - `reference "
+"<https://en.wikipedia.org/wiki/Android_version_history>`__"
+msgstr ""
+

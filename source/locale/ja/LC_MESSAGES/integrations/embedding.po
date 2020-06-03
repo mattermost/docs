@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/integrations/embedding.rst:3
+msgid "Embedding Mattermost in other applications"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:5
+msgid ""
+"This guide discusses how to embed Mattermost into other applications in "
+"different ways."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:8
+msgid "Contents"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:11
+msgid "Launching Mattermost from a button click"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:13
+msgid ""
+"The most common way of integrating Mattermost into another application is"
+" via a link or a button that brings up Mattermost in a new browser window"
+" or tab, with a link to a specific Mattermost channel to begin "
+"discussion."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:15
+msgid "Optionally, single-sign-on can be added to make the experience seamless."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:18
+msgid "Mattermost Launch Button Example in HTML"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:20
+msgid ""
+"Save the below HTML code in a file called ``mattermost-button-"
+"example.html`` then open the file in a browser as an example."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:22
+msgid "<script>"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:24
+msgid "var myWindow = null;"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:26
+msgid "function openMMWindow() {"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:27
+msgid ""
+"myWindow = "
+"window.open(\"https://community.mattermost.com/core/channels/developer\","
+" \"Mattermost\", "
+"\"top=0,left=0,width=400,height=600,status=no,toolbar=no,location=no,menubar=no,titlebar=no\");"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:28
+#: ../../source/integrations/embedding.rst:34
+#: ../../source/integrations/embedding.rst:35
+msgid "}"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:33
+msgid "function closeMMWindow() {"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:32
+msgid "if (myWindow) {"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:33
+msgid "myWindow.close();"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:38
+msgid "</script>"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:48
+msgid "<html>"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:42
+msgid ""
+"<br/> <br/> <button onclick=\"openMMWindow()\">Open Developer "
+"Channel</button> <br/> <br/> <button onclick=\"closeMMWindow()\">Close "
+"Developer Channel</button> <br/> <br/>"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:50
+msgid "</html>"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:54
+msgid "Embedding Mattermost in web applications using an iframe"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:56
+msgid ""
+"Any web application embedded into another using an iframe is at risk of "
+"security exploits, since the outer application intercepts all user input "
+"into the embedded application, an exploit known as `Click-Jacking "
+"<https://en.wikipedia.org/wiki/Clickjacking>`__. By default, Mattermost "
+"disables embedding. If you choose to embed Mattermost using the following"
+" instructions we highly recommend it is done only on a private network "
+"that you control."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:58
+msgid ""
+"To embed Mattermost in an iframe by overriding Mattermost security "
+"features:"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:60
+msgid ""
+"On your Mattermost server, change the HTML template to remove the anti-"
+"Clickjacking security feature"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:62
+msgid "Find the file ``/mattermost/mattermost/web/templates/head.html``"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:63
+msgid ""
+"Comment out the security feature by changing ``<style "
+"id=\"antiClickjack\">body{display:none !important;}</style>`` to ``<!-- "
+"<style id=\"antiClickjack\">body{display:none !important;}</style> -->``"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:65
+msgid ""
+"Update your NGINX configuration to strip out the security policy settings"
+" in the HTTP header."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:67
+msgid ""
+"See `community example <https://forum.mattermost.org/t/how-can-we-load-"
+"mattermost-in-iframe/165/6>`__ for details."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:70
+msgid "Embedding Mattermost in mobile applications"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:72
+msgid ""
+"The open source mobile applications can serve as a guide or started code "
+"to embed Mattermost in mobile applications. The Mattermost Javascript "
+"Driver is used to connect with the Mattermost server and product the "
+"interactivity for these applications."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:74
+msgid ""
+"The mobile applications also provide full source code for push "
+"notifications."
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:77
+msgid "Mobile applications offering Mattermost as a web view:"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:79
+msgid "https://github.com/mattermost/ios"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:80
+msgid "https://github.com/mattermost/android"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:84
+msgid "Mobile applications offering Mattermost with React Native components:"
+msgstr ""
+
+#: ../../source/integrations/embedding.rst:86
+msgid "https://github.com/mattermost/mattermost-mobile"
+msgstr ""
+

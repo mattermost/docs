@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/data-retention.rst:2
+msgid "Data Retention Policy (E20)"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:4
+msgid ""
+"Available in `Enterprise Edition E20 "
+"<https://about.mattermost.com/pricing/>`__."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:6
+msgid ""
+"By default, Mattermost stores all message history providing an unlimited "
+"search history to admins and end users."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:8
+msgid ""
+"In Enterprise Edition E20, you can set a custom policy to manage how long"
+" messages and file uploads are kept in Mattermost channels and direct "
+"messages."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:10
+msgid ""
+"Once a message or a file is deleted, the action is irreversible. Please "
+"be careful when setting up a custom data retention policy."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:16
+msgid "Configuring a Data Retention Policy"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:18
+msgid "To set a custom data retention policy:"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:20
+msgid ""
+"Go to **System Console > Compliance > Data Retention Policy** (or "
+"**System Console > Advanced > Data Retention Policy** in versions prior "
+"to 5.12)."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:21
+msgid ""
+"Select a **Message Retention** option. When a time is specified, "
+"messages, including file attachments, older than the duration you set "
+"will be deleted at the specified time. The minimum retention period is "
+"one day."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:22
+msgid ""
+"Select a **File Retention** option. When a time is specified uploaded "
+"files which are older than the duration you set will be deleted from your"
+" file storage system (either from your local disk or your Amazon S3 "
+"service as specified in **System Console > Environment > File Storage** "
+"(or **System Console > Files > Storage** in versions prior to 5.12)) at "
+"the specified time. The minimum retention period is one day."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:23
+msgid ""
+"Set the start time of the daily scheduled data retention job. Choose a "
+"time when fewer people are using your system. Must be a 24-hour time "
+"stamp in the form HH:MM."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:25
+msgid ""
+"Save the settings and restart your server. Messages and files older than "
+"the duration you set will be deleted at the specified server time, if "
+"applicable."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:27
+msgid ""
+"You can also run the deletion job manually at any time by clicking **Run "
+"Deletion Job Now** in **System Console > Compliance > Data Retention "
+"Policy** (or **System Console > Advanced > Data Retention Policy** in "
+"versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:30
+msgid ""
+"If using data retention and `ElasticSearch "
+"<https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the"
+" `ElasticSearch aggregate search indexes "
+"<https://docs.mattermost.com/administration/config-settings.html"
+"#aggregate-search-indexes>`_ setting is set to a value that is greater "
+"than your data retention policy in days."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:33
+msgid "Frequently Asked Questions (FAQs)"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:36
+msgid "What happens when a message is deleted?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:38
+msgid ""
+"The message is removed from the Mattermost user interface and deleted "
+"from the ``Posts`` table. The message is no longer searchable and cannot "
+"be retrieved in pinned posts or flagged posts lists."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:40
+msgid ""
+"Replies that did not exceed the message duration are still displayed in "
+"the user interface. However, further replies are no longer possible."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:43
+msgid "What happens when a file is deleted?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:45
+msgid ""
+"The file attachment is removed from the Mattermost user interface, "
+"deleted from the ``FileInfo`` table, and from your local disk or Amazon "
+"S3 service as specified in **System Console > Environment > File "
+"Storage** (or **System Console > Files > Storage** in versions prior to "
+"5.12)."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:48
+msgid "Why didn't an old file get deleted after running the deletion job?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:50
+msgid ""
+"First, check the data deletion was successful in the deletion job table "
+"in **System Console > Compliance > Data Retention Policy** (or **System "
+"Console > Advanced > Data Retention Policy** in versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:52
+msgid ""
+"If the files were uploaded prior to Mattermost v4.2, you will need to "
+"delete the files manually from your local file storage or Amazon S3 "
+"storage:"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:54
+msgid ""
+"Wait until all files uploaded prior to Mattermost v4.2 are past the file "
+"retention policy duration."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:55
+msgid ""
+"Delete the ``teams/`` folder in the root of your  Mattermost storage "
+"directory."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:57
+msgid ""
+"Note that these files will still be removed from the Mattermost user "
+"interface if they were uploaded in Mattermost v3.5 or later, which "
+"contain the `FileInfo table "
+"<https://docs.mattermost.com/administration/changelog.html#database-"
+"changes-from-v3-4-to-v3-5>`__."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:60
+msgid "Why do I see ``Pending`` in the deletion job table with no details?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:62
+msgid ""
+"This usually means another data retention job is in progress. You can "
+"verify this in the deletion job table in  **System Console > Compliance >"
+" Data Retention Policy** (or **System Console > Advanced > Data Retention"
+" Policy** in versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:64
+msgid ""
+"If no jobs are in progress and the job has stayed ``Pending`` for more "
+"than 2 minutes, then you may not have restarted your server after "
+"enabling the data retention policy. Restart your server and try again."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:67
+msgid "How do I set a custom policy per team or channel?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:69
+msgid ""
+"Setting custom policies for each team and channel are in the roadmap but "
+"not yet supported."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:71
+msgid ""
+"If you are interested in this feature, consider upvoting the `existing "
+"feature proposal "
+"<https://mattermost.uservoice.com/forums/306457-general/suggestions/31731844"
+"-ee-data-retention-policy-for-individual-teams-and>`__ and share your "
+"feedback in the comments."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:74
+msgid "How is data retention handled in the mobile apps?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:76
+msgid ""
+"When messages or files are deleted, they are no longer searchable in the "
+"Mattermost mobile apps."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:78
+msgid ""
+"In v1.5 and later of the iOS and Android apps, messages and files are "
+"deleted from local storage in the following cases, if they exceed the "
+"retention policy duration:"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:80
+msgid "When the user opens the app."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:81
+msgid "When the user puts the app into the background."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:83
+msgid ""
+"In v1.4 and earlier of the mobile apps, messages and files are not "
+"cleared from local storage when the data retention policy is enabled."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:86
+msgid "How do I know if a data retention job fails?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:88
+msgid ""
+"Mattermost provides the status of each data retention job in **System "
+"Console** > **Compliance** > **Data Retention Policy** (or **System "
+"Console > Advanced > Data Retention Policy** in versions prior to 5.12). "
+"Here, you can see if the job succeeded or failed, including the details "
+"of the error."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:90
+msgid ""
+"Additionally, any failures are returned in the server logs. The error log"
+" begins with the string ``Failed job`` and includes a job_id key/value "
+"pair. Data retention job failures are identified with worker name "
+"``EnterpriseDataRetention``. You can optionally create a script that "
+"programmatically queries for such failures and notifies the appropriate "
+"system."
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:93
+msgid ""
+"Does the System Administrator get any notification when the data "
+"retention period is changed?"
+msgstr ""
+
+#: ../../source/administration/data-retention.rst:95
+msgid ""
+"No, the new config is updated, but the System Admin does not receive any "
+"feedback on what the effects will be (e.g. reporting of how many messages"
+" are to be deleted)."
+msgstr ""
+

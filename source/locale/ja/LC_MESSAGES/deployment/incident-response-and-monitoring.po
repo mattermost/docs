@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:2
+msgid "Incident Response and Monitoring Tools"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:4
+msgid ""
+"Our `Integrations Directory <https://integrations.mattermost.com>`_ has "
+"several integrations to connect incident response and monitoring tools in"
+" Mattermost."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:6
+msgid ""
+"Here are some popular options below, including self-hosted on-prem or "
+"self-hosted private cloud solutions, and vendor-hosted SaaS solutions."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:9
+msgid "AWS CloudWatch SNS"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:11
+msgid ""
+"Two-way integration between Mattermost and Amazon AWS SNS, developed by "
+"Carlos Tadeu Panato Junior, supported by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:12
+msgid ""
+"Receive SNS notifications from Alerts created by Amazon AWS CloudWatch "
+"and sent via AWS SNS."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:13
+msgid ""
+"Get operational data and actionable insights to monitor Mattermost in "
+"order to observe and respond to system-wide changes in performance."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:14
+msgid ""
+"Source code + docs: https://github.com/mattermost/mattermost-plugin-aws-"
+"SNS"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:17
+msgid "Nagios"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:19
+msgid ""
+"Send notifications from a Nagios monitoring instance to any Mattermost "
+"channel for troubleshooting, developed by NDrive."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:20
+msgid "Can be used for other compatible software such as Icinga."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:21
+msgid "Source code + docs: https://github.com/NDrive/nagios-mattermost"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:24
+msgid "Splunk"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:26
+msgid "Monitor a Mattermost environment."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:27
+msgid ""
+"Send application performance insights to any Mattermost channel for "
+"better troubleshooting and monitoring, and to increase system uptime."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:28
+msgid "Docs: http://datatomix.com/?p=433, written by Christian Johannsen."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:31
+msgid "PagerDuty"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:33
+msgid ""
+"Get automatic information regarding the state of an incident to "
+"Mattermost, developed by PagerDuty."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:34
+msgid ""
+"Send incident updates for any PagerDuty Service to any Mattermost channel"
+" to optimize incident resolution time and process."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:35
+msgid "Docs: https://www.pagerduty.com/docs/guides/mattermost-integration-guide/"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:38
+msgid "Opsgenie"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:40
+msgid ""
+"Two-way integration between Opsgenie and Mattermost, developed by "
+"Opsgenie."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:41
+msgid ""
+"Send alert notifications from your Opsgenie incident boards to Mattermost"
+" channels."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:42
+msgid ""
+"Use slash commands to take quick actions such as acknowledging, "
+"assigning, creating and closing alerts in the Mattermost user interface."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:43
+msgid "Docs: https://docs.opsgenie.com/docs/mattermost-integration"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:46
+msgid "Prometheus Alertmanager"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:48
+msgid ""
+"Two-way integration between Alertmanager and Mattermost, developed by "
+"Carlos Tadeu Panato Junior."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:49
+msgid ""
+"Handle alerts sent by client applications such as the Prometheus server "
+"and route them to the correct receiver integrations such as email, "
+"PagerDuty, or Opsgenie."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:50
+msgid ""
+"Source code + docs: https://github.com/cpanato/mattermost-plugin-"
+"alertmanager"
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:52
+msgid ""
+"Have a proposal for an incident response and monitoring integration? `Let"
+" us know in the feature proposal forum "
+"<https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_."
+msgstr ""
+
+#: ../../source/deployment/incident-response-and-monitoring.rst:54
+msgid ""
+"Have built an integration? `Let us know "
+"<https://integrations.mattermost.com/submit-an-integration/>`_ and we'll "
+"share in our `Integrations Directory "
+"<https://integrations.mattermost.com>`_."
+msgstr ""
+

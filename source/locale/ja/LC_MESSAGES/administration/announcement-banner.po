@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/announcement-banner.rst:2
+msgid "Announcement Banner (E10)"
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:4
+msgid ""
+"Available in `Enterprise Edition E10 and higher "
+"<https://about.mattermost.com/pricing/>`__."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:6
+msgid ""
+"In Mattermost Enterprise Edition, an announcement banner is available "
+"that allows System Admins to display a notice that's visible to all users"
+" on the system."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:13
+msgid ""
+"By default, users can dismiss the banner until they log in again or until"
+" you update the banner. You can update the banner by either changing the "
+"text of the banner or by re-enabling the banner after it has been "
+"disabled. You can also control the text color and the background color. A"
+" setting in the System Console allows you to prevent users from "
+"dismissing the banner."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:15
+msgid "**To enable the banner**:"
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:17
+msgid ""
+"In the CUSTOMIZATION section of the System Console, click **Announcement "
+"Banner** in prior versions or **System Console > Site Configuration** in "
+"versions after 5.12."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:18
+msgid "In the *Enable Announcement Banner* section, click **true**."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:19
+msgid ""
+"In the *Banner Text* field, enter the text of the announcement that you "
+"want to make."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:20
+msgid "Set the background and text colors."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:21
+msgid ""
+"To prevent users from dismissing the banner, in the *Allow Banner "
+"Dismissal* section, click **false**."
+msgstr ""
+
+#: ../../source/administration/announcement-banner.rst:22
+msgid "Click **Save**."
+msgstr ""
+

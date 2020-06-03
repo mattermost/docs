@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/help-wanted.rst:3
+msgid "Help Wanted Tickets"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:5
+msgid ""
+"Thank you for your interest in contributing! `Join our \"Contributors\" "
+"community channel "
+"<https://community.mattermost.com/core/channels/tickets>`__ where you can"
+" discuss questions with community members and the Mattermost core team."
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:7
+msgid ""
+"Per the `Code Contribution Guidelines "
+"<https://developers.mattermost.com/contribute/getting-started/>`__, other"
+" than small bug fixes and incremental improvements, only pull requests "
+"referencing `Help Wanted GitHub issues <https://mattermost.com/pl/help-"
+"wanted-mattermost-server>`__ should be submitted to Mattermost projects. "
+"This ensures:"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:9
+msgid "Proposed changes have been unambiguously specified"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:10
+msgid ""
+"The change meets the `fast, obvious, forgiving <http://www.mattermost.org"
+"/design-principles/>`__ design principle for the project"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:11
+msgid ""
+"Volunteers are willing to test, document, support and maintain changes "
+"(authentication options are critical paths that need manual testing with "
+"each monthly release in perpetuity)"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:12
+msgid ""
+"The change `aligns to the stated purpose of the project "
+"<http://www.mattermost.org/vision/#mattermost-teams-v1>`__"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:14
+msgid ""
+"Key contributors and core team members nominate changes for Help Wanted "
+"issues by opening a Jira ticket."
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:17
+msgid "Nominating changes for Help Wanted status"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:19
+msgid "Jira tickets nominating a feature for Help Wanted status should include:"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:21
+msgid "Title clearly and concisely describes change proposed"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:22
+msgid ""
+"Description is unambiguous and includes UI description and help text so "
+"feature can be implemented and tested by any contributor"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:23
+msgid ""
+"If related to a community discussion, include link to ticket in "
+"discussion and link to discussion in ticket"
+msgstr ""
+
+#: ../../source/process/help-wanted.rst:25
+msgid ""
+"Tickets meeting HW criteria receive a `help-wanted` label by triage team "
+"and appear in `Help Wanted list <https://mattermost.com/pl/help-"
+"wanted>`__."
+msgstr ""
+

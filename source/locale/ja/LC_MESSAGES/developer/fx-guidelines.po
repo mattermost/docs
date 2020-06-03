@@ -1,0 +1,1435 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/fx-guidelines.rst:2
+msgid "User Experience Guidelines"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:4
+msgid ""
+"The purpose of the Mattermost User Experience Guidelines (\"UX "
+"Guidelines\") is to deliver a level of usability and consistency that "
+"turns users of Mattermost software into fans of the Mattermost "
+"experience."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:6
+msgid ""
+"If you're interested in contributing to design discussions, please join "
+"the `Mattermost UX Design channel to discuss "
+"<https://community.mattermost.com/core/channels/ux-design>`__."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:15
+msgid "Design Principles"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:17
+msgid ""
+"These principles define the standard we’re setting for the Mattermost "
+"experience."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:20
+msgid "1) Fast, Obvious, Forgiving"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:22
+msgid "**Fast**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:24
+msgid "Fast has two parts: being \"responsive\" and being \"quick\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:26
+msgid ""
+"*Responsive* means when a user clicks, taps, types or otherwise enters "
+"input we give immediate feedback that the input is received and something"
+" is happening. It could be a spinner animation, or just some text saying "
+"“Loading”, but something always responds to the user."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:28
+msgid ""
+"*Quick* means things happen as soon as they can. Loading pages, sending "
+"messages, receiving notifications and other vital actions should be "
+"automatically benchmarked for performance. Bugs should be opened on "
+"performance regressions."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:30
+msgid "**Obvious**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:32
+msgid ""
+"There is no such thing as \"user error\"--it’s always our fault as "
+"product designers. We prevent problems of incorrect usage by making users"
+" aware of correct usage. Fixes could be through user interface "
+"improvements, adjustments to help text or helping users recover when "
+"things go wrong–for example, adding undelete, undo and rolling back."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:34
+msgid ""
+"When our product is correct, users are never confused. Everything we do--"
+"features, interface layout, labeling, help text and documentation--needs "
+"to make sense in the mind of the user, even if it means occasionally "
+"oversimplifying how things technically work."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:36
+msgid ""
+"If a user doesn’t understand how to use a feature, all the underlying "
+"effort and code is wasted. The “Obvious” design principle also flows "
+"through to our `Documentation Guidelines <http://www.mattermost.org"
+"/documentation-guidelines/>`__."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:38
+#, python-format
+msgid ""
+"Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__, core "
+"functionality should be apparent, and advanced functionality should be "
+"possible via sub-menus and be well documented and tested. Functionality "
+"that is not fundamental to the product purpose should be ruthlessly "
+"omitted."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:40
+msgid ""
+"Use design patterns familiar to our audience--general non-technical users"
+" for the core messaging experience, IT administrators for configuration "
+"experience, developers for the developer experience. Mattermost UX should"
+" be drawn from patterns and derivations of other experiences in a mix of "
+"familiar approaches. Remember: Software is an invention--there's nothing "
+"\"intuitive\" about it, there is only what is familiar."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:42
+msgid "**Forgiving**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:44
+msgid ""
+"There will be unavoidable product failures, whether through technical "
+"issues like loss of connectivity or through our inability to make the "
+"user aware of correct usage. Being forgiving means reducing the negative "
+"impact users encounter during failures--not losing their data, not "
+"deleting, updating or sending something they didn't intend to send, and "
+"so forth."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:46
+msgid ""
+"Features like confirmation dialogs on critical actions or temporarily "
+"saving user input in case of disconnect are examples of forgiveness."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:48
+msgid ""
+"That said, forgiving does not mean allowing the product to be used "
+"incorrectly by breaking the \"Obvious\" principle. As an analogy, if "
+"someone kicks a football and misses the goal, being forgiving means "
+"giving them a chance to kick again, it does not mean counting the miss as"
+" a goal."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:51
+msgid "2) International, Compatible, Priority-focused"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:53
+msgid ""
+"**International** - Design with an international, multi-lingual audience "
+"in mind. Use patterns and language without US, Western or culture-"
+"specific references when possible."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:55
+msgid ""
+"**Compatible** - When aligned with our other design principles, we should"
+" deploy UX and integration patterns from the other products for which we "
+"support the import of teams and users."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:57
+msgid ""
+"**Priority-focused** - Communication is a starting point towards the end "
+"goal of helping users within an enterprise achieve their highest "
+"priorities through modern communication. We prefer the term \"messaging\""
+" to convey the sending of thoughtful communications that moves ideas "
+"forward, to the term \"chat\", which doesn't imply progress."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:62
+msgid "Technical Guidelines"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:65
+msgid "Plugins"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:67
+msgid "By default, every new feature should be a plugin. Why?"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:69
+msgid "Isolates complexity."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:70
+msgid "Disabled by default and must be turned on by a System Admin."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:71
+msgid "Grows the plugin ecosystem with better support for external plugins."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:73
+msgid "Reasons you might not want to write a plugin:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:75
+msgid "The feature requires high performance access."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:76
+msgid ""
+"The feature would be used or extended by a plugin (e.g. bot accounts or "
+"Account Settings modal)."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:77
+msgid ""
+"The feature would be used by every Mattermost instance (e.g. flagged "
+"messages, replies)."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:79
+msgid "Reasons to write a plugin:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:81
+msgid "To customize the Mattermost user interface."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:82
+msgid ""
+"To extend Mattermost functionality to meet a specific, complex "
+"requirement."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:83
+msgid "To build integrations that are managed by your Mattermost server."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:84
+msgid "To prototype a new feature with a plugin."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:87
+msgid "Bootstrap Classes"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:89
+msgid ""
+"Since we’re using `bootstrap <http://getbootstrap.com/>`__, try to "
+"utilize `bootstrap classes <http://getbootstrap.com/css/>`__ as much as "
+"possible rather than creating new styles or using inline styles."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:92
+msgid "Custom Styles"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:94
+msgid ""
+"We’re using `BEM methodology <https://en.bem.info/method/>`__  and would "
+"advise everyone to do so when creating new classes or ids. There are many"
+" places in our app that currently don’t follow BEM, but we’re trying to "
+"improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-"
+"getting-your-head-round-bem-syntax/>`__ is a brief overview of the BEM "
+"syntax."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:99
+msgid "Screen and Content Dimensions"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:102
+msgid "Web/Desktop App"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:104
+msgid ""
+"The webapp supports two main modes of displaying the app: desktop view "
+"and mobile/tablet view. The app is primarily used in desktop view, but "
+"when the screen is 768 pixels or less wide, it switches to mobile view. "
+"The mobile view is also used in mobile browsers and the Classic App."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:106
+msgid "For desktop view:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:108
+msgid ""
+"The target screen sizes are 1280 x 800 or 1920 x 1080. Note that the "
+"space available for content will be smaller than this due to the the "
+"frame of the window and system-specific components like the taskbar on "
+"Windows. For example, the desktop app on Windows 10 only has a usable "
+"height of 717 pixels when the tab bar is visible at 1280 x 800 "
+"resolution."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:109
+msgid ""
+"The minimum content size is 769 x 600. When the width is 768 or less, the"
+" app switches to mobile view. When the height is below 600, UI elements "
+"may become misplaced."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:111
+msgid "For mobile view:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:113
+msgid ""
+"The minimum and target content size is 320 x 460, matching the available "
+"space when the app is opened in Safari on an iPhone 5."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:116
+msgid "Mobile App"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:118
+msgid ""
+"At this time, the mobile app only supports an equivalent of mobile view. "
+"In that view:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:120
+msgid ""
+"The minimum and target content size is 320 x 568, matching the screen "
+"size of an iPhone 5. Note that you'll still need to leave space for "
+"system-specific components like the status bar or soft buttons on iOS, "
+"but much more of the screen is usable."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:125
+msgid "UX Feedback Guidelines"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:127
+msgid ""
+"User experience design is a discipline drawing from ergonomics, "
+"ethnography, human factors research and cognitive psychology. It's "
+"evaluated qualitatively with tools like heuristic evaluation and "
+"cognitive walkthroughs, and quantitatively through telemetry, anonymous "
+"usage data and other automated diagnostics."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:129
+msgid ""
+"As with any design process, iteration, prototyping, informed critique and"
+" evaluation is vital to doing our best work. Developing the skill of "
+"informed critique in our community increases the quality of our designs "
+"and of our product."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:131
+msgid ""
+"This guide outlines the levels of UX feedback in the order of positive "
+"impact in order to guide contributors towards the behaviors that best "
+"advance a fast-moving, asychronously-developed open source product."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:133
+msgid ""
+"**Entry-level UX feedback:** Authentic questions or suggestions for "
+"design changes, presented with good intentions, coming from personal "
+"preferences with less than 2 minutes spent thinking about the pros and "
+"cons of the changes the feedback suggests."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:135
+msgid ""
+"Example 1: Well intentioned suggestion that does not consider pros and "
+"cons."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:137
+msgid "Why not change channel length from 22 characters to 50 characters?"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:141
+msgid ""
+"Example 2: Attempt to help provide \"input\" in a design discussion, but "
+"instead of using objective criteria such as audience, community, "
+"customers, examples, research or principles, expresses a political "
+"\"vote\" that may bias or confuse a design discussion."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:143
+msgid "+1, that is my personal preference!"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:145
+msgid ""
+"While it's important to welcome people sharing entry-level feedback, and "
+"to extract from it useful ideas where possible, if entry-level feedback "
+"begins to unintentionally shut out more constructive feedback, a private "
+"note might be sent to the contributor with something like: \"Highly "
+"appreciate your good intentions to share UX feedback. May I ask your help"
+" to review Mattermost's UX Feedback Guidelines (link)?\""
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:147
+msgid ""
+"**Intermediate UX feedback:** - Comments, critique or questions about "
+"design with thoughtful consideration--including trade-offs--of the goal "
+"and principles of a design, along with UX principles of the project, and "
+"patterns from other products."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:149
+msgid ""
+"Feedback speaks for itself, with relevant references to principles, "
+"audience, research and other objective criteria. May include descriptions"
+" of experience using the feature or similar features that can be "
+"generalized to the intended audience:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:151
+msgid ""
+"Example: Thoughtful suggestion listing trade-offs that reference "
+"principles."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:153
+msgid ""
+"What if we used a reply icon, similar to replies in email, for the "
+"comment function? Screenshots below. Pros: a) More familiar to email "
+"users. b) More distinct than the word balloon icon typically used for "
+"\"Comment\", which is too easily confused for \"Message\".  Cons: i) We "
+"use the symbol of \"Reply\" for \"Comment\" (the UI has an \"Add "
+"Comment\" button in the UI), which could be confusing. ii) When we add a "
+"\"Forward\" icon later to move a message to a different channel, the "
+"\"Reply\" and \"Forward\" metaphors may get muddled\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:155
+msgid ""
+"UX feedback at intermediate level or higher is highly appreciated. It "
+"should be encouraged and recognized as a substantial contribution to the "
+"design process."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:157
+msgid ""
+"**Advanced UX feedback:** - Constructive feedback that enlightens a "
+"design discussion, shares fact-based heuristics, helps clear blindspots "
+"and inconsistencies, and significantly improves a design, and potentially"
+" design guidelines. Analysis naturally considers variations needed across"
+" web, PC and mobile experiences."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:159
+msgid ""
+"Example: Noticing a design issue and influencing a change in UX "
+"guidelines to correct things system-wide."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:161
+msgid ""
+"A menu with 10 items without groupings seems too long. Both Apple (link) "
+"and Windows (link) user interface guidelines suggest fewer than 7 options"
+" before grouping. I'd propose we use fewer than 5. There's research "
+"showing 5 items as a number most people can comfortably store mentally "
+"(link), and looking through other products I don't see situations where "
+"we wouldn't be able to group by 5. Also, fewer menu items, perhaps "
+"through sub-menus, should also help mobile experience, where ungrouped "
+"10-item menus just look messy. I've added a PR on UX guidelines where we "
+"can discuss this as well."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:166
+msgid "Design Guidelines"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:170
+msgid "Display: Alignment"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:172
+msgid ""
+"**Elements should feature margins horizontally and vertically, evenly "
+"spaced.**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:174
+msgid ""
+"Create space between elements, such as buttons, text, line separators, "
+"headers and backgrounds, by leaving even space around them (either equal "
+"space or at most 1 pixel difference)."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:176
+#: ../../source/developer/fx-guidelines.rst:369
+#: ../../source/developer/fx-guidelines.rst:408
+msgid "**Examples:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:181
+msgid "Button positioned in the middle of the header."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:186
+msgid "Error message does not extend beyond the horizontal line separator."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:188
+msgid "**Horizontally align multi-line elements along a vertical line.**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:190
+#: ../../source/developer/fx-guidelines.rst:206
+#: ../../source/developer/fx-guidelines.rst:243
+#: ../../source/developer/fx-guidelines.rst:281
+#: ../../source/developer/fx-guidelines.rst:586
+msgid "**Example:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:195
+msgid ""
+"Roles right-justified with respect to the text and irrespective of the "
+"icon."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:200
+msgid "Display: Button Placement"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:202
+msgid ""
+"**Button in the footer of the dialog should either be “Close”, or "
+"“Cancel” and [ACTION_BUTTON].**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:204
+msgid ""
+"If there’s one button on the bottom right, it should be “Close”. If there"
+" are two, the one on the left should be “Cancel” and the one on the right"
+" should be an [ACTION_BUTTON], like “Save” or “Send Invitations”."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:213
+#: ../../source/developer/fx-guidelines.rst:220
+#: ../../source/developer/fx-guidelines.rst:288
+#: ../../source/developer/fx-guidelines.rst:343
+#: ../../source/developer/fx-guidelines.rst:378
+#: ../../source/developer/fx-guidelines.rst:418
+#: ../../source/developer/fx-guidelines.rst:459
+#: ../../source/developer/fx-guidelines.rst:467
+#: ../../source/developer/fx-guidelines.rst:481
+#: ../../source/developer/fx-guidelines.rst:489
+msgid "Correct:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:209
+msgid "Single button at the bottom right should be “Close”."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:216
+msgid ""
+"When there are two buttons on bottom right, left button should be "
+"“Cancel” and the button on the right should be the [ACTION_BUTTON], in "
+"this case “Send Invitations”."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:227
+#: ../../source/developer/fx-guidelines.rst:296
+#: ../../source/developer/fx-guidelines.rst:336
+#: ../../source/developer/fx-guidelines.rst:372
+#: ../../source/developer/fx-guidelines.rst:411
+#: ../../source/developer/fx-guidelines.rst:462
+#: ../../source/developer/fx-guidelines.rst:470
+#: ../../source/developer/fx-guidelines.rst:484
+#: ../../source/developer/fx-guidelines.rst:492
+msgid "Incorrect:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:223
+msgid ""
+"When there are two buttons at the bottom right, left button should not be"
+" “Close”, as it’s not clear if closing will or won’t execute the "
+"[ACTION_BUTTON]."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:232
+msgid "Display: Button States"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:234
+msgid ""
+"All buttons should have a visually distinct appearance for the following "
+"states (if applicable):"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:236
+msgid "default"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:237
+msgid "on_hover / on_hover (w tooltip)"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:238
+msgid "active"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:239
+msgid "disabled (greyed out or hidden)"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:241
+msgid ""
+"The color of the on_hover state should be the same as in active state, "
+"with opacity = 0.7."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:252
+msgid "Display: Icons"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:256
+msgid "When to use icons"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:255
+msgid ""
+"When there’s not enough space for the label and an icon can easily "
+"represent the label."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:256
+msgid "When an icon can help the user more quickly understand a feature."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:259
+msgid "When not to use icons"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:259
+msgid "When the term/phrase is too specific or complicated."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:262
+msgid "Icons should vary across different options"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:262
+msgid ""
+"When using icons, different options in the same section should have "
+"different icons."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:266
+msgid "Testing"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:265
+msgid ""
+"File a bug if the icon is difficult to understand or has cosmetic defects"
+" (size, blur, etc.)."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:266
+msgid "File a bug when an icon doesn’t obviously indicate the underlying feature."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:273
+msgid "Display: Instructions"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:275
+msgid "**Instructions should be sentences, one-line links should be fragments.**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:277
+msgid ""
+"Instructions, such as “A password reset link has been sent to "
+"``you@email.com`` for your account. Please check your inbox.”, should be "
+"displayed as sentences ending in periods. One-line links, such as “Find "
+"it here”, should not end in periods or commas, but question marks are "
+"okay."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:279
+msgid ""
+"Instructions containing a link to an external resource (ie: a blog "
+"article or docs.mattermost.com), should not be hard-coded. A redirect "
+"page from about.mattermost.com should be used in product instructions. "
+"Redirect pages should be formatted as "
+"``https://about.mattermost.com/default-[SUBJECT]``. An "
+"about.mattermost.com page can be requested from the Product team at "
+"Mattermost."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:284
+msgid "Instruction “Please check your inbox”, ending with a period."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:291
+msgid "Instruction “Please check your inbox”, ending without a period."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:301
+msgid "Display: Tooltips"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:303
+msgid "Tooltip text may be title case or sentence case depending on its context."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:305
+msgid ""
+"Tooltips should be title case if the tooltip is a noun, e.g. \"Pinned "
+"Posts\", or \"Flagged Posts\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:306
+msgid ""
+"Tooltips should be sentence case if they are declaring an action, e.g. "
+"\"Flag for follow up\", or \"Create new private channel\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:312
+msgid "Display: Username display"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:314
+msgid ""
+"Usernames should be preceded by the @ icon in all places except for the "
+"Direct Messages list in the left-hand sidebar, and for any post or "
+"comment made by the user."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:316
+msgid "Examples of where an @ icon should precede the username are as follows:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:318
+msgid "User list in the system console."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:319
+msgid "Autocomplete."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:320
+msgid "Members list for the current channel."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:325
+msgid "Display: Number of Choices"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:327
+#, python-format
+msgid ""
+"To simplify decisions, when practical, limit the number of choices to 3 "
+"or 4, and add separators or headings between logical groups. See `Hick’s "
+"Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__ for background on why"
+" this helps."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:329
+#: ../../source/developer/fx-guidelines.rst:577
+msgid "Example:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:332
+msgid "No clear separation between distinct options."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:339
+msgid "A clear separation between distinct options."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:348
+msgid "Feedback: Error Messages"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:350
+msgid ""
+"On occasion, Mattermost users may encounter a problem that prevents them "
+"or the Mattermost system from successfully completing a task. The "
+"unexpected user behavior or system response should be communicated to the"
+" user through an error message, and should follow the design principles "
+"of forgiving and obvious."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:352
+msgid "Error messages should:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:354
+msgid ""
+"State the encountered problem with the component in the title (e.g. "
+"\"Team URL Not Found\")."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:355
+msgid "Describe very briefly why the error happened under the title."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:356
+msgid ""
+"When possible, have a link to direct users to help complete their "
+"original task or return to the previous state."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:357
+msgid "Give recommendations/solution(s) for the next course of action."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:358
+#: ../../source/developer/fx-guidelines.rst:397
+msgid "Be consistent with the Mattermost voice and professional look."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:359
+msgid "Be avoided when possible (by avoiding the error condition)."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:361
+msgid "Error messages should not:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:363
+msgid "Be in red or in capital letters."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:364
+msgid "Say or have the term “Error”."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:365
+#: ../../source/developer/fx-guidelines.rst:404
+msgid "Be lengthy."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:366
+#: ../../source/developer/fx-guidelines.rst:405
+msgid "Be generic."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:367
+#: ../../source/developer/fx-guidelines.rst:406
+msgid "End in an exclamation point."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:372
+msgid "This is an example of a bad error message:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:378
+msgid "This is an example of a good error message:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:386
+msgid "Feedback: System Notice"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:388
+msgid ""
+"On occasion, Mattermost users may encounter a system notice generated by "
+"Mattermost as part of a recent release. The system notice should be "
+"communicated to the user via a pop-over message in the bottom right of "
+"the screen, and should follow the design principles of `Fast, Obvious, "
+"Forgiving <https://docs.mattermost.com/developer/fx-guidelines.html#fast-"
+"obvious-forgiving>`__."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:390
+msgid "Notice messages should:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:392
+msgid "State that the notice is from Mattermost."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:393
+msgid ""
+"Describe very briefly and in an unintimidating tone the reason of the "
+"notice."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:394
+msgid ""
+"When possible, include a link that directs users to help documentation "
+"related to the notice description."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:395
+msgid "Be clear who can see the message."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:396
+msgid ""
+"Give three action options: a link that can be clicked, \"remind me "
+"later\" button or \"don't show again\" button."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:398
+msgid ""
+"Be used very selectively to highlight significant change(s) within the "
+"current release."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:400
+msgid "Notice messages should not:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:402
+msgid "Be in colored text or in capital letters."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:403
+msgid "Exclude who can see the message."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:411
+msgid "This is an example of a bad system notice:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:418
+msgid "This is an example of a good system notice:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:426
+msgid "Input: Fields"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:428
+msgid ""
+"Users should enter information into fields without much thinking. Enter "
+"button on last input field should trigger default dialog button."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:430
+#: ../../source/developer/fx-guidelines.rst:508
+#: ../../source/developer/fx-guidelines.rst:533
+#: ../../source/developer/fx-guidelines.rst:669
+msgid "**Example 1:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:432
+msgid ""
+"If focus is on the last input field in dialog (“Miller”), hitting Enter "
+"triggers the default dialog button (“Send Invitations”)"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:438
+#: ../../source/developer/fx-guidelines.rst:518
+#: ../../source/developer/fx-guidelines.rst:539
+#: ../../source/developer/fx-guidelines.rst:675
+msgid "**Example 2:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:440
+msgid ""
+"Having radio buttons for input options. **NOTE**: We should use radio "
+"buttons/checkboxes for input options rather than custom bootstrap on/off "
+"switches."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:450
+msgid "Input: Hints"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:452
+msgid ""
+"Mattermost voice for documentation and help text follows this simple "
+"guideline: explain something to a user with basic computer skills in "
+"simple terms without jargon or complexity."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:454
+msgid "**Fieldname:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:456
+msgid ""
+"The labels on input fields should be clear and concise for the intended "
+"user. Consider the surrounding UI for consistent naming of input fields "
+"with similar actions."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:459
+msgid "Channel URL: The web address used to reach your channel."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:462
+msgid ""
+"Handle: The name of the subdirectory used to navigate to a channel using "
+"the site URL appended with the handle name. Must use only valid URL "
+"inputs."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:464
+msgid ""
+"The fieldname of a setting should explicitly describe what a setting "
+"affects."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:467
+msgid "Automatically expand link previews."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:470
+msgid "Link previews"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:472
+msgid "**Help text:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:474
+msgid ""
+"Text below an input field should clearly and concisely describe the "
+"purpose of the input in an active voice."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:476
+msgid ""
+"In general, avoid describing the technical requirements of the field in "
+"Help Text, and use Placeholder input text, field validation and error "
+"messages to convey requirements. The exception to this guideline is if "
+"requirements are non-obvious, such as passwords needing different numbers"
+" of characters, symbols, etc."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:478
+msgid ""
+"For a setting involving a CONDITION and an ACTION, the help text should "
+"be written as \"ACTION when/for CONDITION\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:481
+msgid "Flash the taskbar icon when a new message is received."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:484
+msgid "When a new message is received, flash the taskbar icon."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:486
+msgid ""
+"Ensure plural interpretations work when applicable and test help text "
+"with machine translation to reduce non-obvious, English-specific jargon:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:489
+msgid ""
+"You can adjust a few configuration settings when setting up your instance"
+" of Mattermost."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:492
+msgid ""
+"There are a few configuration settings you might want to fiddle with when"
+" setting up your instance of Mattermost."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:494
+msgid ""
+"Note: The incorrect string above machine-translated into German and then "
+"back into English becomes: \"There are some configuration settings you "
+"could know if your instance Matter Most violin\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:496
+msgid "**Placeholder input text:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:498
+msgid ""
+"Show examples of valid input, such as ``name@example.com`` for email "
+"addresses, as well as examples of functionality that is not obviously "
+"supported. For example, for a channel name field the placeholder input "
+"text could be ``Example: Marketing, John’s Room, 中国业务``."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:500
+msgid "**Field validation:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:502
+msgid ""
+"Use field validation to help prevent or correct any mistakes a user might"
+" make."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:504
+msgid ""
+"For **textfields**, restrict users from making entries that are too long "
+"by limiting characters via the ``maxlength`` attribute."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:506
+msgid ""
+"For **textareas**, show a character counter and then a helpful message if"
+" the user exceeds the maximum number of characters."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:520
+msgid ""
+"If a user enters invalid uppercase letters and spaces for a URL, show an "
+"error message and also offer a correction, substituting dashes for spaces"
+" and lower case letters for uppercase letters, so that the user can "
+"resubmit immediately with valid input."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:525
+msgid "Input: Input Patterns"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:527
+msgid ""
+"All inputs such as textareas should behave consistently. If the default "
+"behavior is to perform an action on \"Enter\", then all inputs of that "
+"type should be consistent and perform an action on \"Enter\"."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:530
+msgid "If pressing \"Enter\" posts a message in the center channel post input..."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:536
+msgid ""
+"...then pressing \"Enter\" in the comment thread textarea should also "
+"post a comment..."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:546
+#: ../../source/developer/fx-guidelines.rst:681
+msgid "**Example 3:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:542
+msgid ""
+"...and other textareas or inputs should also perform their primary action"
+" when \"Enter\" is pressed. Here's an example of the \"Edit Header\" "
+"modal:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:551
+msgid "Input: Validation"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:553
+msgid "**Feedback on action:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:555
+msgid ""
+"User should be notified about the action they perform along with any "
+"implications associated with them."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:561
+msgid "Example 1:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:558
+msgid "\"Settings are saved but will be applied after a server restart.\""
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:567
+msgid "Example 2:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:564
+msgid "\"Link copied to clipboard.\""
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:569
+msgid "**Save prompt:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:571
+msgid ""
+"A prompt should appear if a user makes changes to a setting and attempts "
+"to navigate away without saving them."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:574
+msgid "\"You have unsaved changes, are you sure you want to discard them?\""
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:582
+msgid "Menu items"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:584
+msgid ""
+"Items in a menu should be grouped together based on the category they "
+"belong to. Items per category however should not exceed five, with the "
+"exception of seven for the System Console."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:594
+msgid "Notifications: Header Bar"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:596
+msgid ""
+"The header bar appears as a dropdown bar from the top of the screen. The "
+"header bar:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:598
+msgid "May include an \"x\" button to dismiss."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:599
+msgid "Is limited to 60 characters."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:600
+msgid "May include a time-out."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:601
+msgid "Appears over the rest of the UI instead of pushing the UI down."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:603
+msgid ""
+"Multiple headers can appear, with the earliest notification at the top "
+"and more recent notifications appearing underneath."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:605
+msgid "**Desktop**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:610
+msgid "**Mobile**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:615
+msgid "There are several modes for this element:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:617
+msgid "**System-wide header notification:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:619
+#: ../../source/developer/fx-guidelines.rst:629
+msgid "Triggered on login."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:620
+msgid "Includes “x” button to dismiss."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:621
+#: ../../source/developer/fx-guidelines.rst:631
+msgid "No timeout."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:622
+msgid "Removed when system admin cancels."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst
+msgid "Examples:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst
+msgid "“Try our new Windows App. Click here to download.”,"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst
+msgid "“Scheduled maintenance 2:00am to 2:30am starts in 20 minutes, 3 seconds.”"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:627
+msgid "**Action required header notification:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:630
+#: ../../source/developer/fx-guidelines.rst:639
+msgid "No “x” button to dismiss."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:632
+msgid "Dismissed when action completed."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst
+msgid "“We’re evolving. Please review and accept our new terms of service.”"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:636
+msgid "**Persistent issue header notification:**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:638
+msgid "Triggered on issue."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:640
+msgid "Dismissed when issue no longer persists."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst
+msgid "“You are not connected to the internet.”"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:647
+msgid "Markdown Rendering"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:649
+msgid ""
+"Markdown rendering in Mattermost is designed to be a fast, obvious and "
+"forgiving formatting standard for a messaging application. To achieve "
+"this goal, it has variations from markdown in GitHub (the most wildly "
+"used implementation), including:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:651
+msgid ""
+"Bullets directly below a line of text render as a bullet, not as a "
+"continued line of text"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:652
+msgid "{Other variations to be concisely listed here, one line each}"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:654
+msgid ""
+"While we intend to eventually document all the variations from GitHub "
+"markdown, until that is complete we consider any variation in rendering "
+"from the current release of Mattermost to be a regression that should "
+"either be fixed prior to the next release, or documented here."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:656
+msgid ""
+"Currently the `/test tool <https://github.com/mattermost/mattermost-"
+"server/tree/master/tests>`__ can be used for testing Mattermost markdown "
+"versus GitHub markdown."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:661
+msgid "Organization: Reduce Obvious Steps"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:663
+msgid ""
+"If the action a user needs to perform is obvious, we should make "
+"conscious decisions to reduce some of the steps involved in that process."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:666
+msgid ""
+"Clicking on the search icon on mobile should focus the search bar when it"
+" slides in."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:672
+msgid ""
+"Clicking on the reply icon should move the focus to the comment box in "
+"the right-hand sidebar."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:678
+msgid ""
+"Switching channels should move the focus to the post box in the center "
+"channel."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:686
+msgid "Testing Checklist"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:688
+msgid ""
+"In addition to above guidelines, the below provides a concrete checklist "
+"of mistakes to watch for when reviewing proposed product changes."
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:691
+msgid "User Experience Checklist"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:693
+msgid "**1\\) Is the WHITESPACE next to icons SUFFICIENTLY SPACED?**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:695
+msgid "Example of not enough space next to FLAG icon on RIGHT:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:699
+msgid "**2\\) Is the WHITESPACE next to icons EVENLY SPACED?**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:701
+msgid "Example of uneven icon spacing:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:705
+msgid "**3\\) Are there visual GAPS?**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:707
+msgid "Example of gaps in a visual design:"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:711
+msgid "**4\\) Read all help text OUT LOUD--is it helpful to a new user?**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:713
+msgid ""
+"Example of help text that doesn't communicate enough information to a "
+"user (no information included on how to use flagged posts):"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:717
+msgid "**5\\) Does the UI work with a dark theme?**"
+msgstr ""
+
+#: ../../source/developer/fx-guidelines.rst:719
+msgid ""
+"Sometimes bugs are found with theme colors, so it is important to test on"
+" both light and dark themes."
+msgstr ""
+

@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/extended-support-release.rst:2
+msgid "Extended Support Release"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:5
+msgid "What is an Extended Support Release?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:6
+msgid ""
+"During each monthly release, Mattermost backports security fixes to the "
+"previous three monthly releases. Extended Support Releases (ESRs) are "
+"releases that will receive backports for security fixes and major bug "
+"fixes for the length of their life cycle."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:9
+msgid "What is the life cycle of an Extended Support Release?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:10
+msgid ""
+"Mattermost provides an ESR when a significant number of new features and "
+"improvements have been added to the product, and those new features have "
+"had sufficient time to stabilize. A new ESR is released twice a year "
+"every January and July release. An ESR is supported for 9 months to "
+"provide customers enough time to test and upgrade to the next ESR."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:12
+msgid ""
+"When an ESR is at the end of its life cycle, there will be announcements "
+"ahead of time to provide time for people to test, certify, and deploy a "
+"newer ESR version before support ends. There will be a clear upgrade path"
+" provided between ESR versions."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:14
+msgid ""
+"After a release reaches its end-of-life, no further updates will be "
+"provided for that version."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:16
+msgid ""
+"Please see `Release Lifecycle documentation "
+"<https://docs.mattermost.com/administration/release-lifecycle.html>`_ for"
+" full list of lifecycles for each Mattermost release."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:18
+msgid ""
+"To receive updates about Extended Support Releases, sign up for our "
+"mailing list `here <http://eepurl.com/dCKn2P>`__."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:23
+msgid "What is included in an Extended Support Release dot release?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:24
+msgid ""
+"Dot releases for ESR versions will contain high severity or high impact "
+"security fixes and bug fixes. They will not include changes to product "
+"functionality or new features."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:27
+msgid "Who should use an Extended Support Release?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:28
+msgid ""
+"ESRs are intended for organizations who value stability over having the "
+"newest features and improvements, or who have a long internal testing and"
+" certification process to undergo when upgrading."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:30
+msgid ""
+"If your organization prefers to have the newest features and "
+"improvements, Extended Support Releases may not be the best fit for you."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:33
+msgid "How do I install the Extended Support Release?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:34
+msgid ""
+"Follow our normal `install "
+"<https://docs.mattermost.com/guides/administrator.html#installing-"
+"mattermost>`__ or `upgrade "
+"<https://docs.mattermost.com/administration/upgrade.html>`__ guides. "
+"Please follow the `important upgrade notes "
+"<https://docs.mattermost.com/administration/important-upgrade-"
+"notes.html>`_ for all the versions since the current ESR version you have"
+" currently installed. Please also see `the changelog "
+"<https://docs.mattermost.com/administration/changelog.html>`_ for list of"
+" database, API and config.json updates for each release."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:36
+msgid ""
+"When downloading the Mattermost version, choose an Extended Support "
+"Release from the list below."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:39
+msgid "What are the current supported Extended Support Release versions?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:42
+msgid "Version"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:42
+msgid "Type"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:42
+msgid "Release Date"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:42
+msgid "End of Support"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:42
+msgid "Latest Dot Release Download link"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:42
+msgid "Upgrade Notes"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:44
+msgid "5.25"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:44
+#: ../../source/administration/extended-support-release.rst:46
+#: ../../source/administration/extended-support-release.rst:48
+#: ../../source/administration/extended-support-release.rst:50
+msgid "Quality"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:44
+msgid "July 16, 2020"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:44
+msgid "April 15, 2021"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:46
+msgid "5.19"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:46
+msgid "January 16, 2020"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:46
+msgid "October 15, 2020"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:48
+msgid "5.9"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:48
+msgid "April 16, 2019"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:48
+msgid "April 15, 2020"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:48
+msgid ""
+"`5.9.7 <https://releases.mattermost.com/5.9.7/mattermost-5.9.7-linux-"
+"amd64.tar.gz>`_"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:48
+msgid "Please upgrade to 5.0 prior to upgrading to 5.9"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:50
+msgid "4.10"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:50
+msgid "May 16, 2018"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:50
+msgid "July 15, 2019"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:50
+msgid ""
+"`4.10.10 <https://releases.mattermost.com/4.10.10/mattermost-4.10.10"
+"-linux-amd64.tar.gz>`_"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:54
+msgid "How do I restore a previous Extended Support Release?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:55
+msgid ""
+"Before you perform an upgrade, please ensure you have done a full back up"
+" of your current version.  You can restore the database and previous "
+"version if you need to revert an upgrade.  Please note that previous ESR "
+"versions are subject to an end of support date."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:58
+msgid "Why is an Extended Support Release supported for 9 months and not longer?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:59
+msgid ""
+"We chose 9 months because the overhead for maintaining an ESR is high "
+"(and becomes higher the longer the support window is). If we increase the"
+" support window, it decreases how much we can develop the product. We "
+"specifically chose \"ESR\" instead of \"LTS\", since it is not intended "
+"to be a multi-year long term support release. The 9 months support "
+"timeframe will not be extended in any case."
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:63
+msgid "Can customers pay for extended support?"
+msgstr ""
+
+#: ../../source/administration/extended-support-release.rst:64
+msgid ""
+"At this point, we are not planning on letting customers pay for extended "
+"support, but we are open to discuss options for this. Please speak to "
+"your Customer Success Manager if you have additional requirements for "
+"extended support."
+msgstr ""
+

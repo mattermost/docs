@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/image-proxy.rst:4
+msgid "Image Proxy"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:6
+msgid ""
+"Using image proxies means that users make only secure requests. By "
+"allowing image requests to go straight to third-party servers, tracking "
+"pixels is allowed. Users can put invisible images in posts that logs time"
+" and location data for every user that views the post. An image proxy "
+"protects user privacy by eliminating this direct interaction with third-"
+"party servers."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:11
+msgid ""
+"Proxy servers also provide a layer of caching, and can be made faster and"
+" more reliable than third-party sites. This caching also helps preserve "
+"posts by protecting them from dead images."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:14
+msgid ""
+"When enabled, the image proxy needs to be publicly accessible to both the"
+" Mattermost client and server."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:16
+msgid ""
+"You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ "
+"http proxy to route images through SSL:"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:19
+msgid "Local Image Proxy"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:21
+msgid ""
+"The local image proxy is enabled on the Mattermost server by default. "
+"When using the local image proxy, Mattermost apps will download external "
+"images through the Mattermost server itself."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:24
+msgid ""
+"With the local image proxy enabled, requests for images hosted on the "
+"local network are now affected by the "
+"``AllowUntrustedInternalConnections`` setting. See `documentation "
+"<https://docs.mattermost.com/administration/config-settings.html#allow-"
+"untrusted-internal-connections-to>`_ for more information or if you are "
+"seeing unintentionally blocked images."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:29
+msgid "atmos/camo Image Proxy"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:31
+msgid ""
+"The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a "
+"standalone image proxy that can be deployed separately from the "
+"Mattermost server. It provides additional configuration options over the "
+"built-in image proxy, and it can also be used if isolation between the "
+"Mattermost server and image proxy is desired."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:33
+msgid ""
+"This guide gives an example of how to set up an image proxy using "
+"``atmos/camo``:"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:35
+msgid ""
+"Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to "
+"image-proxy.mattermost.com and update the configuration in **System "
+"Console > Files > Storage** in prior versions or **System Console > "
+"Environment > Image Proxy** in versions after 5.12. For example:"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:37
+msgid "**Image Proxy Type**: ``atmos/camo``"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:38
+msgid "**Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:39
+msgid ""
+"**Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string "
+"used for the sample ``atmos/camo`` deployment."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:43
+msgid ""
+"The URL will be replaced with something similar to the following (see "
+"`https://github.com/atmos/camo <https://github.com/atmos/camo>`__ for "
+"details):"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:49
+msgid ""
+"Next, if you post a message with an image, you will get a proxied image "
+"in your post. This will ensure that every image is downloaded via HTTPS."
+msgstr ""
+

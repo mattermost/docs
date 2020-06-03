@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/getting-started/configuring-notifications.rst:2
+msgid "Configuring Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:4
+msgid ""
+"Desktop, email and mobile push notifications notify you of activity in "
+"Mattermost. When you join a team, Mattermost will notify you of messages "
+"directed at you, including when someone:"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:6
+msgid "Direct Messages you"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:7
+msgid "Mentions your username or first name in a channel"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:8
+msgid "Notifies a channel you're in using @channel or @all"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:9
+msgid ""
+"Uses any `keywords you've configured "
+"<https://docs.mattermost.com/help/settings/account-settings.html#words-"
+"that-trigger-mentions>`_"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:12
+msgid "Desktop Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:14
+msgid ""
+"Desktop notifications are pop-ups that appear in the corner of your main "
+"monitor when using Chrome, Firefox, Edge, Safari or the `Mattermost "
+"Desktop app <https://mattermost.com/download/#mattermostApps>`_. You can "
+"change the default preference to trigger desktop notifications for all "
+"messages sent in channels you're a member of, or turn them off entirely."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:18
+msgid ""
+"Configure desktop notifications in **Account Settings** > "
+"**Notifications** > **Desktop Notifications** > **Send Desktop "
+"Notifications**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:21
+msgid ""
+"Configure desktop notifications in specific channels in **Channel Menu** "
+"> **Notification Preferences** > **Send Desktop Notifications**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:24
+msgid ""
+"By default, all channels use the global setting configured in *Account "
+"Settings*."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:26
+msgid ""
+"**Not getting a desktop notification?** See our `FAQ to view the desktop "
+"notification flow chart <https://docs.mattermost.com/overview/faq.html"
+"?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and "
+"see what other factors influence if a notification should be triggered."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:28
+msgid ""
+"Configure desktop notification sounds in **Account Settings** > "
+"**Notifications** > **Desktop Notifications** > **Desktop Notification "
+"Sounds**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:32
+msgid "Email Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:34
+msgid ""
+"By default, you'll get email notifications if you're not actively using "
+"Mattermost. You can change the default preference for email notifications"
+" to turn them off entirely."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:38
+msgid ""
+"Configure email notifications in **Account Settings** > **Notifications**"
+" > **Email Notifications**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:40
+msgid ""
+"Configure the email address where notifications are sent in **Account "
+"Settings** > **General** > **Email**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:43
+msgid ""
+"**Not getting an email notification?** See our `FAQ to view the email "
+"notification flow chart <https://docs.mattermost.com/overview/faq.html"
+"?#what-determines-if-an-email-notification-should-be-triggered>`_ and see"
+" what other factors influence if a notification should be triggered."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:46
+msgid "Mobile Push Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:48
+msgid ""
+"Mobile push notifications appear on the lock screen of your mobile device"
+" if the Mattermost Android or iOS app is installed. By default, these "
+"notifications are triggered when you're not actively using Mattermost, "
+"but this is configurable. You can also change the default preference to "
+"trigger push notifications for all messages sent in channels you're a "
+"member of, or turn them off entirely."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:52
+msgid ""
+"Configure push notifications in **Account Settings** > **Notifications** "
+"> **Mobile Push Notifications** > **Send mobile push notifications**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:55
+msgid ""
+"Configure when push notifications are sent depending on your status in "
+"**Account Settings** > **Notifications** > **Mobile Push Notifications** "
+"> **Trigger push notifications when**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:59
+msgid ""
+"**Not getting a push notification?** See our `FAQ to view the email "
+"notification flow chart <https://docs.mattermost.com/overview/faq.html"
+"?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ "
+"and see what other factors influence if a notification should be "
+"triggered."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:61
+msgid ""
+"Learn more about how Mattermost detects your status as **Online**, "
+"**Away** or **Offline** `here <https://docs.mattermost.com/help/getting-"
+"started/signing-in.html#setting-your-status>`_."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:64
+msgid "Browser Tab Notifications"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:66
+msgid ""
+"If Mattermost is open in a browser tab, the favicon updates to notify you"
+" of unread messages (\\*) and a count of mentions or Direct Messages. "
+"Browser tab notifications are available on Firefox and Chrome."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:72
+msgid "Muting a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:74
+msgid ""
+"Channels in the sidebar are **bold** when there are unread messages in "
+"the channel and show a badge count if you are mentioned specifically. To "
+"mute a channel so it does not appear unread and you do not recieve "
+"notifications, click the channel name at the top of the page to access "
+"the **Channel Menu** > **Notification Preferences > Mute channel**."
+msgstr ""
+
+#: ../../source/help/getting-started/configuring-notifications.rst:76
+msgid ""
+"Mentions are triggered by `selected keywords "
+"<https://docs.mattermost.com/help/settings/account-settings.html#words-"
+"that-trigger-mentions>`_. Learn more about `mentioning teammates "
+"<http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__."
+msgstr ""
+

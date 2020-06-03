@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/ci-cd-tools.rst:2
+msgid "CI/CD Tools"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:4
+msgid ""
+"Our `Integrations Directory <https://integrations.mattermost.com>`_ has "
+"several integrations to connect CI/CD tools in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:6
+msgid ""
+"Here are some popular options below, including self-hosted on-prem or "
+"self-hosted private cloud solutions, and vendor-hosted SaaS solutions."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:9
+msgid "GitHub"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:11
+msgid ""
+"Two-way integration between Mattermost and GitHub, developed by "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:12
+msgid "Get reminders on issues and pull requests that need your attention."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:13
+#: ../../source/deployment/ci-cd-tools.rst:22
+msgid ""
+"Get notifications in Mattermost about mentions, review requests and "
+"comments."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:14
+msgid ""
+"Supports GitHub Enterprise, works with SaaS and Enterprise versions of "
+"GitHub."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:15
+msgid "Source code + docs: https://github.com/mattermost/mattermost-plugin-github"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:18
+msgid "GitLab"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:20
+msgid ""
+"Two-way integration between Mattermost and GitLab, developed by Romain "
+"Maneschi, supported by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:21
+msgid "Get reminders on issues and merge requests that need your attention."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:23
+msgid "Supports SaaS and On Premise versions of GitLab."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:24
+msgid "Source code + docs: https://github.com/mattermost/mattermost-plugin-gitlab"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:27
+msgid "Jenkins Plugin"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:29
+msgid ""
+"Two-way integration between Mattermost and Jenkins, developed by Wasim "
+"Thabraze, supported by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:30
+msgid "Enables interacting with jobs and builds via slash commands in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:31
+msgid "Abort builds, enable and disable jobs, get test results, and build logs."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:32
+msgid ""
+"Source code + docs: https://github.com/mattermost/mattermost-plugin-"
+"jenkins"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:35
+msgid "Jenkins"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:37
+msgid "Connect your Jenkins account to Mattermost, developed by Jenkins."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:38
+msgid "Send webhook notifications from Jenkins to Mattermost channels."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:39
+msgid "Source code + docs: https://github.com/jenkinsci/mattermost-plugin"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:42
+msgid "Bitbucket"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:44
+msgid ""
+"Atlassian Marketplace application for Bitbucket and Mattermost, developed"
+" by Herzum."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:45
+msgid ""
+"Send notifications about repository and pull request events from your "
+"Bitbucket projects to Mattermost channels."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:46
+msgid "Supports Bitbucket Server platform."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:47
+msgid ""
+"Marketplace download + docs: "
+"https://marketplace.atlassian.com/apps/1220418/amplifier-for-mattermost-"
+"bitbucket?hosting=server&tab=overview"
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:49
+msgid ""
+"Have a proposal for a CI/CD tool? `Let us know in the feature proposal "
+"forum "
+"<https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_."
+msgstr ""
+
+#: ../../source/deployment/ci-cd-tools.rst:51
+msgid ""
+"Have built an integration? `Let us know "
+"<https://integrations.mattermost.com/submit-an-integration/>`_ and we'll "
+"share in our `Integrations Directory "
+"<https://integrations.mattermost.com>`_."
+msgstr ""
+

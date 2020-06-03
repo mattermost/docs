@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/health-check.rst:2
+msgid "Health Check"
+msgstr ""
+
+#: ../../source/administration/health-check.rst:4
+msgid ""
+"This page describes how to configure health check probes for a Mattermost"
+" server."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:6
+msgid ""
+"Before you begin, you should have a running Mattermost server. If you "
+"don't, you can `install Mattermost on various distributions "
+"<https://docs.mattermost.com/guides/administrator.html#installing-"
+"mattermost>`__ or deploy a `Kubernetes cluster with Minikube "
+"<https://github.com/mattermost/mattermost-kubernetes>`__.  Note that "
+"`highly available Mattermost cluster "
+"<https://docs.mattermost.com/deployment/cluster.html>`__ is available in "
+"`Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:8
+msgid "You can perform a health check with two methods:"
+msgstr ""
+
+#: ../../source/administration/health-check.rst:11
+msgid "``/ping`` APIv4 Endpoint"
+msgstr ""
+
+#: ../../source/administration/health-check.rst:13
+#, python-format
+msgid ""
+"In Mattermost version 3.10 and later, you can use the `GET /system/ping "
+"APIv4 endpoint "
+"<https://api.mattermost.com/#tag/system%2Fpaths%2F~1system~1ping%2Fget>`__"
+" to check for system health."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:15
+msgid ""
+"A sample request is included below. The endpoint checks if the server is "
+"up and healthy based on the configuration setting "
+"``GoRoutineHealthThreshold``."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:17
+msgid ""
+"If ``GoRoutineHealthThreshold`` and the number of goroutines on the "
+"server exceeds that threshold, the server is considered unhealthy."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:18
+msgid ""
+"If ``GoRoutineHealthThreshold`` is not set or the number of goroutines is"
+" below the threshold the server is considered healthy."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:20
+msgid ""
+"This endpoint can also be provided to schedulers like `Kubernetes "
+"<https://kubernetes.io/docs/tasks/configure-pod-container/configure-"
+"liveness-readiness-probes/#before-you-begin>`__."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:33
+msgid "Mattermost Probe"
+msgstr ""
+
+#: ../../source/administration/health-check.rst:35
+msgid ""
+"The `Mattermost Probe <https://github.com/csduarte/mattermost-probe>`__ "
+"constantly pings a Mattermost server using a variety of probes."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:37
+msgid ""
+"These probes can be configured to verify core features, including sending"
+" and receiving messages, joining channels, pinging a login page, and "
+"searching of users and channels."
+msgstr ""
+
+#: ../../source/administration/health-check.rst:39
+msgid ""
+"The project is contributed by the Mattermost open source community. "
+"Suggestions and contributions for the project are welcome."
+msgstr ""
+

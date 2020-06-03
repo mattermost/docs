@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/sg_general-guidelines.rst:4
+msgid "General Guidelines"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:6
+msgid ""
+"The Mattermost documentation must be of high quality. It must be accurate"
+" and clear, and be presented with a style and tone that is appropriate "
+"for technical content."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:9
+msgid "Style Guide Applicability"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:11
+msgid ""
+"The style guide applies to all end-user, developer, and administrator "
+"documentation that appears on the Mattermost documentation site at "
+"https://docs.mattermost.com."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:13
+msgid "Apply the style guide in the following situations:"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:15
+msgid "When you create a new document."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:16
+msgid "When you convert a document from Markdown to reStructuredText."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:17
+msgid "When you revise a document."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:19
+msgid ""
+"When you revise a document, apply the style guide rules to the part that "
+"you changed. If you have time to update the rest of the document, then do"
+" so. If the scope is significantly greater than you originally "
+"anticipated, then do what you can and what makes sense, and then create "
+"an `issue in GitHub <https://github.com/mattermost/docs/issues>`__. Give "
+"the issue an appropriate title, such as *File XXX converted to .rst, but "
+"needs updating for style guide*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:22
+msgid "Write in the Context of Achievement"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:24
+msgid ""
+"The documentation should help Mattermost users and administrators achieve"
+" their goals. Write imperative sentences as much as possible. Imperative "
+"sentences begin with verbs and give instructions, information, and advice"
+" to help people install, administer, and use Mattermost with success."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:26
+msgid ""
+"Use positive constructs as much as possible, but note that a negative "
+"construct can act as a warning that causes a reader to pay closer "
+"attention to the content, resulting in higher levels of accomplishment."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:30
+msgid "Write to Facilitate Scanning"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:32
+msgid ""
+"Readers need to find information quickly. People don't read documentation"
+" as much as they scan it for solutions to their immediate problem. "
+"Writing and presentation styles that seem redundant in essays or other "
+"texts are often helpful to people scanning for information."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:35
+msgid "Use Headings, Lists, and Emphasis"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:37
+msgid ""
+"Format text to give a visual hierarchy that allows readers to see the "
+"overall content of the page by scanning it. Use headings, lists, and "
+"emphasis to signal importance. Headings should summarize the topic of the"
+" underlying information so that when readers scan a page, they can get an"
+" accurate picture of the contents."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:39
+msgid "Be clear"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:40
+msgid ""
+"Write short, active sentences using everyday vocabulary. Maintain a "
+"visual separation between page elements."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:41
+msgid "Be concise"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:42
+msgid ""
+"Minimize content so it can be found and remembered. Keep pages short, "
+"modular, and focused on a single topic."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:44
+msgid "Be consistent"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:44
+msgid "Refer to one thing or idea with the same word throughout the page."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:47
+msgid "Write for an International Audience"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:49
+msgid ""
+"Mattermost documentation is translated into several languages for use in "
+"many countries and cultures. For this reason, you must consider cultural "
+"differences on a global scale. Names, places, events, and actions should "
+"be chosen as carefully as possible to avoid misunderstanding."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:51
+msgid ""
+"Also remember that English is not the primary language of many readers of"
+" the documentation. Keep the following advice in mind when writing:"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:53
+msgid "Choose words with one or very few meanings."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:54
+msgid ""
+"Use simple verb forms in writing. Most verbs in the simple form are "
+"likely to have an equivalent in another language."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:55
+msgid "Avoid jargon and slang words."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:56
+msgid "Limit difficult words to technical terms where their use is unavoidable."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:57
+msgid "Always make sure that your spelling is correct."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:60
+msgid "Word Usage Guidelines"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:62
+msgid ""
+"To promote consistency and clarity, follow the word usage and spelling "
+"guidelines below."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:65
+msgid "can, might, may"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:65
+msgid ""
+"The word *may* can have several meanings. To avoid ambiguity, use *can* "
+"or *might* instead of *may*. Use *can* to mean *capable of* and *might* "
+"to mean that something is possible. Use *may* only to give permission to "
+"do something."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:68
+msgid "downtime"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:68
+msgid "Use as one word *downtime*, not *down time*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:71
+msgid "emoji, emojis"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:71
+msgid "Use *emojis* as the plural form of *emoji*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:74
+msgid "login, log in, log into"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:74
+msgid ""
+"Use *login* as a noun or adjective, and *log in* and *log into* as verbs."
+" For example: *Log into the Mattermost server using your System Admin "
+"login credentials.*"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:77
+msgid "setup, set up"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:77
+msgid ""
+"Use *setup* as a noun or adjective, and *set up* as a verb. For example: "
+"*Set up your operating system as described in the Ubuntu documentation.*"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:80
+msgid "sign-in, sign in, and sign into"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:80
+msgid ""
+"Use *sign-in* as a noun or adjective, and *sign in* and *sign into* as "
+"verbs. For example: *Sign into your Mattermost account using the sign-in "
+"credentials that were sent to you.*"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:83
+msgid "single sign-on"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:83
+msgid ""
+"Single sign-on is abbreviated as SSO. When using the long form in a "
+"heading with title case, it's *Single Sign-on*."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:86
+msgid "Gender-neutral Text"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:88
+msgid ""
+"Avoid constructs where you are forced to write either *he or she* or *his"
+" or her*. You can use *they* or *their* as singular forms instead."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:90
+msgid "Preferred"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:91
+msgid ""
+"The community manager monitors the forum for well-written questions and "
+"answers, and posts them to the Contributors channel."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:92
+msgid "Avoid"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:93
+msgid ""
+"The community manager posts questions and answers that they think are "
+"well-written."
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:94
+msgid "Do not use"
+msgstr ""
+
+#: ../../source/process/sg_general-guidelines.rst:95
+msgid ""
+"The community manager posts questions and answers that he or she thinks "
+"are well-written."
+msgstr ""
+

@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-rhel-nginx.rst:4
+msgid "Installing NGINX Server"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:6
+msgid ""
+"In a production setting, use a proxy server for greater security and "
+"performance of Mattermost."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:8
+msgid "The main benefits of using a proxy are as follows:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:10
+msgid "SSL termination"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:11
+msgid "HTTP to HTTPS redirect"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:12
+msgid "Port mapping ``:80`` to ``:8065``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:13
+msgid "Standard request logs"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:15
+msgid "**To install NGINX on RHEL 6 or 7:**"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:17
+msgid "Log in to the server that will host the proxy, and open a terminal window."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:19
+msgid "Create the file /etc/yum.repos.d/nginx.repo."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:20
+msgid "``sudo touch /etc/yum.repos.d/nginx.repo``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:22
+msgid ""
+"Open the file as root in a text editor and add the following contents, "
+"where *{version}* is **6** for RHEL 6, and **7** for RHEL 7:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:32
+msgid "Install NGINX."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:34
+msgid "``sudo yum install nginx.x86_64``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:43
+msgid "After the installation is complete, start NGINX."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:37
+#: ../../source/install/install-rhel-nginx.rst:47
+msgid "On RHEL 6:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:39
+msgid "``sudo service nginx start``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:41
+#: ../../source/install/install-rhel-nginx.rst:51
+msgid "On RHEL 7:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:43
+msgid "``sudo systemctl start nginx``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:45
+msgid "**Optional** Set NGINX to start at system boot."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:49
+msgid "``sudo chkconfig nginx on``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:53
+msgid "``sudo systemctl enable nginx``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:55
+msgid "Verify that NGINX is running."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:57
+msgid "``curl http://localhost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:59
+msgid "If NGINX is running, you see the following output:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:75
+msgid "**What to do next**"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:77
+msgid ""
+"Map a fully qualified domain name (FQDN) such as "
+"``mattermost.example.com`` to point to the NGINX server."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:78
+msgid ""
+"Configure NGINX to proxy connections from the Internet to the Mattermost "
+"Server."
+msgstr ""
+

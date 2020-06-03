@@ -1,0 +1,573 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/deployment.md:1
+msgid "Deployment Overview"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:3
+msgid ""
+"The below diagram illustrates a private cloud deployment of Mattermost "
+"with optional configurations for scaling to performance from teams to "
+"large organizations."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:7
+msgid "View Mattermost Network Diagram"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:9
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:10
+msgid ""
+"GitLab Mattermost deployment is documented separately and not included "
+"below."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:12
+msgid "Requirements and Installation Guides"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:14
+msgid ""
+"Mattermost supports workplace messaging for teams using one to three "
+"servers with instructions available in the Install Guides section of this"
+" documentation. See Software and Hardware Requirements documentation for "
+"server sizing estimates."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:16
+msgid "User Experience"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:18
+msgid "PC Web Experience"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:20
+msgid ""
+"End users can securely share messages and files using a web-based "
+"Mattermost experience in IE, Chrome and Firefox. Please see Software and "
+"Hardware Requirements documentation for full details."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:22
+msgid "Mobile App Experience"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:24
+msgid ""
+"Native applications for iOS and Android are available for interacting "
+"with the Mattermost server and receiving encrypted push notifications "
+"from your private cloud. Organizations can use a Hosted Push Notification"
+" Service with encrypted communications to mobile apps on iTunes and "
+"Google Play, or deploy to an Enterprise App Store on your organization's "
+"private network. A Test Push Notification Service is available for use "
+"while evaluating options."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:26
+msgid "Mobile Web Experience"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:28
+msgid ""
+"End users can securely share messages and files using a mobile Web-based "
+"Mattermost experience on iOS and Android devices. Please see Software and"
+" Hardware Requirements documentation for full details."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:30
+msgid "Email Client"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:32
+msgid "Receive emails on desktop and mobile from the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:34
+msgid "Communication Protocols"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:36
+msgid "HTTPS Connection (Secure Hypertext Transfer Protocol)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:38
+msgid ""
+"The HTTPS connection to the Mattermost server renders pages and provides "
+"core functionality. It does not include real-time interactivity, which is"
+" enabled by the WSS connection."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:40
+msgid ""
+"If the HTTPS connection is not available, the Mattermost service will not"
+" work. HTTPS is a secure, encrypted protocol and is highly recommended "
+"for production. An unencrypted HTTP connection may be used in initial "
+"testing and configuration but it is not recommended for production."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:42
+msgid "WSS Connection (Secure WebSocket Protocol)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:44
+msgid ""
+"The WSS connection to the Mattermost server enables real-time updates and"
+" notifications. If the WSS connection is not available, but HTTPS is "
+"available, the system will appear to work, but real time updates and "
+"notifications will not work. Updates will only appear on a page refresh. "
+"WSS will be a persistent connection to the Mattermost server while you "
+"are connected, while HTTPS will be intermittent depending on when you "
+"load a page or a file."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:46
+msgid ""
+"Typically a \"Mattermost unreachable\" error message will be displayed "
+"warning users that the Mattermost server is either unreachable or the "
+"WebSocket connection is not properly configured."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:48
+msgid ""
+"WSS is a secure, encrypted connection and is highly recommended. An "
+"unencrypted WS connection may be used in initial testing and "
+"configuration but it is not recommended for production."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:50
+msgid "Network Access and Multi-Factor Authentication"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:52
+msgid "Behind a VPN"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:54
+msgid ""
+"Mattermost is intended to be installed within a private network which can"
+" offer multiple factors of authentication, including secure access to "
+"computing devices and physical locations."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:56
+msgid ""
+"If outside access is required, a virtual private network client (VPN), "
+"such as OpenVPN, with additional authentication used to connect to "
+"Mattermost for web, desktop and mobile experiences, is recommended."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:58
+msgid "Non-VPN Setup"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:60
+msgid ""
+"If Mattermost is accessible from the open internet, the following is "
+"recommended:"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:62
+msgid ""
+"An IT admin should be assigned to set up appropriate network security, "
+"subscribe to the Mattermost security bulletin and apply new security "
+"updates."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:63
+msgid ""
+"The organization upgrades to Mattermost Enterprise Edition to enable SAML"
+" single sign-on or enable MFA using Google Authenticator. For non-"
+"enterprise deployments, VPN is recommended."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:65
+msgid ""
+"If Mattermost is accessible from the open internet with no VPN or MFA set"
+" up, we recommended using it only for non-confidential, unimportant "
+"conversations where impact of a compromised system is not essential."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:67
+msgid ""
+"Note: Not-for-profit and academic institutions are eligible for special "
+"not-for-profit and academic pricing for Mattermost Enterprise Edition."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:69
+msgid "Data Center Infrastructure"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:71
+msgid "Push Notification Service"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:73
+msgid ""
+"The Mattermost Push Notification Service (MPNS) routes push notifications"
+" to:"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:75
+msgid ""
+"Apple Push Notification Service to send notifications to the Mattermost "
+"iOS app."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:76
+msgid ""
+"Google Push Notification Service to send notifications to the Mattermost "
+"Android app."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:78
+msgid ""
+"If you're deploying mobile applications to an Enterprise App Store, your "
+"MPNS should be behind your firewall on your private network. If you're "
+"using mobile apps in iTunes and Google Play, you can relay notifications "
+"to mobile apps using the Hosted Push Notification Service (HPNS) included"
+" with Mattermost Enterprise Edition."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:80
+msgid ""
+"HPNS does not connect to your mobile apps directly. It sends messages "
+"over an encrypted channel to Apple or Google which are relayed to the app"
+" users downloaded from iTunes or Google Play."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:82
+msgid "Proxy"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:84
+msgid ""
+"The proxy manages Secure Socket Layer encryption and sets the policy on "
+"how network traffic will be routed to the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:86
+msgid ""
+"Mattermost install guides include setup instructions for the NGNIX "
+"software proxy by default. For large scale deployments, a hardware proxy "
+"with dedicated devices for processing SSL encryption and decryption could"
+" potentially increase efficiencies."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:88
+msgid ""
+"In a high availability configuration (Enterprise Edition only) the proxy "
+"would also balance network load across multiple Mattermost servers."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:90
+msgid "Microsoft Active Directory Single Sign-On (Enterprise Edition)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:92
+msgid ""
+"Mattermost Enterprise Edition supports Microsoft Active Directory and "
+"LDAP single sign-on with secure transport over TLS or stunnel."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:94
+msgid "Private Cloud Integrations"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:96
+msgid ""
+"Mattermost offers complete access to its Web Service APIs, along with "
+"incoming and outgoing webhooks, and Slash command options for integrating"
+" with your on-premises systems."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:98
+msgid ""
+"Visit our app directory for dozens of open source integrations to common "
+"tools like Jira, Jenkins, GitLab, Trac, Redmine and SVN, along with "
+"interactive bot applications (Hubot, mattermost-bot), and other "
+"communication tools (Email, IRC, XMPP, Threema) that are freely available"
+" for use and customization."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:100
+msgid "Email Service"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:102
+msgid ""
+"For notifications and account verification, Mattermost connects to your "
+"existing email service over SMTP, including Microsoft Exchange, Amazon "
+"SES, SendGrid and self-hosted email solutions."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:104
+msgid "Mattermost Server"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:106
+msgid ""
+"The Mattermost server installs as a single compiled binary file. All "
+"server settings are stored in a configuration file, config/config.json, "
+"which can be updated directly or via a web-based System Console user "
+"interface."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:108
+msgid "RESTful JSON Web Service"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:110
+msgid ""
+"The entirety of the Mattermost server is accessible through a RESTful Web"
+" Service API. The API can be completely accessed by developers creating "
+"custom applications for Mattermost either directly or via Javascript and "
+"Golang drivers."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:112
+msgid "Authentication Client"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:114
+msgid "Authenticates users by email or username plus password."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:116
+msgid ""
+"For customers of Enterprise Edition, single sign-on via Microsoft Active "
+"Directory and LDAP is also available."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:118
+msgid "Authentication Provider"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:120
+msgid ""
+"Enables authentication of Mattermost server to other services with "
+"Authentication Client interface using OAuth2."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:122
+msgid "Notification Service"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:124
+msgid ""
+"Sends notifications via SMTP email and mobile push notifications via "
+"Mattermost Push Notificiation Service."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:126
+msgid "Data Management Service"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:128
+msgid "Connects to and manages supported databases."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:130
+msgid "High Availability (Enterprise Edition)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:132
+msgid ""
+"Large organizations needing sophisticated, high scale, high availability "
+"configurations can set up a highly available, horizontally scalable "
+"deployment. Contact the enterprise team for guidance on configuring and "
+"sizing Mattermost Enterprise Edition to support your specific needs."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:134
+msgid "Data Stores"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:136
+msgid "Databases"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:138
+msgid ""
+"Mattermost uses a MySQL or Postgres database to store and retrieve system"
+" data and to execute full text search. Solid State Drives can be used for"
+" faster read times to increase performance."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:140
+msgid "See Database requirements for full details."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:142
+msgid "Multiple Read Replicas (Enterprise Edition)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:144
+msgid ""
+"For enterprise deployments, the Mattermost database can be configured "
+"with a master and multiple read replicas. The read replicas can be "
+"configured as a redundant backup to the active server, so that during "
+"hardware failures operation can be diverted to the read replica server "
+"without interrupting service. The safest configuration is to size the "
+"disk space on the read replica used for failover two to three times "
+"larger than storage available on master, so that if the master fails "
+"because it runs out of disk space it will fail over to a read replica "
+"with enough extra space to run smoothly until the master is corrected."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:146
+msgid "Search Replicas (Enterprise Edition)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:148
+msgid ""
+"You can configure one or more search replicas to isolate search queries. "
+"A search replica is similar to a read replica, but is used only for "
+"handling search queries."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:150
+msgid "Global Deployments (Enterprise Edition)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:152
+msgid ""
+"Enterprise customers with deployments spanning many time zones can "
+"contact the Enterprise Team for advanced configurations to minimize "
+"latency by:"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:154
+msgid "Storing static assets over a global CDN."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:155
+msgid ""
+"Deploying multiple Mattermost servers to host API communication closer to"
+" the location of end users."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:156
+msgid ""
+"Deploying multiple database read replicas closer to the location of end "
+"users."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:158
+msgid "File Store"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:160
+msgid ""
+"Images and files shared by users are stored and retrieved in one of three"
+" options."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:162
+msgid ""
+"For teams sharing only modest amounts of file data, local storage on the "
+"same physical machine as the Mattermost server may be sufficient."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:163
+msgid ""
+"For enterprises sharing very large amounts of data, a Network-Attached "
+"Storage server may be used, which can scale to peta-bytes if necessary."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:164
+msgid ""
+"Alternatively, for both ease-of-use and scale, Amazon's S3 file storage "
+"service is another option as well."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:166
+msgid "Deployment Options"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:168
+msgid ""
+"Mattermost Enterprise Edition customers can contact Mattermost, Inc. for "
+"advice on deployment options for their specific environments. The "
+"following section describes common deployment configurations."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:170
+msgid "Mobile devices with VPN clients (recommended)"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:172
+msgid ""
+"Mattermost can be deployed behind your company firewall on a private "
+"network with access from the outside via a Virtual Private Network (VPN)."
+" This means running a VPN client on the mobile devices and desktop "
+"computers that need to access Mattermost."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:174
+msgid ""
+"The Mattermost Push Notification Service (MPNS) should be behind your "
+"firewall on your private network. MPNS does not connect with mobile apps "
+"directly, it forwards push notifications from the Mattermost server to a "
+"relay service for iTunes or Google Play, or to mobile apps within an "
+"Enterprise App Store."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:176
+msgid "Mobile devices without VPN clients"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:178
+msgid ""
+"If Mattermost is available on the internet, we recommend Mattermost "
+"Enterprise Edition featuring SAML-based single sign-on and multi-factor "
+"authentication (MFA) using Google Authenticator."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:180
+msgid ""
+"The Mattermost Push Notification Service (MPNS) should be behind your "
+"firewall inside your private network. MPNS does not connect with mobile "
+"apps directly, it forwards push notifications from the Mattermost server "
+"to a relay service for iOS App Store or Google Play, or directly to "
+"mobile apps within an Enterprise App Store behind your firewall."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:182
+msgid ""
+"For support for certificate-based authentication for mobile devices, "
+"contact the Enterprise Sales Team for more information."
+msgstr ""
+
+#: ../../source/deployment/deployment.md:184
+msgid "Mobile devices with an EMM provider"
+msgstr ""
+
+#: ../../source/deployment/deployment.md:186
+msgid ""
+"Mattermost mobile applications can also be deployed via EMM providers who"
+" support AppConfig such as Blackberry UEM, Mobileiron, and Airwatch. EMM "
+"solutions typically offer \"App Tunnel\" or per-app VPN capabilities that"
+" can be used to connect to mobile apps behind a VPN."
+msgstr ""
+

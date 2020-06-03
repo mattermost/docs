@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/getting-started/creating-teams.rst:2
+msgid "Creating Teams"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:4
+msgid ""
+"New teams can be created if the System Admin has **Enable Team Creation**"
+" set to true in the System Console."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:7
+msgid "Methods to Create a Team"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:9
+msgid ""
+"If team creation is enabled by the System Admin, teams can be created "
+"from the team sidebar or Main Menu. The person who creates a team will "
+"automatically be given the Team Admin role for that team."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:12
+msgid "Team Sidebar"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:13
+msgid ""
+"If you belong to more than one team, a team sidebar will appear left of "
+"your channel list on the left-hand sidebar."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:17
+msgid ""
+"Click the \"+\" icon at the bottom of the team sidebar, then click "
+"**Create a New Team** on the team selection page, which guides you "
+"through the rest of the setup steps. If this option is not visible on the"
+" web page, then the System Admin has disabled team creation."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:19
+msgid ""
+"If you have no other teams to join, clicking the \"+\" icon brings you "
+"directly to the team creation page if team creation is enabled."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:22
+msgid "Main Menu"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:23
+msgid ""
+"From your current Mattermost team, click on the **Main Menu** > **Create "
+"a New Team**. If this option is not visible in the menu, then the System "
+"Admin has disabled team creation."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:26
+msgid "Team Name and URL Selection"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:28
+msgid ""
+"There are a few details and restrictions to consider when selecting a "
+"team name and team URL."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:31
+msgid "Team Name"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:33
+msgid "This is the display name of your team that appears in menus and headings."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:35
+msgid "It can contain any letters, numbers or symbols."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:36
+msgid "It is case sensitive."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:37
+#: ../../source/help/getting-started/creating-teams.rst:47
+msgid "It must be 2–15 characters in length."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:40
+msgid "Team URL"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:42
+msgid ""
+"The team URL is part of the web address that navigates to your team on "
+"the system domain, ``https://domain.com/teamurl/``."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:45
+msgid "It may contain only lowercase letters, numbers and dashes."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:46
+msgid "It must start with a letter and cannot end in a dash."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:48
+msgid ""
+"It cannot start with the following restricted words: ``signup``, "
+"``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:52
+msgid "Best Practices for Using a Single Team vs. Multiple Teams"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:54
+msgid "Mattermost can be deployed both to a single team and to multiple teams."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:56
+msgid ""
+"Currently, we recommend deploying to a single team for the following "
+"reasons:"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:58
+msgid ""
+"Single team deployments promote communication across the organization. "
+"When you add multiple teams, groups can become isolated."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:59
+msgid ""
+"We don’t yet support search or channels across teams, which can impact "
+"the cross-team user experience. This includes general searches, flagged "
+"posts and recent mentions."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:60
+msgid ""
+"Integrations (e.g., webhooks and slash commands) are only persistent "
+"across single team deployments."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:62
+msgid ""
+"However, some Mattermost customers prefer multiple team deployments for "
+"the following reasons:"
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:64
+msgid ""
+"Teams are useful when there is a purpose for each of them. For example, "
+"one team is used for staff members and another team for external users."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:65
+msgid ""
+"Performance is better when users are scattered across multiple teams "
+"instead of all in the same one. With multiple teams, there is less "
+"content to load per team or channel switch and database queries are "
+"faster."
+msgstr ""
+
+#: ../../source/help/getting-started/creating-teams.rst:66
+msgid ""
+"Creating a shared team for all users, and using `advanced permissions "
+"<https://docs.mattermost.com/deployment/advanced-"
+"permissions.html#recipes>`__ to control who can create channels and add "
+"members to the shared team, improves cross-team collaboration when using "
+"multiple teams. Additionally, an `annoucement banner "
+"<https://docs.mattermost.com/administration/announcement-banner.html>`__ "
+"can be used to provide system wide announcements."
+msgstr ""
+

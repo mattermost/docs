@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-post-deployment-solution.rst:4
+msgid "Customizing your Mattermost Install"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:6
+msgid ""
+"After completing your Mattermost install with a deployment solution "
+"provider, such as Bitnamni, you can customize the SSL security, email "
+"notifications and core server options via the following procedures:"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:8
+msgid "Set up SSL:"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:10
+msgid ""
+"`Set up SSL with NGNIX <https://docs.mattermost.com/install/config-ssl-"
+"http2-nginx.html>`__, or"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:11
+msgid ""
+"`Set up SSL without NGINX using Mattermost as a web server "
+"<https://docs.mattermost.com/install/config-tls-mattermost.html>`__"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:13
+msgid "Set up SMTP email:"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:15
+msgid ""
+"`Set up SMTP email <https://docs.mattermost.com/install/smtp-email-"
+"setup.html>`__ to receive email notifications"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:17
+msgid "Configure your core Mattermost server options:"
+msgstr ""
+
+#: ../../source/install/install-post-deployment-solution.rst:19
+msgid ""
+"`Set up basic Mattermost options <https://docs.mattermost.com/install"
+"/config-mattermost-server.html>`__"
+msgstr ""
+

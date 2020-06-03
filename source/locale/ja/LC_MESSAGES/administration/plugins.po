@@ -1,0 +1,592 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/plugins.rst:2
+msgid "Plugins (Beta)"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:5
+msgid ""
+"This is the admin documentation for plugins. If you're a developer "
+"looking to build a plugin, see `our developer documentation "
+"<https://developers.mattermost.com/extend/plugins>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:7
+msgid ""
+"Mattermost supports plugins to customize and extend the platform. See our"
+" `demo plugin <https://github.com/mattermost/mattermost-plugin-demo>`__ "
+"that illustrates the potential for a Mattermost plugin. To start writing "
+"your own plugin, consult our `starter template "
+"<https://github.com/mattermost/mattermost-plugin-starter-template>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:9
+msgid "Consider using a plugin in the following scenarios:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:11
+msgid "When you want to customize the Mattermost user interface."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:12
+msgid ""
+"When you want to extend Mattermost functionality to meet a specific, "
+"complex requirement."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:13
+msgid ""
+"When you want to build integrations that are managed by your Mattermost "
+"server."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:15
+msgid "Plugins are fully supported in both Team and Enterprise Editions."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:18
+msgid "Plugin Marketplace"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:19
+msgid ""
+"The Plugin Marketplace is a collection of plugins that can greatly "
+"increase the value and capabilities of your Mattermost deployment. End "
+"users can see increased productivity through quick access to systems such"
+" as Jira, Zoom, Webex, and GitHub.  Mattermost Admins can discover new "
+"plugins and quickly deploy them to their servers, including High "
+"Availability clusters. The Marketplace is available in 5.16+ and accessed"
+" via **Main Menu > Plugin Marketplace**. The Marketplace listings will "
+"continue to expand as we add new features and plugins that our customers "
+"request."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:24
+msgid "Installing a Plugin"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:26
+msgid ""
+"When a new plugin becomes available on the Marketplace, it's listed with "
+"an option to **Install**. Select **Install** to download and install the "
+"latest plugin binary from its respective GitHub repository. If there's a "
+"cluster present, the plugin will be distributed to each server "
+"automatically."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:29
+msgid "Configuring and Enabling a Plugin"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:31
+msgid ""
+"Once a plugin is installed (or pre-installed if shipped with Mattermost "
+"binary release):"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:33
+msgid "Select **Configure** to open the **Settings** menu."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:34
+msgid "Enter the Plugin settings as required."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:35
+msgid ""
+"Set **Enable Plugin** setting to ``True``. If this flag is not enabled, "
+"the plugin will not become active."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:36
+msgid "Test out the plugin as needed."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:39
+msgid "Upgrading Plugins"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:41
+msgid "Upgrade a plugin on demand when a new version becomes available."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:44
+msgid "Upgrading Plugins (prior to v5.18)"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:46
+msgid ""
+"In v5.16 and v5.17 the Marketplace only supports the installation of new "
+"plugins. To upgrade a plugin, you need to manually update it by "
+"downloading the binary file from the GitHub repository and then upload it"
+" in **System Console > Plugin Management**."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:49
+msgid "Marketplace Server"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:51
+msgid ""
+"There are two Marketplace settings in **System Console > Plugin "
+"management**:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:55
+msgid ""
+"**Enable Marketplace**. Turns the Marketplace user interface on or off "
+"for all users (including System Admins)."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:56
+msgid ""
+"**Marketplace URL**. The location of the Marketplace server to query for "
+"new plugins. Mattermost hosts a Plugin Marketplace for the community and "
+"this is the default value for this field. You can also set up your own "
+"Marketplace server."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:58
+msgid ""
+"When you first access the Marketplace, your Mattermost server will "
+"attempt to contact the Mattermost Marketplace server and return a list of"
+" available plugins that are appropriate based on the server version that "
+"is currently running. Only your server version and search query is passed"
+" over to Mattermost Marketplace; we retain an anonymized record for "
+"product analytics whenever a new plugin is installed, unless you have "
+"opted out of `Telemetry "
+"<https://docs.mattermost.com/administration/telemetry.html>`__. The "
+"`Plugin marketplace server code <https://github.com/mattermost"
+"/mattermost-marketplace>`__ is available as an open source project and "
+"can be used to setup your own private Marketplace if desired."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:62
+msgid "Mattermost Marketplace"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:64
+msgid ""
+"The `Mattermost Plugin Marketplace <https://github.com/mattermost"
+"/mattermost-marketplace>`__ is a service run by Mattermost that contains "
+"listings of plugins that we have reviewed and, in many cases, built. In "
+"the future, we plan to include community-developed plugins that will be "
+"labeled separately to Mattermost-developed plugins. as well as settings "
+"that would restrict which types of plugins you can install. Comments in "
+"our forum are welcome as we develop this feature further."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:67
+msgid "Mattermost Integration Directory"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:69
+msgid ""
+"There are many ways to integrate Mattermost aside from plugins, and we "
+"have created a directory of integration \"recipes\", some of which are "
+"scripts, plugins, or instructions on how to connect Mattermost with your "
+"Enterprise systems. Many are sourced from our community of customers. You"
+" can browse the directory at `https://integrations.mattermost.com/ "
+"<https://integrations.mattermost.com/>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:73
+msgid "About Plugins"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:74
+msgid "Plugins may have one or both of the following parts:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:76
+msgid ""
+"**Webapp plugins**. Customize the Mattermost user interface by adding "
+"buttons to the channel header, overriding the ``RHS``, or even rendering "
+"a custom post type within the center channel. All this is possible "
+"without having to fork the source code and rebase on every Mattermost "
+"release. For a sample plugin, see `our Zoom plugin "
+"<https://github.com/mattermost/mattermost-plugin-zoom>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:77
+msgid ""
+"**Server plugins**. Run a Go process alongside the server, filtering "
+"messages, or integrating with third-party systems such as Jira, GitLab or"
+" Jenkins. For a sample plugin, see `our Jira plugin "
+"<https://github.com/mattermost/mattermost-plugin-jira>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:82
+msgid "Security"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:83
+msgid ""
+"Plugins are intentionally powerful and not artificially sandboxed in any "
+"way and effectively become part of the Mattermost server. Server plugins "
+"can execute arbitrary code alongside your server and webapp plugins can "
+"deploy arbitrary code in client browsers."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:85
+msgid ""
+"While this power enables deep customization and integration, it can be "
+"abused in the wrong hands. Plugins have full access to your server "
+"configuration and thus also to your Mattermost database. Plugins can read"
+" any message in any channel, or perform any action on behalf of any user "
+"in the webapp."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:87
+msgid ""
+"You should only install custom plugins from sources you trust to avoid "
+"compromising the security of your installation."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:90
+msgid "Plugin Signing"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:92
+msgid ""
+"The Plugin Marketplace allows system administrators to download and "
+"install plugins from a central repository. Plugins installed via the "
+"Plugin Marketplace must be signed by a public key certificate trusted by "
+"the local Mattermost server."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:94
+msgid ""
+"While the server ships with a default certificate used to verify plugins "
+"from the default Mattermost plugin marketplace, the server can be "
+"configured to trust different certificates and point at a different "
+"plugin marketplace. This document outlines the steps for generating a "
+"public key certificate and signing plugins for use with a custom plugin "
+"marketplace. It assumes access to the `GNU Privacy Guard (GPG) "
+"<https://gnupg.org>`__ tool."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:98
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:100
+msgid ""
+"Configuring plugin signatures allows finer control over the verification "
+"process:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:106
+msgid ""
+"is used to enforce plugin signature verification. With flag on, only "
+"marketplace plugins will be installed and verified. With flag off, "
+"customers will be able to install plugins manually without signature "
+"verification. Note that the marketplace plugins will still be verified "
+"even if flag is off."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:109
+msgid "Key Generation"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:111
+msgid ""
+"Public and private key pairs are needed to sign and verify plugins. The "
+"private key is used for signing and should be kept in a secure location. "
+"The public key is used for verification and can be distributed freely. To"
+" generate a key pair, run the following command:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:155
+msgid "Key size should be at least 3072 bits."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:158
+msgid "Exporting the Private Key"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:160
+msgid "Find the ID of your private key first. The ID is a hexadecimal number."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:166
+msgid ""
+"This is your private key and should be kept secret. Your hexadecimal key "
+"ID will, of course, be different."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:173
+msgid "Exporting the Public Key"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:175
+msgid "Find the ID of your public key first. The ID is a hexadecimal number."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:186
+msgid "Importing the Key"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:188
+msgid ""
+"If you already have a public and private key pair, you can import them to"
+" the GPG."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:197
+msgid "Running Plugin Signing"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:199
+msgid ""
+"For plugin signing, you have to know the hexadecimal ID of the private "
+"key. Let's assume you want to sign `com.mattermost.demo-"
+"plugin-0.1.0.tar.gz` file, run:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:205
+msgid ""
+"This command will generate `com.mattermost.demo-plugin-0.1.0.tar.gz.sig`,"
+" which is the signature of your plugin."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:208
+msgid "Plugin Verification"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:210
+msgid ""
+"Mattermost server will verify plugin signatures downloaded from plugin "
+"marketplace. To add custom public keys, run the following command on the "
+"Mattermost server:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:216
+msgid "Multiple public keys can be added to the Mattermost server:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:223
+msgid ""
+"To list the names of all public keys installed on your Mattermost server,"
+" use:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:229
+msgid "To delete public key(s) from your Mattermost server, use:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:236
+msgid "Implementation"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:238
+msgid ""
+"See the `implementation document "
+"<https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ>`__"
+" for more information."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:242
+msgid "Set Up Guide"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:244
+msgid ""
+"To manage plugins, go to **System Console > Plugins > Plugin "
+"Management**. From here, you can:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:246
+msgid "Enable or disable pre-packaged plugins."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:247
+msgid "Install and manage custom plugins."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:250
+msgid ""
+"In versions prior to 5.16, go to **System Console > Plugins (Beta) > "
+"Configuration**."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:254
+msgid "Pre-packaged Plugins"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:255
+msgid ""
+"Mattermost ships with a number of pre-packaged plugins written and "
+"maintained by Mattermost. Instead of building these features directly "
+"into the product, you can selectively enable the functionality your "
+"installation requires. Pre-packaged plugins cannot be removed via the "
+"System Console, but can be customized by modifying the "
+"``prepackaged_plugins`` directory in your Mattermost installation."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:258
+msgid "Custom Plugins"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:259
+msgid ""
+"Installing a custom plugin introduces some risk. As a result, plugin "
+"uploads are disabled by default and cannot be enabled via the System "
+"Console or REST API."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:261
+msgid ""
+"To enable plugin uploads, manually set **PluginSettings > EnableUploads**"
+" to ``true`` in your configuration and restart your server. You can "
+"disable plugin uploads at any time without affecting previously uploaded "
+"plugins."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:263
+msgid ""
+"With plugin uploads enabled, navigate to **System Console > Plugins > "
+"Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` "
+"files containing the server executables and webapp resources for the "
+"plugin. You can also specify a URL to install a plugin bundle from a "
+"remote source."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:265
+msgid ""
+"Note: When **RequirePluginSignature** is `true` - plugin uploads cannot "
+"be enabled, and may only be installed via the Marketplace (which verifies"
+" Plugin Code Signatures)."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:267
+msgid ""
+"Custom plugins may also be installed via the `command line interface "
+"<https://docs.mattermost.com/administration/command-line-tools.html"
+"#mattermost-plugin>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:269
+msgid ""
+"While no longer recommended, plugins may also be installed manually by "
+"unpacking the plugin bundle inside the `plugins` directory of a "
+"Mattermost installation."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:272
+msgid "Plugin Uploads in High Availability Mode"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:273
+msgid ""
+"Prior to Mattermost 5.14, Mattermost servers configured for `High "
+"Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_"
+" required plugins to be installed manually. As of Mattermost 5.14, "
+"plugins uploaded via the System Console or the command line interface are"
+" persisted to the configured file store and automatically installed on "
+"all servers that join the cluster."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:275
+msgid ""
+"Manually installed plugins remain supported, but must be individually "
+"installed on each server in the cluster."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:278
+msgid "Frequently Asked Questions (FAQs)"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:281
+msgid "Where Can I Share Feedback on Plugins?"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:283
+msgid ""
+"Join our community server discussion in the `Toolkit channel "
+"<https://community.mattermost.com/core/channels/developer-toolkit>`__."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:286
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:289
+msgid "Plugin Uploads Fail Even Though Uploads are Enabled"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:291
+msgid ""
+"If plugin uploads fail and you see \"permission denied\" errors in "
+"**System Console > Logs** such as:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:297
+msgid ""
+"the Mattermost server doesn't have the necessary permissions for "
+"uploading plugins. Ensure the Mattermost server has write access to the "
+"``mattermost/client`` directory."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:299
+msgid ""
+"It may also be that the working directory for the service running "
+"Mattermost is not correct. On Ubuntu you might see"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:305
+msgid ""
+"This can be fixed on Ubuntu 16.04 and RHEL by opening the service "
+"configuration file and setting ``WorkingDirectory`` to the path to "
+"Mattermost (generally it's ``/opt/mattermost``)."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:307
+msgid "A similar problem can occur on Windows:"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:313
+msgid ""
+"To fix this, set the ``AppDirectory`` of your service using ``nssm set "
+"mattermost AppDirectory c:\\mattermost``."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:316
+msgid "``x509: certificate signed by unknown authority``"
+msgstr ""
+
+#: ../../source/administration/plugins.rst:318
+msgid ""
+"If you're seeing ``x509: certificate signed by unknown authority`` in "
+"your server logs, it usually means that the CA for a self-signed "
+"certificate for a server your plugin is trying to access has not been "
+"added to your local trust store of the machine the Mattermost server is "
+"running on."
+msgstr ""
+
+#: ../../source/administration/plugins.rst:320
+msgid ""
+"You can add one in Linux `following instructions in this StackExchange "
+"article <https://unix.stackexchange.com/questions/90450/adding-a-self-"
+"signed-certificate-to-the-trusted-list>`_, or set up a load balancer like"
+" NGINX per :doc:`production install guide <config-ssl-http2-nginx>` to "
+"resolve the issue."
+msgstr ""
+

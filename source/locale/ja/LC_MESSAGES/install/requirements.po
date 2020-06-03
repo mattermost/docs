@@ -1,0 +1,536 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/requirements.rst:4
+msgid "Software and Hardware Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.rst:6
+msgid ""
+"This guide outlines minimum software and hardware requirements for "
+"deploying Mattermost. Requirements may vary based on utilization and "
+"observing performance of pilot projects is recommended prior to scale "
+"out."
+msgstr ""
+
+#: ../../source/install/requirements.rst:9
+msgid "Contents"
+msgstr ""
+
+#: ../../source/install/requirements.rst:12
+msgid "Deployment Overview"
+msgstr ""
+
+#: ../../source/install/requirements.rst:14
+msgid ""
+"Please see the `Mattermost Deployment Overview "
+"<http://docs.mattermost.com/deployment/deployment.html>`__ documentation "
+"for a summary of software systems whose requirements are described in "
+"this document."
+msgstr ""
+
+#: ../../source/install/requirements.rst:18
+msgid ""
+"`View Mattermost Network Diagram "
+"<https://github.com/mattermost/docs/blob/master/source/images/network.PNG>`__"
+msgstr ""
+
+#: ../../source/install/requirements.rst:21
+msgid "Software Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.rst:24
+msgid "Client Software"
+msgstr ""
+
+#: ../../source/install/requirements.rst:27
+msgid "Desktop Apps"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Operating System"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Technical Requirement"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Windows"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Windows 7, 8.1 and 10"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Mac"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "MacOS 10.12+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Linux"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Ubuntu LTS releases 16.04 or later"
+msgstr ""
+
+#: ../../source/install/requirements.rst:36
+msgid ""
+"Though not officially supported, the Linux desktop app also runs on "
+"RHEL/CentOS 7+."
+msgstr ""
+
+#: ../../source/install/requirements.rst:38
+msgid ""
+"`*` Integrated Windows Authentication is not supported by Mattermost "
+"desktop apps. If you use ADFS we recommend `configuring intranet forms-"
+"based authentication for devices that do not support WIA "
+"<https://docs.microsoft.com/en-us/windows-server/identity/ad-"
+"fs/operations/configure-intranet-forms-based-authentication-for-devices-"
+"that-do-not-support-wia>`_."
+msgstr ""
+
+#: ../../source/install/requirements.rst:41
+msgid "PC Web"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Browser"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Chrome"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "v77+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Firefox"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "v60+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Safari"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "v12+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Edge"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "v44+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:51
+msgid ""
+"`*` Support for Internet Explorer (IE11) has been removed in Mattermost "
+"5.16. We recommend using the `Mattermost Desktop App "
+"<https://mattermost.com/download/#mattermostApps>`_ or another supported "
+"browser. See `this forum post <https://forum.mattermost.org/t/mattermost-"
+"is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn "
+"more."
+msgstr ""
+
+#: ../../source/install/requirements.rst:54
+msgid "Mobile Apps"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "iOS"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "iPhone 5s devices and later with iOS 12+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Android"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Android devices with Android 7+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:62
+msgid ""
+"`*` Integrated Windows Authentication is not supported by Mattermost "
+"mobile apps. If you use ADFS we recommend `configuring intranet forms-"
+"based authentication for devices that do not support WIA "
+"<https://docs.microsoft.com/en-us/windows-server/identity/ad-"
+"fs/operations/configure-intranet-forms-based-authentication-for-devices-"
+"that-do-not-support-wia>`_."
+msgstr ""
+
+#: ../../source/install/requirements.rst:65
+msgid "Mobile Web"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "iOS 12+ with Safari 12+ or Chrome 77+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:1
+msgid "Android 7+ with Chrome 77+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:74
+msgid "Email Client"
+msgstr ""
+
+#: ../../source/install/requirements.rst:76
+msgid "*Desktop clients:* Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:77
+msgid "*Web based clients:* Office 365, Outlook, Gmail, Yahoo, AOL"
+msgstr ""
+
+#: ../../source/install/requirements.rst:78
+msgid "*Mobile clients:* iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS)"
+msgstr ""
+
+#: ../../source/install/requirements.rst:81
+msgid "Server Software"
+msgstr ""
+
+#: ../../source/install/requirements.rst:84
+msgid "Mattermost Server Operating System"
+msgstr ""
+
+#: ../../source/install/requirements.rst:86
+msgid ""
+"Ubuntu 16.04, Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat "
+"Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle "
+"Linux 7+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:87
+msgid ""
+"Using the Mattermost `Docker image <https://docs.mattermost.com/install"
+"/prod-docker.html>`__ on a Docker-compatible operating system (Linux-"
+"based OS) is still recommended"
+msgstr ""
+
+#: ../../source/install/requirements.rst:89
+msgid ""
+"While community support exists for Fedora, FreeBSD and Arch Linux, "
+"Mattermost does not currently include production support for these "
+"platforms."
+msgstr ""
+
+#: ../../source/install/requirements.rst:92
+msgid "Database Software"
+msgstr ""
+
+#: ../../source/install/requirements.rst:94
+msgid "MySQL 5.6, 5.7, 8 (see note below on MySQL 8 support)"
+msgstr ""
+
+#: ../../source/install/requirements.rst:95
+msgid "PostgreSQL 9.4+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:96
+msgid "Amazon Aurora MySQL 5.6+"
+msgstr ""
+
+#: ../../source/install/requirements.rst:98
+msgid ""
+"Deployments requiring searching in Chinese, Japanese, and Korean "
+"languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text "
+"parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-"
+"ngram.html>`__. For searching two characters, you will also need to set "
+"``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart"
+" MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-"
+"server/issues/2033#issuecomment-183872616>`__ for details."
+msgstr ""
+
+#: ../../source/install/requirements.rst:100
+msgid "Search limitations on PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:102
+msgid "Email addresses do not return results."
+msgstr ""
+
+#: ../../source/install/requirements.rst:103
+msgid ""
+"Hashtags or recent mentions of usernames containing a dash do not return "
+"search results."
+msgstr ""
+
+#: ../../source/install/requirements.rst:104
+msgid ""
+"Terms containing a dash return incorrect results as dashes are ignored in"
+" the search query."
+msgstr ""
+
+#: ../../source/install/requirements.rst:105
+msgid ""
+"If any of the above is an issue, you can either enable the `Elasticsearch"
+" (E20) feature "
+"<https://docs.mattermost.com/deployment/elasticsearch.html>`__ or install"
+" MySQL instead."
+msgstr ""
+
+#: ../../source/install/requirements.rst:107
+msgid "Search limitations on MySQL:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:109
+msgid ""
+"Hashtags or recent mentions of usernames containing a dot do not return "
+"search results."
+msgstr ""
+
+#: ../../source/install/requirements.rst:111
+msgid "**MySQL 8 Support**:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:113
+msgid ""
+"In MySQL 8.0.4, the default authentication plugin was changed from "
+"``mysql_native_password`` to ``caching_sha2_password`` "
+"(https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-"
+"plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will "
+"need to enable ``mysql_native_password`` by adding the following entry in"
+" your MySQL configuration file:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:121
+msgid "Hardware Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.rst:123
+msgid ""
+"Usage of CPU, RAM, and storage space can vary significantly based on user"
+" behavior. These hardware recommendations are based on traditional "
+"deployments and may grow or shrink depending on how active your users "
+"are."
+msgstr ""
+
+#: ../../source/install/requirements.rst:125
+msgid ""
+"Moreover, memory requirements can be driven by peak file sharing "
+"activity. Recommendation is based on default 50 MB maximum file size, "
+"which can be `adjusted from the System Console "
+"<https://docs.mattermost.com/administration/config-settings.html#maximum-"
+"file-size>`__. Changing this number may change memory requirements."
+msgstr ""
+
+#: ../../source/install/requirements.rst:127
+msgid ""
+"For deployments larger than 2,000 users, it is recommended to use the "
+"Mattermost open source load testing framework to simulate usage of your "
+"system at full scale: `https://github.com/mattermost/mattermost-load-test"
+" <https://github.com/mattermost/mattermost-load-test>`__."
+msgstr ""
+
+#: ../../source/install/requirements.rst:130
+msgid "Hardware Requirements for Team Deployments"
+msgstr ""
+
+#: ../../source/install/requirements.rst:132
+msgid ""
+"Most small to medium Mattermost team deployments can be supported on a "
+"single server with the following specifications based on registered "
+"users:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:134
+msgid "1 - 1,000 users - 1 vCPU/cores, 2 GB RAM"
+msgstr ""
+
+#: ../../source/install/requirements.rst:135
+msgid "1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM"
+msgstr ""
+
+#: ../../source/install/requirements.rst:140
+msgid "Hardware Requirements for Enterprise Deployments (Multi-Server)"
+msgstr ""
+
+#: ../../source/install/requirements.rst:143
+msgid "Scale Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.rst:145
+msgid ""
+"For Enterprise Edition deployments with a multi-server setup, see `our "
+"scaling guide <https://docs.mattermost.com/deployment/scaling.html>`__."
+msgstr ""
+
+#: ../../source/install/requirements.rst:147
+msgid ""
+"It is highly recommended that pilots are run before enterprise-wide "
+"deployments in order to estimate full scale usage based on your specific "
+"organizational needs. You can use the Mattermost open source load testing"
+" framework to simulate usage of your system: "
+"`https://github.com/mattermost/mattermost-load-test "
+"<https://github.com/mattermost/mattermost-load-test>`__."
+msgstr ""
+
+#: ../../source/install/requirements.rst:149
+msgid ""
+"Mattermost's `performance monitoring "
+"<https://docs.mattermost.com/deployment/metrics.html>`__ tools can be "
+"used for detailed performance measurements and to inspect the running "
+"system to ensure sizing and installation is correct."
+msgstr ""
+
+#: ../../source/install/requirements.rst:152
+msgid "System Requirements"
+msgstr ""
+
+#: ../../source/install/requirements.rst:154
+msgid ""
+"For Enterprise Edition deployments with a multi-server setup, we highly "
+"recommend the following systems to support your Mattermost deployment:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:156
+msgid ""
+"Prometheus to track system health of your Mattermost deployment, through"
+"  `performance monitoring feature "
+"<https://docs.mattermost.com/deployment/metrics.html>`__ available in "
+"Enterprise Edition E20."
+msgstr ""
+
+#: ../../source/install/requirements.rst:157
+msgid ""
+"Grafana to visualize the system health metrics collected by Prometheus "
+"with the  `performance monitoring feature "
+"<https://docs.mattermost.com/deployment/metrics.html>`__. Grafana 5.0.0 "
+"and later is recommended."
+msgstr ""
+
+#: ../../source/install/requirements.rst:158
+msgid ""
+"Elasticsearch to support highly efficient database searches in a cluster "
+"environment. Elasticsearch 5.0 and later is supported. `Learn more here "
+"<https://docs.mattermost.com/deployment/elasticsearch.html>`__."
+msgstr ""
+
+#: ../../source/install/requirements.rst:159
+msgid ""
+"MinIO to support a cloud storage system compatible with Amazon S3. Learn "
+"more about file storage configuration options `in our documentation "
+"<https://docs.mattermost.com/administration/config-"
+"settings.html#files>`__."
+msgstr ""
+
+#: ../../source/install/requirements.rst:162
+msgid "Alternate Storage Calculations"
+msgstr ""
+
+#: ../../source/install/requirements.rst:164
+msgid ""
+"As an alternative to recommended storage sizing above, you can forecast "
+"your own storage usage. Begin with a Mattermost server approximately 600 "
+"MB to 800 MB in size including operating system and database, then add "
+"the multiplied product of:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:166
+msgid ""
+"Estimated storage per user per month (see below), multipled by 12 months "
+"in a year"
+msgstr ""
+
+#: ../../source/install/requirements.rst:167
+msgid "Estimated mean average number of users in a year"
+msgstr ""
+
+#: ../../source/install/requirements.rst:168
+msgid "A 1-2x safety factor"
+msgstr ""
+
+#: ../../source/install/requirements.rst:170
+msgid "**Estimated storage per user per month**"
+msgstr ""
+
+#: ../../source/install/requirements.rst:172
+msgid ""
+"File usage per user varies significantly across industries. The below "
+"benchmarks are recommended:"
+msgstr ""
+
+#: ../../source/install/requirements.rst:175
+msgid "**Low usage teams** (1-5 MB/user/month)"
+msgstr ""
+
+#: ../../source/install/requirements.rst:175
+msgid ""
+"Primarily use text-messages and links to communicate. Examples would "
+"include software development teams that heavily use web-based document "
+"creation and management tools, and therefore rarely upload files to the "
+"server."
+msgstr ""
+
+#: ../../source/install/requirements.rst:178
+msgid "**Medium usage teams** (5-25 MB/user/month)"
+msgstr ""
+
+#: ../../source/install/requirements.rst:178
+msgid ""
+"Use a mix of text-messages as well as shared documents and images to "
+"communicate. Examples might include business teams that may commonly drag"
+" and drop screenshots, PDFs and Microsoft Office documents into "
+"Mattermost for sharing and review."
+msgstr ""
+
+#: ../../source/install/requirements.rst:181
+msgid "**High usage teams** - (25-100 MB/user/month)"
+msgstr ""
+
+#: ../../source/install/requirements.rst:181
+msgid ""
+"Heaviest utlization comes from teams uploading a high number of large "
+"files into Mattermost on a regular basis. Examples include creative teams"
+" who share and store artwork and media with tags and commentary in a "
+"pipeline production process."
+msgstr ""
+
+#: ../../source/install/requirements.rst:183
+msgid ""
+"*Example:* A 30-person team with medium usage (5-25 MB/user/month) with a"
+" safety factor of 2x would require between 3.5 GB (30 users \\* 5 MB \\* "
+"12 months \\* 2x safety factor) and 17.6 GB (30 users \\* 25 MB \\* 12 "
+"months \\* 2x safety factor) of free space in the next year."
+msgstr ""
+
+#: ../../source/install/requirements.rst:185
+msgid ""
+"It's recommended to review storage utilization at least quarterly to "
+"ensure adequate free space is available."
+msgstr ""
+

@@ -1,0 +1,1069 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/cluster.rst:2
+msgid "High Availability Cluster (E20)"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:4
+msgid "*Available in Enterprise Edition E20.*"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:6
+msgid ""
+"A high availability cluster enables a Mattermost system to maintain "
+"service during outages and hardware failures through the use of redundant"
+" infrastructure."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:8
+msgid ""
+"High availability in Mattermost consists of running redundant Mattermost "
+"application servers, redundant database servers, and redundant load "
+"balancers. The failure of any one of these components does not interrupt "
+"operation of the system."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:12
+msgid ""
+"This document applies to Mattermost Server version 4.0 and later. For "
+"previous versions, see :doc:`cluster-310`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:19
+msgid "Requirements for Continuous Operation"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:21
+msgid ""
+"To enable continuous operation at all times, including during server "
+"updates and server upgrades, you must make sure that the redundant "
+"components are properly sized and that you follow the correct sequence "
+"for updating each of the system's components."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:24
+msgid "Redundancy at anticipated scale"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:24
+msgid ""
+"Upon failure of one component, the remaining application servers, "
+"database servers, and load balancers must be sized and configured to "
+"carry the full load of the system. If this requirement is not met, an "
+"outage of one component can result in an overload of the remaining "
+"components, causing a complete system outage."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:29
+msgid "Update sequence for continuous operation"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:27
+msgid ""
+"You can apply most configuration changes and dot release security updates"
+" without interrupting service, provided that you update the system "
+"components in the correct sequence. See the `Upgrade Guide`_ for "
+"instructions on how to do this."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:29
+msgid ""
+"**Exception:** Changes to configuration settings that require a server "
+"restart, and server version upgrades that involve a change to the "
+"database schema require a short period of downtime. Downtime for a server"
+" restart is around 5 seconds, and for a database schema update, downtime "
+"can be up to 30 seconds."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:32
+msgid "Deployment Guide"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:34
+msgid ""
+"Deployment guide to set up and maintain high availability on your "
+"Mattermost servers."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:37
+msgid "Initial Setup Guide for High Availability"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:39
+msgid ""
+"To ensure your instance and configuration are compatible with high "
+"availability, please review the `Configuration and Compatibility`_  "
+"section."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:42
+msgid ""
+"Backup your Mattermost database and file storage locations before "
+"configuring high availability. For more information about backing up, see"
+" :doc:`../administration/backup`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:44
+msgid ""
+"Upgrade Mattermost Server to version 4.0 or later. See "
+":doc:`../administration/upgrade`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:45
+msgid ""
+"Set up a new Mattermost server with version 4.0 or later by following one"
+" of our **Install Guides**. This server must use an identical copy of the"
+" configuration file, ``config.json``. Verify the servers are functioning "
+"by hitting each independent server through its private IP address."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:46
+msgid ""
+"Modify the ``config.json`` files on both servers to add *ClusterSettings*"
+" as described in :ref:`high-availability`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:47
+msgid ""
+"Verify the configuration files are identical on both servers then restart"
+" each machine in the cluster."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:48
+msgid ""
+"Modify your NGINX setup so that it proxies to both servers. For more "
+"information about this, see `Proxy Server Configuration`_."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:49
+msgid ""
+"Open **System Console > Advanced > High Availability** in prior versions "
+"or **System Console > Environment > High Availability** in versions after"
+" 5.12 to verify that each machine in the cluster is communicating as "
+"expected with green status indicators. If not, investigate the log files "
+"for any extra information."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:52
+msgid "Adding a Server to the Cluster"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:54
+#: ../../source/deployment/cluster.rst:62
+msgid ""
+"Backup your Mattermost database and the file storage location. For more "
+"information about backing up, see :doc:`../administration/backup`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:55
+msgid ""
+"Set up a new Mattermost server. This server must use an identical copy of"
+" the configuration file, ``config.json``. Verify the server is "
+"functioning by hitting the private IP address."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:56
+msgid ""
+"Modify your NGINX setup to add the new server. For information about "
+"this, see `Proxy Server Configuration`_."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:57
+msgid ""
+"Open **System Console > Advanced > High Availability** in prior versions "
+"or **System Console > Environment > High Availability** in versions after"
+" 5.12 to verify that all the machines in the cluster are communicating as"
+" expected with green status indicators. If not, investigate the log files"
+" for any extra information."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:60
+msgid "Removing a Server from the Cluster"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:63
+msgid ""
+"Modify your NGINX setup to remove the server. For information about this,"
+" see `Proxy Server Configuration`_."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:64
+msgid ""
+"Open **System Console > Advanced > High Availability** in prior versions "
+"or **System Console > Environment > High Availability** in versions after"
+" 5.12 to verify that all the machines remaining in the cluster are "
+"communicating as expected with green status indicators. If not, "
+"investigate the log files for any extra information."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:67
+msgid "Configuration and Compatibility"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:68
+msgid "Details on configuring your system for high availability."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:71
+msgid "Mattermost Server Configuration"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:74
+msgid "Configuration Settings"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:76
+msgid ""
+"High availability is configured in the ``ClusterSettings`` section of "
+"``config.json`` and the settings are viewable in the System Console. When"
+" high availability is enabled, the System Console is set to read-only "
+"mode to ensure all the ``config.json`` files on the Mattermost servers "
+"are always identical. However, for testing and validating a High "
+"Availability setup, you can set *ReadOnlyConfig* to ``false``, which "
+"allows changes made in the System Console to be saved back to the "
+"configuration file."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:91
+msgid "For more details on these settings, see :ref:`high-availability`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:93
+msgid ""
+"Change the process limit to 8192 and the maximum number of open files to "
+"65536."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:95
+msgid ""
+"Modify ``/etc/security/limits.conf`` on each machine that hosts a "
+"Mattermost server by adding the following lines:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:104
+msgid "Increase the number of websocket connections"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:106
+msgid ""
+"Modify ``/etc/sysctl.conf`` on each machine that hosts a Mattermost "
+"server by adding the following lines:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:114
+msgid "Cluster Discovery"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:116
+msgid ""
+"If you have non-standard (i.e. not simple) network configurations, then "
+"you may need to use the `Override Hostname "
+"<https://docs.mattermost.com/administration/config-settings.html"
+"#override-hostname>`_ setting to help the cluster nodes discover each "
+"other. The cluster settings in the config are removed from the config "
+"file hash for this reason, meaning you can have ``config.json`` files "
+"that are slightly different in High Availability mode. The `Override "
+"Hostname <https://docs.mattermost.com/administration/config-settings.html"
+"#override-hostname>`_ is intended to be different for each clustered node"
+" in ``config.json`` if you need to force discovery."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:118
+msgid ""
+"If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP "
+"address by searching for the first non-local IP address (non-loop-back, "
+"non-localunicast, non-localmulticast network interface). It enumerates "
+"the network interfaces using the built-in go function "
+"`net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. "
+"Otherwise it tries to get the hostname using the `os.Hostname() "
+"<https://golang.org/pkg/os/#Hostname>`_ built-in go function."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:120
+msgid ""
+"You can also run ``SELECT * FROM ClusterDiscovery`` against your database"
+" to see how it has filled in the Hostname field. That field will be the "
+"hostname or IP address the server will use to attempt contact with other "
+"nodes in the cluster. We attempt to make a connection to the ``url "
+"Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure "
+"you have all the correct ports open so the cluster can gossip correctly. "
+"These ports are under ``ClusterSettings`` in your configuration."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:122
+msgid "In short, you should use:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:124
+msgid ""
+"IpAddress discovery if the first non-local address can be seen from the "
+"other machines."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:125
+msgid ""
+"Override Hostname on the operating system so that it's a proper "
+"discoverable name for the other nodes in the cluster."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:126
+msgid ""
+"Override Hostname in ``config.json`` if the above steps do not work. You "
+"can put an IpAddress in this field if needed. The ``config.json`` will be"
+" different for each cluster node."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:129
+msgid "Time Synchronization"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:131
+msgid ""
+"Each server in the cluster must have the Network Time Protocol daemon "
+"``ntpd`` running so that messages are posted in the correct order."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:134
+msgid "State"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:136
+msgid ""
+"The Mattermost Server is designed to have very little state to allow for "
+"horizontal scaling. The items in state considered for scaling Mattermost "
+"are listed below:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:138
+msgid "In memory session cache for quick validation and channel access"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:139
+msgid "In memory online/offline cache for quick response"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:140
+msgid "System configuration file that is loaded and stored in memory"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:141
+msgid "WebSocket connections from clients used to send messages"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:143
+msgid ""
+"When the Mattermost Server is configured for high availability, the "
+"servers  use an inter-node communication protocol on a different "
+"listening address to keep the state in sync. When a state changes it is "
+"written back to the database and an inter-node message is sent to notify "
+"the other servers of the state change. The true state of the items can "
+"always be read from the database. Mattermost also uses inter-node "
+"communication to forward WebSocket messages to the other servers in the "
+"cluster for real-time messages such as  “[User X] is typing.”"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:146
+msgid "Proxy Server Configuration"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:148
+msgid ""
+"The proxy server exposes the cluster of Mattermost servers to the outside"
+" world. The Mattermost servers are designed for use with a proxy server "
+"such as NGINX, a hardware load balancer, or a cloud service like Amazon "
+"Elastic Load Balancer."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:150
+msgid ""
+"If you want to monitor the server with a health check you can use "
+"``http://10.10.10.2/api/v4/system/ping`` and check the response for "
+"``Status 200``, indicating success. Use this health check route to mark "
+"the server *in-service* or *out-of-service*."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:152
+msgid ""
+"A sample configuration for NGINX is provided below. It assumes that you "
+"have two Mattermost servers running on private IP addresses of "
+"``10.10.10.2`` and ``10.10.10.4``."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:193
+msgid ""
+"You can use multiple proxy servers to limit a single point of failure, "
+"but that is beyond the scope of this documentation."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:196
+msgid "File Storage Configuration"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:199
+msgid ""
+"File storage is assumed to be shared between all the machines that are "
+"using services such as NAS or Amazon S3."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:200
+msgid ""
+"If ``\"DriverName\": \"local\"`` is used then the directory at "
+"``\"FileSettings\":`` ``\"Directory\": \"./data/\"`` is expected to be a "
+"NAS location mapped as a local directory, otherwise high availability "
+"will not function correctly and may corrupt your file storage."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:201
+msgid ""
+"If you’re using Amazon S3 or Minio for file storage then no other "
+"configuration is required."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:203
+msgid ""
+"If you’re using the Compliance Reports feature in Enterprise Edition E20,"
+" you need to configure the ``\"ComplianceSettings\":`` ``\"Directory\": "
+"\"./data/\",`` to share between all machines or the reports will only be "
+"available from the System Console on the local Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:205
+msgid ""
+"Migrating to NAS or S3 from local storage is beyond the scope of this "
+"document."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:208
+msgid "Database Configuration"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:210
+msgid ""
+"Use the read replica feature to scale the database. The Mattermost server"
+" can be set up to use one \"master\" database and multiple read replica "
+"databases. Mattermost distributes read requests across all databases, and"
+" sends write requests to the master database, and those changes are then "
+"sent to update the read replicas."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:212
+msgid ""
+"On large deployments, consider using the search replica feature to "
+"isolate search queries onto one or more database servers. A search "
+"replica is similar to a read replica, but is used only for handling "
+"search queries."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:214
+msgid ""
+"If there are no search replicas, the server uses the read replicas "
+"instead. Similarly, if there are no read replicas, the server falls back "
+"to master."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:217
+msgid "Sizing Databases"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:219
+msgid ""
+"For information about sizing database servers, see :ref:`hardware-sizing-"
+"for-enterprise`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:221
+#, python-format
+msgid ""
+"In a master/slave environment, make sure to size the slave machine to "
+"take 100% of the load in the event that the master machine goes down and "
+"you need to fail over."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:224
+msgid "Deploying a Multi-database Configuration"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:226
+msgid "To configure a multi-database Mattermost server:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:228
+msgid ""
+"Update the ``DataSource`` setting in ``config.json`` with a connection "
+"string to your master database server. The connection string is based on "
+"the database type set in ``DriverName``, either ``postgres`` or "
+"``mysql``."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:229
+msgid ""
+"Update the ``DataSourceReplicas`` setting in ``config.json`` with a "
+"series of connection strings to your database read replica servers in the"
+" format ``[\"readreplica1\", \"readreplica2\"]``. Each connection should "
+"also be compatible with the ``DriverName`` setting."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:231
+msgid "Here's an example SqlSettings block for one master and two read replicas:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:244
+msgid "\"SqlSettings\": {"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:234
+msgid ""
+"\"DriverName\": \"mysql\", \"DataSource\": "
+"\"master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\\u0026readTimeout=30s\\u0026writeTimeout=30s\","
+" \"DataSourceReplicas\": "
+"[\"slave_user:slave_password@tcp(replica1.server)/mattermost?charset=utf8mb4,utf8\\u0026readTimeout=30s\\u0026writeTimeout=30s\",\"slave_user:slave_password@tcp(replica2.server)/mattermost?charset=utf8mb4,utf8\\u0026readTimeout=30s\\u0026writeTimeout=30s\"],"
+" \"DataSourceSearchReplicas\": [], \"MaxIdleConns\": 20, "
+"\"MaxOpenConns\": 300, \"Trace\": false, \"AtRestEncryptKey\": \"\", "
+"\"QueryTimeout\": 30"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:243
+msgid "}"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:246
+msgid ""
+"The new settings can be applied by either stopping and starting the "
+"server, or by loading the configuration settings as described in the next"
+" section."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:248
+msgid ""
+"Once loaded, database write requests are sent to the master database and "
+"read requests are distributed among the other databases in the list."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:251
+msgid "Loading a Multi-database Configuration onto an Active Server"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:253
+msgid ""
+"After a multi-database configuration has been defined in ``config.json``,"
+" the following procedure can be used to apply the settings without "
+"shutting down the Mattermost server:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:255
+msgid ""
+"Go to **System Console > Configuration** in prior versions or **System "
+"Console > Environment > Web Server**  and click **Reload Configuration "
+"from Disk** in versions after 5.12 to reload configuration settings for "
+"the Mattermost server from ``config.json``."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:256
+#: ../../source/deployment/cluster.rst:268
+msgid ""
+"Go to **System Console > Database** in prior versions or **System Console"
+" > Environment > Database** and click **Recycle Database Connections** in"
+" versions after 5.12 to take down existing database connections and set "
+"up new connections in the multi-database configuration."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:258
+msgid ""
+"While the connection settings are changing, there might be a brief moment"
+" when writes to the master database are unsuccessful. The process waits "
+"for all existing connections to finish and starts serving new requests "
+"with the new connections. End users attempting to send messages while the"
+" switch is happening will have an experience similar to losing connection"
+" to the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:261
+msgid "Manual Failover for Master Database"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:263
+msgid ""
+"If the need arises to switch from the current master database--for "
+"example, if it is running out of disk space, or requires maintenance "
+"updates, or for other reasons--you can switch Mattermost server to use "
+"one of its read replicas as a master database by updating ``DataSource`` "
+"in ``config.json``."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:265
+msgid "To apply the settings without shutting down the Mattermost server:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:267
+msgid ""
+"Go to **System Console > Configuration** in prior versions or **System "
+"Console > Environment > Web Server** and click **Reload Configuration "
+"from Disk** in versions after 5.12 to reload configuration settings for "
+"the Mattermost server from ``config.json``."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:270
+msgid ""
+"While the connection settings are changing, there might be a brief moment"
+" when writes to the master database are unsuccessful. The process waits "
+"for all existing connections to finish and starts serving new requests "
+"with the new connections. End users attempting to send messages while the"
+" switch is happening can have an experience similar to losing connection "
+"to the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:273
+msgid "Transparent Failover"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:275
+msgid ""
+"The database can be configured for high availability and transparent "
+"failover use the existing database technologies. We recommend MySQL "
+"Clustering, Postgres Clustering, or Amazon Aurora. Database transparent "
+"failover is beyond the scope of this documentation."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:278
+msgid "Leader Election"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:280
+msgid ""
+"In Mattermost v4.2 and later, a cluster leader election process assigns "
+"any scheduled task such as LDAP sync to run on a single node in a multi-"
+"node cluster environment."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:282
+msgid ""
+"The process is based on a widely used `bully leader election algorithm "
+"<https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with"
+" the lowest node ID number from amongst the non-failed processes is "
+"selected as the \"leader\"."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:285
+msgid "Job Server"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:287
+msgid ""
+"Mattermost runs periodic tasks via the `job server "
+"<https://docs.mattermost.com/administration/config-"
+"settings.html#jobs>`__. These tasks include:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:289
+msgid "LDAP sync"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:290
+msgid "Data retention"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:291
+msgid "Compliance exports"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:292
+msgid "Elasticsearch indexing"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:294
+msgid ""
+"Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in "
+"config.json for all app and job servers in the cluster. The cluster "
+"leader will then be responsible for scheduling recurring jobs."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:297
+msgid "Plugins and High Availability"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:299
+msgid ""
+"As of Mattermost 5.14, when you install or upgrade a plugin, it is "
+"propagated across the servers in the cluster automatically."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:301
+msgid ""
+"Note a slight behaviour change in 5.15: When you re-install a plugin in "
+"5.14, the previous **Enabled** or **Disabled** state is retained. As of "
+"5.15, a reinstalled plugin's initial state is **Disabled**."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:305
+msgid "Upgrade Guide"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:307
+msgid ""
+"An update is an incremental change to Mattermost server that fixes bugs "
+"or performance issues. An upgrade adds new or improved functionality to "
+"the server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:310
+msgid "Updating Configuration Changes While Operating Continuously"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:312
+msgid ""
+"A service interruption is not required for most configuration updates. "
+"See `Server Upgrades Requiring Service Interruption`_ for a list of "
+"configuration updates that require a service interruption."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:314
+msgid ""
+"You can apply updates during a period of low load, but if your HA cluster"
+" is sized correctly, you can do it at any time. The system downtime is "
+"brief, and depends on the number of Mattermost servers in your cluster. "
+"Note that you are not restarting the machines, only the Mattermost server"
+" applications. A Mattermost server restart generally takes about 5 "
+"seconds."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:318
+msgid ""
+"Do not modify configuration settings through the System Console. "
+"Otherwise you will have two servers with different `config.json` files in"
+" an HA cluster causing a refresh every time a user connects to a "
+"different app server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:320
+#: ../../source/deployment/cluster.rst:337
+#: ../../source/deployment/cluster.rst:361
+#: ../../source/deployment/cluster.rst:375
+msgid "Make a backup of your existing ``config.json`` file."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:321
+msgid ""
+"For one of the Mattermost servers, make the configuration changes to "
+"``config.json`` and save the file. Do not reload the file yet."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:322
+msgid "Copy the ``config.json`` file to the other servers."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:323
+msgid "Shut down Mattermost on all but one server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:324
+msgid ""
+"Reload the configuration file on the server that is still running. Go to "
+"**System Console > Configuration** in prior versions or **System Console "
+"> Environment > Web Server** in versions after 5.12 and click **Reload "
+"Configuration from Disk**"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:325
+msgid "Start the other servers."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:328
+msgid "Updating Server Version While Operating Continuously"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:330
+msgid ""
+"A service interruption is not required for security patch dot releases of"
+" the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:332
+msgid ""
+"You can apply updates during a period when the anticipated load is small "
+"enough that one server can carry the full load of the system during the "
+"update."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:334
+msgid ""
+"Note that you are not restarting the machines, only the Mattermost server"
+" applications. A Mattermost server restart generally takes about 5 "
+"seconds."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:336
+#: ../../source/deployment/cluster.rst:360
+msgid ""
+"Review the upgrade procedure in the *Upgrade Enterprise Edition* section "
+"of :doc:`../administration/upgrade`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:338
+msgid ""
+"Set your proxy to move all new requests to a single server. If you are "
+"using NGINX and it's configured with an upstream backend section in "
+"``/etc/nginx/sites-available/mattermost`` then comment out all but the "
+"one server that you intend to update first, and reload NGINX."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:339
+msgid ""
+"Shut down Mattermost on each server except the one that you are updating "
+"first."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:340
+msgid "Update each Mattermost instance that is shut down."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:341
+#: ../../source/deployment/cluster.rst:364
+msgid ""
+"On each server, replace the new ``config.json`` file with your backed-up "
+"copy."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:342
+msgid "Start the Mattermost servers."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:343
+msgid "Repeat the update procedure for the server that was left running."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:346
+msgid "Server Upgrades Requiring Service Interruption"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:348
+msgid ""
+"A service interruption is required when the upgrade includes a change to "
+"the database schema or when a change to ``config.json`` requires a server"
+" restart, such as when making the following changes:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:350
+msgid "Default Server Language"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:351
+msgid "Rate Limiting"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:352
+msgid "Webserver Mode"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:353
+msgid "Database"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:354
+msgid "High Availability"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:356
+msgid ""
+"If the upgrade includes a change to the database schema, the database is "
+"upgraded by the first server that starts."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:358
+msgid ""
+"Apply upgrades during a period of low load. The system downtime is brief,"
+" and depends on the number of Mattermost servers in your cluster. Note "
+"that you are not restarting the machines, only the Mattermost server "
+"applications."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:362
+#: ../../source/deployment/cluster.rst:392
+msgid "Stop NGINX."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:363
+#: ../../source/deployment/cluster.rst:393
+msgid "Upgrade each Mattermost instance."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:365
+#: ../../source/deployment/cluster.rst:395
+msgid "Start one of the Mattermost servers."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:366
+#: ../../source/deployment/cluster.rst:396
+msgid "When the server is running, start the other servers."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:367
+#: ../../source/deployment/cluster.rst:397
+msgid "Restart NGINX."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:370
+msgid "Upgrading to Version 4.0 and Later"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:372
+msgid ""
+"Starting with Mattermost Server version 4.0, when a server starts up it "
+"can automatically discover other servers in the same cluster. You can add"
+" and remove servers without the need to make changes to the configuration"
+" file, ``config.json``. To support this capability, new items were added "
+"to the *ClusterSettings* section of ``config.json``. When upgrading from "
+"3.10 or earlier to 4.0 or later, you must manually add the new items to "
+"your existing ``config.json``."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:374
+msgid "Review the upgrade procedure in :doc:`../administration/upgrade`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:376
+msgid ""
+"Revise your existing ``config.json`` to update the *ClusterSettings* "
+"section. The following settings should work in most cases:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:391
+msgid "For more information about these settings, see :ref:`high-availability`."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:394
+msgid ""
+"On each server, replace the new ``config.json`` file with your modified "
+"version."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:400
+msgid "Frequently Asked Questions (FAQ)"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:403
+msgid "Does Mattermost support multi-region high availability deployment?"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:405
+msgid ""
+"Yes. Although not officially tested, you can set up a cluster across AWS "
+"regions, for example, and it should work without issues."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:408
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:411
+msgid "Red Server Status"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:413
+msgid ""
+"When high availability is enabled, the System Console displays the server"
+" status as red or green, indicating if the servers are communicating "
+"correctly with the cluster. The servers use inter-node communication to "
+"ping the other machines in the cluster, and once a ping is established "
+"the servers exchange information, such as server version and "
+"configuration files."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:415
+msgid "A server status of red can occur for the following reasons:"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:417
+msgid ""
+"**Configuration file mismatch**: Mattermost will still attempt the inter-"
+"node communication, but the System Console will show a red status for the"
+" server since the high availability feature assumes the same "
+"configuration file to function properly."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:418
+msgid ""
+"**Server version mismatch**: Mattermost will still attempt the inter-node"
+" communication, but the System Console will show a red status for the "
+"server since the high availability feature assumes the same version of "
+"Mattermost is installed on each server in the cluster. It is recommended "
+"to use the `latest version of Mattermost "
+"<https://www.mattermost.org/download/>`__ on all servers. Follow the "
+"upgrade procedure in :doc:`../administration/upgrade` for any server that"
+" needs to be upgraded."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:419
+msgid ""
+"**Server is down**: If an inter-node communication fails to send a "
+"message it makes another attempt in 15 seconds. If the second attempt "
+"fails, the server is assumed to be down. An error message is written to "
+"the logs and the System Console shows a status of red for that server. "
+"The inter-node communication continues to ping the down server in 15 "
+"second intervals. When the server comes back up, any new messages are "
+"sent to it."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:422
+msgid "WebSocket Disconnect"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:424
+msgid ""
+"When a client WebSocket receives a disconnect it will automatically "
+"attempt to re-establish a connection every three seconds with a backoff. "
+"After the connection is established, the client attempts to receive any "
+"messages that were sent while it was disconnected."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:427
+msgid "App Refreshes Continuously"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:429
+msgid ""
+"When configuration settings are modified through the System Console, the "
+"client refreshes every time a user connects to a different app server. "
+"This occurs because the servers have different `config.json` files in an "
+"HA cluster."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:431
+msgid ""
+"Modify configuration settings directly through ``config.json`` `following"
+" these steps <https://docs.mattermost.com/deployment/cluster.html"
+"#updating-configuration-changes-while-operating-continuously>`__."
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:434
+msgid "Messages Do Not Post Until After Reloading"
+msgstr ""
+
+#: ../../source/deployment/cluster.rst:436
+msgid ""
+"When running in high-availability mode, make sure all Mattermost "
+"application servers are running the same version of Mattermost. If they "
+"are running different versions, it can lead to a state where the lower "
+"version app server cannot handle a request and the request will not be "
+"sent until the frontend application is refreshed and sent to a server "
+"with a valid Mattermost version. Symptoms to look for include requests "
+"failing seemingly at random or a single application server having a "
+"drastic rise in goroutines and API errors."
+msgstr ""
+

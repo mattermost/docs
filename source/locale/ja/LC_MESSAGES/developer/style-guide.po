@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/style-guide.md:1
+msgid "Mattermost Style Guide"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:3
+msgid ""
+"Come join our \"Contributors\" community channel on our daily build "
+"server, where you can discuss questions with community members and the "
+"Mattermost core team. Join our \"Developers\" channel for technical "
+"discussions and our \"Integrations\" channel for all integrations and "
+"plugins discussions."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:5
+#: ../../source/developer/style-guide.md:9
+msgid "Go"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:6
+#: ../../source/developer/style-guide.md:16
+msgid "Javascript"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:7
+#: ../../source/developer/style-guide.md:128
+msgid "React-JSX"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:11
+msgid "All go code must follow the golang official Style Guide"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:13
+msgid ""
+"In addition all code must be run though the official go formatter tool "
+"gofmt"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:18
+msgid ""
+"Part of the build process is running ESLint. ESLint is the final "
+"authority on all style issues. PRs will not be accepted unless there are "
+"no errors running ESLint."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:20
+msgid ""
+"See ESLint configuration file and also instructions on how to use ESLint "
+"with different editors."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:22
+msgid ""
+"The following is a subset of what ESLint checks. ESLint is always the "
+"authority."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:24
+msgid "Whitespace"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:26
+msgid "Indentation is four spaces."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:27
+msgid "Use a space before the leading brace."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:28
+msgid ""
+"Use one space between the comma and the next argument in a bracketed "
+"list. No other space."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:29
+msgid "Use whitespace to make code more readable."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:30
+msgid "Do not use more than one newline to separate code blocks."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:31
+msgid "Do not use a newline as the first line of a function"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:51
+msgid "Semicolons"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:53
+msgid "You must use them always."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:63
+msgid "Variables"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:65
+msgid "Declarations must always use var, let or const."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:66
+msgid "Prefer let or const over var."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:67
+msgid "camelCase for all variable names."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:81
+msgid "Blocks"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:83
+msgid "Braces must be used on all blocks."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:84
+msgid "Braces must start on the same line as the statement starting the block."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:85
+msgid "Else and else if must be on the same line as the if block closing brace."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:112
+msgid "Strings"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:114
+msgid "Use of template strings is preferred instead of concatenation."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:130
+msgid ""
+"Part of the build process is running ESLint. ESLint is the final "
+"authority on all style issues. PRs will not be accepted unless there are "
+"no errors running ESLint. The ESLint configuration file can be found in: "
+"webapp/.eslintrc"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:132
+msgid ""
+"Instructions on how to use ESLint with your favourite editor can be found"
+" here: http://eslint.org/docs/user-guide/integrations"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:134
+msgid "You can run eslint using the makefile by using make check-style"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:136
+msgid ""
+"The following is a subset of what ESLint checks for. ESLint is always the"
+" authority."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:138
+msgid "General"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:140
+msgid "Include only one React component per file."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:141
+msgid ""
+"Use class <name> extends React.Component over React.createClass unless "
+"you need mixins"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:142
+msgid "Filenames should be the component name."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:144
+msgid "Alignment"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:146
+msgid "Follow alignment styles shown below:"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:160
+msgid "Naming"
+msgstr ""
+
+#: ../../source/developer/style-guide.md:162
+msgid "Property names use camelCase."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:163
+msgid "React component names use CapitalCamelCase."
+msgstr ""
+
+#: ../../source/developer/style-guide.md:164
+msgid "Do not use an underscore for internal methods in a react component."
+msgstr ""
+

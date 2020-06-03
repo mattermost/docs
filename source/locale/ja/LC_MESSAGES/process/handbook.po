@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/handbook.rst:3
+msgid "About Mattermost"
+msgstr ""
+
+#: ../../source/process/handbook.rst:5
+msgid ""
+"Mattermost, Inc. is a company based on the Mattermost open source "
+"project. Mattermost software is used by thousands of organizations around"
+" the world in 16 languages."
+msgstr ""
+
+#: ../../source/process/handbook.rst:8
+msgid "Mission"
+msgstr ""
+
+#: ../../source/process/handbook.rst:10
+msgid ""
+"Our mission is to make the world more safe and productive by developing "
+"and delivering secure, open source collaboration software that is "
+"trusted, flexible and offers fast time-to-value."
+msgstr ""
+
+#: ../../source/process/handbook.rst:13
+msgid "Leadership Principles"
+msgstr ""
+
+#: ../../source/process/handbook.rst:15
+msgid ""
+"Leadership principles are deliberate choices defining our behavior. When "
+"facing complexity, uncertainty, or ambiguity (CUA) we determine our point"
+" of view and our actions through the lens of our values:"
+msgstr ""
+
+#: ../../source/process/handbook.rst:17
+msgid ""
+"**Customer Obsession** - We exist to make customers successful. In "
+"everything we do, start with customer perspective and work backwards. "
+"Earn and keep their trust."
+msgstr ""
+
+#: ../../source/process/handbook.rst:19
+msgid ""
+"**Ownership** - Own the outcomes of your activity. Don't drop the ball. "
+"When we see a vacuum on something important, we jump in--we never say "
+"\"it's not my job.\""
+msgstr ""
+
+#: ../../source/process/handbook.rst:21
+msgid ""
+"**High Impact** - Figure out what matters most, and focus on those "
+"priorities. When deciding to work on low impact or high impact projects, "
+"choose high impact."
+msgstr ""
+
+#: ../../source/process/handbook.rst:23
+msgid ""
+"**Self-Awareness** - We understand and seek to understand our strengths "
+"and growth opportunities, as individuals and organizations. We are open "
+"to critique and share critique constructively and respectfully."
+msgstr ""
+
+#: ../../source/process/handbook.rst:25
+msgid ""
+"**Insist on High Standards** — Have relentless high standards. "
+"Continually raise the bar for high-quality products and processes."
+msgstr ""
+
+#: ../../source/process/handbook.rst:27
+msgid ""
+"**Earn Trust** — Make decisions based on maximizing the trust of others "
+"in your judgement. Be open, self-critical and factual."
+msgstr ""
+
+#: ../../source/process/handbook.rst:30
+msgid "Products"
+msgstr ""
+
+#: ../../source/process/handbook.rst:32
+msgid ""
+"Mattermost Team Edition under MIT license and the Mattermost open source "
+"projects under various licenses are maintained by core committers, "
+"including both staff from Mattermost, Inc. and volunteer contributors "
+"from the Mattermost user and customer communities."
+msgstr ""
+
+#: ../../source/process/handbook.rst:34
+msgid ""
+"Mattermost Enterprise Editions, which are commercial extensions built on "
+"top of the Mattermost open source projects, are developed, supported and "
+"sold by Mattermost, Inc."
+msgstr ""
+
+#: ../../source/process/handbook.rst:36
+msgid ""
+"For more information, see our `Product Overview "
+"<https://docs.mattermost.com/overview/product.html>`__."
+msgstr ""
+
+#: ../../source/process/handbook.rst:39
+msgid "Company"
+msgstr ""
+
+#: ../../source/process/handbook.rst:41
+msgid ""
+"Mattermost is an open source, remote-first, communities-centered company "
+"based in Palo Alto, California and headquartered on the internet."
+msgstr ""
+
+#: ../../source/process/handbook.rst:43
+msgid ""
+"**Open source** means that by default we make our technology, business "
+"process and source code available to the public. We develop a small "
+"portion as proprietary technology, built upon our open source work, to "
+"license for subscription fees that enable more high quality open source "
+"work to be produced. Since the start of the Mattermost open source "
+"project in 2015, we have used this model to develop effective open source"
+" solutions for the world to use. This model is sometimes called `Thin "
+"Open Core <https://medium.com/open-consensus/2-open-core-definition-"
+"examples-tradeoffs-e4d0c044da7c>`_."
+msgstr ""
+
+#: ../../source/process/handbook.rst:45
+msgid ""
+"**Remote-first** means that by default our staff works anywhere in the "
+"world where a) we have support for quality video calling and b) where we "
+"can work in a legally appropriate environment. Mattermost was born in an "
+"extraordinary age where organizations can attract, hire and enable remote"
+" teams--working from homes, coffee shops and co-working spaces across "
+"timezones--to produce better technology and business results in less time"
+" than purely office-based teams, while maintaining security and "
+"compliance standards."
+msgstr ""
+
+#: ../../source/process/handbook.rst:47
+msgid ""
+"Remote-first culture flourishes when we share one simple principle: "
+"**Courtesy**. Courtesy means Mattermosters are thoughtful about keeping "
+"our communities appropriately informed, following etiquette for "
+"discussions, calls and video meetings, and giving and receiving feedback "
+"on how to work better together. Courtesy also means we gladly accommodate"
+" those who prefer to work out of a dedicated office. We are remote-first,"
+" not remote-only."
+msgstr ""
+
+#: ../../source/process/handbook.rst:49
+msgid ""
+"**Communities-centered** means we define our success in the context of "
+"the success of our `communities <https://docs.mattermost.com/process"
+"/community-overview.html>`_: users, customers, implementers, resellers, "
+"technology partners, contributors, and colleagues. The success of each "
+"community is owned by a member of the Mattermost leadership team. The "
+"plural definition of \"communities\" is intended to avoid unconsciously "
+"marginalizing downstream stakeholders."
+msgstr ""
+
+#: ../../source/process/handbook.rst:51
+msgid ""
+"**Based in Palo Alto, California and headquartered on the internet** "
+"means the mailing address for Mattermost, Inc. is in Palo Alto, "
+"California, and our headquarters is on the internet, specifically the "
+"production-quality Mattermost instance at "
+"https://community.mattermost.com. Our online headquarters is where "
+"Mattermost staff work with our communities of colleagues, users, "
+"partners, customers, candidates, contributors and other `community "
+"members <https://docs.mattermost.com/process/community-overview.html>`_ "
+"to envision, develop and refine new open source technologies to make the "
+"world safer and more productive. Staff at headquarters, working in an "
+"open source, remote-first, communities-centered company, are "
+"\"Mattermosters\". Staff who choose to work from an office are called "
+"\"Commuters\"."
+msgstr ""
+

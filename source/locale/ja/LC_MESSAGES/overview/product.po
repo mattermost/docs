@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/overview/product.rst:3
+msgid "Product Overview"
+msgstr ""
+
+#: ../../source/overview/product.rst:5
+msgid ""
+"**Mattermost** provides high trust collaboration and messaging solutions "
+"through an open source, community-powered approach. Enjoy all the "
+"productivity benefits of workplace messaging across web, mobile and PC, "
+"with unlimited archiving, search and integrations within IT-controlled "
+"private environments in public clouds, including AWS and Azure, as well "
+"as on-premise in private clouds and virtual or physical servers."
+msgstr ""
+
+#: ../../source/overview/product.rst:7
+msgid ""
+"Thousands of organizations use Mattermost around the world in 16 "
+"languages for its unmatched benefits:"
+msgstr ""
+
+#: ../../source/overview/product.rst:9
+msgid ""
+"**Security** - Keep vital communications, including access to mobile and "
+"desktop apps, within your private environments. Deploy using `dozens of "
+"security features <https://docs.mattermost.com/overview/security.html>`__"
+" vetted by global information security communities. Data stays on servers"
+" you control, encrypted using keys you control."
+msgstr ""
+
+#: ../../source/overview/product.rst:11
+msgid ""
+"**Configurability** - Adapt your deployment to your needs, preferences, "
+"policies and existing systems. Mattermost integrates with your evolving "
+"security, compliance and monitoring infrastructure and offers a host of "
+"app integrations, webhooks, APIs, and drivers to bring all your "
+"communication and workflow into one place."
+msgstr ""
+
+#: ../../source/overview/product.rst:13
+msgid ""
+"**Scalability** - Grow from dozens of users to tens of thousands on the "
+"same server. Built on a high performance, single-tenant infrastructure, "
+"Mattermost E20 offers cluster-based high availability deployments with "
+"horizontal scaling and advanced performance monitoring."
+msgstr ""
+
+#: ../../source/overview/product.rst:16
+msgid "About the Mattermost Open Source Project"
+msgstr ""
+
+#: ../../source/overview/product.rst:18
+msgid ""
+"At its core, Mattermost is an open source, hybrid cloud alternative to "
+"proprietary SaaS messaging for teams. The software, developed in "
+"partnership with over 500 contributors from around the world, is designed"
+" to increase the agility, efficiency and innovation in high trust "
+"organizations while keeping data and operations under IT control."
+msgstr ""
+
+#: ../../source/overview/product.rst:20
+msgid ""
+"Core committers, including both community contributors and paid staff at "
+"Mattermost, Inc., determine the project roadmap. For enterprises with "
+"needs beyond the scope of the open source project, commercial "
+"\"Enterprise Edition\" extensions are available from Mattermost, Inc. "
+"Partnership with our core committer community, along with revenue from "
+"Enterprise Edition, ensures the continued improvement of all editions."
+msgstr ""
+
+#: ../../source/overview/product.rst:23
+msgid "Mattermost Editions"
+msgstr ""
+
+#: ../../source/overview/product.rst:25
+msgid "Mattermost is offered in three editions:"
+msgstr ""
+
+#: ../../source/overview/product.rst:28
+msgid "Mattermost Team Edition"
+msgstr ""
+
+#: ../../source/overview/product.rst:30
+msgid ""
+"A free-to-use, open source, self-hosted alternative to proprietary SaaS "
+"messaging. Team Edition is your open source \"virtual office\", offering "
+"all the core productivity benefits of competing SaaS solutions. It "
+"deploys as single Linux binary with MySQL or PostgreSQL under an MIT "
+"license. Features include:"
+msgstr ""
+
+#: ../../source/overview/product.rst:32
+msgid "One-to-one and group messaging, file sharing, and unlimited search history"
+msgstr ""
+
+#: ../../source/overview/product.rst:33
+msgid "Native apps for iOS, Android, Windows, Mac, Linux"
+msgstr ""
+
+#: ../../source/overview/product.rst:34
+msgid "Threaded messaging, emoji, and custom emoji"
+msgstr ""
+
+#: ../../source/overview/product.rst:35
+msgid "Tools for custom branding"
+msgstr ""
+
+#: ../../source/overview/product.rst:36
+msgid "Continuous archiving"
+msgstr ""
+
+#: ../../source/overview/product.rst:37
+msgid "Multi-factor authentication"
+msgstr ""
+
+#: ../../source/overview/product.rst:38
+msgid ""
+"Highly customizable `third party bots, integrations "
+"<https://about.mattermost.com/community-applications/#publicApps>`__, and"
+" `command line tools <https://docs.mattermost.com/administration/command-"
+"line-tools.html>`__"
+msgstr ""
+
+#: ../../source/overview/product.rst:39
+msgid ""
+"Extensive integration support via `webhooks, APIs, drivers "
+"<https://docs.mattermost.com/guides/integration.html>`__ and `third party"
+" extensions <https://about.mattermost.com/default-app-directory/>`__"
+msgstr ""
+
+#: ../../source/overview/product.rst:40
+msgid "Easily scalable from dozens to hundreds of users"
+msgstr ""
+
+#: ../../source/overview/product.rst:41
+msgid "New features and improvements released every two months"
+msgstr ""
+
+#: ../../source/overview/product.rst:42
+msgid ""
+"Multiple languages including U.S. English, Chinese (Simplified and "
+"Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, "
+"Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian"
+msgstr ""
+
+#: ../../source/overview/product.rst:44
+msgid ""
+"To get started, `download the open source Mattermost Team Edition server "
+"<https://about.mattermost.com/download>`__ under an MIT license."
+msgstr ""
+
+#: ../../source/overview/product.rst:47
+msgid "Mattermost Enterprise Edition E10"
+msgstr ""
+
+#: ../../source/overview/product.rst:49
+msgid ""
+"A commercial enterprise messaging solution for teams, groups and "
+"departments working on multiple projects scaling from hundreds to "
+"thousands of users. E10 is your \"virtual campus\", offering security, "
+"configuration and access control options for larger organizations. "
+"Building on the features in Team Edition, it also offers:"
+msgstr ""
+
+#: ../../source/overview/product.rst:51
+msgid "Active Directory/LDAP single-sign-on"
+msgstr ""
+
+#: ../../source/overview/product.rst:52
+msgid "Encrypted push notifications with service level agreements (SLAs) via HPNS"
+msgstr ""
+
+#: ../../source/overview/product.rst:53
+msgid "Advanced access control policy"
+msgstr ""
+
+#: ../../source/overview/product.rst:54
+msgid "Next business day support via online ticketing system"
+msgstr ""
+
+#: ../../source/overview/product.rst:55
+msgid "Scale to handle thousands of users"
+msgstr ""
+
+#: ../../source/overview/product.rst:57
+msgid ""
+"Get started with a `free trial license "
+"<https://about.mattermost.com/trial/>`__. You can later purchase online "
+"with a `credit card <https://about.mattermost.com/pricing/>`__ or by "
+"`bank transfer <https://about.mattermost.com/quotation/>`__."
+msgstr ""
+
+#: ../../source/overview/product.rst:60
+msgid "Mattermost Enterprise Edition E20"
+msgstr ""
+
+#: ../../source/overview/product.rst:61
+msgid ""
+"A commercial enterprise-grade messaging system that scales from hundreds "
+"to tens of thousands of users. E20 is your \"virtual city\", with "
+"cluster-based horizontal scaling, high availability deployment, "
+"performance monitoring systems and compliance reporting plus advanced "
+"corporate directory integration. Building on the features in E10, it also"
+" offers:"
+msgstr ""
+
+#: ../../source/overview/product.rst:63
+msgid ""
+"Advanced SAML 2.0 authentication with Okta, OneLogin, and Active "
+"Directory Federation Services"
+msgstr ""
+
+#: ../../source/overview/product.rst:64
+msgid "Active Directory/LDAP group sync"
+msgstr ""
+
+#: ../../source/overview/product.rst:65
+msgid "Compliance exports of message histories with oversight protection"
+msgstr ""
+
+#: ../../source/overview/product.rst:66
+msgid "Custom retention policies for messages and files"
+msgstr ""
+
+#: ../../source/overview/product.rst:67
+msgid "High availability support with multi-node database deployment"
+msgstr ""
+
+#: ../../source/overview/product.rst:68
+msgid "Horizontal scaling through cluster-based deployment"
+msgstr ""
+
+#: ../../source/overview/product.rst:69
+msgid ""
+"Elasticsearch support for highly efficient database searches in a cluster"
+" environment"
+msgstr ""
+
+#: ../../source/overview/product.rst:70
+msgid "Advanced performance monitoring"
+msgstr ""
+
+#: ../../source/overview/product.rst:71
+msgid "Eligibility for Premier Support add-on"
+msgstr ""
+
+#: ../../source/overview/product.rst:73
+msgid ""
+"For a complete list of features across editions, visit the `detailed "
+"comparison chart <https://mattermost.com/pricing-feature-comparison/>`_. "
+"Get started with a `free trial license "
+"<https://about.mattermost.com/trial/>`__. You can later purchase online "
+"with a `credit card <https://about.mattermost.com/pricing/>`__ or by "
+"`bank transfer <https://about.mattermost.com/quotation/>`__."
+msgstr ""
+
+#: ../../source/overview/product.rst:75
+msgid ""
+"For purchases above 3,000 seats, please contact our `enterprise sales "
+"team <https://about.mattermost.com/contact/>`__."
+msgstr ""
+

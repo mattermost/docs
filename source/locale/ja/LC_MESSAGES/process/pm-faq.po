@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/pm-faq.rst:2
+msgid "Product Manager FAQ"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:5
+msgid "Can we take this feature out of beta?"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:7
+msgid "To officially release a feature, it should meet the following criteria:"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:9
+msgid ""
+"Scalable: Works for 60k concurrent connections, 60M rows in the database,"
+" and in High Availability"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:10
+msgid "Cross Platform: Works on all web view sizes, mobile apps, desktop apps"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:11
+msgid "Measurable: Telemetry added where appropriate"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:12
+msgid "Documented: Complete documentation is available"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:13
+msgid ""
+"Secure: Reviewed internally for security, and included in future security"
+" reviews"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:14
+msgid "Accessible: Accessibility has been added for user interface components"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:15
+msgid ""
+"Logged: Audit log entries have been added to allow system admins to "
+"troubleshoot issues"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:16
+msgid "Compliant: Anything needed for compliance is tracked in logs"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:20
+msgid "How to create redirects for in-product documentation?"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:22
+msgid ""
+"Documentation that is linked in-product should always use a redirect from"
+" www.mattermost.com instead of the docs.mattermost.com site, to ensure "
+"links are not broken in the event that they are moved on the docs site."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:24
+msgid ""
+"To set up a redirect, you must have admin access to www.mattermost.com.  "
+"Marketing can assist with this access or @jason.blais or "
+"@katie.wiersgalla can add a redirect for you."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:26
+msgid "If you have access, follow these steps:"
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:28
+msgid "Log in to the administration panel for www.mattermost.com."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:29
+msgid "From the left-hand sidebar, go to **SEO > Redirects**."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:30
+msgid ""
+"On the top of the screen, ensure you are on the **Redirects - Yoast SEO**"
+" page header on the **Redirects** tab."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:31
+msgid ""
+"Under **Type**, choose ``301 Moved Permanently`` option (this is the "
+"default option)."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:32
+msgid ""
+"In the **Old url** field, enter in the new direct you want to use in-"
+"product in the format of ``/pl/default-page-description``. Update the "
+"page description with your page information."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:33
+msgid ""
+"In the **Url** field, enter in the full URL to the page on "
+"docs.mattermost.com."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:34
+msgid ""
+"Click the **Add Redirect** botton and verify your entry is added to the "
+"list. You may need to page through to find your entry."
+msgstr ""
+
+#: ../../source/process/pm-faq.rst:35
+msgid ""
+"Test your redirect URL.  This will be the URL in the format of "
+"``https://www.mattermost.com/pl/default-page-description.html``."
+msgstr ""
+

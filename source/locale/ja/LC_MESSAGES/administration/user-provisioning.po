@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/user-provisioning.rst:4
+msgid "Provisioning Workflows"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:6
+msgid ""
+"This document provides an overview of user provisioning and "
+"deprovisioning workflows in Mattermost."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:9
+msgid "User Provisioning"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:11
+msgid ""
+"There are currently three recommended user provisioning workflows in "
+"Mattermost:"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:13
+msgid ""
+"**On demand:** If user accounts are not pre-provisioned using one of the "
+"methods described below, then a new user account will be provisioned when"
+" the user first logs in. When the user logs in, they are asked to select "
+"a public team to join (all users must belong to at least one team) and "
+"then they are added automatically to Town Square and Off-Topic channels. "
+"Mattermost also has a default channel setting that allows everyone to be "
+"added to additional channels specified by the organization."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:14
+msgid ""
+"**Pre-provisioned via bulk import:** Mattermost features a `bulk data "
+"loading tool <https://docs.mattermost.com/deployment/bulk-"
+"loading.html>`__ that can be used for pre-provisioning new users by "
+"adding them to teams and channels before their first login to Mattermost."
+" This tool automates the creation of Teams, Channels, Users and Posts "
+"(with file attachments). It can also be used to migrate users and content"
+" from an existing system."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:15
+msgid ""
+"**Mattermost API:** The Mattermost `RESTful API "
+"<https://api.mattermost.com>`__ can be used to pre-provision new user "
+"accounts as well as add and remove them from teams and channels. This "
+"model is commonly used by enterprises that have central account "
+"provisioning applications."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:19
+msgid ""
+"Mattermost plans to release a new feature in early 2019 that will enable "
+"organizations to synchronize users to teams and channels based on group "
+"membership."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:22
+msgid "Mattermost User Identifier"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:24
+msgid ""
+"The User Identifier used to uniquely identify users in Mattermost depends"
+" on the method of authentication:"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:26
+msgid ""
+"**Email/password**: Email address or username. Created by the user or "
+"previously described account pre-provisioning process."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:27
+msgid ""
+"**AD/LDAP**: Configure a unique and unchanging ID Attribute from the "
+"AD/LDAP server to be used in Mattermost. If a user's ID Attribute "
+"changes, it will create a new Mattermost account unassociated with their "
+"old one."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:28
+msgid ""
+"**SAML 2.0**: Selected during configuration. You may use an Id Attribute "
+"instead of email to bind the user. We recommend choosing an ID that is "
+"unique and will not change over time."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:31
+msgid "User Deprovisioning"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:33
+msgid "Users in Mattermost can be deactivated in the following ways:"
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:35
+msgid ""
+"**AD/LDAP Synchronization**: AD/LDAP users can be deactivated in "
+"Mattermost based on their status in the directory server via "
+"synchronization. Learn more in `AD/LDAP documentation "
+"<https://docs.mattermost.com/deployment/sso-ldap.html#how-does-"
+"deactivating-users-work>`__."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:36
+msgid ""
+"**System Console**: User management screen in **System Console > Users** "
+"allows administrators to deactiveate users with email/password login."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:37
+#, python-format
+msgid ""
+"**RESTful API** The Mattermost API can be used to deactivate users. See "
+"`API documentation to learn more "
+"<https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D%2Fdelete>`__."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:38
+msgid ""
+"**Command Line Interface**: The Mattermost CLI can be used to deactivate "
+"users. See `CLI documentation to learn more "
+"<https://docs.mattermost.com/administration/command-line-tools.html"
+"#mattermost-user-deactivate>`__."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:40
+msgid ""
+"Once deactivated, users still exist in the Mattermost database and their "
+"messages can still be viewed in Mattermost.  To delete a user and all of "
+"their content, you can use the Mattermost CLI tool `as described here "
+"<https://docs.mattermost.com/administration/command-line-tools.html"
+"#mattermost-user-delete>`__."
+msgstr ""
+
+#: ../../source/administration/user-provisioning.rst:44
+msgid ""
+"As long as the ID attribute selected via AD/LDAP or SAML 2.0 is a unique "
+"identifier, the user’s email address or name (along with other "
+"attributes) can be updated without breaking the user’s account."
+msgstr ""
+

@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/mobile/mobile-appstore-install.rst:2
+msgid "Install from Apple App Store and Google Play"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:4
+msgid ""
+"To deploy the apps hosted in the Apple App Store and Google Play, we "
+"recommend you take the following steps to secure your deployment:"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:6
+msgid ""
+"Set up a way to connect to your private network Mattermost instance, "
+"using:"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:7
+msgid ""
+"An external proxy with encrypted transport through HTTPS and WSS network "
+"connections"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:8
+msgid ""
+"(Recommended) Depending on your security policies, consider deploying a "
+"mobile VPN client with multi-factor authentication (MFA), GitLab SSO with"
+" MFA, or run Mattermost Enterprise Edition with MFA"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:10
+msgid "Enable mobile push notifications"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:11
+msgid ""
+"Go to **System Console > Notifications > Mobile Push** in prior versions "
+"or **System Console > Environment > Push Notification Server** in "
+"versions after 5.12"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:12
+msgid ""
+"If testing the apps, or using Team Edition: Select \"Use TPNS connection "
+"to send notifications to iOS and Android apps\""
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:13
+msgid ""
+"If using the apps in production with Enterprise Edition: Select \"Use "
+"HPNS connection with uptime SLA to send notifications to iOS and Android "
+"apps\""
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:17
+msgid "(Optional) Customize mobile push notification contents"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:18
+msgid ""
+"Go to **System Console** > **Notifications** > **Mobile Push** in prior "
+"versions or **System Console > Site Configuration > Notifications** in "
+"versions after 5.12"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:19
+msgid ""
+"Select an option for **Push Notification Contents** to specify what type "
+"of information to include in push notifications"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:20
+msgid ""
+"Most deployments choose to include the **full message content sent in the"
+" notification payload**. If your organization has policies or compliance "
+"requirements regarding data security, you may opt for sending **full "
+"message content fetched from the server on receipt** (Enterprise Edition "
+"E20) so messages are not sent to Apple's Push Notification Service or "
+"Google's Firebase Cloud Messaging notification service."
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:24
+msgid "Download the mobile applications to your mobile device:"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:26
+msgid "`iOS App <https://about.mattermost.com/mattermost-ios-app/>`__"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:27
+msgid "`Android App <https://about.mattermost.com/mattermost-android-app/>`__"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:29
+msgid ""
+"Open the mobile application and enter the address of your Mattermost "
+"server to connect"
+msgstr ""
+
+#: ../../source/mobile/mobile-appstore-install.rst:31
+msgid ""
+"Confirm you're subscribed to `Mattermost Security Bulletins "
+"<https://about.mattermost.com/security-bulletin/>`__. In future, when "
+"notified of security updates, apply them promptly."
+msgstr ""
+

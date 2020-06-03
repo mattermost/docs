@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/video-and-audio-calling.rst:2
+msgid "Voice, Video and Screensharing"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:4
+msgid ""
+"Our `Integrations Directory <https://integrations.mattermost.com>`_ has "
+"several integrations to connect by voice or video call, or to share your "
+"screen with team members in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:6
+msgid ""
+"Here are some popular options below, including self-hosted on-prem or "
+"self-hosted private cloud solutions, and vendor-hosted SaaS solutions."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:8
+msgid ""
+"You can also neatly link voice, video and screensharing solutions to "
+"channels by using Markdown formatting in the channel header. Example: "
+"``[Click for video call](https://link_to_solution)``."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:11
+msgid "Zoom"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:13
+msgid ""
+"Start and join voice calls, video calls and use screen sharing with your "
+"team members, developed by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:14
+msgid ""
+"Click a video icon in a Mattermost channel to invite team members to join"
+" a Zoom call, hosted using the credentials of the user who initiated the "
+"call."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:15
+msgid ""
+"Requires 1 paid `Zoom Pro, Business, Education, or API plan, "
+"<https://zoom.us/pricing>`_ to generate an API key and secret for "
+"$14.99/month."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:16
+#: ../../source/deployment/video-and-audio-calling.rst:26
+msgid "Supports a self-hosted cloud solution, and a vendor-hosted cloud solution."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:17
+msgid "Docs available at: https://docs.mattermost.com/integrations/zoom.html"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:18
+msgid ""
+"Source code available at: https://github.com/mattermost/mattermost-"
+"plugin-zoom"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:21
+msgid "Cisco Webex Cloud"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:23
+msgid ""
+"Start and join voice and video calls, and share your screen with members "
+"of your team, developed by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:24
+msgid ""
+"Use the ``/webex`` command or click the video icon in a Mattermost "
+"channel to invite team members to join a Webex call, hosted using the "
+"credentials of the user who initiated the call."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:25
+msgid ""
+"Requires 1 paid `Cisco Webex Developer Account, "
+"<https://developer.webex.com/>`_ to generate an API key and secret."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:27
+msgid ""
+"Source code and docs available at: https://github.com/mattermost"
+"/mattermost-plugin-webex"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:30
+msgid "BigBlueButton"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:32
+msgid ""
+"Start and join voice calls, video calls and use screen sharing with your "
+"team members, developed by Blindside Networks."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:33
+msgid "A test install is provided to try out the feature on a Mattermost install."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:34
+msgid ""
+"Supports a self-hosted on-prem solution, and a vendor-hosted cloud "
+"solution."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:35
+msgid ""
+"Source code and docs available at: https://github.com/blindsidenetworks"
+"/mattermost-plugin-bigbluebutton"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:38
+msgid "Skype for Business"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:40
+msgid ""
+"Start and join voice calls, video calls and use screen sharing with your "
+"team members, developed by kosgrz."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:41
+msgid ""
+"Clicking a video icon in a Mattermost channel invites team members to "
+"join a Skype for Business call, hosted using the credentials of the user "
+"who initiated the call."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:42
+msgid "Supports a vendor-hosted cloud solution."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:43
+msgid ""
+"Source code and docs available at: https://github.com/kosgrz/mattermost-"
+"plugin-skype4business"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:46
+msgid "WebRTC"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:48
+msgid ""
+"Start one-on-one voice and video calls, based on the WebRTC protocol, "
+"developed by Nikhil Rajan."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:49
+#: ../../source/deployment/video-and-audio-calling.rst:57
+msgid "Calls embedded into the Mattermost interface for seamless user experience."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:50
+msgid ""
+"No third-party dependancy, uses a browser-to-browser and serverless "
+"approach to initiate calls."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:51
+msgid ""
+"Source code and docs available at: https://github.com/niklabh/mattermost-"
+"plugin-webrtc-video"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:54
+msgid "Kopano WebMeetings"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:56
+msgid ""
+"Start one-on-one voice and video calls, based on the WebRTC protocol, "
+"developed by Kopano."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:58
+#: ../../source/deployment/video-and-audio-calling.rst:66
+#: ../../source/deployment/video-and-audio-calling.rst:73
+#: ../../source/deployment/video-and-audio-calling.rst:81
+msgid "Supports a self-hosted on-prem solution."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:59
+msgid ""
+"Source code and docs available at: "
+"https://stash.kopano.io/projects/KM/repos/mattermost-plugin-"
+"kopanowebmeetings/browse"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:62
+msgid "Jitsi"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:64
+msgid ""
+"Start and join voice calls, video calls and use screen sharing with your "
+"team members, developed by Sean Sackowitz."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:65
+msgid ""
+"Click a video icon in a Mattermost channel to invite team members to join"
+" a Jitsi call."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:67
+msgid ""
+"Source code and docs available at: https://github.com/seansackowitz"
+"/mattermost-plugin-jitsi"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:70
+msgid "SIP PBX"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:72
+msgid ""
+"Connect your company's individual desk extensions, external telephone "
+"lines and mobile networks with Mattermost, developed by Bytemine GmbH."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:74
+msgid "Source code and docs available at: https://github.com/bytemine/mattersip"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:77
+msgid "appear.in"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:79
+msgid ""
+"Start and join voice calls, video calls and use screen sharing with your "
+"team members, developed by zarej."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:80
+msgid "Use a slash command `/appearin` to start a new appear.in call."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:82
+msgid ""
+"Source code and docs available at: https://github.com/zarej/Mattermost-"
+"Integration-with-Appear.in"
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:84
+msgid ""
+"Support for other 3rd party video, audio and screensharing solutions via "
+"plugins is planned. A plugin for Cisco WebEx Meetings Server is currently"
+" in development by the Mattermost communities, and scheduled for internal"
+" development in Q3/2019 if not completed by our communities."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:86
+msgid ""
+"Have a proposal for a voice and video call integration? `Let us know in "
+"the feature proposal forum "
+"<https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_."
+msgstr ""
+
+#: ../../source/deployment/video-and-audio-calling.rst:88
+msgid ""
+"Have built an integration? `Let us know "
+"<https://integrations.mattermost.com/submit-an-integration/>`_ and we'll "
+"share in our `Integrations Directory "
+"<https://integrations.mattermost.com>`_."
+msgstr ""
+

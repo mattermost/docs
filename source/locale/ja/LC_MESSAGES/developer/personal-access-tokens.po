@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/personal-access-tokens.rst:4
+msgid "Personal Access Tokens"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:6
+msgid ""
+"Personal access tokens function similar to session tokens and can be used"
+" by integrations to `authenticate against the REST API "
+"<https://about.mattermost.com/default-api-authentication>`__. It is the "
+"most commonly used type of token for integrations."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:14
+msgid "Creating a Personal Access Token"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:16
+msgid ""
+"1 - Enable personal access tokens in **System Console > Integrations > "
+"Custom Integrations** in prior versions or **System Console > "
+"Integrations > Integration Management** in versions after 5.12."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:18
+msgid ""
+"2 - Identify the account you want to create a personal access token with."
+" You may optionally create a new user account for your integration, such "
+"as for a bot account. By default, only System Admins have permissions to "
+"create a personal access token."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:20
+msgid ""
+"3 - To create an access token with a non-admin account, you must first "
+"give it the appropriate permissions. Go to **System Console > Users**, "
+"search for the user account, and select **Manage Roles** from the "
+"dropdown."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:25
+msgid "4 - Select **Allow this account to generate personal access tokens.**"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:30
+msgid ""
+"You may optionally allow the account to post to any channel in your "
+"Mattermost server, including direct messages by choosing the **post:all**"
+" role. **post:channels** role allows the account to post to any public "
+"channel in the Mattermost server."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:32
+msgid "Then hit **Save**."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:34
+msgid "5 - Sign in to the user account to create a personal access token."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:36
+msgid ""
+"6 - Go to **Account Settings > Security > Personal Access Tokens** and "
+"click **Create New Token**."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:38
+msgid ""
+"7 - Enter a description for the token, so you remember what it's used "
+"for. Then hit **Save**."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:41
+msgid ""
+"If you create a personal access token for a System Admin account, be "
+"extra careful who you share it with. The token enables a user to have "
+"full access to the account, including System Admin privileges."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:43
+msgid ""
+"It is recommended to create a personal access token for non-admin "
+"accounts."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:45
+msgid ""
+"8 - Copy the access token now for your integration and store it in a "
+"secure location. You won't be able to see it again!"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:47
+msgid ""
+"9 - You're all set! You can now use the personal access token for "
+"integrations to interact with your Mattermost server and `authenticate "
+"against the Mattermost REST API <https://about.mattermost.com/default-"
+"api-authentication>`__."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:53
+msgid "Revoking a Personal Access Token"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:55
+msgid ""
+"A personal access token can be revoked by deleting the token from either "
+"the user's account settings or from the System Console. Once deleted, all"
+" sessions using the token are deleted, and any attempts to use the token "
+"to interact with the Mattermost server are blocked."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:57
+msgid ""
+"Tokens can also be temporarily deactivated from the user's account "
+"settings. Once deactivated, all sessions using the token are deleted, and"
+" any attempts to use the token to interact with the Mattermost server are"
+" blocked. However, the token can be reactivated at any time."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:60
+msgid "Account Settings"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:62
+msgid ""
+"1 - Sign in to the user account and go to **Account Settings > Security >"
+" Personal Access Tokens**."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:64
+#: ../../source/developer/personal-access-tokens.rst:71
+msgid ""
+"2 - Identify the access token you want to revoke and hit **Delete**. "
+"Confirm the deletion."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:67
+msgid "System Console"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:69
+msgid ""
+"1 - Go to **System Console > Users**, search for the user account which "
+"the token belongs to, and select **Manage Tokens** from the dropdown."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:74
+msgid "Frequently Asked Questions (FAQ)"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:77
+msgid "How do personal access tokens differ from regular session tokens?"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:79
+msgid ""
+"Personal access tokens do not expire. As a result, you can more easily "
+"integrate with Mattermost, bypassing the `session length limits set in "
+"the System Console <https://docs.mattermost.com/administration/config-"
+"settings.html#sessions>`__."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:80
+msgid ""
+"Personal access tokens can be used to authenticate against the API more "
+"easily, including with AD/LDAP and SAML accounts."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:81
+msgid ""
+"You can optionally assign additional roles for the account creating "
+"personal access tokens. This lets the account post to any channel in "
+"Mattermost, including direct messages."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:83
+msgid ""
+"Besides the above differences, personal access tokens are exactly the "
+"same as regular session tokens. They are cryptic random IDs and are not "
+"different from a user's regular session token created after logging in to"
+" Mattermost."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:86
+msgid "Can I set personal access tokens to expire?"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:88
+#, python-format
+msgid ""
+"Not in Mattermost, but you can automate your integration to cycle its "
+"token `through the REST API "
+"<https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`__."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:91
+msgid "How do I identify a badly behaving personal access token?"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:93
+msgid ""
+"Best option is to go to **System Console > Logs** and finding error "
+"messages relating to a particular token ID."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:95
+msgid ""
+"Once identified, you can search which user account the token ID belongs "
+"to in **System Console > Users** and revoke it through the **Manage "
+"Tokens** dropdown option."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:98
+msgid "Do personal access tokens continue to work if the user is deactivated?"
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:100
+msgid ""
+"No. The session used by the personal access token is revoked immediately "
+"after a user is deactivated, and a new session won't be created."
+msgstr ""
+
+#: ../../source/developer/personal-access-tokens.rst:102
+msgid ""
+"The tokens are preserved and continue to function if the user account is "
+"re-activated. This is useful when a bot account is temporarily "
+"deactivated for troubleshooting, for instance."
+msgstr ""
+

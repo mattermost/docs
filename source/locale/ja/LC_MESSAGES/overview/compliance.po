@@ -1,0 +1,619 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/overview/compliance.rst:3
+msgid "Certifications and Compliance Overview"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:5
+msgid ""
+"This overview summarizes various compliances and certifications "
+"Mattermost is designed to support, including:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:7
+#: ../../source/overview/compliance.rst:11
+msgid "GDPR Compliance"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:8
+msgid "U.S. Export Compliance"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:13
+msgid ""
+"The following overview summarizes how Mattermost, Inc. and Mattermost "
+"software comply with the European Union's General Data Protection "
+"Regulation, also known as Regulation (EU): 2016/679 (`See full text <http"
+"://eur-lex.europa.eu/legal-"
+"content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:16
+msgid "Continual Commitment to the Principles of GDPR"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:18
+msgid ""
+"Mattermost is a collaboration hub for highly-trusted organizations and is"
+" committed to supporting the principles of GDPR to protect the data of "
+"people in the European Union. Mattermost completes this mission through "
+"the use of:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:20
+msgid ""
+"**Security Infrastructure** - Continual investment in security, privacy "
+"and compliance capabilities"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:21
+msgid ""
+"**Contractual Obligations** - Appropriate contractual obligations through"
+" our terms of service, including the `Data Processing Addendum "
+"<https://about.mattermost.com/default-data-processing-addendum/>`__ in "
+"our standard `Terms of Service <https://about.mattermost.com/terms>`__"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:22
+msgid ""
+"**Privacy Measures** - Self-certification to international standards for "
+"data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy "
+"measures are outlined in our `Privacy Policy <https://mattermost.com"
+"/privacy-policy/>`__."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:23
+msgid "**Product Features** to ensure data management and data portability"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:25
+msgid ""
+"To say up to date with our efforts, please subscribe to `our regular "
+"newsletter <https://about.mattermost.com/newsletter/>`__."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:28
+msgid "Security Infrastructure"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:30
+msgid ""
+"Mattermost enables organizations to protect their information, and the "
+"information of their users and customers, through self-hosted "
+"communication infrastructure that has been developed with a high standard"
+" of security. The features of this security infrastructure include:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:32
+msgid ""
+"**Security Features** in Mattermost open source and commercial offerings "
+"that enable deployment of your organization’s own infrastructure"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:33
+msgid ""
+"**Responsible Disclosure Policy** for security researchers around the "
+"world to confidentially report suspected vulnerabilities, which can be "
+"addressed in updates to Mattermost software"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:34
+msgid ""
+"**Security Reviews** conducted by both our own internal security review "
+"team and external security researchers"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:35
+msgid ""
+"**ISO 27001 Standards** which are met to achieve alignment with "
+"international security guidelines"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:38
+msgid "Contractual Obligations"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:40
+msgid ""
+"Mattermost adheres to contractual obligations for ensuring the proper "
+"management of data through:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:42
+msgid ""
+"**GDPR-Compliant Data Processing Addendum** included with Mattermost’s "
+"standard terms"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:43
+msgid ""
+"**Mattermost Privacy Policy** sharing how data is handled on the online "
+"infrastructure controlled by Mattermost, Inc."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:46
+msgid "Privacy Measures"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:48
+msgid ""
+"Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy "
+"Shield** principles of notice, choice, onward transfer, security, data "
+"integrity, access and enforcement for personal data submitted by our "
+"customers and partners."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:50
+msgid ""
+"Mattermost outlines security measures to maintain the safety of personal "
+"data submitted by our customers and partners in our `Privacy Policy "
+"<https://mattermost.com/privacy-policy/>`__."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:53
+msgid "Product Features"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:55
+msgid ""
+"Mattermost supports features that ensure data management and data "
+"portability."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:58
+msgid "Data Management"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:60
+msgid ""
+"**Data Retention**: Use `data retention "
+"<https://docs.mattermost.com/administration/data-retention.html>`__ to "
+"automatically erase data after a set period of time, a feature that meets"
+" the Right to Erasure principle. In Team Edition, you can use database "
+"scripts to achieve the same result."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:62
+msgid ""
+"**Profile Deletion**: Delete a user’s personal information via `a command"
+" line tool <https://docs.mattermost.com/administration/command-line-"
+"tools.html#platform-user-delete>`__. The command permanently deletes all "
+"user information including messages created by the user."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:64
+msgid ""
+"**Self-Hosted Push Notification Service**: Self-host your own push "
+"notification service, or deploy mobile apps with any EMM provider that "
+"supports `AppConfig <https://www.appconfig.org/members/>`__ to meet "
+"security and compliance policies. See `mobile app guide "
+"<https://docs.mattermost.com/mobile/mobile-overview.html>`__ to learn "
+"more."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:67
+msgid "Data Portability"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:69
+msgid ""
+"**Data Import**: Use the `bulk loading tool "
+"<https://docs.mattermost.com/deployment/bulk-loading.html>`__ to migrate "
+"data from an existing messaging system, or for pre-populating a new "
+"installation with data. `Review this guide "
+"<https://docs.mattermost.com/administration/migrating.html#migrating-"
+"from-hipchat-server-and-hipchat-data-center-to-mattermost>`__ which "
+"summarizes the different approaches and meets the `Right to Data "
+"Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:71
+msgid ""
+"**Data Export**: Use `compliance exports "
+"<https://docs.mattermost.com/administration/compliance-export.html>`__ to"
+" export conversations from public, private and direct message channels in"
+" XML or EML format. Those in Team Edition can export conversations "
+"directly from the database, both `in MySQL "
+"<https://www.itworld.com/article/2833078/it-management/3-ways-to-import-"
+"and-export-a-mysql-database.html>`__ and `in PostgreSQL "
+"<https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-"
+"export-a-postgresql-database>`__."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:75
+msgid "Accessibility Compliance"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:77
+msgid "Compliance with accessibility standards is achieved in the following ways:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:79
+msgid ""
+"**508 Compliance** - For U.S. public sector organizations seeking to "
+"confirm 508 compliance, Mattermost publicly shares its `Voluntary Product"
+" Accessibility Template (VPAT) online "
+"<https://docs.mattermost.com/overview/vpat.html>`__."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:81
+msgid ""
+"**WCAG 2.0** - For meeting Web Contact Accessibility Guidelines 2.0 "
+"(WCAG), Mattermost has received a 3rd party \"A\" rating and is working "
+"towards an \"AA\" rating."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:83
+msgid ""
+"**ADA** - Mattermost compliance with the Americans with Disabilities Act "
+"(ADA) is achieved by offering the accessibility support detailed in the "
+"VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the "
+"interface to accessibility tools."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:85
+msgid ""
+"**Remediation** - Any technical issue in a current or future product "
+"release that would prevent compliance with accessibility ratings stated "
+"in product documentation would be considered a product defect and "
+"Mattermost would welcome the `public filing of an issue report against "
+"the defect <https://www.mattermost.org/filing-issues/>`__ so that it may "
+"be resolved."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:88
+msgid "U.S. Export Compliance Overview"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:91
+msgid "Summary Table"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:94
+msgid "Mattermost Product"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:94
+msgid "Export Control Classification Number (ECCN)"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:96
+msgid "Mattermost Enterprise Edition E10"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:96
+#: ../../source/overview/compliance.rst:99
+msgid ""
+"`ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs"
+"/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__ "
+"with a License Exception available of `ENC "
+"<https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740"
+"-license-exceptions/file>`__"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:99
+msgid "Mattermost Enterprise Edition E20"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:102
+msgid "Mattermost Team Edition"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:102
+msgid ""
+"Not subject to the U.S. Export Administration Regulations (EAR) given "
+"software is publicly available and fully available to compile from "
+"publicly available source code at https://github.com/mattermost/"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:107
+msgid "Overview"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:109
+msgid ""
+"The U.S. government regulates the transfer of information, commodities, "
+"technology and software considered to be strategically important to the "
+"U.S. in the interest of national security, economic and/or foreign policy"
+" concerns. Many countries outside of the U.S. have similar controls on "
+"exports for the same reasons."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:113
+msgid ""
+"There is a complex network of U.S. agencies and inter-related regulations"
+" that govern exports collectively referred to as “Export Controls.\""
+msgstr ""
+
+#: ../../source/overview/compliance.rst:116
+msgid ""
+"It is the policy of Mattermost to comply with all export compliance laws "
+"in all countries in which it transacts business. Because Mattermost is a "
+"U.S.-based global company, our products, collectively referred to as "
+"“Commodities,\" which include our software as well as our equipment, "
+"materials and services, are subject to the export laws and regulations of"
+" every country in which we conduct business. Non-compliance with export "
+"control regulations can subject Mattermost and its affiliates, including "
+"its customers, employees and business partners to criminal and civil "
+"penalties, the seizure of assets, the denial of export privileges, and "
+"suspension or debarment from Government Contracts."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:123
+msgid ""
+"For these reasons, please take the time to familiarize yourself with "
+"applicable export (and import) controls in the jurisdictions in which you"
+" operate. Although Mattermost cannot provide advice on export matters, "
+"this web page provides the information needed in order export Mattermost "
+"products."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:126
+msgid ""
+"This overview is specific to the `U.S. Export Administration Regulations "
+"<https://www.bis.doc.gov/index.php/regulations/export-administration-"
+"regulations-ear>`__ (EAR), however, business operations may subject you "
+"to other regulations such as the `International Traffic in Arms "
+"Regulations "
+"<https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:129
+msgid "General Information"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:131
+msgid ""
+"Start by taking a look at the `U.S. Bureau of Industry and Security "
+"<https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 "
+"<https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730"
+"-general-information/file>`__ of the U.S. Export Administration "
+"Regulations to understand what the regulations cover and what is “Subject"
+" to the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents"
+"/regulation-docs/412-part-734-scope-of-the-export-administration-"
+"regulations/file>`__ (“export controlled”)."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:135
+msgid "Export Classification and Licensing"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:137
+msgid ""
+"Although what is subject to the Export Administration Regulations is "
+"quite broad, that does not mean an export license is required for every "
+"transaction. The foundation of understanding export controls related to "
+"hardware, software and technology can be found within the `Commerce "
+"Control List <https://www.bis.doc.gov/index.php/regulations/commerce-"
+"control-list-ccl>`__ (CCL), which has 10 categories, 0-9, and is set up "
+"as a positive list. The first step is determining if the item to be "
+"exported is subject to the EAR."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:141
+msgid ""
+"At Mattermost, our Team Edition software is `outside the scope of the EAR"
+" <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1"
+"-encryption-items-not-subject-to-the-ear>`__, as it is derived from "
+"publicly available encryption source code and the complete software "
+"package for both the source code (https://github.com/mattermost/) and "
+"binary versions are publicly available. Mattermost enterprise software is"
+" found in `Category 5, Part 2 "
+"<https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-"
+"register-notices/federal-register-2014/951-ccl5-pt2/file>`__ of the CCL "
+"as Telecommunications and Information Security items (hardware, software "
+"and technology). Most items in this category have encryption."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:143
+msgid ""
+"Often a license exception under `Part 740 "
+"<https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740"
+"-license-exceptions/file>`__ is available where a Commerce Control List "
+"item lists the available license exception(s) specific to an Export "
+"Control Classification Number (ECCN), based on a combination of factors."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:145
+msgid ""
+"Mattermost Enterprise Edition software is found under `ECCN 5D002 "
+"<https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-"
+"register-notices/federal-register-2014/951-ccl5-pt2/file>`__, with a "
+"license exception available from `“ENC” "
+"<https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740"
+"-license-exceptions/file>`__ for our E10 and E20 software, with "
+"encryption features derived from open-source software. Encryption "
+"products, under the export regulations, have multiple levels of controls "
+"and requirements. BIS has a separate section of their website that has an"
+" overview, and many links, covering encryption under `Policy Guidelines "
+"<https://www.bis.doc.gov/index.php/policy-guidance/encryption>`__ that "
+"you may want to review. These guidelines include helpful flow charts for "
+"determining if an item is subject to encryption controls, tables and "
+"other details."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:147
+msgid ""
+"The other key areas to be aware of for an export of Mattermost software "
+"or technology are:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:149
+msgid ""
+"**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North "
+"Korea, Sudan, Syria and other countries/territories with specific "
+"prohibitions, such as Russia and Venezuela. Details can be located at "
+"`BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs"
+"/federal-register-notices/federal-register-2014/1063-746-1/file>`__ and "
+"`OFAC <https://www.treasury.gov/resource-"
+"center/sanctions/Pages/default.aspx>`__. The countries and their "
+"sanctions are subject to change."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:153
+msgid ""
+"**WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its "
+"business partners may not export to parties involved in `proliferation "
+"<https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736"
+"-general-prohibitions/file>`__ of weapons of mass destruction, along with"
+" other prohibited end-uses under the U.S. Export Administration "
+"Regulations (“EAR”)."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:156
+msgid ""
+"**General Prohibitions**: Information on General Prohibitions under the "
+"EAR is located `here <https://www.bis.doc.gov/index.php/documents"
+"/regulations-docs/413-part-736-general-prohibitions/file>`__. Application"
+" of the applicability of these General Prohibitions is based on a "
+"combination of factors. These include: classification of the commodity, "
+"destination, end-user, end-use and conduct."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:158
+msgid ""
+"**Restricted Parties**: You may not export to parties listed on the US "
+"government's `restricted parties lists <https://www.bis.doc.gov/index.php"
+"/policy-guidance/lists-of-parties-of-concern>`__, and should be screening"
+" against these prior to export. There is a `consolidated screening list "
+"<http://apps.export.gov/csl-search#/csl-search>`__ provided by the U.S. "
+"government at export.gov at no charge that can be used for screening."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:160
+msgid ""
+"**Deemed Exports**:  Release of controlled technology to foreign persons "
+"in the U.S. is \"deemed\" to be an export to the person’s country or "
+"countries of nationality and is found in `734.2(b) "
+"<https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734"
+"-scope-of-the-export-administration-regulations/file>`__ of the EAR, "
+"which you can read about under the Export Administration Regulations on "
+"the BIS website."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:163
+msgid ""
+"**Know Your Customer**: By reviewing the BIS website, you will notice "
+"that it is very important to “know your customers,\" and to be aware of "
+"`“Red Flags” <https://www.bis.doc.gov/index.php/compliance-a-training"
+"/export-management-a-compliance/freight-forwarder-"
+"guidance/23-compliance-a-training/51-red-flag-indicators>`__. Be sure to "
+"screen business partners and customers to ensure compliance."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:166
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:168
+msgid ""
+"Mattermost makes this data available for informational purposes only. It "
+"may not reflect the most current legal developments, and Mattermost does "
+"not represent, warrant or guarantee that it is complete, accurate or up "
+"to date. This information is subject to change without notice. The "
+"materials on this site are not intended to constitute legal advice or to "
+"be used as a substitute for specific legal advice. You should not act (or"
+" refrain from acting) based upon information on this site without "
+"obtaining professional advice regarding particular facts and "
+"circumstances."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:175
+msgid "FAQ"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:178
+msgid ""
+"To be compliant with GDPR, do I need to remove message contents of email "
+"notifications?"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:180
+msgid ""
+"Based on our interpretation of GDPR, it is not required to hide message "
+"contents in email notifications to remain compliant for the following "
+"reasons:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:182
+msgid ""
+"Every user has the ability to disable email notifications in their "
+"Account Settings. Therefore, every user has the ultimate control over "
+"whether or not they want information sent via email. This option aligns "
+"with most other products, but we will follow updates on interpretations "
+"of GDPR closely to see if we need to make changes in this area."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:184
+msgid ""
+"Mattermost offers :ref:`TLS encryption <email-tls>` to protect "
+"communication between the Mattermost server and the SMTP email server."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:186
+msgid ""
+"For those who are uncertain if the first two points cover GDPR "
+"compliance, we offer the ability to :ref:`disable notifications "
+"completely <email-notification-config>` on your Mattermost server. To use"
+" Mattermost in production with no email notifications, you also need to "
+":ref:`disable a \"preview mode\" notice banner <email-preview-mode-"
+"banner-config>`."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:189
+msgid ""
+"Are the server access logs containing IP addresses a GDPR compliance "
+"issue?"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:191
+msgid ""
+"Based on our interpretation of `article 49 of GDPR <https://eur-"
+"lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_, "
+"processing personal data for the purpose of ensuring network and "
+"information security is acceptable. Moreover:"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:193
+msgid ""
+"You can control access to the logs via restricted access to the System "
+"Console and the server."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:194
+msgid ""
+"As a self-hosted software, you have full control and ownership of the "
+"logs, with the ability to set up a purge schedule to meet your needs."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:195
+msgid "You can use a reverse proxy to provide obfuscation to IP addresses."
+msgstr ""
+
+#: ../../source/overview/compliance.rst:198
+msgid "Do you have Fed or Department of Defense (DOD) Certification?"
+msgstr ""
+
+#: ../../source/overview/compliance.rst:199
+msgid ""
+"We are in the process of acquiring Authority to Operate (ATO) and "
+"Certificate of Networthiness (CON) certifications."
+msgstr ""
+

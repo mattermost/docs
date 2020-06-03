@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/people-ops.rst:3
+msgid "People Ops"
+msgstr ""
+
+#: ../../source/process/people-ops.rst:5
+msgid "This page summarizes logistics for working at Mattermost."
+msgstr ""
+
+#: ../../source/process/people-ops.rst:8
+msgid "Office Address"
+msgstr ""
+
+#: ../../source/process/people-ops.rst:10
+msgid "Mattermost, Inc. is located at::"
+msgstr ""
+
+#: ../../source/process/people-ops.rst:17
+msgid "Letter of Employment"
+msgstr ""
+
+#: ../../source/process/people-ops.rst:19
+msgid ""
+"If you need a letter from Mattermost verifying your employment or "
+"contractor status, please send the request to hr@mattermost.com citing "
+"what information is needed."
+msgstr ""
+
+#: ../../source/process/people-ops.rst:21
+msgid ""
+"For example, monthly fee, salary, start date, title, etc. People ops will"
+" send you the letter once it is completed."
+msgstr ""
+
+#: ../../source/process/people-ops.rst:24
+msgid "Regular Compensation"
+msgstr ""
+
+#: ../../source/process/people-ops.rst:26
+msgid ""
+"Employees of our US entity, Mattermost, Inc., receive salary by semi-"
+"monthly direct deposit via TriNet. Pay slips are available via `TriNet's "
+"portal <https://www.hrpassport.com/>`__."
+msgstr ""
+
+#: ../../source/process/people-ops.rst:28
+msgid ""
+"Employees of our Canadian co-employer receive salary by direct deposit "
+"semi-monthly via ADP."
+msgstr ""
+
+#: ../../source/process/people-ops.rst:30
+msgid "Contractors to Mattermost, Inc. should email invoices monthly with::"
+msgstr ""
+
+#: ../../source/process/people-ops.rst:36
+msgid ""
+"For 'fixed fee' contracts, it is fine to send invoice before the time "
+"period covered. Example: An invoice for services April 1-30 can be sent "
+"on April 25."
+msgstr ""
+
+#: ../../source/process/people-ops.rst:37
+msgid "Your manager should reply on the email with any feedback on the invoice."
+msgstr ""
+

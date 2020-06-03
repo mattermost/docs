@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/downgrade.rst:2
+msgid "Downgrading Mattermost Server"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:4
+msgid ""
+"In most cases you can downgrade Mattermost Server using the same steps as"
+" :doc:`upgrade`. The binaries can be found in the :doc:`version-archive`."
+" We do not recommend downgrading more than one version back from your "
+"current installation."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:7
+msgid "Downgrade from 5.0 to 4.10"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:9
+msgid ""
+"During the version 5.0 upgrade process, a migration is run to enable new "
+"features of the `advanced permissions system "
+"<https://docs.mattermost.com/deployment/advanced-permissions.html>`__. "
+"This changes the database in ways that result in it no longer being "
+"compatible with Mattermost server 4.10. If you need to downgrade from 5.0"
+" or later to 4.10, it is necessary to follow the steps below."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:11
+msgid "You should gather the following information before starting the upgrade:"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:13
+msgid "Existing install directory - *{install-path}*"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:14
+msgid ""
+"If you don't know where Mattermost Server is installed, use the ``whereis"
+" mattermost`` command. The output should be similar to "
+"*/opt/mattermost/bin/mattermost*. The install directory is everything "
+"before the last occurrence of the string */mattermost*. In this example, "
+"the *{install-path}* is ``/opt``."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:15
+msgid "Location of your local storage directory"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:16
+msgid ""
+"The local storage directory contains all the files that users have "
+"attached to their messages. If you don't know its location, open the "
+"System Console and go to **Files > Storage** and read the value in "
+"**Local Storage Directory**. Relative paths are relative to the "
+"``mattermost`` directory. For example, if the local storage directory is "
+"``./data/`` then the absolute path is ``{install-path}/mattermost/data``."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:18
+msgid "Owner and group of the install directory - *{owner}* and *{group}*"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:18
+msgid ""
+"Use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to get"
+" the owner and group."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:20
+msgid ""
+"In a terminal window on the server that hosts Mattermost Server, change "
+"to your home directory. If any, delete files and directories that might "
+"still exist from a previous download."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:26
+msgid "Stop Mattermost Server."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:28
+#: ../../source/administration/downgrade.rst:75
+msgid "On Ubuntu 14.04 and RHEL 6:"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:34
+#: ../../source/administration/downgrade.rst:81
+msgid "On Ubuntu 16.04 and RHEL 7:"
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:42
+msgid "Back up your data and application."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:44
+msgid ""
+"Back up your database using your organization’s standard procedures for "
+"backing up MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:46
+msgid ""
+"Back up your application by copying into an archive folder (e.g. "
+"``mattermost-back-YYYY-MM-DD-HH-mm``)."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:54
+msgid ""
+"Connect to your database CLI and run the following SQL statements to "
+"revert the changes to the database made by the migration. The commands "
+"may take up to a few minutes to run on large installations."
+msgstr ""
+
+#: ../../source/administration/downgrade.rst:73
+msgid "Start Mattermost server."
+msgstr ""
+

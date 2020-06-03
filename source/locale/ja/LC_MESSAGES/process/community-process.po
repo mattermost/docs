@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/community-process.rst:2
+msgid "Community Monitoring Process"
+msgstr ""
+
+#: ../../source/process/community-process.rst:4
+msgid ""
+"This document outlines the process for monitoring and responding to "
+"community questions in various channels."
+msgstr ""
+
+#: ../../source/process/community-process.rst:7
+msgid "Community Manager"
+msgstr ""
+
+#: ../../source/process/community-process.rst:9
+msgid "When responding to issues:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:11
+msgid "Identify what type of post it is:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:13
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/process/community-process.rst:14
+msgid "Feature Proposal"
+msgstr ""
+
+#: ../../source/process/community-process.rst:15
+msgid "Bug"
+msgstr ""
+
+#: ../../source/process/community-process.rst:16
+msgid "Developer/Product Question"
+msgstr ""
+
+#: ../../source/process/community-process.rst:18
+msgid "Ask questions to narrow down or understand the issue better:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:20
+msgid "Try to understand the issue yourself as much as possible first"
+msgstr ""
+
+#: ../../source/process/community-process.rst:21
+msgid "If appropriate, ask a developer for assistance on technical questions"
+msgstr ""
+
+#: ../../source/process/community-process.rst:23
+msgid "Respond:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:25
+msgid ""
+"Include a link to related documentation in your response (e.g. Jira "
+"ticket, feature proposal, etc.)"
+msgstr ""
+
+#: ../../source/process/community-process.rst:26
+msgid ""
+"If there is no related documentation, write the documentation and include"
+" the link in your response:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:28
+msgid "For reproducible bugs, create a Jira ticket"
+msgstr ""
+
+#: ../../source/process/community-process.rst:29
+msgid ""
+"For product questions or troubleshooting, update docs.mattermost.com if "
+"appropriate"
+msgstr ""
+
+#: ../../source/process/community-process.rst:30
+msgid ""
+"For feature proposals, ask them to `create a feature proposal "
+"<https://www.mattermost.org/feature-ideas/>`__ and post the link back"
+msgstr ""
+
+#: ../../source/process/community-process.rst:32
+msgid ""
+"If appropriate, ask if the community member would be interested in "
+"contributing the feature / bug fix"
+msgstr ""
+
+#: ../../source/process/community-process.rst:36
+msgid "Community channels"
+msgstr ""
+
+#: ../../source/process/community-process.rst:38
+msgid ""
+"The various community channels are outlined below. On a daily basis, the "
+"Community Manager helps with notifying team members about issues in need "
+"of a response and, if necessary, asks for help from a developer."
+msgstr ""
+
+#: ../../source/process/community-process.rst:40
+msgid ""
+"`Peer-to-peer Help Channel "
+"<https://community.mattermost.com/core/channels/peer-to-peer-help>`__: "
+"Forum Issues / GitLab / Stack Overflow"
+msgstr ""
+
+#: ../../source/process/community-process.rst:42
+#: ../../source/process/community-process.rst:64
+#: ../../source/process/community-process.rst:98
+#: ../../source/process/community-process.rst:118
+msgid "Description:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:44
+msgid ""
+"Community Manager reviews new `GitHub mattermost/mattermost-server "
+"<https://github.com/mattermost/mattermost-server>`__ and `GitHub "
+"mattermost/mattermost-mobile <https://github.com/mattermost/mattermost-"
+"mobile/issues>`__ issues daily, and responds to all new issues:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:46
+msgid "Bug Report: Try to reproduce, or ask another team member to reproduce"
+msgstr ""
+
+#: ../../source/process/community-process.rst:47
+msgid "Troubleshooting: Request to move to forums"
+msgstr ""
+
+#: ../../source/process/community-process.rst:48
+msgid "Feature Proposal: Request to move to feature idea forums"
+msgstr ""
+
+#: ../../source/process/community-process.rst:50
+msgid ""
+"Community Manager posts \"[Help Wanted] #forum #github @here @[dev on "
+"rotation] These forum posts are open to everyone in the community. If you"
+" find something you think you know the answer to or can help with, please"
+" help post a response and be part of creating a vibrant Mattermost "
+"community!\" with a list that includes:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:52
+msgid ""
+"Forum and `GitHub mattermost/mattermost-server "
+"<https://github.com/mattermost/mattermost-server>`__ posts that are >=2 "
+"days old (this gives community members a chance to respond first)"
+msgstr ""
+
+#: ../../source/process/community-process.rst:53
+msgid ""
+"New forum posts referencing Enterprise features or upgrade issues after a"
+" release"
+msgstr ""
+
+#: ../../source/process/community-process.rst:54
+msgid "Forum posts with a new reply to questions asked by the core team"
+msgstr ""
+
+#: ../../source/process/community-process.rst:56
+msgid "Everyone from the team/community can step in and answer forum posts"
+msgstr ""
+
+#: ../../source/process/community-process.rst:58
+msgid "Community Manager Responsibility:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:60
+msgid ""
+"Review the list for posts that haven’t been answered, and either reply "
+"(with help from dev if needed) or route to the appropriate person, "
+"following up to make sure a response is posted"
+msgstr ""
+
+#: ../../source/process/community-process.rst:62
+msgid ""
+"`Peer-to-peer Help Channel "
+"<https://community.mattermost.com/core/channels/peer-to-peer-help>`__: "
+"UserVoice Issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:66
+msgid "Ops Team @mentions the Community PM with a list that includes issues:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:68
+msgid "where status requires updating"
+msgstr ""
+
+#: ../../source/process/community-process.rst:70
+msgid "Under Review: After a ticket is created but the spec is not yet complete"
+msgstr ""
+
+#: ../../source/process/community-process.rst:71
+msgid "Planned: Jira ticket with a plan on how to build the feature"
+msgstr ""
+
+#: ../../source/process/community-process.rst:72
+msgid ""
+"Started: When a developer has begun to work on the Jira ticket (the "
+"ticket shows that it is in progress)"
+msgstr ""
+
+#: ../../source/process/community-process.rst:73
+msgid ""
+"Help Wanted: Ticket that is open to any contributor wanting to work on "
+"the issue"
+msgstr ""
+
+#: ../../source/process/community-process.rst:74
+msgid "Completed: When ticket is resolved"
+msgstr ""
+
+#: ../../source/process/community-process.rst:75
+msgid ""
+"Declined: When the suggestion does not fit with the `product vision "
+"<https://www.mattermost.org/manifesto/>`__"
+msgstr ""
+
+#: ../../source/process/community-process.rst:77
+msgid ""
+"where a PM might want to ask a question for clarification or ideas on how"
+" to design something"
+msgstr ""
+
+#: ../../source/process/community-process.rst:78
+msgid "where the requester specifies they want to work on the feature"
+msgstr ""
+
+#: ../../source/process/community-process.rst:80
+msgid "Community PM Responsibility - Team Edition:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:82
+msgid ""
+"The PM who is release manager for the current release cycle will update "
+"the issues after release date."
+msgstr ""
+
+#: ../../source/process/community-process.rst:84
+msgid ""
+"Thank you [NAME] for nominating the feature! It is now available in "
+"Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? "
+"[LINK TO TWEET]"
+msgstr ""
+
+#: ../../source/process/community-process.rst:86
+msgid ""
+"Updates a `spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-"
+"9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`__ that tracks UserVoice "
+"issues announced in upcoming releases."
+msgstr ""
+
+#: ../../source/process/community-process.rst:88
+msgid "Sales Responsibility - Enterprise Edition:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:90
+msgid "Responds to the issues and closes them after release date."
+msgstr ""
+
+#: ../../source/process/community-process.rst:92
+msgid ""
+"Thank you [NAME] for nominating the feature! It is now available in "
+"Mattermost [X.Y]."
+msgstr ""
+
+#: ../../source/process/community-process.rst:94
+msgid ""
+"Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-"
+"9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`__ to track UserVoice "
+"issues to be announced in upcoming releases."
+msgstr ""
+
+#: ../../source/process/community-process.rst:96
+msgid ""
+"Weekly, usually Wednesdays, `Peer-to-peer Help Channel "
+"<https://community.mattermost.com/core/channels/peer-to-peer-help>`__: "
+"GitHub , GitLab and StackOverflow issues with Activity Older than 7 days "
+"(that have not been created by Mattermost staff)"
+msgstr ""
+
+#: ../../source/process/community-process.rst:100
+msgid ""
+"The Community Manager reviews “GitHub, GitLab and StackOverflow issues "
+"with activity older than 7 days” from the following repos and adds a list"
+" of issues to the daily Peer-to-peer Help channel post:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:102
+msgid "https://github.com/mattermost/mattermost-server/issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:103
+msgid "https://github.com/mattermost/docs/issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:104
+msgid "https://github.com/mattermost/mattermost-api-reference/issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:105
+msgid "https://github.com/mattermost/mattermost-bot-sample-golang/issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:106
+msgid "https://github.com/mattermost/mattermost-load-test/issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:107
+msgid "https://github.com/mattermost/mattermost-push-proxy"
+msgstr ""
+
+#: ../../source/process/community-process.rst:108
+msgid ""
+"[a month or older - reviews are monthly] "
+"https://github.com/mattermost/android/pulls"
+msgstr ""
+
+#: ../../source/process/community-process.rst:109
+msgid ""
+"[a month or older - reviews are monthly] "
+"https://github.com/mattermost/ios/pulls"
+msgstr ""
+
+#: ../../source/process/community-process.rst:110
+msgid "http://stackoverflow.com/questions/tagged/mattermost?sort=newest&pageSize=15"
+msgstr ""
+
+#: ../../source/process/community-process.rst:111
+#, python-format
+msgid "https://gitlab.com/search?utf8=%E2%9C%93&search=mattermost&group_id=&project_id=20699&scope=issues&repository_ref="
+msgstr ""
+
+#: ../../source/process/community-process.rst:112
+msgid "https://gitlab.com/gitlab-org/gitlab-mattermost/issues"
+msgstr ""
+
+#: ../../source/process/community-process.rst:113
+msgid "https://gitlab.com/gitlab-org/omnibus-gitlab/issues?label_name=Mattermost"
+msgstr ""
+
+#: ../../source/process/community-process.rst:114
+msgid "https://gitlab.com/gitlab-org/gitlab-ce/issues?label_name=mattermost"
+msgstr ""
+
+#: ../../source/process/community-process.rst:116
+msgid "Help Wanted GitHub Issues:"
+msgstr ""
+
+#: ../../source/process/community-process.rst:120
+msgid ""
+"New GitHub Help Wanted issues are automatically created from JIRA tickets"
+" and are open for community contributions.  The Community Manager can "
+"disregard these issues as they do not need to be posted to the Peer-to-"
+"peer Help channel."
+msgstr ""
+

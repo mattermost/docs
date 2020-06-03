@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/faq_kubernetes.rst:4
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:7
+msgid "What is the difference between the Mattermost Operator and Helm Charts?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:9
+msgid ""
+"The Mattermost Operater is a self-contained set of application/product-"
+"specific instructions that runs inside Kubernetes and facilitates "
+"application management and deployment."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:12
+msgid ""
+"Helm is a tool used to deploy Kubernetes manifests to a cluster, but does"
+" not facilitate application management."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:15
+msgid "Does the Mattermost Operator replace the Helm Chart?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:17
+msgid ""
+"No. Helm is a good mechanism to deploy operators and other applications "
+"but doesn't facilitate application management."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:21
+msgid "Is minIO the only available storage option?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:23
+msgid "No, other options and operators can be added."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:26
+msgid "Do I have to install a separate SQL server to use the Mattermost Operator?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:28
+msgid ""
+"No, you can use the operator on top of your existing deployment without "
+"setting up another database. We will shortly be providing steps for this "
+"configuration."
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:32
+msgid "Can you use blue-green deployments with different database schemas?"
+msgstr ""
+
+#: ../../source/install/faq_kubernetes.rst:34
+msgid ""
+"Currently this is not supported as it introduces the possiblilty of "
+"missing a data entry in the database."
+msgstr ""
+

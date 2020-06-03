@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-nginx.rst:4
+msgid "Installing NGINX Server"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:6
+msgid ""
+"In a production setting, use a proxy server for greater security and "
+"performance of Mattermost."
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:8
+msgid "The main benefits of using a proxy are as follows:"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:10
+msgid "SSL termination"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:11
+msgid "HTTP to HTTPS redirect"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:12
+msgid "Port mapping ``:80`` to ``:8065``"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:13
+msgid "Standard request logs"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:15
+msgid "**To install NGINX on Ubuntu Server:**"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:17
+msgid "Log in to the server that will host the proxy and open a terminal window."
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:19
+msgid "Install NGINX."
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:21
+msgid "``sudo apt-get install nginx``"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:23
+msgid "After the installation is complete, verify that NGINX is running."
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:25
+msgid "``curl http://localhost``"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:27
+msgid "If NGINX is running, you see the following output:"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:44
+msgid "You can stop, start, and restart NGINX with the following commands:"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:52
+msgid "**What to do next**"
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:54
+msgid ""
+"Map a fully qualified domain name (FQDN) such as "
+"``mattermost.example.com`` to point to the NGINX server."
+msgstr ""
+
+#: ../../source/install/install-nginx.rst:55
+msgid ""
+"Configure NGINX to proxy connections from the internet to the Mattermost "
+"Server."
+msgstr ""
+

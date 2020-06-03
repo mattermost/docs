@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/getting-started/organizing-conversations.rst:2
+msgid "Organizing Conversations"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:4
+msgid ""
+"Conversations in Mattermost are crucial to company productivity and "
+"success. Keeping information and messages organized in channels creates "
+"an efficient workplace."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:6
+msgid "`Channel Types`_"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:7
+msgid "`Managing Channels`_"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:11
+msgid "Channel Types"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:13
+msgid ""
+"Channels are used to organize conversations across different topics. "
+"There are three types of channels: Public Channels, Private Channels, and"
+" Direct Messages."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:17
+msgid "Public Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:19
+msgid ""
+"Public Channels are open to everyone on a team. New team members are "
+"automatically added to two Public Channels when they sign up: Town Square"
+" and Off-Topic."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:22
+msgid "Private Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:24
+msgid ""
+"Private Channels are for sensitive topics and are only visible to select "
+"team members. In Team Edition, any member of a Private channel can add or"
+" remove other members from Private channels, but in Enterprise Edition "
+"`these permissions can be restricted to the Channel Admin and System "
+"Admin <http://docs.mattermost.com/help/getting-started/managing-"
+"members.html#user-roles>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:27
+msgid "Direct Messages and Group Messages"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:29
+msgid ""
+"Direct Messages are for conversations between two people. Group Messages "
+"are Direct Messages that have conversations among three or more people. "
+"Both are visible only to the people involved."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:31
+msgid ""
+"Use a Direct Message when you want a private conversation with one "
+"person. Use a Group Message when you want to set up a conversation with "
+"up to seven other participants. If you want to communicate with more than"
+" seven people, you must create a Private Channel."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:33
+msgid ""
+"If your System Administrator has allowed it, you can start a Direct "
+"Message or a Group Message with people on other teams."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:35
+msgid ""
+"Check the online status indicator next to names in the Direct Message "
+"list. It displays: online (green checkmark indicates active browser), "
+"away (orange clock indicates no browser activity for 5 minutes), do not "
+"disturb (red dash indicates disabled desktop and push notifications) and "
+"offline (white circle indicates browser is closed)."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:39
+msgid "Managing Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:41
+msgid "Channels can be created, joined, renamed, left and archived."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:44
+msgid "Creating a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:46
+msgid ""
+"Create a new Public Channel or Private Channel by selecting the **+** "
+"symbol next to the *Channels* or *Private Channels* header on the left "
+"hand side. To start a direct message thread, click the **+** symbol next "
+"to the *Direct Messages* bar or select **More** at the bottom of the list"
+" to view team members you can message."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:50
+msgid ""
+"Anyone can create Public Channels or Private Channels, unless the System "
+"Administrator has `restricted the permissions "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"public-channel-creation-for>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:53
+msgid "Joining a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:55
+msgid ""
+"Click **More** at the bottom of the *Channels* list to view and search "
+"through a list of Public Channels you can join. To join a Private Channel"
+" you need to be added by a member of that channel."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:58
+msgid "Adding Members to a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:60
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click **Add Members**. Any member of a channel can add "
+"new members by clicking **Add** next to a user's name. Users already "
+"added to the channel will not appear in this modal."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:64
+msgid ""
+"You can also add users to channels within their profile pop-over by "
+"clicking \"Add to a Channel\" and selecting the channel to add them to."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:69
+msgid "Removing Members from a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:71
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click **Manage Members**. Any member of a channel can "
+"remove other members by clicking **Remove** next to a user's name."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:74
+msgid "Naming a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:75
+msgid "Channels can be identified in two ways:"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:77
+msgid ""
+"Channel display name: This is the channel name appearing in the "
+"Mattermost user interface. Click the channel name at the top of the "
+"center pane to access the drop-down menu, then click **Rename Channel**. "
+"Anyone can rename the channels they belong to, unless the System "
+"Administrator has `restricted the permissions "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"public-channel-renaming-for>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:78
+msgid ""
+"Channel handle: This is part of the channel URL. You may also change the "
+"channel handle when renaming a channel, but changing channel handles may "
+"break existing links."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:80
+msgid ""
+"For example, for the following channel: "
+"https://community.mattermost.com/core/channels/ux-design"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:82
+msgid "Channel display name: ``UX Design``"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:83
+msgid "Channel handle: ``ux-design``"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:86
+msgid "Leaving a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:88
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click **Leave Channel**. Any team member who leaves a "
+"Private Channel must be re-added by a channel member if they wish to "
+"rejoin. Team members will not receive mention notifications from channels"
+" of which they are not members."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:91
+msgid "Archiving a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:93
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click **Archive Channel**. Anyone can archive the Public "
+"Channels or Private Channels they belong to, unless the System "
+"Administrator has `restricted the permissions "
+"<https://docs.mattermost.com/administration/config-settings.html#id2>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:95
+msgid ""
+"When a channel is archived, it is removed from the user interface, but a "
+"copy exists on the server in case it is needed for audit reasons later. "
+"Because of this, the URL of a newly created channel cannot be the same "
+"URL name as an archived channel."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:97
+msgid ""
+"Moreover, when a channel is archived, the contents cannot be viewed, "
+"shared or searched by default. If you want to be able to view or search "
+"the channel later, either"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:99
+msgid ""
+"Ask your System Administrator to set ``ViewArchivedChannels`` to ``true``"
+" in config.json to allow users to view, share and search for content of "
+"channels that have been archived; or"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:100
+msgid ""
+"Leave the channel open, but post a message in the channel saying it's "
+"considered archived, such as ``# This channel is archived.``"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:103
+msgid "Converting Public Channels to Private (and vice versa)"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:105
+msgid ""
+"Click the channel name at the top of the center pane to access the drop-"
+"down menu, then click **Convert to Private Channel**. Team and System "
+"Admins have the ability to convert public channels to private channels.  "
+"Please note that default channels such as Town Square and Off-Topic "
+"cannot be converted to private channels."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:107
+msgid ""
+"System Admins can also access this setting in **System Console > Channels"
+" > Edit (Channel Configuration)**.  Due to security concerns of sharing "
+"private channel history, only System Admins can convert private channels "
+"to public."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:109
+msgid ""
+"When a channel is converted, history and membership are preserved. "
+"Membership in a private channel is by invitation only. Publicly shared "
+"files remain accessible to anyone with the link."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:111
+msgid ""
+"Note that conversion of private channels to public channels can only be "
+"performed by a System Admin via the System Console or via `CLI command "
+"<https://docs.mattermost.com/administration/command-line-tools.html"
+"#mattermost-channel-modify>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:114
+msgid "Favoriting a Channel"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:116
+msgid ""
+"Favorite channels are a great way to organize your sidebar by choosing "
+"which Channels, Private Channels, and Direct Messages are most important "
+"to you."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:118
+msgid "To mark a channel as a favorite, simply open the channel and then:"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:120
+msgid ""
+"**On desktop:** At the top of the page, click on the star next to the "
+"channel name"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:125
+msgid ""
+"This will add the channel to a \"Favorites\" section in the top of the "
+"sidebar, so it's easy to access. To remove a channel from the "
+"\"Favorites\" section, click the star again."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:130
+msgid ""
+"**On mobile:** Open the dropdown list by the channel name, and select "
+"\"Favorite\"."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing-conversations.rst:132
+msgid ""
+"To remove a channel from the \"Favorites\" section, select the "
+"\"Favorite\" option again."
+msgstr ""
+

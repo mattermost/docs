@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/config-ssl-http2-nginx.rst:4
+msgid "Configuring NGINX with SSL and HTTP/2"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:6
+msgid ""
+"Using SSL gives greater security by ensuring that communications between "
+"Mattermost clients and the Mattermost server are encrypted. It also "
+"allows you to configure NGINX to use the HTTP/2 protocol."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:8
+msgid ""
+"Although you can configure HTTP/2 without SSL, both Firefox and Chrome "
+"browsers support HTTP/2 on secure connections only."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:10
+msgid ""
+"You can use any certificate that you want, but these instructions show "
+"you how to download and install certificates from `Let's Encrypt "
+"<https://letsencrypt.org/>`__, a free certificate authority."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:13
+msgid ""
+"If Let’s Encrypt is enabled, forward port 80 through a firewall, with "
+"`Forward80To443 <https://docs.mattermost.com/administration/config-"
+"settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to "
+"``true`` to complete the Let’s Encrypt certification."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:15
+msgid "**To configure SSL and HTTP/2:**"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:17
+msgid "Log in to the server that hosts NGINX and open a terminal window."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:18
+msgid "Install git."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:20
+msgid "If you are using Ubuntu or Debian:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:22
+msgid "``sudo apt-get install git``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:24
+msgid "If you are using RHEL:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:26
+msgid "``sudo yum install git``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:28
+msgid "Clone the Let's Encrypt repository on GitHub."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:30
+msgid "``git clone https://github.com/letsencrypt/letsencrypt``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:32
+msgid "Change to the ``letsencrypt`` directory."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:34
+msgid "``cd letsencrypt``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:36
+msgid "Stop NGINX."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:38
+#: ../../source/install/config-ssl-http2-nginx.rst:107
+msgid "On Ubuntu 14.04 and RHEL 6:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:40
+msgid "``sudo service nginx stop``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:42
+#: ../../source/install/config-ssl-http2-nginx.rst:111
+msgid "On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:44
+msgid "``sudo systemctl stop nginx``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:46
+msgid "Run ``netstat`` to make sure that nothing is listening on port 80."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:48
+msgid "``netstat -na | grep ':80.*LISTEN'``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:50
+msgid "Run the Let's Encrypt installer."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:52
+msgid "``./letsencrypt-auto certonly --standalone``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:54
+msgid ""
+"When prompted, enter your domain name. After the installation is "
+"complete, you can find the certificate in the   ``/etc/letsencrypt/live``"
+" directory."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:56
+msgid ""
+"Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text"
+" editor and update the *server* section to incorporate the highlighted "
+"lines in the following sample. Make sure to replace *{domain-name}* with "
+"your own domain name, in 3 places."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:105
+msgid "Restart NGINX."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:109
+msgid "``sudo service nginx start``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:113
+msgid "``sudo systemctl start nginx``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:115
+msgid "Check that your SSL certificate is set up correctly."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:117
+msgid ""
+"Test the SSL certificate by visiting a site such as "
+"https://www.ssllabs.com/ssltest/index.html"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:118
+msgid ""
+"If there’s an error about the missing chain or certificate path, there is"
+" likely an intermediate certificate missing that needs to be included."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:120
+msgid ""
+"Configure ``cron`` so that the certificate will automatically renew every"
+" month."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:122
+msgid "``crontab -e``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:124
+msgid ""
+"In the following line, use your own domain name in place of *{domain-"
+"name}*"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:126
+msgid ""
+"``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall"
+" --nginx -d {domain-name} && sudo service nginx reload``"
+msgstr ""
+

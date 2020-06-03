@@ -1,0 +1,936 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:2
+msgid "Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:4
+msgid ""
+"This document provides steps to configure SAML 2.0 with Microsoft ADFS "
+"for Mattermost and Microsoft Windows Server 2016."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:2
+msgid "Before you begin"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:4
+msgid "Before you configure SAML:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:6
+msgid ""
+"Make sure you have the `XML Security Library "
+"<https://www.aleksey.com/xmlsec/download.html>`__ installed on your "
+"Mattermost instance. The XML Security Library is usually included as part"
+" of Debian GNU/Linux."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:8
+msgid "Install the *xmlsec1-openssl* library"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:9
+msgid "On Ubuntu: ``sudo apt-get install xmlsec1``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:10
+msgid "On RHEL: ``sudo yum install xmlsec1-openssl``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:12
+msgid "Generate encryption certificates for encrypting the SAML connection."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:13
+msgid ""
+"You can use the `Bash script "
+"<https://github.com/mattermost/docs/tree/master/source/scripts/generate-"
+"certificates>`__ from the *mattermost/docs* repository on GitHub, or any "
+"other suitable method."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-before-you-begin.rst:14
+msgid ""
+"Save the two files that are generated. They are the private key and the "
+"public key. In the System Console, they are referred to as the **Service "
+"Provider Private Key** and the **Service Provider Public Certificate** "
+"respectively."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:13
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:14
+msgid ""
+"An Active Directory instance where all users have specified email and "
+"username attributes. For Mattermost servers running 3.3 and earlier, "
+"users must also have their first name and last name attributes specified."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:15
+msgid ""
+"A running Microsoft Server. The screenshots used in this guide are from "
+"Microsoft Server 2012R2, but similar steps should work for other "
+"versions."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:16
+msgid "An SSL certificate to sign your ADFS login page."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:17
+msgid ""
+"ADFS installed on your Microsoft Server. You can find a detailed guide "
+"for deploying and configuring ADFS in `this article "
+"<https://msdn.microsoft.com/en-us/library/gg188612.aspx>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:19
+msgid ""
+"On your ADFS installation, open the ADFS console. Select **Service** and "
+"then **Endpoints**. In the **Type** column search for ``SAML 2.0/WS-"
+"Federation`` and note down the value of **URL Path** column. This is also"
+" known as the **SAML SSO URL Endpoint** in this guide. If you chose the "
+"defaults for the installation, this will be ``/adfs/ls``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:22
+msgid "Add a Relying Party Trust"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:24
+msgid ""
+"Open the ADFS management snap-in and select **AD FS > Relying Party "
+"Trusts > Add Relying Party Trust** on the right sidebar. You can also "
+"right-click **Relying Party Trusts** and choose **Add Relying Party "
+"Trust** from the context menu."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:28
+msgid ""
+"In the **Welcome** screen of the configuration wizard choose **Claims "
+"aware** and select **Start**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:32
+msgid ""
+"In the **Select Data Source** screen, choose **Enter data about the "
+"relying party manually**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:36
+msgid ""
+"In the **Specify Display Name** screen enter a **Display Name** (e.g., "
+"``Mattermost``). You can add optional notes."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:40
+msgid ""
+"In the **Configure Certificate** screen, leave the certificate settings "
+"at their default values."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:44
+msgid ""
+"If you would like to set up encryption for your SAML connection, select "
+"**Browse** and upload your Service Provider Public Certificate."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:48
+msgid ""
+"In the **Configure URL** screen, select **Enable Support for the SAML 2.0"
+" WebSSO protocol** and enter the **SAML 2.0 SSO service URL** in the "
+"following format:``https://<your-mattermost-url>/login/sso/saml`` where "
+"``https://<your-mattermost-url>`` should typically match the `Mattermost "
+"Site URL <https://docs.mattermost.com/administration/config-settings.html"
+"#site-url>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:52
+msgid ""
+"In the **Configure Identifiers** screen, enter the **Relying party trust "
+"identifier** (also known as the **Identity Provider Issuer URL**) in the "
+"following format ``https://<your-idp-url>/adfs/services/trust`` and "
+"choose **Add**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:58
+msgid "Add your **SAML 2.0 SSO service URL** from above the same way."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:60
+msgid ""
+"In the **Choose Access Control Policy** screen select the access control "
+"policy suitable for your environment. This guide assumes the default "
+"values **Permit everyone** and an unchecked box."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:64
+msgid "In the **Ready to Add Trust** screen, you can review your settings."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:68
+msgid ""
+"In the **Finish** screen select **Configure claims issuance policy for "
+"this application** and then **Close**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:73
+msgid "Create Claim Rules"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:75
+msgid ""
+"In the **Issuance Transform Rules** tab of the **Claim Rules** editor, "
+"choose **Add Rule…**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:79
+msgid ""
+"In the **Choose Rule Type** screen, select **Send LDAP Attributes as "
+"Claims** from the drop-down menu, then click **Next**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:83
+msgid ""
+"In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of "
+"your choice, select **Active Directory** as the **Attribute Store** and "
+"add the following mapping:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:84
+msgid ""
+"From the LDAP Attribute column, **select** ``E-Mail-Addresses``. From the"
+" Outgoing Claim Type, **type** ``Email``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:85
+msgid ""
+"From the LDAP Attribute column, **select** ``Given-Name``. From the "
+"Outgoing Claim Type, **type** ``FirstName``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:86
+msgid ""
+"From the LDAP Attribute column, **select** ``Surname``. From the Outgoing"
+" Claim Type, **type** ``LastName``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:87
+msgid ""
+"From the LDAP Attribute column, **select** ``SAM-Account-Name``. From the"
+" Outgoing Claim Type, **type** ``Username``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:89
+msgid ""
+"For Mattermost 3.4 and later, the *FirstName* and *LastName* attributes "
+"are optional."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:91
+msgid "Select **Finish** to add the rule."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:93
+msgid ""
+"The entries in the **Outgoing Claim Type** column can be modified and the"
+" entries may contain dashes but no spaces. They are used to map the "
+"corresponding fields in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:97
+msgid "Select **Add Rule** to create another new rule."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:99
+msgid ""
+"In the **Choose Rule Type** screen, select **Transform an Incoming "
+"Claim** from the drop-down menu, then click **Next**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:103
+msgid ""
+"In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of "
+"your choice, then"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:104
+msgid "Select *Name ID* for the **Incoming claim type**"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:105
+msgid "Select *Unspecified* for the **Incoming name ID format**"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:106
+msgid "Select *E-Mail Address* for the **Outgoing claim type**"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:108
+msgid "Select the **Pass through all claim values** option and click **Finish**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:112
+msgid ""
+"Click **Finish** to create the claim rule, then **OK** to finish creating"
+" rules."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:114
+msgid "Open Windows PowerShell as an administrator and run the following command:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:116
+msgid ""
+"``Set-ADFSRelyingPartyTrust -TargetName <display-name> "
+"-SamlResponseSignature \"MessageAndAssertion\"``"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:118
+msgid ""
+"where *<display-name>* is the name you specified in step 4 of *Add a "
+"Relying Party Trust*. In our example it would be ``mattermost``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:120
+msgid ""
+"This action will add the signature to SAML messages, making verification "
+"successful."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:123
+msgid "Export Identity Provider Certificate"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:125
+msgid ""
+"Next, we export the identity provider certificate, which will be later "
+"uploaded to Mattermost to finish SAML configuration."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:127
+msgid ""
+"Open the ADFS management snap-in, select **AD FS > Service > "
+"Certificates** and double click on the certificate under **Token-"
+"signing**. You can also right-click the field, then click **View "
+"Certificate** in the context menu."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:131
+msgid ""
+"In the **Certificate** screen open the the **Details** tab, select **Copy"
+" to File** and then **OK**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:135
+msgid "In the **Certificate Export Wizard** screen, click **Next**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:139
+msgid ""
+"Then, select the option **Base-64 encoded X.509 (.CER)** and click "
+"**Next** again."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:143
+msgid ""
+"In the **Certificate Export Wizard** screen, click **Browse** to specify "
+"the location you want the Identity Provider Certificate to be exported, "
+"and specify the file name."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:147
+msgid ""
+"Click **Save**. In the **Certificate Export Wizard** screen, verify the "
+"file path is correct, and click **Next**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:149
+msgid ""
+"In the **Completing the Certificate Export Wizard**, click **Finish**, "
+"then **OK** to confirm the export was successful."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:153
+msgid "You’re now about to finish configuring SAML for Mattermost!"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:156
+msgid "Configure SAML Sign-in for Mattermost"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:158
+msgid ""
+"Start Mattermost server and sign into Mattermost as a System "
+"Administrator. Go to **System Console > Authentication > SAML**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:159
+msgid "Set **Enable Login With SAML 2.0** to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:160
+msgid ""
+"Set **Enable Synchronizing SAML Accounts With AD/LDAP** to suit your "
+"environment."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:161
+msgid ""
+"Set **Override SAML bind data with AD/LDAP information** to suit your "
+"environment."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:162
+msgid ""
+"For **SAML SSO URL** use the ``SAML 2.0/W-Federation URL ADFS Endpoint`` "
+"you copied at the beginning of the process."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:163
+msgid ""
+"For **Identity Provider Issuer URL** use the ``Relying party trust "
+"identifier`` from ADFS."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:164
+msgid ""
+"For **Identity Provider Public Certificate** use  the``X.509 Public "
+"Certificate``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:168
+msgid "Configure Mattermost to verify the signature."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:169
+msgid "Set **Verify Signature** to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:170
+msgid ""
+"For **Service Provider Login URL** use the ``SAML 2.0 SSO service URL`` "
+"you specified in ADFS."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:174
+msgid "Enable encryption."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:175
+msgid "Set **Enable Encryption** to ``true``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:176
+msgid ""
+"For **Service Provider Private Key** use the Service Provider Private Key"
+" generated at the start of this process."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:177
+msgid ""
+"For **Service Provider Public Certificate** use the Service Provider "
+"Public Certificate you generated at the start of this process."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:178
+msgid "Set **Sign Request** to suit your environment."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:182
+msgid ""
+"Set attributes for the SAML Assertions, which will be used to update user"
+" information in Mattermost. Attributes for email and username are "
+"required and should match the values you entered in ADFS earlier. See "
+":ref:`documentation on SAML configuration settings <saml-enterprise>` for"
+" more detail."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:184
+msgid ""
+"For Mattermost servers running 3.3 and earlier, the first name and last "
+"name attributes are also required fields."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:188
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:190
+msgid ""
+"(Optional) If you configured First Name Attribute and Last Name "
+"Attribute, go to **System Console > Site Configuration > Users and "
+"Teams** (or **System Console > General > Users and Teams** in versions "
+"prior to 5.12) and set **Teammate Name Display** to **Show first and last"
+" name**. This is recommended for a better user experience."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:193
+msgid ""
+"You’re done! If you’d like to confirm SAML SSO is successfully enabled, "
+"switch your System Administrator account from email to SAML-based "
+"authentication via **Account Settings > General > Sign-in Method > Switch"
+" to SAML SSO** and sign in with your SAML credentials to complete the "
+"switch."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:195
+msgid ""
+"It is also recommended to post an announcement about how the migration "
+"will work to users."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-adfs-msws2016.rst:197
+msgid ""
+"You may also configure SAML for ADFS by editing ``config.json`` to enable"
+" SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You "
+"must restart the Mattermost server for the changes to take effect."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:2
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:5
+msgid "How to Bind Authentication to Id Attribute instead of Email"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:7
+msgid ""
+"Alternatively, you can use an Id Attribute instead of email to bind the "
+"user.  We recommend choosing an ID that is unique and will not change "
+"over time."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:9
+msgid ""
+"Configuring with an Id Attribute allows you to reuse an email address for"
+" a new user without the old user's information being exposed. For "
+"instance, if a user with an email address joe.smith@mattermost.com was "
+"once an employee, a new employee named Joe Smith can use the same email. "
+"This configuration is also useful when a user's name changes and their "
+"email needs to be updated."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:11
+msgid ""
+"This process was designed with backwards compatibility to email binding. "
+"Here is the process applied to new account creations and to accounts "
+"logging in after the configuration:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:13
+msgid ""
+"A user authenticated with SAML is bound to the SAML service user using "
+"the Id Attribute (as long as it has been configured) or bound by email "
+"using the email received from SAML."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:14
+msgid ""
+"When the user tries to login and the SAML server responds with a valid "
+"authentication, then the server uses the \"Id\" field of the SAML "
+"authentication to search the user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:15
+msgid "If a user bound to that ID already exists, it logs in as that user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:16
+msgid ""
+"If a user bound to that ID does not exist, it will search base on the "
+"email."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:17
+msgid ""
+"If a user bound to the email exists, it logs in with email and updates "
+"the autentication data to the ID, instead of the email."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:18
+msgid ""
+"If a user bound to the ID or email does not exist, it will create a new "
+"Mattermost account bound to the SAML account by ID and will allow the "
+"user to log in."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:20
+msgid "Note:  Existing accounts will not update until they log in to the server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:23
+msgid ""
+"Can SAML via Microsoft ADFS be configured with Integrated Windows "
+"Authentication (IWA)?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:25
+msgid ""
+"Yes. IWA is supported on the browser, with support added to iOS and "
+"Android mobile apps in Q2/2019 (mobile apps v1.18 and later)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:27
+msgid ""
+"However, IWA is not supported on the Mattermost Desktop Apps due to a "
+"limitation in Electron. As a workaround you may create a browser desktop "
+"shortcut for quick access to Mattermost, just like a Desktop App."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:30
+msgid ""
+"How do I migrate users from one authentication method (e.g. email) to "
+"SAML?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:32
+msgid ""
+"Use the :doc:`mattermost user migrate_auth CLI command <cli-user-migrate-"
+"auth>`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:35
+msgid "How is SAML different from OAuth 2.0 and OpenId Connect?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:37
+msgid ""
+"OAuth 2.0 was primarily intended for delegated authorization, where an "
+"app is authorized to access resources, such as Google contact list. It "
+"doesn’t deal with authentication."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:39
+msgid ""
+"OpenID Connect is built on top of OAuth 2.0, which supports "
+"authentication and thus direct SSO."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:41
+msgid ""
+"SAML is like OpenID Connect, except typically used in enterprise "
+"settings. OpenID Connect is more common in consumer websites and "
+"web/mobile apps."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:43
+msgid ""
+"Learn more at https://hackernoon.com/demystifying-oauth-2-0-and-openid-"
+"connect-and-saml-12aa4cf9fdba."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:2
+msgid "Configure SAML synchronization with AD/LDAP"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:4
+msgid ""
+"In addition to configuring SAML sign-in, you can optionally configure "
+"synchronizing SAML accounts with AD/LDAP. When configured:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:6
+msgid ""
+"Mattermost queries AD/LDAP for relevant account information and updates "
+"SAML accounts based on changes to attributes (first name, last name, and "
+"nickname)"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:7
+msgid ""
+"Accounts disabled in AD/LDAP are made inactive in Mattermost, and their "
+"active sessions are revoked once Mattermost synchronizes attributes."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:9
+msgid "To configure SAML synchronization with AD/LDAP:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:11
+msgid ""
+"Go to **System Console > SAML** in prior versions or **System Console** >"
+" **Authentication** > **SAML 2.0** in versions after 5.12 and set "
+"**Enable Synchronizing SAML Accounts With AD/LDAP** to `true`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:12
+msgid ""
+"Go to **System Console > AD/LDAP** in prior versions or **System "
+"Console** > **Authentication** > **AD/LDAP** in versions after 5.12 and "
+"set **Enable Synchronization with AD/LDAP** to `true`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:13
+msgid ""
+"Set the rest of the AD/LDAP settings based on `configuration settings "
+"documentation <http://docs.mattermost.com/administration/config-"
+"settings.html#ad-ldap>`__ to connect Mattermost with your AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:15
+msgid ""
+"If you don't want to enable AD/LDAP sign-in, keep **Enable sign-in with "
+"AD/LDAP** as ``false``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:17
+msgid ""
+"Set **Syncronization Interval** to specify how often Mattermost "
+"synchronizes SAML user accounts with AD/LDAP. The default setting is 60 "
+"minutes. If you want to synchronize immediately after disabling an "
+"account, use the \"AD/LDAP Synchronize Now\" button in **System Console >"
+" AD/LDAP** in prior versions or **System Console** > **Authentication** >"
+" **AD/LDAP** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:18
+msgid ""
+"To test Mattermost can successfully connect to your AD/LDAP server, click"
+" the **AD/LDAP Test** button."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:20
+msgid ""
+"Once the synchronization with AD/LDAP is enabled, user attributes are "
+"synchronized with AD/LDAP based on their email address. If a user with a "
+"given email address doesn't have an AD/LDAP account, they will be "
+"deactivated in Mattermost on the next AD/LDAP sync. To re-activate the "
+"account:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:22
+msgid "Add the user to your AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:23
+msgid ""
+"Purge all caches in Mattermost in **System Console > Configuration > "
+"Purge All Caches** in prior versions or **System Console** > **Web "
+"Server** > **Purge All Caches** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:24
+#: ../../source/deployment/sso-saml-ldapsync.rst:51
+msgid ""
+"Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize "
+"Now** in prior versions or **System Console** > **Authentication** > "
+"**AD/LDAP** > **AD/LDAP Synchronize Now** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:25
+msgid ""
+"Purge all caches again in Mattermost in **System Console > Configuration "
+"> Purge All Caches** in prior versions or **System Console** > **Web "
+"Server** > **Purge All Caches** in versions after 5.12, which re-"
+"activates the account in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:28
+msgid ""
+"If a user is deactivated from AD/LDAP, they will be deactivated in "
+"Mattermost on the next sync. They will be shown as \"Inactive\" in the "
+"System Console users list, all of their sessions will expire and they "
+"won't be able to log back in to Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:30
+msgid ""
+"If a user is deactivated from SAML, their session won't expire until "
+"they're deactivated from AD/LDAP. However, they won't be able to log back"
+" in to Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:33
+msgid ""
+"SAML synchronization with AD/LDAP is designed to pull user attributes "
+"such as first name and last name from your AD/LDAP, not to control "
+"authentication."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:35
+msgid ""
+"In particular, the user filter cannot be used to control who can log in "
+"to Mattermost, this should be controlled by your SAML service provider's "
+"group permissions."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:37
+msgid ""
+"See :ref:`technical description of SAML synchronization with AD/LDAP "
+"<sso-saml-technical>` for more details."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:40
+msgid "Override SAML Data with AD/LDAP Data"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:42
+msgid ""
+"Alternatively, you can choose to override SAML bind data with AD/LDAP "
+"information. For more infomation on binding a user with the SAML ID "
+"Attribute, please refer to this `documentation "
+"<https://docs.mattermost.com/deployment/sso-saml-okta.html#bind-"
+"authentication-to-id-attribute-instead-of-email>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:44
+msgid ""
+"This process overrides SAML email address with AD/LDAP email address data"
+" or SAML Id Attribute with AD/LDAP Id Attribute if configured. We "
+"recommend using this configuration with the SAML ID Attribute to help "
+"ensure new users are not created when the email address changes for a "
+"user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:46
+msgid ""
+"To ensure existing user accounts do not get disabled in this process, "
+"ensure the SAML IDs match the LDAP IDs by exporting data from both "
+"systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP"
+" and SAML within Mattermost to fields that hold the same data will ensure"
+" the IDs match as well."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:48
+msgid ""
+"Set the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**"
+" in prior versions or **System Console** > **Authentication** > **SAML "
+"2.0** > **Id Attribute** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:49
+msgid ""
+"Set **System Console > SAML > Override SAML bind data with AD/LDAP "
+"information** to ``true`` in prior versions or **System Console** > "
+"**Authentication** > **SAML 2.0** > **Override SAML bind data with "
+"AD/LDAP information** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-ldapsync.rst:50
+msgid ""
+"Set **System Console > SAML > Enable Synchronizing SAML Accounts With "
+"AD/LDAP** to ``true`` in prior versions or **System Console** > "
+"**Authentication** > **SAML 2.0** > **Enable Synchronizing SAML Accounts "
+"With AD/LDAP** in versions after 5.12."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:2
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:4
+msgid ""
+"The following are troubleshooting suggestions on common error messages "
+"and issues."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:6
+msgid "Unable to switch to SAML authentication successfully"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:8
+msgid ""
+"First, ensure you have installed the `XML Security Library "
+"<https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost "
+"instance and that **it is available in your** PATH."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:10
+msgid "Second, ensure you have completed each step of the SAML configuration."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:12
+msgid ""
+"If you are still having trouble with configuration, see further "
+"troubleshooting notes below or feel free to post in our `Troubleshooting "
+"forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to "
+"help with issues during setup."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:14
+msgid "System Administrator locks themselves out of the system"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:16
+msgid ""
+"If the System Administrator is locked out of the system during SAML "
+"configuration process, they can set an existing account to System "
+"Administrator using `a command line tool "
+"<http://docs.mattermost.com/deployment/on-boarding.html#creating-system-"
+"administrator-account-from-commandline>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:18
+msgid ""
+"Received error message: `An account with that username already exists. "
+"Please contact your Administrator.`"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:20
+#: ../../source/deployment/sso-saml-troubleshooting.rst:26
+msgid ""
+"This usually means an existing account has another authentication method "
+"enabled. If so, the user should sign in using that method (such as email "
+"and password), then change their sign-in method to SAML via **Account "
+"Settings > Security > Sign-in method**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:22
+msgid ""
+"This error message can also be received if the `Username Attribute` of "
+"their SAML credentials doesn't match the username of their Mattermost "
+"account. If so, the user can update the attribute at their identity "
+"provider (for instance, back to the old value if it had been previously "
+"updated)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:24
+msgid ""
+"Received error message: `An account with that email already exists. "
+"Please contact your Administrator.`"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:28
+msgid ""
+"This error message can also be received if the `Email Attribute` of their"
+" SAML credentials doesn't match the email address of their Mattermost "
+"account. If so, the user can update the attribute at their identity "
+"provider (for instance, back to the old value if it had been previously "
+"updated)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:30
+msgid ""
+"Received error message: `SAML login was unsuccessful because one of the "
+"attributes is incorrect. Please contact your System Administrator.`"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:32
+msgid ""
+"Confirm all attributes, including `Email Attribute` and `Username "
+"Attribute`, are correct in both the Identity Provider configuration and "
+"in **System Console > SAML**."
+msgstr ""
+

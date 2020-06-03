@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/mobile/mobile-blackberry.rst:2
+msgid "Set Up Mattermost with BlackBerry EMM"
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:4
+msgid "Log in to your BlackBerry UEM environment."
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:6
+msgid "Click on **Apps**."
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:10
+msgid ""
+"Select the already published Mattermost app, or choose to add a new one."
+"  When adding a new app, select **App Store** or **Google Play** to use "
+"the published apps by Mattermost. If you are building the apps yourself, "
+"use the option for **Internal apps** and then browse to select the .apk "
+"or .ipa file."
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:14
+msgid ""
+"Next fill in the app name, description, and any other information needed "
+"for deployment in the screen below. See BlackBerry documentation for more"
+" details on the settings for `internal apps "
+"<http://help.blackberry.com/en/blackberry-"
+"uem/12.6/administration/adr1393870066674.html>`__, `public iOS apps "
+"<http://help.blackberry.com/en/blackberry-uem/12.6/administration/ios-"
+"apps.html>`__, and `Android for Work apps <http://help.blackberry.com/en"
+"/blackberry-uem/12.6/administration/adr1427221741509.html>`__."
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:18
+msgid ""
+"In the same screen look for **App configuration**. You can either upload "
+"this :download:`xml file <mattermost-specfile.xml>` as the template, or "
+"add the configuration manually with the keys and values described in the "
+":ref:`appconfig-table`."
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:20
+msgid "Using the template:"
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:22
+msgid ""
+"Browse for the xml template file (Note: If you build the app yourself, "
+"make sure to edit the template to use your bundle or package ID)"
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:26
+msgid ""
+"Set the name of the app configuration and edit the settings that appear "
+"on screen, then click **Save**"
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:30
+msgid "Manual configuration:"
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:32
+msgid ""
+"Click on the \"**+**\" at the far right of the App configuration table "
+"and select **Configure Manually**"
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:36
+msgid ""
+"Enter a name for the app configuration, and then add the key value pairs "
+"found in the :ref:`appconfig-table`."
+msgstr ""
+
+#: ../../source/mobile/mobile-blackberry.rst:40
+msgid "Save your configuration"
+msgstr ""
+

@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/bots.rst:2
+msgid "Bots"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:4
+msgid ""
+"Our `Integrations Directory <https://integrations.mattermost.com>`_ has "
+"several integrations to connect bots in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:6
+msgid ""
+"Here are some popular options below, including self-hosted on-prem or "
+"self-hosted private cloud solutions, and vendor-hosted SaaS solutions."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:9
+msgid "WelcomeBot"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:11
+msgid "Welcome users to your Mattermost instance, developed by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:12
+msgid ""
+"Add a Welcome Bot that helps add new team members to channels to improve "
+"onboarding and HR processes."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:13
+msgid ""
+"Source code + docs: https://github.com/mattermost/mattermost-plugin-"
+"welcomebot"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:16
+msgid "BotKube"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:18
+msgid ""
+"Monitor and debug Kubernetes resources, developed by InfraCloud "
+"Technologies."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:19
+msgid ""
+"Monitor your Kubernetes cluster, debug critical deployments and get "
+"recommendations for standard practices."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:20
+msgid "Source code + docs: https://github.com/infracloudio/botkube"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:23
+msgid "Sample Golang bot"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:25
+msgid "Sample bot for Go driver, developed by Mattermost."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:26
+msgid ""
+"Learn how to use the Mattermost Go driver to interact with a Mattermost "
+"server, listen to events and respond to messages."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:27
+msgid ""
+"Use API for simple tasks such as logging in to your server, creating a "
+"channel and posting a message."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:28
+msgid ""
+"Source code + docs: https://github.com/mattermost/mattermost-bot-sample-"
+"golang"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:31
+msgid "Hubot Adapter"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:33
+msgid ""
+"Hubot adapter for Mattermost written in Javascript that uses Web API and "
+"Websockets, developed by Andy Lo-A-Foe."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:34
+msgid ""
+"Use the bot to listen for commands and to execute actions based on your "
+"requests."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:35
+msgid "Invite your bot to any Mattermost channel just like a regular user."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:36
+msgid "Source code + docs: https://github.com/loafoe/hubot-matteruser"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:39
+msgid "Python Chatbot"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:41
+msgid "A python based chat bot for Mattermost, developed by Alex Tzonkov."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:42
+msgid ""
+"Allows the creation of listeners, messages and replies to conversations "
+"in particular channels."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:43
+msgid ""
+"Create and setup a bot to listen to a channel for particular prompts and "
+"respond appropriately."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:44
+msgid "Source code + docs: https://github.com/attzonko/mmpy_bot"
+msgstr ""
+
+#: ../../source/deployment/bots.rst:46
+msgid ""
+"Have a proposal for a bot? `Let us know in the feature proposal forum "
+"<https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_."
+msgstr ""
+
+#: ../../source/deployment/bots.rst:48
+msgid ""
+"Have built an integration? `Let us know "
+"<https://integrations.mattermost.com/submit-an-integration/>`_ and we'll "
+"share in our `Integrations Directory "
+"<https://integrations.mattermost.com>`_."
+msgstr ""
+

@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:2
+msgid "Troubleshooting Push Notifications"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:4
+msgid ""
+"If you did not receive a push notification when :doc:`testing push "
+"notifications <mobile-testing-notifications>`, use the following "
+"procedure to troubleshoot:"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:6
+msgid ""
+"Under **System Console** > **General** > **Logging** > **File Log Level**"
+" in prior versions or **System Console > Environment > Logging > File Log"
+" Level** in versions after 5.12 select **DEBUG** in order to watch for "
+"push notifications in the server log."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:8
+msgid "Delete your mobile application, and install it again."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:10
+msgid ""
+"Sign in with \"Account A\" and **confirm you want to receive push "
+"notifications** when prompted by the mobile app."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:12
+msgid ""
+"On desktop, go to **Account Settings** > **Security** > **View and Logout"
+" of Active Sessions** and check that there is a session for the native "
+"mobile app matching your login time."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:14
+msgid ""
+"Repeat the procedure for :doc:`testing push notifications <mobile-"
+"testing-notifications>`."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:16
+msgid ""
+"If no push notification appears go to **System Console** > **Logs** and "
+"click **Reload**. Look at the bottom of the logs for a message similar "
+"to:"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:18
+msgid ""
+"``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to "
+"608xyz0... wi msg of '@accountb: Hello'``"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:20
+msgid ""
+"If the log message appears, it means a message was sent to the HPNS "
+"server and was not received by your mobile application. Please contact "
+"support@mattermost.com with the subject \"HPNS issue on Step 8\" for help"
+" from the commercial support team."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:21
+msgid ""
+"If the log message does not appear, it means no mobile push notification "
+"was sent to “Account A”. Please repeat starting at step 2 and double "
+"check each step."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot-notifications.rst:23
+msgid ""
+"**IMPORTANT:** After your issue is resolved, go to **System Console** > "
+"**General** > **Logging** > **File Log Level** in prior versions or "
+"**System Console > Environment > Logging > File Log Level** in versions "
+"after 5.12 and select **ERROR** to switch your logging detail level to "
+"Errors Only, instead of DEBUG, in order to conserve disk space."
+msgstr ""
+

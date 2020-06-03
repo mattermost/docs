@@ -1,0 +1,638 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/interactive-dialogs.rst:4
+msgid "Interactive Dialogs"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:6
+msgid ""
+"Interactive dialogs are used by applications that integrate with the "
+"Mattermost server. They are a method for integrations to receive some "
+"form-styled input from users and have that input submitted back to the "
+"integration. Use them to gather structured information from the end user "
+"to perform an action or a request."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:8
+msgid ""
+"Integrations open dialogs by sending an HTTP POST, containing some data "
+"in the request body, to an endpoint on the Mattermost server. "
+"Integrations can use this endpoint to open dialogs when users :doc:`click"
+" message buttons or select an option from a menu <interactive-messages>`,"
+" or use a :doc:`custom slash command <slash-commands>`."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:10
+msgid ""
+"Moreover, :doc:`plugins <../administration/plugins>` can trigger a dialog"
+" based on user actions. For instance, if a plugin adds a button in the "
+"channel header, clicking that button may open a dialog."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:12
+msgid ""
+"Here is an example of what a dialog looks like for creating a JIRA issue "
+"within the Mattermost user interface:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:22
+msgid "Opening a Dialog"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:24
+msgid ""
+"To open a dialog, your integration must first receive an HTTP request "
+"from the Mattermost server. This request will be triggered by a slash "
+"command or an interactive message. It will include a trigger ID."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:26
+msgid ""
+"Once you have the trigger ID you can use it to open the interactive "
+"dialog by sending an HTTP POST request to ``https://<your-mattermost-"
+"url>/api/v4/actions/dialogs/open``. See the below section for what to "
+"include in the body of that HTTP request."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:29
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:31
+msgid "Interactive dialogs support the following parameters:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Parameter"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Type"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Description"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "title"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "String"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Title of the dialog. Maximum 24 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "elements"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Array"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"Up to 5 elements allowed per dialog. See below for more details on "
+"elements. If none are supplied - the dialog box acts as a simple "
+"confirmation"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "url"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "The URL to send the submitted dialog payload to."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "icon_url"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) The URL of the icon used for your dialog. If none specified, "
+"no icon is displayed."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "submit_label"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) Label of the button to complete the dialog. Default is "
+"``Submit``."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "notify_on_cancel"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) When true, sends an event back to the integration whenever "
+"there's a user-induced dialog cancellation. No other data is sent back "
+"with the event. Default is ``false``."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "state"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) String provided by the integration that will be echoed back "
+"with dialog submission. Default is the empty string."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:44
+msgid ""
+"Sample JSON is given below. Form submissions are sent back to the URL "
+"defined by the integration. You must also include the trigger ID you "
+"received from the slash command or interactive message."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:62
+msgid "Elements"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:64
+msgid "Each dialog supports elements for users to enter information."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:66
+msgid ""
+"**text**: Single-line plain text field. Use this for inputs such as "
+"names, email addresses or phone numbers."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:67
+msgid ""
+"**textarea**: Multi-line plain text field. Use this field when the answer"
+" is expected to be longer than 150 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:68
+msgid ""
+"**select**: Message menu. Use this for pre-selected choices. Can either "
+"be static menus or dynamic menus generated from users and public channels"
+" of the system. For more information on message menus, see :doc:`the "
+"documentation <interactive-messages>`."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:70
+msgid ""
+"Each element is required by default. Otherwise the client will return an "
+"error as shown below. Note that the error message will appear below the "
+"help text, if one is specified. To make an element optional, set the "
+"field ``\"optional\": \"true\"``."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:75
+msgid "Text Elements"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:77
+msgid ""
+"Text elements are single-line plain text fields. Below is an example of a"
+" text element that asks for an email address."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:91
+msgid ""
+"There is an optional ``\"subtype\": \"email\"`` field in the above "
+"example, which specifies the keyboard layout used on mobile. For this "
+"example, the email keypad is shown to the user given the subtype is set "
+"to ``email``."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:93
+#: ../../source/developer/interactive-dialogs.rst:229
+msgid "The full list of supported fields are included below:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Field"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "display_name"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"Display name of the field shown to the user in the dialog. Maximum 24 "
+"characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "name"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"Name of the field element used by the integration. Maximum 300 "
+"characters. You should use unique “name” fields in the same dialog."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "type"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Set this value to ``text`` for a text element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "subtype"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) One of ``text``, ``email``, ``number``, ``password`` (as of "
+"v5.14),``tel``, or ``url``. Default is ``text``. Use this to set which "
+"keypad is presented to users on mobile when entering the field."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "min_length"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Integer"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "(Optional) Minimum input length allowed for an element. Default is 0."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "max_length"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) Maximum input length allowed for an element. Default is 150. "
+"If you expect the input to be greater 150 characters, consider using a "
+"``textarea`` type element instead."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "optional"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Boolean"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) Set to true if this form element is not required. Default is "
+"``false``."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "help_text"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "(Optional) Set help text for this form element. Maximum 150 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "default"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) Set a default value for this form element. Maximum 150 "
+"characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "placeholder"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) A string displayed to help guide users in completing the "
+"element. Maximum 150 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:110
+msgid "Textarea Elements"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:112
+msgid ""
+"Textarea elements are multi-line plain text fields. A sample JSON is "
+"provided below:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:123
+msgid "The maximum length for a textarea is 3,000 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:125
+msgid ""
+"The list of supported fields is the same as for the ``textarea`` type "
+"element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Set this value to ``textarea`` for a textarea element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. "
+"Default is ``text``. Use this to set which keypad is presented to users "
+"on mobile when entering the field."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "(Optional) Maximum input length allowed for an element. Default is 3,000."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) Set a default value for this form element. Maximum 3,000 "
+"characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) A string displayed to help guide users in completing the "
+"element. Maximum 3,000 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:142
+msgid "Select Elements"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:144
+msgid ""
+"Select elements are message menus that allow users to select one "
+"predefined option from a list. Below is an example of a select element "
+"that asks for one of three different options."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:172
+msgid ""
+"Note that the JSON payload for ``select`` type elements matches "
+":doc:`interactive message menus <interactive-messages>`."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:174
+msgid ""
+"The select element can also be generated dynamically from users and "
+"channels of the system."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:176
+msgid "For users, use"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:187
+msgid "and for public channels, use"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:198
+msgid ""
+"The list of supported fields for the ``select`` type element is included "
+"below:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Set this value to ``select`` for a select element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "data_source"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) One of ``users``, or ``channels``. If none specified, assumes "
+"a manual list of options is provided by the integration."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "options"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) An array of options for the select element. Not applicable for"
+" ``users`` or ``channels`` data sources."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:214
+msgid "Checkbox Element"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:216
+msgid ""
+"In Mattermost version 5.16 and later, you can use checkbox elements. It "
+"looks like a plain text field with a checkbox to be selected. Below is an"
+" example of a checkbox element that asks for meeting feedback:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "Set this value to ``bool`` for a checkbox element."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid "(Optional) Set a default value for this form element. True or false."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:1
+msgid ""
+"(Optional) A string displayed to include a label besides the checkbox. "
+"Maximum 150 characters."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:244
+msgid "Dialog Submission"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:246
+msgid ""
+"When a user submits a dialog, Mattermost will perform client-side input "
+"validation to make sure"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:248
+msgid "All required fields are filled"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:249
+msgid "All formats are correct (e.g. email, telephone number, etc.)"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:251
+msgid "The submission payload sent to the integration is:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:269
+msgid ""
+"Optionally, the dialog can send an event back to the integration if "
+"``notify_on_cancel`` parameter is set to true. If this happens, "
+"``cancelled`` will be set to true on the above payload, and "
+"``submission`` will be empty."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:271
+msgid ""
+"Moreover, Mattermost also allows the integration itself to perform input "
+"validation. This can be done by responding to the dialog submission "
+"request with a JSON body containing an `errors` field. The `errors` field"
+" can contain a JSON object, mapping input field names to string error "
+"messages you would like to display to the user. For example, if you have "
+"a field named `num_between_0_and_10`, you can enforce the user to enter a"
+" number between 0 and 10 by returning the following response body if the "
+"condition isn't satisfied:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:277
+msgid ""
+"The integration may also return a generic error message to the user that "
+"is not attached to a specific field. This can be done by responding to "
+"the dialog submission request with a JSON body containing an `error` "
+"field. The `error` field should contain a string with the error message "
+"to display to the user. For example, if a server-side error occurs, you "
+"can return a message explaining it:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:283
+msgid "Support for generic error messages was added in Mattermost 5.18."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:285
+#, python-format
+msgid ""
+"Finally, once the request is submitted, we recommend the integration to "
+"respond with a system message or an ephemeral message confirming the "
+"submission. This should be a separate request back to Mattermost once the"
+" service has received and responded to a submission request from a "
+"dialog. This can be done either via `the REST API "
+"<https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_,"
+" or via the `Plugin API "
+"<https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_"
+" if you are developing a plugin."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:289
+msgid ""
+"If the dialog is closed by clicking the \"Cancel\" button or by clicking "
+"the \"X\", no data will be submitted. If a user clicks away from the "
+"dialog, the dialog won’t close to prevent accidentally losing any answers"
+" they've made to an unsubmitted dialog."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:292
+msgid "Example"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:294
+msgid ""
+"Below is a full example of a JSON payload that creates an interactive "
+"dialog in Mattermost:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:427
+msgid "Share Your Integration"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:429
+msgid ""
+"If you've built an integration for Mattermost, please consider `sharing "
+"your work <https://www.mattermost.org/share-your-mattermost-projects/>`__"
+" in our `app directory <https://about.mattermost.com/default-app-"
+"directory/>`__."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:431
+msgid ""
+"The `app directory <https://about.mattermost.com/default-app-"
+"directory/>`__ lists open source integrations developed by the Mattermost"
+" community and are available for download, customization and deployment "
+"to your private cloud or on-prem infrastructure."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:434
+msgid "Slack Compatibility"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:436
+msgid ""
+"Like Slack, dialogs are triggered by an interactive message menu or "
+"button, or by a custom slash command. Additionally, Mattermost can "
+"trigger dialogs via plugins."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:438
+msgid ""
+"The schema for these objects is the same as Slack's, except for the "
+"following differences:"
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:440
+msgid ""
+"``url`` field must be specified for Mattermost dialogs, which specifies "
+"where the request is sent to. In Slack, this is handled by specifying the"
+" URL within the Slack app that uses the dialog."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:441
+msgid ""
+"``icon_url`` is an optional field to set the icon for Mattermost dialogs."
+" In Slack, the dialogs use the icon set for the app that uses the dialog."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:442
+msgid ""
+"``label`` in Slack dialogs is ``display_name`` in Mattermost dialogs for "
+"a more consistent naming convention with other integration types."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:443
+msgid ""
+"``hint`` in Slack dialogs is ``help_text`` in Mattermost dialogs for a "
+"more consistent naming convention with other integration types."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:444
+msgid ""
+"``value`` in Slack dialogs is ``default`` in Mattermost dialogs for a "
+"more consistent naming convention with other integration types."
+msgstr ""
+
+#: ../../source/developer/interactive-dialogs.rst:446
+msgid ""
+"Moreover, the JSON payload for ``select`` type elements matches "
+":doc:`interactive message menus <interactive-messages>`."
+msgstr ""
+

@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/settings/custom-emoji.rst:3
+msgid "Custom Emoji"
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:5
+msgid ""
+"Settings for Custom Emoji are accessible from the **Main Menu** by "
+"clicking the hamburger menu at the top of the channels sidebar. Clicking "
+"**Custom Emoji** opens a page where you can view existing Custom Emojis "
+"and create new ones."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:7
+msgid "To create a Custom Emoji:"
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:9
+msgid ""
+"Click on the hamburger menu at the top of the channels sidebar to open "
+"the **Main Menu**."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:10
+msgid "Select **Custom Emoji**."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:11
+msgid "Click **Add Custom Emoji**."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:12
+msgid ""
+"Enter a name for your Custom Emoji. (This is the name that will show up "
+"in the emoji autocomplete)."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:13
+msgid "Click **Select**, and choose what image to use for the emoji."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:14
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:16
+msgid ""
+"Small, square pictures work best when selecting an image. The file can be"
+" any JPG, GIF, or PNG."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:18
+msgid ""
+"After saving, your emoji will show up in the list of Custom Emoji. To add"
+" your Custom Emoji to a message, simply type \":\" followed by your emoji"
+" name to bring it up in the emoji autocomplete. Other users on the site "
+"will also be able to see your emoji in the autocomplete, and will be able"
+" to use it in their own messages."
+msgstr ""
+
+#: ../../source/help/settings/custom-emoji.rst:20
+msgid ""
+"Note: If you cannot see the **Custom Emoji** option in the menu, then "
+"your System Administrator may have restricted access to certain users. "
+"Contact your System Administrator for help."
+msgstr ""
+

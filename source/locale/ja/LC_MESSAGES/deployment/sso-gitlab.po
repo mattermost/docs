@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/sso-gitlab.rst:2
+msgid "GitLab Single Sign-On"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:4
+msgid ""
+"Configure Mattermost to use GitLab as a single sign-on (SSO) service for "
+"team creation, account creation, and user sign-in."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:6
+msgid ""
+"Only the default GitLab SSO is officially supported. \"Double SSO\", "
+"where GitLab SSO is chained to other SSO solutions, is not supported. It "
+"may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons"
+" in some cases, but because of the special logic required they're not "
+"officially supported and are known not to work on some experiences. If "
+"having official AD, LDAP, SAML, or MFA support is critical to your "
+"enterprise, please consider `Mattermost Enterprise Edition "
+"<https://mattermost.com/pricing/>`__ as an option."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:10
+msgid "Step 1: Add an OAuth application to your GitLab account"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:12
+msgid ""
+"Sign in to your GitLab account and go to ``https://{gitlab-site-"
+"name}/profile/applications``. For *{gitlab-site-name}* use the name of "
+"your GitLab instance. If you're using GitLab itself as your OAuth "
+"provider, use *gitlab.com*."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:13
+msgid "Add a new application:"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:15
+msgid "In the **Name** field, type *Mattermost*."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:16
+msgid ""
+"In the **Redirect URI** field add the following two lines, using your own"
+" value for *{mattermost-site-name}*."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:24
+msgid "Do not select any options under **Scopes**."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:26
+msgid "Click **Save application**."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:28
+msgid ""
+"Keep the GitLab window open because you need the *Application Id* and "
+"*Secret* when you configure Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:31
+msgid "Step 2: Configure Mattermost for GitLab SSO"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:33
+msgid ""
+"In Team Edition, navigate to **System Console > Authentication > Gitlab**"
+" or in Enterprise Edition navigate to **System Console > Authentication >"
+" OAuth 2.0**. Select ``Gitlab`` in the *Select OAuth 2.0 service "
+"provider* dropdown and add other required fields.  Alternatively, on your"
+" Mattermost server, add the *Application Id* and the *Secret* to the "
+"*GitLab* settings section in the ``config.json`` file:"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:35
+msgid ""
+"Open ``config.json`` as root in a text editor. It's usually in "
+"``/opt/mattermost/config`` but might be elsewhere on your system."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:36
+msgid ""
+"Locate the *GitLabSettings* section and add or update the following "
+"information:"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:50
+msgid ""
+"For ``{gitlab-site-name}`` use the name of your GitLab instance. If your "
+"GitLab instance is not set up to use SSL, the endpoints must begin with "
+"``http://`` instead of ``https://``. If you are using GitLab itself as "
+"your OAuth provider, use *gitlab.com*."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:52
+msgid ""
+"For ``UserApiEndpoint``, use ``https://{gitlab-site-name}/api/v3/user`` "
+"if you're running GitLab v8.17.8 or earlier."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:54
+msgid ""
+"[Optional] To force all users to sign-up with SSO only, set **System "
+"Console > Authentication > Email > Enable sign-in with email** to "
+"``false`` or in the *EmailSettings* section of ``config.json`` set "
+"*EnableSignUpWithEmail* to ``false``."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:56
+msgid "Restart your Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:58
+msgid "On Ubuntu 14.04 and RHEL 6: ``sudo restart mattermost``"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:60
+msgid "On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart mattermost``"
+msgstr ""
+
+#: ../../source/deployment/sso-gitlab.rst:62
+msgid ""
+"After the server restarts, users must change their sign-in method before "
+"they can sign in with GitLab."
+msgstr ""
+

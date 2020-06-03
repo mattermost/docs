@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/deploy-bitnami.rst:4
+msgid "Deploy Mattermost on Bitnami"
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:6
+msgid ""
+"Deploy your Mattermost Team Edition server in the cloud with one simple "
+"click using one of `several Bitnami cloud images "
+"<https://bitnami.com/stack/mattermost/cloud>`__."
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:8
+msgid "Deployment options include:"
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:10
+msgid "`Amazon Web Services <https://about.mattermost.com/deploy-aws>`__"
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:11
+msgid ""
+"`Oracle Cloud Platform <https://about.mattermost.com/deploy-"
+"oraclecloud>`__"
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:12
+msgid "`Microsoft Azure <https://about.mattermost.com/deploy-azure>`__"
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:13
+msgid ""
+"`Google Cloud Platform <https://about.mattermost.com/deploy-"
+"googlecloud>`__"
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:15
+msgid ""
+"Alternatively, you may also deploy to `Debian 8 VMware or Oracle "
+"VirtualBox virtual machines <https://about.mattermost.com/deploy-"
+"debianvirtualmachine>`__."
+msgstr ""
+
+#: ../../source/install/deploy-bitnami.rst:17
+msgid ""
+"If you migrate from Bitnami to a self-hosted installation with MySQL "
+"database, read these notes in our migration guide: `Migrating from "
+"Bitnami <../administration/migrating.html#migrating-from-bitnami>`__"
+msgstr ""
+

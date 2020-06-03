@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/integrations/webhook.rst:3
+msgid "Using Mattermost with Webhook"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:5
+msgid ""
+"`Webhook <https://github.com/adnanh/webhook>`__ is a Golang application "
+"for setting up webhooks on a server with minimal configuration. It "
+"provides a simple way to trigger events on a server while keeping it "
+"separate from your web server."
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:7
+msgid ""
+"Mattermost's outgoing webhooks feature  can be used with this fairly "
+"easily as long as you take a few things into account."
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:10
+msgid "Sending information from Mattermost"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:12
+msgid ""
+"Mattermost's :doc:`interactive message buttons <../developer/interactive-"
+"messages>` send information using a parameter called \"context.\" The "
+"easiest way to get all the information from Mattermost is to use the "
+"following configuration, which will pass the entire payload to your "
+"script as a string:"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:15
+msgid "{"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:16
+msgid "\"source\": \"entire-payload\""
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:17
+#: ../../source/integrations/webhook.rst:45
+#: ../../source/integrations/webhook.rst:46
+#: ../../source/integrations/webhook.rst:47
+msgid "}"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:21
+msgid "Responding to the request"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:23
+msgid ""
+"If you don't respond to the request you'll see an error in your "
+"Mattermost logs that looks like ``Action integration error [details: "
+"err=EOF]``."
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:25
+msgid ""
+"To solve this, use the ``response-message`` configuration property to "
+"send back a response to prevent this. This response is sent immediately "
+"after receiving the webhook."
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:27
+msgid ""
+"If your script doesn't take very long to run you can use the ``include-"
+"command-output-in-response`` property to send that output to the "
+"Mattermost server."
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:30
+msgid "Authenticating Requests"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:32
+msgid ""
+"Mattermost can be configured to send a token with an outgoing webhook to "
+"make sure that your webhook only responds to authorized requests. To "
+"enable this, use the following in your webhook configuration:"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:35
+msgid "\"trigger-rule\": {"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:37
+msgid "\"match\": {"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:39
+msgid ""
+"\"type\": \"value\", \"value\": \"<Outgoing webhook token>\", "
+"\"parameter\": {"
+msgstr ""
+
+#: ../../source/integrations/webhook.rst:43
+msgid "\"source\": \"request\", \"name\": \"token\""
+msgstr ""
+

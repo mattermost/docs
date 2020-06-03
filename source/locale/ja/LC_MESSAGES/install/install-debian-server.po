@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-debian-server.rst:4
+msgid "Installing Debian Buster"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:6
+msgid ""
+"Install the 64-bit version of Debian on each machine that hosts one or "
+"more of the components."
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:8
+msgid "**To install Debian Buster:**"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:10
+msgid ""
+"To install Debian Buster, see the `Debian Installation Guide (PDF). "
+"<https://www.debian.org/releases/stable/amd64/install.pdf>`__"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:12
+msgid ""
+"After the system is installed, make sure that it's up to date with the "
+"most recent security patches. Open a terminal window and issue the "
+"following commands as root:"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:14
+msgid "``apt-get update``"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:16
+msgid "``apt-get upgrade``"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:18
+msgid "Install *sudo* and *curl* for use later in the installation:"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:20
+msgid "``apt-get install sudo curl gnupg``"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:22
+msgid ""
+"Add your username to the sudo group. In the following command, replace "
+"{username} with your own username."
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:24
+msgid "``usermod -a -G sudo {username}``"
+msgstr ""
+
+#: ../../source/install/install-debian-server.rst:26
+msgid ""
+"Now that the system is up to date and our user is in the sudo group, you "
+"can start installing the components that make up a Mattermost system."
+msgstr ""
+

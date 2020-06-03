@@ -1,0 +1,393 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/integration-faq.md:1
+msgid "Integrations FAQ"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:4
+msgid ""
+"Come join our \"Contributors\" community channel on our daily build "
+"server, where you can discuss questions with community members and the "
+"Mattermost core team. Join our \"Developers\" channel for technical "
+"discussions and our \"Integrations\" channel for all integrations and "
+"plugins discussions."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:6
+msgid "What's the difference between incoming and outgoing webhooks?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:8
+msgid "A webhook is a way for one app to send real-time data to another app."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:10
+msgid ""
+"In Mattermost, incoming webhooks receive data from external applications "
+"and make a post in a specified channel. They're great for setting up "
+"notifications when something happens in an external application."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:12
+msgid ""
+"Outgoing webhooks take data from Mattermost, and send it to an external "
+"application. Then the outgoing webhook can post a response back in "
+"Mattermost. They're great for listening in on channels, and then "
+"notifying external applications when a trigger word is said."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:14
+msgid "What is a slash command?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:16
+msgid ""
+"A slash command is similar to an outgoing webhook, but instead of "
+"listening to a channel it is used as a command tool. This means if you "
+"type in a slash command it will not be posted to a channel, whereas an "
+"outgoing webhook is only triggered by posted messages."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:18
+msgid "What does Slack-compatible mean?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:20
+msgid ""
+"Slack compatible means that Mattermost accepts integrations that have a "
+"payload in the same format as Slack."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:22
+msgid ""
+"If you have a Slack integration, you should be able to set it up in "
+"Mattermost without changing the format."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:24
+msgid "What if I have a webhook from somewhere other than Slack?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:26
+msgid ""
+"If you have an integration that outputs a payload in a different format "
+"you need to write an intermediate application to act as a translation "
+"layer to change it to the format Mattermost uses. Since there’s currently"
+" no general standard for webhook formatting, this is unavoidable and just"
+" a part of how webhooks work."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:28
+msgid ""
+"If there's no translation layer, Mattermost won't understand the data "
+"you're sending."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:30
+msgid "What are attachments?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:32
+msgid ""
+"When \"attachments\" are mentioned in the integrations documentation, it "
+"refers to Slack's Message Attachments. These \"attachments\" can be "
+"optionally added as an array in the data sent by an integration, and are "
+"used to customize the formatting of the message."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:34
+msgid ""
+"We currently don't support the ability to attach files to a post made by "
+"an integration."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:36
+msgid "Where can I find existing integrations?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:38
+msgid ""
+"Visit our app directory for dozens of open source integrations to common "
+"tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along "
+"with interactive bot applications (Hubot, mattermost-bot), and other "
+"communication tools (Email, IRC, XMPP, Threema) that are freely available"
+" for use and customization."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:40
+msgid "Where should I install my integrations?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:42
+msgid ""
+"For self-hosted deployments in small setups you might host integrations "
+"on the same server on which Mattermost is installed. For larger "
+"deployments you can setup a separate server for integrations, or add them"
+" to the server on which the external application is hosted--for example, "
+"if you're self-hosting a Jira server you could deploy a Jira integration "
+"on the Jira server itself."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:44
+msgid ""
+"When self-hosting restrictions are less strict, AWS, Heroku and other "
+"public cloud options could also be used."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:46
+msgid "How do I create a bot account with personal access tokens?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:48
+msgid ""
+"See bot accounts documentation to learn more about how to create and "
+"manage bot accounts in Mattermost."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:50
+msgid ""
+"In version 5.11 and earlier, follow these steps to create a bot account "
+"with personal access tokens:"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:52
+msgid ""
+"Create a bot account using any authentication method, including email and"
+" password, AD/LDAP, or SAML."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:53
+msgid "Create a personal access token for the account using the steps here."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:54
+msgid ""
+"The steps also outline how to give the account permissions to post to any"
+" channel in your Mattermost server, including direct messages, or to any "
+"public channel."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:55
+msgid ""
+"Include the personal access token from step 2 as part of the "
+"Authorization header on API requests from your integration."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:56
+#: ../../source/developer/integration-faq.md:105
+msgid ""
+"To confirm the token works, you can have your bot make a simple GET "
+"request to /api/v4/users/me with the Authorization: bearer "
+"<yourtokenhere> in the header. If it returns a 200 with the bot's user "
+"object in the response, the API request was made successfully."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:63
+msgid "How do I create a bot account without personal access tokens or webhooks?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:65
+msgid ""
+"Deployments that cannot create bot accounts via webhooks due to security "
+"reasons and do not want to use personal access tokens with no expiry "
+"time, can use the following approach:"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:67
+msgid "Create a bot account using a secure email and strong password."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:68
+msgid ""
+"Manually add the account to all teams and channels it needs access to. If"
+" your deployment has a lot of teams or channels, you may create a CLI "
+"script to automate the process."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:69
+msgid ""
+"In a testing environment, you may also make the bot account a System "
+"Admin, giving the bot permissions to post to any channel. Not recommended"
+" in production due to potential security vulnerabilities."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:70
+msgid ""
+"Provide the email and password to your integration, and store it in a "
+"secure location with restricted access."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:71
+msgid ""
+"Have your integration use the email and password with an /api/v4/login "
+"endpoint to retrieve a session token. The session token is used to "
+"authenticate to the Mattermost system."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:72
+msgid ""
+"Set up your bot to make an HTTP POST to your-mattermost-"
+"url.com/api/v4/users/login with a JSON body, including the bot account's "
+"email and password."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:83
+msgid ""
+"where we assume there is a Mattermost instance running at "
+"http://localhost:8065."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:84
+msgid ""
+"If successful, the response will contain a Token header and a user object"
+" in the body:"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:102
+msgid ""
+"The bot should retrieve the session token from the Token header and store"
+" it in memory for use with future requests."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:103
+msgid ""
+"Note: Each session token has an expiry time, set depending on the "
+"server's configuration. If the session token your bot is using expires, "
+"it will receive a 401 Unauthorized response from requests using that "
+"token. When your bot receives this response, it should re-apply the login"
+" logic (using the above steps) to get another session token. Then re-send"
+" the request that received the 401 status code."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:104
+msgid ""
+"Include the Token as part of the Authorization header on API requests "
+"from your integration."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:112
+msgid ""
+"Note: The Mattermost development team is also working on an API developer"
+" token, which allows you to authenticate the bot account via the API "
+"token rather than retrieving a session token from a user account."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:114
+msgid ""
+"How should I automate the install and upgrade of Mattermost when included"
+" in another application?"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:116
+msgid "Automating Mattermost installation within another application:"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:118
+msgid ""
+"Review the Mattermost installation guides to understand configuration "
+"steps of the production deployment"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:119
+msgid ""
+"Install Mattermost files to a dedicated /opt/mattermost directory by "
+"decompressing the tar.gz file of the latest release for your target "
+"platform (for example linux-amd64)."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:120
+msgid ""
+"Review Configuration Settings in config.json and set your automation to "
+"customize your Mattermost deployment based on your requirements."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:121
+msgid ""
+"For directory locations defined in config.json, such as the location of "
+"the local file storage directory (./data/) or logs directory (./logs), "
+"you can redefine those locations in your config.json settings and move "
+"the directories."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:122
+msgid "All other directories should remain as they are in /mattermost"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:123
+msgid "Test that your Mattermost server is running with your new configuration."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:124
+msgid ""
+"Also, from the commandline run ./bin/mattermost -version to test that the"
+" commandline interface is functioning properly."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:126
+msgid "Automating Mattermost upgrade within another application:"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:128
+msgid "Review the upgrade guide for an overview of the upgrade procedure."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:129
+msgid "Create automation to upgrade to the next Mattermost versions:"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:130
+msgid "backup the config.json file to preserve any settings a user may have made."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:131
+msgid "backup the ./data directory if local storage is used for files."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:132
+msgid ""
+"replace the contents of /mattermost directory with the decompressed "
+"contents of the latest release."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:133
+msgid ""
+"restore config.json and ./data to their previous locations (which may "
+"have been overwritten)."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:134
+msgid ""
+"if you need to overwrite any config.json parameters use a sed command or "
+"similar tool to update config.json"
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:135
+msgid ""
+"starting the Mattermost server to upgrade the database, config.json file,"
+" and ./data as necessary."
+msgstr ""
+
+#: ../../source/developer/integration-faq.md:136
+msgid ""
+"Optionally the upgrade procedure can be chained so users can upgrade "
+"across an arbitrary number of Mattermost versions rather than to just the"
+" latest release."
+msgstr ""
+

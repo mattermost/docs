@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-rhel-6-mysql.rst:4
+msgid "Installing MySQL Database Server"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:6
+msgid ""
+"Install and set up the database for use by the Mattermost server. You can"
+" install either MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:8
+msgid "**To install MySQL 5.7 on RHEL 6:**"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:10
+msgid ""
+"Log in to the server that will host the database, and open a terminal "
+"window."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:12
+msgid "Download the MySQL Yum repository from dev.mysql.com."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:14
+msgid ""
+"``wget http://dev.mysql.com/get/mysql57-community-release-"
+"el6-9.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:16
+msgid "Install the Yum repository from the file that you downloaded."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:18
+msgid "``sudo yum localinstall mysql57-community-release-el6-9.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:20
+msgid "Install MySQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:22
+msgid "``sudo yum install mysql-community-server``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:24
+msgid "Start the MySQL server."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:26
+msgid "``sudo service mysqld start``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:29
+msgid ""
+"The first time that you start MySQL, the superuser account "
+"``'root'@'localhost'`` is created and a temporary password is generated "
+"for it."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:30
+msgid ""
+"Also the first time that you start MySQL, the ``validate_password`` "
+"plugin is installed. The plugin forces passwords to contain at least one "
+"upper case letter, one lower case letter, one digit, and one special "
+"character, and that the total password length is at least 8 characters."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:32
+msgid ""
+"Obtain the root password that was generated when you started MySQL for "
+"the first time."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:34
+msgid "``sudo grep 'temporary password' /var/log/mysqld.log``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:36
+msgid ""
+"Change the root password. Login with the password that you obtained from "
+"the previous step."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:38
+msgid "``mysql -u root -p``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:40
+msgid ""
+"Change the password. At the mysql prompt, type the following command. Be "
+"sure to replace ``Password42!`` with the password that you want to use."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:42
+msgid "``mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password42!';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:44
+msgid "Set MySQL to start automatically when the machine starts."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:46
+msgid "``sudo chkconfig mysqld on``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:48
+msgid "Create the Mattermost user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:50
+msgid "``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:53
+msgid "Use a password that is more secure than 'mmuser-password'."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:54
+msgid ""
+"The '%' means that mmuser can connect from any machine on the network. "
+"However, it's more secure to use the IP address of the machine that hosts"
+" Mattermost. For example, if you install Mattermost on the machine with "
+"IP address 10.10.10.2, then use the following command:"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:56
+msgid ""
+"``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-"
+"password';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:58
+msgid "Create the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:60
+msgid "``mysql> create database mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:62
+msgid "Grant access privileges to the user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:64
+msgid "``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-6-mysql.rst:66
+msgid ""
+"With the database installed and the initial setup complete, you can now "
+"install the Mattermost server."
+msgstr ""
+

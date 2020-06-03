@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/sso-saml-technical.rst:3
+msgid "SAML Single-Sign-On (E20): Technical Documentation"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:7
+msgid ""
+"Security Assertion Markup Language (SAML) is an open standard that allows"
+" identity providers (IdP), like OneLogin, to pass authorization "
+"credentials to service providers (SP), like Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:9
+msgid ""
+"In simpler terms, it means you can use one set of credentials to log in "
+"to many different sites. With a SAML identity provider account, you can "
+"log in to Mattermost and other sites securely with the same account."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:11
+msgid ""
+"The main benefit is that it helps administrators centralize user "
+"management by controlling which sites users have access to with their "
+"SAML identity provider credentials."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:18
+msgid "SAML Providers"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:20
+msgid ""
+"**Identity Providers (IdP)**: An identity provider performs the "
+"authentication. When a user clicks to log in, the identity provider "
+"confirms who the user is, and sends data to the service provider with the"
+" proper authorization to access the site."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:22
+msgid "Examples: OneLogin, Okta, Microsoft Active Directory (ADFS) or Azure."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:24
+msgid ""
+"**Service Providers (SP)**: A service provider gets authentication and "
+"authorization information from an IdP. Once received, it gives the user "
+"access to the system and logs the user in."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:26
+msgid "Examples: Mattermost, Zendesk, Zoom, Salesforce."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:29
+msgid "SAML Request (AuthNRequest)"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:31
+msgid ""
+"When Mattermost initiates an SP-initiated SAML request flow, it generates"
+" a **HTTP-Redirect** binding request to the IdP that contains an XML "
+"payload as a base64 string"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:37
+msgid ""
+"AuthNRequests can also be signed by Mattermost in v5.14 and later, in "
+"which case the XML payload is similar to:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:65
+msgid "SAML Responses"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:67
+msgid ""
+"There are different types of SAML responses sent by the IdP to the SP. "
+"The response contains the Assertion with the NameID and attributes of a "
+"user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:69
+msgid ""
+"Below is a table of the different types of responses. Each response type "
+"is fully supported except when the SAML assertion is signed while the "
+"SAML response itself is not:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "Signed SAML Response"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "Signed SAML Assertion"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "Encrypted SAML Assertion"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "Supported by Mattermost"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "Yes"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "No"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:1
+msgid "Partially, validation of assertion signature not supported"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:83
+msgid ""
+"For example XML responses for each type, see the `OneLogin SAML response "
+"examples <https://www.samltool.com/generic_sso_res.php>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:86
+msgid "Technical description of SAML synchronization with AD/LDAP"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:88
+msgid "When enabled, SAML synchronization with AD/LDAP occurs in phases:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:90
+msgid ""
+"Get all the current LDAP users from the Mattermost database who have "
+"``Users.AuthService`` set to ``ldap``. This is a SQL query issued against"
+" the Mattermost database: ``SELECT * FROM Users WHERE AuthService = "
+"'ldap'``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:91
+msgid ""
+"Get all the current SAML users from the Mattermost database who have "
+"``Users.AuthService`` set to ``saml``. This is a SQL query issued against"
+" the Mattermost database: ``SELECT * FROM Users WHERE AuthService = "
+"'saml'``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:92
+msgid ""
+"Get all the current LDAP users from the LDAP server as defined by "
+"``LdapSettings.UserFilter``. This is an `LDAP query "
+"<https://github.com/mattermost/mattermost-server/blob/master/scripts"
+"/ldap-check.sh>`__ issued against the LDAP server. Users are retrieved in"
+" batches as defined by ``LdapSettings.MaxPageSize``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:93
+msgid ""
+"Update LDAP attributes. For each existing Mattermost user retrieved in "
+"step 1, attempt to find a match against the list of LDAP users from step "
+"3. To find matches, ``Users.AuthData`` field of the Mattermost user is "
+"compared against the ``LdapSettings.IdAttribute`` LDAP setting."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:95
+#: ../../source/deployment/sso-saml-technical.rst:100
+msgid ""
+"If any attribute of the user has changed, that attribute is copied from "
+"the LDAP server and the user is marked as updated."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:96
+msgid ""
+"If the corresponding ``LdapSettings.IdAttribute`` is not found, the user "
+"is assumed to be deleted from the LDAP server, and deactivated from "
+"Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:98
+msgid ""
+"Update SAML attributes. For each existing Mattermost user retrieved in "
+"step 2, attempt to find a match against the list of LDAP users from step "
+"3. To find matches, ``SamlSettings.Email`` is compared against the "
+"``LdapSettings.EmailAttribute`` LDAP setting."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:101
+msgid ""
+"If the corresponding ``LdapSettings.EmailAttribute`` is not found, the "
+"user is assumed to be deleted from the LDAP server, and deactivated from "
+"Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:104
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:107
+msgid "How can I obtain a SAML metadata XML file consumed by Mattermost?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:109
+msgid ""
+"You can obtain the XML file by calling the Mattermost RESTful API "
+"endpoint at ``/api/v4/saml/metadata``."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-technical.rst:111
+msgid ""
+"For other useful SAML API calls, see the `API reference "
+"<https://api.mattermost.com/#tag/SAML>`_."
+msgstr ""
+

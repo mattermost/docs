@@ -1,0 +1,1050 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/getting-started/implementation_plan.rst:2
+msgid "Implementation Plan"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:5
+msgid "1   Introduction"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:8
+msgid "1.1 Purpose"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:10
+msgid ""
+"Mattermost is an open source, private cloud alternative to proprietary "
+"SaaS messaging solutions designed to offer organizations superior "
+"control, data sovereignty, configurability, freedom from lock-in, and "
+"enhanced security by keeping vital communications behind your firewall. "
+"You have chosen to implement Mattermost in our supported `editions:`_"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:14
+msgid "Team Edition"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:16
+msgid ""
+"Enterprise Edition (E10) which adds additional features to the platform "
+"including `AD/LDAP Integration <https://docs.mattermost.com/deployment"
+"/sso-ldap.html>`__, `Multi-Factor Authentication (\"MFA\") "
+"<https://docs.mattermost.com/deployment/auth.html>`__, `Encrypted Push "
+"Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__, "
+"`Branding <https://docs.mattermost.com/administration/branding.html>`__, "
+"`Advanced Access Control Policy "
+"<https://docs.mattermost.com/administration/config-"
+"settings.html#policy>`__, and next business day support."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:17
+msgid ""
+"Enterprise Edition (E20) includes E10 features plus `SAML 2.0 "
+"Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`__,"
+" `Compliance Reporting "
+"<https://docs.mattermost.com/administration/compliance.html>`__, `High "
+"Availability <https://docs.mattermost.com/deployment/cluster.html>`__, "
+"`Elasticsearch "
+"<https://docs.mattermost.com/deployment/elasticsearch.html>`__, "
+"`Performance Monitoring "
+"<https://docs.mattermost.com/deployment/metrics.html>`__, `Data Retention"
+" Policy <https://docs.mattermost.com/administration/data-"
+"retention.html>`__, and enterprise class support."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:19
+msgid "The purpose of this Implementation Plan is to:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:21
+msgid "Describe the solution to be deployed;"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:23
+msgid ""
+"Outline the process for implementing the solution (key personnel, tasks, "
+"schedule, etc.);"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:25
+msgid "Identify support required during the implementation process."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:28
+msgid "2 System Overview"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:30
+msgid ""
+"This section provides a brief overview of the system to be implemented, "
+"including a description of the system and its organization."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:33
+msgid "2.1 System Description"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:35
+msgid ""
+"Mattermost is a messaging solution designed to remove friction for inter-"
+"organizational communications. You are implementing Mattermost in order "
+"to:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:37
+#: ../../source/getting-started/implementation_plan.rst:39
+#: ../../source/getting-started/implementation_plan.rst:41
+msgid "**[STATE REASON]**"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:43
+msgid ""
+"In this implementation, you are planning to deploy Mattermost to "
+"**[NUMBER OF USERS]** users on the following teams:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:45
+msgid "**[TEAM 1]**"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:47
+msgid "**[TEAM 2]**"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:49
+msgid "**[TEAM 3]**"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:53
+msgid "2.2  System Organization"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:55
+msgid ""
+"A Mattermost Enterprise E20 implementation consists of the following "
+"system components:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:57
+msgid ""
+"**Mattermost Server** - The Mattermost Server is a single binary that "
+"includes the RESTful JSON web service, authentication client, "
+"authentication provider, notification service, and data management "
+"service. The Mattermost Server can be deployed in stand-alone or high "
+"availability mode where two or more servers are clustered together using "
+"gossip protocol and a proxy server that routes traffic from client "
+"applications to healthy servers in the cluster."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:59
+msgid ""
+"**Mattermost Database** - A MySQL or PostgreSQL database in stand-alone "
+"or high-availability configurations (master with read replicas). When "
+"choosing the database, consider the `inherent search limitations of the "
+"database type <https://docs.mattermost.com/install/requirements.html"
+"#database-software>`__ and whether `Elasticsearch "
+"<https://docs.mattermost.com/deployment/elasticsearch.html>`__ is most "
+"appropriate for your deployment."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:61
+msgid ""
+"**Mattermost Push Notification Service** - Hosted or on-prem service that"
+" pushes notifications to Mattermost Android and Mattermost iOS mobile "
+"applications."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:63
+msgid ""
+"**Mattermost Client Applications** - Client applications are available "
+"for Mattermost for the following platforms: Android, iOS, Windows, OSX, "
+"and Linux (Beta)."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:65
+msgid ""
+"**Mattermost Web Client** - Mattermost users can use their favorite Web "
+"browser to connect to their Mattermost server in place of the Mattermost "
+"mobile and desktop applications."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:67
+msgid ""
+"**Proxy Server** - The use of a proxy server (NGINX, Apache, HAProxy, "
+"ELB, etc.) is recommended with Mattermost to obtain the benefits of: SSL "
+"termination, HTTP to HTTPS redirection, port mapping :80 to :8065, and "
+"the creation of standard request logs."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:70
+msgid ""
+"The following diagram is a high-level illustration of the Mattermost "
+"platform and how its various components interact with each other within a"
+" network:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:73
+#: ../../source/getting-started/implementation_plan.rst:149
+msgid "**Reference**: https://docs.mattermost.com/deployment/deployment.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:75
+msgid ""
+"A recommended installation of Mattermost Enterprise E20 configured with a"
+" redundant, highly available, highly scalable mode, with application "
+"(Mattermost Server) and database high availability features enabled, will"
+" require the following physical, or virtual, servers:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:78
+#: ../../source/getting-started/implementation_plan.rst:264
+msgid "Task"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:78
+msgid "Qty"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:78
+msgid "CPU"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:78
+msgid "Memory"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:78
+msgid "Storage"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:80
+msgid "Mattermost Server"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:80
+#: ../../source/getting-started/implementation_plan.rst:82
+#: ../../source/getting-started/implementation_plan.rst:84
+#: ../../source/getting-started/implementation_plan.rst:268
+msgid "2"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:80
+#: ../../source/getting-started/implementation_plan.rst:82
+msgid "2 vCPUs/cores"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:80
+#: ../../source/getting-started/implementation_plan.rst:84
+msgid "4 GB"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:80
+msgid "45-90 GB"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:82
+msgid "Database Server"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:82
+msgid "8 GB"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:82
+msgid "100 GB"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:84
+msgid "Proxy"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:84
+msgid "1 vCPUs/cores"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:84
+msgid "10 GB"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:88
+msgid ""
+"Mattermost hardware sizing guidance can be found here: "
+"https://docs.mattermost.com/install/requirements.html#hardware-"
+"requirements"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:91
+msgid "2.3 Project References"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:93
+msgid ""
+"This section provides a bibliography of key project references and "
+"deliverables that have been produced before this point in the project "
+"development."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:95
+msgid ""
+"Mattermost Product Overview: "
+"https://docs.mattermost.com/overview/index.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:96
+msgid ""
+"Mattermost Software/Hardware Requirements: "
+"https://docs.mattermost.com/install/requirements.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:97
+msgid ""
+"Mattermost Security Features: "
+"https://docs.mattermost.com/overview/security.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:98
+msgid ""
+"Mattermost Administrator Guide: "
+"https://docs.mattermost.com/guides/administrator.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:99
+msgid "Mattermost User Guide: https://docs.mattermost.com/guides/user.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:102
+msgid "2.4      Glossary"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:104
+msgid ""
+"Provide a glossary of all terms and abbreviations used in the manual.  If"
+" it is several pages in length, it may be placed in an appendix."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:106
+#: ../../source/getting-started/implementation_plan.rst:312
+msgid "---"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:109
+msgid "3   Management Overview"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:111
+msgid ""
+"The subsequent sections provide a brief description of the implementation"
+" and major tasks involved in this section."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:114
+msgid "3.1 Description of Implementation"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:117
+msgid "3.2 Team"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:119
+msgid ""
+"In this section, identify the System Proponent, the name of the "
+"responsible organization(s), and titles and telephone numbers of the "
+"staff who serve as points of contact for the system implementation.  "
+"These points of contact could include the Project Manager. Program "
+"Manager, Security Manager.  Database Administrator, Configuration "
+"Management Manager, or other managers with responsibilities relating to "
+"the system implementation.  The site implementation representative for "
+"each field installation or implementation site should also be included, "
+"if appropriate.  List all managers and staff with whom the implementation"
+" must be coordinated."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:122
+msgid "3.2.1 Team Members"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:125
+msgid "Name"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:125
+msgid "Title"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:125
+msgid "Email"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:125
+msgid "Phone"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:127
+msgid "Jane Doe"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:127
+msgid "Project Manager"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:127
+msgid "jane.doe@company.com"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:127
+msgid "111.111.1111"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:135
+msgid "3.3 Major Tasks"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:137
+msgid ""
+"This section provides a brief description of each major task required for"
+" the implementation of the system. Add as many subsections as necessary "
+"to this section to describe all the major tasks adequately. The tasks "
+"described in this section are not site-specific, but generic or overall "
+"project tasks that are required to install hardware and software, prepare"
+" data, and verify the system."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:140
+msgid "3.3.1 Create System Architecture Document"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:142
+msgid ""
+"The System Architecture Document is used to document the environments "
+"that Mattermost will be deployed to including:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:144
+msgid "The environment (development, staging, production, etc.)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:145
+msgid "Server, or virtual machine, specifications"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:146
+msgid "IP addresses and DNS"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:147
+msgid "Network diagram"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:152
+msgid "3.3.2 Gather Required Software and Documentation"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:154
+msgid ""
+"Gather all of the software and documentation required for a successful "
+"implementation of the Mattermost platform and place it within the "
+"organization’s configuration management system."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:157
+msgid "3.3.3 Prepare Deployment Environments"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:159
+msgid ""
+"Build out the required deployment environments (development, staging, "
+"production, etc.) and implement configuration management (using a tool "
+"like Chef, Puppet, Salt, etc.)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:161
+msgid "**Reference**: https://docs.mattermost.com/install/requirements.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:164
+msgid "3.3.4 Install Software"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:166
+msgid ""
+"Install and configure Mattermost and its component software (MySQL or "
+"PostgreSQL, Nginx or another proxy, etc.)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:168
+msgid ""
+"**Reference**: https://docs.mattermost.com/guides/administrator.html"
+"#installing-mattermost"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:170
+msgid ""
+"Install in High Availability (E20): "
+"https://docs.mattermost.com/deployment/cluster.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:173
+msgid "3.3.5 Test Deployment"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:175
+msgid ""
+"Verify that the software has been deployed successfully in each "
+"environment. Create, or update, automated tests to verify deployments."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:177
+msgid ""
+"**Reference**: https://docs.mattermost.com/administration/health-"
+"check.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:180
+msgid "3.3.6 Bulk Load Data"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:182
+msgid ""
+"Large quantities of data can be imported from a JSON file into Mattermost"
+" at the command line using the bulk loading feature. This feature is most"
+" suitable for migrating data from an existing messaging system, or for "
+"pre-populating a new installation with data."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:184
+msgid "You can import the following data types:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:186
+msgid "Teams"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:187
+msgid "Channels (Public and Private)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:188
+msgid "Users"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:189
+msgid "Users’ Team memberships"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:190
+msgid "Users’ Channel memberships"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:191
+msgid "Users’ notification preferences"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:192
+msgid "Posts (regular, non-reply posts)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:193
+msgid "Direct Message and Group Message channels"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:194
+msgid "Direct Messages and Group Messages"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:196
+msgid "**Reference**: https://docs.mattermost.com/deployment/bulk-loading.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:199
+msgid "3.3.7 Implement Backup"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:201
+msgid ""
+"Implement backup procedures to protect data stored within the Mattermost "
+"database, files uploaded by users, and the Mattermost config.json file."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:203
+msgid "**Reference**: https://docs.mattermost.com/administration/backup.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:206
+msgid "3.3.8 Implement Monitoring"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:208
+msgid ""
+"Mattermost E20 supports integrated health and performance monitoring with"
+" Prometheus and Grafana. A guide to the statistics collected and reported"
+" on is available in the reference below:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:210
+msgid "**Reference**: https://docs.mattermost.com/deployment/metrics.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:213
+msgid "3.3.9 AD/LDAP Setup (E10, E20)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:215
+msgid ""
+"Mattermost supports AD/LDAP integration for user authentication and user "
+"attribute syncing."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:217
+msgid "**Reference**: https://docs.mattermost.com/deployment/sso-ldap.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:220
+msgid "3.3.10 Multi-Factor Authentication (E10, E20)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:222
+msgid ""
+"Configure multi-factor authentication (“MFA”) if required as part of your"
+" IT security policy. Compatible with Google Authenticator"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:224
+msgid "**Reference**: https://docs.mattermost.com/deployment/auth.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:227
+msgid "3.3.11 SAML Single-Sign-On (E20)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:229
+msgid ""
+"Mattermost can be configured to act as a SAML 2.0 Service Provider. "
+"Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the "
+"identity providers (IDPs)."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:231
+msgid "**Reference**: https://docs.mattermost.com/deployment/sso-saml.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:234
+msgid "3.3.12 Train Administrators"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:236
+msgid "Train administrators on the tasks required to manage Mattermost."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:238
+msgid "**Reference**: https://docs.mattermost.com/guides/administrator.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:241
+msgid "3.3.13 Update Legal and Support Settings"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:243
+msgid ""
+"Mattermost has configuration settings for the terms of service, privacy "
+"policy, and support URLs and emails. It is highly recommended that you "
+"modify these in your configuration so that your users have the correct "
+"legal information and can contact administrators to resolve account "
+"issues. You can find these under **System Console > Legal and Support** "
+"in prior versions or **System Console** > **Site Configuration** > "
+"**Customization** in versions after 5.12."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:250
+msgid "3.3.14 Onboard Users"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:252
+msgid ""
+"Send all users a welcome email with instructions on how to get started "
+"using Mattermost including links to the mobile applications and the User "
+"Guide."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:256
+msgid "**References**:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:255
+msgid ""
+"Links to download Mattermost apps:  "
+"https://about.mattermost.com/download/#mattermostApps"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:256
+msgid "User Guides: https://docs.mattermost.com/guides/user.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:259
+msgid "3.4 Implementation Schedule"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:261
+msgid ""
+"In this section, provide a schedule of activities to be accomplished "
+"during implementation.  Show the required tasks (described in Section "
+"3.3, Major Tasks) in chronological order, with the beginning and end "
+"dates of each task."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:264
+msgid "Start Date"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:264
+msgid "End Date"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:266
+msgid "1"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:266
+msgid "Create System Architecture Document"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:266
+msgid "xx/xx/xxxx"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:268
+msgid "Gather Required Software and Documentation"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:270
+msgid "3"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:270
+msgid "Prepare Deployment Environments"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:272
+msgid "4"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:272
+msgid "Install Software"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:274
+msgid "5"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:274
+msgid "Test Deployment"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:276
+msgid "6"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:276
+msgid "Bulk Load Data"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:278
+msgid "7"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:278
+msgid "Implement Backup"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:280
+msgid "8"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:280
+msgid "Implement Monitoring"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:282
+msgid "9"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:282
+msgid "Train Administrators"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:284
+msgid "10"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:284
+msgid "Onboard Users"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:288
+msgid "3.5 Security"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:290
+msgid ""
+"If appropriate for the system to be implemented, include an overview of "
+"the system security features and requirements during the implementation."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:293
+msgid "3.5.1     System Security Features"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:295
+msgid "The Mattermost platform will be secured in the following ways:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:297
+msgid ""
+"Mattermost will be hosted entirely on-premises behind your company "
+"firewall with access restricted to VPN connections;"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:298
+msgid ""
+"Mobile access to Mattermost will be further restricted by the use of "
+"multi-factor authorization;"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:299
+msgid "Transmissions to and from Mattermost will be encrypted using TLS;"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:300
+msgid "Encryption-at-rest will be applied using your company's standards;"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:301
+msgid ""
+"Mattermost’s integrity and audit controls store a complete history of "
+"messages, including edits and deletes, along with all files uploaded. "
+"User interface actions for “deleting” messages and channels remove the "
+"data only from the user interface; the data is retained within your "
+"database. If your compliance guidelines require it, you can turn off "
+"users’ ability to edit and delete their messages after they are posted."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:302
+msgid ""
+"Mattermost will be protected against brute force attacks by its rate "
+"limiting API;"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:303
+msgid ""
+"Authentication to Mattermost will be controlled using your company's "
+"Active Directory/LDAP/SAML directory server."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:305
+msgid "**Reference**: https://docs.mattermost.com/overview/security.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:308
+msgid "3.5.2     Security During Implementation"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:310
+msgid ""
+"This section addresses security issues specifically related to the "
+"implementation effort, if any. For example, if LAN servers or "
+"workstations will be installed at a site with sensitive data preloaded on"
+" non-removable hard disk drives, address how security would be provided "
+"for the data on these devices during shipping, transport, and "
+"installation because theft of the devices could compromise the sensitive "
+"data."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:315
+msgid "4        Implementation Support"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:317
+msgid ""
+"This section describes the support software, materials, equipment, and "
+"facilities required for the implementation, as well as the personnel "
+"requirements and training necessary for the implementation.  The "
+"information provided in this section is not site-specific.  If there are "
+"additional support requirements not covered by the subsequent sections, "
+"others may be added as needed."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:320
+msgid "4.1      Hardware, Software, Facilities, and Materials"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:322
+msgid ""
+"In this section, list support software, materials, equipment, and "
+"facilities required for the implementation, if any."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:325
+msgid "4.1.1     Hardware"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:327
+msgid ""
+"This section provides a list of support equipment and includes all "
+"hardware used for testing time implementation.  For example, if a "
+"client/server database is implemented on a LAN, a network monitor or "
+"“sniffer” might be used, along with test programs. to determine the "
+"performance of the database and LAN at high-utilization rates.  If the "
+"equipment is site-specific, list it in Section 5, Implementation "
+"Requirements by Site."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:330
+msgid "4.1.2     Software"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:332
+msgid ""
+"This section provides a list of software and databases required to "
+"support the implementation. Identify the software by name, code, or "
+"acronym.  Identify which software is commercial off-the-shelf and which "
+"is State-specific.  Identify any software used to facilitate the "
+"implementation process.  If the software is site-specific, list it in "
+"Section 4."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:335
+msgid "4.1.3     Facilities"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:337
+msgid ""
+"In this section, identify the physical facilities and accommodations "
+"required during implementation.  Examples include physical workspace for "
+"assembling and testing hardware components, desk space for software "
+"installers, and classroom space for training the implementation stall.  "
+"Specify the hours per day needed, number of days, and anticipated dates. "
+"If the facilities needed are site-specific, provide this information in "
+"Section 4, Implementation Requirements by Site."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:340
+msgid "4.1.4     Material"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:342
+msgid ""
+"This section provides a list of required support materials, such as "
+"magnetic tapes and disk packs."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:345
+msgid "4.2      Personnel"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:347
+msgid ""
+"This section describes personnel requirements and any known or proposed "
+"staffing requirements, if appropriate.  Also describe the training, if "
+"any, to be provided for the implementation staff."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:350
+msgid "4.2.1     Personnel Requirements and Staffing"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:352
+msgid ""
+"In this section, describe the number of personnel, length of time needed,"
+" types of skills, and skill levels for the staff required during the "
+"implementation period.  If particular staff members have been selected or"
+" proposed for the implementation, identify them and their roles in the "
+"implementation."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:355
+msgid "4.2.2     Training of Implementation Staff"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:357
+msgid ""
+"This section addresses the training, if any, necessary to prepare staff "
+"for implementing and maintaining the system; it does not address user "
+"training, which is the subject of the Training Plan.  Describe the type "
+"and amount of training required for each of the following areas, if "
+"appropriate, for the system:"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:359
+msgid "System hardware/software installation"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:360
+msgid "System support"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:361
+msgid "System maintenance and modification"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:363
+msgid ""
+"Present a training curriculum listing the courses that will be provided, "
+"a course sequence. and a proposed schedule.  If appropriate, identify "
+"which courses particular types of staff should attend by job position "
+"description."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:365
+msgid ""
+"If training will be provided by one or more commercial vendors, identify "
+"them, the course name(s), and a brief description of the course content."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:367
+msgid ""
+"If the training will be provided by State staff, provide the course "
+"name(s) and an outline of the content of each course.  Identify the "
+"resources, support materials, and proposed instructors required to teach "
+"the course(s)."
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:370
+msgid "4.3      Performance Monitoring (E20)"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:372
+msgid ""
+"This section describes the performance monitoring tool and techniques and"
+" how it will be used to help decide if the implementation is successful: "
+"https://docs.mattermost.com/deployment/metrics.html"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:375
+msgid "4.4      Configuration Management Interface"
+msgstr ""
+
+#: ../../source/getting-started/implementation_plan.rst:377
+msgid ""
+"This section describes the interactions required with the Configuration "
+"Management (CM) representative on CM-related issues, such as when "
+"software listings will be distributed, and how to confirm that libraries "
+"have been moved from the development to the production environment."
+msgstr ""
+

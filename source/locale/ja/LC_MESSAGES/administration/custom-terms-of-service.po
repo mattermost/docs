@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/custom-terms-of-service.rst:4
+msgid "Custom Terms of Service (Beta) (E20)"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:6
+msgid ""
+"Available in `Enterprise Edition E20 and higher "
+"<https://about.mattermost.com/pricing/>`__."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:8
+msgid ""
+"In Mattermost Enterprise Edition E20, you can outline custom Terms of "
+"Service for your team members to accept before they can access Mattermost"
+" on web, desktop or mobile."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:11
+msgid "Configuring Terms of Service"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:13
+msgid "To enable custom terms of service:"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:15
+msgid ""
+"Go to **System Console > Customization > Custom Terms of Service** in "
+"prior versions or **System Console > Compliance > Custom Terms of "
+"Service** in versions after 5.12."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:16
+msgid "Set **Enable Custom Terms of Service** to **true**."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:17
+msgid ""
+"Set **Custom Terms of Service Text** which contains your terms. Note that"
+" Markdown-formatting, including lists, headings and bolding, is "
+"supported."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:18
+msgid ""
+"Set **Re-Acceptance Period**, which sets the number of days before Terms "
+"of Service acceptance expires, and the terms must be re-accepted. Set to "
+"0 if you don't want your terms to expire."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:19
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:21
+msgid ""
+"Once saved, all users must accept the terms of service by clicking **I "
+"Agree** next time they log in, or on the next page refresh. If they do "
+"not accept, they will be logged out."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:25
+msgid ""
+"If you make an update to your Terms of Service, make sure to update your "
+"terms of service link at **System Console > Customization > Legal and "
+"Support > Terms of Service link** in prior versions or **System Console >"
+" Site Configuration > Customization** in versions after 5.12."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:27
+msgid ""
+"This link is presented to all users on each log in, and is easily "
+"accessible to end users after accepting the terms."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:30
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:33
+msgid "What happens if I update my terms of service text?"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:35
+msgid ""
+"There will be no impact to your end users. Users will simply be required "
+"to accept the new terms on next login or page refresh."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:38
+msgid "How do I know if my users accepted the terms of service?"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:40
+msgid ""
+"Each time a user agrees to the terms of service, the agreement is "
+"recorded in the database:"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:42
+msgid ""
+"A new field ``AcceptedServiceTermsId`` in the **Users** table indicates "
+"the most recent terms of service the user has accepted."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:43
+msgid ""
+"Each time a user accepts the terms, the action is recorded in the "
+"**Audits** table, containing the username, timestamp of acceptance, and "
+"other relevant information."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:46
+msgid "Why isn't this feature in Team Edition for GDPR compliance?"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:48
+msgid ""
+"Terms of service is presented to users on login and account creation, and"
+" available to users at all times in the link specified at **System "
+"Console > Customization > Legal and Support > Terms of Service link** in "
+"prior versions or **System Console > Site Configuration > Customization**"
+" in versions after 5.12."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:50
+msgid ""
+"This feature is intended to meet compliance requirements for large "
+"Enterprise companies."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:53
+msgid "Why are custom terms of service beta?"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:55
+msgid ""
+"This feature is labelled as beta while we verify the quality of the "
+"feature in various scenarios. Known issues include:"
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:57
+msgid "Login fails when custom terms of service is enabled and MFA is enforced."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:58
+msgid ""
+"Terms of service text disappears in the System Console on save until next"
+" refresh."
+msgstr ""
+
+#: ../../source/administration/custom-terms-of-service.rst:59
+msgid ""
+"Terms of service loads immediately following an update to terms, instead "
+"of after login or a page refresh."
+msgstr ""
+

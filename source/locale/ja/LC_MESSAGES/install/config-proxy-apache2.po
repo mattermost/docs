@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/config-proxy-apache2.rst:4
+msgid "Configuring Apache2 as a proxy for Mattermost Server (Unofficial)"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:6
+msgid ""
+"This unofficial guide is maintained by the Mattermost community and this "
+"deployment configuration is not yet officially supported by Mattermost, "
+"Inc. `Community testing, feedback and improvements are welcome and "
+"greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. "
+"You can `edit this page on GitHub "
+"<https://github.com/mattermost/docs/blob/master/source/install/config-"
+"proxy-apache2.rst>`__."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:8
+msgid ""
+"In order to use Apache as a reverse proxy for the mattermost server, you "
+"need to install and enable the following apache modules: ``mod_rewrite`` "
+", ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow "
+"the instructions from your linux distribution to do so."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:10
+msgid ""
+"The Apache2 proxy configuration is done through the ``/etc/apache2/sites-"
+"available`` directory. If you're setting up Mattermost on a subdomain "
+"you'll want to create a new configuration along the lines of "
+"``mysubdomain.mydomain.com.conf``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:12
+msgid "Copy the `default` configuration file found in the same directory."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:14
+msgid "**To configure Apache2 as a proxy**"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:16
+msgid "SSH into your server."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:17
+msgid ""
+"Make sure the apache modules ``mod_rewrite`` , ``mod_proxy``, "
+"``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. "
+"If not, follow the instructions from your linux distribution to do so."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:18
+msgid ""
+"Create/open the above mentioned file (000-default or a new subdomain "
+"configuration)."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:19
+msgid "Edit your configuration using the guide below:"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:21
+msgid ""
+"If you're not setting up a subdomain your ``ServerName`` will simply be "
+"set to ``mydomain.com``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:22
+msgid ""
+"``ServerAlias`` can been added too if you want to capture "
+"``www.mydomain.com``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:23
+msgid "Remember to change the values to match your server's name, etc."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:24
+msgid ""
+"If you have enabled TLS in the Mattermost settings, you must use the "
+"protocol ``wss://`` instead of ``ws://`` in the ``RewriteRule``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:25
+msgid "Save once finished."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:52
+msgid ""
+"Because you'll likely have not set up the subdomain before now on "
+"Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do"
+" not run ``a2ensite mysubdomain.mydomain.com.conf``)."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:54
+msgid "Restart Apache2"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:56
+msgid "On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:57
+msgid "On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart apache2``"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:59
+msgid ""
+"You should be all set! Ensure that your Mattermost config file is "
+"pointing to the correct URL and then ensure that once deployed your "
+"socket connection is not dropping."
+msgstr ""
+

@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/integrations/net-promoter-score.rst:2
+msgid "User Satisfaction Surveys"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:4
+msgid ""
+"Mattermost is introducing in-product feedback surveys beginning in v5.12."
+" Feedback is used to measure user satisfaction and improve product "
+"quality by hearing directly from users. Please refer to our `privacy "
+"policy <https://github.com/mattermost/mattermost-"
+"server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the"
+" collection and use of information received through our services."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:12
+msgid "Administration"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:14
+msgid "Is the survey enabled by default?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:15
+msgid ""
+"The user satisfaction survey is a pre-packaged plugin, and surveys are "
+"enabled by default on all servers when upgrading to v5.12 or later. "
+"However, the plugin will not be activated on any servers that have `Error"
+" and Diagnostic Reporting "
+"<https://docs.mattermost.com/administration/telemetry.html>`_ disabled, "
+"meaning no surveys or data collection occurs."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:18
+msgid "How can surveys be disabled?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:19
+msgid ""
+"Disabling the **User Satisfaction Surveys** plugin from **System Console "
+"> Plugins (Beta) > Plugin Management** will disable surveys and all data "
+"collection by the plugin. If surveys have been disabled from the plugin "
+"configuration in **System Console > Plugins (Beta) > User Satisfaction "
+"Surveys** but the plugin itself is still enabled, surveys will not be "
+"scheduled but users can still send written feedback by messaging "
+"Surveybot."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:21
+msgid ""
+"If the plugin or surveys in the plugin configuration are disabled, they "
+"will remain disabled for subsequent server upgrades."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:24
+msgid "When is the survey scheduled?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:25
+msgid ""
+"Users will receive surveys 21 days after every server upgrade starting "
+"with v5.12, assuming the following conditions are true:"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:27
+msgid ""
+"User Satisfaction Surveys plugin is enabled in **System Console > Plugins"
+" (Beta) > Plugin Management**"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:28
+msgid ""
+"Surveys are enabled in the plugin configuration in **System Console > "
+"Plugins (Beta) > User Satisfaction Surveys**"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:29
+msgid "User account is greater than 21 days old"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:30
+msgid "User has not completed a survey in the last 90 days"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:31
+msgid "User has not been sent a survey in the last 90 days"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:32
+msgid ""
+"Current server version is greater than the server version of the last "
+"survey, excluding dot releases"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:34
+msgid ""
+"The above conditions mean that at maximum frequency a user will receive a"
+" survey every 90 days, assuming the server is upgraded within that time "
+"period."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:37
+msgid "How will I be notified a survey is scheduled?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:39
+msgid ""
+"System Administrators will receive an email notification and in-product "
+"Direct Message from \"Surveybot\" mentioning the scheduled date the "
+"survey will be triggered."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:44
+msgid "Survey Data"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:47
+msgid "How is the survey received?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:49
+msgid ""
+"Once the survey is triggered on the server, all users will receive an in-"
+"product Direct Messages from \"Surveybot\" on their next login or page "
+"refresh in Mattermost."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:51
+msgid ""
+"Users can optionally select a 0-10 score on how likely they are to "
+"recommend Mattermost and then provide written feedback about their "
+"experience. Selecting a score and providing feedback are optional, and "
+"the survey can be ignored without interrupting usage of Mattermost."
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:56
+msgid "What data is collected?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:57
+msgid ""
+"Data is only collected when a user selects a score or provides written "
+"feedback in response to survey questions. Please refer to our `privacy "
+"policy <https://github.com/mattermost/mattermost-"
+"server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the"
+" collection and use of information received through our services. The "
+"following **non-personally identifiable information** is collected:"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:61
+msgid "Survey information:"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:60
+msgid "Score (0-10) submitted by the user"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:61
+msgid "Written feedback submitted by the user (if applicable)"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:62
+msgid "Timestamp of the survey submission"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:67
+msgid "Server information:"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:64
+msgid "Server/webapp version the survey was submitted on"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:65
+msgid "Installation date of the server"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:66
+msgid "Diagnostic ID used for error and diagnostics reporting"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:67
+msgid "License ID used for error and diagnostics reporting (if applicable)"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:68
+msgid "E10 or E20 (if applicable)"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:72
+msgid "User information:"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:70
+msgid "User role (System Admin, Team Admin or member)"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:71
+msgid "Account creation timestamp"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:72
+msgid "User ID of the surveyed user"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:75
+msgid "Will this data be sent through my firewall?"
+msgstr ""
+
+#: ../../source/integrations/net-promoter-score.rst:77
+msgid ""
+"If Mattermost is hosted in a private network with firewall then data from"
+" the User Satisfaction Surveys plugin is not sent unless outbound "
+"connections are allowed or specifically configured for this plugin."
+msgstr ""
+

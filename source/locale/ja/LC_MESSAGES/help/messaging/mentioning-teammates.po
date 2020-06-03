@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/messaging/mentioning-teammates.rst:4
+msgid "Mentioning Teammates"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:8
+msgid "@Mentions"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:10
+msgid "Use @mentions to get the attention of specific team members."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:12
+msgid ""
+"Note that editing a message does not trigger new @mention notifications, "
+"desktop notifications, or notification sounds."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:16
+msgid "@username"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:18
+msgid ""
+"You can mention a teammate by using the *@* symbol plus their username to"
+" send them a mention notification."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:20
+msgid ""
+"Type *@* to bring up a list of team members who can be mentioned. To "
+"filter the list, type the first few letters of any username, first name, "
+"last name, or nickname. Use the UP and DOWN arrow keys to scroll through "
+"entries in the list, and then press ENTER to select the person to "
+"mention. When selected, the username replaces the full name or nickname."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:22
+msgid ""
+"The following example sends a special mention notification to Alice, "
+"whose username is **alice**. The notification alerts her of the channel "
+"and message where she was mentioned. If Alice is away from Mattermost and"
+" has email notifications turned on, then she receives an email alert of "
+"her mention along with the message text."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:28
+msgid ""
+"If the person you mentioned does not belong to the channel, a System "
+"Message is posted to let you know. This is a temporary message, and you "
+"are the only one who can see it. To add the mentioned person to the "
+"channel, go to the dropdown menu beside the channel name and select **Add"
+" Members**."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:31
+msgid "@channel and @all"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:33
+msgid ""
+"You can mention an entire channel by typing ``@channel`` or ``@all``. All"
+" members of the channel receive a mention notification that behaves the "
+"same way as if the members had been mentioned personally. If used in Town"
+" Square, it notifies all members of your team."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:35
+#: ../../source/help/messaging/mentioning-teammates.rst:48
+msgid ""
+"You can ignore channel-wide mentions in specific channels in the "
+"**Channel Menu > Notification Preferences > Ignore mentions for @channel,"
+" @here and @all**."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:41
+msgid ""
+"If a channel has five or more members, you are prompted to confirm that "
+"you want notifications sent to everyone in the channel."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:44
+msgid "@here"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:46
+msgid ""
+"You can mention everyone who is online in a channel by typing ``@here``. "
+"This sends a desktop notification and push notification to members of the"
+" channel who are online. It's counted as a mention in the sidebar. "
+"Members who are offline do not receive a notification, and when they come"
+" back to the site they will not see a mention counted in the channel "
+"sidebar. Members who are away receive a desktop notification only if they"
+" have notifications set to \"all activity\", and they will not see a "
+"mention counted in the sidebar."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:55
+msgid "Words That Trigger Mentions"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:57
+msgid ""
+"You can customize words that trigger mention notifications in **Account "
+"Settings > Notifications > Words that trigger mentions**. By default, you"
+" receive mention notifications for your username and for *@channel*, "
+"*@all* and *@here*. You can choose to have your first name be a word that"
+" triggers mentions."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:59
+msgid ""
+"You can add a list of customized words to get mention notifications for "
+"by typing them into the input box, separated by commas. This is useful if"
+" you want to be notified of all posts on certain topics, such as "
+"\"interviewing\" or \"marketing\"."
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:62
+msgid "Recent Mentions"
+msgstr ""
+
+#: ../../source/help/messaging/mentioning-teammates.rst:64
+msgid ""
+"Click **@** next to the search box to query for your most recent "
+"@mentions and words that trigger mentions. Click **Jump** next to a "
+"search result in the right-hand sidebar to jump the center pane to the "
+"channel and location of the message with the mention."
+msgstr ""
+

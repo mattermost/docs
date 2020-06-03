@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:4
+msgid "Troubleshooting Setup and Build"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:7
+msgid "Build Errors"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:12
+msgid ""
+"macOS: I get the following error when running ``make run``: \"Cannot "
+"connect to the Docker daemon\""
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:10
+msgid ""
+"If you have Docker Tools installed (as opposed to Docker for Mac), make "
+"sure docker-machine is running."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:12
+msgid "``docker-machine start dev``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:21
+msgid ""
+"macOS: I get the following error or something similar when running ``make"
+" run``: \"Module build failed: Error: dyld: Library not loaded: "
+"/usr/local/opt/libpng/lib/libpng16.16.dylib\""
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:15
+msgid ""
+"libpng needs to be updated because it is used by one of our dependencies."
+" If you do not have libpng installed through Homebrew, run"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:17
+msgid "``brew install libpng``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:19
+msgid ""
+"If you already have libpng installed through Homebrew, you can update it "
+"using the following command:"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:21
+msgid "``brew update && brew upgrade libpng``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:30
+msgid ""
+"I get the following error when running ``make run``: \"Failed to ping db "
+"err:dial tcp 192.168.99.100:3306: getsockopt: connection refused\""
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:24
+msgid ""
+"It appears that your MySQL database isn't running. If you run ``docker "
+"ps``, you should see a line like"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:30
+msgid ""
+"If not, running ``make clean-docker`` will remove all existing Docker "
+"containers so that they'll be recreated next time you call ``make run``."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:35
+msgid ""
+"I get the following error when running ``make run``: \"Error starting "
+"server, err:listen tcp :8065: bind: address already in use\""
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:33
+msgid ""
+"There's likely another Mattermost instance already running. You can use "
+"``make stop`` to stop it before running ``make run`` again."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:35
+msgid ""
+"If there isn't another copy of Mattermost running and you need to change "
+"the port that Mattermost is running on, you can do so by changing the "
+"``ListenAddress`` setting in the *ServiceSettings* section of "
+"``config/config.json``."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:48
+msgid ""
+"macOS: I get the following error or something similar when running ``make"
+" run``: [EROR] Failed to ping DB retrying in 10 seconds err=Error 1045: "
+"Access denied for user ‘mmuser’@’localhost’ (using password: YES)"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:38
+msgid ""
+"It appears that 'mmuser' is not created as a user in your MySQL database."
+" Hence create the new user by using the following command: ``CREATE USER "
+"'mmuser'@'localhost' IDENTIFIED BY 'mostest';``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:41
+msgid "Grant all the permissions to the user using the command:"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:43
+msgid "``GRANT ALL PRIVILEGES ON * . * TO ' mmuser '@'localhost';``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:47
+msgid ""
+"Reload the privileges, so that the changes can be reflected: ``FLUSH "
+"PRIVILEGES;``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:51
+msgid "Testing Errors"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:54
+msgid ""
+"I get the following error when running ``make test``: t.Run undefined "
+"(type *testing.T has no field or method Run)"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:54
+msgid ""
+"You need to upgrade to Go 1.9. We don't support earlier versions than "
+"that."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:57
+msgid "Other Errors"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:60
+msgid "I don't see any error messages, but I can't access http://localhost:8065"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:60
+msgid ""
+"It's possible that the server reported an error, but it was missed "
+"because of all of the output from the JavaScript compiler. Try running "
+"``make run-server`` by itself to see its output. If you still don't see "
+"any error messages, continue to the next section."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:63
+msgid "I don't see anything logged to the console when Mattermost is running"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:63
+msgid ""
+"You can enable console logging in the *LogSettings* section of your "
+"``config/config.json`` by setting *EnableConsole* to ``true``."
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:71
+msgid "I can't log into Mattermost because I don't have an account"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:66
+msgid "You can create an account using the following command:"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:68
+msgid ""
+"``go build -o mattermost && ./mattermost user create --email "
+"user@example.com --username test1 --password mypassword``"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:70
+msgid ""
+"Optionally, you can make that account a System Admin with the following "
+"command:"
+msgstr ""
+
+#: ../../source/developer/dev-setup-troubleshooting.rst:72
+msgid ""
+"``go build -o mattermost && ./mattermost user create --email "
+"user@example.com --username test1 --password mypassword --system_admin``"
+msgstr ""
+

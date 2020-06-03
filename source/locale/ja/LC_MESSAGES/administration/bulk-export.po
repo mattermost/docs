@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/bulk-export.rst:5
+msgid "Bulk Export Tool"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:7
+msgid ""
+"Moving data from one Mattermost instance into another begins with "
+"exporting data to a `JSONL <http://jsonlines.org>`__ file using the `bulk"
+" loading feature <https://docs.mattermost.com/deployment/bulk-"
+"loading.html>`__. This tool is useful if you have created a server for a "
+"proof of concept, have created another server for production use and now "
+"want to retain the history from the proof of concept instance."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:5
+#: ../../source/administration/bulk-export.rst:14
+msgid "You can export the following data types:"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:7
+#: ../../source/administration/bulk-export.rst:16
+msgid "Teams"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:8
+#: ../../source/administration/bulk-export.rst:17
+msgid "Channels (Public and Private)"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:9
+#: ../../source/administration/bulk-export.rst:18
+msgid "Users"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:10
+#: ../../source/administration/bulk-export.rst:19
+msgid "Users' Team memberships"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:11
+#: ../../source/administration/bulk-export.rst:20
+msgid "Users' Channel memberships"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:21
+msgid ""
+"Posts (Posts in the Public/Private channels and also replies to those "
+"posts)"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:2
+msgid "Bulk export data"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:3
+msgid ""
+"At this time, the export supports attributes of the objects listed below."
+" All Mattermost Bulk Export data files will begin with a `Version` object"
+" as the first line of the file. This indicates the version of the "
+"Mattermost Bulk Import file format with which the exported data is "
+"compatible."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:12
+msgid "Users' notification preferences"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:13
+msgid "Posts (regular, non-reply posts)"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:14
+msgid "Posts' Replies"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:15
+msgid "Posts' Reactions"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:16
+msgid "Custom Emoji"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:17
+msgid "Direct Message Channels"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:18
+msgid "Direct Message Posts"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:20
+msgid ""
+"Configuration for exporting specific areas of the server, exporting "
+"additional types of posts, permissions schemes, file attachments, "
+"webhooks and bot messages are not yet supported. Deleted objects are also"
+" not yet supported."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:22
+msgid ""
+"For requests to add additional attributes or objects to our exporter, "
+"please add a feature request on our `feature idea forum "
+"<https://mattermost.uservoice.com/forums/306457-general>`__."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:25
+msgid "Version object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:47
+msgid "Team object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:94
+msgid "Channel object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:143
+msgid "User object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:281
+msgid "UserNotifyProps object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:282
+msgid "This object is a member of the User object."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:354
+msgid "UserTeamMembership object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:386
+msgid "UserChannelMembership object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:421
+msgid "ChannelNotifyProps object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:423
+msgid "This object is a member of the ChannelMembership object."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:462
+msgid "Post object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:503
+msgid "Reply object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:530
+msgid "Reaction object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:532
+msgid "This object is a member of the Post object."
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:560
+msgid "Emoji object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:582
+msgid "DirectChannel object"
+msgstr ""
+
+#: ../../source/administration/bulk-export-data.rst:604
+msgid "DirectPost object"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:26
+msgid "Running the bulk export command"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:27
+msgid ""
+"The export command runs in the `CLI "
+"<https://docs.mattermost.com/administration/command-line-tools.html>`__."
+"  It has permissions to access all information in the Mattermost "
+"database."
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:29
+msgid "To run the export command:"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:31
+msgid ""
+"Navigate to the directory where the Mattermost server is installed. On a "
+"default install of Mattermost, the directory is ``/opt/mattermost/bin``."
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:32
+msgid ""
+"Run the following command to extract data from all teams on the server. "
+"Note that you can change the file name and specify an absolute or "
+"relative path to dictate where the file is exported."
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:34
+msgid "``sudo ./mattermost export bulk file.json --all-teams``"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:36
+msgid "``sudo ./mattermost export bulk /home/user/bulk_data.json --all-teams``"
+msgstr ""
+
+#: ../../source/administration/bulk-export.rst:38
+msgid "Retrieve your file from the location you specified."
+msgstr ""
+

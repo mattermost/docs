@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:4
+msgid ""
+"How to install Mattermost Team Edition Helm Chart in GitLab Helm Chart "
+"deployment"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:6
+msgid ""
+"This document describes how to install Mattermost Team Edition Helm Chart"
+" in proximity with an existing GitLab Helm Chart deployment, utilizing "
+"shared configurations to streamline authentication, storage, encryption, "
+"and traffic routing."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:8
+msgid ""
+"As the Mattermost Helm Chart is installed in a separate namespace, it is "
+"recommended that cert-manager and nginx-ingress be configured to manage "
+"cluster-wide ingress and certificate resources."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:10
+msgid ""
+"The steps in this document presume in-chart Minio instance usage. For "
+"information about out-of-chart object storage configuration, review `this"
+" document <https://gitlab.com/gitlab-"
+"org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and"
+" S3 examples. Alternatively, visit your provider's Help documentation for"
+" configuration settings."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:14
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:16
+msgid "A running Kubernetes cluster with a PostgreSQL database."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:17
+msgid "A running GitLab Helm Chart release."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:18
+msgid ""
+"The name of the secret that holds your PostgreSQL password ``<gitlab"
+">-postgresql-password``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:19
+msgid ""
+"The name of the secret that holds your Minio keys ``<gitlab>-minio-"
+"secret``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:20
+msgid ""
+"The service name for your PostgreSQL, ``<gitlab>-postgresql``, and the "
+"port. If you installed the GitLab helm chart in ``default`` namespace, "
+"then the port is ``5432``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:21
+msgid ""
+"The service name for Minio and the port, ``<gitlab>-minio-svc``, and the "
+"port. If you installed the GitLab helm chart in ``default`` namespace, "
+"then the port is ``9000``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:22
+msgid ""
+"The names of ``kubernetes.io/ingress.class``, "
+"``kubernetes.io/ingress.provider`` and ``certmanager.k8s.io/issuer``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:24
+msgid ""
+"**Note:** There is an option to use external database services "
+"(PostgreSQL or MySQL) for your Mattermost installation. If you use an "
+"external database you will need to disable the MySQL chart in the "
+"``values.yaml`` as per the example in this document."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:28
+msgid "Deploy GitLab Helm Chart"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:30
+msgid ""
+"To deploy Gitlab Helm Chart, follow the instructions described `here "
+"<https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:32
+msgid "Here is a light way to install it:"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:42
+msgid "``<your-domain>``: your desired domain, eg. ``gitlab.example.com``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:43
+msgid "``<external-ip>``: the external IP pointing to your Kubernetes cluster."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:44
+msgid ""
+"``<email>``: email to register in Let's Encrypt to retrieve TLS "
+"certificates."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:46
+msgid "Once all pods are running, log in to GitLab."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:49
+msgid "Create an OAuth application with GitLab"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:51
+msgid ""
+"To create the OAuth application to allow Mattermost to use GitLab as the "
+"authentication provider, please follow the instructions `here "
+"<https://docs.mattermost.com/deployment/sso-gitlab.html>`__."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:53
+msgid ""
+"Please take note of the ``Application ID``, ``Application Secret Key``, "
+"``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings,"
+" as these values will be used later when deploying Mattermost."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:56
+msgid "Deploy Mattermost Team Edition Helm Chart"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:58
+msgid "Requirements:"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:60
+msgid "Mattermost Team Edition Helm Chart Version: 3.8.2"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:62
+msgid ""
+"To deploy Mattermost Team Edition with GitLab Helm Chart, disable the "
+"running ``MySql`` chart and configure InitContainer and Environment "
+"variables in ``values.yaml``. The list below indicates the values that "
+"should be changed. Note that we assume the GitLab chart name is "
+"``gitlab``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:64
+msgid ""
+"``<your-mattermost-domain>``: URL that users will use to access "
+"Mattermost, matching the `Site URL field "
+"<https://docs.mattermost.com/administration/config-settings.html#site-"
+"url>`__, e.g. ``mattermost.gitlab.example.com``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:65
+msgid ""
+"``<name-of-your-tls-secret>``: A name to store the TLS certificate for "
+"your domains, e.g. ``mattermost-tls``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:66
+msgid ""
+"``<ingress-class>``: The ingress class. In a basic GitLab deployment, "
+"this is ``gitlab-nginx``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:67
+msgid ""
+"``<ingress-provider>``: The ingress provider. In a basic GitLab "
+"deployment, this is ``nginx``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:68
+msgid ""
+"``<certmanager-issuer>``: The cert manager issuer. In a basic GitLab "
+"deployment, this is ``gitlab-issuer``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:69
+msgid ""
+"``<gitlab-ap-secret>``: The Application secret, which you created in step"
+" `Create an OAuth application with GitLab`_."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:70
+msgid ""
+"``<gitlab-app-id>``: The Application ID, which you created in step "
+"`Create an OAuth application with GitLab`_."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:71
+msgid ""
+"``<your-gitlab-domain>``: The GitLab domain name, e.g., "
+"``gitlab.example.com``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:72
+msgid ""
+"``<gitlab-postgres.username>``: The GitLab PostgreSQL username. Default "
+"is ``gitlab``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:73
+msgid ""
+"``<gitlab-postgres.passwd-secret>``: Secret that holds your PostgreSQL "
+"password. Default is ``gitlab-postgresql-password``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:74
+msgid ""
+"``<gitlab-postgres-host>``: Postgres host of your Kubernetes service. "
+"Default is ``gitlab-postgresql``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:75
+msgid ""
+"``<gitlab-postgres-port>``: Postgres port of your Kubernetes service. "
+"Default is ``5432``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:76
+msgid ""
+"``<mattermost-database-name>``: Mattermost database, e.g., ``mattermost-"
+"db``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:77
+msgid ""
+"``<gitlab-minio-host>``: Minio host of your Kubernetes service. Default "
+"is ``gitlab-minio-svc``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:78
+msgid ""
+"``<gitlab-minio-port>``: Minio port of your Kubernetes service. Default "
+"is ``9000``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:79
+msgid ""
+"``<gitlab-minio-secret>``: Secret that holds your Minio keys. Default is "
+"``gitlab-minio-secret``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:80
+msgid ""
+"``<mattermost-minio-bucket-name>``: Mattermost Minio bucket name, e.g., "
+"``mattermost-data``."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:234
+msgid ""
+"After these changes, deploy the Mattermost Team Edition Helm Chart with "
+"following command:"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:240
+msgid ""
+"Wait for the pods to run. Then access your Mattermost server, and log in "
+"with your GitLab credentials."
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:243
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/install/install-mmte-helm-gitlab-helm.rst:245
+msgid ""
+"If you have any trouble installing Mattermost Team Edition in GitLab Helm"
+" Chart deployment, let us know in our `Troubleshooting forum "
+"<http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help."
+msgstr ""
+

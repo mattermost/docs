@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/sso-saml.rst:3
+msgid "SAML Single-Sign-On (E20)"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:5
+msgid ""
+"Mattermost can be configured to act as a SAML 2.0 Service Provider. The "
+"SAML Single-Sign-On integration offers the following benefits:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:7
+msgid ""
+"**Single-sign-on.** Users can sign-in to Mattermost with their SAML "
+"credentials."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:8
+msgid ""
+"**Centralized identity management.** Mattermost accounts automatically "
+"pull user attributes from SAML upon login, such as full name, email and "
+"username."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:9
+msgid ""
+"**Automatic account provisioning.** New Mattermost user accounts are "
+"automatically created the first time a user signs in with their SAML "
+"credentials on the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:11
+msgid ""
+"SAML Single-Sign-On itself does not support periodic updates of user "
+"attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync "
+"can be configured to support these use cases."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:13
+msgid ""
+"For more information about SAML, see `this article from Varonis "
+"<https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual "
+"example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-"
+"saml>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:15
+msgid ""
+"Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the "
+"identity providers (IDPs), please see links below for more details on how"
+" to configure SAML with these providers."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:25
+msgid ""
+"In addition to the officially supported identity providers, you can also "
+"configure SAML for a custom IdP. For instance, customers have "
+"successfully set up Azure AD, DUO, PingFederate and SimpleSAMLphp as a "
+"custom IdPs. You can also set up MFA on top of your SAML provider for "
+"additional security."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:28
+msgid "Roadmap"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:30
+msgid ""
+"In Mattermost v5.14, you can optionally configure Mattermost to sign the "
+"SAML request using a private key to meet InfoSec requirements at your "
+"organization."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:32
+msgid ""
+"In future roadmap, the main consideration is an integration with SCIM, "
+"via plugin. Such an integration allows system administrators to create "
+"SAML provisioned users before their first login, and sync them against "
+"Mattermost permissions."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:34
+msgid ""
+"Currently user provisioning and deprovisioning can be handled with SAML "
+"sync, but relies on AD/LDAP - SCIM enables admins to control user "
+"provisioning and deprovisioning within the IdP itself."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:36
+msgid ""
+"For examples, see `Microsoft Azure AD integration with SCIM "
+"<https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/use-"
+"scim-to-provision-users-and-groups>`_ and `Okta user provisioning with "
+"SCIM <https://www.okta.com/integrate/documentation/scim/>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:39
+msgid "Configuration Assistance"
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:41
+msgid ""
+"We are open to providing assistance when configuring your custom IdP by "
+"answering Mattermost technical configuration questions and working with "
+"your IdP provider in support of resolving issues as they relate to "
+"Mattermost SAML configuration settings. However, we cannot guarantee your"
+" connection will work with Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:43
+msgid "For technical documentation on SAML, see :doc:`sso-saml-technical`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:45
+msgid ""
+"To assist with the process of getting a user file for your custom IDP, "
+"please see this `documentation "
+"<https://github.com/icelander/mattermost_generate_user_file>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:47
+msgid ""
+"Please see more information on getting support `here "
+"<https://mattermost.com/support/>`_ and submit requests for official "
+"support of a particular provider on our `feature idea forum "
+"<https://mattermost.uservoice.com>`_."
+msgstr ""
+
+#: ../../source/deployment/sso-saml.rst:49
+msgid ""
+"Please note that we may not be able to guarantee that your connection "
+"will work with Mattermost, however we will consider improvements to our "
+"feature as we are able.  Please submit requests for official support of a"
+" particular provider on our `feature idea forum "
+"<https://mattermost.uservoice.com>`_."
+msgstr ""
+

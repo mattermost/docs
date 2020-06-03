@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/apps/desktop-mvp.rst:1
+msgid ""
+"**The following awards have been given for significant contributions to "
+"the Mattermost Desktop App:**"
+msgstr ""
+
+#: ../../source/help/apps/desktop-mvp.rst:3
+msgid ""
+"Mattermost Desktop Top Contributor: **Jonas Schwabe** (`jnugh "
+"<https://github.com/jnugh>`__) - v3.4 - September 22, 2016"
+msgstr ""
+
+#: ../../source/help/apps/desktop-mvp.rst:5
+msgid ""
+"Mattermost Desktop Top Contributor: **Kolja Lampe** (`Razzeee "
+"<https://github.com/Razzeee>`__) - v1.3 - July 18, 2016"
+msgstr ""
+
+#: ../../source/help/apps/desktop-mvp.rst:7
+msgid ""
+"Mattermost Desktop Quality Champion : **Michael Bisbjerg** (`LordMike "
+"<https://github.com/LordMike>`__) - v1.3 - July 18, 2016"
+msgstr ""
+
+#: ../../source/help/apps/desktop-mvp.rst:9
+msgid ""
+"Mattermost Desktop Quality Champion: **Steve MacQuiddy** - v1.3 - July "
+"18, 2016"
+msgstr ""
+
+#: ../../source/help/apps/desktop-mvp.rst:11
+msgid ""
+"Mattermost Desktop Quality Champion: **David Lu** (`DavidLu1997 "
+"<https://github.com/DavidLu1997>`__) - v1.3 - July 18, 2016"
+msgstr ""
+

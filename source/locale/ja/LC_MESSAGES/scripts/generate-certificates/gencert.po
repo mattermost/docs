@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/scripts/generate-certificates/gencert.md:1
+msgid "gencert.sh for Mattermost"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:3
+msgid ""
+"Generate a self-signed x509v3 certificate for use with multiple URLs / "
+"IPs."
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:5
+msgid "Generate Certificates"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:7
+msgid "Default values"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:13
+msgid "Custom values"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:15
+msgid ""
+"You may change the CRT_CN and CRT_SAN values of the above command based "
+"on your needs."
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:17
+msgid "Additionally you may use any of the following environment variables :"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:18
+msgid "CRT_C : Country value"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:19
+msgid "CRT_L : Locality value"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:20
+msgid "CRT_O : Organization value"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:21
+msgid "CRT_OU : Organizational Unit value"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:22
+msgid "CRT_CN : Common Name value"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:23
+msgid "CRT_SAN : SubjectAltName value"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:25
+msgid "Result"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:27
+msgid "The command will generate two files:"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:28
+msgid "pkcs#8 private key : mattermost-x509.key"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:29
+msgid "x509v3 certificate : mattermost-x509.crt"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:31
+msgid ""
+"You can confirm the certificate content by using the following standard "
+"x509 command:"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:37
+msgid "Secure/Unsecure Certificates"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:39
+msgid "The generated private key is passwordless by default."
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:41
+msgid "You can secure/unsecure the certificates using standard pkcs8 commands:"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:51
+msgid "Additional Reading"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:53
+msgid "Below are additional guides and documentation for optional reading:"
+msgstr ""
+
+#: ../../source/scripts/generate-certificates/gencert.md:54
+msgid "SubjectAltName page on wikipedia"
+msgstr ""
+

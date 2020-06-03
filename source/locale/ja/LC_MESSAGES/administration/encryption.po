@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/administration/encryption.rst:2
+msgid "Encryption Options"
+msgstr ""
+
+#: ../../source/administration/encryption.rst:4
+msgid ""
+"Mattermost provides encryption-in-transit and encryption-at-rest "
+"capabilities. This page guides you through setting up appropriate "
+"encryption security."
+msgstr ""
+
+#: ../../source/administration/encryption.rst:6
+msgid ""
+"Encryption is not required for GDPR, although it can be used as an "
+"additional safeguard against data breach."
+msgstr ""
+
+#: ../../source/administration/encryption.rst:13
+msgid "Encryption-in-transit"
+msgstr ""
+
+#: ../../source/administration/encryption.rst:15
+msgid ""
+"Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on"
+" all data transmissions between Mattermost client applications and the "
+"Mattermost server. You may either set up TLS on the Mattermost Server or "
+"install a proxy such as NGINX and set up TLS on the proxy. Refer to our "
+"`configuration guide for more details "
+"<https://docs.mattermost.com/install/config-tls-mattermost.html>`__."
+msgstr ""
+
+#: ../../source/administration/encryption.rst:17
+msgid ""
+"Connections to Active Directory/LDAP can `optionally be secured with TLS "
+"or stunnel <https://docs.mattermost.com/administration/config-"
+"settings.html#id11>`__."
+msgstr ""
+
+#: ../../source/administration/encryption.rst:20
+msgid "Encryption-at-rest"
+msgstr ""
+
+#: ../../source/administration/encryption.rst:23
+msgid "Database"
+msgstr ""
+
+#: ../../source/administration/encryption.rst:25
+msgid ""
+"Encryption-at-rest is available for messages via hardware and software "
+"disk encryption solutions applied to the Mattermost database, which "
+"resides on its own server within your infrastructure. Encryption options "
+"at the disk level are documented both for `MySQL "
+"<https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-"
+"encryption/>`__ and `PostgreSQL "
+"<https://www.postgresql.org/docs/8.1/static/encryption-options.html>`__."
+msgstr ""
+
+#: ../../source/administration/encryption.rst:28
+msgid "File Storage"
+msgstr ""
+
+#: ../../source/administration/encryption.rst:30
+msgid ""
+"For local storage or storage via Minio, encryption-at-rest is available "
+"for files stored via hardware and software disk encryption solutions "
+"applied to the server."
+msgstr ""
+
+#: ../../source/administration/encryption.rst:32
+msgid ""
+"For Amazon’s proprietary S3 system, encryption-at-rest is available via "
+"`server-side encryption with Amazon S3-managed keys "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"server-side-encryption-for-amazon-s3>`__ in Enterprise Edition E20."
+msgstr ""
+

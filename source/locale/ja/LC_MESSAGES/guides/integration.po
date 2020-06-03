@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/guides/integration.rst:2
+msgid "Mattermost Integration Guide"
+msgstr ""
+
+#: ../../source/guides/integration.rst:4
+msgid "**Are you looking to install an integration?**"
+msgstr ""
+
+#: ../../source/guides/integration.rst:6
+msgid ""
+"See one of the sample integrations below or visit the `Mattermost "
+"Integrations Directory <https://integrations.mattermost.com/>`__."
+msgstr ""
+
+#: ../../source/guides/integration.rst:16
+msgid "**Are you looking to develop an integration?**"
+msgstr ""
+
+#: ../../source/guides/integration.rst:18
+msgid "See `our developer documentation <https://developers.mattermost.com/>`__."
+msgstr ""
+
+#: ../../source/guides/integration.rst:20
+msgid ""
+"**Are you looking for an overview of what capabilities Mattermost offers "
+"for integrations?**"
+msgstr ""
+
+#: ../../source/guides/integration.rst:22
+msgid "See our documentation below."
+msgstr ""
+
+#: ../../source/guides/integration.rst:42
+msgid ""
+"Come `join our \"Contributors\" community channel "
+"<https://community.mattermost.com/core/channels/tickets>`__ on our "
+"community server, where you can discuss questions with community members "
+"and the Mattermost core team. Join our `\"Developers\" channel "
+"<https://community.mattermost.com/core/channels/developers>`__ for "
+"technical discussions and our `\"Developer Toolkit\" channel "
+"<https://community.mattermost.com/core/channels/developer-toolkit>`__ for"
+" all integrations and plugins discussions."
+msgstr ""
+

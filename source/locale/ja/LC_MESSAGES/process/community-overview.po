@@ -1,0 +1,480 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/process/community-overview.rst:3
+msgid "Mattermost Community"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:5
+msgid ""
+"At Mattermost, we be believe workplace messaging will become a leading "
+"platform for workflow and business process. We believe building such a "
+"platform on open source infrastructure has powerful advantages."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:7
+msgid ""
+"We consider people who share these beliefs, and who seek to benefit from "
+"or influence the Mattermost open source project, to be part of the "
+"\"Mattermost Community\"."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:9
+msgid ""
+"The success of Mattermost as an open source platform for messaging-based "
+"workflow and business process depends on empowering our community to "
+"build with us towards a shared vision."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:11
+msgid ""
+"The Mattermost community has two parts, Users and Contributors, detailed "
+"below."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:19
+msgid "Users"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:21
+msgid ""
+"In general, all members of the Mattermost community are users of the open"
+" source project. They may be end users on a system, administrators, or "
+"developers on the Mattermost platform in some way, and the common bond we"
+" all share is we benefit from the project's continued and growing "
+"success."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:23
+msgid "The user community has a number of segments:"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:26
+msgid "End Users"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:27
+msgid ""
+"People using Mattermost to communicate and achieve their organization's "
+"top priorities."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:30
+msgid "IT Administrators"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:32
+msgid "People deploying Mattermost and supporting end users."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:35
+msgid "System Integrators"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:37
+msgid ""
+"People who extend and customize Mattermost privately but who do not share"
+" back their work with the open source community are considered \"users\"."
+" When the same people decide to share their work with others in the "
+"community they are recognized as \"contributors\""
+msgstr ""
+
+#: ../../source/process/community-overview.rst:40
+msgid "Customers"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:42
+msgid ""
+"Organizations that purchase Mattermost Enterprise Edition as an extension"
+" of the Mattermost open source project for advanced features. While the "
+"Mattermost roadmap is focused on benefiting the broad community, large "
+"customers may accelerate certain parts of the roadmap they find most "
+"valuable through large purchases of Enterprise Edition licenses."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:45
+msgid "Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:47
+msgid ""
+"A subset of the Mattermost community as \"contributors\" who help "
+"increase the overall benefits of Mattermost for others. This may be as "
+"simple as offering feature ideas or reporting bugs, offering professional"
+" services to install or deploy the system, or it can be as involved as "
+"building whole new products based on Mattermost, or contributing code to "
+"the underlying software."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:49
+msgid ""
+"The work of all contributors is valued, appreciated and recognized as a "
+"driving force behind the project's growth."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:51
+msgid "There are many ways to contribute:"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:54
+msgid "Solution Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:56
+msgid ""
+"As of July 2018, `over 1000 open source projects on GitHub reference "
+"Mattermost <https://github.com/search?q=mattermost>`__. Solution Builders"
+" create a host of technologies to empower Mattermost software to solve "
+"real world problems. Technologies include:"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:58
+msgid ""
+"**Self-hosted Integration Solutions** - Includes connectivity and "
+"integration with 3rd party applications such as Jira, Confluence, GitLab,"
+" Jenkins and other tools"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:59
+msgid ""
+"**SaaS-based Integration Solutions** - Includes connectivity and "
+"integration with services like Twitter, Zendesk, Salesforce and hundreds "
+"of other extensions with services like Zapier."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:60
+msgid ""
+"**Programming Solutions** - Includes language-specific drivers and "
+"connectors to simplify the work of other developers"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:61
+msgid ""
+"**Mattermost User Experience Plug-Ins** - Includes server and client-side"
+" plug-ins that enhance the native capabilities of a Mattermost server, "
+"such as voice, video and screensharing with Zoom's self-hosted or vendor-"
+"hosted solutions."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:62
+msgid ""
+"**Federated Experiences** - Includes bridges with IRC, Slack and other "
+"messaging applications through solutions like Matterbridge"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:63
+msgid ""
+"**Custom User Experiences** - Includes integrations into Terminal and "
+"Pidgin built off the same core APIs as Mattermost's Web, Desktop, iOS and"
+" Android experiences"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:65
+#: ../../source/process/community-overview.rst:102
+msgid "Community Coordinator: Jason Blais"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:67
+msgid "**LinkedIn Recognition**"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:69
+msgid ""
+"You are welcome to document your contributions to the Mattermost open "
+"source project in your resume or on LinkedIn in any matter you feel is "
+"accurate. Below is an example of an entry:"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:71
+msgid "Title: ``Open Source Solution Builder``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:72
+msgid "Organization/Company: ``Mattermost``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:73
+msgid "Location: ``[Where you did your work]``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:74
+msgid "From: ``[Date started]``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:75
+msgid ""
+"I currently work here: ``Check \"Yes\" if you continue to maintain your "
+"work``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:76
+msgid "Headline: ``Solution builder for Mattermost open source project``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:77
+msgid ""
+"Description: ``[Description of your solution, its benefit to end users, "
+"and link to project. Example: \"Maintainer of Mattermost-Zoom plugin "
+"which offers voice, video and screensharing for Mattermost end users "
+"through Zoom integration, either through a self-hosted private cloud "
+"deployment or a vendor-hosted SaaS service from Zoom. See the project at "
+"https://github.com/mattermost/mattermost-plugin-zoom.\"]``"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:79
+msgid ""
+"Other contributor types beyond Solution Contributors are welcome to use "
+"and modify this LinkedIn template to document their contributions as "
+"well."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:82
+msgid "Platform Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:84
+msgid ""
+"Platform Contributors provide improvements to the core Mattermost open "
+"source projects under https://github.com/mattermost/. Contributions may "
+"be made at different levels of skill and impact:"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:86
+msgid ""
+"**Level 1** - Stated intention to contribute by completing `Mattermost "
+"Contributor Agreement <https://www.mattermost.org/mattermost-contributor-"
+"agreement/>`__ which adds contributor's name to `Mattermost Approved "
+"Contributor's list <https://docs.google.com/spreadsheets/u/2/d/1NTCeG-"
+"iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true>`__."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:87
+msgid ""
+"**Level 2** - Corrections or improvements to on-screen text, "
+"documentation or help text. Cosmetic improvements to code base."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:88
+msgid ""
+"**Level 3** - Corrections of minor bugs in code base other than on-screen"
+" text, documentation or help text either through spontaneous contribution"
+" or by volunteering for and being assigned a ticket by a core committer."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:89
+msgid ""
+"**Level 4** - Corrections to major bugs, or the implementation of minor "
+"feature either through spontaneous contribution or by volunteering for "
+"and being assigned a ticket by a core committer. Alternatively, "
+"requesting and being assigned a ticket of 2 mana or higher by core "
+"committer and completing the project."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:90
+msgid ""
+"**Level 5** - Requesting and being assigned a ticket of 8 mana or higher "
+"by core committer and completing the project."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:91
+msgid ""
+"**Core Committer** - Highly skilled developer who becomes a maintainer "
+"and regular contributor to core Mattermost open source projects."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:93
+msgid ""
+"All contributors Level 2 and above are eligible for a `custom-printed "
+"Mattermost Mug <https://forum.mattermost.org/t/limited-edition-"
+"mattermost-mugs/143>`__ acknowledging their role in the open source "
+"project."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:95
+msgid "Community Coordinator: Eric Sethna"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:98
+msgid "Translation Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:100
+msgid ""
+"Translation Contributors can create and update translations to existing "
+"or new Mattermost languages at https://translate.mattermost.com. In "
+"addition, community members can become \"Language owners\" and help "
+"review, coordinate and supervise the translation of Mattermost into "
+"languages they speak."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:105
+msgid "Documentation Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:107
+msgid ""
+"Documentation Contributors update, edit and create new documentation, "
+"help text, training and other materials to help the community get the "
+"most out of Mattermost software. Core documentation is found at "
+"https://docs.mattermost.com and contributions can be made via the open "
+"source repository at https://github.com/mattermost/docs/"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:109
+msgid "Community Coordinator: Justin Reynolds"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:112
+msgid "Quality Assurance Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:114
+msgid ""
+"Quality Assurance Contributors help find, confirm and report product "
+"defects via our process at https://www.mattermost.org/filing-issues/. "
+"Anyone who encounters a verifiable defect is welcome to file a bug on the"
+" system."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:116
+msgid ""
+"Bonus: When QA Contributor finds and reports a bug on a release candidate"
+" build of Mattermost prior to the final release of the system, the can be"
+" awarded a `Mattermost Bug Hunter Award <https://forum.mattermost.org/t"
+"/mattermost-bug-hunter-awards/4979>`__ for their contribution."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:118
+msgid "Community Coordinator: TBD"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:121
+msgid "Knowledge Base Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:123
+msgid ""
+"Knowledge Base Contributors share feedback, questions and answers on "
+"Mattermost through forums for `trouble shooting "
+"<https://www.mattermost.org/troubleshoot/>`__, `feature proposals "
+"<https://www.mattermost.org/feature-ideas/>`__, Github issues and the "
+"`Mattermost community server <https://community.mattermost.com>`_."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:125
+#: ../../source/process/community-overview.rst:132
+msgid "Community Coordinator: Amy Blais"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:128
+msgid "Deployment Solution Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:130
+msgid ""
+"Deployment Solutions Contributors create packaging and automation for "
+"making it easier to deploy Mattermost, using tools such as Docker, "
+"Kubernetes and other leading virtualization and orchestration solutions. "
+"See `Deployment Solutions Programs "
+"<https://docs.mattermost.com/guides/orchestration.html>`__ for guidance "
+"on how to build to common Mattermost standards."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:135
+msgid "UX Design Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:137
+msgid ""
+"UX Design Contributors influence the design of the Mattermost user "
+"experience through discussion in the ``ux-design`` channel on the "
+"Mattermost continous integration server at "
+"https://community.mattermost.com/core/channels/ux-design and through "
+"contributions to the `Mattermost User Experience Guidelines "
+"<https://docs.mattermost.com/developer/fx-guidelines.html>`__ on `GitHub "
+"<https://github.com/mattermost/docs/blob/master/source/developer/fx-"
+"guidelines.rst>`__."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:139
+msgid "Community Coordinator: Mike Gamble"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:142
+msgid "Coordination Contributors"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:144
+msgid ""
+"Coordination Contributors help organize and align contributors from all "
+"the different roles above. When coordinating and leading a contributor "
+"community, key principles to keep in mind include:"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:146
+msgid "Make it easy and realistic for contributors to get started."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:148
+msgid ""
+"Have clear instructions and realistic expectations. Remember there are "
+"thousands of open source projects in the world so the more difficult it "
+"is to contribute the fewer contributions there will be."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:150
+msgid "Recognize, retain and recruit"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:152
+msgid ""
+"Recognizing people's contributions is vital to keeping them engaged. "
+"Leverage the existing programs to acknowledge the impact people are "
+"having. Retaining active contributors is hugely impactful because they're"
+" trained and ready to go on future projects, and both acknowledgement for"
+" jobs done well and new, interesting projects are key to keeping momentum"
+" going. The next more important is recruiting new contributors and being "
+"able to showcase a vibrant and active existing community to offer a model"
+" for new contributions."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:154
+msgid "Focus on high impact, skill appropriate contributions"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:156
+msgid ""
+"When possible, influence contributors to apply themselves to the highest "
+"impact tickets and projects appropriate for their skill level. Meaningful"
+" contributions early in the contributor journey are a powerful way to "
+"draw people into the community."
+msgstr ""
+
+#: ../../source/process/community-overview.rst:159
+msgid "Mattermost Staff"
+msgstr ""
+
+#: ../../source/process/community-overview.rst:161
+msgid ""
+"Mattermost staff are paid by Mattermost, Inc. to take on any of the "
+"contributor roles mentioned above, as well as to develop and support "
+"Mattermost Enterprise Edition as a commercial extension of the Mattermost"
+" open source project for large and sophisticated organizations."
+msgstr ""
+

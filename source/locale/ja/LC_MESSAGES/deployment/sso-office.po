@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/deployment/sso-office.md:1
+msgid "Office 365 Single Sign-On (E20)"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:4
+msgid ""
+"Follow these steps to configure Mattermost to use your Office 365 logon "
+"credentials and Azure Active Directory account as a single sign-on (SSO) "
+"service for team creation, account creation and sign-in."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:6
+msgid ""
+"The system must be using SSL for use with Office365 as Microsoft only "
+"allows OAuth redirect URIs that are SSL enabled."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:8
+msgid ""
+"1 - Login to your Azure Portal with the account that relates to the Azure"
+" AD tenant you want to register the application in. (You can check the "
+"tenant in the top right corner of the portal)."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:10
+msgid ""
+"2 - In the left-hand navigation pane, select the Azure Active Directory "
+"service, and then select App registrations > New registration."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:14
+msgid ""
+"3 - Give your new registration a Name, and then define which Supported "
+"account types can access the application. For example, if this is to be "
+"only accessed from your enterprise's Azure AD accounts, then select "
+"Accounts in this organizational directory only. The Redirect URI should "
+"be defined as Web client. Also input the URL with the host name that will"
+" be specific to your Mattermost service followed by "
+"/signup/office365/complete. An example below is: "
+"https://your.mattermost.com/signup/office365/complete"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:18
+msgid ""
+"Now the App Registration has been created and you can configure it "
+"further. The standard Azure AD documentation is here for reference."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:20
+msgid ""
+"4 - Select Certificates and Secrets from the menu, and click the button "
+"to generate a New Client secret. Provide a description and define the "
+"expiry for the token."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:24
+msgid ""
+"Click Add and you will be provided with the client secret value, copy "
+"this and save it for use in the Mattermost configuration as the "
+"Application Secret Password."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:26
+msgid ""
+"5 - Select Overview from the menu and copy the Application (client) ID "
+"and the Directory (tenant) ID, for use in the Mattermost configuration as"
+" the Application ID and as part of the Auth Endpoint and Token Endpoint "
+"URL."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:30
+msgid ""
+"6 - Login to Mattermost and then go to the System Console > OAuth 2.0 > "
+"Select OAuth 2.0 service provider, choose Office 365 as the service "
+"provider. Enter the client secret value you copied in Step 4 as the "
+"Application Secret Password. Paste the Application (client) ID you saved "
+"in Step 5 into the Application ID field."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:32
+msgid ""
+"7 - Open your config.json file and copy the Directory (tenant) ID value "
+"from Step 5. In the Office365Settings section of config/config.json you "
+"will be updating the default values from"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:33
+msgid ""
+"AuthEndpoint: "
+"https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:34
+msgid "TokenEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:36
+msgid "to include Directory (tenant) ID value, for example"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:38
+msgid ""
+"AuthEndpoint: https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-"
+"e9e565b3xbf1/oauth2/v2.0/authorize"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:39
+msgid ""
+"TokenEndpoint: https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-"
+"e9e565b3xbf1/oauth2/v2.0/token"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:41
+msgid "8 - Restart your Mattermost server to see the changes take effect."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:43
+msgid "Note about Microsoft Active Directory Tenants"
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:45
+msgid ""
+"A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure"
+" Active Directory (Azure AD) that you own and would have received when "
+"signing up for a Microsoft cloud service such as Azure or Office 365. "
+"Tenants are commonly used by organizations who want to store information "
+"about their users such as passwords, user profile data and permissions. "
+"You can learn more about getting an Azure AD tenant here."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:47
+msgid ""
+"To allow your Azure AD users to sign in to Mattermost using Office 365 "
+"SSO, you must register Mattermost in the Microsoft Azure AD tenant that "
+"contains the users' information. The registration can be done from the "
+"Microsoft Azure portal. The steps to register the Mattermost account in "
+"the tenant should be similar to those provided above, and you can find "
+"more information about integrating apps with Azure AD here."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:49
+msgid ""
+"If you don't register Mattermost in the Microsoft Azure AD tenant your "
+"organization uses, Office 365 SSO will likely fail for your users."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:51
+msgid ""
+"If you're interested in configuring a multi-tenant Mattermost "
+"application, which allows access to users from several organizations, you"
+" can find out more here."
+msgstr ""
+
+#: ../../source/deployment/sso-office.md:53
+msgid ""
+"Note that if you do not use Azure Active Directory, you may simply "
+"register Mattermost with your Office 365 or Azure account (either your "
+"personal, work or school account) and set up Office 365 SSO with "
+"Mattermost using the steps provided above."
+msgstr ""
+

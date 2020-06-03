@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2019 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-03 20:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/help/apps/android.rst:2
+msgid "Android"
+msgstr ""
+
+#: ../../source/help/apps/android.rst:4
+msgid ""
+"The Mattermost Android app lets you connect to your Mattermost server and"
+" switch among teams. You can also receive push notifications on mentions "
+"in Mattermost when your mobile app is closed or running in the "
+"background."
+msgstr ""
+
+#: ../../source/help/apps/android.rst:7
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/help/apps/android.rst:9
+msgid ""
+"Download the `Mattermost Android app from Google Play. "
+"<https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`__"
+msgstr ""
+
+#: ../../source/help/apps/android.rst:10
+msgid ""
+"Open the app and enter the web address of your server (for example: "
+"https://mattermost.company.com)."
+msgstr ""
+
+#: ../../source/help/apps/android.rst:11
+msgid "When you see the login page, log in as you would on your desktop."
+msgstr ""
+
+#: ../../source/help/apps/android.rst:12
+msgid "Select a team to enter, join a team, or create a new team."
+msgstr ""
+
+#: ../../source/help/apps/android.rst:14
+msgid ""
+"The above instructions are for Mattermost 3.0 and later. If you're "
+"running on Mattermost 2.x, you can `download the Android 2.x application "
+"file <https://releases.mattermost.com/client-android/mattermost-"
+"android-2.1.0.apk>`__ to install manually until your server is upgraded "
+"to 3.0."
+msgstr ""
+
