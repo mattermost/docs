@@ -92,4 +92,4 @@ Highlighting
 
 Valid mentions will have highlighted font text with some exceptions, for example if mentions are disabled at the channel level. The highlighted text becomes a hyperlink when a username is displayed. When the username is clicked, the profile popover is displayed. 
 
-When mentions trigger a notification, the user who is being notified will see highlighted font text and highlighted font background. This functions as an identifier of what mentions in the post triggered a notification for the user.
+When mentions trigger a notification, the user being notified will see highlighted font text and highlighted font background. This functions as an identifier of which mentions in the post triggered a notification for the user.
