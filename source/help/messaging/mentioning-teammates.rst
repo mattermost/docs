@@ -54,7 +54,13 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
 @groupname (BETA)(E20)
 ~~~~~
 
-System admins can enable mentions for [LDAP synced groups](https://docs.mattermost.com/deployment/ldap-group-sync.html) via the group configuration page. Once enabled for a specific group, users will be able to mention and notify the entire group  (similar to @channel or @all). Every member of that group who is also present in the channel the mention was posted, will receive a notification. The user who's post included the mention will have the option to invite group members who are not already members of the channel in which the post was made. 
+System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ via the Group Configuration page.
+
+**Note**: This functionality is not yet supported on mobile.
+
+Once enabled for a specific group, users will be able to mention and notify the entire group (similar to @channel or @all). Every member of the group who is also present in the channel the mention was posted, will receive a notification. If members of the group mentioned are not members of the channel, the user who posted the mention is prompted to invite them.
+
+Group mention identifiers (slugs) use the LDAP group name by default, but they can be customized and renamed.
 
 Group mention identfiers (slugs) use the LDAP group name by defualt, but they can also be custmoized/renamed. 
 
