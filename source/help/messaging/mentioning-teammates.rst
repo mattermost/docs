@@ -91,6 +91,6 @@ This confirmation dialog only appears when ``TeamSettings.EnableConfirmNotificat
 Highlighting
 ---------------
 
-All valid mentions will have highlighted font text (with some exceptions, for example if mentions are disabled at the channel level). This text becomes a hyperlink when it displays a username. When clicked, the profile popover is displayed. 
+Valid mentions will have highlighted font text with some exceptions, for example if mentions are disabled at the channel level. The highlighted text becomes a hyperlink when a username is displayed. When the username is clicked, the profile popover is displayed. 
 
-All mentions that trigger a notification, the user who is being notified will see highlighted font text and highlighted font background. This functions as an identifier of what mentions in the post triggered a notification for the user.
+When mentions trigger a notification, the user who is being notified will see highlighted font text and highlighted font background. This functions as an identifier of what mentions in the post triggered a notification for the user.
