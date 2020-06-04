@@ -97,7 +97,7 @@ Permissions
 
 Incidents and playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel. 
 
-To view incidents associated with your Mattermost team, select **! Incidents** from the plugin menu in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view details of incidents that have ended.
+To view incidents associated with your Mattermost team, select **! Incidents** from the plugin menu, or **!** in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view details of incidents that have ended.
 
 Incidents Backstage
 ~~~~~~~~~~~~~~~~~~~~
