@@ -78,6 +78,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on **Add user to a channel** modal.
  - Fixed an issue where Integrations menu was available for member and team admin roles only if with oAuth2 permission.
  - Fixed an issue where empty strings for ``auth_data`` created invalid users for LDAP sync during bulk import.
+ - Fixed an issue where bulk import did not report errors when importing posts failed.
  - Fixed an issue where Compliance Export reported "success" when failing to export a missing file.
  - Fixed an issue where the user interface got stuck when leaving an archived channel.
  - Fixed an issue where Unicode characters appeared in users' display names.
