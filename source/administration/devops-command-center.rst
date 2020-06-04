@@ -122,7 +122,7 @@ Listed incidents include the following information:
 - The channels associated with the incident
 - A button to end the incident
 
-If the incident is active, but in a private channel, you won't be able to see the incident channel name or select **End Incident**. However, the commander name and incident checklist is displayed. If you're a participant in an incident channel, you can modify incident details from within that channel.
+If the incident is active, but in a private channel, you won't be able to see the incident channel name or select **End Incident**. However, the commander name and incident checklist are displayed. If you're a participant in an incident channel, you can modify incident details from within that channel.
 
 You can view all incidents in the incident Backstage via **Main Menu > Incidents & Playbooks** and then select an incident to view the following details:
 
