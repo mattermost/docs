@@ -147,7 +147,7 @@ Incidents can be filtered by incident name, commander, and incident status.
 
 **Browsing related channels**
 
-Incident members see a link to the incident channel at the bottom of the incident details. Clicking the channel name navigates to the incident channel. This section is not displayed when the active user is not an incident member.
+Incident participants see a link to the incident channel at the bottom of the incident details. Clicking the channel name navigates to the incident channel. This section is not displayed when the active user is not an incident participant.
 
 Exporting channels
 ^^^^^^^^^^^^^^^^^
