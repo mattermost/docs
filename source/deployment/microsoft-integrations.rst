@@ -23,7 +23,7 @@ Skype for Business
 Office 365 SSO (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Configure Mattermost to use your Office 365 logon credentials and Azure Active Directory account as a single sign-on (SSO) service, developed by Mattermost.
+- Configure Mattermost to use your Office 365 credentials and Azure Active Directory account as a single sign-on (SSO) service, developed by Mattermost.
 - Supports Microsoft Active Directory Tenants for team creation, account creation and sign-in.
 - Receive a daily summary of calendar events, and accept or decline new events.
 - Docs: https://docs.mattermost.com/deployment/sso-office.html.
