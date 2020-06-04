@@ -225,7 +225,7 @@ Every event we track is accompanied with metadata that help us identify each eve
     - ``UserID``: Unique identifier of the user that checked the item."
     "Checked checklist item unchecked.", "- Any user unchecks a checked checklist item through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item is.
-    - ``UserID``: Unique identifier of the user that checked the item."
+    - ``UserID``: Unique identifier of the user that unchecked the item."
      "Playbook created.", "- Any user clicks on the ``+ New Playbook`` button on the backstage and saves it.", "
     - ``PlaybookID``: Unique identifier of the playbook.
     - ``TeamID``: Unique identifier of the team where the playbook is created.
