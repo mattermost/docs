@@ -48,7 +48,7 @@ To view details about active incidents select **! Incidents** from the plugin me
 
 When an incident has started and the incident channel is created, a message from the incident bot is posted to the incident channel naming the creator of the incident. If an incident is started from the context of a post, the text of the post is posted to the channel along with a permalink.
 
-Incidents are displayed in the RHS are visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It is not possible to view incidents from teams other than the currently selected team.
+Incidents that are displayed in the RHS are visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It is not possible to view incidents from teams other than the currently selected team.
 
 Using playbooks
 ~~~~~~~~~~~~~~~~
