@@ -13,7 +13,6 @@ Overview
 
 Incident Response is a Mattermost plugin designed to help organizations monitor, coordinate, and measure their incident response processes, increasing transparency, maximizing effectiveness, and ultimately saving costs by cutting down time taken to respond and resolve incidents.
 
-
 User's Guide
 ^^^^^^^^^^^^^
 
@@ -67,7 +66,6 @@ Creating checklists
 
 Checklists are created within a playbook and provide steps to follow during an incident. Checklists can be created ahead of time as part of a playbook, or during an incident.
 
-
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
@@ -80,7 +78,6 @@ To edit a checklist, choose **Edit**.
 - Drag the hamburger menu to rearrange the checklist items.
 
 Choose **Done** to save the changes.
-
 
 Ending incidents
 ~~~~~~~~~~~~~~~~
@@ -112,7 +109,6 @@ To open the Incidents backstage, which lists all incidents associated with the c
 - Start Date
 - End Date, if ended, otherwise **--**
 - Commander
-
 
 Viewing incident details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
