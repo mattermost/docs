@@ -130,7 +130,7 @@ You can view all incidents in the incident Backstage via **Main Menu > Incidents
 - A link icon to open the corresponding incident channel
 - Status (**Ongoing** or **Ended**)
 - The commander, including profile picture and username
-- A prompt to export the incident channel
+- A prompt to `export the incident channel <#exporting-channels>`_
 - The total duration
 - The number of members involved at the time the incident started
 - The number of messages posted to the channel, including another prompt to open the corresponding incident channel
