@@ -34,4 +34,4 @@ Collabora Online
 - View Microsoft Word (.doc and .docx), Excel (.xls and .xlsx), and PowerPoint (.ppt and .pptx) files in Mattermost, developed by Collabora.
 - Allows multiple people to edit an Office 365 file at the same time from Mattermost, replacing the original file on the Mattermost server.
 - Self-hosted solution for file sharing and management of Office 365 files.
-- Source code + docs: https://github.com/CollaboraOnline/collabora-mattermost
+- Source code + docs: https://github.com/CollaboraOnline/collabora-mattermost.
