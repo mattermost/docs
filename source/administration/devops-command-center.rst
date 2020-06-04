@@ -60,7 +60,7 @@ The set of steps contained within a playbook is called a checklist.
 Viewing and creating playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select **! Incidents** from the plugin menu in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
+Select **! Incidents** from the plugin menu, or **!** in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
 
 Creating checklists
 ~~~~~~~~~~~~~~~~~~~
