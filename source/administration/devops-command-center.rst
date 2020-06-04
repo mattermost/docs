@@ -117,7 +117,7 @@ To open the Incidents backstage, which lists all incidents associated with the c
 Viewing incident details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To view details of active incidents, select **! Incidents** from the plugin menu in the channel header to open the RHS panel.
+To view details of active incidents, select **! Incidents** from the plugin menu, or **!** in the channel header to open the RHS panel.
 
 Listed incidents include the following information:
 
