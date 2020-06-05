@@ -12,7 +12,7 @@ In Enterprise Edition E20, you can set a custom policy to manage how long messag
 .. toctree::
     :maxdepth: 2
 
-Configuring a Data Retention Policy
+Configuring a data retention policy
 ------------------------------------
 
 To set a custom data retention policy:
@@ -54,7 +54,7 @@ If the files were uploaded prior to Mattermost v4.2, you will need to delete the
 1. Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.
 2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
 
-Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5>`__. 
+Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5>`__.
 
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,7 +73,7 @@ If you are interested in this feature, consider upvoting the `existing feature p
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When messages or files are deleted, they are no longer searchable in the Mattermost mobile apps. 
+When messages or files are deleted, they are no longer searchable in the Mattermost mobile apps.
 
 In v1.5 and later of the iOS and Android apps, messages and files are deleted from local storage in the following cases, if they exceed the retention policy duration:
 
@@ -99,12 +99,12 @@ Does the System Administrator get any notification when the data retention perio
 
 No, the new config is updated, but the System Admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
 
-Does the data retention job affect the audits table? 
+Does the data retention job affect the audits table?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prior to v5.20, data retention would delete all user activity corresponding to the data retention time configuration. From v5.20, the audit table will retain the user activity corresponding to the data retention time configuration. 
+Prior to v5.20, data retention would delete all user activity corresponding to the data retention time configuration. From v5.20, the audit table will retain the user activity corresponding to the data retention time configuration.
 
-Does the data retention job include archived channels? 
+Does the data retention job include archived channels?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Posts and attachments in archived channels are affected by the data retention job. If a post exceeds the age configured for the data retention job it will be deleted from the database.

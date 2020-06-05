@@ -1,5 +1,6 @@
-Bulk export data
+Bulk Export Data
 =================
+
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
 You can export the following data types:
@@ -14,12 +15,12 @@ You can export the following data types:
 - Posts' Replies
 - Posts' Reactions
 - Custom Emoji
-- Direct Message Channels 
+- Direct Message Channels
 - Direct Message Posts
 
-Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
+Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.
 
-For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.  
+For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 
 Version object
 --------------
@@ -42,7 +43,7 @@ Version object
       <td>The number 1.</td>
     </tr>
   </table>
-  
+
 Team object
 -----------
 .. raw:: html
@@ -138,7 +139,7 @@ Channel object
       <td>The name of the permissions scheme that applies to this team.</td>
     </tr>
   </table>
-  
+
 User object
 -----------
 .. raw:: html
@@ -224,7 +225,7 @@ User object
       <td valign="middle">show_unread_section</td>
       <td valign="middle">string</td>
       <td>"True" if the user has enabled showing unread messages at top of channel sidebar.</td>
-    </tr> 
+    </tr>
     <tr class="row-odd">
       <td valign="middle">theme</td>
       <td valign="middle">string</td>
@@ -244,7 +245,7 @@ User object
       <td valign="middle">message_display</td>
       <td valign="middle">string</td>
       <td>The style the user prefers for displayed messages. Options are "clean" if the user uses the standard style or "compact" if the user uses compact style.</td>
-    </tr> 
+    </tr>
     <tr class="row-odd">
       <td valign="middle">channel_display_mode</td>
       <td valign="middle">string</td>
@@ -264,7 +265,7 @@ User object
       <td valign="middle">delete_at</td>
       <td valign="middle">int64</td>
       <td>Timestamp of when the user was deactivated.</td>
-    </tr>    
+    </tr>
     <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
@@ -503,7 +504,7 @@ Post object
       <td valign="middle">array</td>
       <td>The emoji reactions to this post. Will be an array of Reaction objects.</td>
   </table>
-  
+
 Reply object
 ------------
 .. raw:: html
@@ -530,7 +531,7 @@ Reply object
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
     </tr>
   </table>
-  
+
 Reaction object
 ---------------
 
@@ -582,7 +583,7 @@ Emoji object
       <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
     </tr>
   </table>
-  
+
 DirectChannel object
 ----------------------
 .. raw:: html
@@ -604,7 +605,7 @@ DirectChannel object
       <td>The channel header.</td>
     </tr>
   </table>
-  
+
 DirectPost object
 ----------------------
 .. raw:: html

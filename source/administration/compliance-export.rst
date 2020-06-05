@@ -10,9 +10,9 @@ This feature enables compliance exports to be produced from the System Console, 
 - Posts from plugins
 - Posts from bots/webhooks
 
-The exports include information on channel member history at the time of the message was posted. 
+The exports include information on channel member history at the time of the message was posted.
 
-From Mattermost 5.18, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded. 
+From Mattermost 5.18, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Enterprise Edition E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
@@ -24,7 +24,7 @@ Enterprise deployments with a requirement to archive history beyond the data ret
 .. toctree::
     :maxdepth: 2
 
-Set Up Guide
+Set up guide
 ----------------------------
 
 Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`__ in the chosen format. If you have configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
@@ -36,7 +36,7 @@ CSV
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
-2. Set **Enable Compliance Exports** to ``true``.  
+2. Set **Enable Compliance Exports** to ``true``.
 3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
 4. Set the export file format to **CSV**.
 5. Choose **Save**.
@@ -49,7 +49,7 @@ Actiance XML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
-2. Set **Enable Compliance Exports** to ``true``.  
+2. Set **Enable Compliance Exports** to ``true``.
 3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
 4. Set the export file format to **Actiance XML**.
 5. Choose **Save**.
@@ -63,7 +63,7 @@ Global Relay EML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
-2. Set **Enable Compliance Exports** to ``true``.  
+2. Set **Enable Compliance Exports** to ``true``.
 3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
 4. Set the export file format to **GlobalRelay EML**.
 5. Select `A9/Type 9` or `A10/Type 10` for the **Global Relay Customer Account**. This is the type of Global Relay customer account your organization has.
@@ -88,10 +88,10 @@ Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specif
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last post that the previous execution of the job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.  
+If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last post that the previous execution of the job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format will be mailed to the configured email address when run manually. 
+When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format will be mailed to the configured email address when run manually.
 
 Why are compliance exports beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
