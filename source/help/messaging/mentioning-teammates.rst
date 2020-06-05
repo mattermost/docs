@@ -52,7 +52,7 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
   @here can someone do a quick review of this?
   
 @groupname (Beta)(E20)
-~~~~~
+~~~~~~~~~~
 
 System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ via the Group Configuration page.
 
