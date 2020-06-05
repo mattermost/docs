@@ -329,6 +329,15 @@ The number of seconds to wait for a response from the database after opening a c
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+DisableDatabaseSearch
+^^^^^^^^^^^^^^^^^
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"QueryTimeout": true`` with              .                                  |
++-------------------------------------------------------------------------------------------------------------------------+
+
+
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
@@ -1752,6 +1761,28 @@ Enable Latex Rendering
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Enable Local Mode
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables local mode.
+
+**False**: Disables 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLocalMode": true`` with options ``true`` and ``false``.                                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Local Mode Socket Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables local mode socket location.
+
+**False**: Disables 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LocalModeSocketLocation": []`` with string array input                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
