@@ -181,7 +181,7 @@ Supported languages are:
 ``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
 ``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
 ``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
-``sql``, ``swift``, ``tex``, ``thor``, ``v``, ``vb``, ``vbnet``, ``vbs``,
+``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
 ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
 
 Example:

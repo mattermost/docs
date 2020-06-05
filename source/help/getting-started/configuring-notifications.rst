@@ -4,7 +4,7 @@ Configuring Notifications
 Desktop, email and mobile push notifications notify you of activity in Mattermost. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
 
 - Direct Messages you
-- Mentions your username or first name in a channel
+- Mentions you specifically with `@username`
 - Notifies a channel you're in using @channel or @all
 - Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
 
