@@ -124,19 +124,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Changed the primary key on the Reactions table.
 
 ### API Changes
- - Added a new route ``POST /api/v4/group/bleve/purge_indexes``
- - Added a new route ``GET /api/v4/channels/:channel_id/member_counts_by_group``
- - Added a new route ``GET /api/v4/teams/:team_id/commands/autocomplete_suggestions``
- - Added a new route ``GET api/v4/users/:user_id/groups``
- - Added a new route ``GET api/v4/teams/:team_id/groups_by_channels``
- - Added several new APIs for use by mmctl local mode, such as to enable modifying teams with mmctl and to enable restoring a team with mmctl.
+ - Added a new route ``POST /api/v4/group/bleve/purge_indexes`` to delete all Bleve indexes and their contents.
+ - Added a new route ``GET /api/v4/channels/:channel_id/member_counts_by_group`` to get the channel members counts for each AD/LDAP group that has at least one member in the channel.
+ - Added a new route ``GET /api/v4/teams/:team_id/commands/autocomplete_suggestions`` to get a list of autocomplete suggestions.
+ - Added a new route ``GET api/v4/users/:user_id/groups`` to get all AD/LDAP groups for a user.
+ - Added a new route ``GET api/v4/teams/:team_id/groups_by_channels`` to get set of AD/LDAP groups associated with the channels in the given team grouped by channel.
+ - Added several new APIs for use by mmctl local mode, such as ability to modify and restore teams with mmctl.
 
 ### Websocket Event Changes
- - Added ``received_group`` Websocket Event.
- - Added ``received_group_associated_to_team`` Websocket Event.
- - Added ``received_group_not_associated_to_team`` Websocket Event.
- - Added ``received_group_associated_to_channel`` Websocket Event.
- - Added ``received_group_not_associated_to_channel`` Websocket Event.
+ - Added a new ``received_group`` Websocket Event.
+ - Added a new ``received_group_associated_to_team`` Websocket Event.
+ - Added a new ``received_group_not_associated_to_team`` Websocket Event.
+ - Added a new ``received_group_associated_to_channel`` Websocket Event.
+ - Added a new ``received_group_not_associated_to_channel`` Websocket Event.
 
 ### Known Issues
  
