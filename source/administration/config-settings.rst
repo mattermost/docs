@@ -3867,10 +3867,10 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 
 Read Only Config
 ^^^^^^^^^^^^^^^^
+
 **True**: Changes made to settings in the System Console are ignored.
 
 **False**: Changes made to settings in the System Console are written to ``config.json``.
-
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
@@ -4548,6 +4548,34 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
 +-------------------------------------------------------------------------------------------------------+
+
+Bleve Settings
+~~~~~~~~~~~~~~~
+
+IndexDir
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+EnableIndexing
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+EnableSearching
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+EnableAutocomplete
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+BulkIndexingTimeWindowSeconds
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
