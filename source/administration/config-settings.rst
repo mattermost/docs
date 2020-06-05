@@ -1122,7 +1122,7 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 180`` with numerical input.            |
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
 +--------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days)
