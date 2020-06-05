@@ -20,7 +20,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Notify AD/LDAP Groups with a single @mention (E20) 
+#### Notify AD/LDAP Groups with a single @mention (Beta) (E20) 
  - Ability to enable mentions for LDAP-synced groups so users can notify the entire group at the same time.
 
 #### Manage users from the System Console (E20)
