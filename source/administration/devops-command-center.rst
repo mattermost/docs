@@ -27,7 +27,10 @@ The incident channel is the central place for discussion related to the incident
 - Select **! Incidents** from the plugin menu in the channel header.
 - Use the context menu of a post and select **Start incident**.
 
-When you create an incident, the name provided is applied to the new incident channel that is created. The channel name can be used to search for the channel, and is also the name appended to the archived file. You can also select an optional playbook. If a playbook is selected, the corresponding checklist is used as a template to start the incident. If no playbook is selected, the incident starts with an empty checklist.
+When you create an incident, the name provided is applied to the new incident channel that is created. You can also select an optional playbook. 
+
+- If a playbook is selected, a corresponding checklist is used as a template to start the incident. 
+- If no playbook is selected, the incident starts with an empty checklist.
 
 The creator of an incident automatically becomes the incident commander, responsible for managing the incident.
 
