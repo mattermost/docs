@@ -89,11 +89,22 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - DisableDatabaseSearch to to disable database search in case
- - ServiceSettings.ExtendSessionLengthWithActivity to extend session timeouts based on user activity
- - PictureAttribute
- - Changed the default config for mobile push notification contents to "Send full message contents" on new installs.
- - Enabled config for link previews by default on new installs.
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``ExtendSessionLengthWithActivity``
+     - Added ``EnableLocalMode``
+     - Added ``LocalModeSocketLocation``
+     - Changed ``EnableLinkPreviews`` to default true for new installs.
+     - Changed ``SessionLengthWebInDays`` to default to 30 days for new installs.
+ - Under ``ClusterSettings`` in ``config.json``:
+     - Added ``DisableDatabaseSearch``
+ - Under ``LdapSettings`` in ``config.json``: 
+     - Added ``PictureAttribute``
+ - Added new BleveSettings configuration object with the keys:
+IndexDir
+EnableIndexing
+EnableSearching
+EnableAutocomplete
+BulkIndexingTimeWindowSeconds
 
 ### Open Source Components
  - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp
@@ -109,13 +120,24 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``react-native-screens`` in https://github.com/mattermost/mattermost-mobile
 
 ### Database Changes
+ - New column UserGroups.AllowReference
+ - Changes the primary key on the Reactions table
 
 ### API Changes
- - Added API to Server to enable modifying teams with mmctl
- - Added API to Server needed to enable restoring a team with mmctl
+ - New route POST /api/v4/group/bleve/purge_indexes
+ - New route GET /api/v4/channels/:channel_id/member_counts_by_group
+ - New route GET /api/v4/teams/:team_id/commands/autocomplete_suggestions
+ - New route GET api/v4/users/:user_id/groups
+ - New route GET api/v4/teams/:team_id/groups_by_channels
+ - Several new APIs for use by mmctl local mode, such as to enable modifying teams with mmctl and to enable restoring a team with mmctl.
 
 ### Websocket Event Changes
- 
+ - New websocket received_group
+ - New websocket received_group_associated_to_team
+ - New websocket received_group_not_associated_to_team
+ - New websocket received_group_associated_to_channel
+ - New websocket received_group_not_associated_to_channel
+
 ### Known Issues
  
 ### Contributors
