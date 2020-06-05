@@ -8,8 +8,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release day: 2020-06-16**
 
-### Compatibility
-
 ### Breaking Changes
  - A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost apps. It is recommended to enable this setting to improve user experience if compliant with your organizations policies. [Learn more here](https://mattermost.com/blog/session-expiry-experience).
  - The ``mattermost_http_request_duration_seconds`` histogram metric (in Enterprise Edition) has been removed. This information was already captured by ``mattermost_api_time``, which also contains the api handler name, HTTP method, and the response code. As an example, if you are using ``rate(mattermost_http_request_duration_seconds_sum{server=~"$var"}[5m]) /   rate(mattermost_http_request_duration_seconds_count{server=~"$var"}[5m])`` to measure average call duration, it needs to be replaced with ``sum(rate(mattermost_api_time_sum{server=~"$var"}[5m])) by (instance) /   sum(rate(mattermost_api_time_count{server=~"$var"}[5m])) by (instance)``.
@@ -24,22 +22,22 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Ability to enable mentions for LDAP-synced groups so users can notify the entire group at the same time.
 
 #### Manage users from the System Console (E20)
- - Ability to drill into each team or channel configuration page to view and manage members directly in the System Console.
+ - Ability to view and manage members via each team or channel configuration page.
 
-#### Sync profile images from LDAP (E10) 
- - Ability to ensure compliance with corporate policies by automatically syncing profile images from LDAP.
+#### Sync profile images from AD/LDAP (E10) 
+ - Ability to ensure compliance with corporate policies by automatically syncing profile images from AD/LDAP.
 
-#### Extend sessions automatically
+#### Automatically extending user sessions
  - Ability to enable a feature that automatically extends session lengths when users are active on Mattermost apps.
 
 #### Access CLI remotely
  - Ability to manage Mattermost without having direct access to the server with a new Local Mode for mmctl.
 
-#### Slash command autocomplete framework (Beta)
- - Ability to make slash commands easier to use and increase discoverability with a new slash command autocomplete framework for plugins.
-
 #### Improved search experience
  - Ability to use the mouse or keyboard to select search filters instead of typing them manually.
+ 
+#### Slash command autocomplete framework (Beta)
+ - Ability to make slash commands easier to use and increase discoverability with a new slash command autocomplete framework for plugins.
 
 #### Full-text search and indexing (Experimental)
  - Ability to use Bleve to execute search functionality instead of the database.
@@ -139,7 +137,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added a new ``received_group_not_associated_to_channel`` Websocket Event.
 
 ### Known Issues
- 
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
 ### Contributors
  - [aaronrothschild](https://github.com/aaronrothschild), [abdulsmapara](https://github.com/abdulsmapara), [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avasconcelos114](https://github.com/avasconcelos114), [avddvd](https://github.com/avddvd), [awerries](https://github.com/awerries), [bbodenmiller](https://github.com/bbodenmiller), [bbuehrle](https://github.com/bbuehrle), [bradjcoughlin](https://github.com/bradjcoughlin), [cadavre](https://github.com/cadavre), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [CEOehis](https://github.com/CEOehis), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [corey-robinson](https://github.com/corey-robinson), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [craigwillis-mm](https://github.com/craigwillis-mm), [craph](https://github.com/craph), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [dantepippi](https://github.com/dantepippi), [dbejanishvili](https://github.com/dbejanishvili), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [ejose19](https://github.com/ejose19), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [fedealconada](https://github.com/fedealconada), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [funkytwig](https://github.com/funkytwig), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gnello](https://github.com/gnello), [GrigalashviliT](https://github.com/GrigalashviliT), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hzeroo](https://github.com/hzeroo), [ialorro](https://github.com/ialorro), [iamsayantan](https://github.com/iamsayantan), [ikeohachidi](https://github.com/ikeohachidi), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [josephbaylon](https://github.com/josephbaylon), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [l0r3zz](https://github.com/l0r3zz), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [liusy182](https://github.com/liusy182), [lynn915](https://github.com/lynn915), [marianunez](https://github.com/marianunez), [mbecca](https://github.com/mbecca), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mterhar](https://github.com/mterhar), [muratbayan](https://github.com/muratbayan), [nadalfederer](https://github.com/nadalfederer), [NassimBounouas](https://github.com/NassimBounouas), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nperera](https://github.com/nperera), [octoquad](https://github.com/octoquad), [pankajhirway](https://github.com/pankajhirway), [petya-v](https://github.com/petya-v), [pradeepmurugesan](https://github.com/pradeepmurugesan), [prapti](https://github.com/prapti), [psy-q](https://github.com/psy-q), [Qovaros](https://github.com/Qovaros), [Qujja](https://github.com/Qujja), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shibasisp](https://github.com/shibasisp), [Shivam010](https://github.com/Shivam010), [shred86](https://github.com/shred86), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [thefactremains](https://github.com/thefactremains), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [ThiefMaster](https://github.com/ThiefMaster), [tomasmik](https://github.com/tomasmik), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [ztrayner](https://github.com/ztrayner)
 
