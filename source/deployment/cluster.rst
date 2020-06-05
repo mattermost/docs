@@ -107,8 +107,13 @@ Configuration Settings
 
   .. code-block:: none
 
-    net.ipv4.ip_local_port_range="1024 65000"
-    net.ipv4.tcp_fin_timeout=30
+    net.ipv4.ip_local_port_range = 1025 65000
+    net.ipv4.tcp_fin_timeout = 30
+    net.ipv4.tcp_tw_reuse = 1
+    net.core.somaxconn = 4096
+    net.ipv4.tcp_max_syn_backlog = 8192
+
+You can do the same for the proxy server too.
 
 Cluster Discovery
 ^^^^^^^^^^^^^^^^^
@@ -296,10 +301,14 @@ Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in config.json f
 Plugins and High Availability
 ^^^^^^^^^^^^^^^^
 
-As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. 
+As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically.
 
-Note a slight behaviour change in 5.15:
-When you re-install a plugin in 5.14, the previous **Enabled** or **Disabled** state is retained. As of 5.15, a reinstalled plugin's initial state is **Disabled**.
+File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
+
+If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory. If this is not the case high availability will not function correctly and may corrupt your file storage.
+
+Note a slight behavior change in 5.15:
+When you reinstall a plugin in 5.14, the previous **Enabled** or **Disabled** state is retained. As of 5.15, a reinstalled plugin's initial state is **Disabled**.
 
 Upgrade Guide
 -------------

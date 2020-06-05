@@ -6,6 +6,11 @@ For organizations who require multi-factor authentication ("MFA") as part of the
 
 Supported smartphones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`__. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
 
+Prerequisite
+-------------
+Ensure that your server system time is accurate as the MFA implementation relies on Time-based One-time passwords (TOTP).
+
+
 Enabling MFA
 ------------
 
@@ -23,7 +28,4 @@ When MFA enforcement is set to true, all users with email or LDAP authentication
 Users will not be able to remove MFA from their account while enforcement is on.
 
 Since turning on MFA enforcement prevents users from accessing the site until set up is complete, it is recommended you turn on enforcement during non-peak hours when people are less likely to be using the system.
-
-
-
 

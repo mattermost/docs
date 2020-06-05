@@ -2,11 +2,34 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Internet Explorer (IE11) is removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+   PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting PostgreSQL version 10 with v5.26 release. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
+   
+.. important::
+   Upgrade to server version v5.19 or later is required. Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See `this blog post <https://mattermost.com/blog/support-for-esr-5-9-has-ended/>`_ for more details on why you should upgrade and how to upgrade in quick, simple steps.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.22.0                                            | Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in  |
+|                                                    | environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially |
+|                                                    | in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable       |
+|                                                    | during this time.                                                                                                                                                |          
+|                                                    |                                                                                                                                                                  |
+|                                                    | The migration is a single line of SQL and can be applied directly to the database through the MySQL/PSQL command line clients if you prefer to decouple this     |
+|                                                    | from restarting the Mattermost server. It is fully backwards compatible so the schema change can be applied to any previous version of Mattermost without issue. |
+|                                                    | During the time the schema change is running (~30s per million rows in the Reactions table), if end users attempt to react to posts, the emoji reactions will    | 
+|                                                    | not load for end users.                                                                                                                                          |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: ``ALTER TABLE Reactions DROP PRIMARY KEY, ADD PRIMARY KEY (PostId, UserId, EmojiName);``                                                                  |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Postgres: ``ALTER TABLE reactions DROP CONSTRAINT reactions_pkey, ADD PRIMARY KEY (PostId, UserId, EmojiName);``                                                 |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The Channel Moderation Settings feature is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or |
+|                                                    | react to posts without proper permissions will see an error.                                                                                                     |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. The available ``GetProps()`` and ``SetProps()`` methods should now be  |
+|                                                    | used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method.                                             |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.21.0                                            | Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in     |
 |                                                    | Postgres.                                                                                                                                                        |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+

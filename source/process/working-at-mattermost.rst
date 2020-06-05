@@ -179,7 +179,7 @@ Mattermost uses professional employment organizations in the United States and C
 MatterCon 
 ---------
 
-MatterCon is an annual conference for Mattermosters and the contributor community to come together. In 2018 it was held in Lisbon, Portugal. In 2019, in Punta Cana, Dominican Republic. 
+MatterCon is an annual conference for Mattermosters and the contributor community to come together. In 2018, it was held in Lisbon, Portugal. In 2019, in Punta Cana, Dominican Republic. In 2020, it was held in Nassau, Bahamas.
 
 It's a time for Mattermosters and top contributors from our community to get together, to celebrate our achievements and to build shared experiences and empathy to increase the efficiency of working together. 
 

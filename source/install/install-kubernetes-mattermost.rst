@@ -23,7 +23,7 @@ Open a text editor and create a text file with the following details.
   kind: Secret
   metadata:
     name: mattermost-license
-  type: Opqaue
+  type: Opaque
   stringData:
     license: %LICENSE_FILE_CONTENTS%
 
