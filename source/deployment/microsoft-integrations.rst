@@ -18,7 +18,7 @@ Skype for Business
 - Start and join voice calls, video calls, and use screen-sharing with your team members. Developed by kosgrz and maintained by Mattermost.
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
-- Source code + docs: https://github.com/kosgrz/mattermost-plugin-skype4business.
+- Source code + docs: https://github.com/mattermost/mattermost-plugin-skype4business
 
 Office 365 SSO (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
