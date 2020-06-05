@@ -419,7 +419,7 @@ Beta Level Quality
 Experimental Level Quality
   - Not recommended for use in production
   - Unknown level of stability
-  - Minimal feature set that is not yet complete, and functionality may change overtime
+  - Minimal feature set that is not yet complete, and functionality may change over time
   - Minimal documentation is available
   - Disabled by default and must be turned on through a configuration setting
 
