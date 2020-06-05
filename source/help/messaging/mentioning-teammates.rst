@@ -58,7 +58,7 @@ System Admins can enable mentions for `LDAP synced groups <https://docs.mattermo
 
 **Note**: This functionality is not yet supported on mobile.
 
-Once enabled for a specific group, users will be able to mention and notify the entire group (similar to @channel or @all). Every member of the group who is also present in the channel the mention was posted, will receive a notification. If members of the group mentioned are not members of the channel, the user who posted the mention is prompted to invite them.
+Once enabled for a specific group, users can mention and notify the entire group in a channel (similar to @channel or @all). Members of the group in that channel will receive a notification. If members of the group mentioned are not members of the channel, the user who posted the mention is prompted to invite them.
 
 Group mention identifiers (slugs) use the LDAP group name by default, but they can be customized and renamed from the group configuration page.
 
