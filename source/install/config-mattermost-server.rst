@@ -43,8 +43,7 @@ Create the System Admin user and set up Mattermost for general use.
     number and size of files that users attach to messages.
 
   a. Navigate to **System Console > Environment > File Storage** (or **System Console > General > Storage** in versions prior to 5.12).
-  b. If you store the files locally, set **File Storage System** to **Local File System**, and then either accept the default
-  for the **Local Storage Directory** or enter a location. The location must be a directory that exists and has write permissions for the Mattermost server.
+  b. If you store the files locally, set **File Storage System** to **Local File System**, and then either accept the default for the **Local Storage Directory** or enter a location. The location must be a directory that exists and has write permissions for the Mattermost server.
   It can be an absolute path or a relative path. Relative paths are relative to the ``mattermost`` directory.
   c. If you store the files on Amazon S3, set **File Storage System** to **Amazon S3** and enter the appropriate values for your Amazon account.
   d. Click **Save**.

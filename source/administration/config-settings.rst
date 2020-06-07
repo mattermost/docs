@@ -72,7 +72,7 @@ Server Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 View logging of server-side events.
 
-User Management
+User management
 ---------------
 Settings for managing users, user access, groups, and permissions.
 

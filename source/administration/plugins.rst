@@ -16,22 +16,22 @@ Plugins are fully supported in both Team and Enterprise Editions.
 
 Plugin Marketplace
 ------------------
-The Plugin Marketplace is a collection of plugins that can greatly increase the value and capabilities of your Mattermost deployment. End users can see increased productivity through quick access to systems such as Jira, Zoom, Webex, and GitHub.  Mattermost Admins can discover new plugins and quickly deploy them to their servers, including High Availability clusters. The Marketplace is available in 5.16+ and accessed via **Main Menu > Plugin Marketplace**. The Marketplace listings will continue to expand as we add new features and plugins that our customers request.
+The Plugin Marketplace is a collection of plugins that can greatly increase the value and capabilities of your Mattermost deployment. End users can see increased productivity through quick access to systems such as Jira, Zoom, Webex, and GitHub. Mattermost Admins can discover new plugins and quickly deploy them to their servers, including High Availability clusters. The Marketplace is available in 5.16+ and accessed via **Main Menu > Plugin Marketplace**. The Marketplace listings will continue to expand as we add new features and plugins that our customers request.
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
-Plugin Labels
+Plugin labels
 ~~~~~~~~~~~~~~~~
 
-Plugins in the Marketplace are labeled to make it easier for administrators to choose plugins that fit their company's security and risk policies if they do not allow for community plugins to be used. 
+Plugins in the Marketplace are labeled to make it easier for administrators to choose plugins that fit their company's security and risk policies if they do not allow for community plugins to be used.
 
 **Community Plugins**
 
-Plugins identified as "Community" are produced by the open-source community or partners and the features/roadmap are not controlled directly by Mattermost.  Prior to being listed on the Plugin Marketplace, they are reviewed by the Mattermost development team and code-signed to ensure the code Mattermost reviewed, is delivered.  Mattermost does not directly support these plugins in production environments.
+Plugins identified as "Community" are produced by the open-source community or partners and the features/roadmap are not controlled directly by Mattermost.  Prior to being listed on the Plugin Marketplace, they are reviewed by the Mattermost development team and code-signed to ensure the code Mattermost reviewed, is delivered. Mattermost does not directly support these plugins in production environments.
 
 **Beta Plugins**
 
-Plugins may be labeled as "Beta" if they are released to the Plugin Marketplace early for customer previews.  We do not recommend running Beta plugins on production servers.
+Plugins may be labeled as "Beta" if they are released to the Plugin Marketplace early for customer previews. We do not recommend running Beta plugins on production servers.
 
 Installing a plugin
 ~~~~~~~~~~~~~~~~
@@ -53,10 +53,10 @@ Upgrading plugins
 
 Upgrade a plugin on demand when a new version becomes available. New versions of plugins that you have already installed will display a link to easily install the upgraded plugins. Some plugin versions may have breaking changes; please check the release notes if you are performing a major version change.
 
-Upgrading plugins (prior to v5.18)
+Upgrading plugins (prior to 5.18)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In v5.16 and v5.17 the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and then upload it in **System Console > Plugin Management**.
+In 5.16 and 5.17 the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and then upload it in **System Console > Plugin Management**.
 
 Marketplace Server
 ------------------
@@ -71,7 +71,7 @@ There are two Marketplace settings in **System Console > Plugin management**:
 When you first access the Marketplace, your Mattermost server will attempt to contact the Mattermost Marketplace server and return a list of available plugins that are appropriate based on the server version that is currently running. Only your server version and search query is passed over to Mattermost Marketplace; we retain an anonymized record for product analytics whenever a new plugin is installed, unless you have opted out of `Telemetry <https://docs.mattermost.com/administration/telemetry.html>`__. The `Plugin marketplace server code <https://github.com/mattermost/mattermost-marketplace>`__ is available as an open source project and can be used to setup your own private Marketplace if desired.
 
 
-Mattermost Marketplace
+Mattermost Plugin Marketplace
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-marketplace>`__ is a service run by Mattermost that contains listings of plugins that we have reviewed and, in many cases, built. In the future, we plan to include community-developed plugins that will be labeled separately to Mattermost-developed plugins. as well as settings that would restrict which types of plugins you can install. Comments in our forum are welcome as we develop this feature further.
@@ -87,8 +87,7 @@ About plugins
 Plugins may have one or both of the following parts:
 
  - **Web app plugins**. Customize the Mattermost user interface by adding buttons to the channel header, overriding the ``RHS``, or even rendering a custom post type within the center channel. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
- - **Server plugins**. Run a Go process alongside the server, filtering messages, or integrating with third-party systems such as Jira, GitLab or Jenkins. For a sample plugin, see `our Jira plugin <https://github.com/mattermost/mattermost-plugin-jira>`__.
-
+ - **Server plugins**. Run a Go process alongside the server, filtering messages, or integrating with third-party systems such as Jira, GitLab, or Jenkins. For a sample plugin, see `our Jira plugin <https://github.com/mattermost/mattermost-plugin-jira>`__.
 
 
 Security
@@ -102,9 +101,9 @@ You should only install custom plugins from sources you trust to avoid compromis
 Plugin signing
 ---------------
 
-The Plugin Marketplace allows system administrators to download and install plugins from a central repository. Plugins installed via the Plugin Marketplace must be signed by a public key certificate trusted by the local Mattermost server.
+The Plugin Marketplace allows System Admins to download and install plugins from a central repository. Plugins installed via the Plugin Marketplace must be signed by a public key certificate trusted by the local Mattermost server.
 
-While the server ships with a default certificate used to verify plugins from the default Mattermost plugin marketplace, the server can be configured to trust different certificates and point at a different plugin marketplace. This document outlines the steps for generating a public key certificate and signing plugins for use with a custom plugin marketplace. It assumes access to the `GNU Privacy Guard (GPG) <https://gnupg.org>`__ tool.
+While the server ships with a default certificate used to verify plugins from the default Mattermost Plugin Marketplace, the server can be configured to trust different certificates and point at a different plugin marketplace. This document outlines the steps for generating a public key certificate and signing plugins for use with a custom plugin marketplace. It assumes access to the `GNU Privacy Guard (GPG) <https://gnupg.org>`__ tool.
 
 
 Configuration
@@ -266,7 +265,7 @@ Pre-packaged plugins
 ~~~~~~~~~~~~~~~~~~~
 Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Install pre-packaged plugins from the Plugin Marketplace, even if your system cannot directly connect to the internet.
 
-Prior to v5.20, pre-packaged plugins were installed by default and could not be uninstalled without manually modifying the `prepackaged_plugins` directory. Any pre-packaged plugins installed prior to v5.20 and left enabled on upgrade will remain installed, but can now be uninstalled.
+Prior to 5.20, pre-packaged plugins were installed by default and could not be uninstalled without manually modifying the ``prepackaged_plugins`` directory. Any pre-packaged plugins installed prior to v5.20 and left enabled on upgrade will remain installed, but can now be uninstalled.
 
 Custom plugins
 ~~~~~~~~~~~~~~
@@ -276,17 +275,17 @@ To enable plugin uploads, manually set **PluginSettings > EnableUploads** to ``t
 
 With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` files containing the server executables and web app resources for the plugin. You can also specify a URL to install a plugin bundle from a remote source.
 
-Note: When **RequirePluginSignature** is `true`, plugin uploads cannot be enabled, and may only be installed via the Marketplace (which verifies Plugin Code Signatures).  
+Note: When **RequirePluginSignature** is `true`, plugin uploads cannot be enabled, and may only be installed via the Marketplace (which verifies Plugin Code Signatures).
 
 Custom plugins may also be installed via the `command line interface <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-plugin>`__.
 
-While no longer recommended, plugins may also be installed manually by unpacking the plugin bundle inside the `plugins` directory of a Mattermost installation.
+While no longer recommended, plugins may also be installed manually by unpacking the plugin bundle inside the ``plugins`` directory of a Mattermost installation.
 
 Plugin uploads in High Availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Prior to Mattermost 5.14, Mattermost servers configured for `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_ required plugins to be installed manually. As of Mattermost 5.14, plugins uploaded via the System Console or the command line interface are persisted to the configured file store and automatically installed on all servers that join the cluster.
 
-Manually installed plugins remain supported, but must be individually installed on each server in the cluster.
+Manually-installed plugins remain supported, but must be individually installed on each server in the cluster.
 
 Frequently Asked Questions (FAQs)
 ---------------------------------

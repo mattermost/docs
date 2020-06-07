@@ -4,16 +4,11 @@ mmctl Command Line Tool (Beta)
 The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication
 is done with either login credentials or an authentication token.
 
-Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the
-server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool.
-In the future, the Mattermost CLI tool will be deprecated.
+Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be deprecated.
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have
 worked on this project. We are currently accepting pull requests for Help Wanted issues
-in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo. You can learn more about
-the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
-
-
+in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
 **Notes**
 
@@ -84,8 +79,7 @@ Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ 
 Building mmctl
 ----------------
 
-The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
-``go`` 1.11 or greater and compile the binary using:
+The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed ``go`` 1.11 or greater and compile the binary using:
 
 .. code-block:: sh
 
@@ -453,7 +447,7 @@ Management of bots.
 
   Child Commands
     -  `mmctl bot create`_ - Add a channel
-    
+
 **Options**
 
 .. code-block:: sh
@@ -883,7 +877,7 @@ Management of slash commands.
     -  `mmctl command modify`_ - Modify a slash command
     -  `mmctl command move`_ - Move a slash command to a different team
     -  `mmctl command show`_ - Show a custom slash command
-    
+
 
 
 **Options**
@@ -891,7 +885,7 @@ Management of slash commands.
 .. code-block:: sh
 
     -h, --help      help for command
-    
+
 
 mmctl command archive
 ^^^^^^^^^^^^^^^^^^^^
@@ -1119,7 +1113,7 @@ mmctl command show
 
 **Description**
 
-  Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
+  Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name, and creator username.
 
 **Format**
 
@@ -1337,7 +1331,7 @@ mmctl docs
 
 **Description**
 
-  Generates mmctl documentation
+  Generates mmctl documentation.
 
 **Format**
 
@@ -1374,7 +1368,7 @@ Child Commands
 mmctl group channel
 --------------------
 
-Management of channel groups
+Management of channel groups.
 
 Child Commands
   -  `mmctl group channel disable`_ - Disable group channel constrains
@@ -1839,7 +1833,7 @@ mmctl logs
 
 **Description**
 
-  Display logs in a human-readable format
+  Display logs in a human-readable format.
 
 **Format**
 
@@ -2268,7 +2262,7 @@ Child Commands
   -  `mmctl system clearbusy`_ - Clears the busy state
   -  `mmctl system getbusy`_ - Get the current busy state
   -  `mmctl system setbusy`_ - Set the busy state to ``true``
-  
+
 **Options**
 
 .. code-block:: sh
@@ -2348,7 +2342,7 @@ mmctl system getbusy
     --format string                the format of the command output [plain, json] (default "plain")
     --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
     --strict                       will only run commands if the mmctl version matches the server one
-    
+
 
 mmctl system setbusy
 ^^^^^^^^^^^^^^^^^^
@@ -2894,7 +2888,7 @@ mmctl user invite
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl user list
 ^^^^^^^^^^^^^^^^^^
 

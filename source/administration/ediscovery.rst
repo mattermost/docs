@@ -17,12 +17,12 @@ Each of the options is discussed in detail below.
 
   Litigation hold (also known as legal hold) is an extension of eDiscovery where in addition to searching for records, no electronically stored information nor paper documents may be discarded if they may be deemed relevant for a present or future legal case.
 
-Mattermost Compliance Exports
+Mattermost compliance exports
 ------------------------------------
 
 Mattermost Enterprise E20 has compliance report export capabilities.
 
-Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
+Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML, and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
 For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/administration/compliance-export.html>`__.
 
@@ -37,11 +37,11 @@ To use the API, you must first authenticate `as described here <https://api.matt
 
   curl -i -d '{"login_id": "username", "password": "password"}' https://yourmattermosturl/api/v4/users/login
 
-Mattermost will return a response that looks like this:
+Mattermost returns a response that looks like this:
 
 .. code-block:: json
 
-  HTTP/2 200 
+  HTTP/2 200
   server: nginx/1.10.3 (Ubuntu)
   date: Thu, 12 Jul 2018 14:43:45 GMT
   content-type: application/json
@@ -58,7 +58,7 @@ Include the ``token`` value sent in the response as part of the Authorization he
 
   curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
 
-Once you are authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com
+Once you are authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com.
 
 .. note::
 
@@ -90,20 +90,20 @@ When the export process is complete (the execution time is based on the number o
 
 When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to safe that file as. In the example above the file will be saved as ``report-zip.zip``.
 
-Mattermost Database
+Mattermost database
 ------------------------------------
 
-Selecting messages from the Mattermost database using standard SQL is quite easy. If you know the username, the following query can be used to select all messages for the specified user:
+If you have the username, you can select messages from the Mattermost database using standard SQL. The following query can be used to select all messages for the specified user:
 
 .. code-block:: sql
-  
+
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username');
 
 If you want to limit the results of the query based on the date and time that the messages were posted, you can modify the above query to:
 
 .. code-block:: sql
-  
+
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username' AND CreateAt > 1530405832000 AND CreateAt < 1532997832000);
 
-.. note:: 
+.. note::
   The Mattermost database stores date/time stamps in the Unix Epoch (https://en.wikipedia.org/wiki/Unix_time) format and a tool like https://www.epochconverter.com/ can be useful in converting to and from the required format.

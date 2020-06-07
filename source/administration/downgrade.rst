@@ -36,9 +36,8 @@ Owner and group of the install directory - *{owner}* and *{group}*
    .. code-block:: sh
 
      sudo systemctl stop mattermost
-     
 
-     
+
 #. Back up your data and application.
 
    a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
@@ -46,10 +45,10 @@ Owner and group of the install directory - *{owner}* and *{group}*
    b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
    .. code-block:: sh
-    
+
       cd {install-path}
       sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
-    
+
 
 #. Connect to your database CLI and run the following SQL statements to revert the changes to the database made by the migration. The commands may take up to a few minutes to run on large installations.
 
@@ -68,7 +67,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
       UPDATE ChannelMembers SET SchemeUser = NULL, SchemeAdmin = NULL;
 
       DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
- 
+
 
 #. Start Mattermost server.
 

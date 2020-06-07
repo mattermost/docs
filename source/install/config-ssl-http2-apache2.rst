@@ -1,6 +1,6 @@
 .. _config-ssl-http2-apache2:
 
-Configuring Apache2 with SSL and HTTP/2 (unofficial)
+Configuring Apache2 with SSL and HTTP/2 (Unofficial)
 =====================================================
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet

@@ -1,11 +1,9 @@
 .. _config-proxy-nginx:
 
-Configuring NGINX as a proxy for Mattermost Server
+Configuring NGINX as a Proxy for Mattermost Server
 ==================================================
 
-NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the
-file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully
-qualified domain name (FQDN) of your Mattermost website.
+NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 
 **To configure NGINX as a proxy**
 
@@ -16,8 +14,8 @@ qualified domain name (FQDN) of your Mattermost website.
 
 On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``
 
-3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents,
-if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for ``server_name``.
+3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for ``server_name``.
+
 On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
 
   .. code-block:: none
@@ -110,9 +108,7 @@ Now that NGINX is installed and running, you can configure it to use SSL, which 
 
 **Why are Websocket connections returning a 403 error?**
 
-This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the
-same as the host header. If it's not, a ``403`` error is returned.  Open the file ``/etc/nginx/sites-available/mattermost``
-as root in a text editor and make sure that the host header being set in the proxy is dynamic:
+This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a ``403`` error is returned.  Open the file ``/etc/nginx/sites-available/mattermost`` as *root* in a text editor and make sure that the host header being set in the proxy is dynamic:
 
 .. code-block:: none
   :emphasize-lines: 4
@@ -124,8 +120,7 @@ as root in a text editor and make sure that the host header being set in the pro
     proxy_set_header      X-Forwarded-For $remote_addr;
   }
 
-Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain being used by clients. You may need to
-add variations of the host name that clients may send. Your NGINX log will be helpful in diagnosing the problem.
+Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain being used by clients. You may need to add variations of the host name that clients may send. Your NGINX log will be helpful in diagnosing the problem.
 
 .. code-block:: none
   :emphasize-lines: 2
@@ -134,8 +129,7 @@ add variations of the host name that clients may send. Your NGINX log will be he
   "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
   "SessionLengthWebInDays": 30,
 
-For other troubleshooting tips for WebSocket errors,
-see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
+For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
 **How do I setup an NGINX proxy with the Mattermost Docker installation?**
 
@@ -175,7 +169,7 @@ If you are using SSL, you may also need to expose port 443.
 
 You may need to update the Callback URLs for the Application entry of Mattermost inside your GitLab instance.
 
-1. Log into your GitLab instance as the admin.
+1. Log in to your GitLab instance as the admin.
 2. Go to **Admin > Applications**.
 3. Click **Edit** on GitLab-Mattermost.
 4. Update the Callback URLs to your new domain/URL.

@@ -1,7 +1,7 @@
 Mattermost Performance Alerting Guide
 ======================================
 
-Mattermost recommends using Prometheus and Grafana to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard.  
+Mattermost recommends using Prometheus and Grafana to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard.
 
 .. note:: We highly recommend setting up performance alerting for deployments above 5,000 users, where additional servers have been added for performance load-balancing.
 
@@ -16,13 +16,13 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
   b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL
 
 2. In Grafana:
-  a. Under the alert icon in the sidebar, click ''Notification channels''
-  b. Click ''Add channel''
-  c. Enter ''Mattermost Alerts Channel'' as the name
-  d. For type, select ''Slack''
+  a. Under the alert icon in the sidebar, click **Notification channels**
+  b. Click **Add channel**
+  c. Enter **Mattermost Alerts Channel** as the name
+  d. For type, select **Slack**
   e. Paste your webhook URL into the URL field
   f. Include an @ mention in the mention field, if you want to send mentions when an alert is posted to Mattermost
-  g. Press ''Send Test'' to test the alert
+  g. Press **Send Test** to test the alert
 
 If you would also like to get email alerts, you can follow `these instructions <http://docs.grafana.org/alerting/notifications/#email.>`__ to set that up.
 
@@ -38,21 +38,21 @@ The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`__
 
 To configure alerts, set an appropriate threshold and enable notifications. Enabling notifications is the same for each chart, but setting the correct threshold can have some variances that are better handled on a per-chart basis.
 
-1. For each chart, click on the chart name and click ''Edit'':
+1. For each chart, click on the chart name, the click **Edit**.
 
 .. image:: ../images/perf-1.png
 
-2. Then click on the ''Alert'' tab:
+2. Then click on the **Alert** tab:
 
 .. image:: ../images/perf-2.png
 
-3. The alert threshold, which will be discussed in the sections below, is the last field under ''Conditions'' (the one set to 600 in the screenshot above).
+3. The alert threshold, which will be discussed in the sections below, is the last field under **Conditions** (the one set to 600 in the screenshot above).
 
 See the sections below for how to set the threshold for each individual chart. If you would like to add your own custom alert conditions, configure them here.
 
 .. image:: ../images/perf-3.png
 
-4. To enable the notifications for any alerts, click on the ''Notification'' tab on the left and select ''Mattermost Alerts Channel'' under ''Send to'':
+4. To enable the notifications for any alerts, click on the **Notification** tab on the left and select **Mattermost Alerts Channel** under **Send to**:
 
 .. image:: ../images/perf-4.png
 
@@ -80,7 +80,7 @@ Memory Usage
 
 Memory Usage tracks the megabytes of RAM that your app servers are using. Set the threshold similar to the CPU Utilization Rate: below maximum available memory and above your average usage during peak times.
 
-Here’s how we have the alert set on our community server: 
+Here’s how we have the alert set on our community server:
 
 .. image:: ../images/perf-6.png
 

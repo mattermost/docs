@@ -10,7 +10,7 @@ The state of your Mattermost server is contained in multiple data stores that ne
 
 To backup your Mattermost server:
 
-1. Backup your Mattermost database using standard MySQL or PostgreSQL procedures depending on your database version.
+1. Back up your Mattermost database using standard MySQL or PostgreSQL procedures depending on your database version.
 
       - `MySQL backup documentation <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`__ is available online. Use the selector on the page to choose your MySQL version.
       - `PostgreSQL backup documentation <https://www.postgresql.org/docs/9.5/static/backup-dump.html>`__ is available online. Use the navigation at the top of the page to select your PostgreSQL version.
@@ -38,6 +38,7 @@ There are two common approaches:
 
 Automated backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Automating backup for a Mattermost server provides a copy of the server's state at a particular point in time, which can be restored if a failure in the future leads to loss of data. Options include:
 
 - Automation to periodically back up the Mattermost server, which may include all the components listed above or a subset depending on what you choose to protect.

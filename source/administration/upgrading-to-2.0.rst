@@ -1,4 +1,4 @@
-Upgrading to version 2.0
+Upgrading to Version 2.0
 ========================
 
 To upgrade an early edition of Mattermost to the latest edition, you must first upgrade in a specific sequence until you get to version 2.0.0. After that, you must upgrade to version 3.0.3, and from there you can upgrade directly to the latest Mattermost version.
@@ -14,7 +14,7 @@ Location of your local storage directory
 Owner and group of the install directory - *{owner}* and *{group}*
   Use the ``ls -l {install-path}/mattermost/bin/platform`` command to get the owner and group.
 
-**To upgrade to version 2.0**:
+**To upgrade to version 2.0**
 
 1. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
@@ -55,7 +55,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   ``sudo cp -r mattermost {install-path}``
 
-7. Restore your configuration, local file storage and logs.
+7. Restore your configuration, local file storage, and logs.
 
   .. code-block:: text
 

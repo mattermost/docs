@@ -4,9 +4,9 @@ Upgrading Mattermost Server
 In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 .. important::
-  **Upgrade to server version v5.19 or later is required.** Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See `this blog post <https://mattermost.com/blog/support-for-esr-5-9-has-ended/>`_ for more details.
+  **Upgrade to server version 5.19 or later is required.** Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.9 has ended and upgrading to server ESR 5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See `this blog post <https://mattermost.com/blog/support-for-esr-5-9-has-ended/>`_ for more details.
 
-Upgrading to the Latest Version
+Upgrading to the latest version
 -------------------------------
 
 If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version earlier than 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
@@ -19,9 +19,9 @@ Read these instructions carefully from start to finish. Make sure that you under
 
 .. important::
   Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
-  
+
 .. important::
-  If you're upgrading from a version prior to v5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. `/opt/mattermost`) and your binary should point to the `mattermost` binary (i.e. `/opt/mattermost/bin/mattermost`).
+  If you're upgrading from a version prior to 5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``) and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
 
 You should gather the following information before starting the upgrade:
 
@@ -63,7 +63,7 @@ Location of your local storage directory
    .. code-block:: sh
 
      tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
-  
+
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
 #. Stop Mattermost Server.
@@ -91,7 +91,7 @@ Location of your local storage directory
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-#. Remove all files *except special directories* from within the current mattermost directory.
+#. Remove all files *except special directories* from within the current Mattermost directory.
 
    The special directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
    You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
@@ -99,20 +99,20 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
-    
+
 #. Rename the ``plugins`` directories so they do not interfere with the upgrade.
 
    .. code-block:: sh
 
      sudo mv mattermost/plugins/ mattermost/plugins~
      sudo mv mattermost/client/plugins/ mattermost/client/plugins~
-    
+
 #. Change ownership of the new files before copying them.
 
    .. code-block:: sh
 
      sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
-     
+
    .. note::
      If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
 
@@ -127,7 +127,7 @@ Location of your local storage directory
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
      sudo rm -r /tmp/mattermost-upgrade/
 
-#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the ``CAP_NET_BIND_SERVICE`` capability to allow the new Mattermost binary to bind to low ports.
 
    .. code-block:: sh
 
@@ -150,13 +150,13 @@ Location of your local storage directory
 
 #. Upgrade your ``config.json`` schema:
 
-   #. Open the System Console and change a setting, then revert it. This should enable the Save button for that page.
+   #. Open the System Console and change a setting, then revert it. This should enable the **Save** button for that page.
    #. Click **Save**.
    #. Refresh the page.
 
    Your current settings are preserved, and new settings are added with default values.
 
-#. Reinstate the ``plugins`` directories, then restart the mattermost service.
+#. Reinstate the ``plugins`` directories, then restart the Mattermost service.
 
    .. code-block:: sh
 

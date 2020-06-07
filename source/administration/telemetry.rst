@@ -14,40 +14,40 @@ We use the data for the following purposes:
   - To help improve the quality of Mattermost software and related services.
   - To make design decisions for future releases.
 
-Security Update Check Feature
+Security update Ccheck feature
 -----------------------------
 
 New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share diagnostic information with Mattermost Inc. so that we can provide appropriate alerts.
 
-The following data is collected once every 24 hours: 
-  - Mattermost server build number and version 
-  - Type of build (Enterprise Edition or Team Edition) 
-  - Server operating system 
-  - The server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data) 
-  - Database type 
+The following data is collected once every 24 hours:
+  - Mattermost server build number and version
+  - Type of build (Enterprise Edition or Team Edition)
+  - Server operating system
+  - The server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data)
+  - Database type
   - Database version
-  - Number of teams 
-  - Number of users 
+  - Number of teams
+  - Number of users
   - Number of active users
-  - Whether or not the unit tests have been run 
+  - Whether or not the unit tests have been run
   - Date and time of the last check for security updates
   - The location of the Amazon Cloudfront server used for telemetry data
 
 To opt out, disable the feature in **System Console > Environment > SMTP** (or **System Console > Notifications > Email > Enable Security Alerts** in versions prior to 5.12). When the feature is disabled, you will not receive any security alerts.
 
-Error and Diagnostics Reporting Feature
+Error and diagnostics reporting feature
 ---------------------------------------
 
-Mattermost error and diagnostic data is collected for the following purposes: 
-  - To add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues
-  - To analyze and fix software problems 
-  - To help improve the quality of Mattermost software and related services 
-  - To make design decisions for future releases
+Mattermost error and diagnostic data is collected for the following purposes:
+  - To add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues.
+  - To analyze and fix software problems.
+  - To help improve the quality of Mattermost software and related services.
+  - To make design decisions for future releases.
 
-.. note:: 
+.. note::
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. The segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain, starting in Mattermost version 5.23. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
-Deployment and Server Configuration Data
+Deployment and server configuration data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reporting Frequency
@@ -55,7 +55,7 @@ Reporting Frequency
   - At the 24 hour mark and every 24 hours thereafter.
 
 Deployment Configuration Information
-  Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
+  Basic information including Mattermost server version, database and operating system type and version, and count of System Admin accounts.
 
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of ``type`` ("enumerated integer" or "enumerated boolean") values, ``true/false`` ("boolean"), and ``count`` ("integer"). Specifically these include:
@@ -79,13 +79,13 @@ Channel Moderation Configuration Information (Enterprise Edition Only)
   Information related to channel moderation, including number of channel schemes, number of channels with posting messages disabled for users or guests, number of channels with emoji reactions disabled for users or guests, number of channels with managing members disabled, number of channels with channel mentions disabled for users or guests.
 
 Groups Configuration Information (Enterprise Edition Only)
-  Information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members
+  Information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members.
 
 Plugin Configuration Information
   Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which pre-packaged plugins are enabled along with their versions.
 
 Permissions Configuration Information (Enterprise Edition Only)
-  Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
+  Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with.
 
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, guest accounts, and bots.
@@ -101,9 +101,9 @@ The majority of these events have been disabled since Mattermost v5.8. Refer to 
 
 Non-personally Identifiable Error Information, distinguished by end users and System Admins
   Boolean when the following events occur:
-  
+
   - *Sign-in Error*: Email login error, AD/LDAP login error, SAML login error
-  
+
   Boolean when the following events occur, including the error message, recently dispatched Redux actions, and non-identifiable information of the device, operating system, and the app:
 
   - *Mobile App Errors*: App crashes caused by type errors, exceptions, and failed logins
@@ -120,14 +120,14 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Plugin Discovery Diagnostics:* Number of installed plugins containing either server or webapp portions, or both; number of those plugins being activated
   - *Plugin Marketplace Diagnostics:* Plugin id, current version, and target version for all install and update events. Only sent when the default Marketplace is configured
   - *Commercial License Diagnostics (Enterprise Edition Only):* Uploaded an Enterprise license key to the server
-  - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
+  - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
   - *Group Discovery Diagnostics (Enterprise Edition Only):* Provides information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
 
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
-Android Mobile App Performance Monitoring
+Android mobile app performance monitoring
 -----------------------------------------
 
 To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending `diagnostic information <https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting>`__.
