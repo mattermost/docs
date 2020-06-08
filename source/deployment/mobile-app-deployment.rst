@@ -86,7 +86,7 @@ Below, we’ve added some key questions to ask yourself, your team, and any othe
 - Are you going to run a pilot deployment, if so, with whom?
 - What IT or HR policies need to change?
 
-We recommend setting at least one, achievable and time-based outcome.
+We recommend setting at least one achievable and time-based outcome.
 
 At the same time, you should begin thinking about technical and security requirements. A great place to start is with an implementation plan. So, feel free to `use our template available <https://docs.mattermost.com/getting-started/implementation_plan.html>`_ in the Mattermost documentation. Also, begin by engaging with your technical and security teams with questions like those below.
 
@@ -122,7 +122,7 @@ Technical Requirements
     Minimum requirements for the Mattermost Server are maintained in our documentation (link above). 
     **However, we do recommend running the latest version** of the Mattermost Server as it contains the most recent features and any applicable security updates.
 
-    If this is not possible, we encourage you to be on the most recent `Extended Support Release version <https://docs.mattermost.com/administration/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost push notification service (MPNS).
+    If this is not possible, we encourage you to be on the most recent `Extended Support Release version <https://docs.mattermost.com/administration/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
 `Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`_
     Basic mobile device requirements are provided in the link above.
@@ -131,7 +131,7 @@ Technical Requirements
 Public App Store vs. Custom Mattermost Apps
 *******************************************
 
-    **Note:** This guide uses `Public App Store` as generic for the two most used application stores `Apple App Store` and `Google Play Store`.
+    **Note:** This guide uses the term Public App Store as generic for the two most commonly-used application stores: Apple App Store and Google Play Store.
 
 The most critical decision you will make in your mobile deployment is whether to use the apps provided by Mattermost via Google Play and Apple App Store, or to build and distribute custom versions of the Mattermost apps. Below we provide a very general overview of these options.
 
@@ -142,7 +142,7 @@ Utilizing the app distributed by Mattermost in Google Play and the Apple App Sto
 
 - Easier deployment, driven by user needs.
 - Ability to use the Hosted Push Notification Service, or HPNS.
-- Apps automatically updated with the latest features, enhancements and security updates.
+- Apps automatically updated with the latest features, enhancements, and security updates.
 
 Again, this is the recommended route which is as simple as downloading the Mattermost mobile application from the corresponding store, entering a URL to point towards your Mattermost server, and logging in.
 
@@ -182,7 +182,7 @@ Our Hosted Push Notification Service offers:
 - Access to a publicly-hosted Hosted Push Notification Service (HPNS).
 - An explicit `privacy policy <https://about.mattermost.com/hpns-privacy/>`_ for the contents of unencrypted messages.
 - Encrypted TLS connections:
-    - between HPNS and Apple Push Notification Services
+    - Between HPNS and Apple Push Notification Services
     - HPNS and Google’s Firebase Cloud Messaging service
     - HPNS and your Mattermost server
 - Production-level uptime expectations
@@ -254,7 +254,7 @@ In the end, this sets app wrapping in a negative light. This is the reason the `
 Mobile VPN Options
 ******************
 
-A VPN allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs (Virtual Private Networks). We won't go into detail here.
+A Virtual Private Networks (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs. We won't go into detail here.
 
 There are VPN options which depend on the requirements of your organization. You should also consider the demands/needs of your user. Regardless, this can impact your approach to mobile deployment.
 
@@ -420,7 +420,7 @@ Choosing this model means you’ve decided not to use the mobile applications Ma
 
 This also means you will need to maintain these applications. Maintenance includes rebuilding and incorporating feature and/or security updates. Otherwise, your applications will not match the functionality of our publicly available applications, and could be incompatible with future versions of the Mattermost server.
 
-Finally, this choice also means you cannot use the hosted version of the Mattermost Push Notification Service (HPNS).
+Finally, this choice also means you cannot use the hosted version of the Mattermost Push Notification Service (MPNS).
 
 A great first step for this deployment model involves `reviewing the documentation <https://developers.mattermost.com/contribute/mobile/>`_. Your development team should run through the requirements for building the applications. This will help understand the overall impact when choosing this option. This documentation provides guidance on building, compiling, and signing. It also includes information for customizing the apps.
 
@@ -439,9 +439,9 @@ Once you have built your own apps you will need to distribute them. There are tw
 Option 1 - Enterprise App Store via EMM Provider (most common and recommended): 
 
 - This is the most common way for customers to distribute their apps
-- Once added to your own "Enterprise App Store", users can download from the EMM catalog, or you can use the EMM provider to push the application to the user's device
+- Once added to your own Enterprise App Store, users can download from the EMM catalog, or you can use the EMM provider to push the application to the user's device
 
-Option 2 - Apple App Store & Google Play (less common):
+Option 2 - Apple App Store and Google Play (less common):
 
 - To submit an app to the official app stores, you need to submit the app to Apple/Google for review
 - This is the same process Mattermost uses make the apps available for everyone
@@ -513,7 +513,7 @@ Data Security on Mobile Devices
 Corporate Proxy Servers
 ***********************
 
-`How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_
+`How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_
 
 - `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://docs.mattermost.com/mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`_
 - `Whitelist Mattermost push notification proxy to bypass your corporate proxy server <https://docs.mattermost.com/mobile/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`_
