@@ -331,6 +331,9 @@ The number of seconds to wait for a response from the database after opening a c
 
 DisableDatabaseSearch
 ^^^^^^^^^^^^^^^^^
+**True:** Disables the use of the database to perform searches. Should only be used when other `search engines  <https://mattermost.com/pl/default-search-engine>`_ are configured.
+
+**False:** Database search is not disabled. 
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
