@@ -1769,7 +1769,7 @@ Enable Latex Rendering
 Enable Enable Local Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables local mode.
+**True**: Enables local mode for mmctl.
 
 **False**: Disables 
 
