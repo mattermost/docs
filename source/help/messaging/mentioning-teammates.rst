@@ -79,7 +79,7 @@ You can add a list of customized words to get mention notifications for by typin
 Recent Mentions
 ---------------
 
-Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). Click **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
+Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
 Confirmation dialog warnings
 ---------------
