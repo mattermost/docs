@@ -67,6 +67,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Centralized ID validation to a single function.
 
 #### Enterprise Edition (EE)
+ - Added a feature where Enterprise Edition-only features are disabled after the Enterprise Edition license expires. The grace period was changed from 15 to 10 days.
  - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
 
 ### Bug Fixes
