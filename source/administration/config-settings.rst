@@ -4566,7 +4566,13 @@ Directory path to use for storing bleve indexes.
 
 EnableIndexing
 ^^^^^^^^^^^^^^^^^^^^^^^
+**True:** The indexing of new posts occurs automatically. Search queries will use database search until "Enable Bleve for search queries" is enabled.
 
+**False:** The indexing of new posts does not occur automatically. 
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------+
 
 
 EnableSearching
