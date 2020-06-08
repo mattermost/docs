@@ -44,6 +44,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Improvements
 
+#### Enterprise Edition (EE)
+ - All Enterprise Edition features are now disabled after the grace period is over instead of only after a server restart. Also, the grace period was changed from 15 to 10 days. Please see https://mattermost.com/pricing/#faq for more details.
+ - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
+
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
@@ -65,10 +69,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added auditing support to all Comman Line Interface (CLI) API’s.
  - Replaced "Back to Mattermost" button with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
  - Centralized ID validation to a single function.
-
-#### Enterprise Edition (EE)
- - Added a feature where Enterprise Edition-only features are disabled after the Enterprise Edition license expires. The grace period was changed from 15 to 10 days.
- - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
 
 ### Bug Fixes
  - Fixed an issue where Session Idle Timeout setting also unexpectedly affected the mobile app session expiry.
