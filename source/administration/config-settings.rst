@@ -1766,7 +1766,7 @@ Enable Latex Rendering
 | This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Enable Local Mode
+Enable Local Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Enables local mode for mmctl.
