@@ -17,14 +17,14 @@ Team Name
 
 Your **Team Name** is displayed on the sign-in page, and in the top of the left-hand sidebar for your team. 
 
-You can enter a name up to 15 characters in length. The length of team names is limited to ensure readability.
+You can enter a name up to 15 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. The length of team names is limited to ensure readability.
 
 Team Description
 ~~~~~~~~~~~~~~~~
 
 Your **Team Description** is displayed when viewing the list of teams available to join and in the tooltip when hovering over the team name in the team sidebar.
 
-You can enter a description up to 50 characters in length.
+You can enter a description up to 50 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. 
 
 Team Icon
 ~~~~~~~~~~~~~~~~
