@@ -4552,7 +4552,7 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 | This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
 +-------------------------------------------------------------------------------------------------------+
 
-Bleve Settings
+Bleve Settings (Experimental)
 ~~~~~~~~~~~~~~~
 
 IndexDir
