@@ -8,7 +8,7 @@ Office 365 Calendar (E20)
 
 - Two-way integration between Mattermost and Office 365 Calendar, developed by Mattermost.
 - Receive a daily summary of calendar events, and accept or decline new events.
-- Reflect user status as "Do Not Disturb' when in a meeting scheduled via Outlook Calendar.
+- Reflect user status as "Do Not Disturb" when in a meeting scheduled via Outlook Calendar.
 - Source code + docs: https://github.com/mattermost/mattermost-plugin-mscalendar.
 
 Skype for Business
