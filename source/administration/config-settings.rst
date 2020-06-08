@@ -1771,7 +1771,7 @@ Enable Enable Local Mode
 
 **True**: Enables local mode for mmctl.
 
-**False**: Disables 
+**False**: Prevents local mode for mmctl.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLocalMode": true`` with options ``true`` and ``false``.                                                           |
