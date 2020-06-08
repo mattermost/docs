@@ -4587,7 +4587,12 @@ EnableSearching
 
 EnableAutocomplete
 ^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Autocomplete queries will use bleve search.
 
+**False:** Autocomplete queries will not use bleve search. 
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete ": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------+
 
 
 BulkIndexingTimeWindowSeconds
