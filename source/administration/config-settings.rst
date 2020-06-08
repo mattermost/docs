@@ -337,7 +337,7 @@ DisableDatabaseSearch
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch  ": false`` with options ``true`` and ``false``.                               |
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch  ": false`` with options ``true`` and ``false``.     |
 +-------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -4560,9 +4560,8 @@ IndexDir
 Directory path to use for storing bleve indexes.
 
 +-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IndexDir "`` with string input.                                                         |
-+----------------------------------------------------------------------------------------------------------
-
+| This feature's ``config.json`` setting is ``"IndexDir "`` with string input.                              |
++-----------------------------------------------------------------------------------------------------------+
 
 EnableIndexing
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -4570,38 +4569,36 @@ EnableIndexing
 
 **False:** The indexing of new posts does not occur automatically. 
 
-+-----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
++------------------------------------------------------------------------------------------------------------+
 
 EnableSearching
 ^^^^^^^^^^^^^^^^^^^^^^^
 **True:** Search queries will use bleve search.
 
 **False:** Search queries will not use bleve search. 
-+-----------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSearching ": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
++--------------------------------------------------------------------------------------------------------------+
 
 EnableAutocomplete
 ^^^^^^^^^^^^^^^^^^^^^^^
 **True:** Autocomplete queries will use bleve search.
 
 **False:** Autocomplete queries will not use bleve search. 
-+-----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAutocomplete ": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
 
 
 BulkIndexingTimeWindowSeconds
 ^^^^^^^^^^^^^^^^^^^^^^^
 Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
 
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds:3600  "`` with numerical input.                                                         |
-+----------------------------------------------------------------------------------------------------------
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds:3600  "`` with numerical input.  |
++-------------------------------------------------------------------------------------------------------------+
 
 
 Message Export Settings
