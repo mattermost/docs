@@ -1785,7 +1785,7 @@ The path for the socket that the server will create for mmctl to connect and com
 If nothing is specified, the default path that both the server and mmctl assumes is ``/var/tmp/mattermost_local.socket``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LocalModeSocketLocation": []`` with string array input                                                                  |
+| This feature's ``config.json`` setting is ``"LocalModeSocketLocation": []`` with string array input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
@@ -4577,7 +4577,8 @@ EnableSearching
 ^^^^^^^^^^^^^^^^^^^^^^^
 **True:** Search queries will use bleve search.
 
-**False:** Search queries will not use bleve search. 
+**False:** Search queries will not use bleve search.
+
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSearching ": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
@@ -4587,6 +4588,7 @@ EnableAutocomplete
 **True:** Autocomplete queries will use bleve search.
 
 **False:** Autocomplete queries will not use bleve search. 
+
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAutocomplete ": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------+
