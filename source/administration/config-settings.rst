@@ -1780,7 +1780,7 @@ Enable Enable Local Mode
 Enable Local Mode Socket Location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables local mode socket location.
+The path for the socket that the server will create for mmctl to connect and communicate through local mode.  When connecting with mmctl through local mode, you will be required to specify not only the ``--local flag``, but the ``--local-socket-path`` ``/PATH/TO/SOCKET`` as well.
 
 **False**: Disables 
 
