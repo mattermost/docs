@@ -142,8 +142,7 @@ If you don't renew your license within the 10-day grace period, your Mattermost 
 When you renew, the Enterprise features will become available with the previous configuration (provided no action such as user migration has been taken). 
 
 Which features are affected when my Enterprise license expires?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 If you are using the following Enterprise features, they will be impacted.
 
 .. csv-table::
@@ -162,7 +161,7 @@ If you are using the following Enterprise features, they will be impacted.
     "Performance monitoring is disabled.", "Grafana will no longer update with new data.", "None needed."
     "Compliance exports jobs are no longer scheduled in the job server.", "Data is not exported.", "None needed."
     "Data retention jobs are no longer scheduled in the job server.", "Data is not deleted.", "None needed."
-    "Custom terms no longer show for end users on login.", "Data is retained in the Terms of Service database."
+    "Custom terms no longer show for end users on login.", "Data is retained in the Terms of Service database table."
     "Custom announcement banners are no longer visible.", "Default announcement banner displayed.", "None needed."
     "Multi-factor authentication (MFA).", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
     "Permissions.", "Permissions are retained in the database in a frozen state and cannot be modified in the the System Console.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`_ to reset permissions to default."
@@ -183,7 +182,7 @@ Is there a maximum number of users per subscription?
 No, there is no limit to the subscription value or number of users you can purchase per product.
 
 Can other members of my organization use this account to manage our subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
@@ -196,7 +195,7 @@ Mattermost Enterprise Edition subscriptions and support benefits are licensed pe
 When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
 
 How do I delete my Customer Portal account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Please contact Mattermost Support for assistance with deleting your Customer Portal account.
 
