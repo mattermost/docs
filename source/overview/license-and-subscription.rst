@@ -172,7 +172,7 @@ If there is a red expiry announcement banner stating: "Enterprise license is exp
 
 Once a new license is applied, the banner will no longer be visible. 
 
-If you'd prefer to use Mattermost Team Edition going forward, you need to revoke the expired license by following these steps. 
+If you do not plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
 
 Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
