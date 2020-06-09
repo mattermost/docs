@@ -8,7 +8,8 @@ Release v4.5
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.0>`_
 
-**Breaking Changes** 
+Breaking Changes
+~~~~~~~~~~~~~~~
 
 
 Improvements
@@ -63,9 +64,15 @@ Mac
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
 
 Contributors
 ~~~~~~~~~~~~~~~
+
 Many thanks to all our contributors. In alphabetical order:
 
 - `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hanzei <https://github.com/hanzei>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `justledbetter <https://github.com/justledbetter>`_, `nevyangelova <https://github.com/nevyangelova>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
