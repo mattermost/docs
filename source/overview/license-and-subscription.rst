@@ -149,8 +149,8 @@ If you are using the following Enterprise features, they will be impacted
 .. csv-table::
     :header: "Feature", "How it's affected", "What steps do I need to take?"
 
-    "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts", " None needed."
-    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO login options removed from the sign-in page.", " - Users who previously signed in with one of these methods are no longer able to. 
+    "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts", "None needed."
+    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO login options removed from the sign-in page.", "- Users who previously signed in with one of these methods are no longer able to. 
     - Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication using the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-migrate-auth>`_ or via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
     "AD/LDAP groups in the database are retained but cannot be used", "- Memberships are frozen in state for group synced teams/channels. 
     - Mentions for AD/LDAP groups are not shown in the autocomplete menu. 
