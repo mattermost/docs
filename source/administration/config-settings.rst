@@ -4573,7 +4573,7 @@ Enable Indexing
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-EnableSearching
+Enable Searching
 ^^^^^^^^^^^^^^^^^^^^^^^
 **True:** Search queries will use bleve search.
 
