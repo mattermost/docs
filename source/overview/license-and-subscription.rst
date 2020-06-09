@@ -112,8 +112,69 @@ Yes, once your payment is successfully processed your license is immediately ava
 How will I know when to renew my license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Do I lose access to Mattermost if I don't renew in time?
+You will be notified 60 days prior to your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
+
+You can select **Please renew** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser refreshes.
+
+How do I renew my license?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can renew your license in Mattermost via the blue renewal reminder banner. Select Renew Now to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided. 
+
+How long does it take to renew a license?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once you’ve started the renewal process, we will be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we are able to process the renewal and issue your license key within 24 hours.  
+
+
+What happens to my trial/subscription if I don't renew in time?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+From version 5.24, if you don't renew within the 60-day renewal period, a 10 day grace period is provided. During this period your Mattermost installation runs as normal, with full access to Enterprise features. 
+
+When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
+ 
+What happens when my trial/subscription expires?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you don't renew your license within the 10-day grace period, your Mattermost version is automatically downgraded to Team Edition so you can still access and use Mattermost. However, Enterprise features will no longer be available and if you are currently using them, the functionality will no longer be accessible. 
+
+When you renew, the Enterprise features will become available with the previous configuration (provided no action such as user migration has been taken). 
+
+Which features are affected when my Enterprise license expires?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are using the following Enterprise features, they will be impacted 
+
+.. csv-table::
+    :header: "Feature", "How it's affected", "What steps do I need to take?"
+
+    "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts", None needed."
+    "EE auth login options removed from the sign-in page", "AD/LDAP, SAML SSO, Office 365 SSO, Google SSO. 
+    - Users who previously signed in with one of these methods are no longer able to. 
+    - Users who were already signed in can continue to use Mattermost until their session expires or until they log out.",
+    "Users must be migrated to email authentication using the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-migrate-auth>`_ or via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
+    "AD/LDAP groups in the database are retained but cannot be used", "- Memberships are frozen in state for group synced teams/channels. 
+    - Mentions for AD/LDAP groups are not shown in the autocomplete menu. 
+    - Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
+    "High availability is disabled.", "If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
+    "Performance monitoring is disabled.", "Grafana will no longer update with new data.", "None needed."
+    "Compliance exports jobs are no longer scheduled in the job server", "Data is not exported.", "None needed."
+    "Data retention jobs are no longer scheduled in the job server", "Data is not deleted.", "None needed."
+    "Custom terms no longer show for end users on login", "Data is retained in the Terms of Service database."
+    "Custom announcement banners are no longer visible.", "Default announcement banner displayed.", "None needed."
+    "Multi-factor authentication (MFA)", "- MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
+    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the the System Console.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`_ to reset permissions to default."
+    "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
+    
+Why can't I dismiss the expiry notification banner?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If there is a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to users as well as System Admins.
+
+Once a new license is applied, the banner will no longer be visible. 
+
+If you'd prefer to use Mattermost Team Edition going forward, you need to revoke the expired license by following these steps. 
 
 Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
