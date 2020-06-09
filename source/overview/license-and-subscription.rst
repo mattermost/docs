@@ -119,7 +119,7 @@ You can select **Please renew** to begin the renewal process. You can also selec
 How do I renew my license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can renew your license in Mattermost via the blue renewal reminder banner. Select Renew Now to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided. 
+You can renew your license in Mattermost via the blue renewal reminder banner. Select **Please Renew** to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided. 
 
 How long does it take to renew a license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
