@@ -168,7 +168,7 @@ If you are using the following Enterprise features, they will be impacted.
 Why can't I dismiss the expiry notification banner?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If there is a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to users as well as System Admins.
+If there is a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to users.
 
 Once a new license is applied, the banner will no longer be visible. 
 
