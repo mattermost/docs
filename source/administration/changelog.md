@@ -138,6 +138,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added a new ``received_group_not_associated_to_channel`` Websocket Event.
 
 ### Known Issues
+ - Profile image of a user is not displayed correctly when searching for Direct Message channels.
+ - "Email verified" banner is red instead of green.
  - Command+K search results disappear when the input field loses focus when Mattermost window is made unfocused.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
