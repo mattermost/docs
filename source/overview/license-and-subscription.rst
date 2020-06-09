@@ -149,11 +149,9 @@ If you are using the following Enterprise features, they will be impacted
 .. csv-table::
     :header: "Feature", "How it's affected", "What steps do I need to take?"
 
-    "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts", None needed."
-    "EE auth login options removed from the sign-in page", "AD/LDAP, SAML SSO, Office 365 SSO, Google SSO. 
-    - Users who previously signed in with one of these methods are no longer able to. 
-    - Users who were already signed in can continue to use Mattermost until their session expires or until they log out.",
-    "Users must be migrated to email authentication using the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-migrate-auth>`_ or via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
+    "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts", " None needed."
+    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO login options removed from the sign-in page.", " - Users who previously signed in with one of these methods are no longer able to. 
+    - Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication using the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-migrate-auth>`_ or via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
     "AD/LDAP groups in the database are retained but cannot be used", "- Memberships are frozen in state for group synced teams/channels. 
     - Mentions for AD/LDAP groups are not shown in the autocomplete menu. 
     - Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
@@ -163,7 +161,7 @@ If you are using the following Enterprise features, they will be impacted
     "Data retention jobs are no longer scheduled in the job server", "Data is not deleted.", "None needed."
     "Custom terms no longer show for end users on login", "Data is retained in the Terms of Service database."
     "Custom announcement banners are no longer visible.", "Default announcement banner displayed.", "None needed."
-    "Multi-factor authentication (MFA)", "- MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
+    "Multi-factor authentication (MFA)", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
     "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the the System Console.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`_ to reset permissions to default."
     "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
