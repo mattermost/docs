@@ -44,6 +44,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Improvements
 
+#### Enterprise Edition (EE)
+ - Grace period after Enterprise Edition subscription expires was reduced from 15 days to 10 days. Moreover, Enterprise features are now disabled immediately after the grace period is over, instead of only after a server restart. Please see https://mattermost.com/pricing/#faq for more details.
+
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
@@ -65,12 +68,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added auditing support to all Comman Line Interface (CLI) API’s.
  - Replaced "Back to Mattermost" button with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
  - Centralized ID validation to a single function.
- 
-#### Enterprise Edition (EE)
- - All Enterprise Edition features are now disabled after the grace period is over instead of only after a server restart. Also, the grace period was changed from 15 to 10 days. Please see https://mattermost.com/pricing/#faq for more details.
- - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
 
 ### Bug Fixes
+ - Fixed an issue where database read and search replicas were available in Team Edition, leading to unsupported server configuration.
  - Fixed an issue where Session Idle Timeout setting also unexpectedly affected the mobile app session expiry.
  - Fixed an issue where an unread channel disappeared from a list of unread channels immediately.
  - Fixed an issue where a user's role was not reflected correctly in the **Team Members** modal when the user's role was updated after the modal was opened.
