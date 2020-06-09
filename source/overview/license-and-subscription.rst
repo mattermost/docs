@@ -144,7 +144,7 @@ When you renew, the Enterprise features will become available with the previous 
 Which features are affected when my Enterprise license expires?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you are using the following Enterprise features, they will be impacted 
+If you are using the following Enterprise features, they will be impacted.
 
 .. csv-table::
     :header: "Feature", "How it's affected", "What steps do I need to take?"
