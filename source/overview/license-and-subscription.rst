@@ -130,7 +130,7 @@ Once you’ve started the renewal process, we will be in contact with you to con
 What happens to my trial/subscription if I don't renew in time?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-From version 5.24, if you don't renew within the 60-day renewal period, a 10 day grace period is provided. During this period your Mattermost installation runs as normal, with full access to Enterprise features. 
+If you don't renew within the 60-day renewal period, a 10 day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. 
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  
