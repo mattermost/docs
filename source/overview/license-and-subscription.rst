@@ -150,11 +150,14 @@ If you are using the following Enterprise features, they will be impacted.
     :header: "Feature", "How it's affected", "What steps do I need to take?"
 
     "Elasticsearch.", "Elasticsearch is automatically disabled and will start using the default database for indexing posts.", "None needed."
-    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO login options removed from the sign-in page.", "- Users who previously signed in with one of these methods are no longer able to. 
-    - Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication using the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-migrate-auth>`_. This can also be done via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
-    "AD/LDAP groups in the database are retained but cannot be used.", "- Memberships are frozen in state for group synced teams/channels. 
-    - Mentions for AD/LDAP groups are not shown in the autocomplete menu. 
-    - Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
+    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO login options removed from the sign-in page.", "Users who previously signed in with one of these methods are no longer able to. 
+    
+    Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
+    "AD/LDAP groups in the database are retained but cannot be used.", "Memberships are frozen in state for group synced teams/channels. 
+    
+    Mentions for AD/LDAP groups are not shown in the autocomplete menu. 
+    
+    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
     "High availability is disabled.", "If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
     "Performance monitoring is disabled.", "Grafana will no longer update with new data.", "None needed."
     "Compliance exports jobs are no longer scheduled in the job server.", "Data is not exported.", "None needed."
