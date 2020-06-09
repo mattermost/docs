@@ -4563,7 +4563,7 @@ Directory path to use for storing bleve indexes.
 | This feature's ``config.json`` setting is ``"IndexDir "`` with string input.                              |
 +-----------------------------------------------------------------------------------------------------------+
 
-EnableIndexing
+Enable Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^
 **True:** The indexing of new posts occurs automatically. Search queries will use database search until "Enable Bleve for search queries" is enabled.
 
