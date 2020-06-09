@@ -6,8 +6,7 @@ Release v4.5
 
 **Release date:** June 16th, 2020
 
-**Download Binaries:** 
-
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.0>`_
 
 **Breaking Changes** 
 
@@ -22,7 +21,6 @@ All Platforms
 - Added support for triggering a desktop notification when a file download is complete.
 - Added support for the cursor focus to be on the Server Name field when clicking on the ``+`` tab to add a new server.
 - Defaulted "Flash app window and taskbar icon when a new message is received" setting to ``True``.
-- Migrated some operations to promises. (?)
 
 Mac
 ^^^^^^^^^^^^^
@@ -68,7 +66,9 @@ Known Issues
 
 Contributors
 ~~~~~~~~~~~~~~~
+Many thanks to all our contributors. In alphabetical order:
 
+- `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hanzei <https://github.com/hanzei>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `justledbetter <https://github.com/justledbetter>`_, `nevyangelova <https://github.com/nevyangelova>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
 
 Release v4.4
 ----------------------------
