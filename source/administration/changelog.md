@@ -44,10 +44,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Improvements
 
-#### Enterprise Edition (EE)
- - All Enterprise Edition features are now disabled after the grace period is over instead of only after a server restart. Also, the grace period was changed from 15 to 10 days. Please see https://mattermost.com/pricing/#faq for more details.
- - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
-
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
@@ -69,6 +65,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added auditing support to all Comman Line Interface (CLI) API’s.
  - Replaced "Back to Mattermost" button with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
  - Centralized ID validation to a single function.
+ 
+#### Enterprise Edition (EE)
+ - All Enterprise Edition features are now disabled after the grace period is over instead of only after a server restart. Also, the grace period was changed from 15 to 10 days. Please see https://mattermost.com/pricing/#faq for more details.
+ - Restricted Database read/search replicas to be only available on Enterprise Editions E10 and E20.
 
 ### Bug Fixes
  - Fixed an issue where Session Idle Timeout setting also unexpectedly affected the mobile app session expiry.
@@ -127,8 +127,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added a new route ``GET /api/v4/channels/:channel_id/member_counts_by_group`` to get the channel members counts for each AD/LDAP group that has at least one member in the channel.
  - Added a new route ``GET /api/v4/teams/:team_id/commands/autocomplete_suggestions`` to get a list of autocomplete suggestions.
  - Added a new route ``GET api/v4/users/:user_id/groups`` to get all AD/LDAP groups for a user.
- - Added a new route ``GET api/v4/teams/:team_id/groups_by_channels`` to get set of AD/LDAP groups associated with the channels in the given team grouped by channel.
- - Added several new APIs for use by mmctl local mode, such as ability to modify and restore teams with mmctl.
+ - Added a new route ``GET api/v4/teams/:team_id/groups_by_channels`` to get a set of AD/LDAP groups associated with the channels in the given team grouped by channel.
+ - Added several new APIs for use by mmctl local mode, such as the ability to modify and restore teams with mmctl.
 
 ### Websocket Event Changes
  - Added a new ``received_group`` Websocket Event.
@@ -138,6 +138,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added a new ``received_group_not_associated_to_channel`` Websocket Event.
 
 ### Known Issues
+ - Command+K search results disappear when the input field loses focus when Mattermost window is made unfocused.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
