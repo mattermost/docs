@@ -4555,7 +4555,7 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 Bleve Settings (Experimental)
 ~~~~~~~~~~~~~~~
 
-IndexDir
+Index Dir
 ^^^^^^^^^^^^^^^^^^^^^^^
 Directory path to use for storing bleve indexes.
 
