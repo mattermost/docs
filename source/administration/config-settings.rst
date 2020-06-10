@@ -4560,7 +4560,7 @@ Index Dir
 Directory path to use for storing bleve indexes.
 
 +-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IndexDir "`` with string input.                              |
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                              |
 +-----------------------------------------------------------------------------------------------------------+
 
 Enable Indexing
