@@ -1774,7 +1774,7 @@ Enable Local Mode
 **False**: Prevents local mode for mmctl.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLocalMode": true`` with options ``true`` and ``false``.                                                           |
+| This feature's ``config.json`` setting is ``"EnableLocalMode": false`` with options ``true`` and ``false``.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Local Mode Socket Location
