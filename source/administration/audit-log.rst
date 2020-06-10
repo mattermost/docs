@@ -18,7 +18,7 @@ Open ``config.json`` and navigate to the audit settings. The following `configur
     - Specify the IP
     - Specify port
     - Add user-generated fields
-    - Configure certificate settings.
+    - Configure certificate settings
 
 - File configuration options: 
 
