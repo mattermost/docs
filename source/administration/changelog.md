@@ -33,7 +33,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Access CLI remotely
  - Ability to manage Mattermost without having direct access to the server with a new Local Mode for mmctl.
 
-#### Improved search experience
+#### Improved search filters
  - Ability to use the mouse or keyboard to select search filters instead of typing them manually.
  
 #### Slash command autocomplete framework (Beta)
