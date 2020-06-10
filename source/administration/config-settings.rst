@@ -4565,7 +4565,7 @@ Directory path to use for storing bleve indexes.
 
 Enable Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^
-**True:** The indexing of new posts occurs automatically. Search queries will use database search until "Enable Bleve for search queries" is enabled.
+**True:** The indexing of new posts occurs automatically. Search queries will not use bleve search until "Enable Bleve for search queries" is enabled.
 
 **False:** The indexing of new posts does not occur automatically. 
 
