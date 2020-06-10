@@ -10,7 +10,7 @@ Configuring the Mattermost server to use the new audit log requires editing the 
 
 **Accessing configuration options for audit log**
 
-Open the configuration file (``config.json``) and navigate to Audit settings.
+Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/administration/config-settings.html#audit-settings>`_ are available:  
 
 - Syslog configuration options: 
 
@@ -38,22 +38,22 @@ Supported logging events
 Data model
 ~~~~~~~~~~~~
 
-A single audit record is emitted for each event (add, delete, login, ...). Multiple auditable events may be emitted for a single API call.
+A single audit record is emitted for each event (``add``, ``delete``, ``login``, ``...``). Multiple auditable events may be emitted for a single API call.
 
 .. csv-table::
     :header: "Name", "Type", "Description"
 
-    "ID.", "string", "audit record id."
+    "ID.", "string", "audit record ID."
     "CreateAt", "int64", "timestamp of record creation, UTC."
-    "Level", "string", "e.g. audit-rest, audit-app, audit-model"
+    "Level", "string", "e.g. ``audit-rest``, ``audit-app``, ``audit-model``"
     "APIPath", "string", "rest endpoint"
-    "Event", "string", "e.g. add, delete, login, ..."
-    "Status", "string", "e.g. attempt, success, fail, ..."
-    "UserId", "string", "id of user calling the API"
-    "SessionId". "string", "id of session used to call the API"
+    "Event", "string", "e.g. ``add``, ``delete``, ``login``, ``...``"
+    "Status", "string", "e.g. ``attempt``, ``success``, ``fail``, ``...``"
+    "UserId", "string", "ID of user calling the API"
+    "SessionId". "string", "ID of session used to call the API"
     "Client", "string", "e.g. webapp, mmctl, user-agent"
-    "IPAddress", "string", "IP address of Client"
-    "Meta", "map[string]interface{}", "API-specific info; e.g. user id being deleted"
+    "IPAddress", "string", "IP address of client"
+    "Meta", "map[string]interface{}", "API-specific info (e.g. user id being deleted)"
 
 Log storage
 ~~~~~~~~~~~
@@ -67,14 +67,14 @@ When using remote syslog, the current best practice is to also write to local fi
 Planned enhancements to the audit log
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- To ensure audit logs cannot be unknowingly tampered with or corrupted, make it possible to configure the logging engine to sign log files for specific targets. When an audit store cannot be made secure, audit logs could be stored in multiple places (e.g. file and database) so they can be reconciled if needed.
+- To ensure audit logs cannot be unknowingly corrupted or tampered with, make it possible to configure the logging engine to sign log files for specific targets. When an audit store cannot be made secure, audit logs could be stored in multiple places (e.g. file and database) so they can be reconciled if needed.
 
 Planned enhancements to logging in general
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Allow discrete logging "levels". Currently, an application-wide logging level is configured and any log records matching that level or lower will be emitted. These logging levels will remain, but support for zero or more discrete logging "level"'s will be added, meaning only records matching the current log level or one of the discrete "level"s are emitted. Within the logging engine, any level below 10 (trace through critical/fatal, plus reserved) will behave as it does currently, but any "level" above 10 will be considered discrete. Audit records will have a level above 10.
+- Allow discrete logging levels. Currently, an application-wide logging level is configured and any log records matching that level or lower will be emitted. These logging levels will remain, but support for zero or more discrete logging levels will be added, meaning only records matching the current log level or one of the discrete levels are emitted. Within the logging engine, any level below 10 (``trace`` through ``critical``/``fatal``, plus ``reserved``) will behave as it does currently, but any level above 10 will be considered discrete. Audit records will have a level above 10.
 
-- Make logging engine enhancements implemented via the mlog package and will be compatible with existing usage.
+- Make logging engine enhancements implemented via the ``mlog`` package and will be compatible with existing usage.
 
 - Allow logging levels and discrete levels to different targets (files, databases, etc) via configuration. 
 
