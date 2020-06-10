@@ -18,17 +18,6 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
 -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
-
-**Options**
-
-.. code-block:: sh
-
-       --format string               the format of the command output [plain, json] (default "plain")
-       -h, --help                    help for mmctl
-       --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-       --local                       allows communicating with the server through a unix socket
-       --strict                      will only run commands if the mmctl version matches the server one
-
 **Commands**
    - `mmctl auth`_ - Authentication Management
    - `mmctl bot`_ - Bot Management
@@ -52,6 +41,16 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
    - `mmctl version`_ - Version Management
    - `mmctl websocket`_ - Websocket Management
 
+**Options**
+
+.. code-block:: sh
+
+       --format string               the format of the command output [plain, json] (default "plain")
+       -h, --help                    help for mmctl
+       --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+       --local                       allows communicating with the server through a unix socket
+       --strict                      will only run commands if the mmctl version matches the server one
+
 
 Installing mmctl
 ----------------
@@ -68,7 +67,7 @@ Use this option on Linux and macOS if you have Homebrew installed.
 
 **Using go get (Linux, macOS, Windows)**
 
-Use this option on Linux, macOS, and Windows if you have a go environment configured.
+Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
 To add the project in your `$GOPATH` run the following command:
 
@@ -90,7 +89,28 @@ The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to ha
 .. code-block:: sh
 
   make build
+  
+Running the tests
+------------------
 
+mmctl has two types of tests: unit tests and end to end tests. To run the unit tests, you just need to execute:
+
+.. code-block:: sh
+
+  make test
+
+To run the end to end test suite, you need to have a Mattermost server instance running. Check the Developer Setup guide on how to configure a local test server instance.
+
+Once the development server is set up, cd into the ``mattermost-server directory``:
+
+- Start it with ``make run``. To confirm that the instance is running correctly, you can access the web interface at ``http://localhost:8065``.
+- Run ``make test-data`` to preload your server instance with initial seed data. Generated data such as users are typically used for logging, etc.
+
+Change your directory to ``mmctl`` and run the end to end test suite with:
+
+.. code-block:: sh
+  
+  make test-e2e
 
 Authenticating and logging in
 -----------------------------
