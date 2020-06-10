@@ -206,6 +206,7 @@ Learn how to adhere to your security and regulations.
 
    /administration/ediscovery*
    /administration/compliance*
+   /administration/audit-log*
    /administration/compliance-export*
    /administration/data-retention*
    /administration/custom-terms-of-service*
