@@ -4580,7 +4580,7 @@ Enable Searching
 **False:** Search queries will not use bleve search.
 
 +--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching ": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
 +--------------------------------------------------------------------------------------------------------------+
 
 Enable Autocomplete
