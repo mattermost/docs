@@ -1780,7 +1780,7 @@ Enable Local Mode
 Enable Local Mode Socket Location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The path for the socket that the server will create for mmctl to connect and communicate through local mode.  When connecting with mmctl through local mode, you will be required to specify not only the ``--local flag``, but the ``--local-socket-path`` ``/PATH/TO/SOCKET`` as well.
+The path for the socket that the server will create for mmctl to connect and communicate through local mode. If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
 
 If nothing is specified, the default path that both the server and mmctl assumes is ``/var/tmp/mattermost_local.socket``.
 
