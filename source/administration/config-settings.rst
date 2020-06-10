@@ -4590,7 +4590,7 @@ Enable Autocomplete
 **False:** Autocomplete queries will not use bleve search. 
 
 +-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete ": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
 +-----------------------------------------------------------------------------------------------------------------+
 
 
