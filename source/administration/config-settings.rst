@@ -329,17 +329,15 @@ The number of seconds to wait for a response from the database after opening a c
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-DisableDatabaseSearch
-^^^^^^^^^^^^^^^^^
+Disable Database Search
+^^^^^^^^^^^^^^^^^^^^^^^
 **True:** Disables the use of the database to perform searches. Should only be used when other `search engines  <https://mattermost.com/pl/default-search-engine>`_ are configured.
 
 **False:** Database search is not disabled. 
 
-
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
 +-------------------------------------------------------------------------------------------------------------------------+
-
 
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
