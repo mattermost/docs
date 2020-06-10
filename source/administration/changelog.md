@@ -90,20 +90,20 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
      - Added ``ExtendSessionLengthWithActivity`` to enable sessions to be automatically extended when the user is active in their Mattermost client.
-     - Added ``EnableLocalMode``
-     - Added ``LocalModeSocketLocation``
+     - Added ``EnableLocalMode`` to enable local mode for mmctl.
+     - Added ``LocalModeSocketLocation`` to set the path for the socket that the server will create for mmctl to connect and communicate through local mode.
      - Changed ``EnableLinkPreviews`` to default true for new installs.
      - Changed ``SessionLengthWebInDays`` to default to 30 days for new installs.
  - Under ``ClusterSettings`` in ``config.json``:
-     - Added ``DisableDatabaseSearch``
+     - Added ``DisableDatabaseSearch`` to disable the use of the database to perform searches.
  - Under ``LdapSettings`` in ``config.json``: 
      - Added ``PictureAttribute`` to configure the attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
- - Added new BleveSettings configuration object with the keys:
-     - Added ``IndexDir``
-     - Added ``EnableIndexing``
-     - Added ``EnableSearching``
-     - Added ``EnableAutocomplete``
-     - Added ``BulkIndexingTimeWindowSeconds``
+ - Under ``BleveSettings`` in ``config.json``:
+     - Added ``IndexDir`` to set the directory path to use for storing bleve indexes.
+     - Added ``EnableIndexing`` to enable the indexing of new posts to occur automatically.
+     - Added ``EnableSearching`` to enable search queries to use bleve search.
+     - Added ``EnableAutocomplete`` to enable autocomplete queries to use bleve search.
+     - Added ``BulkIndexingTimeWindowSeconds`` to determine the maximum time window for a batch of posts being indexed by the Bulk Indexer.
 
 ### Open Source Components
  - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp
