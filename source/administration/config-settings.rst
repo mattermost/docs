@@ -337,7 +337,7 @@ DisableDatabaseSearch
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch  ": false`` with options ``true`` and ``false``.     |
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
 +-------------------------------------------------------------------------------------------------------------------------+
 
 
