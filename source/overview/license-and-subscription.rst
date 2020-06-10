@@ -127,7 +127,7 @@ How long does it take to renew a license?
 Once you’ve started the renewal process, we will be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we are able to process the renewal and issue your license key within 24 hours.  
 
 
-What happens to my trial/subscription if I don't renew in time?
+What happens to my subscription if I don't renew in time?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you don't renew within the 60-day renewal period, a 10 day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. 
