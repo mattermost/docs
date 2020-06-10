@@ -134,7 +134,7 @@ If you don't renew within the 60-day renewal period, a 10 day grace period is pr
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  
-What happens when my trial/subscription expires?
+What happens when my license expires?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you don't renew your license within the 10-day grace period, your Mattermost version is automatically downgraded to Team Edition so you can still access and use Mattermost. However, Enterprise features will no longer be available and if you are currently using them, the functionality will no longer be accessible. 
