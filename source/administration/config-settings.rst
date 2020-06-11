@@ -329,6 +329,16 @@ The number of seconds to wait for a response from the database after opening a c
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+Disable Database Search
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Disables the use of the database to perform searches. Should only be used when other `search engines  <https://mattermost.com/pl/default-search-engine>`_ are configured.
+
+**False:** Database search is not disabled. 
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
++-------------------------------------------------------------------------------------------------------------------------+
+
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
@@ -1122,7 +1132,7 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 180`` with numerical input.            |
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
 +--------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days)
@@ -1752,6 +1762,28 @@ Enable Latex Rendering
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Local Mode
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables local mode for mmctl.
+
+**False**: Prevents local mode for mmctl.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLocalMode": false`` with options ``true`` and ``false``.                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Local Mode Socket Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The path for the socket that the server will create for mmctl to connect and communicate through local mode. If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
+
+If nothing is specified, the default path that both the server and mmctl assumes is ``/var/tmp/mattermost_local.socket``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LocalModeSocketLocation": "/var/tmp/mattermost_local.socket"`` with string input.                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
@@ -3836,10 +3868,10 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 
 Read Only Config
 ^^^^^^^^^^^^^^^^
+
 **True**: Changes made to settings in the System Console are ignored.
 
 **False**: Changes made to settings in the System Console are written to ``config.json``.
-
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
@@ -4517,6 +4549,57 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
 +-------------------------------------------------------------------------------------------------------+
+
+Bleve Settings (Experimental)
+~~~~~~~~~~~~~~~
+
+Index Dir
+^^^^^^^^^^^^^^^^^^^^^^^
+Directory path to use for storing bleve indexes.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Enable Indexing
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** The indexing of new posts occurs automatically. Search queries will not use bleve search until "Enable Bleve for search queries" is enabled.
+
+**False:** The indexing of new posts does not occur automatically. 
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Enable Searching
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Search queries will use bleve search.
+
+**False:** Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Autocomplete
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Autocomplete queries will use bleve search.
+
+**False:** Autocomplete queries will not use bleve search. 
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
+
+
+Bulk Indexing Time Window Seconds
+^^^^^^^^^^^^^^^^^^^^^^^
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
++-------------------------------------------------------------------------------------------------------------+
+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
