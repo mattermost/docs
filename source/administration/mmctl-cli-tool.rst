@@ -99,7 +99,7 @@ mmctl has two types of tests: unit tests and end to end tests. To run the unit t
 
   make test
 
-To run the end to end test suite, you need to have a Mattermost server instance running. Check the Developer Setup guide on how to configure a local test server instance.
+To run the end to end test suite, you need to have a Mattermost server instance running. Check the `Developer Setup guide <https://developers.mattermost.com/contribute/server/developer-setup/ >`_ for instructions around how to configure a local test server instance.
 
 Once the development server is set up, cd into the ``mattermost-server directory``:
 
