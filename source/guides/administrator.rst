@@ -126,6 +126,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-office*
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
+   /deployment/team-channel-management*
    /deployment/advanced*
    /deployment/permissions-backend*
    /deployment/guest-accounts*
