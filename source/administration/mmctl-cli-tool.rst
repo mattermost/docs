@@ -89,7 +89,14 @@ The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to ha
 .. code-block:: sh
 
   make build
-  
+
+Local mode
+----------
+
+Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without neeing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. This local socket flags the requests coming from the socket, so they can reach the handlers without requiring a user session. 
+
+The API has the same endpoints and mmctl is able to interact with it without needing any modifications. When local mode is enabled a new helper is added to the session. It returns ``true`` if a session is marked as local using the ``--local`` parameter. This helper is used when checking for session permissions to correctly authorize the local sessions.
+
 Running the tests
 ------------------
 
