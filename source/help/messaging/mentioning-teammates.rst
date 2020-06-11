@@ -65,7 +65,7 @@ Group mention identifiers (slugs) use the LDAP group name by default. To customi
 1. Open **System Console > Groups (Beta)**. 
 2. Select **Edit** next to the group you want to edit. 
 3. In **Group Profile > Group Mention** enter the new slug. 
-4. Select **Save** 
+4. Select **Save**.
 
 As with @username mentions, use *@* to bring up a list of groups that can be mentioned. To filter the list, type the first few letters of any group. Use the UP and DOWN arrow keys to scroll through entries in the list, and then press ENTER to select the group you want to mention.
 
