@@ -62,21 +62,7 @@ Channel Permissions
 Channel Moderation (Beta) (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E20*
-
-From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include: 
-
-- **Make channel read-only:** The ability for Admins to turn off posting in specified channels.
-- **Restrict reactions:** Turn off the ability for members and guests to post reactions.
-- **Restrict channel mentions:** Turn off the ability for users to post channel wide mentions (@all/channel/here) in specified channels.
-- **Channel member management:** Only Admins have the ability to add and remove channel members in the specified channels.
-
-These settings are modified in **System Console > User Management > Channels**. 
-
-**Note:**
-These settings are applicable only to Guests and Members. System, Team, and Channel Admins are not affected. If you wish to grant posting ability to a specific member, you must first promote that member to Channel Admin.
-
-The availability of channel moderation settings can also be affected by existing system and team permissions configurations. If there are existing configurations that override the channel settings you would like to apply, it will be indicated in the user interface. These settings can then be adjusted in the relevant panel in the **Permissions** section of the System Console. 
+This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management#channel-moderation-beta-e20>`_.
 
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
