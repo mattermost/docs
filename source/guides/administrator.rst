@@ -68,6 +68,7 @@ Learn how to host Mattermost to meet your networking requirements.
    /administration/encryption*
    /deployment/client-side-data.rst
    /administration/backup*
+   /deployment/bleve*
 
 Configure Mattermost
 ---------------------
