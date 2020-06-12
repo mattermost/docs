@@ -60,6 +60,8 @@ Mac
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- A visible cursor focus is missing on the login screen directly after adding a new server via "+" to the right of the server tabs. `MM-25984 <https://mattermost.atlassian.net/browse/MM-25984>`_
+- Double notifications are received on Ubuntu for at-mentions. `MM-26012 <https://mattermost.atlassian.net/browse/MM-26012>`_
 - The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
 - Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
