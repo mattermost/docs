@@ -8,10 +8,6 @@ Release v4.5
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.0>`_
 
-Breaking Changes
-~~~~~~~~~~~~~~~
-
-
 Improvements
 ~~~~~~~~~~~~~~~
 
