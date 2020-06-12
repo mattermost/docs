@@ -93,7 +93,7 @@ The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to ha
 Local mode
 ----------
 
-Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without needing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. This local socket flags the requests coming from the socket, so they can reach the handlers without requiring a user session. 
+Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without needing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. The requests coming from the socket are treated as authorized, so they can reach the handlers without requiring a user session.
 
 The API that the socket exposes follows the same specification that can be found `in the API documentation <https://api.mattermost.com>`, so mmctl is able to interact with it without needing any modifications. When a request comes in through the socket, it is flagged as local by the server, and this flag is taken into account when checking for session permissions to correctly authorize the sessions.
 
