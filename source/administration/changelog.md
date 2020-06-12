@@ -24,7 +24,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Manage users from the System Console (E20)
  - Ability to view and manage members via each team or channel configuration page.
 
-#### Sync profile images from AD/LDAP (E10) 
+#### Sync profile images from AD/LDAP (E10, E20) 
  - Ability to ensure compliance with corporate policies by automatically syncing profile images from AD/LDAP.
 
 #### Automatically extending user sessions
