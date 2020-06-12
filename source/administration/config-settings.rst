@@ -4427,7 +4427,7 @@ This setting is used to maximize performance for large Enterprise deployments.
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Elasticsearch Settings (Beta)
+Elasticsearch Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Post Index Replicas
