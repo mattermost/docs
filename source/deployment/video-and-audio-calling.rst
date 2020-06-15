@@ -37,10 +37,10 @@ BigBlueButton
 Skype for Business
 ~~~~~~~~~~~~~~~~~~~~
 
-- Start and join voice calls, video calls and use screensharing with your team members, developed by kosgrz.
+- Start and join voice calls, video calls and use screensharing with your team members, developed by Mattermost (Beta).
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
-- Source code and docs available at: https://github.com/kosgrz/mattermost-plugin-skype4business.
+- Source code and docs available at: https://github.com/mattermost/mattermost-plugin-skype4business
 
 WebRTC
 ~~~~~~~~~~~~~~~~~~~~
