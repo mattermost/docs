@@ -158,12 +158,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Release day: 2020-05-16**
+- **v5.23.1, released 2020-06-02**
+  - Fixed an issue where ``Content-Type`` was no longer optional in incoming webhook requests and led to errors. [MM-25677](https://mattermost.atlassian.net/browse/MM-25677)
+- **v5.23.0, released 2020-05-16**
+  - Original 5.23.0 release
 
 Mattermost v5.23.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
- - PostgresSQL ended long-term support for [version 9.4 in February](https://www.postgresql.org/support/versioning).  Mattermost will officially be supporting Postgres version 10 with the Mattermost v5.26 release. New installs will require Postgres version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgresSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgresSQL 9.4. We highly recommend upgrading to PostgresSQL version 10+ after August.  Please follow the instructions under the Upgrading Section within [the PostgresSQL documentation](https://www.postgresql.org/support/versioning/).
+PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost will officially be supporting PostgreSQL version 10 with the Mattermost v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL version 10. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL version 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. 
+
+We highly recommend upgrading to PostgreSQL version 10+. Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
 
 ### Bug Fixes
  - Fixed an issue where using slash command ``/leave`` failed to leave the channel.
