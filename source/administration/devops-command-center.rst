@@ -138,7 +138,6 @@ You can view all incidents in the incident Backstage via **Main Menu > Incidents
 - The number of members currently involved in the incident
 - The number of messages posted to the channel, including another prompt to open the corresponding incident channel
 - A graph depicting when each checklist item was completed
-
 - The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone). 
 - The **Members Involved** widget indicates the total number of users that participated in the channel, either
 by posting a message, being assigned as commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
@@ -189,14 +188,14 @@ Every event we track is accompanied with metadata that help us identify each eve
 
     "Incident created", "- Any user sends the ``/incident start`` command and creates an incident. 
     - Any user clicks on the ``+`` button on the Incident list view, in the RHS and creates an incident.
-    - Any user clicks on the drop-down menu of any post, clicks on the ``Start incident`` option and creates an incident", "
+    - Any user clicks on the drop-down menu of any post, clicks on the ``Start incident`` option and creates an incident.", "
     - ``ID``: Unique identifier of the incident.
     - ``IsActive``: Boolean  value indicating if the incident is active. It always equals ``true``.
     - ``CommanderUserID``: Unique identifier of the commander of the incident. It equals the identifier of the user that created the incident.
     - ``TeamID``: Unique identifier of the team where the incident channel is created.
     - ``CreatedAt``: Timestamp of the incident creation.
     - ``ChannelIDs``: A list containing a single element, the channel created along with the incident.
-    - ``PostID``: Unique identifier of the post .
+    - ``PostID``: Unique identifier of the post.
     - ``NumChecklists``: Number of checklists. It always equals 1.
     - ``TotalChecklistItems``: Number of checklist items this incident starts with. It always equals 0."
     "Incident finished.", "- Any user sends the ``/incident end`` command. 
@@ -208,7 +207,7 @@ Every event we track is accompanied with metadata that help us identify each eve
     - ``TeamID``: Unique identifier of the team where the incident channel is created.
     - ``CreatedAt``: Timestamp of the incident creation.
     - ``ChannelIDs``: A list containing a single element, the channel created along with the incident.
-    - ``PostID``: Unique identifier of the post .
+    - ``PostID``: Unique identifier of the post.
     - ``NumChecklists``: Number of checklists. It always equals 1.
     - ``TotalChecklistItems``: Number of checklist items this incident starts with. It always equals 0."
     "Checklist item created", "- Any user creates a new checklist item through the incident details view, in the RHS.", "
