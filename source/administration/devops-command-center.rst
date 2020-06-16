@@ -133,7 +133,7 @@ You can view all incidents in the incident Backstage via **Main Menu > Incidents
 - A link icon to open the corresponding incident channel
 - Status (**Ongoing** or **Ended**)
 - The commander, including profile picture and username
-- A prompt to `**Export the Incident Channel** <#exporting-channels>`_
+- A prompt to `Export the Incident Channel <#exporting-channels>`_
 - The total duration
   
   - The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone).
