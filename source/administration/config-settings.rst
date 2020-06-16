@@ -1124,7 +1124,6 @@ Improves user experience by extending sessions and keeping users logged in if th
 | This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``.                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
