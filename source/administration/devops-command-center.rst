@@ -130,22 +130,22 @@ If the incident is active, but in a private channel, you won't be able to see th
 You can view all incidents in the incident Backstage via **Main Menu > Incidents & Playbooks** and then select an incident to view the following details:
 
 - Incident name
+
 - A link icon to open the corresponding incident channel
+
 - Status (**Ongoing** or **Ended**)
+
 - The commander, including profile picture and username
+
 - A prompt to `Export the Incident Channel <#exporting-channels>`_
-- The total duration
-  
-  - The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone).
 
-- The number of members currently involved in the incident
+- The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone).
 
-  - The **Members Involved** widget indicates the total number of users that participated in the channel, either
+- The **Members Involved** widget indicates the total number of users that participated in the channel, either
 by posting a message, being assigned as commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
 
-- The number of messages posted to the channel, including another prompt to open the corresponding incident channel
+- The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
 
-  - The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
 - A graph depicting when each checklist item was completed
 
 **Filtering incidents**
