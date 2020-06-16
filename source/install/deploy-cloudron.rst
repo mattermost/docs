@@ -24,7 +24,7 @@ The Mattermost app will be configured with MySQL and SMTP email notifications se
 Demo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A demo is available `here <https://my-demo.cloudron.me>`__ (username: ``cloudron``, password: ``cloudron``).
+A demo is available `here <https://my.demo.cloudron.io>`__ (username: ``cloudron``, password: ``cloudron``).
 
 Package Source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

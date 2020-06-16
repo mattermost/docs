@@ -3,7 +3,10 @@ Extended Support Release
 
 What is an Extended Support Release?
 ------------------------------------
-During each monthly release, Mattermost backports security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.  
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
+
+.. important::
+  **Upgrade to server version v5.19 or later is required.** Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See `this blog post <https://mattermost.com/blog/support-for-esr-5-9-has-ended/>`_ for more details.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -62,3 +65,12 @@ If we increase the support window, it decreases how much we can develop the prod
 Can customers pay for extended support?
 ---------------------------------------
 At this point, we are not planning on letting customers pay for extended support, but we are open to discuss options for this. Please speak to your Customer Success Manager if you have additional requirements for extended support.
+
+How do we notify customers about new and deprecated Extended Support Releases?
+------------------------------------------------------------------------------
+
+For a new upcoming ESR, we send out an email announcement 2 months in advance. We also add a reminder on our release announcement, changelog and via a Forum post (`see example <https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526>`_).
+
+For a deprecated ESR, we send out an email announcement 3 months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.org/>`_.
+
+To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`_.
