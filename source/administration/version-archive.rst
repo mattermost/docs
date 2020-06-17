@@ -9,6 +9,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.24.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-24-feature-release>`__ - `Download <https://releases.mattermost.com/5.24.0/mattermost-5.24.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.24.0/mattermost-5.24.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``f539fde8b81228f9b098e03a90988c3599d912d1b95bbe69b9993c2f8030fc10``
+  - GPG Signature: https://releases.mattermost.com/5.24.0/mattermost-5.24.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.23.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-23-quality-release>`__ - `Download <https://releases.mattermost.com/5.23.1/mattermost-5.23.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.23.1/mattermost-5.23.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``406238c445c35ba61f948dc9678b86d67334c171a71438b6f5982664b92d4ba4``
@@ -182,6 +186,10 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
+Mattermost Team Edition v5.24.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-24-feature-release>`__ - `Download <https://releases.mattermost.com/5.24.0/mattermost-team-5.24.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.24.0/mattermost-team-5.24.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``57e4e06aee012986c490377ccb7ee0fa1dbd45af9bc9c9b5dd9fb3cd37ba0e92``
+  - GPG Signature: https://releases.mattermost.com/5.24.0/mattermost-team-5.24.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.23.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-23-quality-release>`__ - `Download <https://releases.mattermost.com/5.23.1/mattermost-team-5.23.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.23.1/mattermost-team-5.23.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``090aad97523f790743a0ffe18770404f3e370416c31c1e4821b87b35744374ef``
