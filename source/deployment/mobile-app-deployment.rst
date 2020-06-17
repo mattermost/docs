@@ -20,8 +20,6 @@ Learning objectives
 
 This guide provides foundational information necessary when developing a plan for a proof of concept and/or enterprise mobile deployment. 
 
-It does not include technical implementation guidance but links to relevant documentation are included.
-
 By the end of this guide you will have an understanding of the high-level requirements for a successful Mattermost mobile deployment. 
 
 This includes:
@@ -29,6 +27,8 @@ This includes:
 - Choosing how to obtain and distribute the Mattermost mobile applications
 - Determining the ideal mobile deployment model for your organization
 - Understanding the resource requirements when choosing to build your own Mattermost mobile apps
+
+Technical implementation guides are included as links to keep the information in this guide focused.
 
 .. _support:
 
@@ -59,11 +59,11 @@ A successful mobile deployment is an important part of your experience with Matt
 
 Our highest priority is making sure you have what you need to be successful, but keep in mind that any change, even beneficial, will have an impact on your users. To ensure your success you need to identify the goals for your mobile deployment.
 
-For example, using the publicly available Mattermost mobile apps on Google Play and Apple App Store can reduce a deployment to minutes. Better yet, this model can be rolled out to thousands of users in many different countries and languages.
+For example, you can deploy to thousands of users across the world in minutes with the publicly available Mattermost mobile apps on Google Play and Apple App Store.
 
 Of course, large enterprise deployments will take more time, and the overall goals for your deployment will depend on many factors. We recommend taking a moment to write down what a successful deployment looks like. To start, ask yourself and your team what you want to achieve, what are your desired outcomes?
 
-This takes a small amount of time up front. But, we have seen the difference this makes in successful projects.
+This takes a small amount of time upfront. But, we have seen the difference this makes in successful projects.
 
 Below, we have added some key questions to ask yourself, your team, and any other stakeholders.
 
@@ -195,7 +195,7 @@ AppConfig (supported) vs. app wrapping (not supported)
 
     **Note:** Mattermost only supports the AppConfig standard. It does not support app wrapping. Use app wrapping at your own risks.
 
-There are `some great articles <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_ defining AppConfig and app wrapping, let us take a look at AppConfig first.
+Here is `a great article  <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_ defining AppConfig and app wrapping, let us take a look at AppConfig first.
 
 AppConfig
 ---------
@@ -210,7 +210,7 @@ For now, focus on that last part, "... your apps are simpler to configure, secur
 
 Application (App) Wrapping
 --------------------------
-From the article we `referenced earlier <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_, application(app) wrapping involves "...the use of an SDK from an EMM vendor that allows a developer or admin to deploy an API that enables management policies to be set up." 
+From the article we `referenced earlier <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_, application (app) wrapping involves "...the use of an SDK from an EMM vendor that allows a developer or admin to deploy an API that enables management policies to be set up." 
 
 When going this route, there are two options:
 
@@ -234,7 +234,7 @@ In the end, this sets app wrapping in a negative light. This is the reason the `
 Mobile VPN options
 ******************
 
-A Virtual Private Networks (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs. We won't go into detail here.
+A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs. We won't go into detail here.
 
 There are VPN options which depend on the requirements of your organization. You should also consider the demands/needs of your users. Regardless, this can impact your approach to mobile deployment.
 
@@ -243,7 +243,7 @@ For the Mattermost mobile application, we will discuss two options: a device VPN
     **Note:** We suggest `following our recommended steps <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`_ to secure your deployment.
 
 **Device VPN**
-    This is not as common, especially in the case of Bring Your Own Device (BYOD) scenarios. In this option, all internet traffic routes through the VPN specified in the profile. This could cause issue for personal applications.
+    This is not as common, especially in the case of Bring Your Own Device (BYOD) scenarios. In this option, all internet traffic routes through the VPN specified in the profile. This could cause issues for personal applications.
 
 **Per-app VPN**
     In contrast, the more common approach is to use a per-app VPN. This provides a connection to the VPN when needed (on-demand). For example, when using a particular app.
@@ -337,7 +337,7 @@ To proceed you must have a Mattermost Server installed and accessible. This is a
 Accessing the mobile applications
 *********************************
 
-The Mattermost mobile application is available for both Android and iOS devices. At this point, it’s as simple as having your users download the application and `point to your Mattermost Server URL <https://docs.mattermost.com/help/getting-started/signing-in.html#ios-setup>`_.
+The Mattermost mobile application is available for both Android and iOS devices. At this point, it is as simple as having your users download the application and `point to your Mattermost Server URL <https://docs.mattermost.com/help/getting-started/signing-in.html#ios-setup>`_.
 
     **Note:** The Mattermost mobile apps are signed and have certificates associated with Mattermost and the public app stores. This means they will not work if you are privately hosting the Mattermost Push Proxy Service.
 
@@ -375,7 +375,7 @@ Next your users would need to install the mobile application on their device. If
 Updating via the public store apps
 **********************************
 
-While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost mobile applications are available. Simultaneously, you should check any compatibility requirements for the mobile apps and the Mattermost server. 
+While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost mobile applications are available. Simultaneously, you should check any compatibility requirements for the mobile apps and the Mattermost Server. 
 
 For example we recommend you:
 
@@ -398,11 +398,11 @@ Mobile deployment via custom builds
 
 Choosing this model means you have decided not to use the mobile applications Mattermost has made available via the public app stores. 
 
-This also means you will need to maintain these applications. Maintenance includes rebuilding and incorporating feature and/or security updates. Otherwise, your applications will not match the functionality of our publicly available applications, and could be incompatible with future versions of the Mattermost server.
+This also means you will need to maintain these applications. Maintenance includes rebuilding and incorporating feature and/or security updates. Otherwise, your applications will not match the functionality of our publicly available applications, and could be incompatible with future versions of the Mattermost Server.
 
 Finally, this choice also means you cannot use the hosted version of the Mattermost Push Notification Service (MPNS).
 
-As a first step for this deployment model is `reviewing the documentation <https://developers.mattermost.com/contribute/mobile/>`_. Your development team should run through the requirements for building the applications. This documentation provides guidance on building, compiling, and signing. It also includes information for customizing the apps.
+A first step for this deployment model is `reviewing the documentation <https://developers.mattermost.com/contribute/mobile/>`_. Your development team should run through the requirements for building the applications. This documentation provides guidance on building, compiling, and signing. It also includes information for customizing the apps.
 
 We’ve provided some recommended sections below.
 
@@ -431,9 +431,9 @@ Option 2 - Apple App Store and Google Play (less common):
 Using an EMM Provider with your custom Mattermost apps
 ******************************************************
 
-If you will be using an EMM provider, note that Mattermost does not support App Wrapping. Instead we use the AppConfig standard.
+If you will be using an EMM provider, note that Mattermost does not support app wrapping. Instead we use the AppConfig standard.
 
-In some instances, there is an incompatibility with App Wrapping and React Native Applications. React Native is the technology used to develop the Mattermost mobile applications. The Mattermost mobile app will not function properly when using app wrapping. In fact, a majority of the app wrappers EMMs provide do not support WebSocket connections.
+In some instances, there is an incompatibility with app wrapping and React Native applications. React Native is the technology used to develop the Mattermost mobile applications. The Mattermost mobile app will not function properly when using app wrapping. In fact, a majority of the app wrappers EMMs provide do not support WebSocket connections.
 
 App wrapping is still often an option during the EMM configuration. Again, AppConfig is the only supported method for securing Mattermost mobile applications via an EMM provider.
 
@@ -454,7 +454,7 @@ Configuring the MPNS for your custom Mattermost apps
 
 Building and distributing the Mattermost mobile apps requires you to deploy an instance of the MPNS.
 
-As part of the process of building the applications you will need to sign the applications. You must also obtain the appropriate certificate for both Android and iOS. If this is not done, the applications will not be able to interact with Your instance of the MPNS.
+As part of the process of building the applications you will need to sign the applications. You must also obtain the appropriate certificate for both Android and iOS. If this is not done, the applications will not be able to interact with your instance of the MPNS.
 
 Once that is complete you can proceed with deployment of your MPNS instance.
 
@@ -468,7 +468,7 @@ The documentation topics listed below guide installation and configuration for y
 Updating your custom Mattermost apps
 ************************************
 
-While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost Mobile applications are available. We highly recommend you update your custom Mattermost apps for any security or service releases. At the same time, if you have updated the apps, prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. 
+While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost mobile applications are available. We highly recommend you update your custom Mattermost apps for any security or service releases. At the same time, if you have updated the apps, prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost Server. 
 
     **Note:** Only updating the mobile apps, or updating the mobile apps before the Mattermost server, can result in incompatibility.
 
