@@ -51,8 +51,8 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
 
   @here can someone do a quick review of this?
   
-@groupname (Beta)(E20)
-~~~~~~~~~~
+@groupname (Beta) (E20)
+~~~~~~~~~~~~~~~~~~~~~~~
 
 System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ via the Group Configuration page.
 
@@ -86,8 +86,8 @@ Recent Mentions
 
 Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
-Confirmation dialog warnings
----------------
+Confirmation Dialog Warnings
+----------------------------
 
 For any mention that will trigger notifications for more than five users, the user posting the mention must confirm the action before sending the notifications. 
 
