@@ -137,7 +137,7 @@ You can view all incidents in the incident Backstage via **Main Menu > Incidents
 - The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone).
 - The **Members Involved** widget indicates the total number of users that participated in the channel, either by posting a message, being assigned as commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
 - The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
-- A graph depicting when each checklist item was completed
+- A graph depicting when each checklist item was completed.
 
 **Filtering incidents**
 
