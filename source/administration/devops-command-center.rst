@@ -24,29 +24,29 @@ Starting incidents
 The incident channel is the central place for discussion related to the incident. You can start an incident in one of three ways:
 
 - Use the slash command */incident start* from any channel.
-- Select **! Incidents** from the plugin menu in the channel header.
+- Select **!** from the channel header.
 - Use the context menu of a post and select **Start incident**.
 
-When you create an incident, the name provided is applied to the new incident channel that is created. You can also select an optional playbook. 
+When you create an incident, the name provided is applied to the new incident channel that is created. You can also select an optional playbook.
 
-- If a playbook is selected, a corresponding checklist is used as a template to start the incident. 
+- If a playbook is selected, a corresponding checklist is used as a template to start the incident.
 - If no playbook is selected, the incident starts with an empty checklist.
 
 The creator of an incident automatically becomes the incident commander, responsible for managing the incident.
 
 The commander of the incident can:
 
-- Select a playbook when starting an incident
-- Create checklists
-- Invite people to the channel
-- Hand over the commander role to another channel member
+- Select a playbook when starting an incident.
+- Create checklists.
+- Invite people to the channel.
+- Hand over the commander role to another channel member.
 
 To change commanders, select the current commander’s name and use the search bar to locate the username of the new commander. Only members of the channel may be selected as commanders. To assign a commander who is not in the channel, that user must first be invited to the channel using the existing Mattermost user interface (**Manage Members** in the channel header, or the */invite* slash command). Changing the commander takes effect immediately, and members are notified of the change in the channel.
 
 Active incidents
 ~~~~~~~~~~~~~~~~
 
-To view details about active incidents select **! Incidents** from the plugin menu, or **!** in the channel header, to open the right-hand side (RHS) panel and list of current active incidents. Select an incident to see its commander, channel, and checklist.
+To view details about active incidents select **!** in the channel header, to open the right-hand side (RHS) panel and list of current active incidents. Select an incident to see its commander, channel, and checklist.
 
 When an incident has started and the incident channel is created, a message from the incident bot is posted to the incident channel naming the creator of the incident. If an incident is started from the context of a post, the text of the post is posted to the channel along with a permalink.
 
@@ -62,7 +62,7 @@ The set of steps contained within a playbook is called a checklist.
 Viewing and creating playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select **! Incidents** from the plugin menu, or **!** in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
+Select **!** in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
 
 Creating checklists
 ~~~~~~~~~~~~~~~~~~~
@@ -72,11 +72,11 @@ Checklists are created within a playbook and provide steps to follow during an i
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-You can add steps and edit checklist items during an active incident. You can also edit checklist items in playbooks that are not being used in active incidents. 
+You can add steps and edit checklist items during an active incident. You can also edit checklist items in playbooks that are not being used in active incidents.
 
 To edit a checklist, choose **Edit**.
 
-- Select the text field to edit the item details. 
+- Select the text field to edit the item details.
 - Hover over an input box and select the **X** to remove the checklist item.
 - Drag the hamburger menu to rearrange the checklist items.
 
@@ -98,9 +98,9 @@ Administrator's Guide
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-Incidents and playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel. 
+Incidents and playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel.
 
-To view incidents associated with your Mattermost team, select **! Incidents** from the plugin menu, or **!** in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view details of incidents that have ended.
+To view incidents associated with your Mattermost team, select **!** in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view details of incidents that have ended.
 
 Incidents Backstage
 ~~~~~~~~~~~~~~~~~~~~
@@ -120,10 +120,10 @@ To view details of active incidents, select **! Incidents** from the plugin menu
 
 Listed incidents include the following information:
 
-- The current commander’s profile picture and username
-- Zero or more checklist items
-- The channels associated with the incident
-- A button to end the incident
+- The current commander’s profile picture and username.
+- Zero or more checklist items.
+- The channels associated with the incident.
+- A button to end the incident.
 
 If the incident is active, but in a private channel, you won't be able to see the incident channel name or select **End Incident**. However, the commander name and incident checklist are displayed. If you're a participant in an incident channel, you can modify incident details from within that channel.
 
@@ -133,15 +133,11 @@ You can view all incidents in the incident Backstage via **Main Menu > Incidents
 - A link icon to open the corresponding incident channel
 - Status (**Ongoing** or **Ended**)
 - The commander, including profile picture and username
-- A prompt to `export the incident channel <#exporting-channels>`_
-- The total duration
-- The number of members currently involved in the incident
-- The number of messages posted to the channel, including another prompt to open the corresponding incident channel
-- A graph depicting when each checklist item was completed
-- The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone). 
-- The **Members Involved** widget indicates the total number of users that participated in the channel, either
-by posting a message, being assigned as commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
+- A prompt to `Export the Incident Channel <#exporting-channels>`_
+- The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone).
+- The **Members Involved** widget indicates the total number of users that participated in the channel, either by posting a message, being assigned as commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
 - The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
+- A graph depicting when each checklist item was completed.
 
 **Filtering incidents**
 
@@ -173,22 +169,22 @@ Every event we track is accompanied with metadata that help us identify each eve
 - ``serverVersion``: Version of the server the plugin is running on.
 - ``pluginVersion``: Version of the plugin.
 - Fields automatically generated by Rudder:
-  
-  - ``eventTimeStamp``: Timestamp on when the event was queued to send to the server.
-  - ``createdAt``: Timestamp on when the event was sent to the server.
+
+  - ``eventTimeStamp``: Timestamp indicating when the event was queued to send to the server.
+  - ``createdAt``: Timestamp indicating when the event was sent to the server.
   - ``id``: Unique identifier of the event.
   - ``event integrations``: Unused field. It always contains the value null.
-  - ``event originalTimestamp``: Timestamp on when the event actually happened. It always equals eventTimeStamp.
-  - ``type``: Type of the event. It always contains the string ”track”.
+  - ``event originalTimestamp``: Timestamp indicating when the event actually happened. It always equals ``eventTimeStamp``.
+  - ``type``: Type of the event. It always contains the string ``track``.
 
 **Events data**
 
 .. csv-table::
     :header: "Event", "Triggers", "Information collected"
 
-    "Incident created", "- Any user sends the ``/incident start`` command and creates an incident. 
-    - Any user clicks on the ``+`` button on the Incident list view, in the RHS and creates an incident.
-    - Any user clicks on the drop-down menu of any post, clicks on the ``Start incident`` option and creates an incident.", "
+    "Incident created", "- Any user sends the ``/incident start`` command and creates an incident.
+    - Any user clicks on the ``+`` button on the **Incident List** view, in the RHS and creates an incident.
+    - Any user clicks on the drop-down menu of any post, clicks on the **Start incident** option, and creates an incident.", "
     - ``ID``: Unique identifier of the incident.
     - ``IsActive``: Boolean  value indicating if the incident is active. It always equals ``true``.
     - ``CommanderUserID``: Unique identifier of the commander of the incident. It equals the identifier of the user that created the incident.
@@ -198,8 +194,8 @@ Every event we track is accompanied with metadata that help us identify each eve
     - ``PostID``: Unique identifier of the post.
     - ``NumChecklists``: Number of checklists. It always equals 1.
     - ``TotalChecklistItems``: Number of checklist items this incident starts with. It always equals 0."
-    "Incident finished.", "- Any user sends the ``/incident end`` command. 
-    - Any user clicks on the ``End Incident`` button through the incident details view, in the RHS.", "
+    "Incident finished", "- Any user sends the ``/incident end`` command.
+    - Any user clicks on the **End Incident** button through the incident details view, in the RHS.", "
     - ``ID``: Unique identifier of the incident.
     - ``IsActive``: Boolean  value indicating if the incident is active. It always equals ``false``.
     - ``CommanderUserID``: Unique identifier of the commander of the incident. It equals the identifier of the user that created the incident.
@@ -213,33 +209,32 @@ Every event we track is accompanied with metadata that help us identify each eve
     "Checklist item created", "- Any user creates a new checklist item through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item was created.
     - ``UserID``: Unique identifier of the user that created the item."
-    "Checklist item removed.", "- Any user deletes a checklist item through the incident details view, in the RHS.", "
+    "Checklist item removed", "- Any user deletes a checklist item through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item was.
     - ``UserID``: Unique identifier of the user that removed the item."
     "Checklist item renamed.", "- Any user edit the contents of a checklist item through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item was.
     - ``UserID``: Unique identifier of the user that removed the item."
-    "Checklist item moved.", "- Any user moves the position of a checklist item in the list through the incident details view, in the RHS.", "
+    "Checklist item moved", "- Any user moves the position of a checklist item in the list through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item is.
     - ``UserID``: Unique identifier of the user that edited the item."
-    "Unchecked checklist item checked.", "- Any user checks an unchecked checklist item through the incident details view, in the RHS.", "
+    "Unchecked checklist item checked", "- Any user checks an unchecked checklist item through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item is.
     - ``UserID``: Unique identifier of the user that checked the item."
-    "Checked checklist item unchecked.", "- Any user unchecks a checked checklist item through the incident details view, in the RHS.", "
+    "Checked checklist item unchecked", "- Any user unchecks a checked checklist item through the incident details view, in the RHS.", "
     - ``IncidentID``: Unique identifier of the incident where the item is.
     - ``UserID``: Unique identifier of the user that unchecked the item."
-     "Playbook created.", "- Any user clicks on the ``+ New Playbook`` button on the backstage and saves it.", "
+     "Playbook created", "- Any user clicks on the **+ New Playbook** button on the backstage and saves it.", "
     - ``PlaybookID``: Unique identifier of the playbook.
     - ``TeamID``: Unique identifier of the team where the playbook is created.
     - ``NumChecklists``: Number of checklists this playbook has after the update.
     - ``TotalChecklistItems``: Number of checklist items, among all checklists, this playbook has after the update."
-     "Playbook deleted.", "- Any user clicks on the ``Delete`` button next to a playbook on the Backstage and confirms.", "
+     "Playbook deleted", "- Any user clicks on the **Delete** button next to a playbook on the backstage and confirms.", "
     - ``PlaybookID``: Unique identifier of the playbook.
     - ``TeamID``: Unique identifier of the team where the playbook was located.
     - ``NumChecklists``: Number of checklists this playbook had immediately prior to deletion.
     - ``TotalChecklistItems``: Number of checklist items, among all checklists, this playbook had immediately prior to deletion."
-    
-    
+
 Glossary
 ^^^^^^^^
 
