@@ -54,7 +54,7 @@ View subscription details including the number of users and expiry date of your 
 
 License Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://mattermost.com/pricing/#faq>`_.
+Upload or remove license files. For more information on Mattermost licensing, please see our `frequently asked questions about licensing <https://mattermost.com/pricing/#faq>`_.
 
 Reporting
 ---------
@@ -82,38 +82,45 @@ View and manage active and inactive users, and revoke all user sessions. Access 
 
 Teams (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Channels (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Groups (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E10 and higher*
 
 Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
 
 Environment
 -----------
+
 Settings for configuring the network environment in which Mattermost is deployed.
 
 Web Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Changes to properties in this section require a server restart before taking effect.
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The URL that users will use to access Mattermost. The port number is required if it's not a standard port such as 80 or 443.
 
 This field is required in Mattermost v3.8 and later.
@@ -132,6 +139,7 @@ If Site URL is not set, the following features will operate incorrectly:
 
 Test Live URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button confirms that the value entered into the Site URL is valid and live.
 
 Listen Address
@@ -149,6 +157,7 @@ On Linux you can use: ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin
 
 Forward port 80 to 443
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Forwards all insecure traffic from port 80 to secure port 443.
 
 **False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to ``false``.
@@ -170,6 +179,7 @@ Connection Security
 
 TLS Certificate File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The path to the certificate file to use for TLS connection security.
 
 +------------------------------------------------------------------------------------+
@@ -178,6 +188,7 @@ The path to the certificate file to use for TLS connection security.
 
 TLS Key File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The path to the TLS key file to use for TLS connection security.
 
 +-----------------------------------------------------------------------------------+
@@ -186,6 +197,7 @@ The path to the TLS key file to use for TLS connection security.
 
 Use Let's Encrypt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See :doc:`../install/config-tls-mattermost` for more details on setting up Let's Encrypt.
 
 **False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
@@ -199,6 +211,7 @@ Use Let's Encrypt
 
 Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The path to the file where certificates and other data about the Let's Encrypt service will be stored.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -207,6 +220,7 @@ The path to the file where certificates and other data about the Let's Encrypt s
 
 Read Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum time allowed from when the connection is accepted to when the request body is fully read.
 
 +----------------------------------------------------------------------------------------+
@@ -215,6 +229,7 @@ Maximum time allowed from when the connection is accepted to when the request bo
 
 Write Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
 
 +-----------------------------------------------------------------------------------------+
@@ -223,6 +238,7 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 
 Idle Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
 
 +-----------------------------------------------------------------------------------------+
@@ -232,6 +248,7 @@ Set an explicit idle timeout in the HTTP server. This is the maximum time allowe
 
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in June 16, 2018 release*
 
 Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
@@ -242,6 +259,7 @@ Set to false to disable all version 3 endpoints of the REST API. Integrations th
 
 Webserver Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly.
 
 **gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
@@ -256,6 +274,7 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 
 Enable Insecure Outgoing Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Outgoing HTTPS requests can accept unverified, self-signed certificates. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed.
 
 **False**: Only secure HTTPS requests are allowed.
@@ -268,13 +287,14 @@ Security note: Enabling this feature makes these connections susceptible to man-
 
 Reload Configuration from Disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*
 
+*Available in Enterprise Edition E20*
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database** section.
 
 Purge All Caches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
 
 Database
@@ -284,7 +304,8 @@ Changes to properties in this section require a server restart before taking eff
 
 Driver Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
+This setting can only be changed in the ``config.json`` file, it cannot be changed from the System Console user interface.
 
 ``mysql``: enables driver to MySQL database.
 
@@ -296,7 +317,8 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 
 Data Source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
+
+This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed in the ``config.json`` file.
 
 .. note::
   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
@@ -307,6 +329,7 @@ This is the connection string to the master database. When **DriverName** is set
 
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum number of idle connections held open to the database.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -315,6 +338,7 @@ Maximum number of idle connections held open to the database.
 
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum number of open connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -323,6 +347,7 @@ Maximum number of open connections held open to the database.
 
 Query Timeout
 ^^^^^^^^^^^^^^^^^
+
 The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -331,6 +356,7 @@ The number of seconds to wait for a response from the database after opening a c
 
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -339,6 +365,7 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -347,12 +374,12 @@ Minimum number of characters in a hashtag. This must be greater than or equal to
 
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and click **Regenerate**, which displays the value until you click **Save**.
 
 When using High Availability, the salt must be identical in each instance of Mattermost.
 
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to
-encrypt data stored at rest in the database.
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
@@ -360,6 +387,7 @@ encrypt data stored at rest in the database.
 
 SQL Statement Logging (Trace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Executing SQL statements are written to the log for development.
 
 **False**: SQL statements are not written to the log.
@@ -370,6 +398,7 @@ SQL Statement Logging (Trace)
 
 Recycle Database Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
@@ -378,12 +407,14 @@ The workflow for failover without downing the server is to change the database l
 
 Elasticsearch
 ~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Changes to properties in this section require a server restart before taking effect.
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
 
 **False:** Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results.
@@ -394,6 +425,7 @@ Enable Elasticsearch Indexing
 
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -402,6 +434,7 @@ The address of the Elasticsearch server. `Learn more about Elasticsearch in our 
 
 Skip TLS Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
 
 **False:** Mattermost does not skip certificate verification.
@@ -412,6 +445,7 @@ Skip TLS Verification
 
 Server Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 (Optional) The username to authenticate to the Elasticsearch server.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -420,6 +454,7 @@ Server Username
 
 Server Password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 (Optional) The password to authenticate to the Elasticsearch server.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -428,6 +463,7 @@ Server Password
 
 Enable Cluster Sniffing
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Sniffing finds and connects to all data nodes in your cluster automatically.
 
 **False**: Sniffing is disabled.
@@ -438,14 +474,17 @@ Enable Cluster Sniffing
 
 Bulk Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
 
 Purge Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button purges the entire Elasticsearch index. Typically only used if the index has corrupted and search is not behaving as expected. After purging the index a new index can be created with the **Bulk Index** button.
 
 Enable Elasticsearch for search queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
 
 **False**: Database search is used for search queries.
@@ -466,6 +505,7 @@ Enable Elasticsearch for autocomplete queries
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
 
 .. note::
@@ -489,6 +529,7 @@ This selects which file storage system is used: Local File System or Amazon S3.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The local directory to which files are written when the File Storage System is set to ``"local"``. This is relative to the directory Mattermost is installed to and defaults to ``"./data"`` When File Storage System is set to S3 this setting has no effect.
 
 +-------------------------+------------------------------------------------------------------------------------------+
@@ -499,6 +540,7 @@ The local directory to which files are written when the File Storage System is s
 
 Maximum File Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -513,6 +555,7 @@ If you use a proxy or load balancer in front of Mattermost its settings need to 
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The name of the bucket for your S3 compatible object storage instance.
 
 +-------------------------+----------------------------------------------+
@@ -523,7 +566,8 @@ The name of the bucket for your S3 compatible object storage instance.
 
 Amazon S3 Region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS and sets it to ``"us-east-1"`` if none is found. For Minio or Digital Ocean Spaces, leave this setting empty.
+
+The AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS and sets it to ``"us-east-1"`` if none is found. For MinIO or Digital Ocean Spaces, leave this setting empty.
 
 +-------------------------+-----------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Region``                                  |
@@ -533,6 +577,7 @@ The AWS region you selected when creating your S3 bucket. If no region is set, M
 
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
 +-------------------------+----------------------------------------------------------------------+
@@ -543,6 +588,7 @@ This is required for access unless you are using an `Amazon S3 IAM Role <https:/
 
 Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
 
 .. note::
@@ -579,6 +625,7 @@ Enable Secure Amazon S3 Connections
 
 Enable Server-Side Encryption for Amazon S3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
 **True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html>`__.
@@ -596,6 +643,7 @@ Enable Server-Side Encryption for Amazon S3
 
 Enable Amazon S3 Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: When true, log additional debugging information to the system logs. Typically set to ``false`` in production.
 
 **False**: No Amazon S3 debugging information is included in the system logs.
@@ -664,6 +712,7 @@ SMTP
 
 SMTP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Location of SMTP email server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -672,6 +721,7 @@ Location of SMTP email server.
 
 SMTP Server Port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Port of SMTP email server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2257,7 +2307,12 @@ The placeholder text that appears in the login field on the login page. Typicall
 
 Synchronization Interval (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button.
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button.
+
+.. note::
+
+   Because LDAP syncs cause a large number of database read queries you should monitor database load during a sync to determine how often these syncs should happen in your environment.
+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with numerical input.                                                                        |
@@ -3281,12 +3336,10 @@ Enable Daily Report
 Custom Terms of Service (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Custom Terms of Service
-~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*.
 
 Enable Custom Terms of Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
