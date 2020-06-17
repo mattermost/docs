@@ -4,7 +4,7 @@ Installing the Operators
 ============================
 
 The required operators are installed using kubectl and each operator is created in its own namespace. Shorter namespace names
-are recommended. You can install and run multiple Mattermost installations in the same cluster using different namespaces. Make sure to create operators in unused namespaces only.
+are recommended. You can install and run multiple Mattermost installations in the same cluster using different namespaces.
 
 The steps provided below include database and storage operators. 
 
