@@ -68,6 +68,7 @@ Learn how to host Mattermost to meet your networking requirements.
    /administration/encryption*
    /deployment/client-side-data.rst
    /administration/backup*
+   /deployment/bleve*
 
 Configure Mattermost
 ---------------------
@@ -125,6 +126,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-office*
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
+   /deployment/team-channel-management*
    /deployment/advanced*
    /deployment/permissions-backend*
    /deployment/guest-accounts*
@@ -208,6 +210,7 @@ Learn how to adhere to your security and regulations.
 
    /administration/ediscovery*
    /administration/compliance*
+   /administration/audit-log*
    /administration/compliance-export*
    /administration/data-retention*
    /administration/custom-terms-of-service*
