@@ -62,7 +62,7 @@ Channel Permissions
 Channel Moderation (Beta) (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management#channel-moderation-beta-e20>`_.
+This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management.html>`_.
 
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
