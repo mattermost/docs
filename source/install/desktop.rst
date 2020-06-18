@@ -130,7 +130,7 @@ Troubleshooting
 "The application "Mattermost" can't be opened" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    On MacOs Catalina, this dialog can be triggered if using the default Mac Archive Utility. Using a third party arhchive tool like [Keka](https://www.keka.io/) or [Unarchiver](https://macpaw.com/the-unarchiver) fixes the problem.
+   On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as [Keka](https://www.keka.io/) or [Unarchiver](https://macpaw.com/the-unarchiver) can resolve the problem.
 
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
