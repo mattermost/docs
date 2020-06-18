@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 - **v5.24.1, release day TBD**
   - Fixing an issue with a semantic versioning violation of the plugin API that breaks plugins using the ``GetGroupByName`` method. A workaround is to update all invocations ``GetGroupByName`` passing in ``model.GroupSearchOpts{}`` as the second parameter. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
-  - Fixing an issue with the Plugin Tooltip implementation that causes some links to be truncated when rendered. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
+  - Fixing an issue with the Plugin Tooltip implementation that causes some links to be truncated when rendered. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808). This issue will occur if you are using the recent GitHub plugin v1.0.0 release. All links are affected, regardless if they are related to GitHub. Upgrading your Mattermost server will solve the issue, or you can temporarily disable the GitHub plugin to stop the symptom.
 - **v5.24.0, released 2020-06-16**
   - Original 5.24.0 release
 
