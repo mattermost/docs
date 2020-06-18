@@ -47,7 +47,7 @@ If at any point you need additional help, please reach out using the methods bel
 **GitHub**
     Visit us on `GitHub <https://github.com/mattermost/>`_ to create issues in any of our repositories.
 **Enterprise Support**
-    If you are an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.com/support/>`_.
+    If you are an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com>`_.
 
 ----
 
