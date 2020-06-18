@@ -34,10 +34,10 @@ BigBlueButton
 - Supports a self-hosted on-prem solution, and a vendor-hosted cloud solution.
 - Source code and docs available at: https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton.
 
-Skype for Business
-~~~~~~~~~~~~~~~~~~~~
+Skype for Business (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Start and join voice calls, video calls and use screensharing with your team members, developed by Mattermost (Beta).
+- Start and join voice calls, video calls and use screensharing with your team members, developed by kosgrz, and maintained by Mattermost.
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
 - Source code and docs available at: https://github.com/mattermost/mattermost-plugin-skype4business
