@@ -13,7 +13,7 @@ Audience
 IT Leaders, System Administrators, and/or Project Managers
 
 .. Note::
-    Some features described in this guide are only available to E10 and/or E20 (Enterprise Edition). We will highlight specific licenses needed whenever applicable.
+    Some features described in this guide are only available to Enterprise Edition E10 and/or E20. We will highlight specific licenses needed whenever applicable.
 
 *******************
 Learning Objectives
@@ -29,8 +29,8 @@ This includes:
 
 - Choosing how to deploy the Mattermost Server application
 - Migrating from other ChatOps platforms
-- Integrating Mattermost with existing Single Sign-On providers
-- First Steps/Best Practices for Onboarding Users
+- Integrating Mattermost with existing Single sign-on (SSO) providers
+- First steps/best practices for onboarding users
 
 *******
 Support
@@ -43,7 +43,7 @@ If at any point you need additional help, we’re ready to assist, just reach ou
 - Enterprise Support  - If you’re an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal
 
 .. Recommendation::
-    Open our public instance of Mattermost right now in a separate browser tab and create a user. Join channel ..::TODO Specific Guide Support Channel?::.. to not only experience Mattermost right away but to ask if getting stuck at any point in this guide.
+    Open our public instance of Mattermost right now in a separate browser tab and create a user. Join channel ..::TODO Specific Guide Support Channel?::.. to not only experience Mattermost right away but also for support if you get stuck at any point in this guide.
 
 ================================
 Before You Begin Your Deployment
@@ -55,13 +55,13 @@ What Makes Mattermost Different?
 
 Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers. 
 
-Taking this a step further, the emergence of ChatOps means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of integrations, extensions, and customization.
+Taking this a step further, the emergence of ChatOps means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
 
 Here’s just a sample of available integrations our customers are deploying:
 
 - Confluence
 - Docker
-- GitHub / GitLab
+- GitHub/GitLab
 - Jira
 - Outlook
 - Trello
