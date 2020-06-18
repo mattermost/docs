@@ -103,7 +103,7 @@ The second line of output will have the location of the running ``mattermost.ser
 
       Loaded: loaded (/lib/systemd/system/mattermost.service; enabled; vendor preset: enabled)
 
-Edit this file as ``root`` to add this line just before the line that beings with ``ExecStart``\ :
+Edit this file as *root* to add this line just before the line that beings with ``ExecStart``\ :
 
 .. code-block:: text
 
