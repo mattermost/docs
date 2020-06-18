@@ -21,7 +21,7 @@ These instructions cover migrating the Mattermost configuration to the database 
 1. Get your Database Connection String
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first step is to get your master database connection string. There are several ways to do this, but the easiest is touse ``mattermost config get`` command like this:
+The first step is to get your master database connection string. There are several ways to do this, but the easiest is to use ``mattermost config get`` command like this:
 
 .. code-block:: bash
 
