@@ -155,7 +155,7 @@ As with the environment file you will have to escape any single quotes in the da
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-If you have configuration settings that must be set on a per-server basis you should add as environment variables to the ``mm.environment`` file. These must be on their own line, and you must escape them properly.
+If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mm.environment`` file. These must be on their own line, and you must escape them properly.
 
 5. Verify that the configuration was migrated correctly.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
