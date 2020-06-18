@@ -134,7 +134,8 @@ Here is a complete ``mattermost.service`` file with the ``EnvironmentFile`` line
    [Install]
    WantedBy=mysql.service
 
-**NOTE:** If you are using PostgreSQL as your database the ``mysql.service`` **must** be replaced with ``postgresql.service``. The easiest way to avoid making a mistake is to just add the ``EnvironmentFile`` line and not copy the entire example.
+.. note::
+  If you are using PostgreSQL as your database the ``mysql.service`` must be replaced with ``postgresql.service``. The easiest way to avoid making a mistake is to just add the ``EnvironmentFile`` line and not copy the entire example.
 
 4. Migrate configuration from ``config.json``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
