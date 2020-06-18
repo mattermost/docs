@@ -126,6 +126,11 @@ Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
     The app data might be corrupted - remove all the files in ``%LOCALAPPDATA%\mattermost``, then try re-installing the app.
+    
+"The application "Mattermost" can't be opened" dialog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    On MacOs Catalina, this dialog can be triggered if using the default Mac Archive Utility. Using a third party arhchive tool like [Keka](https://www.keka.io/) or [Unarchiver](https://macpaw.com/the-unarchiver) fixes the problem.
 
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
