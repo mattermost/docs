@@ -171,7 +171,8 @@ There should be exactly one line returned, and the ``Value`` field for that line
 6. Reload ``systemd`` files and restart Mattermost
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**NOTE:** If you are running Mattermost in HA this step must be run on all servers in the cluster.
+.. note::
+  If you are running Mattermost in HA this step must be run on all servers in the cluster.
 
 Finally, run these commands to reload the daemon and restart Mattermost using the new ``MM_CONFIG`` environment variable.
 
