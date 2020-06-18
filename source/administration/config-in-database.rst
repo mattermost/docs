@@ -75,7 +75,8 @@ Create the file  ``/opt/mattermost/config/mattermost.environment``  to set the `
 
    MM_CONFIG='postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10'
 
-**NOTE:** Be sure to escape an single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example:
+.. note::
+  Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'``
 
 .. code-block:: text
 
