@@ -13,7 +13,7 @@ Benefits to using this option:
 How to Migrate Configuration to the Database
 --------------------------------------------
 
-These are complete instructions for migrating the Mattermost configuration to the database, as well as updating your ``systemd`` configuration to load the configuration from the database.
+These instructions cover migrating the Mattermost configuration to the database and updating your ``systemd`` configuration to load it from the database.
 
 **NOTE:** These instructions assume you have Mattermost server installed at ``/opt/mattermost`` If you are running Mattermost in a different directory you will have to modify the paths to match your environment.
 
