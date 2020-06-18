@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.24.1, release day TBD**
-  - Fixing an issue with a SemVer violation that breaks all plugins that use the ``plugin-api``. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
+  - Fixing an issue with a semantic versioning violation of the plugin API that breaks plugins using the ``GetGroupByName`` method. A workaround is to update all invocations ``GetGroupByName`` passing in ``model.GroupSearchOpts{}`` as the second parameter. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
   - Fixing an issue with the Plugin Tooltip implementation that causes some links to be truncated when rendered. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
 - **v5.24.0, released 2020-06-16**
   - Original 5.24.0 release
