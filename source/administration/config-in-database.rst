@@ -58,7 +58,8 @@ Here are two example connection strings:
 2. Create Environment File:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**NOTE:** If you are running Mattermost in an HA cluster this step must be done on **all** servers in the cluster. 
+.. note::
+  If you are running Mattermost in an HA cluster this step must be done on **all** servers in the cluster. 
 
 Create the file  ``/opt/mattermost/config/mattermost.environment``  to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
