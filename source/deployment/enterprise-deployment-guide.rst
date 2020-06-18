@@ -10,7 +10,7 @@ About This Guide
 Audience
 ********
 
-IT Leaders, System Administrators, and/or Project Managers
+This guide is targeted at IT Leaders, System Administrators, and/or Project Managers advocating for Mattermost and/or responsible for its deployment.
 
 .. Note::
     Some features described in this guide are only available to E10 and/or E20 (Enterprise Edition). We will highlight specific licenses needed whenever applicable.
@@ -32,18 +32,20 @@ This includes:
 - Integrating Mattermost with existing Single Sign-On providers
 - First Steps/Best Practices for Onboarding Users
 
+.. support::
+
 *******
 Support
 *******
 
-If at any point you need additional help, we’re ready to assist, just reach out using any of these methods:
+If at any point you need help, do not hesitate to reach out using any of these methods:
 
-- Community  - Our entire team is active within our public instance of Mattermost, plus you’ll have the support of one of the best open source communities around
+- Community  - Our entire team is active within our `public instance of Mattermost <https://community.mattermost.com>`_, plus you’ll have the support of one of the best open source communities around
 - Documentation - We link to many parts of our `administrator  documentation <https://docs.mattermost.com/guides/administrator.html>`_ in this guide but encourage you to take a look at `all our documentation <https://docs.mattermost.com>`_
-- Enterprise Support  - If you’re an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal
+- Enterprise Support  - If you’re an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com>`_
 
 .. Recommendation::
-    Open our public instance of Mattermost right now in a separate browser tab and create a user. Join channel ..::TODO Specific Guide Support Channel?::.. to not only experience Mattermost right away but to ask if getting stuck at any point in this guide.
+    Open our `public instance of Mattermost <https://community.mattermost.com>`_ right now in a separate browser tab and create a user. Join channel ..::TODO Specific Guide Support Channel?::.. to experience Mattermost right away and ask questions.
 
 ================================
 Before You Begin Your Deployment
@@ -55,7 +57,7 @@ What Makes Mattermost Different?
 
 Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers. 
 
-Taking this a step further, the emergence of ChatOps means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of integrations, extensions, and customization.
+With the emergence of ChatOps Mattermost is no longer an exclusive developer tool and it has the ability to enhance communication through a multitude of integrations, extensions, and customization.
 
 Here’s just a sample of available integrations our customers are deploying:
 
@@ -66,11 +68,16 @@ Here’s just a sample of available integrations our customers are deploying:
 - Outlook
 - Trello
 
-Taking this further, because Mattermost is an Open Source application, it can be completely customized, in every way, to suit your organizational needs.
+And because Mattermost is an Open Source application, it can be completely customized to suit your organizational needs.
 
 ***************
 Further Reading
 ***************
+
+Enterprise Rollout Checklist
+----------------------------
+
+We have created a `comprehensive checklist for enterprise deployments <https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html>`_, though its audience needs to be more technically adept.
 
 Mattermost Licensing
 --------------------
@@ -100,7 +107,7 @@ Depending on your environment and your users, you have several options when depl
 Deployment First Steps
 ======================
 
-Deploying Mattermost Enterprise is not a small project. Depending on your use-case multiple physical machines have to be set up with Mattermost server, a proxy and a database while thousands of users need to be imported through AD/FS. While we strive to make this as easy as possible it will take time and iteration.
+Deploying Mattermost Enterprise is not a small project. Depending on your use-case multiple physical machines have to be set up with Mattermost server, a proxy and a database while thousands of users need to be imported through AD/FS. We are here to support_ you, on a journey that will take time and iteration.
 
 ***********************
 Determine Your Use-Case
@@ -109,7 +116,7 @@ Determine Your Use-Case
 As mentioned above it is essential for a successful deployment to know your specific use-case. To get started try answering the following questions:
 
 - How many users will use Mattermost on initial deployment and is this number going to increase dramatically in the near future?
-- What clients will be in use?
+- How will my end users interact with the Mattermost application (ie: web app client, desktop client, mobile client)?
 - Are you migrating from an existing ChatOps or different communications platform?
 - Are you using an identity provider for single sign-on and if yes which one?
 - What compliance requirements do you need to meet?
@@ -122,7 +129,7 @@ Planning Your Deployment
 Technical Requirements
 ----------------------
 
-The hardware requirements for the Mattermost server and database `grow with the amount of users they need to support <https://jeffschering.github.io/mmdocs/upgrade/install/requirements.html#hardware-requirements>`_.
+The hardware requirements for the Mattermost server and database `grow with the amount of users they need to support <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_.
 
 Depending on which clients your users will work with additional reading can be necessary:
 - You are going to use the web app - no further reading required.
@@ -145,7 +152,7 @@ We provide our customers with easy to use migration solutions for many scenarios
 - Bespoke Messaging Solutions - Mattermost is designed to replace bespoke messaging solutions and provide additional `security features <https://docs.mattermost.com/overview/security.html>`_, but migrating from bespoke messengers can prove to be challenging, because the data format of such tools is unpredictable. Nonetheless we provide `multiple tools <https://docs.mattermost.com/administration/migrating.html?highlight=slack#bringing-data-from-bespoke-solutions-into-mattermost>`_ to attempt migration and have had many successful migrations with our customers.
 
 .. Note::
-    If your data in the bespoke messenger is not vital we recommend a hard switch after a period of running both systems in parallel.
+    If your data in the bespoke messenger is not vital, we recommend a hard switch after a period of running both systems in parallel.
 
 Single Sign-On
 --------------
@@ -205,7 +212,7 @@ When choosing integrations and plugins for your deployment focus on those bringi
 Notifications
 *************
 
-Notifications have gained importance in our daily lives. Modern operating systems all have a way to point their users attention towards important events from specific apps. There are three different types of notifications in Mattermost - desktop, email and mobile push notifications. Mattermost will notify you of messages with any of these characteristics:
+Notifications have gained importance in our daily lives and are integrated in modern operating systems. Mattermost supports three different types of notifications - desktop, email and mobile push notifications. By default Mattermost will notify its users of messages with any of these characteristics:
 
 - Direct Messages addressed to you
 - Your username or first name is mentioned in a channel
@@ -213,4 +220,4 @@ Notifications have gained importance in our daily lives. Modern operating system
 - Any of `your configured keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ are used
 
 .. Note::
-    All notification behaviour can be controlled globally or individually by channel. Desktop, email and mobile push notifications have separate settings.
+    All notification behavior can be controlled globally or individually by channel. Desktop, email and mobile push notifications have separate settings.
