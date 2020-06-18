@@ -2,7 +2,10 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Internet Explorer (IE11) is removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+   PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
+   
+.. important::
+   Upgrade to server version v5.19 or later is required. Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See `this blog post <https://mattermost.com/blog/support-for-esr-5-9-has-ended/>`_ for more details on why you should upgrade and how to upgrade in quick, simple steps.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
@@ -16,6 +19,10 @@ Important Upgrade Notes
 |                                                    | from restarting the Mattermost server. It is fully backwards compatible so the schema change can be applied to any previous version of Mattermost without issue. |
 |                                                    | During the time the schema change is running (~30s per million rows in the Reactions table), if end users attempt to react to posts, the emoji reactions will    | 
 |                                                    | not load for end users.                                                                                                                                          |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: ``ALTER TABLE Reactions DROP PRIMARY KEY, ADD PRIMARY KEY (PostId, UserId, EmojiName);``                                                                  |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Postgres: ``ALTER TABLE reactions DROP CONSTRAINT reactions_pkey, ADD PRIMARY KEY (PostId, UserId, EmojiName);``                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Channel Moderation Settings feature is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or |
 |                                                    | react to posts without proper permissions will see an error.                                                                                                     |

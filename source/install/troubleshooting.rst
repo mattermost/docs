@@ -26,16 +26,16 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 
 **Mattermost Server**
 
-1. Verify that logging is enabled by navigating to **System Console > Environment > Logging** and confirming that **Output logs to file** is set to **true**.
-1. In the *System Console* go to *Environment > Logging* and note down the path to the *File Log Directory*
-2. The server log file is called *mattermost.log* and can be opened with a standard text editor or shared directly.
+- Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
+- You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
+The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
 
 .. Note::
-   For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
+For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_
+You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_.
 
 **Mattermost Desktop App**
 
@@ -46,7 +46,7 @@ The desktop app log file can be found in the user directory:
 
 **Mattermost Browser App**
 
-The browser-based app does not produce additional log files. If the app has to be debugged use the development tools integrated in your browser.
+The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser.
 
 **Mattermost Push Notification Service**
 
@@ -67,7 +67,7 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ and other forum sites can often be found and applied.
+You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ can often be found and applied.
 
 Administration Issues
 -----------------------------

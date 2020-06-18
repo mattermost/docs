@@ -20,5 +20,5 @@ Mattermost Documentation
    Administrator's Guide <guides/administrator>
    Integration Guide <guides/integration>
    Developer's Guide <https://developers.mattermost.com/>
-   Core Team Handbook <guides/core>
+   Training and Education <guides/education>
    
