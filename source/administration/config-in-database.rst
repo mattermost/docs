@@ -143,7 +143,7 @@ Here is a complete ``mattermost.service`` file with the ``EnvironmentFile`` line
 .. note::
   If you are using an HA cluster you only need to run this on a single server in the cluster.
 
-Like before, the command to migrate the config to the database should always be run as the ``mattermost`` user.
+Like before, the command to migrate the config to the database should always be run as the *mattermost* user.
 
 .. code-block:: bash
 
