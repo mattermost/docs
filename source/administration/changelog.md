@@ -4,6 +4,37 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.25 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+
+**Release day: 2020-07-16**
+
+### Breaking Changes
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.24, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Improvements
+
+### Bug Fixes
+ - 
+ 
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### Open Source Components
+
+### Database Changes
+
+### API Changes
+
+### Websocket Event Changes
+
+### Known Issues
+
+### Contributors
+
+
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 **Release day: 2020-06-16**
