@@ -57,9 +57,7 @@ The following Group Policies are available:
 macOS 10.9+
 --------------------------------------------------
 
-1. Download the `latest version of the Mattermost desktop app:
-
- - <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-mac.dmg>`__
+1. Download the `latest version of the Mattermost desktop app: <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-mac.dmg>`__.
 
 2. Double-click the download to open the disk image.
 
@@ -75,10 +73,8 @@ Generic Linux package
 
 1. Download the latest version of the Mattermost desktop app:
 
- - 64-bit systems:
-   `mattermost-desktop-4.5.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-linux-x64.tar.gz>`__
- - 32-bit systems:
-   `mattermost-desktop-4.5.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-linux-ia32.tar.gz>`__
+ - 64-bit systems: `mattermost-desktop-4.5.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-linux-x64.tar.gz>`__
+ - 32-bit systems: `mattermost-desktop-4.5.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
