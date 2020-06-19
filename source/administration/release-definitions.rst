@@ -8,14 +8,14 @@ Tick-tock refers to even-numbered releases (e.g., v5.6) containing new features,
 Feature Release
 ----------------
 
-The Feature Release has new features added. These are even-numbered releases (e.g., v5.6).
+The Feature Releases have new features added. These are even-numbered releases (e.g., v5.6).
 
 Quality Release
 ----------------
 
-The Quality Release contains only bug fixes and performance improvement and is more stable. These are odd-numbered releases (e.g., v5.7). It is highly recommended to upgrade to Quality Releases for quality and stability.
+The Quality Releases contain only bug fixes and performance improvements and are more stable than Feature Releases. These are odd-numbered releases (e.g., v5.7). It is highly recommended to upgrade to Quality Releases if your organization prefers stability over having the newest features and improvements.
 
 Extended Support Release (ESR)
 ------------------------------
 
-Extended Support Releases are releases that are maintained for a longer period of time and that will receive backports for security fixes and major bug fixes for the length of their life cycle. Read more about `Extended Support Releases here <https://docs.mattermost.com/administration/extended-support-release.html>`_.
+Extended Support Releases are releases that are maintained for a longer period of time. They will receive backports for security fixes and major bug fixes for the length of their life cycle. Read more about `Extended Support Releases here <https://docs.mattermost.com/administration/extended-support-release.html>`_.
