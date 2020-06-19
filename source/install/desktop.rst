@@ -57,7 +57,7 @@ The following Group Policies are available:
 macOS 10.9+
 --------------------------------------------------
 
-1. Download the `latest version of the Mattermost desktop app: <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-mac.dmg>`__.
+1. Download the `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.5.0/mattermost-desktop-4.5.0-mac.dmg>`__.
 
 2. Double-click the download to open the disk image.
 
