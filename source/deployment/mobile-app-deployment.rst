@@ -188,14 +188,14 @@ Most large enterprise teams are familiar with `Enterprise Mobile Management <htt
 
 For those taking on larger deployments, we assume you are already using an EMM provider.
 
-AppConfig is newer, more modern approach when compared to the previous standard, App Wrapping.
+AppConfig is newer, more modern approach when compared to the previous standard, app wrapping.
 
 AppConfig (supported) vs. app wrapping (not supported)
 ======================================================
 
-    **Note:** Mattermost only supports the AppConfig standard. It does not support app wrapping. Use app wrapping at your own risks.
+    **Note:** Mattermost only supports the AppConfig standard. It does not support app wrapping. Use app wrapping at your own risk.
 
-Here is `a great article  <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_ defining AppConfig and app wrapping, let us take a look at AppConfig first.
+Here is `a helpful article  <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_ defining AppConfig and app wrapping, let us take a look at AppConfig first.
 
 AppConfig
 ---------
@@ -206,7 +206,7 @@ So that sounds great, but are there any benefits for users?
 
 Again, in the AppConfig Community’s words, "Users benefit with instant mobile productivity and a seamless out-of-the box experience, and businesses benefit with secure work-ready apps with minimal setup required while leveraging existing investments in Enterprise Mobility Management (EMM), VPN, and identity solutions. Put another way, your apps are simpler to configure, secure and deploy."
 
-For now, focus on that last part, "... your apps are simpler to configure, secure and deploy." AppConfig provides the most efficient and scalable path for success. As an admin this means easier deployment and management of mobile applications. And again, when it comes to Mattermost, it’s our only supported approach.
+For now, focus on that last part, "... your apps are simpler to configure, secure and deploy." AppConfig provides the most efficient and scalable path for success. As an admin this means easier deployment and management of mobile applications. And again, when it comes to Mattermost, it is our only supported approach.
 
 Application (App) Wrapping
 --------------------------
@@ -234,7 +234,7 @@ In the end, this sets app wrapping in a negative light. This is the reason the `
 Mobile VPN options
 ******************
 
-A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs. We won't go into detail here.
+A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs. We will not go into detail here.
 
 There are VPN options which depend on the requirements of your organization. You should also consider the demands/needs of your users. Regardless, this can impact your approach to mobile deployment.
 
@@ -303,7 +303,7 @@ The mobile applications provided by Mattermost work with our hosted version of t
 Distributing custom builds of the mobile apps
 *********************************************
 
-**Desired Outcomes:**
+**Desired Outcomes**:
 
 - Maintain full control over the distribution of applications
 - Change the look, feel, and capabilities of the Mattermost mobile application
