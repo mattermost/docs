@@ -119,7 +119,7 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 
   ``sudo snap install mattermost-desktop --beta``
 
-2. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**`, then click the Mattermost icon.
+2. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
 Troubleshooting
 -----------------
