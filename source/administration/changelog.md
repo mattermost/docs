@@ -6,9 +6,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.24.1, release day TBD**
-  - Fixing an issue with a semantic versioning violation of the plugin API that breaks plugins using the ``GetGroupByName`` method. A workaround is to update all invocations ``GetGroupByName`` passing in ``model.GroupSearchOpts{}`` as the second parameter. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
-  - Fixing an issue with the Plugin Tooltip implementation that causes links to be truncated when rendered. This issue will occur if you are using the recent GitHub plugin v1.0.0 release. All links are affected, regardless if they are related to GitHub. Upgrading your Mattermost server will solve the issue, or you can temporarily disable the GitHub plugin to stop the symptom. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
+- **v5.24.1, released 2020-06-19**
+  - Fixed an issue with a semantic versioning violation of the plugin API that broke plugins using the ``GetGroupByName`` method. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
+  - Fixed an issue with the Plugin Tooltip implementation that caused links to be truncated when rendered. This issue occured if you are using the recent GitHub plugin v1.0.0 release. All links were affected, regardless if they are related to GitHub. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
 - **v5.24.0, released 2020-06-16**
   - Original 5.24.0 release
 
@@ -548,8 +548,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.19.3, release day TBD**
-  - Fixing an issue with the Plugin Tooltip implementation that causes links to be truncated when rendered. This issue will occur if you are using the recent GitHub plugin v1.0.0 release. All links are affected, regardless if they are related to GitHub. Upgrading your Mattermost server will solve the issue, or you can temporarily disable the GitHub plugin to stop the symptom. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
+- **v5.19.3, released 2020-06-19**
+  - Fixed an issue with the Plugin Tooltip implementation that caused links to be truncated when rendered. This issue occured if you are using the recent GitHub plugin v1.0.0 release. All links were affected, regardless if they are related to GitHub. [MM-25808]
 - **v5.19.2, released 2020-04-21**
   - Fixed an issue with unexpected crashes related to any action taken to modify post properties such as push notifications. Note for developers: Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. To avoid crash issues, the available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
   - Fixed an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel name is 40 characters long. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)
