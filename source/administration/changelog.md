@@ -13,9 +13,24 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.24, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Improvements
+ - Added the ability for admins to request a trial license directly in the System Console.
 
 ### Bug Fixes
- - 
+ - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
+ - Fixed an issue where the right-hand side overlapped the GitHub Plugin tooltip.
+ - Fixed an issue where the **System Console > User Management > Users** page was too tall and the 'Revoke All Sessions' button was cut off when a license banner was present.
+ - Fixed an issue where the "Email verified" banner was red instead of green.
+ - Fixed an issue where `Copy Theme Colors` button in **Account Settings > Display > Theme** was not themed correctly.
+ - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open hashtag search.
+ - Fixed an issue where plugin right-hand side did not show tooltips when a user hovered over the Close or Expand/Shrink icons.
+ - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
+ - Fixed an issue where the timezone count was not displayed correctly when a user set a new timezone and then changed it to set automatically.
+ - Fixed an issue where a user's role in Team Members dialog did not update when a user searched for the user.
+ - Fixed an issue where existing users were not shown in the Invite Members flow.
+ - Fixed an issue where signup password minimum length error messages were inconsistent.
+ - Fixed an issue where no error was reported in server logs if plugin icon was invalid.
+ - Fixed an issue where query string parameters were omitted from interactive dialog request urls.
+ - Fixed an issue where ``store.GetPostsSince()`` did not sanitise deleted posts.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
