@@ -179,6 +179,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/release-lifecycle*
    /administration/downgrade.rst
    /administration/open-source-components*
+   /administration/release-definitions*
 
 Mattermost Integrations
 ----------------------------
