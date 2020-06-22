@@ -421,7 +421,7 @@ Experimental Level Quality
   - Unknown level of stability
   - Minimal feature set that is not yet complete, and functionality may change over time
   - Minimal documentation is available
-  - Disabled by default and must be turned on through a configuration setting
+  - Disabled by default and must be enabled by modifying the configuration setting
 
 High Trust Questions
 ----------------------
