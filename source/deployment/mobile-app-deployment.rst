@@ -195,7 +195,7 @@ AppConfig (supported) vs. app wrapping (not supported)
 
     **Note:** Mattermost only supports the AppConfig standard. It does not support app wrapping. Use app wrapping at your own risk.
 
-Here is `a helpful article  <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_ defining AppConfig and app wrapping, let us take a look at AppConfig first.
+Here is `a helpful article  <https://www.computerworld.com/article/3209907/app-wrapping-the-key-to-more-secure-mobile-app-management.html>`_ defining AppConfig and app wrapping. Let us take a look at AppConfig first.
 
 AppConfig
 ---------
