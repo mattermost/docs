@@ -28,7 +28,7 @@ This includes:
 - Determining the ideal mobile deployment model for your organization
 - Understanding the resource requirements when choosing to build your own Mattermost mobile apps
 
-Technical implementation guides are included as links to keep the information in this guide focused.
+Technical implementation guides are included as links to keep the information in this guide concise.
 
 .. _support:
 
