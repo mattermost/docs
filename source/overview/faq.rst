@@ -414,7 +414,7 @@ Beta Level Quality
   - `Premier Support <https://about.mattermost.com/support/>`__ is recommended for use in production environments
   - Core functionality is stable, but iteration based on feedback is ongoing
   - Documentation may not be completed yet
-  - Disabled by default and must be turned on through a configuration setting
+  - Disabled by default and must be enabled by modifying the configuration setting
   - Tested thoroughly on a small set of platforms, and made available for testing and feedback on additional platforms
 Experimental Level Quality
   - Not recommended for use in production
