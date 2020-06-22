@@ -31,6 +31,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where no error was reported in server logs if plugin icon was invalid.
  - Fixed an issue where query string parameters were omitted from interactive dialog request urls.
  - Fixed an issue where ``store.GetPostsSince()`` did not sanitise deleted posts.
+ - Fixed an issue with a panic caused by nil pointer dereference in ``importTeam``.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
