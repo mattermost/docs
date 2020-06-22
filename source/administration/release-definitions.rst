@@ -1,7 +1,7 @@
 Release Definitions
 ========================
 
-Mattermost adopts a monthly tick-tock release cycle, with a new version shipping on the 16th of each month in `binary form <http://docs.mattermost.com/administration/upgrade.html>`_.
+Mattermost follows a monthly tick-tock release cycle, with a new version shipping on the 16th of each month in `binary form <http://docs.mattermost.com/administration/upgrade.html>`_.
 
 Tick-tock refers to even-numbered releases (e.g., v5.6) containing new features, and odd-numbered releases (e.g., v5.7) containing only bug fixes and performance improvements.
 
