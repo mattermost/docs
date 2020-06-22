@@ -13,7 +13,7 @@ The Feature Releases have new features added. These are even-numbered releases (
 Quality Release
 ----------------
 
-The Quality Releases contain only bug fixes and performance improvements and are more stable than Feature Releases. These are odd-numbered releases (e.g., v5.7). It is highly recommended to upgrade to Quality Releases if your organization prefers stability over having the newest features and improvements.
+The Quality Releases contain only bug fixes and performance improvements and are more stable than Feature Releases. These are odd-numbered releases (e.g., v5.7). It is highly recommended to upgrade to a Quality Release if your organization prefers stability over having the newest features and improvements.
 
 Extended Support Release (ESR)
 ------------------------------
