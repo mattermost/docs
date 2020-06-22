@@ -147,6 +147,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Profile image of a user is not displayed correctly when searching for Direct Message channels.
  - "Email verified" banner is red instead of green.
  - Command+K search results disappear when the input field loses focus when Mattermost window is made unfocused.
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
