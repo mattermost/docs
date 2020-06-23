@@ -10,7 +10,7 @@ About this guide
 Audience
 ********
 
-Leaders, Administrators, and/or Champions
+Leaders, Administrators, and/or Champions responsible for deploying Mattermost mobile apps in their organization.
 
     **Note:** Some features described in this guide are only available in Enterprise Edition E10 and/or E20.
 
