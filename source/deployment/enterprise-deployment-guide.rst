@@ -43,7 +43,7 @@ If at any point you need additional help, we are ready to assist, just reach out
 - Enterprise Support  - If you are an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal
 
 .. Recommendation::
-    Visit the `Mattermost Community server <https://community.mattermost.com/>`_ and create an account. Join channel ..::TODO Specific Guide Support Channel?::.. to not only experience Mattermost right away but also for support if you get stuck at any point in this guide.
+    Visit the `Mattermost Community server <https://community.mattermost.com/>`_ and create an account. Join channel `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ to not only experience Mattermost right away but also for support if you get stuck at any point in this guide.
 
 ================================
 Before You Begin Your Deployment
@@ -72,24 +72,22 @@ Taking this further, because Mattermost is an open source application, it can be
 Further Reading
 ***************
 
+Mattermost Scaling
+------------------
+
+Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of scaling.
+
+**`Technical Scaling <https://docs.mattermost.com/deployment/scaling.html>`_** - Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. We officially support running Mattermost Server on multiple `Linux distributions and on-premises cloud solutions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_.
+
+**Functional Scaling** - Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams.
+
 Mattermost Licensing
 --------------------
 
 Mattermost Enterprise Edition comes with two licensing options: Enterprise E10 and Enterprise E20 which can be tested with a `Free 30-Day Trial <https://mattermost.com/trial/>`_. The E10 license to suit smaller organizations with less need for automation and compliance, while the E20 license will provide you with features like AD/LDAP, SAML 2.0, automated compliance export, and team-specific permissions. You can find a full comparison `here <https://mattermost.com/pricing-feature-comparison>`_.
 
-
 .. Note::
     You can purchase and manage your Mattermost Enterprise subscriptions with our `Customer Portal <https://customers.mattermost.com/login>`_ or reach out to our Sales team by contacting sales@mattermost.com.
-
-Mattermost Server Environment
------------------------------
-
-At its core, Mattermost is an open source, hybrid-cloud alternative to proprietary SaaS messaging for teams. It is designed to increase the agility, efficiency and innovation in high trust organizations while keeping data and operations under IT control. Mattermost ensures you can own your data. An important step is to determine the environment for the Mattermost server.
-
-We officially support running Mattermost Server on multiple `Linux distributions and on-premises cloud solutions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_.
-
-.. Note::
-    Other Linux distributions might work too, but are not officially supported.
 
 Client Usage
 ------------
