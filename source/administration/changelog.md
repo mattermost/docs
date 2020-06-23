@@ -14,6 +14,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Improvements
  - Added the ability for admins to request a trial license directly in the System Console.
+ - Use new ServiceProviderIdentifier in AuthnRequest.
 
 ### Bug Fixes
  - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
@@ -23,6 +24,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where `Copy Theme Colors` button in **Account Settings > Display > Theme** was not themed correctly.
  - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open hashtag search.
  - Fixed an issue where plugin right-hand side did not show tooltips when a user hovered over the Close or Expand/Shrink icons.
+ - Fixed an issue where providing AutocompleteData didn't log a proper error in the System Console.
+ - Fixed an issue where license ID was not populated correctly in the license renew banner.
+ - Fixed an issue where a save button was not visible in webapp for Safari on iPad device.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
  - Fixed an issue where the timezone count was not displayed correctly when a user set a new timezone and then changed it to set automatically.
  - Fixed an issue where a user's role in Team Members dialog did not update when a user searched for the user.
