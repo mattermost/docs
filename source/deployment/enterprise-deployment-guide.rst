@@ -36,11 +36,11 @@ This includes:
 Support
 *******
 
-If at any point you need additional help, we’re ready to assist, just reach out using any of these methods:
+If at any point you need additional help, we are ready to assist, just reach out using any of these methods:
 
 - `Community <https://community.mattermost.com/>`_ - Our entire organization uses Mattermost, plus you’ll have the support of one of the best open source communities around
 - Documentation - We link to many parts of our `administrator  documentation <https://docs.mattermost.com/guides/administrator.html>`_ in this guide but encourage you to take a look at `all our documentation <https://docs.mattermost.com>`_
-- Enterprise Support  - If you’re an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal
+- Enterprise Support  - If you are an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal
 
 .. Recommendation::
     Visit the `Mattermost Community server <https://community.mattermost.com/>`_ and create an account. Join channel ..::TODO Specific Guide Support Channel?::.. to not only experience Mattermost right away but also for support if you get stuck at any point in this guide.
@@ -57,7 +57,7 @@ Mattermost is a high-trust messaging platform for enterprise use. As enterprises
 
 Taking this a step further, the emergence of ChatOps means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
 
-Here’s a sample of the types of integrations our customers are deploying:
+Here is a sample of the types of integrations our customers are deploying:
 
 - Confluence
 - Docker
@@ -152,7 +152,7 @@ Single Sign-On
 
 Mattermost can act as a `SAML 2.0 <https://docs.mattermost.com/deployment/sso-saml.html>`_ provider so setting up Single sign-on is a straightforward matter.
 
-We support these SSO Services:
+We support these SSO services:
 
 - `OneLogin <https://docs.mattermost.com/deployment/sso-saml-onelogin.html>`_
 - `Okta <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
