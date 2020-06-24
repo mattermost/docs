@@ -14,7 +14,7 @@ We use the data for the following purposes:
   - To help improve the quality of Mattermost software and related services.
   - To make design decisions for future releases.
 
-Security update Ccheck feature
+Security update check feature
 -----------------------------
 
 New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share diagnostic information with Mattermost Inc. so that we can provide appropriate alerts.

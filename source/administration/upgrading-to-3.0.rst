@@ -57,7 +57,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   ``tar -xzf mattermost*.gz``
 
-5. Stop Mattermost Server.
+5. Stop Mattermost.
 
   On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost stop``
 
@@ -96,7 +96,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   c. When prompted, enter the name of the team that you want to use as the primary team.
 
-11. Start Mattermost server.
+11. Start Mattermost.
 
   On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost start``
 

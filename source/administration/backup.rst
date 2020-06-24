@@ -8,7 +8,7 @@ Backup
 
 The state of your Mattermost server is contained in multiple data stores that need to be separately backed up and restored to fully recover your system from failure.
 
-To backup your Mattermost server:
+To back up your Mattermost server:
 
 1. Back up your Mattermost database using standard MySQL or PostgreSQL procedures depending on your database version.
 
@@ -17,7 +17,7 @@ To backup your Mattermost server:
 
 2. Backup your server settings stored in ``config/config.json``.
 
-      - If you are using SAML configuration for Mattermost, your SAML certificate files will be saved in the ``config`` directory. Therefore, it is recommended to backup the entire directory.
+      - If you are using SAML configuration for Mattermost, your SAML certificate files will be saved in the ``config`` directory. Therefore, it is recommended that you back up the entire directory.
 
 3. Backup files stored by your users with one of the following options:
 
@@ -37,7 +37,7 @@ An appropriate disaster recovery plan weighs the benefits of mitigating specific
 There are two common approaches:
 
 Automated backup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 Automating backup for a Mattermost server provides a copy of the server's state at a particular point in time, which can be restored if a failure in the future leads to loss of data. Options include:
 
@@ -62,10 +62,10 @@ A properly deployed high availability setup automatically switches over to a red
 
 A "complete" disaster recovery solution would protect against both real-time hardware failures using high availability, data corruption failures using automation, and failures of the primary data center by offering both offsite backup and offsite redundant infrastructure. Because the complexity of a full disaster recovery solution is high, it is common for customers to consider trade-offs in cost and complexity relative to the anticipated risks and target recovery times.
 
-Failover from single sign-in outage
+Failover from Single sign-in outage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When using single sign-on with Mattermost Enterprise Edition an outage to your SSO provider can cause a partial outage on your Mattermost instance.
+When using Single sign-on with Mattermost Enterprise Edition an outage to your SSO provider can cause a partial outage on your Mattermost instance.
 
 **What happens during an SSO outage?**
 
@@ -73,25 +73,25 @@ When using single sign-on with Mattermost Enterprise Edition an outage to your S
 
 *Some people can't log in* - During an SSO outage, there are two situations under which a user cannot log in:
 
-a) Users whose session token expires during the outage
+a) Users whose session token expires during the outage.
 
-b) Users trying to log in to new devices
+b) Users trying to log in to new devices.
 
 In each case, the user cannot reach the SSO provider, and cannot log in. In this case, there are several potential mitigations:
 
-1) Configure your SSO provider for high availability
+1) Configure your SSO provider for high availability.
 
 If you're using a self-hosted single sign-on provider, several options are available for `high availability configurations that protect your system from unplanned outages. <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`__
 
 For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `high availability LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`__ to further reduce the chances of an outage.
 
-2) Set up your own IDP to provide an automated or manual SSO failover option
+2) Set up your own IDP to provide an automated or manual SSO failover option.
 
 Create a custom Identity Provider for SAML authentication that connects to both an active and a standby authentication option, that can be manually or automatically switched in case of an outage.
 
 In this configuration, security should be carefully reviewed to prevent the standby SSO option from weakening your authentication protocols.
 
-3) Set up a manual failover plan for SSO outages
+3) Set up a manual failover plan for SSO outages.
 
 When users are unable to reach your organization's SSO provider during an outage, an error message informing the users to contact your support link (defined in your System Console settings) is displayed.
 

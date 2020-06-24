@@ -32,7 +32,7 @@ If you are upgrading a server that is already running a supported version, See [
       1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
       2. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Team Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`
-2. Stop the Mattermost Server
+2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
 3. Back up your data
@@ -45,7 +45,7 @@ If you are upgrading a server that is already running a supported version, See [
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
 6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+      2. Opening the System Console and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
 7. If you have TLS set up on your Mattermost server, you must activate the `CAP_NET_BIND_SERVICE` capability to allow the new Mattermost binary to bind to low ports.
 
       1. `cd {install-path}`
@@ -83,7 +83,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
       1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
       2. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Enterprise Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`
-2. Stop the Mattermost Server
+2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
 3. Back up your data
@@ -96,7 +96,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
 6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+      2. Opening the System Console and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
 7. If you have TLS set up on your Mattermost server, you must activate the `CAP_NET_BIND_SERVICE` capability to allow the new Mattermost binary to bind to low ports.
 
       1. ``cd {install-path}``
@@ -113,7 +113,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 1. Download Mattermost Team Edition 3.0.3
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.0`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz` to download the appropriate new version.
-2. Stop the Mattermost Server
+2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
       2. To stop the server run `sudo stop mattermost`
 3. Back up your data
@@ -143,7 +143,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
          - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](https://www.mattermost.org/upgrade-to-3-0/))
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+      2. Opening the System Console and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
 8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
 9. Test that the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
@@ -165,7 +165,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
           - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
       3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget {RELEASE URL}` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`.
       4. Review the **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
-2. Stop the Mattermost Server
+2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
 3. Back up your data
@@ -178,7 +178,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+      2. Opening the System Console and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
 8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
 9. Test that the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
@@ -192,7 +192,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 1. Download Mattermost Enterprise Edition 3.0.3
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.1`, or `v2.0.0` of either Mattermost Enteprrise Edition or Mattermost Team Edition. If not, please [upgrade to at least Mattermost Enterprise Edition `v2.0.0`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-enterprise-edition-to-2-2-x-and-earlier).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz` to download the appropriate new version.
-2. Stop the Mattermost Server
+2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade
       2. To stop the server run `sudo stop mattermost`
 3. Back up your data
@@ -221,7 +221,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
          - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](https://www.mattermost.org/upgrading-to-mattermost-3-0/#notification))
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+      2. Opening the System Console and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
 8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
 9. Test that the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
@@ -245,7 +245,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
           - Mattermost `v1.0.x` must upgrade to Mattermost `v1.1.x` before further upgrades.
       3. Use the [Version Archive List](https://docs.mattermost.com/administration/upgrade.html#version-archive) to find the `[RELEASE URL]` for your desired version and enter `wget {RELEASE URL}` to download. For example, to download `vX.X.X`, use `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`.
       4. Review **Compatibility** section in [CHANGELOG](https://docs.mattermost.com/administration/changelog.html) for the version downloaded and make sure to follow any instructions.
-2. Stop the Mattermost Server
+2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
       2. To stop the server run `sudo stop mattermost`.
 3. Back up your data
@@ -258,7 +258,7 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
-      2. Opening the **System Console** and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
+      2. Opening the System Console and saving a change will upgrade your `config.json` schema to the latest version using default values for any new settings added.
 8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
 9. Test that the system is working by going to the URL of the server with an `https://` prefix.
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.

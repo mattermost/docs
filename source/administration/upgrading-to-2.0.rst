@@ -39,7 +39,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   ``tar -xzf mattermost*.gz``
 
-4. Stop Mattermost Server.
+4. Stop Mattermost.
 
   On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost stop``
 

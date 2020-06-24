@@ -8,7 +8,7 @@ Use custom branding tools to present a Mattermost experience that is tailored to
 Enable custom branding
 ----------------------
 
-1. Go to **System Console > Site Configuration > Customization > Enable Custom Branding** (or **System Console > Customization > Custom Branding** in versions prior to 5.12) and set the value to ``true``.
+1. Go to **System Console > Site Configuration > Customization > Enable Custom Branding** (or **System Console > Customization > Custom Branding** in versions prior to 5.12) and set the value to **true**.
 2. Choose a **Site Name**, upload a **Custom Brand Image**, and enter **Custom Brand Text**.
 3. Click **Save**.
 

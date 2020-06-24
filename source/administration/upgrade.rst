@@ -34,7 +34,7 @@ Location of your local storage directory
 **To upgrade Mattermost Server**:
 
 .. note::
-  If you are upgrading an HA cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__.
+  If you are upgrading a High Availability cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__.
 
 #. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
@@ -66,7 +66,7 @@ Location of your local storage directory
 
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
-#. Stop Mattermost Server.
+#. Stop Mattermost.
 
    On Ubuntu 14.04 and RHEL 6:
 
@@ -134,7 +134,7 @@ Location of your local storage directory
      cd {install-path}/mattermost
      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
-#. Start Mattermost server.
+#. Start Mattermost.
 
    On Ubuntu 14.04 and RHEL 6:
 
