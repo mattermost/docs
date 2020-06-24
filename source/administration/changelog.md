@@ -25,6 +25,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open hashtag search.
  - Fixed an issue where plugin right-hand side did not show tooltips when a user hovered over the Close or Expand/Shrink icons.
  - Fixed an issue where providing AutocompleteData didn't log a proper error in the System Console.
+ - Fixed an issue where user lost access to current channel and other channels in a team when Team Override Scheme was deleted.
+ - Fixed an issue where archived icons was too dark in the Channel info modal for archived channels in a Dark Theme.
  - Fixed an issue where license ID was not populated correctly in the license renew banner.
  - Fixed an issue where a save button was not visible in webapp for Safari on iPad device.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
