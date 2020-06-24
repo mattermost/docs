@@ -27,7 +27,7 @@ Sample Golang bot
  - Use API for simple tasks such as logging in to your server, creating a channel and posting a message.
  - Source code + docs: https://github.com/mattermost/mattermost-bot-sample-golang
 
-Hubot Adapter
+Hubot adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Hubot adapter for Mattermost written in JavaScript that uses Web API and Websockets, developed by Andy Lo-A-Foe.
@@ -35,7 +35,7 @@ Hubot Adapter
  - Invite your bot to any Mattermost channel just like a regular user.
  - Source code + docs: https://github.com/loafoe/hubot-matteruser
 
-Python Chatbot
+Python chatbot
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - A python based chat bot for Mattermost, developed by Alex Tzonkov.

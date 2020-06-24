@@ -5,16 +5,16 @@ Our `Integrations Directory <https://integrations.mattermost.com>`_ has several 
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
-Jira Plugin
+Jira plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Two-way integration between Mattermost and Jira, developed by Mattermost.
 - Send event notifications from your Jira projects to Mattermost channels, with full JQL filtering support.
 - Create and transition Jira issues, and attach Mattermost messages to Jira in the Mattermost user interface.
-- Supports Jira Core and Jira Software products, for Cloud, Server and Data Center platforms.
+- Supports Jira Core and Jira Software products, for Cloud, Server, and Data Center platforms.
 - Source code + docs: https://github.com/mattermost/mattermost-plugin-jira
 
-Jira Atlassian App
+Jira Atlassian app
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Two-way Atlassian Marketplace application for Jira and Mattermost, developed by Herzum.
@@ -59,7 +59,7 @@ Trello
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Send notifications from Trello projects to Mattermost channels, developed by Lujeni.
-- Deploy via Heroku, Linux Web Server or Docker.
+- Deploy via Heroku, Linux Web Server, or Docker.
 - Source code + docs: https://github.com/Lujeni/matterllo
 
 Have a proposal for an Atlassian integration? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.

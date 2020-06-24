@@ -23,7 +23,7 @@ GitLab
  - Supports SaaS and On Premise versions of GitLab.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-gitlab
 
-Jenkins Plugin
+Jenkins plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Two-way integration between Mattermost and Jenkins, developed by Wasim Thabraze, supported by Mattermost.
