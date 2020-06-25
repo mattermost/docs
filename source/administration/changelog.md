@@ -15,6 +15,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Improvements
  - Added the ability for admins to request a trial license directly in the System Console.
  - Use new ServiceProviderIdentifier in AuthnRequest.
+ - Removed Beta from groups in the system console.
 
 ### Bug Fixes
  - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
@@ -28,6 +29,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where user lost access to current channel and other channels in a team when Team Override Scheme was deleted.
  - Fixed an issue where archived icons was too dark in the Channel info modal for archived channels in a Dark Theme.
  - Fixed an issue where license ID was not populated correctly in the license renew banner.
+ - Fixed an issue where ADFS for SAML and AD/LDAP using ObjectGUID did not sync correctly.
+ - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
  - Fixed an issue where a save button was not visible in webapp for Safari on iPad device.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
  - Fixed an issue where the timezone count was not displayed correctly when a user set a new timezone and then changed it to set automatically.
