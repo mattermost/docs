@@ -34,7 +34,7 @@ Interactive dialogs support the following parameters:
     :header: "Parameter", "Type", "Description"
 
     "``title``", "String", "Title of the dialog. Maximum 24 characters."
-    "``introduction_text``", "string", "Markdown-formatted introduction text."
+    "``introduction_text``", "string", "Markdown-formatted introduction text which is displayed above the dialog ``elements``."
     "``elements``", "Array", "Up to 5 elements allowed per dialog. See below for more details on elements. If none are supplied - the dialog box acts as a simple confirmation."
     "``url``", "String", "The URL to send the submitted dialog payload to."
     "``icon_url``", "String", "(Optional) The URL of the icon used for your dialog. If none specified, no icon is displayed."
