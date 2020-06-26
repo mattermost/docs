@@ -68,4 +68,4 @@ Channel Name
 
 In the channel menu, select **Rename Channel** to change the channel name or handle. Changing the channel handle changes the channel URL. Any channel
 member can edit this setting, unless the System Administrator has
-`restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+`restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. 

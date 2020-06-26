@@ -118,8 +118,11 @@ How Mattermost determines your status
     :header: "Client", "**Online**", "**Away**", "**Offline**"
 
     "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for 5 minutes", "You close Mattermost, sleep or lock your computer"
-    "**Web Browser**", "You're interacting with Mattermost in a browser", "You're inactive in the Mattermost browser window for 5 minutes", "You close the Mattermost browser window"
-    "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen"
+    "**Web Browser**", "You're interacting with Mattermost in a browser", "
+    - You have not typed or switched channels for 5 minutes
+    - The tab is unfocused for 5 minutes
+    - The browser is in the background or minimized for 5 minutes", "You close the Mattermost browser window"
+    "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen" 
 
 Logging Out
 -----------

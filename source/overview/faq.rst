@@ -411,17 +411,17 @@ Production Level Quality
   - Included in security reviews
   - Tested on several platforms
 Beta Level Quality
-  - Is a work in progress
-  - Not recommended in production without `Premier Support <https://about.mattermost.com/support/>`__ engagement with Mattermost, Inc.
-  - Minimal documentation
-  - Disabled by default and must be turned on with a run-time feature flag
-  - Tested thoroughly on a small set of platforms, with tickets and work items drafted, and made available for testing and feedback on additional platforms
+  - `Premier Support <https://about.mattermost.com/support/>`__ is recommended for use in production environments
+  - Core functionality is stable, but iteration based on feedback is ongoing
+  - Documentation may not be completed yet
+  - Disabled by default and must be enabled by modifying the configuration setting
+  - Tested thoroughly on a small set of platforms, and made available for testing and feedback on additional platforms
 Experimental Level Quality
   - Not recommended for use in production
   - Unknown level of stability
-  - Minimal feature set that is not yet complete
-  - Little or no documentation available
-  - Disabled by default and must be turned on with a run-time feature flag
+  - Minimal feature set that is not yet complete, and functionality may change over time
+  - Minimal documentation is available
+  - Disabled by default and must be enabled by modifying the configuration setting
 
 High Trust Questions
 ----------------------

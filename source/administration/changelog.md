@@ -4,6 +4,163 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+- **v5.24.1, released 2020-06-19**
+  - Fixed an issue with a semantic versioning violation of the plugin API that broke plugins using the ``GetGroupByName`` method. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
+  - Fixed an issue with the Plugin Tooltip implementation that caused links to be truncated when rendered. This issue occured if you are using the recent GitHub plugin v1.0.0 release. All links were affected, regardless if they were related to GitHub. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
+- **v5.24.0, released 2020-06-16**
+  - Original 5.24.0 release
+
+Mattermost v5.24.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Breaking Changes
+ - A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost apps. It is recommended to enable this setting to improve user experience if compliant with your organizations policies. [Learn more here](https://mattermost.com/blog/session-expiry-experience).
+ - The ``mattermost_http_request_duration_seconds`` histogram metric (in Enterprise Edition) has been removed. This information was already captured by ``mattermost_api_time``, which also contains the api handler name, HTTP method, and the response code. As an example, if you are using ``rate(mattermost_http_request_duration_seconds_sum{server=~"$var"}[5m]) /   rate(mattermost_http_request_duration_seconds_count{server=~"$var"}[5m])`` to measure average call duration, it needs to be replaced with ``sum(rate(mattermost_api_time_sum{server=~"$var"}[5m])) by (instance) /   sum(rate(mattermost_api_time_count{server=~"$var"}[5m])) by (instance)``.
+ - Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable during this time. Please see the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for full details.
+ - On mobile apps, users will not be able to see LDAP group mentions (E20 feature) in the autocomplete dropdown. Users will still receive notifications if they are part of an LDAP group. However, the group mention keyword will not be highlighted.
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.23, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Notify AD/LDAP Groups with a single @mention (Beta) (E20) 
+ - Ability to enable mentions for LDAP-synced groups so users can notify the entire group at the same time.
+
+#### Manage users from the System Console (E20)
+ - Ability to view and manage members via each team or channel configuration page.
+
+#### Sync profile images from AD/LDAP (E10, E20) 
+ - Ability to ensure compliance with corporate policies by automatically syncing profile images from AD/LDAP.
+
+#### Automatically extending user sessions
+ - Ability to enable a feature that automatically extends session lengths when users are active on Mattermost apps.
+
+#### Access CLI remotely
+ - Ability to manage Mattermost without having direct access to the server with a new Local Mode for mmctl.
+
+#### Improved search filters
+ - Ability to use the mouse or keyboard to select search filters instead of typing them manually.
+ 
+#### Slash command autocomplete framework (Beta)
+ - Ability to make slash commands easier to use and increase discoverability with a new slash command autocomplete framework for plugins.
+
+#### Full-text search and indexing (Experimental)
+ - Ability to use Bleve to execute search functionality instead of the database.
+
+### Improvements
+
+#### Enterprise Edition (EE)
+ - Grace period after Enterprise Edition subscription expires was reduced from 15 days to 10 days. Moreover, Enterprise features are now disabled immediately after the grace period is over, instead of only after a server restart. Please see https://mattermost.com/pricing/#faq for more details.
+
+#### User Interface (UI)
+ - Added a count for pinned posts header icon.
+ - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
+ - Improved keyboard usability in the emoji picker search bar.
+ - Improved profile popover for posts with overwritten username or icon.
+ - Added support for code highlighting of TypeScript files.
+
+#### Notifications
+ - Mention notification settings for "Case sensitive first name" and "Non-case sensitive username" are now disabled by default.
+ 
+#### Search
+ - Added support for searching by position in user lists such as the **Add Members** menu.
+ 
+#### Integrations
+ - Added support for different interactive message button styles.
+
+#### Administration
+ - Added the ability to bulk create, update, and delete team members and channel members in the store, as well as bulk import users belonging to different teams and channels.
+ - Added auditing support to all Comman Line Interface (CLI) API’s.
+ - Replaced "Back to Mattermost" button with a helpful error message in the OAuth 2.0 authentication window when an incorrect Client ID is typed during authentication.
+ - Centralized ID validation to a single function.
+
+### Bug Fixes
+ - Fixed an issue where database read and search replicas were available in Team Edition, leading to unsupported server configuration.
+ - Fixed an issue where Session Idle Timeout setting also unexpectedly affected the mobile app session expiry.
+ - Fixed an issue where an unread channel disappeared from a list of unread channels immediately.
+ - Fixed an issue where a user's role was not reflected correctly in the **Team Members** modal when the user's role was updated after the modal was opened.
+ - Fixed an issue where the autocomplete list of channels remained populated after a user cleared the search on **Add user to a channel** modal.
+ - Fixed an issue where Integrations menu was available for member and team admin roles only if with oAuth2 permission.
+ - Fixed an issue where empty strings for ``auth_data`` created invalid users for LDAP sync during bulk import.
+ - Fixed an issue where bulk import did not report errors when importing posts failed.
+ - Fixed an issue where Compliance Export reported "success" when failing to export a missing file.
+ - Fixed an issue where the user interface got stuck when leaving an archived channel.
+ - Fixed an issue where Unicode characters appeared in users' display names.
+ - Fixed an issue where a failed plugin installation from the plugin marketplace retried automatically.
+ - Fixed an issue where markdown images hosted by plugins did not appear if local image proxy was enabled.
+ 
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``ExtendSessionLengthWithActivity`` to enable sessions to be automatically extended when the user is active in their Mattermost client.
+     - Added ``EnableLocalMode`` to enable local mode for mmctl.
+     - Added ``LocalModeSocketLocation`` to set the path for the socket that the server will create for mmctl to connect and communicate through local mode.
+     - Changed ``EnableLinkPreviews`` to default true for new installs.
+     - Changed ``SessionLengthWebInDays`` to default to 30 days for new installs.
+ - Under ``ClusterSettings`` in ``config.json``:
+     - Added ``DisableDatabaseSearch`` to disable the use of the database to perform searches.
+ - Under ``LdapSettings`` in ``config.json``: 
+     - Added ``PictureAttribute`` to configure the attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
+ - Under ``BleveSettings`` in ``config.json``:
+     - Added ``IndexDir`` to set the directory path to use for storing bleve indexes.
+     - Added ``EnableIndexing`` to enable the indexing of new posts to occur automatically.
+     - Added ``EnableSearching`` to enable search queries to use bleve search.
+     - Added ``EnableAutocomplete`` to enable autocomplete queries to use bleve search.
+     - Added ``BulkIndexingTimeWindowSeconds`` to determine the maximum time window for a batch of posts being indexed by the Bulk Indexer.
+
+### Open Source Components
+ - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp
+ - Added ``p-queue`` in https://github.com/mattermost/mattermost-webapp
+ - Added ``@react-native-community/cookies`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``@react-native-community/masked-view`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``analytics-react-native`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-elements`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-file-viewer`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-localize`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-reanimated`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-safe-area-context`` in https://github.com/mattermost/mattermost-mobile
+ - Added ``react-native-screens`` in https://github.com/mattermost/mattermost-mobile
+
+### Database Changes
+ - Added a new column ``UserGroups.AllowReference``.
+ - Changed the primary key on the Reactions table.
+
+### API Changes
+ - Added a new route ``POST /api/v4/group/bleve/purge_indexes`` to delete all Bleve indexes and their contents.
+ - Added a new route ``GET /api/v4/channels/:channel_id/member_counts_by_group`` to get the channel members counts for each AD/LDAP group that has at least one member in the channel.
+ - Added a new route ``GET /api/v4/teams/:team_id/commands/autocomplete_suggestions`` to get a list of autocomplete suggestions.
+ - Added a new route ``GET api/v4/users/:user_id/groups`` to get all AD/LDAP groups for a user.
+ - Added a new route ``GET api/v4/teams/:team_id/groups_by_channels`` to get a set of AD/LDAP groups associated with the channels in the given team grouped by channel.
+ - Added several new APIs for use by mmctl local mode, such as the ability to modify and restore teams with mmctl.
+
+### Websocket Event Changes
+ - Added a new ``received_group`` Websocket Event.
+ - Added a new ``received_group_associated_to_team`` Websocket Event.
+ - Added a new ``received_group_not_associated_to_team`` Websocket Event.
+ - Added a new ``received_group_associated_to_channel`` Websocket Event.
+ - Added a new ``received_group_not_associated_to_channel`` Websocket Event.
+
+### Known Issues
+ - Profile image of a user is not displayed correctly when searching for Direct Message channels.
+ - "Email verified" banner is red instead of green.
+ - Command+K search results disappear when the input field loses focus when Mattermost window is made unfocused.
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [aaronrothschild](https://github.com/aaronrothschild), [abdulsmapara](https://github.com/abdulsmapara), [adamjclarkson](https://github.com/adamjclarkson), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://translate.mattermost.com/user/aeomin/), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avasconcelos114](https://github.com/avasconcelos114), [avddvd](https://github.com/avddvd), [awerries](https://github.com/awerries), [bbodenmiller](https://github.com/bbodenmiller), [bbuehrle](https://github.com/bbuehrle), [bradjcoughlin](https://github.com/bradjcoughlin), [cadavre](https://github.com/cadavre), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [CEOehis](https://github.com/CEOehis), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [corey-robinson](https://github.com/corey-robinson), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [craigwillis-mm](https://github.com/craigwillis-mm), [craph](https://github.com/craph), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [dantepippi](https://github.com/dantepippi), [dbejanishvili](https://github.com/dbejanishvili), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [ejose19](https://github.com/ejose19), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [fedealconada](https://github.com/fedealconada), [FlaviaBastos](https://github.com/FlaviaBastos), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [funkytwig](https://github.com/funkytwig), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gnello](https://github.com/gnello), [GrigalashviliT](https://github.com/GrigalashviliT), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [gsagula](https://github.com/gsagula), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hzeroo](https://github.com/hzeroo), [ialorro](https://github.com/ialorro), [iamsayantan](https://github.com/iamsayantan), [ikeohachidi](https://github.com/ikeohachidi), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [josephbaylon](https://github.com/josephbaylon), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [l0r3zz](https://github.com/l0r3zz), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [liusy182](https://github.com/liusy182), [lynn915](https://github.com/lynn915), [marianunez](https://github.com/marianunez), [mbecca](https://github.com/mbecca), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mterhar](https://github.com/mterhar), [muratbayan](https://github.com/muratbayan), [nadalfederer](https://github.com/nadalfederer), [NassimBounouas](https://github.com/NassimBounouas), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nperera](https://github.com/nperera), [octoquad](https://github.com/octoquad), [pankajhirway](https://github.com/pankajhirway), [petya-v](https://github.com/petya-v), [pradeepmurugesan](https://github.com/pradeepmurugesan), [prapti](https://github.com/prapti), [psy-q](https://github.com/psy-q), [Qovaros](https://github.com/Qovaros), [Qujja](https://github.com/Qujja), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shibasisp](https://github.com/shibasisp), [Shivam010](https://github.com/Shivam010), [shred86](https://github.com/shred86), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [thefactremains](https://github.com/thefactremains), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [ThiefMaster](https://github.com/ThiefMaster), [tomasmik](https://github.com/tomasmik), [uhlhosting](https://github.com/uhlhosting), [vesari](https://github.com/vesari), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [ztrayner](https://github.com/ztrayner)
+
 ## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.23.1, released 2020-06-02**
@@ -392,6 +549,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.19.3, released 2020-06-19**
+  - Fixed an issue with the Plugin Tooltip implementation that caused links to be truncated when rendered. This issue occured if you are using the recent GitHub plugin v1.0.0 release. All links were affected, regardless if they were related to GitHub. [MM-25808]
 - **v5.19.2, released 2020-04-21**
   - Fixed an issue with unexpected crashes related to any action taken to modify post properties such as push notifications. Note for developers: Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. To avoid crash issues, the available ``GetProps()`` and ``SetProps()`` methods should now be used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method. [MM-21378](https://mattermost.atlassian.net/browse/MM-21378)
   - Fixed an issue where a public channel appears in the list of Direct Message channels in the channel sidebar if the channel name is 40 characters long. [MM-23427](https://mattermost.atlassian.net/browse/MM-23427)

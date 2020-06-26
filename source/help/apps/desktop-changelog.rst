@@ -1,6 +1,81 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.5
+----------------------------
+
+**Release date:** June 16th, 2020
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.0>`_
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added a spell checker for Polish language. 
+- Added support for triggering a desktop notification when a file download is complete.
+- Added support for the cursor focus to be on the Server Name field when clicking on the ``+`` tab to add a new server.
+- Defaulted "Flash app window and taskbar icon when a new message is received" setting to ``True``.
+
+Mac
+^^^^^^^^^^^^^
+
+- On Mac, a closed window now reopens with ``CMD+Tab`` keyboard shortcut.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v7.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the Desktop app could not authenticate with SAML with an IdP relay.
+- Fixed an issue where a moved server tab did not stay in focus.
+- Fixed an issue where right-clicking and then clicking "Save Image" didn't work.
+- Fixed an issue where trusting self-signed certificates kept asking for trust.
+- Fixed an issue where a link to the root of a server caused a "Channel not Found" error if the URL didn't end with a ``/``.
+- Fixed an issue where using ESC or Cancel to close the Add Server modal did not return focus to previously selected text input.
+- Fixed an issue where OneLogin links opened up in the app itself making it impossible to go back to the app.
+- Fixed an issue where links on "Cannot connect to Mattermost" error didn't work.
+
+Windows
+^^^^^^^^^^^^^
+- Fixed an issue where Windows Desktop notifications were delayed compared to other notification channels.
+- Fixed an issue where Windows Desktop Menu option was read as "Unlabel 0 button".
+- Fixed an issue where a white bar was present on the right-hand side of the Settings screen when Add Server modal was open.
+
+Mac
+^^^^^^^^^^^^^
+- Fixed an issue where double clicking the top bar no longer minimized or maximized the window.
+- Fixed an issue where users were unable to reposition the app by using click, hold and drag on the left side of the header.
+- Fixed an issue where server display name field lost focus when using ``CMD+Tab`` to navigate away and back to the app.
+- Fixed an issue where a long server address didn't wrap correctly in the new server settings page.
+- Fixed an issue where copy and pasting into Atlassian login fields pasted text in the wrong place.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- A visible cursor focus is missing on the login screen directly after adding a new server via "+" to the right of the server tabs. `MM-25984 <https://mattermost.atlassian.net/browse/MM-25984>`_
+- Right-click menu is missing on "Add server" modal fields. `MM-26017 <https://mattermost.atlassian.net/browse/MM-26017>`_
+- Double notifications are received on Ubuntu for at-mentions. `MM-26012 <https://mattermost.atlassian.net/browse/MM-26012>`_
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hanzei <https://github.com/hanzei>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `justledbetter <https://github.com/justledbetter>`_, `nevyangelova <https://github.com/nevyangelova>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
+
 Release v4.4
 ----------------------------
 
