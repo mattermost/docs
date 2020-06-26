@@ -2674,3 +2674,16 @@ CLI Documentation:
       -version                          Display the current of the Mattermost platform
 
       -help                             Displays this help page
+
+
+Troubleshooting
+^^^^^^^^^^^^^^^^^
+
+Executing a command hangs and doesn't complete
+------------------------------------------------
+
+If you have Bleve search indexing enabled, temporarily disable it in **System Console > Experimental > Bleve** and run the command again. You can also optionally use a new `mmctl Command Line Tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_ instead.
+
+Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
+
+If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ to get help.
