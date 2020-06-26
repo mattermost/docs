@@ -55,7 +55,7 @@ What Makes Mattermost Different?
 
 Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers. 
 
-Taking this a step further, the emergence of ChatOps means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
+Taking this a step further, the emergence of `ChatOps <https://mattermost.com/chatops>`_ means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
 
 Here is a sample of the types of integrations our customers are deploying:
 
@@ -168,7 +168,7 @@ When you have to meet compliance requirements - especially when working with pro
 - Outbound Proxy - In some scenarios, like monitoring outbound traffic or controlling which websites can appear in link previews, you may wish to `use Mattermost behind a proxy <https://docs.mattermost.com/install/outbound-proxy.html>`_
 - Electronic Discovery - Electronic Discovery (eDiscovery) is the process of searching electronic data to be used as evidence in a legal case. We have put together the `eDiscovery documentation <https://docs.mattermost.com/administration/ediscovery.html>`_ to help
 - Compliance Export - This feature enables `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`_ to be produced from the System Console, containing all messages
-- Data Retention - By default, Mattermost provides unlimited search history storing all messages without an expiration date. These defaults can be `changed by setting Message Retention and File Retention <https://docs.mattermost.com/administration/data-retention.html>`_ to a specific duration in the System Console.
+- Data Retention - By default, Mattermost provides unlimited search history storing all messages without an expiration date. These defaults can be `changed by setting Message Retention and File Retention <https://docs.mattermost.com/administration/data-retention.html>`_ to a specific duration in the System Console
 - Custom Terms of Service - If your organization requires the use of `custom ToS <https://docs.mattermost.com/administration/custom-terms-of-service.html>`_, this can be done in the Mattermost System Console
 
 Security
@@ -205,7 +205,7 @@ Notifications
 
 Notifications have gained importance in our daily lives. Modern operating systems all have a way to point the user's attention towards important events from specific apps. There are three different types of notifications in Mattermost: desktop, email, and mobile push notifications. Mattermost will notify you of messages with any of these characteristics:
 
-- Direct Messages addressed to you
+- Direct Messages
 - Your username or first name is mentioned in a channel
 - A channel you’re in is notified with @channel, @here, or @all
 - Any of `your configured keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ are used
