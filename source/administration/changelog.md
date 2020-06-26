@@ -15,32 +15,32 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Improvements
  - Added the ability for admins to request a trial license directly in the System Console.
  - Use new ServiceProviderIdentifier in AuthnRequest.
- - Removed Beta from groups in the system console.
+ - AD/LDAP Group Sync was promoted from Beta to General Availability.
 
 ### Bug Fixes
  - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
- - Fixed an issue where the right-hand side overlapped the GitHub Plugin tooltip.
- - Fixed an issue where the **System Console > User Management > Users** page was too tall and the 'Revoke All Sessions' button was cut off when a license banner was present.
- - Fixed an issue where the "Email verified" banner was red instead of green.
- - Fixed an issue where `Copy Theme Colors` button in **Account Settings > Display > Theme** was not themed correctly.
- - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open hashtag search.
- - Fixed an issue where plugin right-hand side did not show tooltips when a user hovered over the Close or Expand/Shrink icons.
- - Fixed an issue where providing AutocompleteData didn't log a proper error in the System Console.
- - Fixed an issue where user lost access to current channel and other channels in a team when Team Override Scheme was deleted.
- - Fixed an issue where archived icons was too dark in the Channel info modal for archived channels in a Dark Theme.
- - Fixed an issue where license ID was not populated correctly in the license renew banner.
+ - Fixed an issue where a user lost access to the current channel and other channels in a team when Team Override Scheme was deleted.
  - Fixed an issue where ADFS for SAML and AD/LDAP using ObjectGUID did not sync correctly.
- - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
- - Fixed an issue where a save button was not visible in webapp for Safari on iPad device.
+ - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open the hashtag search.
+ - Fixed an issue where license ID was not populated correctly in the license renewal banner.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
- - Fixed an issue where bulk import rejected team names prefixed with reserved keywords, even with additional text appended.
- - Fixed an issue where System Admin could no longer manage custom emoji after running "bin/mattermost permissions reset".
  - Fixed an issue where leaving an archived channel did not return user to the last viewed channel.
+ - Fixed an issue where bulk import rejected team names prefixed with reserved keywords, even with additional text appended.
+ - Fixed an issue where System Admin could no longer manage custom emoji after running ``bin/mattermost permissions reset``.
+ - Fixed an issue where a user's role in Team Members dialog did not update when a user was searching for the user.
  - Fixed an issue where the timezone count was not displayed correctly when a user set a new timezone and then changed it to set automatically.
- - Fixed an issue where a user's role in Team Members dialog did not update when a user searched for the user.
  - Fixed an issue where existing users were not shown in the Invite Members flow.
+ - Fixed an issue where the **System Console > User Management > Users** page was too tall and the **Revoke All Sessions** button was cut off when a license banner was present.
+ - Fixed an issue where the **Email verified** banner was red instead of green.
+ - Fixed an issue where **Copy Theme Colors** button in **Account Settings > Display > Theme** was not themed correctly.
+ - Fixed an issue where archived channel icons were too dark in the Channel Info modal with the Dark Theme.
+ - Fixed an issue where the **Save** button was not visible in browser for Safari on iPad device.
+ - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
+ - Fixed an issue where no error was reported in server logs if a plugin icon was invalid.
+ - Fixed an issue where providing AutocompleteData did not log a proper error in the System Console.
  - Fixed an issue where signup password minimum length error messages were inconsistent.
- - Fixed an issue where no error was reported in server logs if plugin icon was invalid.
+ - Fixed an issue where the right-hand side overlapped the GitHub Plugin tooltip.
+ - Fixed an issue where the plugin right-hand side did not show tooltips when a user hovered over the Close or Expand/Shrink icons.
  - Fixed an issue where query string parameters were omitted from interactive dialog request urls.
  - Fixed an issue where ``store.GetPostsSince()`` did not sanitise deleted posts.
  - Fixed an issue with a panic caused by nil pointer dereference in ``importTeam``.
@@ -49,8 +49,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
-
-### Open Source Components
 
 ### Database Changes
 
