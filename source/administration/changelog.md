@@ -6,8 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.24.2, release day TBD**
-  - Fixing an issue where changing primary keys during migration does not work with Postgres versions lower than 9.3. [MM-26514](https://mattermost.atlassian.net/browse/MM-26514)
+- **v5.24.2, released 2020-06-26**
+  - Fixed an issue where changing primary keys during migration did not work with Postgres versions lower than 9.3. [MM-26514](https://mattermost.atlassian.net/browse/MM-26514)
 - **v5.24.1, released 2020-06-19**
   - Fixed an issue with a semantic versioning violation of the plugin API that broke plugins using the ``GetGroupByName`` method. [MM-26231](https://mattermost.atlassian.net/browse/MM-26231)
   - Fixed an issue with the Plugin Tooltip implementation that caused links to be truncated when rendered. This issue occured if you are using the recent GitHub plugin v1.0.0 release. All links were affected, regardless if they were related to GitHub. [MM-25808](https://mattermost.atlassian.net/browse/MM-25808)
