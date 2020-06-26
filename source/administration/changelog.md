@@ -33,6 +33,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
  - Fixed an issue where a save button was not visible in webapp for Safari on iPad device.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
+ - Fixed an issue where bulk import rejected team names prefixed with reserved keywords, even with additional text appended.
+ - Fixed an issue where System Admin could no longer manage custom emoji after running "bin/mattermost permissions reset".
+ - Fixed an issue where leaving an archived channel did not return user to the last viewed channel.
  - Fixed an issue where the timezone count was not displayed correctly when a user set a new timezone and then changed it to set automatically.
  - Fixed an issue where a user's role in Team Members dialog did not update when a user searched for the user.
  - Fixed an issue where existing users were not shown in the Invite Members flow.
