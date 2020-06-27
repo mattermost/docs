@@ -123,4 +123,4 @@ The job scheduler runs the data retention job based on the time specified in the
 
 When a job server then picks up that scheduled job in order to execute it there will be a debug log as follows: ``Worker EnterpriseDataRetention: Received a new candidate job``.
 
-When the job is complete there is an info level logline: ``Worker EnterpriseDataRetention: Job is complete``.
+When the job is complete, an ``INFO``-level log line ``Worker EnterpriseDataRetention: Job is complete`` is generated. 
