@@ -112,7 +112,7 @@ Posts and attachments in archived channels are affected by the data retention jo
 How long does it take to run a deletion query and does it affect server performance?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Data retention runs the actual deletion query in batches, deleting data in blocks of 1,000 records per query so the database won’t be locked up for extended periods of time with slow, long-running queries (keeping to this limit keeps the query down to a few milliseconds execution time on the database itself).
+Data retention runs the actual deletion query in batches, deleting data in blocks of 1 000 records per query. This is so the database won’t be locked up for extended periods of time with long-running queries. Keeping to this limit keeps the query down to a few milliseconds' execution time on the database itself.
 
 Each batch of data is deleted based on indexes, so the queries are generally quite quick to execute on such small batches meaning the server will stay fully responsive while the process is running.
 
