@@ -119,7 +119,7 @@ Each batch of data is deleted based on indexes, so the queries are generally qui
 How do I know whether the data retention job is running/scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the job scheduler identifies that it is time for the data retention job to be scheduled again for immediate running (i.e. at the time they have configured for it to run each day), a debug level logline is printed: ``Scheduling data retention job``.
+The job scheduler runs the data retention job based on the time specified in the configuration settings. At this time a ``DEBUG``-level log line is printed: ``Scheduling data retention job``.
 
 When a job server then picks up that scheduled job in order to execute it there will be a debug log as follows: ``Worker EnterpriseDataRetention: Received a new candidate job``.
 
