@@ -114,7 +114,7 @@ How long does it take to run a deletion query and does it affect server performa
 
 Data retention runs the actual deletion query in batches, deleting data in blocks of 1 000 records per query. This is so the database won’t be locked up for extended periods of time with long-running queries. Keeping to this limit keeps the query down to a few milliseconds' execution time on the database itself.
 
-Each batch of data is deleted based on indexes, so the queries are generally quite quick to execute on such small batches meaning the server will stay fully responsive while the process is running.
+Each batch of data is deleted based on indexes - making the queries quick to execute on small batches. This helps the server remain fully responsive while the process is running.
 
 How do I know whether the data retention job is running/scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
