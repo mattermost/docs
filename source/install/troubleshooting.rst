@@ -129,6 +129,11 @@ If you experience issues with your password for your LDAP log in, contact your o
 
 The password reset process is completed on the IdP provider side, and not via the Mattermost System Console.
 
+Multi-Factor Authentication (MFA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your MFA stopped working make sure your server clock not out of sync. On Unix systems you can show the hardware time of your system with ``# hwclock -r``.
+
 SAML issues
 -------------------
 
