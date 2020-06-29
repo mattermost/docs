@@ -2,12 +2,14 @@
 Desktop - Managed Resources
 ===========================
 
-This guide provides steps to use managed resources with the Mattermost Desktop App. A managed resource can be any service available on the same hostname using the same protocol as the Mattermost server.
+The Mattermost Desktop App supports managed resources. A managed resource can be any service available on the same hostname using the same protocol as the Mattermost server.
 
-.. note::
+.. Note::
     Using this feature requires a `custom build of the Mattermost Desktop App <https://docs.mattermost.com/deployment/desktop-app-deployment.html>`_.
 
-When adding the folder of a managed resource to `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`_ it is available from the Mattermost Desktop App as a pop-up window instead of opening in a web-browser. In the below example we add the managed resource `/video`.
+When adding the path of a managed resource to `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`_ it opens as a pop-up window in the Mattermost Desktop App. 
+
+In the below example we add the managed resource ``/video``.
 
 .. code-block:: json
     [...]
