@@ -35,7 +35,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where **Copy Theme Colors** button in **Account Settings > Display > Theme** was not themed correctly.
  - Fixed an issue where archived channel icons were too dark in the Channel Info modal with the Dark Theme.
  - Fixed an issue where the **Save** button was not visible in browser for Safari on iPad device.
+ - Fixed an issue where the thumbnail of a user was not displayed correctly when searching for a Direct Message channel.
  - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
+ - Fixed an issue where a different behavior was seen when pasting a table into message compose and to message edit box.
  - Fixed an issue where no error was reported in server logs if a plugin icon was invalid.
  - Fixed an issue where providing AutocompleteData did not log a proper error in the System Console.
  - Fixed an issue where signup password minimum length error messages were inconsistent.
