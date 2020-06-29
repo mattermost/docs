@@ -507,7 +507,7 @@ The trade-off with this design is that if physical security is not in effect, an
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 
-  1. Instead of username-password, use a Single-sign-on (SSO) provider in Mattermost Enterprise Edition like OneLogin, Okta, or ADFS, or use the open source GitLab SSO option available with Mattermost Team Edition.
+  1. Instead of username-password, use a Single Sign-On (SSO) provider in Mattermost Enterprise Edition like OneLogin, Okta, or ADFS, or use the open source GitLab SSO option available with Mattermost Team Edition.
   2. Per the recommended install instructions, use a VPN client to apply network security to your deployment.
   3. Enable monitoring and alerting from your proxy server to detect and isolate malicious behavior reaching your deployment.
 
