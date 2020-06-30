@@ -8,7 +8,7 @@ For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mat
 Emojis
 ------
 
-Open the emoji autocomplete by typing ``:`` followed by two characters of the word describing the emoji. A full list of emojis can be found `here <http://www.emoji-cheat-sheet.com/>`__. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
+Open the emoji autocomplete by typing ``:`` followed by two characters of the word describing the emoji. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
 
 ``:smile: :+1: :sheep:``
 
