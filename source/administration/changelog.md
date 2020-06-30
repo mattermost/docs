@@ -21,6 +21,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
  - Fixed an issue where a user lost access to the current channel and other channels in a team when Team Override Scheme was deleted.
  - Fixed an issue where ADFS for SAML and AD/LDAP using ObjectGUID did not sync correctly.
+ - Fixed an issue where LDAP Sync job failed when one of the teams had email restrictions.
  - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open the hashtag search.
  - Fixed an issue where license ID was not populated correctly in the license renewal banner.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
