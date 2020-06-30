@@ -138,14 +138,14 @@ Each server in the cluster must have the Network Time Protocol daemon ``ntpd`` r
 State
 ^^^^^
 
-The Mattermost Server is designed to have very little state to allow for horizontal scaling. The items in state considered for scaling Mattermost are listed below:
+The Mattermost server is designed to have very little state to allow for horizontal scaling. The items in state considered for scaling Mattermost are listed below:
 
 - In memory session cache for quick validation and channel access
 - In memory online/offline cache for quick response
 - System configuration file that is loaded and stored in memory
 - WebSocket connections from clients used to send messages
 
-When the Mattermost Server is configured for high availability, the servers use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it's written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as “[User X] is typing.”
+When the Mattermost server is configured for high availability, the servers use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it's written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as “[User X] is typing.”
 
 Proxy server configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -265,7 +265,7 @@ While the connection settings are changing, there might be a brief moment when w
 Manual Failover for Master Database
 ```````````````````````````````````
 
-If the need arises to switch from the current master database--for example, if it is running out of disk space, or requires maintenance updates, or for other reasons--you can switch Mattermost server to use one of its read replicas as a master database by updating ``DataSource`` in ``config.json``.
+If the need arises to switch from the current master database - for example, if it is running out of disk space, or requires maintenance updates, or for other reasons - you can switch Mattermost server to use one of its read replicas as a master database by updating ``DataSource`` in ``config.json``.
 
 To apply the settings without shutting down the Mattermost server:
 
@@ -282,7 +282,7 @@ The database can be configured for high availability and transparent failover us
 Leader election
 ^^^^^^^^^^^^^^^^
 
-In Mattermost v4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
+In Mattermost version 4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
 
 The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the "leader". 
 
@@ -319,11 +319,11 @@ Updating configuration changes while operating continuously
 
 A service interruption is not required for most configuration updates. See `Server Upgrades Requiring Service Interruption`_ for a list of configuration updates that require a service interruption.
 
-You can apply updates during a period of low load, but if your HA cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
+You can apply updates during a period of low load, but if your high availability cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 .. note::
 
-  Do not modify configuration settings through the System Console. Otherwise you will have two servers with different ``config.json`` files in an HA cluster causing a refresh every time a user connects to a different app server.
+  Do not modify configuration settings through the System Console. Otherwise you will have two servers with different ``config.json`` files in a high availability cluster causing a refresh every time a user connects to a different app server.
 
 1. Make a backup of your existing ``config.json`` file.
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
@@ -441,4 +441,4 @@ Modify configuration settings directly through ``config.json`` `following these 
 Messages do not post until after reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When running in high availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
+When running in High Availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
