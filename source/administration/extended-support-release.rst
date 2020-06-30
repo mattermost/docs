@@ -20,7 +20,7 @@ Please see `Release Lifecycle documentation <https://docs.mattermost.com/adminis
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/ESR_graph.png
+.. image:: ../images/ESR2021.png
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
