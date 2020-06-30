@@ -497,7 +497,7 @@ Design Decisions
 Why does Mattermost disclose whether or not an account exists when a user enters an incorrect password?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://zeroheight.com/29be2c109/p/741553-product-design>`__ and, telling users that they made a mistake in entering their password, is in service of our principle of prioritizing user interests.
+Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`__ and, telling users that they made a mistake in entering their password, is in service of our principle of prioritizing user interests.
 
 When using username-password authentication, especially with AD/LDAP, there's the possibility of usernames being email addresses, Mattermost username, AD/LDAP username, AD/LDAP ID, or other AD/LDAP attributes and our design principle intends to help end users understand whether their login error came from having the wrong password or the wrong email/username.
 
