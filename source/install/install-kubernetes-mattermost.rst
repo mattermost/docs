@@ -84,7 +84,7 @@ First, create the Mattermost namespace with this command:
 
   $ kubectl create ns mattermost
 
-Then, if deploying Mattermost enterprise edition, apply the license file specifying the path to the file you created in step 1:
+If you're deploying Mattermost Enterprise Edition, apply the license file by specifying the path to the file you created in step 1:
 
 .. code-block:: sh
 
