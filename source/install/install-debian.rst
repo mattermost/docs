@@ -4,7 +4,7 @@
 Installing Mattermost on Debian Buster
 =========================================
 
-Install a production-ready Mattermost system on 1 to 3 machines.
+Install a production-ready Mattermost system on one to three machines.
 
 .. include:: install-common-intro.rst
 

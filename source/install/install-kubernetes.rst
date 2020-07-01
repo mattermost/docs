@@ -10,7 +10,7 @@ An operator is a set of product- or application-specific instructions packaged i
 and how to configure it. An operator can automate complex application deployment and operation
 activities, such as installation, configuration changes, software updates, failure recovery, and more. The Mattermost operator does this by interacting with MySQL and MinIO operators.
 
-Deploying the Mattermost Operator on Kubernetes is the recommended installation process. It provides a single common installation and management method
+Deploying the Mattermost operator on Kubernetes is the recommended installation process. It provides a single common installation and management method
 that can be implemented in practically any environment with less IT overhead and more automation.
 
 Tasks such as zero-downtime upgrades, database restore, blue/green deployments, canary builds, and failure recovery are all managed by the Mattermost operator.

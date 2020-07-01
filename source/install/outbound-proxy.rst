@@ -1,9 +1,11 @@
 ..  _outbound_proxy:
 
-Using an Outbound Proxy
+Using an outbound proxy
 =======================
 
-In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use a proxy for images, the `image proxy <../administration/image-proxy.rst>`_ is also an option.
+In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound
+traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use
+a proxy for images, the `image proxy <../administration/image-proxy.rst>`_ is also an option.
 
 Configuration
 -------------
@@ -26,7 +28,7 @@ The ``NO_PROXY`` environment variable can be set to prevent certain requests fro
 
 When a domain name is specified, the domain and all of its subdomains are matched, however a domain name with a leading ``.`` only matches the subdomains. For example, ``example.com`` matches both ``example.com`` and ``sub.example.com`` while ``.example.com`` only matches the latter.
 
-Sample Configuration
+Sample configuration
 --------------------
 
 To set these environment variables while running the Mattermost server via ``systemd``, modify the ``mattermost.service`` like this:
@@ -58,5 +60,5 @@ To set these environment variables while running the Mattermost server via ``sys
 
     [Install]
     WantedBy=postgresql.service
-    
+
 For GitLab Mattermost follow the details at https://docs.gitlab.com/omnibus/gitlab-mattermost/#setting-custom-environment-variables instead.

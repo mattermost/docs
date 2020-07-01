@@ -17,13 +17,13 @@ Location of your local storage directory
 Owner and group of the install directory - *{owner}* and *{group}*
   Use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to get the owner and group.
 
-#. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
+#. In a terminal window on the server that hosts Mattermost, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
    .. code-block:: sh
 
      cd ~
 
-#. Stop Mattermost Server.
+#. Stop Mattermost.
 
    On Ubuntu 14.04 and RHEL 6:
 
@@ -36,9 +36,8 @@ Owner and group of the install directory - *{owner}* and *{group}*
    .. code-block:: sh
 
      sudo systemctl stop mattermost
-     
 
-     
+
 #. Back up your data and application.
 
    a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
@@ -46,10 +45,10 @@ Owner and group of the install directory - *{owner}* and *{group}*
    b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
    .. code-block:: sh
-    
+
       cd {install-path}
       sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
-    
+
 
 #. Connect to your database CLI and run the following SQL statements to revert the changes to the database made by the migration. The commands may take up to a few minutes to run on large installations.
 
@@ -68,9 +67,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
       UPDATE ChannelMembers SET SchemeUser = NULL, SchemeAdmin = NULL;
 
       DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
- 
 
-#. Start Mattermost server.
+
+#. Start Mattermost.
 
    On Ubuntu 14.04 and RHEL 6:
 

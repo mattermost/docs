@@ -3,12 +3,13 @@ Mattermost Preview using Heroku
 
 Quickly set up Mattermost in Preview Mode to explore product functionality using Heroku.
 
-This configuration is not recommended for use in production, as it currently does not support email notifications. Also note that for persistent file storage AmazonS3 must be used, as local storage will be deleted periodically when the Heroku process restarts.
+This configuration is not recommended for use in production, as it currently does not support email notifications.
+Also note that for persistent file storage AmazonS3 must be used, as local storage will be deleted periodically when the Heroku process restarts.
 
-Heroku Installation
+Heroku installation
 --------------------
 
-1. Sign up for a free account on `Heroku <https://www.heroku.com/>`__
+1. Sign up for a free account on `Heroku <https://www.heroku.com/>`__.
 
 2. Click the |HerokuDeploy|_ button
 
@@ -28,4 +29,5 @@ Heroku Installation
 4. Click **"Deploy for Free"**
 
 
-After Heroku finishes setting up the app, click "View" and your Mattermost Preview should be up and running. You will be taken to the account creation page, where you can enter credentials to create an account and get started.
+After Heroku finishes setting up the app, click **View** and your Mattermost Preview should be up and running.
+You will be taken to the account creation page, where you can enter credentials to create an account and get started.

@@ -5,7 +5,7 @@ Installing PostgreSQL Database Server
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
-Assume that the IP address of this server is 10.10.10.1
+Assume that the IP address of this server is ``10.10.10.1``.
 
 **To install PostgreSQL on Debian Buster:**
 
@@ -13,7 +13,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``sudo apt-get install postgresql postgresql-contrib``
 
-  When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
+  When the installation is complete, the PostgreSQL server is running and a Linux user account called *postgres* has been created.
 
 2. Log in to the *postgres* account.
 
@@ -46,7 +46,9 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``exit``
 
-9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to
+listen on all assigned IP addresses. To do so, open ``/etc/postgresql/9.4/main/postgresql.conf`` as *root* in a text editor.
+As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
@@ -64,7 +66,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/etc/postgresql/9.4/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/9.4/main/pg_hba.conf`` as *root* in a text editor.
 
     b. Find the following line:
 
@@ -76,7 +78,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/etc/postgresql/9.4/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/9.4/main/pg_hba.conf`` as *root* in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
@@ -86,7 +88,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``sudo systemctl reload postgresql``
 
-12. Verify that you can connect with the user *mmuser*.
+12. Verify that you can connect with the user 'mmuser'.
 
   a. If the Mattermost server and the database are on the same machine, use the following command:
 

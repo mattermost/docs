@@ -1,7 +1,7 @@
 Advanced Permissions (E10/E20)
-===============================
+===============================================
 
-Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interface can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interfaces can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12). The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
 .. note::
 
@@ -13,7 +13,7 @@ Advanced permissions offer Admins a way to restrict actions in Mattermost to aut
   :local:
   
   
-Permissions Structure
+Permissions structure
 ----------------------
 
 The Mattermost System Console provides a number of elements for Admins to control the permissions in their system.
@@ -33,9 +33,9 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 
-**System Scheme Interface** 
+**System Scheme interface** 
 
-The interface for editing permissions in the System Scheme, with panels for Guests (if enabled), All Members, Channel Administrators, Team Administrators, and System Administrators is available in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
+The interface for editing permissions in the System Scheme, with panels for Guests (if enabled), All Members, Channel Admins, Team Admins, and System Admins is available in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
 
 .. image:: ../images/system-scheme.png
 
@@ -44,30 +44,41 @@ Team Override Schemes (E20)
 
 *Available in Enterprise Edition E20*
 
-Using these permissions overrides the default System Scheme permissions in specific teams for All Members, Channel Adminstrators, and Team Administrators. 
+Using these permissions overrides the default System Scheme permissions in specific teams for All Members, Channel Admins, and Team Admins. 
 
 - The permissions granted in a Team Override Scheme apply only in the teams which are assigned to the scheme. 
 - The System Scheme does not apply to teams that are added to a Team Override Scheme.
 - Teams can only belong to one Team Override Scheme.
 
-**Team Override Schemes Interface** 
+**Team Override Schemes interface** 
 
-The interface for naming, assigning teams, and editing permissions in a Team Override Scheme, with panels for All Members, Channel Administrators, and Team Administrators is available in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
+The interface for naming, assigning teams, and editing permissions in a Team Override Scheme, with panels for All Members, Channel Admins, and Team Admins is available in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
 
 .. image:: ../images/team-scheme.png
 
-Channel Override Permissions (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Channel permissions 
+---------------------------
 
-*Available in a future release of Enterprise Edition E20*
+Channel moderation (Beta) (E20)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Allows Admins to restrict permissions within specific channels. Permissions under consideration for this phase include:
+*Available in Enterprise Edition E20*
 
-- **Read-only Channels:** The ability for Admins to turn off posting in specified channels.
-- **Restrict Channel Mentions:** Turn off the ability for users to post channel wide mentions (@-all/channel/here) in specified channels.
-- **Channel member management:** Restricting adding and removing channel members to Admins only in specified channels.
+From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include: 
 
-Supplementary Roles (E20)
+- **Make channel read-only:** The ability for Admins to turn off posting in specified channels.
+- **Restrict reactions:** Turn off the ability for members and guests to post reactions.
+- **Restrict channel mentions:** Turn off the ability for users to post channel wide mentions (@all/channel/here) in specified channels.
+- **Channel member management:** Only Admins have the ability to add and remove channel members in the specified channels.
+
+These settings are modified in **System Console > User Management > Channels**. 
+
+**Note:**
+These settings are applicable only to Guests and Members. System, Team, and Channel Admins are not affected. If you wish to grant posting ability to a specific member, you must first promote that member to Channel Admin.
+
+The availability of channel moderation settings can also be affected by existing system and team permissions configurations. If there are existing configurations that override the channel settings you would like to apply, it will be indicated in the user interface. These settings can then be adjusted in the relevant panel in the **Permissions** section of the System Console. 
+
+Supplementary roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in a future release of Enterprise Edition E20*
@@ -76,9 +87,9 @@ Allows Admins to grant additional permissions to specific users or to a group of
 
 Recipes
 --------
-This section provides some examples of common permissions use cases and how to accomplish them using the **Advanced Permissions System Console interface**.
+This section provides some examples of common permissions use cases for team management, channel management, and overall permissions. 
 
-Team Management
+Team management
 ~~~~~~~~~~~~~~~~
 
 **Only allow Admins, in specific team, to add members**
@@ -99,7 +110,7 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 8. Select the back arrow to return to the **Permission Schemes** menu. 
 
 
-Public and Private Channel Management
+Public and private channel management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Restrict who can rename channels and edit channel header and purposes**
@@ -130,8 +141,32 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.   
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
+  
+Read only channels
+~~~~~~~~~~~~~~~~~~
 
-Post Management
+**Configure a channel so that members can post/reply/react but guests can only read and react.**
+
+1. Navigate to **System Console > User Management > Channels**.
+2. Select **Edit** next to the name of the channel you want to configure.
+3. In the **Create Posts** panel, uncheck **Guests**. 
+4. In the **Post Reactions** panel, uncheck **Guests** if required. 
+5. Choose **Save**. 
+
+The channel is available for all members and guests to access, but guests can only read messages and react to them.
+
+**Create an Announcement Channel where only channel admins are able to post.**
+
+1. Create a new channel (either Public or Private). 
+2. Navigate to **System Console > User Management > Channels**.
+3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
+4. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
+5. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
+6. Choose **Save**. 
+
+The channel is available for all members and guests to access but only admins can post.
+
+Post management
 ~~~~~~~~~~~~~~~~
 
 **Restrict who can delete posts**
@@ -157,7 +192,7 @@ Example: As the default for the entire system, only allow users to edit their ow
   The post edit time limit is a `global config variable <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
 
 
-Integration Management
+Integration management
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 **Restrict managing webhooks and slash commands**
@@ -172,7 +207,7 @@ Example: As the default for the entire system, only allow System Admins to creat
 
   Permissions for creating, editing, and deleting integrations are currently grouped for each integration type. These will be split into separate permissions in a future release.
 
-Administration Tools
+Administration tools
 --------------------
 
 There are a number of CLI tools available for Admins to help in configuring and troubleshooting the permissions system:
@@ -181,7 +216,7 @@ There are a number of CLI tools available for Admins to help in configuring and 
 2. `Export permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a jsonl file.
 3. `Import permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
 
-Backend Infrastructure
+Backend infrastructure
 -----------------------
 
 Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
@@ -192,7 +227,7 @@ Glossary
 - **Permission:** The ability to execute certain actions. Permissions are granted to roles.
 - **Roles:** A set of permissions. Users or groups are assigned to roles.
 - **Group:** A set of users, usually synced from AD/LDAP. Groups are assigned to roles in the context of teams, channels, or system-wide.
-- **Default Roles:** All Members, Guests (if enabled), Channel Administrators, Team Administrators, System Administrators.
+- **Default Roles:** All Members, Guests (if enabled), Channel Admins, Team Admins, System Admins.
 - **System Scheme:** A set of default roles that apply system-wide.
 - **Team Override Scheme:** A set of default roles that apply only in the team specified. Permissions granted to roles in a team scheme override roles in the system scheme.
 - **System-wide:** Applies across the entire system, including all teams of which the user is a member.

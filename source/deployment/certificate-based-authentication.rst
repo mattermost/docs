@@ -5,7 +5,7 @@ Certificate-Based Authentication (Experimental)
 
 Certificate-based authentication (CBA) can be used to identify a user or a device before granting access to Mattermost, providing an additional layer of security to access the system.
 
-Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps and the Mattermost iOS App. Support for the Mattermost Android App is planned. It is expected that you can manage certificate distribution for each personal device (BYOD) and their lifecycle management with a service like `OpenSSL <https://www.openssl.org/>`__.
+Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps, and the Mattermost iOS app. Support for the Mattermost Android app is planned. It is expected that you can manage certificate distribution for each personal device (BYOD) and their lifecycle management with a service like `OpenSSL <https://www.openssl.org/>`__.
 
 Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
@@ -25,10 +25,10 @@ Set up Mattermost server to log in with a client certificate
 1. Make sure your Mattermost server is licensed with a valid Enterprise Edition E20 license.
 2. In ``ExperimentalSettings`` of the ``config.json`` file, set ``ClientSideCertEnable`` to ``true`` and ``ClientSideCertCheck`` to one of the following values:
 
-- ``primary`` - After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
-- ``secondary`` - After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
+- ``primary``: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
+- ``secondary``: After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
-The ``config.json`` file should then have the following lines
+The ``config.json`` file should then have the following lines:
 
 .. code-block:: text
 

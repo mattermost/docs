@@ -1,12 +1,22 @@
 Desktop Application Changelog
 ========================================
 
-Release v4.4.0
+Release v4.4
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.0>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.2>`_
 
-- **v4.4.0, release day 2020-02-16**
+- **v4.4.2, released 2020-05-11**
+ - Fixed an issue on Windows where a channel was marked as read if the app was closed on a channel where the message was posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
+- **v4.4.1, released 2020-04-22**
+ - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
+ - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
+ - Fixed an issue where Windows Desktop notifications were delayed. `MM-22552 <https://mattermost.atlassian.net/browse/MM-22552>`_
+ - Fixed an issue where the app sometimes didn't restore to the right position but "jumped" to a different place in the display when minimizing the app and then maximizing it. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
+ - Fixed an issue where users were not able to paste text into the login screen. `MM-23784 <https://mattermost.atlassian.net/browse/MM-23784>`_
+ - Fixed an issue where back/forward navigation on the OAuth window caused the app to crash. `MM-23153 <https://mattermost.atlassian.net/browse/MM-23153>`_
+- **v4.4.0, released 2020-02-16**
+ - Original v4.4.0 release
 
 **Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
 
@@ -61,11 +71,8 @@ Mac
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
-- Desktop client opens to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
-- Google oAuth with Gmail addresses no longer works on the Desktop app. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
-- When minimizing the app and then maximizing it, it sometimes doesn't restore to the right position but "jumps" to a different place in the taskbar. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
 - No notification on Windows if the app is closed on the channel where the message is posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
-- Segmentation Fault crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
 - The confirmation dialog from UAC names MSI installers with random numbers.
@@ -78,7 +85,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 - `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
 
-Release v4.3.0
+Release v4.3
 ----------------------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__

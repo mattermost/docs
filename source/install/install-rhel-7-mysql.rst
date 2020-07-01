@@ -9,7 +9,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 1. Log in to the server that will host the database, and open a terminal window.
 
-2. Download the MySQL Yum repository from dev.mysql.com.
+2. Download the MySQL Yum repository.
 
   ``wget http://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm``
 
@@ -24,20 +24,20 @@ Install and set up the database for use by the Mattermost server. You can instal
 5. Start the MySQL server.
 
   ``sudo systemctl start mysqld.service``
-  
+
   .. note::
-    1. The first time that you start MySQL, the superuser account ``'root'@'localhost'`` is created and a temporary password is generated for it.
-    2. Also the first time that you start MySQL, the ``validate_password`` plugin is installed. The plugin forces passwords to contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least 8 characters.
+    1. The first time you start MySQL, the superuser account ``'root'@'localhost'`` is created and a temporary password is generated for it.
+    2. Additionally, the first time you start MySQL, the ``validate_password`` plugin is installed. The plugin forces passwords to contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least 8 characters.
 
 6. Obtain the root password that was generated when you started MySQL for the first time.
 
   ``sudo grep 'temporary password' /var/log/mysqld.log``
 
-7. Change the root password. Login with the password that you obtained from the previous step.
+7. Change the root password. Log in with the password that you obtained from the previous step.
 
   ``mysql -u root -p``
 
-8. Change the password. At the mysql prompt, type the following command. Be sure to replace ``Password42!`` with the password that you want to use.
+8. Change the password. At the MySQL prompt, type the following command. Be sure to replace ``Password42!`` with the password that you want to use.
 
   ``mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password42!';``
 
@@ -45,7 +45,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo systemctl enable mysqld``
 
-10. Create the Mattermost user 'mmuser'.
+10. Create the Mattermost user *mmuser*.
 
   ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
@@ -59,7 +59,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql> create database mattermost;``
 
-12. Grant access privileges to the user 'mmuser'.
+12. Grant access privileges to the user *mmuser*.
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 

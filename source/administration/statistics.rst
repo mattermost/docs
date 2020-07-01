@@ -1,18 +1,18 @@
 Statistics
 ================
 
-Statistics on users, posts and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
+Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`__.
+  To maximize performance for large enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`__.
 
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`__.
 
-Site Statistics
+Site statistics
 -----------------
 
-System statistics are viewable under **System Console > Site Statistics** in prior versions or **System Console > Reporting** in versions after 5.12. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Reporting** (or **System Console > Site Statistics** in versions prior to 5.12). The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
@@ -27,10 +27,10 @@ Total Posts
     The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
 
 Daily Active Users
-  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users as of v5.14.
+  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users as of 5.14.
 
 Monthly Active Users
-  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users as of v5.14.
+  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users as of 5.14.
 
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
@@ -73,7 +73,7 @@ Channel Types
 Posts, Files and Hashtags
     This chart displays the number of posts containing files, hashtags or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
-Team Statistics
+Team statistics
 ---------------
 
 Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.

@@ -8,12 +8,12 @@ Mattermost configuration settings are maintained in the configuration file ``con
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
-On new installations starting in version 5.14, the default.json file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+On new installations starting in version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
-**Configuration in Database**
-Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
+**Configuration in database**
+Storing configuration in the database is supported in v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
 
-**Environment Variables**
+**Environment variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
 The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
@@ -28,7 +28,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
-   
+
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
 
@@ -54,7 +54,7 @@ View subscription details including the number of users and expiry date of your 
 
 License Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://mattermost.com/pricing/#faq>`_.
+Upload or remove license files. For more information on Mattermost licensing, please see our `frequently asked questions about licensing <https://mattermost.com/pricing/#faq>`_.
 
 Reporting
 ---------
@@ -72,7 +72,7 @@ Server Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 View logging of server-side events.
 
-User Management
+User management
 ---------------
 Settings for managing users, user access, groups, and permissions.
 
@@ -82,38 +82,45 @@ View and manage active and inactive users, and revoke all user sessions. Access 
 
 Teams (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Channels (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Groups (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E10 and higher*
 
 Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
 
 Environment
 -----------
+
 Settings for configuring the network environment in which Mattermost is deployed.
 
 Web Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Changes to properties in this section require a server restart before taking effect.
 
 Site URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The URL that users will use to access Mattermost. The port number is required if it's not a standard port such as 80 or 443.
 
 This field is required in Mattermost v3.8 and later.
@@ -132,6 +139,7 @@ If Site URL is not set, the following features will operate incorrectly:
 
 Test Live URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button confirms that the value entered into the Site URL is valid and live.
 
 Listen Address
@@ -149,6 +157,7 @@ On Linux you can use: ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin
 
 Forward port 80 to 443
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Forwards all insecure traffic from port 80 to secure port 443.
 
 **False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to ``false``.
@@ -170,6 +179,7 @@ Connection Security
 
 TLS Certificate File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The path to the certificate file to use for TLS connection security.
 
 +------------------------------------------------------------------------------------+
@@ -178,6 +188,7 @@ The path to the certificate file to use for TLS connection security.
 
 TLS Key File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The path to the TLS key file to use for TLS connection security.
 
 +-----------------------------------------------------------------------------------+
@@ -186,6 +197,7 @@ The path to the TLS key file to use for TLS connection security.
 
 Use Let's Encrypt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See :doc:`../install/config-tls-mattermost` for more details on setting up Let's Encrypt.
 
 **False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
@@ -199,6 +211,7 @@ Use Let's Encrypt
 
 Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The path to the file where certificates and other data about the Let's Encrypt service will be stored.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -207,6 +220,7 @@ The path to the file where certificates and other data about the Let's Encrypt s
 
 Read Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum time allowed from when the connection is accepted to when the request body is fully read.
 
 +----------------------------------------------------------------------------------------+
@@ -215,17 +229,29 @@ Maximum time allowed from when the connection is accepted to when the request bo
 
 Write Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
+Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+
++-----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
++-----------------------------------------------------------------------------------------+
+
+
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in June 16, 2018 release*
 
-Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
+Set to ``false`` to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
 
 +---------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``true`` and ``false``. |
@@ -233,6 +259,7 @@ Set to false to disable all version 3 endpoints of the REST API. Integrations th
 
 Webserver Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly.
 
 **gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
@@ -247,6 +274,7 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 
 Enable Insecure Outgoing Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Outgoing HTTPS requests can accept unverified, self-signed certificates. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed.
 
 **False**: Only secure HTTPS requests are allowed.
@@ -259,13 +287,14 @@ Security note: Enabling this feature makes these connections susceptible to man-
 
 Reload Configuration from Disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
-
-The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database section**.
+The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database** section.
 
 Purge All Caches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
 
 Database
@@ -275,7 +304,8 @@ Changes to properties in this section require a server restart before taking eff
 
 Driver Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
+This setting can only be changed in the ``config.json`` file, it cannot be changed from the System Console user interface.
 
 ``mysql``: enables driver to MySQL database.
 
@@ -287,7 +317,8 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 
 Data Source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
+
+This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed in the ``config.json`` file.
 
 .. note::
   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
@@ -298,6 +329,7 @@ This is the connection string to the master database. When **DriverName** is set
 
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum number of idle connections held open to the database.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -306,6 +338,7 @@ Maximum number of idle connections held open to the database.
 
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum number of open connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -314,6 +347,7 @@ Maximum number of open connections held open to the database.
 
 Query Timeout
 ^^^^^^^^^^^^^^^^^
+
 The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -322,6 +356,7 @@ The number of seconds to wait for a response from the database after opening a c
 
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -330,6 +365,7 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -338,12 +374,12 @@ Minimum number of characters in a hashtag. This must be greater than or equal to
 
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and click **Regenerate**, which displays the value until you click **Save**.
 
 When using High Availability, the salt must be identical in each instance of Mattermost.
 
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to
-encrypt data stored at rest in the database.
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
@@ -351,6 +387,7 @@ encrypt data stored at rest in the database.
 
 SQL Statement Logging (Trace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Executing SQL statements are written to the log for development.
 
 **False**: SQL statements are not written to the log.
@@ -361,6 +398,7 @@ SQL Statement Logging (Trace)
 
 Recycle Database Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
@@ -369,15 +407,17 @@ The workflow for failover without downing the server is to change the database l
 
 Elasticsearch
 ~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Changes to properties in this section require a server restart before taking effect.
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
 
-**False:** Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results.
+**True**: indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
+
+**False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``.                                                                    |
@@ -385,6 +425,7 @@ Enable Elasticsearch Indexing
 
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -393,9 +434,10 @@ The address of the Elasticsearch server. `Learn more about Elasticsearch in our 
 
 Skip TLS Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
 
-**False:** Mattermost does not skip certificate verification.
+**True**: Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
+
+**False**: Mattermost does not skip certificate verification.
 
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SkipTLSVerification": false`` with boolean input.        |
@@ -403,6 +445,7 @@ Skip TLS Verification
 
 Server Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 (Optional) The username to authenticate to the Elasticsearch server.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -411,6 +454,7 @@ Server Username
 
 Server Password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 (Optional) The password to authenticate to the Elasticsearch server.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -419,6 +463,7 @@ Server Password
 
 Enable Cluster Sniffing
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Sniffing finds and connects to all data nodes in your cluster automatically.
 
 **False**: Sniffing is disabled.
@@ -429,14 +474,17 @@ Enable Cluster Sniffing
 
 Bulk Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
 
 Purge Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button purges the entire Elasticsearch index. Typically only used if the index has corrupted and search is not behaving as expected. After purging the index a new index can be created with the **Bulk Index** button.
 
 Enable Elasticsearch for search queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
 
 **False**: Database search is used for search queries.
@@ -457,6 +505,7 @@ Enable Elasticsearch for autocomplete queries
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
 
 .. note::
@@ -480,6 +529,7 @@ This selects which file storage system is used: Local File System or Amazon S3.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The local directory to which files are written when the File Storage System is set to ``"local"``. This is relative to the directory Mattermost is installed to and defaults to ``"./data"`` When File Storage System is set to S3 this setting has no effect.
 
 +-------------------------+------------------------------------------------------------------------------------------+
@@ -490,6 +540,7 @@ The local directory to which files are written when the File Storage System is s
 
 Maximum File Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -498,12 +549,13 @@ Maximum file size for message attachments entered in megabytes in the System Con
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
-.. note:: 
+.. note::
 If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
 
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The name of the bucket for your S3 compatible object storage instance.
 
 +-------------------------+----------------------------------------------+
@@ -514,7 +566,8 @@ The name of the bucket for your S3 compatible object storage instance.
 
 Amazon S3 Region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS and sets it to ``"us-east-1"`` if none is found. For Minio or Digital Ocean Spaces, leave this setting empty.
+
+The AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS and sets it to ``"us-east-1"`` if none is found. For MinIO or Digital Ocean Spaces, leave this setting empty.
 
 +-------------------------+-----------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Region``                                  |
@@ -524,6 +577,7 @@ The AWS region you selected when creating your S3 bucket. If no region is set, M
 
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
 +-------------------------+----------------------------------------------------------------------+
@@ -534,6 +588,7 @@ This is required for access unless you are using an `Amazon S3 IAM Role <https:/
 
 Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
 
 .. note::
@@ -558,7 +613,7 @@ The secret access key associated with your Amazon S3 Access Key ID.
 Enable Secure Amazon S3 Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables only secure Amazon S3 Connections.
+**True**: Enables only secure Amazon S3 connections.
 
 **False**: Allows insecure connections to Amazon S3.
 
@@ -570,6 +625,7 @@ Enable Secure Amazon S3 Connections
 
 Enable Server-Side Encryption for Amazon S3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
 **True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html>`__.
@@ -577,7 +633,7 @@ Enable Server-Side Encryption for Amazon S3
 **False**: Doesn't encrypt files in Amazon S3.
 
 .. note::
-  Server-Side Encryption only works with Amazon S3.
+  Server-side encryption only works with Amazon S3.
 
 +-------------------------+-----------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SSE``                               |
@@ -587,6 +643,7 @@ Enable Server-Side Encryption for Amazon S3
 
 Enable Amazon S3 Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: When true, log additional debugging information to the system logs. Typically set to ``false`` in production.
 
 **False**: No Amazon S3 debugging information is included in the system logs.
@@ -655,6 +712,7 @@ SMTP
 
 SMTP Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Location of SMTP email server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -663,10 +721,20 @@ Location of SMTP email server.
 
 SMTP Server Port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Port of SMTP email server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SMTPPort": ""`` with string input.                                                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+SMTP Server Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The maximum amount of time (in seconds) allowed for establishing a TCP connection between Mattermost and the SMTP server, to be idle before being terminated.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SMTPServerTimeout": 10`` with numerical input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable SMTP Authentication
@@ -700,11 +768,11 @@ The password associated with the SMTP username.
 
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``None``: Send email over an unsecure connection.
+**None**: Send email over an unsecure connection.
 
-``TLS``: Communication between Mattermost and your email server is encrypted.
+**TLS**: Communication between Mattermost and your email server is encrypted.
 
-``STARTTLS``: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
+**STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``.                                                      |
@@ -746,12 +814,12 @@ Enable Push Notifications
 
 Push Notification Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
+Location of Mattermost Push Notification Service (MPNS), which resends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
 
 To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__:
 
-- For Enterprise Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/``
-- For Team Edition, enter ``https://push-test.mattermost.com``
+- For Enterprise Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/``.
+- For Team Edition, enter ``https://push-test.mattermost.com``.
 
 Please review full documentation on `push notifications and mobile applications <http://docs.mattermost.com/deployment/push.html>`__ including guidance on compiling your own mobile apps and MPNS before deploying to production.
 
@@ -765,9 +833,9 @@ Please review full documentation on `push notifications and mobile applications 
 Max Notifications Per Channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum total number of users in a channel before @all, @here, and @channel no longer send notifications to maximize performance.
+Maximum total number of users in a channel before *@all*, *@here*, and *@channel* no longer send notifications to maximize performance.
 
-If you want to increase this value, the recommendation is to increase it a little at a time and monitor system health with `performance monitoring metrics <https://docs.mattermost.com/deployment/metrics.html>`__. We also recommend only increasing this value if large channels have restricted permissions for who can post to the channel (for instance, a read-only Town Square channel).
+If you want to increase this value, the recommendation is to increase it incrementally and monitor system health with `performance monitoring metrics <https://docs.mattermost.com/deployment/metrics.html>`__. We also recommend only increasing this value if large channels have restricted permissions for who can post to the channel (for instance, a read-only Town Square channel).
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with numerical input. |
@@ -777,8 +845,8 @@ If you want to increase this value, the recommendation is to increase it a littl
 
 To confirm push notifications are working:
 
-1. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
-2. Set **Push Notification Server** to *https://push.mattermost.com* if using Enterprise Edition. If using Team Edition, set the value to *https://push-test.mattermost.com*.
+1. Go to **System Console > Notifications > Environment > Push Notification Server > Enable Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
+2. Set **Push Notification Server** to ``https://push.mattermost.com`` if using Enterprise Edition. If using Team Edition, set the value to ``https://push-test.mattermost.com``.
 3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__ and log in to your team site.
 4. Close the app on your device, and close any other connections to your team site.
 5. Wait 5 minutes and have another team member send you a direct message, which should trigger a push notification to the Mattermost app on your mobile device.
@@ -786,9 +854,9 @@ To confirm push notifications are working:
 
 If you did not receive an alert:
 
-1. Set **System Console > General > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
+1. Set **System Console > Environment > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
 2. Repeat the above steps.
-3. Go to **System Console > Logs** and copy the log output into a file.
+3. Go to **System Console > Reporting > Server Logs** and copy the log output into a file.
 4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
 
 .. _high-availability:
@@ -815,7 +883,7 @@ Enable High Availability Mode
 
 Cluster Name
 ^^^^^^^^^^^^
-The cluster to join by name. Only nodes with the same cluster name will join together. This is to support Blue-Green deployments or staging pointing to the same database.
+The cluster to join by name. Only nodes with the same cluster name will join together. This is to support blue-green deployments or staging pointing to the same database.
 
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClusterName": ""`` with string input. |
@@ -823,7 +891,7 @@ The cluster to join by name. Only nodes with the same cluster name will join tog
 
 Override Hostname
 ^^^^^^^^^^^^^^^^^
-If blank, Mattermost attempts to get the hostname from the OS or use the IP Address. You can override the hostname of this server with this property. It is not recommended to override the Hostname unless needed. This property can also be set to a specific IP Address if needed. Also see `cluster discovery <https://docs.mattermost.com/deployment/cluster.html#cluster-discovery>`_ for more details.
+If blank, Mattermost attempts to get the hostname from the OS or use the IP address. You can override the hostname of this server with this property. It is not recommended to override the hostname unless needed. This property can also be set to a specific IP address if needed. Also see `cluster discovery <https://docs.mattermost.com/deployment/cluster.html#cluster-discovery>`_ for more details.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"OverrideHostname": ""`` with string input. |
@@ -831,7 +899,7 @@ If blank, Mattermost attempts to get the hostname from the OS or use the IP Addr
 
 Use IP Address
 ^^^^^^^^^^^^^^
-**True**: The cluster attempts to communicate using the IP Address.
+**True**: The cluster attempts to communicate using the IP address.
 
 **False**: The cluster attempts to communicate using the hostname.
 
@@ -913,7 +981,7 @@ The location of the log files. If blank, they are stored in the ``./logs`` direc
 
 Maximum Burst Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
+Typically set to ``true`` in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
 
 Maximum number of requests allowed beyond the per second query limit.
 
@@ -923,7 +991,6 @@ Maximum number of requests allowed beyond the per second query limit.
 
 Memory Store Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Maximum number of user sessions connected to the system as determined by **VaryByRemoteAddr** and **VaryByHeader** variables.
 
 Typically set to the number of users in the system.
@@ -994,7 +1061,7 @@ Level of detail at which log events are written to the console when **EnableCons
 
 Output console logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
+Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
 
 **True**: Logged events are written in a machine readable JSON format.
 
@@ -1008,7 +1075,7 @@ Changes to this setting require a server restart before taking effect.
 
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
+Typically set to ``true`` in production. When ``true``, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
 
 **True**: Log files are written to files specified in **FileLocation**.
 
@@ -1036,7 +1103,7 @@ Level of detail at which log events are written to log files when **EnableFile**
 
 Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
+Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
 
 **True**: Logged events are written in a machine readable JSON format.
 
@@ -1060,7 +1127,6 @@ Changes to this setting require a server restart before taking effect.
 
 Enable Webhook Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 **True**: Contents of incoming webhooks are printed to log files for debugging.
 
 **False**: Contents of incoming webhooks are not printed to log files.
@@ -1071,7 +1137,6 @@ Enable Webhook Debugging
 
 Enable Diagnostics and Error Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 **True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. All diagnostics and error reporting is encrypted in transit and does not include personally identifiable information or message contents. To learn more about this feature, see :doc:`telemetry`.
 
 **False**: Diagnostics and error reporting are disabled.
@@ -1094,7 +1159,7 @@ After changing this setting, the new session length will take effect after the n
 | This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 180`` with numerical input.            |
 +--------------------------------------------------------------------------------------------------------------+
 
-Session length for mobile apps (days)
+Session Length for Mobile Apps (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
 
@@ -1104,9 +1169,8 @@ After changing this setting, the new session length will take effect after the n
 | This feature's ``config.json`` setting is ``"SessionLengthMobileInDays": 180`` with numerical input.        |
 +-------------------------------------------------------------------------------------------------------------+
 
-Session length for SSO authentication (days)
+Session Length for SSO Authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 This setting defines the session length for SSO authentication, such as SAML, GitLab and OAuth 2.0.
 
 Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab or with OAuth 2.0.
@@ -1206,7 +1270,7 @@ Some examples of when you may want to modify this setting include:
 This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 .. note::
-   Use whitespaces instead of commas to list the hostnames, IP addresses or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
+   Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
@@ -1288,7 +1352,9 @@ So you don't miss messages, please make sure to change this value to an email yo
 
 Terms of Service link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+Configurable link to Terms of Service your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+
+In version 5.17 and later, this setting does not change the terms of service link in **Main Menu > About Mattermost**, which refers to the Mattermost Terms of Service.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                 |
@@ -1296,7 +1362,9 @@ Configurable link to Terms of Service your organization may provide to end users
 
 Privacy Policy link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configurable link to Privacy Policy your organization may provide to end users. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+
+In version 5.17 and later, this setting does not change the privacy policy link in **Main Menu > About Mattermost**, which refers to the Mattermost Privacy Policy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                         |
@@ -1364,7 +1432,7 @@ Default language for newly created users and pages where the user hasn't logged 
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Sets which languages are available for users in **Account Settings** > **Display** > **Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
+Sets which languages are available for users in **Account Settings > Display > Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
 
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
@@ -1379,7 +1447,6 @@ Users and Teams
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum number of users per team, excluding inactive users.
-
 
 The **Max Users Per Team** refers to the size of the "team site" which is workspace a "team of people" inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project.
 
@@ -1402,7 +1469,6 @@ Maximum number of channels per team, including both active and deleted channels.
 
 Enable users to open Direct Message channels with
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 **Any user on the Mattermost server**: The Direct Messages "More" menu has the option to open a Direct Message channel with any user on the server.
 
 **Any member of the team**: The Direct Messages "More" menu only has the option to open a Direct Message channel with users on the current team, and CTRL/CMD+K channel switcher only lists users on the current team. If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.
@@ -1417,9 +1483,9 @@ Allow Team Administrators to edit others posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *This permission is stored in the database and can be modified using the System Console user interface.*
 
-**True**: Team Administrators and System Administrators can edit other users' posts.
+**True**: Team Admins and System Admins can edit other users' posts.
 
-**False**: Only System Administrators can edit other users' posts.
+**False**: Only System Admins can edit other users' posts.
 
 .. note::
    This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
@@ -1477,7 +1543,7 @@ Show Full Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Show full name of all users.
 
-**False**: hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Administrators will still be able to see full names in the UI.
+**False**: Hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the UI.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false``.                                                              |
@@ -1489,7 +1555,7 @@ Notifications
 Show @channel and @all confirmation dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
+**True**: Users will be prompted to confirm when posting *@channel* and *@all* in channels with over five members.
 
 **False**: No confirmation is required.
 
@@ -1521,7 +1587,7 @@ Enable Preview Mode Banner
 
 Enable Email Batching
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings** > **Notifications**.
+**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings > Notifications**.
 
 .. note::
   Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ is configured. Email batching in `High Availability mode <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
@@ -1745,7 +1811,7 @@ File Sharing and Downloads
 
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When false, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
+When ``false``, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableFileAttachments": true`` with options ``true`` and ``false``.    |
@@ -1755,7 +1821,7 @@ Allow File Uploads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-When false, disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.
+When ``false``, disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileUpload": true`` with options ``true`` and ``false``.       |
@@ -1765,7 +1831,7 @@ Allow File Downloads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-When false, disables file downloads on mobile apps. Users can still download files from a mobile web browser.
+When ``false``, disables file downloads on mobile apps. Users can still download files from a mobile web browser.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
@@ -1779,7 +1845,7 @@ Enable Public File Links
 
 **False**: The Get Public Link option is hidden from the image preview user interface.
 
-**Note:** When switched to **False**, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When switched back to **True**, old public links will work again unless the **Public Link Salt** has been regenerated.
+**Note:** When switched to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When switched back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false``.                                                          |
@@ -1851,7 +1917,7 @@ Enable Team Creation
 
 **True**: Ability to create a new team is enabled for all users.
 
-**False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
+**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden in the Main Menu.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``.                                                        |
@@ -1865,7 +1931,7 @@ Enable account creation with email
 
 **True**: Allow team creation and account signup using email and password.
 
-**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
+**False**: Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false``.                                                     |
@@ -1926,7 +1992,7 @@ Set the required character types to be included in a valid password. Defaults to
 - **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.
 - **At least one uppercase letter**: Select this checkbox if a valid password must contain at least one uppercase letter.
 - **At least one number**: Select this checkbox if a valid password must contain at least one number.
-- **At least one symbol**: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``
+- **At least one symbol**: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.
 
 This feature's ``config.json`` settings are, respectively:
 
@@ -1970,7 +2036,7 @@ Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True**: When true, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ is required for login. New users will be required to configure MFA on sign-up. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
+**True**: When ``true``, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ is required for login. New users will be required to configure MFA on sign-up. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
 
 **False**: Multi-factor authentication is optional.
 
@@ -2028,7 +2094,7 @@ The type of connection security Mattermost uses to connect to AD/LDAP.
 
 **STARTTLS**: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS.
 
-If the "No encryption" option is selected it is highly recommended that the AD/LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy.
+If ``None`` is selected it is highly recommended that the AD/LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``.                                           |
@@ -2076,12 +2142,12 @@ User Filter
 
 Sample filters for Active Directory:
 
-- To filter out disabled users: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``
-- To filter out by group membership, determine the distinguishedName of your group, then use the group membership general syntax format as your filter.
+- To filter out disabled users: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.
+- To filter out by group membership, determine the ``distinguishedName`` of your group, then use the group membership general syntax format as your filter.
 
   * For example, if the security group distinguishedName is ``CN=group1,OU=groups,DC=example,DC=com``, then the user filter to use is: ``(memberOf=CN=group1,OU=groups,DC=example,DC=com)``. Note that the user must explicitly belong to this group for the filter to apply.
 
-This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
+This filter uses the permissions of the **Bind Username** account to execute the search. Admins should make sure to use a specially created account for Bind Username with read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
@@ -2138,12 +2204,12 @@ Group Display Name Attribute
 | This feature's ``config.json`` setting is ``"GroupDisplayNameAttribute": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Group Id Attribute
+Group ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups. This should be an AD/LDAP value that does not change. This is usually ``entryUUID`` for LDAP and ``objectGUID`` for AD.
 
 .. note::
-  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*).
+  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20*).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GroupIdAttribute": ""`` with string input.                                                                              |
@@ -2193,11 +2259,11 @@ Email notifications will be sent to this email address, and this email address m
 
 Username Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
+The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the **Login ID Attribute**.
 
-This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
+This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a **Username Attribute** is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
 
-The **Username Attribute** may be set to the same value used to sign-in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
+The **Username Attribute** may be set to the same value used to sign in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
@@ -2207,8 +2273,7 @@ ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
-If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead. 
-Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
+If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead. Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
 
 If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`__ CLI tool.
 
@@ -2220,7 +2285,7 @@ Login ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the "Username Attribute" field above.
 
-If your team typically uses domain\username to log in to other services with AD/LDAP, you may enter domain\username in this field to maintain consistency between sites.
+If your team typically uses ``domain\username`` to log in to other services with AD/LDAP, you may enter ``domain\username`` in this field to maintain consistency between sites.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginIdAttribute": ""`` with string input.                                                                              |
@@ -2236,7 +2301,12 @@ The placeholder text that appears in the login field on the login page. Typicall
 
 Synchronization Interval (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button.
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button.
+
+.. note::
+
+   Because LDAP syncs cause a large number of database read queries you should monitor database load during a sync to determine how often these syncs should happen in your environment.
+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with numerical input.                                                                        |
@@ -2244,10 +2314,10 @@ Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minute
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
 
-- A value of 0 is unlimited and does not paginate the results. 
-- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting. 
+- A value of 0 is unlimited and does not paginate the results.
+- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input.                                                                                 |
@@ -2440,7 +2510,7 @@ Email notifications will be sent to this email address, and this email address m
 
 Username Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
+The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a **Username Attribute** is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
@@ -2472,7 +2542,7 @@ Admin Attribute
 
 (Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
 
-This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used. 
+This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``.                                                     |
@@ -2547,7 +2617,7 @@ OAuth 2.0
 
 Settings to configure OAuth login for account creation and login.
 
-Select OAuth 2.0 service provider:
+Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose whether OAuth can be used for account creation and login. Options include:
 
@@ -2572,11 +2642,11 @@ Enable authentication with GitLab
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**Note**: For Enterprise, GitLab settigs can be found under **OAuth 2.0**
+**Note**: For Enterprise, GitLab settings can be found under **OAuth 2.0**
 
 Application ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
+Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a *Name*, then enter *Redirect URLs* ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
@@ -2584,7 +2654,7 @@ Obtain this value by logging into your GitLab account. Go to Profile Settings > 
 
 Application Secret Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Obtain this value by logging into your GitLab account. Go to Profile Settings > Applications > New Application, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
+Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a *Name*, then enter *Redirect URLs* ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
@@ -2618,7 +2688,7 @@ Google
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
-Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
+Enable authentication with Google by selecting **Google Apps** from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
 **True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-google.html>`__ for more detail.
 
@@ -2675,8 +2745,7 @@ Office 365
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-
-Enable authentication with Office 365 by selecting ``Office 365`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
 
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-office.html>`__ for more detail.
 
@@ -2700,6 +2769,14 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Directory (tenant) ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This value is the ID of the application's AAD directory.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 User API Endpoint
@@ -2771,7 +2848,7 @@ Plugin Management
 Enable Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins>`__ to learn more.
+**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins>`__ to learn more.
 
 **False**: Disables plugins on your Mattermost server.
 
@@ -2793,9 +2870,9 @@ Automatic Prepackaged Plugins
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables Plugin Marketplace on your Mattermost server for all System Administrators.
+**True**: Enables Plugin Marketplace on your Mattermost server for all System Admins.
 
-**False**: Disables Plugin Marketplace on your Mattermost server for all System Administrators.
+**False**: Disables Plugin Marketplace on your Mattermost server for all System Admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
@@ -2842,7 +2919,7 @@ Lists installed plugins on your Mattermost server and whether they are enabled. 
 Require Plugin Signature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Prepackaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
 **False**: Do not require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
@@ -2853,7 +2930,7 @@ Require Plugin Signature
 Signature Public Key Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to the Mattermost plugin signing key built-into the server, each public key specified here is trusted to validate plugin signatures.
+In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
@@ -2861,48 +2938,57 @@ In addition to the Mattermost plugin signing key built-into the server, each pub
 
 Autolink
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`_.
 
 Custom User Attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-custom-attributes/blob/master/README.md>`_.
 
-Github
+GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`_.
 
 Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-jira/blob/master/README.md>`_.
 
 Net Promoter Score
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://mattermost.com/pl/default-nps>`_.
 
 Welcome Bot
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`_.
 
 Zoom
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`_.
 
 Integrations
 --------------------------------
-Settings to configure webhooks, slash commands and external integration services.
+
+Settings to configure webhooks, slash command, and external integration services.
 
 Integration Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable Incoming Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Developers building integrations can create webhook URLs for public channels and private channels. Please see our `documentation page <http://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
 
 **True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any public or private channels that you have access to.
 
-**False**: The Integrations > Incoming Webhooks section of Account Settings is hidden and all incoming webhooks are disabled.
+**False**: The **Integrations > Incoming Webhooks** section of Account Settings is hidden and all incoming webhooks are disabled.
 
-Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
+Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a **BOT** tag appears next to all posts from a webhook. Enable at your own risk.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false``.                                                    |
@@ -2910,13 +2996,14 @@ Security note: By enabling this feature, users may be able to perform `phishing 
 
 Enable Outgoing Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Developers building integrations can create webhook tokens for public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in public channels. Please see our `documentation page <http://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and view samples.
 
 **True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**.
 
-**False**: The Integrations > Outgoing Webhooks section of Account Settings is hidden and all outgoing webhooks are disabled.
+**False**: The **Integrations > Outgoing Webhooks** section of Account Settings is hidden and all outgoing webhooks are disabled.
 
-Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
+Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a **BOT** tag appears next to all posts from a webhook. Enable at your own risk.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false``.                                                    |
@@ -2924,11 +3011,12 @@ Security note: By enabling this feature, users may be able to perform `phishing 
 
 Enable Custom Slash Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Slash commands send events to external integrations that send a response back to Mattermost.
 
-**True**: Allow users to create custom slash commands from **Main Menu** > **Integrations** > **Commands**.
+**True**: Allow users to create custom slash commands from **Main Menu > Integrations > Commands**.
 
-**False**: Slash Commands are hidden in the **Integrations** user interface.
+**False**: Slash commands are hidden in the **Integrations** user interface.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false``.                                                           |
@@ -2936,6 +3024,7 @@ Slash commands send events to external integrations that send a response back to
 
 Enable OAuth 2.0 Service Provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
 
 **False**: Mattermost does not function as an OAuth 2.0 service provider.
@@ -2946,14 +3035,15 @@ Enable OAuth 2.0 Service Provider
 
 Restrict managing integrations to Admins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *This permission has been migrated to the database and changing the ``config.json`` value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
 
 **True**: When true, webhooks and slash commands can only be created, edited and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
-**False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu** > **Integrations**.
+**False**: Any team members can create webhooks, slash commands, and OAuth 2.0 applications from **Main Menu > Integrations**.
 
 .. note::
-  OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
+  OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app set up on the server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``.                                               |
@@ -2961,9 +3051,10 @@ Restrict managing integrations to Admins
 
 Enable integrations to override usernames
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of **False**.
 
-**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See http://mattermost.org/webhooks for more details.
+**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
+
+**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is *webhook*. See http://mattermost.org/webhooks for more details.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false``.                                               |
@@ -2971,9 +3062,10 @@ Enable integrations to override usernames
 
 Enable integrations to override profile picture icons
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Webhooks, slash commands and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
-**False**: Webhooks, slash commands and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
+**True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
+
+**False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See http://mattermost.org/webhooks for more details.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``.                                                   |
@@ -2981,6 +3073,7 @@ Enable integrations to override profile picture icons
 
 Enable Personal Access Tokens
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: When true, users can create `personal access tokens <https://about.mattermost.com/default-user-access-tokens>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
 
 To manage who can create personal access tokens or to search users by token ID, go to the **System Console > Users** page.
@@ -2996,6 +3089,7 @@ Bot Accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Bot Account Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: When true, users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://docs.mattermost.com/developer/bot-accounts.html>`_ to learn more.
 
 **False**: Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
@@ -3006,6 +3100,7 @@ Enable Bot Account Creation
 
 Disable bot accounts when owner is deactivated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
 
 **False**: When a user is deactivated, all bot accounts managed by the user remain active.
@@ -3018,6 +3113,7 @@ GIF (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.
 
 **False**: GIFs cannot be selected in the emoji picker.
@@ -3031,6 +3127,7 @@ Enable GIF Picker
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field.
 
 +-----------------------------------------------------------------------------------------------+
@@ -3039,6 +3136,7 @@ When blank, uses the default API key provided by Gfycat. Alternatively, a unique
 
 Gfycat API Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The API secret generated by Gfycat for your API key. When blank, uses the default API secret provided by Gfycat.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3050,6 +3148,7 @@ CORS
 
 Enable cross-origin requests from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
 .. note::
@@ -3061,6 +3160,7 @@ Enable HTTP cross-origin requests from specific domains separated by spaces. Typ
 
 CORS Exposed Headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Whitelist of headers that will be accessible to the requester.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3069,6 +3169,7 @@ Whitelist of headers that will be accessible to the requester.
 
 CORS Allow Credentials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Requests that pass validation will include the ``Access-Control-Allow-Credentials`` header.
 
 **False**: Requests won't include the ``Access-Control-Allow-Credentials`` header.
@@ -3079,6 +3180,7 @@ CORS Allow Credentials
 
 CORS Debug
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Prints messages to the logs to help when developing an integration that uses CORS. These messages will include the structured key value pair ``"source": "cors"``.
 
 **False**: Debug messages not printed to the logs.
@@ -3092,6 +3194,7 @@ Compliance
 
 Data Retention Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Changes to properties in this section require a server restart before taking effect.
@@ -3100,9 +3203,10 @@ Changes to properties in this section require a server restart before taking eff
 
 Message Retention
 ^^^^^^^^^^^^^^^^^^
+
 Set how long Mattermost keeps messages in channels and direct messages.
 
-If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set will be deleted nightly. The minimum time is one day.
+If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set, will be deleted nightly. The minimum time is one day.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``.                                                             |
@@ -3116,6 +3220,7 @@ and
 
 File Retention
 ^^^^^^^^^^^^^^^^^^
+
 Set how long Mattermost keeps file uploads in channels and direct messages.
 
 If **Keep files for a set amount of time** is chosen, set how many days file uploads are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
@@ -3132,6 +3237,7 @@ and
 
 Data Deletion Time
 ^^^^^^^^^^^^^^^^^^^
+
 Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
 
 This setting is based on the local time of the server.
@@ -3142,19 +3248,22 @@ This setting is based on the local time of the server.
 
 Run Deletion Job Now
 ^^^^^^^^^^^^^^^^^^^^^
+
 This button initiates a Data Retention deletion job immediately.
 
 You can monitor the status of the job in the data deletion job table below this button.
 
 Compliance Export (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available as an add-on to Enterprise Edition E20*
 
 Enable Compliance Export
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** When true, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`__.
 
-**False:** When false, Mattermost doesn't generate a compliance export file.
+**True**: When true, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`__.
+
+**False**: When false, Mattermost doesn't generate a compliance export file.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``.                                                                      |
@@ -3162,6 +3271,7 @@ Enable Compliance Export
 
 Compliance Export Time
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
 
 This setting is based on the local time of the server.
@@ -3172,6 +3282,7 @@ This setting is based on the local time of the server.
 
 Export File Format
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
 Currently supported formats are CSV, Actiance XML, and Global Relay EML.
@@ -3180,6 +3291,7 @@ If Global Relay is chosen, the following options will be presented:
 
 Global Relay Customer Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3188,6 +3300,7 @@ Type of Global Relay customer account your organization has, either ``A9/Type 9`
 
 Global Relay SMTP Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The username for authenticating to the Global Relay SMTP server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3196,6 +3309,7 @@ The username for authenticating to the Global Relay SMTP server.
 
 Global Relay SMTP Password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The password associated with the Global Relay SMTP username.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3204,6 +3318,7 @@ The password associated with the Global Relay SMTP username.
 
 Global Relay Email Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The email address your Global Relay server monitors for incoming compliance exports.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3212,18 +3327,21 @@ The email address your Global Relay server monitors for incoming compliance expo
 
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This button initiates a Compliance Export job immediately.
 
 You can monitor the status of the job in the compliance export job table below this button.
 
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Settings used to enable and configure Mattermost compliance reports.
 
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Compliance reporting is enabled in Mattermost.
 
 **False**: Compliance reporting is disabled.
@@ -3234,6 +3352,7 @@ Enable Compliance Reporting
 
 Compliance Report Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Sets the directory where compliance reports are written.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3242,6 +3361,7 @@ Sets the directory where compliance reports are written.
 
 Enable Daily Report
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Mattermost generates a daily compliance report.
 
 **False**: Daily reports are not generated.
@@ -3253,33 +3373,34 @@ Enable Daily Report
 Custom Terms of Service (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Custom Terms of Service
-~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*.
 
 Enable Custom Terms of Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
   This page can only be modified using the System Console user interface.
 
-**True**: When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web or mobile. Existing users must accept them after login or a page refresh. To update terms of service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
+**True**: When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh. To update terms of service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
 
 **False**: During account creation or login, users can review terms of service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
 
 Custom Terms of Service Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
 
 Re-Acceptance Period
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The number of days before Terms of Service acceptance expires, and the terms must be re-accepted.
 
 Defaults to 365 days. 0 indicates the terms do not expire.
 
 Experimental
 -------------
+
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
 Features
@@ -3290,6 +3411,7 @@ AD/LDAP Settings
 
 AD/LDAP Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3298,6 +3420,7 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 
 AD/LDAP Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3306,6 +3429,7 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 
 AD/LDAP Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3314,6 +3438,7 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
@@ -3327,7 +3452,7 @@ Allow Authentication Transfer (Experimental)
 Autoclose Direct Messages in Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings** > **Sidebar**.
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings > Sidebar**.
 
 **False**: Conversations remain in the sidebar until they are manually closed.
 
@@ -3346,8 +3471,10 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 
 Email Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Email Batching Buffer Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the maximum number of notifications batched into a single email.
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -3356,6 +3483,7 @@ Specify the maximum number of notifications batched into a single email.
 
 Email Batching Interval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -3364,6 +3492,7 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 
 Email Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3372,6 +3501,7 @@ Specify the color of the email login button for white labeling purposes. Use a h
 
 Email Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3380,6 +3510,7 @@ Specify the color of the email login button border for white labeling purposes. 
 
 Email Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3388,6 +3519,7 @@ Specify the color of the email login button text for white labeling purposes. Us
 
 Enable Account Deactivation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Ability for users to deactivate their own account from **Account Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
 
 **False**: Ability for users to deactivate their own account is disabled.
@@ -3409,6 +3541,7 @@ Enable Automatic Replies (Experimental)
 
 Enable Channel Viewed WebSocket Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This setting determines whether channel_viewed WebSocket events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -3417,6 +3550,7 @@ This setting determines whether channel_viewed WebSocket events are sent, which 
 
 Enable Client-Side Certification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
 **True**: Enables client-side certification for your Mattermost server. See `the documentation <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`__ to learn more.
@@ -3429,6 +3563,7 @@ Enable Client-Side Certification
 
 Client-Side Certification Login Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20*
 
 Used in combination with the ``ClientSideCertEnable`` setting.
@@ -3443,6 +3578,7 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 
 Enable Default Channel Leave/Join System Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
 **True**: Enables leave/join system messages in the default ``town-square`` channel.
@@ -3473,6 +3609,7 @@ Changes made when hardened mode is enabled:
 
 Enable AD/LDAP Group Sync (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E20 and higher*
 
 **True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
@@ -3488,9 +3625,9 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 Enable Preview Features (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Preview features can be enabled from **Account Settings** > **Advanced** > **Preview pre-release features**.
+**True**: Preview features can be enabled from **Account Settings > Advanced > Preview pre-release features**.
 
-**False**: Disables and hides preview features from **Account Settings** > **Advanced** > **Preview pre-release features**.
+**False**: Disables and hides preview features from **Account Settings > Advanced > Preview pre-release features**.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false``.                                                    |
@@ -3498,11 +3635,12 @@ Enable Preview Features (Experimental)
 
 Enable Theme Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
-**True:** Enables the **Display** > **Theme** tab in Account Settings so users can select their theme.
+**True:** Enables the **Display > Theme** tab in Account Settings so users can select their theme.
 
-**False:** Users cannot select a different theme. The **Display** > **Theme** tab is hidden in Account Settings.
+**False:** Users cannot select a different theme. The **Display > Theme** tab is hidden in Account Settings.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
@@ -3510,11 +3648,12 @@ Enable Theme Selection
 
 Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
-**True:** Enables the **Display** > **Theme** > **Custom Theme** section in Account Settings.
+**True:** Enables the **Display > Theme > Custom Theme** section in Account Settings.
 
-**False:** Users cannot use a custom theme. The **Display** > **Theme** > **Custom Theme** section is hidden in Account Settings.
+**False:** Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in Account Settings.
 
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
@@ -3522,6 +3661,7 @@ Allow Custom Themes
 
 Default Theme
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 Set a default theme that applies to all new users on the system.
@@ -3543,6 +3683,7 @@ Enable Tutorial (Experimental)
 
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3551,6 +3692,7 @@ This setting determines whether "user is typing..." messages are displayed below
 
 Time Between User Typing Updates (User Typing Timeout)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3559,6 +3701,7 @@ This setting defines how frequently "user is typing..." messages are updated, me
 
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
 
 **False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
@@ -3569,6 +3712,7 @@ Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 
 Primary Team (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
 If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
@@ -3582,6 +3726,7 @@ SAML Settings
 
 SAML Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3590,6 +3735,7 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 
 SAML Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3598,6 +3744,7 @@ Specify the color of the SAML login button border for white labeling purposes. U
 
 SAML Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -3607,11 +3754,11 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Disabled:** Users cannot access the experimental channel sidebar feature set.  
+**Disabled**: Users cannot access the experimental channel sidebar feature set.
 
-**Enabled (Default On):** Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
-**Enabled (Default Off):** Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default Off)**: Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
@@ -3620,9 +3767,9 @@ Experimental Sidebar Features (Experimental)
 Sidebar Organization (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
+**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
 
-**False**: Hides the channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting**.
+**False**: Hides the channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``.                                         |
@@ -3630,11 +3777,12 @@ Sidebar Organization (Experimental)
 
 Timezone
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Select the timezone used for timestamps in the user interface and email notifications.
 
-**True** The Timezone setting is visible in the Account Settings and a time zone is automatically assigned in the next active session.
+**True**: The Timezone setting is visible in the Account Settings and a time zone is automatically assigned in the next active session.
 
-**False** The Timezone setting is hidden in the Account Settings.
+**False**: The Timezone setting is hidden in the Account Settings.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false``. |
@@ -3642,6 +3790,7 @@ Select the timezone used for timestamps in the user interface and email notifica
 
 Town Square is Hidden in Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
@@ -3654,6 +3803,7 @@ Town Square is Hidden in Left-Hand Sidebar (Experimental)
 
 Town Square is Read-Only (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 **True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react or pin messages to Town Square, nor are they able to change the channel name, header or purpose.
@@ -3666,6 +3816,7 @@ Town Square is Read-Only (Experimental)
 
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
 
 **False**: Only team name appears in email notification subject line.
@@ -3693,6 +3844,7 @@ Service Settings
 
 WebSocket URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This setting allows the server to instruct clients where they should try to connect WebSockets to.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3779,9 +3931,9 @@ To turn off checking for the threshold, set this value to ``-1``.
 Allow Cookies for Subdomains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True** Allows cookies for subdomains by setting the domain parameter on Mattermost cookies.
+**True**: Allows cookies for subdomains by setting the domain parameter on Mattermost cookies.
 
-**False** Cookies not allowed for subdomains.
+**False**: Cookies not allowed for subdomains.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCookiesForSubdomains": true`` with options ``true`` and ``false``.                                                 |
@@ -3789,6 +3941,7 @@ Allow Cookies for Subdomains
 
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 This setting defines the frequency of cluster request time logging for :doc:`../deployment/metrics`, measured in milliseconds.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3797,6 +3950,7 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 
 Read Only Config
 ^^^^^^^^^^^^^^^^
+
 **True**: Changes made to settings in the System Console are ignored.
 
 **False**: Changes made to settings in the System Console are written to ``config.json``.
@@ -3817,6 +3971,7 @@ If this setting is enabled, users can search messages. Disabling search can resu
 
 Enable User Status Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Turn status updates off to improve performance. When status updates are off, users appear online only for brief periods when posting a message, and only to members of the channel in which the message is posted.
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -3837,7 +3992,7 @@ For deployments seeking additional tracking of system behavior using Segment.com
 WebSocket Secure Port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Optional) This setting defines the port on which the secured WebSocket will listen using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the secured WebSocket will listen using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. **IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS**.
 
 Changes to this setting require a server restart before taking effect.
 
@@ -3848,7 +4003,7 @@ Changes to this setting require a server restart before taking effect.
 WebSocket Port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Optional) This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. **IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS**.
 
 Changes to this setting require a server restart before taking effect.
 
@@ -3867,11 +4022,25 @@ Enable API Team Deletion
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``.                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable OpenTracing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers. Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
+
+By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported.
+
+**False**: OpenTracing is not enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 ~~~~~~~~~~~~
 
 Read Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
@@ -3884,6 +4053,7 @@ Changes to this setting require a server restart before taking effect.
 
 Search Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
@@ -3896,8 +4066,10 @@ Changes to this setting require a server restart before taking effect.
 
 File Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Initial Font
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Font used in auto-generated profile pics with colored backgrounds.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3906,6 +4078,7 @@ Font used in auto-generated profile pics with colored backgrounds.
 
 Amazon S3 Bucket Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set an endpoint URL for Amazon S3 buckets.
 
 *Removed in November 16th, 2016 release*
@@ -3916,6 +4089,7 @@ Set an endpoint URL for Amazon S3 buckets.
 
 Amazon S3 Location Constraint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: S3 region is location constrained.
 
 **False**: S3 region is not location constrained.
@@ -3928,6 +4102,7 @@ Amazon S3 Location Constraint
 
 Amazon S3 Lowercase Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: S3 bucket names are fully lowercase.
 
 **False**: S3 bucket names may contain uppercase and lowercase letters.
@@ -3943,9 +4118,9 @@ Amazon S3 Signature V2
 
 By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html
 
-**True**: Use Signature Version 2 Signing Process
+**True**: Use Signature Version 2 Signing Process.
 
-**False**: Use Signature Version 4 Signing Process
+**False**: Use Signature Version 4 Signing Process.
 
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
@@ -3953,8 +4128,10 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 
 GitLab Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Not currently supported by GitLab OAuth.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3963,8 +4140,10 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 
 Google Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``profile email``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3973,8 +4152,10 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 
 Office 365 Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3983,8 +4164,10 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 
 Cluster Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The maximum number of idle connections held open from one server to all others in the cluster.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3993,6 +4176,7 @@ The maximum number of idle connections held open from one server to all others i
 
 Maximum Idle Connections per Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The maximum number of idle connections held open from one server to another server in the cluster.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4001,6 +4185,7 @@ The maximum number of idle connections held open from one server to another serv
 
 Idle Connection Timeout (in Milliseconds)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The number of milliseconds to leave an idle connection open between servers in the cluster.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4009,6 +4194,7 @@ The number of milliseconds to leave an idle connection open between servers in t
 
 Network Interface
 ^^^^^^^^^^^^^^^^^
+
 An IP address used to identify the device that does automatic IP detection in high availability clusters.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4017,6 +4203,7 @@ An IP address used to identify the device that does automatic IP detection in hi
 
 Bind Address
 ^^^^^^^^^^^^^
+
 An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4025,7 +4212,8 @@ An IP address used to bind cluster traffic to a specific network device. This se
 
 Advertise Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation).
+
+The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve Network Address Translation (NAT).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AdvertiseAddress": ""`` with string input.                                                                              |
@@ -4033,8 +4221,10 @@ The IP address used to access the server from other nodes. This settings is used
 
 Metrics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Block Profile Rate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
@@ -4050,17 +4240,165 @@ Changes to this setting require a server restart before taking effect.
 Experimental Settings only in config.json
 -----------------------------------------
 
+Audit Settings
+~~~~~~~~~~~~~~~
+
+The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
+
+Syslog Configuration Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
+
+**True**: When ``true`` syslog output is enabled.
+
+**False**: Syslog output is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogEnabled": false`` with options ``true`` and ``false``.                                                         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog IP
+^^^^^^^^^^^^^^
+
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name.                                      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog Port
+^^^^^^^^^^^^^^
+
+The port that the syslog server is listening on. The default port is 6514.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number.                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog Tag
+^^^^^^^^^^^^^^
+
+The syslog metadata tag field.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogTag": ""`` with string input consisting of a user-defined tag field.                                            |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog Cert
+^^^^^^^^^^^^^^
+
+This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate.                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog Insecure
+^^^^^^^^^^^^^^
+
+This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any
+host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks.
+
+**Note**: This should be used only for testing and not in a production environment.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogInsecure": false`` with options ``true`` and ``false``.                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Syslog Max Queue Size
+^^^^^^^^^^^^^^^^^^^^^
+
+This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records.
+
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SysLogMaxQueueSize": 1000`` with numerical input.                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Configuration Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation.
+
+**True**: When ``true`` file output is enabled.
+
+**False**: File output is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileEnabled": false`` with options ``true`` and ``false``.                                                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Name
+^^^^^^^^^^^^^^
+
+This is the path to the output file location.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Max Size MB
+^^^^^^^^^^^^^^
+
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input.                                                                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Max Age Days
+^^^^^^^^^^^^^^
+
+This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Max Backups
+^^^^^^^^^^^^^^
+
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Compress
+^^^^^^^^^^^^^^
+
+When ``true`` rotated files are compressed using ``gzip``.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``.                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+File Max Queue Size
+^^^^^^^^^^^^^^^^^^^
+
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records.
+
+This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input.                                                                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Service Settings
 ~~~~~~~~~~~~~~~~~
+
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in December 16, 2018 release and replaced by a new ExperimentalChannelOrganization setting*
 
 **Disabled**: Unread channels section is disabled for all users.
 
-**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings** > **Sidebar**.
+**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings > Sidebar**.
 
-**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings** > **Sidebar**.
+**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings > Sidebar**.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``"disabled"``, ``"default_on"``, and ``"default_off"``.                          |
@@ -4079,11 +4417,12 @@ Strict CSRF Token Enforcement (Experimental)
 
 Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in December 16, 2018 release*
 
 Enable this setting to limit the number of config settings sent to users prior to login.
 
-Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.10.0 and later.
+Supported for Mattermost Server v5.1.0 and later, and Mattermost mobile apps v1.10.0 and later.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false``.                                       |
@@ -4108,7 +4447,7 @@ Restrict System Admin (Experimental)
 **False**: No restrictions are applied to the System Admin role.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false``.                                                  |
+| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``.                                                  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
@@ -4131,6 +4470,7 @@ Control Teammate Name Display at the system level.
 
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Default channels every user is added to automatically after joining a new team. Only applies to public channels, but affects all teams on the server.
 
 When not set, every user is added to ``off-topic`` and ``town-square`` channel by default.
@@ -4149,6 +4489,7 @@ Client Requirement Settings (Experimental)
 
 Latest Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The latest version of the Android React Native app that is recommended for use.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4157,6 +4498,7 @@ The latest version of the Android React Native app that is recommended for use.
 
 Minimum Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The minimum version of the Android React Native app that is required to be used.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4165,6 +4507,7 @@ The minimum version of the Android React Native app that is required to be used.
 
 Latest Desktop Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The latest version of the desktop app that is recommended for use.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4173,6 +4516,7 @@ The latest version of the desktop app that is recommended for use.
 
 Minimum Destop Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The minimum version of the desktop app that is required to be used.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4181,6 +4525,7 @@ The minimum version of the desktop app that is required to be used.
 
 Latest iOS Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The latest version of the iOS app that is recommended for use.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4189,6 +4534,7 @@ The latest version of the iOS app that is recommended for use.
 
 Minimum iOS Version
 ^^^^^^^^^^^^^^^^^^^^^
+
 The minimum version of the iOS React Native app that is required to be used.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4200,6 +4546,7 @@ Theme Settings (Experimental)
 
 Allowed Themes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Available in Enterprise Edition E10 and higher*
 
 Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is set to ``true``.
@@ -4213,6 +4560,7 @@ Display Settings (Experimental)
 
 Supported Timezones Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in April 16, 2019 release*
 
 Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
@@ -4225,6 +4573,7 @@ The file must be in the same directory as your ``config.json`` file if you set a
 
 Experimental Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Disable Post Metadata
@@ -4240,10 +4589,12 @@ Disable Post Metadata
 
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E10 and higher*
 
 Maximum Users for Statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
 
 This setting is used to maximize performance for large Enterprise deployments.
@@ -4257,6 +4608,7 @@ Elasticsearch Settings (Beta)
 
 Post Index Replicas
 ^^^^^^^^^^^^^^^^^^^^^
+
 The number of replicas to use for each post index. If this setting is changed, it only applies to newly created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
 
 +---------------------------------------------------------------------------------------------------+
@@ -4265,6 +4617,7 @@ The number of replicas to use for each post index. If this setting is changed, i
 
 Post Index Shards
 ^^^^^^^^^^^^^^^^^^^^^
+
 The number of shards to use for each post index. If this setting is changed, it only applies to newly created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
 
 +-------------------------------------------------------------------------------------------------+
@@ -4273,6 +4626,7 @@ The number of shards to use for each post index. If this setting is changed, it 
 
 Aggregate Search Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job.
 
 .. note::
@@ -4284,6 +4638,7 @@ Elasticsearch indexes over the age specified by this setting will be aggregated 
 
 Post Aggregator Start Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The start time of the daily scheduled aggregator job. Must be a 24-hour time stamp in the form ``HH:MM``.
 
 This setting is based on the local time of the server.
@@ -4294,6 +4649,7 @@ This setting is based on the local time of the server.
 
 Index Prefix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsearch on a shared Elasticsearch cluster.
 
 +----------------------------------------------------------------------------------------+
@@ -4302,6 +4658,7 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 
 Live Indexing Batch Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Determines how many new posts are batched together before they are added to the Elasticsearch index. It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling multiple messages per second.
 
 +--------------------------------------------------------------------------------------------------------+
@@ -4310,6 +4667,7 @@ Determines how many new posts are batched together before they are added to the 
 
 Request Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Timeout in seconds for Elasticsearch calls.
 
 +-------------------------------------------------------------------------------------------------------+
@@ -4318,6 +4676,7 @@ Timeout in seconds for Elasticsearch calls.
 
 Bulk Indexing Time Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -4326,6 +4685,7 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 
 Trace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver.
 
 +-------------------------------------------------------------------------------------------------------+
@@ -4337,6 +4697,7 @@ Message Export Settings
 
 Export From Timestamp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4345,6 +4706,7 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 
 File Location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set the file location of the compliance exports.
 
 By default, they are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_.
@@ -4355,6 +4717,7 @@ By default, they are written to the ``exports`` subdirectory of the configured `
 
 Batch Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Determines how many new posts are batched together to a compliance export file.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4401,6 +4764,7 @@ The health check runs every 30 seconds. If the plugin is detected to fail 3 time
 
 Directory
 ^^^^^^^^^^
+
 The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -4409,6 +4773,7 @@ The location of the plugin files. If blank, they are stored in the ``./plugins``
 
 Client Directory
 ^^^^^^^^^^^^^^^^^^
+
 The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -4426,6 +4791,7 @@ When running Mattermost in High Availability mode, ``RunJobs`` should be enabled
 
 Run Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set whether or not this Mattermost server will handle tasks created by the Scheduler.
 
 When running Mattermost on a single machine, this setting should always be enabled.
@@ -4438,6 +4804,7 @@ When running Mattermost in High Availablity mode, one or more servers should hav
 
 Run Scheduler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker.
 
 When running Mattermost on a single machine, this setting should always be enabled.
@@ -4453,6 +4820,7 @@ Deprecated Configuration Settings
 
 Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Removed in June 16, 2018 release*
 
 Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ page instead of configuration settings.
@@ -4648,8 +5016,10 @@ When post editing is permitted, setting this to ``-1`` allows editing anytime, a
 
 Images
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Attachment Thumbnail Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in July 16th, 2017 release*
 
 Width of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
@@ -4660,6 +5030,7 @@ Width of thumbnails generated from uploaded images. Updating this value changes 
 
 Attachment Thumbnail Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in July 16th, 2017 release*
 
 Height of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
@@ -4670,6 +5041,7 @@ Height of thumbnails generated from uploaded images. Updating this value changes
 
 Image Preview Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in July 16th, 2017 release*
 
 Maximum width of preview image. Updating this value changes how preview images render in future, but does not change images created in the past.
@@ -4680,6 +5052,7 @@ Maximum width of preview image. Updating this value changes how preview images r
 
 Image Preview Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in July 16th, 2017 release*
 
 Maximum height of preview image. Setting this value to ``0`` instructs Mattermost to auto-size the preview image height based on the source image aspect ratio and the preview image width. Updating this value changes how preview images render in future, but does not change images created in the past.
@@ -4690,6 +5063,7 @@ Maximum height of preview image. Setting this value to ``0`` instructs Mattermos
 
 Profile Picture Width
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in July 16th, 2017 release*
 
 The width to which profile pictures are resized after being uploaded via Account Settings.
@@ -4700,6 +5074,7 @@ The width to which profile pictures are resized after being uploaded via Account
 
 Profile Picture Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 *Removed in July 16th, 2017 release*
 
 The height to which profile pictures are resized after being uploaded via Account Settings.

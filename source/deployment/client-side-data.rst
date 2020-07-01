@@ -1,29 +1,31 @@
 Client-side Data Storage FAQ
 ============================
 
-Mobile Web Experience
+Mobile web experience
 ---------------------
 
 **1. What data is stored?**
+  
   Similar to a desktop web browser, data may be stored in the mobile web browser cache which resides on the storage system of the device operating system which is protected by security measures in the physical device and its operating system.
+
 **2. How is the data protected?**
   Security for mobile web experience is similar to the security for a desktop web experience.
+
 **3. When is the data deleted?**
   If you log out or your account is deactivated, the data in the browser cache may reside until the cache expires or the temporary file system store on the operating system is cleared, depending on your operating system.
 
 
-Mobile App Experience
+Mobile app experience
 ----------------------------------
 
 To speed up initial loading time, Mattermost mobile apps cache data locally on the device for v1.1 and later. Below are common questions on cached data: 
 
 **1. What data is stored locally with the new mobile apps on a mobile device?**
-
   The data that can be found on the device depends solely on whether or not the user is logged in to the Mattermost server, and is independent of the state of the device's connection or the state of the app. While logged in, anything that the user is normally allowed to see is eligible for storage on the device, which includes the following content:
 
-  - messages
-  - files and images that are attached to messages
-  - avatars, usernames, and email addresses of people in the currently open channel
+  - Messages
+  - Files and images that are attached to messages
+  - Avatars, usernames, and email addresses of people in the currently open channel
 
   In addition, metadata that the app uses for keeping track of its operations is also cached. The metadata includes user IDs, channel IDs, team IDs, and message IDs.
   

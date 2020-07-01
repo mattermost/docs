@@ -7,7 +7,7 @@ Depending on the type of error or problem you're experiencing, refer to the sect
 If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
 
 
-Important Notes
+Important notes
 ---------------
 
 - Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised.
@@ -15,13 +15,45 @@ Important Notes
 - Start simple with the step-by-step install guides for your operating system.
 
 
-General Troubleshooting
+General troubleshooting
 -----------------------
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors.
-- You can also search the error messages online - existing solutions can often be applied.
-- Open **System Console > General > Logging** and set File Log Level to **DEBUG**. Make sure to revert to **INFO** after troubleshooting to save disk space.
+Review Mattermost Logs
+~~~~~~~~~~~~~~~~~~~~~~~
+
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_. 
+
+**Mattermost Server**
+
+- Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
+- You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
+The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
+
+.. Note::
+For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
+
+If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
+
+You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_.
+
+**Mattermost Desktop App**
+
+The desktop app log file can be found in the user directory:
+
+- **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
+- **Linux:** ``~/.local/share/Mattermost/logs``
+
+**Mattermost Browser App**
+
+The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser.
+
+**Mattermost Push Notification Service**
+
+Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
+
+Review Mattermost Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
 
@@ -35,19 +67,19 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
+You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ can often be found and applied.
 
-Administration Issues
+Administration issues
 -----------------------------
 
-Lost System Administrator Account
+Lost System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  To reset the account, run from the command line:
    ``./mattermost -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
 -  Log out and back in to apply the change.
 
-Switching System Administrator Account to Single Sign-on (SSO)
+Switching System Administrator account to Single Sign-on (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When Mattermost is initially set up, the first account created becomes the System Administrator account. This account will typically use email authentication to sign-in, since it is usually created before other sign-in methods are configured.
@@ -58,11 +90,11 @@ Before doing this, the System Administrator needs to change their sign-in method
 
 1. Sign in to Mattermost using an email and password.
 2. Go to **Account Settings > Security > Sign-in Method**.
-3. Click the "Switch" button to select a sign-in method and complete the process provided.
+3. Click the **Switch** button to select a sign-in method and complete the process provided.
 
 The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
 
-Locked Out of System Administrator Account
+Locked out of System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
@@ -100,7 +132,7 @@ The password reset process is completed on the IdP provider side, and not via th
 SAML issues
 -------------------
 
-Unable to Switch to SAML Authentication Successfully
+Unable to switch to SAML authentication successfully
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
@@ -160,7 +192,7 @@ To resolve the issue, install Enterprise Edition and restart the process.
 
 This error message can have multiple causes. The log messages provide more information about the root cause and are provided below, along with a suggested fix.
 
-**Issue: Missing a Certificate File.**
+**Issue: Missing a certificate file**
 
 .. code-block:: sh
 
@@ -280,10 +312,10 @@ This error message applies to various validation issues. The log message provide
 - ``too soon`` or ``too late``: Assertion ``NotOnOrAfter`` or ``NotBefore`` attribute outside current time.
 
 
-Deployment and Clustering
+Deployment and clustering
 -------------------------
 
-Red Server Status
+Red server status
 ~~~~~~~~~~~~~~~~~
 
 When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
@@ -294,26 +326,26 @@ A server status of red can occur for the following reasons:
 - **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
 - **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping down the server in 15-second intervals. When the server comes back up, any new messages are sent to it.
 
-WebSocket Disconnect
+WebSocket disconnect
 ~~~~~~~~~~~~~~~~~
 
 When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff. After the connection is established, the client attempts to receive any messages that were sent while it was disconnected.
 
-App Refreshes Continuously
+App refreshes continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster.
 
 Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
-Messages Do Not Post Until After Reloading
+Messages do not post until after reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When running in high availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
 
 
 
-Server Administration
+Server administration
 ---------------------
 
 ``Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.``
@@ -444,7 +476,7 @@ This error appears when a request from Mattermost to another system, such as an 
 Settings
 --------
 
-User Statuses get Stuck on "Away" or "Offline" Status
+User statuses get stuck on "Away" or "Offline" status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
@@ -455,34 +487,34 @@ If you notice more than one user being stuck at an Away or Offline status, try o
 
 If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
 
-System Console Settings Revert to Previous Values after Saving
+System Console settings revert to previous values after saving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
 
 Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the Mattermost user and restart the server.
 
-Mattermost Can't Connect to LDAP/AD Server
+Mattermost can't connect to AD/LDAP server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
+Active Directory and LDAP troubleshooting can be found on `this page <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__.
 
 Mobile
 -------
 
-Login with ADFS/Office365 is Not Working
+Login with ADFS/Office365 is not working
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-The “Connecting…” Bar Doesn't Clear
+The “Connecting…” bar doesn't clear
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
 If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator whether the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
-I’m Not Receiving Push Notifications on my Device
+I’m not receiving push notifications on my device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
@@ -506,7 +538,7 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
-All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
+All outbound connections go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
@@ -529,7 +561,7 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
 
-Configuration Issues
+Configuration issues
 ---------------------
 
 In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost.
@@ -540,19 +572,19 @@ In some cases, the configuration from the product’s website differs from the M
 - Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
 - What device (webapp, desktop app), browser, and operating system (Windows, Mac, etc.) are you using?
 - Confirm that the SSL/TLS certificate was installed successfully by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools** > **Developer Tools**.
+- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools > Developer Tools**.
 
 Integrations
 ~~~~~~~~~~~~
 
-YouTube Videos Show a "Video not found" Preview
+YouTube videos show a "Video not found" preview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
 2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
 3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
 
-Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integration
+Hitting an error "Command with a trigger of failed" when configuring Giphy integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
@@ -567,7 +599,7 @@ Gfycat gifs are not loading even though they show up in the emoji picker
 Mobile
 ~~~~~
 
-Build Gets Stuck at ``bundleReleaseJsAndAssets``
+Build gets stuck at ``bundleReleaseJsAndAssets``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As a workaround, you can bundle the ``js`` manually first with
@@ -582,7 +614,7 @@ and then ignore the gradle task with
 
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
-No Image Previews Available in The Mobile App
+No image previews available in the mobile app
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This can happen if the server running Mattermost has its mime types not set up correctly.
@@ -591,7 +623,7 @@ A server running Linux has this file located in ``/etc/mime.types``. This might 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
 
 
-None of These Solve my Problem!
+None of these solve my problem!
 ------------------------------
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and include the results in your support request or `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ post.

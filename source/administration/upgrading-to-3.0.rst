@@ -1,7 +1,7 @@
-Upgrading to version 3.0
+Upgrading to Version 3.0
 ========================
 
-Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`__. 
+Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`__.
 
 You must upgrade to 3.0 before upgrading to the latest version of Mattermost.
 
@@ -40,7 +40,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 **Upgrading to version 3.0**
 
-1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`__
+1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`__.
 
 2. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
@@ -57,7 +57,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   ``tar -xzf mattermost*.gz``
 
-5. Stop Mattermost Server.
+5. Stop Mattermost.
 
   On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost stop``
 
@@ -86,7 +86,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
   ``sudo chown -R {owner}:{group} {install-path}/mattermost``
 
 10. Upgrade the database.
-  a. Change to the Mattermost bin directory
+  a. Change to the Mattermost ``bin`` directory
 
     ``cd {install-path}/mattermost/bin``
 
@@ -96,7 +96,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
   c. When prompted, enter the name of the team that you want to use as the primary team.
 
-11. Start Mattermost server.
+11. Start Mattermost.
 
   On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost start``
 

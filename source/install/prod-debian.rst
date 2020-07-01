@@ -1,6 +1,6 @@
 ..  _prod-debian:
 
-Production Install on Debian Jessie
+Production install on Debian Jessie
 ===================================
 
 This document is superseded by :doc:`install-debian`.
