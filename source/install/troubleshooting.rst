@@ -132,7 +132,7 @@ The password reset process is completed on the IdP provider side, and not via th
 Multi-Factor Authentication (MFA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your MFA stopped working make sure your server clock not out of sync. On Unix systems you can show the hardware time of your system with ``# hwclock -r``.
+If your MFA stopped working make sure your server clock not out of sync. On Unix systems you can show the hardware time of your system with ``# hwclock -r``. If you are using systemd you can also use ``# timedatectl``.
 
 SAML issues
 -------------------
