@@ -22,6 +22,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a user lost access to the current channel and other channels in a team when Team Override Scheme was deleted.
  - Fixed an issue where ADFS for SAML and AD/LDAP using ObjectGUID did not sync correctly.
  - Fixed an issue where LDAP Sync job failed when one of the teams had email restrictions.
+ - Fixed an issue where an incorrect session length for SSO login was initiated from the mobile app.
  - Fixed an issue on web mobile narrow view where clicking a hashtag in a channel header did not open the hashtag search.
  - Fixed an issue where license ID was not populated correctly in the license renewal banner.
  - Fixed an issue where an archived team could be fully accessed with the archived team's URL.
@@ -29,6 +30,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where bulk import rejected team names prefixed with reserved keywords, even with additional text appended.
  - Fixed an issue where System Admin could no longer manage custom emoji after running ``bin/mattermost permissions reset``.
  - Fixed an issue where a user's role in Team Members dialog did not update when a user was searching for the user.
+ - Fixed an issue where Bleve was not correctly setting the query size, missing search results.
  - Fixed an issue where the timezone count was not displayed correctly when a user set a new timezone and then changed it to set automatically.
  - Fixed an issue where existing users were not shown in the Invite Members flow.
  - Fixed an issue where the **System Console > User Management > Users** page was too tall and the **Revoke All Sessions** button was cut off when a license banner was present.
@@ -38,6 +40,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the **Save** button was not visible in browser for Safari on iPad device.
  - Fixed an issue where the thumbnail of a user was not displayed correctly when searching for a Direct Message channel.
  - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
+ - Fixed an issue where the **Next** button in **Main Menu > Manage Members** was not visible to be able to see the last few members of the team.
  - Fixed an issue where a different behavior was seen when pasting a table into message compose and to message edit box.
  - Fixed an issue where no error was reported in server logs if a plugin icon was invalid.
  - Fixed an issue where providing AutocompleteData did not log a proper error in the System Console.
