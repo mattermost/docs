@@ -6,6 +6,8 @@ Important Upgrade Notes
    
 .. important::
    Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+
+.. important::
    Starting with mobile app v1.33.0, users on server versions below v5.9 may experience issues with how attachments, link previews, reactions and embed data are displayed. Upgrading your server version is required.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
