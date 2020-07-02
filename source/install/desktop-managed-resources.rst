@@ -24,9 +24,9 @@ Here are two example server URLs each with valid and invalid managed resource UR
 
   - A valid conference service: ``https://mattermost.my.org/conference``
 
-  - An invalid video service: ``http://mattermost.my.org/video``
+  - An invalid video service using a different protocol: ``http://mattermost.my.org/video``
 
-  - An invalid conference service: ``https://conference.my.org``
+  - An invalid conference service having a different origin: ``https://conference.my.org``
 
 - Mattermost server: ``https://my.org/mattermost``
 
@@ -34,7 +34,7 @@ Here are two example server URLs each with valid and invalid managed resource UR
 
   - A valid conference service: ``https://my.org/conference``
 
-  - An invalid video service: ``http://my.org/video``
+  - An invalid video service using a different protocol: ``http://my.org/video``
   
-  - An invalid conference service: ``https://conference.my.org``
+  - An invalid conference service having a different origin: ``https://conference.my.org``
 
