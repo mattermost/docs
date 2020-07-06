@@ -119,7 +119,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
     .. note::
       Instead of using this command to install the Desktop App into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
 
-  3. Save the text file with the extension .bat. For instance, mattermost-app-install.bat.
+  3. Save the text file with the extension `.bat`. For instance, `mattermost-app-install.bat`.
   4. Use standard software asset management tools to distribute and deploy the batch file to each user.
 
 Once run, the desktop app is added to the user’s local directory, along with the pre-configured config.json file. The installer creates a shortcut for the Desktop App in the user's start menu; if a zip version is used, you need to create the shortcut manually.
