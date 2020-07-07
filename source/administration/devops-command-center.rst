@@ -100,9 +100,19 @@ Permissions
 
 Incidents and playbooks are associated with teams in Mattermost. Participants can be added by inviting them to the incident's channel.
 
-To view incidents associated with your Mattermost team, select **!** in the channel header to open the RHS menu. If there are no active incidents, you can start one or you can view details of incidents that have ended.
+By default, all incidents are public (available to all members of a team). An incident can be made private during creation, or it can be made private after it has been created. 
 
-Incidents Backstage
+Public and Private incidents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Incidents default as public.
+Users can make incidents private or public
+An incident that was public and becomes private can't be accessed by non-participants thereafter, can't be searched.
+
+
+
+
+Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
 
 To open the Incidents backstage, which lists all incidents associated with the current team, select **Incidents & Playbooks** from the Main Menu. All incidents for the current team are listed for review with the following details for each incident:
@@ -116,9 +126,9 @@ To open the Incidents backstage, which lists all incidents associated with the c
 Viewing incident details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To view details of active incidents, select **! Incidents** from the plugin menu, or **!** in the channel header to open the RHS panel.
+To view details of active incidents associated with your Mattermost team, select **!** in the channel header to open the RHS panel. If there are no active incidents, you can view details of incidents that have ended. If an incident is public you can view details. If an incident is private you will not be able to view the details.
 
-Listed incidents include the following information:
+Incident details include the following information:
 
 - The current commander’s profile picture and username.
 - Zero or more checklist items.
