@@ -59,7 +59,7 @@ Set Up a Connection App for Mattermost SSO
 
 	.. image:: ../../source/images/okta_8_view_instructions.PNG
 
-12. Take note of **Identity Provider Single Sign-On URL** (also known as **SAML SSO URL**), and the Identity Provider Issuer, as both may be needed to configure SAML for Mattermost. Additionally, ensure you **download the X.509 Certificate file** and save it. You may need to upload it to Mattermost at a later step.
+12. Take note of **Identity Provider Single Sign-On URL** (also known as **SAML SSO URL**), and the Identity Provider Issuer, as both may be needed to configure SAML for Mattermost. Additionally, ensure you download the X.509 Certificate file and save it. You may need to upload it to Mattermost in a later step.
 
 	.. image:: ../../source/images/okta_9_view_instructions.PNG
 
