@@ -14,8 +14,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.24, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Improvements
- - Added the ability for admins to request a trial license directly in the System Console.
- - [AD/LDAP Groups](https://docs.mattermost.com/deployment/ldap-group-sync.html) feature was promoted from Beta to General Availability.
+ - Added the ability for admins to request a 30-day E20 trial license directly in the System Console.
+ - [AD/LDAP Group Sync (E20)](https://docs.mattermost.com/deployment/ldap-group-sync.html) feature was moved out of Beta to General Availability.
 
 ### Bug Fixes
  - Fixed an issue where the ability to run a command to export data was erroneously available in Team Edition.
