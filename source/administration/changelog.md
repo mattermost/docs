@@ -42,6 +42,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where text flowed outside the "Invite Members" button in "Invite People" page for some languages.
  - Fixed an issue where the **Next** button in **Main Menu > Manage Members** was not visible to be able to see the last few members of the team.
  - Fixed an issue where a different behavior was seen when pasting a table into message compose and to message edit box.
+ - Fixed an issue where one-byte unicode emoji did not support skin tones.
  - Fixed an issue where no error was reported in server logs if a plugin icon was invalid.
  - Fixed an issue where providing AutocompleteData did not log a proper error in the System Console.
  - Fixed an issue where signup password minimum length error messages were inconsistent.
