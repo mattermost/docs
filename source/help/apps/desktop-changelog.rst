@@ -4,9 +4,12 @@ Desktop Application Changelog
 Release v4.5
 ----------------------------
 
-**Release date:** June 16th, 2020
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.1>`_
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.0>`_
+- **v4.5.1, released**
+ - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
+- **v4.5.0, released 2020-06-16**
+ - Original v4.5.0 release
 
 Improvements
 ~~~~~~~~~~~~~~~
