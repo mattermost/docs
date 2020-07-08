@@ -19,18 +19,18 @@ IT Leaders, System Administrators, and/or Project Managers
 Learning Objectives
 *******************
 
-This guide provides foundational information necessary when developing a plan for a proof of concept and/or production-level enterprise deployment of the Mattermost on-premises edition. 
+This guide provides foundational information necessary when developing a plan for a proof of concept and/or production-level enterprise deployment of Mattermost.
 
 It will not dive into the technical implementation, but will reference any relevant documentation.
 
-By the end of this guide you should have an understanding of the high-level requirements for a successful Mattermost Enterprise deployment. 
+By the end of this guide you should have an understanding of the high-level requirements for a successful Mattermost Enterprise deployment.
 
 This includes:
 
-- Choosing how to deploy the Mattermost Server application
-- Migrating from other ChatOps platforms
-- Integrating Mattermost with existing Single sign-on (SSO) providers
-- First steps/best practices for onboarding users
+- Choosing how to deploy the Mattermost Server application.
+- Migrating from other ChatOps platforms.
+- Integrating Mattermost with existing Single sign-on (SSO) providers.
+- First steps/best practices for onboarding users.
 
 *******
 Support
@@ -38,9 +38,9 @@ Support
 
 If at any point you need additional help, we are ready to assist, just reach out using any of these methods:
 
-- `Community <https://community.mattermost.com/>`_ - Our entire organization uses Mattermost, plus you’ll have the support of one of the best open source communities around
-- Documentation - We link to many parts of our `administrator  documentation <https://docs.mattermost.com/guides/administrator.html>`_ in this guide but encourage you to take a look at `all our documentation <https://docs.mattermost.com>`_
-- Enterprise Support  - If you are an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal
+- `Community <https://community.mattermost.com/>`_ - Our entire organization uses Mattermost, plus you’ll have the support of one of the best open source communities around.
+- Documentation - We link to many parts of our `Administrator documentation <https://docs.mattermost.com/guides/administrator.html>`_ in this guide but encourage you to take a look at `all our documentation <https://docs.mattermost.com>`_.
+- Enterprise Support  - If you are an Enterprise Edition subscriber, you may open a support ticket in the Enterprise Edition Support portal.
 
 .. Recommendation::
     Visit the `Mattermost Community server <https://community.mattermost.com/>`_ and create an account. Join channel `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ to not only experience Mattermost right away but also for support if you get stuck at any point in this guide.
@@ -53,9 +53,9 @@ Before You Begin Your Deployment
 What Makes Mattermost Different?
 ********************************
 
-Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers. 
+Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers.
 
-Taking this a step further, the emergence of `ChatOps <https://mattermost.com/chatops>`_ means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
+The emergence of `ChatOps <https://mattermost.com/chatops>`_ means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
 
 Here is a sample of the types of integrations our customers are deploying:
 
@@ -75,16 +75,20 @@ Further Reading
 Mattermost Scaling
 ------------------
 
-Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of scaling.
+Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of `scaling <https://docs.mattermost.com/deployment/scaling.html>`_.
 
-**`Technical Scaling <https://docs.mattermost.com/deployment/scaling.html>`_** - Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. We officially support running Mattermost Server on multiple `Linux distributions and on-premises cloud solutions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_.
+**Technical Scaling:** Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. We officially support running Mattermost Server on multiple `Linux distributions and on-premises cloud solutions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_.
 
-**Functional Scaling** - Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams.
+**Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams.
 
 Mattermost Licensing
 --------------------
 
-Mattermost Enterprise Edition comes with two licensing options: Enterprise E10 and Enterprise E20 which can be tested with a `Free 30-Day Trial <https://mattermost.com/trial/>`_. The E10 license to suit smaller organizations with less need for automation and compliance, while the E20 license will provide you with features like AD/LDAP, SAML 2.0, automated compliance export, and team-specific permissions. You can find a full comparison `here <https://mattermost.com/pricing-feature-comparison>`_.
+Mattermost Enterprise Edition comes with two licensing options: Enterprise E10 and Enterprise E20.
+
+The E10 license suits smaller organizations with less need for automation and compliance, while the E20 license will provide you with features like AD/LDAP, SAML 2.0, automated compliance export, and team-specific permissions. You can find a full comparison `here <https://mattermost.com/pricing-feature-comparison>`_.
+
+Once you have downloaded and installed Mattermost, navigate to **Main Menu > System Console** to activate a 30-day Enterprise trial.
 
 .. Note::
     You can purchase and manage your Mattermost Enterprise subscriptions with our `Customer Portal <https://customers.mattermost.com/login>`_ or reach out to our Sales team by contacting sales@mattermost.com.
@@ -92,7 +96,7 @@ Mattermost Enterprise Edition comes with two licensing options: Enterprise E10 a
 Client Usage
 ------------
 
-Depending on your environment and your users, you have several options when deploying Mattermost: web browser `desktop <https://docs.mattermost.com/install/desktop.html>`_, `mobile <https://docs.mattermost.com/mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/download/#mattermostApps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
+Depending on your environment and your users, you have several options when deploying Mattermost: web browser, `desktop <https://docs.mattermost.com/install/desktop.html>`_, `mobile <https://docs.mattermost.com/mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/download/#mattermostApps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
 
 ======================
 Deployment First Steps
@@ -134,9 +138,9 @@ When migrating from an existing solution it is important to plan ahead. We recom
 
 We provide our customers with easy to use migration solutions for many scenarios:
 
-- Mattermost - Migrating from Mattermost Team Edition is common and only requires you to `upgrade to the most recent Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition-to-enterprise-edition>`_ and add your license Key.
+- Mattermost - Migrating from Mattermost Team Edition is common and only requires you to `upgrade to the most recent Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition-to-enterprise-edition>`_ and add your license key.
 - Slack - There is support for two methods of importing data from Slack.
-    - For small datasets with few users and without post attachments the `Mattermost Web App can be used <https://docs.mattermost.com/administration/migrating.html?highlight=slack#migrating-from-slack-using-the-mattermost-web-app>`_.
+    - For small datasets with few users and without post attachments the `Mattermost web app can be used <https://docs.mattermost.com/administration/migrating.html?highlight=slack#migrating-from-slack-using-the-mattermost-web-app>`_.
     - If at all possible we recommend the use of `Mattermost CLI for the migration process <https://docs.mattermost.com/administration/migrating.html?highlight=slack#migrating-from-slack-using-the-mattermost-cli>`_.
 - HipChat - We recommend using `Group Export Dashboard <https://docs.mattermost.com/administration/hipchat-migration-guidelines.html>`_ to export your data in combination with the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
 - Jabber - You can use `BrightScout’s Extract, Transform and Load (ETL) <https://github.com/Brightscout/mattermost-etl>`_ tool to migrate from Jabber.
@@ -165,22 +169,22 @@ Compliance
 
 When you have to meet compliance requirements - especially when working with proxies - make sure to plan ahead to avoid infrastructure redesign while deploying Mattermost. Here is how Mattermost supports your compliance needs:
 
-- Outbound Proxy - In some scenarios, like monitoring outbound traffic or controlling which websites can appear in link previews, you may wish to `use Mattermost behind a proxy <https://docs.mattermost.com/install/outbound-proxy.html>`_
-- Electronic Discovery - Electronic Discovery (eDiscovery) is the process of searching electronic data to be used as evidence in a legal case. We have put together the `eDiscovery documentation <https://docs.mattermost.com/administration/ediscovery.html>`_ to help
-- Compliance Export - This feature enables `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`_ to be produced from the System Console, containing all messages
-- Data Retention - By default, Mattermost provides unlimited search history storing all messages without an expiration date. These defaults can be `changed by setting Message Retention and File Retention <https://docs.mattermost.com/administration/data-retention.html>`_ to a specific duration in the System Console
-- Custom Terms of Service - If your organization requires the use of `custom ToS <https://docs.mattermost.com/administration/custom-terms-of-service.html>`_, this can be done in the Mattermost System Console
+- Outbound Proxy - In some scenarios, like monitoring outbound traffic or controlling which websites can appear in link previews, you may wish to `use Mattermost behind a proxy <https://docs.mattermost.com/install/outbound-proxy.html>`_.
+- Electronic Discovery - Electronic Discovery (eDiscovery) is the process of searching electronic data to be used as evidence in a legal case. We have put together the `eDiscovery documentation <https://docs.mattermost.com/administration/ediscovery.html>`_ to help.
+- Compliance Export - This feature enables `Compliance Exports <https://docs.mattermost.com/administration/compliance-export.html>`_ to be produced from the System Console, containing all messages.
+- Data Retention - By default, Mattermost provides unlimited search history storing all messages without an expiration date. These defaults can be `changed by setting Message Retention and File Retention <https://docs.mattermost.com/administration/data-retention.html>`_ to a specific duration in the System Console.
+- Custom Terms of Service - If your organization requires the use of `custom ToS <https://docs.mattermost.com/administration/custom-terms-of-service.html>`_, this can be done in the System Console.
 
 Security
 --------
 
 Security is a major concern with regard to selecting the right tools. Mattermost software is continually reviewed for security by developers, IT administrators, and security researchers. In contrast to SaaS solutions Mattermost can be deployed on-premises in your private cloud giving you full control of not only the software but the hardware side as well. Here is a non-exhaustive list of our security features:
 
-- Private Cloud Deployment
-- Secure Mobile Apps
-- Transmission Security
-- Integrity and Audit Controls
-- Authentication Safeguards
+- Private cloud deployment
+- Secure mobile apps
+- Transmission security
+- Integrity and audit controls
+- Authentication safeguards
 - Access Control Policy
 - More details on this topic are available at the `Mattermost security <https://docs.mattermost.com/overview/security.html>`_ section in our documentation.
 - HIPAA und FINRA - Mattermost can be deployed `Health Insurance Portability and Accountability Act - HIPAA <https://docs.mattermost.com/overview/security.html#hipaa-compliance>`_ and `Financial Industry Regulatory Authority - FINRA <https://docs.mattermost.com/overview/security.html#finra-compliance>`_ compliant.
@@ -205,10 +209,10 @@ Notifications
 
 Notifications have gained importance in our daily lives. Modern operating systems all have a way to point the user's attention towards important events from specific apps. There are three different types of notifications in Mattermost: desktop, email, and mobile push notifications. Mattermost will notify you of messages with any of these characteristics:
 
-- Direct Messages
-- Your username or first name is mentioned in a channel
-- A channel you’re in is notified with @channel, @here, or @all
-- Any of `your configured keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ are used
+- Direct Messages.
+- Your username or first name is mentioned in a channel.
+- A channel you’re in is notified with @channel, @here, or @all.
+- Any of `your configured keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ are used.
 
 .. Note::
     All notification behavior can be controlled globally or individually by channel. Desktop, email, and mobile push notifications have separate settings.
