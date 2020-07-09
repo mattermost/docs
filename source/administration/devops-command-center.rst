@@ -105,12 +105,7 @@ By default, all incidents are public (available to all members of a team). An in
 Public and Private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Incidents default as public.
-Users can make incidents private or public
-An incident that was public and becomes private can't be accessed by non-participants thereafter, can't be searched.
-
-
-
+When incidents are created the default playbook and incident visibility is public. Once the incident is open it can be made private. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and it can't be searched.
 
 Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
