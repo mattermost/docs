@@ -24,7 +24,7 @@ Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity
   Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016> 
 
-In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate and SimpleSAMLphp as a custom IdPs. You can also set up MFA on top of your SAML provider for additional security.
+In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
 Using SAML Attributes to Apply Roles
 -------------------------------------
