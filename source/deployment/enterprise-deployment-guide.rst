@@ -55,7 +55,7 @@ What Makes Mattermost Different?
 
 Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers.
 
-The emergence of `ChatOps <https://mattermost.com/chatops>`_ means Mattermost is no longer an exclusive developer tool. In fact, it has the ability to enhance communication through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
+The emergence of `ChatOps <https://mattermost.com/chatops>`_ means Mattermost is no longer a tool predominantly used by developers. In fact, it has the ability to enhance communication for many kinds of teams through a multitude of `integrations <https://integrations.mattermost.com>`_, extensions, and customization.
 
 Here is a sample of the types of integrations our customers are deploying:
 
