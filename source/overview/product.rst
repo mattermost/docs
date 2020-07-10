@@ -47,7 +47,7 @@ Mattermost Enterprise Edition
 
 To explore the benefits of Mattermost's enterprise features, you can replace the Mattermost Team Edition binary with a `Mattermost Enterprise Edition binary <https://about.mattermost.com/download>`__. This version supports upgrading to Mattermost Enterprise Edition E10 or E20.
 
-Once you've downloaded and installed Mattermost Enterprise Edition you have the option to use it as-is, or you can access Enterprise Edition E20 features such as AD/LDAP, Guest Accounts, read-only channels, and advanced compliance support for a trial period. You can initiate the trial period via **System Console > Licenses and Editions > Start trial**.
+Once you've downloaded and installed Mattermost Enterprise Edition you have the option to use it as-is, or you can access Enterprise Edition E20 features such as AD/LDAP, Guest Accounts, read-only channels, and advanced compliance support for a trial period. Start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 
 Mattermost Enterprise Edition E10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
