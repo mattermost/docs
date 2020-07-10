@@ -62,7 +62,7 @@ To verify the current Docker network use the following command to list it (you c
 
 6. **Configure your Server** based on the `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`__.
 
-Once you've saved your configurations, activate an Enterprise E20 trial license via **Main Menu > System Console > Edition and License > Start trial**.
+Once you've saved your configurations, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 
 Additional guides:
 
