@@ -88,7 +88,7 @@ Mattermost Enterprise Edition comes with two licensing options: Enterprise E10 a
 
 The E10 license suits smaller organizations with less need for automation and compliance, while the E20 license will provide you with features like AD/LDAP, SAML 2.0, automated compliance export, and team-specific permissions. You can find a full comparison `here <https://mattermost.com/pricing-feature-comparison>`_.
 
-Once you have downloaded and installed Mattermost, navigate to **Main Menu > System Console** to activate a 30-day Enterprise trial.
+Once you have installed and deployed Mattermost, activate your Enterprise E20 trial license via **Main Menu > System Console > Edition and License** and select **Start trial**.
 
 .. Note::
     You can purchase and manage your Mattermost Enterprise subscriptions with our `Customer Portal <https://customers.mattermost.com/login>`_ or reach out to our Sales team by contacting sales@mattermost.com.
