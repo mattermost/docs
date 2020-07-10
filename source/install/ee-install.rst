@@ -13,13 +13,13 @@ Installing Enterprise Edition
 
 To install Mattermost Enterprise Edition directly please use one of the following guides:
 
-1. `Production Enterprise Edition on Ubuntu 16.04 <https://docs.mattermost.com/install/install-ubuntu-1604.html>`__
-2. `Production Enterprise Edition on Ubuntu 18.04 <https://docs.mattermost.com/install/install-ubuntu-1804.html>`__
-3. `Production Kubernetes Deployment <https://docs.mattermost.com/install/install-kubernetes.html>`__
-4. `Production Enterprise Edition on RHEL 7 <https://docs.mattermost.com/install/install-rhel-7.html>`__
-5. `Production Enterprise Edition on RHEL 6 <https://docs.mattermost.com/install/install-rhel-6.html>`__
-6. `Production Enterprise Edition on Debian Stretch <https://docs.mattermost.com/install/install-debian.html>`__
-7. `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
+* `Production Kubernetes Deployment <https://docs.mattermost.com/install/install-kubernetes.html>`__
+* `Production Enterprise Edition on Ubuntu 16.04 <https://docs.mattermost.com/install/install-ubuntu-1604.html>`__
+* `Production Enterprise Edition on Ubuntu 18.04 <https://docs.mattermost.com/install/install-ubuntu-1804.html>`__
+* `Production Enterprise Edition on RHEL 7 <https://docs.mattermost.com/install/install-rhel-7.html>`__
+* `Production Enterprise Edition on RHEL 6 <https://docs.mattermost.com/install/install-rhel-6.html>`__
+* `Production Enterprise Edition on Debian Stretch <https://docs.mattermost.com/install/install-debian.html>`__
+* `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
 
 Upgrading to Mattermost Enterprise Edition
 -------------------------------------------------
@@ -33,8 +33,8 @@ If you're already running Mattermost, you can Mattermost edition and version fro
 
 To check your edition and version from the web interface, open **Main Menu > About Mattermost**.
 
-- "Mattermost Enterprise Edition" indicates your system is ready to receive a license key to enable enterprise features.
-- "Mattermost Team Edition" indicates you're using the open source version and need to upgrade (per upgrade instructions below) before a license key can be applied.
+- **Mattermost Enterprise Edition** indicates you can apply a license key to enable enterprise features.
+- **Mattermost Team Edition** indicates you're using the open source version and need to upgrade (per upgrade instructions below) before a license key can be applied.
 
 Upgrading to Enterprise Edition from Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
