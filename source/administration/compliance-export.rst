@@ -10,7 +10,7 @@ This feature enables compliance exports to be produced from the System Console, 
 - Posts from plugins
 - Posts from bots/webhooks
 
-The exports include information on channel member history at the time of the message was posted. 
+The exports include information on channel member history at the time the message was posted. 
 
 From Mattermost 5.18, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded. 
 
