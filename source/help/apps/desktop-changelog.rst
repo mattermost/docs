@@ -8,6 +8,7 @@ Release v4.5
 
 - **v4.5.1, released**
  - Mattermost v4.5.1
+    - Known issue: If both “Show icon in the notification area" and "Start app on login" are enabled, the Linux app starts as a blank screen. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
 - **v4.5.0, released 2020-06-16**
  - Original v4.5.0 release
 
