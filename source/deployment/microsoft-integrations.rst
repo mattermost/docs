@@ -25,7 +25,7 @@ Office 365 SSO (E20)
 - Configure Mattermost to use your Office 365 credentials and Azure Active Directory account as a single sign-on (SSO) service, developed by Mattermost.
 - Supports Microsoft Active Directory Tenants for team creation, account creation, and SSO.
 - Receive a daily summary of calendar events, and accept or decline new events.
-- Docs: https://docs.mattermost.com/deployment/sso-office.html.
+- Docs: https://docs.mattermost.com/deployment/sso-office.html
 
 Collabora Online
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,4 +33,4 @@ Collabora Online
 - View Microsoft Word (.doc and .docx), Excel (.xls and .xlsx), and PowerPoint (.ppt and .pptx) files in Mattermost, developed by Collabora.
 - Allows multiple people to edit an Office 365 file at the same time from Mattermost, replacing the original file on the Mattermost server.
 - Self-hosted solution for file sharing and management of Office 365 files.
-- Source code + docs: https://github.com/CollaboraOnline/collabora-mattermost.
+- Source code + docs: https://github.com/CollaboraOnline/collabora-mattermost

@@ -108,3 +108,19 @@ Does the data retention job include archived channels?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Posts and attachments in archived channels are affected by the data retention job. If a post exceeds the age configured for the data retention job it will be deleted from the database.
+
+How long does it take to run a deletion query and does it affect server performance?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data retention runs the actual deletion query in batches, deleting data in blocks of 1 000 records per query. This is so the database won’t be locked up for extended periods of time with long-running queries. Keeping to this limit keeps the query down to a few milliseconds' execution time on the database itself.
+
+Each batch of data is deleted based on indexes - making the queries quick to execute on small batches. This helps the server remain fully responsive while the process is running.
+
+How do I know whether the data retention job is running/scheduled?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The job scheduler runs the data retention job based on the time specified in the configuration settings. At this time a ``DEBUG``-level log line is printed: ``Scheduling data retention job``.
+
+When a job server picks up that scheduled job for execution, a ``DEBUG``-level log line is generated: ``Worker EnterpriseDataRetention: Received a new candidate job``.
+
+When the job is complete, an ``INFO``-level log line is generated: ``Worker EnterpriseDataRetention: Job is complete``. 
