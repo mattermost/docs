@@ -92,7 +92,7 @@ Use this command to upload a new license or to replace an existing license with 
 
 **Using the System Console**
 
-1. Open **System Console > About > Edition and License** (or **System Console > OTHER > Edition and License** versions prior to 5.12).
+1. Open **System Console > About > Edition and License** (or **System Console > OTHER > Edition and License** in versions prior to 5.12).
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 
