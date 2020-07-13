@@ -27,7 +27,7 @@ Upgrading to Mattermost Enterprise Edition
 Checking your Mattermost Edition and Version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're already running Mattermost, you can Mattermost edition and version from the command line using:
+If you're already running Mattermost, you can check Mattermost edition and version from the command line using:
 
   `mattermost version`
 
