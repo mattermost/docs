@@ -7,7 +7,7 @@ Release v4.5
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.1>`_
 
 - **v4.5.1, released**
- - Mattermost v4.5.1
+ - Mattermost v4.5.1 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
     - Known issue: If both “Show icon in the notification area" and "Start app on login" are enabled, the Linux app starts as a blank screen. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
 - **v4.5.0, released 2020-06-16**
  - Original v4.5.0 release
