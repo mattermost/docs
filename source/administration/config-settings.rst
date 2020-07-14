@@ -2449,7 +2449,7 @@ Verify Signature
 
 Service Provider Identifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+The unique identifier for the Service Provider, usually the same as Service Provider Login Url. In ADFS, this must match the Relying Party Identifier.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input.                                                                     |
