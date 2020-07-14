@@ -29,20 +29,20 @@ Download Group Policy and MSI Installer files
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
 
-3. Navigate to the release page for `version v4.5.0 <https://github.com/mattermost/desktop/releases/tag/v4.5.0>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
+3. Navigate to the release page for `version v4.5.1 <https://github.com/mattermost/desktop/releases/tag/v4.5.1>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v4.5.0.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v4.5.1.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
 
 Installing Group Policy files locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-4.5.0.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-4.5.1.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
 
-2. Navigate to the unzipped ``desktop-4.5.0\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-4.5.1\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
 
