@@ -427,8 +427,7 @@ Procedure:
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
    1. @[name], @[name] and @[name] - you're up for `ice-breaker <https://docs.mattermost.com/process/training.html#ice-breaker>`__
-   2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
-   3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
+   2. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
 
 
@@ -447,7 +446,6 @@ Meeting Agenda:
 - **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
 - **Release updates** - Overview of current release status
 - **Announcements** - Short announcements that the entire team needs to know about
-- **Team updates** - Each team lists a short update of their current top priorities which can be read by meeting attendees (not actually reviewed during the meeting)
 - **Demos** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions. Proposals for items that have already been discussed outside of the meeting can also be queued here
 
@@ -473,6 +471,7 @@ Ice-breaker
    - "My home town" - sharing something interesting about where you grew up
    - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie
    - "Questions" - e.g. "What would constitute a “perfect” day for you?"
+   - Need further inspiration? Take a look `here <https://medium.com/signal-v-noise/the-25-most-popular-icebreaker-questions-based-on-four-years-of-data-893df9b27531>`__
 
 Blind spots, Inspiration, Knowledge Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
