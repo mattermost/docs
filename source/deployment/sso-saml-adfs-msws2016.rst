@@ -49,7 +49,7 @@ If you would like to set up encryption for your SAML connection, select **Browse
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_006.png
 
-7. In the **Configure Identifiers** screen, enter the **Relying party trust identifier**. The Relying party trust identifier identifies the claims being requested. Often the **SAML 2.0 SSO service URL** is used in the following format ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ and choose **Add**. 
+7. In the **Configure Identifiers** screen, enter the **Relying party trust identifier**. The Relying party trust identifier identifies the claims being requested. Often the **SAML 2.0 SSO service URL** is used in the following format ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_. Then choose **Add**. 
 This string must match the string entered in Mattermost for “Service Provider Identifier in Step X. For more information about the Relying party trust identifier and how prefix matching is applied see -
 https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/technical-reference/how-uris-are-used-in-ad-fs
 
