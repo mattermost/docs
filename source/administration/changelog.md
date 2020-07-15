@@ -11,7 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.25.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Breaking Changes
- - Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the settings will continue to work, it is encouraged to modify those settings.                           
+ - Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the settings will continue to work, it is encouraged to [modify those settings](https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust).
  
 **IMPORTANT:** If you upgrade from a release earlier than 5.24, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
