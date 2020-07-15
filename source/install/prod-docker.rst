@@ -60,7 +60,9 @@ To verify the current Docker network use the following command to list it (you c
 
 5. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`__.
 
-6. **Configure your Server** based on the `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`__.
+6. (Optional) To enable enterprise features, go to **System Console > Edition and License** and select **Start trial**.
+
+7. **Configure your Server** based on the `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`__.
 
 Once you've saved your configurations, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 
