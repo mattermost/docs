@@ -1,6 +1,6 @@
 .. _ldap-group-sync:
 
-AD/LDAP Groups (Beta) (E20)
+AD/LDAP Groups (E20)
 ===================================
 
 Overview
@@ -26,7 +26,7 @@ You can also watch a video overview about adding users to Mattermost with AD/LDA
 Pre-installation Notes
 ----------------------
 
-If you have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console > User Management > Groups (Beta)** (or **System Console > Access Control > Groups** in versions prior to 5.12). 
+If you have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console > User Management > Groups** (or **System Console > Access Control > Groups** in versions prior to 5.12). 
 
 The group filter is an optional configuration setting available under **System Console > AD/LDAP**, and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter, however it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
 
@@ -35,7 +35,7 @@ The synchronization of groups happens with the synchronization of users, during 
 Enabling AD/LDAP Group Synchronization
 --------------------------------------
 
-To enable this feature, go to **System Console > Groups (Beta)** (or **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in versions prior to 5.12).
+To enable this feature, go to **System Console > Groups** (or **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in versions prior to 5.12).
 
 
 Using AD/LDAP Group Synchronization
@@ -50,7 +50,7 @@ Additionally, you can specify the **Group** filter used to retrieve groups. If t
 
 Group synchronization occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the **AD/LDAP** configuration page).
 
-After the AD/LDAP groups have been synchronized, go to **System Console > User Management > Groups (Beta)** (or **System Console > Access Control > Groups** in versions prior to 5.12) to link and configure Mattermost groups.
+After the AD/LDAP groups have been synchronized, go to **System Console > User Management > Groups** (or **System Console > Access Control > Groups** in versions prior to 5.12) to link and configure Mattermost groups.
 
 .. image:: ../images/Group_filter.png
 
@@ -195,7 +195,7 @@ To manage membership of a private team with synchronized groups:
 
 Alternatively you can use the CLI tool to set the team to be managed by groups:
 
-1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups (Beta) > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_.
+1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``.
 3. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-enable>`_.
 
