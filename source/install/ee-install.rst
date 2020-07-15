@@ -6,7 +6,7 @@ Enterprise Install and Upgrade
 
 Mattermost Enterprise Edition is free to use in "team mode" without enterprise features enabled. There are two variants of Enterprise Edition, E10 and E20, and you can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
 
-Once you've downloaded and installed Mattermost, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a license key online <https://customers.mattermost.com/login/>`__.
+Once you've downloaded and installed Mattermost, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a `license key online <https://customers.mattermost.com/login/>`__.
 
 Installing Enterprise Edition
 -----------------------------
