@@ -40,7 +40,7 @@ T-minus 1 week
 ---------------------------------------------------------
 
 - (People Ops and New Hire) Set up payroll.
- - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
+ - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.
  - Non-US Employee/Non-Canadian Employee, complete bank info form for monthly wire transfer.
  - Non-US Resident Contractor, complete W8-BEN form.
  - US Contractor, complete W-9 form.
@@ -52,7 +52,7 @@ First Day
 - (Manager) Meets New Hire for first 1-1 meeting.
 - (People Ops) Meets New Hire for check-in meeting.
 - (Buddy) Meets New Hire for first 1-1 meeting.
-- (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
+- (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance).
 
 First Week
 ---------------------------------------------------------
@@ -98,17 +98,17 @@ Timezones
 
 When proposing meetings use famous cities as references for time (e.g. 9am Toronto time), since it's clear and `easy to web search <https://www.google.com/search?ei=8w9nXdn0HMH4-wTH1JrgCA&q=time+in+toronto&oq=time+in+toronto>`__. Avoid using "UTC", as it has been shown to cause confusion.
 
-When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
+When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York.
 
 Scheduling Recurring Group Meetings
 ---------------------------------------------------------
 
-Recurring meetings with more than two people should have one or more regular slots on the calendar reserved so that meetings can be coordinated in a straight-forward way. 
+Recurring meetings with more than two people should have one or more regular slots on the calendar reserved so that meetings can be coordinated in a straight-forward way.
 
-1. Meetings with internal colleagues should be coordinated by checking everyone's availability in G Suite Calendar. 
+1. Meetings with internal colleagues should be coordinated by checking everyone's availability in G Suite Calendar.
 2. Meetings with external colleagues should be coordinated manually with one internal person coordinating everyone's G Suite Calendars.
 
-For efficiency, when Mattermost works with advisors and consultants who engage with two or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
+For efficiency, when Mattermost works with advisors and consultants who engage with two or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart.
 
 Meeting Etiquette
 ---------------------------------------------------------
@@ -118,30 +118,33 @@ Inspired by Corey Hulen's blog article of `6 Annoying Things People Do During Vi
 1. Avoid responding to messages in chat while on a meeting:
 
   - It can be distracting when someone tries to covertly respond to a message. First, other people on call may hear your keyboard and notice you’re looking somewhere else. Second, if they are in the same channel as you, they can see the message ``[User] is typing...`` in Mattermost.
-  - **Tip**: If you feel the need to respond immediately and are easily distracted, set yourself to "Do Not Disturb" mode while in meetings.
+  - **Tip:** If you feel the need to respond immediately and are easily distracted, set yourself to "Do Not Disturb" mode while in meetings.
 
 2. Avoid answering calls or checking text messages on your cell phone:
 
-  - **Tip**: Put your phone on silent and place it out of arm’s reach, face down, so you don’t feel compelled to act.
+  - **Tip:** Put your phone on silent and place it out of arm’s reach, face down, so you don’t feel compelled to act.
 
 3. Display your video on a monitor with your camera:
 
   - If you have your video display on a second monitor, it may cause you to look away from the camera, not looking at the camera when talking. It almost feels like you’re talking to someone else in the room behind your computer monitor.
-  - **Tip**: Either move your camera, or move your video window so they are somewhat inline. Also remember to look towards the camera.
+  
+  - **Tip:** Either move your camera, or move your video window so they are somewhat inline. Also remember to look towards the camera.
 
 4. Mute audio in large video conferences when not speaking:
  
   - When not muted, others can hear random noises, like a fan running or a loud click-clack keyboard, which can be distracting.
-  - **Tip**: Set your Zoom meetings to be on mute by default via Zoom settings.
+  
+  - **Tip:** Set your Zoom meetings to be on mute by default via Zoom settings.
 
 5. Avoid fidgeting uncontrollably or spinning in your office chair:
 
-  - **Tip** If you’re in a group meeting and not doing much talking, feel free to stop your video.
+  - **Tip:** If you’re in a group meeting and not doing much talking, feel free to stop your video.
 
 6. Avoid connecting with your computer but also dialing in via cell phone:
  
   - If you connect with your computer and dial in, there are two of you in the meeting and the voice/video are not synced when you talk. In large groups, there will be a random cell phone number that no one will know who they are.
-  - **Tip**: If you're having a bad internet connection and have to dial in, exit the Zoom meeting on your computer.
+  
+  - **Tip:** If you have a bad internet connection and have to dial in, exit the Zoom meeting on your computer.
   
 7. When presenting, increase window zoom size or set Powerpoint slides to presenter mode:
 
@@ -165,7 +168,6 @@ Procedure:
 
       - Join the **Zoom** link found in the header of the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
-
 Mattermost Staff Meetings
 ----------------------------------------------------
 
@@ -174,7 +176,7 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Customer Obsession All-Hands Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is our "All Hands" meeting focused on how we're aligning the company to serve our customers. "Customer Obsession" is a key leadership principle and we emphasize its priority when we bring the company together. 
+This is our "All Hands" meeting focused on how we're aligning the company to serve our customers. "Customer Obsession" is a key leadership principle and we emphasize its priority when we bring the company together.
 
 Attendees:
 
@@ -206,7 +208,7 @@ Procedure:
 
 **During meeting:**
 
-1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Customer Obsession Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Customer Obsession Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_.
 
   .. code-block:: none
 
@@ -220,10 +222,10 @@ Procedure:
 
 3. (Chair and Co-Chairs) Run through the agenda, which comprises one or more of the following items:
 
-  - **Introduction**: One of the founders does an introduction to the meeting.
-  - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
-  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
-  - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
+  - **Introduction:** One of the founders does an introduction to the meeting.
+  - **Week 2 welcomes of new team members:** New team members introduced on their second week by their manager, or optionally by the new team member themselves.
+  - **Main topics:** Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
+  - **Feedback:** At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
 
@@ -238,7 +240,6 @@ Procedure:
     Share your thoughts on this week's meeting [here](https://goo.gl/forms/AgCNmu3JxTDmSQvp2) @here.
 
 2. (Vice Chair) Post recording to Cust Obs Prep channel, with timecode of co-founder's introduction.
-
 3. (Chair & Vice Chair) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission, and core values.
 
 Frequently Asked Questions
@@ -246,7 +247,7 @@ Frequently Asked Questions
 
 **Why don't new people introduce themselves?**
 
-Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves. 
+Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves.
 
 Product Training and Q&A Session
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -268,9 +269,7 @@ Procedure:
 **Before meeting:**
 
 1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
-
 2. (Co-Chairs) Prepares a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
-
 3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
 
 .. tip :: 
@@ -282,19 +281,14 @@ Procedure:
   - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
 
 4. (Co-Chairs) Two days prior to the training session, practices a dry run for length and structure of the session. This is optional but recommended.
-
 5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
-
 6. (Chair & Co-Chairs) Signs into their Zoom account via OneLogin to access recording and screenshare capabilities during the meeting.
 
 **During meeting:**
 
 1. (Chair) At 8:58am Palo Alto time on the day the meeting is held, posts a reminder of the session along with a Zoom link to join the call. `See example <https://community.mattermost.com/core/pl/ward3bdkii895kw9g4sigbikwo>`_.
-
 2. (Team) Joins the **Zoom** link in the header of the `Product Training and Q&A channel <https://community-release.mattermost.com/core/channels/product-training-and-qa>`_.
-
 3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
-
 4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of one or more of the following items:
 
 - **Introductions**
@@ -319,10 +313,10 @@ Procedure:
 
   - Audience: Primarily CSMs, SAs, Support, QA
   - Technical flow for the feature, data structure, etc.
-  - What to ask for when troubleshooting 
+  - What to ask for when troubleshooting
   - Q&A
 
-- (30 minutes) **Technical Deep Dive** 
+- (30 minutes) **Technical Deep Dive**
 
   - Audience: Primarily SAs, Support, QA
   - Deeper technical review of how the feature works and how it was built
@@ -336,15 +330,10 @@ Procedure:
 **After meeting:**
 
 1. (Chair) Shares link to feedback survey, tailored for each training session to measure its effectiveness. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
-
 2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29>`_, then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
-
 3. (Chair & Co-Chairs) Holds a retrospective meeting two days after the training session to review feedback and discuss what could have been improved.
-
 4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
-
 5. (Co-Chairs) Updates product documentation or other resources based on the training session.
-
 6. (Chair & Co-Chairs) Shares slides and meeting recording with Marketing team for potential GTM collateral.
 
 Sprint Planning
@@ -363,20 +352,18 @@ Triage Meeting
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets.
 - Attendees: One dev representative from each development team, at least one PM, QA team, Release Manager, and optionally leads, customer support and other Mattermost staff.
 
-Note:
-
- - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a Fix Version, Mattermost Team and Sprint. Unclear tickets may be assigned to their creator for more information.
+**Note:**
+- When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a Fix Version, Mattermost Team and Sprint. Unclear tickets may be assigned to their creator for more information.
      - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. It is the responsibility of the triage team to make sure tickets are clear before they're assigned a Fix Version.
      - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into the current release's Fix Version and the current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team with a "Triage" Fix Version and is later prioritized and assigned to the appropriate people within that team.
-     - The **Sprint** determines the time frame in which a dev is responsible for fixing the ticket.
+     - The **Sprint** determines the time frame within which a dev is responsible for fixing the ticket.
 
- - If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-6 working days.
-     - Note: if the ticket is already assigned to a team, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
+- If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-6 working days.
+     - **Note:** If the ticket is already assigned to a team, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
 
 Procedure:
 
 1. (Attendees): Join Zoom meeting link in calendar invitation at scheduled time.
-
 2. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/MM-8015?filter=15011>`__ and assign a development team, sprint, and fix version.
 
 Leads Meeting
@@ -389,22 +376,19 @@ Leads Meeting
 
 Note:
 
-- Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined. 
-
+- Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined.
     - When possible, decision-making should belong to the people closes to details.
     - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
-
 - To queue an item for Leads ask the dev or PM lead.
-
 - Leads is also used for cross-discipline Q&A.
 
     - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads.
 
 Procedure:
 
-1. (Leads): Queue items in Leads channel for discussion. 
+1. (Leads): Queue items in Leads channel for discussion.
 
-2. (Leads): During meeting discuss agenda items in sequence. 
+2. (Leads): During meeting discuss agenda items in sequence.
 
 R&D Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -421,15 +405,14 @@ The meeting includes presentations and demos, controlled agenda items (e.g. queu
 
 Procedure:
 
-1. (Vice Chair) the day before the meeting, post a reminder in `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only).
 
 ::
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
-   1. @[name], @[name] and @[name] - you're up for `ice-breaker <https://docs.mattermost.com/process/training.html#ice-breaker>`__
-   2. If you'll be giving a demo, please queue it [in the meeting notes](link) 
+   1. @[name], @[name] and @[name] - you're up for `ice-breaker <https://docs.mattermost.com/process/training.html#ice-breaker>`__.
+   2. If you'll be giving a demo, please queue it [in the meeting notes](link).
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
-
 
 2. (Team) At time of meeting:
 
@@ -443,11 +426,11 @@ Procedure:
 
 Meeting Agenda:
 
-- **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
-- **Release updates** - Overview of current release status
-- **Announcements** - Short announcements that the entire team needs to know about
-- **Demos** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
-- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions. Proposals for items that have already been discussed outside of the meeting can also be queued here
+- **Ice-breaker:** See **Meeting Elements > Ice-breaker** below for examples.
+- **Release updates:** Overview of current release status.
+- **Announcements:** Short announcements that the entire team needs to know about.
+- **Demos:** Team members show highlights of what's been completed this week. Relevant follow-ups noted.
+- **Blind spots, Inspiration, Knowledge Share:** Colleagues share areas of concern and ask questions. Proposals for items that have already been discussed outside of the meeting can also be queued here.
 
 Post Meeting:
 
@@ -466,26 +449,22 @@ Ice-breaker
 - Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc).
 
 - Examples:
-
-   - "Hobby talk" - sharing about an interesting hobby, past or present
-   - "My home town" - sharing something interesting about where you grew up
-   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie
+   - "Hobby talk" - sharing about an interesting hobby, past or present.
+   - "My home town" - sharing something interesting about where you grew up.
+   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie.
    - "Questions" - e.g. "What would constitute a “perfect” day for you?"
-   - Need further inspiration? Take a look `here <https://medium.com/signal-v-noise/the-25-most-popular-icebreaker-questions-based-on-four-years-of-data-893df9b27531>`__
+   - Need further inspiration? Take a look `here <https://medium.com/signal-v-noise/the-25-most-popular-icebreaker-questions-based-on-four-years-of-data-893df9b27531>`__.
 
 Blind spots, Inspiration, Knowledge Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Exercise to find blindspots in team thinking at the end of a meeting
-- Items for team discussion can also be queued in this section
+- Exercise to find blindspots in team thinking at the end of a meeting.
+- Items for team discussion can also be queued in this section.
 - Colleagues share areas of concern and ask questions which invariably disclose blind-spots or are an opportunity to improve communication.
 - Examples of questions:
-
-    - "What's the status on X?" // often an important item that got forgotten
-    - "Who owns X?" // reveals need for more clarity or communication
-    - "Why do we do X?" // let's us verify if a process is needed, and if we're handling it the right way
-
-
+    - "What's the status on X?" // often an important item that got forgotten.
+    - "Who owns X?" // reveals need for more clarity or communication.
+    - "Why do we do X?" // let's us verify if a process is needed, and if we're handling it the right way.
 
 -----------------------------
 Mindsets
@@ -522,11 +501,11 @@ Emotion, Assumption, and Priority
 
 Consider when two rational people disagree, the cause often comes from one of three areas:
 
-1. **Emotion** - There could be an **emotion** biasing the discussion. Just asking if this might be the case can clear the issue. It's okay to have emotions. We are humans, not robots.
+1. **Emotion:** There could be an **emotion** biasing the discussion. Just asking if this might be the case can clear the issue. It's okay to have emotions. We are humans, not robots.
 
-2. **Assumption** - People may have different underlying **assumptions** (including definitions). Try to understand each other's assumptions and get to agreement or facts when you can.
+2. **Assumption:** People may have different underlying **assumptions** (including definitions). Try to understand each other's assumptions and get to agreement or facts when you can.
 
-3. **Priorities** - Finally people can have different **priorities**. When everyone's priorities are shared and understood it's easier to find solutions that satisfy everyone's criteria.
+3. **Priorities:** Finally people can have different **priorities**. When everyone's priorities are shared and understood it's easier to find solutions that satisfy everyone's criteria.
 
 While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history.
 
@@ -540,29 +519,29 @@ An easy way to check in with team members about how things are going.
 
 Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things.
 
-Shoulder Check 
+Shoulder Check
 ---------------------------------------------
 
-When a new owner takes over a process or a project from a previous owner, there are a finite number of "blindspots" of which the original owner is aware and the new owner will need to understand. 
+When a new owner takes over a process or a project from a previous owner, there are a finite number of "blindspots" of which the original owner is aware and the new owner will need to understand.
 
-Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete. 
+Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete.
 
 This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#mini-boss-end-boss>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
 
- - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#dead-tarzan>`__). 
- - Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes. 
+ - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#dead-tarzan>`__).
+ - Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes.
 
-Even when not crashing, as part of our `Self Awareness value <https://docs.mattermost.com/process/handbook.html#values>`__, top team members will constantly be seeking feedback and review from people around the company. 
+Even when not crashing, as part of our `Self Awareness value <https://docs.mattermost.com/process/handbook.html#values>`__, top team members will constantly be seeking feedback and review from people around the company.
 
 Mini-boss, End-boss
 ---------------------------------------------
 
-After completing the initial draft of a project, there may often be more than one reviewer to approve changes. This may be for different disciplines to review the work (for example, both development and design teams reviewing code changes to the user experience) and it may also be for reviewers with different levels of experience to share feedback. 
+After completing the initial draft of a project, there may often be more than one reviewer to approve changes. This may be for different disciplines to review the work (for example, both development and design teams reviewing code changes to the user experience) and it may also be for reviewers with different levels of experience to share feedback.
 
 When reviewing significant user interface changes, code changes, responses to community or customers, or changes to systems or marketing material changes, it is ideal to have at least two reviewers:
 
-- **Mini-boss**: Reviewer less experienced in domain or Mattermost standards for the first review
-- **End-boss**: Reviewer more experienced in domain or Mattermost standards for the final review for the discipline (e.g. development, design, documentation, etc.) 
+- **Mini-boss:** Reviewer less experienced in domain or Mattermost standards for the first review.
+- **End-boss:** Reviewer more experienced in domain or Mattermost standards for the final review for the discipline (e.g. development, design, documentation, etc.). 
 
 This system has several benefits:
 
@@ -570,48 +549,48 @@ This system has several benefits:
 2. The Mini-boss learns from the End-boss feedback, understanding what was missed, and becoming a better reviewer.
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
-The naming of this term comes from video games, where a person submitting material for review must pass a "mini-boss" challenge before a "end-boss" challenge for different disciplines. 
+The naming of this term comes from video games, where a person submitting material for review must pass a "mini-boss" challenge before a "end-boss" challenge for different disciplines.
 
 Brown M&Ms
 ---------------------------------------------
 
-A "brown M&M" is a mistake that could either signal dangerous oversights in the execution of a project, or be a completely innocuous and unimportant error. When a brown M&M is found, aim to rule out a dangerous error as quickly as possible. Do fast drilldowns and systematic checks to see if more brown M&Ms are found, and if so, an entire project may need to be reviewed. 
+A "brown M&M" is a mistake that could either signal dangerous oversights in the execution of a project, or be a completely innocuous and unimportant error. When a brown M&M is found, aim to rule out a dangerous error as quickly as possible. Do fast drilldowns and systematic checks to see if more brown M&Ms are found, and if so, an entire project may need to be reviewed.
 
-Examples of brown M&Ms may include: 
+Examples of brown M&Ms may include:
 
-a) Significant mistakes in process, consistency or documentation suggesting lack of review or lack of understanding of the pre-existing system
-b) Ambiguous definitions that would make completion of a procedure difficult or unpredictable
+a) Significant mistakes in process, consistency or documentation suggesting lack of review or lack of understanding of the pre-existing system.
+b) Ambiguous definitions that would make completion of a procedure difficult or unpredictable.
 
 The name brown M&M comes from a safety technique used by the American music band Van Halen, who had to set up large, complex concert stages in third tier cities, where few local workers had experience with the safety standards vital to construction. In the `contract rider <https://en.wikipedia.org/wiki/Van_Halen#Contract_riders>`__ with each venue, Van Halen required a bowl of M&M candies with all brown M&Ms removed. Failure to provide the bowl was grounds for Van Halen's stage crew to inspect all of the local vendor's work for safety issues, because it meant the vendor had not paid attention to detail, and safety could be at risk.
 
-Correct Minimums: Medic, Field Surgeon, Plastic Surgeon 
+Correct Minimums: Medic, Field Surgeon, Plastic Surgeon
 -------------------------------------------------------
 
 When making project investment decisions, we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build".
 
-The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company and unnecessarily increasing cost and bureacracy. 
+The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company and unnecessarily increasing cost and bureacracy.
 
-The objective of optimization is to invest at minimal levels for efficiency and safety while maximizing impact. 
+The objective of optimization is to invest at minimal levels for efficiency and safety while maximizing impact.
 
 In making these trade-offs, consider the following mindsets:
 
-- **Correct Minimum 1: Medic** 
+- **Correct Minimum 1: Medic**
 
    Safely fix something that is important, broken and dangerous as fast as possible. Speed is critical - do not worry about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, **do not overbuild**.
  
    *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not delayed to be done with a longer term project, such as a website re-design. If the staging server cannot be pushed, this means manually fixing production and duplicating that change on staging, rather than trying to fix staging.
 
-- **Correct Minimum 2: Field Surgeon** 
+- **Correct Minimum 2: Field Surgeon**
 
-   Triage tasks that are important and broken but not dangerous, and fix the most important things with a minimum time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve it in two to three stages ahead. 
+   Triage tasks that are important and broken but not dangerous, and fix the most important things with a minimum time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve it in two to three stages ahead.
 
    *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
 
-- **Correct Minimum 3: Plastic Surgeon** 
+- **Correct Minimum 3: Plastic Surgeon**
 
-   Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
+   Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.
 
-   *Example:* Click-tracking traffic on about.mattermost.com and optimizing flows to direct visitors to learn about the product and downloading it is a flow that should be continually optimized. 
+   *Example:* Click-tracking traffic on about.mattermost.com and optimizing flows to direct visitors to learn about the product and downloading it is a flow that should be continually optimized.
 
 --------------------------
 Terminology
@@ -709,14 +688,14 @@ Mana
 
 An estimate of total energy, attention and effort required for a task.
 
-A one-line change to code can cost more mana than a 100-line change due to risk and the need for documentation, testing, support and all the other activities needed.
+A one-line change to code can cost more mana than a 100-line change due to risk and the need for documentation, testing, support, and all the other activities needed.
 
 Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions.
 
 MLT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The "Mattermost Leadership Team". See new handbook: https://handbook.mattermost.com/company/about-mattermost/list-of-terms#mlt
+The "Mattermost Leadership Team". See new handbook: https://handbook.mattermost.com/company/about-mattermost/list-of-terms#mlt.
 
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -736,7 +715,7 @@ New test servers that use the cloud infrastructure and can be spun up on pull re
 YouTweetInFace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A reference to the major social media platforms: 
+A reference to the major social media platforms:
 
 - YouTube ("You")
 - Twitter ("Tweet")
@@ -749,8 +728,6 @@ Windows Vista Approach
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An attempt to add functionality through a massive, complex one-time rewrite hoping to improve the architecture, but which likely ends in repeated delays, wasted effort, buggy code and limited architectural improvement (compared to rewriting the architecture in phases). This tempting, high-risk approach is named after Microsoft's "Windows Vista" operating system, one of its most famous examples.
-
-
 
 --------------------------
 Training
@@ -783,14 +760,14 @@ Developers are responsible for architecting and delivering software improvements
 Product Managers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Product managers are responsible for aligning teams to strategic priorities, leading and managing the product development process, and working effectively with marketing to bring the full benefits of Mattermost solutions to users and customers.
+Product Managers are responsible for aligning teams to strategic priorities, leading and managing the product development process, and working effectively with marketing to bring the full benefits of Mattermost solutions to users and customers.
 
 - Strategy
    - Every project and every team needs to align to strategic priorities and focus on intended outcomes developed through a deep understanding of the market, user, customers and competing products and services. Amid a flood of compelling suggestions, opinions, and data, product managers must find what's vital, and rally teams around a shared vision.
 
 - Product development
-   - Product managers lead both the functional design process (user, customer and competitor research, analysis, ideation, prioritization, functional and user experience design, functional specification, user and customer validation), and the software development process (ticketing, prioritization, roadmap design, scheduling, sprint planning, triage, functional verification, implementation validation with users and customers, documentation, and release logistics).
-   - It's the product manager's responsibility to see features shipped predictably and at high quality through planning, attention to detail and thoughtful persuasion.
+   - Product Managers lead both the functional design process (user, customer and competitor research, analysis, ideation, prioritization, functional and user experience design, functional specification, user and customer validation), and the software development process (ticketing, prioritization, roadmap design, scheduling, sprint planning, triage, functional verification, implementation validation with users and customers, documentation, and release logistics).
+   - It's the Product Manager's responsibility to see features shipped predictably and at high quality through planning, attention to detail and thoughtful persuasion.
 
 - Marketing connection
    - Delivering benefits to users and customers based on product features is a core responsibility of product managers, working in conjunction with marketing to shape messaging and positioning and delivering collateral, events, and user and customer discussions to support sales.
@@ -798,7 +775,7 @@ Product managers are responsible for aligning teams to strategic priorities, lea
 Resources
 --------------------------
 
-The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase, message your manager to request an order, whether as physical books, digital books, audiobooks or other formats.
+The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase, message your manager to request an order, whether as physical books, digital books, audiobooks, or other formats.
 
 
 Developers
@@ -824,7 +801,7 @@ Relevant Docs
 Software Strategy
 ^^^^^^^^^^^^^^^^^^^
 
-1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`__ - Required reading for business roles
+1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`__ - Required reading for business roles.
 
 System Security
 ^^^^^^^^^^^^^^^
@@ -862,14 +839,14 @@ The following table summarizes abbreviations used in the above table:
         <p>&nbsp;</p>
     </embed>
 
-Consulting Advisers 
+Consulting Advisers
 --------------------------
 
-To provide guidance, coaching and development for senior and functional leaders, we bring in experts to advise in key areas. 
+To provide guidance, coaching and development for senior and functional leaders, we bring in experts to advise in key areas.
 
 - As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
-Meetings typically take place over phone or video calls. We bring on advisers with `standard consulting agreements <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_ on either a time and materials basis or a recurring fee. 
+Meetings typically take place over phone or video calls. We bring on advisers with `standard consulting agreements <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_ on either a time and materials basis or a recurring fee.
 
 We use a range of advisers from senior board-level contributors to operational and subject-matter experts.
 
@@ -877,30 +854,30 @@ We use a range of advisers from senior board-level contributors to operational a
 Mattermost Avatar
 ---------------------------------------------------------
 
-When becoming a core committer to the Mattermost project we create a "Mattermost Avatar" for you as a fun way to recognize your new level of contribution. 
+When becoming a core committer to the Mattermost project we create a "Mattermost Avatar" for you as a fun way to recognize your new level of contribution.
 
-Mattermost avatars are caricatures of core committers in the costume of a popular culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) created for personal use, and which may be potentially used in team rosters, demonstration sites, "group photos" where avatar images from the team are collected in one image of all the characters together, and other public uses. 
+Mattermost avatars are caricatures of core committers in the costume of a popular culture character (e.g. Spiderman, Wonder Woman, Luke Skywalker, etc.) created for personal use, and which may be potentially used in team rosters, demonstration sites, "group photos" where avatar images from the team are collected in one image of all the characters together, and other public uses.
 
-To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email: 
+To have a Mattermost avatar created, you'll be invited to create a Mattermost avatar via email:
 
-1. Please use the email subject "[YOUR_FULL_NAME] as [CHARACTER_NAME]", for example "Corey Hulen as Han Solo". 
-2. Attach a clear image at least 600 pixels high and 600 pixels wide showing your character's full body in a standing pose. 
+1. Please use the email subject "[YOUR_FULL_NAME] as [CHARACTER_NAME]", for example "Corey Hulen as Han Solo".
+2. Attach a clear image at least 600 pixels high and 600 pixels wide showing your character's full body in a standing pose.
 3. Send a clear photo of your face at least 600 pixels high and 600 pixels wide facing the same direction as your character image.
 
 Notes: 
 
-1. Character should be human-sized (no giant characters).  
+1. Character should be human-sized (no giant characters).
 2. Character's appearance should be family-friendly. For example, no gory or provocative costumes.
  
-You should receive your digital Mattermost avatars by email in 6-8 weeks. 
+You should receive your digital Mattermost avatars by email in 6-8 weeks.
 
-In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project. 
+In special cases, a Mattermost avatar may be created for someone from the Mattermost community who has made an extraordinary contribution to the open source project.
 
-- Example of photo from core committer: `Corey Hulen, co-creator of the Mattermost open source project <https://cloud.githubusercontent.com/assets/177788/25364362/c2fee10c-2916-11e7-9de3-2947987a9dce.png>`__  
+- Example of photo from core committer: `Corey Hulen, co-creator of the Mattermost open source project <https://cloud.githubusercontent.com/assets/177788/25364362/c2fee10c-2916-11e7-9de3-2947987a9dce.png>`__
 
-- Example of reference image for popular culture character: `Han Solo from the movie Star Wars  <https://cloud.githubusercontent.com/assets/177788/25364375/e49415bc-2916-11e7-94ae-038a120743b3.png>`__ 
+- Example of reference image for popular culture character: `Han Solo from the movie Star Wars  <https://cloud.githubusercontent.com/assets/177788/25364375/e49415bc-2916-11e7-94ae-038a120743b3.png>`__
 
-Example of finished Mattermost Avatar: 
+Example of finished Mattermost Avatar:
 
 .. image:: https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png
 
