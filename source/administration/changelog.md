@@ -11,16 +11,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 ### Breaking Changes
- - https://github.com/mattermost/mattermost-server/pull/14640 XXX check
- - https://github.com/mattermost/mattermost-server/pull/14611 XXX check
- - https://github.com/mattermost/mattermost-server/pull/14758 XXX check
- - https://github.com/mattermost/mattermost-server/pull/14405 XXX check
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
  - Sidebar phase 2
  - Advanced logging
+ - Prefething of posts
  - Archive / Unarchive Channels
  - Added a View Group Members Modal
 
@@ -28,14 +25,22 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Improved the styling of a deactivated user's Direct Message channel footer.
+ - Show all emoji aliases on the picker.
+ - Added support for allowing copying & pasting of the emoji shortcode.
+ - Adds Online, Away, Do Not Disturb, and Offline icons to the status menu for quicker recognition.
+ - Add support for PostgreSQL & PL/pgSQL syntax highlighting.
+ - Promoted Russian and Dutch to GA.
 
 #### Plugins
- - Implemented ``http.Hijacker for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
+ - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each.
+ - Increased the width of Server Logs in System Console UI to full screen width, rather than keeping at fixed width.
+ - Implemented ``http.Hijacker`` for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
 
 #### Command Line Interface (CLI)
  - Added ``ldap idmigrate`` to mmctl.
  - Added ``user convert`` command to mmctl.
  - Added ability to remove non-members of the target team if channel move fails.
+ - Increased visibility of user and channel autocomplete suggestions when editing a long post.
 
 #### Search
  - Added ability for Elasticsearch to search terms inside links.
@@ -45,6 +50,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update/delete entities in the searchlayer.
 
 #### Administration
+ - implemented encryption for gossip protocol.
  - Server now sends a push notification to mobile clients when their session expires.
  - Clearing the Site URL in the System Console is no longer allowed.
  - Changed the patch post API endpoint authorization logic to allow the ``edit_others_posts`` permission to function independently from ``edit_own_posts``.
@@ -58,6 +64,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where Elasticsearh indexing job did not index users and/or channels older than the first post.
  - Fixed an issue where Global Relay SMTP connection timeout was not independent of regular email settings timeout.
  - Fixed an issue with a poor performance when opening More Direct Messages modal.
+ - Fixed an issue where bot username validation message was unclear as it did not mention which value was invalid.
+ - Fixed an issue where Command + K input field lost focus when window lost focus, causing search results to disappear.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
