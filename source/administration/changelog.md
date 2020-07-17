@@ -26,6 +26,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Improvements
 
+#### User Interface (UI)
+ - Improved the styling of a deactivated user's Direct Message channel footer.
+
 #### Plugins
  - Implemented ``http.Hijacker for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
 
@@ -54,6 +57,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a user's status was displayed as online while database status was offline.
  - Fixed an issue where Elasticsearh indexing job did not index users and/or channels older than the first post.
  - Fixed an issue where Global Relay SMTP connection timeout was not independent of regular email settings timeout.
+ - Fixed an issue with a poor performance when opening More Direct Messages modal.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
