@@ -11,41 +11,56 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 ### Breaking Changes
+ - https://github.com/mattermost/mattermost-server/pull/14640 XXX check
+ - https://github.com/mattermost/mattermost-server/pull/14611 XXX check
+ - https://github.com/mattermost/mattermost-server/pull/14758 XXX check
+ - https://github.com/mattermost/mattermost-server/pull/14405 XXX check
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
+ - Sidebar phase 2
+ - Advanced logging
  - Archive / Unarchive Channels
  - Added a View Group Members Modal
 
 ### Improvements
-
-#### User Interface (UI)
- - 
 
 #### Plugins
  - Implemented ``http.Hijacker for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
 
 #### Command Line Interface (CLI)
  - Added ``ldap idmigrate`` to mmctl.
+ - Added ``user convert`` command to mmctl.
+ - Added ability to remove non-members of the target team if channel move fails.
 
 #### Search
+ - Added ability for Elasticsearch to search terms inside links.
+ - Searching for a user with a leading "@" in the search term for Elasticsearch now returns results for those users.
+ - Added ability to include filtering searchs/autocompletion by roles.
+ - Added ability to search/autocomplete inactive users from Elasticsearch.
  - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update/delete entities in the searchlayer.
 
 #### Administration
  - Server now sends a push notification to mobile clients when their session expires.
+ - Clearing the Site URL in the System Console is no longer allowed.
  - Changed the patch post API endpoint authorization logic to allow the ``edit_others_posts`` permission to function independently from ``edit_own_posts``.
  - Included a response code in our "Received HTTP Request" log line.
+ - Added support for a new environment variable MM_LICENSE which can contain the contents of a license file. When set, this license takes priority over all other license sources.
 
 ### Bug Fixes
  - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
  - Fixed an issue where quick switch user search was always falling back to the database.
+ - Fixed an issue where a user's status was displayed as online while database status was offline.
+ - Fixed an issue where Elasticsearh indexing job did not index users and/or channels older than the first post.
+ - Fixed an issue where Global Relay SMTP connection timeout was not independent of regular email settings timeout.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
  - ExperimentalDataPrefetch, experimental setting for disabling prefetching of posts
+ - EnableAskCommunityLink
 
 ### Open Source Components
 
