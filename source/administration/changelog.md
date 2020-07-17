@@ -15,15 +15,37 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
+ - Archive / Unarchive Channels
+ - Added a View Group Members Modal
 
 ### Improvements
 
+#### User Interface (UI)
+ - 
+
+#### Plugins
+ - Implemented ``http.Hijacker for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
+
+#### Command Line Interface (CLI)
+ - Added ``ldap idmigrate`` to mmctl.
+
+#### Search
+ - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update/delete entities in the searchlayer.
+
+#### Administration
+ - Server now sends a push notification to mobile clients when their session expires.
+ - Changed the patch post API endpoint authorization logic to allow the ``edit_others_posts`` permission to function independently from ``edit_own_posts``.
+ - Included a response code in our "Received HTTP Request" log line.
+
 ### Bug Fixes
+ - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
+ - Fixed an issue where quick switch user search was always falling back to the database.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
+ - ExperimentalDataPrefetch, experimental setting for disabling prefetching of posts
 
 ### Open Source Components
 
