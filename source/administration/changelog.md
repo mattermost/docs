@@ -30,7 +30,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for allowing copying and pasting of emoji shortcodes.
  - Added Online, Away, Do Not Disturb, and Offline icons to the status menu for quicker recognition.
  - Increased visibility of user and channel autocomplete suggestions when editing a long post.
- - Add support for PostgreSQL & PL/pgSQL syntax highlighting.
+ - Added a flag icon to the post hover menu and update pinned and flagged post styling in the channel.
+ - Added support for PostgreSQL & PL/pgSQL syntax highlighting.
  - Expanded the width of server logs page in System Console UI to full screen width.
 
 #### Plugins
