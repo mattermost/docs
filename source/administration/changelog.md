@@ -70,6 +70,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue with a poor performance when opening More Direct Messages modal.
  - Fixed an issue where bot username validation message was unclear as it did not mention which value was invalid.
  - Fixed an issue where Command+K input field lost focus when the window lost focus, causing search results to disappear.
+ - Fixed an issue where a highlight was missing when users at-mentioned themselves, followed by period, underscore, or hyphen.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
