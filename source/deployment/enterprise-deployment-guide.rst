@@ -136,7 +136,7 @@ Migration
 
 When migrating from an existing solution it is important to plan ahead. We recommend starting with a small dataset - limited users and content - to reduce the time spent debugging and ensuring all fields are imported correctly, before taking on a major import.
 
-We provide our customers with easy to use migration solutions for many scenarios:
+We provide our customers with easy to use migration solutions for many scenarios, as listed below. Moreover, if you are looking for specific guidance and best practices on how to migrate your legacy system to Mattermost, reach out to our Trusted Partner for system migration, `BrightScout <http://www.brightscout.com/>`_, who has successfully migrated several customers from legacy systems to Mattermost, including a `U.S. federal agency <https://mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`_
 
 - Mattermost - Migrating from Mattermost Team Edition is common and only requires you to `upgrade to the most recent Enterprise Edition <https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition-to-enterprise-edition>`_ and add your license key.
 - Slack - There is support for two methods of importing data from Slack.
