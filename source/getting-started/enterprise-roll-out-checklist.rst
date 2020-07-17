@@ -174,6 +174,7 @@ Now that you have an environment in place, we recommend working through the foll
 
 - (Optional) Migrate messages and channels from legacy systems 
  - Resource: https://docs.mattermost.com/administration/migrating.html
+ - Trusted partner: `BrightScout <http://www.brightscout.com/>`_, who has successfully migrated several customers from legacy systems to Mattermost, including a `U.S. federal agency <https://mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`_
 
 2. Enable Key Integrations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
