@@ -20,52 +20,55 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Prefething of posts
  - Archive / Unarchive Channels
  - Added a View Group Members Modal
+ - Promoted Russian and Dutch languages to General Availability
 
 ### Improvements
 
 #### User Interface (UI)
  - Improved the styling of a deactivated user's Direct Message channel footer.
- - Show all emoji aliases on the picker.
- - Added support for allowing copying & pasting of the emoji shortcode.
- - Adds Online, Away, Do Not Disturb, and Offline icons to the status menu for quicker recognition.
+ - All emoji aliases are now shown on the emoji picker.
+ - Added support for allowing copying and pasting of emoji shortcodes.
+ - Added Online, Away, Do Not Disturb, and Offline icons to the status menu for quicker recognition.
+ - Increased visibility of user and channel autocomplete suggestions when editing a long post.
  - Add support for PostgreSQL & PL/pgSQL syntax highlighting.
- - Promoted Russian and Dutch to GA.
+ - Expanded the width of server logs page in System Console UI to full screen width.
 
 #### Plugins
- - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each.
- - Increased the width of Server Logs in System Console UI to full screen width, rather than keeping at fixed width.
+ - Added plugin API endpoint to run a slash command.
+ - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each plugin.
  - Implemented ``http.Hijacker`` for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
 
 #### Command Line Interface (CLI)
- - Added ``ldap idmigrate`` to mmctl.
+ - Added ``ldap idmigrate`` command to mmctl.
  - Added ``user convert`` command to mmctl.
- - Added ability to remove non-members of the target team if channel move fails.
- - Increased visibility of user and channel autocomplete suggestions when editing a long post.
+ - Added ``user deleteall`` command to mmctl.
+ - Added the ability to remove non-members of the target team if ``channel move`` fails.
 
 #### Search
  - Added ability for Elasticsearch to search terms inside links.
- - Searching for a user with a leading "@" in the search term for Elasticsearch now returns results for those users.
+ - Searching for a user with a leading "@" in the search term with Elasticsearch now returns results for those users.
  - Added ability to include filtering searchs/autocompletion by roles.
  - Added ability to search/autocomplete inactive users from Elasticsearch.
- - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update/delete entities in the searchlayer.
+ - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update and/or delete entities in the searchlayer.
+ - Implemented prefix/suffix search on Teams and Channel pages in System Console.
 
 #### Administration
  - implemented encryption for gossip protocol.
- - Server now sends a push notification to mobile clients when their session expires.
+ - Servers now send a push notification to mobile clients when a user's session expires.
  - Clearing the Site URL in the System Console is no longer allowed.
  - Changed the patch post API endpoint authorization logic to allow the ``edit_others_posts`` permission to function independently from ``edit_own_posts``.
- - Included a response code in our "Received HTTP Request" log line.
- - Added support for a new environment variable MM_LICENSE which can contain the contents of a license file. When set, this license takes priority over all other license sources.
+ - Included a response code in the "Received HTTP Request" log line.
+ - Added support for a new environment variable ``MM_LICENSE`` which can contain the contents of a license file. When set, this license takes priority over all other license sources.
 
 ### Bug Fixes
  - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
  - Fixed an issue where quick switch user search was always falling back to the database.
- - Fixed an issue where a user's status was displayed as online while database status was offline.
+ - Fixed an issue where a user's status was displayed as online while the database status was displayed as offline.
  - Fixed an issue where Elasticsearh indexing job did not index users and/or channels older than the first post.
- - Fixed an issue where Global Relay SMTP connection timeout was not independent of regular email settings timeout.
+ - Fixed an issue where Global Relay SMTP connection timeout was not independent of the regular SMTP email settings timeout.
  - Fixed an issue with a poor performance when opening More Direct Messages modal.
  - Fixed an issue where bot username validation message was unclear as it did not mention which value was invalid.
- - Fixed an issue where Command + K input field lost focus when window lost focus, causing search results to disappear.
+ - Fixed an issue where Command+K input field lost focus when the window lost focus, causing search results to disappear.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
