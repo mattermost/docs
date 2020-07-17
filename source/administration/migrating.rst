@@ -5,7 +5,7 @@ Thousands of organizations are moving to Mattermost for powerful, flexible, and 
 
 This guide summarizes different approaches to migrating from one Mattermost deployment to another and migrating from other messengers (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
 
-If you are looking for guidance and best practices on how to migrate your legacy system to Mattermost, reach out to our Trusted Partner for system migration - `BrightScout <http://www.brightscout.com/>`_.
+If you are looking for guidance and best practices on how to migrate your legacy system to Mattermost, reach out to our Trusted Partner for system migration, `BrightScout <http://www.brightscout.com/>`_, who has successfully migrated several customers from legacy systems to Mattermost, including a `U.S. federal agency <https://mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`_.
 
 .. contents::
   :backlinks: top
