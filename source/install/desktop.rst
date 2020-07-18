@@ -151,7 +151,7 @@ To resolve this issue, you can reset the desktop app screen location by deleting
 **To reset the desktop app screen location**
 
 1. If the desktop app is running, right-click the Mattermost icon in the task bar and click **Close Window**.
-2. Open Windows File Explorer, and navigate to the **%APPDATA%\Mattermost** folder.
+2. Open Windows File Explorer, and navigate to the **%APPDATA%\\Mattermost** folder.
 3. Delete the file ``bounds-info.json``.
 
 Desktop App constantly refreshes the page
@@ -167,7 +167,7 @@ Desktop App constantly asks to log in to Mattermost server
 
 This issue can occur after a crash or unexpected shutdown of the desktop app that causes the app data to be corrupted. To resolve the issue:
 
-- Windows: Open Windows File Explorer, navigate to the **%APPDATA%\Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Windows: Open Windows File Explorer, navigate to the **%APPDATA%\\Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 - Mac: Open Finder, navigate to the **~/Library/Application Support/Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 - Linux: Open the file manager, navigate to the **~/.config/Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 
