@@ -5,13 +5,13 @@ Deploy Mattermost on Docker
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback and improvements are welcome and greatly appreciated. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst>`__.
 
-Deploy Mattermost using a multi-node production configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
+Deploy Mattermost using a multi-node configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
 
 For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`__.
 
 If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click **Edit** at the top of this page.
 
-Production Docker Setup on Ubuntu
+Docker Setup on Ubuntu
 ----------------------------------------------------
 
 1. **Install Docker** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`__ or these instructions:
@@ -32,7 +32,7 @@ Production Docker Setup on Ubuntu
       sudo curl -L "https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
 
-3. **Deploy the Mattermost Production Docker** setup by running:
+3. **Deploy the Mattermost Docker** setup by running:
 
    .. code:: bash
    
@@ -60,27 +60,29 @@ To verify the current Docker network use the following command to list it (you c
 
 5. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`__.
 
-6. (Optional) To enable enterprise features under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`__ or `subscription license file <https://about.mattermost.com/pricing/>`__ received via email.
+6. (Optional) To enable enterprise features, go to **System Console > Edition and License** and select **Start trial**.
 
 7. **Configure your Server** based on the `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`__.
 
-Additional Guides:
+Once you've saved your configurations, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
+
+Additional guides:
 
 - **Start, Stop, and Remove Containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping-docker>`__
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker#aws>`__
 
 
-Production Docker Setup on Arch Linux
+Docker Setup on Arch Linux
 -------------------------------------
 
 To install on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost>`__ on the Arch Linux wiki.
 
 
-Production Docker Setup on macOS
+Docker Setup on macOS
 --------------------------------
 
-You can run a production deployment on macOS by `installing Docker Compose using the online guide <https://docs.docker.com/docker-for-mac/>`__ then following the above instructions.
+You can run a deployment on macOS by `installing Docker Compose using the online guide <https://docs.docker.com/docker-for-mac/>`__ then following the above instructions.
 
 Other Options
 --------------

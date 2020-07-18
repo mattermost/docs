@@ -35,3 +35,4 @@ Importing additional types of posts is not yet supported.
 .. include:: bulk-loading-about.rst
 .. include:: bulk-loading-data.rst
 .. include:: bulk-loading-data-format.rst
+.. include:: bulk-loading-troubleshooting.rst

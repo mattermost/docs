@@ -92,7 +92,7 @@ Channels (Experimental)
 
 Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
-Groups (Beta)
+Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -327,6 +327,16 @@ The number of seconds to wait for a response from the database after opening a c
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Disable Database Search
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Disables the use of the database to perform searches. Should only be used when other `search engines  <https://mattermost.com/pl/default-search-engine>`_ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
+
+**False:** Database search is not disabled. 
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
 +-------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Connection Lifetime
@@ -1102,6 +1112,18 @@ Session Lengths
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
 
+Extend session length with activity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Improves user experience by extending sessions and keeping users logged in if they are active in their Mattermost apps. 
+
+**True**: Sessions will be automatically extended when the user is active in their Mattermost client. Users sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below.
+
+**False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
@@ -1109,7 +1131,7 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 180`` with numerical input.            |
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
 +--------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days)
@@ -1148,6 +1170,8 @@ Session Idle Timeout (minutes)
 The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
+
+This setting does not take effect if ``ExtendSessionLengthWithActivity`` is set to ``true``.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes": 43200`` with numerical input.        |
@@ -1306,7 +1330,9 @@ So you don't miss messages, please make sure to change this value to an email yo
 
 Terms of Service link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+Configurable link to Terms of Service your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+
+In version 5.17 and later, this setting does not change the terms of service link in **Main Menu > About Mattermost**, which refers to the Mattermost Terms of Service.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                 |
@@ -1314,7 +1340,9 @@ Configurable link to Terms of Service your organization may provide to end users
 
 Privacy Policy link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configurable link to Privacy Policy your organization may provide to end users. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+
+In version 5.17 and later, this setting does not change the privacy policy link in **Main Menu > About Mattermost**, which refers to the Mattermost Privacy Policy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                         |
@@ -1606,7 +1634,7 @@ Push Notification Contents
 **Full message content fetched from the server on receipt** (*Available in Enterprise Edition E20*): The notification payload relayed through APNS or FCM contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively. |
+| This feature's ``config.json`` setting is ``"PushNotificationContents": "full"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively.    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Announcement Banner
@@ -1715,7 +1743,7 @@ Link previews are requested by the server, meaning the Mattermost server must be
 **False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false``.                                                       |
+| This feature's ``config.json`` setting is ``"EnableLinkPreviews": true`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable SVGs
@@ -1737,6 +1765,28 @@ Enable Latex Rendering
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Local Mode
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables local mode for mmctl.
+
+**False**: Prevents local mode for mmctl.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLocalMode": false`` with options ``true`` and ``false``.                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Local Mode Socket Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The path for the socket that the server will create for mmctl to connect and communicate through local mode. If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
+
+If nothing is specified, the default path that both the server and mmctl assumes is ``/var/tmp/mattermost_local.socket``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LocalModeSocketLocation": "/var/tmp/mattermost_local.socket"`` with string input.                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
@@ -2208,6 +2258,16 @@ Email notifications will be sent to this email address, and this email address m
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Profile Picture Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
+
+The Mattermost server will replace the user’s profile image upon login (not at the sync interval as with other attributes). The sync will not occur if the current Mattermost profile image matches the image associated with that user in AD/LDAP.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PictureAttribute": ""`` with string input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Username Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
@@ -2385,6 +2445,14 @@ Verify Signature
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Service Provider Identifier
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The unique identifier for the Service Provider, usually the same as Service Provider Login Url. In ADFS, this must match the Relying Party Identifier.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Service Provider Login URL
@@ -2720,7 +2788,7 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 Directory (tenant) ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This value is the ID of the application's AAD directory. 
+This value is the ID of the application's AAD directory.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input.                                                                                   |
@@ -3495,7 +3563,7 @@ Changes made when hardened mode is enabled:
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``.                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable AD/LDAP Group Sync (Beta)
+Enable AD/LDAP Group Sync
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20 and higher*
 
@@ -3631,7 +3699,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Disabled:** Users cannot access the experimental channel sidebar feature set.  
+**Disabled:** Users cannot access the experimental channel sidebar feature set.
 
 **Enabled (Default On):** Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
@@ -3821,10 +3889,10 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 
 Read Only Config
 ^^^^^^^^^^^^^^^^
+
 **True**: Changes made to settings in the System Console are ignored.
 
 **False**: Changes made to settings in the System Console are written to ``config.json``.
-
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
@@ -3897,7 +3965,7 @@ Enable OpenTracing
 **True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
 Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
 
-By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported. 
+By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported.
 
 **False**: OpenTracing is not enabled.
 
@@ -4423,7 +4491,7 @@ This setting is used to maximize performance for large Enterprise deployments.
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Elasticsearch Settings (Beta)
+Elasticsearch Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Post Index Replicas
@@ -4502,6 +4570,57 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
 +-------------------------------------------------------------------------------------------------------+
+
+Bleve Settings (Experimental)
+~~~~~~~~~~~~~~~
+
+Index Dir
+^^^^^^^^^^^^^^^^^^^^^^^
+Directory path to use for storing bleve indexes.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Enable Indexing
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** The indexing of new posts occurs automatically. Search queries will not use bleve search until "Enable Bleve for search queries" is enabled.
+
+**False:** The indexing of new posts does not occur automatically. 
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Enable Searching
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Search queries will use bleve search.
+
+**False:** Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Autocomplete
+^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Autocomplete queries will use bleve search.
+
+**False:** Autocomplete queries will not use bleve search. 
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
+
+
+Bulk Indexing Time Window Seconds
+^^^^^^^^^^^^^^^^^^^^^^^
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
++-------------------------------------------------------------------------------------------------------------+
+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~

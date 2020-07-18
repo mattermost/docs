@@ -2,11 +2,50 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Internet Explorer (IE11) is removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+   PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
+   
+.. important::
+   Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+
+.. important::
+   Starting with mobile app v1.33.0 releasing on July 16th, users connecting to server versions below v5.19 may experience compatibility bugs with how attachments, link previews, reactions and embed data are displayed on their mobile device.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.25.0                                            | Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the        |
+|                                                    | settings will continue to work, it is encouraged that you                                                                                                        |
+|                                                    | `modify those settings <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust>`_.                                         | 
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v5.24.0                                            | A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost   |
+|                                                    | apps. It is recommended to enable this setting to improve user experience if compliant with your organizations policies.                                         |
+|                                                    | `Learn more here <https://mattermost.com/blog/session-expiry-experience>`_.                                                                                      |
+|                                                    +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+|                                                    | The ``mattermost_http_request_duration_seconds`` histogram metric (in Enterprise Edition) has been removed. This information was already captured by             |
+|                                                    | ``mattermost_api_time``, which also contains the api handler name, HTTP method, and the response code.                                                           |
+|                                                    |                                                                                                                                                                  |
+|                                                    | As an example, if you are using                                                                                                                                  |
+|                                                    | ``rate(mattermost_http_request_duration_seconds_sum{server=~"$var"}[5m]) /   rate(mattermost_http_request_duration_seconds_count{server=~"$var"}[5m])``          |
+|                                                    | to measure average call duration, it needs to be replaced with                                                                                                   |
+|                                                    | ``sum(rate(mattermost_api_time_sum{server=~"$var"}[5m])) by (instance) /   sum(rate(mattermost_api_time_count{server=~"$var"}[5m])) by (instance)``.             |
+|                                                    +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+|                                                    | Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in  |
+|                                                    | environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially |
+|                                                    | in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable       |
+|                                                    | during this time.                                                                                                                                                |          
+|                                                    |                                                                                                                                                                  |
+|                                                    | The migration is a single line of SQL and can be applied directly to the database through the MySQL/PSQL command line clients if you prefer to decouple this     |
+|                                                    | from restarting the Mattermost server. It is fully backwards compatible so the schema change can be applied to any previous version of Mattermost without issue. |
+|                                                    | During the time the schema change is running (~30s per million rows in the Reactions table), if end users attempt to react to posts, the emoji reactions will    | 
+|                                                    | not load for end users.                                                                                                                                          |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: ``ALTER TABLE Reactions DROP PRIMARY KEY, ADD PRIMARY KEY (PostId, UserId, EmojiName);``                                                                  |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Postgres: ``ALTER TABLE reactions DROP CONSTRAINT reactions_pkey, ADD PRIMARY KEY (PostId, UserId, EmojiName);``                                                 |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                  
+|                                                    | On mobile apps, users will not be able to see LDAP group mentions (E20 feature) in the autocomplete dropdown. Users will still receive notifications if they are |
+|                                                    | part of an LDAP group. However, the group mention keyword will not be highlighted.                                                                               |  
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.22.0                                            | Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in  |
 |                                                    | environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially |
 |                                                    | in advance of the upgrade. Since this migration happens before the Mattermost Server is fully launched, non-High Availability installs will be unreachable       |

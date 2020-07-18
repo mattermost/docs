@@ -6,7 +6,7 @@ Options to protect your Mattermost server from different types of failures range
 Backup
 ------
 
-The state of your Mattermost server is contained in multiple data stores that need to be separately backed-up and restored to fully recover your system from a failure. 
+The state of your Mattermost server is contained in multiple data stores that need to be separately backed up and restored to fully recover your system from failure. 
 
 To backup your Mattermost server: 
 
@@ -25,7 +25,9 @@ To backup your Mattermost server:
      - If you use local storage using a non-default directory specified in the ``Directory`` setting in ``config.json``, back up files in that location.
      - If you store your files in S3, you can typically keep the files where they are located without backup.
      
-To restore a Mattermost instance from backup, restore your database, ``config.json`` file and optionally locally stored user files into the locations from which they were backed up. 
+Please note that to make a 'clean' backup you need to stop Mattermost during the duration of the backup otherwise the database and files may become out of sync.
+
+To restore a Mattermost instance from backup, restore your database, ``config.json`` file, and optionally locally stored user files into the locations from which they were backed up. 
 
 Disaster Recovery 
 ---------------------------
@@ -36,19 +38,19 @@ There are two common approaches:
 
 Automated backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Automating backup up a Mattermost server provides a copy of the server's state at a particular point in time, which can be restored if a failure in future leads to loss of data. Options include: 
+Automating backup for a Mattermost server provides a copy of the server's state at a particular point in time, which can be restored if a failure in the future leads to loss of data. Options include: 
 
-- Automation to periodically backup the Mattermost server, which may include all the components listed above or a subset depending on what you choose to protect.
+- Automation to periodically back up the Mattermost server, which may include all the components listed above or a subset depending on what you choose to protect.
 - Automation to restore a server from backup, or deploy a new server, to reduce recovery time.
 - Automation to verify a backup has been successfully produced to protect against backup automation failures.
 - Storing backups off-site, to protect against physical loss of onsite systems.
 
-Recoverying from a failure using a backup is typically a manual process and will incur downtime. The alternative is to automate recovery using a high availability deployment. 
+Recovering from a failure using a backup is typically a manual process and will incur downtime. The alternative is to automate recovery using a high availability deployment. 
 
 High availability deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deploying Mattermost in `high availability mode <https://docs.mattermost.com/deployment/cluster.html>`__ allows for fast, automated recovery from a component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include: 
+Deploying Mattermost in `high availability mode <https://docs.mattermost.com/deployment/cluster.html>`__ allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include: 
 
 - Deploying redundant Mattermost servers, to protect against failures in the Mattermost server.
 - Deploying redundant databases, to protect against failures in the database.
@@ -97,10 +99,6 @@ Once IT is contacted about an SSO outage issue, they can temporarily change a us
 If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 It is highly important after the outage to switch everyone back to SSO from email-password to maintain consistency and security.
-
-
-
-
 
 
 

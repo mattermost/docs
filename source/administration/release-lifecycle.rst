@@ -3,11 +3,24 @@ Release Lifecycle
 
 What is a Release Lifecycle?
 ------------------------------------
-During each monthly release, Mattermost backports security and major bug fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/administration/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports.
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/administration/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
+
+.. important::
+  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 5.30        | Feature               |  2020-12-16              | 2021-03-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 5.29        | Quality               |  2020-11-16              | 2021-02-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 5.28        | Feature               |  2020-10-16              | 2021-01-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 5.27        | Quality               |  2020-09-16              | 2020-12-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 5.26        | Feature               |  2020-08-16              | 2020-11-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.25        | Quality               |  2020-07-16              | 2021-04-15               | Yes                      |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.24        | Feature               |  2020-06-16              | 2020-09-15               |                          |

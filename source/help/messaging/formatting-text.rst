@@ -8,7 +8,7 @@ For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mat
 Emojis
 ------
 
-Open the emoji autocomplete by typing ``:`` followed by two characters of the word describing the emoji. A full list of emojis can be found `here <http://www.emoji-cheat-sheet.com/>`__. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
+Open the emoji autocomplete by typing ``:`` followed by two characters of the word describing the emoji. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
 
 ``:smile: :+1: :sheep:``
 
@@ -181,7 +181,7 @@ Supported languages are:
 ``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
 ``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
 ``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
-``sql``, ``swift``, ``tex``, ``thor``, ``v``, ``vb``, ``vbnet``, ``vbs``,
+``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
 ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
 
 Example:
@@ -257,7 +257,7 @@ Inline image with hover text
 
   .. raw:: html
 
-    <img src="../../_images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
+    <img src="../../images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
 
 Inline image with link
   Note the extra set of square brackets.
@@ -269,9 +269,8 @@ Inline image with link
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
-     :alt: MatterMost Icon 76X76
-    :alt: Mattermost
     :target: https://github.com/mattermost/mattermost-server
+   
 
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
@@ -282,7 +281,7 @@ Inline image displayed at 50 pixels wide and 76 pixels high
 
   .. raw:: html
 
-    <img alt="Mattermost" src="../../_images/icon-50x76.png" title="Mattermost Icon">
+    <img alt="Mattermost" src="../../images/icon-50x76.png" title="Mattermost Icon">
 
 Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. code-block:: none
@@ -293,7 +292,7 @@ Inline image displayed at 50 pixels wide and the height adjusted to suit
 
   .. raw:: html
 
-    <img src="../../_images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
+    <img src="../../images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
 
 Lines
 -----
@@ -338,7 +337,9 @@ Renders as:
 Math Formulas
 -------------
 
-Create formulas by using LaTeX in a ``latex`` `Code Block`_
+Create formulas by using LaTeX in a ``latex`` `Code Block`_. 
+
+Note: This feature is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
 .. code-block:: none
 

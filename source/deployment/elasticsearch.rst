@@ -16,7 +16,7 @@ Overview
 
 Elasticsearch allows you to search large volumes of data quickly, in near real time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated. 
 
-Elasticsearch v5.x and v6.x are supported.
+Elasticsearch v5.x, v6.x, and v7.x are supported.
 
 When to Use Elasticsearch
 ~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -17,4 +17,5 @@ Deployment Guides
    :maxdepth: 2
    :glob:
 
+   /deployment/enterprise-deployment-guide*
    /deployment/mobile-app-deployment*

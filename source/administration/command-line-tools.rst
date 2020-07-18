@@ -70,7 +70,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
   .. code-block:: bash
 
     cd /opt/gitlab/embedded/service/mattermost
-    sudo -u mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
 
 .. note::
   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
@@ -2674,3 +2674,16 @@ CLI Documentation:
       -version                          Display the current of the Mattermost platform
 
       -help                             Displays this help page
+
+
+Troubleshooting
+^^^^^^^^^^^^^^^^^
+
+Executing a command hangs and doesn't complete
+------------------------------------------------
+
+If you have Bleve search indexing enabled, temporarily disable it in **System Console > Experimental > Bleve** and run the command again. You can also optionally use the new `mmctl Command Line Tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_.
+
+Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
+
+If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ to get help.
