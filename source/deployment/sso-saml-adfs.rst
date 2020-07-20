@@ -48,7 +48,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.PNG
 
-7. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+7. In the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
 
 	.. image:: ../../source/images/adfs_8_configure_url.PNG
 
@@ -84,10 +84,10 @@ Create Claim Rules
 	.. image:: ../../source/images/adfs_15_choose_rule_type.PNG
 
 3. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, select **Active Directory** as the **Attribute Store** and do the following:
-  - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Email``
-  - From the **LDAP Attribute column**, select ``Given-Name``. From the **Outgoing Claim Type**, type ``FirstName``
-  - From the **LDAP Attribute column**, select ``Surname``. From the **Outgoing Claim Type**, type ``LastName``
-  - From the **LDAP Attribute column**, select ``SAM-Account-Name``. From the **Outgoing Claim Type**, type ``Username``
+  - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Email``.
+  - From the **LDAP Attribute column**, select ``Given-Name``. From the **Outgoing Claim Type**, type ``FirstName``.
+  - From the **LDAP Attribute column**, select ``Surname``. From the **Outgoing Claim Type**, type ``LastName``.
+  - From the **LDAP Attribute column**, select ``SAM-Account-Name``. From the **Outgoing Claim Type**, type ``Username``.
 
 For Mattermost 3.4 and later, the *FirstName* and *LastName* attributes are optional.
 
@@ -104,9 +104,9 @@ Note that the entries in the **Outgoing Claim Type** column can be chosen to be 
 	.. image:: ../../source/images/adfs_17_transformation_of_incoming_claim.PNG
 
 6. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, then
-  - Select *Name ID* for the **Incoming claim type**
-  - Select *Unspecified* for the **Incoming name ID format**
-  - Select *E-Mail Address* for the **Outgoing claim type**
+  - Select *Name ID* for the **Incoming claim type**.
+  - Select *Unspecified* for the **Incoming name ID format**.
+  - Select *E-Mail Address* for the **Outgoing claim type**.
 
 Moreover, select the **Pass through all claim values** option. Then click **Finish**.
 
@@ -127,7 +127,7 @@ Export Identity Provider Certificate
 
 Next, we export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
 
-1. In ADFS management sidebar, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate**
+1. In ADFS management sidebar, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate**.
 
 	.. image:: ../../source/images/adfs_19_export_idp_cert_start.PNG
 
@@ -149,25 +149,23 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 	.. image:: ../../source/images/adfs_21-3_export_idp_cert_wizard.PNG
 
-You’re now about to finish configuring SAML for Mattermost!
-
 Configure SAML Sign-in for Mattermost
 --------------------------------------
 
-Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``. 
+Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``.
 
-Next, start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, paste metadata URL in the **Identity Provider Metadata URL** field, and then select **Get SAML Metadata from IdP**.
+Next, start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, paste the metadata URL in the **Identity Provider Metadata URL** field, and then select **Get SAML Metadata from IdP**.
 
 This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally.
 
 Alternatively you can enter the following fields manually:
-  - **SAML SSO URL:** **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
-  - **Identity Provider Issuer URL:** ``Relying party trust identifier`` from ADFS you specified earlier.
-  - **Identity Provider Public Certificate:** ``X.509 Public Certificate`` you downloaded earlier.
+  - **SAML SSO URL**: **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
+  - **Identity Provider Issuer URL**: ``Relying party trust identifier`` from ADFS you specified earlier.
+  - **Identity Provider Public Certificate**: ``X.509 Public Certificate`` you downloaded earlier.
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
 
-2. Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
+2. Configure Mattermost to verify the signature. The **Service Provider Login URL** is the SAML 2.0 SSO service URL you specified in ADFS earlier.
 
 	.. image:: ../../source/images/adfs_23_mattermost_verification.PNG
 
@@ -189,11 +187,11 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 7. Click **Save**.
 
-8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
+If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
-It is also recommended to post an announcement about how the migration will work to users.
+It's also recommended to post an announcement about how the migration will work to users.
 
 You may also configure SAML for ADFS by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
