@@ -56,7 +56,7 @@ Embedding Mattermost in web applications using an iframe
 
 To embed Mattermost in an iframe update your `NGINX configuration<https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server>` to strip out the security policy settings in the HTTP header.
 
-    Replace all occurences of the following line in your proxy config:
+    Replace all occurrences of the following line in your proxy config:
 
 .. code-block:: none
         proxy_set_header X-Frame-Options SAMEORIGIN
@@ -87,6 +87,5 @@ Mobile applications offering Mattermost with React Native components:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - https://github.com/mattermost/mattermost-mobile 
-
 
 
