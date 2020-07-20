@@ -74,7 +74,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
     Enable them from **System Console > Integrations > Custom Integrations** (or **System Console > Integrations > Integration Management** in versions prior to 5.12) or ask your Mattermost System Admin.
 
   .. note::
-    Custom command URLs do not support basic authentication as the slash commands provide their own authentication level. 
+    Custom command URLs do not support basic authentication as the slash commands provide their own authentication level.
     
 6 - (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 
