@@ -186,4 +186,4 @@ Checking your SMTP server is reachable
   As we're not installing telnet by default on the official docker images you either need to use ``ping`` on those or install telnet yourself either directly or by modifying the Dockerfile.
 
 .. note::
-  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_. To submit an improvement or correction to this page, click  **Edit** at the top of this page.
+  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_. To submit an improvement or correction to this page, click **Edit** in the top-right corner of the page.
