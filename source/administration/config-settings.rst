@@ -92,7 +92,7 @@ Channels (Experimental)
 
 Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
-Groups (Beta)
+Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -2447,6 +2447,14 @@ Verify Signature
 | This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Service Provider Identifier
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The unique identifier for the Service Provider, usually the same as Service Provider Login Url. In ADFS, this must match the Relying Party Identifier.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Service Provider Login URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
@@ -3555,7 +3563,7 @@ Changes made when hardened mode is enabled:
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``.                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable AD/LDAP Group Sync (Beta)
+Enable AD/LDAP Group Sync
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20 and higher*
 
