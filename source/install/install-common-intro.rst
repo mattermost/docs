@@ -7,4 +7,4 @@ For the database, you can install either MySQL or PostgreSQL. The proxy is NGINX
   
   For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/help/getting-started/managing-members.html#inviting-team-members>`__ and other `getting started information <https://docs.mattermost.com/guides/user.html#getting-started>`__.
   
-  To submit an improvement or correction to this page, click  **Edit** at the top of this page.
+  To submit an improvement or correction to this page, click **Edit** in the top-right corner of the page.
