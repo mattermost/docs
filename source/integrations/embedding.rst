@@ -54,7 +54,7 @@ Embedding Mattermost in web applications using an iframe
 
 .. warning:: Any web application embedded into another using an iframe is at risk of security exploits, since the outer application intercepts all user input into the embedded application, an exploit known as `Click-Jacking <https://en.wikipedia.org/wiki/Clickjacking>`__. By default, Mattermost disables embedding. If you choose to embed Mattermost using the following instructions we highly recommend it is done only on a private network that you control. 
 
-To embed Mattermost in an iframe update your `NGINX configuration<https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server>` to strip out the security policy settings in the HTTP header.
+To embed Mattermost in an iframe update your `NGINX configuration <https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server>`_ to strip out the security policy settings in the HTTP header.
 
     Replace all occurrences of the following line in your proxy config:
 
@@ -87,5 +87,4 @@ Mobile applications offering Mattermost with React Native components:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - https://github.com/mattermost/mattermost-mobile 
-
 
