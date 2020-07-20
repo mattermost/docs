@@ -44,10 +44,10 @@ If you're upgrading a server that's already running a supported version, See [Up
       1. Run `tar -xvzf mattermost-team-X.X.X-linux-amd64.tar.gz` to decompress the upgraded version and replace the current version of Mattermost on disk, where `X.X.X` is the version number to which you are upgrading.
 5. Restore the state of your server
       1. Copy the backed up version of `config.json` in place of the default `config.json`.
-6. Start your server and address any setting changes relevant in the latest version of Mattermost.
+6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the **System Console** and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
-7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports
       1. `cd {install-path}`
       2. `sudo setcap cap_net_bind_service=+ep ./bin/mattermost`
 
@@ -98,7 +98,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 6. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the **System Console** and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
-7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports
 
       1. ``cd {install-path}``
       2. ``sudo setcap cap_net_bind_service=+ep ./bin/platform``
@@ -107,11 +107,11 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 ## Upgrade Team Edition to 3.0.3
 
-Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
+In Mattermost 3.0 users can maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign-up and team joining process.
 
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
-1. Download Mattermost Team Edition 3.0.3
+1. Download Mattermost Team Edition 3.0.3:
       1. Run `platform -version` to confirm the current version of your Mattermost server is `v2.2.0`, `v2.1.0`, or `v2.0.0`. If not, please [upgrade to `v2.0.0`](https://docs.mattermost.com/administration/legacy-upgrade.html#upgrade-team-edition-to-2-2-x-and-earlier).
       2. Run `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz` to download the appropriate new version.
 2. Stop the Mattermost server
@@ -145,8 +145,8 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the **System Console** and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports
+9. Test the system is working by going to the URL of the server with an `https://` prefix
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 10. After the Mattermost 3.0 upgrade, users with duplicate accounts must follow the instructions in the upgrade email to:
       1. Log in to teams on which duplicate accounts were created.
@@ -180,13 +180,13 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the **System Console** and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports
+9. Test the system is working by going to the URL of the server with an `https://` prefix
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 ## Upgrade Enterprise Edition to 3.0.3
 
-Mattermost 3.0 lets users maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign up and team joining process.
+In Mattermost 3.0 users can maintain a single account across multiple teams on a Mattermost server. This means one set of credentials, one place to configure all account settings, and a more streamlined sign up and team joining process.
 
 If your Mattermost server has duplicate accounts (users with multiple accounts in multiple teams with the same email address or username), you need to understand the 3.0 upgrade process in detail and take special steps to upgrade successfully.
 
@@ -223,8 +223,8 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the **System Console** and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports
+9. Test the system is working by going to the URL of the server with an `https://` prefix
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 10. After the Mattermost 3.0 upgrade, users with duplicate accounts must follow the instructions in the upgrade email to:
       1. Log in to teams on which duplicate accounts were created.
@@ -260,8 +260,8 @@ For any issues, Mattermost Enterprise Edition subscribers and trial license user
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the **System Console** and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
-8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports.
-9. Test the system is working by going to the URL of the server with an `https://` prefix.
+8. If you have TLS set up on your Mattermost server, run `sudo setcap cap_net_bind_service=+ep ./bin/platform` in your Mattermost directory to allow Mattermost to bind to low ports
+9. Test the system is working by going to the URL of the server with an `https://` prefix
       1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 For any issues, Mattermost Enterprise Edition subscribers and trial license users can email support@mattermost.com.
