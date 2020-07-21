@@ -316,7 +316,7 @@ This error message applies to various validation issues. The log message provide
 
 The Active Directory ObjectGUID attribute LDAP display name ``objectGUID`` is a 16 byte array which can be displayed in different ways:
 
-- The ``ldapsearch`` linux command displays it as base 64: ``Hrz/HqNKnU+lCNTYHx9Ycw==``. This is also the format used in LDIF files.
+- The ``ldapsearch`` Linux command displays it as base64: ``Hrz/HqNKnU+lCNTYHx9Ycw==``. This is also the format used in LDIF files.
 
 - The `LDAP Golang package we use <https://github.com/go-ldap/ldap>`__ shows the value as hexidecimal (base 16) array with each byte separated by a backslash: ``\1e\bc\ff\1e\a3\4a\9d\4f\a5\08\d4\d8\1f\1f\58\73``
 
