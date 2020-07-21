@@ -314,7 +314,7 @@ This error message applies to various validation issues. The log message provide
 ``Why does the objectGUID of a user in Mattermost differ from what we're seeing in ADFS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Active Directory Object-Guid attribute LDAP display name ``objectGUID`` is a 16 byte array which can be displayed in different ways:
+The Active Directory ObjectGUID attribute LDAP display name ``objectGUID`` is a 16 byte array which can be displayed in different ways:
 
 - The ``ldapsearch`` linux command displays it as base 64: ``Hrz/HqNKnU+lCNTYHx9Ycw==``. This is also the format used in LDIF files.
 
