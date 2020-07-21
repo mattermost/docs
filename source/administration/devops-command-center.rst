@@ -64,14 +64,19 @@ Viewing and creating playbooks
 
 Select **!** in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
 
-Stages and checklists
-~~~~~~~~~~~~~~~~~~~~~~
+Public and Private incidents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Playbooks contain stages and checklists: 
-- Stages represent the incident process executed by checklist items. When all the checklist items from a stage are completed, the next stage begins. 
-- Checklists are created within a playbook and provide steps to follow during an incident. Checklists can be created ahead of time as part of a playbook, or during an incident. 
+Incidents can be:
 
-Stages and checklists are optional when creating a playbook and can be added to an active or closed incident.
+**Public:** Anyone in the team can view the incident details and join the incident channel.
+**Private:** Only incident members who were in the incident when it was started have access to the ongoing incident and view incident details after the incident has ended.
+
+When you start an incident via **! > + Create new incident** and don't select a playbook the channel is public by default. When you create an incident and do select a playbook, the incident is private by default.
+
+You can also create an incident via **Main Menu > Incidents & Playbooks > Playbooks > + New Playbook**. The default visibility is private. To create a public incident, select the toggle next to **Create Public Incident**.
+
+Private incidents are invisible to non-participants: they do not appear in the RHS when active, nor anywhere in the backstage. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
 
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
@@ -106,24 +111,12 @@ By default, all incidents are public (available to all members of a team). An in
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-Public and Private incidents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Incidents can be:
-
-**Public:** Anyone in the team can view the incident details and join the incident channel.
-**Private:** Only incident members who were in the incident when it was started have access to the ongoing incident and view incident details after the incident has ended.
-
-Incidents created without selecting a playbook default to being public, but can be made private by making the corresponding incident channel private from the channel header dropdown. When creating an incident and selecting a playbook, there is no explicit option to choose if an incident is public or private: it always follows the playbook configuration.
-
-Incidents that are created without a playbook being selected are public by default. You can also create a public incident via **Main Menu > Incidents & Playbooks > Playbooks > + New Playbook**. Select the toggle next to **Create Public Incident**. The default setting in this process is private.
-
-Private incidents are invisible to non-participants: they do not appear in the RHS when active, nor anywhere in the backstage. Private incidents cannot be made public. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
+Permissions are inherited via the System Scheme in Mattermost.
 
 Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
 
-To open the Incidents backstage, which lists all incidents associated with the current team, select **Incidents & Playbooks** from the Main Menu. All incidents for the current team are listed for review with the following details for each incident:
+To open the incidents backstage, which lists all incidents associated with the current team, select **Incidents & Playbooks** from the Main Menu. All incidents for the current team are listed for review with the following details for each incident:
 
 - Name
 - Status (**Ongoing** or **Ended**)
