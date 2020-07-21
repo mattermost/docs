@@ -6,7 +6,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
-**Release day: 2020-07-16**
+- **v5.25.1, released **
+  - Fixed an issue where LDAP sync sent cache clear messages in a tight loop. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
+- **v5.25.0, released 2020-07-16**
+  - Original 5.25.0 release
 
 Mattermost v5.25.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
@@ -80,6 +83,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.24.3, released **
+  - Fixed an issue where LDAP sync sent cache clear messages in a tight loop. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
 - **v5.24.2, released 2020-06-26**
   - Fixed an issue where changing primary keys during migration did not work with Postgres versions lower than 9.3. [MM-26514](https://mattermost.atlassian.net/browse/MM-26514)
 - **v5.24.1, released 2020-06-19**
@@ -239,6 +244,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.23.2, released **
+  - Fixed an issue where LDAP sync sent cache clear messages in a tight loop. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
 - **v5.23.1, released 2020-06-02**
   - Fixed an issue where ``Content-Type`` was no longer optional in incoming webhook requests and led to errors. [MM-25677](https://mattermost.atlassian.net/browse/MM-25677)
 - **v5.23.0, released 2020-05-16**
