@@ -64,7 +64,7 @@ Viewing and creating playbooks
 
 Select **!** in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
 
-Public and Private incidents
+Public and private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Incidents can be:
@@ -112,6 +112,23 @@ Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
 Permissions are inherited via the System Scheme in Mattermost.
+
+Managing Public and Private incidents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System Admins can manage the visibility of channels by converting them into private incident channels. Private incidents are invisible to non-participants: they do not appear in the RHS when active, nor anywhere in the backstage. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
+
+**Creating a private incident channel**
+
+**Converting a public incident channel into a private incident channel**
+
+1. Create a public incident via **! > Create Incident**.
+2. From the channel header, click the dropdown and select **Convert to Private Channel**.
+3. In the confirmation box, select “Yes..”
+4. Launch incident backstage.
+5. Verify that the incident is visible in the incident list.
+6. Click on the incident.
+7. Verify that the incident details are accurately displayed.
 
 Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
