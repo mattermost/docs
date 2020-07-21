@@ -322,7 +322,7 @@ The Active Directory ObjectGUID attribute LDAP display name ``objectGUID`` is a 
 
 You can remove the backslashes: ``1ebcff1ea34a9d4fa508d4d81f1f5873`` and parse it with `Golang <https://play.golang.org/p/9b8iDPuz0Nm>`__ as snippets which prints the base 10 representation of each value: ``30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115``.
 
-- Windows powershell displays the value like this: ``1effbc1e-4aa3-4f9d-a508-d4d81f1f5873``
+- Windows PowerShell displays the value like this: ``1effbc1e-4aa3-4f9d-a508-d4d81f1f5873``.
 
 Deployment and Clustering
 -------------------------
