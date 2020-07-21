@@ -13,6 +13,8 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.26.0                                            | Admins should re-index Elasticsearh using the ``Index now`` button so that all the changes are included in the index and all the entities start using it.        |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.25.0                                            | Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the        |
 |                                                    | settings will continue to work, it is encouraged that you                                                                                                        |
 |                                                    | `modify those settings <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust>`_.                                         | 
