@@ -4,11 +4,12 @@ Desktop Application Changelog
 Release v4.5
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.1>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.2>`_
 
+- **v4.5.2, released 2020-07-20**
+ - Fixed an issue on Linux app started as a blank screen when both “Show icon in the notification area" and "Start app on login" were enabled. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
 - **v4.5.1, released 2020-07-13**
  - Mattermost v4.5.1 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
-    - Known issue: If both “Show icon in the notification area" and "Start app on login" are enabled, the Linux app starts as a blank screen. A workaround is right-clicking on the tray icon, then going to **All Windows** and clicking on the shown window, and then right-clicking again and selecting **New Window**. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
 - **v4.5.0, released 2020-06-16**
  - Original v4.5.0 release
 
