@@ -158,12 +158,18 @@ Once a public incident is converted to a private incident the change cannot be r
 3. In the confirmation box, select “Yes..”
 4. Open the incident backstage, select the incident, and confirm that it is listed as **Private**.
 
-Managing Public and Private playbooks
+Managing playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can manage the visibility of channels by converting them into private incident channels. When a public incident is converted to a private incident, it can't be accessed by members who weren't in the channel at the time of the conversion. In addition, the contents of the channel won't show up in a search query or in the incident list in the incident backstage. 
+System and Team Admins can modify playbook editing permissions and visibility.
 
-Once a public incident is converted to a private incident the change cannot be reversed. Non-participants who are in the same team can be added to the channel by an admin.
+**Adding a user as a playbook editor**
+
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+2. Search for the playbook you want to edit.
+3. Select **Edit**.
+4. Invite a team member to edit the playbook.
+5. Select **Save Playbook**.
 
 **Removing a user from a playbook**
 
@@ -173,14 +179,6 @@ Once a public incident is converted to a private incident the change cannot be r
 4. Search for the user in the list provided.
 5. Remove the user from the playbook.
 6. Select **Save Playbook**.
-
-**Adding a user as a playbook editor**
-
-1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
-2. Search for the playbook you want to edit.
-3. Select **Edit**.
-4. Invite a team member to edit the playbook.
-5. Select **Save Playbook**.
 
 Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
