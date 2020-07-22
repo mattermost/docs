@@ -197,4 +197,4 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for troubleshooting help.
+See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for troubleshooting, or `join the Mattermost user community for help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.

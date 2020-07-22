@@ -40,7 +40,7 @@ To set these environment variables while running the Mattermost server via ``sys
     Description=Mattermost
     After=network.target
     After=postgresql.service
-    Requires=postgresql.service
+    BindsTo=postgresql.service
 
     [Service]
     Type=notify

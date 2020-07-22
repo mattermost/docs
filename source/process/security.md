@@ -35,7 +35,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 
 #### Review 
 
-* To uphold security, quality and reliability standards, all potential changes submitted by open source contributors must pass an [accepting pull requests](https://docs.mattermost.com/process/help-wanted.html) vetting process prior to submission. 
+* To uphold security, quality and reliability standards, all potential changes submitted by open source contributors must pass a [help wanted](https://handbook.mattermost.com/contributors/contributors/help-wanted) vetting process prior to submission. 
 * Clarity and readability of code is enforced through [Mattermost style guides](https://docs.mattermost.com/developer/style-guide.html).
 * After submission, all proposed changes require at least two code reviews for reliability, quality and system security. 
 * All open source contributions are available for public inspection and commentary before and after acceptance. 

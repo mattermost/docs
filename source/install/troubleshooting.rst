@@ -2,10 +2,9 @@
 
 This document summarizes common troubleshooting issues and techniques.
 
-Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past.
+Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
-
 
 Important Notes
 ---------------
@@ -14,15 +13,15 @@ Important Notes
 - Any manipulation of the database must be done using the built in command-line tools.
 - Start simple with the step-by-step install guides for your operating system.
 
-
 General Troubleshooting
 -----------------------
+
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
 Review Mattermost Logs
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_. 
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_.
 
 **Mattermost Server**
 
@@ -118,7 +117,8 @@ Password resets
 
 If you sign in to Mattermost using an email address or username, you can send a password reset request by selecting **I forgot my password**. 
 The Mattermost Support team does not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
-If you are not sure who the System Admin is, contact the internal IT team at your organization for further help.
+
+If you're not sure who the System Admin is, contact the internal IT team at your organization for further help.
 
 **AD/LDAP users**
 
@@ -163,7 +163,6 @@ This error message can also be received if the ``Email Attribute`` of their SAML
 
 Confirm all attributes, including ``Email Attribute`` and ``Username Attribute``, are correct in both the Identity Provider configuration and in **System Console > SAML**.
 
-
 ``An error occurred while building Service Provider Metadata.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -173,8 +172,7 @@ This error indicates that the installation does not have an Enterprise license. 
 
      ERRO[2019-12-23T10:04:33.5074-07:00] An error occurred while building Service Provider Metadata.  caller="mlog/log.go:175" err_details="err=Your license does not support SAML authentication." err_where=GetSamlMetadata http_code=501 ip_addr="::1" method=GET path=/api/v4/saml/metadata request_id=fbtsbxzb33f67gn6yuy73asxjw user_id=
 
-To resolve the issue, install an Enterprise License and restart the process.
-
+To resolve the issue, upload an Enterprise License and restart the process.
 
 ``SAML 2.0 is not configured or supported on this server.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -235,12 +233,10 @@ To address the issue, update settings on Idp to include the required attribute.
 
    Turning on debug logging will allow the assertion to be logged.
 
-
 ``SAML login was unsuccessful because encryption is not enabled. Please contact your System Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP
-Provider SAML is configured to expect an unencrypted SAML assertion but the assertion received was encrypted.
+This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP Provider SAML is configured to expect an unencrypted SAML assertion but the assertion received was encrypted.
 
 .. code-block:: sh
 
@@ -248,12 +244,10 @@ Provider SAML is configured to expect an unencrypted SAML assertion but the asse
 
 To address this issue, turn on encryption and restart the process.
 
-
 ``SAML login was unsuccessful as the Identity Provider response is not encrypted. Please contact your System Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP
-Provider SAML is configured to expect an unencrypted SAML Assertion but the assertion received was encrypted.
+This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP Provider SAML is configured to expect an unencrypted SAML Assertion but the assertion received was encrypted.
 
 .. code-block:: sh
 
@@ -311,6 +305,15 @@ This error message applies to various validation issues. The log message provide
 
 - ``too soon`` or ``too late``: Assertion ``NotOnOrAfter`` or ``NotBefore`` attribute outside current time.
 
+Why does the objectGUID of a user in Mattermost differ from what we're seeing in ADFS?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Active Directory ObjectGUID attribute LDAP display name ``objectGUID`` is a 16 byte array which can be displayed in different ways:
+
+- The ``ldapsearch`` Linux command displays it as base64: ``Hrz/HqNKnU+lCNTYHx9Ycw==``. This is also the format used in LDIF files.
+- The `LDAP Golang package we use <https://github.com/go-ldap/ldap>`__ shows the value as hexadecimal (base 16) array with each byte separated by a backslash: ``\1e\bc\ff\1e\a3\4a\9d\4f\a5\08\d4\d8\1f\1f\58\73``.
+    - You can remove the backslashes: ``1ebcff1ea34a9d4fa508d4d81f1f5873`` and parse it with `Golang <https://play.golang.org/p/9b8iDPuz0Nm>`__ as snippets which prints the base 10 representation of each value: ``30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115``.
+- Windows PowerShell displays the value like this: ``1effbc1e-4aa3-4f9d-a508-d4d81f1f5873``.
 
 Deployment and Clustering
 -------------------------
@@ -318,13 +321,13 @@ Deployment and Clustering
 Red Server Status
 ~~~~~~~~~~~~~~~~~
 
-When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
+When High Availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
 
 A server status of red can occur for the following reasons:
 
-- **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
-- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
-- **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping down the server in 15-second intervals. When the server comes back up, any new messages are sent to it.
+- **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It's recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping down the server in 15-second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
 ~~~~~~~~~~~~~~~~~
@@ -334,16 +337,16 @@ When a client WebSocket receives a disconnect it will automatically attempt to r
 App Refreshes Continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster.
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a High Availability cluster.
 
 Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
 Messages Do Not Post Until After Reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When running in high availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
+When running in High Availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. 
 
-
+Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
 
 Server Administration
 ---------------------
@@ -355,7 +358,6 @@ Server Administration
 -  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome.
 .. image:: ../images/websocket.png
 -  **If this issue is reported repeatedly**, the most likely cause is a proxy being misconfigured somewhere in your infrastructure, and possibly stripping headers off of WebSocket communications.
-
 -  Mattermost clients connect to the server using multiple protocols, ``https`` to enable general site functionality, and ``wss`` for real-time updates. This error message appears when the ``https`` connection is working, but the ``wss`` connection has issues, most commonly having headers stripped off by a firewall or proxy that is either misconfigure or which does not support secure WebSockets.
 
 **Note:** If your ``https`` connection is working and ``wss`` is not, and you dismiss the blue bar message, your team site will render, but will not support real time communications (you will need to refresh to see updates and the system is effectively "broken").
@@ -372,13 +374,13 @@ If only a small number of users have this issue, it could be from intermittent i
 ``Cannot connect to the server. Please check your server URL and internet connection.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
+This error may appear on some devices when trying to connect to a server that is using an SSL curve that's not supported by the client device.
 
 **Solution:**
 
-If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your site configuration file (for example, in ``/etc/nginx/sites-available/mattermost``), to a value that is supported by both client and server. Suggested values for varying levels of compatibility can be found at `Mozilla's Security/Server Side TLS <https://wiki.mozilla.org/Security/Server_Side_TLS>`__ page.
+If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your site configuration file (for example, in ``/etc/nginx/sites-available/mattermost``), to a value that's supported by both client and server. Suggested values for varying levels of compatibility can be found at `Mozilla's Security/Server Side TLS <https://wiki.mozilla.org/Security/Server_Side_TLS>`__ page.
 
-As security and encryption standards often change rapidly, it is best to check for up-to-date information. However, the suggested value as of January 2018 is to use the curves: prime256v1, secp384r1, secp521r1.
+As security and encryption standards often change rapidly, it's best to check for up-to-date information. However, the suggested value as of January 2018 is to use the curves: prime256v1, secp384r1, secp521r1.
 
 For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``.
 
@@ -400,7 +402,7 @@ This will allow insecure TLS connections, but be careful in doing so as it also 
 ``panic: runtime error: invalid memory address or nil pointer dereference``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
+This error can occur if you've manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
 
 **Solution:**
 
@@ -457,10 +459,8 @@ This alert can appear every few seconds in the desktop application or web browse
 
 **Solution:**
 
-If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections.
-
-If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
-
+- If you're using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections.
+- If you're using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
 
 ``context deadline exceeded``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -481,9 +481,8 @@ User Statuses get Stuck on "Away" or "Offline" Status
 
 If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
 
-1. If you are using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`__.
-
-2. If you are using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
+1. If you're using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`__.
+2. If you're using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
 
 If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
 
@@ -497,7 +496,7 @@ Check that the ``config.json`` file is owned by the same user as the process tha
 Mattermost Can't Connect to LDAP/AD Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
+LDAP and Active Directory troubleshooting can be found on `this page <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__.
 
 Mobile
 -------
@@ -512,30 +511,24 @@ The “Connecting…” Bar Doesn't Clear
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator whether the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
+If you're seeing this message all the time, and your internet connection seems fine, ask your server administrator whether the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 I’m Not Receiving Push Notifications on my Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
+If you didn't receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
 1. Under **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) select **DEBUG** in order to watch for push notifications in the server log.
-
 2. Delete and reinstall your mobile application.
-
 3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
-
 4. On desktop, go to **Account Settings > Security > View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
-
 5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
-
 6. If no push notification appears go to **System Console > Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
 
 ``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
 
-  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
-  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double check each step.
-
+  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the support team.
+  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double-check each step.
 7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
@@ -570,9 +563,9 @@ In some cases, the configuration from the product’s website differs from the M
 - See detailed server software requirements for operating system and database.
 - Check which Mattermost server version you're on, and confirm whether it's the latest version.
 - Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
-- What device (webapp, desktop app), browser, and operating system (Windows, Mac, etc.) are you using?
+- What device (webapp, desktop app), browser, and operating system (Windows, MacOS, etc.) are you using?
 - Confirm that the SSL/TLS certificate was installed successfully by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools** > **Developer Tools**.
+- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools > Developer Tools**.
 
 Integrations
 ~~~~~~~~~~~~
@@ -587,14 +580,13 @@ YouTube Videos Show a "Video not found" Preview
 Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
+When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` file and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
 
 Gfycat gifs are not loading even though they show up in the emoji picker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Check whether the server has access to the Gfycat servers. It may be behind a proxy or firewall which is blocking outgoing connections.
 2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
-
 
 Mobile
 ~~~~~
@@ -617,11 +609,9 @@ and then ignore the gradle task with
 No Image Previews Available in The Mobile App
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This can happen if the server running Mattermost has its mime types not set up correctly.
-A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
+This can happen if the server running Mattermost has its mime types not set up correctly. A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
-
 
 None of These Solve my Problem!
 ------------------------------

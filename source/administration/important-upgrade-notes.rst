@@ -5,11 +5,18 @@ Important Upgrade Notes
    PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost will officially be supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
    
 .. important::
-   Upgrade to server version v5.19 or later is required. Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.9 has ended and upgrading to server ESR v5.19 or later is required for improved security, performance, mobile app compatibility, and user experience. See `this blog post <https://mattermost.com/blog/support-for-esr-5-9-has-ended/>`_ for more details on why you should upgrade and how to upgrade in quick, simple steps.
+   Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+
+.. important::
+   Starting with mobile app v1.33.0 releasing on July 16th, users connecting to server versions below v5.19 may experience compatibility bugs with how attachments, link previews, reactions and embed data are displayed on their mobile device.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.25.0                                            | Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying party trust identifier” were corrected. Although the        |
+|                                                    | settings will continue to work, it is encouraged that you                                                                                                        |
+|                                                    | `modify those settings <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust>`_.                                         | 
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.24.0                                            | A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost   |
 |                                                    | apps. It is recommended to enable this setting to improve user experience if compliant with your organizations policies.                                         |
 |                                                    | `Learn more here <https://mattermost.com/blog/session-expiry-experience>`_.                                                                                      |
