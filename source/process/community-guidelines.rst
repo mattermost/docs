@@ -19,22 +19,22 @@ Examples include React Native Apps, Redux, and APIv4 campaigns.
 Onboarding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a blog post for the `Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
+1. Create a blog post for the `Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.
 2. Create a contribution guide. This can be part of the blog post.
 3. Create Help Wanted tickets that a community member could work on.
  
-For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement
+For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement.
 
 Retention
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 1. Identify active contributors and thank them personally for their work.
 2. For Work in Progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions to make sure contributors aren't blocked and feel comfortable asking questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way.
-3. Recognize everyone’s contributions (either intrinsic rewards like having their name listed on a contributor’s page or tangible like swag or gift cards)
-4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor
+3. Recognize everyone’s contributions (either intrinsic rewards like having their name listed on a contributor’s page or tangible like swag or gift cards).
+4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor.
 
 Off-boarding
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
 
@@ -104,20 +104,20 @@ GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
 
 Goal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 Increase Mattermost usage through larger and more numerous deployments via a vibrant open source community that contributes features that would not otherwise be offered.
 
 Principles
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
-- Contributors get a worthwhile benefit from their contributions, from the feature directly and/or from social recognition
-- Community members should have a low barrier to contribute
-- Community development workflow should be clear, efficient and effective
+- Contributors get a worthwhile benefit from their contributions, from the feature directly and/or from social recognition.
+- Community members should have a low barrier to contribute.
+- Community development workflow should be clear, efficient and effective.
 - Help Wanted issues should avoid updates to the Enterprise repository due to complexity in code changes and unit tests.
 
 Creating Help Wanted Issues
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__, follow these steps:
 
@@ -148,7 +148,7 @@ The issue should be written with the mindset that the contributor might have no 
 `See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`__.
 
 Managing Help Wanted Issues
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a Help Wanted issue is added, the PM on community rotation is responsible for:
 
@@ -156,7 +156,7 @@ Once a Help Wanted issue is added, the PM on community rotation is responsible f
 - Following up with a community member if there hasn't been a response for more than two weeks.
 
 Closing Help Wanted Issues
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a pull request for an open GitHub Help Wanted issue is merged, please ensure:
 
@@ -164,7 +164,7 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 - The corresponding Jira ticket is resolved.
 
 Help Wanted Issue Links
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Below is a list of permanent redirects to Help Wanted issue queries:
 
@@ -237,15 +237,15 @@ General Issues
 
   Thanks for the report! We have created a [Jira ticket](link to Jira ticket) to track it. If you're interested helping with a pull request, please let us know.
 
-4. If an issue has a Jira ticket without a ``help-wanted`` label but not assigned to the current release fix version, queue Jira ticket back to triage to ask if a help wanted issue could be created for it.
+4. If an issue has a Jira ticket without a ``help-wanted`` label but not assigned to the current release fix version, queue Jira ticket back to triage to ask if a Help Wanted issue could be created for it.
 
 5. If the reporter doesn’t respond in two weeks, close the issue with the following note:
 
 .. code-block:: text
 
-  Hi @username, we haven't received an update so we'll assume that the problem is fixed or is no longer valid. 
+  Hi @username, we haven't received an update so we'll assume that the problem is fixed or is no longer valid.
 
-  If you still experience the same problem, try upgrading to the latest version. 
+  If you still experience the same problem, try upgrading to the latest version.
 
   If the issue persists, reopen this issue with the relevant information and we'd be glad to help you where we can.
 
@@ -256,11 +256,11 @@ Respond to the issue with the following note:
 
 .. code-block:: text
 
-  Thanks, appreciate your feedback @{username}.  
+  Thanks, appreciate your feedback @{username}.
 
-  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted, and considered for a [help wanted ticket](https://handbook.mattermost.com/contributors/contributors/help-wanted)?
+  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted, and considered for a [Help Wanted ticket](https://handbook.mattermost.com/contributors/contributors/help-wanted)?
 
-  Please include a link back to this GitHub issue. If you're interested in implementing, please say so and we'll prioritize the review. 
+  Please include a link back to this GitHub issue. If you're interested in implementing, please say so and we'll prioritize the review.
 
   You get **10** votes in the feature idea forum, and each one influences the future of the project.
 
@@ -271,15 +271,15 @@ To ask someone to add a license to a GitHub repo, open an issue with the followi
 
 .. code-block:: text
 
-  Thanks for sharing this project! We'd love to use it as part of the Mattermost open source project (https://about.mattermost.com/) in our [React Native mobile app](https://github.com/mattermost/mattermost-mobile) (which uses an [Apache 2.0 license](https://github.com/mattermost/mattermost-mobile/blob/master/LICENSE.txt)). 
+  Thanks for sharing this project! We'd love to use it as part of the Mattermost open source project (https://about.mattermost.com/) in our [React Native mobile app](https://github.com/mattermost/mattermost-mobile) (which uses an [Apache 2.0 license](https://github.com/mattermost/mattermost-mobile/blob/master/LICENSE.txt)).
 
-  Would you consider adding a license, such as an MIT or an Apache 2.0 license? 
+  Would you consider adding a license, such as an MIT or an Apache 2.0 license?
 
   To do so, in GitHub you can hit "Create new file" and name a file `LICENSE.txt`.
 
   ![image](https://cloud.githubusercontent.com/assets/177788/19657017/36238482-99d7-11e6-9fd0-f507970891c7.png)
 
-  This will prompt GitHub to offer a license template: 
+  This will prompt GitHub to offer a license template:
 
   ![image](https://cloud.githubusercontent.com/assets/177788/19657044/5a2d8b66-99d7-11e6-8164-ac7f90b10646.png)
 
@@ -290,25 +290,25 @@ To ask someone to add a license to a GitHub repo, open an issue with the followi
 Difficult Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`__ to help formulate a response and send for community lead to review. 
+To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`__ to help formulate a response and send for community lead to review.
 
 Situation:
-  State what you know about your listeners' circumstances that are relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans. 
+  State what you know about your listeners' circumstances that are relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans.
 
 Complication:
-  Identify the critical issues (changes, pressures, demands, etc.) that are impacting the Situation and creating problems, challenges, or opportunities. 
+  Identify the critical issues (changes, pressures, demands, etc.) that are impacting the Situation and creating problems, challenges, or opportunities.
 
 Implication:
-  Show the personal or business consequences of failing to act on the problems or opportunities described in the Complication. 
+  Show the personal or business consequences of failing to act on the problems or opportunities described in the Complication.
 
 Position:
-  State clearly and confidently your opinion about what needs to be done to solve your listeners' problem. 
+  State clearly and confidently your opinion about what needs to be done to solve your listeners' problem.
 
 Action:
-  Help listeners understand the role you want them to play, or the questions you'd like them to consider, during your presentation or conversation. 
+  Help listeners understand the role you want them to play, or the questions you'd like them to consider, during your presentation or conversation.
 
 Benefit:
-  Describe how your recommended Position and Action will address listeners' specific needs. State the results clearly and quantifiably. 
+  Describe how your recommended Position and Action will address listeners' specific needs. State the results clearly and quantifiably.
 
 Mattermost Twitter
 ---------------------------------------------------------
@@ -318,11 +318,11 @@ Guidelines for Mattermost `Twitter responses <https://twitter.com/mattermost>`__
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
-2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
-3. **Include at most one link**. To provide a clear call to action, include at most one link per tweet and place it near the end of the tweet.
-4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
-5. **Be welcoming**. When asking someone to take action, use "Would you be open to" instead of "Would you like to".
+1. **Avoid acronyms.** Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users.
+2. **Use the active voice.** Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!"
+3. **Include at most one link.** To provide a clear call to action, include at most one link per tweet and place it near the end of the tweet.
+4. **Use exclamation marks only for exciting announcements.** An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
+5. **Be welcoming.** When asking someone to take action, use "Would you be open to" instead of "Would you like to".
 
 Response Writing Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,7 +346,7 @@ Sample Responses
 
   Thank you for your interest in Mattermost. You can learn more about us at www.mattermost.com where you can also download a trial of our product.
 
-2. Requests for a specific feature or group of features. 
+2. Requests for a specific feature or group of features.
 
  - Multiple Feature Requests:
 
@@ -356,7 +356,7 @@ Sample Responses
 
     https://mattermost.uservoice.com/
 
- - Single Feature Request: 
+ - Single Feature Request:
 
   .. code-block:: text
 
@@ -364,17 +364,18 @@ Sample Responses
 
     https://mattermost.uservoice.com/
 
- - Planned Feature Request: 
+ - Planned Feature Request:
+ 
 
   .. code-block:: text
 
-    Thank you for your feedback. We are excited to share that [feature] will be available in our [edition] Edition soon.  Please see our forum post for more information: [link to forum post].
+    Thank you for your feedback. We are excited to share that [feature] will be available in our [edition] Edition soon. Please see our forum post for more information: [link to forum post].
 
  - Shipped Feature Request: 
 
   .. code-block:: text
 
-    Thank you for your feedback. Mattermost already supports [feature]. You can learn more about it in our documentation:  [link to docs].
+    Thank you for your feedback. Mattermost already supports [feature]. You can learn more about it in our documentation: [link to docs].
 
 3. Feedback about their experience, not specific to a feature or a product.
 
@@ -400,4 +401,5 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for reaching out. We recommend opening a support ticket where our team can best help you troubleshoot the issue. For more information about Enterprise Edition support levels, see https://about.mattermost.com/support/. 
+    Thank you for reaching out. We recommend opening a support ticket where our team can best help you troubleshoot the issue. For more information about Enterprise Edition support levels, see https://about.mattermost.com/support/.
+    
