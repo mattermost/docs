@@ -99,32 +99,29 @@ Private incidents are invisible to non-participants: they do not appear in the R
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-You can add stages and edit checklist items during an active incident. You can also edit checklist items in playbooks that are not being used in active incidents.
+You can edit checklist items and their position in the checklist during an active incident as well as checklist items in playbooks not currently being used in active incidents.
 
-To edit a checklist, choose **Edit**.
-
-- Select the text field to edit the item details.
-- Hover over an input box and select the **X** to remove the checklist item.
-- Drag the hamburger menu to rearrange the checklist items.
-
-Choose **Done** to save the changes.
+1. Select **!** in the channel header of an active incident.
+2. Choose **Edit**.
+   - To edit: Select the text field to edit details.
+   - To delete: Hover over an input box and select the **X** to remove the checklist item.
+   - To move: Drag the hamburger menu to rearrange the checklist items.
+3. Choose **Done** to save the changes.
 
 Ending incidents
 ~~~~~~~~~~~~~~~~
 
 There are two ways to end an incident:
 
-- Using slash command */incident end* from within the incident channel.
+- Using the slash command */incident end* from within the incident channel.
 - Using the **End Incident** button in the RHS panel while in the incident channel.
 
-The incident will become inactive, be removed from the list of active incidents, and the associated channel will be archived.
+The incident will become inactive, is removed from the list of active incidents, and the associated channel is archived.
 
 Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Incidents and playbooks are associated with teams in Mattermost. Participants can be added to an incident by other incident members inviting them to the incident's channel.
-
-By default, all incidents are public (available to all members of a team). An incident can be made private during creation, or it can be made private after it has been created. 
+Incidents and playbooks are associated with teams in Mattermost. Participants can be added to an incident by other incident members inviting them to the incident's channel. By default, all incidents are public (available to all members of a team). An incident can be made private during creation, or it can be made private after it has been created. 
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
