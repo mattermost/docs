@@ -72,9 +72,27 @@ Incidents can be:
 **Public:** Anyone in the team can view the incident details and join the incident channel.
 **Private:** Only incident members who were in the incident when it was started have access to the ongoing incident and view incident details after the incident has ended.
 
-When you start an incident via **! > + Create new incident** and don't select a playbook the channel is public by default. When you create an incident and do select a playbook, the incident is private by default.
+**Creating a public incident channel**
 
-You can also create an incident via **Main Menu > Incidents & Playbooks > Playbooks > + New Playbook**. The default visibility is private. To create a public incident, select the toggle next to **Create Public Incident**.
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+2. Select **+ New Playbook**.
+3. Enter a name for the playbook.
+4. Move the toggle to the right to **Create Public Incident**.
+5. Add a few checklist items.
+6. Select **Save**
+7. Switch to the main channel view.
+8. Create an incident by selecting the playbook you just created.
+
+**Creating a private incident channel**
+
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+2. Select **+ New Playbook**.
+3. Enter a name for the playbook.
+4. Keep the **Create Public Incident** option disabled.
+5. Add a few checklist items.
+6. Select **Save**
+7. Switch to the main channel view.
+8. Create an incident by selecting the playbook you just created.
 
 Private incidents are invisible to non-participants: they do not appear in the RHS when active, nor anywhere in the backstage. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
 
@@ -111,24 +129,61 @@ By default, all incidents are public (available to all members of a team). An in
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-Permissions are inherited via the System Scheme in Mattermost.
+System Admins and Team Admins can edit the visibility of, and access to, playbooks and incidents so that:
 
-Managing Public and Private incidents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Users who are removed from an incident channel by a System Admin can no longer access the incident's playbook.
+- Team members who aren't System or Team Admins can't invite other team members to manage private playbooks.
+- Team members who aren't System or Team Admins can't be removed from an incident by other members of the team.
+- Team members who aren't System or Team Admins can't have access to playbooks removed by other members of the team.
 
-System Admins can manage the visibility of channels by converting them into private incident channels. Private incidents are invisible to non-participants: they do not appear in the RHS when active, nor anywhere in the backstage. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
+In addition, System and Team Admins can allow:
+
+- Public playbooks to be deleted by team members whether they're participants in an incident channel or not.
+
+Managing incident channel visibility
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System Admins can manage the visibility of channels by converting them into private incident channels. When a public incident is converted to a private incident, it can't be accessed by members who weren't in the channel at the time of the conversion. In addition, the contents of the channel won't show up in a search query or in the incident list in the incident backstage. 
+
+Once a public incident is converted to a private incident the change cannot be reversed. Non-participants who are in the same team can be added to the channel by an admin.
 
 **Creating a private incident channel**
 
-**Converting a public incident channel into a private incident channel**
-
-1. Create a public incident via **! > Create Incident**.
+1. Create an incident via **! > Create Incident**.
 2. From the channel header, click the dropdown and select **Convert to Private Channel**.
 3. In the confirmation box, select “Yes..”
-4. Launch incident backstage.
-5. Verify that the incident is visible in the incident list.
-6. Click on the incident.
-7. Verify that the incident details are accurately displayed.
+4. Open the incident backstage, select the incident, and confirm that it is listed as **Private**.
+
+**Converting a public incident channel into a private incident channel as a participant**
+
+1. Join an active incident channel.
+2. From the channel header, click the dropdown and select **Convert to Private Channel**.
+3. In the confirmation box, select “Yes..”
+4. Open the incident backstage, select the incident, and confirm that it is listed as **Private**.
+
+Managing Public and Private playbooks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System Admins can manage the visibility of channels by converting them into private incident channels. When a public incident is converted to a private incident, it can't be accessed by members who weren't in the channel at the time of the conversion. In addition, the contents of the channel won't show up in a search query or in the incident list in the incident backstage. 
+
+Once a public incident is converted to a private incident the change cannot be reversed. Non-participants who are in the same team can be added to the channel by an admin.
+
+**Removing a user from a playbook**
+
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+2. Search for the playbook you want to edit.
+3. Select **Edit**.
+4. Search for the user in the list provided.
+5. Remove the user from the playbook.
+6. Select **Save Playbook**.
+
+**Adding a user as a playbook editor**
+
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+2. Search for the playbook you want to edit.
+3. Select **Edit**.
+4. Invite a team member to edit the playbook.
+5. Select **Save Playbook**.
 
 Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
