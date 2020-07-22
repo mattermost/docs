@@ -74,6 +74,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where Command+K input field lost focus when the window lost focus, causing search results to disappear.
  - Fixed an issue where a highlight was missing when users at-mentioned themselves, followed by period, underscore, or hyphen.
  - Fixed an issue where a 500 error was returned by the ``/posts/unread`` endpoint caused by an [integer overflow](https://en.wikipedia.org/wiki/Integer_overflow) when ``limit_after`` was set to 0.
+ - Fixed an issue where the footer text in invitation emails was not translated.
+ - Fixed an issue where ``PermanentDeleteTeam`` did not return an error but did a soft deletion when ``EnableAPITeamDeletion`` was not set.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
