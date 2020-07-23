@@ -74,7 +74,7 @@ Incidents can be:
 
 **Creating a public incident channel**
 
-1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Select **+ New Playbook**.
 3. Enter a name for the playbook.
 4. Move the toggle to the right to **Create Public Incident**.
