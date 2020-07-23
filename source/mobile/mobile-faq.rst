@@ -113,6 +113,12 @@ The following options are available for securing your push notification service:
 
 .. Note:: For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`.
 
+How can I secure my mobile push notification content?
+------------------------------------------------------
+
+When it comes to mobile data privacy, many organizations prioritize secure handling of messaging data, particularly when it may contain mission-critical or proprietary information. These companies may have concerns about using mobile notifications because data must pass through third-party entities like Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before it reaches a device. This poses a potential security risk for organizations that operate under strict security and compliance requirements. To solve this, in Mattermost v5.18 and later, we offer greater protection for Mattermost push notification message data by only sending a unique message ID in the notification layload rather than the full message data. Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the new ID-only push notification setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications. 
+
+
 Why do I sometimes see a delay in receiving a push notification?
 --------------------------------------------------------------------------
 
