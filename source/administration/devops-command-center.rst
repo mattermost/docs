@@ -173,7 +173,7 @@ System and Team Admins can modify playbook editing permissions and visibility.
 
 **Removing a user from a playbook**
 
-1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Search for the playbook you want to edit.
 3. Select **Edit**.
 4. Search for the user in the list provided.
