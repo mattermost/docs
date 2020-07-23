@@ -90,7 +90,7 @@ Incidents can be:
 3. Enter a name for the playbook.
 4. Keep the **Create Public Incident** option disabled.
 5. Add a few checklist items.
-6. Select **Save**
+6. Select **Save**.
 7. Switch to the main channel view.
 8. Create an incident by selecting the playbook you just created.
 
