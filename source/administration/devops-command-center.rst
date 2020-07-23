@@ -85,7 +85,7 @@ Incidents can be:
 
 **Creating a private incident channel**
 
-1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**
+1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Select **+ New Playbook**.
 3. Enter a name for the playbook.
 4. Keep the **Create Public Incident** option disabled.
@@ -324,4 +324,3 @@ Glossary
 * **The RHS:** The incident list and incident details displayed on the right hand side of the webapp. Clicking an incident from the list in the RHS surfaces details of the selected incident. It is not available on mobile.
 * **Incident backstage:** The full-screen analytics and configuration screens accessible from the webapp. It is not available on mobile.
 * **Active incident:** An incident that has not been ended.
-
