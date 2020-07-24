@@ -86,7 +86,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.24.3, released 2020-07-23**
-  - Smoothened the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
+  - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
   - Fixed a bug in pagination which queried more data redundantly. [MM-27187](https://mattermost.atlassian.net/browse/MM-27187)
   - Throttled network traffic by implementing bounded concurrency.
 - **v5.24.2, released 2020-06-26**
