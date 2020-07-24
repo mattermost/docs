@@ -21,7 +21,7 @@ If it is, perhaps offer to help translate or review and make suggestions.
 3 - Confirm that the language you want to help translate is listed in the work in progress project of the `Translation Server <https://translate.mattermost.com/projects/i18n-wip/mattermost-server-wip/>`__.
 If it is, perhaps offer to help translate or review and make suggestions.
 
-4 - The language you want to help translate is neither in the shipped project nor in the work in progress projects `projects <https://translate.mattermost.com/projects/>`__.
+4 - The language you want to help translate is neither in the shipped project nor in the work in progress `projects <https://translate.mattermost.com/projects/>`__.
 
 5 - Review translation rules written by localization leads, when applicable:
 
