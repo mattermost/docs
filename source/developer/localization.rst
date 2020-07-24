@@ -85,7 +85,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 1 - Build Mattermost on your machine following the `Developer Machine Setup Guides <https://docs.mattermost.com/developer/dev-setup.html>`__.
 
-2 - Download a copy of your translations to your local machine by going to the language of your choice, e.g. `German <https://translate.mattermost.com/projects/mattermost/mattermost-server_master/de/>` -> Files -> Download original translation file (JSON file)
+2 - Download a copy of your translations to your local machine by going to the language of your choice, e.g. `German <https://translate.mattermost.com/projects/mattermost/mattermost-server_master/de/>` > Files > Download original translation file (``.json`` file).
 
 3 - Copy the generated [locale].json files to the corresponding directories:
 
