@@ -129,7 +129,7 @@ Permissions
 System Admins and Team Admins can edit the visibility of, and access to, playbooks and incidents so that:
 
 - Users who are removed from an incident channel by a System Admin can no longer access the incident's playbook.
-- Team members who aren't System or Team Admins can't invite other team members to manage private playbooks.
+- Team members who aren't System or Team Admins can invite other team members to manage private playbooks.
 - Team members who aren't System or Team Admins can't be removed from an incident by other members of the team.
 - Team members who aren't System or Team Admins can't have access to playbooks removed by other members of the team.
 
