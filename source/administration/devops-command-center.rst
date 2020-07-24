@@ -194,7 +194,7 @@ To open the incidents backstage, which lists all incidents associated with the c
 Viewing incident details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To view details of active incidents associated with your Mattermost team, select **!** in the channel header to open the RHS panel. If there are no active incidents, you can view details of incidents that have ended. If an incident is public you can view details. If an incident is private you will not be able to view the details.
+To view details of ongoing and ended incidents associated with your Mattermost team, open **Main Menu > Incidents & Playbooks**. Select an incident's name to view its details.
 
 Incident details include the following information:
 
