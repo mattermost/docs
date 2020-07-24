@@ -31,7 +31,7 @@ If it is, perhaps offer to help translate or review and make suggestions.
 Translations Updates
 --------------------
 
-1 - New and updated source strings are being automatically pulled on github pushes by developers.
+1 - New and updated source strings are being automatically pulled on GitHub pushes by developers.
 
 2 - A new pull request with latest translations that reach at least Beta Quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__, `mattermost-server <https://github.com/mattermost/mattermost-server>`__ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__ repos each Monday at 22:00 GMT.
 
