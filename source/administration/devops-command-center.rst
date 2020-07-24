@@ -133,10 +133,6 @@ System Admins and Team Admins can edit the visibility of, and access to, playboo
 - Team members who aren't System or Team Admins can't be removed from an incident by other members of the team.
 - Team members who aren't System or Team Admins can't have access to playbooks removed by other members of the team.
 
-In addition, System and Team Admins can allow:
-
-- Public playbooks to be deleted by team members whether they're participants in an incident channel or not.
-
 Managing incident channel visibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
