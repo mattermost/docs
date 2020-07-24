@@ -15,12 +15,15 @@ To translate a language:
 
 1 - Join the `Mattermost Translation Server <http://translate.mattermost.com>`__.
 
-2 - Confirm that the language you want to help translate is listed in the `Translation Server <http://translate.mattermost.com>`__.
+2 - Confirm that the language you want to help translate is listed in the shipped project of the `Translation Server <https://translate.mattermost.com/projects/mattermost/mattermost-server_master/>`__.
+If it is, perhaps offer to help translate or review and make suggestions.
 
-    - If it is, perhaps offer to help translate or review and make suggestions.
-    - If not, ask to setup your language on the `Mattermost localization channel <https://community.mattermost.com/core/channels/localization>`__, so you can start helping with the translation.
+3 - Confirm that the language you want to help translate is listed in the work in progress project of the `Translation Server <https://translate.mattermost.com/projects/i18n-wip/mattermost-server-wip/>`__.
+If it is, perhaps offer to help translate or review and make suggestions.
 
-3 - Review translation rules written by localization leads, when applicable:
+4 - The language you want to help translate is neither in the shipped project nor in the work in progress projects `projects <https://translate.mattermost.com/projects/>`__.
+
+5 - Review translation rules written by localization leads, when applicable:
 
     - `French (Règles pour la traduction francophone de Mattermost) <https://github.com/wget/mattermost-localization-french-translation-rules>`__
     - `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/meilon/1317a9425988b3ab296c894a72270787>`__
@@ -28,7 +31,7 @@ To translate a language:
 Translations Updates
 --------------------
 
-1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`__ each day at 00:00 GMT. Strings with a ``mobile`` prefix are imported from the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__ project, others are from `mattermost-server <https://github.com/mattermost/mattermost-server>`__ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__.
+1 - New and updated source strings are being automatically pulled on github pushes by developers.
 
 2 - A new pull request with latest translations that reach at least Beta Quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__, `mattermost-server <https://github.com/mattermost/mattermost-server>`__ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__ repos each Monday at 22:00 GMT.
 
@@ -82,26 +85,22 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 1 - Build Mattermost on your machine following the `Developer Machine Setup Guides <https://docs.mattermost.com/developer/dev-setup.html>`__.
 
-2 - Download a copy of your translations to your local machine.
+2 - Download a copy of your translations to your local machine by going to the language of your choice, e.g. `German <https://translate.mattermost.com/projects/mattermost/mattermost-server_master/de/>` -> Files -> Download original translation file (JSON file)
 
-.. image:: ../../source/images/translations_download.png
-
-3 - Use `Mattermosti18n <https://github.com/rodrigocorsi2/mattermosti18n#convert-po---json>`__ to convert Pootle's output into JSON files.
-
-4 - Copy the generated [locale].json files to the corresponding directories:
+3 - Copy the generated [locale].json files to the corresponding directories:
 
     - For the server, copy the files to the i18n directory of the ``mattermost-server`` project.
     - For the webapp, copy the files to the i18n directory of the ``mattermost-webapp`` project.
 
-5 - Modify the file ``i18n/i18n.jsx`` in the ``mattermost-webapp`` project to include your translated strings.
+4 - Modify the file ``i18n/i18n.jsx`` in the ``mattermost-webapp`` project to include your translated strings.
 
-6 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
+5 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 
 If you find a string that has not been translated, search for the string in the respective localization file to confirm it's included for translations. You can find the English version for server, webapp and mobile projects below
 
   - https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json
   - https://github.com/mattermost/mattermost-webapp/blob/master/i18n/en.json
-  - https://github.com/mattermost/mattermost-mobile/blob/master/i18n/en.json
+  - https://github.com/mattermost/mattermost-mobile/blob/master/assets/base/i18n/en.json
 
 If it’s included in the file, then most likely it hasn't been translated yet, but is in https://translate.mattermost.com.
 
@@ -130,7 +129,7 @@ If you're interested in contributing to the process, please join the `Mattermost
     "Türkçe - Turkish", "`Kaya Zeren <https://twitter.com/kaya_zeren>`__", ""
     "Pусский - Russian", "`Alexey Napalkov <https://github.com/flynbit>`_", ""
     "Yкраїнська - Ukrainian", "TBD (Open Role)", ""
-    "한국어 - Korean", "TBD (Open Role)", ""
+    "한국어 - Korean", "`avasconcelos114 <https://translate.mattermost.com/user/avasconcelos114/>`__", ""
     "中文 (简体) - Simplified Chinese", "`aeomin <http://translate.mattermost.com/user/aeomin/>`__", ""
     "中文 (繁體) - Traditional Chinese", "`Tze-Kei Lee (chikei) <https://github.com/chikei>`__", ""
     "日本語 - Japanese", "`Yusuke Nemoto (kaakaa) <https://github.com/kaakaa>`__", ""
