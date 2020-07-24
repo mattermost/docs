@@ -148,7 +148,7 @@ Once a public incident is converted to a private incident the change cannot be r
 
 1. Create an incident via **! > Create Incident**.
 2. From the channel header, click the dropdown and select **Convert to Private Channel**.
-3. In the confirmation box, select “Yes..”
+3. In the confirmation box, select “Yes.”
 4. Open the incident backstage, select the incident, and confirm that it is listed as **Private**.
 
 **Converting a public incident channel into a private incident channel as a participant**
