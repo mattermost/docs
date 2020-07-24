@@ -41,5 +41,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Published to [preview environment ${{ github.actor }}](https://mattermost.github.io/docs/${{ github.actor }})
+            Published to [preview environment ${{ github.actor }}](https://mattermost.github.io/docs/${{ github.actor }}/index.html)
 
