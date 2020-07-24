@@ -94,7 +94,7 @@ Incidents can be:
 7. Switch to the main channel view.
 8. Create an incident by selecting the playbook you just created.
 
-Private incidents are invisible to non-participants: they do not appear in the RHS when active, nor anywhere in the backstage. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
+Private incidents aren't visible to non-members, they do not appear in the RHS or in the backstage when active. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
 
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
