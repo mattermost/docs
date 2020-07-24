@@ -1,7 +1,7 @@
 # Integrations FAQ
 ---
 
-Come [join our "Contributors" community channel](https://community.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://community.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://community.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+Come [join our Contributors community channel](https://community.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our [Developers channel](https://community.mattermost.com/core/channels/developers) for technical discussions and our [Integrations channel](https://community.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
 
 ## What's the difference between incoming and outgoing webhooks?
 
@@ -9,7 +9,7 @@ A webhook is a way for one app to send real-time data to another app.
 
 In Mattermost, incoming webhooks receive data from external applications and make a post in a specified channel. They're great for setting up notifications when something happens in an external application.
 
-Outgoing webhooks take data from Mattermost, and send it to an external application. Then the outgoing webhook can post a response back in Mattermost. They're great for listening in on channels, and then notifying external applications when a trigger word is said.
+Outgoing webhooks take data from Mattermost, and send it to an external application. Then the outgoing webhook can post a response back in Mattermost. They're great for listening in on channels, and then notifying external applications when a trigger word is used.
 
 ## What is a slash command?
 
@@ -39,9 +39,9 @@ We currently don't support the ability to attach files to a post made by an inte
 
 ## Where should I install my integrations? 
 
-For self-hosted deployments in small setups you might host integrations on the same server on which Mattermost is installed. For larger deployments you can setup a separate server for integrations, or add them to the server on which the external application is hosted--for example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself.
+For self-hosted deployments in small setups you might host integrations on the same server on which Mattermost is installed. For larger deployments you can setup a separate server for integrations, or add them to the server on which the external application is hosted - for example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself.
 
-When self-hosting restrictions are less strict, AWS, Heroku and other public cloud options could also be used.
+When self-hosting restrictions are less strict, AWS, Heroku, and other public cloud options could also be used.
 
 ## How do I create a bot account with personal access tokens?
 
@@ -53,13 +53,12 @@ In version 5.11 and earlier, follow these steps to create a bot account with per
 2. Create a personal access token for the account [using the steps here](https://docs.mattermost.com/developer/personal-access-tokens.html#creating-a-personal-access-token).
    - The steps also outline how to give the account permissions to post to any channel in your Mattermost server, including direct messages, or to any public channel.
 3. Include the personal access token from step 2 as part of the `Authorization` header on API requests from your integration.
-   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a 200 with the bot's user object in the response, the API request was made successfully.
+   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a `200` with the bot's user object in the response, the API request was made successfully.
      ```
      GET /api/v4/users/me HTTP/1.1
      Authorization: bearer <yourtokenhere>
      Host: your-mattermost-url.com
      ```
-
 ## How do I create a bot account without personal access tokens or webhooks?
 
 Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
@@ -100,37 +99,38 @@ Deployments that cannot create bot accounts via webhooks due to security reasons
      ```
      
      The bot should retrieve the session token from the `Token` header and store it in memory for use with future requests.
-   - Note: Each session token has an expiry time, set depending on the server's configuration. If the session token your bot is using expires, it will receive a 401 Unauthorized response from requests using that token. When your bot receives this response, it should re-apply the login logic (using the above steps) to get another session token. Then re-send the request that received the 401 status code.
-4. Include the `Token` as part of the `Authorization` header on API requests from your integration.
-   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a 200 with the bot's user object in the response, the API request was made successfully.
+   
+   **Note:** Each session token has an expiry time, set depending on the server's configuration. If the session token your bot is using expires, it will receive a `401 Unauthorized` response from requests using that token. When your bot receives this response, it should reapply the login logic (using the above steps) to get another session token. Then resend the request that received the `401` status code.
+5. Include the `Token` as part of the `Authorization` header on API requests from your integration.
+   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a `200` with the bot's user object in the response, the API request was made successfully.
      ```
      GET /api/v4/users/me HTTP/1.1
      Authorization: bearer <yourtokenhere>
      Host: your-mattermost-url.com
      ```
 
-Note: The Mattermost development team is also working on an [API developer token](https://docs.google.com/document/d/1ey4eNQmwK410pNTvlnmMWTa1fqtj8MV4d9XkCumI384), which allows you to authenticate the bot account via the API token rather than retrieving a session token from a user account.
+**Note:** The Mattermost development team is also working on an [API developer token](https://docs.google.com/document/d/1ey4eNQmwK410pNTvlnmMWTa1fqtj8MV4d9XkCumI384), which allows you to authenticate the bot account via the API token rather than retrieving a session token from a user account.
 
 ## How should I automate the install and upgrade of Mattermost when included in another application?
 
 Automating Mattermost installation within another application:
 
-1. Review the [Mattermost installation guides](https://docs.mattermost.com/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment
+1. Review the [Mattermost installation guides](https://docs.mattermost.com/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment.
 2. Install Mattermost files to a dedicated `/opt/mattermost` directory by decompressing the `tar.gz` file of the latest release for your target platform (for example `linux-amd64`).
 3. Review [Configuration Settings](http://docs.mattermost.com/administration/config-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements.
 4. For directory locations defined in `config.json`, such as the location of the local file storage directory (`./data/`) or logs directory (`./logs`), you can redefine those locations in your `config.json` settings and move the directories.
-   - All other directories should remain as they are in `/mattermost`
+   - All other directories should remain as they are in `/mattermost`.
 5. Test that your Mattermost server is running with your new configuration.
-6. Also, from the commandline run `./bin/mattermost -version` to test that the commandline interface is functioning properly.
+6. Also, from the command line run `./bin/mattermost -version` to test that the command line interface is functioning properly.
 
 Automating Mattermost upgrade within another application:
 
 1. Review the [upgrade guide](http://docs.mattermost.com/administration/upgrade.html) for an overview of the upgrade procedure.
 2. Create automation to upgrade to the next Mattermost versions:
-    - backup the `config.json` file to preserve any settings a user may have made.
-    - backup the `./data` directory if local storage is used for files.
-    - replace the contents of `/mattermost` directory with the decompressed contents of the latest release.
-    - restore `config.json` and `./data` to their previous locations (which may have been overwritten).
-    - if you need to overwrite any `config.json` parameters use a [`sed` command](http://stackoverflow.com/questions/20568515/how-to-use-sed-to-replace-a-config-files-variable) or similar tool to update `config.json`
-    - starting the Mattermost server to upgrade the database, `config.json` file, and `./data` as necessary.
+    - Back up the `config.json` file to preserve any settings a user may have made.
+    - Back up the `./data` directory if local storage is used for files.
+    - Replace the contents of `/mattermost` directory with the decompressed contents of the latest release.
+    - Restore `config.json` and `./data` to their previous locations (which may have been overwritten).
+    - If you need to overwrite any `config.json` parameters use a [`sed` command](http://stackoverflow.com/questions/20568515/how-to-use-sed-to-replace-a-config-files-variable) or similar tool to update `config.json`
+    - Starting the Mattermost server to upgrade the database, `config.json` file, and `./data` as necessary.
 3. Optionally the upgrade procedure can be chained so users can upgrade across an arbitrary number of Mattermost versions rather than to just the latest release.
