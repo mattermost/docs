@@ -32,7 +32,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_dir: ./${{ github.actor }}
-          publish_dir: ./build
+          publish_dir: ./build/html
           publish_branch: gh-pages
           force_orphan: true
       - name: Add comment to PR
