@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
 - **v5.25.1, released 2020-07-23**
-  - Smoothened the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
+  - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
   - Fixed a bug in pagination which queried more data redundantly. [MM-27187](https://mattermost.atlassian.net/browse/MM-27187)
   - Throttled network traffic by implementing bounded concurrency.
 - **v5.25.0, released 2020-07-16**
