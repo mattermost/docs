@@ -21,8 +21,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Archive / Unarchive Channels
  - Added a View Group Members Modal
  - Filters for team/channel
- - Autocomplete functionality should enable commands to be executed on selection(mouse click, tab or enter)
+ - Autocomplete functionality should enable commands to be executed on selection (mouse click, tab or enter)
  - Promoted Russian and Dutch languages to General Availability
+ - Added sysadmin warning support (announcement bar and DM) for multiple metrics
 
 ### Improvements
 
