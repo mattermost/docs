@@ -87,7 +87,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 2 - Download a copy of your translations to your local machine by going to the language of your choice, e.g. `German <https://translate.mattermost.com/projects/mattermost/mattermost-server_master/de/>` > Files > Download original translation file (``.json`` file).
 
-3 - Copy the generated [locale].json files to the corresponding directories:
+3 - Copy the generated ``[locale].json`` files to the corresponding directories:
 
     - For the server, copy the files to the i18n directory of the ``mattermost-server`` project.
     - For the webapp, copy the files to the i18n directory of the ``mattermost-webapp`` project.
