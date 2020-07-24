@@ -70,7 +70,7 @@ Public and private incidents
 Incidents can be:
 
 - **Public:** Anyone in the team can view the incident details and join the incident channel.
-- **Private:** Only incident members who were in the incident when it was started have access to the ongoing incident and view incident details after the incident has ended.
+- **Private:** Only incident members who were members of the channel of the incident have access to the ongoing incident and view incident details after the incident has ended.
 
 **Creating a public incident channel**
 
