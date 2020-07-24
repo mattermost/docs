@@ -99,7 +99,7 @@ Private incidents aren't visible to non-members, they do not appear in the RHS o
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-You can edit checklist items and their position in the checklist during an active incident as well as checklist items in playbooks not currently being used in active incidents.
+You can edit checklist items and their position in the checklist at any time.
 
 1. Select **!** in the channel header of an active incident.
 2. Choose **Edit**.
