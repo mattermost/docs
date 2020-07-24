@@ -103,9 +103,9 @@ You can edit checklist items and their position in the checklist during an activ
 
 1. Select **!** in the channel header of an active incident.
 2. Choose **Edit**.
-   - To edit: Select the text field to edit details.
-   - To delete: Hover over an input box and select the **X** to remove the checklist item.
-   - To move: Drag the hamburger menu to rearrange the checklist items.
+  - To edit: Select the text field to edit details.
+  - To delete: Hover over an input box and select the **X** to remove the checklist item.
+  - To move: Drag the hamburger menu to rearrange the checklist items.
 3. Choose **Done** to save the changes.
 
 Ending incidents
