@@ -140,7 +140,7 @@ In addition, System and Team Admins can allow:
 Managing incident channel visibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can manage the visibility of channels by converting them into private incident channels. When a public incident is converted to a private incident, it can't be accessed by members who weren't in the channel at the time of the conversion. In addition, the contents of the channel won't show up in a search query or in the incident list in the incident backstage. 
+System Admins can manage the visibility of channels by converting them into private incident channels. When a public incident is converted to a private incident, it can't be accessed by members who weren't in the channel at the time of the conversion, unless they're invited by a channel member. In addition, the contents of the channel won't show up in a search query or in the incident list in the incident backstage. 
 
 Once a public incident is converted to a private incident the change cannot be reversed. Non-participants who are in the same team can be added to the channel by an admin.
 
