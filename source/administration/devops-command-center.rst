@@ -67,10 +67,12 @@ Select **!** in the channel header to open the RHS panel. Select the **Playbooks
 Public and private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Incidents can be:
+Incident channels can be public or private, based on the settings of the playbook used for the incident.
 
-- **Public:** Anyone in the team can view the incident details and join the incident channel.
-- **Private:** Only incident members who were members of the channel of the incident have access to the ongoing incident and view incident details after the incident has ended.
+- **Public:** Anyone in the team can view the incident details and join the incident channel. The incident details are visible to all team members during the active incident and after the incident has ended.
+- **Private:** Only incident members who were members of the channel when the incident started have access to the ongoing incident and incident details after the incident has ended. Private incidents can't be made public once they've been started.
+
+Private incidents don't appear in the RHS or in the backstage when they're active, and the contents of the channel won't show up in a search query. If an incident was public and changed to private, it can't be accessed by non-participants unless they're invited by a member of the incident channel.
 
 **Creating a public playbook and incident**
 
@@ -93,8 +95,6 @@ Incidents can be:
 6. Select **Save**.
 7. Switch to the main channel view.
 8. Create an incident by selecting the playbook you just created.
-
-Private incidents aren't visible to non-members, they do not appear in the RHS or in the backstage when active. Private incidents cannot be made public once they've been started. If an incident was public and changed to private, it can't be accessed by non-participants thereafter, and the contents of the channel won't show up in a search query.
 
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
