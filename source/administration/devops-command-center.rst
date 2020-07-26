@@ -83,7 +83,7 @@ Incidents can be:
 7. Switch to the main channel view.
 8. Create an incident by selecting the playbook you just created.
 
-**Creating a private incident channel**
+**Creating a private playbook and incident**
 
 1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Select **+ New Playbook**.
