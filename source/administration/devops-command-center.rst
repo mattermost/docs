@@ -72,7 +72,7 @@ Incidents can be:
 - **Public:** Anyone in the team can view the incident details and join the incident channel.
 - **Private:** Only incident members who were members of the channel of the incident have access to the ongoing incident and view incident details after the incident has ended.
 
-**Creating a public incident channel**
+**Creating a public playbook and incident**
 
 1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Select **+ New Playbook**.
