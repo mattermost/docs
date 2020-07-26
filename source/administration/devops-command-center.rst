@@ -121,7 +121,7 @@ The incident will become inactive, is removed from the list of active incidents,
 Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Incidents and playbooks are associated with teams in Mattermost. Participants can be added to an incident by other incident members inviting them to the incident's channel. By default, all incidents are public (available to all members of a team). An incident can be made private during creation, or it can be made private after it has been created. 
+Incidents and playbooks are associated with teams in Mattermost. Participants can be added to an incident by other incident members inviting them to the incident's channel. Incidents are created based on playbooks, and are public or private depending on the playbook's settings. 
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
