@@ -62,7 +62,7 @@ The set of steps contained within a playbook is called a checklist.
 Viewing and creating playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select **!** in the channel header to open the RHS panel. Select the **Playbooks** icon to open the playbooks backstage and list all playbooks associated with the current team. Select **+ New Playbook** to start a new playbook and checklist. Enter a playbook name and choose **Save Playbook**.
+Open **Main Menu > Incidents & Playbooks > Playbooks** to open the playbooks backstage and view the public playbooks associated with the current team. Select **+ New Playbook** to start a new playbook.
 
 Public and private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ Private incidents don't appear in the backstage when they're active, and the con
 Editing checklists
 ~~~~~~~~~~~~~~~~~~~
 
-You can edit checklist items and their position in the checklist at any time.
+You can edit checklist items and their position in the checklist when they are not part of an active incident.
 
 1. Select **!** in the channel header of an active incident.
 2. Choose **Edit**.
