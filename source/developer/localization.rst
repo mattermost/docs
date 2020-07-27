@@ -15,15 +15,12 @@ To translate a language:
 
 1 - Join the `Mattermost Translation Server <http://translate.mattermost.com>`__.
 
-2 - Confirm that the language you want to help translate is listed in the shipped project of the `Translation Server <https://translate.mattermost.com/projects/mattermost/mattermost-server_master/>`__.
-If it is, perhaps offer to help translate or review and make suggestions.
+2 - Confirm that the language you want to help translate is listed in the `Translation Server <https://translate.mattermost.com/projects/>`_. The language may be listed as shipped or work in progress, depending on if the language `ships in Mattermost <https://docs.mattermost.com/help/settings/account-settings.html#language>`_.
 
-3 - Confirm that the language you want to help translate is listed in the work in progress project of the `Translation Server <https://translate.mattermost.com/projects/i18n-wip/mattermost-server-wip/>`__.
-If it is, perhaps offer to help translate or review and make suggestions.
+    - If it is, perhaps offer to help translate or review and make suggestions.
+    - If not, ask to setup your language on the `Mattermost localization channel <https://community.mattermost.com/core/channels/localization>`__, so you can start helping with the translation.
 
-4 - The language you want to help translate is neither in the shipped project nor in the work in progress `projects <https://translate.mattermost.com/projects/>`__.
-
-5 - Review translation rules written by localization leads, when applicable:
+3 - Review translation rules written by localization leads, when applicable:
 
     - `French (Règles pour la traduction francophone de Mattermost) <https://github.com/wget/mattermost-localization-french-translation-rules>`__
     - `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/meilon/1317a9425988b3ab296c894a72270787>`__
@@ -31,7 +28,7 @@ If it is, perhaps offer to help translate or review and make suggestions.
 Translations Updates
 --------------------
 
-1 - New and updated source strings are being automatically pulled on GitHub pushes by developers.
+1 - New and updated source strings are being automatically added to the translation server on GitHub pushes by developers.
 
 2 - A new pull request with latest translations that reach at least Beta quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__, `mattermost-server <https://github.com/mattermost/mattermost-server>`__ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__ repos each Monday at 22:00 GMT.
 
@@ -129,7 +126,7 @@ If you're interested in contributing to the process, please join the `Mattermost
     "Türkçe - Turkish", "`Kaya Zeren <https://twitter.com/kaya_zeren>`__", ""
     "Pусский - Russian", "`Alexey Napalkov <https://github.com/flynbit>`_", ""
     "Yкраїнська - Ukrainian", "TBD (Open Role)", ""
-    "한국어 - Korean", "`avasconcelos114 <https://translate.mattermost.com/user/avasconcelos114/>`__", ""
+    "한국어 - Korean", "TBD (Open Role)", ""
     "中文 (简体) - Simplified Chinese", "`aeomin <http://translate.mattermost.com/user/aeomin/>`__", ""
     "中文 (繁體) - Traditional Chinese", "`Tze-Kei Lee (chikei) <https://github.com/chikei>`__", ""
     "日本語 - Japanese", "`Yusuke Nemoto (kaakaa) <https://github.com/kaakaa>`__", ""
