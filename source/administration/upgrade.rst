@@ -46,17 +46,9 @@ Location of your local storage directory
 
 #. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
-   *Enterprise Edition*
-
    .. code-block:: sh
 
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
-
-   *Team Edition*
-
-   .. code-block:: sh
-
-    wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 #. Extract the Mattermost Server files.
 
