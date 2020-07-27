@@ -95,18 +95,6 @@ Incident channels can be public or private, based on the settings of the playboo
 7. Switch to the main channel view.
 8. Create an incident by selecting the playbook you just created.
 
-Editing checklists
-~~~~~~~~~~~~~~~~~~~
-
-You can edit checklist items and their position in the checklist when they are not part of an active incident.
-
-1. Select **!** in the channel header of an active incident.
-2. Choose **Edit**.
-  - To edit: Select the text field to edit details.
-  - To delete: Hover over an input box and select the **X** to remove the checklist item.
-  - To move: Drag the hamburger menu to rearrange the checklist items.
-3. Choose **Done** to save the changes.
-
 Ending incidents
 ~~~~~~~~~~~~~~~~
 
@@ -124,19 +112,17 @@ Incidents and playbooks are associated with teams in Mattermost. Participants ca
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-System Admins and Team Admins can edit the visibility of, and access to, playbooks and incidents so that:
+System Admins can edit the visibility of, and access to, playbooks and incidents so that:
 
 - Users who are removed from an incident channel by a System Admin can no longer access the incident's playbook.
-- Team members who aren't System or Team Admins can invite other team members to manage private playbooks.
-- Team members who aren't System or Team Admins can't be removed from an incident by other members of the team.
-- Team members who aren't System or Team Admins can't have access to playbooks removed by other members of the team.
+- Team members who aren't System Admins can invite other team members to manage private playbooks.
+- Team members who aren't System Admins can't be removed from an incident by other members of the team.
+- Team members who aren't System Admins can't have access to playbooks removed by other members of the team.
 
 Managing incident channel visibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can manage the visibility of channels by converting them into private incident channels. When a public incident is converted to a private incident, it can't be accessed by members who weren't in the channel at the time of the conversion, unless they're invited by a channel member. In addition, the contents of the channel won't show up in a search query or in the incident list in the incident backstage. 
-
-Once a public incident is converted to a private incident the change cannot be reversed. Non-participants who are in the same team can be added to the channel by an admin.
+System Admins can manage the visibility of channels by converting them into private incident channels. 
 
 **Creating a private incident channel**
 
@@ -155,7 +141,7 @@ Once a public incident is converted to a private incident the change cannot be r
 Managing playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System and Team Admins can modify playbook editing permissions and visibility.
+Any member of a playbook as well as all system admins can modify playbook editing permissions and visibility.
 
 **Adding a user as a playbook editor**
 
@@ -177,7 +163,7 @@ System and Team Admins can modify playbook editing permissions and visibility.
 Incidents backstage
 ~~~~~~~~~~~~~~~~~~~~
 
-To open the incidents backstage, which lists all incidents associated with the current team, select **Incidents & Playbooks** from the Main Menu. All incidents for the current team are listed for review with the following details for each incident:
+To open the incidents backstage, which lists all incidents associated with the current team, select **Main Menu > Incidents & Playbooks**. All incidents for the current team are listed for review with the following details for each incident:
 
 - Name
 - Status (**Ongoing** or **Ended**)
