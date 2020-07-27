@@ -115,7 +115,6 @@ There are two ways to end an incident:
 - Using the slash command */incident end* from within the incident channel.
 - Using the **End Incident** button in the RHS panel while in the incident channel.
 
-The incident will become inactive, is removed from the list of active incidents, and the associated channel is archived.
 
 Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
