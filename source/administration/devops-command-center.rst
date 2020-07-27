@@ -62,7 +62,7 @@ The set of steps contained within a playbook is called a checklist.
 Viewing and creating playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open **Main Menu > Incidents & Playbooks > Playbooks** to open the playbooks backstage and view the public playbooks associated with the current team. Select **+ New Playbook** to start a new playbook.
+ Open **Main Menu > Incidents & Playbooks > Playbooks** to open the playbooks backstage and view the your playbooks associated with the current team. Select **+ New Playbook** to start a new playbook. 
 
 Public and private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
