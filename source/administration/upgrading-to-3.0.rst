@@ -48,10 +48,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 3. Download version 3.0.3.
 
-  Enterprise Edition
-    ``wget https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz``
-  Team Edition
-    ``wget https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz``
+  ``wget https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz``
 
 4. Extract the Mattermost Server files.
 
