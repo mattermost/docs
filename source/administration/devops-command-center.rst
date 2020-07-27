@@ -72,7 +72,6 @@ Incident channels can be public or private, based on the settings of the playboo
 - **Public:** Anyone in the team can view the incident details and join the incident channel. The incident details are visible to all team members during the active incident and after the incident has ended.
 - **Private:** Only incident members who were members of the channel when the incident started have access to the ongoing incident and incident details after the incident has ended. Private incidents can't be made public once they've been started.
 
-Private incidents don't appear in the backstage when they're active, and the contents of the channel won't show up in a search query. If an incident was public and changed to private, it can't be accessed by non-participants unless they're invited by a member of the incident channel.
 
 **Creating a public playbook and incident**
 
