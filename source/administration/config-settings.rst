@@ -476,10 +476,11 @@ Enable Elasticsearch for autocomplete queries
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers.
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or object storage systems which implement the S3 API. We officially support AWS S3 and Minio.
 
 .. note::
-  We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
+  
+  Other S3 compatible systems may work, but are not officially supported. We have tested Mattermost with `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
 
 File Storage System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
