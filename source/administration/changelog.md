@@ -185,7 +185,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - Added ``LocalModeSocketLocation`` to set the path for the socket that the server will create for mmctl to connect and communicate through local mode.
      - Changed ``EnableLinkPreviews`` to default true for new installs.
      - Changed ``SessionLengthWebInDays`` to default to 30 days for new installs.
- - Under ``ClusterSettings`` in ``config.json``:
+ - Under ``SqlSettings`` in ``config.json``:
      - Added ``DisableDatabaseSearch`` to disable the use of the database to perform searches.
  - Under ``LdapSettings`` in ``config.json``: 
      - Added ``PictureAttribute`` to configure the attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
