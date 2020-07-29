@@ -57,12 +57,16 @@ Using playbooks
 
 Playbooks are templates which are applied to an incident and define a set of steps to be followed in order to resolve the incident. Playbooks can be refined over a period of time to match the changing parameters of future related incidents.
 
-The set of steps contained within a playbook is called a checklist.
+The creator of a playbook is automatically added as a member but can remove themselves. Only playbook members can use the playbook to start an incident - System Admins must be added to the member list to have access to a playbook.
+
+You can optionally add stages and checklist items to a playbook.
 
 Viewing and creating playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- Open **Main Menu > Incidents & Playbooks > Playbooks** to open the playbooks backstage and view the your playbooks associated with the current team. Select **+ New Playbook** to start a new playbook. 
+Open **Main Menu > Incidents & Playbooks > Playbooks** to open the playbooks backstage and view the your playbooks associated with the current team. Select **+ New Playbook** to start a new playbook.
+ 
+A playbook needs to have a name and at least one member in order to be saved to the backstage.
 
 Public and private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +75,6 @@ Incident channels can be public or private, based on the settings of the playboo
 
 - **Public:** Anyone in the team can view the incident details and join the incident channel. The incident details are visible to all team members during the active incident and after the incident has ended.
  - **Private:** Only incident members who are members of the incident channel have access to the ongoing incident and incident details after the incident has ended. Private incidents can't be made public once they've been started. 
-
 
 **Creating a public playbook and incident**
 
@@ -103,21 +106,20 @@ There are two ways to end an incident:
 - Using the slash command */incident end* from within the incident channel.
 - Using the **End Incident** button in the RHS panel while in the incident channel.
 
-
 Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Incidents and playbooks are associated with teams in Mattermost. Participants can be added to an incident by other incident members inviting them to the incident's channel. Incidents are created based on playbooks, and are public or private depending on the playbook's settings. 
+Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, and are public or private depending on the playbook's settings. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_. 
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can edit the visibility of, and access to, playbooks and incidents so that:
+Membership of playbooks and incidents is independent. System Admins can edit the visibility of, and access to, playbooks and incidents so that:
 
 - Users who are removed from an incident channel by a System Admin can no longer access the incident's playbook.
+- Team members who aren't System Admins can't have access to playbooks removed by other members of the team.
 - Team members who aren't System Admins can invite other team members to manage private playbooks.
 - Team members who aren't System Admins can't be removed from an incident by other members of the team.
-- Team members who aren't System Admins can't have access to playbooks removed by other members of the team.
 
 Managing incident channel visibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
