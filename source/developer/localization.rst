@@ -130,3 +130,8 @@ If you're interested in contributing to the process, please join the `Mattermost
     "中文 (简体) - Simplified Chinese", "`aeomin <http://translate.mattermost.com/user/aeomin/>`__", ""
     "中文 (繁體) - Traditional Chinese", "`Tze-Kei Lee (chikei) <https://github.com/chikei>`__", ""
     "日本語 - Japanese", "`Yusuke Nemoto (kaakaa) <https://github.com/kaakaa>`__", ""
+
+Administrative tasks
+~~~~~~~~
+To grant trusted translators additional permissions as weblate admin, add the user to the mattermost@TrustedReviewers Group in weblate.
+Admin interface (tool icon in weblate) > Users > Django Admin Interface > click on the User to add to the group > Groups > Add to mattermost@TrustedReviewers > Save.
