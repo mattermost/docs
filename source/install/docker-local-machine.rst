@@ -21,6 +21,8 @@ If you have Docker set up, Mattermost installs in one-line:
    .. code:: bash
 
        docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
+ 
+When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
 Otherwise, follow the step-by-step instructions:
 
