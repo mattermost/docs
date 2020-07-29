@@ -34,7 +34,8 @@ jobs:
           destination_dir: ./${{ github.actor }}
           publish_dir: ./build/html
           publish_branch: gh-pages
-          force_orphan: true
+          keep_files: true
+
       - name: Add comment to PR
         uses: peter-evans/create-or-update-comment@v1
         with:
