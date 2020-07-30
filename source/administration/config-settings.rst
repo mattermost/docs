@@ -476,7 +476,7 @@ Enable Elasticsearch for autocomplete queries
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or object storage systems which implement the S3 API. We officially support AWS S3 and Minio.
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or object storage systems which implement the S3 API. We officially support AWS S3 and MinIO.
 
 .. note::
   
