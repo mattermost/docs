@@ -15,15 +15,28 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - Sidebar phase 2
- - Advanced logging
- - Prefething of posts
- - Archive / Unarchive Channels
- - Added a View Group Members Modal
- - Filters for team/channel
- - Autocomplete functionality should enable commands to be executed on selection (mouse click, tab or enter)
- - Promoted Russian and Dutch languages to General Availability
- - Added sysadmin warning support (announcement bar and DM) for multiple metrics
+
+#### Archive & unarchive channels from the System Console (E20 Edition)
+ - Channels can now be archived and unarchived with ease from the System Console.
+
+#### Advanced team & channel filters in the System Console (E20 Edition)
+ - Managing teams & channels is now lot easier with new search filters.
+ 
+#### Advanced logging & log forwarding (E20 Edition)
+ - Enables asynchronous logging - improving efficiency of request processing and adds the capability of sending log records to multiple targets.
+ 
+#### Additional mmctl CLI commands
+ - Added new mmctl CLI commands, such as ``ldap idmigrate``, ``user convert`` and ``user deleteall``.
+
+#### Ask the Mattermost community in one click
+ - You can access the community from a new “Help” menu in the channel header, after which you will create an account on our public [Mattermost Community server](https://community.mattermost.com/) to join a vibrant user community to ask questions and help your peers to troubleshoot issues.
+
+#### Categorize and reorder channels with new channel sidebar features (Experimental)
+ - Users now have the ability to create custom categories in the sidebar to group channels together for easier navigation, drag channels between or within categories to prioritize conversations most important to you, and much more.
+ 
+- Added a View Group Members Modal
+- Autocomplete functionality should enable commands to be executed on selection (mouse click, tab or enter)
+- Added sysadmin warning support (announcement bar and DM) for multiple metrics
 
 ### Improvements
 
@@ -33,36 +46,36 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for allowing copying and pasting of emoji shortcodes.
  - Added Online, Away, Do Not Disturb, and Offline icons to the status menu for quicker recognition.
  - Increased visibility of user and channel autocomplete suggestions when editing a long post.
- - Added a flag icon to the post hover menu and update pinned and flagged post styling in the channel.
+ - Added a flag icon to the post hover menu and updated pinned and flagged post styling in the channel.
  - Added support for PostgreSQL & PL/pgSQL syntax highlighting.
  - Expanded the width of server logs page in System Console UI to full screen width.
 
-#### Plugins
- - Added plugin API endpoint to run a slash command.
- - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each plugin.
- - Implemented ``http.Hijacker`` for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
-
-#### Command Line Interface (CLI)
- - Added ``ldap idmigrate`` command to mmctl.
- - Added ``user convert`` command to mmctl.
- - Added ``user deleteall`` command to mmctl.
- - Added the ability to remove non-members of the target team if ``channel move`` fails.
+#### Localization
+ - Promoted Russian and Dutch languages to “official”.
 
 #### Search
  - Added ability for Elasticsearch to search terms inside links.
  - Searching for a user with a leading "@" in the search term with Elasticsearch now returns results for those users.
- - Added ability to include filtering searchs/autocompletion by roles.
+ - Added ability to include filtering search/autocompletion by roles.
  - Added ability to search/autocomplete inactive users from Elasticsearch.
  - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update and/or delete entities in the searchlayer.
  - Implemented prefix/suffix search on Teams and Channel pages in System Console.
 
+#### Plugins
+ - Added plugin API endpoint to run a slash command.
+ - Implemented ``http.Hijacker`` for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
+
+#### Command Line Interface (CLI)
+ - Added the ability to remove non-members of the target team if ``channel move`` fails.
+
 #### Administration
- - implemented encryption for gossip protocol.
+ - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each plugin.
  - Servers now send a push notification to mobile clients when a user's session expires.
  - Clearing the Site URL in the System Console is no longer allowed.
  - Changed the patch post API endpoint authorization logic to allow the ``edit_others_posts`` permission to function independently from ``edit_own_posts``.
  - Included a response code in the "Received HTTP Request" log line.
  - Added support for a new environment variable ``MM_LICENSE`` which can contain the contents of a license file. When set, this license takes priority over all other license sources.
+ - Added support for encryption for gossip protocol.
 
 ### Bug Fixes
  - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
@@ -76,7 +89,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a highlight was missing when users at-mentioned themselves, followed by period, underscore, or hyphen.
  - Fixed an issue where a 500 error was returned by the ``/posts/unread`` endpoint caused by an [integer overflow](https://en.wikipedia.org/wiki/Integer_overflow) when ``limit_after`` was set to 0.
  - Fixed an issue where the footer text in invitation emails was not translated.
- - Fixed an issue where ``PermanentDeleteTeam`` did not return an error but did a soft deletion when ``EnableAPITeamDeletion`` was not set.
+ - Fixed an issue where ``PermanentDeleteTeam`` did not return an error but did a soft deletion if ``EnableAPITeamDeletion`` was not set.
  - Fixed an issue on PostgreSQL where logging in using MFA did not respect the uppercase of the email address.
 
 ### config.json
