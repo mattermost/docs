@@ -93,7 +93,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 5 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 
-If you find a string that has not been translated, search for the string in the respective localization file to confirm it's included for translations. You can find the English version for server, webapp and mobile projects below
+If you find a string that has not been translated, search for the string in the respective localization file to confirm it's included for translations. You can find the English version for server, webapp, and mobile projects below
 
   - https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json
   - https://github.com/mattermost/mattermost-webapp/blob/master/i18n/en.json
