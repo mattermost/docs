@@ -7,7 +7,7 @@ The Mattermost Desktop App supports managed resources. A managed resource can be
 .. Note::
     Using this feature requires a `custom build of the Mattermost Desktop App <https://docs.mattermost.com/deployment/desktop-app-deployment.html>`_.
 
-When adding the path of a managed resource to `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`_ it opens as a pop-up window in the Mattermost Desktop App. 
+Add the path of a managed resource to your configuration file. When selected, it opens as a pop-up window in the Mattermost Desktop App. 
 
 In the below example we add the managed resource ``/video``.
 
@@ -37,4 +37,3 @@ Here are two example server URLs each with valid and invalid managed resource UR
   - An invalid video service using a different protocol: ``http://my.org/video``
   
   - An invalid conference service having a different origin: ``https://conference.my.org``
-
