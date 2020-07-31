@@ -184,7 +184,7 @@ Finally, run these commands to reload the daemon and restart Mattermost using th
 Rolling Back
 ^^^^^^^^^^^^
 
-If you run into issues with your configuratoin in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mm.environment`` and restarting Mattermost with ``systemctl restart mattermost``
+If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mm.environment`` and restarting Mattermost with ``systemctl restart mattermost``
 
 
 Troubleshooting
