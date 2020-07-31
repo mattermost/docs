@@ -14,6 +14,11 @@ Like many search engines, common words such as ``the``, ``which``, and ``are`` (
 Search Modifiers
 ----------------
 
+Clicking inside the search field offers a selection of search filters to narrow down your query. Click on a search filter to add it to the search input.
+
+.. image:: ../../images/search-pop.png
+  :width: 300 px
+
 From: and In:
 ^^^^^^^^^^^^^
 

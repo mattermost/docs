@@ -6,11 +6,11 @@ Product Overview
 
 Thousands of organizations use Mattermost around the world in 16 languages for its unmatched benefits:
 
-- **Security** - Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`__ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
+- **Security.** Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`__ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
 
-- **Configurability** - Adapt your deployment to your needs, preferences, policies and existing systems. Mattermost integrates with your evolving security, compliance and monitoring infrastructure and offers a host of app integrations, webhooks, APIs, and drivers to bring all your communication and workflow into one place.
+- **Configurability.** Adapt your deployment to your needs, preferences, policies and existing systems. Mattermost integrates with your evolving security, compliance and monitoring infrastructure and offers a host of app integrations, webhooks, APIs, and drivers to bring all your communication and workflow into one place.
 
-- **Scalability** - Grow from dozens of users to tens of thousands on the same server. Built on a high performance, single-tenant infrastructure, Mattermost E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
+- **Scalability.** Grow from dozens of users to tens of thousands on the same server. Built on a high performance, single-tenant infrastructure, Mattermost E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
 
 About the Mattermost Open Source Project
 ----------------------------------------------
@@ -19,15 +19,14 @@ At its core, Mattermost is an open source, hybrid cloud alternative to proprieta
 
 Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open source project, commercial "Enterprise Edition" extensions are available from Mattermost, Inc. Partnership with our core committer community, along with revenue from Enterprise Edition, ensures the continued improvement of all editions.
 
-Mattermost Editions
+Mattermost Team Edition
 -----------------------
 
-Mattermost is offered in three editions:
+A free-to-use, open source, self-hosted alternative to proprietary SaaS messaging. Team Edition is your open source "virtual office", offering all the core productivity benefits of competing SaaS solutions. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
 
-Mattermost Team Edition
-^^^^^^^^^^^^^^^^^^^^^^^
+The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features.
 
-A free-to-use, open source, self-hosted alternative to proprietary SaaS messaging. Team Edition is your open source "virtual office", offering all the core productivity benefits of competing SaaS solutions. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license. Features include:
+Features include:
 
 - One-to-one and group messaging, file sharing, and unlimited search history
 - Native apps for iOS, Android, Windows, Mac, Linux
@@ -37,11 +36,18 @@ A free-to-use, open source, self-hosted alternative to proprietary SaaS messagin
 - Multi-factor authentication
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__ and `third party extensions <https://about.mattermost.com/default-app-directory/>`__
-- Easily scalable from dozens to hundreds of users
+- Easily scalable to dozens of users per team
 - New features and improvements released every two months
 - Multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian
 
 To get started, `download the open source Mattermost Team Edition server <https://about.mattermost.com/download>`__ under an MIT license.
+
+Mattermost Enterprise Edition
+----------------------------
+
+To explore the benefits of Mattermost's enterprise features, you can replace the Mattermost Team Edition binary with a `Mattermost Enterprise Edition binary <https://about.mattermost.com/download>`__. This version supports upgrading to Mattermost Enterprise Edition E10 or E20.
+
+Once you've downloaded and installed Mattermost Enterprise Edition you have the option to use it as-is, or you can access Enterprise Edition E20 features such as AD/LDAP, Guest Accounts, read-only channels, and advanced compliance support for a trial period. Start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 
 Mattermost Enterprise Edition E10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,9 +58,7 @@ A commercial enterprise messaging solution for teams, groups and departments wor
 - Encrypted push notifications with service level agreements (SLAs) via HPNS
 - Advanced access control policy
 - Next business day support via online ticketing system
-- Scale to handle thousands of users
-
-Get started with a `free trial license <https://about.mattermost.com/trial/>`__. You can later purchase online with a `credit card <https://about.mattermost.com/pricing/>`__ or by `bank transfer <https://about.mattermost.com/quotation/>`__.
+- Scale to handle hundreds of users per team
 
 Mattermost Enterprise Edition E20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,6 +74,6 @@ A commercial enterprise-grade messaging system that scales from hundreds to tens
 - Advanced performance monitoring
 - Eligibility for Premier Support add-on
 
-For a complete list of features across editions, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`_. Get started with a `free trial license <https://about.mattermost.com/trial/>`__. You can later purchase online with a `credit card <https://about.mattermost.com/pricing/>`__ or by `bank transfer <https://about.mattermost.com/quotation/>`__.
+For a complete list of features across editions, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`_.
 
 For purchases above 3,000 seats, please contact our `enterprise sales team <https://about.mattermost.com/contact/>`__.

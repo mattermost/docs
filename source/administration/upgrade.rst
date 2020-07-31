@@ -3,6 +3,9 @@ Upgrading Mattermost Server
 
 In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
+.. important::
+  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+
 Upgrading to the Latest Version
 -------------------------------
 
@@ -43,17 +46,9 @@ Location of your local storage directory
 
 #. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
-   *Enterprise Edition*
-
    .. code-block:: sh
 
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
-
-   *Team Edition*
-
-   .. code-block:: sh
-
-    wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 #. Extract the Mattermost Server files.
 
@@ -96,13 +91,6 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
-    
-#. Rename the ``plugins`` directories so they do not interfere with the upgrade.
-
-   .. code-block:: sh
-
-     sudo mv mattermost/plugins/ mattermost/plugins~
-     sudo mv mattermost/client/plugins/ mattermost/client/plugins~
     
 #. Change ownership of the new files before copying them.
 
@@ -152,16 +140,6 @@ Location of your local storage directory
    #. Refresh the page.
 
    Your current settings are preserved, and new settings are added with default values.
-
-#. Reinstate the ``plugins`` directories, then restart the mattermost service.
-
-   .. code-block:: sh
-
-     cd {install-path}/mattermost
-     sudo rsync -au plugins~/ plugins
-     sudo rm -rf plugins~
-     sudo rsync -au client/plugins~/ client/plugins
-     sudo rm -rf client/plugins~
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 

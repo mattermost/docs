@@ -3,7 +3,10 @@ Extended Support Release
 
 What is an Extended Support Release?
 ------------------------------------
-During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.  
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
+
+.. important::
+  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -17,7 +20,7 @@ Please see `Release Lifecycle documentation <https://docs.mattermost.com/adminis
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/ESR_graph.png
+.. image:: ../images/ESR2021.png
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
@@ -41,9 +44,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                   |
 +=============+================+==================+==================+============================================================================================+=================================================+
-| 5.25        | Quality        | July 16, 2020    | April 15, 2021   |                                                                                            |                                                 |
+| 5.25        | Quality        | July 16, 2020    | April 15, 2021   | `5.25.2 <https://releases.mattermost.com/5.25.2/mattermost-5.25.2-linux-amd64.tar.gz>`_    |                                                 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
-| 5.19        | Quality        | January 16, 2020 | October 15, 2020 | `5.19.2 <https://releases.mattermost.com/5.19.2/mattermost-5.19.2-linux-amd64.tar.gz>`_    |                                                 |
+| 5.19        | Quality        | January 16, 2020 | October 15, 2020 | `5.19.3 <https://releases.mattermost.com/5.19.3/mattermost-5.19.3-linux-amd64.tar.gz>`_    |                                                 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 | 5.9         | Quality        | April 16, 2019   | April 15, 2020   | `5.9.8 <https://releases.mattermost.com/5.9.8/mattermost-5.9.8-linux-amd64.tar.gz>`_       | Please upgrade to 5.0 prior to upgrading to 5.9 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+

@@ -46,6 +46,7 @@ Learn how to get Mattermost running on your environment.
    /install/trouble_mysql.rst
    /install/desktop*
    /install/desktop-msi-gpo*
+   /install/desktop-managed-resources*
    /install/smtp*
    /install/config-cloudfront*
    /install/outbound-proxy.rst
@@ -68,6 +69,7 @@ Learn how to host Mattermost to meet your networking requirements.
    /administration/encryption*
    /deployment/client-side-data.rst
    /administration/backup*
+   /deployment/bleve*
 
 Configure Mattermost
 ---------------------
@@ -125,6 +127,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-office*
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
+   /deployment/team-channel-management*
    /deployment/advanced*
    /deployment/permissions-backend*
    /deployment/guest-accounts*
@@ -177,6 +180,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/release-lifecycle*
    /administration/downgrade.rst
    /administration/open-source-components*
+   /administration/release-definitions*
 
 Mattermost Integrations
 ----------------------------
@@ -188,7 +192,9 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
+   /administration/devops-command-center*
    /deployment/atlassian-integrations*
+   /deployment/microsoft-integrations*
    /deployment/ci-cd-tools*
    /deployment/incident-response-and-monitoring*
    /deployment/bots*
@@ -206,6 +212,7 @@ Learn how to adhere to your security and regulations.
 
    /administration/ediscovery*
    /administration/compliance*
+   /administration/audit-log*
    /administration/compliance-export*
    /administration/data-retention*
    /administration/custom-terms-of-service*

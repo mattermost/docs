@@ -1,6 +1,7 @@
 Configuration in the Mattermost Database
 =========================================
-A new configuration option was added in `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default config.json file to reading the configuration settings stored within a configuration table in the database. 
+
+A new configuration option was added in `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`_ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <cluster>`.
 
@@ -185,7 +186,6 @@ Rolling Back
 ^^^^^^^^^^^^
 
 If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mm.environment`` and restarting Mattermost with ``systemctl restart mattermost``
-
 
 Troubleshooting
 -----------------
