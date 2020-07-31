@@ -27,19 +27,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Integrate Mattermost advanced logging with log aggregators (E20 Edition)
  - Enables asynchronous logging - improving efficiency of request processing and adds the capability of sending log records to multiple targets.
- 
-#### Additional mmctl CLI commands
- - Added new mmctl CLI commands, such as ``ldap idmigrate``, ``user convert`` and ``user deleteall``.
 
-#### Ask the Mattermost community in one click
+#### Access help of the Mattermost community via Ask the Community direct link
  - You can access the community from a new “Help” menu in the channel header, after which you will create an account on our public [Mattermost Community server](https://community.mattermost.com/) to join a vibrant user community to ask questions and help your peers to troubleshoot issues.
 
 #### Categorize and reorder channels with new channel sidebar features (Experimental)
  - Users now have the ability to create custom categories in the sidebar to group channels together for easier navigation, drag channels between or within categories to prioritize conversations most important to you, and much more.
- 
-- Added a View Group Members Modal
-- Autocomplete functionality should enable commands to be executed on selection (mouse click, tab or enter)
-- Added sysadmin warning support (announcement bar and DM) for multiple metrics
 
 ### Improvements
 
@@ -55,6 +48,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Localization
  - Promoted Russian and Dutch languages to “official”.
+ 
+#### Command Line Interface (CLI)
+ - Added new mmctl CLI commands, such as ``ldap idmigrate``, ``user convert`` and ``user deleteall``.
 
 #### Search
  - Added ability for Elasticsearch to search terms inside links.
@@ -64,7 +60,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update and/or delete entities in the searchlayer.
  - Implemented prefix/suffix search on Teams and Channel pages in System Console.
 
-#### Plugins
+#### Integrations
+ - Added slash command autocomplete functionality to enable commands to be executed on selection (mouse click, tab or enter).
  - Added plugin API endpoint to run a slash command.
  - Implemented ``http.Hijacker`` for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
 
