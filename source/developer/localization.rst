@@ -30,7 +30,7 @@ Translations Updates
 
 1 - New and updated source strings are being automatically added to the translation server on GitHub pushes by developers.
 
-2 - A new pull request with latest translations that reach at least Beta quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__, `mattermost-server <https://github.com/mattermost/mattermost-server>`__ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__ repos each Monday at 22:00 GMT.
+2 - A new pull request with latest translations that reach at least Beta quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__, `mattermost-server <https://github.com/mattermost/mattermost-server>`__, and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`__ repos each Monday at 22:00 GMT.
 
     - A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release.
     - A pull request may also be submitted for a release candidate.
