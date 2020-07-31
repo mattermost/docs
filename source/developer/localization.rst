@@ -134,4 +134,4 @@ If you're interested in contributing to the process, please join the `Mattermost
 Administrative tasks
 ~~~~~~~~
 To grant trusted translators additional permissions as Weblate admin, add the user to the *mattermost@TrustedReviewers* group in Weblate.
-Admin interface (tool icon in weblate) > Users > Django Admin Interface > click on the User to add to the group > Groups > Add to mattermost@TrustedReviewers > Save.
+**Admin interface (tool icon in Weblate) > Users > Django Admin Interface > select the User > Groups > Add to *mattermost@TrustedReviewers* > Save**.
