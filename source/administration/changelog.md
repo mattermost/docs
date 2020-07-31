@@ -22,7 +22,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Advanced team & channel filters in the System Console (E20 Edition)
  - Managing teams & channels is now lot easier with new search filters.
  
-#### Advanced logging & log forwarding (E20 Edition)
+#### Integrate Mattermost advanced logging with log aggregators (E20 Edition)
  - Enables asynchronous logging - improving efficiency of request processing and adds the capability of sending log records to multiple targets.
  
 #### Additional mmctl CLI commands
