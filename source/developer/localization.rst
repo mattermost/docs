@@ -15,7 +15,7 @@ To translate a language:
 
 1 - Join the `Mattermost Translation Server <http://translate.mattermost.com>`__.
 
-2 - Confirm that the language you want to help translate is listed in the `Translation Server <https://translate.mattermost.com/projects/>`_. The language may be listed as shipped or work in progress, depending on if the language `ships in Mattermost <https://docs.mattermost.com/help/settings/account-settings.html#language>`_.
+2 - Confirm that the language you want to help translate is listed in the `Translation Server <https://translate.mattermost.com/projects/>`_. The language may be listed as shipped or work in progress, depending whether the language `ships in Mattermost <https://docs.mattermost.com/help/settings/account-settings.html#language>`_.
 
     - If it is, perhaps offer to help translate or review and make suggestions.
     - If not, ask to setup your language on the `Mattermost localization channel <https://community.mattermost.com/core/channels/localization>`__, so you can start helping with the translation.
