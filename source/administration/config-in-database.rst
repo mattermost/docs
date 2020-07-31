@@ -29,7 +29,7 @@ The first step is to get your master database connection string. There are sever
    cd /opt/mattermost
    bin/mattermost config get SqlSettings.DataSource
 
-Output:
+Example Output:
 
 .. code-block:: text
 
