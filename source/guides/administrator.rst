@@ -46,6 +46,7 @@ Learn how to get Mattermost running on your environment.
    /install/trouble_mysql.rst
    /install/desktop*
    /install/desktop-msi-gpo*
+   /install/desktop-managed-resources*
    /install/smtp*
    /install/config-cloudfront*
    /install/outbound-proxy.rst
