@@ -73,12 +73,18 @@ An official language may be changed back to Beta or Alpha if the specified requi
 
 Similarly, Beta languages may be dropped back to Alpha. If that were to happen, it will be moved from the `mattermost-languages-shipped` project to `mattermost-languages-work-in-progress` on our translation server.
 
-Inversely, in the case of a promotion (Alpha to Beta), the language is moved from `mattermost-languages-work-in-progress`  to `mattermost-languages-work-in-progress`.
+Inversely, in the case of a promotion (Alpha to Beta), the language is moved from `mattermost-languages-work-in-progress`  to `mattermost-languages-shipped`.
 
 Message Syntax 
 -----------------
 
-To format localized messages, `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ uses the `react-intl <https://formatjs.io/docs/react-intl>`_ library from `FormatJS <https://formatjs.io/>`_ using the `ICU Message syntax <https://formatjs.io/docs/icu-syntax>`_. Follow the links to read about placeholders and arguments, or experiment with one of their `live editors <https://formatjs.io/docs/intl-messageformat>`_.
+To format localized messages, `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ uses the `react-intl <https://formatjs.io/docs/react-intl>`_, a Javascript library from `FormatJS <https://formatjs.io/>`_.
+
+This library is using the `ICU Message syntax <http://userguide.icu-project.org/formatparse/messages>`_ that became a de facto syntax in a bunch of programming languages now (Java and PHP use it as well).
+
+If you don't know about the ICU syntax yet, please familiarize yourself with that syntax by reading the `ICU Message Syntax simplified documentation <https://formatjs.io/docs/icu-syntax/>`_. What's most important here is to read the section dedicated to how plural is managed.
+
+In order to ease the manipulation of strings like these with a special syntax (ICU as a reminder), a developer has created an online tool allowing to test an ICU string. This tool, called `Online ICU Message Editor <https://format-message.github.io/icu-message-format-for-translators/editor.html>`_, is displayed as a live editor previewing how a string will appear in context. This tool has been reported by some members of our community as really helping the localization effort needed to translate strings containing an ICU syntax. Don't hesitate to use it.
 
 Knowledge Base
 -----------------
