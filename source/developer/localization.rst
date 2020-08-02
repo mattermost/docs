@@ -15,12 +15,12 @@ To translate a language:
 
 1. Join the `Mattermost Translation Server <http://translate.mattermost.com>`_.
 
-2. Check whether the language you want to help translating is listed in the `Translation Server <https://translate.mattermost.com/projects/>`_.
+2. Check whether the language you want to help translate is listed in the `Translation Server <https://translate.mattermost.com/projects/>`_.
 
    * If it is, perhaps offer to help translate or review and make suggestions.
    * If not, ask to setup your language on the `Mattermost localization channel <https://community.mattermost.com/core/channels/localization>`_, so you can start helping with the translation.
 
-   Note: Languages are grouped either as "shipped" or as "work in progress", depending whether the language `ships in Mattermost <https://docs.mattermost.com/help/settings/account-settings.html#language>`_ or not, depending on its `Translation Quality`_.
+   Note: Languages are grouped either as "shipped" or as "work in progress". A language `ships in Mattermost <https://docs.mattermost.com/help/settings/account-settings.html#language>`_ if it meets specified `translation quality`_.
 
 3. Review translation rules written by localization leads, when applicable:
 
@@ -31,14 +31,14 @@ To translate a language:
 Translations Updates
 --------------------
 
-1. New and updated source strings are automatically added to the translation server each time a GitHub pull request containing strings changes is merged.
+1. New and updated source strings are automatically added to the translation server each time a GitHub pull request containing string changes is merged.
 
 2. A new pull request with latest translations that reach at least Beta quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_, `mattermost-server <https://github.com/mattermost/mattermost-server>`_, and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ repos each Monday at 22:00 GMT.
 
    * A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release.
    * A pull request may also be submitted for a release candidate.
 
-**IMPORTANT:** Please do **not** submit translations directly via a pull request as they may be lost with the next update batches coming from the Mattermost Translation Server.
+**IMPORTANT:** Please do **not** submit translations directly via a pull request as they may be lost with the next pull request update from the Mattermost Translation Server.
 
 Translation Quality
 -------------------
@@ -62,29 +62,23 @@ Beta
 * 90% of translation verified by someone deeply knowledgeable in Mattermost functionality and in the target language.
 * Up to 10% of translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 
-Beta languages are listed in **Account Settings > Display > Language** prefixed with **(Beta)**.
+Beta languages are listed in **Account Settings > Display > Language** appended with **(Beta)**.
 
 Alpha
 ~~~~~
 
 * Translation has not yet reached Beta quality.
 
-An official language may be changed back to Beta or Alpha if the specified requirements are not met for a release.
-
-Similarly, Beta languages may be dropped back to Alpha. If that were to happen, it will be moved from the `mattermost-languages-shipped` project to `mattermost-languages-work-in-progress` on our translation server.
-
-Inversely, in the case of a promotion (Alpha to Beta), the language is moved from `mattermost-languages-work-in-progress`  to `mattermost-languages-shipped`.
+An official language may be changed back to Beta or Alpha if the specified requirements are not met for a release. Similarly, Beta languages may be dropped back to Alpha.
 
 Message Syntax 
 -----------------
 
-To format localized messages, `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ uses the `react-intl <https://formatjs.io/docs/react-intl>`_, a Javascript library from `FormatJS <https://formatjs.io/>`_.
+To format localized messages, `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ uses the `react-intl <https://formatjs.io/docs/react-intl>`_, a Javascript library from `FormatJS <https://formatjs.io/>`_. This library uses the `ICU Message syntax <http://userguide.icu-project.org/formatparse/messages>`_, which is the standard syntax for many programming languages.
 
-This library is using the `ICU Message syntax <http://userguide.icu-project.org/formatparse/messages>`_ that became a de facto syntax in a bunch of programming languages now (Java and PHP use it as well).
+If you don't know about the ICU syntax, please familiarize yourself by reading the `ICU Message Syntax simplified documentation <https://formatjs.io/docs/icu-syntax/>`_. What's most important here is to read the section dedicated to how plural terms are managed.
 
-If you don't know about the ICU syntax yet, please familiarize yourself with that syntax by reading the `ICU Message Syntax simplified documentation <https://formatjs.io/docs/icu-syntax/>`_. What's most important here is to read the section dedicated to how plural is managed.
-
-In order to ease the manipulation of strings like these with a special syntax (ICU as a reminder), a developer has created an online tool allowing to test an ICU string. This tool, called `Online ICU Message Editor <https://format-message.github.io/icu-message-format-for-translators/editor.html>`_, is displayed as a live editor previewing how a string will appear in context. This tool has been reported by some members of our community as really helping the localization effort needed to translate strings containing an ICU syntax. Don't hesitate to use it.
+In order to ease the manipulation of strings like these with a special syntax (ICU as a reminder), a developer has created an online tool allowing to test an ICU string. This tool, called `Online ICU Message Editor <https://format-message.github.io/icu-message-format-for-translators/editor.html>`_, is displayed as a live editor previewing how a string will appear in context. This tool has been reported by some members of our community as really helpful to translate strings containing an ICU syntax. Don't hesitate to use it.
 
 Knowledge Base
 -----------------
@@ -92,7 +86,7 @@ Knowledge Base
 Some terms used in Mattermost may be technical. If you don't know how to translate a specific term:
 
 * If applicable, check how the term has been translated in other locations of the translation you are contributing to.
-* Use a translation engine to know how other translator have turned the sentense in their own translations.
+* Use a translation engine to know how others have translated the term.
 * Use the `Microsoft open linguistic portal <https://www.microsoft.com/en-us/language/Search>`_.
 * Ask your question on the `Mattermost localization channel <https://community.mattermost.com/core/channels/localization>`_.
 
@@ -129,7 +123,7 @@ Translation Maintenance
 
 Translations require updates on a monthly basis as features are added and changed.
 
-While the formal process for updates has yet to be determined, up to now, the release manager is sending a notification to one of the official translation reviewers in order for him/her to send a nudge in the community of translators. This reminder tends to induce a virtuous cycle of motivation into the community of translators.
+While the formal process for updates has yet to be determined, currently the Release Manager notifies one of the official translation reviewers who then forwards the message to the community of translators. This reminder tends to induce a virtuous cycle of motivation into the community of translators.
 
 Below are current official reviewers and maintainers for languages that have reached at least Beta-quality. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release.
 
@@ -155,7 +149,14 @@ If you're interested in contributing to the process, please join the `Mattermost
     "中文 (繁體) - Traditional Chinese", "`Tze-Kei Lee (chikei) <https://github.com/chikei>`_", ""
 
 Administrative tasks
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-To grant trusted translators additional permissions as Weblate admin, add the user to the *mattermost@TrustedReviewers* group in Weblate.
-**Admin interface (tool icon in Weblate) > Users > Django Admin Interface > select the User > Groups > Add to *mattermost@TrustedReviewers* > Save**.
+To grant trusted translators additional permissions as Weblate admin:
+
+1. Add the user to the ``mattermost@TrustedReviewers`` group in Weblate.
+2. Select **Admin interface** (tool icon in Weblate).
+3. Go to **Users > Django Admin Interface**.
+4. Select the user you want to grant permissions to.
+5. Go to **Groups**.
+6. Add the user to ``mattermost@TrustedReviewers`` group.
+7. Hit **Save**.
