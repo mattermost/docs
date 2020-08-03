@@ -298,6 +298,10 @@ When the Mattermost Source Available LICENSE file appears in a specific director
 
 In all cases, any third party components remain licensed under their original license.
 
+An example directory layout is shown below:
+
+.. image:: ../images/source-available-license.png
+
 Why are you changing the licensing model?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
