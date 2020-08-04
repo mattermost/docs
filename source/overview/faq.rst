@@ -284,7 +284,7 @@ See our `frequently asked questions about licensing <https://docs.mattermost.com
 Mattermost Source Available License
 ----------------------------------------------
 
-What is the Mattermost source available icense?
+What is the Mattermost source available license?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise E20 License in a production environment.
