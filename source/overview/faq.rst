@@ -324,7 +324,7 @@ We expect to keep plugins without an enterprise component under our open source 
 Will the repositories be public?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, existing repositories will stay public. We are now also able to make public several enterprise-only plugins previously developed in private.
+Yes, existing repositories will stay public. We are now also able to make public several enterprise-only plugins under the Mattermost Source Available License previously developed in private.
 
 Can I still contribute?
 ~~~~~~~~~~~~~~~~~~~~~~~~
