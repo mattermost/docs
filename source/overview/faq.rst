@@ -8,7 +8,7 @@ General Questions
 -----------------
 
 Why was Mattermost created?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we made Mattermost <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__.
 
@@ -48,20 +48,21 @@ You can get involved and contribute to Mattermost in the following ways:
 - Get troubleshooting help
 - Help translate Mattermost
 
-See the `Get Involved <https://github.com/mattermost/mattermost-server#get-involved>`__ section of the Mattermost GitHub README for more information.
+See the `Get Involved <https://github.com/mattermost/mattermost-server#get-involved>`__ section of the Mattermost GitHub ``README.md`` for more information.
 
 Can contributors add themselves to the Mattermost company page on LinkedIn?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes! If you have contributed to the Mattermost project we think you should be recognized for it professionally beyond GitHub.
+
 To add yourself to the `Mattermost page on LinkedIn <https://www.linkedin.com/company/mattermost/>`__, do the following:
 
-1. Login to `LinkedIn <https://www.linkedin.com/>`__ or create an account.
+1. Log in to `LinkedIn <https://www.linkedin.com/>`__ or create an account.
 2. Go to **Me > View profile**.
-3. Under **Experience**, click on the “plus” symbol and edit the following:
+3. Under **Experience**, click on the **plus** symbol and edit the following:
   - Title: Enter **Developer**, if you contributed code to the open source project or created a plugin, integration, or other enhancement; **Contributor**,  if you've contributed without writing code (e.g., filed bug report, updated documentation, supported troubleshooting questions, proposed a feature, etc.); **Translator**, if you've `helped translate <https://translate.mattermost.com>`__ Mattermost.
   - Company: Find **Mattermost** (you’ll see the Mattermost logo).
-  - Location: Enter where you live
+  - Location: Enter where you live.
   - From: Date of first contribution or perhaps month you cloned `github.com/mattermost`.
   - Select **I currently work here**.
   - Update my industry: Leave unchecked.
@@ -105,7 +106,7 @@ Are mobile push notifications free?
 
 Yes, push notifications are free if you compile your own `push-proxy service <https://github.com/mattermost/mattermost-push-proxy>`__. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc.
 
-TPNS, hosted at ``https://push-test.mattermost.com``, offers transport-level encryption, but not production-level service level agreements (SLAs).
+TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.com>`_, offers transport-level encryption, but not production-level service level agreements (SLAs).
 
 If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Enterprise Edition E10 subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
 
@@ -117,7 +118,7 @@ Video, Audio, and Screen Sharing
 What support is available for video and audio calling and screen sharing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost. 
+Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
 You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in the `Voice, video, and screensharing guide <https://docs.mattermost.com/deployment/video-and-audio-calling.html>`_.
 
@@ -132,40 +133,41 @@ What is Mattermost Enterprise Edition?
 Mattermost Enterprise Edition is a commercial workplace messaging solution for large organizations operating under compliance and security requirements that is built on top of the open source Mattermost Team Edition.
 
 How can I be assured that my data will not be locked in to commercial software?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users of Mattermost Enterprise Edition can downgrade to the open source version without losing any data. Moreover, you always have control over your server and database, where the entirety of your Mattermost deployment is stored.
 
 How does Mattermost scale from teams to enterprises?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of scaling:
 
-    1. Technical scaling: Maintaining system responsiveness as large quantities of new users are added
-    2. Functional scaling: Adding advanced features to support the increased complexity of large organizations
+    1. Technical scaling: Maintaining system responsiveness as large quantities of new users are added.
+    2. Functional scaling: Adding advanced features to support the increased complexity of large organizations.
 
 **Technical Scaling:** Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. The server is built using Golang, the language developed by Google to create internet-scale applications, and supports highly scalable databases like MySQL, which is `used extensively by Facebook <https://www.facebook.com/notes/facebook-engineering/mysql-and-database-engineering-mark-callaghan/10150599729938920/>`__. Beyond tens of thousands of users, Mattermost Enterprise Edition can offer high availability/horizontal scaling configurations using multiple servers to support even larger organizations.
 
 **Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition, as well as downgrade without data loss, should their needs change.
 
-For more information on how Mattermost scales, technically and functionally, please `contact the Enterprise team <https://about.mattermost.com/contact/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`__.
+For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://about.mattermost.com/contact/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`__.
 
 What does it take to manage a Mattermost deployment?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For a small deployment of Mattermost up to a few hundred users, we'd recommend a part-time, mid-level IT admin, with a senior IT admin for supervision and as a backup resource. They should have the ability to administer a basic Linux server, a MySQL or PostgreSQL database, and web proxy configuration with web sockets.
 
-For a medium deployment of 500 to 2000 users, we'd recommend a senior IT administrator who has the capability to configure Mattermost in a high-availability cluster with redundant database and application servers. They should also be able to activate performance monitoring and health check features in Prometheus and Grafana.
+For a medium deployment of 500 to 2000 users, we'd recommend a senior IT administrator who has the capability to configure Mattermost in a High Availability cluster with redundant database and application servers. They should also be able to activate performance monitoring and health check features in Prometheus and Grafana.
 
 How do you manage multiple messaging solutions in an enterprise?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our customers address multiple collaboration solutions in different ways depending on whether the organization is more tops down or bottoms up.
+Our customers address multiple collaboration solutions in different ways depending on whether the organization is more top down or bottom up.
 
-**For top-down, customers want to simplify and leverage investments in a central, flexible, innovative solution that can scale.** There's generally a lot of pain with different teams and departments running their own messaging tools, creating silos, redundancy and significant productivity loss. They'll roll out Mattermost as an official solution and centralize communication there. For an example of this, see our `Uber case study <https://about.mattermost.com/blog/how-uber-uses-mattermost-to-enhance-enterprise-wide-communications/>`__.
+**For top-down, customers want to simplify and leverage investments in a central, flexible, innovative solution that can scale.** There's generally a lot of pain with different teams and departments running their own messaging tools, creating silos, redundancy, and significant productivity loss. They'll roll out Mattermost as an official solution and centralize communication there. For an example of this, see our `Uber case study <https://about.mattermost.com/blog/how-uber-uses-mattermost-to-enhance-enterprise-wide-communications/>`__.
 
 **For bottom-up, customers want to supplement for strategic advantage.** We've seen teams flock to Mattermost because of its productivity benefits for DevOps, remote work, rapid response, and scaling large teams where people are overloaded with email. Those organizations, which can have hundreds to thousands of users, will use Mattermost in parallel with general purpose messaging that doesn't meet their specific needs.
 
-One example is Wargaming, one of the world's largest operators of real-time online video games, with over a 150 million players on their system. They've moved their DevOps, design, analytics. and support teams to Mattermost as a supplement to Skype for Business. This is their company-wide, general purpose messenger, that isn't optimized for large DevOps organizations and the degree of integration and flexibility that they need - specifically for DevOps. People want support for Linux and Mac desktops, lots of APIs and hooks to integrate, plugins to embed certain types of reports and interactive controls into messages, friendly keyboard shortcuts and dozens of other enhancements that provide a distinct advantage to their counterparts at other companies.
+One example is Wargaming, one of the world's largest operators of real-time online video games, with over a 150 million players on their system. They've moved their DevOps, design, analytics. and support teams to Mattermost as a supplement to Skype for Business. This is their company-wide, general purpose messenger, that isn't optimized for large DevOps organizations and the degree of integration and flexibility that they need - specifically for DevOps. People want support for Linux and Mac desktops, lots of APIs and hooks to integrate, plugins to embed certain types of reports and interactive controls into messages, friendly keyboard shortcuts, and dozens of other enhancements that provide a distinct advantage to their counterparts at other companies.
 
 What are the options to purchase a subscription to Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,7 +286,7 @@ See our `frequently asked questions about licensing <https://docs.mattermost.com
 Mattermost Source Available License
 ----------------------------------------------
 
-What is the Mattermost source available license?
+What is the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise E20 License in a production environment.
@@ -292,9 +294,9 @@ A source available license gives access to source code, but places restrictions 
 How can I identify code licensed as source available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the Mattermost Source Available LICENSE file appears at the root of a repository, the restrictions apply to all source code within the repository. A note in the README.md often identifies the use of this license and links to this FAQ.
+When the Mattermost Source Available ``LICENSE`` file appears at the root of a repository, the restrictions apply to all source code within the repository. A note in the ``README.md`` often identifies the use of this license and links to this FAQ.
 
-When the Mattermost Source Available LICENSE file appears in a specific directory, the restrictions apply to all source code within that directory. This directory is often called enterprise. For additional clarity, an additional LICENSE.enterprise file may appear in the root directory, symlinked to the enterprise/LICENSE file.
+When the Mattermost Source Available ``LICENSE`` file appears in a specific directory, the restrictions apply to all source code within that directory. This directory is often called "enterprise". For additional clarity, an additional ``LICENSE.enterprise`` file may appear in the root directory, symlinked to the ``enterprise/LICENSE`` file.
 
 In all cases, any third party components remain licensed under their original license.
 
@@ -315,9 +317,9 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We plan to apply this license to the enterprise directories of our Jira, Microsoft O365 Calendar, and MS Teams Meetings plugins. We also intend to release our Incident Response and Channel Export plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the README file of the GitHub repository and as part of any release notes. 
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Response <https://github.com/mattermost/mattermost-plugin-incident-response>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and as part of any release notes. 
 
-We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as mattermost-server or mattermost-webapp.
+We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`_ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
 Will the repositories be public?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -343,12 +345,12 @@ Yes. If you have a Mattermost Enterprise E20 license, you are free to compile an
 
 Several of our customers value complete access to our source code and compile our plugins from source before deploying to their production servers. By adopting the Mattermost Source Available License, we can develop enterprise-only features in public without impacting this workflow.
 
-Will you distribute open-source plugin binaries without any licensing restrictions?
+Will you distribute open source plugin binaries without any licensing restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At this time, we have no plans to distribute more than one version of each of our plugins. Without a Mattermost Enterprise E20 License, plugins may have reduced functionality or refuse to start altogether.
 
-Can I continue to use the existing open-source repositories without restriction?
+Can I continue to use the existing open source repositories without restriction?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, the Mattermost Source Available License will only apply from the date it is added and to the versions in which it is included.
@@ -356,7 +358,7 @@ Yes, the Mattermost Source Available License will only apply from the date it is
 Can I publish my own plugin under a license of my choosing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, you are free to license your own code as you see fit. We will not apply our Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`_ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
+Yes, you are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`_ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
 
 Can I publish my own plugin and rely on enterprise specific functionality?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -376,17 +378,17 @@ No, the Mattermost Source Available License continues to apply to modifications.
 Can I write my own plugin and license it under the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. 
+Yes.
 
 How do I apply the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To apply this license to your entire repository, add the text to a LICENSE file located at the root of your repository, and add the following section to your README.md directly below the opening paragraph:
+To apply this license to your entire repository, add the text to a ``LICENSE`` file located at the root of your repository, and add the following section to your ``README.md`` directly below the opening paragraph:
 
 ## License
 This repository is licensed under the [Mattermost Source Available License](https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license) and requires a valid Enterprise E20 license.
 
-To apply this license to a subdirectory of your repository, add the text to a LICENSE file located in that directory, and then symlink to that directory from a LICENSE.enterprise file in the root. Finally, add a section similar to the following to your README.md:
+To apply this license to a subdirectory of your repository, add the text to a ``LICENSE`` file located in that directory, and then symlink to that directory from a LICENSE.enterprise file in the root. Finally, add a section similar to the following to your ``README.md``:
 
 ## License
 This repository is licensed under the Apache 2.0 License, except for the server/enterprise directory which is licensed under the  Mattermost Source Available License. To learn more, read the [FAQ: Mattermost Source Available License](https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license).
@@ -405,6 +407,7 @@ What is the full text of the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "The Mattermost Source Available License license (the “Source Available License”)
+
 Copyright (c) 2015-present Mattermost
 
 With regard to the Mattermost Software:
@@ -421,7 +424,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-For all third party components incorporated into the Mattermost Software, those components are licensed under the original license provided by the owner of the applicable component.
+For all third party components incorporated into the Mattermost Software, those components are licensed under the original license provided by the owner of the applicable component."
 
 Integration
 ------------------
@@ -658,20 +661,24 @@ If you're looking to customize the look and feel of Mattermost, see `documentati
 If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost-server``, there are a number of factors to consider:
 
 Security
+^^^^^^^^
 
 - If you run a fork of the Mattermost server we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <http://about.mattermost.com/security-updates/>`__. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature, so that users and customers can upgrade before the security vulnerability is widely known. A malicous user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
 
 Rebranding
+^^^^^^^^^^
 
-- When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy. <https://www.mattermost.org/trademark-standards-of-use/>`__
+- When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://www.mattermost.org/trademark-standards-of-use/>`__.
 - You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`__.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost-server/blob/master/NOTICE.txt>`__, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy <https://www.mattermost.org/licensing/>`__.
 
-Other considerations:
+Other considerations
+^^^^^^^^^^^^^^^^^^^^
 
 - Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 - The Mattermost copyright notices on the user interface should remain.
@@ -680,7 +687,7 @@ Other considerations:
 Will Mattermost complete questionnaires requiring confidential data without an NDA?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find `Mattermost's standard mutual non-disclosure agreement online. <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`__
+No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find `Mattermost's standard mutual non-disclosure agreement online <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`__.
 
 Why does Mattermost have a discount for certain kinds of non-profits but not for others?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
