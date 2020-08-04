@@ -1310,6 +1310,16 @@ Custom text will be shown below custom brand image on left side of server login 
 | This feature's ``config.json`` setting is ``"CustomBrandText": ""`` with string input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Ask Community Link
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When true, "Ask the community" link appears on the Mattermost user interface and Main Menu, which allows users to join the Mattermost Community to ask questions and help others troubleshoot issues.
+
+When false, the link is hidden from users.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"enable_ask_community_link": ""`` with options ``true`` and ``false``.                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Help link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
