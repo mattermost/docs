@@ -1,4 +1,3 @@
-
 Configuration in the Mattermost Database
 =========================================
 
