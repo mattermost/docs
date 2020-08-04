@@ -24,7 +24,7 @@ To translate a language:
 
 3. Review translation rules written by localization leads, when applicable:
 
-   * `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/meilon/1317a9425988b3ab296c894a72270787>`_
+   * `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/der-test/6e04bff8a173e053811cb93e08838ca2>`_
    * `French (Règles pour la traduction francophone de Mattermost) <https://github.com/wget/mattermost-localization-french-translation-rules>`_
    * `Dutch translation rules for Mattermost <https://github.com/ctlaltdieliet/mattermost-localization-dutch-translation-rules>`_
 
