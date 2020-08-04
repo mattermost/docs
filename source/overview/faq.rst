@@ -13,7 +13,7 @@ Why was Mattermost created?
 Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we made Mattermost <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__.
 
 Why does the open source repository contain code specific to the commercial version of Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss.
 
@@ -35,7 +35,7 @@ Community Questions
 -------------------
 
 How can I contribute to Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can get involved and contribute to Mattermost in the following ways:
 
@@ -102,7 +102,7 @@ Mobile push notifications are triggered under to following conditions. Click to 
 .. _tpns:
 
 Are mobile push notifications free?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, push notifications are free if you compile your own `push-proxy service <https://github.com/mattermost/mattermost-push-proxy>`__. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc.
 
@@ -113,7 +113,7 @@ If you need production-level SLAs for push notifications, you can either compile
 Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`__.
 
 Video, Audio, and Screen Sharing
-----------------------------------------
+---------------------------------
 
 What support is available for video and audio calling and screen sharing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,7 +197,7 @@ What are Mattermost's policies around licensing, terms of service, and privacy?
 The following outlines the licensing, terms of service and privacy policies across Mattermost software and services.
 
 Mattermost Software
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Software                                           | License                                                                                                                   | Terms of Service                                                                                                              | Privacy Policy                                                                                                             |
@@ -229,7 +229,8 @@ Mattermost Service Agreements
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Mattermost Websites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+
 +----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | Website                    | License                                                                                                                                                          | Terms of Service                                                                 | Privacy Policy                                                                                                            |
 +============================+==================================================================================================================================================================+==================================================================================+===========================================================================================================================+
@@ -244,6 +245,7 @@ Mattermost Websites
 
 Mattermost Partnership Agreements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | Partnership Agreement                                                       | Agreement                                                                                                         |
 +=============================================================================+===================================================================================================================+
@@ -252,6 +254,7 @@ Mattermost Partnership Agreements
 
 Mattermost Confidentiality Agreements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Confidentiality Agreement                                                   | Agreement                                                                                                                             |
 +=============================================================================+=======================================================================================================================================+
@@ -259,7 +262,8 @@ Mattermost Confidentiality Agreements
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Working for Mattermost
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | Service                                                                     | Terms of Service                                                                                                                                 |
 +=============================================================================+==================================================================================================================================================+
@@ -279,12 +283,12 @@ Do you have a program for official non-profits and charities?
 See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have discounted licenses for academic institutions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
 
 Mattermost Source Available License
-----------------------------------------------
+------------------------------------
 
 What is the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -292,7 +296,7 @@ What is the Mattermost Source Available License?
 A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise E20 License in a production environment.
 
 How can I identify code licensed as source available?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the Mattermost Source Available ``LICENSE`` file appears at the root of a repository, the restrictions apply to all source code within the repository. A note in the ``README.md`` often identifies the use of this license and links to this FAQ.
 
@@ -310,19 +314,19 @@ Why are you changing the licensing model?
 Our plugin framework delivers substantial value to our enterprise customers, but requires significant development and support resources. This change to the licensing model allows us to continue developing open source features while selectively charging for features.
 
 How are repositories changing?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As we add enterprise-only functionality, we will update the license on affected Mattermost authored plugin repositories. The intent is to work alongside the existing, open source functionality in our plugins while reserving certain enterprise functionality to customers who pay us for enterprise licenses.
 
 To which repositories does this apply?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Response <https://github.com/mattermost/mattermost-plugin-incident-response>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and as part of any release notes. 
 
 We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`_ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
 Will the repositories be public?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, existing repositories will stay public. We are now also able to make public several enterprise-only plugins under the Mattermost Source Available License previously developed in private.
 
@@ -334,7 +338,7 @@ Yes, we continue to welcome all contributions. Mattermost may select some contri
 As with all Mattermost repositories, you will still need to sign the `Mattermost CLA <https://mattermost.org/mattermost-contributor-agreement/>`_. We will not accept contributions without signing the Mattermost CLA.
 
 Do I need to re-sign the `Mattermost CLA <https://mattermost.org/mattermost-contributor-agreement/>`_?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, if you have already signed the `Mattermost CLA <https://mattermost.org/mattermost-contributor-agreement/>`_, you do not need to sign it again.
 
@@ -351,12 +355,12 @@ Will you distribute open source plugin binaries without any licensing restrictio
 At this time, we have no plans to distribute more than one version of each of our plugins. Without a Mattermost Enterprise E20 License, plugins may have reduced functionality or refuse to start altogether.
 
 Can I continue to use the existing open source repositories without restriction?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, the Mattermost Source Available License will only apply from the date it is added and to the versions in which it is included.
 
 Do I need to use the Mattermost Source Available License for plugins I create?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`_ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
 
@@ -366,12 +370,12 @@ Can I publish my own plugin and rely on enterprise specific functionality?
 As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise E20 license regardless of how you license your plugin.
 
 Can’t someone compile out any license restrictions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We trust our community to honour the Mattermost Source Available License and work alongside us to develop features across our free and paid offerings. Our support team does not provide support to unlicensed, enterprise-only functionality.
+We trust our community to honor the Mattermost Source Available License and work alongside us to develop features across our free and paid offerings. Our support team does not provide support to unlicensed, enterprise-only functionality.
 
 If I make my own plugin using your source available code, can I remove the license restriction?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, the Mattermost Source Available License continues to apply to modifications.
 
@@ -409,7 +413,7 @@ SOFTWARE.
 For all third party components incorporated into the Mattermost Software, those components are licensed under the original license provided by the owner of the applicable component."
 
 Integration
-------------------
+-----------
 
 Can I use Mattermost to add messaging functionality to my proprietary SaaS service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,7 +433,7 @@ Does Mattermost support external guests?
 Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
 
 Can I use Mattermost for customer service?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution.
 
@@ -519,7 +523,7 @@ The following chart highlights the end user features of Mattermost and their sup
 ..  _feature-quality-levels:
 
 What feature quality levels does Mattermost have?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This list describes the quality levels of Mattermost features, and what can be expected at each level.
 
@@ -571,7 +575,7 @@ If it’s unclear from the vendor’s documentation whether or not your data can
 As an open source self-hosted system, Mattermost provides privacy, total data ownership, and control of infrastructure required by high trust teams.
 
 What are the fundamental security challenges with Massive, Multi-Tenant Applications (MMTA)?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The key risk of allowing confidential data to enter a Massively Multi-Tenant Applications (MMTA) is having the system breached, never knowing your data has been compromised, and having stolen data used to breach your other systems.
 
@@ -688,7 +692,7 @@ Because of this, the Mattermost /mattermost-server repository uses an open sourc
 For companies purchasing Enterprise Edition subscriptions for use by internal staff, who need to modify /mattermost-server, and who also have legal departments that won't allow their staff to work under an open source software license, a special "Advanced Licensing Option" can be purchased to modify /mattermost-server for internal use under a commercial software license. This option is not available for companies that would offer a modified, non-open source version of Mattermost to external parties.
 
 Will Mattermost, Inc. offer the ability to resell Mattermost software without a reseller agreement?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No.
 
@@ -699,5 +703,5 @@ If there is a case where the reseller agreement is under review and an order is 
 EXCEPT AS OTHERWISE EXPRESSLY AGREED BY THE PARTIES IN WRITING, MATTERMOST MAKES NO WARRANTIES OR REPRESENTATIONS WITH RESPECT TO ANY MATTERMOST PRODUCTS, DOCUMENTATION OR SUPPORT, AND HEREBY DISCLAIMS ALL OTHER EXPRESS AND ALL IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT."
 
 Does Mattermost answer questions about open source licenses authored by other organizations?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 No, if you have questions about an open source license please consult the original author, or FAQs they offer.
