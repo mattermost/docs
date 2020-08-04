@@ -375,24 +375,6 @@ If I make my own plugin using your source available code, can I remove the licen
 
 No, the Mattermost Source Available License continues to apply to modifications.
 
-Can I write my own plugin and license it under the Mattermost Source Available License?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes.
-
-How do I apply the Mattermost Source Available License?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To apply this license to your entire repository, add the text to a ``LICENSE`` file located at the root of your repository, and add the following section to your ``README.md`` directly below the opening paragraph:
-
-## License
-This repository is licensed under the [Mattermost Source Available License](https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license) and requires a valid Enterprise E20 license.
-
-To apply this license to a subdirectory of your repository, add the text to a ``LICENSE`` file located in that directory, and then symlink to that directory from a LICENSE.enterprise file in the root. Finally, add a section similar to the following to your ``README.md``:
-
-## License
-This repository is licensed under the Apache 2.0 License, except for the server/enterprise directory which is licensed under the  Mattermost Source Available License. To learn more, read the [FAQ: Mattermost Source Available License](https://docs.mattermost.com/overview/faq.html#mattermost-source-available-license).
-
 Will you pursue legal action if this license is violated?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
