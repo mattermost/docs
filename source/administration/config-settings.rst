@@ -1312,7 +1312,7 @@ Custom text will be shown below custom brand image on left side of server login 
 
 Enable Ask Community Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: **Ask the community** link is visible on the Mattermost user interface and Main Menu. When selected, users can join the Mattermost Community to ask questions and help others troubleshoot issues.
+**True**: **Ask the community** link is visible in the Mattermost channel header, under the **Help** menu. When clicked, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues.
 
 **False**: The link is not visible to users.
 
