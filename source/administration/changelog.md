@@ -197,6 +197,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - Added ``EnableSearching`` to enable search queries to use bleve search.
      - Added ``EnableAutocomplete`` to enable autocomplete queries to use bleve search.
      - Added ``BulkIndexingTimeWindowSeconds`` to determine the maximum time window for a batch of posts being indexed by the Bulk Indexer.
+ - Under ``Notifications`` under ``Push Notification Contents`` in ``config.json``:
+     - Added ``full`` to enable push notifications with full message content sent in the notification payload.
 
 ### Open Source Components
  - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp
