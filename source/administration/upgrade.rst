@@ -9,7 +9,8 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 Upgrading to the Latest Version
 -------------------------------
 
-If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prioer to 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
+If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
+
 
 .. _before-you-begin:
 
