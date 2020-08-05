@@ -36,6 +36,8 @@ How do I deploy the open source Mattermost Team Edition under an MIT license?
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
 
+We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
+
 To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`_, and follow our standard install guides. The same applies to server upgrades.
 
 Community Questions
