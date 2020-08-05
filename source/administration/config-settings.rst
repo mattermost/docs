@@ -1314,7 +1314,7 @@ Enable Ask Community Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: **Ask the community** link is visible on the Mattermost user interface and Main Menu. When selected, users can join the Mattermost Community to ask questions and help others troubleshoot issues.
 
-When false, the link is hidden from users.
+**False**: The link is not visible to users.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"enable_ask_community_link": ""`` with options ``true`` and ``false``.                                                   |
