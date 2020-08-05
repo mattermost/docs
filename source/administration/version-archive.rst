@@ -190,6 +190,8 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
+The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
+
 Mattermost Team Edition v5.25.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-25-esr>`__ - `Download <https://releases.mattermost.com/5.25.2/mattermost-team-5.25.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.25.2/mattermost-team-5.25.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a3e6ccc5e45ca9cc540ea4cc13a68d6e61cf78530ac1d9a629029d4187838625``
