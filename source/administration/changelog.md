@@ -69,6 +69,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability to remove non-members of the target team if ``channel move`` fails.
 
 #### Administration
+ - Added support for a System Admin warning system that displays warnings in the announcement bar and sends Direct Messages to admins if one or more metric fulfills a certain condition.
  - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each plugin.
  - Servers now send a push notification to mobile clients when a user's session expires.
  - Clearing the Site URL in the System Console is no longer allowed.
