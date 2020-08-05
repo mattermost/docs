@@ -1317,7 +1317,7 @@ Enable Ask Community Link
 **False**: The link is not visible to users.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"enable_ask_community_link": ""`` with options ``true`` and ``false``.                                                   |
+| This feature's ``config.json`` setting is ``"enable_ask_community_link": ""`` with options ``true`` and ``false``. Defaults to true.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Help link
