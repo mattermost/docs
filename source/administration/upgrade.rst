@@ -5,11 +5,6 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 
 .. important::
   Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
-  
-Upgrading Team Edition to Enterprise Edition
---------------------------------------------
-
-To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions below, making sure that you download the Enterprise Edition in Step 3.
 
 Upgrading to the Latest Version
 -------------------------------
@@ -147,6 +142,11 @@ Location of your local storage directory
    Your current settings are preserved, and new settings are added with default values.
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
+
+Upgrading Team Edition to Enterprise Edition
+--------------------------------------------
+
+To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions provided above, making sure that you download the Enterprise Edition in Step 3.
 
 Uploading a License Key
 --------------------------
