@@ -6,6 +6,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
+- **v5.25.3, release day TBD**
+  - Fixing an issue where deactivated users are included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
+  - Fixing an issue where 
 - **v5.25.2, released 2020-07-31**
   - Fixed an issue where pages in the System Console didn't scroll up or down in some browser versions. [MM-27168](https://mattermost.atlassian.net/browse/MM-27168)
 - **v5.25.1, released 2020-07-23**
