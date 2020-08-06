@@ -5,7 +5,7 @@ Plugins are our system for extending and changing a Mattermost server’s capabi
 
 You can also integrate external applications into your Mattermost instance, using webhooks and slash commands.
 
-`Join our Contributors community channel <https://community.mattermost.com/core/channels/tickets>`__ on our community server, where you can discuss questions with community members and the Mattermost core team. Join our `Developers channel <https://community.mattermost.com/core/channels/developers>`__ for technical discussions and our `Developer Toolkit channel <https://community.mattermost.com/core/channels/developer-toolkit>`__ for all integrations and plugins discussions.
+`Join our Contributors community channel <https://community.mattermost.com/core/channels/tickets>`__, where you can discuss questions with community members and the Mattermost core team. Join our `Developers channel <https://community.mattermost.com/core/channels/developers>`__ for technical discussions and our `Developer Toolkit channel <https://community.mattermost.com/core/channels/developer-toolkit>`__ for all integrations and plugins discussions.
 
 Developer's Guide
 ^^^^^^^^^^^^^^^^^
