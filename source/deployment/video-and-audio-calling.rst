@@ -17,6 +17,15 @@ Zoom
 - Docs available at: https://docs.mattermost.com/integrations/zoom.html.
 - Source code available at: https://github.com/mattermost/mattermost-plugin-zoom.
 
+Microsoft Teams Meetings
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
+- Click a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
+- Requires a Microsoft Teams account.
+- Requires Mattermost E20.
+- Source code and docs available at: https://github.com/mattermost/mattermost-msteams-meetings .
+
 Cisco Webex Cloud
 ~~~~~~~~~~~~~~~~~~~~
 
