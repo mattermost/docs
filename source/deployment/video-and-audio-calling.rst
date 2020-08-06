@@ -18,13 +18,13 @@ Zoom
 - Source code available at: https://github.com/mattermost/mattermost-plugin-zoom.
 
 Microsoft Teams Meetings
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
 - Click a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
 - Requires a Microsoft Teams account.
 - Requires Mattermost E20.
-- Source code and docs available at: https://github.com/mattermost/mattermost-msteams-meetings .
+- Source code and docs available at: https://github.com/mattermost/mattermost-msteams-meetings.
 
 Cisco Webex Cloud
 ~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +36,7 @@ Cisco Webex Cloud
 - Source code and docs available at: https://github.com/mattermost/mattermost-plugin-webex.
 
 BigBlueButton
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Blindside Networks.
 - A test install is provided to try out the feature on a Mattermost installation.
@@ -49,7 +49,7 @@ Skype for Business (Beta)
 - Start and join voice calls, video calls and use screensharing with your team members, developed by kosgrz, and maintained by Mattermost.
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
-- Source code and docs available at: https://github.com/mattermost/mattermost-plugin-skype4business
+- Source code and docs available at: https://github.com/mattermost/mattermost-plugin-skype4business.
 
 WebRTC
 ~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,7 @@ Kopano WebMeetings
 - Source code and docs available at: https://stash.kopano.io/projects/KM/repos/mattermost-plugin-kopanowebmeetings/browse.
 
 Jitsi
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Sean Sackowitz.
 - Click a video icon in a Mattermost channel to invite team members to join a Jitsi call.
@@ -76,14 +76,14 @@ Jitsi
 - Source code and docs available at: https://github.com/seansackowitz/mattermost-plugin-jitsi.
 
 SIP PBX
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
 
 - Connect your company's individual desk extensions, external telephone lines. and mobile networks with Mattermost, developed by Bytemine GmbH.
 - Supports a self-hosted on-prem solution.
 - Source code and docs available at: https://github.com/bytemine/mattersip.
 
 appear.in
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by zarej.
 - Use the ``/appearin`` slash command to start a new appear.in call.
