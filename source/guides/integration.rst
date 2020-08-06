@@ -22,16 +22,11 @@ An overview of what capabilities Mattermost offers for integrations.
    :glob:
 
    /administration/plugins*
-   
-See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://integrations.mattermost.com/>`__.
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
    /integrations/jira*
    /integrations/zoom*
    /integrations/zapier*
+   
+Vist the `Mattermost Integrations Directory <https://integrations.mattermost.com/>`__ for all available plugins.
 
 Components and Functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
