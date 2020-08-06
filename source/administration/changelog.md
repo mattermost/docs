@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 - **v5.25.3, release day TBD**
   - Fixing an issue where deactivated users are included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
-  - Fixing an issue where 
+  - Fixing an issue where attempting to pin a post fails if a user does not have the ``channel_mention`` permission on a channel. [MM-26346](https://mattermost.atlassian.net/browse/MM-26346)
 - **v5.25.2, released 2020-07-31**
   - Fixed an issue where pages in the System Console didn't scroll up or down in some browser versions. [MM-27168](https://mattermost.atlassian.net/browse/MM-27168)
 - **v5.25.1, released 2020-07-23**
