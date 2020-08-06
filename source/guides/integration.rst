@@ -12,7 +12,7 @@ Developer's Guide
 
 For guidance and processes around developing integrations and plugins, see `our developer documentation <https://developers.mattermost.com/>`__.
 
-Admininstrator's Guide
+Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
 
 An overview of what capabilities Mattermost offers for integrations.
