@@ -12,6 +12,8 @@ Developer's Guide
 
 For guidance and processes around developing integrations and plugins, see `our developer documentation <https://developers.mattermost.com/>`__.
 
+Vist the `Mattermost Integrations Directory <https://integrations.mattermost.com/>`__ for all available plugins.
+
 Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,9 +27,8 @@ An overview of what capabilities Mattermost offers for integrations.
    /integrations/jira*
    /integrations/zoom*
    /integrations/zapier*
+   /developer/integration*
    
-Vist the `Mattermost Integrations Directory <https://integrations.mattermost.com/>`__ for all available plugins.
-
 Components and Functionality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -46,6 +47,5 @@ An overview of the depth of customization available.
    /developer/bot-accounts*
    /developer/personal-access-tokens*
    /developer/oauth*
-   /developer/integration*
    /integrations/embedding*
    /integrations/webhook*
