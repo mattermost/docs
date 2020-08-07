@@ -179,7 +179,7 @@ Supported languages are:
 ``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
 ``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
 ``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
-``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
+``podspec``, ``pgsql``, ``postgres``, ``postgresql``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
 ``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
 ``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
 ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
