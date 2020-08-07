@@ -3795,7 +3795,10 @@ Service Settings
 
 Data Prefetch
 ^^^^^^^^^^^^^^
-When enabled, messages in all unread channels are fetched from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
+
+**True**: Messages in all unread channels are pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
+
+**False**: Messages are fetched on-demand from the server when users switch channels.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDataPrefetch": true`` with options ``true`` and ``false``.                                                  |
