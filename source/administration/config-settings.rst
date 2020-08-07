@@ -3711,7 +3711,7 @@ Experimental Sidebar Features (Experimental)
 
 **Disabled:** Users cannot access the experimental channel sidebar feature set.
 
-**Enabled (Default On):** Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include collapsible categories, unread filtering, and history arrows. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default On):** Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
 **Enabled (Default Off):** Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
 
@@ -3792,6 +3792,17 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 
 Service Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data Prefetch
+^^^^^^^^^^^^^^
+
+**True**: Messages in all unread channels are pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
+
+**False**: Messages are fetched on-demand from the server when users switch channels.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalDataPrefetch": true`` with options ``true`` and ``false``.                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 WebSocket URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

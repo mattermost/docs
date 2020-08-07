@@ -147,7 +147,11 @@ Join us in testing an experimental feature set offering additional functionality
 
 When configured by the System Admin, users can enable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include:
 
-**Collapsible categories**: Collapse categories in the sidebar (e.g., favorites, public channels, private channels, and direct messages) to reduce unnecessary scrolling. When collapsed, only unread channels will appear in the corresponding category.
+**Collapsible custom categories**: Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
+
+**Drag and drop channels and categories**: Drag channels between or within categories, or drag to reorder entire categories to prioritize important conversations.
+
+**Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 
 **Unread filter**: Catch up on all your unread channels with a one-click unreads filter. When enabled, you'll see only unread channels in the sidebar.
 
@@ -155,4 +159,4 @@ When configured by the System Admin, users can enable the features in **Account 
 
 `Learn more about upcoming additions to this feature set and give us feedback here <https://about.mattermost.com/default-sidebar/>`_.
 
- .. image:: ../../images/sidebar-phase-1.gif
+ .. image:: ../../images/sidebar-phase-2.gif
