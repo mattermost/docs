@@ -97,8 +97,21 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - ExperimentalDataPrefetch, experimental setting for disabling prefetching of posts
- - EnableAskCommunityLink
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added ``ExperimentalDataPrefetch``, to 
+ - Under ``ClusterSettings`` in ``config.json``:
+   - Added ``EnableExperimentalGossipEncryption``, to 
+ - Under ``LogSettings`` in ``config.json``:
+   - Added ``EnableSentry``, to 
+   - Added ``AdvancedLoggingConfig``, to 
+ - Under ``FileSettings`` in ``config.json``:
+   - Added ``AmazonS3PathPrefix``, to 
+ - Under ``EmailSettings`` in ``config.json``:
+   - Added ``PushNotificationBuffer``, to
+ - Under ``SupportSettings`` in ``config.json``:
+   - Added ``EnableAskCommunityLink``, to 
+ - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
+   - Added ``SMTPServerTimeout``, to 
 
 ### Open Source Components
  - Added ``react-native-cookies`` and ``react-native-keyboard-aware-scroll-view``, and removed ``@react-native-community/cookies`` in https://github.com/mattermost/mattermost-mobile.
@@ -106,10 +119,35 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``rudder-sdk-js`` in https://github.com/mattermost/mattermost-redux.
 
 ### Database Changes
+ - Added a new column ``Sessions.ExpiredNotify``.
 
 ### API Changes
+ - Added ``POST api/v4/bots/:bot_id/convert_to_user`` API endpoint to 
+ - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to 
+ - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to 
+ - Added ``POST api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to 
+ - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to 
+ - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories/order`` API endpoint to 
+ - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories/order`` API endpoint to 
+ - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to 
+ - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to 
+ - Added ``DELETE api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to 
+ - Added ``GET api/v4/groups/:group_id/stats`` API endpoint to 
+ - Added ``POST api/v4/ldap/migrateid`` API endpoint to 
+ - Added ``GET api/v4/warn_metrics/status`` API endpoint to 
+ - Added ``POST api/v4/warn_metrics/ack/:warn_metrick_id`` API endpoint to 
+ - Added ``GET api/v4/users/stats/filtered`` API endpoint to 
+ - Added ``POST api/v4/users/:user_id/convert_to_bot`` API endpoint to 
+ - Added ``POST api/v4/users/:user_id/email/verify/member`` API endpoint to 
+ - Added ``POST api/v4/users/:user_id/typing`` API endpoint to 
 
 ### Websocket Event Changes
+ - Added ``sidebar_category_created`` Websocket Event.
+ - Added ``sidebar_category_updated`` Websocket Event.
+ - Added ``sidebar_category_deleted`` Websocket Event.
+ - Added ``sidebar_category_order_updated`` Websocket Event.
+ - Added ``warn_metric_status_received`` Websocket Event.
+ - Added ``warn_metric_status_removed`` Websocket Event.
  
 ### Known Issues
  - Twitter link previews do not work in Mattermost.
