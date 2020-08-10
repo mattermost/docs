@@ -123,7 +123,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
  - Added ``POST api/v4/bots/:bot_id/convert_to_user`` API endpoint to add the ability to convert a bot into a user.
- - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to 
+ - Added ``POST api/v4/users/:user_id/convert_to_bot`` API endpoint to add the ability to convert a user into a bot.
  - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to get a list of sidebar categories that will appear in the user's sidebar on the given team, including a list of channel IDs in each category.
  - Added ``POST api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to create a custom sidebar category for the user on the given team.
  - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to update any number of sidebar categories for the user on the given team.
@@ -132,14 +132,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to get a single sidebar category for the user on the given team.
  - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to update a single sidebar category for the user on the given team.
  - Added ``DELETE api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to delete a single custom sidebar category for the user on the given team.
- - Added ``GET api/v4/groups/:group_id/stats`` API endpoint to 
  - Added ``POST api/v4/ldap/migrateid`` API endpoint to migrate LDAP IdAttribute to a new value.
  - Added ``GET api/v4/warn_metrics/status`` API endpoint to get the status of a set of metrics (enabled or disabled) from the Systems table.
- - Added ``POST api/v4/warn_metrics/ack/:warn_metrick_id`` API endpoint to 
- - Added ``GET api/v4/users/stats/filtered`` API endpoint to 
- - Added ``POST api/v4/users/:user_id/convert_to_bot`` API endpoint to add the ability to convert a user into a bot.
- - Added ``POST api/v4/users/:user_id/email/verify/member`` API endpoint to 
- - Added ``POST api/v4/users/:user_id/typing`` API endpoint to 
+ - Added ``POST api/v4/warn_metrics/ack/:warn_metric_id`` API endpoint to acknowldge a warning for the ``warn_metric_id`` metric crossing a threshold (or some similar condition being fulfilled).
+ - Added ``GET api/v4/groups/:group_id/stats`` API endpoint to retrieve the stats of a given group.
+ - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to update a team privacy allowing changing a team from Public (open) to Private (invitation only) and back.
+ - Added ``GET api/v4/users/stats/filtered`` API endpoint to get a count of users in the system matching the specified filters.
+ - Added ``POST api/v4/users/:user_id/email/verify/member`` API endpoint to verify the email used by a user without a token.
+ - Added ``POST api/v4/users/:user_id/typing`` API endpoint to notify users in the given channel via websocket that the given user is typing.
 
 ### Websocket Event Changes
  - Added ``sidebar_category_created`` Websocket Event.
