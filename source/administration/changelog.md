@@ -100,18 +100,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``ServiceSettings`` in ``config.json``:
    - Added ``ExperimentalDataPrefetch``, to enable messages in all unread channels to be pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
  - Under ``ClusterSettings`` in ``config.json``:
-   - Added ``EnableExperimentalGossipEncryption``, to 
+   - Added ``EnableExperimentalGossipEncryption``, to enable all communication through the cluster using the gossip protocol to be encrypted.
  - Under ``LogSettings`` in ``config.json``:
-   - Added ``EnableSentry``, to 
-   - Added ``AdvancedLoggingConfig``, to 
+   - Added ``EnableSentry``, to enable sentry reporting.
+   - Added ``AdvancedLoggingConfig``, to enable optional logging capability to allow sending log records to a number of destinations.
  - Under ``FileSettings`` in ``config.json``:
-   - Added ``AmazonS3PathPrefix``, to 
+   - Added ``AmazonS3PathPrefix``, to allow using the same S3 bucket for multiple deployments.
  - Under ``EmailSettings`` in ``config.json``:
-   - Added ``PushNotificationBuffer``, to
+   - Added ``PushNotificationBuffer``, to remove hardcoded goroutine workers from push notifications to improve notifications arriving in order.
  - Under ``SupportSettings`` in ``config.json``:
    - Added ``EnableAskCommunityLink``, to enable showing a link in the Mattermost channel header under the **Help** menu. When clicked, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues. This option is not available on the mobile apps.
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
-   - Added ``SMTPServerTimeout``, to 
+   - Added ``SMTPServerTimeout``, to ensure Global Relay SMTP connection timeout is independent of regular email settings timeout.
 
 ### Open Source Components
  - Added ``react-native-cookies`` and ``react-native-keyboard-aware-scroll-view``, and removed ``@react-native-community/cookies`` in https://github.com/mattermost/mattermost-mobile.
@@ -122,7 +122,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added a new column ``Sessions.ExpiredNotify``.
 
 ### API Changes
- - Added ``POST api/v4/bots/:bot_id/convert_to_user`` API endpoint to 
+ - Added ``POST api/v4/bots/:bot_id/convert_to_user`` API endpoint to add the ability to convert a bot into a user.
  - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to 
  - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to 
  - Added ``POST api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to 
@@ -137,7 +137,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GET api/v4/warn_metrics/status`` API endpoint to 
  - Added ``POST api/v4/warn_metrics/ack/:warn_metrick_id`` API endpoint to 
  - Added ``GET api/v4/users/stats/filtered`` API endpoint to 
- - Added ``POST api/v4/users/:user_id/convert_to_bot`` API endpoint to 
+ - Added ``POST api/v4/users/:user_id/convert_to_bot`` API endpoint to add the ability to convert a user into a bot.
  - Added ``POST api/v4/users/:user_id/email/verify/member`` API endpoint to 
  - Added ``POST api/v4/users/:user_id/typing`` API endpoint to 
 
