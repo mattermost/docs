@@ -50,7 +50,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Promoted Russian and Dutch languages to “official”.
  
 #### Command Line Interface (CLI)
- - Added new mmctl CLI commands, such as ``ldap idmigrate``, ``user convert`` and ``user deleteall``.
+ - Added new mmctl CLI commands, such as ``ldap idmigrate``, ``user convert``, ``channel move``, and ``user deleteall``.
 
 #### Search
  - Added ability for Elasticsearch to search terms inside links.
@@ -77,6 +77,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Included a response code in the "Received HTTP Request" log line.
  - Added support for a new environment variable ``MM_LICENSE`` which can contain the contents of a license file. When set, this license takes priority over all other license sources.
  - Added support for encryption for gossip protocol.
+ - Move gossip protocol to use only gossip.
 
 ### Bug Fixes
  - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
@@ -136,10 +137,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GET api/v4/warn_metrics/status`` API endpoint to get the status of a set of metrics (enabled or disabled) from the Systems table.
  - Added ``POST api/v4/warn_metrics/ack/:warn_metric_id`` API endpoint to acknowldge a warning for the ``warn_metric_id`` metric crossing a threshold (or some similar condition being fulfilled).
  - Added ``GET api/v4/groups/:group_id/stats`` API endpoint to retrieve the stats of a given group.
- - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to update a team privacy allowing changing a team from Public (open) to Private (invitation only) and back.
+ - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to get a list of private channels on a team based on query string parameters.
  - Added ``GET api/v4/users/stats/filtered`` API endpoint to get a count of users in the system matching the specified filters.
  - Added ``POST api/v4/users/:user_id/email/verify/member`` API endpoint to verify the email used by a user without a token.
  - Added ``POST api/v4/users/:user_id/typing`` API endpoint to notify users in the given channel via websocket that the given user is typing.
+ - Added Get/Update/Delete user preferences to Plugin API.
+ - Added channel ID check for Plugin API ``UploadFile`` to specify the ID of the channel a file will be uploaded to.
 
 ### Websocket Event Changes
  - Added ``sidebar_category_created`` Websocket Event.
