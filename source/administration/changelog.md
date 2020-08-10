@@ -98,7 +98,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
-   - Added ``ExperimentalDataPrefetch``, to 
+   - Added ``ExperimentalDataPrefetch``, to enable messages in all unread channels to be pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
  - Under ``ClusterSettings`` in ``config.json``:
    - Added ``EnableExperimentalGossipEncryption``, to 
  - Under ``LogSettings`` in ``config.json``:
@@ -109,7 +109,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``EmailSettings`` in ``config.json``:
    - Added ``PushNotificationBuffer``, to
  - Under ``SupportSettings`` in ``config.json``:
-   - Added ``EnableAskCommunityLink``, to 
+   - Added ``EnableAskCommunityLink``, to enable showing a link in the Mattermost channel header under the **Help** menu. When clicked, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues. This option is not available on the mobile apps.
  - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
    - Added ``SMTPServerTimeout``, to 
 
