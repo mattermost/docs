@@ -3312,6 +3312,14 @@ The email address your Global Relay server monitors for incoming compliance expo
 | This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Global Relay SMTP Server Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SMTPServerTimeout": "1800"`` with numerical input.                                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This button initiates a Compliance Export job immediately.
