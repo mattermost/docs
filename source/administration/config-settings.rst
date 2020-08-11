@@ -3960,6 +3960,19 @@ Enable API Team Deletion
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``.                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable API User Deletion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins or user with appropriate delete permissions to permanently delete a user.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``.                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
+
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
