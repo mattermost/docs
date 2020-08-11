@@ -82,7 +82,7 @@ Groups Configuration Information (Enterprise Edition Only)
   Information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members.
 
 Plugin Configuration Information
-  Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/app/diagnostics.go#L668>`_ are enabled along with their versions. The list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead. Some plugins may send summary data such as number of authenticated users of the plugin.
+  Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/app/diagnostics.go#L668>`_ are enabled along with their versions. Some plugins may send summary data such as number of authenticated users of the plugin. From version 5.26, the list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
 
 Permissions Configuration Information (Enterprise Edition Only)
   Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with.
