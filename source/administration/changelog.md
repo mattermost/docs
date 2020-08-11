@@ -22,16 +22,16 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Archive & unarchive channels from the System Console (E20 Edition)
  - Channels can now be archived and unarchived with ease from the System Console.
 
-#### Advanced team & channel filters in the System Console (E20 Edition)
+#### Manage teams and channels in System Console using search filters (E20 Edition)
  - Managing teams & channels is now lot easier with new search filters.
  
-#### Integrate Mattermost advanced logging with log aggregators (E20 Edition)
- - Enables asynchronous logging - improving efficiency of request processing and adds the capability of sending log records to multiple targets.
+#### Customize log configuration and output targets (E20 Edition)
+ - Customize log level records beyond the standard levels of trace, debug, info, and panic, as well as configure different destinations based on discrete log levels.
 
-#### Access help of the Mattermost community via Ask the Community direct link
+#### Get help from the Mattermost community via ‘Ask the community’ link
  - You can access the community from a new “Help” menu in the channel header, after which you will create an account on our public [Mattermost Community server](https://community.mattermost.com/) to join a vibrant user community to ask questions and help your peers to troubleshoot issues.
 
-#### Categorize and reorder channels with new channel sidebar features (Experimental)
+#### Categorize and reorder channels with channel sidebar enhancements (Experimental)
  - Users now have the ability to create custom categories in the sidebar to group channels together for easier navigation, drag channels between or within categories to prioritize conversations most important to you, and much more.
 
 ### Improvements
