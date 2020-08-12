@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
 - **v5.25.3, released 2020-08-12**
-  - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as Gitlab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
+  - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as GitLab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
   - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
   - Fixed an issue where guest user invites did not work in a SAML environment. [MM-27519](https://mattermost.atlassian.net/browse/MM-27519)
   - Fixed an issue where the bulk export didn't finish if a custom data directory was set. [MM-27550](https://mattermost.atlassian.net/browse/MM-27550)
