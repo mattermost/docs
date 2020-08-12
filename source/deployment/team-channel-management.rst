@@ -40,9 +40,15 @@ A list of all members in a channel is visible to System Admins. Members can be a
 Channels
 ---------
 
-To view and manage channel information, navigate to **System Console > Channels**. Teams can be managed by **Group Sync** or **Manual Invites**. The type of management in use may affect the management options available for that team.
+To view and manage channel information, navigate to **System Console > Channels**. Channels can be managed by **Group Sync** or **Manual Invites**. The type of management in use may affect the management options available for that channel. Use the **Filter** to refine your search results. You can use one filter, or combine filters to search by channel and management type:
 
-Select a team to view its configuration options.
+- Public channels
+- Private channels
+- Archived channels
+- Channels that are synchronized to an AD/LDAP Group
+- Channels with users who were invited manually (not synced from LDAP)
+
+Select a channel to view its configuration options.
 
 Profile
 ~~~~~~~
