@@ -1,23 +1,23 @@
 ================================================
-Embedding Mattermost in other applications 
+Embedding Mattermost in Other Applications
 ================================================
 
-This guide discusses how to embed Mattermost into other applications in different ways. 
+This guide discusses how to embed Mattermost into other applications in different ways.
 
 .. contents::
     :backlinks: top
 
-Launching Mattermost from a button click 
--------------------------------------------------------
+Launching Mattermost From a Button Click
+-----------------------------------------
 
-The most common way of integrating Mattermost into another application is via a link or a button that brings up Mattermost in a new browser window or tab, with a link to a specific Mattermost channel to begin discussion. 
+The most common way of integrating Mattermost into another application is via a link or a button that brings up Mattermost in a new browser window or tab, with a link to a specific Mattermost channel to begin discussion.
 
-Optionally, single-sign-on can be added to make the experience seamless. 
+Optionally, single-sign-on can be added to make the experience seamless.
 
 Mattermost Launch Button Example in HTML 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Save the below HTML code in a file called ``mattermost-button-example.html`` then open the file in a browser as an example. 
+Save the below HTML code in a file called ``mattermost-button-example.html`` then open the file in a browser as an example.
 
   <script>
 
@@ -49,41 +49,27 @@ Save the below HTML code in a file called ``mattermost-button-example.html`` the
       <br/>
   </html>
 
-
-Embedding Mattermost in web applications using an iframe  
+Embedding Mattermost in web applications using an iframe
 ----------------------------------------------------------
 
-.. warning:: Any web application embedded into another using an iframe is at risk of security exploits, since the outer application intercepts all user input into the embedded application, an exploit known as `Click-Jacking <https://en.wikipedia.org/wiki/Clickjacking>`__. By default, Mattermost disables embedding. If you choose to embed Mattermost using the following instructions we highly recommend it is done only on a private network that you control. 
+Any web application embedded into another using an iframe is at risk of security exploits, since the outer application intercepts all user input into the embedded application, an exploit known as `Click-Jacking <https://en.wikipedia.org/wiki/Clickjacking>`__. By default, Mattermost disables embedding. If you choose to embed Mattermost we highly recommend it is done only on a private network that you control.
 
-To embed Mattermost in an iframe by overriding Mattermost security features: 
+See `this recipe <https://forum.mattermost.org/t/recipe-embedding-mattermost-in-web-applications-using-an-iframe-unsupported-recipe/10233>`__ for details.
 
-1. On your Mattermost server, change the HTML template to remove the anti-Clickjacking security feature 
+Embedding Mattermost in mobile applications
+--------------------------------------------
 
-    a. Find the file ``/mattermost/mattermost/web/templates/head.html``
-    b. Comment out the security feature by changing ``<style id="antiClickjack">body{display:none !important;}</style>`` to ``<!-- <style id="antiClickjack">body{display:none !important;}</style> -->`` 
+The open source mobile applications can serve as a guide or starter code to embed Mattermost in mobile applications. The Mattermost Javascript Driver is used to connect with the Mattermost server and product the interactivity for these applications.
 
-2. Update your NGINX configuration to strip out the security policy settings in the HTTP header.
+The mobile applications also provide full source code for push notifications.
 
-    - See `community example <https://forum.mattermost.org/t/how-can-we-load-mattermost-in-iframe/165/6>`__ for details.
-
-Embedding Mattermost in mobile applications 
--------------------------------------------------------
-
-The open source mobile applications can serve as a guide or started code to embed Mattermost in mobile applications. The Mattermost Javascript Driver is used to connect with the Mattermost server and product the interactivity for these applications. 
-
-The mobile applications also provide full source code for push notifications. 
-
-Mobile applications offering Mattermost as a web view: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mobile applications offering Mattermost as a web view 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - https://github.com/mattermost/ios
 - https://github.com/mattermost/android
 
+Mobile applications offering Mattermost with React Native components 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mobile applications offering Mattermost with React Native components: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- https://github.com/mattermost/mattermost-mobile 
-
-
-
+https://github.com/mattermost/mattermost-mobile
