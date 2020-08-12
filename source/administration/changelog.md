@@ -6,11 +6,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
-- **v5.25.3, release day TBD**
-  - Fixing an issue where deactivated users are included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
-  - Fixing an issue where guest user invites do not work in a SAML environment. [MM-27519](https://mattermost.atlassian.net/browse/MM-27519)
-  - Fixing an issue where the bulk export doesn't finish if a custom data directory is set. [MM-27550](https://mattermost.atlassian.net/browse/MM-27550)
-  - Fixing an issue where attempting to pin a post fails if a user does not have the ``channel_mention`` permission on a channel. [MM-26346](https://mattermost.atlassian.net/browse/MM-26346)
+- **v5.25.3, released 2020-08-12**
+  - Fixed an issue where the permission to create user access tokens was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
+  - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
+  - Fixed an issue where guest user invites did not work in a SAML environment. [MM-27519](https://mattermost.atlassian.net/browse/MM-27519)
+  - Fixed an issue where the bulk export didn't finish if a custom data directory was set. [MM-27550](https://mattermost.atlassian.net/browse/MM-27550)
+  - Fixed an issue with a performance degradation after upgrading to 5.25. [MM-27575](https://mattermost.atlassian.net/browse/MM-27575)
+  - Fixed an issue where attempting to pin a post failed if a user did not have the ``channel_mention`` permission on a channel. [MM-26346](https://mattermost.atlassian.net/browse/MM-26346)
 - **v5.25.2, released 2020-07-31**
   - Fixed an issue where pages in the System Console didn't scroll up or down in some browser versions. [MM-27168](https://mattermost.atlassian.net/browse/MM-27168)
 - **v5.25.1, released 2020-07-23**
