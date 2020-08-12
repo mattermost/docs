@@ -154,6 +154,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Known Issues
  - Twitter link previews do not work in Mattermost.
+ - Pasted unicode emojis fail to appear once posted.
  - ``CMD+SHIFT+V`` does not paste copied text on MacOS on Safari 12 (Catalina) and Firefox.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
