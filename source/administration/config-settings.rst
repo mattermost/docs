@@ -1091,7 +1091,7 @@ Beyond the standard log levels (trace, debug, info, panic), discrete log levels 
 .. note::
    Available discrete log levels are listed in ``mattermost-server:mlog/levels.go``. Logs are recorded asynchronously to reduce latency to the caller. Advanced logging supports hot-reloading of logger configuration.
 
-This feature's ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: [Log Settings Options](https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt). Sample config: [Advanced Logging Options Sample.json.zip](https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip).
+This feature's ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
 
 Standard Logging 
 ~~~~~~~~~~~~~~~~
