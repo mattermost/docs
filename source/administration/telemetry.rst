@@ -78,7 +78,7 @@ Commercial License Information (Enterprise Edition Only)
 Channel Moderation Configuration Information (Enterprise Edition Only)
   Information related to channel moderation, including number of channel schemes, number of channels with posting messages disabled for users or guests, number of channels with emoji reactions disabled for users or guests, number of channels with managing members disabled, number of channels with channel mentions disabled for users or guests.
   
-Team and Channel Member Management Information (Enterprise Edition Only)
+Channel Member Management Information (Enterprise Edition Only)
   Information related to bulk user management and team and channel filtering, including number of users added, number of users removed, number of users promoted, number of users demoted, number of times archive and unarchive is used from any channel configuration page, and number of times channel search or team search filters are used.
 
 Groups Configuration Information (Enterprise Edition Only)
