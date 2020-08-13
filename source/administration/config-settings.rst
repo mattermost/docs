@@ -4453,7 +4453,7 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 Amazon S3 Path
 ^^^^^^^^^^^^^^^
 
-Allows using same S3 bucket for multiple deployments
+Allows using the same S3 bucket for multiple deployments.
 
 +------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix: ""`` with string input.                   |
