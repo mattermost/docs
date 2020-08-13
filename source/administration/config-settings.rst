@@ -4877,7 +4877,7 @@ The minimum version of the iOS React Native app that is required to be used.
 Push Notification Buffer
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Used to control the buffer of outstanding Push notification messages to be sent. If the number of messages exceed that number, then the request making the push notification will block until there's room.
+Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will block until there's room.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
