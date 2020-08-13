@@ -171,7 +171,21 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
-**Release day: 2020-07-16**
+- **v5.25.3, released 2020-08-12**
+  - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as GitLab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
+  - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
+  - Fixed an issue where guest user invites did not work in a SAML environment. [MM-27519](https://mattermost.atlassian.net/browse/MM-27519)
+  - Fixed an issue where the bulk export didn't finish if a custom data directory was set. [MM-27550](https://mattermost.atlassian.net/browse/MM-27550)
+  - Fixed an issue with a performance degradation after upgrading to 5.25.0. [MM-27575](https://mattermost.atlassian.net/browse/MM-27575)
+  - Fixed an issue where attempting to pin a post failed if a user did not have the ``channel_mention`` permission on a channel. [MM-26346](https://mattermost.atlassian.net/browse/MM-26346)
+- **v5.25.2, released 2020-07-31**
+  - Fixed an issue where pages in the System Console didn't scroll up or down in some browser versions. [MM-27168](https://mattermost.atlassian.net/browse/MM-27168)
+- **v5.25.1, released 2020-07-23**
+  - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
+  - Fixed a bug in pagination which queried more data redundantly. [MM-27187](https://mattermost.atlassian.net/browse/MM-27187)
+  - Throttled network traffic by implementing bounded concurrency.
+- **v5.25.0, released 2020-07-16**
+  - Original 5.25.0 release
 
 Mattermost v5.25.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
@@ -245,6 +259,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.24 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.24.3, released 2020-07-23**
+  - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
+  - Fixed a bug in pagination which queried more data redundantly. [MM-27187](https://mattermost.atlassian.net/browse/MM-27187)
+  - Throttled network traffic by implementing bounded concurrency.
 - **v5.24.2, released 2020-06-26**
   - Fixed an issue where changing primary keys during migration did not work with Postgres versions lower than 9.3. [MM-26514](https://mattermost.atlassian.net/browse/MM-26514)
 - **v5.24.1, released 2020-06-19**
@@ -341,7 +359,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - Added ``LocalModeSocketLocation`` to set the path for the socket that the server will create for mmctl to connect and communicate through local mode.
      - Changed ``EnableLinkPreviews`` to default true for new installs.
      - Changed ``SessionLengthWebInDays`` to default to 30 days for new installs.
- - Under ``ClusterSettings`` in ``config.json``:
+ - Under ``SqlSettings`` in ``config.json``:
      - Added ``DisableDatabaseSearch`` to disable the use of the database to perform searches.
  - Under ``LdapSettings`` in ``config.json``: 
      - Added ``PictureAttribute`` to configure the attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
@@ -351,6 +369,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - Added ``EnableSearching`` to enable search queries to use bleve search.
      - Added ``EnableAutocomplete`` to enable autocomplete queries to use bleve search.
      - Added ``BulkIndexingTimeWindowSeconds`` to determine the maximum time window for a batch of posts being indexed by the Bulk Indexer.
+ - Under ``EmailSettings`` in ``config.json``:
+     - Changed ``PushNotificationContents`` to default ``full`` for new installs.
 
 ### Open Source Components
  - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp
@@ -404,6 +424,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.23 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.23.2, released 2020-07-23**
+  - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
+  - Fixed a bug in pagination which queried more data redundantly. [MM-27187](https://mattermost.atlassian.net/browse/MM-27187)
+  - Throttled network traffic by implementing bounded concurrency.
 - **v5.23.1, released 2020-06-02**
   - Fixed an issue where ``Content-Type`` was no longer optional in incoming webhook requests and led to errors. [MM-25677](https://mattermost.atlassian.net/browse/MM-25677)
 - **v5.23.0, released 2020-05-16**
