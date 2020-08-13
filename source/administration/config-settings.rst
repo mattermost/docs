@@ -988,8 +988,36 @@ Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix s
 | This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Logging
+Advanced Logging 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Output logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send log records to multiple targets: 
+
+- multiple local file targets
+- multiple syslogs
+- multiple TCP sockets
+
+Allow any combination of local file, syslog and TCP socket targets. These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software.
+
+File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
+
+Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified. 
+
+.. note::
+   Available discrete log levels are listed in ``mattermost-server:mlog/levels.go``
+   Logs are recorded asynchronously to reduce latency to the caller. 
+   Advanced logging supports hot-reloading of logger configuration.
+
+This feature's ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options outlined in this txt file: [Log Settings Options](https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt). Sample config: [Advanced Logging Options Sample.json.zip](https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip)                                 |
+
+Standard Logging 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in All Editions*
+
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
