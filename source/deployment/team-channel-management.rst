@@ -1,7 +1,7 @@
 Managing Team and Channel Members (E20)
 =======================================
 
-System Admins can manage team and channel configuration in the System Console.
+System Admins can manage channel configuration in the System Console.
 
 - **Management:** Manage sync, moderation, and membership settings.
 - **Promoting/demoting Team and Channel Admins:** Team and Channel Admins can be demoted via the System Console.
