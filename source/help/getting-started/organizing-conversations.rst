@@ -99,6 +99,8 @@ In addition to this, when a channel is archived, by default the contents cannot 
 1. Ask your System Admin to set ``ExperimentalViewArchivedChannels`` to ``true`` in ``config.json`` to allow users to view, share, and search for content of channels that have been archived; or
 2. Leave the channel open, but post a message in the channel saying it's considered archived: such as ``# This channel is archived.``
 
+System Admins `can archive channels in the System Console <https://docs.mattermost.com/deployment/team-channel-management.html#profile>`_ without needing to be a channel member.
+
 Unarchiving a channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
