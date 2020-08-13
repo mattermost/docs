@@ -35,7 +35,12 @@ You can add and remove groups, as well as promote or demote group members to Tea
 Members
 ~~~~~~~~
 
-A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role.
+A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role. Use the role **Filter** to refine your search results. You can use one filter, or combine filters to search by multiple roles:
+
+- Guest
+- Member
+- Team Admin
+- System Admin
 
 Channels
 ---------
@@ -109,4 +114,9 @@ You can add and remove groups, as well as promote or demote group members to Tea
 Members
 ~~~~~~~
 
-A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role.
+A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role. Use the role **Filter** to refine your search results. You can use one filter, or combine filters to search by multiple roles:
+
+- Guest
+- Member
+- Channel Admin
+- System Admin
