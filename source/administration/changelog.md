@@ -22,8 +22,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Archive & unarchive channels from the System Console (E20 Edition)
  - Channels can now be archived and unarchived with ease from the System Console.
 
-#### Manage teams and channels in System Console using search filters (E20 Edition)
- - Managing teams & channels is now lot easier with new search filters.
+#### Manage members and channels in System Console using search filters (E20 Edition)
+ - Managing members & channels is now lot easier with new search filters.
  
 #### Customize log configuration and output targets (E20 Edition)
  - Customize log level records beyond the standard levels of trace, debug, info, and panic, as well as configure different destinations based on discrete log levels.
