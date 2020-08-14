@@ -118,7 +118,7 @@ Here’s how it’s set on our community server:
 Plugin Hooks
 -------------
 
-You can trace hooks and plugin API calls with Prometheus. Below are some examples of hooks and API prometheus metrics that you may want to be aware of when troubleshooting or monitoring your server's performance.
+You can trace hooks and plugin API calls with Prometheus. Below are some examples of hooks and API Prometheus metrics that you may want to be aware of when troubleshooting or monitoring your server's performance.
 
 .. code-block:: none
 
