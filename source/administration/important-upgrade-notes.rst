@@ -134,7 +134,7 @@ Important Upgrade Notes
 |                                                    | ``ExperimentalEnablePostMetadata`` setting was removed. Post metadata, including post dimensions, is now stored in the database to correct scroll position and   |
 |                                                    | eliminate scroll jumps as content loads in a channel.                                                                                                            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Added the ability to enforce the administration of teams/channels with Group Sync. If group-sync is enabled, all team and channel admin designations will be     |
+|                                                    | Added the ability to enforce the administration of teams/channels with Group Sync. If Group Sync is enabled, all Team and Channel Admin designations will be     |
 |                                                    | lost upon upgrade. It is highly recommended that prior to upgrading, team and channel admins are added to admin specific LDAP groups corresponding to their      |
 |                                                    | teams and channels. After upgrading, those groups will need to be role-synced to the Team or Channel Admin role.                                                 |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
