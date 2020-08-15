@@ -136,7 +136,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Added the ability to enforce the administration of teams/channels with Group Sync. If group-sync is enabled, all team and channel admin designations will be     |
 |                                                    | lost upon upgrade. It is highly recommended that prior to upgrading, team and channel admins are added to admin specific LDAP groups corresponding to their      |
-|                                                    | teams and channels. After upgrading, those groups will need to be role-synced to the team or channel admin role.                                                 |
+|                                                    | teams and channels. After upgrading, those groups will need to be role-synced to the Team or Channel Admin role.                                                 |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.11.0                                            | If your integration uses ``Update.Props == nil`` to clear ``Props``, this will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to clear properties. |
 |                                                    |                                                                                                                                                                  |
