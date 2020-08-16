@@ -3961,7 +3961,7 @@ Enable API Team Deletion
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable API Channel Deletion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
 
