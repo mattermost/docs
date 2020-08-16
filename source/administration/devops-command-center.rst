@@ -18,16 +18,44 @@ User's Guide
 
 Incidents are events within Mattermost that are initiated to manage a specific situation/response in real-time. When the situation/response is complete, the incident is ended. Events that occurred within the incident can be reused in future incidents as playbooks and checklists.
 
+Using playbooks
+~~~~~~~~~~~~~~~~
+
+Playbooks are templates which are applied to an incident and define a group of tasks (stages) and steps to be followed in order to resolve the incident. Playbooks can be refined over a period of time to match the changing parameters of future related incidents. Incidents can only be started once they're associated with a playbook. It's not possible to start an incident from within the playbook backstage but you can create a playbook for use with a future incident.
+
+When you start an incident, you need to either create a playbook or select an existing one.
+
+**Creating a new playbook**
+
+The creator of a playbook is automatically added as the first member and can remove themselves once other members have been added. Only playbook members can use the playbook to start an incident - System Admins must be added to the member list to have access to a playbook.
+
+You can also create a new playbook outside of an incident. Select **+ New Playbook** to start a new playbook using either the blank template, or the **Incident Response Playbook** template provided.
+
+**Selecting an existing playbook**
+
+You can select any existing playbook that you have access to, from the drop-down list provided, when starting an incident.
+
+**Viewing playbooks**
+
+Open **Main Menu > Incidents & Playbooks > Playbooks** to view the playbooks associated with the current team and create a new one.
+
+Stages and steps
+~~~~~~~~~~~~~~~~~~
+
+When you create a playbook you can group your tasks into stages which have accompanying steps. Each step can be assigned a slash command. The steps within each stage must be completed in the order they're listed.
+
+Stages and steps are optional, and can be left empty by default. You can't add stages and steps to a playbook that's being used in an active incident, but you can add them to the playbook when it's not in use.
+
 Starting incidents
 ~~~~~~~~~~~~~~~~~~
 
-The incident channel is the central place for discussion related to the incident. You can start an incident in one of three ways:
+When you start an incident, a channel is created. You can start an incident in one of three ways:
 
 - Use the slash command */incident start* from any channel.
 - Select **!** from the channel header.
 - Use the context menu of a post and select **Start incident**.
 
-When you create an incident, the name provided is applied to the new incident channel that is created. You can also select an optional playbook.
+The incident channel is the central place for discussion related to the incident.  When you create an incident, the name provided is applied to the new incident channel that is created. You can also select an optional playbook.
 
 - If a playbook is selected, a corresponding checklist is used as a template to start the incident.
 - If no playbook is selected, the incident starts with an empty checklist.
@@ -46,70 +74,52 @@ To change commanders, select the current commander’s name and use the search b
 Active incidents
 ~~~~~~~~~~~~~~~~
 
-To view details about active incidents select **!** in the channel header, to open the right-hand side (RHS) panel and list of current active incidents. Select an incident to see its commander, channel, and checklist.
-
 When an incident has started and the incident channel is created, a message from the incident bot is posted to the incident channel naming the creator of the incident. If an incident is started from the context of a post, the text of the post is posted to the channel along with a permalink.
 
-Incidents that are displayed in the RHS are visible to all members of the relevant team, even if they are not a member of the corresponding incident channel. It is not possible to view incidents from teams other than the currently selected team.
+It is not possible to view incidents from teams other than the currently selected team.
 
-Using playbooks
-~~~~~~~~~~~~~~~~
-
-Playbooks are templates which are applied to an incident and define a set of steps to be followed in order to resolve the incident. Playbooks can be refined over a period of time to match the changing parameters of future related incidents.
-
-The creator of a playbook is automatically added as a member but can remove themselves. Only playbook members can use the playbook to start an incident - System Admins must be added to the member list to have access to a playbook.
-
-You can optionally add stages and checklist items to a playbook.
-
-Viewing and creating playbooks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Open **Main Menu > Incidents & Playbooks > Playbooks** to open the playbooks backstage and view the your playbooks associated with the current team. Select **+ New Playbook** to start a new playbook.
- 
-A playbook needs to have a name and at least one member in order to be saved to the backstage.
+To view details about active incidents select **Main Menu > Incidents & Playbooks**. Select an incident to see its duration, members, and messages.
 
 Public and private incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Incident channels can be public or private, based on the settings of the playbook used for the incident.
+Incident channels can be public or private, based on the incident's playbook.
 
 - **Public:** Anyone in the team can view the incident details and join the incident channel. The incident details are visible to all team members during the active incident and after the incident has ended.
- - **Private:** Only incident members who are members of the incident channel have access to the ongoing incident and incident details after the incident has ended. Private incidents can't be made public once they've been started. 
+ - **Private:** Only incident members who are members of the incident channel have access to the ongoing incident and incident details after the incident has ended. Private incidents can't be made public once they've been started.
 
 **Creating a public playbook and incident**
 
 1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Select **+ New Playbook**.
-3. Enter a name for the playbook.
-4. Move the toggle to the right to **Create Public Incident**.
-5. Add a few checklist items.
-6. Select **Save**.
-7. Switch to the main channel view.
-8. Create an incident by selecting the playbook you just created.
+3. Replace **Untitled Playbook** with the name of the playbook.
+4. Under **Settings** select **Public**.
+5. Select **Save**.
+6. Return to the channel view using the **<**.
+7. Select **!** in the channel header and then **+ Start Incident**.
 
 **Creating a private playbook and incident**
 
 1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Select **+ New Playbook**.
-3. Enter a name for the playbook.
-4. Keep the **Create Public Incident** option disabled.
-5. Add a few checklist items.
-6. Select **Save**.
-7. Switch to the main channel view.
-8. Create an incident by selecting the playbook you just created.
+3. Replace **Untitled Playbook** with the name of the playbook.
+4. Under **Settings** select **Private**.
+5. Select **Save**.
+6. Return to the channel view using the **<**.
+7. Select **!** in the channel header and then **+ Start Incident**.
 
 Ending incidents
 ~~~~~~~~~~~~~~~~
 
-There are two ways to end an incident:
+To end an active incident:
 
-- Using the slash command */incident end* from within the incident channel.
-- Using the **End Incident** button in the RHS panel while in the incident channel.
+- Use the slash command */incident end* from within the incident channel.
+- Use the **End Incident** button in the RHS panel while in the incident channel.
 
 Administrator's Guide
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, and are public or private depending on the playbook's settings. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_. 
+Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, and are public or private depending on the playbook's settings. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~
@@ -117,18 +127,18 @@ Permissions
 Membership of playbooks and incidents is independent. System Admins can edit the visibility of, and access to, playbooks and incidents so that:
 
 - Users who are removed from an incident channel by a System Admin can no longer access the incident's playbook.
-- Team members who aren't System Admins can't have access to playbooks removed by other members of the team.
-- Team members who aren't System Admins can invite other team members to manage private playbooks.
-- Team members who aren't System Admins can't be removed from an incident by other members of the team.
+- Incident members can't have access to playbooks removed by other members of the team.
+- Team members can't be removed from an incident by other members of the team.
+- Incident members can invite other team members to manage private playbooks.
 
 Managing incident channel visibility
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can manage the visibility of channels by converting them into private incident channels. 
+System Admins can manage the visibility of public incident channels by converting them into private incident channels. These steps are only applicable if the incident's playbook is **Public**.
 
 **Creating a private incident channel**
 
-1. Create an incident via **! > Create Incident**.
+1. Create an incident via **! > + Start Incident**, select or create a playbook, and choose **Start Incident**.
 2. From the channel header, click the dropdown and select **Convert to Private Channel**.
 3. In the confirmation box, select “Yes.”
 4. Open the incident backstage, select the incident, and confirm that it is listed as **Private**.
