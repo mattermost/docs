@@ -26,7 +26,7 @@ Important Upgrade Notes
 |                                                    | ``UPDATE Systems SET Value='<value>' WHERE Name='ClusterEncryptionKey';`` in MySQL and                                                                           |
 |                                                    | ``UPDATE systems SET value='<value>' WHERE name='ClusterEncryptionKey'`` for PostgreSQL.                                                                         |
 |                                                    |                                                                                                                                                                  |
-|                                                    | For any change in this config setting to take effect, the whole cluster must be shut down first. Then the config change made, and then restarted. In a cluster,   |
+|                                                    | For any change in this config setting to take effect, the whole cluster must be shut down first. Then the config change made, and then restarted. In a cluster,  |
 |                                                    | all servers either will completely use encryption or not. There cannot be any partial usage.                                                                     |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.25.0                                            | Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying Party Trust Identifier” were corrected. Although the        |
@@ -34,7 +34,7 @@ Important Upgrade Notes
 |                                                    | `modify those settings <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust>`_.                                         | 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.24.0                                            | A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost   |
-|                                                    | apps. It is recommended to enable this setting to improve user experience if compliant with your organization's policies.                                         |
+|                                                    | apps. It is recommended to enable this setting to improve user experience if compliant with your organization's policies.                                        |
 |                                                    | `Learn more here <https://mattermost.com/blog/session-expiry-experience>`_.                                                                                      |
 |                                                    +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 |                                                    | The ``mattermost_http_request_duration_seconds`` histogram metric (in Enterprise Edition) has been removed. This information was already captured by             |
@@ -82,7 +82,7 @@ Important Upgrade Notes
 |                                                    | Direct access to the ``Props`` field in the ``model.Post`` structure has been deprecated. The available ``GetProps()`` and ``SetProps()`` methods should now be  |
 |                                                    | used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method.                                             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v5.21.0                                            | Honour key value expiry in KVCompareAndSet, KVCompareAndDelete, and KVList. We also improved handling of plugin key value race conditions and deleted keys in     |
+| v5.21.0                                            | Honour key value expiry in KVCompareAndSet, KVCompareAndDelete, and KVList. We also improved handling of plugin key value race conditions and deleted keys in    |
 |                                                    | Postgres.                                                                                                                                                        |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.20.0                                            | Any `pre-packaged plugin <https://docs.mattermost.com/administration/plugins.html#pre-packaged-plugins>`_ that is not enabled in the ``config.json`` will no     |
@@ -153,7 +153,7 @@ Important Upgrade Notes
 |                                                    | We recommend setting ``DisableLegacyMfa`` to ``true`` for additional security hardening.                                                                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests   |
-|                                                    | such as Open Graph metadata, webhooks, or slash commands.                                                                                                         |
+|                                                    | such as Open Graph metadata, webhooks, or slash commands.                                                                                                        |
 |                                                    | `See documentation <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ for additional information.       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.8.0                                             | The local image proxy has been added, and images displayed within the client are now affected by the ``AllowUntrustedInternalConnections`` setting.              |
@@ -213,7 +213,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | A new ``config.json`` setting to disable the `permanent APIv4 delete team parameter                                                                              |
 |                                                    | <https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput>`__ is added. The setting will be off by default for all new and existing          |
-|                                                    | installs, except those deployed on GitLab Omnibus. If you reply on the APIv4 parameter, enable the setting in ``config.json`` before upgrading.                    |
+|                                                    | installs, except those deployed on GitLab Omnibus. If you reply on the APIv4 parameter, enable the setting in ``config.json`` before upgrading.                  |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | An unused ``ExtraUpdateAt`` field will be removed from the channel modal.                                                                                        |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -226,7 +226,7 @@ Important Upgrade Notes
 |                                                    |     [2018/03/27 09:08:00 EDT] [INFO] Post.Message supports at most 16383 characters (65535 bytes)                                                                |
 |                                                    |                                                                                                                                                                  |
 |                                                    | As of 5.0.0, the maximum post message size is 16383 (multi-byte) characters. If your logs show a number less than this limit and you want to enable longer       |
-|                                                    | post messages, you will need to manually migrate your database as described below. This migration can be slow for larger ``Posts`` tables, so it's best to         |
+|                                                    | post messages, you will need to manually migrate your database as described below. This migration can be slow for larger ``Posts`` tables, so it's best to       |
 |                                                    | schedule this upgrade during off-peak hours.                                                                                                                     |
 |                                                    |                                                                                                                                                                  |
 |                                                    | To migrate a MySQL database, connect to your database and run the following:                                                                                     |
