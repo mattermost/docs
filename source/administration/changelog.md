@@ -21,6 +21,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the ``SendEmailNotifications`` setting blocked testing the SMTP connection.
  - Fixed an issue where users were not matching on mixed-case SAML assertions.
  - Fixed an issue where incoming webhooks owned by a bot did not consistently allow username override.
+ - Fixed an issue where the emoji picker in the Edit Post Modal was misaligned.
  - Fixed an issue where the theme color for 'Sidebar Text Active Border' was not currently being used in active border in the sidebar.
 
 ### config.json
