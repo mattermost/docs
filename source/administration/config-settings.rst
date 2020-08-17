@@ -4450,6 +4450,16 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 | This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
+Amazon S3 Path
+^^^^^^^^^^^^^^^
+
+Allows using the same S3 bucket for multiple deployments.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix: ""`` with string input.                   |
++------------------------------------------------------------------------------------------------------------+
+
+
 GitLab Settings
 ~~~~~~~~~~~~~~~
 
@@ -4863,6 +4873,16 @@ The minimum version of the iOS React Native app that is required to be used.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
+
+Push Notification Buffer
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room.
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Theme Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
