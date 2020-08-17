@@ -61,7 +61,7 @@ On subsequent synchronizations and once groups are linked:
 
  - Users that have been added to an AD/LDAP group will be added to the linked Mattermost group and to teams and channels configured for that group.
  - Mattermost groups that are linked to AD/LDAP groups no longer included in your filter are deleted.
- - Users removed from an AD/LDAP group are removed from the linked Mattermost group, but their channel and team membership is not revoked.
+ - Users removed from an AD/LDAP group are removed from the linked Mattermost group, but their channel and team membership is only revoked when the channel or team is synchronized to an AD/LDAP group.
 
 .. image:: ../images/Group_Group_Member_Sync.png
 
@@ -137,7 +137,7 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 
 .. image:: ../images/Group_Members.png
 
-Users can be removed from the Mattermost group on subsequent synchronizations.
+Members removed from the AD/LDAP group will also be removed from the Mattermost group (and any synchronized teams and channels) on subsequent synchronizations.
 
 .. note::
    When a member removes themselves manually from a channel, that action is tracked in the **Channel Member History** table.  Users are not re-added to channels from which they previously removed themselves.
