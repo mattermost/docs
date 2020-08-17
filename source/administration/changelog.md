@@ -15,6 +15,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.26, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Improvements
+ - Changed the Default Theme setting in the System Console to a drop-down field.
 
 ### Bug Fixes
  - Fixed an issue where a panic occurred when the server was getting shutdown before ``InitPlugins()`` was able to complete.
@@ -23,6 +24,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where incoming webhooks owned by a bot did not consistently allow username override.
  - Fixed an issue where the emoji picker in the Edit Post Modal was misaligned.
  - Fixed an issue where the theme color for 'Sidebar Text Active Border' was not currently being used in active border in the sidebar.
+ - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
+ - Fixed an issue where a panic was caused when a user joined a team with default channels archived.
+ - Fixed an issue where the Mobile session was getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` was enabled.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
