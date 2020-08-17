@@ -39,8 +39,6 @@ Learn how to get Mattermost running on your environment.
    /install/deploy-bitnami*
    /install/docker-local*
    /install/docker-ebs*
-   /install/troubleshooting*
-   /install/trouble_mysql.rst
    /install/desktop-msi-gpo*
 
 Deployment
@@ -141,6 +139,18 @@ Learn how to maintain your Mattermost system.
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
+
+Troubleshooting
+----------------
+
+Understand potential issues and how to address them.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /install/troubleshooting.rst
+   /install/trouble_mysql.rst
  
 Upgrade Mattermost
 ----------------------------
