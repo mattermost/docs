@@ -83,7 +83,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
  - Fixed an issue where quick switch user search was always falling back to the database.
  - Fixed an issue where a user's status was displayed as online while the database status was displayed as offline.
- - Fixed an issue where Elasticsearh indexing job did not index users and/or channels older than the first post.
+ - Fixed an issue where Elasticsearch indexing job did not index users and/or channels older than the first post.
  - Fixed an issue where Global Relay SMTP connection timeout was not independent of the regular SMTP email settings timeout.
  - Fixed an issue with a poor performance when opening More Direct Messages modal.
  - Fixed an issue where bot username validation message was unclear as it did not mention which value was invalid.
