@@ -12,7 +12,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
 
 ### Breaking Changes
- - In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearh using the **Purge index** and then **Index now** button so that all the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is little to no activity because it may take several hours.
+ - In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearch using the **Purge index** and then **Index now** button so that all the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is little to no activity because it may take several hours.
  - An ``EnableExperimentalGossipEncryption`` option was added under ``ClusterSettings``. If this is set to ``true``, and ``UseExperimentalGossip`` is also ``true``, all communication through the cluster using the gossip protocol will be encrypted. The encryption uses ``AES-256`` by default, and it is not kept configurable by design. However, if one wishes, they can set the value in Systems table manually for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256. To update the key, one can execute ``UPDATE Systems SET Value='<value>' WHERE Name='ClusterEncryptionKey';`` in MySQL and ``UPDATE systems SET value='<value>' WHERE name='ClusterEncryptionKey'`` for PostgreSQL. For any change in this config setting to take effect, the whole cluster must be shutdown first. Then the config change made, and then restarted. In a cluster, all servers either will completely use encryption or not. There cannot be any partial usage.
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
@@ -83,7 +83,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
  - Fixed an issue where quick switch user search was always falling back to the database.
  - Fixed an issue where a user's status was displayed as online while the database status was displayed as offline.
- - Fixed an issue where Elasticsearh indexing job did not index users and/or channels older than the first post.
+ - Fixed an issue where Elasticsearch indexing job did not index users and/or channels older than the first post.
  - Fixed an issue where Global Relay SMTP connection timeout was not independent of the regular SMTP email settings timeout.
  - Fixed an issue with a poor performance when opening More Direct Messages modal.
  - Fixed an issue where bot username validation message was unclear as it did not mention which value was invalid.
@@ -156,6 +156,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Twitter link previews do not work in Mattermost.
  - Pasted unicode emojis fail to appear once posted.
  - ``CMD+SHIFT+V`` does not paste copied text on MacOS on Safari 12 (Catalina) and Firefox.
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
@@ -244,6 +245,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Twitter link previews do not work in Mattermost.
  - Highlight is missing when at-mentioning yourself, followed by period, underscore, or hyphen.
  - Ctrl+Enter doesn't post an edited message with "Send messages on Ctrl+Enter" enabled for all messages.
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
