@@ -4,6 +4,43 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+**Release day: 2020-09-16**
+
+### Compatibility
+
+### Breaking Changes
+
+**IMPORTANT:** If you upgrade from a release earlier than 5.26, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Improvements
+
+### Bug Fixes
+ - Fixed an issue where a panic occurred when the server was getting shutdown before ``InitPlugins()`` was able to complete.
+ - Fixed an issue where the ``SendEmailNotifications`` setting blocked testing the SMTP connection.
+ - Fixed an issue where users were not matching on mixed-case SAML assertions.
+ - Fixed an issue where incoming webhooks owned by a bot did not consistently allow username override.
+ - Fixed an issue where the theme color for 'Sidebar Text Active Border' was not currently being used in active border in the sidebar.
+
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### Open Source Components
+
+### Database Changes
+
+### API Changes
+
+### Websocket Event Changes
+ 
+### Known Issues
+
+### Contributors
+
+
 ## Release v5.26 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 **Release day: 2020-08-16**
