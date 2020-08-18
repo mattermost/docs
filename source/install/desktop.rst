@@ -4,12 +4,12 @@ Desktop Application Install Guides
 
 Mattermost desktop applications are available for Windows, Mac, and Linux operating systems. They support all the features of the web experience, plus:
 
- - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys
- - Auto-start Mattermost when a user logs into their machine
- - (Windows) Add Mattermost to Start menu, Taskbar, and System Tray
- - (Windows/Mac) Deep link to the desktop app via mattermost:// protocol if app is already installed
- - (Mac) Add Mattermost to the Dock
- - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__
+ - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
+ - Auto-start Mattermost when a user logs into their machine.
+ - (Windows) Add Mattermost to Start menu, Taskbar, and System Tray.
+ - (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if app is already installed.
+ - (Mac) Add Mattermost to the Dock.
+ - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
 
 Below is a list of additional resources:
 
@@ -30,12 +30,12 @@ Windows 10+, Windows 8.1+, Windows 7+
 
    - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.5.2/mattermost-desktop-setup-4.5.2-win.exe>`__
 
-2. From the **\Downloads** folder right-click on the file ``mattermost-desktop-setup-4.5.2-win.exe`` and select **Open**.
+2. From the ``\Downloads`` folder right-click on the file ``mattermost-desktop-setup-4.5.2-win.exe`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
 MSI Installer and Group Policies (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the latest version of the Mattermost desktop app MSI installer (Beta):
 
@@ -55,7 +55,7 @@ The following Group Policies are available:
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 
 macOS 10.9+
---------------------------------------------------
+-------------
 
 1. Download the `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.5.2/mattermost-desktop-4.5.2-mac.dmg>`__.
 
@@ -66,7 +66,7 @@ macOS 10.9+
 `Homebrew <https://brew.sh>`__ users can install with ``brew cask install mattermost``.
 
 Linux
---------------------------------------------------
+--------
 
 Generic Linux package
 ~~~~~~~~~~~~~~~~~~~~~
@@ -121,7 +121,7 @@ Troubleshooting
 -----------------
 
 "Installation has failed" dialog
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The app data might be corrupted. Remove all the files in ``%LOCALAPPDATA%\mattermost``, then try reinstalling the app.
     
@@ -142,7 +142,7 @@ Desktop App window is black and doesn't load the page
 If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
 Desktop App is not visible, but the Mattermost icon is in the Task Bar
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This issue can occur on Windows in a multiple-monitor setup. When you disconnect the monitor that Mattermost is displayed on, Mattermost continues to display at screen coordinates that no longer exist.
 
@@ -151,11 +151,12 @@ To resolve this issue, you can reset the desktop app screen location by deleting
 **To reset the desktop app screen location**
 
 1. If the desktop app is running, right-click the Mattermost icon in the task bar and click **Close Window**.
-2. Open Windows File Explorer, and navigate to the **%APPDATA%\\Mattermost** folder.
+2. Open Windows File Explorer, and navigate to the ``%APPDATA%\\Mattermost`` folder.
 3. Delete the file ``bounds-info.json``.
 
 Desktop App constantly refreshes the page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This issue can occur when ``localStorage`` has an unexpected state. To resolve the issue:
 
 - Windows: Open Windows File Explorer, navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
@@ -163,21 +164,21 @@ This issue can occur when ``localStorage`` has an unexpected state. To resolve t
 - Linux: Open the File Manager, navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
       
 Desktop App constantly asks to log in to Mattermost server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This issue can occur after a crash or unexpected shutdown of the desktop app that causes the app data to be corrupted. To resolve the issue:
 
-- Windows: Open Windows File Explorer, navigate to the **%APPDATA%\\Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
-- Mac: Open Finder, navigate to the **~/Library/Application Support/Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
-- Linux: Open the file manager, navigate to the **~/.config/Mattermost** folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Windows: Open Windows File Explorer, navigate to the``%APPDATA%\\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Mac: Open Finder, navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Linux: Open the file manager, navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 
 "Internal error: BrowserWindow 'unresponsive' event has been emitted"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clicking **Show Details** on the dialog provides logs. Ways to resolve the issue:
 
-1. Clear the cache via **View > Clear Cache and Reload** or CTRL+SHIFT+R .
-2. Go to App Settings via **File > Settings** or CTRL+COMMA or and unselect hardware acceleration.
+1. Clear the cache via **View > Clear Cache and Reload** or CTRL+SHIFT+R.
+2. Go to App Settings via **File > Settings** or CTRL+COMMA  and unselect hardware acceleration.
   
 Desktop app not responsive within Citrix Virtual Apps or Desktop Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -187,7 +188,7 @@ Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\S
 For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Reporting Issues
---------------------------------------------------
+-----------------
 
 When reporting bugs found in the Mattermost desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`__. To access the Developer Tools Console, follow these instructions:
 
@@ -197,7 +198,7 @@ When reporting bugs found in the Mattermost desktop app, it is helpful to includ
 4. Save the file and then send it along with a description of your issue.
 5. Go to **View > Toggle Developer Tools** to disable the Developer Tools.
 
-You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above: 
+You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above:
 
 ``document.getElementsByTagName("webview")[0].openDevTools();`` 
 
@@ -217,4 +218,4 @@ macOS
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-To submit an improvement or correction to this documentation, click  **Edit** at the top of this page.
+To submit an improvement or correction to this documentation, click **Edit** at the top of this page.
