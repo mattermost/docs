@@ -107,7 +107,7 @@ Using local mode
 
 You need to append ``--local`` to the command you want to use or set the environment variable as ``MMCTL_LOCAL=true``.
 
-In versions prior to 5.26, only the commands ``config``, ``plugin`` and ``license`` are available.
+In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
 Running the tests
 ------------------
