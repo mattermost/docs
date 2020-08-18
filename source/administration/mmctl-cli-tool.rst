@@ -1,16 +1,11 @@
 mmctl Command Line Tool (Beta)
 ==============================
 
-The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication
-is done with either login credentials or an authentication token.
+The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token.
 
-Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the
-server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool.
-In the future, the Mattermost CLI tool will be deprecated.
+Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be deprecated.
 
-This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues
-in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about
-the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
+This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
 **Notes**
 
@@ -50,7 +45,6 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
        --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
        --local                       allows communicating with the server through a unix socket
        --strict                      will only run commands if the mmctl version matches the server one
-
 
 Installing mmctl
 ----------------
@@ -179,7 +173,6 @@ mmctl auth clean
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl auth current
 ^^^^^^^^^^^^^^^^^
 
@@ -213,7 +206,6 @@ mmctl auth current
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl auth delete
 ^^^^^^^^^^^^^^^^^
@@ -398,8 +390,7 @@ mmctl auth set
    --strict                      will only run commands if the mmctl version matches the server one
 
 
-Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then enter your username and password
-(and MFA token if MFA is enabled on the account).
+Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then enter your username and password (and MFA token if MFA is enabled on the account).
 
 Password
 
@@ -466,7 +457,6 @@ And now we can run commands normally:
    email: john.doe@example.com
    auth_service:
 
-
 Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -483,14 +473,14 @@ For zsh, add the following line to your ``~/.zshrc`` file:
   source <(mmctl completion zsh)
 
 mmctl bot
---------------
+---------
 
 Management of bots.
 
   Child Commands
     -  `mmctl bot assign`_ - Assign bot ownership
     -  `mmctl bot create`_ - Create a new bot
-    -  `mmctl bot disable`_ - Disble a bot
+    -  `mmctl bot disable`_ - Disable a bot
     -  `mmctl bot enable`_ - Enable a bot
     -  `mmctl bot list`_ - List all bots
     -  `mmctl bot update`_ - Update bot configuration
@@ -725,6 +715,7 @@ Commands for channel management.
     -  `mmctl channel list`_ - List all channels on specified teams
     -  `mmctl channel make_private`_ - Set a channel's type to "private"
     -  `mmctl channel modify`_ - Modify a channel's type (private/public)
+    -  `mmctl channel move`_ - Moves channels to the specified team
     -  `mmctl channel remove`_ - Remove users from a channel
     -  `mmctl channel rename`_ - Rename a channel
     -  `mmctl channel restore`_ - Restore a channel from the archive
@@ -775,8 +766,7 @@ mmctl channel archive
 
 **Description**
 
-  Archive one or multiple channels along with all related information including posts from the database. Channels can be
-  specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
+  Archive one or multiple channels along with all related information including posts from the database. Channels can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
 
 **Format**
 
@@ -871,7 +861,6 @@ mmctl channel list
 
   -h, --help   help for list
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -886,8 +875,7 @@ mmctl channel make_private
 
 **Description**
 
-   Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel)
-   or by channel ID.
+   Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
 
 **Format**
 
@@ -917,11 +905,11 @@ mmctl channel make_private
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel modify
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
-   Change the public/private type of a channel. Channel can be specified by [team]:[channel]. ie. myteam:mychannel or by channel ID.
+   Change the public/private type of a channel. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
 
 **Format**
 
@@ -940,7 +928,7 @@ mmctl channel modify
 
 .. code-block:: sh
 
-  -h, --help    help for modify
+    -h, --help  help for modify
     --private   Convert the channel to a private channel
     --public    Convert the channel to a public channel
 
@@ -953,9 +941,43 @@ mmctl channel modify
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
+mmctl channel move
+^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+   Moves the provided channels to the specified team. Validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved     along with the channel. Channels can be specified by [team]:[channel]. ie. myteam:mychannel or by channel ID.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl channel move [team] [channels] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    channel move newteam oldteam:mychannel
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help    help for move
+   --force       Remove users that are not members of target team before moving the channel.
+   
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel remove
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1059,7 +1081,6 @@ mmctl channel restore
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl channel search
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -1097,7 +1118,6 @@ mmctl channel search
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl command
 -------------
 
@@ -1112,14 +1132,12 @@ Management of slash commands.
     -  `mmctl command move`_ - Move a slash command to a different team
     -  `mmctl command show`_ - Show a custom slash command
     
-
 **Options**
 
 .. code-block:: sh
 
     -h, --help      help for command
     
-
 mmctl command archive
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -1232,7 +1250,6 @@ mmctl command delete
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl command list
 ^^^^^^^^^^^^^^^^^^^^
@@ -1352,7 +1369,7 @@ mmctl command show
 
 **Description**
 
-  Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
+  Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name, and creator username.
 
 **Format**
 
@@ -1467,7 +1484,6 @@ mmctl completion zsh
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl config
 ------------
@@ -1663,7 +1679,7 @@ mmctl docs
 
 **Description**
 
-  Generates mmctl documentation
+  Generates mmctl documentation.
 
 **Format**
 
@@ -1970,7 +1986,7 @@ mmctl group team enable
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group team list
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2037,7 +2053,6 @@ mmctl group team status
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl ldap
 ----------
 
@@ -2085,7 +2100,6 @@ mmctl ldap sync
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl license
 -------------
@@ -2135,7 +2149,6 @@ mmctl license remove
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl license upload
 ^^^^^^^^^^^^^^^^^^^^
@@ -2217,9 +2230,8 @@ Child Commands
 
   -h, --help   help for permissions
 
-
 mmctl permissions add
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2253,7 +2265,7 @@ mmctl permissions add
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl permissions remove
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2286,9 +2298,8 @@ mmctl permissions remove
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl permissions show
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2339,7 +2350,6 @@ Child Commands
 
    -h, --help   help for plugin
 
-
 mmctl plugin add
 ^^^^^^^^^^^^^^^^^
 
@@ -2373,7 +2383,6 @@ mmctl plugin add
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl plugin delete
 ^^^^^^^^^^^^^^^^^^^^
@@ -2443,7 +2452,6 @@ mmctl plugin disable
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl plugin enable
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -2511,7 +2519,6 @@ mmctl plugin list
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl post
 ------------
@@ -2623,7 +2630,7 @@ Child Commands
 
   -h, --help   help for system
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
@@ -2657,7 +2664,7 @@ mmctl system clearbusy
 
    -h, --help   help for clearbusy
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
@@ -2691,7 +2698,7 @@ mmctl system getbusy
 
     -h, --help   help for getbusy
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
@@ -2700,7 +2707,6 @@ mmctl system getbusy
     --local                        allows communicating with the server through a unix socket
     --strict                       will only run commands if the mmctl version matches the server one
     
-
 mmctl system setbusy
 ^^^^^^^^^^^^^^^^^^
 
@@ -2724,10 +2730,10 @@ mmctl system setbusy
 
 .. code-block:: sh
 
-    -h, --help   help for setbusy
+    -h, --help           help for setbusy
     -s, --seconds uint   Number of seconds until server is automatically marked as not busy (default 3600)
 
-**Options Inherited from Parent Commands**
+**Options inherited from parent commands**
 
 .. code-block:: sh
 
@@ -2735,7 +2741,6 @@ mmctl system setbusy
     --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
     --local                        allows communicating with the server through a unix socket
     --strict                       will only run commands if the mmctl version matches the server one
-
 
 mmctl team
 ----------
@@ -2758,7 +2763,6 @@ Child Commands
 .. code-block:: sh
 
   -h, --help   help for team
-
 
 mmctl team archive
 ^^^^^^^^^^^^^^^^
@@ -2869,7 +2873,6 @@ mmctl team delete
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl team list
 ^^^^^^^^^^^^^^^^
 
@@ -2975,7 +2978,6 @@ mmctl team rename
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl team restore
 ^^^^^^^^^^^^^^^^^^
 
@@ -3044,7 +3046,6 @@ mmctl team search
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl team users
 ^^^^^^^^^^^^^^^^^^
 
@@ -3085,7 +3086,6 @@ mmctl team users add
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl team users remove
 ~~~~~~~~~~~~~~~~~~
@@ -3137,7 +3137,6 @@ Child Commands
 
    -h, --help       help for token
 
-
 mmctl token generate
 ^^^^^^^^^^^^^^^^^^
 
@@ -3163,7 +3162,6 @@ mmctl token generate
 
    -h, --help           help for generate
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3173,7 +3171,6 @@ mmctl token generate
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
    
-
 mmctl token list
 ^^^^^^^^^^^^^^^^^^
 
@@ -3203,7 +3200,6 @@ mmctl token list
    --inactive       List only inactive tokens
    --page int       Page number to fetch for the list of users
    --per-page int   Number of users to be fetched (default 200) 
-
 
 **Options inherited from parent commands**
 
@@ -3270,7 +3266,6 @@ Child Commands
 
    -h, --help       help for user
 
-
 mmctl user activate
 ^^^^^^^^^^^^^^^^^^
 
@@ -3297,7 +3292,6 @@ mmctl user activate
 
    -h, --help           help for activate
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3306,7 +3300,6 @@ mmctl user activate
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl user create
 ^^^^^^^^^^^^^^^^^^
@@ -3376,7 +3369,6 @@ mmctl user deactivate
 
     -h, --help       help for deactivate
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3388,7 +3380,7 @@ mmctl user deactivate
 
 
 mmctl user email
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3413,7 +3405,6 @@ mmctl user email
 
     -h, --help       help for email
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3428,8 +3419,7 @@ mmctl user invite
 
 **Description**
 
-  Send an email invite to a user, to join a team. You can invite a user to multiple teams by listing
-  them. You can specify teams by name or ID.
+  Send an email invite to a user, to join a team. You can invite a user to multiple teams by listing them. You can specify teams by name or ID.
 
 **Format**
 
@@ -3521,7 +3511,6 @@ mmctl user reset_password
 
     -h, --help       help for reset_password
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3536,8 +3525,7 @@ mmctl user resetmfa
 
 **Description**
 
-  Turn off multi-factor authentication for a user. If MFA enforcement is enabled, the
-  user will be forced to re-enable MFA as soon as they login.
+  Turn off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA as soon as they login.
 
 **Format**
 
@@ -3556,7 +3544,6 @@ mmctl user resetmfa
 .. code-block:: sh
 
     -h, --help       help for resetmfa
-
 
 **Options inherited from parent commands**
 
@@ -3592,7 +3579,6 @@ mmctl user search
 
     -h, --help       help for search
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3621,7 +3607,6 @@ mmctl version
 
     -h, --help       help for version
 
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3649,7 +3634,6 @@ mmctl websocket
 .. code-block:: sh
 
     -h, --help       help for websocket
-
 
 **Options inherited from parent commands**
 
