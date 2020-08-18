@@ -44,7 +44,7 @@ Stages and steps
 
 When you create a playbook you can group your tasks into stages which have accompanying steps. Each step can be assigned a slash command. The steps within each stage must be completed in the order they're listed.
 
-Stages and steps are optional, and can be left empty by default. You can't add stages and steps to a playbook that's being used in an active incident, but you can add them to the playbook when it's not in use.
+Stages and steps are optional, and can be left empty by default. You can add stages and steps to a playbook that's being used in an active incident, but they won't be applied to the active incident.
 
 Starting incidents
 ~~~~~~~~~~~~~~~~~~
@@ -122,7 +122,7 @@ Administrator's Guide
 Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, and are public or private depending on the playbook's settings. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
 
 Permissions
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Membership of playbooks and incidents is independent. System Admins can edit the visibility of, and access to, playbooks and incidents so that:
 
@@ -151,11 +151,11 @@ System Admins can manage the visibility of public incident channels by convertin
 4. Open the incident backstage, select the incident, and confirm that it is listed as **Private**.
 
 Managing playbooks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
-Any member of a playbook as well as all system admins can modify playbook editing permissions and visibility.
+Any member of a playbook as well as all System Admins can modify playbook editing permissions and visibility.
 
-**Adding a user as a playbook editor**
+**Adding a playbook editor**
 
 1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Search for the playbook you want to edit.
@@ -163,7 +163,7 @@ Any member of a playbook as well as all system admins can modify playbook editin
 4. Invite a team member to edit the playbook.
 5. Select **Save Playbook**.
 
-**Removing a user from a playbook**
+**Removing a playbook member**
 
 1. Navigate to **Main Menu > Incidents & Playbooks > Playbooks**.
 2. Search for the playbook you want to edit.
@@ -184,7 +184,7 @@ To open the incidents backstage, which lists all incidents associated with the c
 - Commander
 
 Viewing incident details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To view details of ongoing and ended incidents associated with your Mattermost team, open **Main Menu > Incidents & Playbooks**. Select an incident's name to view its details.
 
@@ -203,7 +203,7 @@ You can view all incidents in the incident Backstage via **Main Menu > Incidents
 - A link icon to open the corresponding incident channel
 - Status (**Ongoing** or **Ended**)
 - The commander, including profile picture and username
-- A prompt to `Export the Incident Channel <#exporting-channels>`_
+- A prompt to `Export the Incident Channel <#exporting-channels>`_.
 - The **Duration** widget displays the duration of the incident. While the incident is ongoing, the end time is displayed as **Ongoing**. When the incident has ended, it shows the end time (in the user's timezone).
 - The **Members Involved** widget indicates the total number of users that participated in the channel, either by posting a message, being assigned as commander, or interacting with a checklist. This number is not affected by users leaving the channel, or users joining the channel but not participating.
 - The total number of messages displayed includes messages posted by both users and bots (including the incident response bot). It does not include system or ephemeral messages.
