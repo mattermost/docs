@@ -32,6 +32,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a console error showed when creating a new custom category in new channel sidebar.
  - Fixed an issue where **System Console > Site Statistics - Dates** were displayed out of order for days when there were no posts.
  - Fixed an issue where the Mattermost Server crashed when a Compliance Export job was run for Global Relay EML.
+ - Fixed an issue where Compliance Jobs did not restart correctly after Warning status.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
