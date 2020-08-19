@@ -73,7 +73,7 @@ Browsing incidents
 
 Only public incidents and incidents in which the active user is a member are displayed. System administrators have access to all incidents, whether or not they are members.
 
-Click on an incident to view additional metadata such as duration, number of involved members, number of messages posted to the channel, and a timeline of when steps were resolved. Optionally filter the list of incidents to show only ongoing incidents, or incidents for whom a given user is the commander.
+Click on an incident to view additional metadata such as duration, number of involved members, number of messages posted to the channel, and a timeline of when steps were resolved. Optionally filter the list of incidents to include only ongoing incidents or the incident's commander.
 
 Exporting channels
 ^^^^^^^^^^^^^^^^^^
