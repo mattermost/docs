@@ -63,7 +63,7 @@ Ending incidents
 To end an active incident, browse to the incident channel and use one of the following steps:
 
 - Use the slash command */incident end*.
-- Use the **End Incident** button in the RHS.
+- The **End Incident** button in the RHS.
 
 Browsing incidents
 ~~~~~~~~~~~~~~~~~~
