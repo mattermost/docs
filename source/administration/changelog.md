@@ -6,7 +6,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.26 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release day: 2020-08-16**
+- **v5.26.1, release day TBD**
+  - Fixing an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) only works with users signing in with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
+  - Fixing an issue where the mobile app sessions are getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` is enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
+- **v5.26.0, released 2020-08-16**
+  - Original 5.26.0 release
 
 ### Compatibility
  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
@@ -172,6 +176,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
+- **v5.25.4, release day TBD**
+  - Fixing an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) only works with users signing in with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
+  - Fixing an issue where the mobile app sessions are getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` is enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
 - **v5.25.3, released 2020-08-12**
   - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as GitLab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
   - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
