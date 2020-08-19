@@ -69,7 +69,7 @@ Browsing incidents
 ~~~~~~~~~~~~~~~~~~
 
 1. Navigate to **Main Menu > Incidents & Playbooks**.
-2. With **Incidents** selected in the top menu, view the incidents in the current team.
+2. Select **Incidents** in the top menu to view the incidents in the current team.
 
 Only public incidents and incidents in which the active user is a member are displayed. System administrators have access to all incidents, whether or not they are members.
 
