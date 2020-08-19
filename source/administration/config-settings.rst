@@ -10,13 +10,11 @@ The default location of ``config.json`` is in the ``mattermost/config`` director
 
 On new installations starting from version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
-Configuration in Database
--------------------------
+**Configuration in Database**
 
 Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
 
-Environment Variables
----------------------
+**Environment Variables**
 
 Starting from Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
@@ -43,6 +41,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 
 About
 -------
+
 Settings for managing the edition and license for Mattermost Enterprise Edition.
 
 Edition and License
