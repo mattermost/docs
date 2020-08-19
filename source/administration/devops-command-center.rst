@@ -78,7 +78,9 @@ Click on an incident to view additional metadata such as duration, number of inv
 Exporting channels
 ^^^^^^^^^^^^^^^^^^
 
-If your server is licensed for E20, and the channel export plugin is installed and active, navigate to **Main Menu > Incidents & Playbooks**, select an incident, then choose **Export Incident Channel** in the top-right corner to download the contents of the incident channel as a CSV. The file excludes attachments, but includes system messages.
+If your server is licensed for E20, and the channel export plugin is installed and active, navigate to **Main Menu > Incidents & Playbooks** to select an incident you want to export. Choose **Export Incident Channel** in the top-right corner to download the contents as a CSV. 
+
+The file excludes attachments, but includes system messages.
 
 If you have an E20 license but the channel export plugin is not installed, or the plugin is installed but not enabled, it’s not possible to select **Export Incident Channel**.
 
