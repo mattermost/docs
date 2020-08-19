@@ -26,7 +26,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the theme color for 'Sidebar Text Active Border' was not currently being used in active border in the sidebar.
  - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
  - Fixed an issue where a panic was caused when a user joined a team with default channels archived.
- - Fixed an issue where the Mobile session was getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` was enabled.
+ - Fixed an issue where pasted unicode emojis failed to appear once posted.
  - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to go "Back to Mattermost" in the authentication window.
  - Fixed an issue where a new badge in the channel sidebar category header reappeard after a channel was removed from the category.
  - Fixed an issue where a console error showed when creating a new custom category in new channel sidebar.
