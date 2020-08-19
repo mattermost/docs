@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 - **v5.26.1, release day TBD**
   - Fixing an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) only works with users signing in with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
-  - Fixing an issue where the mobile app session gets logged out unexpectedly. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
+  - Fixing an issue where the mobile app sessions are getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` is enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
 - **v5.26.0, released 2020-08-16**
   - Original 5.26.0 release
 
@@ -178,7 +178,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - **v5.25.4, release day TBD**
   - Fixing an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) only works with users signing in with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
-  - Fixing an issue where the mobile app session gets logged out unexpectedly. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
+  - Fixing an issue where the mobile app sessions are getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` is enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
 - **v5.25.3, released 2020-08-12**
   - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as GitLab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
   - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
