@@ -53,9 +53,10 @@ The creator of a playbook is automatically added as the first member and becomes
 Interacting with an incident
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Browsing to an incident channel automatically opens the RHS showing the current commander, duration, active stage and corresponding steps. Any member of the incident is free to change the commander, view other stages, mark a new stage as active, or mark a step as completed.
+Browsing to an incident channel automatically opens the RHS showing the current commander, duration, active stage and corresponding steps. Any member of the incident is free to change the commander, view other stages, mark a new stage as active, or mark a step as completed. You can also use slash commands to expedite the completion of a step, such as inviting a user to the channel or triggering some third-party integration.
 
-Some steps may be assigned slash commands which can be run at any time by clicking **(Run)** next to the slash command. Use slash commands to expedite the completion of a step, such as inviting a user to the channel or triggering some third-party integration.
+- Assign slash commands to steps and use the **(Run)** button to run them at any time. Steps can have slash commands ssigned slash commands which can be run at any time by clicking **(Run)** next to the slash command.
+- Each step can be optionally assigned to a member of the incident. Select the **No assignee** label below the step title to select an assignee.
 
 Ending incidents
 ~~~~~~~~~~~~~~~~
