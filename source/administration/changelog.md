@@ -37,6 +37,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
  - Fixed an issue where user's role was not added correctly in Members block in **System Console > Teams** System Console page.
  - Fixed an issue where a channel state got broken after an "unallowed" deletion.
+ - Fixed an issue where the Admin Advisor bot was displayed in the **Integrations > Bot Accounts** page.
+ - Fixed an issue where the ability to demote admins to members and to deactivate accounts from **System Console > Users** was not available.
+ - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for the LDAP Groups.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
