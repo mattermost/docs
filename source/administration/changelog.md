@@ -18,29 +18,29 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Changed the Default Theme setting in the System Console to a drop-down field.
 
 ### Bug Fixes
- - Fixed an issue where a panic occurred when the server was getting shutdown before ``InitPlugins()`` was able to complete.
- - Fixed an issue where the ``SendEmailNotifications`` setting blocked testing the SMTP connection.
+ - Fixed an issue where the server crashed when a Compliance Export job was run for Global Relay EML.
+ - Fixed an issue where Compliance Jobs did not restart correctly after a Warning status.
  - Fixed an issue where users were not matching on mixed-case SAML assertions.
- - Fixed an issue where incoming webhooks owned by a bot did not consistently allow username override.
- - Fixed an issue where the emoji picker in the Edit Post Modal was misaligned.
- - Fixed an issue where the theme color for 'Sidebar Text Active Border' was not currently being used in active border in the sidebar.
- - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
- - Fixed an issue where a panic was caused when a user joined a team with default channels archived.
- - Fixed an issue where pasted unicode emojis failed to appear once posted.
- - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to go "Back to Mattermost" in the authentication window.
- - Fixed an issue where a new badge in the channel sidebar category header reappeard after a channel was removed from the category.
- - Fixed an issue where a console error showed when creating a new custom category in new channel sidebar.
- - Fixed an issue where **System Console > Site Statistics - Dates** were displayed out of order for days when there were no posts.
- - Fixed an issue where the Mattermost Server crashed when a Compliance Export job was run for Global Relay EML.
- - Fixed an issue where Compliance Jobs did not restart correctly after Warning status.
- - Fixed an issue where the channel switcher showed a wrong empty state at times with network API.
- - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
- - Fixed an issue where user's role was not added correctly in Members block in **System Console > Teams** System Console page.
- - Fixed an issue where a channel state got broken after an "unallowed" deletion.
- - Fixed an issue where the Admin Advisor bot was displayed in the **Integrations > Bot Accounts** page.
- - Fixed an issue where the ability to demote admins to members and to deactivate accounts from **System Console > Users** was not available.
  - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for the LDAP Groups.
+ - Fixed an issue where user's role was not added correctly in the Members block in **System Console > Teams** System Console page.
+ - Fixed an issue where the ability to demote Admins to members and to deactivate accounts from **System Console > Users** were not available.
  - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to a Group.
+ - Fixed an issue where incoming webhooks owned by a bot did not consistently allow a username override.
+ - Fixed an issue where the emoji picker in the Edit Post modal was misaligned.
+ - Fixed an issue where pasted unicode emojis failed to appear once posted.
+ - Fixed an issue where dates on **System Console > Site Statistics - Dates** were displayed out of order on days when there were no posts.
+ - Fixed an issue where the Admin Advisor bot was unexpectedly displayed in the **Integrations > Bot Accounts** page.
+ - Fixed an issue where a new badge in the channel sidebar category header reappeard after a channel was removed from the category.
+ - Fixed an issue where the theme color for "Sidebar Text Active Border" was not currently being used in the active border in the sidebar.
+ - Fixed an issue where a console error showed when creating a new custom category in new channel sidebar.
+ - Fixed an issue where a channel state got broken after an "unallowed" deletion.
+ - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
+ - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to click "Back to Mattermost" in the authentication window.
+ - Fixed an issue where the channel switcher sometimes showed a wrong empty state with network API.
+ - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
+ - Fixed an issue where a panic occurred when the server was getting a shutdown before ``InitPlugins()`` was able to complete.
+ - Fixed an issue where a panic was caused when a user joined a team with default channels archived.
+ - Fixed an issue where the ``SendEmailNotifications`` setting blocked testing the SMTP connection.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
