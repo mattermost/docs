@@ -16,13 +16,13 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
   b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL
 
 2. In Grafana:
-  a. Under the alert icon in the sidebar, click ''Notification channels''
-  b. Click ''Add channel''
-  c. Enter ''Mattermost Alerts Channel'' as the name
-  d. For type, select ''Slack''
+  a. Under the alert icon in the sidebar, click **Notification channels**
+  b. Click **Add channel**
+  c. Enter **Mattermost Alerts Channel** as the name
+  d. For type, select **Slack**
   e. Paste your webhook URL into the URL field
   f. Include an @ mention in the mention field, if you want to send mentions when an alert is posted to Mattermost
-  g. Press ''Send Test'' to test the alert
+  g. Press **Send Test** to test the alert
 
 If you would also like to get email alerts, you can follow `these instructions <http://docs.grafana.org/alerting/notifications/#email.>`__ to set that up.
 
@@ -38,21 +38,21 @@ The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`__
 
 To configure alerts, set an appropriate threshold and enable notifications. Enabling notifications is the same for each chart, but setting the correct threshold can have some variances that are better handled on a per-chart basis.
 
-1. For each chart, click on the chart name and click ''Edit'':
+1. For each chart, click on the chart name and click **Edit**:
 
 .. image:: ../images/perf-1.png
 
-2. Then click on the ''Alert'' tab:
+2. Then click on the **Alert** tab:
 
 .. image:: ../images/perf-2.png
 
-3. The alert threshold, which will be discussed in the sections below, is the last field under ''Conditions'' (the one set to 600 in the screenshot above).
+3. The alert threshold, which will be discussed in the sections below, is the last field under **Conditions** (the one set to 600 in the screenshot above).
 
 See the sections below for how to set the threshold for each individual chart. If you would like to add your own custom alert conditions, configure them here.
 
 .. image:: ../images/perf-3.png
 
-4. To enable the notifications for any alerts, click on the ''Notification'' tab on the left and select ''Mattermost Alerts Channel'' under ''Send to'':
+4. To enable the notifications for any alerts, click on the **Notification** tab on the left and select **Mattermost Alerts Channel** under **Send to**:
 
 .. image:: ../images/perf-4.png
 
@@ -80,7 +80,7 @@ Memory Usage
 
 Memory Usage tracks the megabytes of RAM that your app servers are using. Set the threshold similar to the CPU Utilization Rate: below maximum available memory and above your average usage during peak times.
 
-Here’s how we have the alert set on our community server: 
+Here’s how we have the alert set on our Community server: 
 
 .. image:: ../images/perf-6.png
 
@@ -91,18 +91,18 @@ Goroutines are functions or methods that run concurrently with other functions a
 
 Set the threshold somewhere above the average number of goroutines you see during peak load times. Small spikes are usually nothing to worry about. It’s the uncontrolled climbing of goroutines that you want to watch out for.
 
-Here’s how we have it set on our community server:
+Here’s how we have it set on our Community server:
 
 .. image:: ../images/perf-7.png
 
 Number of API Errors per Second
 --------------------------------
 
-Any 4xx or 5xx HTTP response status codes are counted as a REST API error. API errors themselves are not necessarily a problem. There are many legitimate reasons for an API error to occur, such as users’ sessions expiring or clients requesting to see if a resource exists and is being given a ''404 Not Found'' response. It is normal to have some API errors that scale with your installation base.
+Any 4xx or 5xx HTTP response status codes are counted as a REST API error. API errors themselves are not necessarily a problem. There are many legitimate reasons for an API error to occur, such as users’ sessions expiring or clients requesting to see if a resource exists and is being given a ``404 Not Found`` response. It is normal to have some API errors that scale with your installation base.
 
 That said, errors against the REST API can be indicative of deployment and other issues. For example, if one of your app servers did not deploy correctly for whatever reason, it may begin returning a high number of API errors. Another example would be a rogue bot spamming the API with bad requests. Alerts on API errors per second would help catch these and other issues.
 
-Here’s how it’s set on our community server:
+Here’s how it’s set on our Community server:
 
 .. image:: ../images/perf-8.png
 
@@ -116,6 +116,38 @@ You’ll want to set the alert threshold a little above what the mean request ti
 Here’s how it’s set on our community server:
 
 .. image:: ../images/perf-9-b.png
+
+Plugin Hooks
+-------------
+
+You can trace hooks and plugin API calls with Prometheus. Below are some examples of hooks and API Prometheus metrics that you may want to be aware of when troubleshooting or monitoring your server's performance.
+
+.. code-block:: none
+
+  # HELP mattermost_plugin_hook_time Time to execute plugin hook handler in seconds.
+  # TYPE mattermost_plugin_hook_time histogram
+  mattermost_plugin_hook_time_bucket{hook_name="ChannelHasBeenCreated",plugin_id="com.mattermost.demo-plugin",success="true",le="0.005"} 0
+  mattermost_plugin_hook_time_bucket{hook_name="ChannelHasBeenCreated",plugin_id="com.mattermost.demo-plugin",success="true",le="0.01"} 0
+
+.. code-block:: none
+
+  # HELP mattermost_plugin_multi_hook_time Time to execute multiple plugin hook handler in seconds.
+  # TYPE mattermost_plugin_multi_hook_time histogram
+  mattermost_plugin_multi_hook_time_bucket{plugin_id="com.mattermost.custom-attributes",le="0.005"} 100
+  mattermost_plugin_multi_hook_time_bucket{plugin_id="com.mattermost.custom-attributes",le="0.01"} 100
+
+.. code-block:: none
+
+  # HELP mattermost_plugin_multi_hook_server_time Time for the server to execute multiple plugin hook handlers in seconds.
+  # TYPE mattermost_plugin_multi_hook_server_time histogram
+  mattermost_plugin_multi_hook_server_time_bucket{le="0.005"} 1043
+  
+.. code-block:: none
+
+  # HELP mattermost_plugin_api_time Time to execute plugin API handlers in seconds.
+  # TYPE mattermost_plugin_api_time histogram
+  mattermost_plugin_api_time_bucket{api_name="AddUserToChannel",plugin_id="com.mattermost.plugin-incident-response",success="true",le="0.005"} 0
+  mattermost_plugin_api_time_bucket{api_name="AddUserToChannel",plugin_id="com.mattermost.plugin-incident-response",success="true",le="0.01"} 0
 
 Other Alerts
 -------------
