@@ -4,8 +4,190 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.26 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+- **v5.26.1, release day TBD**
+  - Fixing an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) only works with users signing in with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
+  - Fixing an issue where the mobile app sessions are getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` is enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
+- **v5.26.0, released 2020-08-16**
+  - Original 5.26.0 release
+
+### Compatibility
+ - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. In our 6.0 release (date to be announced), we plan on fully deprecating PostgreSQL 9.4. Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
+
+### Breaking Changes
+ - In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearch using the **Purge index** and then **Index now** button so that all the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is little to no activity because it may take several hours.
+ - An ``EnableExperimentalGossipEncryption`` option was added under ``ClusterSettings``. If this is set to ``true``, and ``UseExperimentalGossip`` is also ``true``, all communication through the cluster using the gossip protocol will be encrypted. The encryption uses ``AES-256`` by default, and it is not kept configurable by design. However, if one wishes, they can set the value in Systems table manually for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256. To update the key, one can execute ``UPDATE Systems SET Value='<value>' WHERE Name='ClusterEncryptionKey';`` in MySQL and ``UPDATE systems SET value='<value>' WHERE name='ClusterEncryptionKey'`` for PostgreSQL. For any change in this config setting to take effect, the whole cluster must be shutdown first. Then the config change made, and then restarted. In a cluster, all servers either will completely use encryption or not. There cannot be any partial usage.
+
+**IMPORTANT:** If you upgrade from a release earlier than 5.25, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Archive & unarchive channels from the System Console (E20 Edition)
+ - Channels can now be archived and unarchived with ease from the System Console.
+
+#### Manage members and channels in System Console using search filters (E20 Edition)
+ - Managing members & channels is now lot easier with new search filters.
+ 
+#### Customize log configuration and output targets (E20 Edition)
+ - Customize log level records beyond the standard levels of trace, debug, info, and panic, as well as configure different destinations based on discrete log levels.
+
+#### Get help from the Mattermost community via ‘Ask the community’ link
+ - You can access the community from a new “Help” menu in the channel header, after which you will create an account on our public [Mattermost Community server](https://community.mattermost.com/) to join a vibrant user community to ask questions and help your peers to troubleshoot issues.
+
+#### Categorize and reorder channels with channel sidebar enhancements (Experimental)
+ - Users now have the ability to create custom categories in the sidebar to group channels together for easier navigation, drag channels between or within categories to prioritize conversations most important to you, and much more.
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the styling of a deactivated user's Direct Message channel footer.
+ - All emoji aliases are now shown on the emoji picker.
+ - Added support for allowing copying and pasting of emoji shortcodes.
+ - Added Online, Away, Do Not Disturb, and Offline icons to the status menu for quicker recognition.
+ - Increased visibility of user and channel autocomplete suggestions when editing a long post.
+ - Added a flag icon to the post hover menu and updated pinned and flagged post styling in the channel.
+ - Added support for PostgreSQL & PL/pgSQL syntax highlighting.
+ - Expanded the width of server logs page in System Console UI to full screen width.
+
+#### Localization
+ - Promoted Russian and Dutch languages to “official”.
+ 
+#### Command Line Interface (CLI)
+ - Added new mmctl CLI commands, such as ``ldap idmigrate``, ``user convert``, ``channel move``, and ``user deleteall``.
+
+#### Search
+ - Added ability for Elasticsearch to search terms inside links.
+ - Searching for a user with a leading "@" in the search term with Elasticsearch now returns results for those users.
+ - Added ability to include filtering search/autocompletion by roles.
+ - Added ability to search/autocomplete inactive users from Elasticsearch.
+ - Added missing methods such as ``PermanenteDeleteByUser`` and ``PermanenteDeleteByChannel`` that update and/or delete entities in the searchlayer.
+ - Implemented prefix/suffix search on Teams and Channel pages in System Console.
+
+#### Integrations
+ - Added slash command autocomplete functionality to enable commands to be executed on selection (mouse click, tab or enter).
+ - Added plugin API endpoint to run a slash command.
+ - Implemented ``http.Hijacker`` for plugins' ``ServeHTTP`` to make it possible to upgrade the ``ServeHTTP`` hook to expose a websocket connection.
+
+#### Command Line Interface (CLI)
+ - Added the ability to remove non-members of the target team if ``channel move`` fails.
+
+#### Administration
+ - Added support for a System Admin warning system that displays warnings in the announcement bar and sends Direct Messages to admins if one or more metric fulfills a certain condition.
+ - **System Console > Plugins** section now lists all the installed plugins regardless of the number of configurable settings associated with each plugin.
+ - Servers now send a push notification to mobile clients when a user's session expires.
+ - Clearing the Site URL in the System Console is no longer allowed.
+ - Changed the patch post API endpoint authorization logic to allow the ``edit_others_posts`` permission to function independently from ``edit_own_posts``.
+ - Included a response code in the "Received HTTP Request" log line.
+ - Added support for a new environment variable ``MM_LICENSE`` which can contain the contents of a license file. When set, this license takes priority over all other license sources.
+ - Added support for encryption for gossip protocol.
+ - Move gossip protocol to use only gossip.
+
+### Bug Fixes
+ - Fixed an issue where an empty outgoing webhook response generated a spurious ERROR.
+ - Fixed an issue where quick switch user search was always falling back to the database.
+ - Fixed an issue where a user's status was displayed as online while the database status was displayed as offline.
+ - Fixed an issue where Elasticsearch indexing job did not index users and/or channels older than the first post.
+ - Fixed an issue where Global Relay SMTP connection timeout was not independent of the regular SMTP email settings timeout.
+ - Fixed an issue with a poor performance when opening More Direct Messages modal.
+ - Fixed an issue where bot username validation message was unclear as it did not mention which value was invalid.
+ - Fixed an issue where Command+K input field lost focus when the window lost focus, causing search results to disappear.
+ - Fixed an issue where a highlight was missing when users at-mentioned themselves, followed by period, underscore, or hyphen.
+ - Fixed an issue where a 500 error was returned by the ``/posts/unread`` endpoint caused by an [integer overflow](https://en.wikipedia.org/wiki/Integer_overflow) when ``limit_after`` was set to 0.
+ - Fixed an issue where the footer text in invitation emails was not translated.
+ - Fixed an issue where ``PermanentDeleteTeam`` did not return an error but did a soft deletion if ``EnableAPITeamDeletion`` was not set.
+ - Fixed an issue on PostgreSQL where logging in using MFA did not respect the uppercase of the email address.
+
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added ``ExperimentalDataPrefetch``, to enable messages in all unread channels to be pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
+ - Under ``ClusterSettings`` in ``config.json``:
+   - Added ``EnableExperimentalGossipEncryption``, to enable all communication through the cluster using the gossip protocol to be encrypted.
+ - Under ``LogSettings`` in ``config.json``:
+   - Added ``EnableSentry``, to enable sentry reporting.
+   - Added ``AdvancedLoggingConfig``, to enable optional logging capability to allow sending log records to a number of destinations.
+ - Under ``FileSettings`` in ``config.json``:
+   - Added ``AmazonS3PathPrefix``, to allow using the same S3 bucket for multiple deployments.
+ - Under ``EmailSettings`` in ``config.json``:
+   - Added ``PushNotificationBuffer``, to remove hardcoded goroutine workers from push notifications to improve notifications arriving in order.
+ - Under ``SupportSettings`` in ``config.json``:
+   - Added ``EnableAskCommunityLink``, to enable showing a link in the Mattermost channel header under the **Help** menu. When clicked, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues. This option is not available on the mobile apps.
+ - Under ``GlobalRelayMessageExportSettings`` in ``config.json``:
+   - Added ``SMTPServerTimeout``, to ensure Global Relay SMTP connection timeout is independent of regular email settings timeout.
+
+### Open Source Components
+ - Added ``react-native-cookies`` and ``react-native-keyboard-aware-scroll-view``, and removed ``@react-native-community/cookies`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``dynamic-virtualized-list`` and ``prettier`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``rudder-sdk-js`` in https://github.com/mattermost/mattermost-redux.
+
+### Database Changes
+ - Added a new column ``Sessions.ExpiredNotify``.
+
+### API Changes
+ - Added ``POST api/v4/bots/:bot_id/convert_to_user`` API endpoint to add the ability to convert a bot into a user.
+ - Added ``POST api/v4/users/:user_id/convert_to_bot`` API endpoint to add the ability to convert a user into a bot.
+ - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to get a list of sidebar categories that will appear in the user's sidebar on the given team, including a list of channel IDs in each category.
+ - Added ``POST api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to create a custom sidebar category for the user on the given team.
+ - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories`` API endpoint to update any number of sidebar categories for the user on the given team.
+ - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories/order`` API endpoint to get the order of the sidebar categories for a user on the given team as an array of IDs.
+ - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories/order`` API endpoint to update the order of the sidebar categories for a user on the given team.
+ - Added ``GET api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to get a single sidebar category for the user on the given team.
+ - Added ``PUT api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to update a single sidebar category for the user on the given team.
+ - Added ``DELETE api/v4/users/:user_id/teams/:team_id/channels/categories/:category_id`` API endpoint to delete a single custom sidebar category for the user on the given team.
+ - Added ``POST api/v4/ldap/migrateid`` API endpoint to migrate LDAP IdAttribute to a new value.
+ - Added ``GET api/v4/warn_metrics/status`` API endpoint to get the status of a set of metrics (enabled or disabled) from the Systems table.
+ - Added ``POST api/v4/warn_metrics/ack/:warn_metric_id`` API endpoint to acknowldge a warning for the ``warn_metric_id`` metric crossing a threshold (or some similar condition being fulfilled).
+ - Added ``GET api/v4/groups/:group_id/stats`` API endpoint to retrieve the stats of a given group.
+ - Added ``GET api/v4/teams/:team_id/channels/private`` API endpoint to get a list of private channels on a team based on query string parameters.
+ - Added ``GET api/v4/users/stats/filtered`` API endpoint to get a count of users in the system matching the specified filters.
+ - Added ``POST api/v4/users/:user_id/email/verify/member`` API endpoint to verify the email used by a user without a token.
+ - Added ``POST api/v4/users/:user_id/typing`` API endpoint to notify users in the given channel via websocket that the given user is typing.
+ - Added Get/Update/Delete user preferences to Plugin API.
+ - Added channel ID check for Plugin API ``UploadFile`` to specify the ID of the channel a file will be uploaded to.
+
+### Websocket Event Changes
+ - Added ``sidebar_category_created`` Websocket Event.
+ - Added ``sidebar_category_updated`` Websocket Event.
+ - Added ``sidebar_category_deleted`` Websocket Event.
+ - Added ``sidebar_category_order_updated`` Websocket Event.
+ - Added ``warn_metric_status_received`` Websocket Event.
+ - Added ``warn_metric_status_removed`` Websocket Event.
+ 
+### Known Issues
+ - Twitter link previews do not work in Mattermost.
+ - Pasted unicode emojis fail to appear once posted.
+ - ``CMD+SHIFT+V`` does not paste copied text on MacOS on Safari 12 (Catalina) and Firefox.
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [abdulsmapara](https://github.com/abdulsmapara), [abdusabri](https://github.com/abdusabri), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [aidapira](https://github.com/aidapira), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [ankallio](https://github.com/ankallio), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AugustasV](https://github.com/AugustasV), [avasconcelos114](https://github.com/avasconcelos114), [BaaaZen](https://github.com/BaaaZen), [bbodenmiller](https://github.com/bbodenmiller), [bill2004158](https://github.com/bill2004158), [bradjcoughlin](https://github.com/bradjcoughlin), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chakatz](https://github.com/chakatz), [chikei](https://github.com/chikei), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [danielhelfand](https://github.com/danielhelfand), [DanielSz50](https://github.com/DanielSz50), [dantepippi](https://github.com/dantepippi), [Dartui](https://github.com/Dartui), [dbejanishvili](https://github.com/dbejanishvili), [deanwhillier](https://github.com/deanwhillier), [denniskamp](https://github.com/denniskamp), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [dpanic](https://github.com/dpanic), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [ericjaystevens](https://github.com/ericjaystevens), [esadur](https://github.com/esadur), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fakela](https://github.com/fakela), [flexo3001](https://github.com/flexo3001), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [Francois-D](https://github.com/Francois-D), [gabrieljackson](https://github.com/gabrieljackson), [ghasrfakhri](https://github.com/ghasrfakhri), [gigawhitlocks](https://github.com/gigawhitlocks), [grubbins](https://github.com/grubbins), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hhhhugi](https://github.com/hhhhugi), [hmhealey](https://github.com/hmhealey), [hryuk](https://github.com/hryuk), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [javimox](https://github.com/javimox), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [joshuabezaleel](https://github.com/joshuabezaleel), [jseiser](https://github.com/jseiser), [JtheBAB](https://github.com/JtheBAB), [Jukie](https://github.com/Jukie), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kayron8](https://github.com/kayron8), [khos2ow](https://github.com/khos2ow), [kirkjaa](https://github.com/kirkjaa), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [liusy182](https://github.com/liusy182), [Lyimmi](https://github.com/Lyimmi), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mlongo4290](https://github.com/mlongo4290), [mustafayildirim](https://github.com/mustafayildirim), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nicolailang](https://github.com/nicolailang), [nikolaizah](https://github.com/nikolaizah), [ofpiyush](https://github.com/ofpiyush), [openmohan](https://github.com/openmohan), [phommasy](https://github.com/phommasy), [prapti](https://github.com/prapti), [qerosi](https://github.com/qerosi), [rahulchheda](https://github.com/rahulchheda), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rmatev](https://github.com/rmatev), [rodcorsi](https://github.com/rodcorsi), [ruzaq](https://github.com/ruzaq), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottjr632](https://github.com/scottjr632), [ShehryarShoukat96](https://github.com/ShehryarShoukat96), [shred86](https://github.com/shred86), [skaramanlis](https://github.com/skaramanlis), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [sridhar02](https://github.com/sridhar02), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [TheoVitkovskiy](https://github.com/TheoVitkovskiy), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [TRUNGTar](https://github.com/TRUNGTar), [uhlhosting](https://github.com/uhlhosting), [utkuufuk](https://github.com/utkuufuk), [Vars-07](https://github.com/Vars-07), [Venhaus](https://github.com/Venhaus), [vijaynag-bs](https://github.com/vijaynag-bs), [webchick](https://github.com/webchick), [weblate](https://github.com/weblate), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [Yohannesseifu](https://github.com/Yohannesseifu), [YushiOMOTE](https://github.com/YushiOMOTE)
+
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
+- **v5.25.4, release day TBD**
+  - Fixing an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) only works with users signing in with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
+  - Fixing an issue where the mobile app sessions are getting logged out unexpectedly when ``ExtendSessionLengthWithActivity`` is enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
+- **v5.25.3, released 2020-08-12**
+  - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as GitLab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
+  - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
+  - Fixed an issue where guest user invites did not work in a SAML environment. [MM-27519](https://mattermost.atlassian.net/browse/MM-27519)
+  - Fixed an issue where the bulk export didn't finish if a custom data directory was set. [MM-27550](https://mattermost.atlassian.net/browse/MM-27550)
+  - Fixed an issue with a performance degradation after upgrading to 5.25.0. [MM-27575](https://mattermost.atlassian.net/browse/MM-27575)
+  - Fixed an issue where attempting to pin a post failed if a user did not have the ``channel_mention`` permission on a channel. [MM-26346](https://mattermost.atlassian.net/browse/MM-26346)
+- **v5.25.2, released 2020-07-31**
+  - Fixed an issue where pages in the System Console didn't scroll up or down in some browser versions. [MM-27168](https://mattermost.atlassian.net/browse/MM-27168)
 - **v5.25.1, released 2020-07-23**
   - Smoothed the database query load while syncing teams and channel roles by fetching data in batches. [MM-27114](https://mattermost.atlassian.net/browse/MM-27114)
   - Fixed a bug in pagination which queried more data redundantly. [MM-27187](https://mattermost.atlassian.net/browse/MM-27187)
@@ -70,6 +252,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Twitter link previews do not work in Mattermost.
  - Highlight is missing when at-mentioning yourself, followed by period, underscore, or hyphen.
  - Ctrl+Enter doesn't post an edited message with "Send messages on Ctrl+Enter" enabled for all messages.
+ - Enabling Bleve search engine makes the Command Line Interface (CLI) mutually exclusive with the running server. This issue does not apply when using [mmctl Command Line Tool](https://docs.mattermost.com/administration/mmctl-cli-tool.html). 
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
@@ -185,7 +368,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - Added ``LocalModeSocketLocation`` to set the path for the socket that the server will create for mmctl to connect and communicate through local mode.
      - Changed ``EnableLinkPreviews`` to default true for new installs.
      - Changed ``SessionLengthWebInDays`` to default to 30 days for new installs.
- - Under ``ClusterSettings`` in ``config.json``:
+ - Under ``SqlSettings`` in ``config.json``:
      - Added ``DisableDatabaseSearch`` to disable the use of the database to perform searches.
  - Under ``LdapSettings`` in ``config.json``: 
      - Added ``PictureAttribute`` to configure the attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
@@ -195,6 +378,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - Added ``EnableSearching`` to enable search queries to use bleve search.
      - Added ``EnableAutocomplete`` to enable autocomplete queries to use bleve search.
      - Added ``BulkIndexingTimeWindowSeconds`` to determine the maximum time window for a batch of posts being indexed by the Bulk Indexer.
+ - Under ``EmailSettings`` in ``config.json``:
+     - Changed ``PushNotificationContents`` to default ``full`` for new installs.
 
 ### Open Source Components
  - Added ``@types/react-custom-scrollbars`` in https://github.com/mattermost/mattermost-webapp

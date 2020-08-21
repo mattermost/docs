@@ -26,6 +26,8 @@ A free-to-use, open source, self-hosted alternative to proprietary SaaS messagin
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features.
 
+We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
+
 Features include:
 
 - One-to-one and group messaging, file sharing, and unlimited search history
@@ -40,7 +42,7 @@ Features include:
 - New features and improvements released every two months
 - Multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian
 
-To get started, `download the open source Mattermost Team Edition server <https://about.mattermost.com/download>`__ under an MIT license.
+To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
 Mattermost Enterprise Edition
 ----------------------------

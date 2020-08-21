@@ -1,5 +1,5 @@
 Licensing and Subscription
-----------------------
+--------------------------
 
 Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`_ where you can easily purchase and manage your Mattermost Enterprise subscriptions.
 
@@ -16,16 +16,16 @@ You can access your Customer Portal account to view information about your:
 - Active users (available in a future release)
 
 Purchasing an Enterprise license
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **If you don't have a Customer Portal account**
 
-Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
+Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the required information and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below.
 
 **If you have an existing Customer Portal account**
 
-1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account. 
-2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_. 
+1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account.
+2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_.
 3. (Optional for E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
 4. Select **Next Step**.
 5. Enter your billing and payment information.
@@ -36,15 +36,15 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
 
 Applying the license key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your Mattermost Enterprise license is ready to use and be applied via the Mattermost System Console. 
+Your Mattermost Enterprise license is ready to use and be applied via the Mattermost System Console.
 
 .. image:: ../images/mattermost_enterprise_license.png
 
-System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin. 
-   
-**If you already have Mattermost installed** 
+System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin.
+
+**If you already have Mattermost installed**
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
@@ -52,7 +52,7 @@ You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#c
 
 **If you don't have Mattermost installed**
 
-If you have not yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deployment/deployment.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/deployment/on-boarding.html>`_ documentation. 
+If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deployment/deployment.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/deployment/on-boarding.html>`_ documentation.
 
 Viewing license information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +62,7 @@ For licenses purchased using the Customer Portal, you can view the license start
 If you have an existing subscription and license, not purchased via the Customer Portal, this information will not be listed.
 
 Adding more users to a purchased license
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add more users to your existing license, `contact us <https://mattermost.com/contact-us/>`_.
 
@@ -72,10 +72,12 @@ Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ability to renew your license in the Customer Portal will be available in a future release.
-To renew your license in the meantime, contact your Customer Success Manager to start the renewal process. Alternatively, `contact us <https://mattermost.com/contact-us/>`_ for assistance. 
+
+To renew your license in the meantime, contact your Customer Success Manager to start the renewal process. Alternatively, `contact us <https://mattermost.com/contact-us/>`_ for assistance.
 
 Frequently Asked Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -83,22 +85,20 @@ We use `Stripe <https://stripe.com/payments>`_ to process credit card transactio
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
-
 How is user defined for Enterprise Edition subscriptions?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`__.
 
-
 Do I need to pay for deactivated users?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No. If you deactivate a user that user is not counted as an active user during your annual renewal process. You can deactivate users manually via System Console and also via Active Directory/LDAP synchronization, the CLI tool, and the server APIs.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
 Can I use the same license key on multiple Enterprise Edition servers?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server, or multiple linked Mattermost application servers in a high availability configuration with access to a single database.
 
@@ -117,31 +117,31 @@ You will be notified 60 days prior to your license expiry that your license is d
 You can select **Please renew** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser refreshes.
 
 How do I renew my license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can renew your license in Mattermost via the blue renewal reminder banner. Select **Please Renew** to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided. 
+You can renew your license in Mattermost via the blue renewal reminder banner. Select **Please Renew** to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided.
 
 How long does it take to renew a license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once you’ve started the renewal process, we will be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we are able to process the renewal and issue your license key within 24 hours.  
+Once you’ve started the renewal process, we'll be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we're able to process the renewal and issue your license key within 24 hours.
 
 What happens to my license if I don't renew in time?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 60-day renewal period, a 10 day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. 
+If you don't renew within the 60-day renewal period, a 10 day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features.
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  
 What happens when my license expires?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew your license within the 10-day grace period, your Mattermost version is automatically downgraded to Team Edition so you can still access and use Mattermost. However, Enterprise features will no longer be available and if you are currently using them, the functionality will no longer be accessible. 
+If you don't renew your license within the 10-day grace period, your Mattermost version is automatically downgraded to Team Edition so you can still access and use Mattermost. However, Enterprise features will no longer be available and if you are currently using them, the functionality will no longer be accessible.
 
-When you renew, the Enterprise features will become available with the previous configuration (provided no action such as user migration has been taken). 
+When you renew, the Enterprise features will become available with the previous configuration (provided no action such as user migration has been taken).
 
 Which features are affected when my Enterprise license expires?
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The affected Enterprise features include, but are not limited to, the following:
 
@@ -172,27 +172,41 @@ Why can't I dismiss the expiry notification banner?
 
 If there is a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to users.
 
-Once a new license is applied, the banner will no longer be visible. 
+Once a new license is applied, the banner will no longer be visible.
 
-If you do not plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
+If you don't plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
+
+Do you have a program for official non-profits, open source projects, and charities?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, please see the `Mattermost Monday License program <https://mattermost.com/nonprofit/>`_.
+
+Do you have discounted licenses for academic institutions?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`_ for no charge to students (staff members pay regular price). You need to pay for at least 10 staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`_ for more information.
 
 Is there a maximum number of users per subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No, there is no limit to the subscription value or number of users you can purchase per product.
 
 Can other members of my organization use this account to manage our subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
-
 What happens if my department buys Mattermost Enterprise Edition and then central IT buys a high volume license that also covers my department?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise Edition subscriptions and support benefits are licensed per production instance.
 
 When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
+
+Where can I find the license agreement for Mattermost Enterprise Edition?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost Enterprise Edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional enterprise features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.
 
 How do I delete my Customer Portal account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,7 +214,6 @@ How do I delete my Customer Portal account?
 Please contact Mattermost Support for assistance with deleting your Customer Portal account.
 
 What happens to my license when I delete my account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an account is deleted, the license remains valid. When the license
-is close to expiring, you will need to create a new profile in order to purchase a new license.
+When an account is deleted, the license remains valid. When the license is close to expiring, you will need to create a new profile in order to purchase a new license.

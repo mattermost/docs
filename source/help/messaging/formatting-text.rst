@@ -178,8 +178,8 @@ Supported languages are:
 ``ktm``, ``kts``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
 ``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
 ``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
-``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
-``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
+``perl``, ``pgsql``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
+``podspec``, ``postgres``, ``postgresql``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
 ``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
 ``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
 ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
@@ -255,9 +255,9 @@ Inline image with hover text
 
   Renders as:
 
-  .. raw:: html
-
-    <img src="../../images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon
 
 Inline image with link
   Note the extra set of square brackets.
@@ -279,9 +279,9 @@ Inline image displayed at 50 pixels wide and 76 pixels high
 
   Renders as:
 
-  .. raw:: html
-
-    <img alt="Mattermost" src="../../images/icon-50x76.png" title="Mattermost Icon">
+  .. image:: ../../images/icon-50x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon 
 
 Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. code-block:: none
@@ -290,9 +290,10 @@ Inline image displayed at 50 pixels wide and the height adjusted to suit
 
   Renders as:
 
-  .. raw:: html
-
-    <img src="../../images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :width: 50
+    
 
 Lines
 -----
