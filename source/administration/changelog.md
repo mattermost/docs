@@ -40,6 +40,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the Admin Advisor bot was displayed in the **Integrations > Bot Accounts** page.
  - Fixed an issue where the ability to demote admins to members and to deactivate accounts from **System Console > Users** was not available.
  - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for the LDAP Groups.
+ - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to a Group.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
