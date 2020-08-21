@@ -3961,9 +3961,9 @@ Enable API Team Deletion
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable API Channel Deletion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins or user with appropriate delete permissions to permanently delete a channel.
+**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
 
