@@ -12,6 +12,8 @@ Use the following materials as a template to help you plan and document the impl
    :maxdepth: 2
    :glob:
 
+   /getting-started/enterprise-roll-out-checklist.rst
+   /deployment/on-boarding.rst
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
@@ -25,20 +27,22 @@ Learn how to get Mattermost running on your environment.
    :glob:
 
    /install/requirements.rst
-   /install/ee-install*
-   /install/desktop*
-   Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
+   Installing on Kubernetes </install/install-kubernetes.rst>
+   Installing on Debian Buster </install/install-debian.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
-   Installing on Debian Stretch </install/install-debian.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
-   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
-   Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
+   Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
+   /install/ee-install*
+   /install/transport-encryption/config.rst
    /install/deploy-bitnami*
    /install/docker-local*
    /install/docker-ebs*
+   /install/deploy-cloudron*
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
+   /install/desktop*
    /install/desktop-msi-gpo*
-
+ 
 Deployment
 -----------------
 
@@ -55,6 +59,7 @@ Learn how to host Mattermost to meet your networking requirements.
    /administration/encryption*  
    /deployment/client-side-data.rst
    /administration/backup*
+   /deployment/bleve*
 
 Configure Mattermost
 ---------------------
@@ -65,7 +70,6 @@ Learn how to configure settings to meet your unique requirements.
    :maxdepth: 2
    :glob:
 
-   /deployment/on-boarding.rst  
    /administration/config-settings.rst
    /administration/config-in-database.rst 
    /administration/prev-config-settings.rst
@@ -118,8 +122,10 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-office*
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
+   /deployment/team-channel-management*
    /deployment/advanced*
    /deployment/permissions-backend*
+   /deployment/guest-accounts*
 
 Administration
 ----------------------------
@@ -131,6 +137,7 @@ Learn how to maintain your Mattermost system.
    :glob:
 
    /administration/command*
+   /administration/mmctl-cli-tool.rst
    /administration/scripts*
    /administration/statistics.md
    /integrations/net-promoter-score*
@@ -162,11 +169,13 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/upgrade.rst
    /administration/important-upgrade-notes*   
    /administration/changelog*
+   /help/apps/desktop-changelog*
    /administration/version-archive*
    /administration/extended-support-release* 
    /administration/release-lifecycle* 
    /administration/downgrade.rst
    /administration/open-source-components*
+   /administration/release-definitions*
 
 Mattermost Integrations
 ----------------------------
@@ -178,7 +187,9 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
+   /administration/devops-command-center*
    /deployment/atlassian-integrations*
+   /deployment/microsoft-integrations*
    /deployment/ci-cd-tools*
    /deployment/incident-response-and-monitoring*
    /deployment/bots*
@@ -196,6 +207,7 @@ Learn how to adhere to your security and regulations.
 
    /administration/ediscovery*
    /administration/compliance*
+   /administration/audit-log*
    /administration/compliance-export*
    /administration/data-retention*
    /administration/custom-terms-of-service*
