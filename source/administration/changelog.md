@@ -23,6 +23,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where users were not matching on mixed-case SAML assertions.
  - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for the LDAP Groups.
  - Fixed an issue where user's role was not added correctly in the Members block in **System Console > Teams** System Console page.
+ - Fixed an issue where a team stopped loading in the System Console "Filter By"-dropdown when a search was performed and then cleared.
  - Fixed an issue where the ability to demote Admins to members and to deactivate accounts from **System Console > Users** were not available.
  - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to a Group.
  - Fixed an issue where incoming webhooks owned by a bot did not consistently allow a username override.
