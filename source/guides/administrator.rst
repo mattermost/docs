@@ -215,7 +215,7 @@ Learn how to support growth within Mattermost.
    /deployment/metrics*
    /administration/performance-alerting-guide*
 
-Community Documentation
+Community-Managed Documentation
 ------------------------
 
 Documentation on early previews and unofficial functionality.
