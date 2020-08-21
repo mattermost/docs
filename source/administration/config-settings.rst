@@ -3968,7 +3968,7 @@ Enable API Channel Deletion
 **False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``.                                                    |
+| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``.                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
