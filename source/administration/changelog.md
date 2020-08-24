@@ -15,6 +15,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.26, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Improvements
+ - Added the ability to upgrade Mattermost from TE to E0 directly from the System Console.
  - Changed the Default Theme setting in the System Console to a drop-down field.
 
 ### Bug Fixes
@@ -41,6 +42,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
  - Fixed an issue where a panic occurred when the server was getting a shutdown before ``InitPlugins()`` was able to complete.
  - Fixed an issue where a panic was caused when a user joined a team with default channels archived.
+ - Fixed an issue where ``App.GetSidebarCategories()`` panicked on nil returned value.
  - Fixed an issue where the ``SendEmailNotifications`` setting blocked testing the SMTP connection.
 
 ### config.json
