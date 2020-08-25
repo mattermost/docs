@@ -52,6 +52,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
 ### Open Source Components
+ - Removed ``@types/redux-mock-store`` and ``tinycolor2`` from https://github.com/mattermost/mattermost-webapp.
+ - Added ``bootstrap-colorpicker`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``@react-native-community/clipboard`` in https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
 
