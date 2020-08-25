@@ -4,9 +4,9 @@ Desktop Application Changelog
 Release v4.5
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.2>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.3>`_
 
-- **v4.5.3, release TBD**
+- **v4.5.3, released 2020-08-25**
  - Fixed an issue where users were unable to log in to the desktop app when users had to select a certificate for authentication even when there was only one option to manage a certificate login. `MM-27331 <https://mattermost.atlassian.net/browse/MM-27331>`_
 - **v4.5.2, released 2020-07-20**
  - Fixed an issue on Linux app started as a blank screen when both “Show icon in the notification area" and "Start app on login" were enabled. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
