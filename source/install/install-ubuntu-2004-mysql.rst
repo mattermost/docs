@@ -31,7 +31,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql> create database mattermost;``
 
-7. Grant access privileges to the user 'mmuser'.
+7. Grant access privileges to the user *mmuser*.
 
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
