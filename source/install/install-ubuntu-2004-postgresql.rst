@@ -21,7 +21,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
 3. Start the PostgreSQL interactive terminal.
 
-  ``psql``
+`` sudo -u postgres psql``
 
 4.  Create the Mattermost database.
 
