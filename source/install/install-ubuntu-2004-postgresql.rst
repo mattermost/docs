@@ -76,7 +76,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   **If the Mattermost server and the database are on different machines:**
 
-    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` in a text editor as *root* user.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
