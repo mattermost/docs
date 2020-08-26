@@ -6,7 +6,7 @@ In-depth documentation on installation, deployment and administration of Matterm
 Getting Started
 ---------------------
 
-Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization.
+Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization. 
 
 .. toctree::
    :maxdepth: 2
@@ -27,11 +27,9 @@ Learn how to get Mattermost running on your environment.
    :glob:
 
    /install/requirements.rst
-   Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
-   Installing on RHEL 6 </install/install-rhel-6.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
@@ -39,20 +37,13 @@ Learn how to get Mattermost running on your environment.
    /install/transport-encryption/config.rst
    /install/deploy-bitnami*
    /install/docker-local*
-   /install/prod-docker*
    /install/docker-ebs*
    /install/deploy-cloudron*
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
-   /install/trouble_mysql.rst
    /install/desktop*
-   /install/desktop-msi-gpo*
    /install/desktop-managed-resources*
-   /install/smtp*
-   /install/config-cloudfront*
-   /install/outbound-proxy.rst
-   /install/i18n*
-   /install/config-apache2.rst
-
+   /install/desktop-msi-gpo*
+ 
 Deployment
 -----------------
 
@@ -62,11 +53,11 @@ Learn how to host Mattermost to meet your networking requirements.
    :maxdepth: 2
    :glob:
 
-   /deployment/deployment.md
+   /deployment/deployment.md 
    /deployment/desktop-app-deployment*
    /mobile/mobile-appconfig.rst
    /administration/image-proxy*
-   /administration/encryption*
+   /administration/encryption*  
    /deployment/client-side-data.rst
    /administration/backup*
    /deployment/bleve*
@@ -80,13 +71,17 @@ Learn how to configure settings to meet your unique requirements.
    :maxdepth: 2
    :glob:
 
-
    /administration/config-settings.rst
-   /administration/config-in-database.rst
+   /administration/config-in-database.rst 
    /administration/prev-config-settings.rst
    /deployment/customize-mattermost.rst
-   /deployment/customize-email.rst
+   /deployment/customize-email.rst 
    /administration/branding.rst
+   /install/smtp*
+   /install/config-cloudfront*
+   /install/outbound-proxy.rst
+   /install/i18n*
+   /install/config-apache2.rst
 
 Mobile Apps
 ------------------
@@ -109,7 +104,7 @@ Onboard Users
 Learn how to get your users into and comfortable using Mattermost.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :glob:
 
    /deployment/bulk-loading.rst
@@ -120,6 +115,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
+   /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
    /deployment/sso-saml-technical*
    /deployment/sso-gitlab*
@@ -150,7 +146,6 @@ Learn how to maintain your Mattermost system.
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
 
-
 Troubleshooting
 ----------------
 
@@ -161,7 +156,8 @@ Understand potential issues and how to address them.
    :glob:
 
    /install/troubleshooting.rst
-
+   /install/trouble_mysql.rst
+ 
 Upgrade Mattermost
 ----------------------------
 
@@ -170,14 +166,14 @@ Learn how to keep Mattermost current with fixes and new features.
 .. toctree::
    :maxdepth: 2
    :glob:
-
+   
    /administration/upgrade.rst
-   /administration/important-upgrade-notes*
+   /administration/important-upgrade-notes*   
    /administration/changelog*
    /help/apps/desktop-changelog*
    /administration/version-archive*
-   /administration/extended-support-release*
-   /administration/release-lifecycle*
+   /administration/extended-support-release* 
+   /administration/release-lifecycle* 
    /administration/downgrade.rst
    /administration/open-source-components*
    /administration/release-definitions*
@@ -225,15 +221,15 @@ Learn how to support growth within Mattermost.
 .. toctree::
    :maxdepth: 2
    :glob:
-
+   
    /deployment/scaling*
    /deployment/cluster*
    /deployment/elastic*
    /deployment/metrics*
    /administration/performance-alerting-guide*
 
-Unofficial Enhancements
------------------------
+Community-Managed Documentation
+------------------------
 
 Documentation on early previews and unofficial functionality.
 
@@ -242,3 +238,5 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
+   /install/prod-docker*
+   /install/deploy-cloudron*
