@@ -46,7 +46,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   ``exit``
 
-9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/10/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/10/main/postgresql.conf`` in a text editor as *root* user. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
