@@ -36,7 +36,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the Admin Advisor bot was unexpectedly displayed in the **Integrations > Bot Accounts** page.
  - Fixed an issue where a new badge in the channel sidebar category header reappeard after a channel was removed from the category.
  - Fixed an issue where the theme color for "Sidebar Text Active Border" was not currently being used in the active border in the sidebar.
- - Fixed an issue where a console error showed when creating a new custom category in new channel sidebar.
+ - Fixed an issue where users saw an incorrect mention count when added to a channel by another user.
+ - Fixed an issue where channels created from another browser tab did not immediately appear in the channel sidebar.
+ - Fixed an issue where a console error showed when creating a new custom category in channel sidebar.
  - Fixed an issue where a channel state got broken after an "unallowed" deletion.
  - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
  - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to click "Back to Mattermost" in the authentication window.
