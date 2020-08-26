@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.26 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.26.1, released 2020-08-26**
+- **v5.26.1, released 2020-08-25**
   - Fixed an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) worked with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
   - Fixed an issue where opening the mobile app called an API that overrode session extension triggers of typing, channel change, and posts which lead to users getting unexpectedly logged out from the mobile app when ``ExtendSessionLengthWithActivity`` was enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
   - Fixed an issue where a null AuthData value caused a kernel panic during LDAP sync. [MM-27965](https://mattermost.atlassian.net/browse/MM-27965)
@@ -177,7 +177,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
-- **v5.25.4, released 2020-08-26**
+- **v5.25.4, released 2020-08-25**
   - Fixed an issue where the [LDAP PictureAttribute feature](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) worked with LDAP but not with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
   - Fixed an issue where opening the mobile app called an API that overrode session extension triggers of typing, channel change, and posts which lead to users getting unexpectedly logged out from the mobile app when ``ExtendSessionLengthWithActivity`` was enabled. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
   - Fixed an issue where a null AuthData value caused a kernel panic during LDAP sync. [MM-27965](https://mattermost.atlassian.net/browse/MM-27965)
