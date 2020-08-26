@@ -4,7 +4,7 @@
 Installing Mattermost on Ubuntu 20.04 LTS
 =========================================
 
-Install a production-ready Mattermost system on 1 to 3 machines.
+Install a production-ready Mattermost system on up to three machines.
 
 .. include:: install-common-intro.rst
 
