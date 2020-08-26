@@ -30,6 +30,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where incoming webhooks owned by a bot did not consistently allow a username override.
  - Fixed an issue where the emoji picker in the Edit Post modal was misaligned.
  - Fixed an issue where pasted unicode emojis failed to appear once posted.
+ - Fixed an issue where long text in message edit modal did not scroll with a scroll bar.
+ - Fixed an issue with Accessibility where user's name was not displayed in alt text on some images.
  - Fixed an issue where dates on **System Console > Site Statistics - Dates** were displayed out of order on days when there were no posts.
  - Fixed an issue where the Admin Advisor bot was unexpectedly displayed in the **Integrations > Bot Accounts** page.
  - Fixed an issue where a new badge in the channel sidebar category header reappeard after a channel was removed from the category.
