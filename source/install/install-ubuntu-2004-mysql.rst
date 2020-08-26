@@ -13,9 +13,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo apt install mysql-server``
 
-3. Run ``mysql_secure_installation`` and follow the instructions.
-
-  ``sudo mysql_secure_installation``
+3. Run ``sudo mysql_secure_installation`` and follow the instructions.
 
 4. Log in to MySQL as *root*.
 
