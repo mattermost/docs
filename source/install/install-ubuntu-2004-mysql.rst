@@ -17,7 +17,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo mysql_secure_installation``
 
-4. Log in to MySQL as root.
+4. Log in to MySQL as *root*.
 
   ``sudo mysql``
 
