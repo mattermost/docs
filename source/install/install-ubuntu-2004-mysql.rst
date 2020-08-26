@@ -19,7 +19,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo mysql``
 
-5. Create the Mattermost user 'mmuser'.
+5. Create the Mattermost user *mmuser*.
 
   ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
