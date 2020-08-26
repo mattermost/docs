@@ -6,7 +6,7 @@ Installing Mattermost on RHEL 6
 
 .. warning::
   RHEL 6 is approaching its End of Life in December 2020.
-  Because of this, we don't recommend installing new instances of Mattermost on RHEL 6. Rather use a newer version such as RHEL 8.
+  Because of this, we don't recommend installing new instances of Mattermost on RHEL 6.
 
 You can use these instructions to install Mattermost on CentOS 6, Oracle Linux 6, or Scientific Linux 6. With the exception of the operating system that you install, the process is identical.
 
