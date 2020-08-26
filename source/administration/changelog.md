@@ -181,7 +181,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - Fixed an issue where users were unable to use the [``PictureAttribute`` setting](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
   - Fixed an issue where users got unexpectedly logged out from the mobile app when ``ExtendSessionLengthWithActivity`` was enabled as opening the mobile app called an API that overrode session extension triggers of typing, channel change, and posts. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
   - Fixed an issue where users experienced a kernel panic during LDAP sync when AuthData value was null. [MM-27965](https://mattermost.atlassian.net/browse/MM-27965)
-  - Fixed an issue where users experienced Mattermost server crashing on ``(Status).ToClusterJson`` calls. [MM-24544](https://mattermost.atlassian.net/browse/MM-24544)
+  - Fixed an issue where users experienced the Mattermost server crashing on ``(Status).ToClusterJson`` calls. [MM-24544](https://mattermost.atlassian.net/browse/MM-24544)
 - **v5.25.3, released 2020-08-12**
   - Fixed an issue where the permission to create user access tokens on environments with OpenID Connect login providers such as GitLab was denied for System Admins. [MM-27623](https://mattermost.atlassian.net/browse/MM-27623)
   - Fixed an issue where deactivated users were included in compliance exports. [MM-27194](https://mattermost.atlassian.net/browse/MM-27194)
