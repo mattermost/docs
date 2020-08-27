@@ -4,7 +4,7 @@ Installing Ubuntu Server 16.04 LTS
 ==================================
 
 .. warning::
-   Ubuntu 16.04 is approaching its End of Life in April 2021. Because of this, we don't recommend installing new instances of Mattermost on Ubuntu 16.04. Please   refer to install guides for :doc:`Ubuntu 18.04 LTS <install-ubuntu-1804>` or :doc:`Ubuntu 20.04 LTS <install-ubuntu-2004>` instead.
+   Ubuntu 16.04 is approaching its End of Life in April 2021. Because of this, we don't recommend installing new instances of Mattermost on Ubuntu 16.04. Please refer to install guides for :doc:`Ubuntu 18.04 LTS <install-ubuntu-1804>` or :doc:`Ubuntu 20.04 LTS <install-ubuntu-2004>` instead.
 
 Install the 64-bit version of Ubuntu Server on each machine that hosts one or more of the components.
 
