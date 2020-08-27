@@ -1,8 +1,9 @@
-Mattermost Omnibus
-===================
+Installing Mattermost Omnibus
+============================
 
 Overview
 ---------
+
 Mattermost Omnibus is a Debian package that packages the individual components of a Mattermost deployment into a single installation process. The package leverages the ``apt`` package manager to install and keep the components of the platform updated, using a custom CLI and ansible recipes to link those components together and configure them.
 
 Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. Support for RedHat/CentOS distributions will be available in future versions. 
