@@ -16,7 +16,7 @@ Prerequisites
 
 .. note:: 
 
-  With Mattermost Omnibus, the ``config.json`` file no longer exists. So you’ll need to use mmctl to make changes to your mattermost server config using the following command: `mmctl config edit`. If you wish to manage your server locally, you may want to enable local mode for mmctl.
+  With Mattermost Omnibus, the ``config.json`` file no longer exists. So you’ll need to use mmctl to make changes to your Mattermost server configuration using ``mmctl config edit``. If you wish to manage your server locally, you may want to enable local mode for mmctl.
 
 Installing Mattermost Omnibus
 ------------------------------
