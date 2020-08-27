@@ -24,7 +24,7 @@ Installing Mattermost Omnibus
 During installation you can provide an existing domain name that points to the Ubuntu server or, if you don't have one available, you can log in using the server's IP address.
 
 .. note::
-  Plugin uploads and HTTPS are enabled by default. These settings are modified in the ``yaml`` file using mmctl (link to config section).
+  Plugin uploads and HTTPS are enabled by default. These settings are modified in the ``yaml`` file using `mmctl config edit <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-config-edit>`__. 
 
 The Omnibus repositories are configured using a cURL command: 
 
