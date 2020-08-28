@@ -27,6 +27,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a team stopped loading in the System Console "Filter By"-dropdown when a search was performed and then cleared.
  - Fixed an issue where the ability to demote Admins to members and to deactivate accounts from **System Console > Users** were not available.
  - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to a Group.
+ - Fixed an issue where a AD/LDAP group mention of an outsider group was highlighted in a Group Synced channel.
  - Fixed an issue where incoming webhooks owned by a bot did not consistently allow a username override.
  - Fixed an issue where the emoji picker in the Edit Post modal was misaligned.
  - Fixed an issue where pasted unicode emojis failed to appear once posted.
