@@ -39,6 +39,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where users saw an incorrect mention count when added to a channel by another user.
  - Fixed an issue where channels created from another browser tab did not immediately appear in the channel sidebar.
  - Fixed an issue where a console error showed when creating a new custom category in channel sidebar.
+ - Fixed an issue where enabling the new channel sidebar created invalid channel links.
  - Fixed an issue where a channel state got broken after an "unallowed" deletion.
  - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
  - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to click "Back to Mattermost" in the authentication window.
