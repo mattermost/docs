@@ -1,0 +1,46 @@
+name: github pages
+
+on:
+  pull_request:
+    types: [assigned, opened, reopened, synchronize]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Install dependencies
+        run: pipenv install --dev
+
+      - name: Build
+        run: make html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.0-1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_dir: ./${{ github.actor }}
+          publish_dir: ./build/html
+          publish_branch: gh-pages
+          keep_files: true
+
+      - name: Add comment to PR
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          body: |
+            Published to [preview environment ${{ github.actor }}](https://mattermost.github.io/docs/${{ github.actor }}/index.html)
+

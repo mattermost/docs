@@ -169,6 +169,8 @@ To debug outgoing webhooks in **System Console > Logs**, set **System Console > 
 
 When ``TRUE``, as of v5.14 all outgoing webhooks are logged and include a ``request_id`` value in the log file. 
 
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+
 My integration prints the JSON data in a Mattermost channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

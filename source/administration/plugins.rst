@@ -272,7 +272,7 @@ Custom plugins
 ~~~~~~~~~~~~~~
 Installing a custom plugin introduces some risk. As a result, plugin uploads are disabled by default and cannot be enabled via the System Console or REST API.
 
-To enable plugin uploads, manually set **PluginSettings > EnableUploads** to ``true`` in your configuration and restart your server. You can disable plugin uploads at any time without affecting previously uploaded plugins.
+To enable plugin uploads, manually set **PluginSettings > EnableUploads** to ``true`` in your ``config.json`` file and restart your server. You can disable plugin uploads at any time without affecting previously uploaded plugins.
 
 With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` files containing the server executables and web app resources for the plugin. You can also specify a URL to install a plugin bundle from a remote source.
 
@@ -298,6 +298,8 @@ Join our community server discussion in the `Toolkit channel <https://community.
 
 Troubleshooting
 -----------------
+
+Please see common questions below. For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Plugin uploads fail even though uploads are enabled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

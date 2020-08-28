@@ -27,11 +27,7 @@ Open a text editor and create a text file with the following details.
   stringData:
     license: %LICENSE_FILE_CONTENTS%
 
-Save the file as ``mattermost-license-secret.yaml``. Apply the file, specifying the correct path, using:
-
-.. code-block:: sh
-
-  $ kubectl apply -f /path/to/mattermost-license-secret.yaml
+Save the file as ``mattermost-license-secret.yaml``.
 
 **2. Create an Installation Manifest File**
 
@@ -82,11 +78,22 @@ Save the file as ``mattermost-installation.yaml``.
 
 **3. Apply the Installation Manifest File**
 
-To initiate deployment, apply the file, specifying the correct path, using:
+First, create the Mattermost namespace with this command:
 
 .. code-block:: sh
 
   $ kubectl create ns mattermost
+
+If you're deploying Mattermost Enterprise Edition, apply the license file by specifying the path to the file you created in step 1:
+
+.. code-block:: sh
+
+  $ kubectl apply -n mattermost -f /path/to/mattermost-license-secret.yaml
+
+Finally, apply the installation file, specifying path to file you created in step 2:
+
+.. code-block:: sh
+
   $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
 
 The deployment process can be monitored in the Kubernetes user interface.
