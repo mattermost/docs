@@ -42,6 +42,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a channel state got broken after an "unallowed" deletion.
  - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
  - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to click "Back to Mattermost" in the authentication window.
+ - Fixed an issue where editing "Full Name" got overwritten by Single Sign-On settings.
+ - Fixed an issue where "You do not have the appropriate permissions" error was shown for ``warn_metrics`` call for non-admin users.
  - Fixed an issue where the channel switcher sometimes showed a wrong empty state with network API.
  - Fixed an issue where the loader was not hidden when posts were not loading which affected the performance of Linux distros.
  - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
