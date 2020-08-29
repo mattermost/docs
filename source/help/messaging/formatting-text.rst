@@ -22,9 +22,9 @@ Text Style
 
 You can use either ``_`` or ``*`` around a word to make it italic. Use two to make it bold.
 
-* ``_italics_`` renders as `italics`
+* ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
-* ``**_bold-italic_**`` renders as |bold_italics|
+* ``***bold-italic***`` renders as |bold_italics|
 * ``~~strikethrough~~`` renders as |strikethrough|
 
 .. |bold_italics| image:: ../../images/bold_italics.PNG
