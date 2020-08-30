@@ -51,7 +51,7 @@ You can also install Mattermost without a domain name or SSL (not recommended). 
 Updating Mattermost Omnibus
 -----------------------------
 
-Mattermost Omnibus is integrated with Ubuntu’s OS's package manager. When a new Mattermost version is released, run:
+Mattermost Omnibus is integrated with the ``apt`` package manager. When a new Mattermost version is released, run:
 
 ``sudo apt update && sudo apt upgrade``
 
