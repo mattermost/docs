@@ -57,6 +57,20 @@ Mattermost Omnibus is integrated with Ubuntu’s OS's package manager. When a ne
 
 This downloads the latest version of Mattermost and updates your Mattermost platform. 
 
+Configuring Mattermost Omnibus
+----------------------------------------
+
+Omnibus has its own configuration file located in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform and connect all the services together. For Omnibus to work properly, there are some configuration parameters that are fixed and cannot be changed through the web interface (for example, the port that Mattermost uses to run) and some others that need to be configured directly through this file instead of in the Mattermost web interface or the configuration. The properties that you can configure in this file are:
+
+``db_user``: the PostgreSQL database user. This value is generated during the Omnibus installation and should not be changed.
+``db_password``: the PostgreSQL database password. This value is generated during the Omnibus installation and should not be changed.
+``fqdn``: the domain name for the Mattermost application. This is the value that is asked during the install process, and it’s used to populate the ServiceSettings.SiteURL Mattermost configuration property, as well as to retrieve and configure the SSL certificate for the server.
+``email``: the email for certificate communications. This is the value that is asked during the install process, and it will not be used if https is disabled.
+``https``: this indicates if the platform should be configured to use https or http. It can have the ``true`` and ``false`` values. The recommended way to install Mattermost is to use https, but you can disable it if required. You can read more about this here [[LINK TO THE FAQ]]
+``data_directory``: this is the directory where Mattermost stores its data
+``enable_plugin_uploads``: this setting is used to configure the ``PluginSettings.EnableUploads`` Mattermost configuration property. It can have the ``true`` and ``false`` values
+``enable_local_mode``: this setting is used to configure the ``ServiceSettings.EnableLocalMode`` Mattermost configuration property. It can have the ``true`` and ``false`` values
+
 Removing Mattermost Omnibus
 ---------------------------
 
