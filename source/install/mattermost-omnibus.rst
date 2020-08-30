@@ -60,7 +60,7 @@ The properties that you can configure in this file are:
 - ``db_password``: The PostgreSQL database password. This value is generated during the Omnibus installation and should not be changed.
 - ``fqdn``: The domain name for the Mattermost application. This is the value that is asked during the install process, and it’s used to populate the ``ServiceSettings.SiteURL`` Mattermost configuration property, as well as to retrieve and configure the SSL certificate for the server.
 - ``email``: The email address used for certificate communications. This is the value that is asked during the install process, and it will not be used if HTTPS is disabled.
-- ``https``: This indicates whether the platform should be configured to use HTTPS or HTTP with values ``true`` or ``false``. The recommended way to install Mattermost is to use HTTPS, but you can disable it if required. You can read more about this here [[LINK TO THE FAQ]].
+- ``https``: This indicates whether the platform should be configured to use HTTPS or HTTP with values ``true`` or ``false``. The recommended way to install Mattermost is to use HTTPS, but you can disable it if required.
 - ``data_directory``: This is the directory where Mattermost stores its data.
 - ``enable_plugin_uploads``: This setting can be ``true`` or ``false`` and is used to configure the ``PluginSettings.EnableUploads`` Mattermost configuration property.
 - ``enable_local_mode``: This setting can be ``true`` or ``false`` and is used to configure the ``ServiceSettings.EnableLocalMode`` Mattermost configuration property.
