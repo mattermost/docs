@@ -100,7 +100,7 @@ Although the recommended way to install and configure Omnibus is with SSL enable
 What happened to ``config.json``?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Omnibus does not use a file for managing server configuration settings. You can edit your config by running the following mmctl command: ``mmctl config edit``.
+Mattermost Omnibus does not use a file for managing server configuration settings. You can edit your config by running the following mmctl command after connecting mmctl to the instance: ``mmctl config edit``. If you are logged into the machine as the ``mattermost`` user, you can use ``mmctl --local config edit`` as well.
 
 Are there plans to add other packages to the Omnibus?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
