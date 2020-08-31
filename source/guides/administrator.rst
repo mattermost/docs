@@ -78,6 +78,7 @@ Learn how to configure settings to meet your unique requirements.
    /deployment/customize-email.rst 
    /administration/branding.rst
    /install/smtp*
+   /install/config-cloudfront*
    /install/outbound-proxy.rst
    /install/i18n*
    /install/config-apache2.rst
@@ -239,4 +240,3 @@ Documentation on early previews and unofficial functionality.
    /install/prod-windows-2012*
    /install/prod-docker*
    /install/deploy-cloudron*
-   /install/config-cloudfront*
