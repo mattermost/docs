@@ -97,7 +97,7 @@ What are the ``mmomni`` commands and what do they do?
 
 ``mmomni backup``: Takes a complete snapshot of your Mattermost server and places the backup file in a specified file location.
 ``mmomni restore``: Restores specified backup file to your Mattermost server.
-``mmomni reconfigure``: Reruns the process that changes domain, SSL, or any Omnibus-specified restrictions such as the ability to upload plugins.
+``mmomni reconfigure``: Reruns the process that changes domain, SSL, or any Omnibus-specified restrictions such as the ability to upload plugins. It also applies to any changes made to the ``mmomni.yml`` configuration file.
 ``mmomni status``: Shows current status of all Omnibus components.
 ``mmomni tail``: Runs a join tail of logs of all Omnibus components.
 
