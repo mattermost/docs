@@ -15,7 +15,7 @@ Prerequisites
 - A domain name pointing to that server
 - Root level access to the server
 
-Installing Mattermost Omnibus
+Configuring Mattermost Omnibus Repositories
 ------------------------------
 
 The Omnibus repositories are configured using a cURL command:
