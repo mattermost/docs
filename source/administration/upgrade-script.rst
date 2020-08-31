@@ -3,7 +3,7 @@ Upgrading Mattermost Server with a script
 
 *Preparing the script*
 
-`Save the script <https://docs.mattermost.com/administration/upgrade_mattermost.sh>`__ to your mattermost server.
+`Save the script <https://docs.mattermost.com/administration/upgrade_mattermost.sh>`__ to your Mattermost server.
 
 Make it executable.
 
