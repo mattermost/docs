@@ -22,7 +22,7 @@ The Omnibus repositories are configured using a cURL command:
 
 ``curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash``
 
-This command configures the repositories needed for a ``PostgreSQL`` database, an ``nginx`` web server to act as a proxy, and ``certbot`` to issue and renew the SSL certificate.
+This command configures the repositories needed for a ``PostgreSQL`` database, an ``nginx`` web server to act as a proxy, and ``certbot`` to issue and renew the SSL certificate. It also configures the Mattermost Omnibus repository so that you can run the install command.
 
 Installing Mattermost Omnibus
 ------------------------------
