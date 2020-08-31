@@ -16,7 +16,7 @@ Prerequisites
 - Root level access to the server
 
 Configuring Mattermost Omnibus Repositories
-------------------------------
+-------------------------------------------
 
 The Omnibus repositories are configured using a cURL command:
 
@@ -24,14 +24,14 @@ The Omnibus repositories are configured using a cURL command:
 
 This command configures the repositories needed for a ``PostgreSQL`` database, an ``nginx`` web server to act as a proxy, and ``certbot`` to issue and renew the SSL certificate.
 
-In order to issue that certificate, the installer requests a domain name and an email address from us. These are used to generate the certificate and deliver any related communications respectively.
-
 Installing Mattermost Omnibus
 ------------------------------
 
 If you're installing Omnibus, and have a domain and SSL use:
 
 ``sudo apt install mattermost-omnibus``.
+
+In order to issue that certificate, the installer requests a domain name and an email address from us. These are used to generate the certificate and deliver any related communications respectively.
 
 After all the packages are installed, Omnibus runs the ansible scripts that configure all the platform components and starts the server. To access Mattermost, open a browser, navigate to your domain, and create the System Admin user to start using the platform.
 
@@ -65,6 +65,8 @@ The properties that you can configure in this file are:
 - ``enable_plugin_uploads``: This setting can be ``true`` or ``false`` and is used to configure the ``PluginSettings.EnableUploads`` Mattermost configuration property.
 - ``enable_local_mode``: This setting can be ``true`` or ``false`` and is used to configure the ``ServiceSettings.EnableLocalMode`` Mattermost configuration property.
 
+After modifying the ``mmomni.yml`` configuration file, you need to run ``mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
+
 Removing Mattermost Omnibus
 ---------------------------
 
@@ -97,7 +99,7 @@ What are the ``mmomni`` commands and what do they do?
 
 ``mmomni backup``: Takes a complete snapshot of your Mattermost server and places the backup file in a specified file location.
 ``mmomni restore``: Restores specified backup file to your Mattermost server.
-``mmomni reconfigure``: Reruns the process that changes domain, SSL, or any Omnibus-specified restrictions such as the ability to upload plugins. It also applies to any changes made to the ``mmomni.yml`` configuration file.
+``mmomni reconfigure``: Reruns the process that changes domain, SSL, or any Omnibus-specified restrictions such as the ability to upload plugins. It also applies any changes made to the ``mmomni.yml`` configuration file.
 ``mmomni status``: Shows current status of all Omnibus components.
 ``mmomni tail``: Runs a join tail of logs of all Omnibus components.
 
