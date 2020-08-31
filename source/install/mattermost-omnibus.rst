@@ -48,7 +48,7 @@ Configuring Mattermost Omnibus
 ----------------------------------------
 
 .. note::
-  Plugin uploads and HTTPS are enabled by default. These settings are modified in the ``yaml`` file using `mmctl config edit <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-config-edit>`__.
+  Plugin uploads, local mode and HTTPS are enabled by default. These settings are modified in the ``yaml`` file as described below.
 
 With Mattermost Omnibus, the ``config.json`` file no longer exists as Omnibus has its own configuration file located in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform and connect all the services together. So you’ll need to use mmctl to make changes to your Mattermost server configuration using ``mmctl config edit``. If you wish to manage your server locally, you may want to enable local mode for mmctl.
 
