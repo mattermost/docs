@@ -1,6 +1,8 @@
 Upgrading Mattermost Server with a script
 =========================================
 
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback, and improvements are welcome and greatly appreciated.
+
 *Preparing the script*
 
 `Save the script <https://docs.mattermost.com/administration/upgrade_mattermost.sh>`__ to your Mattermost server.
