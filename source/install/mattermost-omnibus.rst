@@ -11,7 +11,7 @@ Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distribu
 Prerequisites
 -------------
 
-- A clean Ubuntu server (18.04. Or 20.04)
+- A clean Ubuntu server (18.04 or 20.04)
 - A domain name pointing to that server
 - Root level access to the server
 
