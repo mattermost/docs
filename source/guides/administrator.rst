@@ -29,6 +29,7 @@ Learn how to get Mattermost running on your environment.
    /install/requirements.rst
    Installing on Ubuntu 20.04 LTS </install/install-ubuntu-2004.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
+   Installing Mattermost Omnibus </install/mattermost-omnibus.rst>
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
