@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Immedially exit if a command run from a loop, a pipeline or a compound
+# Immediately exit if a command run from a loop, a pipeline or a compound
 # command statement fails
 set -e
 
