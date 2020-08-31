@@ -39,7 +39,6 @@ Learn how to get Mattermost running on your environment.
    /install/deploy-bitnami*
    /install/docker-local*
    /install/docker-ebs*
-   /install/deploy-cloudron*
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/desktop*
    /install/desktop-managed-resources*
@@ -230,7 +229,7 @@ Learn how to support growth within Mattermost.
    /administration/performance-alerting-guide*
 
 Community-Managed Documentation
-------------------------
+-------------------------------
 
 Documentation on early previews and unofficial functionality.
 
