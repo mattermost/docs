@@ -11,7 +11,6 @@ Upgrading to the Latest Version
 
 If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
 
-
 .. _before-you-begin:
 
 **Before you begin**
@@ -22,7 +21,7 @@ Read these instructions carefully from start to finish. Make sure that you under
   Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
   
 .. important::
-  If you're upgrading from a version prior to v5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. `/opt/mattermost`) and your binary should point to the `mattermost` binary (i.e. `/opt/mattermost/bin/mattermost`).
+  If you're upgrading from a version prior to v5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``) and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
 
 You should gather the following information before starting the upgrade:
 
@@ -31,7 +30,6 @@ Existing install directory - *{install-path}*
   If that command does not produce any results because your version is older, try ``whereis platform`` instead.
 Location of your local storage directory
   The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage** (or **Files > Storage** in versions prior to 5.12) and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
-
 
 **To upgrade Mattermost Server**:
 
@@ -61,12 +59,6 @@ Location of your local storage directory
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
 #. Stop your Mattermost server.
-
-   On Ubuntu 14.04 and RHEL 6:
-
-   .. code-block:: sh
-
-     sudo service mattermost stop
 
    On Ubuntu 16.04 and RHEL 7:
 
@@ -122,12 +114,6 @@ Location of your local storage directory
      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 #. Start your Mattermost server.
-
-   On Ubuntu 14.04 and RHEL 6:
-
-   .. code-block:: sh
-
-     sudo service mattermost start
 
    On Ubuntu 16.04 and RHEL 7:
 
