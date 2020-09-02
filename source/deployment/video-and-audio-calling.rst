@@ -1,5 +1,5 @@
 Voice, video, and screensharing
-============================================
+================================
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
@@ -8,12 +8,12 @@ Here are some popular options below, including self-hosted on-prem, or self-host
 .. tip :: You can also neatly link voice, video and screensharing solutions to channels by using Markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
 Zoom
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
 - Click a video icon in a Mattermost channel to invite team members to join a Zoom call, hosted using the credentials of the user who initiated the call.
 - Requires one paid `Zoom Pro, Business, Education, or API plan, <https://zoom.us/pricing>`_ to generate an API key and secret.
-- Supports a self-hosted cloud solution, and a vendor-hosted cloud solution.
+- Supports a self-hosted cloud solution and a vendor-hosted cloud solution.
 - Docs available at: https://docs.mattermost.com/integrations/zoom.html.
 - Source code available at: https://github.com/mattermost/mattermost-plugin-zoom.
 
@@ -27,12 +27,12 @@ Microsoft Teams Meetings
 - Source code and docs available at: https://github.com/mattermost/mattermost-msteams-meetings.
 
 Cisco Webex Cloud
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 - Start and join voice and video calls, and share your screen with members of your team, developed by Mattermost.
 - Use the ``/webex`` slash command or click the video icon in a Mattermost channel to invite team members to join a Webex call, hosted using the credentials of the user who initiated the call.
 - Requires one paid `Cisco Webex Developer Account, <https://developer.webex.com/>`_ to generate an API key and secret.
-- Supports a self-hosted cloud solution, and a vendor-hosted cloud solution.
+- Supports a self-hosted cloud solution and a vendor-hosted cloud solution.
 - Source code and docs available at: https://github.com/mattermost/mattermost-plugin-webex.
 
 BigBlueButton
@@ -40,7 +40,7 @@ BigBlueButton
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Blindside Networks.
 - A test install is provided to try out the feature on a Mattermost installation.
-- Supports a self-hosted on-prem solution, and a vendor-hosted cloud solution.
+- Supports a self-hosted on-prem solution and a vendor-hosted cloud solution.
 - Source code and docs available at: https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton.
 
 Skype for Business (Beta)
@@ -52,7 +52,7 @@ Skype for Business (Beta)
 - Source code and docs available at: https://github.com/mattermost/mattermost-plugin-skype4business.
 
 WebRTC
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~
 
 - Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Nikhil Rajan.
 - Calls embedded into the Mattermost interface for seamless user experience.
@@ -60,7 +60,7 @@ WebRTC
 - Source code and docs available at: https://github.com/niklabh/mattermost-plugin-webrtc-video.
 
 Kopano WebMeetings
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 - Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Kopano.
 - Calls embedded into the Mattermost interface for seamless user experience.
@@ -78,7 +78,7 @@ Jitsi
 SIP PBX
 ~~~~~~~~
 
-- Connect your company's individual desk extensions, external telephone lines. and mobile networks with Mattermost, developed by Bytemine GmbH.
+- Connect your company's individual desk extensions, external telephone lines, and mobile networks with Mattermost, developed by Bytemine GmbH.
 - Supports a self-hosted on-prem solution.
 - Source code and docs available at: https://github.com/bytemine/mattersip.
 
