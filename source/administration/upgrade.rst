@@ -114,7 +114,6 @@ Location of your local storage directory
 
 #. Start your Mattermost server.
 
-   On Ubuntu 16.04 and RHEL 7:
 
    .. code-block:: sh
 
