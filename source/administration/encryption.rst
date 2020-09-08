@@ -14,7 +14,15 @@ Encryption-in-transit
 
 Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or install a proxy such as NGINX and set up TLS on the proxy. Refer to our `configuration guide for more details <https://docs.mattermost.com/install/config-tls-mattermost.html>`__.
 
-Connections to Active Directory/LDAP can `optionally be secured with TLS or stunnel <https://docs.mattermost.com/administration/config-settings.html#id11>`__.
+Connections to Active Directory/LDAP can `optionally be secured with TLS or stunnel <https://docs.mattermost.com/administration/config-settings.html#id9>`__.
+
+Gossip Encryption (Experimental):
+-----------------------
+
+In a High Availability mode, Mattermost supports encryption of cluster data in-transit when using the gossip protocol.  
+
+The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the `Systems` table to AES-128, AES-192, or AES-256.
+
 
 Encryption-at-rest
 -----------------------
