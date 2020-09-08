@@ -8,12 +8,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release day: 2020-09-16**
 
-### Compatibility
-
-### Breaking Changes
-
-**IMPORTANT:** If you upgrade from a release earlier than 5.26, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
-
 ### Improvements
  - Added the ability to upgrade Mattermost from TE to E0 directly from the System Console.
  - Changed the Default Theme setting in the System Console to a drop-down field.
@@ -54,23 +48,27 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``App.GetSidebarCategories()`` panicked on nil returned value.
  - Fixed an issue where the ``SendEmailNotifications`` setting blocked testing the SMTP connection.
 
-### config.json
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
-
 ### Open Source Components
  - Removed ``@types/redux-mock-store`` and ``tinycolor2`` from https://github.com/mattermost/mattermost-webapp.
  - Added ``bootstrap-colorpicker`` in https://github.com/mattermost/mattermost-webapp.
  - Added ``@react-native-community/clipboard`` in https://github.com/mattermost/mattermost-mobile.
 
-### Database Changes
-
 ### API Changes
-
-### Websocket Event Changes
+ - Added ``POST api/v4/upgrade_to_enterprise`` API endpoint to be able to execute an inplace upgrade from Team Edition to Enterprise Edition.
+ - Added ``GET api/v4/upgrade_to_enterprise/status`` API endpoint to get the current status for the inplace upgrade from Team Edition to Enterprise Edition.
+ - Added ``POST api/v4/restart`` API endpoint to restart the system after an upgrade from Team Edition to Enterprise Edition.
  
 ### Known Issues
+ - Twitter link previews do not work in Mattermost.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
