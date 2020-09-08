@@ -13,7 +13,7 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 Replying to Messages
 ---------------------
 
-Hover over any message and click the reply link (arrow icon |replyarrow|). This organizes the conversation into a thread. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+When replying to a message you should do so by hovering over message and clicking the reply link(arrow icon |replyarrow|). This organizes the conversation into a thread, makes it easier to follow, and enables multiple parallel conversations to occur at the same time without confusion. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
 .. |replyarrow| image:: ../../images/replyIcon.PNG
    :alt: reply arrow
