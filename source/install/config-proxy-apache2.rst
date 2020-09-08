@@ -5,12 +5,12 @@ Configuring Apache2 as a proxy for Mattermost Server (Unofficial)
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-proxy-apache2.rst>`__.
 
-On a Debian-based OS such as Ubuntu, Apache2 proxy configuration is done in the ``/etc/apache2/sites-available`` directory. RH-based systems organize Apache configuration files `differently <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-web_servers>`__. If you're setting up Mattermost on a subdomain, you'll want to create a new configuration file along the lines of ``mysubdomain.mydomain.com.conf``. 
+On a Debian-based OS such as Ubuntu, Apache2 proxy configuration is done in the ``/etc/apache2/sites-available`` directory. RH-based systems organize Apache configuration files `differently <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-web_servers>`__. If you're setting up Mattermost on a subdomain, you'll want to create a new configuration file along the lines of ``mysubdomain.mydomain.com.conf``.
 
 **To configure Apache2 as a proxy**
 
 1. SSH into your server.
-2. Make sure the Apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
+2. Make sure the Apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http``, and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your Linux distribution to do so.
 3. Create the above mentioned configuration file. It is often helpful to start with a copy of (on Ubuntu) 000-default.conf or default-ssl.conf.
 4. Edit your configuration using the guide below:
 
@@ -47,7 +47,7 @@ On a Debian-based OS such as Ubuntu, Apache2 proxy configuration is done in the 
 
 5. (Debian/Ubuntu only:) Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
 
-6. Restart Apache2
+6. Restart Apache2.
 
 	- On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
 	- On Ubuntu 16.04+ and RHEL 7+: ``sudo systemctl restart apache2``
