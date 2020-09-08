@@ -172,6 +172,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/important-upgrade-notes*   
    /administration/changelog*
    /help/apps/desktop-changelog*
+   /administration/mobile-changelog*
    /administration/version-archive*
    /administration/extended-support-release* 
    /administration/release-lifecycle* 
