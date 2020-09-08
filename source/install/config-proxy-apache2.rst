@@ -5,24 +5,20 @@ Configuring Apache2 as a proxy for Mattermost Server (Unofficial)
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-proxy-apache2.rst>`__.
 
-In order to use Apache as a reverse proxy for the mattermost server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow the instructions from your linux distribution to do so.
-
-The Apache2 proxy configuration is done through the ``/etc/apache2/sites-available`` directory. If you're setting up Mattermost on a subdomain you'll want to create a new configuration along the lines of ``mysubdomain.mydomain.com.conf``.
-
-Copy the `default` configuration file found in the same directory.
+On a Debian-based OS such as Ubuntu, Apache2 proxy configuration is done in the ``/etc/apache2/sites-available`` directory. RH-based systems organize Apache configuration files `differently <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-web_servers>`__. If you're setting up Mattermost on a subdomain, you'll want to create a new configuration file along the lines of ``mysubdomain.mydomain.com.conf``. 
 
 **To configure Apache2 as a proxy**
 
 1. SSH into your server.
-2. Make sure the apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
-3. Create/open the above mentioned file (000-default or a new subdomain configuration).
+2. Make sure the Apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
+3. Create the above mentioned configuration file. It is often helpful to start with a copy of (on Ubuntu) 000-default.conf or default-ssl.conf.
 4. Edit your configuration using the guide below:
 
-	1. If you're not setting up a subdomain your ``ServerName`` will simply be set to ``mydomain.com``.
+	1. If you're not setting up a subdomain, your ``ServerName`` will simply be set to ``mydomain.com``.
 	2. ``ServerAlias`` can been added too if you want to capture ``www.mydomain.com``.
 	3. Remember to change the values to match your server's name, etc.
 	4. If you have enabled TLS in the Mattermost settings, you must use the protocol ``wss://`` instead of ``ws://`` in the ``RewriteRule``.
-	5. Save once finished.
+	5. To serve requests on a different port (such as 8443), in addition to setting the port in the VirtualHost element, add "Listen 8443" on a separate line before the VirtualHost line.
 
 .. code-block:: apacheconf
 
@@ -49,11 +45,11 @@ Copy the `default` configuration file found in the same directory.
 
 		</VirtualHost>
 
-5. Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
+5. (Debian/Ubuntu only:) Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
 
 6. Restart Apache2
 
 	- On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
-	- On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart apache2``
+	- On Ubuntu 16.04+ and RHEL 7+: ``sudo systemctl restart apache2``
 
-You should be all set! Ensure that your Mattermost config file is pointing to the correct URL and then ensure that once deployed your socket connection is not dropping.
+You should be all set! Ensure that your Mattermost config file is pointing to the correct URL (which may include a port), and then ensure that once deployed your socket connection is not dropping. To prevent external access to Mattermost on port 8065, in the config file, set "ListenAddress" to "localhost:8065" instead of ":8065".
