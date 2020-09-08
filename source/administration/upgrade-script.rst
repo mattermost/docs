@@ -1,4 +1,4 @@
-Upgrading Mattermost Server with a script
+Upgrading Mattermost Server with a Script
 =========================================
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback, and improvements are welcome and greatly appreciated.
@@ -10,7 +10,9 @@ Upgrading Mattermost Server with a script
 Make it executable.
 
 .. code-block:: sh
+
    # chmod +x ./update_mattermost.sh
+
 Please adjust the parameters at the beginning of the script according to your environment.
 
 *Start the script*
@@ -18,8 +20,11 @@ Please adjust the parameters at the beginning of the script according to your en
 To start the update process, start the script and add the desired version number as an argument.
 
 .. code-block:: sh
+
    # ./upgrade_mattermost.sh <VERSION>
+
 Example:
 
 .. code-block:: sh
+
    # ./upgrade_mattermost.sh 5.26.0
