@@ -9,7 +9,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **Release day: 2020-09-16**
 
 ### Improvements
- - Added the ability to upgrade Mattermost from TE to E0 directly from the System Console.
+ - Added the ability to upgrade Mattermost from Team Edition to Enterprise Edition E0 directly from the System Console.
+ - Added various improvements for Admin Advisor feature (Team Edition), including: the bot messages now appear only once for the 500-user advisory, the banner no longer reappears upon page refresh, and the banner nagging interval was reduced from daily to weekly.
  - Changed the Default Theme setting in the System Console to a drop-down field.
 
 ### Bug Fixes
