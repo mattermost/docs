@@ -3,7 +3,9 @@ Elasticsearch (E20)
 
 *Available in Enterprise Edition E20.*
 
-`Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ is a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`__.
+The Elasticsearch module in Mattermost E20 is recommended for enterprise-scale deployments to optimize search performance and avoid performance degradation and timeouts.
+
+The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`__.
 
 .. toctree::
     :maxdepth: 2
@@ -17,7 +19,7 @@ Overview
 Elasticsearch allows you to search large volumes of data quickly, in near real time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
 .. important::
-    The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
+    The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
 
 Elasticsearch v5.x, v6.x, and v7.x are supported. 
 
