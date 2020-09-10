@@ -3,7 +3,9 @@ Elasticsearch (E20)
 
 *Available in Enterprise Edition E20.*
 
-`Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ is a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`__.
+The Elasticsearch module in Mattermost E20 is recommended for enterprise-scale deployments to optimize search performance and avoid slowness and timeouts. 
+
+The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`__.
 
 .. toctree::
     :maxdepth: 2
