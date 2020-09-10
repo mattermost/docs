@@ -27,6 +27,8 @@ When to Use Elasticsearch
 
 The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
 
+For deployments over 5 million posts, Elasticsearch is required to avoid significant performance issues with search and at-mentions, including slowless and timeouts. 
+
 Setting Up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
