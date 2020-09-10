@@ -3,7 +3,7 @@ Elasticsearch (E20)
 
 *Available in Enterprise Edition E20.*
 
-The Elasticsearch module in Mattermost E20 is recommended for enterprise-scale deployments to optimize search performance and avoid performance degradation and timeouts.
+Elasticsearch provides enterprise-scale deployments optimized search performance and prevents performance degradation and timeouts. 
 
 The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`__.
 
