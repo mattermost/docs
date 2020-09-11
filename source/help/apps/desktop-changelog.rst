@@ -4,8 +4,10 @@ Desktop Application Changelog
 Release v4.5
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.3>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.4>`_
 
+- **v4.5.4, released 2020-09-11**
+ - Fixed an issue where Help and Report a Problem website links configured to point to Mattermost channels didn't work. `MM-28595 <https://mattermost.atlassian.net/browse/MM-28595>`_
 - **v4.5.3, released 2020-08-25**
  - Fixed an issue where users were unable to log in to the desktop app when users had to select a certificate for authentication that requires a pin even when there was only one option to manage a certificate login. `MM-27331 <https://mattermost.atlassian.net/browse/MM-27331>`_
 - **v4.5.2, released 2020-07-20**
