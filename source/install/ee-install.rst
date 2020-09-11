@@ -80,9 +80,6 @@ From Mattermost v5.27, if you're running a Linux system with x86-64 architecture
   * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
   * For versions prior to v5.27, please follow `these upgrade instructions <https://docs.mattermost.com/administration/upgrade.html#upgrading-to-the-latest-version>`_.
 
-Initiating the Conversion
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Navigate to **System Console > Edition and License** and select **Upgrade to Enterprise Edition**.
 
 During the upgrade process, the Mattermost Enterprise Edition binary file that matches your version of Mattermost is downloaded, decompressed, extracted, and overwrites the Team Edition executable. Once this process is complete, you're prompted to restart your server. 
@@ -90,35 +87,23 @@ During the upgrade process, the Mattermost Enterprise Edition binary file that m
 The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can activate an E20 trial.
 
 Permissions and Limitations
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're using a package manager, such as GitLab Omnibus, to manage your Mattermost installation the Mattermost user won't have permissions to perform the upgrade. In this case you may encounter an error which is resolved by changing the file permissions manually. 
 
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
-To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user.
-
-1. Open the command line tool on the Mattermost server.
-2. `cd` to the Mattermost installation directory.
-3. Enter: 
+To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. Open the command line tool on the Mattermost server, `cd` to the Mattermost installation directory, and run the following command.
 
 .. code-block:: none
 
   \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
 
-4. Press ENTER.
-
-Return to the Mattermost System Console and run the upgrade again. Once complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions:
-
-1. Open the command line tool on the Mattermost server.
-2. `cd` to the Mattermost installation directory.
-3. Enter: 
+In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions:
 
 .. code-block:: none
 
   \n\n```\nchown {{.FileUsername}} \"{{.Path}}\"\nchmod -w \"{{.Path}}\"\n```"
-  
-4. Press ENTER.
 
 Note that any future automated updates or actions performed by other System Admins after the conversion will overwrite the conversion once the ``run gitlab-ctl configure`` command is run. This automatically updates Mattermost to the new version of Mattermost Team Edition, and overwrites Enterprise Edition. Any Enterprise Edition features you were using will no longer be accessible - but none of your user data will be affected.
 
@@ -135,7 +120,7 @@ You can convert to Enterprise Edition again by following the steps above. If you
 The manual process reset my file permissions. How do I get them back?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you manually changed your file permissions, you can change them back:
+If you manually changed your file permissions, you can change them back.
 
 1. Open the command line tool on the Mattermost server.
 2. `cd` to the Mattermost installation directory.
@@ -144,8 +129,6 @@ If you manually changed your file permissions, you can change them back:
 .. code-block:: none
   
   \n\n```\nchown {{.FileUsername}} \"{{.Path}}\"\nchmod -w \"{{.Path}}\"\n```"
-
-4. Press ENTER.
 
 File permissions error
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -159,8 +142,6 @@ If your Mattermost deployment is part of a managed package you may receive file 
 .. code-block:: none
 
    \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
-
-4. Press ENTER.
 
 Incompatible system architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
