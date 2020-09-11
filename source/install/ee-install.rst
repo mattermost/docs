@@ -89,7 +89,7 @@ During the upgrade process, the Mattermost Enterprise Edition binary file that m
 
 The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can activate an E20 trial.
 
-GitLab Omnibus
+Permissions and Limitations
 ~~~~~~~~~~~~~~
 
 If you're using a package manager, such as GitLab Omnibus, to manage your Mattermost installation the Mattermost user won't have permissions to perform the upgrade. In this case you may encounter an error which is resolved by changing the file permissions manually. 
