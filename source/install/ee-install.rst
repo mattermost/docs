@@ -168,7 +168,7 @@ This tool is currently only compatible with Linux systems using x86-64 architect
 Can’t get file
 ^^^^^^^^^^^^^^^^
 
-If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
+If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error, please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
 
 Changing a License Key
 ----------------------
