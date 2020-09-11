@@ -94,7 +94,7 @@ GitLab Omnibus
 
 If you’re using GitLab Omnibus to manage your Mattermost installation, you may encounter an error during the upgrade due to permission restrictions. This is resolved by changing the file permissions manually. Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
-To change the permissions using the command line on the Mattermost server you need access to the command line tool as *mattermost* user.
+To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user.
 
 1. Open the command line tool on the Mattermost server.
 2. `cd` to the Mattermost installation directory.
