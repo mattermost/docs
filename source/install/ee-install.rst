@@ -67,7 +67,108 @@ If you need to migrate Team Edition prior to install, `please follow the migrati
 Upgrading Enterprise Edition to a Newer Version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Upgrade a previous version of Mattermost Enterprise Edition to a later version by following the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`__.
+Upgrade a previous version of Mattermost Enterprise Edition to a later version by following the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`__.
+
+Converting Team Edition to Enterprise Edition
+--------------------------------------------
+
+From Mattermost v5.27, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise Edition in the System Console using a built-in conversion utility. This tool is recommended for standalone servers intending to upgrade to Enterprise Edition permanently.
+
+.. note::
+
+  * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, this process can be used. However if you plan to upgrade permanently and scale your production environment, we recommend following the appropriate `migration process <https://docs.mattermost.com/administration/migrating.html>`_.
+  * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
+  * For versions prior to v5.27, please follow `these upgrade instructions <https://docs.mattermost.com/administration/upgrade.html#upgrading-to-the-latest-version>`_.
+
+Initiating the Conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Navigate to **System Console > Edition and License** and select **Upgrade to Enterprise Edition**.
+
+During the upgrade process, the Mattermost Enterprise Edition binary file that matches your version of Mattermost is downloaded, decompressed, extracted, and overwrites the Team Edition executable. Once this process is complete, you're prompted to restart your server. 
+
+The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can activate an E20 trial.
+
+GitLab Omnibus
+~~~~~~~~~~~~~~
+
+If you’re using GitLab Omnibus to manage your Mattermost installation, you may encounter an error during the upgrade due to permission restrictions. This is resolved by changing the file permissions manually. Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
+
+To change the permissions using the command line on the Mattermost server you need access to the command line tool as *mattermost* user.
+
+1. Open the command line tool on the Mattermost server.
+2. `cd` to the Mattermost installation directory.
+3. Enter: 
+
+.. code-block:: none
+
+  \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
+
+4. Press ENTER.
+
+Return to the Mattermost System Console and run the upgrade again. Once complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions:
+
+1. Open the command line tool on the Mattermost server.
+2. `cd` to the Mattermost installation directory.
+3. Enter: 
+
+.. code-block:: none
+
+  \n\n```\nchown {{.FileUsername}} \"{{.Path}}\"\nchmod -w \"{{.Path}}\"\n```"
+  
+4. Press ENTER.
+
+Note that any future automated updates or actions performed by other System Admins after the conversion will overwrite the conversion once the ``run gitlab-ctl configure`` command is run. This automatically updates Mattermost to the new version of Mattermost Team Edition, and overwrites Enterprise Edition. Any Enterprise Edition features you were using will no longer be accessible - but none of your user data will be affected.
+
+Troubleshooting
+~~~~~~~~~~~~~~~~
+
+Mattermost has reverted to Team Edition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you converted Team Edition to Enterprise Edition on a managed deployment and then upgraded, the upgrade will have overwritten Enterprise Edition with the latest version of Team Edition.
+
+You can convert to Enterprise Edition again by following the steps above. If you plan to use Mattermost Enterprise Edition permanently, we recommend migrating your server to a self-managed one.
+
+The manual process reset my file permissions. How do I get them back?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you manually changed your file permissions, you can change them back:
+
+1. Open the command line tool on the Mattermost server.
+2. `cd` to the Mattermost installation directory.
+3. Enter: 
+
+.. code-block:: none
+  
+  \n\n```\nchown {{.FileUsername}} \"{{.Path}}\"\nchmod -w \"{{.Path}}\"\n```"
+
+4. Press ENTER.
+
+File permissions error
+^^^^^^^^^^^^^^^^^^^^^^^
+
+If your Mattermost deployment is part of a managed package you may receive file permissions errors and the upgrade will fail. You can edit the permissions settings manually:
+
+1. Open the command line tool on the Mattermost server.
+2. `cd` to the Mattermost installation directory.
+3. Enter: 
+
+.. code-block:: none
+
+   \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
+
+4. Press ENTER.
+
+Incompatible system architecture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This tool is currently only compatible with Linux systems using x86-64 architecture. If you’re running Mattermost on a different architecture, please follow the manual upgrade process.
+
+Can’t get file
+^^^^^^^^^^^^^^^^
+
+If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
 
 Changing a License Key
 ----------------------
