@@ -162,6 +162,6 @@ To grant trusted translators additional permissions as Weblate admin, add the us
 
 To add a new language:
 
-1. Go to https://translate.mattermost.com/projects/i18n-wip/ .
+1. Go to `https://translate.mattermost.com/projects/i18n-wip/<https://translate.mattermost.com/projects/i18n-wip/>`_.
 2. Click any of the components on the resulting page, then go to **Tools > Start new translation**. Select the languages you want to add, then click **Start new translation**.
 3. Repeat step 2 for every component in `https://translate.mattermost.com/projects/i18n-wip/<https://translate.mattermost.com/projects/i18n-wip/>`
