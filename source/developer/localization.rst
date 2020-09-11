@@ -160,7 +160,7 @@ To grant trusted translators additional permissions as Weblate admin, add the us
 5. Add the user to ``mattermost@TrustedReviewers`` group.
 6. Hit **Save**.
 
-To add a new language to the WIP project:
+To add a new language:
 
 1. Go to https://translate.mattermost.com/projects/i18n-wip/ .
 2. Click on any of the three components **Tools > Start new translation** and add the languages you want to add and click **Save**.
