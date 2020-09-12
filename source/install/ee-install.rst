@@ -105,7 +105,7 @@ In the Mattermost System Console, retry the upgrade. When the upgrade is complet
 
   \n\n```\nchown {{.FileUsername}} \"{{.Path}}\"\nchmod -w \"{{.Path}}\"\n```"
 
-Note that any future automated updates or actions performed by other System Admins after the conversion will overwrite the conversion once the ``run gitlab-ctl configure`` command is run. This automatically updates Mattermost to the new version of Mattermost Team Edition, and overwrites Enterprise Edition. Any Enterprise Edition features you were using will no longer be accessible - but none of your user data will be affected.
+Note that automated updates or actions performed by other System Admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you will not be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~
