@@ -52,7 +52,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
  - Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false
 
-   .. code-block:: text
+.. code-block:: text
 
     mattermost['enable'] = false
 
@@ -72,11 +72,11 @@ Upgrade a previous version of Mattermost Enterprise Edition to a later version b
 Converting Team Edition to Enterprise Edition
 --------------------------------------------
 
-From Mattermost v5.27 on, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise Edition in the System Console using a built-in conversion utility. This tool is recommended for standalone servers seeking to run an Enterprise trial or upgrade to Enterprise E10 or E20.
+From Mattermost v5.27 on, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise Edition in the System Console using a built-in conversion utility. This tool is recommended if you'd like to run an Enterprise trial or upgrade to Enterprise E10 or E20 on standalone servers.
 
 .. note::
 
-  * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, this process can be used. However if you plan to upgrade permanently and scale your production environment, we strongly recommend installing a new standalone server and following the appropriate `migration process <https://docs.mattermost.com/administration/migrating.html>`_.
+  * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, you can use this tool. However if you plan to upgrade permanently and scale your production environment, we strongly recommend installing a new standalone server and following the appropriate `migration process <https://docs.mattermost.com/administration/migrating.html>`_.
   * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
   * For versions prior to v5.27, please follow `these upgrade instructions <https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition-to-enterprise-edition>`_.
 
@@ -93,21 +93,21 @@ If you're using a package manager, such as GitLab Omnibus, to manage your Matter
 
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
-To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. Open the command line tool on the Mattermost server, `cd` to the Mattermost installation directory, and run the following command.
+To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. Open the command line tool on the Mattermost server, ``cd`` to the Mattermost installation directory, and run the following command.
 
 .. code-block:: none
 
   \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
 
-In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions, replacing <OriginalFileOwner> with the appropriate value:
+In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions, replacing ``<OriginalFileOwner>`` with the appropriate value:
 
 .. code-block:: none
 
-chown <OriginalFileOwner> <PathToBinaryFile>
+  chown <OriginalFileOwner> <PathToBinaryFile>
 
-chmod -w <PathToBinaryFile>
+  chmod -w <PathToBinaryFile>
 
-Note that automated updates or actions performed by other System Admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you will not be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
+Note that automated updates or actions performed by other System Admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~
@@ -120,19 +120,19 @@ If you converted Team Edition to Enterprise Edition on a managed deployment and 
 You can convert to Enterprise Edition again by following the steps above. If you plan to use Mattermost Enterprise Edition permanently, we recommend migrating your server to a self-managed one.
 
 The manual process reset my file permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you manually changed your file permissions, you can change them back.
 
 1. Open the command line tool on the Mattermost server.
-2. `cd` to the Mattermost installation directory.
+2. ``cd`` to the Mattermost installation directory.
 3. Enter: 
 
 .. code-block:: none
   
-chown <OriginalFileOwner> <PathToBinaryFile>
+  chown <OriginalFileOwner> <PathToBinaryFile>
 
-chmod -w <PathToBinaryFile>
+  chmod -w <PathToBinaryFile>
 
 File permissions error
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -140,7 +140,7 @@ File permissions error
 If your Mattermost deployment is part of a managed package you may receive file permissions errors and the upgrade will fail. You can edit the permissions settings manually:
 
 1. Open the command line tool on the Mattermost server.
-2. `cd` to the Mattermost installation directory.
+2. ``cd`` to the Mattermost installation directory.
 3. Enter: 
 
 .. code-block:: none
