@@ -76,7 +76,7 @@ From Mattermost v5.27 on, if you're running a Linux system with x86-64 architect
 
 .. note::
 
-  * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, this process can be used. However if you plan to upgrade permanently and scale your production environment, we recommend following the appropriate `migration process <https://docs.mattermost.com/administration/migrating.html>`_.
+  * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, this process can be used. However if you plan to upgrade permanently and scale your production environment, we strongly recommend installing a new standalone server and following the appropriate `migration process <https://docs.mattermost.com/administration/migrating.html>`_.
   * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
   * For versions prior to v5.27, please follow `these upgrade instructions <https://docs.mattermost.com/administration/upgrade.html#upgrading-team-edition-to-enterprise-edition>`_.
 
