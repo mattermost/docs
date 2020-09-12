@@ -128,7 +128,9 @@ If you manually changed your file permissions, you can change them back.
 
 .. code-block:: none
   
-  \n\n```\nchown {{.FileUsername}} \"{{.Path}}\"\nchmod -w \"{{.Path}}\"\n```"
+chown <OriginalFileOwner> <PathToBinaryFile>
+
+chmod -w <PathToBinaryFile>
 
 File permissions error
 ^^^^^^^^^^^^^^^^^^^^^^^
