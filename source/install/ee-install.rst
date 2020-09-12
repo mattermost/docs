@@ -82,7 +82,7 @@ From Mattermost v5.27 on, if you're running a Linux system with x86-64 architect
 
 Navigate to **System Console > Edition and License** and select **Upgrade to Enterprise Edition**.
 
-During the upgrade process, the Mattermost Enterprise Edition binary file that matches your current server version is downloaded, decompressed, and extracted. Mattermost then replaces the Team Edition binary with the Enterprise Edition version. Once this process is complete, you're prompted to restart your server. 
+During the upgrade process, the Mattermost Enterprise Edition binary file that matches your current server version is downloaded, decompressed, and extracted. The Team Edition binary is then replaced by the Enterprise Edition version. Once this process is complete, you're prompted to restart your server.
 
 The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now activate an Enterprise Edition trial or upload a license.
 
@@ -158,7 +158,7 @@ Incompatible system architecture
 This tool is currently only compatible with Linux systems using x86-64 architecture. If you’re running Mattermost on a different architecture, please follow the manual upgrade process.
 
 Can’t retrieve Enterprise Edition binary file
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error, please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
 
@@ -179,7 +179,7 @@ Use this command to upload a new license or to replace an existing license with 
   mattermost license upload {license}
 
 .. note::
-  If you upload the license via the CLI using  `mattermost license upload`, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
+  If you upload the license via the CLI using  ``mattermost license upload``, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
 
 **Using the System Console**
 
