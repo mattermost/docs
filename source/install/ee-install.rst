@@ -84,7 +84,7 @@ Navigate to **System Console > Edition and License** and select **Upgrade to Ent
 
 During the upgrade process, the Mattermost Enterprise Edition binary file that matches your version of Mattermost is downloaded, decompressed, extracted, and overwrites the Team Edition executable. Once this process is complete, you're prompted to restart your server. 
 
-The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can activate an E20 trial.
+The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now activate an Enterprise Edition trial or upload a license.
 
 Permissions and Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
