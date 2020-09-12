@@ -99,7 +99,7 @@ To change the permissions using the command line on the Mattermost server, you n
 
   \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
 
-In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions:
+In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions, replacing <OriginalFileOwner> with the appropriate value:
 
 .. code-block:: none
 
