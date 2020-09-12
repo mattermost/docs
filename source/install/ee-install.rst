@@ -117,7 +117,7 @@ If you converted Team Edition to Enterprise Edition on a managed deployment and 
 
 You can convert to Enterprise Edition again by following the steps above. If you plan to use Mattermost Enterprise Edition permanently, we recommend migrating your server to a self-managed one.
 
-The manual process reset my file permissions. How do I get them back?
+The manual process reset my file permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you manually changed your file permissions, you can change them back.
