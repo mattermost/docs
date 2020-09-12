@@ -56,7 +56,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
     mattermost['enable'] = false
 
- - Run `sudo gitlab-ctl reconfigure` to apply the updated setting
+- Run `sudo gitlab-ctl reconfigure` to apply the updated setting
 
 2. Install Mattermost using `one of the guides above <https://docs.mattermost.com/install/ee-install.html#installing-enterprise-edition>`__.
 3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
@@ -93,13 +93,14 @@ If you're using a package manager, such as GitLab Omnibus, to manage your Matter
 
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
-To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. Open the command line tool on the Mattermost server, ``cd`` to the Mattermost installation directory, and run the following command.
+To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. 
+Open the command line tool on the Mattermost server and ``cd`` to the Mattermost installation directory. Run the following commands (replacing ``<PathToBinaryFile>`` with the appropriate path (typically ``/opt/mattermost/bin/mattermost``) to change the ownership of the binary file to *mattermost* user and grant write access:
 
 .. code-block:: none
 
-chown mattermost <PathToBinaryFile>
+  chown mattermost <PathToBinaryFile>
 
-chmod +w <PathToBinaryFile>
+  chmod +w <PathToBinaryFile>
 
 In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions, replacing ``<OriginalFileOwner>`` with the appropriate value:
 
@@ -127,7 +128,7 @@ The manual process reset my file permissions
 If you manually changed your file permissions, you can change them back.
 
 1. Open the command line tool on the Mattermost server.
-2. ``cd`` to the Mattermost installation directory.
+2. ``cd`` to the Mattermost installation directory (typically ``/opt/mattermost/bin/mattermost``).
 3. Enter: 
 
 .. code-block:: none
@@ -142,12 +143,14 @@ File permissions error
 If your Mattermost deployment is part of a managed package you may receive file permissions errors and the upgrade will fail. You can edit the permissions settings manually:
 
 1. Open the command line tool on the Mattermost server.
-2. ``cd`` to the Mattermost installation directory.
+2. ``cd`` to the Mattermost installation directory (typically ``/opt/mattermost/bin/mattermost``).
 3. Enter: 
 
 .. code-block:: none
 
-   \n\n```\nchown {{.MattermostUsername}} \"{{.Path}}\"\nchmod +w \"{{.Path}}\"\n```\n\
+  chown <OriginalFileOwner> <PathToBinaryFile>
+
+  chmod -w <PathToBinaryFile>
 
 Incompatible system architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
