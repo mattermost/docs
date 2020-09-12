@@ -148,7 +148,7 @@ Incompatible system architecture
 
 This tool is currently only compatible with Linux systems using x86-64 architecture. If you’re running Mattermost on a different architecture, please follow the manual upgrade process.
 
-Can’t get file
+Can’t retrieve Enterprise Edition binary file
 ^^^^^^^^^^^^^^^^
 
 If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error, please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
