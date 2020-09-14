@@ -12,18 +12,18 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
 
 ### Improvements
  - Added the ability to upgrade Mattermost from Team Edition to Enterprise Edition E0 directly from the System Console.
- - Added various improvements for Admin Advisor feature (Team Edition), including: the bot messages now appear only once for the 500-user advisory, the banner no longer reappears upon page refresh, and the banner nagging interval was reduced from daily to weekly.
+ - Added various improvements for Admin Advisor feature (Team Edition), including that the bot messages now appear only once for the 500-user advisory and the banner nagging interval is reduced from daily to weekly.
  - Changed the Default Theme setting in the System Console to a drop-down field.
 
 ### Bug Fixes
  - Fixed an issue where the server crashed when a Compliance Export job was run for Global Relay EML.
  - Fixed an issue where Compliance Jobs did not restart correctly after a Warning status.
  - Fixed an issue where users were not matching on mixed-case SAML assertions.
- - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for the LDAP Groups.
+ - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for AD/LDAP Groups.
  - Fixed an issue where user's role was not added correctly in the Members block in **System Console > Teams** System Console page.
  - Fixed an issue where a team stopped loading in the System Console "Filter By"-dropdown when a search was performed and then cleared.
  - Fixed an issue where the ability to demote Admins to members and to deactivate accounts from **System Console > Users** were not available.
- - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to a Group.
+ - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to an AD/LDAP Group.
  - Fixed an issue where a AD/LDAP group mention of an outsider group was highlighted in a Group Synced channel.
  - Fixed an issue where incoming webhooks owned by a bot did not consistently allow a username override.
  - Fixed an issue where the emoji picker in the Edit Post modal was misaligned.
@@ -36,7 +36,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Fixed an issue where the theme color for "Sidebar Text Active Border" was not currently being used in the active border in the sidebar.
  - Fixed an issue where users saw an incorrect mention count when added to a channel by another user.
  - Fixed an issue where channels created from another browser tab did not immediately appear in the channel sidebar.
- - Fixed an issue where a console error showed when creating a new custom category in channel sidebar.
+ - Fixed an issue where a console error showed when creating a new custom category in the channel sidebar.
  - Fixed an issue where enabling the new channel sidebar created invalid channel links.
  - Fixed an issue where a channel state got broken after an "unallowed" deletion.
  - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
@@ -44,7 +44,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Fixed an issue where editing "Full Name" got overwritten by Single Sign-On settings.
  - Fixed an issue where "You do not have the appropriate permissions" error was shown for ``warn_metrics`` call for non-admin users.
  - Fixed an issue where the channel switcher sometimes showed a wrong empty state with network API.
- - Fixed an issue where the loader was not hidden when posts were not loading which affected the performance of Linux distros.
+ - Fixed an issue where the loader was not hidden when posts were not loading which affected the performance of some Linux distros.
  - Fixed an issue where ``PatchConfig`` caused a panic if ``SiteURL`` was not set.
  - Fixed an issue where a panic occurred when the server was getting a shutdown before ``InitPlugins()`` was able to complete.
  - Fixed an issue where a panic was caused when a user joined a team with default channels archived.
