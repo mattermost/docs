@@ -89,7 +89,7 @@ The Mattermost version listed in **System Console > Edition and License** will c
 Permissions and Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're using a package manager, such as GitLab Omnibus, to manage your Mattermost installation, the Mattermost system user won't have sufficient permissions to perform the upgrade. If this is the case, you'll need to change the file permissions manually.
+If you're using a package manager, such as GitLab Omnibus, to manage your Mattermost installation the Mattermost system user won't have sufficient permissions to perform the upgrade. If this is the case, you'll need to change the file permissions manually.
 
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
