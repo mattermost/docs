@@ -11,7 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Improvements
- - Added the ability to upgrade Mattermost from Team Edition to Enterprise Edition E0 directly from the System Console.
+ - Added the ability to upgrade Mattermost from Team Edition to Enterprise Edition directly from the System Console.
  - Added various improvements for Admin Advisor feature (Team Edition), including that the bot messages now appear only once for the 500-user advisory and the banner nagging interval is reduced from daily to weekly.
  - Changed the Default Theme setting in the System Console to a drop-down field.
 
