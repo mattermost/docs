@@ -20,7 +20,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Fixed an issue where Compliance Jobs did not restart correctly after a `Warning` status.
  - Fixed an issue where users were not matching on mixed-case SAML assertions.
  - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for AD/LDAP Groups.
- - Fixed an issue where user's role was not added correctly in the Members block in **System Console > Teams** System Console page.
+ - Fixed an issue where user role was not added correctly in the Members block in **System Console > Teams**.
  - Fixed an issue where a team stopped loading in the System Console "Filter By"-dropdown when a search was performed and then cleared.
  - Fixed an issue where the ability to demote Admins to members and to deactivate accounts from **System Console > Users** were not available.
  - Fixed an issue where a false message "Group Mentions is already taken" was shown when a System Admin tried to add a channel to an AD/LDAP Group.
