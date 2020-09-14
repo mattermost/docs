@@ -17,7 +17,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
 
 ### Bug Fixes
  - Fixed an issue where the server crashed when a Compliance Export job was run for Global Relay EML.
- - Fixed an issue where Compliance Jobs did not restart correctly after a Warning status.
+ - Fixed an issue where Compliance Jobs did not restart correctly after a `Warning` status.
  - Fixed an issue where users were not matching on mixed-case SAML assertions.
  - Fixed an issue where Channel Admin was not able to make the default role as Channel Admin for AD/LDAP Groups.
  - Fixed an issue where user's role was not added correctly in the Members block in **System Console > Teams** System Console page.
