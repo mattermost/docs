@@ -50,13 +50,17 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
 1. Disable the built-in Mattermost instance on GitLab Omnibus:
 
- - Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false
+ - Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false:
 
 .. code-block:: text
 
     mattermost['enable'] = false
 
-- Run `sudo gitlab-ctl reconfigure` to apply the updated setting
+- Then run the following command to apply the updated setting:
+
+.. code-block::
+  
+  sudo gitlab-ctl reconfigure
 
 2. Install Mattermost using `one of the guides above <https://docs.mattermost.com/install/ee-install.html#installing-enterprise-edition>`__.
 3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
@@ -179,6 +183,7 @@ Use this command to upload a new license or to replace an existing license with 
   mattermost license upload {license}
 
 .. note::
+
   If you upload the license via the CLI using  ``mattermost license upload``, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
 
 **Using the System Console**
