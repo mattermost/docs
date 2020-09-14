@@ -66,7 +66,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
- - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Status may sometimes get stuck as Away or Offline in High Availability mode with IP Hash turned off.
  - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
  - Searching with Elasticsearch enabled may not always highlight the searched terms.
  - Team sidebar on desktop app does not update when channels have been read on mobile.
