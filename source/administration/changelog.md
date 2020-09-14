@@ -40,7 +40,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Fixed an issue where enabling the new channel sidebar created invalid channel links.
  - Fixed an issue where a channel state got broken after an "unallowed" deletion.
  - Fixed an issue where dynamic slash command autocomplete options did not update between requests.
- - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to click "Back to Mattermost" in the authentication window.
+ - Fixed an issue where an incorrect callback URL with OAuth 2.0 allowed users to click **Back to Mattermost** in the authentication window.
  - Fixed an issue where editing "Full Name" got overwritten by Single Sign-On settings.
  - Fixed an issue where "You do not have the appropriate permissions" error was shown for ``warn_metrics`` call for non-admin users.
  - Fixed an issue where the channel switcher sometimes showed a wrong empty state with network API.
