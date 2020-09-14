@@ -63,7 +63,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  
 ### Known Issues
  - Twitter link previews do not work in Mattermost.
- - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
