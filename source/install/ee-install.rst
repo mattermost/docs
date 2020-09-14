@@ -94,7 +94,7 @@ If you're using a package manager, such as GitLab Omnibus, to manage your Matter
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
 To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. 
-Open the command line tool on the Mattermost server and ``cd`` to the Mattermost installation directory. Run the following commands (replacing ``<PathToBinaryFile>`` with the appropriate path (typically ``/opt/mattermost/bin/mattermost``) to change the ownership of the binary file to *mattermost* user and grant write access:
+Open the command line tool on the Mattermost server and ``cd`` to the Mattermost installation directory. Run the following commands (replacing ``<PathToBinaryFile>`` with the appropriate path (typically ``/opt/mattermost/bin/mattermost``)) to change the ownership of the binary file to *mattermost* user and grant write access:
 
 .. code-block:: none
 
