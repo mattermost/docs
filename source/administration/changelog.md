@@ -33,7 +33,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Fixed an issue where dates on **System Console > Site Statistics - Dates** were displayed out of order on days when there were no posts.
  - Fixed an issue where the Admin Advisor bot was unexpectedly displayed in the **Integrations > Bot Accounts** page.
  - Fixed an issue where a new badge in the channel sidebar category header reappeard after a channel was removed from the category.
- - Fixed an issue where the theme color for "Sidebar Text Active Border" was not currently being used in the active border in the sidebar.
+ - Fixed an issue where the theme color for **Sidebar Text Active Border** was not currently being used in the active border in the sidebar.
  - Fixed an issue where users saw an incorrect mention count when added to a channel by another user.
  - Fixed an issue where channels created from another browser tab did not immediately appear in the channel sidebar.
  - Fixed an issue where a console error showed when creating a new custom category in the channel sidebar.
