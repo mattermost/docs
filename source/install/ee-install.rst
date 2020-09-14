@@ -50,11 +50,11 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
 1. Disable the built-in Mattermost instance on GitLab Omnibus:
 
- - Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false:
+- Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false:
 
 .. code-block:: text
 
-    mattermost['enable'] = false
+   mattermost['enable'] = false
 
 - Then run the following command to apply the updated setting:
 
@@ -69,7 +69,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 If you need to migrate Team Edition prior to install, `please follow the migration guide <http://docs.mattermost.com/administration/migrating.html>`__.
 
 Upgrading Enterprise Edition to a Newer Version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upgrade a previous version of Mattermost Enterprise Edition to a later version by following the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`__.
 
@@ -98,12 +98,11 @@ If you're using a package manager, such as GitLab Omnibus, to manage your Matter
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
 To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. 
-Open the command line tool on the Mattermost server and ``cd`` to the Mattermost installation directory. Run the following commands (replacing ``<PathToBinaryFile>`` with the appropriate path (typically ``/opt/mattermost/bin/mattermost``)) to change the ownership of the binary file to *mattermost* user and grant write access:
+Open the command line tool on the Mattermost server and ``cd`` to the Mattermost installation directory. Run the following commands (replacing ``<PathToBinaryFile>`` with the appropriate path - typically ``/opt/mattermost/bin/mattermost``) to change the ownership of the binary file to *mattermost* user and grant write access:
 
 .. code-block:: none
 
   chown mattermost <PathToBinaryFile>
-
   chmod +w <PathToBinaryFile>
 
 In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions, replacing ``<OriginalFileOwner>`` with the appropriate value:
@@ -111,7 +110,6 @@ In the Mattermost System Console, retry the upgrade. When the upgrade is complet
 .. code-block:: none
 
   chown <OriginalFileOwner> <PathToBinaryFile>
-
   chmod -w <PathToBinaryFile>
 
 Note that automated updates or actions performed by other System Admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
@@ -138,7 +136,6 @@ If you manually changed your file permissions, you can change them back.
 .. code-block:: none
   
   chown <OriginalFileOwner> <PathToBinaryFile>
-
   chmod -w <PathToBinaryFile>
 
 File permissions error
@@ -153,7 +150,6 @@ If your Mattermost deployment is part of a managed package you may receive file 
 .. code-block:: none
 
   chown <OriginalFileOwner> <PathToBinaryFile>
-
   chmod -w <PathToBinaryFile>
 
 Incompatible system architecture
@@ -192,4 +188,4 @@ Use this command to upload a new license or to replace an existing license with 
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 
-After the key is uploaded and installed, the details of your license are displayed.
+Once the key is uploaded and installed, the details of your license are displayed.
