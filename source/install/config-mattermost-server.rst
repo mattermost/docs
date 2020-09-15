@@ -18,7 +18,7 @@ Create the System Admin user and set up Mattermost for general use.
 
   * In **Site Configuration > Notifications** make the following changes:
 
-    - Set **Enable Email Notifications** to **true***
+    - Set **Enable Email Notifications** to **true**
     - Set **Notification Display Name** to **No-Reply**
     - Set **Notification From Address** to *{your-domain-name}* For example, *example.com*
   
