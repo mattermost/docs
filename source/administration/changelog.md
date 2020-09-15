@@ -15,10 +15,37 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.27, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
+ - New admin roles
 
 ### Improvements
 
+#### User Interface (UI)
+ - Added PSD file preview support.
+
+#### Search
+ - Search terms including stopwords now return matching stopwords instead of an empty result.
+ - Removed duplication in ``is_or_search`` and ``IncludeDeletedChannels`` parameters for search.
+ - ``*`` characters are now filtered from the search terms in the database.
+
+#### Command Line Interface (CLI)
+ - Added ``config migrate``, ``user delete``, ``integrity``, ``user migrate_auth``, ``moveChannel``, ``updateChannelPrivacy``, ``restoreTeam``, ``channel delete``, and plugin marketplace commands to mmctl.
+ 
+#### Plugins
+ - Plugins now start concurrently on server startup.
+ - Added a ``CreateCommand`` plugin API that creates a slash command that is not handled by the plugin itself.
+ 
+#### Administration
+ - Added the ability to upload and remove private and public certicates for LDAP authentication.
+ - Added team filters to search teams in Teams page.
+ - Improved logging related to sessions not found.
+ - Created Grafana enterprise metrics for logging, such as for current queue level(s), rate of logging records emitted, and rate of logging errors.
+ - The correct error is now logged when ``GetUser`` fails during MFA Authentication.
+
 ### Bug Fixes
+ - Fixed an issue where a large amount of archived channels caused performance degredation.
+ - Fixed an issue where ``group list-ldap`` mmctl command didn't return any results.
+ - Fixed an issue where API invites by email were silently rate-limited.
+ - Fixed an issue where an error occurred while inviting more than 20 users to a team via the Invite Flow.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
