@@ -30,23 +30,23 @@ There are two ways to set up AD/LDAP:
 
 After installing Mattermost:
 
-1. **Create a System Admin account using email authentication.** 
+1. **Create a System Admin account using email authentication.**
 
 On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.
 
-2. **Configure AD/LDAP.** 
+2. **Configure AD/LDAP.**
 
 Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
-3. **Confirm that AD/LDAP sign-on is enabled.** 
+3. **Confirm that AD/LDAP sign-on is enabled.**
 
 After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
-4. **Switch your System Admin account from email to AD/LDAP authentication.** 
+4. **Switch your System Admin account from email to AD/LDAP authentication.**
 
 Navigate to **Account Settings > Security > Sign-in Method > Switch to AD/LDAP** and sign in with your AD/LDAP credentials to complete the switch.
 
-5. **(Optional) Restrict authentication to AD/LDAP.** 
+5. **(Optional) Restrict authentication to AD/LDAP.**
 
 Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to `false` and **Enable sign-in with username** to `false`. Then choose **Save** to save the changes. This should leave Active Directory/LDAP as the only sign in option.
 
@@ -88,7 +88,9 @@ Using filters assigns roles to specified users on login. To access AD/LDAP filte
 
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
-##### Guest Filter 
+Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is `(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`.
+
+##### Guest Filter
 
 (Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
