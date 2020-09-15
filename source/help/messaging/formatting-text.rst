@@ -22,9 +22,9 @@ Text Style
 
 You can use either ``_`` or ``*`` around a word to make it italic. Use two to make it bold.
 
-* ``_italics_`` renders as `italics`
+* ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
-* ``**_bold-italic_**`` renders as |bold_italics|
+* ``***bold-italic***`` renders as |bold_italics|
 * ``~~strikethrough~~`` renders as |strikethrough|
 
 .. |bold_italics| image:: ../../images/bold_italics.PNG
@@ -178,8 +178,8 @@ Supported languages are:
 ``ktm``, ``kts``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
 ``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
 ``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
-``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
-``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
+``perl``, ``pgsql``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
+``podspec``, ``postgres``, ``postgresql``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
 ``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
 ``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
 ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,

@@ -2,6 +2,8 @@
 Community Playbook
 ============================================================
 
+**Note:** This document is in the process of being migrated to the `Mattermost Handbook <https://handbook.mattermost.com/contributors/contributors/>`_.
+
 This document provides easy-to-follow community guidelines for:
 
 .. contents::
@@ -98,7 +100,7 @@ Tips
 How to run a Hackathon?
 ---------------------------------------------------------
 
-See :doc:`How to Run a Hackathon page <how-to-run-a-hackathon>`.
+This page has been moved to the `Mattermost Handbook <https://handbook.mattermost.com/contributors/contributors/how-to-run-a-hackathon>`_. 
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------

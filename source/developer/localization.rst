@@ -1,7 +1,7 @@
 Localization
 ============
 
-The goal of the localization process is to consistently produce high quality translations release after release through collaboration between the international community, translators, project managers, language leads and the core team.
+The goal of the localization process is to consistently produce high quality translations release after release through collaboration between the international community, translators, project managers, language leads, and the core team.
 
 Translation Process
 -------------------
@@ -24,9 +24,9 @@ To translate a language:
 
 3. Review translation rules written by localization leads, when applicable:
 
-   * `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/der-test/6e04bff8a173e053811cb93e08838ca2>`_
-   * `French (Règles pour la traduction francophone de Mattermost) <https://github.com/wget/mattermost-localization-french-translation-rules>`_
-   * `Dutch translation rules for Mattermost <https://github.com/ctlaltdieliet/mattermost-localization-dutch-translation-rules>`_
+   * `German (Regeln zur Übersetzung von Mattermost) <https://gist.github.com/der-test/6e04bff8a173e053811cb93e08838ca2>`_.
+   * `French (Règles pour la traduction francophone de Mattermost) <https://github.com/wget/mattermost-localization-french-translation-rules>`_.
+   * `Dutch translation rules for Mattermost <https://github.com/ctlaltdieliet/mattermost-localization-dutch-translation-rules>`_.
 
 Translations Updates
 --------------------
@@ -38,7 +38,8 @@ Translations Updates
    * A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release.
    * A pull request may also be submitted for a release candidate.
 
-**IMPORTANT:** Please do **not** submit translations directly via a pull request as they may be lost with the next pull request update from the Mattermost Translation Server.
+.. important:: 
+  Please do **not** submit translations directly via a pull request as they may be lost with the next pull request update from the Mattermost Translation Server.
 
 Translation Quality
 -------------------
@@ -81,7 +82,7 @@ If you don't know about the ICU syntax, please familiarize yourself by reading t
 In order to ease the manipulation of strings like these with a special syntax (ICU as a reminder), a developer has created an online tool allowing to test an ICU string. This tool, called `Online ICU Message Editor <https://format-message.github.io/icu-message-format-for-translators/editor.html>`_, is displayed as a live editor previewing how a string will appear in context. This tool has been reported by some members of our community as really helpful to translate strings containing an ICU syntax. Don't hesitate to use it.
 
 Knowledge Base
------------------
+---------------
 
 Some terms used in Mattermost may be technical. If you don't know how to translate a specific term:
 
@@ -93,7 +94,7 @@ Some terms used in Mattermost may be technical. If you don't know how to transla
 Test Translations
 -----------------
 
-If you'd like to review and verify translations prior to achieving Beta-quality status, you can follow these steps:
+If you'd like to review and verify translations prior to achieving Beta quality status, you can follow these steps:
 
 1. Build Mattermost on your machine following the `Developer Machine Setup Guides <https://docs.mattermost.com/developer/dev-setup.html>`_.
 
@@ -108,7 +109,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 5. Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 
-   If you find a string that has not been translated, search for the string in the respective localization file to confirm it's included for translations. You can find the English version for server, webapp, and mobile projects below
+   If you find a string that has not been translated, search for the string in the respective localization file to confirm it's included for translations. You can find the English version for server, webapp, and mobile projects below:
 
    * https://github.com/mattermost/mattermost-server/blob/master/i18n/en.json
    * https://github.com/mattermost/mattermost-webapp/blob/master/i18n/en.json
@@ -116,7 +117,7 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
    If it’s included in the file, then most likely it hasn't been translated yet, but is in https://translate.mattermost.com.
 
-   If you want to confirm if it's translated, you can check for the respective .json file in ``/i18n`` folder. 
+   If you want to confirm if it's translated, you can check for the respective ``.json file`` in the ``/i18n`` folder.
 
 Translation Maintenance
 -----------------------
@@ -127,7 +128,7 @@ While the formal process for updates has yet to be determined, currently the Rel
 
 Below are current official reviewers and maintainers for languages that have reached at least Beta-quality. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release.
 
-If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://community.mattermost.com/core/channels/localization>`_. Creating localization channels is also encouraged - see examples of current channels including `Italian <https://community.mattermost.com/core/channels/i18n-italian>`_, `German <https://community.mattermost.com/core/channels/i18n-german>`_ and `Swedish <https://community.mattermost.com/core/channels/i18n-swedish>`_.
+If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://community.mattermost.com/core/channels/localization>`_. Creating localization channels is also encouraged - see examples of current channels including `Italian <https://community.mattermost.com/core/channels/i18n-italian>`_, `German <https://community.mattermost.com/core/channels/i18n-german>`_, and `Swedish <https://community.mattermost.com/core/channels/i18n-swedish>`_.
 
 .. csv-table::
     :header: "Language", "Official Reviewer(s)", "Maintainers"
@@ -148,15 +149,21 @@ If you're interested in contributing to the process, please join the `Mattermost
     "中文 (简体) - Simplified Chinese", "`aeomin <http://translate.mattermost.com/user/aeomin/>`_", ""
     "中文 (繁體) - Traditional Chinese", "`Tze-Kei Lee (chikei) <https://github.com/chikei>`_", ""
 
-Administrative tasks
-~~~~~~~~~~~~~~~~~~~~~~~~
+Administrative Tasks
+~~~~~~~~~~~~~~~~~~~~
 
-To grant trusted translators additional permissions as Weblate admin:
+To grant trusted translators additional permissions as Weblate admin, add the user to the ``mattermost@TrustedReviewers`` group in Weblate:
 
-1. Add the user to the ``mattermost@TrustedReviewers`` group in Weblate.
-2. Select **Admin interface** (tool icon in Weblate).
-3. Go to **Users > Django Admin Interface**.
-4. Select the user you want to grant permissions to.
-5. Go to **Groups**.
-6. Add the user to ``mattermost@TrustedReviewers`` group.
-7. Hit **Save**.
+1. Select **Admin interface** (tool icon in Weblate header).
+2. Go to **Users > Django Admin Interface**.
+3. Select the user you want to grant permissions to.
+4. Go to **Groups**.
+5. Add the user to ``mattermost@TrustedReviewers`` group.
+6. Hit **Save**.
+
+To add a new language:
+
+1. Go to `https://translate.mattermost.com/projects/i18n-wip/ <https://translate.mattermost.com/projects/i18n-wip>`__.
+2. Click any of the components on the resulting page, then select **Tools > Start new translation**. 
+3. Select the languages you want to add, then click **Start new translation**.
+4. Repeat step 2 for every component in `https://translate.mattermost.com/projects/i18n-wip/ <https://translate.mattermost.com/projects/i18n-wip/>`_.

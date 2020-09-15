@@ -17,22 +17,23 @@ Zapier Setup Guide
 Zapier is authorized using OAuth2.0. The setup guide requires that a System Admin register the Zapier app on their Mattermost server and can then optionally allow any users with a Zapier account to create integrations.
 
 Enable Zapier on your Mattermost Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first time you set up Zapier on your Mattermost instance you will be required to enable an OAuth 2.0 application which can be used by everyone on your server. Your System Admin must execute these steps.
 
 To learn more about OAuth 2.0 applications, including what permissions they have access to, see the `OAuth 2.0 documentation <https://docs.mattermost.com/developer/oauth-2-0-applications.html>`__.
 
 Enable OAuth 2.0
-```````````````````````````
+`````````````````
 
 1. Open **Main Menu > System Console**.
 2. Under **Integrations > Integration Management** (or **Integrations > Custom Integrations** in versions prior to 5.12):
+
   a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
   b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
 
 Register Zapier as an OAuth 2.0 Application
-````````````````````````````````````````````````````````````````
+````````````````````````````````````````````
 
 1. Go to **Main Menu** > **Integrations**.
 2. Select **OAuth 2.0 Applications > Add OAuth 2.0 Application** and enter the following fields:
@@ -54,7 +55,7 @@ Create a Zap
 1. `Sign up <https://zapier.com/sign-up/>`__ for a free Zapier account or `log in <https://zapier.com/app/login>`__ if you already have one.
 2. On your `Zapier dashboard <https://zapier.com/app/dashboard>`__ click **Make a Zap!**.
 3. **Trigger App**: Events in this app will trigger new messages in Mattermost.
-  a. **Select a Trigger App** that will trigger new messages in Mattermost. If the app you’re looking to connect isn’t supported on Zapier, consider firing in-app events to a Gmail account and then connecting Gmail to Mattermost using Zapier.
+  a. **Select a Trigger App**. This will trigger new messages in Mattermost. If the app you’re looking to connect isn’t supported on Zapier, consider firing in-app events to a Gmail account and then connecting Gmail to Mattermost using Zapier.
   b. **Select the Trigger Event**. New messages in Mattermost will fire depending on these selected events in conjunction with any filters you apply.
   c. **Connect the Trigger Account**. Connect the account from which you’d like to trigger events and **Test** it to ensure Zapier can connect successfully.
 4. **Filtering** (Optional): Exclude certain events from triggering new messages. Learn more about using `Zapier custom filtering <https://zapier.com/learn/how-to-use-zapier/custom-filters/>`__.
@@ -84,10 +85,10 @@ Message Formatting Tips
 
 Here are some useful tips we recommend to get the most out of Zapier integration:
 
-- **Markdown**: Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`__ for Jira issue titles.
-- **Custom Icons**: Use different icons for different services and Zapier integrations.
-- **Hashtags**: Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a Jira ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
-- **Quick Links**: Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`__. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
+- **Markdown:** Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`__ for Jira issue titles.
+- **Custom Icons:** Use different icons for different services and Zapier integrations.
+- **Hashtags:** Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a JIRA ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
+- **Quick Links:** Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`__. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
 
 Examples
 ~~~~~~~~
@@ -105,7 +106,6 @@ The Mattermost team has over 50 zaps integrated on our `Community Contributors t
     [Body of issue or comment]
 
 .. image:: ../images/zapier-ch1.png
-
 
 **Forum Posts, Jira Comments, Hacker News Mentions, Tweets**
 

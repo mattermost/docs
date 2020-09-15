@@ -62,8 +62,5 @@ Generic OAuth and OpenID are not currently supported.
 Future authentication methods 
 -----------------------------
 
-Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with one of the following options, or another option not yet listed, please contact sales@mattermost.com to start a discussion. 
+Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documenation, please contact sales@mattermost.com to start a discussion. 
 
-- Certificate-based authentication
-- Authentication via reverse proxy
-- Kerberos-based authentication 

@@ -1,5 +1,7 @@
 # Bugs, Feature Ideas, Troubleshooting
 
+**Note:** This page is being migrated to the [Mattermost Handbook](https://handbook.mattermost.com/contributors/contributors). 
+
 Here's how to engage with the Mattermost community: 
 
 - **Bugs:** [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/). 
