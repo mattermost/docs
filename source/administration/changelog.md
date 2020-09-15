@@ -20,12 +20,24 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Improvements
 
 #### User Interface (UI)
- - Added PSD file preview support.
+ - Improved the readability of the toast banner message timestamp, post timestamp, and date separators.
+ - Added animation for emoji reactions on webapp.
+ - Added the ability to use ``Ctrl + B`` and ``Ctrl + I`` to add bold and italics markdown formatting to selected text.
+ - Clicking on original message creator's username in discontinuing posts now opens the user's profile popover.
+ - Added support for PSD file preview.
+ - When the ``Enable Latex Rendering`` option is set to ``true``, the current code now doesn't highlight.
+ - Updated the UX of the ``More unreads`` indicator in the channel sidebar.
+ - ``Select Team`` list container now scales in width based on browser window width.
+ - Added support for signaling login to other tabs (Windows, macOS and Linux browsers).
 
 #### Search
  - Search terms including stopwords now return matching stopwords instead of an empty result.
  - Removed duplication in ``is_or_search`` and ``IncludeDeletedChannels`` parameters for search.
  - ``*`` characters are now filtered from the search terms in the database.
+ - Fixed inconsistencies across product when using ``in:@` / `in:``, such as displaying Direct and Group Messages in ``in:@`` search suggestions.
+
+#### Notifications
+ - Added an option in the **Account Settings** to select different desktop notification sounds.
 
 #### Command Line Interface (CLI)
  - Added ``config migrate``, ``user delete``, ``integrity``, ``user migrate_auth``, ``moveChannel``, ``updateChannelPrivacy``, ``restoreTeam``, ``channel delete``, and plugin marketplace commands to mmctl.
@@ -35,22 +47,40 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added a ``CreateCommand`` plugin API that creates a slash command that is not handled by the plugin itself.
  
 #### Administration
+ - Added the ability to download Compliance files from the System Console.
  - Added the ability to upload and remove private and public certicates for LDAP authentication.
+ - Added the ability to convert a public channel to private and vice versa via Advanced Permissions.
  - Added team filters to search teams in Teams page.
- - Improved logging related to sessions not found.
+ - Improved logging related to sessions that are not found.
  - Created Grafana enterprise metrics for logging, such as for current queue level(s), rate of logging records emitted, and rate of logging errors.
- - The correct error is now logged when ``GetUser`` fails during MFA Authentication.
+ - Improved logging when ``GetUser`` fails during MFA Authentication.
 
 ### Bug Fixes
  - Fixed an issue where a large amount of archived channels caused performance degredation.
  - Fixed an issue where ``group list-ldap`` mmctl command didn't return any results.
  - Fixed an issue where API invites by email were silently rate-limited.
- - Fixed an issue where an error occurred while inviting more than 20 users to a team via the Invite Flow.
+ - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
+ - Fixed an issue on Microsoft Edge (non-Chromium) where logging out caused the user to get stuck at a loading screen.
+ - Fixed an issue where post text was partially hidden by the post hover menu.
+ - Fixed an issue where users were unable to type color hex value into custom theme color input box.
+ - Fixed an issue where Group Message results were prioritized over Direct Message results for Full Name in the user autocomplete.
+ - Fixed an issue where the New Message indicator was broken when a webhook owned by the user posted to a channel.
+ - Fixed an issue where the active search bar was not vertically aligned with left edge of the right-hand side in tablet view.
+ - Fixed an issue where the "Start trial" message was unreadable in the System Console on dark theme on first load.
+ - Fixed an issue on Firefox where pasting an image also added the file as text.
+ - Fixed an issue where Python syntax highlighting handled ``"""`` strangely.
+ - Fixed an issue where formatting around inline codes was missing.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
+ - ``PublicCertificateFile`` and ``PrivateKeyFile``
+ - ``CloudBilling``
+ - ``CloudUserLimit``
+ - ``EnableAPIChannelDeletion``
+ - ``EnableAPIUserDeletion``
+ - ``DownloadExportResults``
 
 ### Open Source Components
 
