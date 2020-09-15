@@ -49,15 +49,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Administration
  - Added the ability to download Compliance files from the System Console.
  - Added the ability to upload and remove private and public certicates for LDAP authentication.
+ - Added support for resumable file uploads.
  - Added the ability to convert a public channel to private and vice versa via Advanced Permissions.
- - Added team filters to search teams in Teams page.
+ - Added filters to search teams in Teams page.
+ - Added filters to user removal modal in Users page.
  - Improved logging related to sessions that are not found.
  - Created Grafana enterprise metrics for logging, such as for current queue level(s), rate of logging records emitted, and rate of logging errors.
  - Improved logging when ``GetUser`` fails during MFA Authentication.
+ - Added support for sending telemetry via an environment variable set by packages to identify type of deployment (e.g. Docker, Mattermost Omnibus).
 
 ### Bug Fixes
  - Fixed an issue where a large amount of archived channels caused performance degredation.
  - Fixed an issue where ``group list-ldap`` mmctl command didn't return any results.
+ - Fixed an issue where user were allowed to update their profile picture on ADFS setup with SAML and LDAP configured and AD/LDAP Sync enabled.
  - Fixed an issue where API invites by email were silently rate-limited.
  - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
  - Fixed an issue on Microsoft Edge (non-Chromium) where logging out caused the user to get stuck at a loading screen.
