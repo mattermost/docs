@@ -5,13 +5,8 @@ This handbook is a guide to serving on the core team of the Mattermost open sour
 
 Please consider this handbook - along with all our documentation - as a work-in-progress and constantly updating to best achieve our shared mission. 
 
-
 Development Process
 -------------------
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
 
 This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/development-process>`__.
    
@@ -23,26 +18,16 @@ This section has moved to the `Mattermost Handbook <https://handbook.mattermost.
 Community Process
 -------------------
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
-
-   /process/community-overview*
-   /process/community-systems*
-   /process/help-wanted*
-   /process/community-guidelines*
-   /process/how-to-run-a-hackathon*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/contributors/contributors/community-playbook>`__.
 
 Product Management Handbook
 ------------------------------
-.. toctree::
-   :maxdepth: 2
-   :glob:
 
 This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook>`__.
 
 Core Developer Handbook
 -----------------------
+
 .. toctree::
    :maxdepth: 2
    :glob:
@@ -53,15 +38,12 @@ Core Developer Handbook
 Documentation Style Guide
 -------------------------
 
-.. toctree::
-   :maxdepth: 3
-   :glob:
-   
-   /process/documentation-guidelines*
-   /process/documentation-UItext-guidelines*
+This section has moved to the `Mattermost Handbook Documentation Style Guide <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide>`__ and the `Mattermost Handbook User Interface Text Guidelines <https://handbook.mattermost.com/operations/research-and-development/product/development-process/user-interface-text-guidelines>`__.
 
 Joining the Team 
--------------------------
+----------------
+
+This section has moved to the `Mattermost Handbook Join Us Guide <https://handbook.mattermost.com/contributors/join-us>`__ and the `Mattermost Handbook Workplace Guide <https://handbook.mattermost.com/operations/workplace>`__
 
 .. toctree::
    :maxdepth: 2
@@ -76,17 +58,13 @@ Joining the Team
    /process/developer*
 
 Marketing  
--------------------------
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
+---------
 
 This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math>`__.
 
    
 Partners
--------------------------
+--------
 
 .. toctree::
    :maxdepth: 2
