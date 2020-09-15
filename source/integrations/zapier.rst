@@ -43,7 +43,7 @@ Register Zapier as an OAuth 2.0 Application
   d. **Homepage**: ``https://zapier.com/``
   e. **Icon URL**: ``https://cdn.zapier.com/zapier/images/logos/zapier-logomark.png``
   f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/MattermostDevAPI/``
-3. Click **Save** to create the application. 
+3. Click **Save** to create the application.
 
 You'll be provided with a **Client ID** and **Client Secret**. Save these values, or share them with your team to connect Zapier in the steps below.
 
@@ -69,7 +69,7 @@ Create a Zap
     2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu > Integrations > OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret.
     3. **Log in to Mattermost**. After completing the above fields you will be prompted to log in to your Mattermost account if you're not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`__.
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
-  d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will post.
+  d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will be posted.
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
     2. **Channel**: Choose the channel where new messages will post. The dropdown contains all channels that you belong to. Zapier cannot post into Direct Message channels.
     3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#id4>`__ below.
@@ -87,7 +87,7 @@ Here are some useful tips we recommend to get the most out of Zapier integration
 
 - **Markdown:** Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`__ for Jira issue titles.
 - **Custom Icons:** Use different icons for different services and Zapier integrations.
-- **Hashtags:** Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a JIRA ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
+- **Hashtags:** Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a Jira ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
 - **Quick Links:** Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`__. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
 
 Examples
@@ -150,7 +150,7 @@ Cannot connect a Mattermost account
   .. image:: ../images/zapier-trailing-space-error.png
 
 5. ``"Mattermost needs your help: We couldn't find the requested app"``
-  a. Possible Solution: The **Client ID** might be incorrect. Verify this value in **Main Menu** > **Integrations** > **OAuth 2.0 Applications**, or check with your System Admin.
+  a. Possible Solution: The **Client ID** might be incorrect. Verify this value in **Main Menu > Integrations > OAuth 2.0 Applications**, or check with your System Admin.
 
   .. image:: ../images/zapier-error3.png
 
