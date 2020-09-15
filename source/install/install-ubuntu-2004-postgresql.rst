@@ -21,7 +21,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
 3. Start the PostgreSQL interactive terminal.
 
-  `` sudo -u postgres psql``
+  ``sudo -u postgres psql``
 
 4.  Create the Mattermost database.
 
@@ -31,7 +31,8 @@ Assume that the IP address of this server is 10.10.10.1.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
-  .. note::
+.. note::
+  
     Use a password that is more secure than 'mmuser-password'.
 
 6.  Grant the user access to the Mattermost database.
