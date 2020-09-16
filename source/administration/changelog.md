@@ -62,6 +62,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Added ``POST api/v4/restart`` API endpoint to restart the system after an upgrade from Team Edition to Enterprise Edition.
  
 ### Known Issues
+ - A blank screen occurs when user edits a post and submits or cancels the edits while on Preview mode.
  - Twitter link previews do not work in Mattermost.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
