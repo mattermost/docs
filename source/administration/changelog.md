@@ -63,6 +63,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``group list-ldap`` mmctl command didn't return any results.
  - Fixed an issue where user were allowed to update their profile picture on ADFS setup with SAML and LDAP configured and AD/LDAP Sync enabled.
  - Fixed an issue where API invites by email were silently rate-limited.
+ - Fixed an issue where deactivated users broke pagination in Manage Members modal.
  - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
  - Fixed an issue on Microsoft Edge (non-Chromium) where logging out caused the user to get stuck at a loading screen.
  - Fixed an issue where post text was partially hidden by the post hover menu.
