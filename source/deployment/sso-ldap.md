@@ -178,7 +178,15 @@ There are two main ways to do this:
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
 2. **User filter:** Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
 
-For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`. Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is `(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`.
+For Active Directory, to filter out deactivated users you must set the user filter to:
+
+`(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+
+Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is: 
+
+`(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)`
+
+`(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`
 
 When a user is deactivated in Mattermost, all the user's current sessions are revoked and they will be unable to log in or access Mattermost.
 
