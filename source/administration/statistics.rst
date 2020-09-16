@@ -1,7 +1,7 @@
 Statistics
 ================
 
-Statistics on users, posts and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
+Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 .. note::
 
@@ -12,7 +12,7 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 Site Statistics
 -----------------
 
-System statistics are viewable under **System Console > Site Statistics** in prior versions or **System Console > Reporting** in versions after 5.12. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Reporting** (or **System Console > Site Statistics** in versions prior to 5.12). The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
@@ -42,7 +42,7 @@ Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Advanced system statistics (Enterprise)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enterprise Edition includes additional system statistics.
 
@@ -71,7 +71,7 @@ Channel Types
     This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.
 
 Posts, Files and Hashtags
-    This chart displays the number of posts containing files, hashtags or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
+    This chart displays the number of posts containing files, hashtags, or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
 Team Statistics
 ---------------
@@ -105,4 +105,4 @@ Newly Created Users
 Troubleshooting
 -----------------
 
-If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you are using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
+If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you're using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
