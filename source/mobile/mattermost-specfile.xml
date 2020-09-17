@@ -39,6 +39,11 @@
 				<value>Mattermost</value> 
 			</defaultValue>
 		</string>
+		<string keyName="timeout">
+			<defaultValue>
+				<value>10000</value> 
+			</defaultValue>
+		</string>
 	</dict>
 <presentation defaultLocale="en-US">
     <fieldGroup>
@@ -102,6 +107,14 @@
             </label>
             <description>
                 <language value="en-US">Set the Mattermost server URL users will be using as default.</language>
+            </description>
+        </field>
+        <field keyName="timeout" type="input">
+            <label>
+                <language value="en-US">Mattermost Server API Request timout</language>
+            </label>
+            <description>
+                <language value="en-US">How long (in milliseconds) the mobile app should wait for the server to respond to API requests.</language>
             </description>
         </field>
         <field keyName="allowOtherServers" type="input">
