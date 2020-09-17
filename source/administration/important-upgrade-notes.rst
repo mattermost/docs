@@ -13,6 +13,8 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.28.0                                            | The service will crash with a coredump instead of just dumping the stack trace to console.                                                                       |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.26.0                                            | In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearch using the **Purge index** and then **Index now** button so that all |
 |                                                    | the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is       |
 |                                                    | little to no activity because it may take several hours.                                                                                                         |
