@@ -31,6 +31,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for signaling login to other tabs (Windows, macOS and Linux browsers).
 
 #### Search
+ - Added wildcard support to Bleve.
  - Search terms including stopwords now return matching stopwords instead of an empty result.
  - Removed duplication in ``is_or_search`` and ``IncludeDeletedChannels`` parameters for search.
  - ``*`` characters are now filtered from the search terms in the database.
