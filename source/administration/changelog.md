@@ -40,7 +40,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added an option in the **Account Settings** to select different desktop notification sounds.
 
 #### Command Line Interface (CLI)
- - Added ``config migrate``, ``user delete``, ``integrity``, ``user migrate_auth``, ``moveChannel``, ``updateChannelPrivacy``, ``restoreTeam``, ``channel delete``, and plugin marketplace commands to mmctl.
+ - Added ``config migrate``, ``config subpath``, ``user delete``, ``integrity``, ``user migrate_auth``, ``moveChannel``, ``updateChannelPrivacy``, ``restoreTeam``, ``channel delete``, and plugin marketplace commands to mmctl.
  
 #### Plugins
  - Plugins now start concurrently on server startup.
@@ -62,6 +62,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a large amount of archived channels caused performance degredation.
  - Fixed an issue where ``group list-ldap`` mmctl command didn't return any results.
  - Fixed an issue where user were allowed to update their profile picture on ADFS setup with SAML and LDAP configured and AD/LDAP Sync enabled.
+ - Fixed an issue where patching the config with ``DataSourceReplicas`` caused a panic.
  - Fixed an issue where API invites by email were silently rate-limited.
  - Fixed an issue where deactivated users broke pagination in Manage Members modal.
  - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
@@ -71,6 +72,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where Group Message results were prioritized over Direct Message results for Full Name in the user autocomplete.
  - Fixed an issue where the New Message indicator was broken when a webhook owned by the user posted to a channel.
  - Fixed an issue where the active search bar was not vertically aligned with left edge of the right-hand side in tablet view.
+ - Fixed an issue where there were two scrollbars showing in the channel switcher.
  - Fixed an issue where the "Start trial" message was unreadable in the System Console on dark theme on first load.
  - Fixed an issue on Firefox where pasting an image also added the file as text.
  - Fixed an issue where Python syntax highlighting handled ``"""`` strangely.
