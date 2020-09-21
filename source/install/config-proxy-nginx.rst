@@ -14,7 +14,8 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
   
 On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``
 
-3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+3. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+
 On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
 
   .. code-block:: none
@@ -85,9 +86,7 @@ On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.c
 
 6. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6: ``sudo service nginx restart``
-
-  On Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, and RHEL 7: ``sudo systemctl restart nginx``
+ ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
@@ -96,17 +95,17 @@ On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.c
   If everything is working, you will see the HTML for the Mattermost signup page.
 
 8. Restrict access to port 8065.
-  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use security groups to restrict access.
+
+By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use Security Groups to restrict access.
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
 
-**NGINX Configuration FAQ**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NGINX Configuration FAQ
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why are Websocket connections returning a 403 error?**
 
-This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned.  Open the file ``/etc/nginx/sites-available/mattermost`` 
-as root in a text editor and make sure that the host header being set in the proxy is dynamic:
+This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and make sure that the host header being set in the proxy is dynamic:
 
 .. code-block:: none
   :emphasize-lines: 4
@@ -139,16 +138,18 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
     # Grep the name of your Mattermost network like "mymattermost_default".
     docker network connect mymattermost_default nginx-proxy
 
-2. Restart the Mattermost Docker containers
+2. Restart the Mattermost Docker containers.
 
   .. code-block:: none
 
     docker-compose stop app
     docker-compose start app
 
-.. tip :: There is no need to run the 'web' container, since NGINX proxy accepts incoming requests.
+.. tip:: 
 
-3. Update your docker-compose.yml file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
+  You don't need to run the 'web' container, since NGINX proxy accepts incoming requests.
+
+3. Update your ``docker-compose.yml`` file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
 
   .. code-block:: none
 
@@ -161,15 +162,15 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
     expose:
       - "80"
 
-If you are using SSL, you may also need to expose port 443. 
+If you're using SSL, you may also need to expose port 443. 
 
 **Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
 
-You may need to update the Callback URLs for the Application entry of Mattermost inside your Gitlab instance.
+You may need to update the Callback URLs for the Application entry of Mattermost inside your GitLab instance.
 
-1. Log into your GitLab instance as the admin
-2. Go to **Admin > Applications**
-3. Click **Edit** on GitLab-Mattermost
-4. Update the Callback URLs to your new domain/URL
-5. Save the changes
-6. Update the external URL for Gitlab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
+1. Log in to your GitLab instance as the admin.
+2. Go to **Admin > Applications**.
+3. Click **Edit** on GitLab-Mattermost.
+4. Update the Callback URLs to your new domain/URL.
+5. Save the changes.
+6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
