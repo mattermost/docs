@@ -52,4 +52,4 @@ On a Debian-based OS such as Ubuntu, Apache2 proxy configuration is done in the 
 	- On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
 	- On Ubuntu 16.04+ and RHEL 7+: ``sudo systemctl restart apache2``
 
-You should be all set! Ensure that your Mattermost config file is pointing to the correct URL (which may include a port), and then ensure that once deployed your socket connection is not dropping. To prevent external access to Mattermost on port 8065, in the config file, set "ListenAddress" to "localhost:8065" instead of ":8065".
+You should be all set! Ensure that your Mattermost config file is pointing to the correct URL (which may include a port), and then ensure that your socket connection is not dropping once deployed. To prevent external access to Mattermost on port 8065, in the config file, set ``ListenAddress`` to ``localhost:8065`` instead of ``:8065``.
