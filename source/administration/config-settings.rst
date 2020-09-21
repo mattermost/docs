@@ -5233,12 +5233,18 @@ Policy
 
 *Removed in June 16, 2018 release*
 
-Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ page instead of configuration settings.
+.. note:: 
+  
+   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ page instead of configuration settings.
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Removed in June 16, 2018 release*
+
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
 
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the Main Menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
@@ -5257,6 +5263,10 @@ Enable public channel creation for
 
 *Removed in June 16, 2018 release*
 
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
+
 Restrict the permission level required to create public channels.
 
 **All team members**: Allow all team members to create public channels.
@@ -5273,6 +5283,10 @@ Enable public channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Removed in June 16, 2018 release*
+
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Public channels.
 
@@ -5293,6 +5307,10 @@ Enable public channel deletion for
 
 *Removed in June 16, 2018 release*
 
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
+
 Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 **All channel members**: Allow all channel members to delete Public channels.
@@ -5312,6 +5330,10 @@ Enable private channel creation for
 
 *Removed in June 16, 2018 release*
 
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
+
 Restrict the permission level required to create Private channels.
 
 **All team members**: Allow all team members to create Private channels.
@@ -5328,6 +5350,10 @@ Enable private channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Removed in June 16, 2018 release*
+
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Private channels.
 
@@ -5348,6 +5374,10 @@ Enable managing of private channel members for
 
 *Removed in June 16, 2018 release*
 
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
+
 Set policy on who can add and remove members from Private channels.
 
 **All team members**: Allow all team members to add and remove members.
@@ -5366,6 +5396,10 @@ Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Removed in June 16, 2018 release*
+
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
@@ -5386,6 +5420,10 @@ Allow which users to delete messages
 
 *Removed in June 16, 2018 release*
 
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
+
 Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted any time.
 
 **Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow Team Admins, Channel Admins, and System Admins to delete any message.
@@ -5402,6 +5440,10 @@ Allow users to edit their messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Removed in June 16, 2018 release*
+
+.. note:: 
+
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
 
 Set the time limit that users have to edit their messages after posting.
 
