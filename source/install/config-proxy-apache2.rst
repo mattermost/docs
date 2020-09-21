@@ -5,7 +5,7 @@ Configuring Apache2 as a proxy for Mattermost Server (Unofficial)
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-proxy-apache2.rst>`__.
 
-On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration is done in the ``/etc/apache2/sites-available`` directory. RH-based systems organize Apache configuration files `differently <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-web_servers>`__. If you're setting up Mattermost on a subdomain, you'll want to create a new configuration file along the lines of ``mysubdomain.mydomain.com.conf``.
+On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration is done in the ``/etc/apache2/sites-available`` directory. Red Hat-based systems organize Apache configuration files `differently <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-web_servers>`__. If you're setting up Mattermost on a subdomain, you'll want to create a new configuration file along the lines of ``mysubdomain.mydomain.com.conf``.
 
 **To configure Apache2 as a proxy**
 
