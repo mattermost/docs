@@ -16,6 +16,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
  - New admin roles
+ - In-Product Notices
 
 ### Improvements
 
