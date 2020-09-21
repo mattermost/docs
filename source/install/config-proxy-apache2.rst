@@ -11,7 +11,7 @@ On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration i
 
 1. SSH into your server.
 2. Make sure the Apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http``, and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your Linux distribution to do so.
-3. Create the above mentioned configuration file. It is often helpful to start with a copy of (on Ubuntu) 000-default.conf or default-ssl.conf.
+3. Create the above mentioned configuration file. It is often helpful to start with a copy of ``000-default.conf`` or ``default-ssl.conf`` (on Ubuntu).
 4. Edit your configuration using the guide below:
 
 	1. If you're not setting up a subdomain, your ``ServerName`` will simply be set to ``mydomain.com``.
