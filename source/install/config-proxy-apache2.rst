@@ -18,7 +18,7 @@ On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration i
 	2. ``ServerAlias`` can been added too if you want to capture ``www.mydomain.com``.
 	3. Remember to change the values to match your server's name, etc.
 	4. If you have enabled TLS in the Mattermost settings, you must use the protocol ``wss://`` instead of ``ws://`` in the ``RewriteRule``.
-	5. To serve requests on a different port (such as 8443), in addition to setting the port in the VirtualHost element, add "Listen 8443" on a separate line before the VirtualHost line.
+	5. To serve requests on a different port (such as 8443), in addition to setting the port in the VirtualHost element, add ``Listen 8443`` on a separate line before the VirtualHost line.
 
 .. code-block:: apacheconf
 
