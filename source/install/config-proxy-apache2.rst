@@ -45,7 +45,7 @@ On a Debian-based OS such as Ubuntu, Apache2 proxy configuration is done in the 
 
 		</VirtualHost>
 
-5. (Debian/Ubuntu only:) Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
+5. (Debian/Ubuntu only) Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
 
 6. Restart Apache2.
 
