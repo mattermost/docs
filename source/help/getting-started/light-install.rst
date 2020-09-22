@@ -26,7 +26,7 @@ Open a terminal window and enter:
 
 .. code-block:: 
   
-  sudo MMO_HTTPS=false apt install mattermost-omnibus.
+  sudo MMO_HTTPS=false apt install mattermost-omnibus
 
 When your server is up and running, navigate to it via the domain name that points to your server (or the server’s IP address if you’re not using a domain name). Next, create a team and invite people to join your Mattermost server. 
 
