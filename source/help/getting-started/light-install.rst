@@ -6,7 +6,7 @@ Mattermost is a messaging and collaboration platform. With Mattermost, you can i
 Before you get started you'll need:
 
 * A clean Ubuntu server (18.04 or 20.04) with root level access
-* (Recommended) A domain name pointing to your server
+* (Recommended) A domain name pointing to your server (e.g. ``mymattermostserver.com``)
 * (Recommended) Email addresses of your team members so you can invite them to the server
 
 Installation
