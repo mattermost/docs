@@ -9,8 +9,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **Release day: 2020-10-16**
 
 ### Compatibility
+ - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 In our v5.30 release (December 16). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
 
 ### Breaking Changes
+ - Now when the service crashes, it will generate a coredump instead of just dumping the stack trace to the console. This allows us to preserve the full information of the crash to help with debugging it. For more information about coredumps, please see: https://man7.org/linux/man-pages/man5/core.5.html.  
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.27, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
