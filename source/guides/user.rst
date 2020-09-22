@@ -11,7 +11,6 @@ Getting Started
    :glob:
 
    /help/getting-started/welcome-to-mattermost.rst
-   /help/getting-started/light-install.rst
    /help/getting-started/signing-in.rst
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
