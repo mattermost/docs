@@ -838,7 +838,7 @@ Enable Push Notifications
 **False**: Mobile push notifications are disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SendPushNotifications": false`` with options ``true`` and ``false``.                                                    |
+| This feature's ``config.json`` setting is ``"SendPushNotifications": true`` with options ``true`` and ``false``.                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Server
