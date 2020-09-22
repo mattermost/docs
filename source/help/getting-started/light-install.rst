@@ -19,6 +19,12 @@ Open a terminal window and enter:
 .. code-block::
 
   curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash
+  
+Then, to install the Omnibus package, run:
+
+.. code-block::
+
+  sudo apt install mattermost-omnibus
 
 .. note::
   
