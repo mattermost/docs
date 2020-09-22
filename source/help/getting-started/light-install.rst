@@ -20,7 +20,9 @@ Open a terminal window and enter:
 
   curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash
 
-Note: Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
+.. note::
+  
+  Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
 
 .. code-block:: 
   
