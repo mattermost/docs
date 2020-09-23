@@ -181,11 +181,17 @@ Use this command to upload a new license or to replace an existing license with 
 .. note::
 
   If you upload the license via the CLI using  ``mattermost license upload``, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
+  
+License key storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Once you have uploaded your license key to your Mattermost server it will be stored in your SQL database at `mattermost.Licenses`. You can check what keys are on your server by running `select * from mattermost.Licenses;`.
 
 **Using the System Console**
 
 1. Open **System Console > About > Edition and License** (or **System Console > OTHER > Edition and License** in versions prior to 5.12).
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
+
+Removing the license key to upgrade will not remove settings that you have configured with an Enterprise license so long as your new license key is the same or higher level license. 
 
 Once the key is uploaded and installed, the details of your license are displayed.
