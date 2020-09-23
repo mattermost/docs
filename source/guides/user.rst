@@ -3,15 +3,6 @@ Mattermost User's Guide
 
 End user help and documentation.
 
-Installation
-============
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   
-   /help/getting-started/light-install.rst
-
 Getting Started
 ===============
 
