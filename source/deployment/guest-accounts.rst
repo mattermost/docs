@@ -41,7 +41,7 @@ Guests can access the Mattermost server via email invitation, and be authenticat
 
 Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/deployment/sso-ldap.html>`_ and `SAML Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`_.
 
-Converting a member user to a guest will not change the channels they are in; however they will be restricted from discovering additional channels and unable to Direct Message/Group Message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
+Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to Direct Message/Group Message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
 
 Inviting Guests to the Mattermost Server via Email
 ---------------------------------------------------
