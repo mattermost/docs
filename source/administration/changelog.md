@@ -48,6 +48,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Plugins
  - Plugins now start concurrently on server startup.
+ - Plugin tooltips are now only rendered when user hovers over a link.
  - Added a ``CreateCommand`` plugin API that creates a slash command that is not handled by the plugin itself.
  
 #### Administration
@@ -81,6 +82,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue on Firefox where pasting an image also added the file as text.
  - Fixed an issue where Python syntax highlighting handled ``"""`` strangely.
  - Fixed an issue where formatting around inline codes was missing.
+ - Fixed an issue where ``GetPluginStatus`` didn't work in a non-cluster environment.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
