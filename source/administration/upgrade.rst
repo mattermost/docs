@@ -119,13 +119,12 @@ Location of your local storage directory
 
      sudo systemctl start mattermost
 
-#. Upgrade your ``config.json`` schema:
+#. If you are using an HA deployment, please apply the steps above on all the nodes in your cluster. After that, the "Config File MD5" column in the "High Availability" should be green. If they are yellow, please ensure that all nodes have the same server version and the same config. If they still show yellow, then there's a simple trick to trigger a config propagation across the cluster.
 
    #. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
    #. Click **Save**.
-   #. Refresh the page.
 
-   Your current settings are preserved, and new settings are added with default values.
+   This will not change any config, but send the existing config to all nodes in the cluster.
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
