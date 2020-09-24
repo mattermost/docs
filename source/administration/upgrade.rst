@@ -119,7 +119,9 @@ Location of your local storage directory
 
      sudo systemctl start mattermost
 
-#. If you are using an HA deployment, please apply the steps above on all the nodes in your cluster. After that, the "Config File MD5" column in the "High Availability" should be green. If they are yellow, please ensure that all nodes have the same server version and the same config. If they still show yellow, then there's a simple trick to trigger a config propagation across the cluster.
+#. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability interface should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration. 
+
+If they still show yellow, then you need to trigger a config propagation across the cluster:
 
    #. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
    #. Click **Save**.
