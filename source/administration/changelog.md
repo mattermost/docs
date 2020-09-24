@@ -72,8 +72,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where deactivated users broke pagination in Manage Members modal.
  - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
  - Fixed an issue on Microsoft Edge (non-Chromium) where logging out caused the user to get stuck at a loading screen.
+ - Fixed an issue where users received ghost notifications when the "First name trigger mention" setting was set but the "First Name" was not set.
  - Fixed an issue where post text was partially hidden by the post hover menu.
  - Fixed an issue where users were unable to type color hex value into custom theme color input box.
+ - Fixed an issue where the badge with a mention count on the team sidebar did not increment when user was added to a channel.
  - Fixed an issue where Group Message results were prioritized over Direct Message results for Full Name in the user autocomplete.
  - Fixed an issue where the New Message indicator was broken when a webhook owned by the user posted to a channel.
  - Fixed an issue where the active search bar was not vertically aligned with left edge of the right-hand side in tablet view.
@@ -94,6 +96,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``EnableAPIChannelDeletion``
  - ``EnableAPIUserDeletion``
  - ``DownloadExportResults``
+ - ``EnableCustomEmoji`` is now enabled by default.
 
 ### Open Source Components
 
