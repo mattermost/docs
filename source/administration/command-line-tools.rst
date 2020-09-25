@@ -2081,8 +2081,8 @@ mattermost user migrate_auth
     .. code-block:: json
 
         {
-          "user1@email.com": "user.one",
-          "user2@email.com": "user.two"
+          "user1@email.com": "username.one",
+          "user2@email.com": "username.two"
         }
 
   Users file generation
