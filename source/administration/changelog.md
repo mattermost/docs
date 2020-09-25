@@ -71,7 +71,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where API invites by email were silently rate-limited.
  - Fixed an issue where deactivated users broke pagination in Manage Members modal.
  - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
+ - Fixed an issue where a ``PostUtils.formatText`` crashed when formatting text with unicode emoiji.
  - Fixed an issue on Microsoft Edge (non-Chromium) where logging out caused the user to get stuck at a loading screen.
+ - Fixed an issue where a selected item in the Direct Messages **More** menu didn’t scroll into view when using keyboard navigation.
  - Fixed an issue where users received ghost notifications when the "First name trigger mention" setting was set but the "First Name" was not set.
  - Fixed an issue where post text was partially hidden by the post hover menu.
  - Fixed an issue where users were unable to type color hex value into custom theme color input box.
