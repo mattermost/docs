@@ -21,6 +21,7 @@
  - Removed the filename from an error message when an image/video was too large.
  - Improved unread badge UX on the hamburger menu and team icons.
  - Improved ``in:@user`` search to return Direct and Group Message search results.
+ - Restyled the mobile autocomplete.
  - Improved the validation error message of the Enter Server URL screen when entering an invalid server URL.
 
 ### Bug Fixes
