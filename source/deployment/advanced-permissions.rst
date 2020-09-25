@@ -1,9 +1,9 @@
 Advanced Permissions (E10/E20)
 ==============================
 
-Mattermost Admins can restrict actions in Mattermost to authorized users only by using Advanced Permissions.
+Mattermost Admins can restrict how members interact with Mattermost functionality using Advanced Permissions.
 
-A permission is an action which can be carried out on an object, based on the level of access granted to the user performing the action. Permissions in Mattermost can be applied in a team context, a channel context, and a system context. Each context has a scheme - a set of rules governing what types of actions can be granted to users. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture.
+Permissions provide a way to customize how posts, channels, integrations, teams, and members are managed. Permissions in Mattermost can be applied to contexts such as teams, channels, and system-wide. Each context has a scheme - a set of rules governing what types of actions can be performed by users. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture.
 
 This document describes the types of permissions that can be given to users in different contexts of Mattermost using the System Scheme and the Team Override Scheme. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions. 
 
