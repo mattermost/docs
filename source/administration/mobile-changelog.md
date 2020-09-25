@@ -21,6 +21,7 @@
  - Removed the filename from an error message when an image/video was too large.
  - Improved unread badge UX on the hamburger menu and team icons.
  - Improved ``in:@user`` search to return Direct and Group Message search results.
+ - Improved the validation error message of the Enter Server URL screen when entering an invalid server URL.
 
 ### Bug Fixes
 
@@ -28,6 +29,7 @@
  - Fixed an issue where a hashtag (#) character added to an announcement banner caused the app to display a blanck screen.
  - Fixed an issue where a draft message on the reply thread was not retained if the user navigated away from the thread.
  - Fixed an issue where a thumnail of a file attachment posted in a reply thread displayed in the center channel.
+ - Fixed an issue where users were unable to join public channels via channel permalink.
 
 #### Android specific
  - 
