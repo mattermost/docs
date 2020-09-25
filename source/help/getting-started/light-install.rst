@@ -30,9 +30,9 @@ Then, to install the Omnibus package, run:
   
   Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
 
-.. code-block:: sh
+  .. code-block:: sh
   
-  sudo MMO_HTTPS=false apt install mattermost-omnibus
+    sudo MMO_HTTPS=false apt install mattermost-omnibus
 
 When your server is up and running, navigate to it via the domain name (e.g. ``mymattermostserver.com``) that points to your server (or the server’s IP address if you’re not using a domain name). Next, create a team and invite people to join your Mattermost server.
 
