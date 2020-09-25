@@ -28,7 +28,7 @@ Then, to install the Omnibus package, run:
 
 .. note::
   
-  Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
+  Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it (or without a domain name), you can run: 
 
 .. code-block:: sh
   
