@@ -14,15 +14,15 @@ Installation
 
 Install Mattermost using `Mattermost Omnibus <https://docs.mattermost.com/install/mattermost-omnibus.html>`_.
 
-Open a terminal window and enter: 
+Open a terminal window and enter:
 
-.. code-block::
+.. code-block:: sh
 
   curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash
   
 Then, to install the Omnibus package, run:
 
-.. code-block::
+.. code-block:: sh
 
   sudo apt install mattermost-omnibus
 
@@ -30,7 +30,7 @@ Then, to install the Omnibus package, run:
   
   Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
 
-.. code-block:: 
+.. code-block:: sh
   
   sudo MMO_HTTPS=false apt install mattermost-omnibus
 
