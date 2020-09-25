@@ -1,7 +1,11 @@
 Advanced Permissions (E10/E20)
-===============================================
+==============================
 
-Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interfaces can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12). The channel permissions interface is accessed in **System Console > User Management > Channels**.
+Mattermost Admins can restrict actions in Mattermost to authorized users only by using Advanced Permissions.
+
+A permission is an action which can be carried out on an object, based on the level of access granted to the user performing the action. Permissions in Mattermost can be applied in a team context, a channel context, and a system context. Each context has a scheme - a set of rules governing what types of actions can be granted to users. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture.
+
+This document describes the types of permissions that can be given to users in different contexts of Mattermost using the System Scheme and the Team Override Scheme. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions. 
 
 .. note::
 
@@ -12,13 +16,11 @@ Advanced permissions offer Admins a way to restrict actions in Mattermost to aut
   :backlinks: top
   :local:
   
-  
 Permissions Structure
 ----------------------
 
-The Mattermost System Console provides a number of elements for Admins to control the permissions in their system.
+The Mattermost System Console provides a number of elements for Admins to control the permissions in their system. Permissions interfaces can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12). The channel permissions interface is accessed in **System Console > User Management > Channels**.
   
-
 System Scheme (E10)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -27,13 +29,13 @@ System Scheme (E10)
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
 
 - **Guests:** If Guest Accounts are enabled, permissions apply to guest users in all channels, in all teams.
-- **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams. 
+- **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams.
 - **Channel Administrators:** Permissions apply to all Channel Admins in all channels, in all teams.
 - **Team Administrators:** Permissions apply to all Team Admins, in all teams.
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 
-**System Scheme Interface** 
+**System Scheme Interface**
 
 The interface for editing permissions in the System Scheme, with panels for Guests (if enabled), All Members, Channel Administrators, Team Administrators, and System Administrators is available in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
 
@@ -44,20 +46,19 @@ Team Override Schemes (E20)
 
 *Available in Enterprise Edition E20*
 
-Using these permissions overrides the default System Scheme permissions in specific teams for All Members, Channel Adminstrators, and Team Administrators. 
+A Team Override Scheme is a set of permissions applicable to a specific team. When this permission scheme is applied to a team, the System Scheme permissions fall away. In this way, teams can have a degree of autonomy and team management can be tailored more effectively to support different use cases, such as a team specifically for guest users. 
 
-- The permissions granted in a Team Override Scheme apply only in the teams which are assigned to the scheme. 
-- The System Scheme does not apply to teams that are added to a Team Override Scheme.
+- Permissions set in a Team Override Scheme apply to all Members, Channel Adminstrators, and Team Administrators.
 - Teams can only belong to one Team Override Scheme.
 
 **Team Override Schemes Interface** 
 
-The interface for naming, assigning teams, and editing permissions in a Team Override Scheme, with panels for All Members, Channel Administrators, and Team Administrators is available in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
+The interface is available in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
 
 .. image:: ../images/team-scheme.png
 
 Channel Permissions 
----------------------------
+--------------------
 
 Channel Moderation (Beta) (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,7 +74,8 @@ Allows Admins to grant additional permissions to specific users or to a group of
 
 Recipes
 --------
-This section provides some examples of common permissions use cases for team management, channel management, and overall permissions. 
+
+This section provides examples of common permissions use cases for team management, channel management, and overall permissions.
 
 Team Management
 ~~~~~~~~~~~~~~~~
@@ -85,16 +87,15 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
 2. Select **Edit Scheme**.
 3. In the **All Members > Teams** panel, check the box for **Add Team Members**. This sets the system default for all teams.
-4. Choose **Save**. 
-5. Select the back arrow to return to the **Permission Schemes** menu. 
+4. Choose **Save**.
+5. Select the back arrow to return to the **Permission Schemes** menu.
 6. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
   ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
-  iv. In the **Team Administrators** panel, check the box for **Add Team Members**. 
+  iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
 7. Choose **Save**. 
-8. Select the back arrow to return to the **Permission Schemes** menu. 
-
+8. Select the back arrow to return to the **Permission Schemes** menu.
 
 Public and Private Channel Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +125,7 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
 5. Select the arrow to return to the **Permission Schemes** interface.
 6. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.   
+  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
   
@@ -135,20 +136,20 @@ Read only channels
 
 1. Navigate to **System Console > User Management > Channels**.
 2. Select **Edit** next to the name of the channel you want to configure.
-3. In the **Create Posts** panel, uncheck **Guests**. 
-4. In the **Post Reactions** panel, uncheck **Guests** if required. 
-5. Choose **Save**. 
+3. In the **Create Posts** panel, uncheck **Guests**.
+4. In the **Post Reactions** panel, uncheck **Guests** if required.
+5. Choose **Save**.
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
 **Create an Announcement Channel where only channel admins are able to post.**
 
-1. Create a new channel (either Public or Private). 
+1. Create a new channel (either Public or Private).
 2. Navigate to **System Console > User Management > Channels**.
 3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
-4. In the **Create Posts** panel, uncheck **Guests** and **Members**. 
-5. In the **Post Reactions** panel, uncheck **Guests** and **Members**. 
-6. Choose **Save**. 
+4. In the **Create Posts** panel, uncheck **Guests** and **Members**.
+5. In the **Post Reactions** panel, uncheck **Guests** and **Members**.
+6. Choose **Save**.
 
 The channel is available for all members and guests to access but only admins can post.
 
@@ -176,7 +177,6 @@ Example: As the default for the entire system, only allow users to edit their ow
 .. note::
 
   The post edit time limit is a `global config variable <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
-
 
 Integration Management
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,7 +213,7 @@ Glossary
 - **Permission:** The ability to execute certain actions. Permissions are granted to roles.
 - **Roles:** A set of permissions. Users or groups are assigned to roles.
 - **Group:** A set of users, usually synced from AD/LDAP. Groups are assigned to roles in the context of teams, channels, or system-wide.
-- **Default Roles:** All Members, Guests (if enabled), Channel Administrators, Team Administrators, System Administrators.
+- **Default Roles:** All Members, Guests (if enabled), Channel Admins, Team Admins, System Admins.
 - **System Scheme:** A set of default roles that apply system-wide.
 - **Team Override Scheme:** A set of default roles that apply only in the team specified. Permissions granted to roles in a team scheme override roles in the system scheme.
 - **System-wide:** Applies across the entire system, including all teams of which the user is a member.
