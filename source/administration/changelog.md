@@ -98,7 +98,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``EnableAPIChannelDeletion``
  - ``EnableAPIUserDeletion``
  - ``DownloadExportResults``
- - ``EnableCustomEmoji`` is now enabled by default.
+ - ``EnableCustomEmoji``, ``EnableGifPicker``, ``ExperimentalViewArchivedChannels`` and ``ExperimentalTimezone`` are now enabled by default for new installs.
 
 ### Open Source Components
 
