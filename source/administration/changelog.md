@@ -19,6 +19,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
  - New admin roles
  - In-Product Notices
+ - Admin Advisor v2
 
 ### Improvements
 
@@ -101,6 +102,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``EnableCustomEmoji``, ``EnableGifPicker``, ``ExperimentalViewArchivedChannels`` and ``ExperimentalTimezone`` are now enabled by default for new installs.
 
 ### Open Source Components
+ - Added ``react-is`` and ``tinycolor2`` to https://github.com/mattermost/mattermost-webapp.
+ - Removed ``@types/highlight.js``, ``@typescript-eslint/parser``, ``bootstrap-colorpicker``, and ``intl`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Database Changes
 
