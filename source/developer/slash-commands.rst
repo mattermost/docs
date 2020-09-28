@@ -150,7 +150,7 @@ Tips and Best Practices
 
 1. Slash commands are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`__.
 
-2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__.
+2. Posts size is limited to 16393 characters for servers running `Mattermost Server v5.0 or later <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__. Use the `extra_responses <https://developers.mattermost.com/integrate/slash-commands/#parameters>`__ field to reply to a triggered slash command with more than one post.
 
 3. You can restrict who can create slash commands in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
 
