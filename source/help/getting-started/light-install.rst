@@ -36,6 +36,8 @@ Then, to install the Omnibus package, run:
 
 When your server is up and running, navigate to it via the domain name (e.g. ``mymattermostserver.com``) that points to your server (or the server’s IP address if you’re not using a domain name). Next, create a team and invite people to join your Mattermost server.
 
+If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+
 Add Users
 ---------
 
