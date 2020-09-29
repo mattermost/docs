@@ -126,7 +126,7 @@ If they still show yellow, then you need to trigger a config propagation across 
    #. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
    #. Click **Save**.
 
-   This will not change any config, but send the existing config to all nodes in the cluster.
+   This will not change any config, but sends the existing config to all nodes in the cluster.
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
