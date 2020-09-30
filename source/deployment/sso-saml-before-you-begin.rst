@@ -1,7 +1,7 @@
 Before You Begin
 ----------------
 
-Before you begin, you will need to install of the XML Security Library.
+Before you begin, you'll need to install the XML Security Library.
 
 1. Make sure you have the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
 
