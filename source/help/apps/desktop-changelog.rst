@@ -1,6 +1,46 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.6
+----------------------------
+
+**Release date:** 
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.0>`_
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+- Added a setting to be able to select different desktop notification sounds.
+- ``Show Mattermost icon in the menu bar`` setting is now enabled by default for new installs on Mac, and ``Show icon in the notification area`` and ``Leave app running in the notification area when application window is closed`` settings are are now enabled by default for new installs on Ubuntu.
+- The default window frame and server tabs are now used on older Windows and Linux OS versions.
+- Added support for allowing access to managed resources.
+- The same default protocols as the server are now used in the autolink plugin.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where the **Add server** modal fields were missing the right-click menu.
+- Fixed an issue where users did not see the right-click menu with Copy and Paste options on the login page when using the desktop app to login to an external application.
+- Fixed an issue where a JS error occurred when a separate OAuth window was open.
+- Fixed an issue where users were unable to resize the desktop app vertically from the top tab bar.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- 
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `devinbinnie <https://github.com/devinbinnie>`_, `dpanic <https://github.com/dpanic>`_, `jekill <https://github.com/jekill>`_, `jupenur <https://github.com/jupenur>`_, `M-ZubairAhmed <https://github.com/M-ZubairAhmed>`_, `nevyangelova <https://github.com/nevyangelova>`_, `rvillablanca <https://github.com/rvillablanca>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
+
+
 Release v4.5
 ----------------------------
 
