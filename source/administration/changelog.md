@@ -22,17 +22,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### New admin roles to delegate administration tasks to other types of administrators (E20)
  - New admin roles are additional system roles that have access to designated areas of the System Console. This enables you to delegate certain administrative tasks to other members of your organization.
 
-#### Download link to access completed compliance export files from System Console (E20)
- - Now you can easily retrieve compliance export files directly from **System Console > Compliance Exports** with a new download link.
-
 #### Certificate-based authentication with AD/LDAP (E10)
  - You can now improve the security of your AD/LDAP authentication with certificate-based  AD/LDAP authentication.
 
 #### Stay current with in-product notices
  - Now with in-product notices, users and Admins will be made aware of the newest product enhancements from within Mattermost. [Learn more about in-product notices here](https://about.mattermost.com/default-notices/).
-
-#### Mattermost Omnibus now Generally Available
- - Mattermost Omnibus provides you with an ultra-fast and simple deployment of Mattermost and all of its dependencies on a single server.
 
 ### Improvements
 
