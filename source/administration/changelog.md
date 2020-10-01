@@ -17,9 +17,21 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.27, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - New admin roles
- - In-Product Notices
- - Admin Advisor v2
+
+#### New admin roles to delegate administration tasks to other types of administrators (E20)
+ - New admin roles are additional system roles that have access to designated areas of the System Console. This enables you to delegate certain administrative tasks to other members of your organization.
+
+#### Download link to access completed compliance export files from System Console (E20)
+ - Now you can easily retrieve compliance export files directly from **System Console > Compliance Exports** with a new download link.
+
+#### Certificate-based authentication with AD/LDAP (E10)
+ - You can now improve the security of your AD/LDAP authentication with certificate-based  AD/LDAP authentication.
+
+#### Stay current with in-product notices
+ - Now with in-product notices, users and Admins will be made aware of the newest product enhancements from within Mattermost. [Learn more about in-product notices here](https://about.mattermost.com/default-notices/).
+
+#### Mattermost Omnibus now Generally Available
+ - Mattermost Omnibus (Beta) provides you with an ultra-fast and simple deployment of Mattermost and all of its dependencies on a single server.
 
 ### Improvements
 
@@ -72,7 +84,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where API invites by email were silently rate-limited.
  - Fixed an issue where deactivated users broke pagination in Manage Members modal.
  - Fixed an issue where an error occurred while inviting more than 20 users to a team via **Invite People**.
- - Fixed an issue where a ``PostUtils.formatText`` crashed when formatting text with unicode emoiji.
+ - Fixed an issue where a ``PostUtils.formatText`` crashed when formatting text with unicode emoji.
+ - Fixed an issue where a white screen occurred when editing a post and sending the post from a preview mode.
  - Fixed an issue on Microsoft Edge (non-Chromium) where logging out caused the user to get stuck at a loading screen.
  - Fixed an issue where a selected item in the Direct Messages **More** menu didn’t scroll into view when using keyboard navigation.
  - Fixed an issue where users received ghost notifications when the "First name trigger mention" setting was set but the "First Name" was not set.
@@ -114,7 +127,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues
 
 ### Contributors
-
+ - [aaronrothschild](https://github.com/aaronrothschild), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [amwolff](https://github.com/amwolff), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [apollo13](https://github.com/apollo13), [archit-p](https://github.com/archit-p), [arshchimni](https://github.com/arshchimni), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [asimsedhain](https://github.com/asimsedhain), [avasconcelos114](https://github.com/avasconcelos114), [Ayanrocks](https://github.com/Ayanrocks), [bbodenmiller](https://github.com/bbodenmiller), [bhargav50](https://github.com/bhargav50), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [clarmso](https://github.com/clarmso), [colorfusion](https://github.com/colorfusion), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [devius](https://github.com/devius), [DylanWard14](https://github.com/DylanWard14), [elaine-mattermost](https://github.com/elaine-mattermost), [elyscape](https://github.com/elyscape), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [fakoor](https://github.com/fakoor), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gracion](https://github.com/gracion), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jecepeda](https://github.com/jecepeda), [JeremyShih](https://github.com/JeremyShih), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgilliam17](https://github.com/jgilliam17), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [josephk96](https://github.com/josephk96), [jp0707](https://github.com/jp0707), [JtheBAB](https://github.com/JtheBAB), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kashifsoofi](https://github.com/kashifsoofi), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [kosgrz](https://github.com/kosgrz), [lanjp](https://github.com/lanjp), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [Lumexralph](https://github.com/Lumexralph), [luryus](https://github.com/luryus), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [marianunez](https://github.com/marianunez), [MathewtheCoder](https://github.com/MathewtheCoder), [mathiusjohnson](https://github.com/mathiusjohnson), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mozkomor05](https://github.com/mozkomor05), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nikolaizah](https://github.com/nikolaizah), [ogi-m](https://github.com/ogi-m), [openmohan](https://github.com/openmohan), [prapti](https://github.com/prapti), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [RohitJain13](https://github.com/RohitJain13), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shieldsjared](https://github.com/shieldsjared), [sridhar02](https://github.com/sridhar02), [srkgupta](https://github.com/srkgupta), [StevenPhan](https://github.com/StevenPhan), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [Tak-Iwamoto](https://github.com/Tak-Iwamoto), [tasdomas](https://github.com/tasdomas), [teresa-novoa](https://github.com/teresa-novoa), [thefactremains](https://github.com/thefactremains), [thePanz](https://github.com/thePanz), [TQuock](https://github.com/TQuock), [txeli](https://github.com/txeli), [uhlhosting](https://github.com/uhlhosting), [vladimirdotk](https://github.com/vladimirdotk), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog)
 
 ## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
