@@ -1,11 +1,9 @@
 Advanced Permissions (E10/E20)
 ==============================
 
-Mattermost Admins can restrict how members interact with Mattermost functionality using Advanced Permissions.
+Permissions provide a way to customize how posts, channels, integrations, teams, and members are managed. Mattermost Admins can use Advanced Permissions to restrict how members interact with Mattermost functionality. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture.
 
-Permissions provide a way to customize how posts, channels, integrations, teams, and members are managed. Permissions in Mattermost can be applied to contexts such as teams, channels, and system-wide. Each context has a scheme - a set of rules governing what types of actions can be performed by users. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture.
-
-This document describes the types of permissions that can be given to users in different contexts of Mattermost using the System Scheme and the Team Override Scheme. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions. 
+Advanced Permissions in Mattermost are applied using schemes which are a set of rules governing what types of actions can be performed by users system-wide, within specific teams, and within specific channels. This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and supplementary roles. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions. 
 
 .. note::
 
@@ -35,9 +33,7 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 
-**System Scheme Interface**
-
-The interface for editing permissions in the System Scheme, with panels for Guests (if enabled), All Members, Channel Administrators, Team Administrators, and System Administrators is available in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
+You can access the System Scheme interface in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
 
 .. image:: ../images/system-scheme.png
 
@@ -46,14 +42,15 @@ Team Override Schemes (E20)
 
 *Available in Enterprise Edition E20*
 
-A Team Override Scheme is a set of permissions applicable to a specific team. When this permission scheme is applied to a team, the System Scheme permissions fall away. In this way, teams can have a degree of autonomy and team management can be tailored more effectively to support different use cases, such as a team specifically for guest users. 
+A Team Override Scheme is a set of permissions applicable to a specific team. Using a Team Override Scheme gives teams a degree of autonomy, as team management can be tailored more effectively to support different use cases, such as a team specifically for guest users. Other functionality, such as how integrations are managed, can be applied in a more granular way.
 
+When you use this permission scheme:
+
+- The System Scheme permissions no longer apply.
 - Permissions set in a Team Override Scheme apply to all Members, Channel Adminstrators, and Team Administrators.
 - Teams can only belong to one Team Override Scheme.
 
-**Team Override Schemes Interface** 
-
-The interface is available in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
+You can access the Team Override Scheme interface in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
 
 .. image:: ../images/team-scheme.png
 
@@ -112,7 +109,7 @@ The **Manage Channel Settings** option is now only available to **Channel Admini
 
 .. note::
 
-  Permissions for channel renaming, editing header, and editing purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
+  Permissions for channel renaming, editing the header, and editing the channel purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
 
 **Restrict who can create channels, in specific teams**
 
