@@ -343,6 +343,10 @@ A service interruption is not required for security patch dot releases of the Ma
 
 You can apply updates during a period when the anticipated load is small enough that one server can carry the full load of the system during the update.
 
+.. note::
+
+  We only support a one version difference between the server versions when performing a rolling upgrade. Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. 
+
 Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
 1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../administration/upgrade`.
