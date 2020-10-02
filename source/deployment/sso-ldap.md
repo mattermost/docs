@@ -4,13 +4,15 @@ _Available in Enterprise Edition E10 and E20_
 
 ### Overview
 
-Active Directory/LDAP integration offers the following benefits:
+Active Directory is a service that stores authentication and authorization details of all users on your organization's network. Integrating your Active Directory with Mattermost means that users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP and changes are synced with the Mattermost server.
+
+Benefits of integrating with Mattermost include:
 
 - **Single sign-on.** Users can sign in to Mattermost with their AD/LDAP credentials.
-- **Centralized identity management.** Mattermost accounts can display user information from AD/LDAP, such as first and last name, email, and username.
-- **Automatic account provisioning.** New Mattermost user accounts are automatically created the first time a user signs in with their AD/LDAP credentials on the Mattermost server.
+- **Centralized identity management.** Mattermost accounts can display user information from AD/LDAP, such as first and last name, email, and username. This information can't be changed by the user and is linked to their AD/LDAP profile.
+- **Automatic account creation.** A Mattermost user account is automatically created the first time a user signs in with their AD/LDAP credentials on the Mattermost server.
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
-- **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using LDAP filters.
+- **Compliance alignment.** Manage Administrator access to Mattermost in the System Console using LDAP filters.
 
 ### Pre-installation Notes
 
