@@ -1752,7 +1752,7 @@ Description
       bin/mattermost team remove myteam user@example.com username
 
 mattermost team rename
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -1777,7 +1777,7 @@ Description
       --display_name string   Team Display Name
 
 mattermost team restore
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Restore a previously archived team.
