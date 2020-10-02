@@ -132,7 +132,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 .. note::
 
-  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, where as v5.25.5 + v5.27.0 is not supported. Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. 
+  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, where as v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. 
 
 
 Upgrading Team Edition to Enterprise Edition
