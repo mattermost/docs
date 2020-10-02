@@ -1,9 +1,11 @@
 Advanced Permissions (E10/E20)
 ==============================
 
-Permissions provide a way to customize how posts, channels, integrations, teams, and members are managed. Mattermost Admins can use Advanced Permissions to restrict how members interact with Mattermost functionality. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture.
+Mattermost Admins can use Advanced Permissions customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, where specific actions can be assigned to, and performed by, assigned roles.
 
-Advanced Permissions in Mattermost are applied using schemes which are a set of rules governing what types of actions can be performed by users system-wide, within specific teams, and within specific channels. This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and supplementary roles. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions. 
+In Mattermost, permissions are applied using either the System Scheme (applicable across the entire system and all teams) or the Team Override Scheme (applicable to a single team).
+
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions.
 
 .. note::
 
@@ -17,8 +19,8 @@ Advanced Permissions in Mattermost are applied using schemes which are a set of 
 Permissions Structure
 ----------------------
 
-The Mattermost System Console provides a number of elements for Admins to control the permissions in their system. Permissions interfaces can be accessed in **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12). The channel permissions interface is accessed in **System Console > User Management > Channels**.
-  
+The Mattermost System Console provides a number of elements for Admins to control the permissions in their system. 
+
 System Scheme (E10)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -42,7 +44,7 @@ Team Override Schemes (E20)
 
 *Available in Enterprise Edition E20*
 
-A Team Override Scheme is a set of permissions applicable to a specific team. Using a Team Override Scheme gives teams a degree of autonomy, as team management can be tailored more effectively to support different use cases, such as a team specifically for guest users. Other functionality, such as how integrations are managed, can be applied in a more granular way.
+In some cases teams require more permissions flexibility than provided by the System Scheme. Using a Team Override Scheme gives teams a degree of autonomy to customize how users collaborate, such as as creating teams for different departments.
 
 When you use this permission scheme:
 
@@ -56,6 +58,8 @@ You can access the Team Override Scheme interface in **System Console > User Man
 
 Channel Permissions 
 --------------------
+
+The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
 Channel Moderation (Beta) (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
