@@ -12,7 +12,7 @@ Consider using a plugin in the following scenarios:
  - When you want to extend Mattermost functionality to meet a specific, complex requirement.
  - When you want to build integrations that are managed by your Mattermost server.
 
-Plugins are fully supported in both Team Edition and Enterprise Editions.
+Plugins are fully supported in both Team Edition and Enterprise Edition.
 
 Plugin Marketplace
 ------------------
