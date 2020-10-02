@@ -2,13 +2,15 @@
 SAML Single Sign-On (E20)
 ==========================
 
+SAML is a standard that allows identity providers to pass credentials to service providers. SAML Single-Sign On (SSO) is a way for users to be authenticated for multiple applications and services at once and not need to confirm their identity each time they use a new service.
+
 Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single sign-on integration offers the following benefits:
 
 - **Single sign-on.** Users can sign-in to Mattermost with their SAML credentials.
-- **Centralized identity management.** Mattermost accounts automatically pull user attributes from SAML upon login, such as full name, email and username.
-- **Automatic account provisioning.** New Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials on the Mattermost server.
+- **Centralized identity management.** Mattermost accounts automatically pull user attributes from SAML upon login, such as full name, email, and username.
+- **Automatic account creation.** Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials on the Mattermost server.
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
-- **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
+- **Compliance alignment.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
 
 SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
 
@@ -42,7 +44,7 @@ Username Attribute
 
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
-Guest Attribute 
+Guest Attribute
 ~~~~~~~~~~~~~~~~
 
 When enabled, the Guest Attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
@@ -73,9 +75,9 @@ Existing members that are identified by this attribute will be promoted from mem
 **Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
 Roadmap
-----------
+--------
 
-In Mattermost v5.14, you can optionally configure Mattermost to sign the SAML request using a private key to meet InfoSec requirements at your organization.
+From Mattermost v5.14, you can optionally configure Mattermost to sign the SAML request using a private key to meet InfoSec requirements at your organization.
 
 In the future roadmap, the main consideration is an integration with SCIM, via plugin. Such an integration allows system administrators to create SAML-provisioned users before their first login, and sync them against Mattermost permissions.
 
@@ -84,12 +86,12 @@ Currently user provisioning and deprovisioning can be handled with SAML sync, bu
 For examples, see `Microsoft Azure AD integration with SCIM <https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups>`_ and `Okta user provisioning with SCIM <https://www.okta.com/integrate/documentation/scim/>`_.
 
 Configuration Assistance
----------------------------------
+------------------------
 
 We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.
 
 For technical documentation on SAML, see :doc:`sso-saml-technical`.
 
-To assist with the process of getting a user file for your custom IDP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
+To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
 Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.
