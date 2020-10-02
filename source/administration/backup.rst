@@ -69,8 +69,9 @@ When using single sign-on with Mattermost Enterprise Edition an outage to your S
 
 **What happens during an SSO outage?**
 
-- *Most people can still log in.* By default, when a user logs in to Mattermost they receive a session token lasting 30 days (the duration can be configured in the System Console). During an SSO outage, users with valid session tokens can continue to using Mattermost uninterrupted.
-- *Some people can't log in.* During an SSO outage, there are two situations under which a user cannot log in:
+*Most people can still log in.* By default, when a user logs in to Mattermost they receive a session token lasting 30 days (the duration can be configured in the System Console). During an SSO outage, users with valid session tokens can continue to using Mattermost uninterrupted.
+
+*Some people can't log in.* During an SSO outage, there are two situations under which a user cannot log in:
       - Users whose session token expires during the outage
       - Users trying to log in to new devices 
 
