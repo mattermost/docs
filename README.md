@@ -50,7 +50,7 @@ If you've downloaded the repo and are editing Mattermost documentation on your l
 2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`. 
 3. `cd` into the cloned repository.
 4. Install the required packages: `pipenv install`.
-5. Build the doc set using `make html`. This generates files in `/build` directory.
+5. Build the doc set using `make HTML`. This generates files in `/build` directory.
 6. Navigate to the `/build` directory to preview the page/s you've edited. 
 
-The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 
+The build process may generate this error: ``WARNING: toctree contains a reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 
