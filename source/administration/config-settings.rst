@@ -1133,7 +1133,7 @@ Level of detail at which log events are written to the console when ``EnableCons
 **INFO**: Outputs error messages and information around startup and initialization.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``"DEBUG"``, ``"ERROR"``, and ``"INFO"``.                                          |
+| This feature's ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``"DEBUG"``, ``"ERROR"``, and ``"INFO"``.                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Output console logs as JSON
@@ -1527,7 +1527,7 @@ Configurable link to a download page for Mattermost Apps. When a link is present
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Android App Download Link
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas>`__ for your mobile apps, change this link to point to the correct app.
 
@@ -2631,7 +2631,7 @@ Enable Login With SAML
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Synchronizing SAML Accounts With AD/LDAP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
 
@@ -2731,6 +2731,7 @@ The signature algorithm used to sign the request. Supported options are `RSAwith
 
 CanonicalAlgorithm
 ^^^^^^^^^^^^^^^^^^^
+
 The canonicalization algorithm. Supported options are `Exclusive XML Canonicalization 1.0 <http://www.w3.org/2001/10/xml-exc-c14n#>`_ and `Canonical XML 1.1 <http://www.w3.org/2006/12/xml-c14n11>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2776,6 +2777,7 @@ When ``true``, Mattermost signs the SAML request using your Service Provider Pri
 
 Email Attribute
 ^^^^^^^^^^^^^^^^^
+
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
 
 Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
@@ -3329,7 +3331,7 @@ Slash commands send events to external integrations that send a response back to
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable OAuth 2.0 Service Provider
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
 
@@ -4040,7 +4042,7 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 +-----------------------------------------------------------------------------------------------------------------+
 
 SAML Settings
-^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 SAML Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4254,7 +4256,7 @@ Set a threshold on the number of goroutines when the Mattermost system is consid
 To turn off checking for the threshold, set this value to ``-1``.
 
 +----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": -1`` with numerical input.     |
+| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": -1`` with numerical input.       |
 +----------------------------------------------------------------------------------------------------------+
 
 Allow Cookies for Subdomains
@@ -4577,7 +4579,7 @@ Changes to this setting require a server restart before taking effect.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Experimental Settings only in ``config.json``
---------------------------------------------
+---------------------------------------------
 
 Audit settings
 ~~~~~~~~~~~~~~~
@@ -4687,7 +4689,7 @@ This is the maximum size (measured in megabytes) that the file can grow before t
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max age days
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
 
@@ -4785,7 +4787,7 @@ Restrict System Admin (Experimental)
 **False**: No restrictions are applied to the System Admin role.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``.                                                  |
+| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``.                                                 |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
@@ -5085,16 +5087,14 @@ Enable Autocomplete
 | This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
 +-----------------------------------------------------------------------------------------------------------------+
 
-
 Bulk Indexing Time Window Seconds
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
 +-------------------------------------------------------------------------------------------------------------+
-
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~

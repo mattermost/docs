@@ -184,7 +184,7 @@ mmctl auth clean
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth current
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -252,7 +252,7 @@ mmctl auth delete
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth list
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -366,7 +366,7 @@ mmctl auth renew
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl auth set
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -406,7 +406,7 @@ Password
 
 .. code-block:: sh
 
-     $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret
+    $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret
 
 The ``login`` command can also work interactively, so if you leave any required flag empty, ``mmctl`` will ask you for it interactively:
 
@@ -434,13 +434,12 @@ You can generate and use a personal access token to authenticate with a server, 
 
    $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
 
-
 Alternatively, you can log in to your Mattermost server with a username and password:
 
 .. code-block:: sh
 
-     $ mmctl auth login https://my-instance.example.com --name my-instance --username john.doe --password mysupersecret
-     credentials for my-instance: john.doe@https://my-instance.example.com stored
+   $ mmctl auth login https://my-instance.example.com --name my-instance --username john.doe --password mysupersecret
+   credentials for my-instance: john.doe@https://my-instance.example.com stored
 
 We can check the currently stored credentials with:
 
@@ -468,7 +467,7 @@ And now we can run commands normally:
    auth_service:
 
 Installing shell completions
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
 
@@ -605,7 +604,6 @@ mmctl bot disable
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
    
-   
 mmctl bot enable
 ^^^^^^^^^^^^^^^^^
 
@@ -641,7 +639,7 @@ mmctl bot enable
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl bot list
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -772,7 +770,7 @@ mmctl channel add
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel archive
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -806,7 +804,7 @@ mmctl channel archive
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel create
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -847,7 +845,7 @@ mmctl channel create
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel list
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -915,7 +913,7 @@ mmctl channel make_private
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel modify
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -952,7 +950,7 @@ mmctl channel modify
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel move
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1023,7 +1021,7 @@ mmctl channel remove
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel rename
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1092,7 +1090,7 @@ mmctl channel restore
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel search
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1149,7 +1147,7 @@ Management of slash commands.
     -h, --help      help for command
     
 mmctl command archive
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 **Dscription**
 
@@ -1262,7 +1260,7 @@ mmctl command delete
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command list
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1341,7 +1339,7 @@ mmctl command modify
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command move
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1375,7 +1373,7 @@ mmctl command move
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command show
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1582,7 +1580,7 @@ mmctl config get
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl config reset
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1741,7 +1739,7 @@ Child Commands
       -h, --help   help for group
 
 mmctl group channel disable
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1775,7 +1773,7 @@ mmctl group channel disable
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group channel enable
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1843,7 +1841,7 @@ mmctl group channel list
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group channel status
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1877,7 +1875,7 @@ mmctl group channel status
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group list-ldap
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1911,7 +1909,7 @@ mmctl group list-ldap
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group team
---------------------
+----------------
 
 Management of team groups.
 
@@ -1962,7 +1960,7 @@ mmctl group team disable
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group team enable
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2030,7 +2028,7 @@ mmctl group team list
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl group team status
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2241,7 +2239,7 @@ Child Commands
   -h, --help   help for permissions
 
 mmctl permissions add
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2275,7 +2273,7 @@ mmctl permissions add
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl permissions remove
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2531,7 +2529,7 @@ mmctl plugin list
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl post
-------------
+----------
 
 Management of posts.
 
@@ -2650,7 +2648,7 @@ Child Commands
     --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system clearbusy
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2684,7 +2682,7 @@ mmctl system clearbusy
     --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system getbusy
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2718,7 +2716,7 @@ mmctl system getbusy
     --strict                       will only run commands if the mmctl version matches the server one
     
 mmctl system setbusy
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2775,7 +2773,7 @@ Child Commands
   -h, --help   help for team
 
 mmctl team archive
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3057,14 +3055,14 @@ mmctl team search
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl team users
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 Child Commands
   -  `mmctl team users add`_ - Add users to a team
   -  `mmctl team users remove`_ - Remove users from a team
 
 mmctl team users add
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3098,7 +3096,7 @@ mmctl team users add
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl team users remove
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3132,7 +3130,7 @@ mmctl team users remove
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl token
----------
+-----------
 
 Management of users' access tokens.
 
@@ -3148,7 +3146,7 @@ Child Commands
    -h, --help       help for token
 
 mmctl token generate
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3182,7 +3180,7 @@ mmctl token generate
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl token list
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3277,7 +3275,7 @@ Child Commands
    -h, --help       help for user
 
 mmctl user activate
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3388,7 +3386,6 @@ mmctl user deactivate
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-
 mmctl user email
 ^^^^^^^^^^^^^^^^^
 
@@ -3460,7 +3457,7 @@ mmctl user invite
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl user list
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3627,7 +3624,7 @@ mmctl version
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl websocket
--------------
+---------------
 
 **Description**
 
