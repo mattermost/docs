@@ -18,8 +18,8 @@ Open a terminal window and enter:
 
 .. code-block:: sh
 
-  curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash
-  
+  curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
+
 Then, to install the Omnibus package, run:
 
 .. code-block:: sh
