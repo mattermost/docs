@@ -16,3 +16,5 @@ Install the 64-bit version of RHEL 7 on each machine that hosts one or more of t
   ``sudo yum upgrade``
 
 Now that the system is up to date, you can start installing the components that make up a Mattermost system.
+
+..note:: Please make sure the ``mailcap`` package is intalled as the ``mime.types`` file it installs is needed for the mobile app to work correctly.
