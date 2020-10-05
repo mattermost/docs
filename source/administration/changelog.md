@@ -107,11 +107,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``EnableAPIChannelDeletion``
  - ``EnableAPIUserDeletion``
  - ``DownloadExportResults``
+ - ``AdvancedLoggingConfig``
  - ``EnableCustomEmoji``, ``EnableGifPicker``, ``ExperimentalViewArchivedChannels`` and ``ExperimentalTimezone`` are now enabled by default for new installs.
 
 ### Open Source Components
  - Added ``react-is`` and ``tinycolor2`` to https://github.com/mattermost/mattermost-webapp.
  - Removed ``@types/highlight.js``, ``@typescript-eslint/parser``, ``bootstrap-colorpicker``, and ``intl`` from https://github.com/mattermost/mattermost-webapp.
+ - Removed ``react-native-v8`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
 
