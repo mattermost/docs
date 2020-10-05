@@ -25,10 +25,12 @@ Bug Fixes
 
 All Platforms
 ^^^^^^^^^^^^^
+- Fixed an issue where the app window started as maximized when "Start app on login" setting was enabled.
 - Fixed an issue where the **Add server** modal fields were missing the right-click menu.
 - Fixed an issue where users did not see the right-click menu with Copy and Paste options on the login page when using the desktop app to login to an external application.
 - Fixed an issue where a JS error occurred when a separate OAuth window was open.
 - Fixed an issue where users were unable to resize the desktop app vertically from the top tab bar.
+- Fixed an issue where some links pointing to the System Console did not work on the desktop app.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
