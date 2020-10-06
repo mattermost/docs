@@ -19,4 +19,4 @@ Now that the system is up to date, you can start installing the components that 
 
 .. note:: 
 
-  Please make sure the ``mailcap`` package is intalled as the ``mime.types`` file it installs is needed for the mobile app to work correctly.
+  Ensure that the ``mailcap`` package is installed as it includes the ``mime.types`` file which is needed for the Mobile App to work correctly.
