@@ -4,7 +4,7 @@ Upgrading Mattermost Server
 In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 .. important::
-  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to v5.25 or later is highly recommended.
 
 Upgrading to the Latest Version
 -------------------------------
@@ -18,9 +18,11 @@ If you are upgrading from version 3.0 or later, these instructions apply to you.
 Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
 
 .. important::
+
   Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
   
 .. important::
+
   If you're upgrading from a version prior to v5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``) and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
 
 You should gather the following information before starting the upgrade:
@@ -31,14 +33,15 @@ Existing install directory - *{install-path}*
 Location of your local storage directory
   The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage** (or **Files > Storage** in versions prior to 5.12) and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 
-**To upgrade Mattermost Server**:
+**To upgrade Mattermost Server**
 
 .. note::
-  If you are upgrading a High Availability cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__.
+
+  If you're upgrading a High Availability cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__.
 
 #. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
-#. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
+#. In a terminal window on the server that hosts Mattermost, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
    .. code-block:: sh
 
@@ -59,7 +62,6 @@ Location of your local storage directory
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
 #. Stop your Mattermost server.
-
 
    .. code-block:: sh
 
@@ -119,7 +121,7 @@ Location of your local storage directory
 
      sudo systemctl start mattermost
 
-#. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration. 
+#. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
 If they still show yellow, then you need to trigger a config propagation across the cluster:
 
@@ -130,12 +132,16 @@ If they still show yellow, then you need to trigger a config propagation across 
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
+.. note::
+
+  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
+
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
 
 To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions provided above, making sure that you download the Enterprise Edition in Step 3.
 
 Uploading a License Key
---------------------------
+-----------------------
 
 When Enterprise Edition is running, open **System Console > About > Editions and License** and upload your license key.
