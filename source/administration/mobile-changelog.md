@@ -9,8 +9,6 @@
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
-### Highlights
-
 ### Improvements
  - Added **Channel Settings > Notification Preferences** to add the ability to edit mobile push notification settings at the channel level.
  - Server URL now autofills when opening the app from the mobile landing page.
@@ -28,19 +26,13 @@
 
 #### All apps
  - Fixed an issue where a hashtag (#) character added to an announcement banner caused the app to display a blanck screen.
+ - Fixed an issue where users were still able to upload files via the share extension when ``EnableMobileFileUpload`` was disabled on the server.
  - Fixed an issue where a draft message on the reply thread was not retained if the user navigated away from the thread.
  - Fixed an issue where a thumbnail of a file attachment posted in a reply thread displayed in the center channel.
  - Fixed an issue where users were unable to join public channels via channel permalinks.
 
-#### Android specific
- - 
-
 #### iOS specific
- - 
- 
-### Known Issues
- - 
-
+ - Fixed an issue where user received an error when opening links on iOS 14 when Safari was not set as the default browser.
 
 ## 1.35.1 Release
 - Release Date: September 21, 2020
