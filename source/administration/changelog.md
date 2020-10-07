@@ -6,7 +6,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Release day: 2020-09-16**
+- **v5.27.1, release day TBD**
+  - Fixing an issue where the Compliance Exports are taking too long on large deployments. This will be fixed with a performance optimization of the message export query.
+- **v5.27.0, released 2020-09-16**
+  - Original 5.27.0 release
 
 Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
@@ -80,8 +83,7 @@ Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.ma
 ## Release v5.26 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.26.2, released 2020-09-03**
-  - Forcefully disabled the SAML Setting "Use Improved SAML Library (Beta)", as we have identified some issues in this feature. Please follow instructions at https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility. 
-
+  - Forcefully disabled the SAML Setting "Use Improved SAML Library (Beta)", as we have identified some issues in this feature. Please follow instructions at https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.
 - **v5.26.1, released 2020-08-25**
   - Fixed an issue where users were unable to use the [``PictureAttribute`` setting](https://docs.mattermost.com/administration/config-settings.html#profile-picture-attribute) with SAML authentication. [MM-27852](https://mattermost.atlassian.net/browse/MM-27852)
   - Fixed an issue where users got unexpectedly logged out from the mobile app when ``ExtendSessionLengthWithActivity`` was enabled as opening the mobile app called an API that overrode session extension triggers of typing, channel change, and posts. [MM-27184](https://mattermost.atlassian.net/browse/MM-27184)
