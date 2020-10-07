@@ -104,9 +104,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``LdapSettings`` in ``config.json``:
      - Added ``PublicCertificateFile``, to be able to upload the public certificate to be used for encryption with SAML configuration.
      - Added ``PrivateKeyFile`` to be able to upload the private key to be used for encryption with SAML configuration.
- - Under ``ExperimentalSettings`` in ``config.json``:
-     - Added ``CloudBilling``, to 
-     - Added ``CloudUserLimit``, to 
  - Under ``ServiceSettings`` in ``config.json``:
      - Added ``EnableAPIChannelDeletion``, to permanently delete channels for compliance reasons.
      - Added ``EnableAPIUserDeletion``, to permanently delete users for compliance reasons.
