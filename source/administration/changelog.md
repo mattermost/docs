@@ -101,13 +101,21 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - ``PublicCertificateFile`` and ``PrivateKeyFile``
- - ``CloudBilling``
- - ``CloudUserLimit``
- - ``EnableAPIChannelDeletion``
- - ``EnableAPIUserDeletion``
- - ``DownloadExportResults``
- - ``AdvancedLoggingConfig``
+ - Under ``LdapSettings`` in ``config.json``:
+     - Added ``PublicCertificateFile``, to be able to upload the public certificate to be used for encryption with SAML configuration.
+     - Added ``PrivateKeyFile`` to be able to upload the private key to be used for encryption with SAML configuration.
+ - Under ``ExperimentalSettings`` in ``config.json``:
+     - Added ``CloudBilling``, to 
+     - Added ``CloudUserLimit``, to 
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``EnableAPIChannelDeletion``, to permanently delete channels for compliance reasons.
+     - Added ``EnableAPIUserDeletion``, to permanently delete users for compliance reasons.
+ - Under ``MessageExportSettings`` in ``config.json``:
+     - Added ``DownloadExportResults``, to 
+ - Under ``LogSettings`` in ``config.json``:
+     - Added ``AdvancedLoggingConfig``, to enable configuration options for setting audit targets.
+ - Under ``AnnouncementSettings`` in ``config.json``:
+     - Added ``AdminNoticesEnabled``, ``UserNoticesEnabled``, ``NoticesURL``, ``NoticesFetchFrequency``, and ``NoticesSkipCache``, to enable in-product notices to make users and Admins aware of the newest product enhancements from within Mattermost.
  - ``EnableCustomEmoji``, ``EnableGifPicker``, ``ExperimentalViewArchivedChannels`` and ``ExperimentalTimezone`` are now enabled by default for new installs.
 
 ### Open Source Components
@@ -123,6 +131,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
+ - Pressing **Enter** closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
  - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
  - Twitter link previews do not work in Mattermost.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
