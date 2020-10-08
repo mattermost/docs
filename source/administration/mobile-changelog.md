@@ -10,8 +10,8 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
- - Added **Channel Settings > Notification Preferences** to add the ability to edit mobile push notification settings at the channel level.
- - Server URL now autofills when opening the app from the mobile landing page.
+ - Added **Channel Info > Notification Preferences** to add the ability to edit mobile push notification settings at the channel level.
+ - Server URL now autofills when opening the app from a mobile browser landing page.
  - Added support for accessibility to the channel header buttons.
  - Refactored the post draft component, including writing and posting messages, attaching images, using the autocomplete functionality, showing alerts from group mentions and channel wide mentions, and executing slash commands.
  - Improved the empty state screen for Recent Mentions.
@@ -25,11 +25,11 @@
 ### Bug Fixes
 
 #### All apps
- - Fixed an issue where a hashtag (#) character added to an announcement banner caused the app to display a blanck screen.
+ - Fixed an issue where a hashtag (#) character added to an announcement banner caused the app to display a blank screen.
  - Fixed an issue where users were still able to upload files via the share extension when ``EnableMobileFileUpload`` was disabled on the server.
  - Fixed an issue where a draft message on the reply thread was not retained if the user navigated away from the thread.
  - Fixed an issue where a thumbnail of a file attachment posted in a reply thread displayed in the center channel.
- - Fixed an issue where users were unable to join public channels via channel permalinks.
+ - Fixed an issue where users were unable to join public channels via channel links.
 
 #### iOS specific
  - Fixed an issue where user received an error when opening links on iOS 14 when Safari was not set as the default browser.
