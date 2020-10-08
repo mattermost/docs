@@ -44,7 +44,7 @@ Team Override Schemes (E20)
 
 *Available in Enterprise Edition E20*
 
-In some cases teams require more permissions flexibility than provided by the System Scheme. Using a Team Override Scheme gives teams a degree of autonomy to customize how users collaborate, such as as creating teams for different departments.
+On systems with multiple `Mattermost teams <https://docs.mattermost.com/help/getting-started/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
