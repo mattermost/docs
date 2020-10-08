@@ -4,7 +4,7 @@ _Available in Enterprise Edition E10 and E20_
 
 ### Overview
 
-Active Directory is a service that stores authentication and authorization details of all users on your organization's network. Integrating your Active Directory with Mattermost means that users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP and changes are synced with the Mattermost server.
+Active Directory (AD) is a service that stores authentication and authorization details of users on your organization's network. When you integrate your AD/LDAP system with Mattermost, users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP, and changes are synced with the Mattermost server.
 
 Benefits of integrating AD/LDAP with Mattermost include:
 
