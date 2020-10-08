@@ -20,7 +20,7 @@ Enabling MFA
 
 This option is enabled by the System Admin in the `System Console <http://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication > MFA > Enable Multi-factor Authentication**. 
 
-Once enabled, users can set up this feature in the `Account Settings <https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication>`__ menu under **Security > Multi-factor Authentication**.
+Once enabled, users can opt to use MFA on their account in the `Account Settings <https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication>`__ menu under **Security > Multi-factor Authentication**.
 
 Enforcing MFA (E10)
 -------------------
