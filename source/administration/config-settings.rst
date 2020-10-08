@@ -838,7 +838,7 @@ Enable Push Notifications
 **False**: Mobile push notifications are disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SendPushNotifications": false`` with options ``true`` and ``false``.                                                    |
+| This feature's ``config.json`` setting is ``"SendPushNotifications": true`` with options ``true`` and ``false``.                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Server
@@ -1667,7 +1667,7 @@ Allow Users to View Archived Channels (Beta)
 **False**: Users are unable to view, share, or search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": false`` with options ``true`` and ``false``.                          |
+| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": true`` with options ``true`` and ``false``.                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Show Email Address
@@ -3427,7 +3427,7 @@ Enable GIF Picker
 **False**: GIFs cannot be selected in the emoji picker.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableGifPicker": false`` with options ``true`` and ``false``.                                                          |
+| This feature's ``config.json`` setting is ``"EnableGifPicker": true`` with options ``true`` and ``false``.                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -4103,7 +4103,7 @@ Select the timezone used for timestamps in the user interface and email notifica
 **False**: The **Timezone** setting is hidden in the Account Settings.
 
 +------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Hidden in Left-Hand Sidebar (Experimental)
