@@ -2,7 +2,9 @@
 SAML Single Sign-On (E20)
 ==========================
 
-SAML is a standard that allows identity providers to pass credentials to service providers. SAML Single-Sign On (SSO) is a way for users to be authenticated for multiple applications and services at once and not need to confirm their identity each time they use a new service.
+Single sign-on (SSO) is a way for users to log into multiple applications with a single user ID and password without having to re-enter their credentials. The SAML standard allows identity providers to pass credentials to service providers. Mattermost can be configured to act as a SAML 2.0 Service Provider. 
+
+The SAML single-sign-on integration offers the following benefits:
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single sign-on integration offers the following benefits:
 
