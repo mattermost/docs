@@ -20,7 +20,7 @@ Renders as:
 Text Style
 ----------
 
-You can use either ``_`` or ``*`` around a word to make it italic. Use two to make it bold.
+You can use either ``_`` or ``*`` around a word to make it italic, or ``__`` or ``**`` around a word to make it bold. You can also use common keyboard shortcuts, including CTRL/CMD + B to bold, and CTRL/CMD + I to italicize. 
 
 * ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
