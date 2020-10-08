@@ -10,6 +10,7 @@ Below is an overview of our features, security, account management, deployment, 
    :glob:
 
    /overview/product*
+   /overview/mattermost-cloud-overview*
    /overview/security*
    /overview/architecture*
    /deployment/deployment*
