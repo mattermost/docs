@@ -1,7 +1,7 @@
 Advanced Permissions (E10/E20)
 ==============================
 
-Mattermost Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, where specific actions can be assigned to, and performed by, assigned roles.
+Mattermost Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
 In Mattermost, permissions are applied using either the System Scheme (applicable across the entire system and all teams) or the Team Override Scheme (applicable to a single team).
 
