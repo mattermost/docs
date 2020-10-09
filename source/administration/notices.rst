@@ -1,7 +1,7 @@
 In-Product Notices
 ==================
 
-Mattermost is introducing in-product notices to keep users and adminstrators informed of the newest product improvements, features and releases. 
+Mattermost is introducing in-product notices to keep users and administrators informed of the newest product improvements, features and releases.
 
 .. contents::
   :depth: 2
