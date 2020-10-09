@@ -22,6 +22,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl config`_ - Configuration Management
    - `mmctl docs`_ - Generates mmctl documentation
    - `mmctl group`_ - Group Management
+   - `mmctl integrity`_ - Database record integrity
    - `mmctl ldap`_ - LDAP Management
    - `mmctl license`_ - License Management
    - `mmctl logs`_ - Log Management
@@ -2053,6 +2054,36 @@ mmctl group team status
 .. code-block:: sh
 
     -h, --help   help for status
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+   
+mmctl integrity
+---------------
+
+**Description**
+
+  Perform a relational integrity check which returns information about any orphaned record found.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl integrity [flags]
+
+**Options**
+
+.. code-block:: sh
+
+   --confirm       Confirm you really want to run a complete integrity check that may temporarily harm system performance
+   -h, --help      help for integrity
+   -v, --verbose   Show detailed information on integrity check results
 
 **Options inherited from parent commands**
 
