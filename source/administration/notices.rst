@@ -25,7 +25,7 @@ End User notices can be disabled in the **System Console > Notices** page.
 
 FAQ
 ---
-Are notices enabled by-default?
+Are notices enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Notices are enabled by-default for all Mattermost users. System Admins may choose to disable administrator or end user notices in the **System Console > Notices** page.
 
