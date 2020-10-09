@@ -25,6 +25,8 @@ Once enabled, users can opt to use MFA on their account in the `Account Settings
 Enforcing MFA (E10)
 -------------------
 
+This option can be enabled by the System Admin in the `System Console <http://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication > MFA > Enforce Multi-factor Authentication**.
+
 When MFA enforcement is set to **true**, users with email or LDAP authentication who don't have MFA set up will be directed to the MFA setup page when they log in to Mattermost. They will not be able to access the site until MFA setup is complete. Any new users will be required to set up MFA during the sign up process.
 
 Users will not be able to remove MFA from their account while enforcement is on.
