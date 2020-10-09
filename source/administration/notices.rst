@@ -35,6 +35,5 @@ No, the Mattermost server requires a connection to the internet to recieve notic
 
 How often will users receive notices?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Notices will be used to raise awreness of new features as part of our monthly release cadence. Users will only recieve notices that apply to them specifically. For example, if a user is already running the latest desktop version, they will not recieve a desktop upgrade notice.  
-
+Notices will be used to raise awareness of new features as part of our monthly release cadence. Users will only receive notices that apply to them specifically. For example, if a user is already running the latest desktop app version, they will not receive a desktop upgrade notice.  
 
