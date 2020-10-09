@@ -2659,7 +2659,7 @@ mmctl plugin marketplace list
     $ mmctl plugin marketplace list --page 2 --per-page 10
 
     # Filtering will narrow down the search
-    $ mmctl plugin marketplace list --filter jitsi
+    $ mmctl plugin marketplace list --filter jit
 
     # You can only retrieve local plugins
     $ mmctl plugin marketplace list --local-only
