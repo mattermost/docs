@@ -1,6 +1,6 @@
-==========================
+=========================
 SAML Single Sign-On (E20)
-==========================
+=========================
 
 Single sign-on (SSO) is a way for users to log into multiple applications with a single user ID and password without having to re-enter their credentials. The SAML standard allows identity providers to pass credentials to service providers. Mattermost can be configured to act as a SAML 2.0 Service Provider. 
 
@@ -10,9 +10,9 @@ Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Sin
 
 - **Single sign-on.** Users can sign-in to Mattermost with their SAML credentials.
 - **Centralized identity management.** Mattermost accounts automatically pull user attributes from SAML upon login, such as full name, email, and username.
-- **Automatic account creation.** Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials on the Mattermost server.
+- **Automatic account provisioning.** Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials on the Mattermost server.
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
-- **Compliance alignment.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
+- **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
 
 SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
 
@@ -36,7 +36,7 @@ Using SAML Attributes to Apply Roles
 You can use attributes to assign roles to specified users on login. To access the SAML attribute settings navigate to **System Console > SAML 2.0**.
 
 Username Attribute
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 (Optional) Enter a SAML assertion filter to use when searching for users.
 
@@ -47,7 +47,7 @@ Username Attribute
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
 Guest Attribute
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 When enabled, the Guest Attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
@@ -63,7 +63,7 @@ When a guest logs in for the first time they are presented with a default landin
 See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information about this feature.
 
 Admin Attribute
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 (Optional) The attribute in the SAML Assertion for designating System Admins. The users selected by the query will have access to your Mattermost server as System Admins. By default, System Admins have complete access to the Mattermost System Console.
 
@@ -77,7 +77,7 @@ Existing members that are identified by this attribute will be promoted from mem
 **Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
 Roadmap
---------
+-------
 
 From Mattermost v5.14, you can optionally configure Mattermost to sign the SAML request using a private key to meet InfoSec requirements at your organization.
 
