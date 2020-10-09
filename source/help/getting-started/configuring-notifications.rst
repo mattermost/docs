@@ -16,7 +16,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
 .. image:: ../../images/desktop_notification.png
 
--  Configure desktop notifications in **Account Settings > Notifications > Desktop notifications > Send desktop notifications** and choose your sound selection.
+-  Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications** and choose your sound selection.
 -  Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
   - By default, all channels use the global setting configured in **Account Settings**.
    
