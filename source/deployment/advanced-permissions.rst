@@ -3,7 +3,10 @@ Advanced Permissions (E10/E20)
 
 Mattermost Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
-In Mattermost, permissions are applied using either the System Scheme (applicable across the entire system and all teams) or the Team Override Scheme (applicable to a single team).
+Two permission schemes are provided in Mattermost: 
+
+* System Scheme: Applies permissions universally across all teams and channels.
+* Team Override Schemes: Allow admins to customize permissions for each team.
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions.
 
@@ -48,8 +51,8 @@ On systems with multiple `Mattermost teams <https://docs.mattermost.com/help/get
 
 When you use this permission scheme:
 
-- The System Scheme permissions no longer apply.
-- Permissions set in a Team Override Scheme apply to all Members, Channel Adminstrators, and Team Administrators.
+- The permissions granted in a Team Override Scheme apply only in the teams which are assigned to the scheme.
+- The System Scheme does not apply to teams that are added to a Team Override Scheme.
 - Teams can only belong to one Team Override Scheme.
 
 You can access the Team Override Scheme interface in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
