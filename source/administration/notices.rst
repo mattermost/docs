@@ -28,7 +28,7 @@ FAQ
 Are notices enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in the **System Console > Notices** page.
+Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Notices**.
 
 Will I still receive notices if my server is air-gapped?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
