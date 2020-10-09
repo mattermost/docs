@@ -31,7 +31,7 @@ Notices are enabled by-default for all Mattermost users. System Admins may choos
 
 Will I still receive notices if my server is air-gapped? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No, the Mattermost server requires a connection to the internet to receive notices. 
+No, the Mattermost server requires a connection to the internet to receive notices.
 
 How often will users receive notices?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
