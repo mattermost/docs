@@ -2352,7 +2352,11 @@ Child Commands
   -  `mmctl plugin delete`_ - Remove plugins
   -  `mmctl plugin disable`_ - Disable plugins
   -  `mmctl plugin enable`_ - Enable plugins
+  -  `mmctl plugin install-url`_ - Install plugin from URL
   -  `mmctl plugin list`_ - List plugins
+  -  `mmctl plugin marketplace`_ - Management of Plugin Marketplace plugins
+  -  `mmctl plugin marketplace install`_ - Install a plugin from the Plugin Marketplace
+  -  `mmctl plugin marketplace list`_ - List Plugin Marketplace plugins
 
 **Options**
 
@@ -2495,6 +2499,45 @@ mmctl plugin enable
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+   
+mmctl plugin install-url
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Supply one or multiple URLs to plugins compressed in a ``.tar.gz`` file. Plugins must be enabled in the server's config settings.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl plugin install-url <url>... [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # You can install one plugin
+    $ mmctl plugin install-url https://example.com/mattermost-plugin.tar.gz
+
+    # Or install multiple in one go
+    $ mmctl plugin install-url https://example.com/mattermost-plugin-one.tar.gz https://example.com/mattermost-plugin-two.tar.gz
+
+**Options**
+
+.. code-block:: sh
+
+   -f, --force   overwrite a previously installed plugin with the same ID, if any
+   -h, --help    help for install-url
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl plugin list
 ^^^^^^^^^^^^^^^^^^
@@ -2530,8 +2573,119 @@ mmctl plugin list
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
+mmctl plugin marketplace
+-------------------------
+
+Management of Plugin Marketplace plugins.
+
+Child Commands
+  -  `mmctl plugin marketplace install`_ - Install a plugin from the Plugin Marketplace
+  -  `mmctl plugin marketplace list`_ - List plugins on the Plugin Marketplace
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for marketplace
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --local                        allows communicating with the server through a unix socket
+    --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl plugin marketplace install
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Installs a plugin listed on the Plugin Marketplace server.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl plugin marketplace install <id> [version] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # you can specify with both the plugin id and its version
+    $ mmctl plugin marketplace install jitsi 2.0.0
+
+    # if you don't specify the version, the latest one will be installed
+    $ mmctl plugin marketplace install jitsi
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for install
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl plugin marketplace list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Gets all plugins from the Plugin Marketplace server, merging data from locally installed plugins as well as prepackaged plugins shipped with the server.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl plugin marketplace list [flags]
+    
+**Examples**
+
+.. code-block:: sh
+
+    # You can list all the plugins
+    $ mmctl plugin marketplace list --all
+
+    # Pagination options can be used too
+    $ mmctl plugin marketplace list --page 2 --per-page 10
+
+    # Filtering will narrow down the search
+    $ mmctl plugin marketplace list --filter jitsi
+
+    # You can only retrieve local plugins
+    $ mmctl plugin marketplace list --local-only
+
+**Options**
+
+.. code-block:: sh
+
+    --all             Fetch all plugins. --page flag will be ignore if provided
+    --filter string   Filter plugins by ID, name or description
+    -h, --help        help for list
+    --local-only      Only retrieve local plugins
+    --page int        Page number to fetch for the list of users
+    --per-page int    Number of users to be fetched (default 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
 mmctl post
-------------
+----------
 
 Management of posts.
 
@@ -2650,7 +2804,7 @@ Child Commands
     --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system clearbusy
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
