@@ -20,7 +20,7 @@ Administrator notices can be disabled in the **System Console > Notices** page.
 End User Notices
 ----------------
 
-End user notices are used to inform users and Admins of new feature enhancements, and when new desktop versions are available. End User notices can be disabled in the **System Console > Notices** page.
+End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
 
 FAQ
 ---
