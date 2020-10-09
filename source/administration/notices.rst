@@ -8,7 +8,7 @@ Mattermost is introducing in-product notices to keep users and adminstrators inf
   :local:
   :backlinks: entry
   
- .. image:: ../images/notices.png
+ .. image:: ../../images/notices.png
 
 Adminstrator Notices
 ---------------------
