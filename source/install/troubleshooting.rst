@@ -461,7 +461,7 @@ This alert can appear every few seconds in the desktop application or web browse
 **Solution:**
 
 - If you're using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable WebSocket disconnections.
-- If you're using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ for setting the  ``proxy_read_timeout``.
+- If you're using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
 
 ``context deadline exceeded``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,4 +1,4 @@
-.. _config-ssl-http2-nginx:
+.. _config-proxy-nginx:
 
 Customizing your Mattermost Install
 ====================================
