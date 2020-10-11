@@ -34,6 +34,7 @@ Learn how to get Mattermost running on your environment.
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
+   Installing on RHEL 8 </install/install-rhel-8.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
    /install/ee-install*

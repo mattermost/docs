@@ -12,11 +12,11 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
   
-On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``
+On RHEL 7 and 8: ``sudo touch /etc/nginx/conf.d/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
-On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
+On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
 
   .. code-block:: none
 
@@ -76,13 +76,13 @@ On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
-On RHEL 7: ``sudo rm /etc/nginx/conf.d/default``
+On RHEL 7 and 8: ``sudo rm /etc/nginx/conf.d/default``
 
 5. Enable the mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
-On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+On RHEL 7 and 8: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
 
 6. Restart NGINX.
 

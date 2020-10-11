@@ -39,7 +39,7 @@ You can use any certificate that you want, but these instructions show you how t
 
   ``sudo service nginx stop``
 
-  On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7:
+  On Ubuntu 16.04, Ubuntu 18.04, RHEL 7 and RHEL 8:
 
   ``sudo systemctl stop nginx``
 
@@ -108,7 +108,7 @@ You can use any certificate that you want, but these instructions show you how t
 
   ``sudo service nginx start``
 
-  On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7:
+  On Ubuntu 16.04, Ubuntu 18.04, RHEL 7 and RHEL 8:
 
   ``sudo systemctl start nginx``
 
