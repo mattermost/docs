@@ -1507,6 +1507,7 @@ Configuration settings.
     -  `mmctl config reset`_ - Reset the configuration
     -  `mmctl config set`_ - Set the value of a configuration
     -  `mmctl config show`_ - Writes the server configuration to STDOUT
+    -  `mmctl config subpath`_ - Update client asset loading to use the configured subpath
 
 **Options**
 
@@ -1583,7 +1584,7 @@ mmctl config get
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl config reset
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1675,6 +1676,50 @@ mmctl config show
 .. code-block:: sh
 
       -h, --help   help for show
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+
+mmctl config subpath
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Update the hard-coded production client asset paths to take into account Mattermost running on a subpath. This command needs access to the Mattermost assets directory to be able to rewrite the paths.
+
+**Format**
+
+.. code-block:: sh
+
+     mmctl config subpath [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # you can rewrite the assets to use a subpath
+   mmctl config subpath --assets-dir /opt/mattermost/client --path /mattermost
+
+   # the subpath can have multiple steps
+   mmctl config subpath --assets-dir /opt/mattermost/client --path /my/custom/subpath
+
+   # or you can fallback to the root path passing /
+   mmctl config subpath --assets-dir /opt/mattermost/client --path /
+
+**Options**
+
+.. code-block:: sh
+
+    -a, --assets-dir string   directory of the Mattermost assets in the local filesystem
+    -h, --help                help for subpath
+    -p, --path string         path to update the assets with
 
 **Options inherited from parent commands**
 
