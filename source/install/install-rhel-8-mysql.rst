@@ -25,7 +25,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``mysql -u root -p``
 
-5. Change the password. At the mysql prompt, type the following command. Be sure to replace ``Password42!`` with the password that you want to use.
+5. Change the password. At the prompt, type the following command. Be sure to replace ``Password42!`` with the password that you want to use:
 
   ``mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password42!';``
 
