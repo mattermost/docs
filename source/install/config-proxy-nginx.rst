@@ -21,7 +21,7 @@ On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
 SSL and HTTP/2 with server push are enabled in the provided configuration example.
 
 .. note::
-  You will need get valid SSL certificates for nginx to pin the certificates properly and your browser to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning *Let's Encrypt*, please see `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
+  You will need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning Let's Encrypt, please see the `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
 
   .. code-block:: none
 
