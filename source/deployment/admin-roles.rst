@@ -64,9 +64,8 @@ The format of the mmctl command is:
 ``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
 
 Editing Privileges of Admin Roles (Advanced)
---------------------------------------------
-
-Each of the admin roles have defined, default privileges as outlined above. However both read and write access to areas of the System Console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
+---------------------
+Each of the admin roles have defined, default privileges as outlined above. However both read & write access to areas of the system console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
 
 The format of the mmctl command is:
 
@@ -77,12 +76,12 @@ The format of the mmctl command is:
 ``mmctl permissions add system_user_manager sysconsole_write_authentication``
 
 **To grant read only access to the authentication section for all users with the User Manager role:**
-
 ``mmctl permissions remove system_user_manager sysconsole_read_authentication``
 
-**To remove write access to the authentication section for all users with the User Manager role:**
 
+**To remove write access to the authentication section for all users with the User Manager role:**
 ``mmctl permissions remove system_user_manager sysconsole_write_authentication``
+
 
 Frequently Asked Questions
 --------------------------
@@ -91,6 +90,10 @@ Can a User Manager or System Manager reset an administrator’s email or passwor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is not possible with the default priveleges of these roles. The ability to reset passwords, or email addresses of administrators is limited to System Admins.  
+
+Can a User Manager or System Manager access the configuration file? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Yes. Any admin role will have the ability to read the config file using the ``mmctl config edit`` command. Their changes will only be applied if they have the appropriate permissions to do so. 
 
 Are all actions of admin roles logged?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
