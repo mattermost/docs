@@ -88,7 +88,7 @@ Plugin Configuration Information
   Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/app/diagnostics.go#L668>`_ are enabled along with their versions. Some plugins may send summary data such as number of authenticated users of the plugin. From version 5.26, the list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
 
 Permissions Configuration Information (Enterprise Edition Only)
-  Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with.
+  Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with; Number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.
 
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, guest accounts, and bots.
