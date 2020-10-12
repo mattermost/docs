@@ -21,7 +21,7 @@ The main benefits of using a proxy are as follows:
 
   If you are on RHEL 8 you can skip to **Step 4. Install NGINX**.
 
-3. Open the file as root in a text editor and add the following contents, where *{version}* is **6** for RHEL 6, and **7** for RHEL 7:
+3. Open the file as *root* in a text editor and add the following contents, where *{version}* is **7** for RHEL 7:
 
   .. code-block:: none
   
