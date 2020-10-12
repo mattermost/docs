@@ -33,7 +33,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``sudo systemctl enable mysqld``
 
-7. Create the Mattermost user 'mmuser'.
+7. Create the Mattermost user *mmuser*.
 
   ``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``
 
