@@ -5,7 +5,7 @@ Upgrading Mattermost Server with a Script
 
 *Preparing the script*
 
-Copy and save the following script to your Mattermost server as ``update_mattermost.sh``.
+Copy and save the following script to your Mattermost server as ``upgrade_mattermost.sh``.
 
 .. code-block:: sh
 
@@ -65,7 +65,7 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    fi
 
    # Ask for database backup
-   
+
    if [ "${backupdatabase}" -eq 0 ]; then
     read -r -p "[?] Do you have a current backup of the Mattermost database? [Y/n] " input
 
@@ -81,7 +81,7 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    fi
 
    # Check if Mattermost exists in the path provided above
- 
+
    if [ ! -f "${mattermostdir}/bin/mattermost" ];  then
       echo "Mattermost not found please check the path for the Mattermost directory"
       exit 1
@@ -147,7 +147,7 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    chown -hR "$USER":"$GROUP" "${downloaddir}/mattermost-upgrade/"
 
    # Clean up Mattermost directory
-  
+
   find "${mattermostdir}" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/config" -o -path "${mattermostdir}/logs" -o -path "${mattermostdir}/plugins" -o     -path "${mattermostdir}/data" \) -delete
 
   # Rename plugin directory
@@ -189,7 +189,7 @@ Make it executable.
 
 .. code-block:: sh
 
-   # chmod +x ./update_mattermost.sh
+   # chmod +x ./upgrade_mattermost.sh
 
 Please adjust the parameters at the beginning of the script according to your environment.
 
