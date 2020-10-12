@@ -20,7 +20,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 6. Set **Enable Bleve for search queries** to **true**.
 7. Set **Enable Bleve for autocomplete queries** to **true**.
 
-Bleve Search
+Using Bleve Search
 ------------
 
 The following conditions are applied when using Bleve search:
