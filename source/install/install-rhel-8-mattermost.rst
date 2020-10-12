@@ -87,7 +87,7 @@ Assume that the IP address of this server is 10.10.10.2
       WantedBy=multi-user.target
 
     .. note::
-      If you are using MySQL, replace ``postgresql.service`` by ``mysqld.service`` in the ``[unit]`` section.
+      If you are using MySQL, replace ``postgresql.service`` with ``mysqld.service`` in the ``[unit]`` section.
 
   c. Make the service executable.
 
