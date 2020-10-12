@@ -5,7 +5,7 @@ Installing Mattermost Server
 
 Install Mattermost Server on a 64-bit machine.
 
-Assume that the IP address of this server is 10.10.10.2
+Assume that the IP address of this server is ``10.10.10.2``.
 
 **To install Mattermost Server on RHEL 8**
 
