@@ -45,7 +45,7 @@ Each role has a set of default permissions, and when a user is assigned a role, 
 Assigning Admin Roles
 ---------------------
 
-System Admins can assign roles and modify privileges using the mmctl tool. This can be done either locally or remotely.
+System Admins can assign roles using the mmctl tool. This can be done either locally or remotely.
 
 The format of the mmctl command is:
 
@@ -59,7 +59,30 @@ The format of the mmctl command is:
 
 ``mmctl permissions role assign system_user_manager bob-smith sue-clark``
 
-``mmctl permissions role assign system_read_only_admin captain-marvel clark-kent``
+**To grant the Read Only Admin role to two users, Bob Smith and Sue Clark:**
+
+``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
+
+Editing Privileges of Admin Roles (Advanced)
+---------------------
+Each of the admin roles have defined, default privileges as outlined above, however both read & write access to areas of the system console can be granted or removed from each role. System Admins can modify role privileges using the mmctl tool. This can be done either locally or remotely.
+
+The format of the mmctl command is:
+
+``mmctl permissions add [role_name] [permission...]``
+
+**To grant write access to the authentication section for all users with the User Manager role:**
+
+``mmctl permissions add system_user_manager sysconsole_write_authentication``
+
+**To grant read only access to the authentication section for all users with the User Manager role:**
+``mmctl permissions remove system_user_manager sysconsole_read_authentication``
+
+
+**To remove write access to the authentication section for all users with the User Manager role:**
+``mmctl permissions remove system_user_manager sysconsole_write_authentication``
+
+WARNING: Use this functionality at your own risk. Granting access to roles outside of the default permissions set may expose security issues such as the ability to change passwords, edit admin filters, etc.   
 
 Frequently Asked Questions
 --------------------------
@@ -67,7 +90,7 @@ Frequently Asked Questions
 Can a User Manager or System Manager reset an administrator’s email or password without their knowledge?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No. The ability to reset passwords, or email addresses of administrators is limited to System Admins.
+This is not possible with the default priveleges of these roles. The ability to reset passwords, or email addresses of administrators is limited to System Admins by default. However, if the priveleges of a role are manually changed to include write access to users, this authority can be granted.  
 
 Are all actions of admin roles logged?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -112,7 +135,7 @@ This is being considered for future development.
 Can a System Manager or User Manager demote or deactivate another Admin or Manager?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No privilege grants the authority to deactivate or demote another admin.
+By default, no privilege grants the authority to deactivate or demote another admin. However, if the priveleges of a role are manually changed to include write access to users, this authority can be granted.
 
 Can a System Manager or User Manager assign or unassign admin roles?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
