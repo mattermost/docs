@@ -20,8 +20,6 @@ You can export the following data types:
 - Users' Channel memberships
 - Posts (Posts in the Public/Private channels and also replies to those posts)
 
-.. note:: The Bulk Export Tool does currently not support exporting file attachments of posts.
-
 .. include:: bulk-export-data.rst
 
 Running the bulk export command
