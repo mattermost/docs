@@ -61,12 +61,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added a ``CreateCommand`` plugin API that creates a slash command that is not handled by the plugin itself.
  
 #### Administration
- - Added the ability to download Compliance files from the System Console.
  - Added the ability to upload and remove private and public certicates for LDAP authentication.
  - Added support for resumable file uploads.
  - Added the ability to convert a public channel to private and vice versa via Advanced Permissions.
  - Added filters to search teams in Teams page.
- - Added filters to user removal modal in Users page.
  - Improved logging related to sessions that are not found.
  - Created Grafana enterprise metrics for logging, such as for current queue level(s), rate of logging records emitted, and rate of logging errors.
  - Improved logging when ``GetUser`` fails during MFA Authentication.
