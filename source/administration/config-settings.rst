@@ -2313,6 +2313,24 @@ If the "No encryption" option is selected it is highly recommended that the AD/L
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``.                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Private Key
+^^^^^^^^^^^^
+
+(Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PrivateKeyFile": false`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Public Certificate
+^^^^^^^^^^^^^^^^^^
+
+(Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PublicCertificateFile": false`` with with string input.                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Skip Certificate Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
