@@ -71,7 +71,7 @@ Installing PostgreSQL Database
 
 14. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
-  **If the Mattermost server and the database are on the same machine**:
+  **If the Mattermost server and the database are on the same machine:**
 
     a. Open ``/var/lib/pgsql/data/pg_hba.conf`` as root in a text editor.
 
