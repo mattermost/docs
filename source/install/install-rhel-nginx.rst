@@ -12,7 +12,7 @@ The main benefits of using a proxy are as follows:
   -  Port mapping ``:80`` to ``:8065``
   -  Standard request logs
 
-**To install NGINX on RHEL 6, 7 or 8:**
+**To install NGINX on RHEL 7 or 8:**
 
 1. Log in to the server that will host the proxy, and open a terminal window.
 
