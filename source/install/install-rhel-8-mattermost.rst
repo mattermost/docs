@@ -66,7 +66,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo touch /etc/systemd/system/mattermost.service``
 
-  b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
+  b. Open the configuration file in a text editor, and copy the following lines into the file:
 
     .. code-block:: none
 
