@@ -27,4 +27,3 @@ The following conditions are applied when using Bleve search:
 
 * **Unquoted terms:** Search terms that contain non-alphanumeric characters/special characters outside of quotation marks are removed. For example, using ``abcd "**" && abc`` as a search term will return results for a search for ``abcd "**" abc`` as the ``&&`` characters weren't within the quotation marks.
 * **Wildcard search:** Wildcard search (e.g., ``abc*``) is supported.
-* **Excluded words:** The following stop words are excluded from search in MySQL: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.
