@@ -83,7 +83,7 @@ Installing PostgreSQL Database
 
       ``local   all             all                        trust``
 
-  **If the Mattermost server and the database are on different machines**:
+  **If the Mattermost server and the database are on different machines:**
 
     a. Open ``/var/lib/pgsql/data/pg_hba.conf`` as *root* in a text editor.
 
