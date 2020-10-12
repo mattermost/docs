@@ -196,7 +196,7 @@ NGINX Configuration FAQ
 
 **Why are Websocket connections returning a 403 error?**
 
-This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and make sure that the host header being set in the proxy is dynamic:
+This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* in a text editor and make sure that the host header being set in the proxy is dynamic:
 
 .. code-block:: none
   :emphasize-lines: 4
