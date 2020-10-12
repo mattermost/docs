@@ -82,7 +82,6 @@ The format of the mmctl command is:
 **To remove write access to the authentication section for all users with the User Manager role:**
 ``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
-WARNING: Use this functionality at your own risk. Granting access to roles outside of the default permissions set may expose security issues such as the ability to change passwords, edit admin filters, etc.   
 
 Frequently Asked Questions
 --------------------------
