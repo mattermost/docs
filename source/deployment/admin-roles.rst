@@ -1,5 +1,5 @@
 =============================
-Configuring Admin Roles (E20)
+Additional System Admin Roles (E20)
 =============================
 
 From v5.28, System Admins can assign roles to members, allowing them access only to designated areas of the System Console. This allows other members of your organization to perform certain administrative tasks without providing access to all administrative capabilities.
