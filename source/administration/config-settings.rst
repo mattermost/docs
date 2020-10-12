@@ -2317,6 +2317,7 @@ Private Key
 ^^^^^^^^^^^^
 
 (Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PrivateKeyFile": false`` with string input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
