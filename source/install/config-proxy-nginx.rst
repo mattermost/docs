@@ -20,7 +20,8 @@ On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
 
 SSL and HTTP/2 with server push are enabled in the provided configuration example.
 
-**NOTE**: You will need get valid SSL certificates for nginx to pin the certificates properly and your browser to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning *Let's Encrypt*, please see `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
+.. note::
+  You will need get valid SSL certificates for nginx to pin the certificates properly and your browser to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning *Let's Encrypt*, please see `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
 
   .. code-block:: none
 
@@ -144,7 +145,7 @@ By default, the Mattermost server accepts connections on port 8065 from every ma
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
 
 NGINX Configuration FAQ
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why are Websocket connections returning a 403 error?**
 
