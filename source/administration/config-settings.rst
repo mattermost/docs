@@ -3409,7 +3409,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``.                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Bot Accounts
 ~~~~~~~~~~~~
 
@@ -4273,7 +4272,7 @@ Set a threshold on the number of goroutines when the Mattermost system is consid
 To turn off checking for the threshold, set this value to ``-1``.
 
 +----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": -1`` with numerical input.     |
+| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": -1`` with numerical input.       |
 +----------------------------------------------------------------------------------------------------------+
 
 Allow Cookies for Subdomains
