@@ -131,7 +131,7 @@ GROUP="$(stat -c '%G' ${mattermostdir}/bin/mattermost)"
 chown -hR "$USER":"$GROUP" "${downloaddir}/mattermost-upgrade/"
 
 # Clean up mattermost directory
-find "${mattermostdir}" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/config" -o -path "${mattermostdir}/logs" -o -path "${mattermostdir}/plugins" -o -path "${mattermostdir}/data" \) -delete
+find "${mattermostdir}" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/config" -o -path "${mattermostdir}/logs" -o -path "${mattermostdir}/plugins" -o -path "${mattermostdir}/data" \) -exec rm -rf {} \;
 
 # Rename plugin directory
 if [ "${plugins}" -eq 0 ];  then
