@@ -64,8 +64,9 @@ The format of the mmctl command is:
 ``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
 
 Editing Privileges of Admin Roles (Advanced)
----------------------
-Each of the admin roles have defined, default privileges as outlined above. However both read & write access to areas of the system console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
+--------------------------------------------
+
+Each of the admin roles have defined, default privileges as outlined above. However both read and write access to areas of the System Console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
 
 The format of the mmctl command is:
 
@@ -76,12 +77,12 @@ The format of the mmctl command is:
 ``mmctl permissions add system_user_manager sysconsole_write_authentication``
 
 **To grant read only access to the authentication section for all users with the User Manager role:**
+
 ``mmctl permissions remove system_user_manager sysconsole_read_authentication``
 
-
 **To remove write access to the authentication section for all users with the User Manager role:**
-``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
+``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
 Frequently Asked Questions
 --------------------------
