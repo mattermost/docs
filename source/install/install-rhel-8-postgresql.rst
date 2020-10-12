@@ -34,7 +34,7 @@ Installing PostgreSQL Database
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-9.  Create the Mattermost user 'mmuser'.
+9.  Create the Mattermost user *mmuser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
