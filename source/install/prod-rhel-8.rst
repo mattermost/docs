@@ -3,4 +3,4 @@
 Production Install on RHEL 8+
 ===============================
 
-This document is superseded by :doc:`install-rhel-8`.
+This document is replaced by :doc:`install-rhel-8`.
