@@ -85,7 +85,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/var/lib/pgsql/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/data/pg_hba.conf`` as *root* in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
