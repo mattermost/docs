@@ -90,7 +90,7 @@ Frequently Asked Questions
 Can a User Manager or System Manager reset an administrator’s email or password without their knowledge?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is not possible with the default priveleges of these roles. The ability to reset passwords, or email addresses of administrators is limited to System Admins by default. However, if the priveleges of a role are manually changed to include write access to users, this authority can be granted.  
+This is not possible with the default priveleges of these roles. The ability to reset passwords, or email addresses of administrators is limited to System Admins.  
 
 Are all actions of admin roles logged?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,7 +135,7 @@ This is being considered for future development.
 Can a System Manager or User Manager demote or deactivate another Admin or Manager?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, no privilege grants the authority to deactivate or demote another admin. However, if the priveleges of a role are manually changed to include write access to users, this authority can be granted.
+By default, no privilege grants the authority to deactivate or demote another admin. 
 
 Can a System Manager or User Manager assign or unassign admin roles?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
