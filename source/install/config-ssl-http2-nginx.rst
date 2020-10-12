@@ -68,7 +68,7 @@ You can use any certificate that you want, but these instructions show you how t
 
     server {
       listen 80 default_server;
-      server_name   mattermost.example.com;
+      server_name mattermost.example.com;
       return 301 https://$server_name$request_uri;
     }
 
