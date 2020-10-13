@@ -68,8 +68,9 @@ The format of the mmctl command is:
 ``mmctl permissions role unassign system_manager bob-smith``
 
 Editing Privileges of Admin Roles (Advanced)
----------------------
-Each of the admin roles have defined, default privileges as outlined above. However both read & write access to areas of the system console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
+--------------------------------------------
+
+Each of the admin roles have defined, default privileges as outlined above. However both read and write access to areas of the System Console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
 
 The format of the mmctl command is:
 
@@ -80,11 +81,12 @@ The format of the mmctl command is:
 ``mmctl permissions add system_user_manager sysconsole_write_authentication``
 
 **To grant read only access to the authentication section for all users with the User Manager role:**
+
 ``mmctl permissions remove system_user_manager sysconsole_read_authentication``
 
 **To remove write access to the authentication section for all users with the User Manager role:**
-``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
+``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
 Frequently Asked Questions
 --------------------------
@@ -92,10 +94,11 @@ Frequently Asked Questions
 Can a User Manager or System Manager reset an administrator’s email or password without their knowledge?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is not possible with the default priveleges of these roles. The ability to reset passwords, or email addresses of administrators is limited to System Admins.  
+This is not possible with the default privileges of these roles. The ability to reset passwords or email addresses of administrators is limited to System Admins.  
 
 Can a User Manager or System Manager access the configuration file? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Yes. However, they will only have access to read actual values and modify values in accordance with their permissions. If appropriate read permissions do not exist, the default key values will be displayed.
 
 Are all actions of admin roles logged?
