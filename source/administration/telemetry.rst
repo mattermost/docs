@@ -58,7 +58,7 @@ Deployment Configuration Information
   Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
 
 Deployment Type
-  - Manual install (includes wget installs)
+  - Manual install (includes ``wget`` installs)
   - Docker
   - Mattermost Omnibus
   - Kubernetes operator
