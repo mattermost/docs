@@ -4726,7 +4726,7 @@ This setting can be left as default unless you are seeing audit write failures i
 | This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input.                                                                       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Advanaced Audit Logging Configuration
+Advanced Audit Logging Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
