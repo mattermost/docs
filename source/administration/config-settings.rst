@@ -2319,7 +2319,7 @@ Private Key
 (Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input.                                                                             |
+| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Public Certificate
@@ -2328,7 +2328,7 @@ Public Certificate
 (Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with with string input.                                                                 |
+| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with with string input.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
