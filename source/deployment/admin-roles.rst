@@ -93,7 +93,7 @@ This is not possible with the default priveleges of these roles. The ability to 
 
 Can a User Manager or System Manager access the configuration file? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Yes. Any admin role will have the ability to read the config file using the ``mmctl config edit`` command. Their changes will only be applied if they have the appropriate permissions to do so. 
+Yes. However, they will only have access to read actual values and modify values in accordance with their permissions. If appropriate read permissions do not exist, the default key values will be displayed.
 
 Are all actions of admin roles logged?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -138,7 +138,7 @@ This is being considered for future development.
 Can a System Manager or User Manager demote or deactivate another Admin or Manager?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, no privilege grants the authority to deactivate or demote another admin. 
+No privilege grants the authority to deactivate or demote another admin. 
 
 Can a System Manager or User Manager assign or unassign admin roles?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
