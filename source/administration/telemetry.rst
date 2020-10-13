@@ -57,6 +57,13 @@ Reporting Frequency
 Deployment Configuration Information
   Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
 
+Deployment Type
+  - Manual install (includes wget installs)
+  - Docker
+  - Mattermost Omnibus
+  - Kubernetes operator
+  - GitLab Omnibus
+
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of ``type`` ("enumerated integer" or "enumerated boolean") values, ``true/false`` ("boolean"), and ``count`` ("integer"). Specifically these include:
 
