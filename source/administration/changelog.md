@@ -106,9 +106,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``ServiceSettings`` in ``config.json``:
      - Added ``EnableAPIChannelDeletion``, to permanently delete channels for compliance reasons.
      - Added ``EnableAPIUserDeletion``, to permanently delete users for compliance reasons.
- - Under ``MessageExportSettings`` in ``config.json``:
-     - Added ``DownloadExportResults``, to 
- - Under ``LogSettings`` in ``config.json``:
+ - Under ``NotificationLogSettings`` and ``ExperimentalAuditSettings`` in ``config.json``:
      - Added ``AdvancedLoggingConfig``, to enable configuration options for setting audit targets.
  - Under ``AnnouncementSettings`` in ``config.json``:
      - Added ``AdminNoticesEnabled``, ``UserNoticesEnabled``, ``NoticesURL``, ``NoticesFetchFrequency``, and ``NoticesSkipCache``, to enable in-product notices to make users and Admins aware of the newest product enhancements from within Mattermost.
@@ -120,10 +118,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Removed ``react-native-v8`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
+ - Added a new column ``Commands.PluginId``.
+ - Changed to data type of ``Teams.Type to varchar(255)``.
+ - Changed to data type of ``Teams.SchemeId to varchar(26)``.
+ - Changed to data type of ``IncomingWebhooks.Username to varchar(255)``.
+ - Changes to data type of ``IncomingWebhooks.IconURL to text",``.
 
 ### API Changes
-
-### Websocket Event Changes
+ - Added ``POST /upgrade_to_enterprise`` API endpoint.
+ - Added ``GET /upgrade_to_enterprise/status`` API endpoint.
+ - Added ``POST /restart`` API endpoint.
+ - Added ``GET /warn_metrics/status`` API endpoint.
+ - Added ``POST /warn_metrics/ack/:warn_metric_id`` API endpoint.
  
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
