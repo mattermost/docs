@@ -2055,6 +2055,31 @@ Public Link Salt
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Notices
+~~~~~~~~
+
+Enable Admin Notices
+^^^^^^^^^^^^^^^^^^^^
+
+**True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://about.mattermost.com/default-notices>`_
+
+**False**: System Admins will not receive notices except those that apply to all end users (See ``UserNoticesEnabled``). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdminNoticesEnabled": true`` with options ``true`` and ``false``.                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable End User Notices
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://about.mattermost.com/default-notices>`_
+
+**False**: Users will not receive notices about available client upgrades and relevant end user features. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserNoticesEnabled": true`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Authentication
 ---------------
 
