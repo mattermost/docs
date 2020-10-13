@@ -84,11 +84,6 @@ Can any of the new roles view API keys/passwords or other sensitive information 
 
 No, password information is only visible to System Admins and is obfuscated for other roles.
 
-If download links for compliance exports are enabled in the System Console, can a Read Only Admin download the reports? 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Only roles that are explicitly granted access to **System Console > Compliance** have access to download compliance reports. 
-
 Can any of the new roles force-join Private channels?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
