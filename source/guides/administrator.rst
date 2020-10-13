@@ -143,6 +143,7 @@ Learn how to maintain your Mattermost system.
    /administration/scripts*
    /administration/statistics.md
    /integrations/net-promoter-score*
+   /administration/notices* 
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
