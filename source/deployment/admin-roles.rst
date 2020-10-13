@@ -45,7 +45,7 @@ Each role has a set of default permissions, and when a user is assigned a role, 
 Assigning Admin Roles
 ---------------------
 
-System Admins can assign roles using the mmctl tool. This can be done either locally or remotely.
+System Admins can assign roles using the mmctl tool, either locally or remotely.
 
 The format of the mmctl command is:
 
