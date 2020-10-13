@@ -51,9 +51,7 @@ The Billing History screen contains a list of all your monthly invoices and paym
 
 Billing periods end at 11:59 P.M. UTC on the last day of the month, at which time subscription costs are calculated and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
 
-If you have a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription. Please see Failed and Delinquent Payments <link> for more information.
-
-For questions regarding the details of your invoice please see How to read your invoice.
+If you have a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
 
 Company information
 ~~~~~~~~~~~~~~~~~~~
@@ -72,4 +70,19 @@ We offer pricing and billing only in U.S. Dollars at this time. Payment will be 
 Sales tax and VAT
 ~~~~~~~~~~~~~~~~~
 
-Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, customers may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales or VAT tax.
+Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, customers may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
+
+Failed or late payments
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Administrators are notified immediately of failed payments both in-product with a banner and via email. The notifications provide directions on how to update payment information. Once payment information is updated you are charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here’s what to expect:
+
+.. csv-table::
+   :header: "Time in arrears", "Action taken"
+
+   "7 days", "An email is sent to the workspace Administrator with directions to update payment information."
+   "14 days", "Another email is sent to the workspace Administrator with directions to update payment information."
+   "30 days", "An email is sent to the workspace Administrator indicating that the workspace will be suspended in a further 90 days."
+   "120 days", "The workspace will be suspended, preventing access by all users and Administrators."
+
+Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
