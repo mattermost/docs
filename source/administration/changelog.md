@@ -109,7 +109,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``NotificationLogSettings`` and ``ExperimentalAuditSettings`` in ``config.json``:
      - Added ``AdvancedLoggingConfig``, to enable configuration options for setting audit targets.
  - Under ``AnnouncementSettings`` in ``config.json``:
-     - Added ``AdminNoticesEnabled``, ``UserNoticesEnabled``, ``NoticesURL``, ``NoticesFetchFrequency``, and ``NoticesSkipCache``, to enable in-product notices to make users and Admins aware of the newest product enhancements from within Mattermost.
+     - Added ``AdminNoticesEnabled`` and ``UserNoticesEnabled``, to enable in-product notices to make users and Admins aware of the newest product enhancements from within Mattermost.
  - ``EnableCustomEmoji``, ``EnableGifPicker``, ``ExperimentalViewArchivedChannels`` and ``ExperimentalTimezone`` are now enabled by default for new installs.
 
 ### Open Source Components
