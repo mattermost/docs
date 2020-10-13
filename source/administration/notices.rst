@@ -4,11 +4,11 @@ In-Product Notices
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
 
 .. contents::
-  :depth: 2
   :local:
-  :backlinks: entry
+
+.. image:: 
   
- .. image:: ../../images/notices.png
+  ../../images/notices.png
 
 Administrator Notices
 ---------------------
