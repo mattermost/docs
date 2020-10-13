@@ -2335,8 +2335,6 @@ Public Certificate
 Skip Certificate Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost.
-
 **True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
 **False**: Mattermost does not skip certificate verification.
