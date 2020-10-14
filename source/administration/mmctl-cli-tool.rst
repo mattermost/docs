@@ -2114,7 +2114,7 @@ mmctl integrity
 
 **Description**
 
-  Perform a relational integrity check which returns information about any orphaned record found.
+  Perform a relational integrity check which returns information about any orphaned record found. This command can only be run using local mode.
 
 **Format**
 
