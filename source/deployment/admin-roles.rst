@@ -70,7 +70,9 @@ The format of the mmctl command is:
 Editing Privileges of Admin Roles (Advanced)
 --------------------------------------------
 
-Each of the admin roles have defined, default privileges as outlined above. However both read and write access to areas of the System Console can be granted or removed from each role by System Admins using the mmctl tool. This can be done either locally or remotely.
+Each of the admin roles have defined, default privileges as outlined above. 
+
+System Admins can grant read and write access to other areas of the System Console, as well as remove read write access (including default access), for each role. This is completed using the mmctl tool, either locally or remotely.
 
 The format of the mmctl command is:
 
