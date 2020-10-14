@@ -1,6 +1,6 @@
 # "Your contribution will help the world💖"
 
-## [Contribute to Mattermost](https://mattermost.com/contribute/)
+## Contribute to Mattermost (https://mattermost.com/contribute/)
 <br>
 
 
