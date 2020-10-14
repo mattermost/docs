@@ -12,8 +12,9 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    #!/usr/bin/env bash
 
    # Immediately exit if a command run from a loop, a pipeline or a compound
-   # command statement fails
-   set -e
+   # command statement fails or a variable is used unset.
+   set -o errexit nounset
+
 
    ################################################################################
    # Configuration - please adapt it to your environment
@@ -61,6 +62,11 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    	echo "[-] The edition must either be \"Team\" or \"Enterprise\". Aborted."
    	exit 1
    fi
+
+   # Check config variables
+   test -d ${backup}
+   test -d ${downloaddir}
+   test -d ${mattermostdir}
 
    # Ask for database backup
    if [ "${backupdatabase}" -eq 0 ]; then
@@ -117,13 +123,13 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    }
 
    # Check previous download
-   if [ -e ${downloaddir}/mattermost-upgrade.tar.gz ]; then
+   if [ -e "${downloaddir}/mattermost-upgrade.tar.gz" ]; then
    	read -r -p "[?] A previous download exists. Do you want to replace it by a new one? [Y/n] " input
 
    	case "$input" in
    		[yY])
    			echo "[+] Remove previous download."
-   			rm -rf ${downloaddir}/mattermost-upgrade.tar.gz
+   			rm -rf "${downloaddir}/mattermost-upgrade.tar.gz"
    			get_the_file
    			;;
    	esac
@@ -166,16 +172,16 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    # Rename plugin directory
    if [ "${plugins}" -eq 0 ];  then
    	echo "[+] Renaming plugin folders..."
-   	if [ -d ${mattermostdir}/plugins/ ]; then
+   	if [ -d "${mattermostdir}/plugins/" ]; then
    		mv "${mattermostdir}/plugins/" "${mattermostdir}/plugins~"
    	fi
-   	if [ -d ${mattermostdir}/client/plugins/ ]; then
+   	if [ -d "${mattermostdir}/client/plugins/" ]; then
    		mv "${mattermostdir}/client/plugins/" "${mattermostdir}/client/plugins~"
    	fi
    fi
 
    echo "[+] Updating Mattermost..."
-   cp -an ${downloaddir}/mattermost-upgrade/mattermost/* ${mattermostdir}
+   cp -an "${downloaddir}/mattermost-upgrade/mattermost/"* "${mattermostdir}"
 
 
    echo "[+] Cleaning Mattermost temporary files..."
@@ -201,6 +207,7 @@ Copy and save the following script to your Mattermost server as ``update_matterm
    	echo "mv \"${mattermostdir}/client/plugins\" \"${mattermostdir}/client/plugins~\""
    	echo "*************************************************"
    fi
+
 
 Make it executable.
 
