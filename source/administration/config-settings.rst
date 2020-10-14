@@ -4,9 +4,9 @@ Configuration Settings
 .. note::
    The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
 
-Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
+Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
 On new installations starting from version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
@@ -838,7 +838,7 @@ Enable Push Notifications
 **False**: Mobile push notifications are disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SendPushNotifications": false`` with options ``true`` and ``false``.                                                    |
+| This feature's ``config.json`` setting is ``"SendPushNotifications": true`` with options ``true`` and ``false``.                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Server
@@ -1667,7 +1667,7 @@ Allow Users to View Archived Channels (Beta)
 **False**: Users are unable to view, share, or search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": false`` with options ``true`` and ``false``.                          |
+| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": true`` with options ``true`` and ``false``.                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Show Email Address
@@ -1890,7 +1890,7 @@ Enable Custom Emoji
 **False**: Custom Emojis are disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableCustomEmoji": false`` with options ``true`` and ``false``.                                                        |
+| This feature's ``config.json`` setting is ``"EnableCustomEmoji": true`` with options ``true`` and ``false``.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict Custom Emoji Creation
@@ -2053,6 +2053,31 @@ Public Link Salt
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Notices
+~~~~~~~~
+
+Enable Admin Notices
+^^^^^^^^^^^^^^^^^^^^
+
+**True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://about.mattermost.com/default-notices>`_
+
+**False**: System Admins will not receive notices except those that apply to all end users (See ``UserNoticesEnabled``). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdminNoticesEnabled": true`` with options ``true`` and ``false``.                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable End User Notices
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://about.mattermost.com/default-notices>`_
+
+**False**: Users will not receive notices about available client upgrades and relevant end user features. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserNoticesEnabled": true`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Authentication
@@ -3427,7 +3452,7 @@ Enable GIF Picker
 **False**: GIFs cannot be selected in the emoji picker.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableGifPicker": false`` with options ``true`` and ``false``.                                                          |
+| This feature's ``config.json`` setting is ``"EnableGifPicker": true`` with options ``true`` and ``false``.                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -4103,7 +4128,7 @@ Select the timezone used for timestamps in the user interface and email notifica
 **False**: The **Timezone** setting is hidden in the Account Settings.
 
 +------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Hidden in Left-Hand Sidebar (Experimental)

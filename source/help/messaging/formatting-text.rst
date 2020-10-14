@@ -20,7 +20,7 @@ Renders as:
 Text Style
 ----------
 
-You can use either ``_`` or ``*`` around a word to make it italic. Use two to make it bold.
+You can use either ``_`` or ``*`` around a word to make it italic, or ``__`` or ``**`` around a word to make it bold. You can also use common keyboard shortcuts, including CTRL/CMD + B to bold, and CTRL/CMD + I to italicize. 
 
 * ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
@@ -175,13 +175,13 @@ Supported languages are:
 ``handlebars``, ``hbs``, ``hic``,  ``hpp``, ``html``, ``html.handlebars``, 
 ``html.hbs``, ``hs``, ``hx``, ``iced``, ``irb``,
 ``java``, ``jinja``, ``jl``, ``js``, ``json``, ``jsp``, ``jsx``, ``kt``,
-``ktm``, ``kts``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
+``ktm``, ``kts``, ``latexcode``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
 ``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
 ``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
 ``perl``, ``pgsql``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
 ``podspec``, ``postgres``, ``postgresql``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
 ``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
-``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
+``sql``, ``swift``, ``tex``, ``texcode``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
 ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
 
 Example:
