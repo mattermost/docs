@@ -86,7 +86,7 @@ The format of the mmctl command is:
 
 ``mmctl permissions remove system_user_manager sysconsole_read_authentication``
 
-**To remove write access to the authentication section for all users with the User Manager role:**
+**To remove write access to the Authentication section of the System Console for all users with the User Manager role:**
 
 ``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
