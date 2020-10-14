@@ -30,7 +30,7 @@ Here’s an example:
 
 Your organization has a Mattermost Cloud workspace and you're paying monthly by credit card at rate of $10 per user per month. You add a new user 11 days into your billing period and that user remains active for the subsequent 19 days remaining in the month - for a total of 20 days.
 
-The prorated subscription cost for this user is determined by multiplying the monthly amount ($10) by the number of days they were active in the billing cycle (20) and dividing by the number of days in the month (30). The prorated subscription cost for the user added on day 11 is $6.67.*
+The prorated subscription cost for this user is determined by multiplying the monthly amount ($10) by the number of days they were active in the billing cycle (20) and dividing by the number of days in the month (30). The prorated subscription cost for the user added on day 11 is $6.67.
 
 Similarly, if you deactivate users in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
 
