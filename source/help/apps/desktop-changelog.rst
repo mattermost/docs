@@ -25,7 +25,7 @@ Bug Fixes
 
 All Platforms
 ^^^^^^^^^^^^^
-- Fixed an issue where the app window started as maximized when "Start app on login" setting was enabled.
+- Fixed an issue where the app window started as maximized when "Start app on login" setting was enabled. This setting is not respected when AppImage file (Unofficial) is used.
 - Fixed an issue where the **Add server** modal fields were missing the right-click menu.
 - Fixed an issue where users did not see the right-click menu with Copy and Paste options on the login page when using the desktop app to login to an external application.
 - Fixed an issue where the URL bar was shown in the bottom left corner when hovering over a timestamp or internal links.
