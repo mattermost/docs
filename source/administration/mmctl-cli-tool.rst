@@ -606,7 +606,6 @@ mmctl bot disable
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
    
-   
 mmctl bot enable
 ^^^^^^^^^^^^^^^^^
 
@@ -642,7 +641,7 @@ mmctl bot enable
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl bot list
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 **Description**
 
@@ -953,7 +952,7 @@ mmctl channel modify
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel move
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1024,7 +1023,7 @@ mmctl channel remove
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel rename
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1150,7 +1149,7 @@ Management of slash commands.
     -h, --help      help for command
     
 mmctl command archive
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 **Dscription**
 
@@ -1263,7 +1262,7 @@ mmctl command delete
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command list
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1342,7 +1341,7 @@ mmctl command modify
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command move
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1376,7 +1375,7 @@ mmctl command move
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command show
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -2114,7 +2113,11 @@ mmctl integrity
 
 **Description**
 
-  Perform a relational integrity check which returns information about any orphaned record found. This command can only be run using local mode.
+  Perform a relational integrity check which returns information about any orphaned record found. 
+  
+  **Note:**
+  
+  This command can only be run using local mode.
 
 **Format**
 
@@ -3287,14 +3290,14 @@ mmctl team search
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl team users
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 Child Commands
   -  `mmctl team users add`_ - Add users to a team
   -  `mmctl team users remove`_ - Remove users from a team
 
 mmctl team users add
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3328,7 +3331,7 @@ mmctl team users add
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl team users remove
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3362,7 +3365,7 @@ mmctl team users remove
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl token
----------
+-----------
 
 Management of users' access tokens.
 
@@ -3378,7 +3381,7 @@ Child Commands
    -h, --help       help for token
 
 mmctl token generate
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3412,7 +3415,7 @@ mmctl token generate
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl token list
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3485,7 +3488,7 @@ mmctl token revoke
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl user
----------
+----------
 
 Management of users.
 
@@ -3493,11 +3496,13 @@ Child Commands
   -  `mmctl user activate`_ - Activate a user
   -  `mmctl user create`_ - Create user
   -  `mmctl user deactivate`_ - Deactivate user
+  -  `mmctl user delete`_ - Delete users
+  -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
   -  `mmctl user email`_ - Set user email
   -  `mmctl user invite`_ - Invite user
   -  `mmctl user list`_ - List users
   -  `mmctl user reset_password`_ - Reset user password
-  -  `mmctl user resetmfa`_ - Reset user's MFA token
+  -  `mmctl user resetmfa`_ - Reset a user's MFA token
   -  `mmctl user search`_ - Search for a user
 
 **Options**
@@ -3507,7 +3512,7 @@ Child Commands
    -h, --help       help for user
 
 mmctl user activate
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -3618,6 +3623,79 @@ mmctl user deactivate
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
+mmctl user delete
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Permanently delete some users. Permanently deletes one or multiple users along with all related information including posts from the database.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl user delete [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user delete user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+     --confirm   Confirm you really want to delete the user and a DB backup has been performed
+     -h, --help  help for delete
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl user deleteall
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Permanently delete all users and all related information including posts.
+  
+  **Note:**
+  
+  This command can only be run using local mode.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl user deleteall [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user deleteall
+
+**Options**
+
+.. code-block:: sh
+
+     --confirm   Confirm you really want to delete the user and a DB backup has been performed
+     -h, --help  help for delete
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl user email
 ^^^^^^^^^^^^^^^^^
@@ -3690,7 +3768,7 @@ mmctl user invite
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl user list
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 **Description**
 
