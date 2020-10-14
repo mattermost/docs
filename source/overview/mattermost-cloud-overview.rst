@@ -7,7 +7,7 @@ Mattermost Cloud is offered as a monthly subscription service. It is available f
 How Billing Works
 -----------------
 
-Active users are defined as users who fulfil the following criteria:
+You are billed for active users in your workspace.  An active user: 
 
 - Has created an account and joined a workspace and shows as **Active** in **System Console > Users**.
 - Counts towards your monthly bill for each day they are active in the billing period.
