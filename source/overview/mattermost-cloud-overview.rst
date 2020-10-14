@@ -12,7 +12,7 @@ You are billed for active users in your workspace.  An active user:
 - Has created an account and joined a workspace and shows as **Active** in **System Console > Users**.
 - Counts towards your monthly bill for each day they are active in the billing period.
 
-If a user is deactivated by a System Administrator they no longer count toward your monthly bill.
+Users deactivated by a System Administrator are no longer counted toward future monthly invoices.
 
 Billing periods
 ~~~~~~~~~~~~~~~
