@@ -4728,6 +4728,7 @@ This setting can be left as default unless you are seeing audit write failures i
 
 Advanced Audit Logging Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *Available in Enterprise Edition E20*
 
 Output logs to multiple targets
