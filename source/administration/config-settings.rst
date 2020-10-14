@@ -1083,15 +1083,13 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send log records to multiple targets:
+Allow any combination of local file, syslog, and TCP socket targets and send log records to multiple targets:
 
-- Multiple local file targets
-- Multiple syslogs
-- Multiple TCP sockets
+- Multiple local file targets: Supports rotation and compression triggered by size and/or duration.
+- Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
+- Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-Allow any combination of local file, syslog, and TCP socket targets. These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software.
-
-File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
+These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software. 
 
 Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified.
 
