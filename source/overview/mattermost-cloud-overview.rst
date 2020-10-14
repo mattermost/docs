@@ -62,7 +62,7 @@ Payment information
 ~~~~~~~~~~~~~~~~~~~
 
 Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted.
-
+To add a new credit card first delete the saved card, then select **Add a Credit Card** in the top right of the subsequent screen. Mattermost has engaged third party payments processor Stripe to safely collect and store your credit card information. You may only store information pertaining to one credit card.
 To add a new credit card first delete the saved card, then select **Add a Credit Card** in the top right of the subsequent screen. Mattermost only stores information pertaining to one credit card.
 
 We offer pricing and billing only in U.S. Dollars at this time. Payment will be made in USD converted using the exchange rate from at the time of the transaction.
