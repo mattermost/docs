@@ -47,18 +47,19 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
-  .. code-block:: bash
+.. code-block:: bash
 
     cd /opt/mattermost/
     sudo -u mattermost bin/mattermost version
 
 .. note::
-  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+   Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
   
-.. note::
-When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows: 
-``bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"`` 
+When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows:
 
+.. code-block:: bash
+ 
+  bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -67,7 +68,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 
 **For example, to get the Mattermost version on GitLab Omnibus:**
 
-  .. code-block:: bash
+.. code-block:: bash
 
     cd /opt/gitlab/embedded/service/mattermost
     sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
@@ -82,7 +83,7 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
 
 **For example, to get the Mattermost version on a Docker install:**
 
-  .. code-block:: bash
+.. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
 
@@ -103,7 +104,7 @@ Notes:
 
 -  Parameters in CLI commands are order-specific.
 -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
--  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
+-  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
 .. tip::
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
@@ -1751,7 +1752,7 @@ Description
       bin/mattermost team remove myteam user@example.com username
 
 mattermost team rename
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -1776,7 +1777,7 @@ Description
       --display_name string   Team Display Name
 
 mattermost team restore
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Restore a previously archived team.
@@ -2081,8 +2082,8 @@ mattermost user migrate_auth
     .. code-block:: json
 
         {
-          "user1@email.com": "user.one",
-          "user2@email.com": "user.two"
+          "user1@email.com": "username.one",
+          "user2@email.com": "username.two"
         }
 
   Users file generation

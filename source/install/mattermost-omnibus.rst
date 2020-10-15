@@ -20,7 +20,7 @@ Configuring Mattermost Omnibus Repositories
 
 The Omnibus repositories are configured using a cURL command:
 
-``curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash``
+``curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash``
 
 This command configures the repositories needed for a ``PostgreSQL`` database, an ``nginx`` web server to act as a proxy, and ``certbot`` to issue and renew the SSL certificate. It also configures the Mattermost Omnibus repository so that you can run the install command.
 
@@ -128,3 +128,8 @@ Can I use MySQL instead of PostgreSQL?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 MySQL is not supported. Omnibus is architected to run with PostgreSQL.
+
+Where can I get help?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.

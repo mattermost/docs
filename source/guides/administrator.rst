@@ -4,14 +4,15 @@ Administrator's Guide
 In-depth documentation on installation, deployment and administration of Mattermost system.
 
 Getting Started
----------------------
+----------------
 
-Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization. 
+Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization.
 
 .. toctree::
    :maxdepth: 2
    :glob:
 
+   /help/getting-started/light-install.rst
    /getting-started/enterprise-roll-out-checklist.rst
    /deployment/on-boarding.rst
    /getting-started/implementation_plan.rst
@@ -33,6 +34,7 @@ Learn how to get Mattermost running on your environment.
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
+   Installing on RHEL 8 </install/install-rhel-8.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
    /install/ee-install*
@@ -46,7 +48,7 @@ Learn how to get Mattermost running on your environment.
    /install/desktop-msi-gpo*
  
 Deployment
------------------
+-----------
 
 Learn how to host Mattermost to meet your networking requirements.
 
@@ -54,11 +56,11 @@ Learn how to host Mattermost to meet your networking requirements.
    :maxdepth: 2
    :glob:
 
-   /deployment/deployment.md 
+   /deployment/deployment.md
    /deployment/desktop-app-deployment*
    /mobile/mobile-appconfig.rst
    /administration/image-proxy*
-   /administration/encryption*  
+   /administration/encryption*
    /deployment/client-side-data.rst
    /administration/backup*
    /deployment/bleve*
@@ -73,10 +75,10 @@ Learn how to configure settings to meet your unique requirements.
    :glob:
 
    /administration/config-settings.rst
-   /administration/config-in-database.rst 
+   /administration/config-in-database.rst
    /administration/prev-config-settings.rst
    /deployment/customize-mattermost.rst
-   /deployment/customize-email.rst 
+   /deployment/customize-email.rst
    /administration/branding.rst
    /install/smtp*
    /install/config-cloudfront*
@@ -85,7 +87,7 @@ Learn how to configure settings to meet your unique requirements.
    /install/config-apache2.rst
 
 Mobile Apps
-------------------
+-----------
 
 Learn how to configure and administer Mattermost apps.
 
@@ -171,12 +173,13 @@ Learn how to keep Mattermost current with fixes and new features.
    :glob:
    
    /administration/upgrade.rst
-   /administration/important-upgrade-notes*   
+   /administration/important-upgrade-notes*
    /administration/changelog*
    /help/apps/desktop-changelog*
+   /administration/mobile-changelog*
    /administration/version-archive*
-   /administration/extended-support-release* 
-   /administration/release-lifecycle* 
+   /administration/extended-support-release*
+   /administration/release-lifecycle*
    /administration/downgrade.rst
    /administration/open-source-components*
    /administration/release-definitions*
