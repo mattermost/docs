@@ -30,23 +30,23 @@ There are two ways to set up AD/LDAP:
 
 After installing Mattermost:
 
-1. **Create a System Admin account using email authentication.** 
+1. **Create a System Admin account using email authentication.**
 
 On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.
 
-2. **Configure AD/LDAP.** 
+2. **Configure AD/LDAP.**
 
 Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
-3. **Confirm that AD/LDAP sign-on is enabled.** 
+3. **Confirm that AD/LDAP sign-on is enabled.**
 
 After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
-4. **Switch your System Admin account from email to AD/LDAP authentication.** 
+4. **Switch your System Admin account from email to AD/LDAP authentication.**
 
 Navigate to **Account Settings > Security > Sign-in Method > Switch to AD/LDAP** and sign in with your AD/LDAP credentials to complete the switch.
 
-5. **(Optional) Restrict authentication to AD/LDAP.** 
+5. **(Optional) Restrict authentication to AD/LDAP.**
 
 Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to `false` and **Enable sign-in with username** to `false`. Then choose **Save** to save the changes. This should leave Active Directory/LDAP as the only sign in option.
 
@@ -60,7 +60,7 @@ If you've made a mistake and lock yourself out of the system somehow, you can [s
 
 In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.
 
-Note that the AD/LDAP sync depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost. 
+Note that the AD/LDAP sync depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost.
 
 To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
@@ -88,7 +88,9 @@ Using filters assigns roles to specified users on login. To access AD/LDAP filte
 
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
-##### Guest Filter 
+Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is `(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`.
+
+##### Guest Filter
 
 (Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
@@ -176,11 +178,19 @@ There are two main ways to do this:
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
 2. **User filter:** Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
 
-For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.  
+For Active Directory, to filter out deactivated users you must set the user filter to:
+
+`(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+
+Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is: 
+
+`(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)`
+
+`(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`
 
 When a user is deactivated in Mattermost, all the user's current sessions are revoked and they will be unable to log in or access Mattermost.
 
-#### Can I connect to multiple Active Directory servers? 
+#### Can I connect to multiple Active Directory servers?
 
 There is currently no built-in way to connect to multiple AD servers. You will need to connect the instances in a forest before connecting to Mattermost.
 

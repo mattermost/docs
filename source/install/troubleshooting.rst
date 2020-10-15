@@ -10,7 +10,7 @@ Important Notes
 ---------------
 
 - Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised.
-- Any manipulation of the database must be done using the built in command-line tools.
+- Any manipulation of the database must be done using the built in command line tools.
 - Start simple with the step-by-step install guides for your operating system.
 
 General Troubleshooting
@@ -27,6 +27,7 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 
 - Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
 - You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
+
 The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
 
 .. Note::
@@ -69,7 +70,7 @@ Put together a timeline to eliminate events prior to the error/problem occurring
 You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ can often be found and applied.
 
 Administration Issues
------------------------------
+----------------------
 
 Lost System Administrator Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,26 +80,26 @@ Lost System Administrator Account
 -  Log out and back in to apply the change.
 
 Switching System Administrator Account to Single Sign-on (SSO)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When Mattermost is initially set up, the first account created becomes the System Administrator account. This account will typically use email authentication to sign-in, since it is usually created before other sign-in methods are configured.
+When Mattermost is initially set up, the first account created becomes the System Admin account. This account will typically use email authentication to sign in, since it is usually created before other sign in methods are configured.
 
-After setting up SSO authentication, it is common for the System Administrator to want to turn off email sign-in so users will only have SSO as a sign-in option.
+After setting up SSO authentication, it is common for the System Admin to want to turn off email sign in so users will only have SSO as a sign in option.
 
-Before doing this, the System Administrator needs to change their sign-in method to SSO by doing the following:
+Before doing this, the System Admin needs to change their sign in method to SSO by doing the following:
 
 1. Sign in to Mattermost using an email and password.
 2. Go to **Account Settings > Security > Sign-in Method**.
-3. Click the "Switch" button to select a sign-in method and complete the process provided.
+3. Select **Switch** to select a sign-in method and complete the process provided.
 
-The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
+The System Admin can now turn off email sign in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Admin ask them to switch authentication methods as well.
 
 Locked Out of System Administrator Account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
+If the System Admin is locked out of the system during SAML configuration process, they can set an existing account to System Admin using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
 
-If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line:
+If email sign in was turned off before the System Admin switched sign in methods, sign up for a new account and promote it to System Admin from the command line:
 
 1. Sign in to the server Mattermost is running on via ``ssh``.
 2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
@@ -108,22 +109,20 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
     $ sudo -u mattermost bin/mattermost roles system_admin {username}
 
-4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
+4. Replace ``{username}`` with the name of the user you'd like to promote to System Admin.
 
-Password resets
+Password Resets
 ~~~~~~~~~~~~~~~
 
 **Email address or username sign in**
 
-If you sign in to Mattermost using an email address or username, you can send a password reset request by selecting **I forgot my password**. 
-The Mattermost Support team does not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
+If you sign in to Mattermost using an email address or username, you can send a password reset request by selecting **I forgot my password**. The Mattermost Support team does not have access to your Mattermost server/instance. If you experience any problems, the next step is to contact your Mattermost System Admin.
 
 If you're not sure who the System Admin is, contact the internal IT team at your organization for further help.
 
 **AD/LDAP users**
 
-The password reset process is performed on the directory level as Mattermost pulls the credential information from the LDAP directory.
-If you experience issues with your password for your LDAP log in, contact your organization's LDAP administrator for further help.
+The password reset process is performed on the directory level as Mattermost pulls the credential information from the LDAP directory. If you experience issues with your password for your LDAP log in, contact your organization's LDAP administrator for further help.
 
 **SSO users (OneLogin/Okta etc)**
 
@@ -135,7 +134,7 @@ Multi-Factor Authentication (MFA)
 If MFA has stopped working, confirm that your server clock is not out of sync. On Unix systems you can view the hardware time of your system using ``# hwclock -r``. If you're using systemd you can also use ``# timedatectl``.
 
 SAML issues
--------------------
+-----------
 
 Unable to Switch to SAML Authentication Successfully
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,27 +143,27 @@ First, ensure you have installed the `XML Security Library <https://www.aleksey.
 
 Second, ensure you have completed each step of the SAML configuration.
 
-System Administrator locks themselves out of the system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+System Admin locks themselves out of the system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
+If the System Admin is locked out of the system during SAML configuration process, they can set an existing account to System Admin using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
 
 ``An account with that username already exists. Please contact your Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the ``Username Attribute`` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
 ``An account with that email already exists. Please contact your Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the ``Email Attribute`` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Confirm all attributes, including ``Email Attribute`` and ``Username Attribute``, are correct in both the Identity Provider configuration and in **System Console > SAML**.
 
@@ -190,12 +189,12 @@ The error indicates that the installation is using the Mattermost Team Edition. 
 
 To resolve the issue, install Enterprise Edition and restart the process.
 
-``An error occurred while initiating the request to the Identity Provider. Please contact your System Administrator``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``An error occurred while initiating the request to the Identity Provider. Please contact your System Administrator.``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error message can have multiple causes. The log messages provide more information about the root cause and are provided below, along with a suggested fix.
 
-**Issue: Missing a Certificate File.**
+**Issue: Missing a Certificate File**
 
 .. code-block:: sh
 
@@ -224,7 +223,7 @@ Install the Service Provider Public Certificate and restart the process.
    If making adjustments for these errors within System Console, no restart is required. However, if making configuration changes outside System Console, such as moving certificate files to the corrrect path, a server restart is required.
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates that a required attribute was missing from the assertion received from the Idp provider, check log file for which attribute is missing.
 
@@ -250,7 +249,7 @@ This error indicates a mismatch between SP Provider (Mattermost) configuration a
 To address this issue, turn on encryption and restart the process.
 
 ``SAML login was unsuccessful as the Identity Provider response is not encrypted. Please contact your System Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP Provider SAML is configured to expect an unencrypted SAML Assertion but the assertion received was encrypted.
 
@@ -261,7 +260,7 @@ This error indicates a mismatch between SP Provider (Mattermost) configuration a
 To address this issue, turn on encryption and restart the process.
 
 ``An error occurred while parsing the response from the Identity Provider. Please contact your System Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error is caused by a malformed response or certificate issue, see log file for more information.
 
@@ -270,7 +269,7 @@ This error is caused by a malformed response or certificate issue, see log file 
    ERRO[2019-12-23T11:22:16.733242-07:00] An error occurred while parsing the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=illegal base64 data at input byte 15012" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=uhnbq1objfyqpyqct3sy3fch9y user_id=
 
 ``An error occurred while encoding the request for the Identity Provider. Please contact your System Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificate.
 
@@ -278,7 +277,7 @@ This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not instal
 
    ERRO[2019-12-23T12:42:04.389431-07:00] An error occurred while encoding the request for the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details= err_where=SamlInterfaceImpl.BuildRequest http_code=500 ip_addr="::1" method=GET path=/login/sso/saml request_id=mg4mdc78q3r798y5ierdz5qqdc user_id=
 
-``SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator``
+``SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificates.
@@ -288,7 +287,7 @@ This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not instal
    ERRO[2019-12-23T12:45:45.041627-07:00] SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=failed to decrypt xml: error invoking xmlsec1: : exec: \"xmlsec1\": executable file not found in $PATH" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=i7d7kc4hk3ymzneetdbuafz9ca user_id=
 
 ``An error occurred while validating the response from the Identity Provider. Please contact your System Administrator.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error message applies to various validation issues. The log message provides more information about the cause of the issue.
 
@@ -335,21 +334,21 @@ A server status of red can occur for the following reasons:
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping down the server in 15-second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff. After the connection is established, the client attempts to receive any messages that were sent while it was disconnected.
 
 App Refreshes Continuously
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a High Availability cluster.
 
 Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
 Messages Do Not Post Until After Reloading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When running in High Availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. 
+When running in High Availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version.
 
 Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
 
@@ -357,13 +356,13 @@ Server Administration
 ---------------------
 
 ``Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Message appears in blue bar on team site.
--  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome.
+-  To check the WebSocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome.
 .. image:: ../images/websocket.png
 -  **If this issue is reported repeatedly**, the most likely cause is a proxy being misconfigured somewhere in your infrastructure, and possibly stripping headers off of WebSocket communications.
--  Mattermost clients connect to the server using multiple protocols, ``https`` to enable general site functionality, and ``wss`` for real-time updates. This error message appears when the ``https`` connection is working, but the ``wss`` connection has issues, most commonly having headers stripped off by a firewall or proxy that is either misconfigure or which does not support secure WebSockets.
+-  Mattermost clients connect to the server using multiple protocols, ``https`` to enable general site functionality, and ``wss`` for real-time updates. This error message appears when the ``https`` connection is working, but the ``wss`` connection has issues, most commonly having headers stripped off by a firewall or proxy that is either misconfigured or which does not support secure WebSockets.
 
 **Note:** If your ``https`` connection is working and ``wss`` is not, and you dismiss the blue bar message, your team site will render, but will not support real time communications (you will need to refresh to see updates and the system is effectively "broken").
 
@@ -394,18 +393,18 @@ For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521
 ``x509: certificate signed by unknown authority``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
+This error may appear in server logs when attempting to sign-up when using self-signed certificates to set up SSL, which is not yet supported by Mattermost.
 
 **Solution:**
 
 Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future.
 
-As a work around, in **System Console > Security > Connections** set **Enable Insecure Outgoing Connections** to ``true``.
+As a work around, in **System Console > Security > Connections** set **Enable Insecure Outgoing Connections** to **True**.
 
 This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
 ``panic: runtime error: invalid memory address or nil pointer dereference``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error can occur if you've manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
 
@@ -414,7 +413,7 @@ This error can occur if you've manually manipulated the Mattermost database, typ
 Restore from database backup created prior to manual database updates, or reinstall the system.
 
 ``We couldn't find an existing account matching your email address for this team. This team may require an invite from the team owner to join.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error appears when a user tries to sign in, and Mattermost can't find an account matching the credentials they entered.
 
@@ -422,32 +421,29 @@ This error appears when a user tries to sign in, and Mattermost can't find an ac
 
 1. If you're signing in with email and have previously created an account:
 
-Check that you are using the correct email address. If you can't remember what email address was used, contact the System Administrator for assistance.
+Check that you are using the correct email address. If you can't remember what email address was used, contact the System Admin for assistance.
 
 2. If you haven't signed up for an account on this team yet:
 
-Click the link at the bottom of the sign-in page that says “Don't have an account? Create one now” to create an account. If the link is not available, contact a Team or System Administrator for an invitation.
+Click the link at the bottom of the sign-in page that says “Don't have an account? Create one now” to create an account. If the link is not available, contact a Team or System Admin for an invitation.
 
 3. If your account uses a different sign-in method (for example, the account was created with email but the user is trying to use SSO to sign in):
 
-   - Check the sign-in page.
+   - Check the sign in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
       -  **Note:** You may then switch authentication methods from **Account Settings > Security > Sign-in Method**.
 
-   - If the sign-in method is not available, contact the System Administrator.
+   - If the sign-in method is not available, contact the System Admin.
 
-      -  This can happen if the site was originally set up to allow an
-         account to be created using either GitLab or email, but then the
-         System Administrator turned one of the options off.
+      -  This can happen if the site was originally set up to allow an account to be created using either GitLab or email, but then the System Admin turned one of the options off.
       -  The System Administrator can fix this issue by:
 
          1. Turning the sign-in option back on.
-         2. Asking the user to switch sign-in methods before turning the
-            sign-in option off.
+         2. Asking the user to switch sign-in methods before turning the sign-in option off.
 
 ``Failed to upgrade websocket connection``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
 
@@ -464,7 +460,7 @@ This alert can appear every few seconds in the desktop application or web browse
 
 **Solution:**
 
-- If you're using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections.
+- If you're using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable WebSocket disconnections.
 - If you're using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
 
 ``context deadline exceeded``
@@ -484,7 +480,7 @@ Settings
 User Statuses get Stuck on "Away" or "Offline" Status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
+If you notice more than one user being stuck at an "Away" or "Offline" status, try one of the following steps:
 
 1. If you're using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`__.
 2. If you're using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
@@ -492,14 +488,14 @@ If you notice more than one user being stuck at an Away or Offline status, try o
 If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
 
 System Console Settings Revert to Previous Values after Saving
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
 
 Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the Mattermost user and restart the server.
 
 Mattermost Can't Connect to LDAP/AD Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 LDAP and Active Directory troubleshooting can be found on `this page <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__.
 
@@ -507,7 +503,7 @@ Mobile
 -------
 
 Login with ADFS/Office365 is Not Working
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
@@ -537,7 +533,7 @@ If you didn't receive a push notification when :doc:`testing push notifications 
 7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
@@ -568,7 +564,7 @@ In some cases, the configuration from the product’s website differs from the M
 - See detailed server software requirements for operating system and database.
 - Check which Mattermost server version you're on, and confirm whether it's the latest version.
 - Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
-- What device (webapp, desktop app), browser, and operating system (Windows, MacOS, etc.) are you using?
+- What device (webapp, desktop app), browser, and operating system (Windows, macOS, etc.) are you using?
 - Confirm that the SSL/TLS certificate was installed successfully by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
 - Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools > Developer Tools**.
 
@@ -588,7 +584,7 @@ Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integ
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` file and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
 
 Gfycat gifs are not loading even though they show up in the emoji picker
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Check whether the server has access to the Gfycat servers. It may be behind a proxy or firewall which is blocking outgoing connections.
 2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
