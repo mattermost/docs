@@ -115,6 +115,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/hipchat-migration-guidelines*
    /administration/migration-announcement-email-template*
    /administration/user-provisioning*
+   /deployment/admin-roles*
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
@@ -145,6 +146,7 @@ Learn how to maintain your Mattermost system.
    /administration/scripts*
    /administration/statistics.md
    /integrations/net-promoter-score*
+   /administration/notices* 
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
@@ -162,7 +164,7 @@ Understand potential issues and how to address them.
    /install/trouble_mysql.rst
  
 Upgrade Mattermost
--------------------
+------------------
 
 Learn how to keep Mattermost current with fixes and new features.
 
@@ -183,7 +185,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/release-definitions*
 
 Mattermost Integrations
-------------------------
+-----------------------
 
 Learn how to extend Mattermost by integrating your workflows.
 
@@ -202,7 +204,7 @@ Learn how to extend Mattermost by integrating your workflows.
    /deployment/productivity-tools*
 
 Mattermost Compliance
-----------------------
+---------------------
 
 Learn how to adhere to your security and regulations.
 
