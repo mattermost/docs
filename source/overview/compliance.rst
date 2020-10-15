@@ -8,7 +8,7 @@ This overview summarizes various compliances and certifications Mattermost is de
 - U.S. Export Compliance
 
 GDPR Compliance
------------------------------------------------
+----------------
 
 The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)
 
@@ -17,78 +17,71 @@ Continual Commitment to the Principles of GDPR
 
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost completes this mission through the use of:
 
-- **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities
-- **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://about.mattermost.com/terms>`__
-- **Privacy Measures** - Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
-- **Product Features** to ensure data management and data portability
+- **Security Infrastructure:** Continual investment in security, privacy and compliance capabilities.
+- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://about.mattermost.com/terms>`__.
+- **Privacy Measures:** Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
+- **Product Features:** To ensure data management and data portability.
 
 To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__.
 
 Security Infrastructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure that has been developed with a high standard of security. The features of this security infrastructure include:
 
-- **Security Features** in Mattermost open source and commercial offerings that enable deployment of your organization’s own infrastructure
-- **Responsible Disclosure Policy** for security researchers around the world to confidentially report suspected vulnerabilities, which can be addressed in updates to Mattermost software
-- **Security Reviews** conducted by both our own internal security review team and external security researchers
-- **ISO 27001 Standards** which are met to achieve alignment with international security guidelines
+- **Security Features** in Mattermost open source and commercial offerings that enable deployment of your organization’s own infrastructure.
+- **Responsible Disclosure Policy** for security researchers around the world to confidentially report suspected vulnerabilities, which can be addressed in updates to Mattermost software.
+- **Security Reviews** conducted by both our own internal security review team and external security researchers.
+- **ISO 27001 Standards** which are met to achieve alignment with international security guidelines.
 
 Contractual Obligations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost adheres to contractual obligations for ensuring the proper management of data through:
 
-- **GDPR-Compliant Data Processing Addendum** included with Mattermost’s standard terms
+- **GDPR-Compliant Data Processing Addendum** included with Mattermost’s standard terms.
 - **Mattermost Privacy Policy** sharing how data is handled on the online infrastructure controlled by Mattermost, Inc.
 
 Privacy Measures
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy Shield** principles of notice, choice, onward transfer, security, data integrity, access and enforcement for personal data submitted by our customers and partners.
 
 Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
 Product Features
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Mattermost supports features that ensure data management and data portability.
 
 Data Management
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
-- **Data Retention**: Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
-
-- **Profile Deletion**: Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`__. The command permanently deletes all user information including messages created by the user.
-
-- **Self-Hosted Push Notification Service**: Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`__ to learn more.
+- **Data Retention:** Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
+- **Profile Deletion:** Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`__. The command permanently deletes all user information including messages created by the user.
+- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`__ to learn more.
 
 Data Portability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-- **Data Import**: Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
-
-- **Data Export**: Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
-
+- **Data Import:** Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
+- **Data Export:** Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
 
 Accessibility Compliance
------------------------------------------------
+-------------------------
 
 Compliance with accessibility standards is achieved in the following ways:
 
-- **508 Compliance** - For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
-
-- **WCAG 2.0** - For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.
-
-- **ADA** - Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
-
-- **Remediation** - Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`__ so that it may be resolved.
+- **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
+- **WCAG 2.0L** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.
+- **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
+- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`__ so that it may be resolved.
 
 U.S. Export Compliance Overview
------------------------------------------------
+-------------------------------
 
 Summary Table
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mattermost Product                            | Export Control Classification Number (ECCN)                                                                                                     |
@@ -104,7 +97,7 @@ Summary Table
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Overview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
 The U.S. government regulates the transfer of information, commodities, technology and software considered
 to be strategically important to the U.S. in the interest of national security, economic and/or foreign policy
@@ -126,13 +119,13 @@ jurisdictions in which you operate. Although Mattermost cannot provide advice on
 This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`__ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__.
 
 General Information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`__ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
 the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”).
 
 Export Classification and Licensing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although what is subject to the Export Administration Regulations is quite broad, that does not mean an export license
 is required for every transaction. The foundation of understanding export controls related to hardware, software and
@@ -163,7 +156,7 @@ person’s country or countries of nationality and is found in `734.2(b) <https:
 **Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of `“Red Flags” <https://www.bis.doc.gov/index.php/compliance-a-training/export-management-a-compliance/freight-forwarder-guidance/23-compliance-a-training/51-red-flag-indicators>`__. Be sure to screen business partners and customers to ensure compliance.
 
 Disclaimer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 Mattermost makes this data available for informational purposes only. It may not reflect the most current legal
 developments, and Mattermost does not represent, warrant or guarantee that it is complete, accurate or up to date.
@@ -172,21 +165,24 @@ advice or to be used as a substitute for specific legal advice. You should not a
 information on this site without obtaining professional advice regarding particular facts and circumstances.
 
 FAQ
------------------------------------------------
+----
 
 To be compliant with GDPR, do I need to remove message contents of email notifications?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Based on our interpretation of GDPR, it is not required to hide message contents in email notifications to remain compliant for the following reasons:
 
 1. Every user has the ability to disable email notifications in their Account Settings. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
-
 2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server.
-
 3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to :ref:`disable notifications completely <email-notification-config>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <email-preview-mode-banner-config>`.
 
+What information is shared when I click **Contact us** on a Mattermost Admin Advisor notification?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Clicking **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
+
 Are the server access logs containing IP addresses a GDPR compliance issue?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_, processing personal data for the purpose of ensuring network and information security is acceptable. Moreover:
 

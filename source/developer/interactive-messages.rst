@@ -40,6 +40,7 @@ The following payload gives an example that uses message buttons.
         "text": "This is the attachment text.",
         "actions": [
           {
+            "id": "message",
             "name": "Ephemeral Message",
             "integration": {
               "url": "http://127.0.0.1:7357",
@@ -48,6 +49,7 @@ The following payload gives an example that uses message buttons.
               }
             }
           }, {
+            "id": "update",
             "name": "Update",
             "integration": {
               "url": "http://127.0.0.1:7357",
@@ -93,6 +95,7 @@ The following payload gives an example that uses message menus.
         "text": "This is the attachment text.",
         "actions": [
           {
+            "id": "action_options",
             "name": "Select an option...",
             "integration": {
               "url": "http://127.0.0.1:7357/action_options",
@@ -149,6 +152,7 @@ Specify ``channels`` as your action's ``data_source`` as follows:
         "text": "This is the attachment text.",
         "actions": [
           {
+            "id": "action_options",
             "name": "Select an option...",
             "integration": {
               "url": "http://127.0.0.1:7357/action_options",
@@ -176,6 +180,7 @@ Specify ``users`` as your action's ``data_source`` as follows:
   {
     "attachments": [
       {
+        "id": "action_options",
         "pretext": "This is the attachment pretext.",
         "text": "This is the attachment text.",
         "actions": [
@@ -199,6 +204,9 @@ Parameters
 ^^^^^^^^^^^^^
 
 Below is a brief description of each parameter to help you customize the interactive message button and menu in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`__.
+
+ID
+  A per post unique identifier.
 
 Name
   Give your action a descriptive name.
