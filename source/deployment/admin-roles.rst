@@ -59,7 +59,36 @@ The format of the mmctl command is:
 
 ``mmctl permissions role assign system_user_manager bob-smith sue-clark``
 
-``mmctl permissions role assign system_read_only_admin captain-marvel clark-kent``
+**To grant the Read Only Admin role to two users, Bob Smith and Sue Clark:**
+
+``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
+
+**To remove the System Manager role from a single user called Bob Smith:**
+
+``mmctl permissions role unassign system_manager bob-smith``
+
+Editing Privileges of Admin Roles (Advanced)
+--------------------------------------------
+
+Each of the admin roles have defined, default privileges as outlined above. 
+
+System Admins can grant read and write access to other areas of the System Console, as well as remove read write access (including default access), for each role. This is completed using the mmctl tool, either locally or remotely.
+
+The format of the mmctl command is:
+
+``mmctl permissions add [role_name] [permission...]``
+
+**To grant write access to the Authentication section of the System Console for all users with the User Manager role:**
+
+``mmctl permissions add system_user_manager sysconsole_write_authentication``
+
+**To grant read only access to the Authentication section of the System Console for all users with the User Manager role:**
+
+``mmctl permissions remove system_user_manager sysconsole_read_authentication``
+
+**To remove write access to the Authentication section of the System Console for all users with the User Manager role:**
+
+``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
 Frequently Asked Questions
 --------------------------
@@ -67,7 +96,12 @@ Frequently Asked Questions
 Can a User Manager or System Manager reset an administrator’s email or password without their knowledge?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No. The ability to reset passwords, or email addresses of administrators is limited to System Admins.
+This is not possible with the default privileges of these roles. The ability to reset passwords or email addresses of administrators is limited to System Admins.  
+
+Can a User Manager or System Manager access the configuration file? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yes. However, they will only have access to read actual values and modify values in accordance with their permissions. If appropriate read permissions do not exist, the default key values will be displayed.
 
 Are all actions of admin roles logged?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -83,6 +117,11 @@ Can any of the new roles view API keys/passwords or other sensitive information 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No, password information is only visible to System Admins and is obfuscated for other roles.
+
+If download links for compliance exports are enabled in the System Console, can a Read Only Admin download the reports? 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Only roles that are explicitly granted access to **System Console > Compliance** have access to download compliance reports. 
 
 Can any of the new roles force-join Private channels?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,7 +146,7 @@ This is being considered for future development.
 Can a System Manager or User Manager demote or deactivate another Admin or Manager?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No privilege grants the authority to deactivate or demote another admin.
+No privilege grants the authority to deactivate or demote another admin. 
 
 Can a System Manager or User Manager assign or unassign admin roles?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
