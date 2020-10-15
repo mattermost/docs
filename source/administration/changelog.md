@@ -9,14 +9,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **Release day: 2020-10-16**
 
 ### Compatibility
- - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 In our v5.30 release (December 16). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
- - Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its lifecycle. Upgrading to server v5.25 or later is required.
- - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16th) mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
+ - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 In our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
+ - Support for Mattermost Server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its lifecycle. Upgrading to Mattermost Server v5.25 or later is required.
+ - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 ### Breaking Changes
  - Now when the service crashes, it will generate a coredump instead of just dumping the stack trace to the console. This allows us to preserve the full information of the crash to help with debugging it. For more information about coredumps, please see: https://man7.org/linux/man-pages/man5/core.5.html.  
 
-**IMPORTANT:** If you upgrade from a release earlier than 5.27, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.27, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -27,7 +27,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - You can now improve the security of your AD/LDAP authentication with certificate-based AD/LDAP authentication.
 
 #### Stay current with in-product notices
- - Now with in-product notices, users and Admins will be made aware of the newest product enhancements from within Mattermost. [Learn more about in-product notices here](https://about.mattermost.com/default-notices/).
+ - With in-product notices, users and Admins will be made aware of the newest product enhancements from within Mattermost. [Learn more about in-product notices here](https://about.mattermost.com/default-notices/).
 
 ### Improvements
 
@@ -102,7 +102,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``LdapSettings`` in ``config.json``:
      - Added ``PublicCertificateFile``, to be able to upload the public certificate to be used for encryption with SAML configuration.
-     - Added ``PrivateKeyFile`` to be able to upload the private key to be used for encryption with SAML configuration.
+     - Added ``PrivateKeyFile``, to be able to upload the private key to be used for encryption with SAML configuration.
  - Under ``ServiceSettings`` in ``config.json``:
      - Added ``EnableAPIChannelDeletion``, to permanently delete channels for compliance reasons.
      - Added ``EnableAPIUserDeletion``, to permanently delete users for compliance reasons.
