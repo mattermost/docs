@@ -6,7 +6,7 @@ Mattermost in-product notices keep users and administrators informed of the newe
 .. contents::
   :local:
 
-.. image:: ../../images/notices.png
+.. image:: ../images/notices.png
 
 Administrator Notices
 ---------------------
