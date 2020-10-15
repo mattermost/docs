@@ -12,7 +12,7 @@ You are billed for active users in your workspace.  An active user:
 - Has created an account and joined a workspace and shows as **Active** in **System Console > Users**.
 - Counts towards your monthly invoice for each day they are active in the billing period.
 
-Users deactivated by a System Administrator are no longer counted toward future monthly invoices.
+Users deactivated by a System Admin are no longer counted as active on your next monthly invoice unless you reactivate the users within the billing period.
 
 Billing periods
 ~~~~~~~~~~~~~~~
@@ -64,6 +64,7 @@ Payment information
 ~~~~~~~~~~~~~~~~~~~
 
 Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted.
+
 To add a new credit card first delete the saved card, then select **Add a Credit Card** in the top right of the subsequent screen. Mattermost has engaged third party payments processor Stripe to safely collect and store your credit card information. You may only store information pertaining to one credit card.
 
 We offer pricing and billing only in U.S. Dollars at this time. Payment will be made in USD converted using the exchange rate from at the time of the transaction.
