@@ -65,7 +65,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/var/lib/pgsql/10/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` as root in a text editor.
 
     b. Find the following lines:
 
