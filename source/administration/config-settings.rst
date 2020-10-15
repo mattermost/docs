@@ -1083,15 +1083,13 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send log records to multiple targets:
+Allow any combination of local file, syslog, and TCP socket targets and send log records to multiple targets:
 
-- Multiple local file targets
-- Multiple syslogs
-- Multiple TCP sockets
+- Multiple local file targets: Supports rotation and compression triggered by size and/or duration.
+- Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
+- Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-Allow any combination of local file, syslog, and TCP socket targets. These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software.
-
-File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
+These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software. 
 
 Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified.
 
@@ -4779,6 +4777,26 @@ This setting can be left as default unless you are seeing audit write failures i
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input.                                                                       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Advanced Audit Logging Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in Enterprise Edition E20*
+
+Output logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send log records to multiple targets:
+
+- Multiple local file targets
+- Multiple syslogs
+- Multiple TCP sockets
+
+Allow any combination of local file, syslog, and TCP socket targets. 
+
+File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
+
+This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
 
 Service Settings
 ~~~~~~~~~~~~~~~~
