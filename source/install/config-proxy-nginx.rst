@@ -11,12 +11,12 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 2. Create a configuration file for Mattermost.
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
-
-On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``
+  
+On RHEL 7 and 8: ``sudo touch /etc/nginx/conf.d/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
-On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
+On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
 
 SSL and HTTP/2 with server push are enabled in the provided configuration example.
 
@@ -120,13 +120,13 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
-On RHEL 7: ``sudo rm /etc/nginx/conf.d/default``
+On RHEL 7 and 8: ``sudo rm /etc/nginx/conf.d/default``
 
 5. Enable the mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
-On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+On RHEL 7 and 8: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
 
 6. Restart NGINX.
 

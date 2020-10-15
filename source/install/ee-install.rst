@@ -16,6 +16,7 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 * `Production Kubernetes Deployment <https://docs.mattermost.com/install/install-kubernetes.html>`__
 * `Production Enterprise Edition on Ubuntu 18.04 <https://docs.mattermost.com/install/install-ubuntu-1804.html>`__
 * `Production Enterprise Edition on RHEL 7 <https://docs.mattermost.com/install/install-rhel-7.html>`__
+* `Production Enterprise Edition on RHEL 8 <https://docs.mattermost.com/install/install-rhel-8.html>`__
 * `Production Enterprise Edition on Debian Stretch <https://docs.mattermost.com/install/install-debian.html>`__
 * `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
 
