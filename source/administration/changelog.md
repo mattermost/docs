@@ -71,7 +71,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for sending telemetry via an environment variable set by packages to identify type of deployment (e.g. Docker, Mattermost Omnibus).
 
 ### Bug Fixes
- - Fixed an issue where a large amount of archived channels caused performance degredation.
+ - Fixed an issue where a large number of archived channels caused performance degradation.
  - Fixed an issue where ``group list-ldap`` mmctl command didn't return any results.
  - Fixed an issue where user were allowed to update their profile picture on ADFS setup with SAML and LDAP configured and AD/LDAP Sync enabled.
  - Fixed an issue where patching the config with ``DataSourceReplicas`` caused a panic.
@@ -97,7 +97,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``GetPluginStatus`` didn't work in a non-cluster environment.
 
 ### config.json
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``LdapSettings`` in ``config.json``:
@@ -133,7 +133,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
- - Pressing **Enter** closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
+ - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
  - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
  - Twitter link previews no longer work in Mattermost as Twitter has removed OpenGraph data from its pages.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
