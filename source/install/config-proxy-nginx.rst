@@ -112,7 +112,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
     }
 
     # This block is useful for debugging TLS v1.3. Please feel free to remove this
-    # and use the `$ssl_early_data` variable exposed by nginx directly should you
+    # and use the `$ssl_early_data` variable exposed by NGINX directly should you
     # wish to do so.
     map $ssl_early_data $tls1_3_early_data {
       "~." $ssl_early_data;
