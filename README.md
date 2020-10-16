@@ -15,8 +15,6 @@ If you have any questions, sign up to [community.mattermost.com](https://communi
      * [Reviewing Pull Requests](#reviewing-pull-requests)
  * [Building and Validating](#building-and-validating)
 
-
-
 ## Contributing
 
 ### Getting Started
