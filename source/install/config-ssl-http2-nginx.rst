@@ -145,6 +145,9 @@ You can use any certificate that you want, but these instructions show you how t
        }
     }
 
+    # This block is useful for debugging TLS v1.3. Please feel free to remove this
+    # and use the `$ssl_early_data` variable exposed by nginx directly should you
+    # wish to do so.
     map $ssl_early_data $tls1_3_early_data {
       "~." $ssl_early_data;
       default "";

@@ -11,7 +11,7 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 2. Create a configuration file for Mattermost.
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
-  
+
 On RHEL 7 and 8: ``sudo touch /etc/nginx/conf.d/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
@@ -111,6 +111,9 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
        }
     }
 
+    # This block is useful for debugging TLS v1.3. Please feel free to remove this
+    # and use the `$ssl_early_data` variable exposed by nginx directly should you
+    # wish to do so.
     map $ssl_early_data $tls1_3_early_data {
       "~." $ssl_early_data;
       default "";
