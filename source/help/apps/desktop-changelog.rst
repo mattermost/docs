@@ -13,7 +13,7 @@ Improvements
 
 All Platforms
 ^^^^^^^^^^^^^
-- Added a setting to be able to select different desktop notification sounds.
+- Added a setting to be able to select different desktop notification sounds (Requires Mattermost server v5.28+).
 - ``Show Mattermost icon in the menu bar`` setting is now enabled by default for new installs on Mac, and ``Show icon in the notification area`` and ``Leave app running in the notification area when application window is closed`` settings are are now enabled by default for new installs on Ubuntu.
 - The default window frame and server tabs are now used on older Windows and Linux OS versions.
 - Added Russian and Ukrainian language spellcheckers.
