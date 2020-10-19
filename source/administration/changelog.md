@@ -6,8 +6,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.28 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.28.1, release day TBD**
-  - Fixing an issue where mmctl Command Line Tool (Beta) is currently broken on Mattermost server v5.28.0. [MM-29740](https://mattermost.atlassian.net/browse/MM-29740)
+- **v5.28.1, released 2020-10-19**
+  - Fixed an issue where mmctl Command Line Tool (Beta) was broken on Mattermost server v5.28.0. [MM-29740](https://mattermost.atlassian.net/browse/MM-29740)
+  - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
 - **v5.28.0, released 2020-10-16**
   - Original 5.28.0 release
 
@@ -154,7 +155,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Released Day: 2020-09-16**
+- **v5.27.1, released 2020-10-19**
+  - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
+- **v5.27.0, released 2020-09-16**
+  - Original 5.27.0 release
 
 Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
@@ -400,8 +404,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
-- **v5.25.6, release day TBD**
-  - Fixing an issue where the Compliance Exports are taking too long on large deployments. This will be fixed with a performance optimization of the message export query.
 - **v5.25.5, released 2020-09-03**
   - Forcefully disabled the SAML Setting "Use Improved SAML Library (Beta)", as we have identified some issues in this feature. Please follow instructions at https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility. 
 - **v5.25.4, released 2020-08-25**
