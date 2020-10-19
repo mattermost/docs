@@ -14,27 +14,29 @@ Installation
 
 Install Mattermost using `Mattermost Omnibus <https://docs.mattermost.com/install/mattermost-omnibus.html>`_.
 
-Open a terminal window and enter: 
+Open a terminal window and enter:
 
-.. code-block::
+.. code-block:: sh
 
-  curl -o- deb.packages.mattermost.com/repo-setup.sh | sudo bash
-  
+  curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
+
 Then, to install the Omnibus package, run:
 
-.. code-block::
+.. code-block:: sh
 
   sudo apt install mattermost-omnibus
 
 .. note::
   
-  Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
+  Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it (or without a domain name), you can run: 
 
-.. code-block:: 
+  .. code-block:: sh
   
-  sudo MMO_HTTPS=false apt install mattermost-omnibus
+    sudo MMO_HTTPS=false apt install mattermost-omnibus
 
 When your server is up and running, navigate to it via the domain name (e.g. ``mymattermostserver.com``) that points to your server (or the server’s IP address if you’re not using a domain name). Next, create a team and invite people to join your Mattermost server.
+
+If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Add Users
 ---------

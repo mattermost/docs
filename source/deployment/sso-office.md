@@ -29,11 +29,11 @@ Click _Add_ and you will be provided with the _client secret value_, copy this a
 
 6 - Login to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365** as the service provider. Enter the _client secret value_ you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field. 
 
-7 - Open your config.json file and copy the _Directory (tenant) ID_ value from Step 5. In the `Office365Settings` section of `config/config.json` you will be updating the default values from 
+7 - Open your config.json file and copy the _Directory (tenant) ID_ value from Step 5. In the `Office365Settings` section of `config/config.json` you will be updating the default values from:
  - `AuthEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize` 
  - `TokenEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/token` 
  
- to include _Directory (tenant) ID_ value, for example
+ to include _Directory (tenant) ID_ value, for example:
  
  - `AuthEndpoint`: `https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize` 
  - `TokenEndpoint`: `https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token`

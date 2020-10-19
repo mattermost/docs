@@ -43,7 +43,7 @@ You can access the System Scheme interface in **System Console > User Management
 .. image:: ../images/system-scheme.png
 
 Team Override Schemes (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
@@ -65,12 +65,12 @@ Channel Permissions
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
 Channel Moderation (Beta) (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management.html>`_.
 
 Supplementary Roles (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in a future release of Enterprise Edition E20*
 
@@ -79,7 +79,7 @@ Allows Admins to grant additional permissions to specific users or to a group of
 Recipes
 --------
 
-This section provides examples of common permissions use cases for team management, channel management, and overall permissions.
+This section provides some examples of common permissions use cases for team management, channel management, and overall permissions. 
 
 Team Management
 ~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
   iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
 7. Choose **Save**. 
-8. Select the back arrow to return to the **Permission Schemes** menu.
+8. Select the back arrow to return to the **Permission Schemes** menu. 
 
 Public and Private Channel Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,7 +116,7 @@ The **Manage Channel Settings** option is now only available to **Channel Admini
 
 .. note::
 
-  Permissions for channel renaming, editing the header, and editing the channel purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
+  Permissions for channel renaming, editing channel header, and editing channel purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
 
 **Restrict who can create channels, in specific teams**
 
@@ -133,6 +133,19 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
   
+Convert Public channels to Private channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Allow all members to convert Public channels to Private channels**
+
+Example: Set the default setting to allow all members, Team Admins, and Channel Admins to convert Public channels to Private.
+
+1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+2. Select **Edit Scheme**.
+3. In the **All Members** panel, uncheck the box for **Manage Public Channels > Convert Channels**.
+
+This permission is applied to all other roles (excluding the Guest role). When this permission is not enabled for All Members, it must be manually applied to Team Admins and Channel Admins if required.
+
 Read only channels
 ~~~~~~~~~~~~~~~~~~
 
@@ -207,12 +220,12 @@ There are a number of CLI tools available for Admins to help in configuring and 
 3. `Import permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
 
 Backend Infrastructure
------------------------
+----------------------
 
 Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
 
 Glossary
-----------
+--------
 
 - **Permission:** The ability to execute certain actions. Permissions are granted to roles.
 - **Roles:** A set of permissions. Users or groups are assigned to roles.

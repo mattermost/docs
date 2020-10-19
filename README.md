@@ -4,6 +4,17 @@ This repository generates the documentation available at https://docs.mattermost
 
 If you have any questions, sign up to [community.mattermost.com](https://community.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676) and join the [Documentation](https://community.mattermost.com/core/channels/documentation) channel.
 
+# Table of Contents
+
+ * [Contributing](#contributing)
+     * [Getting Started](#getting-started)
+     * [Editing](#editing)
+     * [Creating Pull Requests](#creating-pull-requests)
+     * [Using Labels](#using-labels)
+     * [Commenting on Pull Requests](#commenting-on-pull-requests)
+     * [Reviewing Pull Requests](#reviewing-pull-requests)
+ * [Building and Validating](#building-and-validating)
+
 ## Contributing
 
 ### Getting Started
@@ -16,7 +27,7 @@ If this is your first time contributing to Mattermost, first read the [Mattermos
 
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
-If this the first time you're contributing, click **Edit the file in your fork of this project** (pencil icon) on the top right corner to create a fork.
+If this is the first time you're contributing, click **Edit the file in your fork of this project** (pencil icon) on the top right corner to create a fork.
 
 ### Creating Pull Requests
 

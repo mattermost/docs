@@ -89,13 +89,17 @@ Installing PostgreSQL Database
 
     a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
 
-    b. Find the following line:
+    b. Find the following lines:
 
       ``local   all             all                        peer``
+      
+      ``host    all             all         ::1/128        ident``
 
-    c. Change ``peer`` to ``trust``:
+    c. Change ``peer`` and ``ident`` to ``trust``:
 
       ``local   all             all                        trust``
+      
+      ``host    all             all         ::1/128        trust``
 
   **If the Mattermost server and the database are on different machines**:
 

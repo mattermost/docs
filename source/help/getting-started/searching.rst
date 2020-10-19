@@ -48,14 +48,14 @@ Use the ``-`` symbol to exclude posts from your search results. For example, ``t
 This can be used in combination with modifiers to refine search results. For example, ``test -release -in:release-discussion -from:eric`` will return all results with the word ``test``, excluding posts with the word ``release``, excluding posts made in the ``release-discussion`` channel, and excluding posts from ``@eric``.
 
 Quotation Marks
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 Use quotation marks to return search results for exact terms.
 
 - For example: Searching ``"Mattermost website"`` returns messages containing the exact phrase ``Mattermost website``, but not messages containing ``Mattermost`` and ``website`` separately.
 
 Wildcard
-^^^^^^^^^
+^^^^^^^^
 
 Use the ``*`` character for wildcard searches that match within words.
 
@@ -85,13 +85,13 @@ Technical Notes
 ---------------
 
 Searching Chinese, Korean, and Japanese
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - The best experience for searching in Chinese, Korean and Japanese is to use MySQL 5.7.6 or later with special configuration. Please see `documentation`_.
 - You can search to some degree without this configuration by adding ``*`` to the end of search terms.
 
 Differences between PostgreSQL and MySQL Search
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Main Menu > About Mattermost** to see which database you’re using.
 
@@ -106,6 +106,7 @@ PostgreSQL:
 MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot don't return search results.
+- Stop words that are excluded from search in MySQL: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.
 
 .. _documentation: https://docs.mattermost.com/install/i18n.html
 .. _MySQL: http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
