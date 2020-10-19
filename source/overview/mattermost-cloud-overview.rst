@@ -29,7 +29,7 @@ The prorated subscription cost for this user is determined by multiplying the mo
 
 The prorated subscription cost for the user added on day 11 is $6.67 USD.
 
-Similarly, if you make a registered user Inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
+Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
 
 Viewing and Managing Billing Details
 ------------------------------------
