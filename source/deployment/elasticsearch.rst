@@ -25,7 +25,7 @@ Elasticsearch v5.x, v6.x, and v7.x are supported.
 
 .. note::
     From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading.
-
+    
 Setting Up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,6 +60,9 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
 .. note::
     Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
 
+.. note::
+    If your deployment has a large number of posts (typically in excess of 1 million but not strictly defined) the reindexing progress percentage may stay at 99% for a long time.
+    
 Limitations
 ------------
 
