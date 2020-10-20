@@ -54,7 +54,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed inconsistencies across product when using ``in:@` / `in:``, such as displaying Direct and Group Messages in ``in:@`` search suggestions.
 
 #### Notifications
- - Added an option in the **Account Settings** to select different desktop notification sounds. While there are no extra requirements to use custom sounds in the browser, Desktop app users will need at least v4.6.0 to enable the setting.
+ - Added an option in the **Account Settings** to select different desktop notification sounds. This setting is available in supported browsers and Desktop app since v4.6.0
 
 #### Command Line Interface (CLI)
  - Added ``config migrate``, ``config subpath``, ``user delete``, ``integrity``, ``user migrate_auth``, ``moveChannel``, ``updateChannelPrivacy``, ``restoreTeam``, ``channel delete``, and plugin marketplace commands to mmctl.
