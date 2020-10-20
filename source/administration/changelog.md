@@ -25,6 +25,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where links in channels headers overlapped in some cases.
  - Fixed an issue where a plugin could create a blank ephymeral post, leading to a white screen.
  - Fixed an issue where the channel switcher dialog was not accessible with a screen reader.
+ - Fixed an issue where installing plugins on a server using ``FileSettings.PathPrefix`` caused issues.
+ - Fixed an issue where the error message was unclear when a plugin crashed during a slash command execution.
+ - Fixed an issue where bot icon images had too much height.
+ - Fixed an issue where tags where nested in Plugin Marketplace labels.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
