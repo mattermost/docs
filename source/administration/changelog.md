@@ -4,6 +4,52 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
+
+### Compatibility
+
+### Breaking Changes 
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.28, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a new browser favicon state for when there are new messages but no mentions.
+ - The right-hand side text input box is now pinned to the bottom of the screen in long threads.
+ - A threshold was added from the bottom for the new messages toast.
+
+### Bug Fixes
+ - Fixed an issue where links in channels headers overlapped in some cases.
+ - Fixed an issue where a plugin could create a blank ephymeral post, leading to a white screen.
+ - Fixed an issue where the channel switcher dialog was not accessible with a screen reader.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - 
+
+### Open Source Components
+ - 
+
+### Database Changes
+ - 
+
+### API Changes
+ - 
+ 
+### Websocket Event Changes
+ - 
+ 
+### Known Issues
+ - 
+
+### Contributors
+ - 
+
 ## Release v5.28 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.28.1, released 2020-10-19**
