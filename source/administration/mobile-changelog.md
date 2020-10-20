@@ -1,5 +1,31 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.37.0 Release
+- Release Date: November 16, 2020
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Icon overhaul
+ - The user autocomplete now allows matching on terms with spaces (For example: @firstname lastName) the same way as in the WebApp.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where nothing happened when tapping an active channel in the sidebar menu.
+ - Fixed an issue where the channel info count for Group Messages did not match the total number of users when both active and deactivated users were present.
+ - Fixed an issue where the hamburger icon width had changed and notification badges were misaligned.
+ 
+#### Android specific
+ - Fixed an issue where the Android App defaulted to Town Square after sharing a file outside of the app.
+
+#### iOS specific
+ - 
+
 ## 1.36.0 Release
 - Release Date: October 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
