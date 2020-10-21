@@ -1,8 +1,8 @@
 ..  _ee-install:
 
-===========================================
+===============================
 Enterprise Install and Upgrade
-===========================================
+===============================
 
 Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. There are two variants of Enterprise Edition: E10 and E20, and you can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
 
