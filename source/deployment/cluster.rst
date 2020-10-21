@@ -30,7 +30,7 @@ Update sequence for continuous operation
 Deployment Guide
 ----------------
 
-Deployment guide to set up and maintain High Availability on your Mattermost servers.
+Deployment guide to set up and maintain High Availability on your Mattermost servers. This document does not cover the configuration of databases in terms of disaster recovery, however, please refer to the `Frequently Asked Questions (FAQ)`_ section for our recommendations.
 
 Initial Setup Guide for High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -420,6 +420,15 @@ Does Mattermost support multi-region High Availability deployment?
 
 Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
 
+What does Mattermost recommend for diaster recovery of the databases?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When deploying Mattermost in a High Availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.
+
+For example, if deploying Mattermost on AWS with Amazon Aurora we recommend utilizing multiple availability zones.
+
+When deploying Mattermost on your own cluster please refer to your IT team for a solution best suited for your existing architecture.
+
 Troubleshooting
 ---------------
 
@@ -450,3 +459,6 @@ Messages Do Not Post Until After Reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When running in High Availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
+
+
+
