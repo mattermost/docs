@@ -192,6 +192,6 @@ Once you've uploaded your license key to your Mattermost server it's stored in y
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 
-Removing the license key to upgrade will not remove settings that you have configured with an Enterprise license so long as your new license key is the same or higher level license. 
+Removing the license key to upgrade will not remove any Enterprise settings that you have configured as long as your new license key matches the previous version of Enterprise Edition, or is for a higher version.
 
 Once the key is uploaded and installed, the details of your license are displayed.
