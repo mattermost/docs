@@ -183,7 +183,7 @@ Use this command to upload a new license or to replace an existing license with 
   If you upload the license via the CLI using  ``mattermost license upload``, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
   
 License key storage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 Once you have uploaded your license key to your Mattermost server it will be stored in your SQL database at `mattermost.Licenses`. You can check what keys are on your server by running `select * from mattermost.Licenses;`.
 
 **Using the System Console**
