@@ -184,7 +184,7 @@ Use this command to upload a new license or to replace an existing license with 
   
 License key storage
 ^^^^^^^^^^^^^^^^^^^^
-Once you have uploaded your license key to your Mattermost server it will be stored in your SQL database at `mattermost.Licenses`. You can check what keys are on your server by running `select * from mattermost.Licenses;`.
+Once you've uploaded your license key to your Mattermost server it's stored in your SQL database at ``mattermost.Licenses``. You can check what keys are on your server by running ``select * from mattermost.Licenses;``.
 
 **Using the System Console**
 
