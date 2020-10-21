@@ -5090,6 +5090,9 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 | This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input.     |
 +----------------------------------------------------------------------------------------+
 
+.. note::
+  By setting this, all ES indexes created by MM are given the provided prefix. This will make it possible for two MM installs to share an ES cluster by setting different prefixes so the index names don't collide.
+
 Live Indexing Batch Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
