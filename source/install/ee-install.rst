@@ -184,6 +184,7 @@ Use this command to upload a new license or to replace an existing license with 
   
 License key storage
 ^^^^^^^^^^^^^^^^^^^^
+
 Once you've uploaded your license key to your Mattermost server it's stored in your SQL database at ``mattermost.Licenses``. You can check what keys are on your server by running ``select * from mattermost.Licenses;``.
 
 **Using the System Console**
@@ -193,7 +194,9 @@ Once you've uploaded your license key to your Mattermost server it's stored in y
 3. Upload the new license key file.
 
 Removing an E20 or E10 license key will not remove the configuration for Enterprise settings, however these features will not function until an E10 or E20 license key is applied. 
+
 .. note::
+
   - When you apply an E20 license key to a previously E10-licensed server, the E10 features will retain their configuration settings in E20. 
   - When you apply an E10 license to a previously E20-licensed server, the E20 features will retain their configuration but will no longer be accessible for use.
 
