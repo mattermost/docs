@@ -2601,7 +2601,7 @@ When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  Because LDAP syncs cause a large number of database read queries you should monitor database load during a sync to determine how often these syncs should happen in your environment.
+  LDAP syncs cause a large number of database read queries. Ensure that you monitor database load during a sync to determine how often these syncs should happen in your environment in order to minimize performance degradation.
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^
