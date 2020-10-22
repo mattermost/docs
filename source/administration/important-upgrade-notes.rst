@@ -5,7 +5,7 @@ Important Upgrade Notes
    PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 In our v5.30 release (December 16). Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
    
 .. important::
-   Support for Mattermost Server v5.19 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its lifecycle. Upgrading to server v5.25 or later is required.
+   Support for Mattermost Server v5.19 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its lifecycle. Upgrading to v5.25 or later is required.
 
 .. important::
    TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
