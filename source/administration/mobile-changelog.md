@@ -16,6 +16,7 @@
 ### Bug Fixes
 
 #### All apps
+ - Fixed an issue where the app crashed when a user received a notification while dismissing the Add Reactions modal.
  - Fixed an issue where nothing happened when tapping an active channel in the sidebar menu.
  - Fixed an issue where the channel info count for Group Messages did not match the total number of users when both active and deactivated users were present.
  - Fixed an issue where the hamburger icon width had changed and notification badges were misaligned.
