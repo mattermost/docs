@@ -18,7 +18,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Added a new browser favicon state for when there are new messages but no mentions.
- - The right-hand side text input box is now pinned to the bottom of the screen in long threads.
  - A threshold was added from the bottom for the new messages toast.
 
 ### Bug Fixes
@@ -26,6 +25,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where links in channels headers overlapped in some cases.
  - Fixed an issue where a plugin could create a blank ephymeral post, leading to a white screen.
  - Fixed an issue where the channel switcher dialog was not accessible with a screen reader.
+ - Fixed an issue where email addresses were not auto-detected on invites.
  - Fixed an issue where installing plugins on a server using ``FileSettings.PathPrefix`` caused issues.
  - Fixed an issue where the error message was unclear when a plugin crashed during a slash command execution.
  - Fixed an issue where bot icon images had too much height.
