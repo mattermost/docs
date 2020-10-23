@@ -205,4 +205,4 @@ Example:
 
 .. code-block:: sh
 
-   # ./upgrade_mattermost.sh 5.26.0
+   # ./update_mattermost.sh 5.26.0
