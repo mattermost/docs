@@ -18,6 +18,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Added a new browser favicon state for when there are new messages but no mentions.
+ - Improved filter control for the channel sidebar to show unread channels without categories.
  - A threshold was added from the bottom for the new messages toast.
 
 ### Bug Fixes
@@ -30,6 +31,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the error message was unclear when a plugin crashed during a slash command execution.
  - Fixed an issue where bot icon images had too much height.
  - Fixed an issue where tags where nested in Plugin Marketplace labels.
+ - Fixed an issue where the category headings in the experimental sidebar were not sticky and overlapped the More Unreads indicators.
+ - Fixed an issue where Automatic Direct Message Replies were not shown on the right-hand side.
+ - Fixed an issue where Automatic Direct Message Replies were still showing after the root post was deleted.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
