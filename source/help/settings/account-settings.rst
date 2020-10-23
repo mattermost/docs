@@ -3,7 +3,7 @@ Account Settings
 
 --------------
 
-Account Settings is accessible from the **Main Menu** by clicking the three horizontal lines (or hamburger menu) at the top of the channels pane. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+Account Settings is accessible from the **Main Menu** by clicking the three horizontal lines (or hamburger menu) at the top of the channels pane. From here, you can configure your profile settings, notification preferences, integrations, theme settings and display options.
 
 General
 -------
@@ -18,7 +18,7 @@ Full names appear in the Direct Messages member list and team management modal. 
 Username
 ~~~~~~~~
 
-Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted. Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'. 
+Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted. Username must begin with a letter and contain between 3 to 22 lowercase characters made up of numbers, letters and the symbols '.', '-', and '_'. 
 
 Nickname
 ~~~~~~~~
