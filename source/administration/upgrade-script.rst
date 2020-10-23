@@ -199,7 +199,7 @@ To start the update process, start the script and add the desired version number
 
 .. code-block:: sh
 
-   # ./upgrade_mattermost.sh <VERSION>
+   # ./updade_mattermost.sh <VERSION>
 
 Example:
 
