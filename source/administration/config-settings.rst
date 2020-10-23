@@ -2600,6 +2600,9 @@ When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and
 | This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with numerical input.                                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+  LDAP syncs cause a large number of database read queries. Ensure that you monitor database load during a sync to determine how often these syncs should happen in your environment in order to minimize performance degradation.
+
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^
 
