@@ -13,7 +13,7 @@ Copy and save the following script to your Mattermost server as ``upgrade_matter
 
    # Immediately exit if a command run from a loop, a pipeline or a compound
    # command statement fails or a variable is used unset.
-   set -o errexit nounset
+   set -e
 
 
    ################################################################################
