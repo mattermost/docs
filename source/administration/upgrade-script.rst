@@ -5,7 +5,7 @@ Upgrading Mattermost Server with a Script
 
 *Preparing the script*
 
-Copy and save the following script to your Mattermost server as ``update_mattermost.sh``.
+Copy and save the following script to your Mattermost server as ``upgrade_mattermost.sh``.
 
 .. code-block:: sh
 
@@ -213,7 +213,7 @@ Make it executable.
 
 .. code-block:: sh
 
-   # chmod +x ./update_mattermost.sh
+   # chmod +x ./upgrade_mattermost.sh
 
 Please adjust the parameters at the beginning of the script according to your environment.
 

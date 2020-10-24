@@ -1,5 +1,39 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.36.0 Release
+- Release Date: October 16, 2020
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Added **Channel Info > Notification Preferences** to add the ability to edit mobile push notification settings at the channel level.
+ - Server URL now autofills when opening the app from a mobile browser landing page.
+ - Added support for accessibility to the channel header buttons.
+ - Refactored the post draft component, including writing and posting messages, attaching images, using the autocomplete functionality, showing alerts from group mentions and channel wide mentions, and executing slash commands.
+ - Improved the empty state screen for Recent Mentions.
+ - Improved ``in:@user`` search to return Direct and Group Message search results.
+ - Improved styling of Read Only channels.
+ - Removed the filename from an error message when an image/video was too large.
+ - Improved unread badge styling of the hamburger menu and team icons.
+ - Improved styling of autocomplete modals.
+ - Improved the validation error message of the Enter Server URL screen when entering an invalid server URL.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where a hashtag (#) character added to an announcement banner caused the app to display a blank screen.
+ - Fixed an issue where users were still able to upload files via the share extension when ``EnableMobileFileUpload`` was disabled on the server.
+ - Fixed an issue where a draft message on the reply thread was not retained if the user navigated away from the thread.
+ - Fixed an issue where a thumbnail of a file attachment posted in a reply thread displayed in the center channel.
+ - Fixed an issue where users were unable to join public channels via channel links.
+
+#### iOS specific
+ - Fixed an issue where user received an error when opening links on iOS 14 when Safari was not set as the default browser.
+
 ## 1.35.1 Release
 - Release Date: September 21, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device

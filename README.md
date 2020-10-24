@@ -4,6 +4,17 @@ This repository generates the documentation available at https://docs.mattermost
 
 If you have any questions, sign up to [community.mattermost.com](https://community.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676) and join the [Documentation](https://community.mattermost.com/core/channels/documentation) channel.
 
+# Table of Contents
+
+ * [Contributing](#contributing)
+     * [Getting Started](#getting-started)
+     * [Editing](#editing)
+     * [Creating Pull Requests](#creating-pull-requests)
+     * [Using Labels](#using-labels)
+     * [Commenting on Pull Requests](#commenting-on-pull-requests)
+     * [Reviewing Pull Requests](#reviewing-pull-requests)
+ * [Building and Validating](#building-and-validating)
+
 ## Contributing
 
 ### Getting Started

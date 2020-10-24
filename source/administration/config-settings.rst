@@ -4,11 +4,11 @@ Configuration Settings
 .. note::
    The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
 
-Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
+Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
-On new installations starting from version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+On new installations starting from version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
 **Configuration in Database**
 
@@ -40,7 +40,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
   :backlinks: entry
 
 About
--------
+-----
 
 Settings for managing the edition and license for Mattermost Enterprise Edition.
 
@@ -53,9 +53,9 @@ Edition
 View the edition of the Mattermost deployment.
 
 License
-^^^^^^^^
+^^^^^^^
 
-View subscription details including the number of users and expiry date of your Mattermost License.
+View subscription details including the number of users and expiry date of your Mattermost license.
 
 License Key
 ^^^^^^^^^^^
@@ -93,14 +93,14 @@ Users
 View and manage active and inactive users, and revoke all user sessions. Access individual users to view their User ID, and view the teams they are on and what their role is on a team. Additionally, add the user to other teams without direct access to the team.
 
 Teams (Experimental)
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
 Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Channels (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
@@ -114,11 +114,11 @@ Groups
 Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
 
 Permissions
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 *Available in Enterprise Edition E10 and higher*
 
-Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
+Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
 
 Environment
 -----------
@@ -141,9 +141,9 @@ In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://
 
 If Site URL is not set, the following features will not operate correctly:
 
- - Email notifications will contain broken links, and email batching will not work
- - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail
- - Plugins may not work as expected
+ - Email notifications will contain broken links, and email batching will not work.
+ - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.
+ - Plugins may not work as expected.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                    |
@@ -155,7 +155,7 @@ Test Live URL
 This button confirms that the value entered into the Site URL is valid and live.
 
 Listen Address
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address.
 
@@ -168,7 +168,7 @@ On Linux you can use: ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin
 +-------------------------------------------------------------------------------------------+
 
 Forward port 80 to 443
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Forwards all insecure traffic from port 80 to secure port 443.
 
@@ -231,7 +231,7 @@ The path to the file where certificates and other data about the Let's Encrypt s
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 Read Timeout
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Maximum time allowed from when the connection is accepted to when the request body is fully read.
 
@@ -240,7 +240,7 @@ Maximum time allowed from when the connection is accepted to when the request bo
 +----------------------------------------------------------------------------------------+
 
 Write Timeout
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
 
@@ -249,7 +249,7 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 +-----------------------------------------------------------------------------------------+
 
 Idle Timeout
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
 
@@ -297,24 +297,24 @@ Enable Insecure Outgoing Connections
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Reload Configuration from Disk
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Available in Enterprise Edition E20*
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database** section.
 
 Purge All Caches
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
 
 Database
-~~~~~~~~~~
+~~~~~~~~
 
 Changes to properties in this section require a server restart before taking effect.
 
 Driver Name
-^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
@@ -327,7 +327,7 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Data Source
-^^^^^^^^^^^^
+^^^^^^^^^^^
 
 This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
 
@@ -339,7 +339,7 @@ This is the connection string to the master database. When **DriverName** is set
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Idle Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Maximum number of idle connections held open to the database.
 
@@ -357,7 +357,7 @@ Maximum number of open connections held open to the database.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Query Timeout
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
 
@@ -386,7 +386,7 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 +-------------------------------------------------------------------------------------------------------------------------+
 
 Minimum Hashtag Length
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
 
@@ -408,7 +408,7 @@ No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used t
 +------------------------------------------------------------------------------------------+
 
 SQL Statement Logging (Trace)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Executing SQL statements are written to the log for development.
 
@@ -495,12 +495,12 @@ Enable Cluster Sniffing
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Bulk Indexing
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
 
 Purge Indexes
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 This button purges the entire Elasticsearch index. Typically only used if the index has corrupted and search is not behaving as expected. After purging the index a new index can be created with the **Bulk Index** button.
 
@@ -1083,15 +1083,13 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send log records to multiple targets:
+Allow any combination of local file, syslog, and TCP socket targets and send log records to multiple targets:
 
-- Multiple local file targets
-- Multiple syslogs
-- Multiple TCP sockets
+- Multiple local file targets: Supports rotation and compression triggered by size and/or duration.
+- Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
+- Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-Allow any combination of local file, syslog, and TCP socket targets. These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software.
-
-File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
+These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software. 
 
 Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified.
 
@@ -1667,7 +1665,7 @@ Allow Users to View Archived Channels (Beta)
 **False**: Users are unable to view, share, or search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": false`` with options ``true`` and ``false``.                          |
+| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": true`` with options ``true`` and ``false``.                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Show Email Address
@@ -1890,7 +1888,7 @@ Enable Custom Emoji
 **False**: Custom Emojis are disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableCustomEmoji": false`` with options ``true`` and ``false``.                                                        |
+| This feature's ``config.json`` setting is ``"EnableCustomEmoji": true`` with options ``true`` and ``false``.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Restrict Custom Emoji Creation
@@ -2053,6 +2051,31 @@ Public Link Salt
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Notices
+~~~~~~~~
+
+Enable Admin Notices
+^^^^^^^^^^^^^^^^^^^^
+
+**True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://about.mattermost.com/default-notices>`_
+
+**False**: System Admins will not receive notices except those that apply to all end users (See ``UserNoticesEnabled``). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdminNoticesEnabled": true`` with options ``true`` and ``false``.                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable End User Notices
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://about.mattermost.com/default-notices>`_
+
+**False**: Users will not receive notices about available client upgrades and relevant end user features. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserNoticesEnabled": true`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Authentication
@@ -2313,10 +2336,27 @@ If the "No encryption" option is selected it is highly recommended that the AD/L
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``.                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Private Key
+^^^^^^^^^^^^
+
+(Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Public Certificate
+^^^^^^^^^^^^^^^^^^
+
+(Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with with string input.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Skip Certificate Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost.
 
 **True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
@@ -2559,6 +2599,9 @@ When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with numerical input.                                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  LDAP syncs cause a large number of database read queries. Ensure that you monitor database load during a sync to determine how often these syncs should happen in your environment in order to minimize performance degradation.
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^
@@ -3276,7 +3319,7 @@ Welcome Bot
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`_.
 
 Zoom
-~~~~~~
+~~~~~
 
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`_.
 
@@ -3392,7 +3435,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``.                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Bot Accounts
 ~~~~~~~~~~~~
 
@@ -3429,7 +3471,7 @@ Enable GIF Picker
 **False**: GIFs cannot be selected in the emoji picker.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableGifPicker": false`` with options ``true`` and ``false``.                                                          |
+| This feature's ``config.json`` setting is ``"EnableGifPicker": true`` with options ``true`` and ``false``.                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -4105,7 +4147,7 @@ Select the timezone used for timestamps in the user interface and email notifica
 **False**: The **Timezone** setting is hidden in the Account Settings.
 
 +------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Hidden in Left-Hand Sidebar (Experimental)
@@ -4352,6 +4394,32 @@ mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDelet
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``.                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable API User Deletion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``.                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
+
+Enable API Channel Deletion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``.                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
 
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
@@ -4726,11 +4794,31 @@ This setting can be left as default unless you are seeing audit write failures i
 | This feature's ``config.json`` setting is ``"FileMaxQueueSize": 1000`` with numerical input.                                                                       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Advanced Audit Logging Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in Enterprise Edition E20*
+
+Output logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send log records to multiple targets:
+
+- Multiple local file targets
+- Multiple syslogs
+- Multiple TCP sockets
+
+Allow any combination of local file, syslog, and TCP socket targets. 
+
+File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
+
+This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
+
 Service Settings
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Group Unread Channels (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
 
@@ -4889,7 +4977,6 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Theme Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

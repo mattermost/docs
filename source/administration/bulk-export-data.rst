@@ -1,5 +1,6 @@
 Bulk export data
-=================
+================
+
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
 You can export the following data types:
@@ -14,15 +15,17 @@ You can export the following data types:
 - Posts' Replies
 - Posts' Reactions
 - Custom Emoji
-- Direct Message Channels 
+- Direct Message Channels
 - Direct Message Posts
 
-Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
-
-For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.  
+.. note:: 
+  Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
+  
+  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 
 Version object
 --------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -45,6 +48,7 @@ Version object
   
 Team object
 -----------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -92,6 +96,7 @@ Team object
 
 Channel object
 --------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -141,6 +146,7 @@ Channel object
   
 User object
 -----------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -279,6 +285,7 @@ User object
 
 UserNotifyProps object
 ----------------------
+
 This object is a member of the User object.
 
 .. raw:: html
@@ -349,9 +356,9 @@ This object is a member of the User object.
     </tr>
   </table>
 
-
 UserTeamMembership object
 -------------------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -384,6 +391,7 @@ UserTeamMembership object
 
 UserChannelMembership object
 ----------------------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -460,6 +468,7 @@ This object is a member of the ChannelMembership object.
 
 Post object
 -----------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -506,6 +515,7 @@ Post object
   
 Reply object
 ------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -563,6 +573,7 @@ This object is a member of the Post object.
 
 Emoji object
 ------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -584,7 +595,8 @@ Emoji object
   </table>
   
 DirectChannel object
-----------------------
+--------------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -606,7 +618,8 @@ DirectChannel object
   </table>
   
 DirectPost object
-----------------------
+-----------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
