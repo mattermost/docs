@@ -18,6 +18,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Added a new browser favicon state for when there are new messages but no mentions.
+ - Improved sort order of the channel switcher to prioritize recently viewed channels.
  - Improved filter control for the channel sidebar to show unread channels without categories.
  - A threshold was added from the bottom for the new messages toast.
 
