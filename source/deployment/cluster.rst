@@ -426,7 +426,7 @@ What does Mattermost recommend for diaster recovery of the databases?
 
 When deploying Mattermost in a High Availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.
 
-For example, if you're deploying Mattermost on AWS with Amazon Aurora we recommend utilizing multiple Availability Zones. If you're deploying Mattermost on your own cluster please consult with IT team for a solution best suited for your existing architecture.
+For example, if you're deploying Mattermost on AWS with Amazon Aurora we recommend utilizing multiple Availability Zones. If you're deploying Mattermost on your own cluster please consult with your IT team for a solution best suited for your existing architecture.
 
 Troubleshooting
 ---------------
