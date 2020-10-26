@@ -1,5 +1,5 @@
-Administrator's Guide
-=====================
+Self-Hosted Administrator's Guide
+=================================
 
 In-depth documentation on installation, deployment, and administration of Mattermost.
 
