@@ -1,7 +1,16 @@
 Administrator's Guide
 =====================
 
-In-depth documentation on installation, deployment and administration of Mattermost system.
+In-depth documentation on installation, deployment, and administration of Mattermost.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /overview/architecture*
+   /deployment/deployment*
+      /deployment/enterprise-deployment-guide*
+      /deployment/mobile-app-deployment*
 
 Getting Started
 ----------------
