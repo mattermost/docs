@@ -5091,7 +5091,7 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 +----------------------------------------------------------------------------------------+
 
 .. note::
-  When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster setting without the index names colliding.
+  When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.
   
 Live Indexing Batch Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
