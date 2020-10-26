@@ -1,6 +1,6 @@
-==========================
-Cloud Administration Guide
-==========================
+============================
+Cloud Administrator's Guide
+============================
 
 System Administration (System console settings)
 -----------------------------------------------
