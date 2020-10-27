@@ -32,6 +32,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the error message was unclear when a plugin crashed during a slash command execution.
  - Fixed an issue where bot icon images had too much height.
  - Fixed an issue where tags where nested in Plugin Marketplace labels.
+ - Fixed an issue where ephemeral posts posted by bot accounts showed a wrong username on the right-hand side.
  - Fixed an issue where the category headings in the experimental sidebar were not sticky and overlapped the More Unreads indicators.
  - Fixed an issue where Automatic Direct Message Replies were not shown on the right-hand side.
  - Fixed an issue where Automatic Direct Message Replies were still showing after the root post was deleted.
