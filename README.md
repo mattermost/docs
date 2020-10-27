@@ -27,7 +27,9 @@ If this is your first time contributing to Mattermost, first read the [Mattermos
 
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
-If this is the first time you're contributing, click **Edit the file in your fork of this project** (pencil icon) on the top right corner to create a fork.
+If this is the first time you're contributing, follow the steps: 
+1. Fork the repo by clicking on <a href="https://github.com/mattermost/docs/fork?fragment=1"><kbd><b>Fork</b></kbd></a> button.
+2. Navigate to file you would like to change and Click **Edit the file** (pencil icon) on the top right corner to start editing in Github UI.
 
 ### Creating Pull Requests
 
@@ -55,13 +57,30 @@ Any merged PRs with an **Editor Review** or **Reviews Complete** label will be p
 
 ## Building and Validating
 
-If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests. 
+If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests.
 
-1. Download the Mattermost docs repo onto a machine with Python installed.
-2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`. 
-3. `cd` into the cloned repository.
-4. Install the required packages: `pipenv install`.
+`NOTE: Commands are to be executed on Linux, Mac, and Windows(using Powershell)`
+
+1. Download the Mattermost docs repo onto a machine with Python installed or simple cloned the forked copy of this repo by running,
+```sh
+$ git clone https://github.com/Your_Username/docs.git
+```
+2. Install [pipenv](https://docs.pipenv.org/) by following command
+```python
+$ pip install pipenv
+```
+3. Navigate into the cloned repository by following command,
+```sh
+$ cd docs
+```
+4. Install the required packages by running
+```python
+$ pipenv install
+```
 5. Build the doc set using `make html`. This generates files in `/build` directory.
-6. Navigate to the `/build` directory to preview the page/s you've edited. 
+6. Navigate to the `/build` directory to preview the page/s you've edited, by runnning 
+```sh
+$ cd /build
+```
 
 The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 
