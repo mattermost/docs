@@ -24,6 +24,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Bug Fixes
  - Fixed an issue where Enterprise CLI commands would not run.
+ - Fixed an issue where the color picker colors were missing from the Announcement Banner page in the System Console.
  - Fixed an issue where links in channels headers overlapped in some cases.
  - Fixed an issue where a plugin could create a blank ephymeral post, leading to a white screen.
  - Fixed an issue where the channel switcher dialog was not accessible with a screen reader.
