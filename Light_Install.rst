@@ -42,8 +42,8 @@
 
 आप Main Menu > Plugin Marketplace के माध्यम से इंटीग्रेशन और प्लगइन्स पा और इंस्टॉल कर सकते हैं।
 
-GitHub, Jira और Jenkins से  आरंभ करें:
+GitHub, Jira और Jenkins से परिचय करें: 
 
 - अपनी समीक्षा को प्रबंधित करने, पुल रिक्वेस्ट,टिप्पणियों और मर्ज करने के लिए अपने स्लैश कमांड का उपयोग करके अपने Github संगठन को मैटरमोस्ट से कनेक्ट करें। GitHub मैटरमोस्ट में प्री-पैकेज्ड है। [कॉन्फ़िगरेशन स्टेप्स [https://github.com/mattermost/mattermost-plugin-github#configuration]का पालन करें, और फिर अपनी टीम को /github connect चलाना बताए  ताकि वे अधिसूचना प्राप्त कर सकें।
 - अपने Jira अकाउंट को मैटरमोस्ट से कनेक्ट करें और बॉट के लिए एक चैनल सेटअप करें ताकि आपकी टीम हमेशा अद्यतित रहे। आरंभ करने के लिए [कॉन्फ़िगरेशन गाइड](https://mattermost.gitbook.io/plugin-jira/setup/configuration) पर जाएँ।  कॉन्फ़िगर करने के बाद, [उपयोगकर्ता डॉक्यूमेंटेशन](https://mattermost.gitbook.io/plugin-jira/end-user-guide/getting-started) को अपनी टीम के साथ साझा करें ताकि वे सूचनाएं प्राप्त कर सकें।
-- अपने वर्कफ़्लोज़ को केंद्रीकृत करने और बिल्ड प्रबंधित करने के लिए अपने Jenkins सर्वर को मैटरमोस्ट से कनेक्ट करें। आरंभ करने के लिए [इंस्टॉलेशन गाइड](https://github.com/mattermost/mattermost-plugin-jenkins#installation) पर जाएं। अपनी टीम के साथ [फीचर्स लिस्ट](https://github.com/mattermost/mattermost-plugin-jenkins#features)  साझा करें ताकि वे कार्य जुटाना शुरू कर सकें।
+- अपने वर्कफ़्लोज़ को केंद्रीकृत करने और बिल्ड प्रबंधित करने के लिए अपने Jenkins सर्वर को मैटरमोस्ट से कनेक्ट करें। आरंभ करने के लिए [इंस्टॉलेशन गाइड](https://github.com/mattermost/mattermost-plugin-jenkins#installation) पर जाएं। अपनी टीम के साथ [फीचर्स लिस्ट](https://github.com/mattermost/mattermost-plugin-jenkins#features)  साझा करें ताकि वह तेज़ी से कार्य शुरू कर सकें।
