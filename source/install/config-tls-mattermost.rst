@@ -52,7 +52,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
  
  Other helpful resources:
  
-  `NGINX's ssl blog <https://www.nginx.com/blog/nginx-ssl/>`__ and
+- `NGINX's SSL blog <https://www.nginx.com/blog/nginx-ssl/>`__
 - `NGINX's SSLguide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
  
 .. note::
