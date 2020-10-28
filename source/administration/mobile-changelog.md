@@ -10,7 +10,7 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
- - Icon overhaul
+ - Icon overhaul.
  - The user autocomplete now allows matching on terms with spaces (For example: @firstname lastName) the same way as in the WebApp.
 
 ### Bug Fixes
@@ -20,9 +20,11 @@
  - Fixed an issue where nothing happened when tapping an active channel in the sidebar menu.
  - Fixed an issue where the channel info count for Group Messages did not match the total number of users when both active and deactivated users were present.
  - Fixed an issue where the hamburger icon width had changed and notification badges were misaligned.
+ - Fixed an issue where the redux-persist serializer did not return a value based on the type of the argument.
  
 #### Android specific
- - Fixed an issue where the Android App defaulted to Town Square after sharing a file outside of the app.
+ - Fixed an issue where the Android app added autofill data in the chat box.
+ - Fixed an issue where the Android app defaulted to Town Square after sharing a file outside of the app.
 
 #### iOS specific
  - 
