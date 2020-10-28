@@ -46,7 +46,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - 
 
 ### Open Source Components
- - 
+ - Removed ``@types/react-custom-scrollbars`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Database Changes
  - 
