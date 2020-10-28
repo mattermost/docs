@@ -43,7 +43,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 .. note::
    Password-protected certificates are not supported.
    
-**Configure TLS on NGINX(proxy)**:
+**Configure TLS on NGINX (proxy)**
  
  1. To encrpyt the traffic between End-Client and Mattermost server, NGINX will serve as forward proxy. Communication flow will be as follow:
     End-Client -> NGINX (port 443) -> Mattermost server.
