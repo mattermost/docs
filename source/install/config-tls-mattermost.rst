@@ -56,4 +56,4 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
   `NGINX's ssl guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
  
 .. note::
-  Do not setup TLS on mattermost before before doing so for NGINX. It breaks the connection as the TLS prevented it from successfully communicating with the Mattermost server.
+  Do not set up TLS on Mattermost before before doing so for NGINX. It breaks the connection as the TLS prevents it from successfully communicating with the Mattermost server.
