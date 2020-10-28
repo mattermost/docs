@@ -47,7 +47,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
  
  1. To encrpyt the traffic between End-Client and Mattermost server, NGINX will serve as forward proxy. Communication flow will be as follow:
     End-Client -> NGINX (port 443) -> Mattermost server.
- 2. Upstream encryption between NGINX to Mattermost server is allowed. (optional, not needed)
+ 2. (Optional) Upstream encryption between NGINX to Mattermost server is allowed.
  3. Follow `NGINX's guide on setting up SSL Termination for TCP Upstream Servers <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-tcp/>`__.
  
  Other helpful resources:
