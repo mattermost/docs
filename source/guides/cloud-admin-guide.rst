@@ -2,124 +2,68 @@
 Cloud Administrator's Guide
 ============================
 
-In-depth documentation on installation, deployment, and administration of Mattermost.
+In-depth documentation on deployment and administration of Mattermost Cloud workspaces.
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+  
 System Administration 
 ---------------------
 
-Billing
-^^^^^^^
+In-depth documentation on installation, deployment, and administration of Mattermost.
 
-Reporting
-^^^^^^^^^
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
-User Management 
-^^^^^^^^^^^^^^^
+   /cloud/cloud-administration/authentication.rst
+   /cloud/cloud-billing/cloud-billing.rst
+   /cloud/cloud-reporting.rst
+   
+User Management
+---------------
 
-Users
-^^^^^
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
-Groups
-^^^^^^
+   /cloud/cloud-administration/user-management.rst
 
-Teams
-^^^^^
+Configuration
+-------------
 
-Channels
-^^^^^^^^
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
-Permissions
-^^^^^^^^^^^
-
-Site Configuration
-------------------
-
-Customization
-^^^^^^^^^^^^^
-
-Localization
-^^^^^^^^^^^^
-
-Users and teams
-^^^^^^^^^^^^^^^
-
-Notifications
-^^^^^^^^^^^^^
-
-Announcement Banner
-^^^^^^^^^^^^^^^^^^^
-
-Emoji
-^^^^^^
-
-Posts
-^^^^^
-
-Public Links
-^^^^^^^^^^^^
-
-File Sharing and Downloads
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Notices
-^^^^^^^
-
-Authentication
---------------
-
-Signup
-^^^^^^
-
-Email
-^^^^^
-
-Password
-^^^^^^^^
-
-MFA
-^^^^
-
-AD/LDAP
-^^^^^^^
-
-SAML 2.0
-^^^^^^^^
-
-OAuth 2.0
-^^^^^^^^^
-
-Guest Access
-^^^^^^^^^^^^
+   /cloud/cloud-administration/site-configuration.rst
 
 Plugins
 -------
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /cloud/cloud-plugins.rst
+
 Integrations
 ------------
 
-Management
-^^^^^^^^^^
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
-Bot Accounts
-^^^^^^^^^^^^
+   /cloud/cloud-integrations.rst
 
-GIF
-^^^
+Mobile
+------
 
-CORS
-^^^^
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
-Compliance
------------
-
-Data Retention Policy
-^^^^^^^^^^^^^^^^^^^^^
-
-Compliance Export
-^^^^^^^^^^^^^^^^^
-
-Custom Terms of Service
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Mobile Apps 
------------
+   /cloud/cloud-mobile/cloud-mobile-apps.rst
+ 
