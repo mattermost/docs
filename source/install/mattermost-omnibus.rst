@@ -6,7 +6,7 @@ Overview
 
 Mattermost Omnibus is a Debian package that packages the individual components of a Mattermost deployment into a single installation process. The package leverages the ``apt`` package manager to install and keep the components of the platform updated, using a custom CLI and ansible recipes to link those components together and configure them.
 
-Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. Support for RedHat/CentOS distributions will be available in future versions.
+Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. Support for RedHat/CentOS distributions will be available in future versions. The package bundles the E0 Mattermost platform version.
 
 Prerequisites
 -------------
@@ -52,7 +52,7 @@ Configuring Mattermost Omnibus
 
 With Mattermost Omnibus, the ``config.json`` file is no longer used as `Omnibus stores the Mattermost configuration in the database <https://docs.mattermost.com/administration/config-in-database.html>`__. The Omnibus platform itself requires of a configuration of its own, that is stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform and connect all the services together. So you’ll need to use mmctl to make changes to your Mattermost server configuration using ``mmctl --local config edit``.
 
-For Omnibus to work properly, there are some configuration parameters that are fixed and cannot be changed through the web interface - for example, the port that Mattermost uses to run. Other parameters need to be configured directly in the ``mmomni.yml`` file instead of in the Mattermost web interface or the configuration. 
+For Omnibus to work properly, there are some configuration parameters that are fixed and cannot be changed through the web interface - for example, the port that Mattermost uses to run. Other parameters need to be configured directly in the ``mmomni.yml`` file instead of in the Mattermost web interface or the configuration.
 
 The properties that you can configure in this file are:
 
@@ -95,7 +95,7 @@ Frequently Asked Questions (FAQs)
 ----------------------------------
 
 What are the ``mmomni`` commands and what do they do?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mmomni backup``: Takes a complete snapshot of your Mattermost server and places the backup file in a specified file location.
 - ``mmomni restore``: Restores specified backup file to your Mattermost server.
@@ -104,13 +104,13 @@ What are the ``mmomni`` commands and what do they do?
 - ``mmomni tail``: Runs a join tail of logs of all Omnibus components.
 
 Can I install without a domain?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run: 
+Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run:
 ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
 
 What happened to ``config.json``?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Omnibus `stores the configuration of the Mattermost server into the database <https://docs.mattermost.com/administration/config-in-database.html>`__. You can edit your config by running the following mmctl command after connecting mmctl to the instance: ``mmctl config edit``. If you are logged into the machine as the ``mattermost`` user, you can use ``mmctl --local config edit`` as well.
 
@@ -120,16 +120,26 @@ Are there plans to add other packages to the Omnibus?
 Yes! We are planning several packages and currently seeking feedback to help us prioritize these.
 
 Are there plans to support other OS distros?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes! We are currently seeking feedback to help us prioritize these.
 
 Can I use MySQL instead of PostgreSQL?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 MySQL is not supported. Omnibus is architected to run with PostgreSQL.
 
+Can I use a license with Omnibus?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yes! Mattermost Omnibus bundles the E0 Mattermost version, so the enterprise features can be unlocked uploading a license.
+
+Can I use an Omnibus server as part of a cluster?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+No, Omnibus has been designed to be a self contained Mattermost platform, so it contains and expects all the necessary components to be in the same server.
+
 Where can I get help?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
