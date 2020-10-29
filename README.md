@@ -66,8 +66,11 @@ If you've downloaded the repo and are editing Mattermost documentation on your l
 $ git clone https://github.com/Your_Username/docs.git
 ```
 2. Install [pipenv](https://docs.pipenv.org/) by following command
+```sh
+$ brew install pipenv   # for Mac users, if you have brew installed)
+```
 ```python
-$ pip install pipenv
+$ pip install pipenv # for all others
 ```
 3. Navigate into the cloned repository by following command,
 ```sh
