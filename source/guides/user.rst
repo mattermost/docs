@@ -21,6 +21,7 @@ Getting Started
    /help/getting-started/organizing.rst
    /help/getting-started/accessibility.rst
    /help/apps/desktop-guide.rst
+   help/getting-started/mobile-app.rst
 
 Messaging
 =========
