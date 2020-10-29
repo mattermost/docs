@@ -571,3 +571,31 @@ header .header__searchbar {
       overflow: visible !important;
    }
 }
+
+@media print {
+	body,
+	div.wy-grid-for-nav,
+	section.wy-nav-content-wrap {
+		height: auto;
+	}
+
+	body {
+		overflow: visible;
+	}
+
+	section.wy-nav-content-wrap {
+		margin-left: 0px;
+	}
+
+	header {
+		position: absolute;
+	}
+
+	.header__container > :not(.header__logo) {
+		display: none;
+	}
+
+	div.c-thermometer__trigger {
+		display: none;
+	}
+}

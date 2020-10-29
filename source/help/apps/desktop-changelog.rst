@@ -4,9 +4,12 @@ Desktop Application Changelog
 Release v4.6
 ----------------------------
 
-**Release date:** 2020-10-16
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.1>`_
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.0>`_
+- **v4.6.1, released 2020-10-26**
+ - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. `MM-29921 <https://mattermost.atlassian.net/browse/MM-29921>`_
+- **v4.6.0, released 2020-10-16**
+ - Original v4.6.0 release
 
 Improvements
 ~~~~~~~~~~~~~~~

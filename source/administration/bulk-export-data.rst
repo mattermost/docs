@@ -70,7 +70,7 @@ Team object
     <tr class="row-odd">
       <td valign="middle">type</td>
       <td valign="middle">string</td>
-      <td>The type of team. Will have one the following values:<br>
+      <td>The type of team. Will have one of the following values:<br>
           <kbd>"O"</kbd> for an open team<br>
           <kbd>"I"</kbd> for an invite-only team.</td>
     </tr>
@@ -413,7 +413,7 @@ UserChannelMembership object
         <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle">object</td>
-      <td>The notify preferences for this user in this channelas defined by the <b>ChannelNotifyProps</b> object.</td>
+      <td>The notify preferences for this user in this channel as defined by the <b>ChannelNotifyProps</b> object.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">favorite</td>
