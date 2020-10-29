@@ -30,6 +30,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a plugin could create a blank ephymeral post, leading to a white screen.
  - Fixed an issue where the channel switcher dialog was not accessible with a screen reader.
  - Fixed an issue where email addresses were not auto-detected on invites.
+ - Fixed an issue where duplicate sidebar categories could be created on first use of the new experimental sidebar.
  - Fixed an issue where installing plugins on a server using ``FileSettings.PathPrefix`` caused issues.
  - Fixed an issue where the error message was unclear when a plugin crashed during a slash command execution.
  - Fixed an issue where bot icon images had too much height.
