@@ -63,7 +63,7 @@ If you've downloaded the repo and are editing Mattermost documentation on your l
 
 1. Download the Mattermost docs repo onto a machine with Python installed or simple cloned the forked copy of this repo by running,
 ```sh
-$ git clone https://github.com/Your_Username/docs.git
+$ git clone https://github.com/mattermost/docs.git
 ```
 2. Install [pipenv](https://docs.pipenv.org/) by following command
 ```sh
