@@ -92,7 +92,7 @@ The format of the mmctl command is:
 
 
 Listing of New Admin Roles and Privileges
---------------------------------------
+-----------------------------------------
 
 **Roles:**
 ``system_manager``
