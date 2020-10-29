@@ -12,7 +12,7 @@ In-depth documentation on deployment and administration of Mattermost Cloud work
 System Administration 
 ---------------------
 
-In-depth documentation on installation, deployment, and administration of Mattermost.
+In-depth documentation on administration and configuration of Mattermost Cloud.
 
 .. toctree::
    :maxdepth: 1
