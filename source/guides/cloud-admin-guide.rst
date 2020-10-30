@@ -18,7 +18,6 @@ In-depth documentation on administration and configuration of Mattermost Cloud.
    :maxdepth: 2
    :glob:
 
-   /cloud/cloud-administration/authentication.rst
    /cloud/cloud-billing/cloud-billing.rst
    /cloud/cloud-reporting.rst
    
@@ -46,14 +45,10 @@ Configuration
 
    /cloud/cloud-administration/site-configuration.rst
 
-Plugins
--------
+Authentication
+--------------
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
-
-   /cloud/cloud-plugins.rst
+   /cloud/cloud-administration/authentication.rst
 
 Integrations
 ------------
@@ -63,6 +58,20 @@ Integrations
    :glob:
 
    /cloud/cloud-integrations.rst
+
+Plugins
+-------
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /cloud/cloud-plugins.rst
+
+Compliance
+----------
+
+
 
 Mobile
 ------
