@@ -29,7 +29,7 @@ Installing Mattermost Omnibus
 
 If you're installing Omnibus, and have a domain and SSL use:
 
-``sudo apt install mattermost-omnibus``
+``sudo apt install mattermost-omnibus -y``
 
 In order to issue that certificate, the installer requests a domain name and an email address from us. These are used to generate the certificate and deliver any related communications respectively.
 
