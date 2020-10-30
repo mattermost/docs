@@ -15,7 +15,7 @@ System Administration
 In-depth documentation on administration and configuration of Mattermost Cloud.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /cloud/cloud-administration/authentication.rst
@@ -29,7 +29,13 @@ User Management
    :maxdepth: 2
    :glob:
 
-   /cloud/cloud-administration/user-management.rst
+   /cloud/cloud-user-management/user-management.rst
+   /cloud/cloud-user-management/cloud-groups.rst
+   /cloud/cloud-user-management/team-and-channel.rst
+   /cloud/cloud-user-management/cloud-guest-accounts.rst
+   /cloud/cloud-user-management/advanced-permissions.rst
+   /cloud/cloud-user-management/additional-admin-roles.rst
+   /cloud/cloud-user-management/user-satisfaction.rst
 
 Configuration
 -------------
