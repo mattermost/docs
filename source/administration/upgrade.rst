@@ -84,7 +84,7 @@ Location of your local storage directory
    The special directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
    You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
 
-   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should add ``-o -path mattermost/yourFolderHere`` to the below command or you will have to manually copy the from the backup into the new install.
+   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should add ``-o -path mattermost/yourFolderHere`` to the below command or you will have to manually copy the your TLSCert/TLSKey files from the backup into the new install.
 
    .. code-block:: sh
 
