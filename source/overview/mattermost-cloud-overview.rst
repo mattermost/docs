@@ -2,81 +2,56 @@
 Mattermost Cloud Overview
 =========================
 
-Mattermost Cloud is offered as a pay-as-you-go subscription service.
+Mattermost Cloud delivers the industry’s leading open-source collaboration platform in a highly secure, dedicated cloud environment designed for privacy-conscious enterprises and developer collaboration.
 
-You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
+Mattermost Cloud is built on open-source software powered by a thriving developer community. The open-source approach enables software with a modular architecture, built with modern software development practices. Open-source development and provides transparency in source code, extensibility, and public trust. Mattermost Cloud comes in two editions, Mattermost Cloud Professional and Mattermost Cloud Enterprise.  
 
-Mattermost is available free of charge for all workspaces that have 10 or fewer registered users. Your subscription will be upgraded to a per-user pricing model once you reach 11 or more registered users.
+Mattermost Cloud Professional
+------------------------------
 
-Billing Period
---------------
+Mattermost Cloud Professional includes the full set of collaboration and DevOps features and is available from the Mattermost.com website. Signing up requires creating an account with an email and specifying a domain for the workspace. Once you sign up and create your workspace, a wizard will guide you through a quick setup, invitation for team members, and integration with developer tools. The service is free for up to 10 users and converts to per-user pricing after that.
 
-After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
+Mattermost Cloud Professional offers all enterprise-grade administration features, including: 
 
-Adding and removing users in the middle of a billing period
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ - Identity Management - single sign-on, SAML and AD/LDAP user and group provisioning, guest management, and enterprise mobility management
+ - Governance - message and file retention policies, system and team permission policies, custom terms of service, channel moderation settings, compliance exports    
 
-If you add new users in the middle of a billing cycle, you’ll only be charged for the days that the user is registered.
+To get started with Mattermost Cloud Professional, visit https://mattermost.com/mattermost-cloud.
 
-Here’s an example:
+Mattermost Cloud Enterprise
+---------------------------
 
-Your organization has a Mattermost Cloud workspace and you’re on a monthly subscription at the rate of $10 USD per user per month. You add a new user on the 11th day of a 30-day billing period and that user remains registered for the remainder of the billing period.
+Mattermost Cloud Enterprise offers the isolation, security, and control of self-hosted editions but without the burden of managing deployment, maintaining uptime, or applying upgrades.
 
-The prorated subscription cost for this user is determined by multiplying the monthly amount ($10 USD) by the number of days they are actively registered in the billing period (20) and dividing by the number of days in the month (30).
+Mattermost Cloud Enterprise offers all chat and administration features, integrated DevOps workflows, provides a 99.0% financially-backed guaranteed uptime and enterprise-grade support.
+  
+Every Mattermost Cloud Enterprise instance is deployed in a private environment within an AWS VPC dedicated to a single customer. Within that VPC, all the required resources to run, monitor, and administer Mattermost are deployed in isolation. These resources include a dedicated RDS Aurora database cluster and a dedicated Kubernetes cluster, deployed across multiple availability zones and managed by Kubernetes experts. 
 
-The prorated subscription cost for the user added on day 11 is $6.67 USD.
+This intentional isolation and dedicated deployment allow Mattermost Cloud Enterprise to offer other privacy-centric features, such as VPC Peering, bring-your-own-domain and certificates, mutual TLS, access to monitoring tools, and databases to run custom analysis, and more.
 
-Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
+Future releases will include an enterprise network integration with VPC Peering, TLS mutual authentication, and additional data residency options.  
 
-Viewing and Managing Billing Details
-------------------------------------
+To get started with Mattermost Cloud Enterprise, visit: https://mattermost.com/cloud to speak to a Mattermost Account Executive. 
 
-You can view your billing details in **System Console > Billing & Account**.
+FAQ
+----
+**How much does Mattermost Cloud Cost?**  
+Mattermost Cloud Professional is free for up to 10 users. After ten users, it is $10.00/user/month as a pay-as-you-go subscription.  Please contact us for over 1000 users. 
 
-Subscription
-^^^^^^^^^^^^
+Mattermost Cloud Enterprise is an annual subscription. Please contact us for a quote.    
 
-The subscription screen outlines the details of your Mattermost Cloud plan, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
+**How can customers trial Mattermost Cloud?** 
+We offer ten users free as a trial option in our Mattermost Cloud Professional edition.  Customers under 11 users can use Mattermost Cloud Professional free for as long as they need.  All features are provided in this free offering. 
 
-Billing History
-^^^^^^^^^^^^^^^
+Mattermost Cloud Enterprise offers a discounted proof-of-concept for 60 days. The proof-of-concept program includes a dedicated customer engineer.  
 
-The Billing History screen contains a list of all your monthly invoices and payments. Invoices appear immediately after the billing period ends.
+**When will we support other regions?** 
+Mattermost Cloud Enterprise will support data residency in early 2021. We appreciate feedback from our customers on regional support in both editions.  
 
-Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
+**How is Mattermost Cloud secured?** 
+Mattermost Cloud has encryption at rest and in-transit. We are SOC2 Type1 certified and working towards SOC2 Type 2.
 
-If you have a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
+Mattermost Cloud Enterprise is deployed in a private environment within an AWS VPC dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace.
 
-Company information
-^^^^^^^^^^^^^^^^^^^^
-
-The **Company Information** screen contains an area to add your company address where you are physically located. The company address will appear on your invoice if specified. Otherwise the billing address associated with the credit card on file will be used.
-
-Payment information
-^^^^^^^^^^^^^^^^^^^^
-
-Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted.
-
-Mattermost has engaged third party payments processor Stripe to safely collect and store your credit card information. You may only store information pertaining to one credit card.
-
-We offer pricing and billing only in U.S. Dollars (USD) at this time. Payment will be made in USD converted using the exchange rate from at the time of the transaction.
-
-Sales tax and VAT
-^^^^^^^^^^^^^^^^^
-
-Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
-
-Failed or late payments
-^^^^^^^^^^^^^^^^^^^^^^^
-
-You will be notified immediately of failed payments both in-product with a banner and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you will be charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here’s what to expect:
-
-.. csv-table::
-   :header: "Time in arrears", "Action taken"
-
-   "7 days", "An email is sent to the workspace Administrator with directions to update payment information."
-   "14 days", "Another email is sent to the workspace Administrator with directions to update payment information."
-   "30 days", "An email is sent to the workspace Administrator indicating that the workspace will be suspended in a further 60 days."
-   "90 days", "The workspace will be suspended, preventing access by all users and Administrators."
-
-Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
+**What are the alternatives, and why should customers choose Mattermost Cloud?**
+Other SaaS offerings are closed-source and focus on a very broad use-case. Mattermost Cloud is built on our open-source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering.  Mattermost has deep integrations and workflows that help builders and operators be more effective. Mattermost Cloud Enterprise is deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources. 
