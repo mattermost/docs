@@ -3,11 +3,6 @@ Cloud Administrator's Guide
 ============================
 
 In-depth documentation on deployment and administration of Mattermost Cloud workspaces.
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   
   
 System Administration 
 ---------------------
@@ -25,7 +20,7 @@ User Management
 ---------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /cloud/cloud-user-management/user-management.rst
@@ -40,13 +35,17 @@ Configuration
 -------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /cloud/cloud-administration/site-configuration.rst
 
 Authentication
 --------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
    /cloud/cloud-administration/authentication.rst
    /cloud/cloud-administration/sso-saml.rst
@@ -59,7 +58,7 @@ Integrations
 ------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /cloud/cloud-integrations.rst
@@ -68,7 +67,7 @@ Plugins
 -------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /cloud/cloud-plugins.rst
@@ -76,6 +75,9 @@ Plugins
 Compliance
 ----------
 
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
 
 Mobile
