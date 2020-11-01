@@ -15,14 +15,14 @@ Supported smartphones include iOS, Android, Blackberry, and Windows Phone device
   As the MFA implementation relies on Time-based One-time passwords (TOTP) ensure that your server system time is accurate. If there is a discrepancy, users may not be able to log in successfully.
 
 Enabling MFA
-------------
+^^^^^^^^^^^^
 
 This option is enabled by the System Admin in the `System Console <http://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication > MFA > Enable Multi-factor Authentication**. 
 
 Once enabled, users can opt to use MFA on their account in the `Account Settings <https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication>`__ menu under **Security > Multi-factor Authentication**.
 
 Enforcing MFA (E10)
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 This option can be enabled by the System Admin in the `System Console <http://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication > MFA > Enforce Multi-factor Authentication**.
 
