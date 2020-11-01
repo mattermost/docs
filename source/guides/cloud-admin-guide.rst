@@ -59,7 +59,7 @@ Integrations
    :maxdepth: 1
    :glob:
 
-   /cloud/cloud-integrations.rst
+   /cloud/cloud-incoming-webhooks.rst
 
 Plugins
 -------
