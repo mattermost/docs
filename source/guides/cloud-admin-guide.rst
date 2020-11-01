@@ -60,15 +60,14 @@ Integrations
    :glob:
 
    /cloud/cloud-incoming-webhooks.rst
-
-Plugins
--------
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   /cloud/cloud-plugins.rst
+   /cloud/cloud-outgoing-webhooks.rst
+   /cloud/cloud-slash-commands.rst
+   /cloud/cloud-bot-accounts.rst
+   /cloud/cloud-personal-access-tokens.rst
+   /cloud/cloud-oauth-2-0-application.rst
+   /cloud/integrations-faq.md
+   /cloud/embedding.rst
+   /cloud/webhook.rst
 
 Compliance
 ----------
@@ -77,6 +76,10 @@ Compliance
    :maxdepth: 1
    :glob:
 
+   /cloud/cloud-administration/cloud-compliance.rst
+   /cloud/cloud-administration/compliance-export.rst
+   /cloud/cloud-administration/data-retention-policy.rst
+   /cloud/cloud-administration/custom-terms-of-service.rst
 
 Mobile
 ------
