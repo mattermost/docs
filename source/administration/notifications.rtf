@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f0\fs24 \cf0 Notifications\
+-----------------\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+There are seven different settings that allow you to control notifications. \
+\
+1. Show @channel and @all confirmation dialog: Users will be prompted to confirm when posting @channel and @all in channels with over five members.\
+2. Email Notification Contents: You can specify the content shown in email notifications. \'93Send full message contents\'94 will include Sender name and channel in email notifications. \'93Send generic description with only sender name\'94 will include the team name and name of the person who sent the message, with no information about channel name or message contents, is included in email notifications. This is typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.\
+3. Notification Display Name: Set the name displayed on the email account used when sending notification emails from Mattermost system.\
+4. Notification From Address: Set the address displayed on the email account used when sending notification emails from within Mattermost. So you don\'92t miss messages, please make sure to change this value to an email your system administrator receives, such as "admin@yourcompany.com".\
+5. Notification Reply-To Address: Set the email address used in the Reply-To header when sending notification emails from Mattermost.\
+6. Notification Footer Mailing Address: Set the name and mailing address displayed in the footer of email notifications from Mattermost, such as \'93\'a9 ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA\'94. If the field is left empty, the organization name and mailing address will not be displayed.\
+7. Push Notification Contents: You can configure what information is provided in push notifications. \'93Generic description with only sender name\'94 will include only the name of the person who sent the message but no information about channel name or message text. \'93Generic description with sender and channel names\'94 will include names of users and channels but no specific details from the message text. \'93Full message content sent in the notification payload\'94 sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. When selecting \'93ID-Only Push Notifications\'94, full message content is fetched from the server on receipt. The notification payload relayed through the Apple Push Notification service or Firebase Cloud Messaging service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a notification service app extention on iOS or an expandable notification pattern on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer\'92s mobile application without passing the message contents through either the Apple Push Notification service or Firebase Cloud Messaging service.\
+}
