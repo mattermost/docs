@@ -153,7 +153,7 @@ GROUP="$(stat -c '%G' ${mattermostdir}/bin/mattermost)"
 chown -hR "$USER":"$GROUP" "${downloaddir}/mattermost-upgrade/"
 
 
-# Clean up mattermost directory
+# Clean up Mattermost directory
 find "${mattermostdir}" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/config" -o -path "${mattermostdir}/logs" -o -path "${mattermostdir}/plugins" -o -path "${mattermostdir}/data" -o -path "${mattermostdir}/client" \) -exec rm -rf {} \;
 find "${mattermostdir}/client" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/client/plugins" \) -exec rm -rf {} \;
 
