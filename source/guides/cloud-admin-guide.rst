@@ -33,7 +33,7 @@ Configuration
 -------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /cloud/cloud-administration/site-configuration.rst
@@ -50,7 +50,7 @@ Authentication
    /cloud/cloud-administration/sso-ldap.md
    /cloud/cloud-administration/sso-gitlab.rst
    /cloud/cloud-administration/sso-google.md
-   cloud/cloud-administration/sso-office.md
+   /cloud/cloud-administration/sso-office.md
 
 Integrations
 ------------
@@ -59,15 +59,15 @@ Integrations
    :maxdepth: 1
    :glob:
 
-   /cloud/cloud-incoming-webhooks.rst
-   /cloud/cloud-outgoing-webhooks.rst
-   /cloud/cloud-slash-commands.rst
-   /cloud/cloud-bot-accounts.rst
-   /cloud/cloud-personal-access-tokens.rst
-   /cloud/cloud-oauth-2-0-application.rst
-   /cloud/integrations-faq.md
-   /cloud/embedding.rst
-   /cloud/webhook.rst
+   /cloud/cloud-integrations/cloud-incoming-webhooks.rst
+   /cloud/cloud-integrations/cloud-outgoing-webhooks.rst
+   /cloud/cloud-integrations/cloud-slash-commands.rst
+   /cloud/cloud-integrations/cloud-bot-accounts.rst
+   /cloud/cloud-integrations/cloud-personal-access-tokens.rst
+   /cloud/cloud-integrations/cloud-oauth-2-0-application.rst
+   /cloud/cloud-integrations/integrations-faq.md
+   /cloud/cloud-integrations/embedding.rst
+   /cloud/cloud-integrations/webhook.rst
 
 Compliance
 ----------
@@ -85,8 +85,11 @@ Mobile
 ------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /cloud/cloud-mobile/cloud-mobile-apps.rst
+   /cloud/cloud-mobile/cloud-app-config.rst
+   /cloud/cloud-mobile/mobile-apps-faq.rst
+   /cloud/cloud-mobile/troubleshooting-mobile.rst
  
