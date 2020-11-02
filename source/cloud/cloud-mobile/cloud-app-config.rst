@@ -1,6 +1,6 @@
 
-ppConfig for EMM Solutions with Mattermost Mobile Apps
-=======================================================
+Config for EMM Solutions with Mattermost Mobile Apps
+=====================================================
 
 What is AppConfig?
 ------------------
@@ -18,7 +18,7 @@ For example set up instructions, see our documentation on :doc:`MobileIron <mobi
 Mattermost AppConfig Values
 ---------------------------
 
-The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template <mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
+The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template <mattermost-specfile.xml>` of the configuration file for use with your EMM provider.
 
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | Key                    | Description                                                                                                                                                                                                     | Type   | Default Value | Valid Values     | iOS Support | Android for Work Support |
@@ -43,6 +43,7 @@ The following table shows all the configuration options that can be sent from th
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | vendor                 | Name of the EMM vendor or company deploying the app. Used in help text when prompting for passcodes so users are aware why the app is being protected.                                                          | String | Mattermost    |                  | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
+
 
 Other AppConfig Settings
 ------------------------

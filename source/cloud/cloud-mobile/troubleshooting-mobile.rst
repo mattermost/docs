@@ -3,7 +3,7 @@ Troubleshooting Mobile Applications
 ===================================
 
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 
 First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
 
@@ -15,6 +15,7 @@ Please note that the apps cannot connect to servers with self-signed certificate
 
 Login with ADFS/Office365 is not working
 ----------------------------------------
+
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 I see a “Connecting…” bar that does not go away
@@ -63,7 +64,6 @@ This can happen if the server running Mattermost has its mime types not set up c
 A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
-
 
 None of these solve my problem!
 -------------------------------
