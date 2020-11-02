@@ -1,6 +1,6 @@
-=========================
+==========================
 Mattermost Cloud Overview
-=========================
+==========================
 
 Mattermost Cloud is offered as a pay-as-you-go subscription service.
 
