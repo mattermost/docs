@@ -13,6 +13,7 @@ System Administration
 
    /cloud/cloud-billing/cloud-billing.rst
    /cloud/cloud-reporting.rst
+   /cloud/cloud-administration/create-new-workspace.rst
    
 User Management
 ---------------
