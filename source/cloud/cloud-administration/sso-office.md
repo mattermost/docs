@@ -10,23 +10,23 @@ Follow these steps to configure Mattermost to use your Office 365 logon credenti
 
 2. In the left-hand navigation pane, select the **Azure Active Directory service**, and then select **App registrations > New registration**.
 
-![AzureApp_NewRegistration.png](../../source/images/AzureApp_New_Registration.png)
+![](../../../source/images/AzureApp_New_Registration.png)
 
 3. Give your new registration a **Name**, and then define which **Supported account types** can access the application. For example, if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. The **Redirect URI** should be defined as Web client. Also input the URL with the host name that will be specific to your Mattermost service followed by `/signup/office365/complete`. An example below is: https://your.mattermost.com/signup/office365/complete
 
-   ![AzureApp_SetupMenuv2.png](../../source/images/AzureApp_SetupMenuv2.png)
+   ![](../../../source/images/AzureApp_SetupMenuv2.png)
 
 Now the App Registration has been created and you can configure it further. The standard Azure AD documentation is [here](https://docs.microsoft.com/en-gb/azure/active-directory/develop/quickstart-register-app) for reference.
 
 4. Select **Certificates and Secrets** from the menu, and click the button to generate a **New Client secret**. Provide a description and define the expiry for the token. 
 
-   ![AzureApp_Client_Secret_Expiry.png](../../source/images/AzureApp_Client_Secret_Expiry.png)
+   ![](../../../source/images/AzureApp_Client_Secret_Expiry.png)
 
 Click _Add_ and you will be provided with the _client secret value_, copy this and save it for use in the Mattermost configuration as the **Application Secret Password**.
 
 5. Select **Overview** from the menu and copy the _Application (client) ID_ and the _Directory (tenant) ID_, for use in the Mattermost configuration as the **Application ID** and as part of the **Auth Endpoint** and **Token Endpoint** URL.
 
-   ![AzureApp_App_Directory_IDsv2.png](../../source/images/AzureApp_App_Directory_IDsv2.png)
+   ![](../../../source/images/AzureApp_App_Directory_IDsv2.png)
 
 6. Log in to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365** as the service provider. Enter the _client secret value_ you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field.
 

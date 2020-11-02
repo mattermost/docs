@@ -18,12 +18,12 @@ Creating a Personal Access Token
 
 3 - To create an access token with a non-admin account, you must first give it the appropriate permissions. Go to **System Console > Users**, search for the user account, and select **Manage Roles** from the dropdown.
 
-.. image:: ../../source/images/access_token_manage_roles.png
+.. image:: ../../../source/images/access_token_manage_roles.png
   :width: 500 px
 
 4 - Select **Allow this account to generate personal access tokens.**
 
-.. image:: ../../source/images/access_tokens_additional_roles.png
+.. image:: ../../../source/images/access_tokens_additional_roles.png
   :width: 500 px
 
 You may optionally allow the account to post to any channel in your Mattermost server, including direct messages by choosing the **post:all** role. **post:channels** role allows the account to post to any public channel in the Mattermost server.
@@ -45,7 +45,7 @@ Then hit **Save**.
 
 9 - You're all set! You can now use the personal access token for integrations to interact with your Mattermost server and `authenticate against the Mattermost REST API <https://about.mattermost.com/default-api-authentication>`__.
 
-.. image:: ../../source/images/access_token_settings.png
+.. image:: ../../../source/images/access_token_settings.png
   :width: 500 px
 
 Revoking a Personal Access Token

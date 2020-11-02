@@ -2,7 +2,7 @@
 GitLab Single Sign-On
 =====================
 
-Configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation, and user sign-in.
+Configure Mattermost to use GitLab as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in.
 
 .. Note:: Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required they're not officially supported and are known not to work on some experiences. If having official AD, LDAP, SAML, or MFA support is critical to your enterprise, please consider `Mattermost Enterprise Edition <https://mattermost.com/pricing/>`__ as an option. 
 
@@ -56,8 +56,6 @@ Step 2: Configure Mattermost for GitLab SSO
 
 3. Restart your Mattermost server.
 
-  On Ubuntu 14.04 and RHEL 6: ``sudo restart mattermost``
-
-  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart mattermost``
+  ``sudo systemctl restart mattermost``
 
 After the server restarts, users must change their sign-in method before they can sign in with GitLab.

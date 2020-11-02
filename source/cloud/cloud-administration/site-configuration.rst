@@ -1,18 +1,6 @@
 Site Configuration
 ==================
 
-Customization
--------------
-
-Localization
--------------
-
-Users and teams
----------------
-
-Notifications
--------------
-
 Announcement Banner
 -------------------
 
@@ -20,7 +8,7 @@ Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pr
 
 In Mattermost Enterprise Edition, an announcement banner is available that allows System Admins to display a notice that's visible to all users on the system.
 
-.. image:: ../images/announcement-banner-1106x272.png
+.. image:: ../../images/announcement-banner-1106x272.png
   :width: 1106
   :height: 272
   :alt: Shows the announcement banner at the top of the user's screen.
@@ -36,24 +24,12 @@ By default, users can dismiss the banner until they log in again or until you up
 5. To prevent users from dismissing the banner, in the *Allow Banner Dismissal* section, click **false**.
 6. Click **Save**.
 
-Emoji
------
-
-Posts
------
-
-Public Links
-------------
-
-File Sharing and Downloads
---------------------------
-
 In-Product Notices
 ------------------
 
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
 
-.. image:: ../images/notices.png
+.. image:: ../../images/notices.png
 
 Administrator Notices
 ^^^^^^^^^^^^^^^^^^^^^
@@ -68,7 +44,7 @@ End User Notices
 End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
 
 FAQs
-^^^
+^^^^
 
 Are notices enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

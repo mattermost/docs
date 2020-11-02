@@ -8,7 +8,7 @@ Mattermost supports webhooks to easily integrate external applications into the 
 
 Use incoming webhooks to post messages to Mattermost public channels, private channels and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload in the request body.
 
-.. image:: ../images/incoming_webhooks_sample.png
+.. image:: ../../images/incoming_webhooks_sample.png
   :width: 500 px
 *An example of a GitHub integration that posts updates to a Developers channel*
 
@@ -25,7 +25,7 @@ Simple Incoming Webhook
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
-.. image:: ../images/incoming_webhooks_create_simple.png
+.. image:: ../../images/incoming_webhooks_create_simple.png
   :width: 400 px
   
 1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so.
@@ -64,7 +64,7 @@ See `developer documentation <https://developers.mattermost.com/integrate/incomi
 
 This content will be displayed in the Town Square channel.
 
-.. image:: ../images/incoming_webhooks_full_example.png
+.. image:: ../../images/incoming_webhooks_full_example.png
   :width: 500 px
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
