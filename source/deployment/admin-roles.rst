@@ -90,16 +90,17 @@ The format of the mmctl command is:
 
 ``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
+Admin Roles and Privileges
+---------------------------
 
-Listing of New Admin Roles and Privileges
------------------------------------------
+**Roles**
 
-**Roles:**
-``system_manager``
-``system_user_manager``
-``system_read_only_admin``
+- ``system_manager``
+- ``system_user_manager``
+- ``system_read_only_admin``
 
-**Privileges:**
+**Privileges**
+
 - ``PERMISSION_SYSCONSOLE_READ_ABOUT``
 - ``PERMISSION_SYSCONSOLE_WRITE_ABOUT``
 
@@ -112,7 +113,7 @@ Listing of New Admin Roles and Privileges
 - ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_GROUPS``
 - ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_GROUPS``
 
--``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_TEAMS``
+- ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_TEAMS``
 - ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_TEAMS``
 
 - ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_CHANNELS``
