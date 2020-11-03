@@ -18,11 +18,11 @@ By default, users can dismiss the banner until they log in again or until you up
 **To enable the banner**:
 
 1. Open **System Console > Site Configuration**.
-2. In the *Enable Announcement Banner* section, click **true**.
-3. In the *Banner Text* field, enter the text of the announcement that you want to make.
+2. For **Enable Announcement Banner**, select **true**.
+3. In the **Banner Text** field, enter the text of the announcement that you want to make.
 4. Set the background and text colors.
-5. To prevent users from dismissing the banner, in the *Allow Banner Dismissal* section, click **false**.
-6. Click **Save**.
+5. To prevent users from dismissing the banner, in the **Allow Banner Dismissal** section, select **false**.
+6. Select **Save**.
 
 In-Product Notices
 ------------------
