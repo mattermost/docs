@@ -25,7 +25,7 @@ Mattermost Cloud Enterprise offers the isolation, security, and control of self-
   
 Every Mattermost Cloud Enterprise instance is deployed in a private environment within an AWS VPC dedicated to a single customer. Within that VPC, all the required resources to run, monitor, and administer Mattermost are deployed in isolation. These resources include a dedicated RDS Aurora database cluster and a dedicated Kubernetes cluster, deployed across multiple Availability Zones and managed by Kubernetes experts.
 
-This intentional isolation and dedicated deployment allow Mattermost Cloud Enterprise to offer other privacy-centric features, such as VPC Peering, bring-your-own-domain and certificates, mutual TLS, access to monitoring tools, databases to run custom analysis, and more.
+This intentional isolation and dedicated deployment supports other privacy-centric features, such as VPC Peering, bring-your-own-domain and certificates, mutual TLS, access to monitoring tools, databases to run custom analysis, and more.
 
 Future releases will include an enterprise network integration with VPC Peering, TLS mutual authentication, and additional data residency options.
 
