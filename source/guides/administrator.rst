@@ -96,14 +96,14 @@ Learn how to configure settings to meet your unique requirements.
    /install/i18n*
    /install/config-apache2.rst
    
-DevOps Command Center
----------------------
+Incident Management
+-------------------
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   /devops-command-center/devops-command-center-overview.md
+   /administration/devops-command-center.rst
 
 Mobile Apps
 -----------
