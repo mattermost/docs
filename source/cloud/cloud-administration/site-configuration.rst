@@ -64,9 +64,9 @@ Emoji
 
 There are three different settings that allow you to control emoji.
 
-1. Enable Emoji Picker: An emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of Custom Emojis may slow down performance.
-2. Enable Custom Emoji: You can control whether or not the Custom Emoji option in the Main Menu, where users can go to create customized emoji is accessible.
-3. Restrict Custom Emoji Creation: You can set which role is able to create Custom Emoji from the Main Menu > Custom Emoji (all users, System and Team Admins, or System Admins only).
+1. **Enable Emoji Picker:** An emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of Custom Emojis may slow down performance.
+2. **Enable Custom Emoji:** You can control whether or not the Custom Emoji option in the Main Menu, where users can go to create customized emoji is accessible.
+3. **Restrict Custom Emoji Creation:** You can set which role is able to create Custom Emoji from the Main Menu > Custom Emoji (all users, System and Team Admins, or System Admins only).
 
 File Sharing and Downloads
 --------------------------
@@ -101,7 +101,7 @@ There are seven different settings that allow you to control notifications.
   - **Generic description with only sender name** will include only the name of the person who sent the message but no information about channel name or message text. 
   - **Generic description with sender and channel names** will include names of users and channels but no specific details from the message text. 
   - **Full message content sent in the notification payload** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages.  
-  - **Only Push Notifications**, full message content is fetched from the server on receipt. The notification payload relayed through the Apple Push Notification service or Firebase Cloud Messaging service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a notification service app extention on iOS or an expandable notification pattern on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the Apple Push Notification service or Firebase Cloud Messaging service.
+  - **Only Push Notifications** means full message content is fetched from the server on receipt. The notification payload relayed through the Apple Push Notification service or Firebase Cloud Messaging service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a notification service app extention on iOS or an expandable notification pattern on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the Apple Push Notification service or Firebase Cloud Messaging service.
 
 Posts
 -----
