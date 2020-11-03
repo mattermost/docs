@@ -137,7 +137,7 @@ Yes! Mattermost Omnibus bundles the E0 Mattermost version, so the enterprise fea
 Can I use an Omnibus server as part of a cluster?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No, Omnibus has been designed to be a self contained Mattermost platform, so it contains and expects all the necessary components to be in the same server.
+No, Omnibus is designed to be a self-contained Mattermost platform, so it expects all the necessary components to be in the same server.
 
 Where can I get help?
 ^^^^^^^^^^^^^^^^^^^^^
