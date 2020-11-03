@@ -1,5 +1,5 @@
-Installing Mattermost Omnibus (Beta)
-===================================
+Installing Mattermost Omnibus
+=============================
 
 Overview
 ---------
