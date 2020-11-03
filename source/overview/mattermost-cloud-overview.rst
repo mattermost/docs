@@ -46,7 +46,7 @@ How can customers trial Mattermost Cloud?
 
 We offer ten users free as a trial option in our Mattermost Cloud Professional edition.  Customers under 11 users can use Mattermost Cloud Professional free for as long as they need.  All features are provided in this free offering. 
 
-Mattermost Cloud Enterprise offers a discounted proof-of-concept for 60 days. The proof-of-concept program includes a dedicated customer engineer.  
+Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
 When will we support other regions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
