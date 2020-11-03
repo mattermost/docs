@@ -95,6 +95,11 @@ Learn how to configure settings to meet your unique requirements.
    /install/outbound-proxy.rst
    /install/i18n*
    /install/config-apache2.rst
+   
+DevOps Command Center
+---------------------
+
+  /administration/devops-command-center*
 
 Mobile Apps
 -----------
@@ -204,7 +209,6 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
-   /administration/devops-command-center*
    /deployment/atlassian-integrations*
    /deployment/microsoft-integrations*
    /deployment/ci-cd-tools*
