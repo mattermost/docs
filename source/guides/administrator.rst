@@ -99,7 +99,11 @@ Learn how to configure settings to meet your unique requirements.
 DevOps Command Center
 ---------------------
 
-  /administration/devops-command-center*
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /administration/devops-command-center*
 
 Mobile Apps
 -----------
