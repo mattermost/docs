@@ -59,7 +59,7 @@ The interface for naming, assigning teams, and editing permissions in a Team Ove
 Channel Permissions 
 ---------------------------
 
-Channel Moderation (Beta) (E20)
+Channel Moderation (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management.html>`_.
