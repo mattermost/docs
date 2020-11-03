@@ -48,7 +48,7 @@ We offer ten users free as a trial option in our Mattermost Cloud Professional e
 
 Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
-When will we support other regions?
+When will support for other regions be available?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Cloud Enterprise will support data residency in early 2021. We appreciate feedback from our customers on regional support for both editions.
