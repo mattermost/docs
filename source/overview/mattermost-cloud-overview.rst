@@ -55,7 +55,7 @@ Mattermost Cloud Enterprise will support data residency in early 2021. We apprec
 
 How is Mattermost Cloud secured?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Mattermost Cloud has encryption at rest and in-transit. We are SOC2 Type1 certified and working towards SOC2 Type 2.
+Mattermost Cloud has encryption at rest and in-transit. We are SOC2 Type 1 certified and working towards SOC2 Type 2.
 
 Mattermost Cloud Enterprise is deployed in a private environment within an AWS VPC dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace.
 
