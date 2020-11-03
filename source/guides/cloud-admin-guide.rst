@@ -93,4 +93,9 @@ Mobile
    /cloud/cloud-mobile/cloud-app-config.rst
    /cloud/cloud-mobile/mobile-apps-faq.rst
    /cloud/cloud-mobile/troubleshooting-mobile.rst
+   
+DevOps Command Center
+---------------------
+
+ /administration/devops-command-center*
  
