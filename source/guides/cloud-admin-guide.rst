@@ -94,12 +94,12 @@ Mobile
    /cloud/cloud-mobile/mobile-apps-faq.rst
    /cloud/cloud-mobile/troubleshooting-mobile.rst
    
-DevOps Command Center
----------------------
+Incident Management
+-------------------
 
 .. toctree::
    :maxdepth: 1
    :glob:
  
-   /devops-command-center/devops-command-center-overview.md
+   /administration/devops-command-center.rst
  
