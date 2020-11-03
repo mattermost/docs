@@ -44,7 +44,7 @@ Mattermost Cloud Enterprise is an annual subscription. Please contact us for a q
 How can customers trial Mattermost Cloud?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We offer ten users free as a trial option in our Mattermost Cloud Professional edition.  Customers under 11 users can use Mattermost Cloud Professional free for as long as they need.  All features are provided in this free offering. 
+Mattermost Cloud Professional edition is free for up to ten users and all features are provided in this free offering.
 
 Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
