@@ -43,7 +43,7 @@ Run Compliance Reports
 
 Compliance Reports are exports of all messages in Mattermost that match the report criteria. To run a report: 
 
-1. Go to **System Console > > Compliance > Compliance Monitoring** (or **System Console > Compliance > Compliance Monitoring** in versions prior to 5.12).
+1. Go to **System Console > > Compliance > Compliance Monitoring**.
 2. Fill in the following criteria:  
 
      - **Job Name:** Name the compliance report you are about to run (e.g. "HR Audit 455").
