@@ -1,5 +1,5 @@
 =========================
-SAML Single Sign-On (E20)
+SAML Single Sign-On
 =========================
 
 Single sign-on (SSO) is a way for users to log into multiple applications with a single user ID and password without having to re-enter their credentials. The SAML standard allows identity providers to pass credentials to service providers. Mattermost can be configured to act as a SAML 2.0 Service Provider. 
@@ -29,7 +29,7 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
 Using SAML Attributes to Apply Roles
--------------------------------------
+--------------------------------------------------
 
 You can use attributes to assign roles to specified users on login. To access the SAML attribute settings navigate to **System Console > SAML 2.0**.
 
@@ -72,21 +72,10 @@ Existing members that are identified by this attribute will be promoted from mem
 3. Complete the **Admin Attribute** field.
 4. Choose **Save**.
 
-**Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
-
-Roadmap
--------
-
-From Mattermost v5.14, you can optionally configure Mattermost to sign the SAML request using a private key to meet InfoSec requirements at your organization.
-
-In the future roadmap, the main consideration is an integration with SCIM, via plugin. Such an integration allows system administrators to create SAML-provisioned users before their first login, and sync them against Mattermost permissions.
-
-Currently user provisioning and deprovisioning can be handled with SAML sync, but relies on AD/LDAP. SCIM enables admins to control user provisioning and deprovisioning within the IdP itself.
-
-For examples, see `Microsoft Azure AD integration with SCIM <https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups>`_ and `Okta user provisioning with SCIM <https://www.okta.com/integrate/documentation/scim/>`_.
+**Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However, if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
 Configuration Assistance
-------------------------
+---------------------------------
 
 We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.
 

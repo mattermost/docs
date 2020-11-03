@@ -1,5 +1,4 @@
-
-# Office 365 Single Sign-On (E20)
+# Office 365 Single Sign-On
 ___
 
 Follow these steps to configure Mattermost to use your Office 365 logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
@@ -30,16 +29,10 @@ Click _Add_ and you will be provided with the _client secret value_, copy this a
 
 6. Log in to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365** as the service provider. Enter the _client secret value_ you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field.
 
-7. Open the `config.json` file and copy the _Directory (tenant) ID_ value from Step 5. In the `Office365Settings` section of `config.json` you will be updating the default values from:
- - `AuthEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize` 
- - `TokenEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/token`
- 
- to include _Directory (tenant) ID_ value, for example:
+7. Open the `config.json` file and copy the _Directory (tenant) ID_ value from Step 5. Update the default values in Auth Endpoint and Token Endpoint to include _Directory (tenant) ID_ value, for example:
  
  - `AuthEndpoint`: `https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize`
  - `TokenEndpoint`: `https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token`
-
-8. Restart your Mattermost server to see the changes take effect.
 
 ### Note about Microsoft Active Directory Tenants
 
@@ -48,7 +41,5 @@ A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active
 To allow your Azure AD users to sign in to Mattermost using Office 365 SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the [Microsoft Azure portal](https://manage.windowsazure.com/). The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about [integrating apps with Azure AD here](https://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/).
 
 If you don't register Mattermost in the Microsoft Azure AD tenant your organization uses, Office 365 SSO will likely fail for your users.
-
-If you're interested in configuring a multi-tenant Mattermost application, which allows access to users from several organizations, you can [find out more here](https://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/#configuring-multi-tenant-applications).
 
 Note that if you do not use Azure Active Directory, you may simply register Mattermost with your Office 365 or Azure account (either your personal, work or school account) and set up Office 365 SSO with Mattermost using the steps provided above.
