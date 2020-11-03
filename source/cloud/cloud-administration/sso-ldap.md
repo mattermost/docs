@@ -1,7 +1,5 @@
 
-## Active Directory/LDAP Setup (E10/E20)
-
-_Available in Enterprise Edition E10 and E20_
+## Active Directory/LDAP Setup
 
 ### Overview
 
