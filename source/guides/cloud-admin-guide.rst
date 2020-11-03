@@ -101,5 +101,5 @@ DevOps Command Center
    :maxdepth: 1
    :glob:
  
-   /administration/devops-command-center*
+   /devops-command-center*
  
