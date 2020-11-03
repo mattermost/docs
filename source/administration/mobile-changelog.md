@@ -18,7 +18,8 @@
 #### All apps
  - Fixed an issue where the app crashed when a user received a notification while dismissing the Add Reactions modal.
  - Fixed an issue where users were still able to paste files in the message box even when mobile file uploads were disabled in the System Console.
- - Fixed an issue where tapping on an invalid permalink still showed an error.
+ - Fixed an issue where tapping on an invalid permalink showed an error.
+ - Fixed an issue where Global Default notification channel setting displayed incorrect notification defaults.
  - Fixed an issue where the channel info count for Group Messages did not match the total number of users when both active and deactivated users were present.
  - Fixed an issue where the hamburger icon width had changed and notification badges were misaligned.
  - Fixed an issue where the redux-persist serializer did not return a value based on the type of the argument.
