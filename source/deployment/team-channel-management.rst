@@ -66,7 +66,7 @@ Channel Management
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation (Beta) (E20)
+Channel Moderation (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20.*
