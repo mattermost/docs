@@ -1,6 +1,6 @@
-======================
-DevOps Command Center
-======================
+==============================
+Mattermost Incident Management
+==============================
 
 Mattermost Incident Management is the first workflow that we officially support as part of DevOps Command Center. 
 
