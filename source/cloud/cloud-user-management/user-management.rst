@@ -6,7 +6,7 @@ Inviting Team Members
 
 If you have the required permissions, you can add people to your team via a direct invite, a public team invite link, or if they already have an account on the server, you can add them to the team yourself.
 
-From version 5.16, the System Admin can `enable guest access <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When this is enabled, you can invite guests or users external to the organization such as vendors or customers.
+You can also `enable guest access <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When this is enabled, you can invite guests or users external to the organization such as vendors or customers.
 
 Direct Invites
 ~~~~~~~~~~~~~~
@@ -25,7 +25,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 
 1. Click your username at the top of the Navigation Panel.
 2. Click **Invite People**.
-3. If there is a option to invite members and guests, choose **Invite Guests**.
+3. If there is an option to invite members and guests, choose **Invite Guests**.
 4. In the **Invite People** field enter the email address of guest you want to add. You can add multiple email addresses to invite more than one guest.
 5. Specify the channels the guest will be able to access.
 6. [Optional] Add a custom message to be included in the invitation to the guest.
@@ -34,17 +34,10 @@ Direct invites are invitation emails sent from your team's server directly to th
 .. note::
 
    If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
-
-**To send a direct invite in versions prior to 5.16**
-
-1. Click your username, at the top of the Navigation Panel.
-2. Click **Send Email Invite** and enter the person's email address along with their first and last name.
-3. To invite more than one person, click **Add another**.
-4. Click **Send Invitation**.
-
+   
 .. note::
   
-  If you don't see the **Send Email Invite** option, confirm with your System Admin that **System Console > Authentication > Signup > Enable Email Invitations** (or **System Console > Security > Sign Up > Enable Email Invitations** in versions prior to 5.12) is set to ``true``.
+  If you don't see the **Send Email Invite** option, confirm with your System Admin that **System Console > Authentication > Signup > Enable Email Invitations**.
 
 Team Invite Link
 ~~~~~~~~~~~~~~~~
@@ -57,12 +50,6 @@ The team invite link is a unique URL that directs people to an account creation 
 2. Click **Invite People**.
 3. If there is an option to invite members and guests, choose **Invite Members**.
 4. Click the **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team.
-
-**To get a team invite link in versions prior to 5.16**
-
-1. Click your username, at the top of the Navigation Panel.
-2. Click **Get Team Invite Link**.
-3. In the window that opens, copy the link and share it with those you want to invite to the team.
 
 Adding Someone to Your Team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,7 +68,7 @@ If someone you want to add to your team already has an account on the server, yo
 
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Invite People**.
-3. If there is a option to invite members and guests, choose **Invite Guests**.
+3. If there is an option to invite members and guests, choose **Invite Guests**.
 4. In the **Invite People** menu search for the guest you want to add. If the people you want to add are not on the list, then they do not have an account on your server.
 5. Specify the channels the guest will have access to.
 6. Click **Invite Guests**.

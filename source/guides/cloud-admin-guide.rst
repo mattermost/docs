@@ -27,7 +27,6 @@ User Management
    /cloud/cloud-user-management/team-and-channel.rst
    /cloud/cloud-user-management/cloud-guest-accounts.rst
    /cloud/cloud-user-management/advanced-permissions.rst
-   /cloud/cloud-user-management/additional-admin-roles.rst
    /cloud/cloud-user-management/user-satisfaction.rst
 
 Configuration
