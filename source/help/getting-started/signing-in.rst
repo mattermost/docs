@@ -5,7 +5,7 @@ Signing in
 
 To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your administrator.
 
-After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection
+After signing in, the team that appears first on your team sidebar will open. If you have not joined a team, the Team Selection
 page opens where you can view a list of teams that you can join.
 
 .. contents::
