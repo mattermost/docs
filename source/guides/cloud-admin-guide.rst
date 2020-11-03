@@ -101,5 +101,5 @@ DevOps Command Center
    :maxdepth: 1
    :glob:
  
-   /devops-command-center/devops-command-center-overview*
+   /devops-command-center/devops-command-center-overview.md
  
