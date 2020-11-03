@@ -51,7 +51,7 @@ Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 6
 When will we support other regions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Enterprise will support data residency in early 2021. We appreciate feedback from our customers on regional support in both editions.  
+Mattermost Cloud Enterprise will support data residency in early 2021. We appreciate feedback from our customers on regional support for both editions.
 
 How is Mattermost Cloud secured?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
