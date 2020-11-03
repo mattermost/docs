@@ -11,7 +11,7 @@ From version 5.16, the System Admin can `enable guest access <https://docs.matte
 Direct Invites
 ~~~~~~~~~~~~~~
 
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can only be used once. A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites** (or **System Console > Security > Sign Up > Invalidate pending email invites** in versions prior to 5.12).
+Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can only be used once. A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
 
 **To send a direct invite**
 
