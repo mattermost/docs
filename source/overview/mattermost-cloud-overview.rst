@@ -31,10 +31,10 @@ Future releases will include an enterprise network integration with VPC Peering,
 
 To get started with Mattermost Cloud Enterprise, visit: https://mattermost.com/cloud to speak to a Mattermost Account Executive.
 
-FAQ
----
+Frequently Asked Questions (FAQs)
+---------------------------------
 
-How much does Mattermost Cloud Cost?
+How much does Mattermost Cloud cost?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Cloud Professional is free for up to 10 users. After 10 users, it is $10 USD per user, per month as a pay-as-you-go subscription. If you have over 1000 users please contact us.
