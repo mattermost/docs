@@ -1,5 +1,5 @@
-Managing Team and Channel Members (E20)
-=======================================
+Managing Team and Channel Members
+=================================
 
 System Admins can manage channel configuration in the System Console.
 
@@ -66,12 +66,10 @@ Channel Management
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation (Beta) (E20)
+Channel Moderation (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E20.*
-
-From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
+The channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 
 - **Make channel read-only:** The ability for Admins to turn off posting in specified channels.
 - **Restrict reactions:** Turn off the ability for members and guests to post reactions.
