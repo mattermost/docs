@@ -10,7 +10,7 @@ Daily compliance reports may also be generated, supporting integration with comp
 By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded.
 
 .. note::
-  This feature is replaced by `Compliance Export (Beta) <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+  This feature is replaced by `Compliance Export (Beta) <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost in a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 Enabling Compliance Reporting
 =============================
