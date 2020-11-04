@@ -22,10 +22,10 @@ If you are seeing this message all the time, and your internet connection seems 
 I’m not receiving push notifications on my device
 -------------------------------------------------
 
-Please see our documentation on :doc:`troubleshooting push notifications <mobile-troubleshoot-notifications>`.
+Please see our documentation on `troubleshooting push notifications <https://docs.mattermost.com/cloud/cloud-mobile/troubleshooting-mobile.html>`_.
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
---------------------------------------------------------------------------------
+------------------------------------------------
 
 As a workaround, you can bundle the ``js`` manually first with
 
