@@ -197,10 +197,6 @@ Example: As the default for the entire system, only allow System Admins to creat
 
   Permissions for creating, editing, and deleting integrations are currently grouped for each integration type. These will be split into separate permissions in a future release.
 
-Backend Infrastructure
-----------------------
-
-Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
 
 Glossary
 --------
