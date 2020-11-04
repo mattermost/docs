@@ -47,6 +47,7 @@ Authentication
 
    /cloud/cloud-administration/authentication.rst
    /cloud/cloud-administration/sso-saml.rst
+   /cloud/cloud-administration/saml-technical.rst
    /cloud/cloud-administration/sso-ldap.md
    /cloud/cloud-administration/sso-gitlab.rst
    /cloud/cloud-administration/sso-google.md
