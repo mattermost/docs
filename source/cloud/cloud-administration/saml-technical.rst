@@ -6,7 +6,9 @@ Security Assertion Markup Language (SAML) is an open standard that allows identi
 
 In simpler terms, it means you can use one set of credentials to log in to many different sites. With a SAML identity provider account, you can log in to Mattermost and other sites securely with the same account. The main benefit is that it helps administrators centralize user management by controlling which sites users have access to with their SAML identity provider credentials.
 
-Mattermost supports using a single metadata URL to retrieve configuration information for the Identity Provider using your Single Sign-on URL to generate an IdP metadata URL. The IdP metadata XML file contains the IdP certificate, the entity ID, the redirect URL, and the logout URL. Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL fields in the configuration process automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally. 
+Mattermost supports using a single metadata URL to retrieve configuration information for the Identity Provider using your Single Sign-on URL to generate an IdP metadata URL. The IdP metadata XML file contains the IdP certificate, the entity ID, the redirect URL, and the logout URL. 
+
+Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL fields in the configuration process automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally.
 
 .. contents::
   :backlinks: top
@@ -79,7 +81,7 @@ There are different types of SAML responses sent by the IdP to the SP. The respo
 For example XML responses for each type, see the `OneLogin SAML response examples <https://www.samltool.com/generic_sso_res.php>`_.
 
 Technical description of SAML synchronization with AD/LDAP
-------------------------------------------------------------
+----------------------------------------------------------
 
 When enabled, SAML synchronization with AD/LDAP occurs in phases:
 
@@ -100,6 +102,6 @@ Frequently Asked Questions
 --------------------------
 
 How can I obtain a SAML metadata XML file consumed by Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can obtain the XML file by calling the Mattermost RESTful API endpoint at ``/api/v4/saml/metadata``. For other useful SAML API calls, see the `API reference <https://api.mattermost.com/#tag/SAML>`_.
