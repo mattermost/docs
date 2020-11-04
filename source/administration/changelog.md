@@ -7,13 +7,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
 ### Compatibility
+ - A new configuration setting ``ThreadAutoFollow`` has been added to support [Collapsed Reply Threads] (https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245) releasing in beta in Q1 2021. This setting is enabled by default and may affect server performance. It is recommended to review our [documentation on hardware requirements](https://docs.mattermost.com/install/requirements.html#hardware-requirements) to ensure your servers are appropriately scaled for the size of your user base.
 
 ### Breaking Changes
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.28, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - [Channel moderation](https://docs.mattermost.com/deployment/team-channel-management.html#channels) feature was moved out of beta to General Availability.
+
+#### Channel Moderation Settings now generally available (E20)
+ - [Channel moderation](https://docs.mattermost.com/deployment/team-channel-management.html#channels) feature was moved out of beta to general availability.
+
+#### Mattermost Omnibus now generally available
+ - [Mattermost Omnibus](https://docs.mattermost.com/help/getting-started/light-install.html) feature was moved out of beta to general availability.
 
 ### Improvements
 
@@ -47,7 +53,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
-   - Added ``ThreadAutoFollow``, to add support for thread auto follow.
+   - Added ``ThreadAutoFollow``, to add support for collapsed reply threads.
 
 ### Open Source Components
  - Removed ``@types/react-custom-scrollbars`` from https://github.com/mattermost/mattermost-webapp.
