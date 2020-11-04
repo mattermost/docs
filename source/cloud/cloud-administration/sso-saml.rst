@@ -18,18 +18,15 @@ For more information about SAML, see `this article from Varonis <https://www.var
 
 Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers.
 
-.. toctree::
-  :titlesonly:
-
-  Okta SAML Configuration <sso-saml-okta>
-  OneLogin SAML Configuration <sso-saml-onelogin.rst>
-  Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
-  Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
+ - `Okta SAML Configuration <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
+ - `OneLogin SAML Configuration <https://docs.mattermost.com/deployment/sso-saml-onelogin.html>`_
+ - `Microsoft ADFS SAML Configuration for Windows Server 2012 <https://docs.mattermost.com/deployment/sso-saml-adfs.html#configure-saml-with-microsoft-adfs-for-windows-server-2012>`_
+ - `Microsoft ADFS SAML Configuration for Windows Server 2016 <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html>`_
 
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
 Using SAML Attributes to Apply Roles
---------------------------------------------------
+------------------------------------
 
 You can use attributes to assign roles to specified users on login. To access the SAML attribute settings navigate to **System Console > SAML 2.0**.
 
@@ -68,19 +65,19 @@ Admin Attribute
 Existing members that are identified by this attribute will be promoted from member to System Admin upon next login. The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are manually demoted to members in **System Console > User Management** to ensure access is restricted immediately.
 
 1. Navigate to **System Console > Authentication > SAML 2.0**.
-2. Set **Enable Admin Attribute** to ``true``.
+2. Set **Enable Admin Attribute** to **true**.
 3. Complete the **Admin Attribute** field.
 4. Choose **Save**.
 
 **Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However, if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
 Configuration Assistance
----------------------------------
+-------------------------
 
 We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.
 
-For technical documentation on SAML, see :doc:`sso-saml-technical`.
-
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
+
+For technical documentation on SAML, see `SAML Single-Sign-On: Technical Documentation <https://docs.mattermost.com/source/cloud/cloud-administration/saml_technical.rst>`_.
 
 Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.
