@@ -57,7 +57,7 @@ To help us narrow down whether it’s a server configuration issue, device speci
 **Connect to our community workspace **
 
 1. Create an account at https://community.mattermost.com
-2. Erase your mobile application and reinstall it
+2. Delete your mobile application and reinstall it
 3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to see if the connection is working
 
 **Connect with another device**
