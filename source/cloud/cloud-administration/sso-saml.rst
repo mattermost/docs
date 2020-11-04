@@ -18,13 +18,10 @@ For more information about SAML, see `this article from Varonis <https://www.var
 
 Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers.
 
-.. toctree::
-  :titlesonly:
-
-  Okta SAML Configuration <sso-saml-okta>
-  OneLogin SAML Configuration <sso-saml-onelogin.rst>
-  Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
-  Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
+ - `Okta SAML Configuration <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
+ -  `OneLogin SAML Configuration <https://docs.mattermost.com/deployment/sso-saml-onelogin.html>`_
+ -  `Microsoft ADFS SAML Configuration for Windows Server 2012 <https://docs.mattermost.com/deployment/sso-saml-adfs.html#configure-saml-with-microsoft-adfs-for-windows-server-2012>`_
+ -  `Microsoft ADFS SAML Configuration for Windows Server 2016 <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html>`_
 
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
@@ -78,8 +75,6 @@ Configuration Assistance
 ---------------------------------
 
 We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.
-
-For technical documentation on SAML, see :doc:`sso-saml-technical`.
 
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
