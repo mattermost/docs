@@ -1,46 +1,38 @@
-===================================================
+============================================
 SAML Single-Sign-On: Technical Documentation
-===================================================
+============================================
 
 Security Assertion Markup Language (SAML) is an open standard that allows identity providers (IdP), like OneLogin, to pass authorization credentials to service providers (SP), like Mattermost.
 
-In simpler terms, it means you can use one set of credentials to log in to many different sites. With a SAML identity provider account, you can log in to Mattermost and other sites securely with the same account.
+In simpler terms, it means you can use one set of credentials to log in to many different sites. With a SAML identity provider account, you can log in to Mattermost and other sites securely with the same account. The main benefit is that it helps administrators centralize user management by controlling which sites users have access to with their SAML identity provider credentials.
 
-The main benefit is that it helps administrators centralize user management by controlling which sites users have access to with their SAML identity provider credentials.
-
-From v5.20 Mattermost supports using a single metadata URL to retrieve configuration information for the Identity Provider using your single sign-on URL to generate an IdP metadata URL. The IdP metadata XML file contains the IdP certificate, the entity ID, the redirect URL, and the logout URL. 
-
-Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL fields in the configuration process automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally. 
-
-This is currently supported for Okta and Microsoft ADFS server 2012 and 2016. OneLogin support will be added in a future release. 
-
-For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. 
+Mattermost supports using a single metadata URL to retrieve configuration information for the Identity Provider using your Single Sign-on URL to generate an IdP metadata URL. The IdP metadata XML file contains the IdP certificate, the entity ID, the redirect URL, and the logout URL. Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL fields in the configuration process automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally. 
 
 .. contents::
   :backlinks: top
   :local:
 
 SAML Providers
---------------------------------------------
+--------------
 
-**Identity Providers (IdP)**: An identity provider performs the authentication. When a user clicks to log in, the identity provider confirms who the user is, and sends data to the service provider with the proper authorization to access the site.
+**Identity Providers (IdP):** An identity provider performs the authentication. When a user clicks to log in, the identity provider confirms who the user is, and sends data to the service provider with the proper authorization to access the site.
 
 *Examples*: OneLogin, Okta, Microsoft Active Directory (ADFS) or Azure.
 
-**Service Providers (SP)**: A service provider gets authentication and authorization information from an IdP. Once received, it gives the user access to the system and logs the user in.
+**Service Providers (SP):** A service provider gets authentication and authorization information from an IdP. Once received, it gives the user access to the system and logs the user in.
 
 *Examples*: Mattermost, Zendesk, Zoom, Salesforce.
 
 SAML Request (AuthNRequest)
---------------------------------------------
+---------------------------
 
-When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string
+When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string:
 
 .. code-block:: none
 
  bM441nuRIzAjKeMM8RhegMFjZ4L4xPBHhAfHYqgnYDQnSxC++Qn5IocWuzuBGz7JQmT9C57nxjxgbFIatiqUCQN17aYrLn/mWE09C5mJMYlcV68ibEkbR/JKUQ+2u/N+mSD4/C/QvFvuB6BcJaXaz0h7NwGhHROUte6MoGJKMPE=
 
-AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case the XML payload is similar to:
+AuthNRequests can also be signed by Mattermost in which case the XML payload is similar to:
 
 .. code-block:: XML
 
@@ -68,11 +60,9 @@ AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case
   </samlp:AuthnRequest>
 
 SAML Responses
-------------------------------------------------------------
+--------------
 
-There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user.
-
-Below is a table of the different types of responses. Each response type is fully supported except when the SAML assertion is signed while the SAML response itself is not:
+There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user. Below is a table of the different types of responses. Each response type is fully supported except when the SAML assertion is signed while the SAML response itself is not:
 
 .. csv-table::
     :header: "Signed SAML Response", "Signed SAML Assertion", "Encrypted SAML Assertion", "Supported by Mattermost"
@@ -107,11 +97,9 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
  - If the corresponding ``LdapSettings.EmailAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
 
 Frequently Asked Questions
-------------------------------------------------------------
+--------------------------
 
 How can I obtain a SAML metadata XML file consumed by Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can obtain the XML file by calling the Mattermost RESTful API endpoint at ``/api/v4/saml/metadata``.
-
-For other useful SAML API calls, see the `API reference <https://api.mattermost.com/#tag/SAML>`_.
+You can obtain the XML file by calling the Mattermost RESTful API endpoint at ``/api/v4/saml/metadata``. For other useful SAML API calls, see the `API reference <https://api.mattermost.com/#tag/SAML>`_.
