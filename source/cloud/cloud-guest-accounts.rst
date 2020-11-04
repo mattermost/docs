@@ -1,7 +1,5 @@
-Guest Accounts (Beta) (E10/E20)
-================================
-
-Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`__.
+Guest Accounts (Beta)
+=====================
 
 Guest Accounts are a way to collaborate with individuals (such as vendors and contractors) outside of your organization by controlling their access to channels and team members. For example, Guest Accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
@@ -26,7 +24,7 @@ Enabling Guest Accounts
 ------------------------
 
 1. Navigate to **System Console > Authentication > Guest Access**.
-2. Set **Enable Guest Access** to ``True``.
+2. Set **Enable Guest Access** to **true**.
 3. (Optional) **Whitelist domains that are acceptable for Guest Access**.
  - This allows the System Administrators to set a list of approved guest domains. If you have team domain restrictions, you will also need to add your guest domain to **Team Settings > Allow only users with a specific email domain to join this team**.
 4. (Optional) **Enforce Multi-Factor Authentication (MFA) for your Guests**.
@@ -57,7 +55,7 @@ To invite guests into one or more Mattermost channels:
 5. Choose the channels the guest can join (excluding managed teams).
 6. (Optional) Enter a custom message.
 
-.. image:: ../images/Guest_Invite_Screen.png
+.. image:: ../../images/Guest_Invite_Screen.png
 
 Configuring AD/LDAP Authentication
 ----------------------------------
@@ -90,7 +88,7 @@ When a guest logs in without having any channels assigned to their account, they
 Guest Permission Settings
 -------------------------
 
-In E10 and E20, you can also control which users can invite guests. By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ in E20 that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:
+By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_ that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:
 
  - Edit posts
  - Delete posts
@@ -104,7 +102,7 @@ Guests are identified with a **Guest** badge. This badge is visible in various p
 
 Channels containing guests will have their header automatically updated with a message stating: *This channel has guests*.
 
-.. image:: ../images/Guest_Badges.png
+.. image:: ../../images/Guest_Badges.png
 
 Managing Guests
 ---------------
@@ -124,7 +122,7 @@ When a guest has been removed from all channels within a team, and if they belon
 Promoting and Demoting User Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System Admins can demote a member to guest by updating their role in **System Console > User Management > Users**. The demoted user will retain their existing channel and team memberships but will be restricted from discovering public channels and collaborating with users outside of the channels they are in.  This is useful if you are already collaborating with external contractors and want to restrict their abilities within your Mattermost instance.
+System Admins can demote a member to guest by updating their role in **System Console > User Management > Users**. The demoted user will retain their existing channel and team memberships but will be restricted from discovering public channels and collaborating with users outside of the channels they are in.  This is useful if you are already collaborating with external contractors and want to restrict their abilities within Mattermost.
 
 System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**.
 
@@ -133,15 +131,15 @@ System Admins can also promote a guest to member by updating their role in **Sys
 Disabling Guest Accounts
 ------------------------
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta) > Enable Guest Access** and select ``False``. In versions prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta) > Enable Guest Access** and select ``False``. Current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
 
-From 5.18, if you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
+If you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta) > Enable Guest Access** and select ``False``. In versions prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta) > Enable Guest Access** and select ``False``. Current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
 
 Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
-You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. From version 5.18, when a single Guest Account is disabled or the feature is disabled, the guest will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
+You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. When a single Guest Account is disabled or the feature is disabled, the guest will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
 
 Reinstating Guest Accounts
 --------------------------
