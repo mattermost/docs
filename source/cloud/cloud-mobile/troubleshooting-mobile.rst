@@ -54,7 +54,7 @@ For more troubleshooting help, `open a new topic in our forums <https://forum.ma
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and include the results in your support request:
 
-**Connect to our community workspace **
+**Connect to our community workspace**
 
 1. Create an account at https://community.mattermost.com
 2. Delete your mobile application and reinstall it
