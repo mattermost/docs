@@ -5,13 +5,7 @@ Troubleshooting Mobile Applications
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
 --------------------------------------------------------------------------------------------------------------
 
-First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
-
-If the server URL is correct, there could be an issue with the SSL certificate configuration.
-
-To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
-
-Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
+Confirm that your server URL has no typos and that it includes ``https://``.
 
 Login with ADFS/Office365 is not working
 ----------------------------------------
@@ -29,18 +23,6 @@ I’m not receiving push notifications on my device
 -------------------------------------------------
 
 Please see our documentation on :doc:`troubleshooting push notifications <mobile-troubleshoot-notifications>`.
-
-All my outbound connections need to go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
------------------------------------------------------------------------------------------------------------------------------
-
-You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
-
-1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
-2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
-4. Enter the URL of your proxy in the **Push Notification Server** field.
-
-.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 --------------------------------------------------------------------------------
@@ -72,11 +54,11 @@ For more troubleshooting help, `open a new topic in our forums <https://forum.ma
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
 
-**Connect to another server**
+**Connect to our community workspace **
 
-1. Create an account at https://demo.mattermost.com
+1. Create an account at https://community.mattermost.com
 2. Erase your mobile application and reinstall it
-3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working
+3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to see if the connection is working
 
 **Connect with another device**
 
