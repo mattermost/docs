@@ -1,5 +1,5 @@
-Managing Team and Channel Members (E20)
-=======================================
+Managing Team and Channel Members
+==================================
 
 System Admins can manage channel configuration in the System Console.
 
