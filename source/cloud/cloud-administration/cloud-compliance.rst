@@ -128,9 +128,8 @@ Compliance query results stored in ``posts.csv`` file
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
 +---------------------+---------------------------------------------------------------+-------------------------------+
-<<<<<<< HEAD
-=======
 
+====================
 Global Relay Support
 ====================
 
@@ -140,4 +139,3 @@ Mattermost daily compliance reports are compatible with Global Relay compliance 
 - You can also contact your Global Relay account manager about a services project to establish this conversion.
 
 You may also use the new :doc:`Compliance Export feature <compliance-export>` for Global Relay exports.
->>>>>>> 564de11cf556bad33b040fef68465520b5c5e80d
