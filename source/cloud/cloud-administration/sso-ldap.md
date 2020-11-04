@@ -166,10 +166,6 @@ There are three AD/LDAP attributes that apear to be similar but serve a differen
 2. **ID Attribute**: Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [mattermost ldap idmigrate CLI tool](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate).
 3. **Login ID Attribute**: The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the **Username Attribute** field above, or another field that users can easily remember.
 
-#### If I want to add people to channels, can I pre-create users?
-
-Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
-
 #### How do I deactivate users?
 
 When AD/LDAP authentication is used in Mattermost, user deactivation must be done via the AD/LDAP server.
@@ -238,10 +234,6 @@ To address this issue you can set the [max page size](https://docs.mattermost.co
 
 If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
-#### Where can I find help on AD/LDAP configuration settings in `config.json`?
-
-You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
-
 #### Can the AD/LDAP User Filter read security groups?
 
 Yes it can, but make sure that:
@@ -252,5 +244,3 @@ Yes it can, but make sure that:
 #### How do I know if an AD/LDAP sync job fails?
 
 Mattermost provides the status of each AD/LDAP sync job in **System Console > Authentication > AD/LDAP**. Here you can see the number of users updated and if the job succeeded or failed.
-
-Moreover, any failures are returned in the server logs. The error log begins with the string `Failed job` and includes a `job_id key/value` pair. AD/LDAP sync job failures are identified with worker name `EnterpriseLdapSync`. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
