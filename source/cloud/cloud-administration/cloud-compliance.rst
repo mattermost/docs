@@ -10,9 +10,7 @@ Daily compliance reports may also be generated, supporting integration with comp
 By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded.
 
 .. note::
-  This feature is replaced by a new :doc:`Compliance Export feature <compliance-export>`, and will be removed in Mattermost a future release. We recommend migrating to the new system.
-  
-  For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+  This feature is replaced by Compliance Export (Beta) <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost in a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 Enabling Compliance Reporting
 =============================
@@ -37,7 +35,7 @@ Run Compliance Reports
 
 Compliance Reports are exports of all messages in Mattermost that match the report criteria. To run a report:
 
-1. Go to **System Console > > Compliance > Compliance Monitoring**.
+1. Go to **System Console > Compliance > Compliance Monitoring**.
 2. Fill in the following criteria:
 
      - **Job Name:** Name the compliance report you are about to run (e.g. "HR Audit 455").
@@ -129,7 +127,6 @@ Compliance query results stored in ``posts.csv`` file
 | PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
 +---------------------+---------------------------------------------------------------+-------------------------------+
 
-====================
 Global Relay Support
 ====================
 
@@ -138,4 +135,4 @@ Mattermost daily compliance reports are compatible with Global Relay compliance 
 - This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
 - You can also contact your Global Relay account manager about a services project to establish this conversion.
 
-You may also use the new :doc:`Compliance Export feature <compliance-export>` for Global Relay exports.
+You may also use the `Compliance Export (Beta) feature <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_ for Global Relay exports.
