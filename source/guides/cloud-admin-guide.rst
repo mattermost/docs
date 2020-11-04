@@ -24,10 +24,10 @@ User Management
 
    /cloud/cloud-user-management/user-management.rst
    /cloud/cloud-user-management/cloud-groups.rst
-   /cloud/cloud-user-management/team-and-channel.rst
-   /cloud/cloud-user-management/cloud-guest-accounts.rst
+   /cloud/cloud-user-management/cloud-team-and-channel.rst
+   /cloud/cloud-guest-accounts.rst
    /cloud/cloud-user-management/advanced-permissions.rst
-   /cloud/cloud-user-management/user-satisfaction.rst
+   /cloud/cloud-user-management/user-satisfaction-surveys.rst
 
 Configuration
 -------------

@@ -35,7 +35,7 @@ Run Compliance Reports
 
 Compliance Reports are exports of all messages in Mattermost that match the report criteria. To run a report:
 
-1. Go to **System Console > > Compliance > Compliance Monitoring**.
+1. Go to **System Console > Compliance > Compliance Monitoring**.
 2. Fill in the following criteria:
 
      - **Job Name:** Name the compliance report you are about to run (e.g. "HR Audit 455").
@@ -136,4 +136,3 @@ Mattermost daily compliance reports are compatible with Global Relay compliance 
 - You can also contact your Global Relay account manager about a services project to establish this conversion.
 
 You may also use the new `Compliance Export (Beta) feature <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_ for Global Relay exports.
-
