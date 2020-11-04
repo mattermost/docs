@@ -56,12 +56,11 @@ To help us narrow down whether it’s a server configuration issue, device speci
 
 **Connect to our community workspace**
 
-1. Create an account at https://community.mattermost.com
-2. Delete your mobile application and reinstall it
-3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to see if the connection is working
+1. Create an account at https://community.mattermost.com.
+2. Delete your mobile application and reinstall it.
+3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to see if the connection is working.
 
 **Connect with another device**
 
-If you have another mobile device available, try connecting with that to see if your issue still reproduces.
-
-If you don’t have another device available, check with other teammates to see if they are having the same issue.
+- If you have another mobile device available, try connecting with that to see if your issue still reproduces.
+- If you don’t have another device available, check with other teammates to see if they are having the same issue.
