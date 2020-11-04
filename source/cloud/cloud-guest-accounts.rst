@@ -55,7 +55,7 @@ To invite guests into one or more Mattermost channels:
 5. Choose the channels the guest can join (excluding managed teams).
 6. (Optional) Enter a custom message.
 
-.. image:: ../../images/Guest_Invite_Screen.png
+.. image:: ../images/Guest_Invite_Screen.png
 
 Configuring AD/LDAP Authentication
 ----------------------------------
@@ -102,7 +102,7 @@ Guests are identified with a **Guest** badge. This badge is visible in various p
 
 Channels containing guests will have their header automatically updated with a message stating: *This channel has guests*.
 
-.. image:: ../../images/Guest_Badges.png
+.. image:: ../images/Guest_Badges.png
 
 Managing Guests
 ---------------
