@@ -2,27 +2,27 @@
 Bot Accounts
 =============
 
-Use Bot Accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the :doc:`personal access tokens feature <personal-access-tokens>`.
+Use Bot Accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the `personal access tokens feature <https://docs.mattermost.com/cloud/cloud-integrations/cloud-personal-access-tokens.html>`_.
 
 Bot accounts are just like user accounts, except they:
 
   - Cannot be logged into.
   - Cannot be used to create other bot accounts.
-  - Do not count as a registered user and therefore do not count towards the total users for an Enterprise Edition license.
+  - Do not count as a registered user and therefore do not count towards your subscription.
 
 Additional benefits include:
 
   - Bot accounts can be enabled to post to any channel in the system by System Administrators, including a private team, private channel or a Direct Message channel.
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
   - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
-  - Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
+  - Bot accounts are a safe way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
   - ``BOT`` tag is used everywhere in the UI where bot accounts are referenced, including messages and user lists.
 
 Note that currently:
 
   - Bot accounts can only be created or managed by plugins or System Administrators.
   - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
-  - Service accounts without an email address pulled from LDAP or SAML systems in Enterprise Edition is not yet supported.
+  - Service accounts without an email address pulled from LDAP or SAML systems is not yet supported.
 
 If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com>`_.
 
@@ -68,19 +68,6 @@ See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to learn mor
 
 To authorize your bot via RESTful API use ``curl -i -H 'authorization: Bearer <Access Token>' http://localhost:8065/api/v4/users/me``. **Access Token** is not the ``Token ID`` and won't be visible again once created.
 
-Command Line Interface (CLI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can use the following CLI command to convert an existing user account to a bot:
-
-.. code-block:: text
-
-  user convert user@example.com --bot
-
-In addition to email, you may identify the user by its username or user ID.
-
-Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synced from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML sync performs correctly.
-
 Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -88,27 +75,6 @@ Plugins can create bot accounts through an ``EnsureBot`` helper function. For an
 
 Bots created by a plugin use the plugin's ID as the creator, unless otherwise specified by the plugin.
 
-Technical Notes
------------------------
-
-Data Model
-^^^^^^^^^^^
-
-Each bot account has a row in the **Users** table and the **Bots** table. The entries are tied together by ``User.Id = Bot.UserId``.
-
-The Bots table schema is described as follows:
-
-.. csv-table::
-    :header: "Field", "Description", "Type", "Required"
-
-    "UserId", "User ID of the bot user", "string", "Y"
-    "Username", "Username of the bot account", "string", "Y"
-    "DisplayName", "Display name of the bot account", "string", "N"
-    "Description", "Description of the bot account", "string", "N"    
-    "OwnerId", "User ID of the owner of the bot", "string", "Y"
-    "CreateAt", "Unix timestamp of creation time", "int64", "Y"
-    "UpdateAt", "Unix timestamp of update time", "int64", "Y"
-    "DeleteAt", "Unix timestamp of deletion time", "int64", "Y"
 
 Frequently Asked Questions
 -----------------------------
@@ -131,18 +97,6 @@ Once the plugin is enabled, the plugin posts as the ``github`` account but witho
 
 If the user is an existing user account you want to preserve, change its username and restart the Mattermost server, after which the plugin will create a bot account with the name ``github``.
 
-How do I convert an existing account to a bot account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Use the following CLI command to convert an existing user account to a bot:
-
-.. code-block:: text
-
-  user convert user@example.com --bot
-
-In addition to email, you may identify the user by its username or user ID.
-
-Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synced from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML sync performs correctly.
 
 How can I quickly test if my bot account is working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -206,4 +160,4 @@ If you need to sync service accounts from AD/LDAP or SAML to Mattermost and use 
 How are bot accounts identified in compliance exports?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of v5.14, a field named ``UserType`` is added to Compliance Exports, including Global Relay, Actiance, and CSV. The field identifies whether a message was posted by a ``user`` or by a ``bot`` account.  
+A field named ``UserType`` is added to Compliance Exports, including Global Relay, Actiance, and CSV. The field identifies whether a message was posted by a ``user`` or by a ``bot`` account.  
