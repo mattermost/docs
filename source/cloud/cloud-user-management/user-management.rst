@@ -77,12 +77,6 @@ If someone you want to add to your team already has an account on the server, yo
    
    If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
 
-**To add someone to your team in versions prior to 5.16**
-
-1. Click your username, at the top of the Navigation Panel.
-2. Click **Add Members to Team**.
-3. In the **Add New Members*** window, click the username of the person or people to add to your team. You can type in the search box to filter the list. If the people you want to add are not on the list, then they are either already on your team or they do not have an account on your server.
-
 .. note::
   
   System Admins can view and add team membership to individual users on the user profile page (**System Console > Users > User Profile**) by clicking **Add Team**.
@@ -119,8 +113,6 @@ When a team is first created, the person who set it up is made a Team Admin. It 
 
 Channel Admin
 ~~~~~~~~~~~~~
-
-*Available in Enterprise Edition E10 and higher*
 
 The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
 
