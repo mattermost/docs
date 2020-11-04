@@ -5,7 +5,7 @@ Outgoing Webhooks
 .. note::
   This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate>`__.
 
-Mattermost supports webhooks to easily integrate external applications into the server.
+Mattermost supports webhooks to easily integrate external applications into Mattermost.
 
 Use outgoing webhooks to post automated responses to posts made by your users. Outgoing webhooks will send an HTTP POST request to a web service and process a response back to Mattermost when a message matches one or both of the following conditions:
 
@@ -27,7 +27,7 @@ Suppose you want to write an external application, which executes software tests
 
 You can follow these general guidelines to set up a Mattermost outgoing webhook for your application.
 
-1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so.
+1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management**.
 
 2 - Click **Add Outgoing Webhook** and add name and description for the webhook. The description can be up to 500 characters. 
 
@@ -104,9 +104,9 @@ which would render in Mattermost as:
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the username is set to `webhook`.
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Administrator. If not enabled, the username is set to `webhook`.
 
- Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+ Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
@@ -164,11 +164,7 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-To debug outgoing webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
-
-When ``TRUE``, as of v5.14 all outgoing webhooks are logged and include a ``request_id`` value in the log file. 
-
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+For  assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 My integration prints the JSON data in a Mattermost channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
