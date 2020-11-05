@@ -51,7 +51,7 @@ The full process is outlined below:
 
 Regardless of whether you're using iOS or Android, the MPNS needs to have access to the appropriate secret compiled into the mobile app.
 
-This means if you use the Mattermost apps from the Apple App Store or Google Play, you need to use the hosted push notification service from Mattermost, Inc. If you compile the apps yourself, you must also compile and use your own MPNS with the corresponding secret.
+This means if you use the Mattermost apps from the App Store or Google Play, you need to use the hosted push notification service from Mattermost, Inc. If you compile the apps yourself, you must also compile and use your own MPNS with the corresponding secret.
 
 4. Either APNS or FCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android device to be displayed.
 
@@ -119,11 +119,11 @@ The following options are available for securing your push notification service:
     - MPNS and Google’s Firebase Cloud Messaging (FCM)
     - MPNS and your Mattermost server
 
-4. Securing the Mattermost Apple App Store and Google Play apps.
+4. Securing the Mattermost App Store and Google Play apps.
 
 .. note:: 
 
-  For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`. 
+  For configuration details, see guides for `deploying the Mattermost App Store and Google Play apps <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`_ and `deploying your own version of the apps <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_. 
 
 Why do I sometimes see a delay in receiving a push notification?
 --------------------------------------------------------------------------
@@ -133,8 +133,8 @@ Why do I sometimes see a delay in receiving a push notification?
 The technical flow for the device to receive a push notification is as follows:
 
 1. User posts a message in Mattermost.
-2. Mattermost server identifies if notifications needs to be sent.
-3. If yes, Mattermost server sends a payload containing the push notification to the push proxy.
+2. Mattermost identifies if a notification needs to be sent.
+3. If yes, Mattermost sends a payload containing the push notification to the push proxy.
 4. The push proxy parses the notification and relays it to APNS and FCM.
 5. APNS and FCM informs the relevant devices that there is a push notification for Mattermost. This usually happens almost immediately, but may be delayed by a couple of minutes.
 6. Mattermost processes the notification and displays it on the user's device.
@@ -144,12 +144,12 @@ How do I deploy Mattermost with Enterprise Mobility Management (EMM) providers?
 
 Mattermost enables customers with high privacy and custom security requirements to deploy mobile app and push notification services using keys that they alone control.
 
-:doc:`Learn more about using AppConfig for EMM providers <mobile-appconfig>`.
+`Learn more about using AppConfig for EMM providers <https://docs.mattermost.com/cloud/cloud-mobile/cloud-app-config.html`_.
 
 How do I host the Mattermost push notification service?
 --------------------------------------------------------
 
-First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>`. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to:
+First, you can use the `Mattermost Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/mobile/mobile-hpns.html>`_. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to:
 
 1. Customize the `Mattermost mobile apps <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_;
 2. Deploy your own push notification service, or
