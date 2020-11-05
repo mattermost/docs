@@ -304,7 +304,7 @@ A comma-separated list of paths within the Mattermost domain that are managed by
 When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of in a browser. See `here <https://docs.mattermost.com/install/desktop-managed-resources.html>`_ for more information.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ManagedResourcePaths": ""`` with string input.                                        |
+| This feature's ``config.json`` setting is ``"ManagedResourcePaths": ""`` with string input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Reload Configuration from Disk
