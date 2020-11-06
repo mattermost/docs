@@ -265,3 +265,4 @@ Documentation on early previews and unofficial functionality.
    /install/prod-docker*
    /install/deploy-cloudron*
    /administration/upgrade-script*
+   /administration/light-install.rst
