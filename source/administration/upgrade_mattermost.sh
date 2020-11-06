@@ -113,7 +113,7 @@ function get_the_file() {
 
 # Check previous download
 if [ -e "${downloaddir}/mattermost-upgrade.tar.gz" ]; then
-	read -r -p "[?] A previous download exists. Do you want to replace it by a new one? [Y/n] " input
+	read -r -p "[?] A previous download exists. Do you want to replace it by a new one? [Y/n]" input
 
 	case "$input" in
 		[yY])
