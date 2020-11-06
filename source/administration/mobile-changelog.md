@@ -16,7 +16,7 @@
 ### Bug Fixes
 
 #### All apps
- - Fixed an issue where the app crashed when a user received a notification while dismissing the Add Reactions modal.
+ - Fixed an issue where the app crashed when a user received a notification while dismissing a modal.
  - Fixed an issue where users were still able to paste files in the message box even when mobile file uploads were disabled in the System Console.
  - Fixed an issue where tapping on an invalid permalink showed an error.
  - Fixed an issue where Global Default notification channel setting displayed incorrect notification defaults.
