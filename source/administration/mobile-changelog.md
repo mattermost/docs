@@ -10,7 +10,7 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
- - Icon overhaul.
+ - Icons have been updated across the app to be more consistent and adhere to new design standards.
  - The user autocomplete now allows matching on terms with spaces (For example: @firstname lastName) the same way as in the WebApp.
 
 ### Bug Fixes
