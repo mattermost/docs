@@ -28,9 +28,6 @@
  - Fixed an issue where the Android app added autofill data in the chat box.
  - Fixed an issue where the Android app defaulted to Town Square after sharing a file outside of the app.
 
-#### iOS specific
- - 
-
 ## 1.36.0 Release
 - Release Date: October 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
