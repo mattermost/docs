@@ -9,7 +9,7 @@
 
 **इंस्टालेशन**
 
-[मैटरमोस्ट ओमनीबस](https://docs.mattermost.com/install/mattermost-omnibus.html)  के द्वारा मैटरमोस्ट इनस्टॉल  करें।
+[मैटरमोस्ट ओमनीबस](https://docs.mattermost.com/install/mattermost-omnibus.html) के द्वारा मैटरमोस्ट इनस्टॉल  करें।
 
 टर्मिनल विंडो खोलें और एंटेर करें:
 ``curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash``
