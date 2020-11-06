@@ -26,7 +26,6 @@ How is data handled on mobile devices after a user account is deactivated?
 
 App data is wiped from the device when a user logs out of the app. If the user is logged in when the account is deactivated, then within one minute of deactivation the system logs the user out. Thereafter all app data is wiped from the device.
 
-
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------
 
@@ -49,11 +48,11 @@ Additional metadata may be sent depending on the System Console setting for `Pus
 - **Full message content fetched from the server on receipt:** ``Post content`` and ``Channel name`` are not included in the notification payload, instead the ``Post ID`` is used to fetch ``Post content`` and ``Channel name`` from the server after the push notification is received on the device.
 
 How can I use ID-Only push notifications to protect notification content from being exposed to third-party services?
----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
-When it comes to mobile data privacy, many organizations prioritize secure handling of messaging data, particularly when it may contain mission-critical or proprietary information. These organizations may have concerns about using mobile notifications because data must pass through third-party entities like Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before it reaches a device. This poses a potential risk for organizations that operate under strict compliance requirements and cannot expose message data to external entities. 
+When it comes to mobile data privacy, many organizations prioritize secure handling of messaging data, particularly when it may contain mission-critical or proprietary information. These organizations may have concerns about using mobile notifications because data must pass through third-party entities like Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before it reaches a device. This poses a potential risk for organizations that operate under strict compliance requirements and cannot expose message data to external entities.
 
-To solve this, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data. Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. 
+To solve this, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data. Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself.
 
 If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
 
@@ -70,14 +69,14 @@ The following options for secure mobile app deployments are available:
   - If a VPN client with multifactor authentication is not in use, it's highly recommended that MFA is required on authenticating into Mattermost, either within Mattermost itself or via your SSO provider.
 
 Why do I sometimes see a delay in receiving a push notification?
---------------------------------------------------------------------------
+----------------------------------------------------------------
 
 `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ determine when your device receives a push notification from Mattermost. Thus, a delay is usually as a result of those services.
 
 The technical flow for the device to receive a push notification is as follows:
 
 1. User posts a message in Mattermost.
-2. Mattermost identifies if a notification needs to be sent.
+2. Mattermost identifies whether a notification needs to be sent.
 3. If yes, Mattermost sends a payload containing the push notification to the push proxy.
 4. The push proxy parses the notification and relays it to APNS and FCM.
 5. APNS and FCM informs the relevant devices that there is a push notification for Mattermost. This usually happens almost immediately, but may be delayed by a couple of minutes.
@@ -92,7 +91,7 @@ Mattermost enables customers with high privacy and custom security requirements 
 
 
 How can I get Google SSO to work with the Mattermost mobile app?
------------------------------------------------------------------
+----------------------------------------------------------------
 
 The apps on the Apple App Store and Google Play Store cannot support Google SSO out of the box. This is because Google requires a unique Google API key that's specific to each organization.
 
