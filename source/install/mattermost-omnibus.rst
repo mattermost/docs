@@ -132,7 +132,7 @@ MySQL is not supported. Omnibus is architected to run with PostgreSQL.
 Can I use a license with Omnibus?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes! Mattermost Omnibus bundles the E0 Mattermost version, so the enterprise features can be unlocked uploading a license.
+Yes. Mattermost Omnibus bundles Mattermost Enterprise Edition, and Enterprise features are unlocked when you purchase and upload a license.
 
 Can I use an Omnibus server as part of a cluster?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
