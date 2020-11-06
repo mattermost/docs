@@ -55,7 +55,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Added ``ThreadAutoFollow``, to add support for collapsed reply threads.
    - Added ``ManagedResourcePaths``, to add support for a setting to use with the Desktop Managed Resources feature.
    
-### Go Runtime Version
+### Go Version
  - 5.29 is built with Go ``1.14.6``.
 
 ### Open Source Components
