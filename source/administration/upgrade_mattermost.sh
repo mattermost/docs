@@ -59,7 +59,7 @@ test -d ${mattermostdir}
 
 # Ask for database backup
 if [ "${backupdatabase}" -eq 0 ]; then
-	read -r -p "[?] Do you have a current backup of the Mattermost database? [Y/n] " input
+	read -r -p "[?] Do you have a current backup of the Mattermost database? [Y/n]" input
 
 	case "$input" in
 		[yY])
