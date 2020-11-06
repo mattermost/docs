@@ -107,7 +107,7 @@ Can I install without a domain?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run:
-``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
+``sudo MMO_HTTPS=false apt install mattermost-omnibus``
 
 What happened to ``config.json``?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
