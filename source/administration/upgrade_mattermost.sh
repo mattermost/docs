@@ -72,7 +72,7 @@ if [ "${backupdatabase}" -eq 0 ]; then
 	esac
 fi
 
-# Check if mattermost exists in the path provided above
+# Check if Mattermost exists in the path provided above
 if [ ! -f "${mattermostdir}/bin/mattermost" ];  then
 	echo "Mattermost not found please check the path for the Mattermost directory"
 	exit 1
