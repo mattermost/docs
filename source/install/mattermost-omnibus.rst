@@ -1,5 +1,5 @@
 Installing Mattermost Omnibus (Beta)
-===================================
+====================================
 
 Overview
 ---------
@@ -25,7 +25,7 @@ The Omnibus repositories are configured using a cURL command:
 This command configures the repositories needed for a ``PostgreSQL`` database, an ``nginx`` web server to act as a proxy, and ``certbot`` to issue and renew the SSL certificate. It also configures the Mattermost Omnibus repository so that you can run the install command.
 
 Installing Mattermost Omnibus
-------------------------------
+-----------------------------
 
 If you're installing Omnibus, and have a domain and SSL use:
 
@@ -36,7 +36,7 @@ In order to issue that certificate, the installer requests a domain name and an 
 After all the packages are installed, Omnibus runs the ansible scripts that configure all the platform components and starts the server. To access Mattermost, open a browser, navigate to your domain, and create the System Admin user to start using the platform.
 
 Updating Mattermost Omnibus
------------------------------
+---------------------------
 
 Mattermost Omnibus is integrated with the ``apt`` package manager. When a new Mattermost version is released, run:
 
@@ -45,7 +45,7 @@ Mattermost Omnibus is integrated with the ``apt`` package manager. When a new Ma
 This downloads the latest version of Mattermost and updates your Mattermost platform.
 
 Configuring Mattermost Omnibus
-----------------------------------------
+-------------------------------
 
 .. note::
   Plugin uploads, local mode, and HTTPS are enabled by default. These settings are modified in the ``yaml`` file as described below.
@@ -75,7 +75,7 @@ If you wish to remove Mattermost and Mattermost Omnibus completely for any reaso
 ``sudo apt remove --purge mattermost mattermost-omnibus``
 
 Backup and Restore using the Mattermost Omnibus CLI
---------------------------------------------------
+---------------------------------------------------
 
 Mattermost Omnibus includes a CLI tool: ``mmomni``, which is used to manage configuration.
 
@@ -92,7 +92,7 @@ Restore example:
 Future releases may include automation for snapshot management.
 
 Frequently Asked Questions (FAQs)
-----------------------------------
+---------------------------------
 
 What are the ``mmomni`` commands and what do they do?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,12 +107,13 @@ Can I install without a domain?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Although the recommended way to install and configure Omnibus is with SSL enabled, if you want to use or test without it, you can run:
+
 ``sudo MMO_HTTPS=false apt install mattermost-omnibus``
 
 What happened to ``config.json``?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Omnibus `stores the configuration of the Mattermost server into the database <https://docs.mattermost.com/administration/config-in-database.html>`__. You can edit your config by running the following mmctl command after connecting mmctl to the instance: ``mmctl config edit``. If you are logged into the machine as the ``mattermost`` user, you can use ``mmctl --local config edit`` as well.
+Mattermost Omnibus `stores the configuration of the Mattermost server into the database <https://docs.mattermost.com/administration/config-in-database.html>`__. You can edit your config by running the following mmctl command after connecting mmctl to the instance: ``mmctl config edit``. If you're logged into the machine as the ``mattermost`` user, you can use ``mmctl --local config edit`` as well.
 
 Are there plans to add other packages to the Omnibus?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,7 +133,7 @@ MySQL is not supported. Omnibus is architected to run with PostgreSQL.
 Can I use a license with Omnibus?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes. Mattermost Omnibus bundles Mattermost Enterprise Edition, and Enterprise features are unlocked when you purchase and upload a license.
+Yes. Mattermost Omnibus bundles the free, unlicensed Mattermost Enterprise Edition, and Enterprise features are unlocked when you purchase and upload a license.
 
 Can I use an Omnibus server as part of a cluster?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
