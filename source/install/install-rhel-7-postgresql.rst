@@ -46,7 +46,7 @@ Installing PostgreSQL Database
 
 10.  Create the Mattermost database.
 
-  ``postgres=# CREATE DATABASE mattermost;``
+  ``postgres=# CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;``
 
 11.  Create the Mattermost user 'mmuser'.
 

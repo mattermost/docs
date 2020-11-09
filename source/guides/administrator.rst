@@ -1,7 +1,17 @@
-Administrator's Guide
-=====================
+==================================
+Self-Managed Administrator's Guide
+==================================
 
-In-depth documentation on installation, deployment and administration of Mattermost system.
+In-depth documentation on installation, deployment, and administration of Mattermost.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /overview/architecture*
+   /deployment/deployment*
+      /deployment/enterprise-deployment-guide*
+      /deployment/mobile-app-deployment*
 
 Getting Started
 ----------------
@@ -85,6 +95,15 @@ Learn how to configure settings to meet your unique requirements.
    /install/outbound-proxy.rst
    /install/i18n*
    /install/config-apache2.rst
+   
+Incident Management
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /administration/devops-command-center.rst
 
 Mobile Apps
 -----------
@@ -194,7 +213,6 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
-   /administration/devops-command-center*
    /deployment/atlassian-integrations*
    /deployment/microsoft-integrations*
    /deployment/ci-cd-tools*
@@ -247,3 +265,4 @@ Documentation on early previews and unofficial functionality.
    /install/prod-docker*
    /install/deploy-cloudron*
    /administration/upgrade-script*
+   /administration/light-install-hindi.rst
