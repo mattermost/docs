@@ -955,6 +955,19 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 | This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
+Enable Expirimental Gossip Encryption
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All communication through the cluster using the gossip protocol will be encrypted
+
+**False**: All communication using gossip protocol remains unencrypted.
+
+The encryption uses AES-256 by default, and it is not kept configurable by design. However, if one wishes, they can set the value in Systems table manually for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256.
+
++--------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableExperimentalGossipEncryption": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------+    
+    
 Gossip Port
 ^^^^^^^^^^^
 
