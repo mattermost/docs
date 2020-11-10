@@ -26,7 +26,7 @@ These notifications also give System Admins quick access to optionally contact s
 
 Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, information such as the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are sent to us. This information is used to contact you as requested and to help us better understand your needs.
 
-If you prefer not to contact support, you will need to dismiss the notification manually.
+Selecting **Acknowledge** will close the advisory and does not send your details to Mattermost.
 
 We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.org/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.
 
@@ -35,8 +35,8 @@ End User Notices
 
 End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
 
-FAQ
----
+Frequently Asked Questions (FAQs)
+---------------------------------
 
 Are notices enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
