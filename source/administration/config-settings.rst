@@ -4201,6 +4201,20 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 Service Settings
 ~~~~~~~~~~~~~~~~
 
+Automatically Follow Threads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting has been added as a requirement to support [Collapsed Reply Threads](https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245) (releasing in beta in Q1 2021) and may affect server performance. It is recommended to review our [documentation on hardware requirements](https://docs.mattermost.com/install/requirements.html#hardware-requirements) to ensure your servers are appropriately scaled for the size of your user base.
+
+**True**: Threads a user starts, participates in or is mentioned in are automatically followed. A new ``threads`` table is added in the database that tracks followed threads for each user, in addition to read or unread state of each followed thread.   
+
+**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled (releasing in beta in Q1 2021).
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Data Prefetch
 ^^^^^^^^^^^^^^
 
