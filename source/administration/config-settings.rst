@@ -955,7 +955,7 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 | This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-Enable Expirimental Gossip Encryption
+Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: All communication through the cluster using the gossip protocol will be encrypted
