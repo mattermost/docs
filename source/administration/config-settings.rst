@@ -958,7 +958,7 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: All communication through the cluster using the gossip protocol will be encrypted
+**True**: All communication through the cluster using the gossip protocol will be encrypted.
 
 **False**: All communication using gossip protocol remains unencrypted.
 
