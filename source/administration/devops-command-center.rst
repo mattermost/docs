@@ -37,6 +37,22 @@ Activating Mattermost Incident Management for Cloud Deployments
 
 Mattermost Incident Management is included in the Mattermost Cloud workspace and is enabled by default.
 
+Playbooks and Incidents
+-----------------------
+
+Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, which define whether an incident channel is public or private. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+
+Only members of the team in which the playbook or incident is defined have access. Playbook membership is independent of incident membership.
+
+- Members of a playbook may start an incident using that playbook, and edit the playbook's stages and steps.
+- Members of an incident may modify the current state of the incident, and invite new members to the incident channel.
+
+During an active incident, you want to focus on triaging and solving the problem as soon as possible. Planning your incident support strategy ahead of time with playbooks is the best way to ensure incidents run smoothly. A playbook is a recipe for dealing with and resolving an incident. In a playbook, you can plan ahead so that during an incident responders know exactly what to do. Make sure to schedule a retrospective analysis to iterate on the design of your playbooks after the incident finishes.
+
+Within each playbook, you can create stages and tasks to ensure that items are addressed and completed in sequential order. The tasks can optionally be associated with slash commands and assigned to individual team members.
+
+Once complete, incident channels can be exported using the channel export option for analysis. Teams can identify bottlenecks in the incident by seeing time gaps between when checklist items are completed and incorporating necessary changes into the playbook for next incident.
+
 Using slash commands
 --------------------
 
@@ -63,22 +79,6 @@ Here are some examples:
 
 - Add a task called **Sync up** with the slash command ``/zoom hello``. Running that slash command initiates a Zoom call in the incident channel. If you've installed Jitsi, you could use ``/jitsi hello``. 
 - One of your tasks may require the header to be changed to reflect a new status. Create a task called **Change header** with the slash command ``/header new header``.
-
-Playbooks and Incidents
------------------------
-
-Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, which define whether an incident channel is public or private. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
-
-Only members of the team in which the playbook or incident is defined have access. Playbook membership is independent of incident membership.
-
-- Members of a playbook may start an incident using that playbook, and edit the playbook's stages and steps.
-- Members of an incident may modify the current state of the incident, and invite new members to the incident channel.
-
-During an active incident, you want to focus on triaging and solving the problem as soon as possible. Planning your incident support strategy ahead of time with playbooks is the best way to ensure incidents run smoothly. A playbook is a recipe for dealing with and resolving an incident. In a playbook, you can plan ahead so that during an incident responders know exactly what to do. Make sure to schedule a retrospective analysis to iterate on the design of your playbooks after the incident finishes.
-
-Within each playbook, you can create stages and tasks to ensure that items are addressed and completed in sequential order. The tasks can optionally be associated with slash commands and assigned to individual team members.
-
-Once complete, incident channels can be exported using the channel export option for analysis. Teams can identify bottlenecks in the incident by seeing time gaps between when checklist items are completed and incorporating necessary changes into the playbook for next incident.
 
 Creating a playbook
 ^^^^^^^^^^^^^^^^^^^
