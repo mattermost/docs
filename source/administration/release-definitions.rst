@@ -8,10 +8,10 @@ For the past few years, Mattermost used a monthly “tick-tock” alternating re
 Feature Release
 ----------------
 
-The Feature Releases have new features added. These are even-numbered releases (e.g., 5.24). The Feature Releases have new features added.
+The Feature Releases have new features added. These are even-numbered releases (e.g., 5.24).
 
-Quality Release	
-----------------	
+Quality Release
+----------------
 
 The Quality Releases contain only bug fixes and performance improvements and are more stable than Feature Releases. These are odd-numbered releases (e.g., 5.25). It is highly recommended to upgrade to a Quality Release if your organization prefers stability over having the newest features and improvements.
 
