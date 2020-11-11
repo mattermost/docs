@@ -138,11 +138,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
 Incident Management Telemetry
 -----------------------------
 
-We only track the events that create, delete, or update items. We never track the specific content of the items. In particular, we do not collect the name of the incidents or the contents of the stages and tasks.
-
-Every event we track is accompanied with some metadata that help us group events by server. If that server is licensed, we are able to identify the contact person for the license. Otherwise, we are not able to connect personally identifying information from the event data described below. For example, although we collect the `UserActualId` of the user initiating the event, we are unable to connect personal information to that userId. That userId is used only to aggregate, analyze, and display data.
-
-The following list details the types of metadata we collect:
+The following list details the types of Incident Management metadata we collect:
 
 **Data collected for all event types**
 
