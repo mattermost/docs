@@ -67,6 +67,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
+ - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
  - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
  - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
  - Twitter link previews no longer work in Mattermost as Twitter has removed OpenGraph data from its pages.
