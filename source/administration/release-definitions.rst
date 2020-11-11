@@ -1,19 +1,14 @@
 Release Definitions
 ========================
 
-Mattermost follows a monthly tick-tock release cycle, with a new version shipping on the 16th of each month in `binary form <http://docs.mattermost.com/administration/upgrade.html>`_.
+Mattermost ships with a new version on the 16th of each month in `binary form <http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition>`_.
 
-Tick-tock refers to even-numbered releases (e.g., 5.24) containing new features, and odd-numbered releases (e.g., 5.25) containing only bug fixes and performance improvements.
+For the past few years, Mattermost used a monthly “tick-tock” alternating release cycle. A tick-tock cycle refers to even-numbered releases (e.g., 5.26) containing new features, and odd-numbered releases (e.g., 5.27) containing only bug fixes and performance improvements. As our product and team continue to evolve, we're moving away from this alternating release cycle in favor of a general monthly release.
 
 Feature Release
 ----------------
 
-The Feature Releases have new features added. These are even-numbered releases (e.g., 5.24).
-
-Quality Release
-----------------
-
-The Quality Releases contain only bug fixes and performance improvements and are more stable than Feature Releases. These are odd-numbered releases (e.g., 5.25). It is highly recommended to upgrade to a Quality Release if your organization prefers stability over having the newest features and improvements.
+The Feature Releases have new features added.
 
 Extended Support Release (ESR)
 ------------------------------
