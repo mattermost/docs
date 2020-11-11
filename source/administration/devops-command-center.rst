@@ -17,6 +17,11 @@ When incidents are monitored, coordinated, and measured effectively, you can add
   :depth: 2
   :local:
   :backlinks: entry
+  
+API Documentation
+-----------------
+
+The Mattermost Incident Management API specification is available `here <https://github.com/mattermost/mattermost-plugin-incident-management/blob/master/server/api/api.yaml>`_.
 
 Installing Mattermost Incident Management for Self-Managed Deployments
 ----------------------------------------------------------------------
