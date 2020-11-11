@@ -62,13 +62,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``@types/react-custom-scrollbars`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Database Changes
- - 
-
-### API Changes
- - 
-
-### Websocket Event Changes
- - 
+ - Altered some types and defaults in ``SidebarCategories`` table.
+ - Added a new column ``Threads.ChannelId``.
 
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
