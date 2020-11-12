@@ -16,7 +16,7 @@ Administrator notices are used to inform System Admins when a new server version
 Administrator notices can be disabled in the **System Console > Notices** page.
 
 Admin Advisor notices
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Admin Advisor notifications are included in Mattermost from v5.26. These notifications are designed to provide guidance and assist in choosing features to support your deployment as it scales.
 
@@ -29,7 +29,7 @@ Managing admin advisor notifications
 
 The Admin Advisor notifications are run on a schedule based on specific triggers.
 
-Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, contact information such as the email address and name associated with your Mattermost account is sent to us, so we can contact you as requested and to help us better understand your needs. The number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are also sent to us to better understand your environment and hence provide more tailored support.
+- Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, contact information such as the email address and name associated with your Mattermost account is sent to us, so we can contact you as requested and to help us better understand your needs. The number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are also sent to us to better understand your environment and hence provide more tailored support.
 - Selecting **Acknowledge** in the Admin Advisor banner closes the advisory and does not send your details to Mattermost.
 - Closing the notification bot removes the conversation from your Direct Messages list.
 
