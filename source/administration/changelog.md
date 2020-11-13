@@ -86,13 +86,14 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.28 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.28.1, release day TBD**
-  - Fixing an issue where mmctl Command Line Tool (Beta) is currently broken on Mattermost server v5.28.0. [MM-29740](https://mattermost.atlassian.net/browse/MM-29740)
+- **v5.28.1, released 2020-10-19**
+  - Fixed an issue where mmctl Command Line Tool (Beta) was broken on Mattermost server v5.28.0. [MM-29740](https://mattermost.atlassian.net/browse/MM-29740)
+  - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
 - **v5.28.0, released 2020-10-16**
   - Original 5.28.0 release
 
 ### Compatibility
- - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 In our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
+ - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 and all 9.x versions in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
  - Support for Mattermost Server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its lifecycle. Upgrading to Mattermost Server v5.25 or later is required.
  - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
@@ -133,7 +134,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Fixed inconsistencies across product when using ``in:@` / `in:``, such as displaying Direct and Group Messages in ``in:@`` search suggestions.
 
 #### Notifications
- - Added an option in the **Account Settings** to select different desktop notification sounds.
+ - Added an option in the **Account Settings** to select different desktop notification sounds. This setting is available in supported browsers and in the Desktop app v4.6 and later.
 
 #### Command Line Interface (CLI)
  - Added ``config migrate``, ``config subpath``, ``user delete``, ``integrity``, ``user migrate_auth``, ``moveChannel``, ``updateChannelPrivacy``, ``restoreTeam``, ``channel delete``, and plugin marketplace commands to mmctl.
@@ -144,7 +145,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a ``CreateCommand`` plugin API that creates a slash command that is not handled by the plugin itself.
  
 #### Administration
- - Added the ability to upload and remove private and public certicates for LDAP authentication.
+ - Added the ability to upload and remove private and public certificates for LDAP authentication.
  - Added support for resumable file uploads.
  - Added the ability to convert a public channel to private and vice versa via Advanced Permissions.
  - Added filters to search teams in Teams page.
@@ -234,7 +235,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Released Day: 2020-09-16**
+- **v5.27.1, released 2020-10-19**
+  - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
+- **v5.27.0, released 2020-09-16**
+  - Original 5.27.0 release
 
 Mattermost v5.27.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
@@ -480,8 +484,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
-- **v5.25.6, release day TBD**
-  - Fixing an issue where the Compliance Exports are taking too long on large deployments. This will be fixed with a performance optimization of the message export query.
+- **v5.25.6, released 2020-11-10**
+  - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
+  - Bumped up Go patch version to 1.14.6 to fix an issue where a potential livelock was detected in the app server under heavy load. [MM-26584](https://mattermost.atlassian.net/browse/MM-26584)
 - **v5.25.5, released 2020-09-03**
   - Forcefully disabled the SAML Setting "Use Improved SAML Library (Beta)", as we have identified some issues in this feature. Please follow instructions at https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility. 
 - **v5.25.4, released 2020-08-25**

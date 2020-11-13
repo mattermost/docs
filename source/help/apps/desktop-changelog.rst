@@ -4,16 +4,19 @@ Desktop Application Changelog
 Release v4.6
 ----------------------------
 
-**Release date:** 2020-10-16
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.1>`_
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.0>`_
+- **v4.6.1, released 2020-10-26**
+ - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. `MM-29921 <https://mattermost.atlassian.net/browse/MM-29921>`_
+- **v4.6.0, released 2020-10-16**
+ - Original v4.6.0 release
 
 Improvements
 ~~~~~~~~~~~~~~~
 
 All Platforms
 ^^^^^^^^^^^^^
-- Added a setting to be able to select different desktop notification sounds.
+- Added a setting to be able to select different desktop notification sounds (Requires Mattermost server v5.28+).
 - ``Show Mattermost icon in the menu bar`` setting is now enabled by default for new installs on Mac, and ``Show icon in the notification area`` and ``Leave app running in the notification area when application window is closed`` settings are are now enabled by default for new installs on Ubuntu.
 - The default window frame and server tabs are now used on older Windows and Linux OS versions.
 - Added Russian and Ukrainian language spellcheckers.

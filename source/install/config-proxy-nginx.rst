@@ -11,12 +11,17 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 2. Create a configuration file for Mattermost.
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
-  
+
 On RHEL 7 and 8: ``sudo touch /etc/nginx/conf.d/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
 On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
+
+SSL and HTTP/2 with server push are enabled in the provided configuration example.
+
+.. note::
+  You will need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning Let's Encrypt, please see the `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
 
   .. code-block:: none
 
@@ -28,8 +33,42 @@ On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
     proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
     server {
-       listen 80;
+      listen 80 default_server;
+      server_name   mattermost.example.com;
+      return 301 https://$server_name$request_uri;
+    }
+
+    server {
+       listen 443 ssl http2;
        server_name    mattermost.example.com;
+
+       http2_push_preload on; # Enable HTTP/2 Server Push
+
+       ssl on;
+       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
+       ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
+       ssl_session_timeout 1d;
+
+       # Enable TLS versions (TLSv1.3 is required upcoming HTTP/3 QUIC).
+       ssl_protocols TLSv1.2 TLSv1.3;
+
+       # Enable TLSv1.3's 0-RTT. Use $ssl_early_data when reverse proxying to
+       # prevent replay attacks.
+       #
+       # @see: http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
+       ssl_early_data on;
+
+       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+       ssl_prefer_server_ciphers on;
+       ssl_session_cache shared:SSL:50m;
+       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+       add_header Strict-Transport-Security max-age=15768000;
+       # OCSP Stapling ---
+       # fetch OCSP records from URL in ssl_certificate and cache them
+       ssl_stapling on;
+       ssl_stapling_verify on;
+
+       add_header X-Early-Data $tls1_3_early_data;
 
        location ~ /api/v[0-9]+/(users/)?websocket$ {
            proxy_set_header Upgrade $http_upgrade;
@@ -72,6 +111,14 @@ On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
        }
     }
 
+    # This block is useful for debugging TLS v1.3. Please feel free to remove this
+    # and use the `$ssl_early_data` variable exposed by NGINX directly should you
+    # wish to do so.
+    map $ssl_early_data $tls1_3_early_data {
+      "~." $ssl_early_data;
+      default "";
+    }
+
 4. Remove the existing default sites-enabled file.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
@@ -90,7 +137,7 @@ On RHEL 7 and 8: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/def
 
 7. Verify that you can see Mattermost through the proxy.
 
-  ``curl http://localhost``
+  ``curl https://localhost``
 
   If everything is working, you will see the HTML for the Mattermost signup page.
 
@@ -101,7 +148,7 @@ By default, the Mattermost server accepts connections on port 8065 from every ma
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
 
 NGINX Configuration FAQ
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why are Websocket connections returning a 403 error?**
 
@@ -145,7 +192,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
     docker-compose stop app
     docker-compose start app
 
-.. tip:: 
+.. tip::
 
   You don't need to run the 'web' container, since NGINX proxy accepts incoming requests.
 
@@ -161,8 +208,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
       - VIRTUAL_HOST=mymattermost.tld
     expose:
       - "80"
-
-If you're using SSL, you may also need to expose port 443. 
+      - "443"
 
 **Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
 
