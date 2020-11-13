@@ -64,8 +64,8 @@ Channel Permissions
 
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
-Channel Moderation (Beta) (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Channel Moderation (E20)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management.html>`_.
 

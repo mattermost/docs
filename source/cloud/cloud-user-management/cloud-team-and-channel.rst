@@ -66,8 +66,8 @@ Channel Management
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Channel Moderation
+~~~~~~~~~~~~~~~~~~~
 
 Channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 
