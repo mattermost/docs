@@ -23,8 +23,10 @@ API Documentation
 
 The Mattermost Incident Management API specification is available `here <https://github.com/mattermost/mattermost-plugin-incident-management/blob/master/server/api/api.yaml>`_.
 
-Installing Mattermost Incident Management for Self-Managed Deployments
-----------------------------------------------------------------------
+Installing Mattermost Incident Management
+-----------------------------------------
+
+*For self-managed deployments*
 
 Mattermost Incident Management is available in the Plugin Marketplace. You can download and install the plugin from Mattermost.
 
@@ -37,26 +39,9 @@ Mattermost Incident Management is available in the Plugin Marketplace. You can d
 
 When you open the Main Menu, **Playbooks & Incidents** is available as a menu item.
 
-Activating Mattermost Incident Management for Cloud Deployments
----------------------------------------------------------------
+*For Cloud deployments*
 
 Mattermost Incident Management is included in the Mattermost Cloud workspace and is enabled by default.
-
-Playbooks and Incidents
------------------------
-
-Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, which define whether an incident channel is public or private. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
-
-Only members of the team in which the playbook or incident is defined have access. Playbook membership is independent of incident membership.
-
-- Members of a playbook may start an incident using that playbook, and edit the playbook's stages and steps.
-- Members of an incident may modify the current state of the incident, and invite new members to the incident channel.
-
-During an active incident, you want to focus on triaging and solving the problem as soon as possible. Planning your incident support strategy ahead of time with playbooks is the best way to ensure incidents run smoothly. A playbook is a recipe for dealing with and resolving an incident. In a playbook, you can plan ahead so that during an incident responders know exactly what to do. Make sure to schedule a retrospective analysis to iterate on the design of your playbooks after the incident finishes.
-
-Within each playbook, you can create stages and tasks to ensure that items are addressed and completed in sequential order. The tasks can optionally be associated with slash commands and assigned to individual team members.
-
-Once complete, incident channels can be exported using the channel export option for analysis. Teams can identify bottlenecks in the incident by seeing time gaps between when checklist items are completed and incorporating necessary changes into the playbook for next incident.
 
 Using slash commands
 --------------------
@@ -84,6 +69,22 @@ Here are some examples:
 
 - Add a task called **Sync up** with the slash command ``/zoom hello``. Running that slash command initiates a Zoom call in the incident channel. If you've installed Jitsi, you could use ``/jitsi hello``. 
 - One of your tasks may require the header to be changed to reflect a new status. Create a task called **Change header** with the slash command ``/header new header``.
+
+Playbooks and Incidents
+-----------------------
+
+Incidents and playbooks are associated with teams in Mattermost. Incident channels are created based on playbooks, which define whether an incident channel is public or private. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+
+Only members of the team in which the playbook or incident is defined have access. Playbook membership is independent of incident membership.
+
+- Members of a playbook may start an incident using that playbook, and edit the playbook's stages and steps.
+- Members of an incident may modify the current state of the incident, and invite new members to the incident channel.
+
+During an active incident, you want to focus on triaging and solving the problem as soon as possible. Planning your incident support strategy ahead of time with playbooks is the best way to ensure incidents run smoothly. A playbook is a recipe for dealing with and resolving an incident. In a playbook, you can plan ahead so that during an incident responders know exactly what to do. Make sure to schedule a retrospective analysis to iterate on the design of your playbooks after the incident finishes.
+
+Within each playbook, you can create stages and tasks to ensure that items are addressed and completed in sequential order. The tasks can optionally be associated with slash commands and assigned to individual team members.
+
+Once complete, incident channels can be exported using the channel export option for analysis. Teams can identify bottlenecks in the incident by seeing time gaps between when checklist items are completed and incorporating necessary changes into the playbook for next incident.
 
 Creating a playbook
 ^^^^^^^^^^^^^^^^^^^
@@ -142,6 +143,16 @@ When an incident has been started, it's added to the list of channels in the Mat
 
 If an incident channel is private new participants can only be added to an incident channel by a channel member. If the incident is public, no invitation is needed - search for, and join, the channel via **Browse Channels** in Mattermost.
 
+Ending an incident
+^^^^^^^^^^^^^^^^^^
+
+Incident members can end an incident using the slash command ``/incident end`` from within the incident channel. Ending an incident signals to all participants that the issue has been resolved.
+
+Restarting an incident
+^^^^^^^^^^^^^^^^^^^^^^
+
+An ended incident can be restarted at any time using ``/incident restart`` from within the incident channel or via **Restart Incident** in the RHS. Some playbooks may define stages and tasks to complete after an incident has been resolved, such as scheduling and completing a post-mortem.
+
 Incident status and information
 -------------------------------
 
@@ -161,17 +172,7 @@ You can also:
 - Start an automated action
 - Invite new members to the channel
 
-Channel export
-^^^^^^^^^^^^^^
+Channel Export
+--------------
 
 Please see the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
-
-Ending an incident
-^^^^^^^^^^^^^^^^^^
-
-Incident members can end an incident using the slash command ``/incident end`` from within the incident channel. Ending an incident signals to all participants that the issue has been resolved.
-
-Restarting an incident
-^^^^^^^^^^^^^^^^^^^^^^
-
-An ended incident can be restarted at any time using ``/incident restart`` from within the incident channel or via **Restart Incident** in the RHS. Some playbooks may define stages and tasks to complete after an incident has been resolved, such as scheduling and completing a post-mortem.
