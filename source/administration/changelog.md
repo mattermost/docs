@@ -4,6 +4,78 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.30
+
+### Compatibility
+
+### Breaking Changes
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.29, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Modify New Admin Roles Permissions in the System Console
+Added a user interface for the existing new system roles functionality including a new permission to ``read/write system_roles``. This feature is currently in Beta.
+
+### Improvements
+
+#### User Interface
+ - Prioritize ``@`` autocomplete results based on recency and thread activity.
+ - File attachments below size of 10 now show fractions.
+ - Improved the formatting of the channel header change message.
+ - Team invite workflow now shows ``BOT`` tags when the search returns Bot users.
+ - Added support for 16x16 base64 encoded mini images to use with progressive rendering.
+
+#### Notifications
+ - Channel wide mentions are now automatically disabled when a user mutes a channel.
+
+#### Command Line Interface (CLI)
+ - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
+ - Added ``mmctl system version`` endpoint to print the remote server version.
+
+#### Integrations
+ - Updated ``icon_emoji`` field in incoming webhooks to allow for emojis to also be specified with surrounding colons.
+ - Dynamic auto-completion is now supported for built-in slash commands.
+
+#### Administration
+ - Added the ability to load a set of configuration custom defaults from a ``MM_CUSTOM_DEFAULTS_PATH`` environment variable.
+
+#### Enterprise Edition (EE)
+ - Added the ability to retrieve compliance files from the System Console.
+
+### Bug Fixes
+ - Fixed an issue where editing a post did not submit with CMD+ENTER.
+ - Fixed an issue where users were able to create or edit slash commands to have more than two slashes in the URL.
+ - Fixed an issue where resized emojis got overwritten with original data.
+ - Fixed an issue where the sidebar category ... menu was not shown when hovering over a long category name.
+ - Fixed an issue where a received direct message did not show up on the sidebar if it wasn't previously created.
+ - Fixed an issue where search using ``from:`` failed to auto-load more results in the right-hand side when elasticsearch was enabled.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+  Added ``EnableSharedChannels``
+
+### Go Version
+
+### Open Source Components
+
+### Database Changes
+
+### Websocket Event Changes
+ - In ``post_deleted`` websocket event, System Admins are now notified when a user initiates a post deletion.
+
+### API Changes
+ - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
+ - Added new API endpoints for working with experimental collapsed threads.
+ 
+### Known Issues
+
+### Contributors
+
+
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
 ### Compatibility
