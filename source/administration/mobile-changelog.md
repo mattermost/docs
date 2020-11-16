@@ -1,5 +1,28 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.38.0 Release
+- Release Date: December 16, 2020
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Gallery UX improvements
+ - Images now load progressively as the image comes into view-port instead of loading all the images on mount.
+ - Mattermost is now resizeable on Android Desktops like Samsung DeX.
+ - Vertically center 'Something went wrong' message block.
+
+### Bug Fixes
+ - Fixed an issue where redux event was not sent to update list of Group Mentions when Groups were added or removed in a LDAP Group Synced Team.
+ - Fixed an issue where group mentions were highlighted by default before it was posted.
+
+#### All apps
+ 
+#### Android specific
+
 ## 1.37.0 Release
 - Release Date: November 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
