@@ -20,7 +20,7 @@ Admin Advisor notices
 
 Admin Advisor notifications are included in Mattermost from v5.26. These notifications are designed to provide guidance and assist in choosing features to support your deployment as it scales.
 
-When these notifications are triggered, a System Admin receives a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notifications are triggered based on usage such as the the number of registered users, posts or channels in your deployment reaching a predefined threshold.
+When these notifications are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notifications are triggered based on usage such as the the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 These notifications also give System Admins quick access to optionally contact support for additional assistance as well as links to useful resources for user management and provisioning to support large systems.
 
