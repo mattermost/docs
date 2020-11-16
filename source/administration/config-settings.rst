@@ -296,6 +296,17 @@ Enable Insecure Outgoing Connections
 | This feature's ``config.json`` setting is ``"EnableInsecureOutgoingConnections": false`` with options ``true`` and ``false``.                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Managed Resource Paths
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A comma-separated list of paths within the Mattermost domain that are managed by a third party service instead of Mattermost itself. Links to these paths will be opened in a new tab/window by Mattermost apps. For example, if Mattermost is running on ``https://mymattermost.com``, setting this to ``conference`` will cause links such as ``https://mymattermost.com/conference`` to be opened in a new window.
+
+When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of in a browser. See `here <https://docs.mattermost.com/install/desktop-managed-resources.html>`_ for more information.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ManagedResourcePaths": ""`` with string input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Reload Configuration from Disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4203,6 +4214,20 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 
 Service Settings
 ~~~~~~~~~~~~~~~~
+
+Automatically Follow Threads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245>`_ (releasing in beta in Q1 2021) and may affect server performance. It is recommended to review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.
+
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.   
+
+**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled (releasing in beta in Q1 2021).
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Data Prefetch
 ^^^^^^^^^^^^^^
