@@ -31,7 +31,7 @@ If you're installing Omnibus, and have a domain and SSL use:
 
 ``sudo apt install mattermost-omnibus -y``
 
-In order to issue that certificate, the installer requests a domain name and an email address from us. These are used to generate the certificate and deliver any related communications respectively.
+In order to issue that certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications respectively.
 
 After all the packages are installed, Omnibus runs the ansible scripts that configure all the platform components and starts the server. To access Mattermost, open a browser, navigate to your domain, and create the System Admin user to start using the platform.
 
