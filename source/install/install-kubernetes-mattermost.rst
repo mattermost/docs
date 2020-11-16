@@ -76,6 +76,8 @@ Open a text editor and create a text file with the following details.
 
 Save the file as ``mattermost-installation.yaml``.
 
+To configure the Mattermost Installation with external database and filestore refere to `Configuring external database and filestore (Recommended)`_ before proceeding.
+
 **3. Apply the Installation Manifest File**
 
 First, create the Mattermost namespace with this command:
@@ -112,6 +114,130 @@ Use your domain registration service to create a canonical name or IP address re
 pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
 
 Navigate to the ``ingressName`` URL in your browser and use Mattermost.
+
+
+Configuring external database and filestore (Recommended)
+----------------------------------------------------------
+
+When installing Mattermost with Mattermost Operator for production scenario it is recommended to use an external database and filestore.
+
+**1. Create database Secret**
+
+The database Secret needs to be created in the namespace that will hold the Mattermost Installation.
+The Secret should contain the following data:
+
+.. csv-table::
+    :header: "Key", "Description", "Required"
+
+    "DB_CONNECTION_STRING", "Connection string to the database.", "true"
+    "MM_SQLSETTINGS_DATASOURCEREPLICAS", "Connection string to read replicas of the database.", "false"
+    "DB_CONNECTION_CHECK_URL", "The URL used for checking that the database is accessible.", "false"
+
+Example Secret for AWS Aurora compatible with PostgreSQL:
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  data:
+    DB_CONNECTION_CHECK_URL: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTAK
+    DB_CONNECTION_STRING: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTAK
+    MM_SQLSETTINGS_DATASOURCEREPLICAS: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLXJvLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTAK
+  kind: Secret
+  metadata:
+    name: my-postgres-connection
+  type: Opaque
+
+.. note:: For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
+   For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP url.
+
+
+**2. Create filestore Secret**
+
+The filestore Secret needs to be created in the namespace that will hold the Mattermost Installation.
+The Secret should contain the following data:
+
+.. csv-table::
+    :header: "Key", "Description", "Required"
+
+    "accesskey", "Filestore access key.", true
+    "accesskey", "Filestore secret key.", true
+
+Example Secret for AWS S3:
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  data:
+    accesskey: QUNDRVNTX0tFWQo=
+    secretkey: U1VQRVJfU0VDUkVUX0tFWQo=
+  kind: Secret
+  metadata:
+    name: my-s3-iam-access-key
+  type: Opaque
+
+
+**3. Adjust Cluster Installation**
+
+To instruct Mattermost Operator to use the external database, modify the following fields:
+
+.. code-block:: yaml
+
+  spec:
+  ...
+    database:
+        secret: my-postgres-connection
+
+
+To instruct Mattermost Operator to use the external filestore, modify the following fields:
+
+.. code-block:: yaml
+
+  spec:
+  ...
+    minio:
+      externalBucket: my-s3-bucket
+      externalURL: s3.amazonaws.com
+      secret: my-s3-iam-access-key
+
+Additionaly when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` environment variable to ``true``:
+
+.. code-block:: yaml
+
+  spec:
+  ...
+      mattermostEnv:
+      ...
+      - name: MM_FILESETTINGS_AMAZONS3SSE
+        value: "true"
+
+Example Cluster Installation configured with both external databases and filestore:
+
+.. code-block:: yaml
+
+  apiVersion: mattermost.com/v1alpha1
+  kind: ClusterInstallation
+  metadata:
+    name: mm-example-external-db
+  spec:
+    size: 5000users
+    ingressName: example.mattermost-example.com
+    ingressAnnotations:
+      kubernetes.io/ingress.class: nginx
+    version: 5.28.0
+    mattermostLicenseSecret: ""
+    database:
+      secret: my-postgres-connection
+      storageSize: 50Gi
+    minio:
+      externalBucket: my-s3-bucket
+      externalURL: s3.amazonaws.com
+      secret: my-s3-iam-access-key
+      storageSize: 50Gi
+    elasticSearch:
+      host: ""
+      username: ""
+      password: ""
+
 
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
