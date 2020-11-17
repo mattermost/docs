@@ -76,7 +76,7 @@ Open a text editor and create a text file with the following details.
 
 Save the file as ``mattermost-installation.yaml``.
 
-To configure the Mattermost Installation with external database and filestore refere to `Configuring external database and filestore (Recommended)`_ before proceeding.
+To configure the Mattermost Installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding.
 
 **3. Apply the Installation Manifest File**
 
