@@ -51,7 +51,6 @@ Added a user interface for the existing new system roles functionality including
 
 ### Bug Fixes
  - Fixed an issue where editing a post did not submit with CMD+ENTER.
- - Fixed an issue where twitter link previews no longer worked in Mattermost.
  - Fixed an issue where users were able to create or edit slash commands to have more than two slashes in the URL.
  - Fixed an issue where resized emojis got overwritten with original data.
  - Fixed an issue where the sidebar category ... menu was not shown when hovering over a long category name.
