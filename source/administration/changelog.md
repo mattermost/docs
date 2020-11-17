@@ -7,8 +7,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.30
 
 ### Compatibility
+ - Postgres v9.4 deprecation planned for December 16th.
 
 ### Breaking Changes
+ -
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.29, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
@@ -20,43 +22,52 @@ Added a user interface for the existing new system roles functionality including
 ### Improvements
 
 #### User Interface
- - Prioritize ``@`` autocomplete results based on recency and thread activity.
+ - ``@`` autocomplete results are now prioritized based on recency and thread activity.
  - File attachments below size of 10 now show fractions.
  - Improved the formatting of the channel header change message.
  - Team invite workflow now shows ``BOT`` tags when the search returns Bot users.
+ - Added the ability to zoom in/out on PDF files.
  - Added support for 16x16 base64 encoded mini images to use with progressive rendering.
 
 #### Notifications
- - Channel wide mentions are now automatically disabled when a user mutes a channel.
+ - Channel-wide mentions are now automatically disabled when a user mutes a channel.
 
 #### Command Line Interface (CLI)
  - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
  - Added ``mmctl system version`` endpoint to print the remote server version.
+ - Improved the ``mmctl system status`` command output to include all the reported values.
 
 #### Integrations
  - Updated ``icon_emoji`` field in incoming webhooks to allow for emojis to also be specified with surrounding colons.
  - Dynamic auto-completion is now supported for built-in slash commands.
+ - Added plugin hooks for ``ReationHasBeenAdded`` and ``ReactionHasBeenRemoved``.
 
 #### Administration
  - Added the ability to load a set of configuration custom defaults from a ``MM_CUSTOM_DEFAULTS_PATH`` environment variable.
+ - Added AWS Metering service support.
 
 #### Enterprise Edition (EE)
  - Added the ability to retrieve compliance files from the System Console.
 
 ### Bug Fixes
  - Fixed an issue where editing a post did not submit with CMD+ENTER.
+ - Fixed an issue where twitter link previews no longer worked in Mattermost.
  - Fixed an issue where users were able to create or edit slash commands to have more than two slashes in the URL.
  - Fixed an issue where resized emojis got overwritten with original data.
  - Fixed an issue where the sidebar category ... menu was not shown when hovering over a long category name.
  - Fixed an issue where a received direct message did not show up on the sidebar if it wasn't previously created.
  - Fixed an issue where search using ``from:`` failed to auto-load more results in the right-hand side when elasticsearch was enabled.
+ - Fixed an issue where s3 file backend ``TestFileConnection`` failed due to permissions if S3PathPrefix was in use.
+ - Fixed an issue where an id was missing for Tooltip in ``PostInfo``.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ExperimentalSettings`` in ``config.json``:
-  Added ``EnableSharedChannels``
+   - Added ``EnableSharedChannels``
+ - Under ``SamlSettings`` in ``config.json``:
+   - Added ``IgnoreGuestsLdapSync``, to ignore Guests when using SAML and synchronizing with LDAP.
 
 ### Go Version
 
