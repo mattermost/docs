@@ -116,6 +116,8 @@ In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_nativ
    
    [mysqld]
    default-authentication-plugin=mysql_native_password
+   
+In MySQL versions 8.0.0-8.0.11 ```ADMIN``` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_. We recommend installing 8.0.12 or higher since it is no longer reserved in these versions.
 
 Hardware Requirements
 ---------------------
