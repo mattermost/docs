@@ -121,7 +121,8 @@ Configuring external database and filestore (Recommended)
 
 When installing Mattermost using the Mattermost Operator in a production scenario, it's recommended that you use an external database and filestore.
 
-**1. Create database secret**
+1. Create database secret
+^^^^^^^^^^^^^^^^^^^
 
 The database secret needs to be created in the namespace that will hold the Mattermost installation.
 The secret should contain the following data:
@@ -150,8 +151,8 @@ Example secret for AWS Aurora compatible with PostgreSQL:
 .. note:: For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
    For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
-
-**2. Create filestore secret**
+2. Create filestore secret
+^^^^^^^^^^^^^^^^^^^
 
 The filestore secret needs to be created in the namespace that will hold the Mattermost installation.
 The secret should contain the following data:
@@ -175,8 +176,8 @@ Example secret for AWS S3:
     name: my-s3-iam-access-key
   type: Opaque
 
-
-**3. Adjust cluster installation**
+3. Adjust cluster installation
+^^^^^^^^^^^^^^^^^^^^^
 
 To instruct Mattermost Operator to use the external database, modify the following fields:
 
@@ -186,7 +187,6 @@ To instruct Mattermost Operator to use the external database, modify the followi
   ...
     database:
         secret: my-postgres-connection
-
 
 To instruct Mattermost Operator to use the external filestore, modify the following fields:
 
