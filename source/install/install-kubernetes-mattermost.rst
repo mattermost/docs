@@ -121,7 +121,7 @@ Configuring external database and filestore (Recommended)
 
 When installing Mattermost using the Mattermost Operator in a production scenario, it's recommended that you use an external database and filestore.
 
-**1. Create database Secret**
+**1. Create database secret**
 
 The database secret needs to be created in the namespace that will hold the Mattermost installation.
 The secret should contain the following data:
@@ -151,7 +151,7 @@ Example secret for AWS Aurora compatible with PostgreSQL:
    For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
 
-**2. Create filestore Secret**
+**2. Create filestore secret**
 
 The filestore secret needs to be created in the namespace that will hold the Mattermost installation.
 The secret should contain the following data:
@@ -159,8 +159,8 @@ The secret should contain the following data:
 .. csv-table::
     :header: "Key", "Description", "Required"
 
-    "accesskey", "Filestore access key.", true
-    "accesskey", "Filestore secret key.", true
+    "accesskey", "Filestore access key.", "true"
+    "secretkey", "Filestore secret key.", "true"
 
 Example secret for AWS S3:
 
@@ -176,7 +176,7 @@ Example secret for AWS S3:
   type: Opaque
 
 
-**3. Adjust Cluster Installation**
+**3. Adjust cluster installation**
 
 To instruct Mattermost Operator to use the external database, modify the following fields:
 
@@ -199,7 +199,7 @@ To instruct Mattermost Operator to use the external filestore, modify the follow
       externalURL: s3.amazonaws.com
       secret: my-s3-iam-access-key
 
-Additionaly when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` environment variable to ``true``:
+Additionaly when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
 .. code-block:: yaml
 
@@ -208,6 +208,8 @@ Additionaly when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` enviro
       mattermostEnv:
       ...
       - name: MM_FILESETTINGS_AMAZONS3SSE
+        value: "true"
+      - name: MM_FILESETTINGS_AMAZONS3SSL
         value: "true"
 
 Example cluster installation configured with both external databases and filestore:
