@@ -119,12 +119,12 @@ Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 Configuring external database and filestore (Recommended)
 ----------------------------------------------------------
 
-When installing Mattermost with Mattermost Operator for production scenario it is recommended to use an external database and filestore.
+When installing Mattermost using the Mattermost Operator in a production scenario, it's recommended that you use an external database and filestore.
 
 **1. Create database Secret**
 
-The database Secret needs to be created in the namespace that will hold the Mattermost Installation.
-The Secret should contain the following data:
+The database secret needs to be created in the namespace that will hold the Mattermost installation.
+The secret should contain the following data:
 
 .. csv-table::
     :header: "Key", "Description", "Required"
@@ -133,7 +133,7 @@ The Secret should contain the following data:
     "MM_SQLSETTINGS_DATASOURCEREPLICAS", "Connection string to read replicas of the database.", "false"
     "DB_CONNECTION_CHECK_URL", "The URL used for checking that the database is accessible.", "false"
 
-Example Secret for AWS Aurora compatible with PostgreSQL:
+Example secret for AWS Aurora compatible with PostgreSQL:
 
 .. code-block:: yaml
 
@@ -148,13 +148,13 @@ Example Secret for AWS Aurora compatible with PostgreSQL:
   type: Opaque
 
 .. note:: For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
-   For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP url.
+   For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
 
 **2. Create filestore Secret**
 
-The filestore Secret needs to be created in the namespace that will hold the Mattermost Installation.
-The Secret should contain the following data:
+The filestore secret needs to be created in the namespace that will hold the Mattermost installation.
+The secret should contain the following data:
 
 .. csv-table::
     :header: "Key", "Description", "Required"
@@ -162,7 +162,7 @@ The Secret should contain the following data:
     "accesskey", "Filestore access key.", true
     "accesskey", "Filestore secret key.", true
 
-Example Secret for AWS S3:
+Example secret for AWS S3:
 
 .. code-block:: yaml
 
@@ -210,7 +210,7 @@ Additionaly when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` enviro
       - name: MM_FILESETTINGS_AMAZONS3SSE
         value: "true"
 
-Example Cluster Installation configured with both external databases and filestore:
+Example cluster installation configured with both external databases and filestore:
 
 .. code-block:: yaml
 
@@ -237,7 +237,6 @@ Example Cluster Installation configured with both external databases and filesto
       host: ""
       username: ""
       password: ""
-
 
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
