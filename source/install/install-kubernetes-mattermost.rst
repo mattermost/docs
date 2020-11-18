@@ -11,7 +11,7 @@ Manifest files contain the configurations needed for the
 operator to perform tasks and communicate with Kubernetes. Create the manifest file locally in a text editor,
 copy and paste the contents, and save the file. Recommended file names are provided, but your naming conventions may differ.
 
-**1. (Enterprise only) Create a Mattermost License Secret**
+**1. (Enterprise only) Create a Mattermost license secret**
 
 Open a text editor and create a text file with the following details.
 
@@ -29,7 +29,7 @@ Open a text editor and create a text file with the following details.
 
 Save the file as ``mattermost-license-secret.yaml``.
 
-**2. Create an Installation Manifest File**
+**2. Create an installation manifest file**
 
 The Mattermost installation manifest contains fields which must be edited in line with your configuration and environment requirements.
 
@@ -78,7 +78,7 @@ Save the file as ``mattermost-installation.yaml``.
 
 To configure the Mattermost Installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding.
 
-**3. Apply the Installation Manifest File**
+**3. Apply the installation manifest file**
 
 First, create the Mattermost namespace with this command:
 
@@ -100,7 +100,7 @@ Finally, apply the installation file, specifying path to file you created in ste
 
 The deployment process can be monitored in the Kubernetes user interface.
 
-**4. Configure DNS and Use Mattermost**
+**4. Configure DNS and use Mattermost**
 
 When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
 
@@ -110,22 +110,18 @@ When the deployment is complete, obtain the hostname or IP address of your Matte
 
 Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
 
-Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest,
-pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
 
 Navigate to the ``ingressName`` URL in your browser and use Mattermost.
-
 
 Configuring external database and filestore (Recommended)
 ----------------------------------------------------------
 
 When installing Mattermost using the Mattermost Operator in a production scenario, it's recommended that you use an external database and filestore.
 
-1. Create database secret
-^^^^^^^^^^^^^^^^^^^
+**1. Create database secret**
 
-The database secret needs to be created in the namespace that will hold the Mattermost installation.
-The secret should contain the following data:
+The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
 .. csv-table::
     :header: "Key", "Description", "Required"
@@ -148,14 +144,13 @@ Example secret for AWS Aurora compatible with PostgreSQL:
     name: my-postgres-connection
   type: Opaque
 
-.. note:: For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
-   For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
+.. note:: 
+  For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
+  For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
-2. Create filestore secret
-^^^^^^^^^^^^^^^^^^^
+**2. Create filestore secret**
 
-The filestore secret needs to be created in the namespace that will hold the Mattermost installation.
-The secret should contain the following data:
+The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
 .. csv-table::
     :header: "Key", "Description", "Required"
@@ -176,8 +171,7 @@ Example secret for AWS S3:
     name: my-s3-iam-access-key
   type: Opaque
 
-3. Adjust cluster installation
-^^^^^^^^^^^^^^^^^^^^^
+**3. Adjust cluster installation**
 
 To instruct Mattermost Operator to use the external database, modify the following fields:
 
@@ -199,7 +193,7 @@ To instruct Mattermost Operator to use the external filestore, modify the follow
       externalURL: s3.amazonaws.com
       secret: my-s3-iam-access-key
 
-Additionaly when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
+Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
 .. code-block:: yaml
 
@@ -243,12 +237,11 @@ Example cluster installation configured with both external databases and filesto
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
 
-The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database. 
+The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database.
 
 The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's recommended that you consult the relevant documentation or, if your deployment is managed in a different way, consult your Administrator.
 
-It is important to note that this process requires the creation of a new Mattermost
-installation - editing the existing ``.yaml`` files is not recommended and can result in data loss.
+It is important to note that this process requires the creation of a new Mattermost installation - editing the existing ``.yaml`` files is not recommended and can result in data loss.
 
 The process described below needs to be completed prior to proceeding with the Mattermost deployment.
 
@@ -277,10 +270,9 @@ Save the file as ``secret.yaml``. The example below is for AWS/S3.
 
 **Parameters**
 
-- ``name``. The name of this manifest which is referenced in the installation manifest.
+- ``name``: The name of this manifest which is referenced in the installation manifest.
 
-
-6. Create a Mattermost cluster installation manifest.
+6. Create a Mattermost cluster installation manifest:
 
 Open a text editor and create a text file with the following details. Save the file as ``mattermost-installation.yaml``:
 
@@ -328,15 +320,11 @@ Open a text editor and create a text file with the following details. Save the f
 
 **Parameters**
 
-- ``mattermostClusterName``. The ClusterInstallation file name.
-
-- ``restoreSecret``. The location of the backup file.
-
-- ``mattermostDBPassword``. The password used to access the database.
-
-- ``mattermostDBUser``. The username required to access the database.
-
-- ``initBucketURL``. The URL of the storage instance/server where the backed up DB is stored.
+- ``mattermostClusterName``: The ClusterInstallation file name.
+- ``restoreSecret``: The location of the backup file.
+- ``mattermostDBPassword``: The password used to access the database.
+- ``mattermostDBUser``: The username required to access the database.
+- ``initBucketURL``: The URL of the storage instance/server where the backed up DB is stored.
 
 8. To initiate deployment, apply the file and specify the path where the newly-created files have been saved:
 
@@ -347,7 +335,6 @@ Open a text editor and create a text file with the following details. Save the f
       $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
       $ kubectl apply -n mattermost -f /path/to/restore.yaml
 
-The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
-review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact Mattermost customer support for assistance.
+The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced, review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact Mattermost customer support for assistance.
 
 Once complete, access your Mattermost instance and confirm that the database has been restored.
