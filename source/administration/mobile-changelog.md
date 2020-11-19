@@ -10,14 +10,14 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
- - Gallery UX improvements
+ - Added gallery user interface improvements.
  - Images now load progressively as the image comes into view-port instead of loading all the images on mount.
- - Mattermost is now resizeable on Android Desktops like Samsung DeX.
- - Vertically center 'Something went wrong' message block.
+ - Mattermost is now resizeable on Android Desktops such as Samsung DeX.
+ - "Something went wrong" message block is now vertically centered.
 
 ### Bug Fixes
- - Fixed an issue where redux event was not sent to update list of Group Mentions when Groups were added or removed in a LDAP Group Synced Team.
- - Fixed an issue where group mentions were highlighted by default before it was posted.
+ - Fixed an issue where redux event was not sent to update the list of Group Mentions when Groups were added or removed in an LDAP Group Synced Team.
+ - Fixed an issue where a group mention was highlighted by default before it was posted.
 
 #### All apps
  
