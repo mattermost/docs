@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.30
 
 ### Compatibility
- - Postgres v9.4 deprecation planned for December 16th.
+  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
 
 ### Breaking Changes
  -
@@ -16,17 +16,17 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Modify New Admin Roles Permissions in the System Console
-Added a user interface for the existing new system roles functionality including a new permission to ``read/write system_roles``. This feature is currently in Beta.
+#### Modify New Admin Roles Permissions in the System Console (Beta)
+ - Added a user interface for the existing new system roles functionality including a new permission to ``read/write system_roles``.
 
 ### Improvements
 
 #### User Interface
  - ``@`` autocomplete results are now prioritized based on recency and thread activity.
  - File attachments below size of 10 now show fractions.
- - Improved the formatting of the channel header change message.
+ - The formatting of the channel header change message was improved.
  - Team invite workflow now shows ``BOT`` tags when the search returns Bot users.
- - Added the ability to zoom in/out on PDF files.
+ - Added the ability to zoom in/out of PDF files.
  - Added support for 16x16 base64 encoded mini images to use with progressive rendering.
 
 #### Notifications
@@ -44,7 +44,7 @@ Added a user interface for the existing new system roles functionality including
 
 #### Administration
  - Added the ability to load a set of configuration custom defaults from a ``MM_CUSTOM_DEFAULTS_PATH`` environment variable.
- - Added AWS Metering service support.
+ - Added AWS metering service support.
 
 #### Enterprise Edition (EE)
  - Added the ability to retrieve compliance files from the System Console.
@@ -53,10 +53,10 @@ Added a user interface for the existing new system roles functionality including
  - Fixed an issue where editing a post did not submit with CMD+ENTER.
  - Fixed an issue where users were able to create or edit slash commands to have more than two slashes in the URL.
  - Fixed an issue where resized emojis got overwritten with original data.
- - Fixed an issue where the sidebar category ... menu was not shown when hovering over a long category name.
+ - Fixed an issue where the sidebar category "More" menu was not shown when hovering over a long category name.
  - Fixed an issue where a received direct message did not show up on the sidebar if it wasn't previously created.
- - Fixed an issue where search using ``from:`` failed to auto-load more results in the right-hand side when elasticsearch was enabled.
- - Fixed an issue where s3 file backend ``TestFileConnection`` failed due to permissions if S3PathPrefix was in use.
+ - Fixed an issue where a search using ``from:`` failed to auto-load more results in the right-hand side when Elasticsearch was enabled.
+ - Fixed an issue where s3 file backend ``TestFileConnection`` failed due to permissions if ``S3PathPrefix`` was in use.
  - Fixed an issue where an id was missing for Tooltip in ``PostInfo``.
 
 ### config.json
@@ -64,7 +64,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ExperimentalSettings`` in ``config.json``:
-   - Added ``EnableSharedChannels``
+   - Added ``EnableSharedChannels``, to support managing shared channels feature.
  - Under ``SamlSettings`` in ``config.json``:
    - Added ``IgnoreGuestsLdapSync``, to ignore Guests when using SAML and synchronizing with LDAP.
 
@@ -79,7 +79,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### API Changes
  - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
- - Added new API endpoints for working with experimental collapsed threads.
+ - Added new API endpoints to work with experimental collapsed threads.
  
 ### Known Issues
 
