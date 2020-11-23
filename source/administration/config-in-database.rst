@@ -109,7 +109,7 @@ Edit this file as *root* to add the below text just above the line that begins w
 
 .. code-block:: text
 
-   EnvironmentFile=/opt/mattermost/config/mm.environment
+   EnvironmentFile=/opt/mattermost/config/mattermost.environment
 
 Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line added:
 
@@ -123,7 +123,7 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 
    [Service]
    Type=notify
-   EnvironmentFile=/opt/mattermost/config/mm.environment
+   EnvironmentFile=/opt/mattermost/config/mattermost.environment
    ExecStart=/opt/mattermost/bin/mattermost
    TimeoutStartSec=3600
    Restart=always
@@ -157,7 +157,7 @@ As with the environment file you'll have to escape any single quotes in the data
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mm.environment`` file. These must be on their own line, and you must escape them properly.
+If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
 
 Verify that the configuration was migrated correctly
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -186,7 +186,7 @@ Finally, run these commands to reload the daemon and restart Mattermost using th
 Rolling back
 ^^^^^^^^^^^^
 
-If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mm.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
+If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mattermost.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
 
 Troubleshooting
 -----------------
