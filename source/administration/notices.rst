@@ -25,7 +25,7 @@ When these notifications are triggered, System Admins receive a bot message noti
 These notifications also give System Admins quick access to optionally contact support for additional assistance as well as links to useful resources for user management and provisioning to support large systems.
 
 Managing admin advisor notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 The Admin Advisor notifications are run on a schedule based on specific triggers.
 
