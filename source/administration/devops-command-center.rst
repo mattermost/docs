@@ -63,12 +63,20 @@ Mattermost Incident Management includes built-in slash commands:
 Adding slash commands to tasks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Slash commands can be added to tasks to initiate actions as part of your incident response playbook.
+Slash commands can be added to tasks to initiate actions as part of your playbook.
 
 Here are some examples:
 
 - Add a task called **Sync up** with the slash command ``/zoom hello``. Running that slash command initiates a Zoom call in the incident channel. If you've installed Jitsi, you could use ``/jitsi hello``. 
 - One of your tasks may require the header to be changed to reflect a new status. Create a task called **Change header** with the slash command ``/header new header``.
+
+Generating test data
+^^^^^^^^^^^^^^^^^^^^
+
+You can use the test commands to create incidents that are populated with random data. These incidents are listed in the incident insights page.
+
+- ``/incident test create-incident``: This command accepts a playbook ID (that can be chosen from the playbooks the user is a member of, using the autocomplete system), a timestamp, and an incident name. It creates an ongoing incident with the creation date set to the specified timestamp. An example command looks like this: ``/incident test bulk-data 10 3 2020-01-31 2020-11-22 2``.
+- ``/incident test bulk-data``: This command accepts a number of ongoing incidents, a number of ended incidents, a beginning and an end date, and an optional seed. It creates as many ongoing and ended incidents as specified, all of them with their creation date randomly picked between the beginning and end dates. The seed, if available, is used to get reproducible results. The names of the incidents are randomly chosen from a list of incident names and a list of fake company names which are defined in the code. An example command is: ``/incident test create-incident 6utgh6qg7p8ndeef9edc583cpc 2020-11-23 PR-Testing``.
 
 Playbooks and Incidents
 -----------------------
@@ -176,3 +184,17 @@ Channel Export
 --------------
 
 Please see the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
+
+Glossary
+--------
+
+- **Incident:** An event requiring the coordinated actions of one or more Mattermost users. An incident is either ongoing or closed.
+- **Playbook:** A task-based process that's followed in order to resolve an incident.
+- **Tasks:** The individual steps required to complete the stages of an incident. Tasks can optionally be assigned to specific incident participants into stages.
+- **Stage:** A set of tasks grouped together to achieve a specific goal of the workflow, which generally need to be completed before proceeding to the next stage of the incident resolution process.
+- **Commander:** The Mattermost user currently responsible for transitioning an incident from ongoing to closed.
+- **Incident channel:** A Mattermost channel dedicated to real-time conversation about the incident.
+- **Incident member:** A Mattermost user with access to the corresponding incident channel.
+- **The RHS:** The incident list and incident details displayed on the right hand side of the webapp. It is not available on mobile.
+- **Playbook configuration page:** The playbook configuration and editing page. It is not available on mobile.
+- **Incident insight page:** The incident details and analytics page, which also provides the channel export download link. It is not available on mobile.
