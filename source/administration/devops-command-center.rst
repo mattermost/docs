@@ -197,4 +197,4 @@ Glossary
 - **Playbook configuration page:** The playbook configuration and editing page. It is not available on mobile.
 - **Stage:** A set of tasks grouped together to achieve a specific goal of the workflow, which generally need to be completed before proceeding to the next stage of the incident resolution process.
 - **Tasks:** The individual steps required to complete the stages of an incident. Tasks can optionally be assigned to specific incident participants into stages.
-- **The RHS:** The incident list and incident details displayed on the right hand side of the webapp. It is not available on mobile.
+- **The RHS:** The incident list and incident details displayed on the right hand side (RHS) of the web app. It is not available on mobile.
