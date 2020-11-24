@@ -91,7 +91,7 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database Software
 ^^^^^^^^^^^^^^^^^
 
--  MySQL 5.6, 5.7, 8 (see note below on MySQL 8 support)
+-  MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
 -  Amazon Aurora MySQL 5.6+
 
@@ -110,12 +110,14 @@ Search limitations on MySQL:
 
 **MySQL 8 Support**:
 
-In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
+In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
    
    [mysqld]
    default-authentication-plugin=mysql_native_password
+   
+In MySQL versions 8.0.0-8.0.11 ```ADMIN``` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12. 
 
 Hardware Requirements
 ---------------------
