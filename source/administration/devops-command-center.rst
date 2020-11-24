@@ -51,8 +51,8 @@ Slash commands are shortcuts used to perform actions in Mattermost. To view the 
 Mattermost Incident Management includes built-in slash commands:
 
 - ``/incident start`` - Start a new incident.
-- ``/incident end`` - Close the incident of that channel.
-- ``/incident restart`` - Restart a closed incident.
+- ``/incident end`` - End an ongoing incident.
+- ``/incident restart`` - Restart an ended incident.
 - ``/incident check [checklist #] [item #]`` - Check/uncheck the checklist item.
 - ``/incident announce ~[channels]`` - Announce the current incident in other channels.
 - ``/incident list`` - List all your incidents.
@@ -75,8 +75,8 @@ Generating test data
 
 You can use the test commands to create incidents that are populated with random data. These incidents are listed in the incident insight page.
 
-- ``/incident test create-incident``: This command accepts a playbook ID (that can be chosen from the playbooks the user is a member of, using the autocomplete system), a timestamp, and an incident name. It creates an ongoing incident with the creation date set to the specified timestamp. An example command looks like this: ``/incident test bulk-data 10 3 2020-01-31 2020-11-22 2``.
 - ``/incident test bulk-data``: This command accepts a number of ongoing incidents, a number of ended incidents, a beginning and an end date, and an optional seed. It creates as many ongoing and ended incidents as specified, all of them with their creation date randomly picked between the beginning and end dates. The seed, if available, is used to get reproducible results. The names of the incidents are randomly chosen from a list of incident names and a list of fake company names which are defined in the code. An example command is: ``/incident test create-incident 6utgh6qg7p8ndeef9edc583cpc 2020-11-23 PR-Testing``.
+- ``/incident test create-incident``: This command accepts a playbook ID (that can be chosen from the playbooks the user is a member of, using the autocomplete system), a timestamp, and an incident name. It creates an ongoing incident with the creation date set to the specified timestamp. An example command looks like this: ``/incident test bulk-data 10 3 2020-01-31 2020-11-22 2``.
 
 Playbooks and Incidents
 -----------------------
@@ -175,10 +175,10 @@ To view information about ongoing incidents, select the **Incidents** icon in th
 
 You can also:
 
-- Assign a step to yourself or another incident member
-- Mark a step as **Complete** or **Incomplete**
-- Start an automated action
-- Invite new members to the channel
+- Assign a step to yourself or another incident member.
+- Mark a step as **Complete** or **Incomplete**.
+- Start an automated action.
+- Invite new members to the channel.
 
 Channel Export
 --------------
@@ -188,8 +188,8 @@ Please see the `Channel Export plugin documentation <https://mattermost.gitbook.
 Glossary
 --------
 
-- **Commander:** The Mattermost user currently responsible for transitioning an incident from ongoing to closed.
-- **Incident:** An event requiring the coordinated actions of one or more Mattermost users. An incident is either ongoing or closed.
+- **Commander:** The Mattermost user currently responsible for transitioning an incident from ongoing to ended.
+- **Incident:** An event requiring the coordinated actions of one or more Mattermost users. An incident is either ongoing or ended.
 - **Incident channel:** A Mattermost channel dedicated to real-time conversation about the incident.
 - **Incident insight page:** The incident details and analytics page, which also provides the channel export download link. It is not available on mobile.
 - **Incident member:** A Mattermost user with access to the corresponding incident channel.
