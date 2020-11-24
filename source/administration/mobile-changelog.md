@@ -16,12 +16,15 @@
  - "Something went wrong" message block is now vertically centered.
 
 ### Bug Fixes
- - Fixed an issue where redux event was not sent to update the list of Group Mentions when Groups were added or removed in an LDAP Group Synced Team.
- - Fixed an issue where a group mention was highlighted by default before it was posted.
 
 #### All apps
  
 #### Android specific
+ - Fixed an issue where redux event was not sent to update the list of Group Mentions when Groups were added or removed in an LDAP Group Synced Team.
+ - Fixed an issue where a group mention was highlighted by default before it was posted.
+
+#### iOS specific
+ - Fixed an issue where the header area overlapped notch on launch on iPhone 12.
 
 ## 1.37.0 Release
 - Release Date: November 16, 2020
