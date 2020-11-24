@@ -73,7 +73,7 @@ Here are some examples:
 Generating test data
 ^^^^^^^^^^^^^^^^^^^^
 
-You can use the test commands to create incidents that are populated with random data. These incidents are listed in the incident insights page.
+You can use the test commands to create incidents that are populated with random data. These incidents are listed in the incident insight page.
 
 - ``/incident test create-incident``: This command accepts a playbook ID (that can be chosen from the playbooks the user is a member of, using the autocomplete system), a timestamp, and an incident name. It creates an ongoing incident with the creation date set to the specified timestamp. An example command looks like this: ``/incident test bulk-data 10 3 2020-01-31 2020-11-22 2``.
 - ``/incident test bulk-data``: This command accepts a number of ongoing incidents, a number of ended incidents, a beginning and an end date, and an optional seed. It creates as many ongoing and ended incidents as specified, all of them with their creation date randomly picked between the beginning and end dates. The seed, if available, is used to get reproducible results. The names of the incidents are randomly chosen from a list of incident names and a list of fake company names which are defined in the code. An example command is: ``/incident test create-incident 6utgh6qg7p8ndeef9edc583cpc 2020-11-23 PR-Testing``.
