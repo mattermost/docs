@@ -68,7 +68,7 @@ Slash commands can be added to tasks to initiate actions as part of your playboo
 Here are some examples:
 
 - Add a communication task called **Sync up** with the slash command ``/zoom hello``. Running that slash command initiates a Zoom call in the incident channel. If you've installed Jitsi, you could use ``/jitsi hello``. 
-- One of your tasks may require the header to be changed to reflect a new status. Create a task called **Change header** with the slash command ``/header new header``.
+- One of your tasks may require the channel header to be changed to reflect a new status. Create a task called **Change header** with the slash command ``/header new header``.
 
 Generating test data
 ^^^^^^^^^^^^^^^^^^^^
