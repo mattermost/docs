@@ -3,7 +3,7 @@ Emoji Skin Tones
 
 Emoji are pictures that can communicate emotions, gestures, intent, and so much more. The Mattermost Emoji Picker uses neutral skin tones by default. You can customize the skin tone for many emoji using a native emoji picker.
 
-Selecting Emoji
+Selecting Emojis
 ---------------
 
 Click the smile icon inside the message input box to open the Mattermost Emoji Picker.
