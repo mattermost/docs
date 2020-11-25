@@ -30,6 +30,7 @@ Messaging
    :glob:
 
    /help/messaging/sending-messages.md
+   /help/messaging/emoji.rst
    /help/messaging/reading-messages.md
    /help/messaging/mentioning-teammates.md
    /help/messaging/formatting-text.md
