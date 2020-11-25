@@ -27,7 +27,7 @@ To access alternate skin tones, open Mattermost on your device and use the nativ
 
 **macOS**
 
-1. Use the keyboard shortcut CMD+CTRL+Space Bar to open the native emoji picker for MacOS.
+1. Use the keyboard shortcut CMD+CTRL+Space Bar to open the native emoji picker for macOS.
 2. Select and hold on an emoji to select an alternate skin tone.
 
 .. image:: ../../images/macosemojiskintones.png
