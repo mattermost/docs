@@ -49,7 +49,7 @@ To access alternate skin tones, open Mattermost on your device and use the nativ
 
 **Android**
 
-1. Open an Android Emoji Keyboard.
+1. Open the Android emoji keyboard.
 2. Touch and hold an emoji to select an alternate skin tone.
 
 .. image:: ../../images/mobile/androidemojiskintones.png
