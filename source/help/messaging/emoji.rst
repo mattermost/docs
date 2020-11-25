@@ -1,24 +1,36 @@
-Emoji Skin Tones
-================
+Using Emojis
+============
 
-Emoji are pictures that can communicate emotions, gestures, intent, and so much more. The Mattermost Emoji Picker uses neutral skin tones by default. You can customize the skin tone for many emoji using a native emoji picker.
+Emojis are small, digital images or icons used to communicate or express concepts such as emotions and physical gestures in your messages.
 
-Selecting Emojis
----------------
+Adding Emojis to messages
+-------------------------
+
+**Selecting Emojis**
 
 Select the smile icon inside the Mattermost message input box to open the Emoji Picker.
 
 .. image:: ../../images/selectemoji.png
   :alt: Open the Mattermost Emoji Picker.
 
-Selecting Emoji Skin Tones
---------------------------
+**Typing Emojis**
 
-To access alternate skin tones, open Mattermost on your device and use the native emoji pickers provided on your platform or device.
+Alternatively, open the emoji autocomplete by typing ``:`` followed by at least two characters of the word describing the emoji. 
+
+.. image:: ../../images/emojiautocomplete.png
+   :alt: Emoji Autocomplete
+   :scale: 80
+   
+It's also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
+
+Accessing Alternate Skin Tones
+------------------------------
+
+The Mattermost Emoji Picker and Emoji autocomplete use generic skin tones. To access alternate skin tones, you can use the native emoji pickers provided on your platform or device.
 
 **Windows 10**
 
-1. Use the keyboard shortcut: Windows Key+. (period) to open the native emoji picker for Windows 10.
+1. Use the keyboard shortcut: Windows Key + **.** (period) to open the native emoji picker for Windows 10.
 2. Select an alternate skin tone and then select an emoji.
 
 .. image:: ../../images/windows10emojiskintones.png
@@ -27,17 +39,17 @@ To access alternate skin tones, open Mattermost on your device and use the nativ
 
 **macOS**
 
-1. Use the keyboard shortcut CMD+CTRL+Space Bar to open the native emoji picker for macOS.
-2. Select and hold on an emoji to select an alternate skin tone.
+1. Use the keyboard shortcut: CMD+CTRL+Space Bar to open the native emoji picker for macOS.
+2. Select and hold an emoji to choose an alternate skin tone.
 
 .. image:: ../../images/macosemojiskintones.png
-  :alt: Select alternate emoji skin tones on MacOS systems.
+  :alt: Select alternate emoji skin tones on macOS systems.
   :scale: 80
 
 **iPhone and iPad**
 
 1. Open the emoji keyboard.
-2. Touch and hold an emoji to select an alternate skin tone.
+2. Touch and hold an emoji to choose an alternate skin tone.
 
 .. image:: ../../images/mobile/appleemojiskintones.png
   :alt: Select alternate emoji skin tones on Apple devices.
@@ -50,7 +62,7 @@ To access alternate skin tones, open Mattermost on your device and use the nativ
 **Android**
 
 1. Open the Android emoji keyboard.
-2. Touch and hold an emoji to select an alternate skin tone.
+2. Touch and hold an emoji to choose an alternate skin tone.
 
 .. image:: ../../images/mobile/androidemojiskintones.png
   :alt: Select alternate emoji skin tones on Android devices.
