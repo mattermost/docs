@@ -19,7 +19,7 @@ Alternatively, open the emoji autocomplete by typing ``:`` followed by at least 
 
 .. image:: ../../images/emojiautocomplete.png
    :alt: Emoji Autocomplete
-   :scale: 80
+   :scale: 60
    
 It's also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
 
