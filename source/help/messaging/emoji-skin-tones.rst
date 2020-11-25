@@ -6,7 +6,7 @@ Emoji are pictures that can communicate emotions, gestures, intent, and so much 
 Selecting Emojis
 ---------------
 
-Click the smile icon inside the message input box to open the Mattermost Emoji Picker.
+Select the smile icon inside the Mattermost message input box to open the Emoji Picker.
 
 .. image:: ../../images/selectemoji.png
   :alt: Open the Mattermost Emoji Picker.
