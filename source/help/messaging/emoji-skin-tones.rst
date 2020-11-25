@@ -14,7 +14,7 @@ Select the smile icon inside the Mattermost message input box to open the Emoji 
 Selecting Emoji Skin Tones
 --------------------------
 
-To access alternate skin tones, use the native emoji pickers available on your platform or device.
+To access alternate skin tones, open Mattermost on your device and use the native emoji pickers provided on your platform or device.
 
 **Windows 10**
 
