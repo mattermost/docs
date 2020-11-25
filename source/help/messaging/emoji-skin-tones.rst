@@ -36,7 +36,7 @@ To access alternate skin tones, use the native emoji pickers available on your p
 
 **iPhone and iPad**
 
-1. Open the iPhone Emoji Keyboard.
+1. Open the emoji keyboard.
 2. Touch and hold an emoji to select an alternate skin tone.
 
 .. image:: ../../images/mobile/appleemojiskintones.png
