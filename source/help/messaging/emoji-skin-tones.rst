@@ -25,7 +25,7 @@ To access alternate skin tones, use the native emoji pickers available on your p
   :alt: Select alternate emoji skin tones on Windows 10 systems.
   :scale: 70
 
-**MacOS**
+**macOS**
 
 1. Use the keyboard shortcut CMD+CTRL+Space Bar to open the native emoji picker for MacOS.
 2. Click and hold on an emoji to select an alternate skin tone.
