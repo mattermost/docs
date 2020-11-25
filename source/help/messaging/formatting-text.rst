@@ -5,18 +5,6 @@ Markdown makes it easy to format messages. Type a message as you normally would 
 
 For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
 
-Emojis
-------
-
-Open the emoji autocomplete by typing ``:`` followed by two characters of the word describing the emoji. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
-
-``:smile: :+1: :sheep:``
-
-Renders as:
-
-.. image:: ../../images/Emoji1.PNG
-   :alt: Sample Emoji
-
 Text Style
 ----------
 
