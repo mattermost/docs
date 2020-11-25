@@ -18,7 +18,7 @@ To access alternate skin tones, use the native emoji pickers available on your p
 
 **Windows 10**
 
-1. Use the keyboard shortcut: Windows Key + . (period) to open the native emoji picker for Windows 10.
+1. Use the keyboard shortcut: Windows Key+. (period) to open the native emoji picker for Windows 10.
 2. Select an alternate skin tone and then select an emoji.
 
 .. image:: ../../images/windows10emojiskintones.png
