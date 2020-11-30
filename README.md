@@ -59,20 +59,20 @@ Any merged PRs with an **Editor Review** or **Reviews Complete** label will be p
 
 If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests.
 
-`NOTE: Commands are to be executed on Linux, Mac, and Windows(using Powershell)`
+**Note:** Commands can be executed on Linux, Mac, and Windows (using Powershell)
 
-1. Download the Mattermost docs repo onto a machine with Python installed or simple cloned the forked copy of this repo by running,
+1. Open a terminal window and clone the forked copy of the docs repo by running:
 ```sh
 $ git clone https://github.com/mattermost/docs.git
 ```
-2. Install [pipenv](https://docs.pipenv.org/) by following command
+2. Install [pipenv](https://docs.pipenv.org/) by using:
 ```sh
 $ brew install pipenv   # for Mac users, if you have brew installed)
 ```
 ```python
-$ pip install pipenv # for all others
+$ pip install pipenv # for other operating systems)
 ```
-3. Navigate into the cloned repository by following command,
+3. Open your terminal and navigate into the cloned repository:
 ```sh
 $ cd docs
 ```
