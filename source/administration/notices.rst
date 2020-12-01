@@ -23,7 +23,7 @@ End user notices are used to inform users and Admins of new feature enhancements
 .. image:: ../images/notices.png
 
 Frequently Asked Questions (FAQs)
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Are notices enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
