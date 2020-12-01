@@ -22,30 +22,6 @@ End user notices are used to inform users and Admins of new feature enhancements
 
 .. image:: ../images/notices.png
 
-Admin Advisor notices
----------------------
-
-Admin Advisor notices are included in Mattermost from v5.26. They're designed to provide guidance and assist in choosing features to support your deployment as it scales.
-
-When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
-
-.. image:: ../images/mattermost_admin_advisor_banner.png
-
-.. image:: ../images/mattermost_admin_advisor_bot.png
-
-System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
-
-Managing Admin Advisor notices
-------------------------------
-
-The Admin Advisor notices are run on a schedule based on specific triggers.
-
-- Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, contact information such as the email address and name associated with your Mattermost account is sent to us, so we can contact you as requested and to help us better understand your needs. The number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are also sent to us to better understand your environment and hence provide more tailored support.
-- Selecting **Acknowledge** in the Admin Advisor banner closes the advisory and does not send your details to Mattermost.
-- Closing the notification bot removes the conversation from your Direct Messages list.
-
-We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.org/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.
-
 Frequently Asked Questions (FAQs)
 ---------------------------------
 
@@ -63,3 +39,27 @@ How often will users receive notices?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Notices will be used to raise awareness of new features as part of our monthly release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
+
+Admin Advisor notices
+---------------------
+
+Admin Advisor notices are included in Mattermost from v5.26. They're designed to provide guidance and assist in choosing features to support your deployment as it scales.
+
+When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
+
+.. image:: ../images/mattermost_admin_advisor_banner.png
+
+.. image:: ../images/mattermost_admin_advisor_bot.png
+
+System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
+
+Managing Admin Advisor notices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Admin Advisor notices are run on a schedule based on specific triggers.
+
+- Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, contact information such as the email address and name associated with your Mattermost account is sent to us, so we can contact you as requested and to help us better understand your needs. The number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are also sent to us to better understand your environment and hence provide more tailored support.
+- Selecting **Acknowledge** in the Admin Advisor banner closes the advisory and does not send your details to Mattermost.
+- Closing the notification bot removes the conversation from your Direct Messages list.
+
+We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.org/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.
