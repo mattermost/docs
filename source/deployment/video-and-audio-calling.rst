@@ -3,12 +3,12 @@ Voice, video, and screensharing
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-Here are some popular options below, including self-hosted on-prem, or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
+Here are some popular options below, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
 .. tip :: You can also neatly link voice, video and screensharing solutions to channels by using Markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
 Zoom
-~~~~~~
+~~~~
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
 - Click a video icon in a Mattermost channel to invite team members to join a Zoom call, hosted using the credentials of the user who initiated the call.
@@ -23,7 +23,7 @@ Microsoft Teams Meetings
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
 - Click a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
 - Requires a Microsoft Teams account.
-- Requires Mattermost E20.
+- Requires Mattermost Enterprise Edition E20.
 - Source code and docs available at: https://github.com/mattermost/mattermost-msteams-meetings.
 
 Cisco Webex Cloud
