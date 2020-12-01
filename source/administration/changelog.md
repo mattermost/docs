@@ -6,6 +6,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
+- **v5.29.1, release day TBD**
+  - Adding ``UnreadMentions`` column to ``ThreadMembership`` table. Also including additional bug fixes related to Collapsed Reply Threads, such as an issue where errors related to ``ThreadMemberships`` appear in the server logs when replying to a user on a thread.
+- **v5.29.0, released 2020-11-16**
+  - Original 5.29.0 release
+
 ### Compatibility
  - A new configuration setting ``ThreadAutoFollow`` has been added to support [Collapsed Reply Threads](https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245) releasing in beta in Q1 2021. This setting is enabled by default and may affect server performance. It is recommended to review our [documentation on hardware requirements](https://docs.mattermost.com/install/requirements.html#hardware-requirements) to ensure your servers are appropriately scaled for the size of your user base.
 
@@ -67,7 +72,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
- - Errors related to ``ThreadMemberships`` may appear in the server logs when replying to a user on a thread.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
  - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
  - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
