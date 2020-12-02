@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
 - **v5.29.1, release day TBD**
-  - Adding ``UnreadMentions`` column to ``ThreadMembership`` table. Also including additional bug fixes related to Collapsed Reply Threads, such as an issue where errors related to ``ThreadMemberships`` appear in the server logs when replying to a user on a thread.
+  - Adding ``UnreadMentions`` column to ``ThreadMemberships`` table. Also including additional bug fixes related to Collapsed Reply Threads, such as an issue where errors related to ``ThreadMemberships`` appear in the server logs when replying to a user on a thread.
 - **v5.29.0, released 2020-11-16**
   - Original 5.29.0 release
 
