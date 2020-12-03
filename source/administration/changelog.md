@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
 - **v5.29.1, released 2020-12-03**
-  - Re-enabled the SAML Setting "Use Improved SAML Library (Beta)".
+  - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
   - Added ``UnreadMentions`` column to ``ThreadMemberships`` table. Also included additional bug fixes related to Collapsed Reply Threads feature, such as a fix for an issue where errors related to ``ThreadMemberships`` appeared in the server logs when replying to a user on a thread.
 - **v5.29.0, released 2020-11-16**
   - Original 5.29.0 release
@@ -93,7 +93,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v5.28 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.28.2, released 2020-12-03**
-  - Re-enabled the SAML Setting "Use Improved SAML Library (Beta)".
+  - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
 - **v5.28.1, released 2020-10-19**
   - Fixed an issue where mmctl Command Line Tool (Beta) was broken on Mattermost server v5.28.0. [MM-29740](https://mattermost.atlassian.net/browse/MM-29740)
   - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
@@ -244,7 +244,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v5.27 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.27.2, released 2020-12-03**
-  - Re-enabled the SAML Setting "Use Improved SAML Library (Beta)".
+  - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
 - **v5.27.1, released 2020-10-19**
   - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
 - **v5.27.0, released 2020-09-16**
@@ -495,7 +495,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
 - **v5.25.7, released 2020-12-03**
-  - Re-enabled the SAML Setting "Use Improved SAML Library (Beta)".
+  - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
 - **v5.25.6, released 2020-11-10**
   - Fixed an issue where the Compliance Exports were taking too long on large deployments. This was fixed with a performance optimization of the message export query.
   - Bumped up Go patch version to 1.14.6 to fix an issue where a potential livelock was detected in the app server under heavy load. [MM-26584](https://mattermost.atlassian.net/browse/MM-26584)
