@@ -18,7 +18,7 @@ After a release reaches its end-of-life, no further updates will be provided for
 
 Please see `Release Lifecycle documentation <https://docs.mattermost.com/administration/release-lifecycle.html>`_ for full list of lifecycles for each Mattermost release.
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__.
+To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
 .. image:: ../images/ESR20212.png
 
@@ -75,4 +75,4 @@ For a new upcoming ESR, we send out an email announcement 2 months in advance. W
 
 For a deprecated ESR, we send out an email announcement 3 months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.org/>`_.
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`_.
+To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.

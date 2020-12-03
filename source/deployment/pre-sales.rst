@@ -21,4 +21,4 @@ To get started:
 
 3. Hanna will add you to a special private channel to discuss your deployment with Mattermost sales and technical staff. 
 
-Following the evaluation period, if the customer includes `Premier Support <https://about.mattermost.com/support/>`__ with their subscription, the real time discussion channel with Mattermost, Inc. will persist and be staffed by the Mattermost customer success team for Premier Customers. 
+Following the evaluation period, if the customer includes `Premier Support <https://mattermost.com/support/>`__ with their subscription, the real time discussion channel with Mattermost, Inc. will persist and be staffed by the Mattermost customer success team for Premier Customers. 

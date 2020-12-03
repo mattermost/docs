@@ -72,7 +72,7 @@ Mattermost is optimized to be deployed in a highly secure environment. However, 
 
 When Mattermost is deployed outside a firewall, Admins must be aware that their system is exposed to issues inherent in public cloud deployments. In this case, we generally follow the standards of leading online services. For example, Gmail offers APIs that not only confirm whether an email account exists, but also displays the user's profile picture by default.
 
-Mattermost undergoes extensive penetration testing, security reviews, and `security updates <http://about.mattermost.com/security-updates>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided:
+Mattermost undergoes extensive penetration testing, security reviews, and `security updates <https://mattermost.com/security-updates/>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided:
 
    - Limit communications to specific users, private channels, or team-wide public channels.
    - Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.org", etc."
@@ -89,10 +89,10 @@ Security updates address newly discovered attacks reported to Mattermost, Inc. b
 
 For more information, please see:
 
-- `Mattermost Security Updates Disclosures <http://about.mattermost.com/security-updates/>`__
+- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`__
    - A summary of security updates made based on past and on-going security analysis and penetration testing.
 
-- `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__
+- `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__
    - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
 
 Security Policies

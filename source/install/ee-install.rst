@@ -40,7 +40,7 @@ Upgrading to Enterprise Edition from Mattermost Team Edition
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free "team mode", but there is no ability to unlock Enterprise features.
 
-To enable unlocking Enterprise features, replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an `upgrade procedure <http://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`__.
+To enable unlocking Enterprise features, replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition>`__.
 
 If you'd like to back up Mattermost prior to upgrading, `the migration guide <https://docs.mattermost.com/administration/migrating.html#migrating-the-mattermost-server>`__  outlines the process required to back up and restore your database.
 
@@ -67,7 +67,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
 4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`__ with your Mattermost instance.
 
-If you need to migrate Team Edition prior to install, `please follow the migration guide <http://docs.mattermost.com/administration/migrating.html>`__.
+If you need to migrate Team Edition prior to install, `please follow the migration guide <https://docs.mattermost.com/administration/migrating.html>`__.
 
 Upgrading Enterprise Edition to a Newer Version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

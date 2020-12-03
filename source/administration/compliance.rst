@@ -1,7 +1,7 @@
 Compliance Reporting and Oversight (E20)
 -----------------------------------------
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
 .. note::
   This feature is replaced by a new :doc:`Compliance Export feature <compliance-export>`, and will be removed in Mattermost v6.0. We recommend migrating to the new system.

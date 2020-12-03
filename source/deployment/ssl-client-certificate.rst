@@ -124,4 +124,4 @@ You should see the Mattermost login page. If you see:
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Follow this process <https://www.mattermost.org/troubleshoot/>`__ to resolve configuration issues and to ask for help.
+`Follow this process <https://mattermost.org/troubleshoot/>`__ to resolve configuration issues and to ask for help.

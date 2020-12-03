@@ -3,7 +3,7 @@
 Guest Accounts (Beta) (E10/E20)
 ================================
 
-Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E10 and higher <https://mattermost.com/pricing-self-managed/>`__.
 
 Guest Accounts are a way to collaborate with individuals (such as vendors and contractors) outside of your organization by controlling their access to channels and team members. For example, Guest Accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 

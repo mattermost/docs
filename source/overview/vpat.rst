@@ -8,7 +8,7 @@ The following Voluntary Product Accessiblity Template for 508 Compliance is comp
 - **Product Version Number**: Assessment applies to release 3.7 and later 
 - **Vendor Company Name**: Mattermost, Inc. 
 - **Vendor Contact Name**: Steve Green
-- **Vendor Contact Telephone**: Please `contact Mattermost, Inc. <https://about.mattermost.com/contact/>`__ for telephone access. 
+- **Vendor Contact Telephone**: Please `contact Mattermost, Inc. <https://mattermost.com/contact-us/>`__ for telephone access. 
 
 .. contents::
     :backlinks: top

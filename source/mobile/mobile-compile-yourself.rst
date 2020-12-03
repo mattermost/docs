@@ -34,4 +34,4 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 
 6. Deploy to an Enterprise App Store
 
-7. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`__. In future, when notified of security updates, apply them promptly. 
+7. Confirm you're subscribed to `Mattermost Security Bulletins <https://mattermost.com/security-updates/#sign-up>`__. In future, when notified of security updates, apply them promptly. 

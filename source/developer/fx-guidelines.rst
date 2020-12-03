@@ -33,7 +33,7 @@ There is no such thing as "user error"--it’s always our fault as product desig
 
 When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text and documentation--needs to make sense in the mind of the user, even if it means occasionally oversimplifying how things technically work.
 
-If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`__.
+If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <https://mattermost.org/documentation-guidelines/>`__.
 
 Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__, core functionality should be apparent, and advanced functionality should be possible via sub-menus and be well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 

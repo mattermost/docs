@@ -24,7 +24,7 @@ Public channels are open to everyone on a team. New team members are automatical
 Private channels
 ~~~~~~~~~~~~~~~~
 
-Private channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admin and System Admin <http://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`__.
+Private channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admin and System Admin <https://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`__.
 
 Direct Messages and Group Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

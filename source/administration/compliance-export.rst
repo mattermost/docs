@@ -1,7 +1,7 @@
 Compliance Export Beta (E20)
 =====================================
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including:
 
