@@ -124,7 +124,7 @@ Verify Group Policy settings in the installed Desktop app
 Silent Installation Guide
 --------------------------------------------
 
-Silent installation of MSI can be performed with the following command:
+Perform a silent installation of MSI by running the following command:
 
 ``msiexec /i mattermost-desktop-v4.6.1-x64.msi /qn``
 
