@@ -128,4 +128,4 @@ Silent installation of MSI can be performed with the following command:
 
 ``msiexec /i mattermost-desktop-v4.6.1-x64.msi /qn``
 
-Note: Current version is 4.6.1. In future, you may need to change it accordingly.
+Note: Current version is 4.6.1. In the future, you may need to change this command accordingly.
