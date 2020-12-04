@@ -27,7 +27,7 @@ If this is your first time contributing to Mattermost, first read the [Mattermos
 
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
-If this is the first time you're contributing, follow the steps: 
+If this is the first time you're contributing, follow these steps: 
 1. Select **Fork** in the top-right corner of the GitHub page to fork the repo.
 2. Navigate to file you want to edit and select the pencil icon (**Edit the file**) to open the editing interface.
 
@@ -65,12 +65,14 @@ If you've downloaded the repo and are editing Mattermost documentation on your l
 ```sh
 $ git clone https://github.com/mattermost/docs.git
 ```
-2. Install [pipenv](https://docs.pipenv.org/) by using:
+2. Install [pipenv](https://docs.pipenv.org/) by using:     
+-> for Mac users, if you have Homebrew installed
 ```sh
-$ brew install pipenv   (for Mac users, if you have brew installed)
+$ brew install pipenv  
 ```
+-> for other operating systems
 ```python
-$ pip install pipenv (for other operating systems)
+$ pip install pipenv 
 ```
 3. Open your terminal and navigate into the cloned repository:
 ```sh
