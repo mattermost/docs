@@ -22,6 +22,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl config`_ - Configuration Management
    - `mmctl docs`_ - Generates mmctl documentation
    - `mmctl group`_ - Group Management
+   - `mmctl integrity`_ - Database record integrity
    - `mmctl ldap`_ - LDAP Management
    - `mmctl license`_ - License Management
    - `mmctl logs`_ - Log Management
@@ -639,7 +640,7 @@ mmctl bot enable
    --strict                      will only run commands if the mmctl version matches the server one
    
 mmctl bot list
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 **Description**
 
@@ -950,7 +951,7 @@ mmctl channel modify
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel move
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1339,7 +1340,7 @@ mmctl command modify
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command move
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Description**
 
@@ -1504,6 +1505,7 @@ Configuration settings.
     -  `mmctl config reset`_ - Reset the configuration
     -  `mmctl config set`_ - Set the value of a configuration
     -  `mmctl config show`_ - Writes the server configuration to STDOUT
+    -  `mmctl config subpath`_ - Update client asset loading to use the configured subpath
 
 **Options**
 
@@ -1672,6 +1674,50 @@ mmctl config show
 .. code-block:: sh
 
       -h, --help   help for show
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+
+mmctl config subpath
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Update the hard-coded production client asset paths to take into account Mattermost running on a subpath. This command needs access to the Mattermost assets directory to be able to rewrite the paths.
+
+**Format**
+
+.. code-block:: sh
+
+     mmctl config subpath [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # you can rewrite the assets to use a subpath
+   mmctl config subpath --assets-dir /opt/mattermost/client --path /mattermost
+
+   # the subpath can have multiple steps
+   mmctl config subpath --assets-dir /opt/mattermost/client --path /my/custom/subpath
+
+   # or you can fallback to the root path passing /
+   mmctl config subpath --assets-dir /opt/mattermost/client --path /
+
+**Options**
+
+.. code-block:: sh
+
+    -a, --assets-dir string   directory of the Mattermost assets in the local filesystem
+    -h, --help                help for subpath
+    -p, --path string         path to update the assets with
 
 **Options inherited from parent commands**
 
@@ -2060,6 +2106,40 @@ mmctl group team status
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+   
+mmctl integrity
+---------------
+
+**Description**
+
+  Perform a relational integrity check which returns information about any orphaned record found. 
+  
+  **Note:**
+  
+  This command can only be run using local mode.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl integrity [flags]
+
+**Options**
+
+.. code-block:: sh
+
+   --confirm       Confirm you really want to run a complete integrity check that may temporarily harm system performance
+   -h, --help      help for integrity
+   -v, --verbose   Show detailed information on integrity check results
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl ldap
 ----------
@@ -2350,7 +2430,11 @@ Child Commands
   -  `mmctl plugin delete`_ - Remove plugins
   -  `mmctl plugin disable`_ - Disable plugins
   -  `mmctl plugin enable`_ - Enable plugins
+  -  `mmctl plugin install-url`_ - Install plugin from URL
   -  `mmctl plugin list`_ - List plugins
+  -  `mmctl plugin marketplace`_ - Management of Plugin Marketplace plugins
+  -  `mmctl plugin marketplace install`_ - Install a plugin from the Plugin Marketplace
+  -  `mmctl plugin marketplace list`_ - List Plugin Marketplace plugins
 
 **Options**
 
@@ -2493,6 +2577,45 @@ mmctl plugin enable
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+   
+mmctl plugin install-url
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Supply one or multiple URLs to plugins compressed in a ``.tar.gz`` file. Plugins must be enabled in the server's config settings.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl plugin install-url <url>... [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # You can install one plugin
+    $ mmctl plugin install-url https://example.com/mattermost-plugin.tar.gz
+
+    # Or install multiple in one go
+    $ mmctl plugin install-url https://example.com/mattermost-plugin-one.tar.gz https://example.com/mattermost-plugin-two.tar.gz
+
+**Options**
+
+.. code-block:: sh
+
+   -f, --force   overwrite a previously installed plugin with the same ID, if any
+   -h, --help    help for install-url
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl plugin list
 ^^^^^^^^^^^^^^^^^^
@@ -2518,6 +2641,117 @@ mmctl plugin list
 .. code-block:: sh
 
    -h, --help   help for list
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl plugin marketplace
+-------------------------
+
+Management of Plugin Marketplace plugins.
+
+Child Commands
+  -  `mmctl plugin marketplace install`_ - Install a plugin from the Plugin Marketplace
+  -  `mmctl plugin marketplace list`_ - List plugins on the Plugin Marketplace
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for marketplace
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --local                        allows communicating with the server through a unix socket
+    --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl plugin marketplace install
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Installs a plugin listed on the Plugin Marketplace server.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl plugin marketplace install <id> [version] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # you can specify with both the plugin id and its version
+    $ mmctl plugin marketplace install jitsi 2.0.0
+
+    # if you don't specify the version, the latest one will be installed
+    $ mmctl plugin marketplace install jitsi
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for install
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl plugin marketplace list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Gets all plugins from the Plugin Marketplace server, merging data from locally installed plugins as well as prepackaged plugins shipped with the server.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl plugin marketplace list [flags]
+    
+**Examples**
+
+.. code-block:: sh
+
+    # You can list all the plugins
+    $ mmctl plugin marketplace list --all
+
+    # Pagination options can be used too
+    $ mmctl plugin marketplace list --page 2 --per-page 10
+
+    # Filtering will narrow down the search
+    $ mmctl plugin marketplace list --filter jit
+
+    # You can only retrieve local plugins
+    $ mmctl plugin marketplace list --local-only
+
+**Options**
+
+.. code-block:: sh
+
+    --all             Fetch all plugins. --page flag will be ignore if provided
+    --filter string   Filter plugins by ID, name or description
+    -h, --help        help for list
+    --local-only      Only retrieve local plugins
+    --page int        Page number to fetch for the list of users
+    --per-page int    Number of users to be fetched (default 200)
 
 **Options inherited from parent commands**
 
@@ -3253,7 +3487,7 @@ mmctl token revoke
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl user
----------
+----------
 
 Management of users.
 
@@ -3261,11 +3495,13 @@ Child Commands
   -  `mmctl user activate`_ - Activate a user
   -  `mmctl user create`_ - Create user
   -  `mmctl user deactivate`_ - Deactivate user
+  -  `mmctl user delete`_ - Delete users
+  -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
   -  `mmctl user email`_ - Set user email
   -  `mmctl user invite`_ - Invite user
   -  `mmctl user list`_ - List users
   -  `mmctl user reset_password`_ - Reset user password
-  -  `mmctl user resetmfa`_ - Reset user's MFA token
+  -  `mmctl user resetmfa`_ - Reset a user's MFA token
   -  `mmctl user search`_ - Search for a user
 
 **Options**
@@ -3376,6 +3612,80 @@ mmctl user deactivate
 .. code-block:: sh
 
     -h, --help       help for deactivate
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl user delete
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Permanently delete some users. Permanently deletes one or multiple users along with all related information including posts from the database.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl user delete [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user delete user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+     --confirm   Confirm you really want to delete the user and a DB backup has been performed
+     -h, --help  help for delete
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl user deleteall
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Permanently delete all users and all related information including posts.
+  
+  **Note:**
+  
+  This command can only be run using local mode.
+
+**Format**
+
+.. code-block:: sh
+
+    mmctl user deleteall [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user deleteall
+
+**Options**
+
+.. code-block:: sh
+
+     --confirm   Confirm you really want to delete the user and a DB backup has been performed
+     -h, --help  help for delete
 
 **Options inherited from parent commands**
 

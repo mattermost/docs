@@ -2,17 +2,36 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 In our v5.30 release (December 16). Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
+   PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 and all 9.x versions in our v5.30 release (December 16). Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
    
 .. important::
-   Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+   Support for Mattermost Server v5.19 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its lifecycle. Upgrading to v5.25 or later is required.
 
 .. important::
-   Starting with mobile app v1.33.0 releasing on July 16th 2020, users connecting to server versions below v5.19 may experience compatibility bugs with how attachments, link previews, reactions, and embed data are displayed on their mobile device.
+   TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with those TLS versions. System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.29.0                                            | A new configuration setting ``ThreadAutoFollow`` has been added to support `Collapsed Reply Threads                                                              |
+|                                                    | <https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245>`_ releasing in beta in Q1 2021. This       |
+|                                                    | setting is enabled by default and may affect server performance. It is recommended to review our `documentation on hardware requirements                         |
+|                                                    | <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.  |   
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.                                                                    |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v5.28.0                                            | Now when the service crashes, it will generate a coredump instead of just dumping the stack trace to the console. This allows us to preserve the full            |
+|                                                    | information of the crash to help with debugging it.                                                                                                              |
+|                                                    |                                                                                                                                                                  |
+|                                                    | For more information about coredumps, please see: https://man7.org/linux/man-pages/man5/core.5.html.                                                             |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | In-product notices have been introduced to keep System Admins and end users informed of the latest product enhancements available in new server and desktop      | 
+|                                                    | versions. `Learn more about in-product notices <https://docs.mattermost.com/administration/notices.html>`_ and how to disable them in our documentation.         |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.                                                                    |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v5.27.0                                            | Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.                                                                    |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.26.0                                            | In v5.26, Elasticsearch indexes needed to be recreated. Admins should re-index Elasticsearch using the **Purge index** and then **Index now** button so that all |
 |                                                    | the changes will be included in the index. Systems may be left with a limited search during the indexing, so it should be done during a time when there is       |
 |                                                    | little to no activity because it may take several hours.                                                                                                         |
@@ -36,8 +55,7 @@ Important Upgrade Notes
 |                                                    | settings will continue to work, it is encouraged that you                                                                                                        |
 |                                                    | `modify those settings <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html#add-a-relying-party-trust>`_.                                         | 
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled. Follow instructions at                                                                  |
-|                                                    | https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                        |
+|                                                    | Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.                                                                    |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.24.0                                            | A new configuration setting, ``ExtendSessionLengthWithActivity`` automatically extends sessions to keep users logged in if they are active in their Mattermost   |
 |                                                    | apps. It is recommended to enable this setting to improve user experience if compliant with your organization's policies.                                        |

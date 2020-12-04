@@ -1,7 +1,17 @@
-Administrator's Guide
-=====================
+==================================
+Self-Managed Administrator's Guide
+==================================
 
-In-depth documentation on installation, deployment and administration of Mattermost system.
+In-depth documentation on installation, deployment, and administration of Mattermost.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /overview/architecture*
+   /deployment/deployment*
+      /deployment/enterprise-deployment-guide*
+      /deployment/mobile-app-deployment*
 
 Getting Started
 ----------------
@@ -34,6 +44,7 @@ Learn how to get Mattermost running on your environment.
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
+   Installing on RHEL 8 </install/install-rhel-8.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
    /install/ee-install*
@@ -84,6 +95,15 @@ Learn how to configure settings to meet your unique requirements.
    /install/outbound-proxy.rst
    /install/i18n*
    /install/config-apache2.rst
+   
+Incident Management
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /administration/devops-command-center.rst
 
 Mobile Apps
 -----------
@@ -114,6 +134,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/hipchat-migration-guidelines*
    /administration/migration-announcement-email-template*
    /administration/user-provisioning*
+   /deployment/admin-roles*
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
@@ -144,6 +165,7 @@ Learn how to maintain your Mattermost system.
    /administration/scripts*
    /administration/statistics.md
    /integrations/net-promoter-score*
+   /administration/notices* 
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
@@ -161,7 +183,7 @@ Understand potential issues and how to address them.
    /install/trouble_mysql.rst
  
 Upgrade Mattermost
--------------------
+------------------
 
 Learn how to keep Mattermost current with fixes and new features.
 
@@ -182,7 +204,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/release-definitions*
 
 Mattermost Integrations
-------------------------
+-----------------------
 
 Learn how to extend Mattermost by integrating your workflows.
 
@@ -191,7 +213,6 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
-   /administration/devops-command-center*
    /deployment/atlassian-integrations*
    /deployment/microsoft-integrations*
    /deployment/ci-cd-tools*
@@ -201,7 +222,7 @@ Learn how to extend Mattermost by integrating your workflows.
    /deployment/productivity-tools*
 
 Mattermost Compliance
-----------------------
+---------------------
 
 Learn how to adhere to your security and regulations.
 
@@ -244,3 +265,4 @@ Documentation on early previews and unofficial functionality.
    /install/prod-docker*
    /install/deploy-cloudron*
    /administration/upgrade-script*
+   /administration/light-install-hindi.rst

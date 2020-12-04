@@ -1,7 +1,7 @@
 Configuration in the Mattermost Database
-=========================================
+========================================
 
-A new configuration option was added in `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+A new configuration option was added in the `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`_ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <cluster>`.
 
@@ -20,7 +20,7 @@ These instructions cover migrating the Mattermost configuration to the database 
   These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory you'll have to modify the paths to match your environment.
 
 Get your database connection string
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The first step is to get your master database connection string. There are several ways to do this, but the easiest is to use the ``mattermost config get`` command:
 
@@ -58,7 +58,7 @@ Here are two example connection strings:
    postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
 
 Create an environment file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   If you're running Mattermost in a High Availability cluster this step must be done on all servers in the cluster.
@@ -109,7 +109,7 @@ Edit this file as *root* to add the below text just above the line that begins w
 
 .. code-block:: text
 
-   EnvironmentFile=/opt/mattermost/config/mm.environment
+   EnvironmentFile=/opt/mattermost/config/mattermost.environment
 
 Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line added:
 
@@ -123,7 +123,7 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 
    [Service]
    Type=notify
-   EnvironmentFile=/opt/mattermost/config/mm.environment
+   EnvironmentFile=/opt/mattermost/config/mattermost.environment
    ExecStart=/opt/mattermost/bin/mattermost
    TimeoutStartSec=3600
    Restart=always
@@ -140,7 +140,7 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
   If you're using PostgreSQL as your database, the ``mysql.service`` must be replaced with ``postgresql.service``. The easiest way to avoid making a mistake is to add only the ``EnvironmentFile`` line and not copy the entire example.
 
 Migrate configuration from ``config.json``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   If you're using a High Availability cluster you only need to run this on a single server in the cluster.
@@ -157,10 +157,10 @@ As with the environment file you'll have to escape any single quotes in the data
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mm.environment`` file. These must be on their own line, and you must escape them properly.
+If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
 
 Verify that the configuration was migrated correctly
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configurations are stored in the ``Configurations`` table in the database. To verify that you've migrated the configuration successfully run this query:
 
@@ -186,7 +186,7 @@ Finally, run these commands to reload the daemon and restart Mattermost using th
 Rolling back
 ^^^^^^^^^^^^
 
-If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mm.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
+If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mattermost.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
 
 Troubleshooting
 -----------------

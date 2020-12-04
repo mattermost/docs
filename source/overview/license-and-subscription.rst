@@ -16,7 +16,7 @@ You can access your Customer Portal account to view information about your:
 - Active users (available in a future release)
 
 Purchasing an Enterprise license
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **If you don't have a Customer Portal account**
 
@@ -36,7 +36,7 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
 
 Applying the license key
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your Mattermost Enterprise license is ready to use and be applied via the Mattermost System Console.
 
@@ -55,14 +55,14 @@ You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#c
 If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deployment/deployment.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/deployment/on-boarding.html>`_ documentation.
 
 Viewing license information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users and license type in your account under **Subscription**.
+For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users, and license type in your account under **Subscription**.
 
-If you have an existing subscription and license, not purchased via the Customer Portal, this information will not be listed.
+If you have an existing subscription and license, not purchased via the Customer Portal, this information won't be listed.
 
 Adding more users to a purchased license
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add more users to your existing license, `contact us <https://mattermost.com/contact-us/>`_.
 
@@ -76,12 +76,12 @@ The ability to renew your license in the Customer Portal will be available in a 
 To renew your license in the meantime, contact your Customer Success Manager to start the renewal process. Alternatively, `contact us <https://mattermost.com/contact-us/>`_ for assistance.
 
 Frequently Asked Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Are my credit card details safe?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use `Stripe <https://stripe.com/payments>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__, which is PCI-DSS compliant.
+We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__, which is PCI-DSS compliant.
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
@@ -98,19 +98,19 @@ No. If you deactivate a user that user is not counted as an active user during y
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
 Can I use the same license key on multiple Enterprise Edition servers?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server, or multiple linked Mattermost application servers in a high availability configuration with access to a single database.
+License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
 
 Customers who purchase the Premier Support add-on to E20 are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
 
 Is my license available immediately?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, once your payment is successfully processed your license is immediately available to download.
 
 How will I know when to renew my license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You will be notified 60 days prior to your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
 
@@ -129,19 +129,19 @@ Once you’ve started the renewal process, we'll be in contact with you to confi
 What happens to my license if I don't renew in time?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 60-day renewal period, a 10 day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features.
+If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features.
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  
 What happens when my license expires?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you don't renew your license within the 10-day grace period, your Mattermost version is automatically downgraded to Team Edition so you can still access and use Mattermost. However, Enterprise features will no longer be available and if you are currently using them, the functionality will no longer be accessible.
 
 When you renew, the Enterprise features will become available with the previous configuration (provided no action such as user migration has been taken).
 
 Which features are affected when my Enterprise license expires?
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The affected Enterprise features include, but are not limited to, the following:
 
@@ -149,12 +149,12 @@ The affected Enterprise features include, but are not limited to, the following:
     :header: "Feature", "How it's affected", "What steps do I need to take?"
 
     "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts.", "None needed."
-    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO", "Login options are no longer provided on the sign-in page. Users who previously signed in with one of these methods are no longer able to. 
+    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO", "Login options are no longer provided on the sign-in page. Users who previously signed in with one of these methods are no longer able to.
     
     Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
-    "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in state for group synced teams/channels. 
+    "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in state for group synced teams/channels.
     
-    Mentions for AD/LDAP groups are not shown in the autocomplete menu. 
+    Mentions for AD/LDAP groups are not shown in the autocomplete menu.
     
     Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
     "High Availability", "High Availability is disabled. If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
@@ -170,19 +170,19 @@ The affected Enterprise features include, but are not limited to, the following:
 Why can't I dismiss the expiry notification banner?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If there is a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to users.
+If there's a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your System Administrator for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to users.
 
 Once a new license is applied, the banner will no longer be visible.
 
 If you don't plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
 
 Do you have a program for official non-profits, open source projects, and charities?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, please see the `Mattermost Monday License program <https://mattermost.com/nonprofit/>`_.
 
 Do you have discounted licenses for academic institutions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`_ for no charge to students (staff members pay regular price). You need to pay for at least 10 staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`_ for more information.
 
@@ -204,7 +204,7 @@ Mattermost Enterprise Edition subscriptions and support benefits are licensed pe
 When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
 
 Where can I find the license agreement for Mattermost Enterprise Edition?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise Edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional enterprise features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.
 

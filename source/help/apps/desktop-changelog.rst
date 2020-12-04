@@ -1,6 +1,57 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.6
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.1>`_
+
+- **v4.6.1, released 2020-10-26**
+ - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. `MM-29921 <https://mattermost.atlassian.net/browse/MM-29921>`_
+- **v4.6.0, released 2020-10-16**
+ - Original v4.6.0 release
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+- Added a setting to be able to select different desktop notification sounds (Requires Mattermost server v5.28+).
+- ``Show Mattermost icon in the menu bar`` setting is now enabled by default for new installs on Mac, and ``Show icon in the notification area`` and ``Leave app running in the notification area when application window is closed`` settings are are now enabled by default for new installs on Ubuntu.
+- The default window frame and server tabs are now used on older Windows and Linux OS versions.
+- Added Russian and Ukrainian language spellcheckers.
+- Added support for allowing access to managed resources.
+- The same default protocols as in the server are now used in the autolink plugin.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where the app window started as maximized when "Start app on login" setting was enabled. This setting is not respected when AppImage file (Unofficial) is used.
+- Fixed an issue where the **Add server** modal fields were missing the right-click menu.
+- Fixed an issue where users did not see the right-click menu with Copy and Paste options on the login page when using the desktop app to login to an external application.
+- Fixed an issue where the URL bar was shown in the bottom left corner when hovering over a timestamp or internal links.
+- Fixed an issue where a Javascript error occurred when a separate OAuth window was open.
+- Fixed an issue where users were unable to resize the desktop app vertically from the top tab bar.
+- Fixed an issue where some links pointing to the System Console did not work on the desktop app.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- On Ubuntu, auto-focus is lost when using alt+tab to switch between windows. `MM-29705 <https://mattermost.atlassian.net/browse/MM-29705>`_
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `devinbinnie <https://github.com/devinbinnie>`_, `dpanic <https://github.com/dpanic>`_, `jekill <https://github.com/jekill>`_, `jupenur <https://github.com/jupenur>`_, `M-ZubairAhmed <https://github.com/M-ZubairAhmed>`_, `nevyangelova <https://github.com/nevyangelova>`_, `rvillablanca <https://github.com/rvillablanca>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
+
+
 Release v4.5
 ----------------------------
 

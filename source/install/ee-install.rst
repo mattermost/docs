@@ -1,8 +1,8 @@
 ..  _ee-install:
 
-===========================================
+===============================
 Enterprise Install and Upgrade
-===========================================
+===============================
 
 Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. There are two variants of Enterprise Edition: E10 and E20, and you can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
 
@@ -16,6 +16,7 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 * `Production Kubernetes Deployment <https://docs.mattermost.com/install/install-kubernetes.html>`__
 * `Production Enterprise Edition on Ubuntu 18.04 <https://docs.mattermost.com/install/install-ubuntu-1804.html>`__
 * `Production Enterprise Edition on RHEL 7 <https://docs.mattermost.com/install/install-rhel-7.html>`__
+* `Production Enterprise Edition on RHEL 8 <https://docs.mattermost.com/install/install-rhel-8.html>`__
 * `Production Enterprise Edition on Debian Stretch <https://docs.mattermost.com/install/install-debian.html>`__
 * `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
 
@@ -181,11 +182,25 @@ Use this command to upload a new license or to replace an existing license with 
 .. note::
 
   If you upload the license via the CLI using  ``mattermost license upload``, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
+  
+License key storage
+^^^^^^^^^^^^^^^^^^^^
+
+Once you've uploaded your license key to your Mattermost server it's stored in your SQL database at ``mattermost.Licenses``. You can check what keys are on your server by running ``select * from mattermost.Licenses;``.
 
 **Using the System Console**
 
 1. Open **System Console > About > Edition and License** (or **System Console > OTHER > Edition and License** in versions prior to 5.12).
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
+
+Removing an E20 or E10 license key will not remove the configuration for Enterprise settings, however these features will not function until an E10 or E20 license key is applied. 
+
+When you're using High Availability it's critical to ensure that all servers in the cluster have the E20 license properly installed to prevent multi-node clusters from failing. An E20 license is required for High Availability to work.
+
+.. note::
+
+  - When you apply an E20 license key to a previously E10-licensed server, the E10 features will retain their configuration settings in E20. 
+  - When you apply an E10 license to a previously E20-licensed server, the E20 features will retain their configuration but will no longer be accessible for use.
 
 Once the key is uploaded and installed, the details of your license are displayed.

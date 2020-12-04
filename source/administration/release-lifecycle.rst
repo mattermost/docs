@@ -6,11 +6,13 @@ What is a Release Lifecycle?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/administration/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
 
 .. important::
-  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 is coming to the end of its lifecycle on October 15th, 2020. Upgrading to server v5.25 or later is highly recommended.
+  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 has come to the end of its lifecycle. Upgrading to server v5.25 or later is required.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 5.31        | Feature               |  2021-01-16              | 2021-10-15               | Yes                      |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.30        | Feature               |  2020-12-16              | 2021-03-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.29        | Quality               |  2020-11-16              | 2021-02-15               |                          |
@@ -33,7 +35,7 @@ During each monthly release, Mattermost backports high severity or high impact s
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.20        | Feature               |  2020-02-16              | 2020-05-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
-| 5.19        | Quality               |  2020-01-16              | 2020-09-15               | Yes                      |
+| 5.19        | Quality               |  2020-01-16              | 2020-10-15               | Yes                      |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.18        | Feature               |  2019-12-16              | 2020-03-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+

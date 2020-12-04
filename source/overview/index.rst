@@ -11,10 +11,9 @@ Below is an overview of our features, security, account management, deployment, 
 
    /overview/product*
    /overview/security*
-   /overview/architecture*
-   /deployment/deployment*
    /overview/integrations*
    /overview/license-and-subscription*
+   /overview/mattermost-cloud-overview*
    /overview/auth*
    /overview/compliance*
    /overview/faq*

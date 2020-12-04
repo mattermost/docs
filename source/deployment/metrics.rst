@@ -187,6 +187,14 @@ WebSocket Metrics:
 
     - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
     - ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
+    
+Logging Metrics:
+
+    - ``logger_queue_used``: Current logging queue level(s).
+    - ``logger_logged_total``: The total number of logging records emitted.
+    - ``logger_error_total``: The total number of logging errors.
+    - ``logger_dropped_total``: The total number of logging records dropped.
+    - ``logger_blocked_total``: The total number of logging records blocked.
 
 Standard GO Metrics
 ------------------------------------------------

@@ -1,5 +1,6 @@
 Bulk export data
-=================
+================
+
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
 You can export the following data types:
@@ -14,15 +15,17 @@ You can export the following data types:
 - Posts' Replies
 - Posts' Reactions
 - Custom Emoji
-- Direct Message Channels 
+- Direct Message Channels
 - Direct Message Posts
 
-Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
-
-For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.  
+.. note:: 
+  Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
+  
+  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 
 Version object
 --------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -45,6 +48,7 @@ Version object
   
 Team object
 -----------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -66,7 +70,7 @@ Team object
     <tr class="row-odd">
       <td valign="middle">type</td>
       <td valign="middle">string</td>
-      <td>The type of team. Will have one the following values:<br>
+      <td>The type of team. Will have one of the following values:<br>
           <kbd>"O"</kbd> for an open team<br>
           <kbd>"I"</kbd> for an invite-only team.</td>
     </tr>
@@ -79,9 +83,8 @@ Team object
       <td valign="middle">allow_open_invite</td>
       <td valign="middle">bool</td>
       <td>Whether to allow open invitations. Will have one of the following values:<br>
-        <kbd>true</kbd><br>
-        <kbd>false</kbd>
-      </td>
+        <kbd>"true"</kbd><br>
+        <kbd>"false"</kbd></td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">scheme</td>
@@ -92,6 +95,7 @@ Team object
 
 Channel object
 --------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -141,6 +145,7 @@ Channel object
   
 User object
 -----------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -174,9 +179,9 @@ User object
       <td valign="middle">string</td>
       <td>The authentication data if <kbd>auth_service</kbd> is used. The value depends on the <kbd>auth_service</kbd> that is specified.<br>
         The data comes from the following fields for the respective auth_services:<br>
-        <kbd>"gitlab"</kbd> - The value of the Id attribute provided in the Gitlab auth data.<br>
+        <kbd>"gitlab"</kbd> - The value of the Id attribute provided in the GitLab auth data.<br>
         <kbd>"ldap"</kbd> - The value of the LDAP attribute specified as the "ID Attribute" in the Mattermost LDAP configuration.<br>
-        <kbd>"saml"</kbd> - The value of the SAML Email address attribute.<br>
+        <kbd>"saml"</kbd> - The value of the SAML email address attribute.<br>
         <kbd>"google"</kbd> - The value of the OAuth Id attribute.<br>
         <kbd>"office365"</kbd> - The value of the OAuth Id attribute.</td>
     </tr>
@@ -213,17 +218,17 @@ User object
     <tr class="row-odd">
       <td valign="middle">use_markdown_preview</td>
       <td valign="middle">bool</td>
-      <td>"True" if the user has enabled markdown preview in the message input box.</td>
+      <td><kbd>"true"</kbd> if the user has enabled markdown preview in the message input box.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">use_formatting</td>
       <td valign="middle">bool</td>
-      <td>"True" if the user has enabled post formatting for links, emoji, text styles and line breaks.</td>
+      <td><kbd>"true"</kbd> if the user has enabled post formatting for links, emoji, text styles, and line breaks.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">show_unread_section</td>
       <td valign="middle">string</td>
-      <td>"True" if the user has enabled showing unread messages at top of channel sidebar.</td>
+      <td><kbd>"true"</kbd> if the user has enabled showing unread messages at top of channel sidebar.</td>
     </tr> 
     <tr class="row-odd">
       <td valign="middle">theme</td>
@@ -233,27 +238,27 @@ User object
     <tr class="row-odd">
       <td valign="middle">military_time</td>
       <td valign="middle">string</td>
-      <td>"True" if the user has enabled a 24 hour clock. "False" if using a 12 hour clock.</td>
+      <td><kbd>"true"</kbd> if the user has enabled a 24-hour clock. <kbd>"false"</kbd> if using a 12-hour clock.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">collapse_previews</td>
       <td valign="middle">string</td>
-      <td>"True" if user collapses link preview by default. "False" is user expands link previews by default.</td>
+      <td><kbd>"true"</kbd> if user collapses link preview by default. <kbd>"false"</kbd> if user expands link previews by default.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">message_display</td>
       <td valign="middle">string</td>
-      <td>The style the user prefers for displayed messages. Options are "clean" if the user uses the standard style or "compact" if the user uses compact style.</td>
+      <td>The style the user prefers for displayed messages. Options are <kbd>"clean"</kbd> if the user uses the standard style or <kbd>"compact"</kbd> if the user uses compact style.</td>
     </tr> 
     <tr class="row-odd">
       <td valign="middle">channel_display_mode</td>
       <td valign="middle">string</td>
-      <td>"Full" if the users displays channel messages at the full width of the screen or "centered" if the user uses a fixed width, centered block</td>
+      <td><kbd>"full"</kbd> if the users displays channel messages at the full width of the screen or <kbd>"centered"</kbd> if the user uses a fixed width, centered block.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">tutorial_step</td>
       <td valign="middle">string</td>
-      <td>"1", "2" or "3" indicates which specified tutorial step to start with for the user. "999" skips the tutorial.</td>
+      <td><kbd>"1"</kbd>, <kbd>"2"</kbd>, or <kbd>"3"</kbd> indicates which specified tutorial step to start with for the user. <kbd>"999"</kbd> skips the tutorial.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">email_interval</td>
@@ -279,6 +284,7 @@ User object
 
 UserNotifyProps object
 ----------------------
+
 This object is a member of the User object.
 
 .. raw:: html
@@ -330,7 +336,7 @@ This object is a member of the User object.
     <tr class="row-odd">
       <td valign="middle">channel</td>
       <td valign="middle">string</td>
-      <td>Preference for whether @all, @channel and @here trigger mentions. Will be one of the following values:<br>
+      <td>Preference for whether @all, @channel, and @here trigger mentions. Will be one of the following values:<br>
       <kbd>"true"</kbd> - Mentions are triggered.<br>
       <kbd>"false"</kbd> - Mentions are not triggered.</td>
     </tr>
@@ -349,9 +355,9 @@ This object is a member of the User object.
     </tr>
   </table>
 
-
 UserTeamMembership object
 -------------------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -384,6 +390,7 @@ UserTeamMembership object
 
 UserChannelMembership object
 ----------------------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -405,12 +412,12 @@ UserChannelMembership object
         <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle">object</td>
-      <td>The notify preferences for this user in this channelas defined by the <b>ChannelNotifyProps</b> object.</td>
+      <td>The notify preferences for this user in this channel as defined by the <b>ChannelNotifyProps</b> object.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">favorite</td>
       <td valign="middle">boolean</td>
-      <td>Whether the channel is marked as a favorite for this user. Will be one of the following values<br>
+      <td>Whether the channel is marked as a favorite for this user. Will be one of the following values:<br>
           <kbd>"true"</kbd> - Yes.<br>
           <kbd>"false"</kbd> - No.</td>
       </td>
@@ -453,13 +460,13 @@ This object is a member of the ChannelMembership object.
       <td valign="middle">string</td>
       <td>Preference for marking channel as unread. Will be one of the following values:<br>
           <kbd>"all"</kbd> - For all unread messages.<br>
-          <kbd>"mention"</kbd> - Only for mentions.
-      </td>
+          <kbd>"mention"</kbd> - Only for mentions.</td>
     </tr>
   </table>
 
 Post object
 -----------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -506,6 +513,7 @@ Post object
   
 Reply object
 ------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -563,6 +571,7 @@ This object is a member of the Post object.
 
 Emoji object
 ------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -584,7 +593,8 @@ Emoji object
   </table>
   
 DirectChannel object
-----------------------
+--------------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -606,7 +616,8 @@ DirectChannel object
   </table>
   
 DirectPost object
-----------------------
+-----------------
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
