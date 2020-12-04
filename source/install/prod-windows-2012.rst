@@ -34,7 +34,7 @@ Set up Database Server
 Install and Configure MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2. `Download the MySQL 5.6+ <http://dev.mysql.com/downloads/windows/installer/>`__ installer, or (PostgreSQL 9.3+).
+2. `Download the MySQL 5.6+ <https://dev.mysql.com/downloads/windows/installer/>`__ installer, or (PostgreSQL 9.3+).
    For the purposes of this guide, we'll be downloading and installing the latest version of MySQL Community Server
    Edition MSI-installer (version 5.7 at the time of writing this guide). Note that the appropriate link refers 
    to 32-bit (as shown in the figure below); however, this installer is 32-bit but is capable of installing the 
@@ -120,7 +120,7 @@ Set up Mattermost Server
 1. For the purposes of this guide we will assume this server has an IP
    address of 10.0.0.2
 
-2. `Download <https://www.mattermost.org/download/>`__ the latest Mattermost Server by opening your 
+2. `Download <https://mattermost.org/download/>`__ the latest Mattermost Server by opening your 
    favorite browser and navigating to 
    ``https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-windows-amd64.zip`` 
    where `X.X.X` is the latest Mattermost release version. For example, 3.4.0.
@@ -267,13 +267,13 @@ Configure Reverse Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Reverse proxying involves rewriting an HTTP request and relaying it to a back-end server.  IIS does not natively support this; however, Microsoft
-provides a `URL Rewrite <http://www.iis.net/learn/extensions/url-rewrite-module>`__ module and an `Application Request Routing 
-<http://www.iis.net/downloads/microsoft/application-request-routing>`__ module which, when combined, are capable of performing these functions.
+provides a `URL Rewrite <https://www.iis.net/learn/extensions/url-rewrite-module>`__ module and an `Application Request Routing 
+<https://www.iis.net/downloads/microsoft/application-request-routing>`__ module which, when combined, are capable of performing these functions.
 We'll start by installing these module, and then configure the proxy.
 
-17. `Download <http://go.microsoft.com/fwlink/?LinkID=615137>`__ the URL Rewrite 2.0 x64 module.
+17. `Download <https://go.microsoft.com/fwlink/?LinkID=615137>`__ the URL Rewrite 2.0 x64 module.
 
-18. `Download <http://go.microsoft.com/fwlink/?LinkID=615136>`__ the Application Request Routing 3.0 x64 module.
+18. `Download <https://go.microsoft.com/fwlink/?LinkID=615136>`__ the Application Request Routing 3.0 x64 module.
 
 19. Install the modules (trivial installers with no customizations or options to select).
 

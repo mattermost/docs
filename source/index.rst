@@ -7,8 +7,8 @@
 Mattermost Documentation
 ------------------------
 
-.. _`mattermost.org/download`: http://www.mattermost.org/download/
-.. _contacting Mattermost, Inc.: https://about.mattermost.com/contact/
+.. _`mattermost.org/download`: https://mattermost.com/download/
+.. _contacting Mattermost, Inc.: https://mattermost.com/contact-us/
 .. _download and try it today.: https://docs.mattermost.com/install/ee-install.html
 
 .. toctree::

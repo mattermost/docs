@@ -349,7 +349,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
      "dialog":{
         "callback_id":"somecallbackid",
         "title":"Test Title",
-        "icon_url":"http://www.mattermost.org/wp-content/uploads/2016/04/icon.png",
+        "icon_url":"https://mattermost.org/wp-content/uploads/2016/04/icon.png",
         "elements":[
            {
               "display_name":"Display Name",
@@ -474,7 +474,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
 Share your integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
 
 The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
 

@@ -48,7 +48,7 @@ Location of your local storage directory
 
      cd /tmp
 
-#. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+#. Download `the latest version of Mattermost Server <https://mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
    .. code-block:: sh
 

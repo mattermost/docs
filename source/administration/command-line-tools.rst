@@ -2667,7 +2667,7 @@ CLI Documentation:
               platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
 
       -upgrade_db_30                   Upgrades the database from a version 2.x schema to version 3 see
-                                        http://www.mattermost.org/upgrading-to-mattermost-3-0/
+                                        https://mattermost.org/upgrading-to-mattermost-3-0/
 
           Example:
               platform -upgrade_db_30
@@ -2687,4 +2687,4 @@ If you have Bleve search indexing enabled, temporarily disable it in **System Co
 
 Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
 
-If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ to get help.
+If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ to get help.

@@ -156,7 +156,7 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 8:30 AM (`San Francisco Time <http://everytimezone.com/>`__)
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 8:30 AM (`San Francisco Time <https://everytimezone.com/>`__)
 
 - Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
 - Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors, and anyone who would like to join.
@@ -347,7 +347,7 @@ Sprint Planning
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Triage team - 2-2.5 hours/week) daily at 09:30 or 10:00 (`San Francisco Time <http://everytimezone.com/>`__).
+**Mattermost staff-only** - (Triage team - 2-2.5 hours/week) daily at 09:30 or 10:00 (`San Francisco Time <https://everytimezone.com/>`__).
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets.
 - Attendees: One dev representative from each development team, at least one PM, QA team, Release Manager, and optionally leads, customer support and other Mattermost staff.
@@ -369,7 +369,7 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <http://everytimezone.com/>`__)
+**Mattermost staff only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <https://everytimezone.com/>`__)
 
 - Goal: Address leadership and process topics.
 - Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations.
@@ -393,7 +393,7 @@ Procedure:
 R&D Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Product Staff - 45 min/week) Thursdays at 09:00 (`San Francisco Time <http://everytimezone.com/>`__).
+**Mattermost Inc-only** - (Product Staff - 45 min/week) Thursdays at 09:00 (`San Francisco Time <https://everytimezone.com/>`__).
 
 Regular team meeting for product staff team at Mattermost Inc.
 
@@ -801,16 +801,16 @@ Relevant Docs
 Software Strategy
 ^^^^^^^^^^^^^^^^^^^
 
-1. `Monetizing Open Source (Or, All Enterprise Software) <http://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`__ - Required reading for business roles.
+1. `Monetizing Open Source (Or, All Enterprise Software) <https://a16z.com/2017/04/10/monetizing-open-source-enterprise-software/>`__ - Required reading for business roles.
 
 System Security
 ^^^^^^^^^^^^^^^
 
 Papers and Course Materials
 
-1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <http://templatelab.com/cybersecurity-framework/>`__ - Standards for internal Mattermost security processes and safeguards.
-2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`__ - Fundamental challenges with system security.
-3. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <http://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`__ - Well written introduction to system security from one of the leaders in the field.
+1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <https://templatelab.com/cybersecurity-framework/>`__ - Standards for internal Mattermost security processes and safeguards.
+2. `Computer Security in the Real World. Butler Lampson <https://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`__ - Fundamental challenges with system security.
+3. `Course notes from CS513: System Security (Cornell University). Fred B. Schneider <https://www.cs.cornell.edu/courses/cs513/2007fa/02.outline.html>`__ - Well written introduction to system security from one of the leaders in the field.
 
 Additional Training Resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

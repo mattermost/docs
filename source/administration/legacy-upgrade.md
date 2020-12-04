@@ -31,7 +31,7 @@ If you're upgrading a server that's already running a supported version, See [Up
 
 1. Download the latest version of Team Edition server and note any compatibility procedures:
       1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
-      2. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+      2. Download [the latest version of the Mattermost Server](https://mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Team Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
@@ -82,7 +82,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 1. Download the latest version of Enterprise Edition server and note any compatibility procedures:
       1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
-      2. Download [the latest version of the Mattermost Server](https://about.mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+      2. Download [the latest version of the Mattermost Server](https://mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Enterprise Edition:** `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
@@ -141,7 +141,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
                      - When the server finds a duplicate account not in the `primary team` the email address of the account may be changed to avoid conflicts.
                          - An account with a **duplicate email address** will be updated so `+[TEAM_URL_NAME]` is appended to the local part of the email address. For example: An account with a duplicate email `steve@company.com` in the team at URL `https://mattermost.company.com/marketing` becomes `steve+marketing@company.com`. The `+marketing` used in this procedure is part of the RFC5233 email specification and most email systems will properly route `steve+marketing@company.com` to `steve@company.com`. After the upgrade, if email authentication is used for sign-in, the user would need to sign-in with the new email address.
                          - An account with a **duplicate username** will be updated so `[TEAM_URL_NAME].`” is prepended to the username. For example: An account with a duplicate username `steve` in the team at URL `https://mattermost.company.com/marketing` becomes `marketing.steve`.
-         - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](https://www.mattermost.org/upgrade-to-3-0/)).
+         - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](https://mattermost.org/upgrade-to-3-0/)).
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the System Console and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.
@@ -219,7 +219,7 @@ If your Mattermost server has duplicate accounts (users with multiple accounts i
                      - When the server finds a duplicate account not in the `primary team` the email address of the account may be changed to avoid conflicts
                          - An account with a **duplicate email address** will be updated so `+[TEAM_URL_NAME]` is appended to the local part of the email address. For example: An account with a duplicate email `steve@company.com` in the team at URL `https://mattermost.company.com/marketing` becomes `steve+marketing@company.com`. The `+marketing` used in this procedure is part of the RFC5233 email specification and most email systems will properly route `steve+marketing@company.com` to `steve@company.com`. After the upgrade, if email authentication is used for sign-in, the user would need to sign-in with the new email address.
                          - An account with a **duplicate username** will be updated so `[TEAM_URL_NAME].`” is prepended to the username. For example: An account with a duplicate username `steve` in the team at URL `https://mattermost.company.com/marketing` becomes `marketing.steve`.
-         - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](https://www.mattermost.org/upgrading-to-mattermost-3-0/#notification))
+         - Users with accounts containing duplicate emails or usernames will receive a notification email explaining the upgrade, and instructions on how to move to a single user account ([see example](https://mattermost.org/upgrading-to-mattermost-3-0/#notification))
 7. Start your server and address any setting changes relevant in the latest version of Mattermost
       1. Run `sudo start mattermost`.
       2. Open the System Console and save a change to upgrade your `config.json` schema to the latest version using default values for any new settings added.

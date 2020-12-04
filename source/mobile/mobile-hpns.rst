@@ -4,11 +4,11 @@ Hosted Push Notification Service
 Securing your Mattermost Push Notification Service
 --------------------------------------------------
 
-When using Mattermost mobile apps in the Apple App Store and Google Play, purchase an annual subscription to `Mattermost Enterprise Edition E10 <https://about.mattermost.com/pricing/>`__ or higher to receive access to our Hosted Push Notification Service (HPNS).
+When using Mattermost mobile apps in the Apple App Store and Google Play, purchase an annual subscription to `Mattermost Enterprise Edition E10 <https://mattermost.com/pricing-self-managed/>`__ or higher to receive access to our Hosted Push Notification Service (HPNS).
 
 Our Hosted Push Notification Service offers:
 
-  - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit `privacy policy <https://about.mattermost.com/hpns-privacy/>`__ where the contents of unencrypted messages are not examined or stored
+  - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ where the contents of unencrypted messages are not examined or stored
   - Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server
   - Production-level uptime expectation
 
@@ -26,7 +26,7 @@ Setting up HPNS push notifications in Enterprise Edition
 
 Follow these steps to set up HPNS:
 
-1. Follow the instructions to `install or upgrade to Enterprise Edition <http://docs.mattermost.com/install/ee-install.html>`__
+1. Follow the instructions to `install or upgrade to Enterprise Edition <https://docs.mattermost.com/install/ee-install.html>`__
 
 2. Go to **System Console** > **Notifications** > **Mobile Push** > **Send Push Notifications** in prior versions or **System Console > Environment > Push Notification Server** in versions after 5.12
 

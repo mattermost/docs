@@ -53,7 +53,7 @@ be used in production.
 Configuration Settings
 ----------------------
 
-See `Configuration Settings <http://docs.mattermost.com/administration/config-settings.html>`__
+See `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html>`__
 documentation to customize your deployment.
 
 (Recommended) Enable Email
