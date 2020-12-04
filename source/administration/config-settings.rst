@@ -26,13 +26,21 @@ The name of the environment variable for any setting can be derived from the nam
 
 Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
 
-For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
+For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented in the sections below.
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
 
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
+   
+**Load Custom Configuration Defaults**
+
+Starting from Mattermost version 5.30, you can load a set of custom configuration defaults using an environment variable.
+
+1. Create a ``custom.json`` file that contains the custom configuration defaults.
+2. Edit the ``config.json`` file to include the new environment variable ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
+
 
 .. contents::
   :depth: 2
