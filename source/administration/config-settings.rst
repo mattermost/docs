@@ -32,7 +32,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
 
 .. warning::
-   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration `Configuration In Database <https://docs.mattermost.com/administration/config-in-database.html>`_
+   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/administration/config-in-database.html>`_.
    
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
