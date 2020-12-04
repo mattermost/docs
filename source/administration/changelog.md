@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 - **v5.29.1, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
-  - Added ``UnreadMentions`` column to ``ThreadMemberships`` table. Also included additional bug fixes related to Collapsed Reply Threads feature, such as a fix for an issue where errors related to ``ThreadMemberships`` appeared in the server logs when replying to a user on a thread.
+  - Added ``UnreadMentions`` column to ``ThreadMemberships`` table to fix an issue where. . . . Also included additional bug fixes related to Collapsed Reply Threads feature, such as a fix for an issue where errors related to ``ThreadMemberships`` appeared in the server logs when replying to a user on a thread.
 - **v5.29.0, released 2020-11-16**
   - Original 5.29.0 release
 
