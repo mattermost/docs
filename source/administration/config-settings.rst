@@ -745,10 +745,10 @@ See the `documentation <https://docs.mattermost.com/administration/image-proxy.h
 SMTP
 ~~~~
 
-SMTP Server
-^^^^^^^^^^^^
+SMTP Email Server
+^^^^^^^^^^^^^^^^^
 
-Location of SMTP email server.
+Location of SMTP email server used for email notifications.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SMTPServer": ""`` with string input.                                                                                    |
@@ -1749,7 +1749,8 @@ Enable Email Batching
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings > Notifications**.
 
 .. note::
-  Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ is configured. Email batching in `High Availability mode <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
+  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/administration/config-settings.html#smtp-email-server>`__ is configured. 
+  - Email batching in `High Availability mode <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
 
 **False**: If email notifications are enabled in Account Settings, emails will be sent individually for every mention or direct message received.
 
@@ -3776,11 +3777,8 @@ Experimental
 
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
-Features
-~~~~~~~~~
-
 AD/LDAP Settings
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 AD/LDAP Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3843,7 +3841,7 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 +---------------------------------------------------------------------------------------------------------------------------------+
 
 Email Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Email Batching Buffer Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4095,7 +4093,7 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 +-----------------------------------------------------------------------------------------------------------------+
 
 SAML Settings
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 SAML Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^
