@@ -8,7 +8,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 - **v5.29.1, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
-  - Added ``UnreadMentions`` column to ``ThreadMemberships`` table, and fixed server log warnings related to ``ThreadMemberships``. Admins planning to enable [Collapsed Reply Threads](https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245) (available in beta in Q1 2021) are recommended to upgrade to v5.29.1 or later.
+  - Added ``UnreadMentions`` column to ``ThreadMemberships`` table, and fixed server log warnings related to ``ThreadMemberships``. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.29.1 or later.
 - **v5.29.0, released 2020-11-16**
   - Original 5.29.0 release
 
