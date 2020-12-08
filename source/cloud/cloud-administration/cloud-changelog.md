@@ -51,10 +51,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Cloud > "Tips & Next Steps" should not show "Explore channels" section for guest users.
  - System Roles shows License and Environment as possible permissions but are always hidden in Cloud
 
-## Release 2020-11-24
+## Release 2020-12-03
 
-- **Release 2020-12-03
+### Bug Fixes
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
+
+## Release 2020-11-24
 
 ### Compatibility
  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 and all 9.x versions in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
