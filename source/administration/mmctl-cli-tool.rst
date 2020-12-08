@@ -2308,9 +2308,12 @@ mmctl permissions
 Management of permissions and roles.
 
 Child Commands
-  -  `mmctl permissions add`_ - Add permissions
-  -  `mmctl permissions remove`_ - Remove permissions
-  -  `mmctl permissions show`_ - Show permissions
+  -  `mmctl permissions add`_ - Add permissions to a role
+  -  `mmctl permissions role assign`_ - Assign users to role
+  -  `mmctl permissions remove`_ - Remove permissions from a role
+  -  `mmctl permissions reset`_ - Reset default permissions for role
+  -  `mmctl permissions role show`_ - Show the role information
+  -  `mmctl permissions role unassign`_ - Unassign users from role
 
 **Options**
 
@@ -2329,7 +2332,7 @@ mmctl permissions add
 
 .. code-block:: sh
 
-    mmctl permissions add [role] [permission...] [flags]
+    mmctl permissions add [role_name] [permission...] [flags]
 
 **Examples**
 
@@ -2352,6 +2355,47 @@ mmctl permissions add
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
+mmctl permissions role assign
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Assign users to a role by username (only available in E10 and E20).
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl permissions role assign [role_name] [username...] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # Assign users with usernames 'john.doe' and 'jane.doe' to the role named 'system_admin'.
+    permissions assign system_admin john.doe jane.doe
+    
+    # Examples using other system roles
+    permissions assign system_manager john.doe jane.doe
+    permissions assign system_user_manager john.doe jane.doe
+    permissions assign system_read_only_admin john.doe jane.doe
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for assign
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
+
 mmctl permissions remove
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2363,7 +2407,7 @@ mmctl permissions remove
 
 .. code-block:: sh
 
-      mmctl permissions remove [role] [permission...] [flags]
+      mmctl permissions remove [role_name] [permission...] [flags]
 
 **Examples**
 
@@ -2385,6 +2429,42 @@ mmctl permissions remove
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl permissions reset
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Reset the given role's permissions to the set that was originally released with (only available in E10 and E20).
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl permissions reset [role_name] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # Reset the permissions of the 'system_read_only_admin' role.
+    $ mmctl permissions reset system_read_only_admin
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for reset
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl permissions show
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -2419,6 +2499,47 @@ mmctl permissions show
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl permissions role unassign
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Unassign users from a role by username (only available in E10 and E20).
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl permissions role unassign [role_name] [username...] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # Unassign users with usernames 'john.doe' and 'jane.doe' from the role named 'system_admin'.
+    permissions unassign system_admin john.doe jane.doe
+
+    # Examples using other system roles
+    permissions unassign system_manager john.doe jane.doe
+    permissions unassign system_user_manager john.doe jane.doe
+    permissions unassign system_read_only_admin john.doe jane.doe
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for unassign
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl plugin
 -------------
