@@ -2865,6 +2865,8 @@ Child Commands
   -  `mmctl system clearbusy`_ - Clears the busy state
   -  `mmctl system getbusy`_ - Get the current busy state
   -  `mmctl system setbusy`_ - Set the busy state to ``true``
+  -  `mmctl system status`_ - Prints the status of the server
+  -  `mmctl system version`_ - Prints the remote server version
   
 **Options**
 
@@ -2983,6 +2985,74 @@ mmctl system setbusy
     --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
     --local                        allows communicating with the server through a unix socket
     --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl system status
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Prints the server status calculated using several basic server healthchecks.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl system status [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    system status
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for status
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl system version
+^^^^^^^^^^^^^^^^^^^^
+
+Prints the server version of the currently connected Mattermost instance.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl system version [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    system version
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for version
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team
 ----------
