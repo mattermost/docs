@@ -24,7 +24,7 @@ Microsoft Teams Meetings
 - Click a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
 - Requires a Microsoft Teams account.
 - Requires Mattermost Enterprise Edition E20.
-- Source code and docs available at: https://github.com/mattermost/mattermost-msteams-meetings.
+- Source code and docs available at: https://github.com/mattermost/mattermost-plugin-msteams-meetings.
 
 Cisco Webex Cloud
 ~~~~~~~~~~~~~~~~~~
