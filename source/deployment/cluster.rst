@@ -434,7 +434,7 @@ Troubleshooting
 Capturing High Availability Troubleshooting Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible and for at least two weeks. 
+When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
 
 You may be asked to provide this data to Mattermost for analysis and troubleshooting purposes.
 
