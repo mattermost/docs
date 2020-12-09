@@ -36,7 +36,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
    
 **Load Custom Configuration Defaults**
 
-Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable.
+Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
 
 1. Create a ``custom.json`` file that contains the custom configuration defaults.
 2. Edit the ``config.json`` file to include the new environment variable ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
