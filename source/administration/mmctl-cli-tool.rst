@@ -2360,7 +2360,7 @@ mmctl permissions role assign
 
 **Description**
 
-Assign users to a role by username (only available in E10 and E20).
+Assign users to a role by username (only available in Enterprise Edition E10 and E20).
 
 **Format**
 
