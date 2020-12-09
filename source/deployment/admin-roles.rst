@@ -99,7 +99,7 @@ The format of the mmctl command is:
 
 1. Go to **System Console > User Management > System Roles (Beta)** and select the **Viewer** role.
 
-2. Under **Assigned People**, search for ``Bob Smith``, and then select **Remove**.
+2. Under **Assigned People**, search for **Bob Smith**, and then select **Remove**.
 
 The format of the mmctl command is:
 
