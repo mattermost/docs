@@ -2,12 +2,12 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2020-12-08
+## Release 2020-12-09
 
 ### Highlights
 
 #### Incident Management provided out-of-the-box (E20)
- - Pre-packaged and pre-installed the channel export plugin for enterprise-ready builds.
+ - Pre-packaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
 
 ### Improvements
 
