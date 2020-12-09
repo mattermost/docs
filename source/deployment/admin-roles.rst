@@ -65,7 +65,7 @@ The format of the mmctl command is:
 
 2. Under **Assigned People**, choose **Add People**.
 
-3. Search for and select ``Bob Smith``, and then click **Add** to grant the System Manager role to that user.
+3. Search for and select ``Bob Smith`` then select **Add** to grant the System Manager role to that user.
 
 The format of the mmctl command is:
 
