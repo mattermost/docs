@@ -87,7 +87,7 @@ The format of the mmctl command is:
 
 1. Go to **System Console > User Management > System Roles (Beta)** and select the **Viewer** role.
 
-2. Under **Assigned People**, click **Add People**.
+2. Under **Assigned People**, select **Add People**.
 
 3. Search for and select ``Bob Smith`` and ``Sue Clark``, and then click **Add** to grant the Viewer role to those users.
 
