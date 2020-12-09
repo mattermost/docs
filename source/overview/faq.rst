@@ -32,7 +32,7 @@ We have done performance testing of 60,000 concurrent users and 60 million posts
 Mattermost provides an open source, well-documented `load test simulator <https://github.com/mattermost/mattermost-load-test>`_ to verify that your Mattermost deployment can achieve the stated scale benchmarks ahead of production deployment.
 
 How do I deploy the open source Mattermost Team Edition under an MIT license?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
 
@@ -111,7 +111,7 @@ Mobile push notifications are triggered under to following conditions. Click to 
 .. _tpns:
 
 Are mobile push notifications free?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, push notifications are free if you compile your own `push-proxy service <https://github.com/mattermost/mattermost-push-proxy>`__. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc.
 
@@ -147,7 +147,7 @@ How can I be assured that my data will not be locked in to commercial software?
 Users of Mattermost Enterprise Edition can downgrade to the open source version without losing any data. Moreover, you always have control over your server and database, where the entirety of your Mattermost deployment is stored.
 
 How does Mattermost scale from teams to enterprises?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Growing your Mattermost installation from supporting a team to supporting an enterprise requires two types of scaling:
 
@@ -211,9 +211,9 @@ Mattermost Software
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Software                                           | License                                                                                                                   | Terms of Service                                                                                                              | Privacy Policy                                                                                                             |
 +====================================================+===========================================================================================================================+===============================================================================================================================+============================================================================================================================+
-| Mattermost Team Edition (Open Source)              | Open Source **MIT License**.                                                                                              | `Mattermost Trademark Policy <https://mattermost.org/trademark-standards-of-use/>`__                                      | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
+| Mattermost Team Edition (Open Source)              | Open Source **MIT License**.                                                                                              | `Mattermost Trademark Policy <https://mattermost.org/trademark-standards-of-use/>`__                                          | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
 |                                                    |                                                                                                                           |                                                                                                                               | with `GDPR Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__.                   |
-|                                                    | Open Source Add-ons available under `Apache v2 and other licenses <https://mattermost.org/licensing/>`__.             | `Mattermost Server Conditions of Use <https://about.mattermost.com/default-terms/>`__                                         |                                                                                                                            |
+|                                                    | Open Source Add-ons available under `Apache v2 and other licenses <https://mattermost.org/licensing/>`__.                 | `Mattermost Server Conditions of Use <https://about.mattermost.com/default-terms/>`__                                         |                                                                                                                            |
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
 | Mattermost Enterprise Edition with no subscription | `Commercial Enterprise Edition License <https://about.mattermost.com/enterprise-edition-license/>`__.                     | No subscription terms apply when operating without a subscription                                                             |                                                                                                                            |
 |                                                    |                                                                                                                           |                                                                                                                               |                                                                                                                            |
@@ -680,7 +680,7 @@ Other considerations
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 
 Will Mattermost complete questionnaires requiring confidential data without an NDA?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, Mattermost will not complete questionnaires requiring confidential data without a non-disclosure agreement. You can find `Mattermost's standard mutual non-disclosure agreement online <https://docs.google.com/document/d/10Qc2kxxZGYNzp9b19oEhItRM01OPyrWRISJ2rbm1gvc/edit>`__.
 
@@ -692,7 +692,7 @@ While we welcome anyone to use the open source version of Mattermost Team Editio
 Learn more about our non-profit discount program at https://about.mattermost.com/mattermost-mondays/.
 
 Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost open source project was created by `a group of developers who had their data paywalled by a proprietary online messaging service <https://mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__ and felt it was unfair.
 
@@ -713,6 +713,7 @@ EXCEPT AS OTHERWISE EXPRESSLY AGREED BY THE PARTIES IN WRITING, MATTERMOST MAKES
 
 Does Mattermost answer questions about open source licenses authored by other organizations?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 No, if you have questions about an open source license please consult the original author, or FAQs they offer.
 
 Illicit Use 
@@ -721,10 +722,8 @@ Illicit Use
 How do I report illicit use of Mattermost software? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Illicit use of Mattermost software to harm others, infringe on their rights, break laws or policies is explicitly against our `Conditions of Use <https://about.mattermost.com/default-terms/>`_. 
+Illicit use of Mattermost software to harm others, infringe on their rights, break laws or policies is explicitly against our `Conditions of Use <https://about.mattermost.com/default-terms/>`_.
 
-If the illicit use is happening on a web address ending in ``“mattermost.com”`` it means the suspected perpetrators are using Mattermost software controlled by our company, Mattermost, Inc. In this case, please contact us at ``support@mattermost.com`` to report the issue for us to investigate. 
+If the illicit use is happening on a web address ending in ``“mattermost.com”`` it means the suspected perpetrators are using Mattermost software controlled by our company, Mattermost, Inc. In this case, please contact us at ``support@mattermost.com`` to report the issue for us to investigate.
 
-If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.net/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our  `Conditions of Use <https://about.mattermost.com/default-terms/>`_ policy for Mattermost software. 
-
-
+If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.net/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our  `Conditions of Use <https://about.mattermost.com/default-terms/>`_ policy for Mattermost software.
