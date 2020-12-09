@@ -65,7 +65,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Added ``EnableSharedChannels``, to support managing shared channels feature.
  - Under ``SamlSettings`` in ``config.json``:
-   - Added ``IgnoreGuestsLdapSync``, to ignore Guests when using SAML and synchronizing with LDAP.
+   - Added ``IgnoreGuestsLdapSync``, to ignore guests when using SAML and synchronizing with LDAP.
 
 ### Go Version
  - 5.30 is built with Go ``1.14.6``.
@@ -74,9 +74,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@stripe/react-stripe-js``, ``@stripe/stripe-js``, and ``@types/country-list`` to https://github.com/mattermost/mattermost-webapp.
  - Removed ``react-native-image-gallery`` from https://github.com/mattermost/mattermost-mobile.
  - Added ``react-native-redash`` and ``react-native-share`` to https://github.com/mattermost/mattermost-mobile.
-
-### Database Changes
- - 
  
 ### Websocket Event Changes
  - In ``post_deleted`` websocket event, System Admins are now notified when a user initiates a post deletion.
@@ -87,6 +84,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ### Known Issues
  - Line numbers do not line up with the text on code file previews.
+ - Deleting users via CLI sometimes fails when trying to fetch threads.
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
  - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
