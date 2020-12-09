@@ -12,7 +12,7 @@ From v5.30, System Admins can use the System Console to manage admin roles and a
 
 There are two ways to assign roles:
 
-1. Using the System Console. Go to **System Console > User Management > System Roles (Beta)**.
+1. Using **System Console > User Management > System Roles (Beta)**.
 
 2. Using the command line, using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_.
 
