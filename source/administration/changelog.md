@@ -12,7 +12,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Incident Management provided out-of-the-box (E20)
- - Prepackaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
+ - Pre-packaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
 
 #### Configure New Admin Roles Permissions in the System Console (E20, Beta)
  - Mattermost [recently released three new pre-built granular administrator roles](https://mattermost.com/blog/mattermost-release-v5-28/) to enable you to selectively delegate administrative tasks to other members of your organization. The three new roles are System Manager, User Manager, and Read-only Admin. Now you can configure specific permissions for these roles directly from the System Console.
