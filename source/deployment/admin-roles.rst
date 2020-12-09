@@ -146,7 +146,7 @@ The format of the mmctl command is:
 
 1. Go to **System Console > User Management > System Roles (Beta)** and select the **User Manager** role.
 
-2. Under **Privileges > Authentication**, select **No access**, and then click **Save**.
+2. Under **Privileges > Authentication** select **No access**, then choose **Save**.
 
 The format of the mmctl command is:
 
