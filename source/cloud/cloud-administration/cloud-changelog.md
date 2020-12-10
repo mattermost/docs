@@ -33,13 +33,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
  - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close LDAP Session.
 
-### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
- - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``CollapsedThreads`` for collapsed reply threads feature.
-
 ### Database Changes
  - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
  
@@ -90,11 +83,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### Notifications
  - Channel-wide mentions are now automatically disabled when a user mutes a channel.
 
-#### Command Line Interface (CLI)
- - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
- - Added mmctl system version endpoint to print the remote server version.
- - Improved the mmctl system status command output to include all the reported values.
-
 #### Integrations
  - Updated icon_emoji field in incoming webhooks to allow for emojis to also be specified with surrounding colons.
  - Dynamic auto-completion is now supported for built-in slash commands.
@@ -115,15 +103,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Fixed an issue where a search using from: failed to auto-load more results in the right-hand side when Elasticsearch was enabled.
  - Fixed an issue where s3 file backend TestFileConnection failed due to permissions if S3PathPrefix was in use.
  - Fixed an issue where an id was missing for Tooltip in PostInfo.
-
-### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
- - Under ``ExperimentalSettings`` in ``config.json``:
-    - Added ``EnableSharedChannels``, to support managing shared channels feature.
- - Under ``SamlSettings`` in ``config.json``:
-    - Added ``IgnoreGuestsLdapSync``, to ignore Guests when using SAML and synchronizing with LDAP.
 
 #### Websocket Event Changes
  - In post_deleted websocket event, System Admins are now notified when a user initiates a post deletion.
