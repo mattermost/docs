@@ -4,14 +4,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ## Release 2020-12-09
 
-### Highlights
-
-#### Incident Management provided out-of-the-box (E20)
- - Pre-packaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
-
 ### Improvements
 
-#### Cloud-specific
+#### Cloud Services
  - The Customer Web Server can now make HTTP requests to an installation by passing the X-Cloud-Token header, with the value being that installation's Customer API Key.
  - System Admins can receive an email notifying them of a failed payment in Mattermost cloud.
  - In the event a subscription has a payment and there is no card on the account when that payment is processed, an email will be sent to attempt to get the user to pay up.
@@ -51,9 +46,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ## Release 2020-11-24
 
-### Compatibility
- - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 and all 9.x versions in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
-
 ### Highlights
 
 #### Modify new Admin roles permissions in the System Console (Beta)
@@ -63,7 +55,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Improvements
 
-#### Cloud-specific
+#### Cloud Services
  - Slack imports are no longer allowed in Cloud installations.
  - Mattermost cloud instances with delinquent subscriptions will be sent emails on a certain cadence, in certain cases:
     - A check happens twice per day to see if an installation is over the user limit
