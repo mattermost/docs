@@ -20,7 +20,7 @@
 #### All apps
  
 #### Android specific
- - Fixed an issue where redux event was not sent to update the list of Group Mentions when Groups were added or removed in an LDAP Group Synced Team.
+ - Fixed an issue where the list of Group Mentions was not updated when Groups were added or removed in an LDAP Group Synced Team.
  - Fixed an issue where a group mention was highlighted by default before it was posted.
 
 #### iOS specific
