@@ -84,7 +84,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ### Known Issues
  - Line numbers do not line up with the text on code file previews.
- - Deleting users via CLI sometimes fails when trying to fetch threads.
+ - In some cases reply posts cannot be marked as unread.
+ - The threshold from the bottom of the screen is sometimes not respected for received messages.
+ - Posts created by bots containing attachments appear as repeated until the user refreshes the page.
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
  - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
