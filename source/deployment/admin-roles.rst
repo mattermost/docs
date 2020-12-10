@@ -77,7 +77,7 @@ The format of the mmctl command is:
 
 2. Under **Assigned People**, choose **Add People**.
 
-3. Search for and select **Bob Smith** and **Sue Clark** then choose **Add** to grant the User Manager role to those users.
+3. Search for and select **Bob Smith** and **Sue Clark** then select **Add** to grant the User Manager role to those users.
 
 The format of the mmctl command is:
 
