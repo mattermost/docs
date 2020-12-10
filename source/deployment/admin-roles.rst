@@ -12,7 +12,7 @@ From v5.30, System Admins can use the System Console to manage admin roles and a
 
 There are two ways to assign roles:
 
-1. Using **System Console > User Management > System Roles (Beta)**.
+1. In the System Console under **User Management > System Roles (Beta)**.
 
 2. Using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_.
 
@@ -53,57 +53,77 @@ Assigning Admin Roles
 
 System Admins can assign roles using the System Console or the mmctl tool. This can be done either locally or remotely.
 
-1. Go to **System Console > User Management > System Roles (Beta) > Assigned People**. 
+  **In the System Console**
 
-The format of the mmctl command is:
+  1. Go to **System Console > User Management > System Roles (Beta) > Assigned People**. 
 
-``mmctl permissions role assign [role_name] [username...]``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign [role_name] [username...]``
 
 **To grant the System Manager role to a single user called Bob Smith:**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **System Manager** role.
+  **In the System Console**
 
-2. Under **Assigned People**, choose **Add People**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **System Manager** role.
 
-3. Search for and select ``Bob Smith`` then select **Add** to grant the System Manager role to that user.
+  2. Under **Assigned People**, choose **Add People**.
 
-The format of the mmctl command is:
+  3. Search for and select ``Bob Smith``, then select **Add** to grant the System Manager role to that user.
 
-``mmctl permissions role assign system_manager bob-smith``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign system_manager bob-smith``
 
 **To grant the User Manager role to two users, Bob Smith and Sue Clark:**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **User Manager** role.
+  **In the System Console**
 
-2. Under **Assigned People**, choose **Add People**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
 
-3. Search for and select **Bob Smith** and **Sue Clark** then select **Add** to grant the User Manager role to those users.
+  2. Under **Assigned People**, choose **Add People**.
 
-The format of the mmctl command is:
+  3. Search for and select **Bob Smith** and **Sue Clark**, then select **Add** to grant the User Manager role to those users.
 
-``mmctl permissions role assign system_user_manager bob-smith sue-clark``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign system_user_manager bob-smith sue-clark``
 
 **To grant the Read Only Admin role to two users, Bob Smith and Sue Clark:**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **Viewer** role.
+  **In the System Console**
 
-2. Under **Assigned People**, select **Add People**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **Viewer** role.
 
-3. Search for and select **Bob Smith** and **Sue Clark**, then select **Add** to grant the Viewer role to those users.
+  2. Under **Assigned People**, select **Add People**.
 
-The format of the mmctl command is:
+  3. Search for and select **Bob Smith** and **Sue Clark**, then select **Add** to grant the Viewer role to those users.
 
-``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
 
 **To remove the System Manager role from a single user called Bob Smith:**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **Viewer** role.
+  **In the System Console**
 
-2. Under **Assigned People** search for **Bob Smith** then select **Remove**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **Viewer** role.
 
-The format of the mmctl command is:
+  2. Under **Assigned People** search for **Bob Smith**, then select **Remove**.
 
-``mmctl permissions role unassign system_manager bob-smith``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role unassign system_manager bob-smith``
 
 Editing Privileges of Admin Roles (Advanced)
 --------------------------------------------
@@ -112,49 +132,65 @@ Each of the admin roles have defined, default privileges as outlined above.
 
 System Admins can grant read and write access to other areas of the System Console, as well as remove read and write access (including default access), for each role. This is completed using the System Console or the mmctl tool, either locally or remotely.
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **System Manager**, **User Manager**, or **Viewer** role.
+  **In the System Console**
 
-2. For each set of privileges, select the access level as **Can edit**, **Read only**, or **No access**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **System Manager**, **User Manager**, or **Viewer** role.
 
-**Note:** If you set privilege subsections to different access levels, the privilege access level displays as **Mixed Access**.
+  2. For each set of privileges, select the access level as **Can edit**, **Read only**, or **No access**.
 
-The format of the mmctl command is:
+  **Note:** If you set privilege subsections to different access levels then the privilege access level displays as **Mixed Access**.
 
-``mmctl permissions add [role_name] [permission...]``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions add [role_name] [permission...]``
 
 **To grant write access to the Authentication section of the System Console for all users with the User Manager role:**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **User Manager** role.
+  **In the System Console**
 
-2. Under **Privileges > Authentication**, select **Can edit** then select **Save**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
 
-The format of the mmctl command is:
+  2. Under **Privileges > Authentication** select **Can edit**, then select **Save**.
 
-``mmctl permissions add system_user_manager sysconsole_write_authentication``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions add system_user_manager sysconsole_write_authentication``
 
 **To grant read only access to the Authentication section of the System Console for all users with the User Manager role:**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **User Manager** role.
+  **In the System Console**
 
-2. Under **Privileges > Authentication**, select **Read only** then select **Save**.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
 
-The format of the mmctl command is:
+  2. Under **Privileges > Authentication** select **Read only**, then select **Save**.
 
-``mmctl permissions remove system_user_manager sysconsole_read_authentication``
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions remove system_user_manager sysconsole_read_authentication``
 
 **To remove write access to the Authentication section of the System Console for all users with the User Manager role:**
+  
+  **In the System Console**
 
-1. Go to **System Console > User Management > System Roles (Beta)** and select the **User Manager** role.
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
 
-2. Under **Privileges > Authentication** select **No access**, then choose **Save**.
+  2. Under **Privileges > Authentication** select **No access**, then choose **Save**.
 
-The format of the mmctl command is:
+  **Using the mmctl tool**
+  
+  The format of the mmctl command is:
 
-``mmctl permissions remove system_user_manager sysconsole_write_authentication``
+  ``mmctl permissions remove system_user_manager sysconsole_write_authentication``
 
 **To reset a role to its default set of permissions:**
 
-**Note:** This is completed using the mmctl tool only, either locally or remotely.
+This is completed using the mmctl tool only, either locally or remotely.
 
 The format of the mmctl command is:
 
