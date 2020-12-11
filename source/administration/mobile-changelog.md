@@ -19,6 +19,7 @@
 
 #### All apps
  - Fixed an issue where all channel push notifications were cleared when opening one channel's push notification.
+ - Fixed an issue where post edits and deletes propagated inconsistently.
  
 #### Android specific
  - Fixed an issue where the list of Group Mentions was not updated when Groups were added or removed in an LDAP Group Synced Team.
