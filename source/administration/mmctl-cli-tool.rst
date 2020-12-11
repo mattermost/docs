@@ -2313,7 +2313,7 @@ Child Commands
   -  `mmctl permissions remove`_ - Remove permissions from a role
   -  `mmctl permissions reset`_ - Reset default permissions for role
   -  `mmctl permissions show`_ - Show the role information
-  -  `mmctl permissions role unassign`_ - Unassign users from role
+  -  `mmctl permissions role unassign`_ - Unassign users from a role
 
 **Options**
 
