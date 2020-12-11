@@ -30,7 +30,7 @@ A wide array of open source self-hosted integrations are available from the comm
 
 Many of these use Mattermost incoming webhooks to deliver data into Mattermost from on-premises systems like Jira, Jenkins, GitLab, and other popular products.
 
-- Learn about `Mattermost open source apps and integrations <https://about.mattermost.com/default-app-directory/>`__.
+- Learn about `Mattermost open source apps and integrations <https://apps.mattermost.com/>`__.
 
 Slack-compatible webhooks (private and public cloud)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +53,7 @@ Self-hosted bots interfacing to other systems (private and public cloud)
 You can deploy interactive bots with Mattermost to issue commands and receive responses through a centralized interface. The Hubot open source project, created by GitHub, Inc., is among the most popular of the bot options.
 
 - Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__.
-- Learn about `all the open source community bots available <https://about.mattermost.com/default-app-directory/>`__.
+- Learn about `all the open source community bots available <https://apps.mattermost.com/>`__.
 
 Custom integrations
 ---------------------------------------------------------
@@ -73,7 +73,7 @@ Mattermost provides complete access to `server APIs <https://api.mattermost.com/
 
 - Learn about `Mattermost REST APIs <https://api.mattermost.com/>`__.
 - Learn about `Mattermost drivers, webhooks, and slash commands <https://docs.mattermost.com/developer/api.html>`__.
-- Learn about `Mattermost open source apps and integrations <https://about.mattermost.com/default-app-directory/>`__.
+- Learn about `Mattermost open source apps and integrations <https://apps.mattermost.com/>`__.
 - Learn about the `Mattermost Golang Bot sample <https://github.com/mattermost/mattermost-bot-sample-golang>`__.
 
 Slack-compatible slash commands (private and public cloud)
