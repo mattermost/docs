@@ -18,6 +18,7 @@
 ### Bug Fixes
 
 #### All apps
+ - Fixed an issue where the apps frequently failed to load channels for initial team.
  - Fixed an issue where all channel push notifications were cleared when opening one channel's push notification.
  - Fixed an issue where post edits and deletes propagated inconsistently.
  
