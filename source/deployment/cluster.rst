@@ -440,7 +440,7 @@ You may be asked to provide this data to Mattermost for analysis and troubleshoo
 
 .. note::
 
-  - Ensure that server log files are being created. See :ref:`troubleshooting` for details.
+  - Ensure that server log files are being created. You can find more on working with Mattermost logs `here <https://docs.mattermost.com/install/troubleshooting.html#review-mattermost-logs>`__.
   - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
   - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster.
 
