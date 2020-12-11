@@ -67,3 +67,77 @@ Common Tasks
 **Upgrading Mattermost**
  - Mattermost releases updates monthly to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
  - Follow the steps outlined in the `upgrade documentation <https://docs.mattermost.com/administration/upgrade.html>`_ to perform upgrades.   
+
+User Experience Optimizations
+-----------------------------
+
+We highly recommend the following best practices, configuration options, and features for an optimal Mattermost user experience.
+
+**1. Upgrade your Mattermost Server**
+
+Frequent server upgrades are critical to maintain an optimized user experience. When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, and guaranteed mobile app compatibility. Upgrading your Mattermost server only takes a few minutes. See the `Upgrade Guide <https://docs.mattermost.com/administration/upgrade.html>`__ for step-by-step instructions. 
+
+**2. Install Plugins**
+
+Plugins customize and extend the Mattermost platform. Install plugins with a single click from the **Main Menu > Plugin Marketplace**. See the `Plugin Marketplace  <https://docs.mattermost.com/administration/plugins.html#plugin-marketplace>`__ documentation for details.
+
+  Consider installing and enabling the following productivity plugins for your users:   
+    - Enable audio/video calling and screen sharing with `Jitsi <https://integrations.mattermost.com/?s=Jitsi%20Plugin>`__ or `Zoom <https://integrations.mattermost.com/?s=Zoom%20Plugin>`__.
+    - Create polls with `Matterpoll <https://integrations.mattermost.com/?s=Matterpoll%20Plugin>`__.
+    - Share GIFs with `GIF Commands <https://integrations.mattermost.com/?s=gif&submit=>`__.
+    - Create and share memes with `Memes <https://integrations.mattermost.com/?s=Memes%20Plugin>`__.
+    - Set personal reminders with `Remind <https://integrations.mattermost.com/?s=Remind%20Plugin>`__.
+    - Create and share to do items with `Todo <https://github.com/mattermost/mattermost-plugin-todo>`__.
+    - Customize welcome messages for new users with `WelcomeBot <https://integrations.mattermost.com/?s=WelcomeBot%20Plugin>`__.
+
+Explore all plugins and integrations available in the `Mattermost Plugin Marketplace <https://integrations.mattermost.com/>`__.
+
+**3. Enable Automatically Extended Sessions**
+
+Keep your desktop and mobile users logged in and refresh user sessions automatically by configuring the following: **System Console > Sessions > Extend session length with activity**: ``true``. See the `Extend session length with activity <https://docs.mattermost.com/administration/config-settings.html#extend-session-length-with-activity>`__ configuration settings documentation for details. 
+
+**4. Enable Full Content Push Notifications**
+
+Enable push notifications on mobile devices to deliver messages in real time by configuring the following: **System Console > Push Notification Server > Enable Push Notifications**: ``Use TPNS``. See the `Push notification server <https://docs.mattermost.com/administration/config-settings.html#push-notification-server>`__ configuration settings documentation for details. 
+
+Enable full content push notifications, including the sender’s name, the channel name, and the message text, by configuring the following: **System Console > Notifications > Push Notification Contents**: ``Full message contents``. See the `Push notification contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ configuration settings documentation for details.
+
+.. note::
+
+  - Mattermost Enterprise E10 and E20 customers can `enable HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ that includes production-level uptime SLAs.
+
+  - Mattermost Enterprise E20 customers can `enable ID-Only push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ so the notification message contents are not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device.
+
+**5. Enable Custom Emoji**
+
+`Emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ enable users to express concepts such as emotions and physical gestures in messages. Enable the emoji picker by configuring the following: **System Console > Emoji > Enable Emoji Picker**: ``true``. See the `Enable emoji picker <https://docs.mattermost.com/administration/config-settings.html#enable-emoji-picker>`__ configuration settings documentation for details.
+
+Empower users to create and share their own custom emojis by configuring the following: **System Console > Emoji > Enable Custom Emoji**: ``true``. See the `Enable custom emoji <https://docs.mattermost.com/administration/config-settings.html#enable-custom-emoji>`__ configuration settings documentation for details.
+
+**6. Enable GIF Picker (Beta)**
+
+GIFs are animated images that can make messaging more fun and engaging. Enable users to access the Mattermost GIF picker from the message draft area by configuring the following: **System Console > GIF (Beta) > Enable GIF Picker**: ``true``. See the `Enable GIF picker <https://docs.mattermost.com/administration/config-settings.html#enable-gif-picker>`__ configuration settings documentation for details.
+
+**7. Enable Link Previews**
+
+Link previews provide a visual glimpse of relevant content for links shared in messages. Enable link previews by configuring the following: **System Console > Posts > Enable Link Previews**: ``true``. See the `Enable link previews <https://docs.mattermost.com/administration/config-settings.html#enable-link-previews>`__ configuration settings documentation for details.
+ 
+**8. Enable Batched Email Notifications**
+
+Email notifications can be batched together so users don’t get overwhelmed with too many emails.
+
+Enable email notifications first by configuring the following: **System Console > Notifications > Enable Email Notifications**: ``true``. See the `Enable email notifications <https://docs.mattermost.com/administration/config-settings.html#enable-email-notifications>`__ configuration settings documentation for details. Email notifications require configuring an `SMTP email server <https://docs.mattermost.com/administration/config-settings.html#smtp-server>`__.
+
+Then, enable batched email notifications by configuring the following: **System Console > Notifications > Enable Email Batching**: ``true``. See the `Enable email batching <https://docs.mattermost.com/administration/config-settings.html#enable-email-batching>`__ configuration settings documentation for details.Email batching is not available if you are running your deployment in `High Availability <https://docs.mattermost.com/deployment/cluster.html>`__.
+
+**9. Enable Elasticsearch (E20)**
+
+Mattermost Enterprise E20 customers can enable `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ for optimized search performance at enterprise-scale. Elasticsearch solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results. 
+
+Enable Elasticsearch by configuring the following: **System Console > Elasticsearch > Enable Indexing**: ``true``. See the `Elasticsearch <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__ configuration settings documentation for details. Enabling Elasticsearch requires `setting up an Elasticsearch server <https://docs.mattermost.com/deployment/elasticsearch.html#setting-up-an-elasticsearch-server>`__.
+
+**10. Try Experimental Features**
+
+Mattermost often releases experimental features to get user feedback on new functionality and product enhancements. For example, new `experimental sidebar features <https://mattermost.com/blog/dev-sneak-peek-experimental-sidebar-features>`__ include custom, collapsible channel categories, unread filtering, and many more enhancements for managing channels in your sidebar.  
+
+Enable experimental sidebar features by configuring the following: **System Console > Experimental > Experimental Sidebar Features**. See the `Experimental sidebar features (Experimental) <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features-experimental>`__ configuration settings documentation for details.
