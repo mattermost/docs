@@ -2311,7 +2311,7 @@ Child Commands
   -  `mmctl permissions add`_ - Add permissions to a role
   -  `mmctl permissions role assign`_ - Assign users to role
   -  `mmctl permissions remove`_ - Remove permissions from a role
-  -  `mmctl permissions reset`_ - Reset default permissions for role
+  -  `mmctl permissions reset`_ - Reset default permissions for a role
   -  `mmctl permissions show`_ - Show the role information
   -  `mmctl permissions role unassign`_ - Unassign users from a role
 
