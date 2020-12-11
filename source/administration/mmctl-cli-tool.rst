@@ -2435,7 +2435,7 @@ mmctl permissions reset
 
 **Description**
 
-Reset the given role's permissions to the set that was originally released with (only available in E10 and E20).
+Reset the given role's permissions to the default settings and overwrite custom settings (only available in Enterprise Edition E10 and E20).
 
 **Format**
 
