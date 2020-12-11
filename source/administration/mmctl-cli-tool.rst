@@ -2505,7 +2505,7 @@ mmctl permissions role unassign
 
 **Description**
 
-Unassign users from a role by username (only available in E10 and E20).
+Unassign users from a role by username (only available in Enterprise Edition E10 and E20).
 
 **Format**
 
