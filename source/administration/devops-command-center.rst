@@ -148,6 +148,11 @@ Deleting a playbook
 3. Select **Delete**.
 4. Confirm that you want to **Delete Playbook**.
 
+Playbook preferences
+~~~~~~~~~~~~~~~~~~~~
+
+
+
 Incidents
 ^^^^^^^^^
 
