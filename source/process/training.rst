@@ -68,22 +68,27 @@ Three Months
 Channels
 ---------------------------------------------------------
 
-Whenever possible, we share key updates and have discussions in Mattermost. Some of the channels used are:
+Whenever possible, we share key updates and have discussions in Mattermost. Some of the recommended channels we use are listed below. Note that some channels are available on the Community server and others are available on the Mattermost Staff server.
 
-- `Announcements <https://community.mattermost.com/private-core/channels/announcements>`_ - Mattermost-wide announcements
+Community Channels 
+---------------------------------------------------------
 - `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ - General questions about Mattermost
 - `Ask R&D <https://community.mattermost.com/core/channels/ask-r-and-d>`_ - Technical questions to the Mattermost R&D team
+- `Developers <https://community.mattermost.com/core/channels/developers>`_ - General development help
+- `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
+- `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
+- `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
+
+Mattermost Staff Channels
+---------------------------------------------------------
+- `Announcements <https://community.mattermost.com/private-core/channels/announcements>`_ - Mattermost-wide announcements
 - `Customer Feedback <https://community.mattermost.com/private-core/channels/customer-feedback>`_ - Discussion of customer feedback
 - `Customer Success <https://community.mattermost.com/private-core/channels/customer-success>`_ - Updates from, and general discussion with, the Mattermost customer success team
 - `Customer Support <https://community.mattermost.com/private-core/channels/community>`_ - Discussion of customer support ticket escalations
-- `Developers <https://community.mattermost.com/core/channels/developers>`_ - General development help
 - `Marketing <https://community.mattermost.com/private-core/channels/marketing>`_ - Campaign ideas and general marketing team discussions
-- `Marketing Website <https://community.mattermost.com/private-core/channels/marketing-website-priv>`_ - Website bugs, release notes, and web discussions
-- `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
+- `Marketing Website (P) <https://community.mattermost.com/private-core/channels/marketing-website-priv>`_ - Website bugs, release notes, and web discussions
 - `Roadmap <https://community.mattermost.com/private-core/channels/roadmap>`_ - Questions about and discussion of the product roadmap, or to view public roadmap in the header
 - `Sales: General Questions <https://community.mattermost.com/private-core/channels/sales-general-questions>`_ - Discussion of all types of sales inquiries/questions
-- `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
-- `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
 - `UX Design <https://community.mattermost.com/core/channels/ux-design>`_ - Questions and discussion about product design
 - `Welcome <https://community.mattermost.com/private-core/channels/welcome>`_ - Where new staff members are introduced on their first day
 
