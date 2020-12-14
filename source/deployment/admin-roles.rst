@@ -4,7 +4,7 @@ Additional System Admin Roles (E20)
 
 From v5.28, System Admins can use the command line to assign roles that permit members to have admin access to specified areas of the System Console. This allows members of your organization to perform certain administrative tasks without providing them with access to all system administrative capabilities.
 
-From v5.30, System Admins can use the System Console to manage admin roles and admin role privileges.
+From v5.30, System Admins can also use the System Console to manage additional System Admin roles and privileges.
 
 - **System Manager:** The System Manager has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read only.
