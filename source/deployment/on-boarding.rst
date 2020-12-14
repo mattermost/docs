@@ -104,7 +104,7 @@ Enable full content push notifications, including the sender’s name, the chann
 
 .. note::
 
-  - Mattermost Enterprise E10 and E20 customers can `enable HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ that includes production-level uptime SLAs.
+  - Mattermost Enterprise Edition E10 and E20 customers can `enable HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ that includes production-level uptime SLAs.
 
   - Mattermost Enterprise Edition E20 customers can `enable ID-Only push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ so the notification message contents are not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device.
 
