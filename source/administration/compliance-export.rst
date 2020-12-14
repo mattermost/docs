@@ -41,7 +41,7 @@ CSV
 4. Set the export file format to **CSV**.
 5. Choose **Save**.
 
-The daily compliance export job creates a zip file with a unique job identifier of all messages posted in the last 24 hours. Unzip the file to easily transform the CSV format into a desired format for your third-party archive system.
+The daily compliance export job creates a zip file with a unique job identifier of all messages posted in the last 24 hours. You can unzip the file to easily transform the default CSV format into a desired format for your third-party archive system.
 
 
 For a sample CSV output, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
