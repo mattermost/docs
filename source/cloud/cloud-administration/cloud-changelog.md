@@ -6,11 +6,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Improvements
 
-#### Cloud Services
- - The Customer Web Server can now make HTTP requests to an installation by passing the X-Cloud-Token header, with the value being that installation's Customer API Key.
- - System Admins can receive an email notifying them of a failed payment in Mattermost cloud.
- - In the event a subscription has a payment and there is no card on the account when that payment is processed, an email will be sent to attempt to get the user to pay up.
-
 #### User Interface (UI)
  - Added the ability to mute categories with the experimental sidebar feature.
  - Added support for multi-selection of channels for dragging and dropping between channels in the experimental sidebar feature.
@@ -27,12 +22,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section as read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
  - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close LDAP Session.
-
-### Database Changes
- - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
- 
-### Websocket Event Changes
- - New websocket events added: ``thread_updated``, ``thread_follow_changed``, ``thread_read_changed``.
 
 ### Known Issues
  - System Manager does not have access to Billing section and sees blank screen.
@@ -54,15 +43,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### Pre-package and enable incident management v1.1.1
 
 ### Improvements
-
-#### Cloud Services
- - Slack imports are no longer allowed in Cloud installations.
- - Mattermost cloud instances with delinquent subscriptions will be sent emails on a certain cadence, in certain cases:
-    - A check happens twice per day to see if an installation is over the user limit
-    - If that installation is over the user limit, they are marked for notification during the next billing cycle
-    - If that installation is still over the limit 7, 14, 30, and 90 days into the next billing cycle, they will be sent emails with various wording to get them to add a payment method and upgrade their cloud billing 
-    - If that installation is no longer over the limit 7, 14, and 30 days into the next billing cycle, we will "forgive" them, and not send any emails for that cycle. 
-    - After the installation has gone over the limit, each time the job runs, it checks Stripe to check the state of the subscription. If it's flipped from "past_due" to active, it will cancel any emails for that cycle. Otherwise, it will continue on.
 
 #### User Interface
  - @-autocomplete results are now prioritized based on recency and thread activity.
@@ -95,9 +75,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where a search using from: failed to auto-load more results in the right-hand side when Elasticsearch was enabled.
  - Fixed an issue where s3 file backend TestFileConnection failed due to permissions if S3PathPrefix was in use.
  - Fixed an issue where an id was missing for Tooltip in PostInfo.
-
-#### Websocket Event Changes
- - In post_deleted websocket event, System Admins are now notified when a user initiates a post deletion.
 
 #### API Changes
  - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
