@@ -126,7 +126,7 @@ Link previews provide a visual glimpse of relevant content for links shared in m
 
 Email notifications can be batched together so users don’t get overwhelmed with too many emails.
 
-Enable email notifications first by configuring the following: **System Console > Notifications > Enable Email Notifications**: ``true``. See the `Enable email notifications <https://docs.mattermost.com/administration/config-settings.html#enable-email-notifications>`__ configuration settings documentation for details. Email notifications require configuring an `SMTP email server <https://docs.mattermost.com/administration/config-settings.html#smtp-server>`__.
+Enable email notifications first by setting **System Console > Notifications > Enable Email Notifications** to ``true``. See the `Enable email notifications <https://docs.mattermost.com/administration/config-settings.html#enable-email-notifications>`__ configuration settings documentation for details. Note that email notifications require an `SMTP email server <https://docs.mattermost.com/administration/config-settings.html#smtp-server>`__ to be configured.
 
 Then, enable batched email notifications by configuring the following: **System Console > Notifications > Enable Email Batching**: ``true``. See the `Enable email batching <https://docs.mattermost.com/administration/config-settings.html#enable-email-batching>`__ configuration settings documentation for details.Email batching is not available if you are running your deployment in `High Availability <https://docs.mattermost.com/deployment/cluster.html>`__.
 
