@@ -2,7 +2,7 @@
 Additional System Admin Roles (E20)
 ====================================
 
-From v5.28, System Admins can use the command line to assign roles to members that permit admin access to designated areas of the System Console. This allows other members of your organization to perform certain administrative tasks without providing access to all system administrative capabilities.
+From v5.28, System Admins can use the command line to assign roles that permit members to have admin access to specified areas of the System Console. This allows members of your organization to perform certain administrative tasks without providing them with access to all system administrative capabilities.
 
 From v5.30, System Admins can use the System Console to manage admin roles and admin role privileges.
 
