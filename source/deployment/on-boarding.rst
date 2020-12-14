@@ -100,7 +100,7 @@ Keep your desktop and mobile users logged in and refresh user sessions automatic
 
 Enable push notifications on mobile devices to deliver messages in real time by setting **System Console > Push Notification Server > Enable Push Notifications** to ``Use TPNS``. See the `Push notification server <https://docs.mattermost.com/administration/config-settings.html#push-notification-server>`__ configuration settings documentation for details.
 
-Enable full content push notifications, including the sender’s name, the channel name, and the message text, by configuring the following: **System Console > Notifications > Push Notification Contents**: ``Full message contents``. See the `Push notification contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ configuration settings documentation for details.
+Enable full content push notifications, including the sender’s name, the channel name, and the message text, by setting **System Console > Notifications > Push Notification Contents** to ``Full message contents``. See the `Push notification contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ configuration settings documentation for details.
 
 .. note::
 
