@@ -120,7 +120,7 @@ GIFs are animated images that can make messaging more fun and engaging. Enable u
 
 **7. Enable Link Previews**
 
-Link previews provide a visual glimpse of relevant content for links shared in messages. Enable link previews by configuring the following: **System Console > Posts > Enable Link Previews**: ``true``. See the `Enable link previews <https://docs.mattermost.com/administration/config-settings.html#enable-link-previews>`__ configuration settings documentation for details.
+Link previews provide a visual glimpse of relevant content for links shared in messages. Enable link previews by setting **System Console > Posts > Enable Link Previews** to ``true``. See the `Enable link previews <https://docs.mattermost.com/administration/config-settings.html#enable-link-previews>`__ configuration settings documentation for details.
  
 **8. Enable Batched Email Notifications**
 
