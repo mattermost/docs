@@ -116,7 +116,7 @@ Empower users to create and share their own custom emojis by setting **System Co
 
 **6. Enable GIF Picker (Beta)**
 
-GIFs are animated images that can make messaging more fun and engaging. Enable users to access the Mattermost GIF picker from the message draft area by configuring the following: **System Console > GIF (Beta) > Enable GIF Picker**: ``true``. See the `Enable GIF picker <https://docs.mattermost.com/administration/config-settings.html#enable-gif-picker>`__ configuration settings documentation for details.
+GIFs are animated images that can make messaging more fun and engaging. Enable users to access the Mattermost GIF picker from the message draft area by setting **System Console > GIF (Beta) > Enable GIF Picker** to ``true``. See the `Enable GIF picker <https://docs.mattermost.com/administration/config-settings.html#enable-gif-picker>`__ configuration settings documentation for details.
 
 **7. Enable Link Previews**
 
