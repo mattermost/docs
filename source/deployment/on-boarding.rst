@@ -112,7 +112,7 @@ Enable full content push notifications, including the sender’s name, the chann
 
 `Emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ enable users to express concepts such as emotions and physical gestures in messages. Enable the emoji picker by configuring the following: **System Console > Emoji > Enable Emoji Picker**: ``true``. See the `Enable emoji picker <https://docs.mattermost.com/administration/config-settings.html#enable-emoji-picker>`__ configuration settings documentation for details.
 
-Empower users to create and share their own custom emojis by configuring the following: **System Console > Emoji > Enable Custom Emoji**: ``true``. See the `Enable custom emoji <https://docs.mattermost.com/administration/config-settings.html#enable-custom-emoji>`__ configuration settings documentation for details.
+Empower users to create and share their own custom emojis by setting **System Console > Emoji > Enable Custom Emoji** to ``true``. See the `Enable custom emoji <https://docs.mattermost.com/administration/config-settings.html#enable-custom-emoji>`__ configuration settings documentation for details.
 
 **6. Enable GIF Picker (Beta)**
 
