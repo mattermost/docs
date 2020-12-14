@@ -94,7 +94,7 @@ Explore all plugins and integrations available in the `Mattermost Plugin Marketp
 
 **3. Enable Automatically Extended Sessions**
 
-Keep your desktop and mobile users logged in and refresh user sessions automatically by configuring the following: **System Console > Sessions > Extend session length with activity**: ``true``. See the `Extend session length with activity <https://docs.mattermost.com/administration/config-settings.html#extend-session-length-with-activity>`__ configuration settings documentation for details. 
+Keep your desktop and mobile users logged in and refresh user sessions automatically by setting **System Console > Sessions > Extend session length with activity** to ``true``. See the `Extend session length with activity <https://docs.mattermost.com/administration/config-settings.html#extend-session-length-with-activity>`__ configuration settings documentation for details.
 
 **4. Enable Full Content Push Notifications**
 
