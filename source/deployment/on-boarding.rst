@@ -140,4 +140,4 @@ Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexi
 
 Mattermost often releases experimental features to get user feedback on new functionality and product enhancements. For example, new `experimental sidebar features <https://mattermost.com/blog/dev-sneak-peek-experimental-sidebar-features>`__ include custom, collapsible channel categories, unread filtering, and many more enhancements for managing channels in your sidebar.  
 
-Enable experimental sidebar features by configuring the following: **System Console > Experimental > Experimental Sidebar Features**. See the `Experimental sidebar features (Experimental) <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features-experimental>`__ configuration settings documentation for details.
+Enable experimental sidebar features by enabling **System Console > Experimental > Experimental Sidebar Features**. See the `Experimental sidebar features (Experimental) <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features-experimental>`__ configuration settings documentation for details.
