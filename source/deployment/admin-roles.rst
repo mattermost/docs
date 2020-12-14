@@ -55,7 +55,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta) > Assigned People**. 
+- Go to **System Console > User Management > System Roles (Beta) > Assigned People**. 
 
   **Using the mmctl tool**
 
