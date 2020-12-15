@@ -100,9 +100,9 @@ Only members of the team in which the playbook or incident is defined have acces
 - Members of a playbook may start an incident using that playbook, and edit the playbook's stages and steps.
 - Members of an incident may modify the current state of the incident, and invite new members to the incident channel.
 
-During an active incident, you want to focus on triaging and solving the problem as soon as possible. Planning your incident support strategy ahead of time with playbooks is the best way to ensure incidents run smoothly. A playbook is a recipe for dealing with and resolving an incident. In a playbook, you can plan ahead so that during an incident responders know exactly what to do. Make sure to schedule a retrospective analysis to iterate on the design of your playbooks after the incident finishes.
+During an active incident, you want to focus on triaging and solving the problem as soon as possible. Planning your incident support strategy ahead of time with playbooks is the best way to ensure incidents run smoothly. A playbook is a recipe for dealing with and resolving an incident. In a playbook, you can plan ahead so that during an incident responders know exactly what to do.
 
-Within each playbook, you can create stages and tasks to ensure that items are addressed and completed in sequential order. The tasks can optionally be associated with slash commands and assigned to individual team members.
+Within each playbook, you can create stages and tasks to ensure that items are addressed and completed in sequential order. The tasks can optionally be associated with slash commands and assigned to individual team members. Playbooks also include status update settings, including a reminder feature, so regular updates can be shared to selected channels at set intervals. Make sure to schedule a retrospective analysis to iterate on the design of your playbooks after the incident finishes.
 
 Once complete, incident channels can be exported using the channel export option for analysis. Teams can identify bottlenecks in the incident by seeing time gaps between when checklist items are completed and incorporating necessary changes into the playbook for next incident.
 
@@ -127,10 +127,10 @@ A playbook must be defined before starting an incident.
 6. Configure whether the incident channel should be public or private within the team.
 7. Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the contents.
 
-Editing a playbook
-~~~~~~~~~~~~~~~~~~
+Configuring a playbook
+~~~~~~~~~~~~~~~~~~~~~~
 
-You can edit a playbook at any time. However, the changes will only be applied to future incidents - not the active incidents, or incidents that previously used that playbook.
+You can change a playbook's configuration at any time. However, the changes will only be applied to future incidents - not the active incidents, or incidents that previously used that playbook.
 
 Navigate to **Main Menu > Playbooks & Incidents** and select the playbook you'd like to edit.
 
