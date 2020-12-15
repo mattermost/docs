@@ -20,11 +20,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Improvements
 
 #### User Interface
- - ``@`` autocomplete results are now prioritized based on recency and thread activity.
- - File attachments below size of 10 now show fractions.
+ - @-autocomplete results are now prioritized based on recency and thread activity.
+ - File attachments below the size of 10 (KB, MB, GB, TB, etc.) now allow showing fractions.
  - The formatting of the channel header change message was improved.
- - Team invite workflow now shows ``BOT`` tags when the search returns Bot users.
- - Added the ability to zoom in/out of PDF files.
+ - Team invite workflow now shows BOT tags when the search returns Bot users.
+ - Added the ability to zoom in and out of PDF files.
  - Added support for 16x16 base64 encoded mini images to use with progressive rendering.
 
 #### Notifications
@@ -36,28 +36,27 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Improved the ``mmctl system status`` command output to include all the reported values.
 
 #### Integrations
- - Updated ``icon_emoji`` field in incoming webhooks to allow for emojis to also be specified with surrounding colons.
+ - Updated icon_emoji field in incoming webhooks to allow emojis to be specified with surrounding colons.
  - Dynamic auto-completion is now supported for built-in slash commands.
  - Added plugin hooks for ``ReationHasBeenAdded`` and ``ReactionHasBeenRemoved``.
 
 #### Administration
- - Added the ability to load a set of configuration custom defaults from a ``MM_CUSTOM_DEFAULTS_PATH`` environment variable.
+ - Added the ability to load a set of custom configuration defaults from a MM_CUSTOM_DEFAULTS_PATH environment variable.
  - Added AWS metering service support.
 
 #### Enterprise Edition (EE)
  - Added the ability to retrieve compliance files from the System Console.
 
 ### Bug Fixes
- - Fixed an issue where YouTube previews did not display sometimes.
- - Fixed an issue with broken link previews for twitter links.
+ - Fixed an issue with broken link previews for Twitter links.
  - Fixed an issue where editing a post did not submit with CMD+ENTER.
- - Fixed an issue where users were able to create or edit slash commands to have more than two slashes in the URL.
- - Fixed an issue where resized emojis got overwritten with original data.
+ - Fixed an issue where users were able to create or edit slash commands to contain more than two slashes in the URL.
+ - Fixed an issue where resized emojis were being overwritten with original data.
  - Fixed an issue where the sidebar category "More" menu was not shown when hovering over a long category name.
- - Fixed an issue where a received direct message did not show up on the sidebar if it wasn't previously created.
- - Fixed an issue where a search using ``from:`` failed to auto-load more results in the right-hand side when Elasticsearch was enabled.
- - Fixed an issue where s3 file backend ``TestFileConnection`` failed due to permissions if ``S3PathPrefix`` was in use.
- - Fixed an issue where an id was missing for Tooltip in ``PostInfo``.
+ - Fixed an issue where a received direct message did not show up on the sidebar if the direct message channel was newly created.
+ - Fixed an issue where a search using from: failed to auto-load more results on the right-hand side when Elasticsearch was enabled.
+ - Fixed an issue where an s3 file backend TestFileConnection failed due to permissions if S3PathPrefix was in use.
+ - Fixed an issue where an id was missing for a Tooltip in PostInfo.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
