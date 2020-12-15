@@ -51,7 +51,7 @@ Mattermost Incident Management has the following components:
 * **Slash commands:** Used to perform actions and manage incidents.
 * **Playbooks:** A playbook is a recipe that defines how an incident is started and resolved, as well as the retrospective process. Playbooks also include configuration options such as reminders.
 - **Stages:** A set of tasks grouped together to achieve a specific goal of the workflow, which generally need to be completed before proceeding to the next stage of the incident resolution process.
-- **Tasks:** The individual steps required to complete the stages of an incident. Tasks can optionally be assigned to specific incident participants into stages.
+ - **Tasks:** The individual steps required to complete the stages of an incident. Tasks can optionally be assigned to specific incident participants. 
 * **Incidents:** Incidents are events that require quick and effective collaboration and resolution. How an incident is handled depends on its playbook configuration.
 
 Using slash commands
