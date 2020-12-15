@@ -151,7 +151,7 @@ Navigate to **Main Menu > Playbooks & Incidents** and select the playbook you'd 
 
  - Select an optional broadcast channel where incident status updates will be automatically copied. Incident status updates always post to the incident channel. 
  - Set a default timer interval reminding the incident commander to provide a status update. 
-- Add a message template with the reminder text.
+ - Add a message template used for the first status update.
 
 Deleting a playbook
 ~~~~~~~~~~~~~~~~~~~
