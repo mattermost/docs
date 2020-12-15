@@ -46,10 +46,12 @@ Mattermost Incident Management is included in the Mattermost Cloud workspace and
 Getting Started with Incident Management
 ----------------------------------------
 
-Mattermost Incident Management has the following basic components:
+Mattermost Incident Management has the following components:
 
 * **Slash commands:** Used to perform actions and manage incidents.
-* **Playbooks:** A playbook is a recipe that defines how an incident is started and resolved, as well as the retrospective process.
+* **Playbooks:** A playbook is a recipe that defines how an incident is started and resolved, as well as the retrospective process. Playbooks also include configuration options such as reminders.
+- **Stages:** A set of tasks grouped together to achieve a specific goal of the workflow, which generally need to be completed before proceeding to the next stage of the incident resolution process.
+- **Tasks:** The individual steps required to complete the stages of an incident. Tasks can optionally be assigned to specific incident participants into stages.
 * **Incidents:** Incidents are events that require quick and effective collaboration and resolution. How an incident is handled depends on its playbook configuration.
 
 Using slash commands
@@ -130,28 +132,36 @@ Editing a playbook
 
 You can edit a playbook at any time. However, the changes will only be applied to future incidents - not the active incidents, or incidents that previously used that playbook.
 
-Navigate to **Main Menu > Playbooks & Incidents** and select the playbook you'd like to edit. You can:
+Navigate to **Main Menu > Playbooks & Incidents** and select the playbook you'd like to edit.
+
+**Permissions:**
 
 - Change the channel type created with this playbook.
 - Share the playbook.
+
+**Stages and tasks:**
+
 - Delete a stage and its associated tasks.
 - Add new tasks to an existing stage.
 - Edit tasks in an existing stage.
 - Edit the slash commands in existing tasks.
 - Add new stages and tasks.
 
+**Preferences:**
+
+- Select a broadcast channel where status updates will be automatically posted.
+- Set a timer to reminder the incident commander to provide a status update.
+- Add a message template with the reminder text.
+
 Deleting a playbook
 ~~~~~~~~~~~~~~~~~~~
+
+You can delete a playbook provided it's not currently being used in an active incident.
 
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Select the **Action** menu next to the playbook name.
 3. Select **Delete**.
 4. Confirm that you want to **Delete Playbook**.
-
-Playbook preferences
-~~~~~~~~~~~~~~~~~~~~
-
-
 
 Incidents
 ^^^^^^^^^
@@ -190,17 +200,25 @@ Restarting an incident
 
 An ended incident can be restarted at any time using ``/incident restart`` from within the incident channel or via **Restart Incident** in the RHS. Some playbooks may define stages and tasks to complete after an incident has been resolved, such as scheduling and completing a post-mortem.
 
-Incident status and information
--------------------------------
+Incident information
+--------------------
 
-To view the status of your active incident(s) select **Main Menu > Playbooks & Incidents**. Select the **Incident** tab to view a list of incidents in your team. Select the incident name to view a summary of the incident, jump to the channel, or export the channel.
+To view information about ongoing incidents, select the **Incidents** icon in the header of any channel to open the RHS where all ongoing incidents in your team are listed. Select **Go to Incident Channel** to open the relevant channel and see:
 
-To view information about ongoing incidents, select the **Incidents** icon in the header of any channel to open the RHS where all ongoing incidents are listed. Select **Go to Incident Channel** to open the relevant channel and see:
+- The incident summary tab shows:
+  - The incident commander
+  - The incident duration
+  - The current stage
+  - The most recent update
 
-- The incident commander
-- The current stage
-- The remaining tasks
-- The finished tasks
+Select **Update Status** to send out a status update to your selected channel. 
+
+The tasks list tab shows:
+  - The current stage
+  - The remaining tasks in the stage
+  - The finished tasks in the stage
+  
+Note that you can advance to the next stage in the incident even if none of the tasks are marked as completed. To return to the previous stage, select the three-dot menu and then choose **Previous Stage**.
 
 You can also:
 
@@ -208,6 +226,8 @@ You can also:
 - Mark a step as **Complete** or **Incomplete**.
 - Start an automated action.
 - Invite new members to the channel.
+
+To view all incidents in your team (ongoing and closed) select **Main Menu > Playbooks & Incidents**. Select the **Incident** tab and then select the incident name to view a summary of the incident, jump to the channel, or export the channel.
 
 Channel Export
 --------------
@@ -218,12 +238,8 @@ Glossary
 --------
 
 - **Commander:** The Mattermost user currently responsible for transitioning an incident from ongoing to ended.
-- **Incident:** An event requiring the coordinated actions of one or more Mattermost users. An incident is either ongoing or ended.
 - **Incident channel:** A Mattermost channel dedicated to real-time conversation about the incident.
 - **Incident insight page:** The incident details and analytics page, which also provides the channel export download link. It is not available on mobile.
 - **Incident member:** A Mattermost user with access to the corresponding incident channel.
-- **Playbook:** A task-based process that's followed in order to resolve an incident.
 - **Playbook configuration page:** The playbook configuration and editing page. It is not available on mobile.
-- **Stage:** A set of tasks grouped together to achieve a specific goal of the workflow, which generally need to be completed before proceeding to the next stage of the incident resolution process.
-- **Tasks:** The individual steps required to complete the stages of an incident. Tasks can optionally be assigned to specific incident participants into stages.
 - **The RHS:** The incident list and incident details displayed on the right hand side (RHS) of the web app. It is not available on mobile.
