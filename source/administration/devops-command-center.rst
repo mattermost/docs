@@ -156,7 +156,7 @@ Navigate to **Main Menu > Playbooks & Incidents** and select the playbook you'd 
 Deleting a playbook
 ~~~~~~~~~~~~~~~~~~~
 
-You can delete a playbook provided it's not currently being used in an active incident.
+You can delete a playbook at any time.
 
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Select the **Action** menu next to the playbook name.
