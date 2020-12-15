@@ -83,6 +83,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new API endpoints to work with experimental collapsed threads.
  
 ### Known Issues
+ - Error text is missing when the team name is left blank on **Team Create** page.
  - Line numbers do not line up with the text on code file previews.
  - In some cases reply posts cannot be marked as unread.
  - The threshold from the bottom of the screen is sometimes not respected for received messages.
