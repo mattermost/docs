@@ -38,7 +38,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Integrations
  - Updated icon_emoji field in incoming webhooks to allow emojis to be specified with surrounding colons.
  - Dynamic auto-completion is now supported for built-in slash commands.
- - Added plugin hooks for ``ReationHasBeenAdded`` and ``ReactionHasBeenRemoved``.
+ - Added plugin hooks for ``ReactionHasBeenAdded`` and ``ReactionHasBeenRemoved``.
 
 #### Administration
  - Added the ability to load a set of custom configuration defaults from a MM_CUSTOM_DEFAULTS_PATH environment variable.
