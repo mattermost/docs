@@ -18,7 +18,7 @@ Companies who enter into a Mattermost Authorized Reseller agreement typically ha
 Becoming a Mattermost Authorized Reseller 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Complete a `contact form <https://about.mattermost.com/contact/>`__ with Mattermost requesting an authorized reseller discussion and, if available, include the name of the customer to which you would like to resell. 
+- Complete a `contact form <https://mattermost.com/contact-us/>`__ with Mattermost requesting an authorized reseller discussion and, if available, include the name of the customer to which you would like to resell. 
 - You'll be in contact with a partner manager via email, or possibly phone, to understand the details of your business and the resale transaction. 
 - Once the resale is approved internally, you will be provided a one-time click-sign authorized reseller agreement to complete, along with purchase order information for your customer. 
 
@@ -45,7 +45,7 @@ Value-Added Resellers who complete online training and have set up local support
 Becoming a Mattermost Value-Added Reseller ("VAR") 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Complete a `contact form <https://about.mattermost.com/contact/>`__ with Mattermost requesting a reseller discussion.
+- Complete a `contact form <https://mattermost.com/contact-us/>`__ with Mattermost requesting a reseller discussion.
 - Reseller applications are reviewed within 1-2 weeks. Resellers meeting the following criteria are invited for a partnership discussion:
 
    - An existing customer has inquired by purchasing Mattermost Enterprise Edition via resale
@@ -80,12 +80,12 @@ Commercial and open source organizations who demonstrate the ability to automate
 - Joint-webinar opportunties 
 - Promotion on Mattermost social media accounts 
 
-To apply for the program, complete the `contact form <https://about.mattermost.com/contact/>`__ with Mattermost requesting a deployment solutions partner discussion.
+To apply for the program, complete the `contact form <https://mattermost.com/contact-us/>`__ with Mattermost requesting a deployment solutions partner discussion.
 
 Partner Directory 
 ------------------------------
 
-A directory of Mattermost partners can be found at https://about.mattermost.com/partners/
+A directory of Mattermost partners can be found at https://mattermost.com/partners/
 
 After completion of a partner agreement, partners are invited to send an overview of their services with a logo to inclusion in the Mattermost partner directory. 
 
@@ -93,7 +93,7 @@ To get started, please email the following to: partner-directory@mattermost.com
 
 - **Partner Name** - Your legal name may be shortened to fit in the directory listing. If you wish you can state your full legal name as part of your partner description 
 - **Partner Contact Information** - The best email address (and phone number, if preferred) where you can be reached
-- **Partner Description** - 30-100 words describing your business. See examples at https://about.mattermost.com/partners/
+- **Partner Description** - 30-100 words describing your business. See examples at https://mattermost.com/partners/
 - **City, State/Province and Country** - Location of key office or offices providing Mattermost services, or global headquarters. 
 - **Logo** - At least 200px wide
 

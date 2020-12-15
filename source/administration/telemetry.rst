@@ -134,7 +134,53 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
   - *Group Discovery Diagnostics (Enterprise Edition Only):* Provides information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
-  - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.   
+  - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
+
+Incident Management Telemetry
+-----------------------------
+
+The following list details the types of Incident Management metadata we collect:
+
+**Data collected for all event types**
+
+- ``serverVersion``: Version of the server the plugin is running on.
+- ``pluginVersion``: Version of the plugin.
+- ``eventTimeStamp``: Timestamp indicating when the event was queued to send to the server.
+- ``event originalTimestamp``: Timestamp indicating when the event actually happened. It always equals ``eventTimeStamp``.
+- ``UserID``: Unique identifier of the server.
+- ``UserActualID``: Unique identifier of the user who initiated the action.
+- ``type``: Type of the event. There are three event types that are tracked: ``incident``, ``tasks``, ``playbook``.
+
+**Data collected in incident events**
+
+- ``incidentID``: Unique identifier of the incident.
+- ``IsActive``: Boolean  value indicating if the incident is active.
+- ``CommanderUserID``: Unique identifier of the commander of the incident.
+- ``TeamID``: Unique identifier of the team where the incident channel is created.
+- ``CreatedAt``: Timestamp of the incident creation.
+- ``PostID``: Unique identifier of the post from which the incident was created (if relevant).
+- ``NumChecklists``: Number of stages in this incident.
+- ``TotalChecklistItems``: Number of tasks in this incident.
+- ``ActiveStage``: A number indicating the stage of the incident (0-based).
+- ``Public``: ``true`` if the incident was public, ``false`` if it was private.
+
+**Data collected in tasks events**
+
+- ``incidentID``: Unique identifier of the incident.
+- ``NewState``: ``null`` if the task is uncompleted, ``done`` if the task was marked completed.
+- ``WasCommander``: ``true`` if the userId who initiated the event was also the commander of the event, ``false`` if not.
+- ``WasAssignee``: ``true`` if the userId who initiated the event was also the assignee of the event, ``false`` if not.
+
+**Data collected in playbook events**
+
+- ``PlaybookID``: Unique identifier of the playbook.
+- ``TeamID``: Unique identifier of the team this playbook is associated with.
+- ``NumChecklists``: Number of stages in this playbook.
+- ``TotalChecklistItems``: Number of tasks in this incident.
+- ``IsPublic``: ``true`` if the playbook was public, ``false`` if it was private.
+- ``NumMembers``: The number of members with access to this playbook.
+- ``NumSlashCommands``: The number of slash commands in this playbook.
+  
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
 Android Mobile App Performance Monitoring

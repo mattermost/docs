@@ -27,7 +27,7 @@ The main benefits of using a proxy are as follows:
   
     [nginx]
     name=nginx repo
-    baseurl=http://nginx.org/packages/rhel/{version}/$basearch/
+    baseurl=https://nginx.org/packages/rhel/{version}/$basearch/
     gpgcheck=0
     enabled=1
 

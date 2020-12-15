@@ -1,7 +1,7 @@
 Data Retention Policy (E20)
 =================================
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users.
 

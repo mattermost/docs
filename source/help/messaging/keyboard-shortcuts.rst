@@ -1,7 +1,7 @@
 Keyboard Shortcuts
 ------------------
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <http://docs.mattermost.com/help/messaging/executing-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
 To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
 
@@ -75,7 +75,7 @@ Messages
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | :[character]+TAB                       | :[character]+TAB                       | Autocomplete emoji beginning with [character]                              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
-| CTRL+SHIFT+\\                          |  CMD+SHIFT+\\                          | React to last message in channel or thread            |
+| CTRL+SHIFT+\\                          |  CMD+SHIFT+\\                          | React to last message in channel or thread                                 |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 
 

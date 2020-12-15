@@ -99,7 +99,7 @@ Desktop Notifications
 
 Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost.
 
-When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
 
 Send Desktop Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,7 +165,7 @@ Select **Custom Theme** to customize your theme colors and share them with other
 
 In Enterprise Edition, if you belong to multiple teams, you can optionally select the checkbox "Apply new theme to all my teams" to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
 
-Learn more about the custom theme color selectors `here <http://docs.mattermost.com/help/settings/theme-colors.html#custom-themes>`__.
+Learn more about the custom theme color selectors `here <https://docs.mattermost.com/help/settings/theme-colors.html#custom-themes>`__.
 
 Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
 
@@ -285,7 +285,7 @@ If "On for all messages" is enabled, ENTER inserts a new line and CTRL+ENTER pos
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
+This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <https://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
 Enable Join/Leave Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

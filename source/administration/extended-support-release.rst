@@ -18,9 +18,9 @@ After a release reaches its end-of-life, no further updates will be provided for
 
 Please see `Release Lifecycle documentation <https://docs.mattermost.com/administration/release-lifecycle.html>`_ for full list of lifecycles for each Mattermost release.
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__.
+To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/ESR2021.png
+.. image:: ../images/ESR20212.png
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
@@ -41,19 +41,18 @@ When downloading the Mattermost version, choose an Extended Support Release from
 What are the current supported Extended Support Release versions? 
 -----------------------------------------------------------------
 
-+-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
-| Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                   |
-+=============+================+==================+==================+============================================================================================+=================================================+
-| 5.25        | Quality        | July 16, 2020    | April 15, 2021   | `5.25.6 <https://releases.mattermost.com/5.25.6/mattermost-5.25.6-linux-amd64.tar.gz>`_    | SAML Setting "Use Improved SAML                 |
-|             |                |                  |                  |                                                                                            | Library (Beta)" was disabled.                   |
-|             |                |                  |                  |                                                                                            | Please use ``xmlsec1``.                         |
-+-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
-| 5.19        | Quality        | January 16, 2020 | October 15, 2020 | `5.19.3 <https://releases.mattermost.com/5.19.3/mattermost-5.19.3-linux-amd64.tar.gz>`_    |                                                 |
-+-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
-| 5.9         | Quality        | April 16, 2019   | April 15, 2020   | `5.9.8 <https://releases.mattermost.com/5.9.8/mattermost-5.9.8-linux-amd64.tar.gz>`_       | Please upgrade to 5.0 prior to upgrading to 5.9 |
-+-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
-| 4.10        | Quality        | May 16, 2018     | July 15, 2019    | `4.10.10 <https://releases.mattermost.com/4.10.10/mattermost-4.10.10-linux-amd64.tar.gz>`_ |                                                 |
-+-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
++=============+================+==================+==================+============================================================================================+=====================================================+
+| 5.25        | Quality        | July 16, 2020    | April 15, 2021   | `5.25.7 <https://releases.mattermost.com/5.25.7/mattermost-5.25.7-linux-amd64.tar.gz>`_    | The xmlsec1-based SAML library was disabled in      |
+|             |                |                  |                  |                                                                                            | favor of the re-enabled and improved SAML library   |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| 5.19        | Quality        | January 16, 2020 | October 15, 2020 | `5.19.3 <https://releases.mattermost.com/5.19.3/mattermost-5.19.3-linux-amd64.tar.gz>`_    |                                                     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| 5.9         | Quality        | April 16, 2019   | April 15, 2020   | `5.9.8 <https://releases.mattermost.com/5.9.8/mattermost-5.9.8-linux-amd64.tar.gz>`_       | Please upgrade to 5.0 prior to upgrading to 5.9     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| 4.10        | Quality        | May 16, 2018     | July 15, 2019    | `4.10.10 <https://releases.mattermost.com/4.10.10/mattermost-4.10.10-linux-amd64.tar.gz>`_ |                                                     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 How do I restore a previous Extended Support Release?
 -----------------------------------------------------
@@ -75,4 +74,4 @@ For a new upcoming ESR, we send out an email announcement 2 months in advance. W
 
 For a deprecated ESR, we send out an email announcement 3 months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.org/>`_.
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`_.
+To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.

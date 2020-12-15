@@ -26,7 +26,7 @@ There are two ways to set up AD/LDAP:
      - Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP sign in method.
 
 2. **Configure AD/LDAP by editing `config.json`**
-     - Edit `config.json` to enable AD/LDAP based on the [AD/LDAP settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap). When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
+     - Edit `config.json` to enable AD/LDAP based on the [AD/LDAP settings documentation](https://docs.mattermost.com/administration/config-settings.html#ad-ldap). When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
 
 #### Configure AD/LDAP Sign In
 
@@ -187,7 +187,7 @@ There is currently no built-in way to connect to multiple AD servers. You will n
 
 This indicates that there is a problem somewhere with your configuration. We recommend that you check your Mattermost configuration settings to ensure that AD/LDAP is enabled, and the settings are correct.
 
-If you're still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting.
+If you're still having issues, you can [contact support](https://mattermost.com/support/) for additional troubleshooting.
 
 #### I see the error `User not registered on AD/LDAP server`.
 
@@ -197,7 +197,7 @@ This means the query sent back to the AD/LDAP server returned no results. We rec
 2. Check that the user account exists in the AD/LDAP server.
 3. Check the AD/LDAP configuration settings are correct.
 
-If you're still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting.
+If you're still having issues, you can [contact support](https://mattermost.com/support/) for additional troubleshooting.
 
 #### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost.
 

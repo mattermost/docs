@@ -25,7 +25,7 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 **If you have an existing Customer Portal account**
 
 1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account.
-2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_.
+2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`_.
 3. (Optional for E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
 4. Select **Next Step**.
 5. Enter your billing and payment information.
@@ -81,14 +81,14 @@ Frequently Asked Questions
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use `Stripe <https://stripe.com/payments>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__, which is PCI-DSS compliant.
+We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__, which is PCI-DSS compliant.
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
 How is user defined for Enterprise Edition subscriptions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`__.
+See our `frequently asked questions about licensing <https://mattermost.com/pricing-self-managed/#faq>`__.
 
 Do I need to pay for deactivated users?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -18,7 +18,7 @@ Below is a list of additional resources:
  - `Source code <https://github.com/mattermost/desktop>`__
  - Contributor’s guide (coming soon)
 
-You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+You can `download the apps directly from our downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
 
 .. contents::
     :backlinks: top
@@ -133,7 +133,7 @@ On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is th
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. First, make sure you have installed the latest desktop app version `from our website <https://about.mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
+1. First, make sure you have installed the latest desktop app version `from our website <https://mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
 2. Try to clear cache and reload the app from **View > Clear Cache and Reload** or use CTRL/CMD+SHIFT+R.
 3. Quit the app and restart it to see if the issue clears.
 4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux or **Mattermost > Settings** on macOS, and unselect **Use GPU hardware acceleration**.

@@ -109,5 +109,5 @@ MySQL:
 - Stop words that are excluded from search in MySQL: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.
 
 .. _documentation: https://docs.mattermost.com/install/i18n.html
-.. _MySQL: http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
+.. _MySQL: https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
 .. _Postgres: https://www.apt-browse.org/browse/debian/jessie/main/amd64/postgresql-9.4/9.4.18-0+deb8u1/file/usr/share/postgresql/9.4/tsearch_data/english.stop

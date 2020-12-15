@@ -1,7 +1,7 @@
 .. _interactive-dialogs:
 
 Interactive Dialogs
-========================================
+===================
 
 Interactive dialogs are used by applications that integrate with the Mattermost server. They are a method for integrations to receive some form-styled input from users and have that input submitted back to the integration. Use them to gather structured information from the end user to perform an action or a request.
 
@@ -19,27 +19,27 @@ Here is an example of what a dialog looks like for creating a Jira issue within 
   :local:
 
 Opening a Dialog
------------------------
+----------------
 
 To open a dialog, your integration must first receive an HTTP request from the Mattermost server. This request will be triggered by a slash command or an interactive message. It will include a trigger ID.
 
 Once you have the trigger ID you can use it to open the interactive dialog by sending an ``HTTP POST`` request to ``https://<your-mattermost-url>/api/v4/actions/dialogs/open``. See the below section for what to include in the body of that HTTP request.
 
 Parameters
------------------------
+----------
 
-Interactive dialogs support the following parameters: 
+Interactive dialogs support the following parameters:
 
 .. csv-table::
     :header: "Parameter", "Type", "Description"
 
     "``title``", "String", "Title of the dialog. Maximum 24 characters."
     "``introduction_text``", "string", "Markdown-formatted introduction text which is displayed above the dialog ``elements``."
-    "``elements``", "Array", "Up to 5 elements allowed per dialog. See below for more details on elements. If none are supplied - the dialog box acts as a simple confirmation."
+    "``elements``", "Array", "Up to 5 elements allowed per dialog. See below for more details on elements. If none are supplied the dialog box acts as a simple confirmation."
     "``url``", "String", "The URL to send the submitted dialog payload to."
     "``icon_url``", "String", "(Optional) The URL of the icon used for your dialog. If none specified, no icon is displayed."
     "``submit_label``", "String", "(Optional) Label of the button to complete the dialog. Default is ``Submit``."
-    "``notify_on_cancel``", "String", "(Optional) When true, sends an event back to the integration whenever there's a user-induced dialog cancellation. No other data is sent back with the event. Default is ``false``."
+    "``notify_on_cancel``", "String", "(Optional) When ``true``, sends an event back to the integration whenever there's a user-induced dialog cancellation. No other data is sent back with the event. Default is ``false``."
     "``state``", "String", "(Optional) String provided by the integration that will be echoed back with dialog submission. Default is the empty string."
 
 Sample JSON is given below. Form submissions are sent back to the URL defined by the integration. You must also include the trigger ID you received from the slash command or interactive message.
@@ -61,22 +61,22 @@ Sample JSON is given below. Form submissions are sent back to the URL defined by
   }
 
 Elements
------------------------
+--------
 
 Each dialog supports elements for users to enter information.
 
-- ``text``: Single-line plain text field. Use this for inputs such as names, email addresses or phone numbers.
-- ``textarea``: Multi-line plain text field. Use this field when the answer is expected to be longer than 150 characters. 
-- ``select``: Message menu. Use this for pre-selected choices. Can either be static menus or dynamic menus generated from users and public channels of the system. For more information on message menus, see :doc:`the documentation <interactive-messages>`.
+- ``text``: Single-line plain text field. Use this for inputs such as names, email addresses, or phone numbers.
+- ``textarea``: Multi-line plain text field. Use this field when the answer is expected to be longer than 150 characters.
+- ``select``: Message menu. Use this for pre-selected choices. Can either be static menus or dynamic menus generated from users and Public channels of the system. For more information on message menus, see :doc:`the documentation <interactive-messages>`.
 - ``bool``: Checkbox option. Use this for binary selection.
 - ``radio``: Radio button option. Use this to quickly select an option from pre-selected choices.
 
-Each element is required by default. Otherwise the client will return an error as shown below. Note that the error message will appear below the help text, if one is specified. To make an element optional, set the field ``"optional": "true"``.
+Each element is required by default, otherwise the client will return an error as shown below. Note that the error message will appear below the help text, if one is specified. To make an element optional, set the field ``"optional": "true"``.
 
 .. image:: ../../source/images/interactive-dialog-error.png
 
 Text elements
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Text elements are single-line plain text fields. Below is an example of a ``text`` element that asks for an email address.
 
@@ -94,24 +94,24 @@ Text elements are single-line plain text fields. Below is an example of a ``text
 
 There is an optional ``"subtype": "email"`` field in the above example, which specifies the keyboard layout used on mobile. For this example, the email keypad is shown to the user given the subtype is set to ``email``.
 
-The full list of supported fields are included below:
+The full list of supported fields is included below:
 
 .. csv-table::
     :header: "Field", "Type", "Description"
 
     "``display_name``", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
-    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique ``name`` fields in the same dialog."
     "``type``", "String", "Set this value to ``text`` for a text element."
-    "``subtype``", "String", "(Optional) One of ``text``, ``email``, ``number``, ``password`` (as of v5.14),``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
+    "``subtype``", "String", "(Optional) One of ``text``, ``email``, ``number``, ``password`` (as of v5.14), ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "``min_length``", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
     "``max_length``", "Integer", "(Optional) Maximum input length allowed for an element. Default is 150. If you expect the input to be greater 150 characters, consider using a ``textarea`` type element instead."
-    "``optional``", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "``optional``", "Boolean", "(Optional) Set to ``true`` if this form element is not required. Default is ``false``."
     "``help_text``", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
     "``default``", "String", "(Optional) Set a default value for this form element. Maximum 150 characters."
     "``placeholder``", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 150 characters."
     
 Textarea elements
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Textarea elements are multi-line plain text fields. A sample JSON is provided below:
 
@@ -132,12 +132,12 @@ The list of supported fields is the same as for the ``textarea`` type element.
     :header: "Field", "Type", "Description"
 
     "``display_name``", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
-    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique ``name`` fields in the same dialog."
     "``type``", "String", "Set this value to ``textarea`` for a textarea element."
     "``subtype``", "String", "(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "``min_length``", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
     "``max_length``", "Integer", "(Optional) Maximum input length allowed for an element. Default is 3,000."
-    "``optional``", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "``optional``", "Boolean", "(Optional) Set to ``true`` if this form element is not required. Default is ``false``."
     "``help_text``", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
     "``default``", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
     "``placeholder``", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
@@ -188,7 +188,7 @@ For users, use:
     "data_source": "users"
   }
 
-and for public channels, use:
+and for Public channels, use:
 
 .. code-block:: json
 
@@ -205,19 +205,19 @@ The list of supported fields for the ``select`` type element is included below:
     :header: "Field", "Type", "Description"
 
     "``display_name``", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
-    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
-    "``type``", "String", "Set this value to ``select`` for a select element."
+    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique ``name`` fields in the same dialog."
+    "``type``", "String", "Set this value to ``select`` for a ``select`` element."
     "``data_source``", "String", "(Optional) One of ``users``, or ``channels``. If none specified, assumes a manual list of options is provided by the integration."
     "``options``", "Array", "(Optional) An array of options for the select element. Not applicable for ``users`` or ``channels`` data sources."
-    "``optional``", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "``optional``", "Boolean", "(Optional) Set to ``true`` if this form element is not required. Default is ``false``."
     "``help_text``", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
     "``default``", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
     "``placeholder``", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
 
 Checkbox element
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
-From Mattermost 5.16 you can use ``checkbox`` elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a ``checkbox`` element that asks for meeting feedback.
+From Mattermost v5.16 you can use ``checkbox`` elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a ``checkbox`` element that asks for meeting feedback.
 
 .. image:: ../../source/images/interactive-dialog-bool.png
 
@@ -230,24 +230,24 @@ From Mattermost 5.16 you can use ``checkbox`` elements. It looks like a plain te
     "type": "bool",
   }
 
-The full list of supported fields are included below:
+The full list of supported fields is included below:
 
 .. csv-table::
     :header: "Field", "Type", "Description"
 
     "``display_name``", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
-    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique ``name`` fields in the same dialog."
     "``type``", "String", "Set this value to ``bool`` for a checkbox element."
-    "``optional``", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "``optional``", "Boolean", "(Optional) Set to ``true`` if this form element is not required. Default is ``false``."
     "``help_text``", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
-    "``default``", "String", "(Optional) Set a default value for this form element. True or false."
+    "``default``", "String", "(Optional) Set a default value for this form element. ``true`` or ``false``."
     "``placeholder``", "String", "(Optional) A string displayed to include a label besides the checkbox. Maximum 150 characters."
     
 
 Radio element
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
-From Mattermost 5.16 you can use ``radio`` elements. It looks like a plain text field with a radio button to be selected. Below is an example of a ``radio`` element that asks for a department.
+From Mattermost v5.16 you can use ``radio`` elements. It looks like a plain text field with a radio button to be selected. Below is an example of a ``radio`` element that asks for a department.
 
 .. image:: ../../source/images/interactive-dialog-radio.png
 
@@ -281,7 +281,7 @@ The full list of supported fields are included below:
     :header: "Field", "Type", "Description"
 
     "``display_name``", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
-    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "``name``", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique ``name`` fields in the same dialog."
     "``type``", "String", "Set this value to ``radio`` for a radio element."
     "``options``", "Array", "(Optional) An array of options for the radio element."
     "``help_text``", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
@@ -289,12 +289,12 @@ The full list of supported fields are included below:
 
 
 Dialog submission
------------------------
+-----------------
 
 When a user submits a dialog, Mattermost will perform client-side input validation to make sure:
 
-  - All required fields are filled
-  - All formats are correct (e.g. email, telephone number, etc.)
+  - All required fields are filled.
+  - All formats are correct (e.g. email, telephone number, etc.).
 
 The submission payload sent to the integration is:
 
@@ -314,7 +314,7 @@ The submission payload sent to the integration is:
       "cancelled": false
   }
 
-Optionally, the dialog can send an event back to the integration if ``notify_on_cancel`` parameter is set to true. If this happens, ``cancelled`` will be set to true on the above payload, and ``submission`` will be empty.
+Optionally, the dialog can send an event back to the integration if ``notify_on_cancel`` parameter is set to ``true``. If this happens, ``cancelled`` will be set to ``true`` on the above payload, and ``submission`` will be empty.
 
 Moreover, Mattermost also allows the integration itself to perform input validation. This can be done by responding to the dialog submission request with a JSON body containing an ``errors`` field. The ``errors`` field can contain a JSON object, mapping input field names to string error messages you would like to display to the user. For example, if you have a field named ``num_between_0_and_10``, you can enforce the user to enter a number between 0 and 10 by returning the following response body if the condition isn't satisfied:
 
@@ -328,16 +328,16 @@ The integration may also return a generic error message to the user that is not 
 
   {"error": "Failed to fetch additional data. Please try again."}
 
-Support for generic error messages was added in Mattermost 5.18.
+Support for generic error messages was added in Mattermost v5.18.
 
-Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission. This should be a separate request back to Mattermost once the service has received and responded to a submission request from a dialog. This can be done either via `the REST API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_, or via the `Plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_ if you're developing a plugin.
+Finally, once the request is submitted, we recommend that the integration responds with a system message or an ephemeral message confirming the submission. This should be a separate request back to Mattermost once the service has received and responded to a submission request from a dialog. This can be done either via `the REST API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_, or via the `Plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_ if you're developing a plugin.
 
 .. note::
 
-  If the dialog is closed by clicking **Cancel** or the **X**, no data will be submitted. If a user clicks away from the dialog, the dialog won’t close. This is to prevent accidentally losing any answers they've made to an unsubmitted dialog.
+  If the dialog is closed by clicking **Cancel** or **X**, no data will be submitted. If a user clicks away from the dialog, the dialog won’t close. This is to prevent accidentally losing any answers they've made to an unsubmitted dialog.
 
 Example
------------------------
+-------
 
 Below is a full example of a JSON payload that creates an interactive dialog in Mattermost:
 
@@ -349,7 +349,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
      "dialog":{
         "callback_id":"somecallbackid",
         "title":"Test Title",
-        "icon_url":"http://www.mattermost.org/wp-content/uploads/2016/04/icon.png",
+        "icon_url":"https://mattermost.org/wp-content/uploads/2016/04/icon.png",
         "elements":[
            {
               "display_name":"Display Name",
@@ -474,7 +474,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
 Share your integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
 
 The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
 
