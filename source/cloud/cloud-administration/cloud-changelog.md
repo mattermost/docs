@@ -10,7 +10,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Added the ability to mute categories with the experimental sidebar feature.
  - Added support for multi-selection of channels when dragging and dropping between channels in the experimental sidebar feature.
  - Group messages are now returned in the channel switcher when only first names are typed.
- - /dnd command will only set a do not disturb status whatever the current user status is.
+ - Issuing /dnd consecutively no longer unexpectedly toggles the user status between "Do Not Disturb" and "Online" and will only set the user's status to "Do Not Disturb".
 
 #### Administration
  - Added a new `manage_remote_clusters` permission.
@@ -46,7 +46,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 #### User Interface
  - @-autocomplete results are now prioritized based on recency and thread activity.
- - File attachments below size of 10 now show fractions.
+ - File attachments below the size of 10 (KB, MB, GB, TB, etc.) now allow showing fractions.
  - The formatting of the channel header change message was improved.
  - Team invite workflow now shows BOT tags when the search returns Bot users.
  - Added the ability to zoom in and out of PDF files.
@@ -71,7 +71,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where users were able to create or edit slash commands to contain more than two slashes in the URL.
  - Fixed an issue where resized emojis were being overwritten with original data.
  - Fixed an issue where the sidebar category "More" menu was not shown when hovering over a long category name.
- - Fixed an issue where a received direct message did not show up on the sidebar if it wasn't previously created.
+ - Fixed an issue where a received direct message did not show up on the sidebar if the direct message channel was newly created.
  - Fixed an issue where a search using ``from:`` failed to auto-load more results on the right-hand side when Elasticsearch was enabled.
  - Fixed an issue where an s3 file backend TestFileConnection failed due to permissions if S3PathPrefix was in use.
  - Fixed an issue where an id was missing for a Tooltip in PostInfo.
