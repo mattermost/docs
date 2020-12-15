@@ -106,6 +106,13 @@ Within each playbook, you can create stages and tasks to ensure that items are a
 
 Once complete, incident channels can be exported using the channel export option for analysis. Teams can identify bottlenecks in the incident by seeing time gaps between when checklist items are completed and incorporating necessary changes into the playbook for next incident.
 
+Incident status updates
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Incident status updates ensure that incident stakeholders have insight into the incident and its progress. Status updates are posted to the incident channel, and can also be optionally copied to an additional channel for visibility.
+
+Status update messaging and settings are managed in the playbooks preferences and can also be adjusted in the **Update Status** option of an ongoing incident.
+
 Playbooks
 ^^^^^^^^^
 
