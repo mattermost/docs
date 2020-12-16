@@ -28,7 +28,7 @@ Installing Mattermost Incident Management
 
 *For self-managed deployments*
 
-Mattermost Incident Management is available in the Plugin Marketplace. You can download and install the plugin from Mattermost.
+Mattermost Incident Management is available in the Plugin Marketplace:
 
 1. Open **System Console > Plugin Management**.
 2. Search for **Incident Response** using the search bar or scroll through the list manually.
