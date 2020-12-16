@@ -4167,7 +4167,6 @@ Create an incoming webhook to allow external posting of messages to a specific c
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
 
-
 mmctl webhook create-outgoing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4323,7 +4322,6 @@ Modify an existing incoming webhook by changing its title, description, channel,
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
-
 
 mmctl webhook modify-outgoing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
