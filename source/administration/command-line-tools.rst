@@ -53,9 +53,13 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
     sudo -u mattermost bin/mattermost version
 
 .. note::
-   Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
-  
-When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows:
+
+Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+
+.. note::
+
+  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows:
+``bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"``
 
 .. code-block:: bash
  
@@ -654,7 +658,7 @@ mattermost config migrate
     .. code-block:: none
 
        bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
-       
+
 mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -670,7 +674,7 @@ mattermost config reset
     .. code-block:: none
 
        bin/mattermost config reset SqlSettings.DriverName LogSettings
-       
+
    Options
     .. code-block:: none
 
@@ -2279,7 +2283,7 @@ mattermost version
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl version <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-version>`__.
+   This command will be replaced in a future release with the mmctl command `mmctl system version <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-system-version>`__.
 
 
 Description

@@ -124,7 +124,7 @@ Once the development server is set up, cd into the ``mattermost-server directory
 Change your directory to ``mmctl`` and run the end to end test suite with:
 
 .. code-block:: sh
-  
+
   make test-e2e
 
 Authenticating and logging in
@@ -495,13 +495,13 @@ Management of bots.
     -  `mmctl bot enable`_ - Enable a bot
     -  `mmctl bot list`_ - List all bots
     -  `mmctl bot update`_ - Update bot configuration
-    
+
 **Options**
 
 .. code-block:: sh
 
    -h, --help   help for bot
-   
+
 mmctl bot assign
 ^^^^^^^^^^^^^^^^^
 
@@ -571,7 +571,7 @@ mmctl bot create
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl bot disable
 ^^^^^^^^^^^^^^^^^
 
@@ -605,7 +605,7 @@ mmctl bot disable
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl bot enable
 ^^^^^^^^^^^^^^^^^
 
@@ -639,7 +639,7 @@ mmctl bot enable
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl bot list
 ^^^^^^^^^^^^^^
 
@@ -675,7 +675,7 @@ mmctl bot list
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl bot update
 ^^^^^^^^^^^^^^^^^
 
@@ -976,7 +976,7 @@ mmctl channel move
 
    -h, --help    help for move
    --force       Remove users that are not members of target team before moving the channel.
-   
+
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -1141,13 +1141,13 @@ Management of slash commands.
     -  `mmctl command modify`_ - Modify a slash command
     -  `mmctl command move`_ - Move a slash command to a different team
     -  `mmctl command show`_ - Show a custom slash command
-    
+
 **Options**
 
 .. code-block:: sh
 
     -h, --help      help for command
-    
+
 mmctl command archive
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -1416,7 +1416,7 @@ Generates autocompletion scripts for bash and zsh.
   Child Commands
     -  `mmctl completion bash`_ - Edit the configuration settings
     -  `mmctl completion zsh`_ - Get the value of a configuration setting
-    
+
 **Options**
 
 .. code-block:: sh
@@ -1429,7 +1429,7 @@ mmctl completion bash
 **Description**
 
   Generates the bash autocompletion scripts.
-  
+
   To load completion, run
 
 .. code-block:: sh
@@ -1465,7 +1465,7 @@ mmctl completion zsh
 **Description**
 
   Generates the zsh autocompletion scripts.
-  
+
   To load completion, run
 
 .. code-block:: sh
@@ -2952,7 +2952,7 @@ Child Commands
   -  `mmctl system setbusy`_ - Set the busy state to ``true``
   -  `mmctl system status`_ - Prints the status of the server
   -  `mmctl system version`_ - Prints the remote server version
-  
+
 **Options**
 
 .. code-block:: sh
@@ -3035,7 +3035,7 @@ mmctl system getbusy
     --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
     --local                        allows communicating with the server through a unix socket
     --strict                       will only run commands if the mmctl version matches the server one
-    
+
 mmctl system setbusy
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -3072,11 +3072,11 @@ mmctl system setbusy
     --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system status
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
-Prints the server status calculated using several basic server healthchecks.
+ Prints the server status calculated using several basic server healthchecks.
 
 **Format**
 
@@ -3088,19 +3088,18 @@ Prints the server status calculated using several basic server healthchecks.
 
 .. code-block:: sh
 
-    system status
+   system status
 
 **Options**
 
 .. code-block:: sh
 
-  -h, --help   help for status
+    -h, --help   help for status
 
 **Options inherited from parent commands**
 
 .. code-block:: sh
 
-      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
       --format string                the format of the command output [plain, json] (default "plain")
       --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
       --local                        allows communicating with the server through a unix socket
@@ -3109,35 +3108,36 @@ Prints the server status calculated using several basic server healthchecks.
 mmctl system version
 ^^^^^^^^^^^^^^^^^^^^
 
-Prints the server version of the currently connected Mattermost instance.
+**Description**
+
+ Prints the server version of the currently connected Mattermost instance.
 
 **Format**
 
 .. code-block:: sh
 
-  mmctl system version [flags]
+   mmctl system version [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-    system version
+   system version
 
 **Options**
 
 .. code-block:: sh
 
-  -h, --help   help for version
+   -h, --help   help for version
 
 **Options inherited from parent commands**
 
 .. code-block:: sh
 
-      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
-      --format string                the format of the command output [plain, json] (default "plain")
-      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-      --local                        allows communicating with the server through a unix socket
-      --strict                       will only run commands if the mmctl version matches the server one
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --local                        allows communicating with the server through a unix socket
+    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team
 ----------
@@ -3567,7 +3567,7 @@ mmctl token generate
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl token list
 ^^^^^^^^^^^^^^^^
 
@@ -3596,7 +3596,7 @@ mmctl token list
    -h, --help       help for list
    --inactive       List only inactive tokens
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200) 
+   --per-page int   Number of users to be fetched (default 200)
 
 **Options inherited from parent commands**
 
@@ -3606,7 +3606,7 @@ mmctl token list
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl token revoke
 ^^^^^^^^^^^^^^^^^^
 
@@ -3920,7 +3920,7 @@ mmctl user invite
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
+
 mmctl user list
 ^^^^^^^^^^^^^^^
 
