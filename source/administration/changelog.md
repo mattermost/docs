@@ -7,7 +7,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ## Release v5.30
 
 ### Compatibility
-  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
+  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
 
 ### Highlights
 
@@ -23,7 +23,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - @-autocomplete results are now prioritized based on recency and thread activity.
  - File attachments below the size of 10 (KB, MB, GB, TB, etc.) now allow showing fractions.
  - The formatting of the channel header change message was improved.
- - Team invite workflow now shows BOT tags when the search returns Bot users.
+ - Team invite workflow now shows BOT tags when the search returns bot users.
  - Added the ability to zoom in and out of PDF files.
  - Added support for 16x16 base64 encoded mini images to use with progressive rendering.
 
@@ -31,17 +31,17 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Channel-wide mentions are now automatically disabled when a user mutes a channel.
 
 #### Command Line Interface (CLI)
- - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
+ - Added new local API endpoints for getting, updating, and deleting incoming and outgoing webhooks.
  - Added ``mmctl system version`` endpoint to print the remote server version.
  - Improved the ``mmctl system status`` command output to include all the reported values.
 
 #### Integrations
- - Updated icon_emoji field in incoming webhooks to allow emojis to be specified with surrounding colons.
+ - Updated ``icon_emoji`` field in incoming webhooks to allow emojis to be specified with surrounding colons.
  - Dynamic auto-completion is now supported for built-in slash commands.
  - Added plugin hooks for ``ReactionHasBeenAdded`` and ``ReactionHasBeenRemoved``.
 
 #### Administration
- - Added the ability to load a set of custom configuration defaults from a MM_CUSTOM_DEFAULTS_PATH environment variable.
+ - Added the ability to load a set of custom configuration defaults from a ``MM_CUSTOM_DEFAULTS_PATH`` environment variable.
  - Added AWS metering service support.
 
 #### Enterprise Edition (EE)
@@ -52,14 +52,14 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where editing a post did not submit with CMD+ENTER.
  - Fixed an issue where users were able to create or edit slash commands to contain more than two slashes in the URL.
  - Fixed an issue where resized emojis were being overwritten with original data.
- - Fixed an issue where the sidebar category "More" menu was not shown when hovering over a long category name.
- - Fixed an issue where a received direct message did not show up on the sidebar if the direct message channel was newly created.
- - Fixed an issue where a search using from: failed to auto-load more results on the right-hand side when Elasticsearch was enabled.
- - Fixed an issue where an s3 file backend TestFileConnection failed due to permissions if S3PathPrefix was in use.
- - Fixed an issue where an id was missing for a Tooltip in PostInfo.
+ - Fixed an issue where the sidebar category **More** menu was not shown when hovering over a long category name.
+ - Fixed an issue where a received direct message notification did not show up on the sidebar if the Direct Message channel was newly created.
+ - Fixed an issue where a search using **from:** failed to auto-load more results on the right-hand side when Elasticsearch was enabled.
+ - Fixed an issue where an s3 file backend ``TestFileConnection`` failed due to permissions if ``S3PathPrefix`` was in use.
+ - Fixed an issue where an ID was missing for a Tooltip in ``PostInfo``.
 
 ### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ExperimentalSettings`` in ``config.json``:
@@ -79,26 +79,26 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - In ``post_deleted`` websocket event, System Admins are now notified when a user initiates a post deletion.
 
 ### API Changes
- - Added new local API endpoints for getting, updating and deleting incoming and outgoing webhooks.
+ - Added new local API endpoints for getting, updating, and deleting incoming and outgoing webhooks.
  - Added new API endpoints to work with experimental collapsed threads.
  
 ### Known Issues
  - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
- - Error text is missing when the team name is left blank on team creation page.
+ - Error text is missing when the team name is left blank on the team creation page.
  - Line numbers do not line up with the text on code file previews.
  - In some cases reply posts cannot be marked as unread.
  - The threshold from the bottom of the screen is sometimes not respected for received messages.
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page.
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
- - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
+ - The Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
- - Status may sometimes get stuck as Away or Offline in High Availability mode with IP Hash turned off.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
  - Searching with Elasticsearch enabled may not always highlight the searched terms.
- - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
