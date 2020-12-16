@@ -31,7 +31,6 @@
  
 ### Known Issues
  - At-mention and slash command suggestion autocomplete modals block post draft.
- - Animated GIFs uploaded by another user appear as broken icons.
 
 ## 1.37.0 Release
 - Release Date: November 16, 2020
