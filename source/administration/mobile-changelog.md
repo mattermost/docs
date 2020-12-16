@@ -28,6 +28,10 @@
 
 #### iOS specific
  - Fixed an issue where the header area overlapped notch on launch on iPhone 12.
+ 
+### Known Issues
+ - At-mention and slash command suggestion autocomplete modals block post draft.
+ - Animated GIFs uploaded by another user appear as broken icons.
 
 ## 1.37.0 Release
 - Release Date: November 16, 2020
