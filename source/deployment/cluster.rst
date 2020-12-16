@@ -280,6 +280,31 @@ Transparent Failover
 
 The database can be configured for High Availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
+Recommended Configuration Settings
+``````````````````````````````````
+
+If you are using Postgres as the choice of database, we recommend the following configuration optimizations which suits the workload of a Mattermost server.
+
+The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7.
+
+1. **max_connections**: If you are using read-replicas set reader connections to 1024, and writer connections to 256. If you are using a single instance, then only setting it to 1024 should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number. Also tune the `MaxOpenConns` setting under the `SqlSettings` of Mattermost app accordingly.
+
+2. **random_page_cost**: Set it to 1.1, unless the DB is using spinning disks.
+
+3. **work_mem**: Set it to 16MB for readers, and 32MB for writers. If it's a single instance, then just 16MB should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number.
+
+4. **effective_cache_size**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
+
+5. **shared_buffers**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
+
+6. **tcp_keepalives_count**: 5
+
+7. **tcp_keepalives_idle**: 5
+
+8. **tcp_keepalives_interval**: 1
+
+Note that if you are using pgbouncer or any similar connection pooling proxy in front of your DB, then the keepalive settings should be applied to the proxy instead and revert the keepalive settings for the DB back to defaults.
+
 Leader Election
 ^^^^^^^^^^^^^^^^
 
