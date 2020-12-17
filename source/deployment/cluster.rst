@@ -283,7 +283,7 @@ The database can be configured for High Availability and transparent failover us
 Recommended Configuration Settings
 ``````````````````````````````````
 
-If you are using Postgres as the choice of database, we recommend the following configuration optimizations which suits the workload of a Mattermost server.
+If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
 
 The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7.
 
