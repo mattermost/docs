@@ -7,7 +7,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ## Release v5.30
 
 **Release Day TBD**
- - v5.30.0 release is delayed for a few days as our team is investigating a performance issue related to typing lag, which may be affecting v5.29 and v5.30 releases. The lag mainly affects users with a lot of channels in the sidebar
+ - v5.30.0 release is delayed for a few days as our team is investigating a performance issue related to typing lag, which may be affecting v5.29 and v5.30 releases. The lag mainly affects users with a lot of channels in the sidebar.
 
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
