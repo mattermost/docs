@@ -34,7 +34,7 @@ Mattermost Incident Management is available in the Plugin Marketplace:
 2. Search for **Incident Management**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
 4. From the plugin configuration page, set **Enable Plugin** to **true**.
-5. Click **Save** to enable the plugin.
+5. Select **Save** to enable the plugin.
 
 Getting Started with Incident Management
 ----------------------------------------
