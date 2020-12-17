@@ -43,10 +43,10 @@ Mattermost Incident Management has the following components:
 
 * **Incidents** are situations that require an immediate response. Every reported incident results in a newly-created, public or private incident channel exposing a custom user interface for collaboration and resolution.
 * **Playbooks** define the process to guide an incident toward resolution. Playbooks are created in advance by defining the tasks, stages, and other configuration used during an incident.
-* **Tasks** are the discrete actions to be taken when resolving an incident. As the necessary work is completed, the team should mark the tasks as complete. During an incident, tasks my be assigned to a member of the incident channel to communicate ownership.
-* **Stages** are groups of tasks, helping focus efforts on the current stage of the incident. While tasks can be completed in any order, stages are worked through sequentially.
-* The **Commander** is a defined role during the incident. This person is considered responsible for ensuring forward momentum on resolving the incident. By default, the reporter of the incident starts as the commander, but the commander may be changed at any time to another member of the incident channel.
-* **Slash commands** may be assigned to tasks defined in the playbook, helping to streamline common actions.
+* **Tasks** are the discrete actions to be taken when resolving an incident. As the necessary work is completed, the team should mark the tasks as complete. During an incident, tasks may be assigned to a member of the incident channel to communicate ownership.
+* **Stages** are groups of tasks that help focus efforts on the current stage of the incident. While tasks can be completed in any order, stages are worked through sequentially.
+* The **Commander** is a defined role during the incident. This person is responsible for ensuring forward momentum on resolving the incident. By default, the reporter of the incident starts as the commander, but the commander may be changed at any time to another member of the incident channel.
+* **Slash commands** may be assigned to tasks defined in the playbook to help to streamline common actions.
 
 To access Mattermost Incident Management:
 
@@ -56,15 +56,15 @@ To access Mattermost Incident Management:
 Playbooks and Incidents
 -----------------------
 
-Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a name, description, and playbook. The name and description are used as the initial channel name and channel description, but may be modified thereafter. The selected playbook defines the stages and tasks, how incident statuses are communicated, and whether or not the incident channel is public or private. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a name, description, and playbook. The name and description are used as the initial channel name and channel description, but may be modified later. The selected playbook defines the stages and tasks, how incident statuses are communicated, and whether or not the incident channel is public or private. Read more about `public and private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
 
-Playbooks are always private, with membership in the playbook required to configure the playbook or start an incident using that playbook. Once an incident is started, however, any member of the team may be added to the incident channel. Users not in the team are unable to access playbooks or incidents belonging to that team.
+Playbooks are always private by default. Membership in the playbook is required to configure the playbook or start an incident using that playbook. Once an incident is started, any member of the team may be added to the incident channel. Users who are not members of the team are unable to access playbooks or incidents belonging to that team.
 
 While the commander of an incident has a dedicated, named role, all members of an incident channel have unrestricted access to modify the current state of the incident. This permissive access model ensures the incident is never blocked on any one individual. Use private channels and channel membership to restrict access, or configure the playbook as public if everyone on the team is trusted with access to the incident.
 
-During an ongoing incident, providing regular status updates increases visibility and helps ensure continued momentum toward resolution. Any member of the channel can write a status update, posting that update to the channel and optionally starting a reminder timer to prompt for a subsequent update. Also, if configured in the playbook, these status updates may also be broadcast to another channel. Use this channel to communicate status updates to stakeholders without requiring their membership in the incident channel.
+During an ongoing incident, use the channel to communicate status updates to stakeholders without requiring their membership in the incident channel. Providing regular status updates increases visibility and helps ensure continued momentum toward resolution. Any member of the channel can write a status update, post that update to the channel, and optionally start a reminder timer to prompt for a subsequent update.  Also, if configured in the playbook, status updates may also be broadcast to another channel. 
 
-Once an incident is ended, be sure to schedule a post-mortem meeting to iterate on the design of your playbook. Automatic posts made when a task was marked as complete or the commander was changed help expose a timeline of events for review. Export the messages from the incident channel to use in building a post-mortem document. Identify bottlenecks by explaining gaps between task completion and suggest changes to the playbook for the next incident.
+Once an incident is ended, be sure to schedule a post-mortem meeting to iterate on the design of your playbook. Automatic posts can help expose a timeline of events for review, such as when a task is marked as complete or when the commander changes. You can export the messages from the incident channel and use them to build a post-mortem document. Identify bottlenecks by explaining gaps between task completion, and suggest changes to the playbook for the next incident.
 
 Playbooks
 ^^^^^^^^^
@@ -81,14 +81,14 @@ A playbook must be defined before starting an incident.
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Start a **Blank Playbook**, or use the built-in **Incident Management Playbook** as a template.
 3. Name your playbook and provide a description.
-4. Within the tasks tab, customize the stages and tasks:
+4. Within the **Tasks** tab, customize the stages and tasks:
    * Create and name new tasks to capture actions your team should take to resolve the incident.
    * Create new stages to group tasks meant to be completed together.
    * Drag and drop to reorganize stages and tasks.
    * Optionally add task descriptions to give additional context to members of the incident channel. Descriptions support a limited form of markdown, including text styling and hyperlinks.
-   * Optionally add a slash command to the task that can be executed by members of the incident channel at will.
-5. Within the preferences tab, customize how status updates are communicated:
-   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured channel, `Unknown Channel` will be shown instead of the channel name.
+   * Optionally add a slash command to the task that can be executed by members of the incident channel as needed.
+5. Within the **Preferences** tab, customize how status updates are communicated:
+   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, `Unknown Channel` will be shown instead of the channel name.
    * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
    * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
 6. On the right hand side, configure the permissions:
@@ -102,8 +102,8 @@ You can change a playbook's configuration at any time, but changes will only be 
 
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
-3. Click on the name of the playbook, or select the **Action** menu next to the playbook name and click **Edit**.
-4. Configure the playbook just as when creating a playbook.
+3. Select the name of the playbook, or select the **Action** menu next to the playbook name, then select **Edit**.
+4. Configure the playbook the same way a playbook is created or edited.
 
 Deleting a playbook
 ~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ You can delete a playbook at any time. Ongoing or ended incidents previously sta
 
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
-3. Select the **Action** menu next to the playbook name and click **Edit**.
+3. Select the **Action** menu next to the playbook name, then select **Edit**.
 4. Confirm that you want to **Delete Playbook**.
 
 Incidents
@@ -139,7 +139,7 @@ The creator of an incident is automatically added as the first member and become
 Joining an incident
 ~~~~~~~~~~~~~~~~~~~
 
-Joining an incident simply requires joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**. 
+Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**. 
 
 If the incident channel is private, an existing member of the incident channel must invite you. System administrators may join private incident channels without permission.
 
@@ -147,10 +147,10 @@ Working with stages and tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Any member of the incident channel may work with stages and tasks:
-* To mark a task as completed, click the unchecked checkbox next to the task. To undo this, simply click the checkbox again.
-* To advance to the next stage, click **Next Stage**. Advancing to the next stage without completing the tasks in the stage prompts for confirmation.
-* To assign a task to a member of the incident channel, click **No Assignee** (or the existing assignee's username) and select a user.
-* To view any description associated with a task, click the information icon to the right of the task name.
+* To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
+* To advance to the next stage, select **Next Stage**. Advancing to the next stage without completing the tasks in the stage prompts you to confirm.
+* To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
+* To view any description associated with a task, select the information icon to the right of the task name.
 * To execute a slash command associated with a task, click **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
 
 Changing commanders
