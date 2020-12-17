@@ -33,7 +33,7 @@ Mattermost Incident Management is available in the Plugin Marketplace:
 1. As a system administrator, navigate to **Main Menu > Plugin Marketplace**.
 2. Search for **Incident Management**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
-4. From the plugin configuration page, set **Enable Plugin** to **true**.
+4. From the plugin configuration page, set **Enable Plugin** to ``true``.
 5. Select **Save** to enable the plugin.
 
 Getting Started with Incident Management
@@ -101,7 +101,8 @@ Configuring a playbook
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
 1. Navigate to **Main Menu > Playbooks & Incidents**.
-2. Find the playbook to be edited. Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
+2. Find the playbook to be edited. 
+   - Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
 3. Select the name of the playbook, or select the **Action** menu next to the playbook name, then select **Edit**.
 4. Configure the playbook the same way a playbook is created or edited.
 
@@ -111,7 +112,8 @@ Deleting a playbook
 You can delete a playbook at any time. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
 1. Navigate to **Main Menu > Playbooks & Incidents**.
-2. Find the playbook to be edited. Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
+2. Find the playbook to be edited. 
+   - Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
 3. Select the **Action** menu next to the playbook name, then select **Edit**.
 4. Confirm that you want to **Delete Playbook**.
 
@@ -123,7 +125,7 @@ Incidents
   :local:
 
 Starting an incident
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 To start an incident, use any one of the following:
 
@@ -139,7 +141,7 @@ The creator of an incident is automatically added as the first member and become
 Joining an incident
 ~~~~~~~~~~~~~~~~~~~
 
-Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**. 
+Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
 
 If the incident channel is private, an existing member of the incident channel must invite you. System administrators may join private incident channels without permission.
 
@@ -162,9 +164,8 @@ To change commanders, use any one of the following:
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Summary** tab.
-  3. Select the current commander's name in the right-hand sidebar, then select the new commander.
+  3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
     - To change the commander to a user who is not in the channel, first add the user to the channel.
-
 
 Providing a status update
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,7 +174,7 @@ Incident status updates ensure that stakeholders remain informed about the progr
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Summary** tab.
-  3. Click **Update Status**.
+  3. Within the **Summary** tab select **Update Status**.
   4. Type a markdown-formatted message.
     - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
     - If this is a subsequent status update, the message from the last status update will be pre-populated here.
@@ -242,14 +243,13 @@ Generating test data
 To quickly test Mattermost Incident Management, use the following test commands to create incidents populated with random data:
 - ``/incident test create-incident [playbook ID] [timestamp] [incident name]`` - Provide the ID of an existing playbook to which the current user has access, a timestamp, and an incident name. The command creates an ongoing incident with the creation date set to the specified timestamp.
   * An example command looks like: ``/incident test create-incident 6utgh6qg7p8ndeef9edc583cpc 2020-11-23 PR-Testing``
-- ``/incident test bulk-data [ongoing] [ended] [start date] [end date] [seed]`` - Provide a number of ongoing and ended incidents, a start and end date, and an optional random seed. The command creates the given number of ongoing and ended incidents, with creation dates randomly between the start and end dates. The seed may be used to reproduce the same outcome on multiple invocations. Incident names are generated randomly. 
+- ``/incident test bulk-data [ongoing] [ended] [start date] [end date] [seed]`` - Provide a number of ongoing and ended incidents, a start and end date, and an optional random seed. The command creates the given number of ongoing and ended incidents, with creation dates randomly between the start and end dates. The seed may be used to reproduce the same outcome on multiple invocations. Incident names are generated randomly.
   * An example command looks like: ``/incident test bulk-data 10 3 2020-01-31 2020-11-22 2``
 
 Channel Export
 --------------
 
 Exporting the contents of an incident channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
-
 
 API Documentation
 -----------------
