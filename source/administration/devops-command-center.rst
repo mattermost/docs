@@ -3,7 +3,7 @@ Mattermost Incident Management
 
 *Available in Mattermost Enterprise Edition E20, Mattermost Cloud Professional, and Mattermost Cloud Enterprise.*
 
-Incidents are situations which require an immediate response and benefit from a clearly defined process guiding toward resolution. Mattermost Incident Management equips your team to coordinate, manage, and resolve incidents from within Mattermost:
+Incidents are situations which require an immediate response, and incidents benefit from a clearly defined process that guides toward resolution. Mattermost Incident Management equips your team to coordinate, manage, and resolve incidents from within Mattermost:
 
 * Starting an incident automatically creates a dedicated incident channel to coordinate discussion. 
   - Use custom categories in the left-hand sidebar to streamline access to ongoing incidents.
