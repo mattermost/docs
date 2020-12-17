@@ -195,7 +195,7 @@ Incident members can end an incident using any one of the following:
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Tasks** tab.
-  3. If you are on the final stage, select **End Incident**.
+  3. Within the **Tasks** tab, if you are on the final stage, select **End Incident**.
   4. Otherwise, to end the incident from an earlier stage, select the **...** menu, then select **End Incident**.
 
 Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
@@ -208,7 +208,7 @@ If an incident was ended prematurely, it can be restarted using any one of the f
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the RHS.
   2. Browse to the **Tasks** tab.
-  3. Select **Restart Incident**.
+  3. Within the **Tasks** tab select **Restart Incident**.
 
 Reviewing past incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -216,7 +216,7 @@ Reviewing past incidents
 To view past incidents of which you are a member, from the desktop or browser:
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Select the **Incidents** tab.
-3. Find the incident to be reviewed, then select the name of the incident.
+3. Within the **Incidents** tab find the incident to be reviewed, then select the name of the incident.
 4. Review the incident details:
    * The duration, total number of members ever involved, and messages sent in the channel are listed.
    * A graphical timeline shows how much time elapsed between completed tasks.
