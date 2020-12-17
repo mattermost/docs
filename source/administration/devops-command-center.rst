@@ -24,7 +24,7 @@ Installing Mattermost Incident Management
 
 *For Cloud deployments*
 
-Mattermost Incident Management is included in the Mattermost Cloud workspace and is enabled by default and upgraded automatically.
+Mattermost Incident Management is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
 
 *For self-managed deployments*
 
