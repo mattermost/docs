@@ -113,11 +113,21 @@ Search limitations on MySQL:
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
-   
+
    [mysqld]
    default-authentication-plugin=mysql_native_password
-   
-In MySQL versions 8.0.0-8.0.11 ```ADMIN``` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12. 
+
+
+In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev.mysql.com/doc/mysqld-version-reference/en/optvar-changes-8-0.html). Therefore, if you update your MySQL installation to version 8, you will need to convert your database tables to use the new default collation:
+
+.. code-block:: sql
+
+   ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+
+
+Not making this change can cause the database to have tables with different collations, which will cause errors when executing queries.
+
+In MySQL versions 8.0.0-8.0.11 ```ADMIN``` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
 
 Hardware Requirements
 ---------------------
