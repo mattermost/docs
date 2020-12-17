@@ -51,7 +51,7 @@ Mattermost Incident Management has the following components:
 To access Mattermost Incident Management:
 
 * From the Main Menu, select **Playbooks & Incidents** to configure playbooks and review incidents of which you are a member. System administrators have unrestricted access.
-* From the channel header, click the **Incidents** icon to open the RHS and create a new incident or collaborate on active incidents of which you are a member.
+* From the channel header, select the **Incidents** icon to open the right-hand sidebar. From there, create a new incident or collaborate on active incidents of which you are a member.
 
 Playbooks and Incidents
 -----------------------
@@ -129,7 +129,7 @@ To start an incident, use any one of the following:
 
 * Run the ``/incident start`` slash command from any channel.
 * From the desktop or browser:
-  - Select the **Incidents** icon in the channel header, and select **Start Incident** from the RHS.
+  - Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
   - Use the context menu of a post and select **Start incident**.
 
 Starting an incident opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
@@ -151,7 +151,7 @@ Any member of the incident channel may work with stages and tasks:
 * To advance to the next stage, select **Next Stage**. Advancing to the next stage without completing the tasks in the stage prompts you to confirm.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
 * To view any description associated with a task, select the information icon to the right of the task name.
-* To execute a slash command associated with a task, click **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
+* To execute a slash command associated with a task, select **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
 
 Changing commanders
 ~~~~~~~~~~~~~~~~~~~
@@ -160,31 +160,31 @@ To change commanders, use any one of the following:
 
 * Run the ``/incident commander @username`` slash command from the incident channel.
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the RHS.
+  1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Summary** tab.
-  3. Click the current commander's name in the RHS and select the new commander.
-    - To change commander to a user who is not in the channel, first add the user to the channel.
+  3. Select the current commander's name in the right-hand sidebar, then select the new commander.
+    - To change the commander to a user who is not in the channel, first add the user to the channel.
 
 
 Providing a status update
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Incident status updates ensure that stakeholders remain informed about the progress toward resolving the incident. To post a status update:
+Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the RHS.
+  1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Summary** tab.
   3. Click **Update Status**.
   4. Type a markdown-formatted message.
-    - If this is the first status update and the playbook defined a template, that template will be pre-populated here.
+    - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
     - If this is a subsequent status update, the message from the last status update will be pre-populated here.
   5. Optionally set a reminder to prompt for the next status update.
-    - If this is the first status update and the playbook defined a default reminder timer, that timer will be pre-selected here.
+    - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
     - If this is a subsequent status update, the last reminder timer will be pre-populated here.
-  6. Click **Update Status** to post your status update.
+  6. Select **Update Status** to post your status update.
     - Status updates are posted to the incident channel as a message from the user providing the status update.
     - If the playbook defined a broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
-The most recent status post will also appear in the RHS of an incident channel. To correct or remove a status post, edit or delete the post as normal. Note, however, that status updates broadcast to another channel will not be edited or deleted.
+The most recent status post will also appear in the right-hand sidebar of the incident channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
 Ending an incident
 ~~~~~~~~~~~~~~~~~~~
@@ -192,12 +192,12 @@ Ending an incident
 Incident members can end an incident using any one of the following:
 * Run the ``/incident end`` slash command from within the incident channel.
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the RHS.
+  1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Tasks** tab.
-  3. If on the final stage, click **End Incident**.
-  4. Otherwise, to end the incident from an earlier stage, click the **...** menu and select **End Incident**.
+  3. If you are on the final stage, select **End Incident**.
+  4. Otherwise, to end the incident from an earlier stage, select the **...** menu, then select **End Incident**.
 
-Ending an incident signals to all members of the channel that the incident is no longer ongoing, but conversation in the channel, marking tasks as complete, and even changing the commander are all still allowed.
+Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
 
 Restarting an incident
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -207,7 +207,7 @@ If an incident was ended prematurely, it can be restarted using any one of the f
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the RHS.
   2. Browse to the **Tasks** tab.
-  3. Click **Restart Incident**.
+  3. Select **Restart Incident**.
 
 Reviewing past incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,16 +215,16 @@ Reviewing past incidents
 To view past incidents of which you are a member, from the desktop or browser:
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Select the **Incidents** tab.
-3. Find the incident to be reviewed and click the name of the incident.
+3. Find the incident to be reviewed, then select the name of the incident.
 4. Review the incident details:
    * The duration, total number of members ever involved, and messages sent in the channel are listed.
-   * A graphical timeline shows how much time elapsed between completing tasks.
-5. Optionally export the contents of the incident channel for review during a post-mortem.
+   * A graphical timeline shows how much time elapsed between completed tasks.
+5. Optionally export the contents of the incident channel to review during a post-mortem.
 
 Built-in slash commands
 -----------------------
 
-The ``/incident`` slash command allows interacting with incidents via the post textbox on desktop, browser, and mobile:
+The ``/incident`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile for:
 
 - ``/incident start`` - Start a new incident.
 - ``/incident end`` - End an ongoing incident.
