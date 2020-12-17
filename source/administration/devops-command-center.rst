@@ -132,7 +132,7 @@ To start an incident, use any one of the following:
   - Select the **Incidents** icon in the channel header, and select **Start Incident** from the RHS.
   - Use the context menu of a post and select **Start incident**.
 
-Starting an incident opens an interactive dialog. Provide an incident name and select a playbook to used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
+Starting an incident opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
 
 The creator of an incident is automatically added as the first member and becomes the commander.
 
