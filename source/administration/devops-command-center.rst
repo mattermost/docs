@@ -204,7 +204,7 @@ Restarting an incident
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If an incident was ended prematurely, it can be restarted using any one of the following:
-* Run the ``/incident restart`` slash command from within the incident channel.
+* Within the incident channel, run the ``/incident restart`` slash command.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the RHS.
   2. Browse to the **Tasks** tab.
