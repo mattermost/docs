@@ -91,7 +91,7 @@ A playbook must be defined before starting an incident.
    * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, `Unknown Channel` will be shown instead of the channel name.
    * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
    * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
-6. On the right hand side, configure the permissions:
+6. On the right-hand side of the screen, configure the permissions:
    * Decide whether the automatically created incident channel should be public or private within the team.
    * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
 
