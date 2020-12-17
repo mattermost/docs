@@ -30,7 +30,7 @@ Mattermost Incident Management is included in the Mattermost Cloud workspace, en
 
 Mattermost Incident Management is available in the Plugin Marketplace:
 
-1. As a system administrator, navigate to **Main Menu > Plugin Marketplace**.
+1. As a System Admin, navigate to **Main Menu > Plugin Marketplace**.
 2. Search for **Incident Management**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
 4. From the plugin configuration page, set **Enable Plugin** to ``true``.
@@ -173,8 +173,8 @@ Providing a status update
 Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-  2. Browse to the **Summary** tab.
-  3. Within the **Summary** tab select **Update Status**.
+  2. Select the **Summary** tab.
+  3. Within the **Summary** tab, select **Update Status**.
   4. Type a markdown-formatted message.
     - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
     - If this is a subsequent status update, the message from the last status update will be pre-populated here.
@@ -194,7 +194,7 @@ Incident members can end an incident using any one of the following:
 * Within the incident channel, run the ``/incident end`` slash command.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-  2. Browse to the **Tasks** tab.
+  2. Select the **Tasks** tab.
   3. Within the **Tasks** tab, if you are on the final stage, select **End Incident**.
   4. Otherwise, to end the incident from an earlier stage, select the **...** menu, then select **End Incident**.
 
@@ -207,7 +207,7 @@ If an incident was ended prematurely, it can be restarted using any one of the f
 * Within the incident channel, run the ``/incident restart`` slash command.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the RHS.
-  2. Browse to the **Tasks** tab.
+  2. Select the **Tasks** tab.
   3. Within the **Tasks** tab select **Restart Incident**.
 
 Reviewing past incidents
