@@ -293,7 +293,7 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 3. **work_mem**: Set it to 16 MB for readers, and 32 MB for writers. If it's a single instance, 16 MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
 
-4. **effective_cache_size**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
+4. **effective_cache_size**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
 
 5. **shared_buffers**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
 
