@@ -48,6 +48,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added the ability to retrieve compliance files from the System Console.
 
 ### Bug Fixes
+ - Fixed a performance issue related to typing lag.
  - Fixed an issue with broken link previews for Twitter links.
  - Fixed an issue where editing a post did not submit with CMD+ENTER.
  - Fixed an issue where users were able to create or edit slash commands to contain more than two slashes in the URL.
