@@ -42,7 +42,7 @@ Getting Started with Incident Management
 Mattermost Incident Management has the following components:
 
 * **Incidents** are situations that require an immediate response. Every reported incident results in a newly-created, public or private incident channel exposing a custom user interface for collaboration and resolution.
-* **Playbooks** define the process to guide an incident toward resolution. Playbooks are created in advance, defining the tasks, stages, and other configuration used during an incident.
+* **Playbooks** define the process to guide an incident toward resolution. Playbooks are created in advance by defining the tasks, stages, and other configuration used during an incident.
 * **Tasks** are the discrete actions to be taken when resolving an incident. As the necessary work is completed, the team should mark the tasks as complete. During an incident, tasks my be assigned to a member of the incident channel to communicate ownership.
 * **Stages** are groups of tasks, helping focus efforts on the current stage of the incident. While tasks can be completed in any order, stages are worked through sequentially.
 * The **Commander** is a defined role during the incident. This person is considered responsible for ensuring forward momentum on resolving the incident. By default, the reporter of the incident starts as the commander, but the commander may be changed at any time to another member of the incident channel.
