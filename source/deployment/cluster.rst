@@ -295,7 +295,7 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 4. **effective_cache_size**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
 
-5. **shared_buffers**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
+5. **shared_buffers**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
 
 6. **tcp_keepalives_count**: 5
 
