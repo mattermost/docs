@@ -1,5 +1,37 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.38.0 Release
+- Release Date: December 16, 2020
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Added gallery user interface improvements.
+ - Images now load progressively as the image comes into view-port instead of loading all the images on mount.
+ - Mattermost is now resizeable on Android Desktops such as Samsung DeX.
+ - "Something went wrong" message block is now vertically centered.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the apps frequently failed to load channels for initial team.
+ - Fixed an issue where all channel push notifications were cleared when opening one channel's push notification.
+ - Fixed an issue where post edits and deletes propagated inconsistently.
+ 
+#### Android specific
+ - Fixed an issue where the list of Group Mentions was not updated when Groups were added or removed in an LDAP Group Synced Team.
+ - Fixed an issue where a group mention was highlighted by default before it was posted.
+
+#### iOS specific
+ - Fixed an issue where the header area overlapped notch on launch on iPhone 12.
+ 
+### Known Issues
+ - At-mention and slash command suggestion autocomplete modals block post draft.
+
 ## 1.37.0 Release
 - Release Date: November 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
