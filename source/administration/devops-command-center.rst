@@ -191,7 +191,7 @@ Ending an incident
 ~~~~~~~~~~~~~~~~~~~
 
 Incident members can end an incident using any one of the following:
-* Run the ``/incident end`` slash command from within the incident channel.
+* Within the incident channel, run the ``/incident end`` slash command.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Browse to the **Tasks** tab.
