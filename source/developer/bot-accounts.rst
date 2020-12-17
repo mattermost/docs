@@ -9,7 +9,7 @@ Bot accounts are just like user accounts, except they:
 
   - Can't be logged into.
   - Can't be used to create other bot accounts.
-  - Don't count as a registered user and therefore don't count towards the total users for an Enterprise Edition license.
+  - Don't count as a registered user and therefore don't count towards the total number of users for an Enterprise Edition license.
 
 Additional benefits include:
 
