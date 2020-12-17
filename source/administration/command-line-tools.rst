@@ -58,9 +58,10 @@ Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as `
 
 .. note::
 
-  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows:
+  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
 .. code-block:: bash
-  bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+ 
+ bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
