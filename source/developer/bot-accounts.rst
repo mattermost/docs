@@ -13,17 +13,17 @@ Bot accounts are just like user accounts, except they:
 
 Additional benefits include:
 
-  - Bot accounts can be enabled to post to any channel in the system by System Admins, including a private team, private channel or a Direct Message channel.
+  - System Admins can enable Bot accounts to post to any channel in the system, including private teams, private channels, or Direct Message channels.
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
   - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
   - Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
-  - ``BOT`` tag is used everywhere in the UI where bot accounts are referenced, including messages and user lists.
+  - A ``BOT`` tag is used throughout Mattermost where bot accounts are referenced, including messages and user lists.
 
 Note that currently:
 
-  - Bot accounts can only be created or managed by plugins or System Admins.
+  - Only System Admins or plugins can create or manage Bot accounts.
   - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
-  - Service accounts without an email address pulled from LDAP or SAML systems in Enterprise Edition is not yet supported.
+  - In Mattermost Enterprise Edition, service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
 
 If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com>`_.
 
@@ -55,11 +55,11 @@ User Interface (UI)
 
 1. Go to **Main Menu > Integrations > Bot Accounts**.
 2. Select **Add Bot Account**.
-3. Set the **Username** of the bot. The username must begin with a letter, and contain between 3 and 22 lowercase characters made up of numbers, letters, and the symbols ".", "-", and "_".
+3. Set the **Username** of the bot. The username must begin with a letter, and contain between 3 and 22 lowercase characters made up of numbers, letters, and symbols including ".", "-", or "_".
 4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout Mattermost.
 5. (Optional) Set a **Display Name** and **Description**.
-6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any Public channels, Private channels and Direct Messages.
-7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or all Mattermost Public channels.
+6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any Public channels, Private channels, and Direct Messages.
+7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or post to all Mattermost Public channels.
 
 RESTful API
 ^^^^^^^^^^^
