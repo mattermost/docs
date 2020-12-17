@@ -2,6 +2,12 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2020-12-18
+
+### Bug Fixes
+ - Fixed a performance issue related to typing lag.
+ - Fixed an issue where YouTube previews did not display sometimes.
+
 ## Release 2020-12-09
 
 ### Improvements
