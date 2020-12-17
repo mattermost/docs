@@ -239,7 +239,7 @@ The ``/incident`` slash command allows interacting with incidents via the post t
 Generating test data
 ^^^^^^^^^^^^^^^^^^^^
 
-To quickly Mattermost Incident Management, use the following test commands to create incidents populated with random data:
+To quickly test Mattermost Incident Management, use the following test commands to create incidents populated with random data:
 - ``/incident test create-incident [playbook ID] [timestamp] [incident name]`` - Provide the ID of an existing playbook to which the current user has access, a timestamp, and an incident name. The command creates an ongoing incident with the creation date set to the specified timestamp.
   * An example command looks like: ``/incident test create-incident 6utgh6qg7p8ndeef9edc583cpc 2020-11-23 PR-Testing``
 - ``/incident test bulk-data [ongoing] [ended] [start date] [end date] [seed]`` - Provide a number of ongoing and ended incidents, a start and end date, and an optional random seed. The command creates the given number of ongoing and ended incidents, with creation dates randomly between the start and end dates. The seed may be used to reproduce the same outcome on multiple invocations. Incident names are generated randomly. 
