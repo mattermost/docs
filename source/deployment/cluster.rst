@@ -291,7 +291,7 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 2. **random_page_cost**: Set it to 1.1, unless the DB is using spinning disks.
 
-3. **work_mem**: Set it to 16MB for readers, and 32MB for writers. If it's a single instance, then just 16MB should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number.
+3. **work_mem**: Set it to 16 MB for readers, and 32 MB for writers. If it's a single instance, 16 MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
 
 4. **effective_cache_size**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
 
