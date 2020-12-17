@@ -216,7 +216,7 @@ Reviewing past incidents
 To view past incidents of which you are a member, from the desktop or browser:
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Select the **Incidents** tab.
-3. Within the **Incidents** tab find the incident to be reviewed, then select the name of the incident.
+3. Within the **Incidents** tab, find the incident to be reviewed, then select the name of the incident.
 4. Review the incident details:
    * The duration, total number of members ever involved, and messages sent in the channel are listed.
    * A graphical timeline shows how much time elapsed between completed tasks.
