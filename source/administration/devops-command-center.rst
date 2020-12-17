@@ -183,7 +183,7 @@ Incident status updates ensure that stakeholders remain informed about the progr
     - If this is a subsequent status update, the last reminder timer will be pre-populated here.
   6. Select **Update Status** to post your status update.
     - Status updates are posted to the incident channel as a message from the user providing the status update.
-    - If the playbook defined a broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
+    - If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
 The most recent status post will also appear in the right-hand sidebar of the incident channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
