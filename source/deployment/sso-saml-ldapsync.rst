@@ -15,8 +15,8 @@ To configure SAML synchronization with AD/LDAP:
 
  - If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP** (or **System Console > AD/LDAP** in versions prior to 5.12) and keep **Enable sign-in with AD/LDAP** as ``false``.
 
-4. To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to **System Console > Authentication > AD/LDAP** (or **System Console > AD/LDAP** in versions prior to 5.12) and set **Synchronization Interval**. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, click **AD/LDAP Synchronize Now**.
-5. To confirm that Mattermost can successfully connect to your AD/LDAP server, go to **System Console > Authentication > AD/LDAP** (or **System Console > AD/LDAP** in versions prior to 5.12) and select **AD/LDAP Test**.
+5. To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to **System Console > Authentication > AD/LDAP** (or **System Console > AD/LDAP** in versions prior to 5.12) and set **Synchronization Interval**. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, click **AD/LDAP Synchronize Now**.
+6. To confirm that Mattermost can successfully connect to your AD/LDAP server, go to **System Console > Authentication > AD/LDAP** (or **System Console > AD/LDAP** in versions prior to 5.12) and select **AD/LDAP Test**.
 
 Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn't have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync. To re-activate the account:
 
