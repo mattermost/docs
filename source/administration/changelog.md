@@ -6,8 +6,111 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.30
 
-**Release Day TBD**
- - v5.30.0 release is delayed for a few days as our team is investigating a performance issue related to typing lag, which may be affecting v5.29 and v5.30 releases. The lag mainly affects users with a lot of channels in the sidebar.
+- **v5.30.1, released 2020-12-18**
+  - Fixed the displayed modal Build Number version to standard semver.
+- **v5.30.0, released 2020-12-16**
+  - Original 5.30.0 release
+
+### Compatibility
+  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
+
+### Highlights
+
+#### Incident Management provided out-of-the-box (E20)
+ - Pre-packaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
+
+#### Configure New Admin Roles Permissions in the System Console (E20, Beta)
+ - Mattermost [recently released three new pre-built granular administrator roles](https://mattermost.com/blog/mattermost-release-v5-28/) to enable you to selectively delegate administrative tasks to other members of your organization. The three new roles are System Manager, User Manager, and Read-only Admin. Now you can configure specific permissions for these roles directly from the System Console.
+
+### Improvements
+
+#### User Interface
+ - @-autocomplete results are now prioritized based on recency and thread activity.
+ - File attachments below the size of 10 (KB, MB, GB, TB, etc.) now allow showing fractions.
+ - The formatting of the channel header change message was improved.
+ - Team invite workflow now shows BOT tags when the search returns bot users.
+ - Added the ability to zoom in and out of PDF files.
+ - Added support for 16x16 base64 encoded mini images to use with progressive rendering.
+
+#### Notifications
+ - Channel-wide mentions are now automatically disabled when a user mutes a channel.
+
+#### Command Line Interface (CLI)
+ - Added new local API endpoints for getting, updating, and deleting incoming and outgoing webhooks.
+ - Added ``mmctl system version`` endpoint to print the remote server version.
+ - Improved the ``mmctl system status`` command output to include all the reported values.
+
+#### Integrations
+ - Updated ``icon_emoji`` field in incoming webhooks to allow emojis to be specified with surrounding colons.
+ - Dynamic auto-completion is now supported for built-in slash commands.
+ - Added plugin hooks for ``ReactionHasBeenAdded`` and ``ReactionHasBeenRemoved``.
+
+#### Administration
+ - Added the ability to load a set of custom configuration defaults from a ``MM_CUSTOM_DEFAULTS_PATH`` environment variable.
+ - Added AWS metering service support.
+
+#### Enterprise Edition (EE)
+ - Added the ability to retrieve compliance files from the System Console.
+
+### Bug Fixes
+ - Fixed a performance issue related to typing lag.
+ - Fixed an issue where YouTube previews did not display sometimes.
+ - Fixed an issue with broken link previews for Twitter links.
+ - Fixed an issue where editing a post did not submit with CMD+ENTER.
+ - Fixed an issue where users were able to create or edit slash commands to contain more than two slashes in the URL.
+ - Fixed an issue where resized emojis were being overwritten with original data.
+ - Fixed an issue where the sidebar category **More** menu was not shown when hovering over a long category name.
+ - Fixed an issue where a received direct message notification did not show up on the sidebar if the Direct Message channel was newly created.
+ - Fixed an issue where a search using **from:** failed to auto-load more results on the right-hand side when Elasticsearch was enabled.
+ - Fixed an issue where an s3 file backend ``TestFileConnection`` failed due to permissions if ``S3PathPrefix`` was in use.
+ - Fixed an issue where an ID was missing for a Tooltip in ``PostInfo``.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+   - Added ``EnableSharedChannels``, to support managing shared channels feature.
+ - Under ``SamlSettings`` in ``config.json``:
+   - Added ``IgnoreGuestsLdapSync``, to ignore guests when using SAML and synchronizing with LDAP.
+
+### Go Version
+ - 5.30 is built with Go ``1.14.6``.
+
+### Open Source Components
+ - Added ``@stripe/react-stripe-js``, ``@stripe/stripe-js``, and ``@types/country-list`` to https://github.com/mattermost/mattermost-webapp.
+ - Removed ``react-native-image-gallery`` from https://github.com/mattermost/mattermost-mobile.
+ - Added ``react-native-redash`` and ``react-native-share`` to https://github.com/mattermost/mattermost-mobile.
+ 
+### Websocket Event Changes
+ - In ``post_deleted`` websocket event, System Admins are now notified when a user initiates a post deletion.
+
+### API Changes
+ - Added new local API endpoints for getting, updating, and deleting incoming and outgoing webhooks.
+ - Added new API endpoints to work with experimental collapsed threads.
+ 
+### Known Issues
+ - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - Error text is missing when the team name is left blank on the team creation page.
+ - Line numbers do not line up with the text on code file previews.
+ - In some cases reply posts cannot be marked as unread.
+ - The threshold from the bottom of the screen is sometimes not respected for received messages.
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page.
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
+ - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
+ - The Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [adamjclarkson](https://github.com/adamjclarkson), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akshaychhajed](https://github.com/akshaychhajed), [Ampit](https://github.com/Ampit), [amyblais](https://github.com/amyblais), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Ant0wan](https://github.com/Ant0wan), [antifarben](https://github.com/antifarben), [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [AugustasV](https://github.com/AugustasV), [avasconcelos114](https://github.com/avasconcelos114), [BenCookie95](https://github.com/BenCookie95), [bhargav50](https://github.com/bhargav50), [ByeongsuPark](https://github.com/ByeongsuPark), [calebroseland](https://github.com/calebroseland), [CandyZack](https://github.com/CandyZack), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [cinlloc](https://github.com/cinlloc), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [dalcde](https://github.com/dalcde), [daniel-shuy](https://github.com/daniel-shuy), [danielsischy](https://github.com/danielsischy), [darkLord19](https://github.com/darkLord19), [DavidePrincipi](https://github.com/DavidePrincipi), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [dizkek](https://github.com/dizkek), [drraghavendra](https://github.com/drraghavendra), [egrinberg](https://github.com/egrinberg), [eltociear](https://github.com/eltociear), [emilyhollinger](https://github.com/emilyhollinger), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [erezo9](https://github.com/erezo9), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [fagunbhavsar](https://github.com/fagunbhavsar), [FalseHonesty](https://github.com/FalseHonesty), [flynbit](https://github.com/flynbit), [fmunshi](https://github.com/fmunshi), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [GodlikePenguin](https://github.com/GodlikePenguin), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [haardikdharma10](https://github.com/haardikdharma10), [hack3r-0m](https://github.com/hack3r-0m), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harryfromwork](https://github.com/harryfromwork), [hectorgabucio](https://github.com/hectorgabucio), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [icy-meteor](https://github.com/icy-meteor), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jecepeda](https://github.com/jecepeda), [JeremyShih](https://github.com/JeremyShih), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jials](https://github.com/jials), [johnsonbrothers](https://github.com/johnsonbrothers), [jomaxro](https://github.com/jomaxro), [josephbaylon](https://github.com/josephbaylon), [jrepe](https://github.com/jrepe), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kaiwalyakoparkar](https://github.com/kaiwalyakoparkar), [kayazeren](https://github.com/kayazeren), [kichloo](https://github.com/kichloo), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [lawrencejohnson](https://github.com/lawrencejohnson), [lestgabo](https://github.com/lestgabo), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lucianomagrao](https://github.com/lucianomagrao), [lynn915](https://github.com/lynn915), [Manimaran11](https://github.com/Manimaran11), [marianunez](https://github.com/marianunez), [maticbasle](https://github.com/maticbasle), [mbouzada](https://github.com/mbouzada), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [MikeworX](https://github.com/MikeworX), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [morganrconnolly](https://github.com/morganrconnolly), [msal4](https://github.com/msal4), [muety](https://github.com/muety), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nikolaizah](https://github.com/nikolaizah), [nronas](https://github.com/nronas), [ogi-m](https://github.com/ogi-m), [OgmaJ](https://github.com/OgmaJ), [pablovelezvidal](https://github.com/pablovelezvidal), [persianopencart](https://github.com/persianopencart), [phntom](https://github.com/phntom), [pikami](https://github.com/pikami), [prithvijit-dasgupta](https://github.com/prithvijit-dasgupta), [promulo](https://github.com/promulo), [razum2um](https://github.com/razum2um), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [Remakh](https://github.com/Remakh), [Revanth47](https://github.com/Revanth47), [rishabh710](https://github.com/rishabh710), [rodcorsi](https://github.com/rodcorsi), [rvillablanca](https://github.com/rvillablanca), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [Saucistophe](https://github.com/Saucistophe), [sbishel](https://github.com/sbishel), [seongwon-kang](https://github.com/seongwon-kang), [SezalAgrawal](https://github.com/SezalAgrawal), [shazm](https://github.com/shazm), [shinnlok](https://github.com/shinnlok), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [Spotts9](https://github.com/Spotts9), [sridhar02](https://github.com/sridhar02), [sstaszkiewicz-copperleaf](https://github.com/sstaszkiewicz-copperleaf), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [tacoelho](https://github.com/tacoelho), [Tak-Iwamoto](https://github.com/Tak-Iwamoto), [tasdomas](https://github.com/tasdomas), [thefactremains](https://github.com/thefactremains), [thePanz](https://github.com/thePanz), [tianlangwu](https://github.com/tianlangwu), [tohn](https://github.com/tohn), [TQuock](https://github.com/TQuock), [trishitapingolia](https://github.com/trishitapingolia), [tw-ayush](https://github.com/tw-ayush), [tweichart](https://github.com/tweichart), [uhlhosting](https://github.com/uhlhosting), [vanya829](https://github.com/vanya829), [VolatianaYuliana](https://github.com/VolatianaYuliana), [vraravam](https://github.com/vraravam), [weblate](https://github.com/weblate), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [wijayaerick](https://github.com/wijayaerick), [zarej](https://github.com/zarej), [ZombiMigz](https://github.com/ZombiMigz)
 
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 

@@ -26,7 +26,7 @@ The name of the environment variable for any setting can be derived from the nam
 
 Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
 
-For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
+For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented in the sections below.
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
@@ -36,6 +36,14 @@ For any setting that is not set in ``config.json`` or in environment variables, 
    
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
+   
+**Load Custom Configuration Defaults**
+
+Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
+
+1. Create a JSON file that contains the custom configuration defaults. For example, ``custom.json``.
+2. When starting the server, point the custom defaults environment variable to the defaults file: ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
+
 
 .. contents::
   :depth: 2
@@ -748,10 +756,10 @@ See the `documentation <https://docs.mattermost.com/administration/image-proxy.h
 SMTP
 ~~~~
 
-SMTP Server
-^^^^^^^^^^^^
+SMTP Email Server
+^^^^^^^^^^^^^^^^^
 
-Location of SMTP email server.
+Location of SMTP email server used for email notifications.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SMTPServer": ""`` with string input.                                                                                    |
@@ -1765,7 +1773,8 @@ Enable Email Batching
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings > Notifications**.
 
 .. note::
-  Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ is configured. Email batching in `High Availability mode <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
+  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/administration/config-settings.html#smtp-email-server>`__ is configured. 
+  - Email batching in `High Availability mode <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
 
 **False**: If email notifications are enabled in Account Settings, emails will be sent individually for every mention or direct message received.
 
@@ -2709,6 +2718,19 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false``.                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Ignore Guest Users When Synchronizing with AD/LDAP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``. 
+
+**True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
+
+**False**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``.                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Override SAML Bind Data with AD/LDAP Information
@@ -3792,11 +3814,8 @@ Experimental
 
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
-Features
-~~~~~~~~~
-
 AD/LDAP Settings
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 AD/LDAP Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3859,7 +3878,7 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 +---------------------------------------------------------------------------------------------------------------------------------+
 
 Email Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Email Batching Buffer Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4111,7 +4130,7 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 +-----------------------------------------------------------------------------------------------------------------+
 
 SAML Settings
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 SAML Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^
