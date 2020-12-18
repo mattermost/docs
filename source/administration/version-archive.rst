@@ -9,6 +9,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.30.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-30>`__ - `Download <https://releases.mattermost.com/5.30.1/mattermost-5.30.1-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.30.1/mattermost-5.30.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``14018addf86c040200515cb0141308a6d213f149f8afe425dd171347be516401``
+  - GPG Signature: https://releases.mattermost.com/5.30.1/mattermost-5.30.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.29.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-29-quality-release>`__ - `Download <https://releases.mattermost.com/5.29.1/mattermost-5.29.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.29.1/mattermost-5.29.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``66175918186cf402213143903230cd8a8b4a96c18d2ee50445f303685accb2c7``
@@ -210,6 +214,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v5.30.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-30>`__ - `Download <https://releases.mattermost.com/5.30.1/mattermost-team-5.30.1-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.30.1/mattermost-team-5.30.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``3c4165d7ea240ad49dba8e486d9fd7de83eea7cac2cb9a355d891dd605b3fa52``
+  - GPG Signature: https://releases.mattermost.com/5.30.1/mattermost-team-5.30.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.29.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-29-quality-release>`__ - `Download <https://releases.mattermost.com/5.29.1/mattermost-team-5.29.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.29.1/mattermost-team-5.29.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``220a3ca032d288a01c62bf4074d20c854f63c2837b27da47ab1ad0e70e616221``
