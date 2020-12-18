@@ -126,7 +126,7 @@ In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev
 
 Not making this change can cause the database to have tables with different collations, which will cause errors when executing queries.
 
-In MySQL versions 8.0.0-8.0.11 ```ADMIN``` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
+In MySQL versions 8.0.0 - 8.0.11 ``ADMIN`` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
 
 Hardware Requirements
 ---------------------
