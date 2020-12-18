@@ -83,19 +83,19 @@ A playbook must be defined before starting an incident.
 3. Name your playbook and provide a description.
 4. Select the **Tasks** tab.
 5. Within the **Tasks** tab, customize the stages and tasks:
-   * Create and name new tasks to capture actions your team should take to resolve the incident.
-   * Create new stages to group tasks meant to be completed together.
-   * Drag and drop to reorganize stages and tasks.
-   * Optionally add task descriptions to give additional context to members of the incident channel. Descriptions support a limited form of markdown, including text styling and hyperlinks.
-   * Optionally add a slash command to the task that can be executed by members of the incident channel as needed.
+  * Create and name new tasks to capture actions your team should take to resolve the incident.
+  * Create new stages to group tasks meant to be completed together.
+  * Drag and drop to reorganize stages and tasks.
+  * Optionally add task descriptions to give additional context to members of the incident channel. Descriptions support a limited form of markdown, including text styling and hyperlinks.
+  * Optionally add a slash command to the task that can be executed by members of the incident channel as needed.
 6. Select the **Preferences** tab.
 7. Within the **Preferences** tab, customize how status updates are communicated:
-   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, `Unknown Channel` will be shown instead of the channel name.
-   * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
-   * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
+  * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, `Unknown Channel` will be shown instead of the channel name.
+  * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
+  * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
 8. On the right-hand side of the screen, configure the permissions:
-   * Decide whether the automatically created incident channel should be public or private within the team.
-   * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
+  * Decide whether the automatically created incident channel should be public or private within the team.
+  * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
 
 Configuring a playbook
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +104,7 @@ You can change a playbook's configuration at any time, but changes will only be 
 
 1. Go to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. 
-   - Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
+ * Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
 3. Select the name of the playbook, or select the **Action** menu next to the playbook name, then select **Edit**.
 4. Configure the playbook the same way a playbook is created or edited.
 
@@ -115,7 +115,7 @@ You can delete a playbook at any time. Ongoing or ended incidents previously sta
 
 1. Go to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. 
-   - Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
+ * Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
 3. Select the **Action** menu next to the playbook name, then select **Edit**.
 4. Confirm that you want to **Delete Playbook**.
 
@@ -133,8 +133,8 @@ To start an incident, use any one of the following:
 
 * Run the ``/incident start`` slash command from any channel.
 * From the desktop or browser:
-  - Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
-  - Use the context menu of a post and select **Start incident**.
+ * Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
+ * Use the context menu of a post and select **Start incident**.
 
 Starting an incident opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
 
@@ -164,11 +164,13 @@ Changing commanders
 To change commanders, use any one of the following:
 
 * Run the ``/incident commander @username`` slash command from the incident channel.
+
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-  2. Select the **Summary** tab.
-  3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
-    - To change the commander to a user who is not in the channel, first add the user to the channel.
+
+1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
+2. Select the **Summary** tab.
+3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
+  * To change the commander to a user who is not in the channel, first add the user to the channel.
 
 Providing a status update
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,18 +178,19 @@ Providing a status update
 Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
 
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-  2. Select the **Summary** tab.
-  3. Within the **Summary** tab, select **Update Status**.
-  4. Add a markdown-formatted message.
-    - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
-    - If this is a subsequent status update, the message from the last status update will be pre-populated here.
-  5. Optionally set a reminder to prompt for the next status update.
-    - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
-    - If this is a subsequent status update, the last reminder timer will be pre-populated here.
-  6. Select **Update Status** to post your status update.
-    - Status updates are posted to the incident channel as a message from the user providing the status update.
-    - If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
+
+1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
+2. Select the **Summary** tab.
+3. Within the **Summary** tab, select **Update Status**.
+4. Add a markdown-formatted message.
+ * If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
+ * If this is a subsequent status update, the message from the last status update will be pre-populated here.
+5. Optionally set a reminder to prompt for the next status update.
+ * If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.\
+ * If this is a subsequent status update, the last reminder timer will be pre-populated here.\
+6. Select **Update Status** to post your status update.
+ * Status updates are posted to the incident channel as a message from the user providing the status update.
+ * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
 The most recent status post will also appear in the right-hand sidebar of the incident channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
@@ -197,11 +200,12 @@ Ending an incident
 Incident members can end an incident using any one of the following:
 
 * Within the incident channel, run the ``/incident end`` slash command.
+
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-  2. Select the **Tasks** tab.
-  3. Within the **Tasks** tab, if you are on the final stage, select **End Incident**.
-  4. Otherwise, to end the incident from an earlier stage, select the **...** menu, then select **End Incident**.
+1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
+2. Select the **Tasks** tab.
+3. Within the **Tasks** tab, if you are on the final stage, select **End Incident**.
+4. Otherwise, to end the incident from an earlier stage, select the **...** menu, then select **End Incident**.
 
 Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
 
@@ -211,10 +215,11 @@ Restarting an incident
 If an incident was ended prematurely, it can be restarted using any one of the following:
 
 * Within the incident channel, run the ``/incident restart`` slash command.
+
 * From the desktop or browser:
-  1. Select the **Incidents** icon in the channel header to open the RHS.
-  2. Select the **Tasks** tab.
-  3. Within the **Tasks** tab select **Restart Incident**.
+1. Select the **Incidents** icon in the channel header to open the RHS.
+2. Select the **Tasks** tab.
+3. Within the **Tasks** tab select **Restart Incident**.
 
 Reviewing past incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,8 +230,8 @@ To view past incidents of which you are a member, from the desktop or browser:
 2. Select the **Incidents** tab.
 3. Within the **Incidents** tab, find the incident to be reviewed, then select the name of the incident.
 4. Review the incident details:
-   * The duration, total number of members ever involved, and messages sent in the channel are listed.
-   * A graphical timeline shows how much time elapsed between completed tasks.
+ * The duration, total number of members ever involved, and messages sent in the channel are listed.
+ * A graphical timeline shows how much time elapsed between completed tasks.
 5. Optionally export the contents of the incident channel to review during a post-mortem.
 
 Built-in slash commands
@@ -248,9 +253,13 @@ Generating test data
 ^^^^^^^^^^^^^^^^^^^^
 
 To quickly test Mattermost Incident Management, use the following test commands to create incidents populated with random data:
+
 - ``/incident test create-incident [playbook ID] [timestamp] [incident name]`` - Provide the ID of an existing playbook to which the current user has access, a timestamp, and an incident name. The command creates an ongoing incident with the creation date set to the specified timestamp.
+
   * An example command looks like: ``/incident test create-incident 6utgh6qg7p8ndeef9edc583cpc 2020-11-23 PR-Testing``
+
 - ``/incident test bulk-data [ongoing] [ended] [start date] [end date] [seed]`` - Provide a number of ongoing and ended incidents, a start and end date, and an optional random seed. The command creates the given number of ongoing and ended incidents, with creation dates randomly between the start and end dates. The seed may be used to reproduce the same outcome on multiple invocations. Incident names are generated randomly.
+
   * An example command looks like: ``/incident test bulk-data 10 3 2020-01-31 2020-11-22 2``
 
 Channel Export
