@@ -81,17 +81,19 @@ A playbook must be defined before starting an incident.
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Start a **Blank Playbook**, or use the built-in **Incident Management Playbook** as a template.
 3. Name your playbook and provide a description.
-4. Within the **Tasks** tab, customize the stages and tasks:
+4. Select the **Tasks** tab.
+5. Within the **Tasks** tab, customize the stages and tasks:
    * Create and name new tasks to capture actions your team should take to resolve the incident.
    * Create new stages to group tasks meant to be completed together.
    * Drag and drop to reorganize stages and tasks.
    * Optionally add task descriptions to give additional context to members of the incident channel. Descriptions support a limited form of markdown, including text styling and hyperlinks.
    * Optionally add a slash command to the task that can be executed by members of the incident channel as needed.
-5. Within the **Preferences** tab, customize how status updates are communicated:
+6. Select the **Preferences** tab.
+7. Within the **Preferences** tab, customize how status updates are communicated:
    * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, `Unknown Channel` will be shown instead of the channel name.
    * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
    * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
-6. On the right-hand side of the screen, configure the permissions:
+8. On the right-hand side of the screen, configure the permissions:
    * Decide whether the automatically created incident channel should be public or private within the team.
    * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
 
@@ -163,7 +165,7 @@ To change commanders, use any one of the following:
 * Run the ``/incident commander @username`` slash command from the incident channel.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-  2. Browse to the **Summary** tab.
+  2. Select the **Summary** tab.
   3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
     - To change the commander to a user who is not in the channel, first add the user to the channel.
 
