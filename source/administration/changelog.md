@@ -4,6 +4,56 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.31
+
+### Compatibility
+  - TLS
+
+### Highlights
+ - Pre-packaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to mute categories with the experimental sidebar feature.
+ - Added support for multi-selection of channels when dragging and dropping between channels in the experimental sidebar feature.
+ - Group messages are now returned in the channel switcher when only first names are typed.
+ - Issuing /dnd consecutively no longer unexpectedly toggles the user status between “Do Not Disturb” and “Online” and will only set the user’s status to “Do Not Disturb”.
+
+#### Administration
+ - Added a new ``manage_remote_clusters`` permission.
+
+### Bug Fixes
+ - Cleaned up the config store on server initialization errors.
+ - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
+ - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section as read-only for the System Manager.
+ - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
+ - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close LDAP Session.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in config.json:
+    - Added ``CollapsedThreads`` for collapsed reply threads feature.
+    
+### Go Version
+
+### Open Source Components
+ 
+### Database Changes
+ - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
+
+### Websocket Event Changes
+ - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
+
+### API Changes
+ 
+### Known Issues
+
+### Contributors
+
+
 ## Release v5.30
 
 - **v5.30.1, released 2020-12-18**
