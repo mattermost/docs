@@ -118,7 +118,7 @@ In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_nativ
    default-authentication-plugin=mysql_native_password
 
 
-In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev.mysql.com/doc/mysqld-version-reference/en/optvar-changes-8-0.html). Therefore, if you update your MySQL installation to version 8, you will need to convert your database tables to use the new default collation:
+In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev.mysql.com/doc/mysqld-version-reference/en/optvar-changes-8-0.html). Therefore, if you update your MySQL installation to version 8, you'll need to convert your database tables to use the new default collation:
 
 .. code-block:: sql
 
