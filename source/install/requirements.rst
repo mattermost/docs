@@ -1,7 +1,7 @@
 ..  _requirements:
 
 Software and Hardware Requirements
-================================
+==================================
 
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out.
 
@@ -24,7 +24,7 @@ Client Software
 ~~~~~~~~~~~~~~~
 
 Desktop Apps
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
@@ -38,7 +38,7 @@ Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 
 `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 PC Web
-^^^^^^^^
+^^^^^^
 
 .. csv-table::
     :header: "Browser", "Technical Requirement"
@@ -51,7 +51,7 @@ PC Web
 `*` Support for Internet Explorer (IE11) has been removed in Mattermost 5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
 
 Mobile Apps
-^^^^^^^^^^^^
+^^^^^^^^^^^
 
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
@@ -62,7 +62,7 @@ Mobile Apps
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 Mobile Web
-^^^^^^^^^^^
+^^^^^^^^^^
 
 .. csv-table::
     :header: "Browser", "Technical Requirement"
@@ -139,7 +139,7 @@ Moreover, memory requirements can be driven by peak file sharing activity. Recom
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
 Hardware Requirements for Team Deployments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
 
@@ -149,10 +149,10 @@ Most small to medium Mattermost team deployments can be supported on a single se
 .. _hardware-sizing-for-enterprise:
 
 Hardware Requirements for Enterprise Deployments (Multi-Server)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Scale Requirements
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`__.
 
@@ -161,7 +161,7 @@ It is highly recommended that pilots are run before enterprise-wide deployments 
 Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 
 System Requirements
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
