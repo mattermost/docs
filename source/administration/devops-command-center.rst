@@ -30,7 +30,7 @@ Mattermost Incident Management is included in the Mattermost Cloud workspace, en
 
 Mattermost Incident Management is available in the Plugin Marketplace:
 
-1. As a System Admin, navigate to **Main Menu > Plugin Marketplace**.
+1. As a System Admin, go to **Main Menu > Plugin Marketplace**.
 2. Search for **Incident Management**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
 4. From the plugin configuration page, set **Enable Plugin** to ``true``.
@@ -78,7 +78,7 @@ Creating a playbook
 
 A playbook must be defined before starting an incident.
 
-1. Navigate to **Main Menu > Playbooks & Incidents**.
+1. Go to **Main Menu > Playbooks & Incidents**.
 2. Start a **Blank Playbook**, or use the built-in **Incident Management Playbook** as a template.
 3. Name your playbook and provide a description.
 4. Select the **Tasks** tab.
@@ -102,7 +102,7 @@ Configuring a playbook
 
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Navigate to **Main Menu > Playbooks & Incidents**.
+1. Go to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. 
    - Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
 3. Select the name of the playbook, or select the **Action** menu next to the playbook name, then select **Edit**.
@@ -113,7 +113,7 @@ Deleting a playbook
 
 You can delete a playbook at any time. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Navigate to **Main Menu > Playbooks & Incidents**.
+1. Go to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. 
    - Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
 3. Select the **Action** menu next to the playbook name, then select **Edit**.
@@ -151,6 +151,7 @@ Working with stages and tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Any member of the incident channel may work with stages and tasks:
+
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To advance to the next stage, select **Next Stage**. Advancing to the next stage without completing the tasks in the stage prompts you to confirm.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
@@ -173,11 +174,12 @@ Providing a status update
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
+
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
   2. Select the **Summary** tab.
   3. Within the **Summary** tab, select **Update Status**.
-  4. Type a markdown-formatted message.
+  4. Add a markdown-formatted message.
     - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
     - If this is a subsequent status update, the message from the last status update will be pre-populated here.
   5. Optionally set a reminder to prompt for the next status update.
@@ -193,6 +195,7 @@ Ending an incident
 ~~~~~~~~~~~~~~~~~~~
 
 Incident members can end an incident using any one of the following:
+
 * Within the incident channel, run the ``/incident end`` slash command.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
@@ -206,6 +209,7 @@ Restarting an incident
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If an incident was ended prematurely, it can be restarted using any one of the following:
+
 * Within the incident channel, run the ``/incident restart`` slash command.
 * From the desktop or browser:
   1. Select the **Incidents** icon in the channel header to open the RHS.
@@ -216,6 +220,7 @@ Reviewing past incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To view past incidents of which you are a member, from the desktop or browser:
+
 1. Navigate to **Main Menu > Playbooks & Incidents**.
 2. Select the **Incidents** tab.
 3. Within the **Incidents** tab, find the incident to be reviewed, then select the name of the incident.
