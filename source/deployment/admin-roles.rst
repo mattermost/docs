@@ -8,7 +8,7 @@ From v5.30, System Admins can also use the System Console to manage additional S
 
 - **System Manager:** The System Manager has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read only.
-- **Read Only Admin:** This role is able to access all pages of the System Console but has no write access to any pages.
+- **Viewer:** This role is able to access all pages of the System Console but has no write access to any pages.
 
 There are two ways to assign roles:
 
@@ -43,7 +43,7 @@ When a user is assigned a role, they have access the System Console. As each rol
       - (User Management) Permissions
       - Authentication
 
-**Read Only Admin**
+**Viewer**
 
   - Read Only
      - All pages within the System Console
@@ -95,7 +95,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   ``mmctl permissions role assign system_user_manager bob-smith sue-clark``
 
-**To grant the Read Only Admin role to two users, Bob Smith and Sue Clark:**
+**To grant the Viewer role to two users, Bob Smith and Sue Clark:**
 
   **In the System Console**
 
