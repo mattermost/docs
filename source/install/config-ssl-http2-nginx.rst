@@ -19,66 +19,68 @@ You can use any certificate that you want, but these instructions show you how t
 If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation `here <https://certbot.eff.org>`_ .
 
 1. Log in to the server that hosts NGINX and open a terminal window.
+
 2. Open the your mattermost nginx conf file as root in a text editor and update the ip address in the ``upstream backend`` to point towards mattermost, and the ``server_name`` to be your domain for Mattermost. 
 
 .. note::
    On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file run ``sudo touch /etc/nginx/sites-available/mattermost``.
    On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file run ``sudo touch /etc/nginx/conf.d/mattermost``.
    
-
-  .. code-block:: none
+.. code-block:: none
 
    upstream backend {
-      server {ip}:8065;
-      keepalive 32;
-      }
+       server {ip}:8065;
+       keepalive 32;
+       }
 
    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
    server {
-      listen 80 default_server;
-      server_name mattermost.example.com;
+       listen 80 default_server;
+       server_name mattermost.example.com;
 
-      location ~ /api/v[0-9]+/(users/)?websocket$ {
-          proxy_set_header Upgrade $http_upgrade;
-          proxy_set_header Connection "upgrade";
-          client_max_body_size 50M;
-          proxy_set_header Host $http_host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-          proxy_set_header X-Frame-Options SAMEORIGIN;
-          proxy_buffers 256 16k;
-          proxy_buffer_size 16k;
-          client_body_timeout 60;
-          send_timeout 300;
-          lingering_timeout 5;
-          proxy_connect_timeout 90;
-          proxy_send_timeout 300;
-          proxy_read_timeout 90s;
-          proxy_pass http://backend;
-      }
+       location ~ /api/v[0-9]+/(users/)?websocket$ {
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection "upgrade";
+           client_max_body_size 50M;
+           proxy_set_header Host $http_host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_set_header X-Frame-Options SAMEORIGIN;
+           proxy_buffers 256 16k;
+           proxy_buffer_size 16k;
+           client_body_timeout 60;
+           send_timeout 300;
+           lingering_timeout 5;
+           proxy_connect_timeout 90;
+           proxy_send_timeout 300;
+           proxy_read_timeout 90s;
+           proxy_pass http://backend;
+       }
 
-      location / {
-          client_max_body_size 50M;
-          proxy_set_header Connection "";
-          proxy_set_header Host $http_host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header X-Forwarded-Proto $scheme;
-          proxy_set_header X-Frame-Options SAMEORIGIN;
-          proxy_buffers 256 16k;
-          proxy_buffer_size 16k;
-          proxy_read_timeout 600s;
-          proxy_cache mattermost_cache;
-          proxy_cache_revalidate on;
-          proxy_cache_min_uses 2;
-          proxy_cache_use_stale timeout;
-          proxy_cache_lock on;
-          proxy_http_version 1.1;
-          proxy_pass http://backend;
-      }
+       location / {
+           client_max_body_size 50M;
+           proxy_set_header Connection "";
+           proxy_set_header Host $http_host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_set_header X-Frame-Options SAMEORIGIN;
+           proxy_buffers 256 16k;
+           proxy_buffer_size 16k;
+           proxy_read_timeout 600s;
+           proxy_cache mattermost_cache;
+           proxy_cache_revalidate on;
+           proxy_cache_min_uses 2;
+           proxy_cache_use_stale timeout;
+           proxy_cache_lock on;
+           proxy_http_version 1.1;
+           proxy_pass http://backend;
+       }
    }
+
+
 
 3. Remove the existing default sites-enabled file.
 
@@ -91,8 +93,10 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
    On RHEL 7+: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+   
 
 5. Run ``sudo nginx -t`` to ensure your configuration is done properly. If you get an error, look into the nginx config and make the needed changes to the file under ``/etc/nginx/sites-available/mattermost``
+
 
 6. Restart NGINX.
 
@@ -123,18 +127,24 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
   ``sudo ln -s /snap/bin/certbot /usr/bin/certbot``
 
-11. Run the Let's Encrypt installer.
+11. Run the Let's Encrypt installer dry-run.
+
+  ``sudo certbot --dry-run``
+
+  This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate.
+  
+12. Run the Let's Encrypt installer.
 
   ``sudo certbot``
 
-  This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. Once this is activated, it will automatically edit your nginx conf file for the site(s) selected.
+  This will run certbot and will automatically edit your nginx conf file for the site(s) selected.
   
-12. Ensure your SSL is configured properly by running:
+13. Ensure your SSL is configured properly by running:
 
    ``curl https://localhost``
 
 
-13. Check that your SSL certificate is set up correctly.
+14. Check that your SSL certificate is set up correctly.
 
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
