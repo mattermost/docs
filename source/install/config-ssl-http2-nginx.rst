@@ -267,3 +267,27 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 4. Update the Callback URLs to your new domain/URL.
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
+
+**Certbot Rate Limiting**
+
+If running certbot stand alone you will see the below error:
+
+   .. code-block:: none
+
+      Error: Could not issue a Let's Encrypt SSL/TLS certificate for example.com.
+      One of the Let's Encrypt rate limits has been exceeded for example.com.
+      See the related Knowledge Base article for details.
+      Details
+      Invalid response from https://acme-v02.api.letsencrypt.org/acme/new-order.
+      Details:
+      Type: urn:ietf:params:acme:error:rateLimited
+      Status: 429
+      Detail: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/
+
+If running Let's Encrypt within Mattermost you will see the below error:
+
+   .. code-block:: none
+
+      {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
+
+This error means that you've attempted to generate a cert too many times. You can fund more information here - https://letsencrypt.org/docs/rate-limits/.
