@@ -28,6 +28,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
   .. code-block:: none
 
+
    upstream backend {
       server {ip}:8065;
       keepalive 32;
@@ -240,12 +241,13 @@ If you see the above errors this is typically because certbot was not able to ac
 .. note:: 
    If you're using Cloudflare you'll need to disable ``force traffic to https``.
 
+
 **Certbot Rate Limiting**
 
 If running certbot stand alone you will see the below error:
 
    .. code-block:: none
-   
+
       Error: Could not issue a Let's Encrypt SSL/TLS certificate for example.com.
       One of the Let's Encrypt rate limits has been exceeded for example.com.
       See the related Knowledge Base article for details.
@@ -255,11 +257,11 @@ If running certbot stand alone you will see the below error:
       Type: urn:ietf:params:acme:error:rateLimited
       Status: 429
       Detail: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/
-      
+
 If running Let's Encrypt within Mattermost you will see the below error:
 
    .. code-block:: none
-   
-      {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from 108.162.219.86:9580: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
+
+      {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
 
 This error means that you've attempted to generate a cert too many times. You can fund more information here - https://letsencrypt.org/docs/rate-limits/.
