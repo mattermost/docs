@@ -21,7 +21,7 @@ You can use any certificate that you want, but these instructions show you how t
 
   If you are using Ubuntu or Debian:
 
-  ``sudo apt-get install git``
+  ``sudo apt-get install certbot``
 
   If you are using RHEL:
 
