@@ -16,156 +16,85 @@ You can use any certificate that you want, but these instructions show you how t
 
 **To configure NGINX as a proxy with SSL and HTTP/2:**
 
+If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation `here <https://certbot.eff.org>`_ .
+
 1. Log in to the server that hosts NGINX and open a terminal window.
-2. Install git.
+2. Open the your mattermost nginx conf file as root in a text editor and update the ip address in the ``upstream backend`` to point towards mattermost, and the ``server_name`` to be your domain for Mattermost. 
 
-  If you are using Ubuntu or Debian:
-
-  ``sudo apt-get install git``
-
-  If you are using RHEL:
-
-  ``sudo yum install git``
-
-3. Clone the Let's Encrypt repository on GitHub.
-
-  ``git clone https://github.com/letsencrypt/letsencrypt``
-
-4. Change to the ``letsencrypt`` directory.
-
-  ``cd letsencrypt``
-
-5. Stop NGINX.
-
-  On Ubuntu 14.04 and RHEL 6:
-
-  ``sudo service nginx stop``
-
-  On Ubuntu 18.04, RHEL 7, and RHEL 8:
-
-  ``sudo systemctl stop nginx``
-
-6. Run ``netstat`` to make sure that nothing is listening on port 80.
-
-  ``netstat -na | grep ':80.*LISTEN'``
-
-7. Run the Let's Encrypt installer.
-
-  ``./letsencrypt-auto certonly --standalone``
-
-  When prompted, enter your domain name. After the installation is complete, you can find the certificate in the   ``/etc/letsencrypt/live`` directory.
-
-8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 3 places.
+.. note::
+   On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file run ``sudo touch /etc/nginx/sites-available/mattermost``.
+   On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file run ``sudo touch /etc/nginx/conf.d/mattermost``.
+   
 
   .. code-block:: none
 
-    upstream backend {
-       server 10.10.10.2:8065;
-       keepalive 32;
-    }
+   upstream backend {
+      server {ip}:8065;
+      keepalive 32;
+      }
 
-    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
+   proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
-    server {
+   server {
       listen 80 default_server;
       server_name mattermost.example.com;
-      return 301 https://$server_name$request_uri;
-    }
 
-    server {
-       listen 443 ssl http2;
-       server_name    mattermost.example.com;
+      location ~ /api/v[0-9]+/(users/)?websocket$ {
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+          client_max_body_size 50M;
+          proxy_set_header Host $http_host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Frame-Options SAMEORIGIN;
+          proxy_buffers 256 16k;
+          proxy_buffer_size 16k;
+          client_body_timeout 60;
+          send_timeout 300;
+          lingering_timeout 5;
+          proxy_connect_timeout 90;
+          proxy_send_timeout 300;
+          proxy_read_timeout 90s;
+          proxy_pass http://backend;
+      }
 
-       http2_push_preload on; # Enable HTTP/2 Server Push
+      location / {
+          client_max_body_size 50M;
+          proxy_set_header Connection "";
+          proxy_set_header Host $http_host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Frame-Options SAMEORIGIN;
+          proxy_buffers 256 16k;
+          proxy_buffer_size 16k;
+          proxy_read_timeout 600s;
+          proxy_cache mattermost_cache;
+          proxy_cache_revalidate on;
+          proxy_cache_min_uses 2;
+          proxy_cache_use_stale timeout;
+          proxy_cache_lock on;
+          proxy_http_version 1.1;
+          proxy_pass http://backend;
+      }
+   }
 
-       ssl on;
-       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
-       ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
-       ssl_session_timeout 1d;
-
-       # Enable TLS versions (TLSv1.3 is required upcoming HTTP/3 QUIC).
-       ssl_protocols TLSv1.2 TLSv1.3;
-
-       # Enable TLSv1.3's 0-RTT. Use $ssl_early_data when reverse proxying to
-       # prevent replay attacks.
-       #
-       # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
-       ssl_early_data on;
-
-       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
-       ssl_prefer_server_ciphers on;
-       ssl_session_cache shared:SSL:50m;
-       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
-       add_header Strict-Transport-Security max-age=15768000;
-       # OCSP Stapling ---
-       # fetch OCSP records from URL in ssl_certificate and cache them
-       ssl_stapling on;
-       ssl_stapling_verify on;
-
-       add_header X-Early-Data $tls1_3_early_data;
-
-       location ~ /api/v[0-9]+/(users/)?websocket$ {
-           proxy_set_header Upgrade $http_upgrade;
-           proxy_set_header Connection "upgrade";
-           client_max_body_size 50M;
-           proxy_set_header Host $http_host;
-           proxy_set_header X-Real-IP $remote_addr;
-           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-           proxy_set_header X-Forwarded-Proto $scheme;
-           proxy_set_header X-Frame-Options SAMEORIGIN;
-           proxy_buffers 256 16k;
-           proxy_buffer_size 16k;
-           client_body_timeout 60;
-           send_timeout 300;
-           lingering_timeout 5;
-           proxy_connect_timeout 90;
-           proxy_send_timeout 300;
-           proxy_read_timeout 90s;
-           proxy_pass http://backend;
-       }
-
-       location / {
-           client_max_body_size 50M;
-           proxy_set_header Connection "";
-           proxy_set_header Host $http_host;
-           proxy_set_header X-Real-IP $remote_addr;
-           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-           proxy_set_header X-Forwarded-Proto $scheme;
-           proxy_set_header X-Frame-Options SAMEORIGIN;
-           proxy_buffers 256 16k;
-           proxy_buffer_size 16k;
-           proxy_read_timeout 600s;
-           proxy_cache mattermost_cache;
-           proxy_cache_revalidate on;
-           proxy_cache_min_uses 2;
-           proxy_cache_use_stale timeout;
-           proxy_cache_lock on;
-           proxy_http_version 1.1;
-           proxy_pass http://backend;
-       }
-    }
-
-    # This block is useful for debugging TLS v1.3. Please feel free to remove this
-    # and use the `$ssl_early_data` variable exposed by nginx directly should you
-    # wish to do so.
-    map $ssl_early_data $tls1_3_early_data {
-      "~." $ssl_early_data;
-      default "";
-    }
-
-9. Remove the existing default sites-enabled file.
+3. Remove the existing default sites-enabled file.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
-On RHEL 7: ``sudo rm /etc/nginx/conf.d/default``
+   On RHEL 7+: ``sudo rm /etc/nginx/conf.d/default``
 
-10. Enable the mattermost configuration.
+4. Enable the mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
-On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+   On RHEL 7+: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
 
-11. Restart NGINX.
+5. Run ``sudo nginx -t`` to ensure your configuration is done properly. If you get an error, look into the nginx config and make the needed changes to the file under ``/etc/nginx/sites-available/mattermost``
+
+6. Restart NGINX.
 
   On Ubuntu 14.04 and RHEL 6:
 
@@ -175,24 +104,42 @@ On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.c
 
   ``sudo systemctl start nginx``
 
-12. Verify that you can see Mattermost through the proxy.
+7. Verify that you can see Mattermost through the proxy.
 
   ``curl https://localhost``
 
-  If everything is working, you will see the HTML for the Mattermost signup page. You will see invalid certificate when accessing through the IP or localhost. Use the full FQDN domain to verify if the SSL certificate has pinned properly and is valid.
+  If everything is working, you will see the HTML for the Mattermost signup page. You will see invalid certificate when accessing through the IP or localhost. Use the full FQDN domain to verify if the SSL certificate has pinned properly and is valid.    
+
+
+8. Install and update Snap.
+
+  ``sudo snap install core; sudo snap refresh core``
+
+9. Install the Certbot package
+
+  ``sudo snap install --classic certbot``
+
+10. Add a symbolic link to ensure Certbot can run.
+
+  ``sudo ln -s /snap/bin/certbot /usr/bin/certbot``
+
+11. Run the Let's Encrypt installer.
+
+  ``sudo certbot``
+
+  This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. Once this is activated, it will automatically edit your nginx conf file for the site(s) selected.
+  
+12. Ensure your SSL is configured properly by running:
+
+   ``curl https://localhost``
+
 
 13. Check that your SSL certificate is set up correctly.
 
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-14. Configure ``cron`` so that the certificate will automatically renew every month.
 
-  ``crontab -e``
-
-  In the following line, use your own domain name in place of *{domain-name}*
-
-  ``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall --nginx -d {domain-name} && sudo service nginx reload``
 
 NGINX Configuration FAQ
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -267,3 +214,46 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 4. Update the Callback URLs to your new domain/URL.
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
+
+
+**Why does Certbot fail the http-01 challenge?**
+
+   .. code-block:: none
+
+      Requesting a certificate for yourdomain.com
+      Performing the following challenges:
+      http-01 challenge for yourdomain.com
+      Waiting for verification...
+      Challenge failed for domain yourdomain.com
+      http-01 challenge for yourdomain.com
+      Cleaning up challenges
+      Some challenges have failed.
+   
+If you see the above errors this is typically because certbot was not able to access port 80. This can be due to a firewall or other DNS configuration. Ensure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config does not have a redirect.
+
+.. note:: 
+   If you're using Cloudflare you'll need to disable ``force traffic to https``.
+
+**Certbot Rate Limiting**
+
+If running certbot stand alone you will see the below error:
+
+   .. code-block:: none
+
+      Error: Could not issue a Let's Encrypt SSL/TLS certificate for example.com.
+      One of the Let's Encrypt rate limits has been exceeded for example.com.
+      See the related Knowledge Base article for details.
+      Details
+      Invalid response from https://acme-v02.api.letsencrypt.org/acme/new-order.
+      Details:
+      Type: urn:ietf:params:acme:error:rateLimited
+      Status: 429
+      Detail: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/
+
+If running Let's Encrypt within Mattermost you will see the below error:
+
+   .. code-block:: none
+
+      {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
+
+This error means that you've attempted to generate a cert too many times. You can fund more information here - https://letsencrypt.org/docs/rate-limits/.
