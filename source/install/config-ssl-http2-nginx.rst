@@ -214,3 +214,23 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 4. Update the Callback URLs to your new domain/URL.
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
+
+
+**Why does Certbot fail the http-01 challenge?**
+
+   .. code-block:: none
+
+      Requesting a certificate for yourdomain.com
+      Performing the following challenges:
+      http-01 challenge for yourdomain.com
+      Waiting for verification...
+      Challenge failed for domain yourdomain.com
+      http-01 challenge for yourdomain.com
+      Cleaning up challenges
+      Some challenges have failed.
+   
+If you see the above errors this is typically because certbot was not able to access port 80. This can be due to a firewall or other DNS configuration. Ensure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config does not have a redirect.
+
+.. note:: 
+   If you're using Cloudflare you'll need to disable ``force traffic to https``.
+
