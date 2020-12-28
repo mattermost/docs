@@ -16,7 +16,7 @@ You can use any certificate that you want, but these instructions show you how t
 
 **To configure NGINX as a proxy with SSL and HTTP/2:**
 
-If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation [here](https://certbot.eff.org/).
+If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation `here <https://certbot.eff.org>`_ .
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 2. Open the your mattermost nginx conf file as root in a text editor and update the ip address in the ``upstream backend`` to point towards mattermost, and the ``server_name`` to be your domain for Mattermost. 
