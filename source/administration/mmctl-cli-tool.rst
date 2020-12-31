@@ -1503,6 +1503,8 @@ Configuration settings.
   Child Commands
     -  `mmctl config edit`_ - Edit the configuration settings
     -  `mmctl config get`_ - Get the value of a configuration setting
+    -  `mmctl config migrate`_ - Migrate existing config between backends
+    -  `mmctl config reload`_ - Reload the server configuration
     -  `mmctl config reset`_ - Reset the configuration
     -  `mmctl config set`_ - Set the value of a configuration
     -  `mmctl config show`_ - Writes the server configuration to STDOUT
@@ -1581,6 +1583,76 @@ mmctl config get
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl config migrate
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl config migrate [from_config] [to_config] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for migrate
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl config reload
+^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Reload the server configuration in case you want new settings to be applied.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl config reload [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    config reload
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for reload
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config reset
 ^^^^^^^^^^^^^^^^^^
