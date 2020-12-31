@@ -14,7 +14,7 @@ Channels are used to organize conversations across different topics. There are t
 
 - Public channels
 - Private channels
-- Direct Messages
+- Direct Messages and Group Messages
 
 Public channels
 ~~~~~~~~~~~~~~~
@@ -41,7 +41,7 @@ If your System Admin has allowed it, you can start a Direct Message or a Group M
 Managing channels
 ------------------
 
-Channels can be created, joined, renamed, left, and archived.
+Channels can be created, joined, renamed, left, marked as a favorite, muted, unmuted, and archived.
 
 Creating a channel
 ~~~~~~~~~~~~~~~~~~~
@@ -137,12 +137,28 @@ To mark a channel as a favorite, open the channel:
 **On desktop:** At the top of the page, select on the star icon next to the channel name
 
     .. image:: ../../images/favorite_channels_desktop.png
+    :alt: Mark a channel as a favorite.
+    :scale: 50
        
 This adds the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
- .. image:: ../../images/favorite_channels_sidebar.png
+    .. image:: ../../images/favorite_channels_sidebar.png
+    :alt: Favorite channels in the left-hand sidebar.
+    :scale: 50
        
 **On mobile:** Open the dropdown list by the channel name, and select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
+
+Muting a channel
+~~~~~~~~~~~~~~~~
+
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
+
+Once a channel is muted:
+- Email and push notifications are disabled.
+- A mute icon displays next to the channel name.
+- The channel is greyed out in the left-hand sidebar and the channel isn't marked as unread unless you're mentioned directly. 
+
+To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
 --------------------------------------------
 Experimental: Channel Organization Features
@@ -154,7 +170,11 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Collapsible custom categories**: Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
 
-**Drag and drop channels and categories**: Drag channels between or within categories, or drag to reorder entire categories to prioritize important conversations.
+**Drag and drop channels and categories**: Drag channels between or within custom categories, or drag to reorder entire categories to prioritize important conversations.
+
+**Rename custom categories**: Customize name of categories.
+
+**Mute and unmute custom categories**: Mute and unmute all channels in a custom category.
 
 **Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 
