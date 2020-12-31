@@ -137,14 +137,14 @@ To mark a channel as a favorite, open the channel:
 **On desktop:** At the top of the page, select on the star icon next to the channel name
 
     .. image:: ../../images/favorite_channels_desktop.png
-    :alt: Mark a channel as a favorite.
-    :scale: 50
+        :alt: Mark a channel as a favorite.
+        :scale: 40
        
 This adds the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
     .. image:: ../../images/favorite_channels_sidebar.png
-    :alt: Favorite channels in the left-hand sidebar.
-    :scale: 50
+        :alt: Favorite channels in the left-hand sidebar.
+        :scale: 40
        
 **On mobile:** Open the dropdown list by the channel name, and select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
 
@@ -154,9 +154,10 @@ Muting a channel
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
 
 Once a channel is muted:
+
 - Email and push notifications are disabled.
 - A mute icon displays next to the channel name.
-- The channel is greyed out in the left-hand sidebar and the channel isn't marked as unread unless you're mentioned directly. 
+- The channel is greyed out in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
 
 To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
