@@ -1270,11 +1270,11 @@ User sessions are cleared when a user tries to log in. Additionally, a job runs 
 Extend session length with activity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Improves user experience by extending sessions and keeping users logged in if they are active in their Mattermost apps. 
+Improves user experience by extending sessions. Keeps users logged in if they are active in their Mattermost apps, and sends session expiry push notifications if sessions expire on mobile.
 
-**True**: Sessions will be automatically extended when the user is active in their Mattermost client. User sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below.
+**True**: Sessions will be automatically extended when the user is active in their Mattermost client. User sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below. When a session expires on the mobile client, the Mattermost server sends mobile devices a session expiry push notification.
 
-**False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below.
+**False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below. When a session expires on the mobile client, no session expiry push notification is sent from the Mattermost server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``.                                           |
