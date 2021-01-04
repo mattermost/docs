@@ -14,7 +14,7 @@
  - Typing an emoji in a post now adds the emoji to recently used emojis list.
 
 ### Bug Fixes
- - 
+ - Fixed an issue where ``/mscalendar settings`` did not redirect a user to the bot Direct Message channel.
 
 ## 1.38.1 Release
 - Release Date: December 18, 2020
