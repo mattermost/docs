@@ -10,7 +10,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
   - TLS
 
 ### Highlights
- - Pre-packaged and pre-installed the Incident Management as well as Channel Export plugins for enterprise-ready builds.
+ - Pre-packaged and pre-installed the Incident Management v1.2.0 as well as Channel Export plugins for enterprise-ready builds.
 
 ### Improvements
 
@@ -29,6 +29,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section as read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
  - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close LDAP Session.
+ - Fixed an issue where line numbers did not line up with the text on code file previews.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -38,8 +39,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - Added ``CollapsedThreads`` for collapsed reply threads feature.
     
 ### Go Version
-
-### Open Source Components
  
 ### Database Changes
  - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
