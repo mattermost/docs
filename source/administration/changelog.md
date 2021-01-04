@@ -4,13 +4,13 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
-## Release v5.31
+## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 ### Compatibility
   - TLS
 
 ### Highlights
- - Pre-packaged and pre-installed the Incident Management v1.2.0 as well as Channel Export plugins for enterprise-ready builds.
+ - Pre-packaged and pre-installed the Incident Management v1.2.0.
 
 ### Improvements
 
