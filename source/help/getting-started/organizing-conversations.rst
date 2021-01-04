@@ -154,7 +154,7 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Collapsible custom categories**: Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
 
-**Multi-select channels**: Using the Mattermost Web or Desktop App, select multiple channels at a time. Press and hold SHIFT to select sequential channels. Press and hold CMD (for Mac) or CTRL (for Windows/Linux) to select non-sequential channels.
+**Multi-select channels**: Using the Mattermost Web or Desktop App, select multiple channels at a time. To select sequential channels, press and hold SHIFT. To select non-sequential channels press and hold CMD (for Mac) or CTRL (for Windows/Linux).
 
 **Drag and drop channels and categories**: Drag and drop to move selected channels within or between custom categories, or drag to reorder entire categories to prioritize important conversations. Multi-selected channels move together as a group in the order they originally appeared.
 
