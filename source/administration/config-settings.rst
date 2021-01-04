@@ -4725,7 +4725,9 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 
 **False**: Remote cluster management is disabled.
 
-This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``.    
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``.                                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
