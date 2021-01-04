@@ -43,7 +43,7 @@ This section has moved to the `Mattermost Handbook Documentation Style Guide <ht
 Joining the Team 
 ----------------
 
-This section has moved to the `Mattermost Handbook Join Us Guide <https://handbook.mattermost.com/contributors/join-us>`__ and the `Mattermost Handbook Workplace Guide <https://handbook.mattermost.com/operations/workplace>`__
+This section has moved to the `Mattermost Handbook Join Us Guide <https://handbook.mattermost.com/contributors/join-us>`__ and the `Mattermost Handbook Workplace Guide <https://handbook.mattermost.com/operations/workplace>`__.
 
 .. toctree::
    :maxdepth: 2
