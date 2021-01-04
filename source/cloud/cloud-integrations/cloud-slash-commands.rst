@@ -6,7 +6,7 @@ Slash Commands
 
   This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/>`__.
 
-Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to `outgoing webhooks <https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and direct messages.
+Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to `outgoing webhooks <https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and Direct Messages.
 
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands>`__ and `custom slash commands <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html>`__.
 
