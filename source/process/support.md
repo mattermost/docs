@@ -1,205 +1,269 @@
 # Support Handbook
+## Information Required to Open a Support Ticket
 
-## General Questions For Any Issues
+Encountering an error can be frustrating, so to get you back to work as fast as possible it's important that you provide as much information as you can in a timely manner. But knowing just what information is relevant can be confusing. To remember what we need, just think: C.L.U.E.S.
 
-Questions to ask when providing support for any of the following issues.
+- Configurations
+- Logs
+- Users Affected
+- Environment
+- Steps to reproduce
 
-#### What OS and version is the Mattermost server installed?
-E.g.: Ubuntu 16.04, RHEL 7.1
+This is all of the information that can summarize your issue. With this we can begin searching for the cause, whether it's a simple configuration change or a new bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
 
-#### What is your Mattermost server version?
-E.g.: 4.2, 4.3
 
-#### Are you experiencing the issues with the browser webapp, if so which one?
-E.g.: Chrome, Firefox, Edge
+## General Guidelines for Information
 
-#### Are you experiencing the issues with the Mattermost Desktop App, if so what version and OS?
-E.g.: App version 3.6 on Mac, App version 3.7.1 on Windows
+To make finding the cause of the unexpected behavior, follow these guidelines when providing diagnostic data:
+Make sure files are as complete as possible, rather than providing a few lines. Entire log files and configurations provide important context
+Provide configuration and logs in plaintext format if possible, as these are far easier for us to search than screenshots
+Be sure to sanitize them of usernames, passwords, and LDAP groups. Replace them with example strings that contain the same special characters if possible, as these are common causes of configuration errors
+Provide screenshots or screen recordings of the unexpected behavior users are seeing so that we know exactly what they're seeing
 
-#### Are you experiencing the issues with the Mattermost Mobile App, if so what version and OS?
-E.g.: App version 1.2 on iOS, App version 1.3 on Android
 
-#### Can you send a snippet of the Mattermost server logs around the time of the incident?  
-Typically located in `/opt/mattermost/logs`.
+## Configuration
 
-#### Are you running Mattermost in a container and/or using container orchestration?
-E.g.: Docker and Kubernetes, Docker and Cloud Foundry
+### Why we need it
 
-## Mattermost Is Not Working / The Server Keeps Dying
+On Linux systems settings are generally stored in configuration files. Many problems can be resolved by enabling or disabling a configuration setting, but in order to find it we need to have as complete a picture of how your system is set up as possible. This also will help us to reproduce the bugs so our developers can fix them.
 
-Questions to ask when dealing with general complaints along the lines of "Mattermost is not working"
-or "the server keeps dying". See the previous section if you have not yet established from the
-information provided by the customer that the server is the likely issue.
 
-#### Check the status of the server process
+### What it is
 
-Assuming the customer has followed our Linux setup guide, there will be a systemd service called
-`mattermost.service` on their server. You can check the status of this process with:
+Configuration includes but is not limited to:
 
-```
-sudo systemctl status mattermost.service
-```
+- The Mattermost config.json file
+- The configuration for the reverse proxy, e.g. Nginx, HAProxy, AWS
+- The database configuration
 
-If the service is not running, and the status is not `failed`, instruct them to run:
+If the issue is regarding SAML authentication, the configuration for the Mattermost service in the SAML IdP
+Any other systems that Mattermost connects to or sits between the user and the Mattermost server
 
-```
-sudo systemctl enable mattermost.service
-sudo systemctl start mattermost.service
-```
+### How to get them
 
-#### Mattermost is not running after a reboot
+#### Mattermost Configuration
 
-Many people miss the step in the setup guide that enables the systemd unit file for Mattermost.
-Rectify this with the following commands, and ask the customer to reboot to verify it is working.
+The Mattermost configuration is usually stored at `/opt/mattermost/config/config.json`. If you've migrated the Mattermost configuration to the database you can get the configuration using mmctl or by running this database query:
 
 ```
-sudo systemctl enable mattermost.service
-sudo systemctl start mattermost.service
+SELECT Value FROM Configurations WHERE Active = 1;
 ```
 
-#### Check the Mattermost logs
+#### Reverse Proxy Configuration
 
-Ask the customer to share the contents of `mattermost.log` from the `logs` directory of their
-Mattermost installation in order to look for any indications why Mattermost has stopped running.
+Nginx usually splits its configuration into two parts; the main server configuration at `/etc/nginx/nginx.conf` and a virtual server configuration which on Ubuntu is stored in `/etc/nginx/sites-available`. Both would be good, but the latter is more important.
+SAML Configuration
+If the issue you're seeing is with SAML login, we will need to see the full configuration for the Mattermost service in the SAML provider.  Because most SAML providers are configured via a web UI, screenshots similar to the ones in the setup documentation are sufficient.
 
-#### Check the system logs
 
-Often, the reason for Mattermost being reported as "randomly dying" is running out of memory. Ask
-the customer to send the results of the following command to inspect for evidence of OOM.
+#### LDAP Configuration
+
+The LDAP administrator should confirm the correct values for the following Mattermost LDAP settings:
+
+- LDAP Server hostname
+- LDAP Connection Port, Security, and certificates
+- BaseDN, Bind Username and Bind Password
+- User, Group, Guest, and Admin filters
+- Display attributes
+
+These can be provided as a text file or screenshots from the LDAP server.
+
+
+#### Other Configurations
+
+If you are experiencing an issue on mobile and are using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. Otherwise, the administrator of the external system should be able to get you the configuration.
+
+
+## Logs
+
+### Why We Need It
+
+Nearly all computer systems have logs that show details about errors and application behavior that can show us what's happening under the hood when an application is running. For this reason they're invaluable when diagnosing a problem, but only if they're as complete as possible.
+
+
+### Where It Is
+
+#### Mattermost
+
+Mattermost has two log files, one for general messages and the other for notification-related messages. These are found at:
+`/opt/mattermost/logs/mattermost.log`
+`/opt/mattermost/logs/notification.log`
+
+
+#### Proxy
+
+The location of these depend on your proxy configuration, but a good place to start looking is in /var/log. Your proxy administrator should be able to help you find the logs.
+
+
+#### Database
+
+MySQL and PostgreSQL have different logs, and their location varies based on your configuration. Check their documentation to get the logs if the issue is related to database connectivity
+
+
+#### SAML, LDAP & Other Systems
+
+The system administrator should be able to find these for you.
+
+
+### How to Get It
+
+#### Mattermost
+
+To get the most information from the logs we have to make sure debug logging is enabled. To do this edit your Mattermost configuration to set the File Logging Level to DEBUG.
+
+If the behavior started at a known time or date, use journalctl to get the logs like this:
+
+`sudo journalctl -u mattermost --since "2020-08-23 17:15:00" > mattermost_journalctl.log`
+
+Replace `2020-08-23 17:15:00` with the date and time (relative to the server) when the behavior started. To get the server time, use the date command.
+
+If the log files generated are too large to send, compress them with this command:
+
+`tar -czf /tmp/mattermost.log.tgz`
+
+The compressed logs will be on the server at `/tmp/mattermost.log.tgz`.
+
+If the compressed file is still too big, use these commands to split the compressed file into 20MB chunks:
 
 ```
-sudo journalctl -u mattermost.service
+mkdir -p /tmp/mattermost-logs
+cd /tmp/mattermost-logs
+tar czf - /opt/mattermost/logs/mattermost.log | split -b 20m - mattermost.log.tgz.
 ```
 
-If the OOM killer is the problem, suggest they use a machine with more RAM. If they already have
-plenty of RAM for the load they are experiencing, this may indicate a bug in the Mattermost server.
+The files will be located on the server at `/tmp/mattermost-logs` and be named `mattermost.log.tgz.aa`,  `mattermost.log.tgz.ab....` To copy these files from the server use a file transfer client that supports SSH/SFTP like Cyberduck.
+
+If you are experiencing issues with Elasticsearch, SAML, LDAP, or the database you can enable trace logging in `config.json` by setting `Trace` to `true` under their respective settings. This, combined with `DEBUG` level output, will make truly huge log files so only leave it on long enough to replicate the behavior. This will also contain a lot more sensitive data, including user data, so be sure to sanitize it completely before sharing it.
 
 
-## Database Issues
+#### System Logs
 
-Questions to ask when providing support for database issues.
+The location of log files for other systems varies, but a good way to get the logs for all processes on the Mattermost server is journalctl like this:
 
-__IMPORTANT: Before asking for any database queries to be run, suggest a back-up is completed to prevent accidental data loss or corruption.__
+`sudo journalctl --since "2020-08-23 17:15:00" > mattermost_journalctl.log`
 
-#### PostgreSQL or MySQL?
-Find out which database they are using. We only support PostgreSQL and MySQL currently.
+Replace `2020-08-23 17:15:00` with the date and time (relative to the server) when the error occurred. You can use `--until` with the same timestamp format to get the logs between two times:
 
-If they're using Amazon Aurora MySQL, and their issue seems like a race condition, it might be due to the multi-region lag that Aurora can have. If this is the case there may be a race in code we need to fix. @christopher will know more.
-
-#### What is the database version?
-Make sure it's a [version we support](https://docs.mattermost.com/install/requirements.html#database-software). If we don't support it, ask them to use a version we do support.
-
-#### Read replicas?
-Check if they have any read replicas set up. If these are misconfigured, it could be the source of some issues, such as rows not being propagated to the replicas and looking like missing/old data to a user.
-
-If the read replicas are not being used, make sure they have an enterprise license uploaded.
-
-#### Connection errors?
-If their Mattermost server is unable to connect to the database, make sure the connection string being used is correct. It could also be a networking issue where the database isn't on the same network or the right ports are not open.
-
-#### Other
-If they are receiving a specific error from the database, try using that to troubleshoot the issue.
-
-## WebSocket Issues
-
-#### Can you send us the following Mattermost server configuration settings?
-`ServiceSettings.SiteURL`, `ServiceSettings.ListenAddress`, `ServiceSettings.AllowCorsFrom`, `ServiceSettings.WebsocketSecurePort`, `ServiceSettings.WebsocketPort` Typically found in `/opt/mattermost/config/config.json`
-
-#### Can you send us your Nginx configuration files?
-Typically found in `/etc/nginx/nginx.conf` and `/etc/nginx/sites-available/mattermost`
-
-#### Can you send us a snippet of your Nginx error logs around the time of the incident?
-Typically found in `/var/log/nginx/error.log`
+`sudo journalctl --since "2020-08-23 17:15:00" --until "2020-08-23 16:30:00" > mattermost_journalctl.log`
 
 
-## LDAP Issues
+## Users Affected
 
-#### Attach your LDAP settings from config.json.
-The username/password should be removed.
+### Why We Need it
 
-#### What AD/LDAP server and version are you using?
-E.g.: Active Directory on Windows Server 2016.
+Mattermost servers are chaotic places. Thousands of posts, websocket actions, and webhook calls happen every second. And users can be in dozens of channels across multiple teams. Knowing which users are affected by a problem can help sift through all this information to find the root cause.
 
-#### Are there any LDAP errors in the logs?
 
-#### Is there a limit on the number of users the LDAP server can return in a single query? If so, have you set the Maximum Page Size in Mattermost?
-Many LDAP servers have an upper limit on the number of users returned, so they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
+### What It Is
 
-#### Can you send an example user from your system? 
-ldapsearch command format is preferred.
+This should be a detailed explanation of anything all end users reporting the unexpected behavior have in common. This includes but is not limited to:
+- Team and Channel memberships, including direct and group messages
+- Authentication methods
+- Client operating system and app versions
+- How they connect to the Mattermost server
+- Any other things they have in common such as when they joined, whether their login information recently changed, or if they are being synced via LDAP
 
-#### Is the server properly licensed?
-Check the licensing page in the system console.
+Note for Agents: This information is also required:
+- Customer Name
+- Customer Contacts
+- Customer License, e.g. E20/PS
+- Customer Tier - Where to find this?
 
-## TLS/SSL Issues
 
-#### Are you using a proxy or the built in TLS support?
+## Environment
 
-#### Are there any errors in the Mattermost logs?
+### What it is
 
-#### Send us your config.json. For example:
-```
-grep "TLS" /opt/mattermost/config/config.json 
-        "TLSCertFile": "",
-        "TLSKeyFile": "",
-        "TLSMinVer": "1.2",
-        "TLSStrictTransport": false,
-        "TLSStrictTransportMaxAge": 63072000,
-        "TLSOverwriteCiphers": [],
-        "ConnectionSecurity": "STARTTLS",
-```
+Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost. 
 
-#### Send your proxy configuration if you are using one.
+Because of this, having a complete picture of the servers and network that the Mattermost server operates in is key to solving problems. This includes but is not limited to:
 
-#### Have you followed one of the setup guides?
+- Mattermost version - 5.28.0, 5.25.5
+- Server OS and version - RHEL7, Ubuntu 18.04
+- Any orchestration/automation used like Docker or Kubernetes
+- Reverse Proxy and version - Nginx 1.16
+- Database type and version - MySQL 5.7, PostgreSQL 12.4
+- SAML provider - Windows Server 2012 Active Directory, Okta, KeyCloak
+- LDAP provider - Windows Server 2016 Active Directory, Okta, OpenLDAP
+- The type and version of any proxies or VPNs on the network that the Mattermost server or
 
-#### Check the status of the SSL certificate being used on Mattermost. For example:
-```
-echo | openssl s_client -showcerts -connect <URL>:443 -CApath /etc/ssl/ && echo | openssl s_client -connect <URL>:443 2>/dev/null | openssl x509 -noout -dates -text
-```
+Be sure to be as specific as possible when describing the environment. If you are seeing errors like Connection Refused be sure to include any firewalls or filtering proxies that may be on your network, either inbound or outbound.
 
-## GitLab Issues
+### Examples
 
-#### General Questions
+- Mattermost Server 
+- External hostname: mattermost.example.com
+- Internal hostname: mattermost.lan
+- Mattermost v5.28.0 
+- Zoom plugin v1.4.1
+- Nginx v1.18.0
+- Database server
+- Internal hostname: mysql.lan
+- MySQL v5.7
+- LDAP Provider - 192.168.1.102
+- Internal hostname: ldap.lan
+- OpenLDAP 2.4.54 (Docker container)
 
-1. Have they set up Mattermost on its own, or are they using GitLab Omnibus?
-2. If using GitLab Omnibus, what version of it do they have?
-3. If using GitLab Omnibus, Can they send us the Mattermost section of their gitlab.rb (found in `/etc/gitlab/gitlab.rb`) and their config.json (found in `/var/opt/gitlab/mattermost/config.json`)?
 
-#### Connection issues
+- Mattermost Servers
+- Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
+- Mattermost server versions
+- mm1-3: 5.25.4
+- mm4: 5.21.0
+- Proxy server
+- External hostname: mattermost.example.com
+- Internal hostname: proxy.local.lan
+- Nginx v1.16.0
+- Database Servers
+- Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
+- Primary: db1.local.lan
+- Read-Only: db2.local.lan, db3.local.lan
+- MySQL v5.6
+- Elasticsearch Server
+- Hostname: elastic.local.lan
+- Elasticsearch 7.9 with these plugins
+- analysis-icu
 
-1. If they try to access Mattermost and receive a "took too long to respond" error page, they should check to confirm that their `mattermost_external_url` is set correctly in their gitlab.rb. Then, they should run `gitlab-ctl reconfigure`.
-2. If they try to access Mattermost and receive a 502 error, their `mattermost_external_url` is set correctly, but their Mattermost instance does not appear to be running. They should then:
-    1. Run `gitlab-ctl status mattermost` to see if Mattermost is running.
-    2. Check the logs to see if something is preventing Mattermost from starting. They can do this by running `gitlab-ctl tail mattermost` and using `gitlab-ctl restart mattermost` to attempt to start Mattermost.
 
-#### Login issues
+## Steps to Reproduce
 
-1. Are they seeing any error messages when they try to log in? If so, what error messages are they seeing, and can they send us a screenshot?
-2. Does anything appear in the Mattermost logs when they try to log in? They can see these by running `gitlab-ctl tail mattermost`.
+### What It Is
 
-#### Other debugging information
+If the behavior only happens when the user performs a specific action, detailed steps to reproduce it will help us make sure we find and fix the right bug. These should be as descriptive as possible, but nothing is better for documenting this than a screenshot or, even better, screen recording.
 
-Useful commands:
-- `sudo gitlab-ctl reconfigure` - Update `config.json` and other configuration files, then restart all services (including Mattermost).
-- `sudo gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
-- `sudo gitlab-ctl status mattermost` - Check if Mattermost is running. The printed output will start with `run` if it's running or `down` if it's not.
-- `sudo gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press CTRL+C to exit.
-- `sudo gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
-- `sudo less /var/opt/gitlab/mattermost/config.json` - View the Mattermost `config.json` directly (use the arrow keys to scroll, press Q to exit).
-- `sudo gitlab-psql -d mattermost_production` - Access the embedded Mattermost database.
-- `sudo gitlab-rails console production` - Access the GitLab admin console (press CTRL+D to exit).
-   - You can then carry out commands such as updating a user’s password:
+A short summary of the steps to reproduce is also helpful. If you want some examples, look at the bug tickets on some Mattermost Jira tickets.
 
-     ```
-     user = User.find_by(email: 'admin@local.host')
-     user.password = 'secret_pass'
-     user.password_confirmation = 'secret_pass'
-     user.save!
-     ```
+### How to Get It
 
-File locations:
-- Configuration files are located at `/etc/gitlab/gitlab.rb` and `/var/opt/gitlab/mattermost/config.json`.
-- Log files are located in `/var/log/gitlab`. Mattermost's current logs in particular are in `/var/log/gitlab/mattermost`. The current log is named `current` with older ones being named `mattermost.log` or `mattermost.logmattermost.log`.
-- The default data directory is `/var/opt/gitlab/mattermost/data`.
-- Other Mattermost resources (i18n, email templates, webapp code, etc) are located in `/opt/gitlab/embedded/service/mattermost`.
+#### Mac OS
+
+Press Command + Shift + 5 to open the screen recording tool and select the region of the screen you want to record. To take a screenshot, press Command + Shift + 4 and select the region to take a screenshot. The files are placed on the desktop by default.
+
+- Windows
+  - Follow these instructions
+- iOS
+  - Follow these instructions
+- Android
+  - Follow these instructions
+
+## Appendix
+### A Note on Mobile Issues
+
+Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact your Customer Engineer for help setting these up.
+
+
+### SAML Login Issues
+
+If the issue is with SAML login one important piece of information is the SAML login flow. This contains headers and authentication information that can reveal issues that are easy to fix. Follow these instructions to view the SAML login flow if you are experiencing SAML authentication.
+
+
+### Checking Keys & Certificates
+
+Key and certificate files should never be shared, but if the error indicates a problem with the format of a key or certificate verify the format of the keys and certificates by running this command:
+
+`cat -A /path/to/key-or.cert`
+
+The output must meet these criteria exactly to be valid:
+Start with `-----BEGIN CERTIFICATE-----$`
+All lines must end with $ . If they end with ^M$ then convert them to UNIX line endings with `dos2unix`
+End with `-----END CERTIFICATE-----$`
