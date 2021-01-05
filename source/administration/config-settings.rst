@@ -5375,6 +5375,19 @@ In previous Mattermost Server versions, and this documentation, the instructions
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
+Shared Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+**True**: Enables users from multiple Mattermost instances to collaborate with one another using shared channels.
+
+**False**: Disables channel sharing.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSharedChannels": false`` with options ``true`` and ``false``.                |                                         |
++---------------------------------------------------------------------------------------------------------------------------------+ 
+
 Deprecated Configuration Settings
 -----------------------------------
 
