@@ -106,7 +106,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
 7. Verify that you can see Mattermost through the proxy.
 
-  ``curl https://localhost``
+  ``curl http://localhost``
 
   If everything is working, you will see the HTML for the Mattermost signup page. You will see invalid certificate when accessing through the IP or localhost. Use the full FQDN domain to verify if the SSL certificate has pinned properly and is valid.    
 
@@ -123,11 +123,11 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
   ``sudo ln -s /snap/bin/certbot /usr/bin/certbot``
 
-11. Run the Let's Encrypt installer dry-run.
+11. Run the Let's Encrypt installer dry-run to ensure your DNS is configured properly.
 
-  ``sudo certbot --dry-run``
+  ``sudo certbot certbot --dry-run``
 
-  This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate.
+  This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate. If this finishes successfully, proceed to step 12.
   
 12. Run the Let's Encrypt installer.
 
@@ -137,7 +137,103 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
   
 13. Ensure your SSL is configured properly by running:
 
-   ``curl https://localhost``
+   ``curl https://{your domain here}``
+
+14. Finally, we suggest editing your config file again to increase your SSL security settings above the default Let's Encrypt. This is the same file from Step 2 above. Edit it to look like the below:
+
+.. code-block:: none
+
+   upstream backend {
+       server {ip}:8065;
+      keepalive 32;
+       }
+
+   proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
+
+   server {
+       server_name mattermost.example.com;
+
+       location ~ /api/v[0-9]+/(users/)?websocket$ {
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection "upgrade";
+           client_max_body_size 50M;
+           proxy_set_header Host $http_host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_set_header X-Frame-Options SAMEORIGIN;
+           proxy_buffers 256 16k;
+           proxy_buffer_size 16k;
+           client_body_timeout 60;
+           send_timeout 300;
+           lingering_timeout 5;
+           proxy_connect_timeout 90;
+           proxy_send_timeout 300;
+           proxy_read_timeout 90s;
+           proxy_pass http://backend;
+       }
+
+       location / {
+           client_max_body_size 50M;
+           proxy_set_header Connection "";
+           proxy_set_header Host $http_host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_set_header X-Frame-Options SAMEORIGIN;
+           proxy_buffers 256 16k;
+           proxy_buffer_size 16k;
+           proxy_read_timeout 600s;
+           proxy_cache mattermost_cache;
+           proxy_cache_revalidate on;
+           proxy_cache_min_uses 2;
+           proxy_cache_use_stale timeout;
+           proxy_cache_lock on;
+           proxy_http_version 1.1;
+           proxy_pass http://backend;
+       }
+
+       listen 443 ssl http2; # managed by Certbot
+       ssl_certificate /etc/letsencrypt/live/mattermost.example.com/fullchain.pem; # managed by Certbot
+       ssl_certificate_key /etc/letsencrypt/live/mattermost.example.com/privkey.pem; # managed by Certbot
+       # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+       ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+       ssl_session_timeout 1d;
+
+       # Enable TLS versions (TLSv1.3 is required upcoming HTTP/3 QUIC).
+       ssl_protocols TLSv1.2 TLSv1.3;
+
+       # Enable TLSv1.3's 0-RTT. Use $ssl_early_data when reverse proxying to
+       # prevent replay attacks.
+       #
+       # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
+       ssl_early_data on;
+
+       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SH>
+       ssl_prefer_server_ciphers on;
+       ssl_session_cache shared:SSL:50m;
+       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+       add_header Strict-Transport-Security max-age=15768000;
+       # OCSP Stapling ---
+       # fetch OCSP records from URL in ssl_certificate and cache them
+       ssl_stapling on;
+       ssl_stapling_verify on;
+   }
+
+
+   server {
+       if ($host = mattermost.example.com) {
+           return 301 https://$host$request_uri;
+       } # managed by Certbot
+
+
+       listen 80 default_server;
+       server_name mattermost.example.com;
+       return 404; # managed by Certbot
+
+   }
+
 
 
 14. Check that your SSL certificate is set up correctly.
