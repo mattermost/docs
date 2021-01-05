@@ -40,7 +40,7 @@ Features include:
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__ and `third party extensions <https://about.mattermost.com/default-app-directory/>`__
 - Easily scalable to dozens of users per team
 - New features and improvements released every two months
-- Multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian
+- Multiple languages including U.S. English, Chinese (Simplified and Traditional), Bulgarian, Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish and Ukrainian
 
 To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
