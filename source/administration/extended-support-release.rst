@@ -6,7 +6,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its lifecycle on April 16, 2021. Upgrading to Mattermost Server v5.31 or later is highly recommended.
+  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 or later is highly recommended.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -72,7 +72,7 @@ At this point, we are not planning on letting customers pay for extended support
 How do we notify customers about new and deprecated Extended Support Releases?
 ------------------------------------------------------------------------------
 
-For a new upcoming ESR, we send out an email announcement around the time of the release day. We also add a reminder on our release announcement, changelog and via a Forum post (`see example <https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526>`_).
+For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526>`_).
 
 For a deprecated ESR, we send out an email announcement 3 months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.org/>`_.
 
