@@ -100,11 +100,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
 6. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6:
-
-  ``sudo service nginx start``
-
-  On Ubuntu 18.04, RHEL 7, and RHEL 8:
+  On Ubuntu 18.04+, RHEL 7+:
 
   ``sudo systemctl start nginx``
 
