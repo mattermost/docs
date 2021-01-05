@@ -5,7 +5,7 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 
 .. important::
 
-  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its lifecycle on April 16, 2021. Upgrading to Mattermost Server v5.31 or later is highly recommended.
+  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 or later is highly recommended.
 
 Upgrading to the Latest Version
 -------------------------------
