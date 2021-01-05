@@ -5385,7 +5385,7 @@ Shared Channels (Experimental)
 **False**: Disables channel sharing.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSharedChannels": false`` with options ``true`` and ``false``.                |                                         |
+| This feature's ``config.json`` setting is ``"EnableSharedChannels": false`` with options ``true`` and ``false``.                |
 +---------------------------------------------------------------------------------------------------------------------------------+ 
 
 Deprecated Configuration Settings
