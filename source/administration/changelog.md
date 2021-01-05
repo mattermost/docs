@@ -39,6 +39,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - Added ``CollapsedThreads`` for collapsed reply threads feature.
     
 ### Go Version
+ - 5.31 is built with Go ``1.14.6``.
  
 ### Database Changes
  - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
