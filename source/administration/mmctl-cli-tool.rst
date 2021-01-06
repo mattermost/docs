@@ -2395,7 +2395,7 @@ mmctl permissions reset
 
 **Description**
 
-Reset the given role's permissions to the default settings and overwrite custom settings (only available in Enterprise Edition E10 and E20).
+Reset the given role's permissions to the default settings and overwrite custom settings (available in Enterprise Edition E10 and E20).
 
 **Format**
 
@@ -2431,7 +2431,7 @@ mmctl permissions role assign
 
 **Description**
 
-Assign users to a role by username (only available in Enterprise Edition E10 and E20).
+Assign users to a role by username (available in Enterprise Edition E10 and E20).
 
 **Format**
 
