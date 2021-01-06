@@ -2,6 +2,43 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-01-12
+
+### Highlights
+ - Pre-packaged and pre-installed the Incident Management v1.2.0.
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed number of files allowed per post, from 5 to 10.
+ - Enabled the 3-dot menu on channels in the new sidebar to move multi-selected groups of channels.
+ 
+#### Administration
+ - Bumped the Go version to v1.15.5.
+ - Added support for automatic installation and enabling of plugins using feature flags.
+ - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
+ - Added a mattermost command to initialize the database.
+ - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
+ - Added support for processing import files through the API.
+ - Added support for protocol relative URLs while using the Image Proxy.
+ - Added shared channels and ``remote_cluster_service`` under a license check.
+ - A Striped LRU cache is now used by default.
+
+### Bug Fixes
+ - Fixed an issue where the permissions of a System Role got deleted when changing the access level to any permission.
+ - Fixed an issue where editing a ``/me`` post behaved differently in Webapp and Mobile App.
+ - Fixed an issue where the hover state did not span the whole width of the left-hand side on category headers.
+ - Fixed an issue where plugins on the left-hand side of the System Console were sorted differently than the ones in the Plugin Management page.
+ - Fixed an issue where 15-character team names were truncated when the experimental sidebar was enabled.
+ - Fixed an issue where the sidebar menus weren't styled correctly on mobile web view.
+ - Fixed an issue where jumping into an archive channel and clicking to jump to recent messages sent the user out of the archived channel.
+ - Fixed an issue where the tooltip text for copying an incoming webhook url was unclear.
+
+### Known Issues
+ - System Managers do not have access to the Billing section and see a blank screen.
+ - Cloud > "Tips & Next Steps" should not show an "Explore channels" section for guest users.
+ - System Roles shows License and Environment as possible permissions but they are always hidden in Cloud.
+
 ## Release 2020-12-18
 
 ### Bug Fixes
