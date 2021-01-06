@@ -22,7 +22,7 @@
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-**Note:** Support for landscape orientation was removed for non-tablets. This was done to fix an issue where the header area overlapped notch on launch on iPhone 12.
+**Note:** Support for landscape orientation was removed for non-tablet devices.
 
 ### Improvements
  - Added gallery user interface improvements.
