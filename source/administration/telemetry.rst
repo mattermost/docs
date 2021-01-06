@@ -143,17 +143,15 @@ The following list details the types of Incident Management metadata we collect:
 
 **Data collected for all event types**
 
-- ``serverVersion``: Version of the server the plugin is running on.
-- ``pluginVersion``: Version of the plugin.
-- ``eventTimeStamp``: Timestamp indicating when the event was queued to send to the server.
-- ``event originalTimestamp``: Timestamp indicating when the event actually happened. It always equals ``eventTimeStamp``.
+- ``PluginVersion``: Version of the plugin.
+- ``ServerVersion``: Version of the server the plugin is running on.
 - ``UserID``: Unique identifier of the server.
+- ``Event``: Type of the event. There are three event types that are tracked: ``incident``, ``tasks``, ``playbook``.
 - ``UserActualID``: Unique identifier of the user who initiated the action.
-- ``type``: Type of the event. There are three event types that are tracked: ``incident``, ``tasks``, ``playbook``.
 
 **Data collected in incident events**
 
-- ``incidentID``: Unique identifier of the incident.
+- ``IncidentID``: Unique identifier of the incident.
 - ``IsActive``: Boolean  value indicating if the incident is active.
 - ``CommanderUserID``: Unique identifier of the commander of the incident.
 - ``TeamID``: Unique identifier of the team where the incident channel is created.
@@ -162,24 +160,28 @@ The following list details the types of Incident Management metadata we collect:
 - ``NumChecklists``: Number of stages in this incident.
 - ``TotalChecklistItems``: Number of tasks in this incident.
 - ``ActiveStage``: A number indicating the stage of the incident (0-based).
-- ``Public``: ``true`` if the incident was public, ``false`` if it was private.
+- ``Action``: The type of action performed against the incident: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``.
+- ``Public``: When creating an incident, ``true`` if it is public, and ``false`` if it is private.
 
 **Data collected in tasks events**
 
-- ``incidentID``: Unique identifier of the incident.
+- ``IncidentID``: Unique identifier of the incident.
 - ``NewState``: ``null`` if the task is uncompleted, ``done`` if the task was marked completed.
-- ``WasCommander``: ``true`` if the userId who initiated the event was also the commander of the event, ``false`` if not.
-- ``WasAssignee``: ``true`` if the userId who initiated the event was also the assignee of the event, ``false`` if not.
+- ``Action``: The type of action performed against the task: ``add_task``, ``remove_task``, ``rename_task``, ``modify_task_state``, ``move_task``, ``set_assignee_for_task``, ``run_task_slash_command``.
+- ``NewState``: When modifying a task state, ``true`` if the task is now checked, ``false`` if the task is now unchecked.
+- ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the commander of the event, and ``false`` otherwise.
+- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the event was also the assignee of the event, ``false`` otherwise.
 
 **Data collected in playbook events**
 
 - ``PlaybookID``: Unique identifier of the playbook.
-- ``TeamID``: Unique identifier of the team this playbook is associated with.
+- ``TeamID``: Unique identifier of the team to which this playbook is associated.
 - ``NumChecklists``: Number of stages in this playbook.
 - ``TotalChecklistItems``: Number of tasks in this incident.
-- ``IsPublic``: ``true`` if the playbook was public, ``false`` if it was private.
+- ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
 - ``NumMembers``: The number of members with access to this playbook.
-- ``NumSlashCommands``: The number of slash commands in this playbook.
+- ``NumSlashCommands``: The number of tasks with slash commands in this playbook.
+- ``Action``: The type of action performed against the playbook: ``create``, ``update``, ``delete``
   
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
