@@ -9,7 +9,7 @@ Attach Files to Messages
 You can attach files to messages in the following ways:
 
 -  Use the attachment icon - select the paperclip icon inside the message input box
--  Drag and Drop
+-  Drag and drop
 -  Paste from the clipboard
 
 Preview File Attachments
