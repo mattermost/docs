@@ -36,7 +36,7 @@ Public URLs allow you to share attachments with anyone outside the Mattermost sy
 .. tip::
   If **Get Public Link** is not visible in the file previewer, and you prefer that the feature is enabled, you can request your System Admin to enable the feature from the System Console under **Site Configuration > Public Links**.
 
-Viewing Media:
+Viewing Media
 ~~~~~~~~~~~~~~
 
 The following media formats are supported on most browsers:
