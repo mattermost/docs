@@ -35,7 +35,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where the tooltip text for copying an incoming webhook URL was unclear.
 
 ### Known Issues
- - System Managers do not have access to the Billing section and see a blank screen.
  - Cloud > "Tips & Next Steps" should not show an "Explore channels" section for guest users.
  - System Roles shows License and Environment as possible permissions but they are always hidden in Cloud.
 
