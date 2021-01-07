@@ -1272,7 +1272,7 @@ Extend session length with activity
 
 Improves user experience by extending sessions. Keeps users logged in if they are actively using their Mattermost apps. As of Mattermost v5.26, the Mattermost server sends session expiry push notifications if sessions expire on mobile.
 
-**True**: Sessions will be automatically extended when the user is active in their Mattermost client. User sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below. When a session expires on the mobile client, the Mattermost server sends mobile devices a session expiry push notification.
+**True**: Sessions will be automatically extended when the user is actively using their Mattermost app. User sessions will only expire if they are not actively using their Mattermost app for the full duration of the session lengths defined in the fields below. When a session expires on the mobile client, the Mattermost server sends mobile devices a session expiry push notification.
 
 **False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below. When a session expires on the mobile client, no session expiry push notification is sent from the Mattermost server.
 
