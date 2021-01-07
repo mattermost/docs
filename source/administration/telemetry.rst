@@ -181,7 +181,7 @@ The following list details the types of Incident Management metadata we collect:
 - ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
 - ``NumMembers``: The number of members with access to this playbook.
 - ``NumSlashCommands``: The number of tasks with slash commands in this playbook.
-- ``Action``: The type of action performed against the playbook: ``create``, ``update``, ``delete``
+- ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
   
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
