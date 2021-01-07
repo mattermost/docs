@@ -152,7 +152,7 @@ The following list details the types of Incident Management metadata we collect:
 **Data collected in incident events**
 
 - ``IncidentID``: Unique identifier of the incident.
-- ``IsActive``: Boolean  value indicating if the incident is active.
+- ``IsActive``: Boolean value indicating if the incident is active.
 - ``CommanderUserID``: Unique identifier of the commander of the incident.
 - ``TeamID``: Unique identifier of the team where the incident channel is created.
 - ``CreatedAt``: Timestamp of the incident creation.
