@@ -175,7 +175,7 @@ The following list details the types of Incident Management metadata we collect:
 **Data collected in playbook events**
 
 - ``PlaybookID``: Unique identifier of the playbook.
-- ``TeamID``: Unique identifier of the team to which this playbook is associated.
+- ``TeamID``: Unique identifier of the team associated with this playbook.
 - ``NumChecklists``: Number of stages in this playbook.
 - ``TotalChecklistItems``: Number of tasks in this incident.
 - ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
