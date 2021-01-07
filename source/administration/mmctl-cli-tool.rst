@@ -1624,7 +1624,7 @@ mmctl config reload
 
 **Description**
 
-Reloads the server configuration in case you want new settings to be applied.
+Reloads the server configuration and applies new settings.
 
 **Format**
 
