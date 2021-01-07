@@ -4714,6 +4714,21 @@ Audit settings
 
 The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
+Remote Clusters
+^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Enable this setting to add, remove, and view remote clusters for shared channels.
+
+**True**: When ``true`` System Admins can manage remote clusters using the System Console.
+
+**False**: Remote cluster management is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``.                                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Syslog configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
