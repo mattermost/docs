@@ -170,7 +170,7 @@ The following list details the types of Incident Management metadata we collect:
 - ``Action``: The type of action performed against the task: ``add_task``, ``remove_task``, ``rename_task``, ``modify_task_state``, ``move_task``, ``set_assignee_for_task``, ``run_task_slash_command``.
 - ``NewState``: When modifying a task state, ``true`` if the task is now checked, ``false`` if the task is now unchecked.
 - ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the commander of the event, and ``false`` otherwise.
-- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the event was also the assignee of the event, ``false`` otherwise.
+- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the event was also the assignee of the event, and ``false`` otherwise.
 
 **Data collected in playbook events**
 
