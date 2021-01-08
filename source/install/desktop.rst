@@ -63,7 +63,7 @@ macOS 10.9+
 
 3. Drag the Mattermost application to the **Applications** folder.
 
-`Homebrew <https://brew.sh>`__ users can install with ``brew cask install mattermost``.
+`Homebrew <https://brew.sh>`__ users can install with ``brew install --cask mattermost``.
 
 Linux
 --------
