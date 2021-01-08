@@ -4263,7 +4263,6 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Data Prefetch
 ^^^^^^^^^^^^^^
 
@@ -4891,6 +4890,21 @@ This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLo
 
 Service Settings
 ~~~~~~~~~~~~~~~~
+
+Collapsed Threads
+^^^^^^^^^^^^^^^^^
+
+This setting allows System Admins to configure Collapsed Reply Threads in the System Console and set the default appearance of threads for their end users.
+
+**Disabled**: Collapsed Reply Threads are disabled for all users.
+
+**Default On**: Enables Collapsed Reply Threads by default. Users can turn it off in **Account Settings**.
+
+**Default Off**: Disables Collapsed Reply Threads by default. Users can turn it on in **Account Settings**.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled``, ``default_on``, and ``default_off``.                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
