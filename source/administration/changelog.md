@@ -9,15 +9,15 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2021-01-16**
 
 ### Highlights
- - Pre-packaged and pre-installed the Incident Management v1.2.0.
+ - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0.
 
 ### Improvements
 
 #### User Interface (UI)
- - Added the ability to mute categories with the experimental sidebar feature.
+ - Added the ability to mute categories with the experimental channel sidebar feature.
  - Added support for multi-selection of channels when dragging and dropping between channels in the experimental sidebar feature.
  - Group messages are now returned in the channel switcher when only first names are typed.
- - Issuing /dnd consecutively no longer unexpectedly toggles the user status between “Do Not Disturb” and “Online” and will only set the user’s status to “Do Not Disturb”.
+ - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user status between “Do Not Disturb” and “Online”, and will only set the user’s status to “Do Not Disturb”.
 
 #### Administration
  - Added a new ``manage_remote_clusters`` permission.
@@ -25,9 +25,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Bug Fixes
  - Cleaned up the config store on server initialization errors.
  - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
- - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section as read-only for the System Manager.
+ - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
- - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close LDAP Session.
+ - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close the LDAP Session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
 
 ### config.json
@@ -49,13 +49,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### API Changes
  
 ### Known Issues
- - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - **Discard Changes** confirmation is not displayed when an admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
- - Line numbers do not line up with the text on code file previews.
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page.
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
- - The Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
+ - The Admin Filter option is not disabled on the AD/LDAP page for admin roles with the ``sysconsole_write_authentication`` permission.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
