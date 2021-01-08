@@ -30,6 +30,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close the LDAP Session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
  - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
+ - Fixed an issue where desktop notifications got sent for every message posted in a Direct Message channel.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
