@@ -11,14 +11,12 @@
 
 ### Improvements
  - Teams in the sidebar are now ordered by user preference.
- - Typing an emoji in a post now adds the emoji to recently used emojis list.
+ - Typing an emoji in a post now adds the emoji to the list of recently used emojis.
 
 ### Bug Fixes
  
- #### All apps
+#### All apps
  - Fixed an issue where ``/mscalendar settings`` did not redirect a user to the bot Direct Message channel.
- 
-#### Android specific
 
 #### iOS specific
  - Fixed an issue where custom URL schemes didn't work.
