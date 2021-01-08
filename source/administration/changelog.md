@@ -37,9 +37,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
- 
+
 ### Database Changes
- - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
+ - 
 
 ### Websocket Event Changes
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
@@ -47,6 +47,22 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### API Changes
  
 ### Known Issues
+ - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - Error text is missing when the team name is left blank on the team creation page.
+ - Line numbers do not line up with the text on code file previews.
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page.
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
+ - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
+ - The Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
@@ -225,6 +241,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Database Changes
  - Altered some types and defaults in ``SidebarCategories`` table.
  - Added a new column ``Threads.ChannelId``.
+ - Added ``UnreadMentions`` column to ``ThreadMembership`` table.
 
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
