@@ -29,6 +29,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
  - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close the LDAP Session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
+ - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
