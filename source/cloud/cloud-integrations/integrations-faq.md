@@ -18,7 +18,7 @@ A slash command is similar to an outgoing webhook, but instead of listening to a
 
 ## What does Slack-compatible mean?
 
-Slack compatible means that Mattermost accepts integrations that have a payload in the same format as Slack.  
+Slack-compatible means that Mattermost accepts integrations that have a payload in the same format as Slack.  
 
 If you have a Slack integration, you should be able to set it up in Mattermost without changing the format.   
 
@@ -30,7 +30,7 @@ If there's no translation layer, Mattermost won't understand the data you're sen
 
 ## What are attachments?
 
-When "attachments" are mentioned in the integrations documentation, it refers to Slack's Message Attachments. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
+When "attachments" are mentioned in the Mattermost integrations documentation, it refers to Slack's Message Attachments. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
 
 We currently don't support the ability to attach files to a post made by an integration.
 
@@ -40,7 +40,7 @@ We currently don't support the ability to attach files to a post made by an inte
 
 ## Where should I install my integrations? 
 
-For self-hosted deployments in small setups you might host integrations on the same server on which Mattermost is installed. For larger deployments you can setup a separate server for integrations, or add them to the server on which the external application is hosted - for example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself.
+You can set up a separate server for integrations, or add them to the server on which the external application is hosted - for example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself.
 
 When self-hosting restrictions are less strict, AWS, Heroku, and other public cloud options could also be used.
 
@@ -53,8 +53,8 @@ See [bot accounts documentation](https://docs.mattermost.com/developer/bot-accou
 Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
 
 1. Create a bot account using a secure email and strong password.
-2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a CLI script to automate the process.
-   - In a testing environment, you may also make the bot account a System Admin, giving the bot permissions to post to any channel. Not recommended in production due to potential security vulnerabilities.
+2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a script to automate the process.
+   - In a testing environment, you may also make the bot account a System Admin, giving the bot permissions to post to any channel. This is not recommended in production due to potential security vulnerabilities.
 3. Provide the email and password to your integration, and store it in a secure location with restricted access.
 4. Have your integration use the email and password with an [`/api/v4/login`](https://api.mattermost.com/v4/#tag/authentication) endpoint to retrieve a session token. The session token is used to authenticate to the Mattermost system.
    - Set up your bot to make an HTTP POST to `your-mattermost-url.com/api/v4/users/login` with a JSON body, including the bot account's email and password.
@@ -89,7 +89,7 @@ Deployments that cannot create bot accounts via webhooks due to security reasons
      
      The bot should retrieve the session token from the `Token` header and store it in memory for use with future requests.
    
-   **Note:** Each session token has an expiry time, set depending on the server's configuration. If the session token your bot is using expires, it will receive a `401 Unauthorized` response from requests using that token. When your bot receives this response, it should reapply the login logic (using the above steps) to get another session token. Then resend the request that received the `401` status code.
+   **Note:** Each session token has an expiry time, set depending on configuration. If the session token your bot is using expires, it will receive a `401 Unauthorized` response from requests using that token. When your bot receives this response, it should reapply the login logic (using the above steps) to get another session token. Then resend the request that received the `401` status code.
 5. Include the `Token` as part of the `Authorization` header on API requests from your integration.
    - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a `200` with the bot's user object in the response, the API request was made successfully.
      ```
