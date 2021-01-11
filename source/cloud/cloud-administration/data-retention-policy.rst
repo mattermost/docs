@@ -20,9 +20,9 @@ To set a custom data retention policy:
 3. Select a **File Retention** option. When a time is specified uploaded files which are older than the duration you set will be deleted will be deleted at the specified time. The minimum retention period is one day.
 4. Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 
-Save the settings and restart your server. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
+Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
 
-You can also run the deletion job manually at any time by clicking **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
+You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
 Frequently Asked Questions (FAQs)
 ---------------------------------
