@@ -15,11 +15,11 @@ By default, users can dismiss the banner until they log in again or until you up
 
 **To enable the banner**:
 
-1. Open **System Console > Site Configuration**.
-2. For **Enable Announcement Banner**, select **true**.
+1. Open **System Console > Site Configuration > Announcement Banner**.
+2. Set **Enable Announcement Banner** to **true**.
 3. In the **Banner Text** field, enter the text of the announcement that you want to make.
-4. Set the background and text colors.
-5. To prevent users from dismissing the banner, in the **Allow Banner Dismissal** section, select **false**.
+4. Set banner background and text colors.
+5. To prevent users from dismissing the banner, set **Allow Banner Dismissal** section to **false**.
 6. Select **Save**.
 
 In-Product Notices
@@ -32,14 +32,14 @@ Mattermost in-product notices keep users and administrators informed of the newe
 Administrator Notices
 ^^^^^^^^^^^^^^^^^^^^^
 
-Administrator notices are used to inform System Admins when a new server version is available, or if a server upgrade is recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
+Administrator notices are used to inform System Admins of important updates or recommended configuration options to optimize the user experience of their deployment.
 
-Administrator notices can be disabled in the **System Console > Notices** page.
+Administrator notices can be disabled in the **System Console > Site Configuration > Notices** page.
 
 End User Notices
 ^^^^^^^^^^^^^^^^
 
-End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
+End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Site Configuration > Notices**.
 
 FAQs
 ^^^^
@@ -47,12 +47,12 @@ FAQs
 Are notices enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Notices**.
+Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Site Configuration > Notices**.
 
-Will I still receive notices if my server is air-gapped?
+Will I still receive notices if my workstation is air-gapped?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, the Mattermost server requires a connection to the internet to receive notices.
+No, the Mattermost workstation requires a connection to the internet to receive notices.
 
 How often will users receive notices?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,7 +101,7 @@ There are seven different settings that allow you to control notifications.
   - **Generic description with only sender name** will include only the name of the person who sent the message but no information about channel name or message text. 
   - **Generic description with sender and channel names** will include names of users and channels but no specific details from the message text. 
   - **Full message content sent in the notification payload** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages.  
-  - **Only Push Notifications** means full message content is fetched from the server on receipt. The notification payload relayed through the Apple Push Notification service or Firebase Cloud Messaging service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a notification service app extention on iOS or an expandable notification pattern on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the Apple Push Notification service or Firebase Cloud Messaging service.
+  - **Only Push Notifications** means full message content is fetched from Mattermost on receipt. The notification payload relayed through the Apple Push Notification service or Firebase Cloud Messaging service contains no message content. Instead it contains a unique message ID used to fetch message content from Mattermost when a push notification is received by a device via a notification service app extention on iOS or an expandable notification pattern on Android. If Mattermost cannot be reached, a generic push notification message is displayed without message content or sender name. For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the Apple Push Notification service or Firebase Cloud Messaging service.
 
 Posts
 -----
@@ -128,7 +128,7 @@ There are seven different settings that allow you to control users and teams.
 
 1. **Max Users Per Team:** The Max Users Per Team refers to the size of the *team site* which is a workspace a *team of people* inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project. The default maximum of 1000 people is at the extreme high end of a single team of people. At this point organizations are more often 'multiple teams of people' and investments in explicitly defining etiquette, such as channel organization or turning on policy features in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.
 2. **Max Channels Per Team:** Set the maximum number of channels per team, including both active and deleted channels.
-3. **Enable users to open Direct Message channels with:** You can configure whether users can message any user on the Mattermost workspace or only users in the same team as them. This setting adjusts the users returned in the Direct Messages **More** menu and CTRL/CMD+K channel switcher only lists users on the current team. This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
+3. **Enable users to open Direct Message channels with:** You can configure whether users can message any user on the Mattermost workspace or only users in the same team as them. This setting adjusts the users returned in the Direct Messages **More** menu and CTRL/CMD+K channel switcher only lists users on the current team. This setting only affects the UI, not permissions on the workspace. For instance, a Direct Message channel can be created with anyone on the workspace regardless of this setting.
 4. **Teammate Name Display:** Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**. 
   - **Show username** displays the user's username. 
   - **Show nickname** if one exists displays the user's nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. 
