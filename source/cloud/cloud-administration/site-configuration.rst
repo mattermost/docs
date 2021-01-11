@@ -52,7 +52,7 @@ Notices are enabled by default for all Mattermost users. System Admins may choos
 Will I still receive notices if my workspace is air-gapped?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, the Mattermost workstation requires a connection to the internet to receive notices.
+No, the Mattermost workspace requires a connection to the internet to receive notices.
 
 How often will users receive notices?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
