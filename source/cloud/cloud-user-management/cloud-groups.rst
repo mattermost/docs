@@ -117,7 +117,7 @@ It may take a few seconds to load all team and channel memberships for a user de
 Removing Configured Teams and Channels From a Group
 ---------------------------------------------------
 
-To remove a team or channel configured for a group, click **Remove** to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action.
+To remove a team or channel configured for a group, select **Remove** to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action.
 
 Viewing Users Belonging to The Group
 ------------------------------------
@@ -180,7 +180,7 @@ To manage membership of a private team with synchronized groups:
 2. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the Sync Group Members feature.
 3. Add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
-5. Click **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
+5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
 To manage membership of a private channel with synchronized groups:
 
@@ -188,7 +188,7 @@ To manage membership of a private channel with synchronized groups:
 2. Under **Channel Management**, enable **Sync Group Members**. Please ensure the channel is set to ``private``.
 3. Add one or more groups to the channel. If there are groups already associated to default users into the channel, they will already be present.
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the channel on the next synchronization.
-5. Click save. Members will be updated on the next scheduled AD/LDAP synchronization.
+5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
 
 Assigning Roles to Group Members
@@ -207,10 +207,10 @@ The permissions for each role can be viewed and modified in **System Console > P
 1. Navigate to **System Console > User Management > Teams**.
 2. Select **Edit** next to the team you want to configure.
 3. Ensure that **Sync Group Members** is enabled.
-4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+4. Select **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
 5. Select the arrow next to the current role in the **Roles** column to display and select the **Team Admin** option.
 6. Repeat as needed for any other synced groups you have added.
-7. Choose **Save**.
+7. Select **Save**.
 
 Roles are updated on the next scheduled AD/LDAP synchronization.
 
@@ -219,10 +219,10 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 1. Navigate to **System Console > User Management > Channels**.
 2. Select **Edit** next to the team you want to configure.
 3. Ensure that **Sync Group Members** is enabled.
-4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+4. Select **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
 5. Select the arrow next to the current role in the **Roles** column to display and select the **Channel Admin** option.
 6. Repeat as needed for any other synced groups you have added.
-7. Choose **Save**.
+7. Select **Save**.
 
 Roles are updated on the next scheduled AD/LDAP synchronization.
 
@@ -340,7 +340,7 @@ To manage membership of a private team with synchronized groups:
 3. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the Sync Group Members feature.
 4. Add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
 5. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
-6. Click **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
+6. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
 
 To manage membership of a private channel with synchronized groups:
@@ -350,7 +350,7 @@ To manage membership of a private channel with synchronized groups:
 3. Under **Channel Management**, enable **Sync Group Members**. Please ensure the channel is set to ``private``.
 4. Add one or more groups to the channel. If there are groups already associated to default users into the channel, they will already be present.
 5. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the channel on the next synchronization.
-6. Click **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
+6. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
 Add or Remove Groups from Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
