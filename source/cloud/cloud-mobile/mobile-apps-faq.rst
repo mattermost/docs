@@ -87,8 +87,7 @@ How do I deploy Mattermost with Enterprise Mobility Management (EMM) providers?
 
 Mattermost enables customers with high privacy and custom security requirements to deploy mobile app and push notification services using keys that they alone control.
 
-`Learn more about using AppConfig for EMM providers <https://docs.mattermost.com/cloud/cloud-mobile/cloud-app-config.html`_.
-
+`Learn more about using AppConfig for EMM providers <https://docs.mattermost.com/cloud/cloud-mobile/cloud-app-config.html>`__.
 
 How can I get Google SSO to work with the Mattermost mobile app?
 ----------------------------------------------------------------
