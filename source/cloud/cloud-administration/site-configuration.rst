@@ -49,7 +49,7 @@ Are notices enabled by default?
 
 Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Site Configuration > Notices**.
 
-Will I still receive notices if my workstation is air-gapped?
+Will I still receive notices if my workspace is air-gapped?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, the Mattermost workstation requires a connection to the internet to receive notices.
