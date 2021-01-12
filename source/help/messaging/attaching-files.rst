@@ -51,6 +51,6 @@ Other document previews (such as Word, Excel, or PPT) are not yet supported.
 Attachment Limits and Sizes
 ---------------------------
 
-Mattermost Cloud supports a maximum of 10 attached files per post. Mattermost Team Edition and Enterprise Edition support a maximum of five attached files per post, and this maximum will be increased to 10 files per post in a future release.
+The ability to attach a maximum of 10 files per post is available today for Cloud deployments and will be available for self-hosted deployments in Mattermost Server v5.32 and later.
 
 The default maximum file size is 50 MB, but this can be changed by the System Admin.
