@@ -16,7 +16,12 @@
 ### Bug Fixes
  
 #### All apps
+ - Fixed an issue where users were unable to open files with file names that contained multiple dots.
  - Fixed an issue where ``/mscalendar settings`` did not redirect a user to the bot Direct Message channel.
+ - Fixed an issue where tapping on an archived channel link from the app did not redirect the user to the archived channel.
+
+#### Android specific
+ - Fixed an issue where in some cases the deviceID used to receive push notifications wasn't being attached to the session as the registration completed.
 
 #### iOS specific
  - Fixed an issue where custom URL schemes didn't work.
