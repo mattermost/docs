@@ -11,7 +11,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 #### User Interface (UI)
  - Changed the number of file attachments allowed per post, from 5 to 10.
- - Enabled the **More options** menu on channels in the new sidebar to move multi-selected groups of channels.
+ - Added support to move multi-selected groups of channels to another category via the **More options** menu.
  
 #### Administration
  - Updated the Go version to v1.15.5.
