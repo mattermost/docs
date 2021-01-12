@@ -154,7 +154,7 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Collapsible custom categories**: Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
 
-**Move channels and categories**: Prioritize important conversations by dragging and dropping channels between or within categories, or drag channels to reorder entire categories. You can also select the **More options** icon, then select **Move to**, followed by a category destination.
+**Move channels and categories**: Specify a destination for selected channels using the **Move to** under the **More options** icon. This feature is available today for Cloud deployments and will be available for self-hosted deployments in Mattermost Server v5.32 and later. 
 
 **Drag and drop channels and categories**: Drag channels between or within categories, or drag to reorder entire categories to prioritize important conversations.
 
