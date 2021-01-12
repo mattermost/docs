@@ -135,7 +135,7 @@ mmctl auth
 
 **Description**
 
-  Manages the credentials and authentication methods of the remote Mattermost instances.
+  Manage the credentials and authentication methods of remote Mattermost instances.
 
   -  `mmctl auth clean`_ - Clean credentials
   -  `mmctl auth current`_ - Display current credentials
@@ -722,14 +722,19 @@ Commands for channel management.
     -  `mmctl channel add`_ - Add a channel
     -  `mmctl channel archive`_ - Archive a channel
     -  `mmctl channel create`_ - Create a channel
+    -  `mmctl channel delete`_ - Delete a channel
     -  `mmctl channel list`_ - List all channels on specified teams
     -  `mmctl channel make_private`_ - Set a channel's type to "private"
     -  `mmctl channel modify`_ - Modify a channel's type (private/public)
-    -  `mmctl channel move`_ - Moves channels to the specified team
+    -  `mmctl channel move`_ - Move channels to the specified team
     -  `mmctl channel remove`_ - Remove users from a channel
     -  `mmctl channel rename`_ - Rename a channel
     -  `mmctl channel restore`_ - Restore a channel from the archive
     -  `mmctl channel search`_ - Search a channel by name
+    -  `mmctl channel unarchive`_ - Unarchive a channel
+    -  `mmctl channel users`_ - Manage channel users
+    -  `mmctl channel users add`_ - Add a user to a channel
+    -  `mmctl channel users remove`_ - Remove a user from a channel
 
 **Options**
 
@@ -776,7 +781,7 @@ mmctl channel archive
 
 **Description**
 
-  Archive one or multiple channels along with all related information including posts from the database. Channels can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
+  Archive one or multiple channels along with all related information including posts from the database. Channels can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
 
 **Format**
 
@@ -800,6 +805,7 @@ mmctl channel archive
 
 .. code-block:: sh
 
+   --config-path string         path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
@@ -841,17 +847,54 @@ mmctl channel create
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl channel delete
+^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Permanently delete one or multiple channels along with all related information including posts from the database.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl channel delete [channels] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  channel delete myteam:mychannel
+
+**Options**
+
+.. code-block:: sh
+
+  --confirm       Confirm you really want to delete the channel and a DB backup has been performed.
+  -h, --help      help for delete
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+  --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --local                        allows communicating with the server through a unix socket
+  --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl channel list
 ^^^^^^^^^^^^^^^^^^
 
 **Description**
 
-  List all public and archived channels on specified teams. Archived channels are appended with '(archived)'.
+  List all public and archived channels on specified teams. Archived channels are appended with ``(archived)``. Private channels the user is a member of or has access to are appended with ``(private)``.
 
 **Format**
 
@@ -875,6 +918,7 @@ mmctl channel list
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
@@ -909,6 +953,7 @@ mmctl channel make_private
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
@@ -946,6 +991,7 @@ mmctl channel modify
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
@@ -956,7 +1002,7 @@ mmctl channel move
 
 **Description**
 
-   Moves the provided channels to the specified team. Validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved     along with the channel. Channels can be specified by [team]:[channel]. ie. myteam:mychannel or by channel ID.
+   Move the provided channels to the specified team. Validate that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved     along with the channel. Channels can be specified by ``[team]:[channel]`` (ie. myteam:mychannel) or by channel ID.
 
 **Format**
 
@@ -981,6 +1027,7 @@ mmctl channel move
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
@@ -1027,31 +1074,36 @@ mmctl channel rename
 
 **Description**
 
-  Rename a channel.
+  Rename an existing channel.
 
 **Format**
 
 .. code-block:: sh
 
-   mmctl channel rename [flags]
+   mmctl channel rename [channel] [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-   channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+   channel rename myteam:oldchannel --name 'new-channel' --display_name 'New Display Name'
+   channel rename myteam:oldchannel --name 'new-channel'
+   channel rename myteam:oldchannel --display_name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
   --display_name string   Channel Display Name
-  -h, --help              help for rename
+  -h, --help                  help for rename
+  --name string           Channel Name
 
 **Options inherited from parent commands**
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string               the format of the command output [plain, json] (default "plain")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
@@ -1096,7 +1148,7 @@ mmctl channel search
 
 **Description**
 
-  Search a channel by channel name. Channel can be specified by team (e.g., ``--team myTeam myChannel```) or by team ID.
+  Search a channel by channel name. Channel can be specified by team (e.g., ``--team myTeam myChannel``) or by team ID.
 
 **Format**
 
@@ -1123,10 +1175,153 @@ mmctl channel search
 
 .. code-block:: sh
 
+   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl channel unarchive
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Unarchive a previously archived channel. Channels can be specified by ``[team]:[channel]``. (ie. myteam:mychannel) or by channel ID.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl channel unarchive [channels] [flags]
+  
+**Examples**
+
+.. code-block:: sh
+
+  channel unarchive myteam:mychannel
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for unarchive
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+  --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --local                        allows communicating with the server through a unix socket
+  --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl channel users
+^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Manage channel users.
+
+**Format**
+
+.. code-block:: sh
+
+ mmctl channel users [channel]
+  
+**Examples**
+
+.. code-block:: sh
+
+  x
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for users
+  
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+  --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --local                        allows communicating with the server through a unix socket
+  --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl channel users add
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Add one or multiple users to a channel.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl channel users add [channel] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  channel users add myteam:mychannel user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for add
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+  --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --local                        allows communicating with the server through a unix socket
+  --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl channel users remove
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Remove one or multiple users from a channel.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl channel users remove [channel] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  channel users remove myteam:mychannel user@example.com username
+  channel users remove myteam:mychannel --all-users
+
+**Options**
+
+.. code-block:: sh
+
+  --all-users   Remove all users from the indicated channel.
+  -h, --help        help for remove
+  
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+  --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+  --format string                the format of the command output [plain, json] (default "plain")
+  --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+  --local                        allows communicating with the server through a unix socket
+  --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl command
 -------------
@@ -1151,7 +1346,7 @@ Management of slash commands.
 mmctl command archive
 ^^^^^^^^^^^^^^^^^^^^^
 
-**Dscription**
+**Description**
 
   Archive a slash command. Commands can be specified by command ID.
 
@@ -1505,7 +1700,7 @@ Configuration settings.
     -  `mmctl config get`_ - Get the value of a configuration setting
     -  `mmctl config reset`_ - Reset the configuration
     -  `mmctl config set`_ - Set the value of a configuration
-    -  `mmctl config show`_ - Writes the server configuration to STDOUT
+    -  `mmctl config show`_ - Write the server configuration to STDOUT
     -  `mmctl config subpath`_ - Update client asset loading to use the configured subpath
 
 **Options**
@@ -1519,7 +1714,7 @@ mmctl config edit
 
 **Description**
 
-  Opens the editor defined in the EDITOR environment variable to modify the server's configuration and then uploads it.
+  Open the editor defined in the EDITOR environment variable to modify the server's configuration and then uploads it.
 
 **Format**
 
@@ -1553,7 +1748,7 @@ mmctl config get
 
 **Description**
 
-  Gets the value of a config setting by its name in dot notation.
+  Get the value of a configuration setting by its name in dot notation.
 
 **Format**
 
@@ -1587,7 +1782,7 @@ mmctl config reset
 
 **Description**
 
- Resets the value of a config setting by its name in dot notation or a setting section. Accepts multiple values for array settings.
+ Reset the value of a configuration setting by its name in dot notation or a setting section. Accepts multiple values for array settings.
 
 **Format**
 
@@ -1622,7 +1817,7 @@ mmctl config set
 
 **Description**
 
-  Sets the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
+  Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
 **Format**
 
@@ -1656,7 +1851,7 @@ mmctl config show
 
 **Description**
 
-  Prints the server configuration and writes to STDOUT in JSON format.
+  Print the server configuration and writes to STDOUT in JSON format.
 
 **Format**
 
@@ -1790,7 +1985,7 @@ mmctl group channel disable
 
 **Description**
 
-  Disables group constrains in the specified channel.
+  Disable group constrains in the specified channel.
 
 **Format**
 
@@ -1824,7 +2019,7 @@ mmctl group channel enable
 
 **Description**
 
-  Enables group constrains in the specified channel.
+  Enable group constrains in the specified channel.
 
 **Format**
 
@@ -1892,7 +2087,7 @@ mmctl group channel status
 
 **Description**
 
-  Shows the group constrain status for the specified channel.
+  Show the group constrain status for the specified channel.
 
 **Format**
 
@@ -1977,7 +2172,7 @@ mmctl group team disable
 
 **Description**
 
- Disables group constrains in the specified team.
+ Disable group constrains in the specified team.
 
 **Format**
 
@@ -2011,7 +2206,7 @@ mmctl group team enable
 
 **Description**
 
-  Enables group constrains in the specified team.
+  Enable group constrains in the specified team.
 
 **Format**
 
@@ -2079,7 +2274,7 @@ mmctl group team status
 
 **Description**
 
- Shows the group constrain status for the specified team.
+ Show the group constrain status for the specified team.
 
 **Format**
 
@@ -2196,7 +2391,7 @@ mmctl license
 Licensing management commands.
 
 Child Commands
-  -  `mmctl license remove`_ - Remove current license
+  -  `mmctl license remove`_ - Remove the current license
   -  `mmctl license upload`_ - Upload a new license
 
 **Options**
@@ -2360,7 +2555,7 @@ mmctl permissions role assign
 
 **Description**
 
-Assign users to a role by username (only available in Enterprise Edition E10 and E20).
+  Assign users to a role by username (only available in Enterprise Edition E10 and E20).
 
 **Format**
 
@@ -2469,7 +2664,7 @@ mmctl permissions role unassign
 
 **Description**
 
-Unassign users from a role by username (only available in Enterprise Edition E10 and E20).
+  Unassign users from a role by username (only available in Enterprise Edition E10 and E20).
 
 **Format**
 
@@ -2765,7 +2960,7 @@ mmctl plugin marketplace install
 
 **Description**
 
-  Installs a plugin listed on the Plugin Marketplace server.
+  Install a plugin listed on the Plugin Marketplace server.
 
 **Format**
 
@@ -2803,7 +2998,7 @@ mmctl plugin marketplace list
 
 **Description**
 
-  Gets all plugins from the Plugin Marketplace server, merging data from locally installed plugins as well as prepackaged plugins shipped with the server.
+  Get all plugins from the Plugin Marketplace server, merging data from locally installed plugins as well as prepackaged plugins shipped with the server.
 
 **Format**
 
@@ -2947,11 +3142,11 @@ mmctl system
 System management commands for interacting with the server state and configuration.
 
 Child Commands
-  -  `mmctl system clearbusy`_ - Clears the busy state
+  -  `mmctl system clearbusy`_ - Clear the busy state
   -  `mmctl system getbusy`_ - Get the current busy state
   -  `mmctl system setbusy`_ - Set the busy state to ``true``
-  -  `mmctl system status`_ - Prints the status of the server
-  -  `mmctl system version`_ - Prints the remote server version
+  -  `mmctl system status`_ - Print the status of the server
+  -  `mmctl system version`_ - Print the remote server version
 
 **Options**
 
@@ -3007,7 +3202,7 @@ mmctl system getbusy
 
 **Description**
 
- Gets the server busy state (high load) and timestamp corresponding to when the server busy flag will be automatically cleared.
+ Get the server busy state (high load) and timestamp corresponding to when the server busy flag will be automatically cleared.
 
 **Format**
 
@@ -3076,7 +3271,7 @@ mmctl system status
 
 **Description**
 
- Prints the server status calculated using several basic server healthchecks.
+ Print the server status calculated using several basic server healthchecks.
 
 **Format**
 
@@ -3110,7 +3305,7 @@ mmctl system version
 
 **Description**
 
- Prints the server version of the currently connected Mattermost instance.
+ Print the server version of the currently connected Mattermost instance.
 
 **Format**
 
@@ -3166,7 +3361,7 @@ mmctl team archive
 
 **Description**
 
-  Archives a team along with all related information including posts from the database.
+  Archive a team along with all related information including posts from the database.
 
 **Format**
 
@@ -3240,7 +3435,7 @@ mmctl team delete
 
 **Description**
 
-  Permanently deletes a team along with all related information including posts from the database.
+  Permanently delete a team along with all related information including posts from the database.
 
 **Format**
 
@@ -3380,7 +3575,7 @@ mmctl team restore
 
 **Description**
 
-  Restores archived teams.
+  Restore archived teams.
 
 **Format**
 
@@ -3782,7 +3977,7 @@ mmctl user delete
 
 **Description**
 
-  Permanently delete some users. Permanently deletes one or multiple users along with all related information including posts from the database.
+  Permanently delete one or multiple users along with all related information including posts from the database.
 
 **Format**
 
@@ -4065,7 +4260,7 @@ mmctl version
 
 **Description**
 
-  Prints the version of mmctl.
+  Print the version of mmctl.
 
 **Format**
 
@@ -4093,7 +4288,7 @@ mmctl webhook
 
 **Description**
 
-Management of webhooks.
+Manage webhooks.
 
 Child Commands
    -  `mmctl webhook create-incoming`_ - Create an incoming webhook
