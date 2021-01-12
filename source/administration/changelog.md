@@ -42,6 +42,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
 
+### API Changes
+ - Added a new ``POST /api/v4/cloud/webhook`` endpoint.
+
 ### Websocket Event Changes
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
