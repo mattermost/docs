@@ -155,7 +155,7 @@ Select the channel name at the top of the center pane to access the drop-down me
 
 Once a channel is muted:
 
-- Email and push notifications are disabled.
+- Email, desktop, and push notifications are disabled.
 - A mute icon displays next to the channel name.
 - The channel is greyed out in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
 
@@ -173,9 +173,7 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Drag and drop channels and categories**: Drag channels between or within custom categories, or drag to reorder entire categories to prioritize important conversations.
 
-**Rename custom categories**: Customize name of categories.
-
-**Mute and unmute custom categories**: Mute and unmute all channels in a custom category.
+**Mute and unmute custom categories**: Mute and unmute all channels in a custom category, and selectively mute or unmute select channels within categories.
 
 **Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 
