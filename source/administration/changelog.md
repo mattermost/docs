@@ -42,13 +42,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
 
-### Database Changes
- - 
-
 ### Websocket Event Changes
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
-
-### API Changes
  
 ### Known Issues
  - **Discard Changes** confirmation is not displayed when an admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
