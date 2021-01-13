@@ -185,7 +185,7 @@ Because of this, having a complete picture of the servers and network that the M
 - Database type and version - MySQL 5.7, PostgreSQL 12.4
 - SAML provider - Windows Server 2012 Active Directory, Okta, KeyCloak
 - LDAP provider - Windows Server 2016 Active Directory, Okta, OpenLDAP
-- The type and version of any proxies or VPNs on the network that the Mattermost server or
+- The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
 
 Be sure to be as specific as possible when describing the environment. If you are seeing errors like Connection Refused be sure to include any firewalls or filtering proxies that may be on your network, either inbound or outbound.
 
