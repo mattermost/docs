@@ -239,12 +239,21 @@ A short summary of the steps to reproduce is also helpful. If you want some exam
 
 Press CMD+SHIFT+5 to open the screen recording tool and select the region of the screen you want to record. To take a screenshot, press CMD+SHIFT+4 and select the region to take a screenshot. The screenshot files are placed on the desktop by default.
 
-- Windows
-  - Follow these instructions
-- iOS
-  - Follow these instructions
-- Android
-  - Follow these instructions
+
+#### Windows
+
+Press CTRL + SHIFT + S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install a third party software like [OBS](https://obsproject.com/).
+
+
+#### iOS
+
+[Take a screenshot or screen recording on iPhone](https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios)
+
+
+#### Android
+
+[Take a screenshot or record your screen on your Android device](https://support.google.com/android/answer/9075928?hl=en)
+
 
 ## Appendix
 ### A Note on Mobile Issues
