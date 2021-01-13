@@ -719,7 +719,6 @@ mmctl channel
 Commands for channel management.
 
   Child Commands
-    -  `mmctl channel add`_ - Add a channel
     -  `mmctl channel archive`_ - Archive a channel
     -  `mmctl channel create`_ - Create a channel
     -  `mmctl channel delete`_ - Delete a channel
@@ -727,9 +726,8 @@ Commands for channel management.
     -  `mmctl channel make_private`_ - Set a channel's type to "private"
     -  `mmctl channel modify`_ - Modify a channel's type (private/public)
     -  `mmctl channel move`_ - Move channels to the specified team
-    -  `mmctl channel remove`_ - Remove users from a channel
     -  `mmctl channel rename`_ - Rename a channel
-    -  `mmctl channel restore`_ - Restore a channel from the archive
+    -  `mmctl channel restore`_ - (Deprecated) Restore a channel from the archive
     -  `mmctl channel search`_ - Search a channel by name
     -  `mmctl channel unarchive`_ - Unarchive a channel
     -  `mmctl channel users`_ - Manage channel users
@@ -741,40 +739,6 @@ Commands for channel management.
 .. code-block:: sh
 
    -h, --help   help for channel
-
-mmctl channel add
-^^^^^^^^^^^^^^^^^
-
-**Description**
-
-  Add users to a channel. If adding multiple users, use a space-separated list.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl channel add [channel] [users] [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   channel add myteam:mychannel user@example.com username
-
-**Options**
-
- .. code-block:: sh
-
-  -h, --help   help for add
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel archive
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1033,42 +997,6 @@ mmctl channel move
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
-mmctl channel remove
-^^^^^^^^^^^^^^^^^^^^
-
-**Description**
-
-  Remove specified users from a channel.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl channel remove [channel] [users] [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-  channel remove myteam:mychannel user@example.com username
-  channel remove myteam:mychannel --all-users
-
-**Options**
-
-.. code-block:: sh
-
-  --all-users   Remove all users from the indicated channel
-  -h, --help    help for remove
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
-
 mmctl channel rename
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -1111,6 +1039,8 @@ mmctl channel rename
 
 mmctl channel restore
 ^^^^^^^^^^^^^^^^^^^^^
+
+Deprecated in favor of `mmctl channel unarchive`_. Not used in Mattermost Server version v5.26 and later.
 
 **Description**
 
@@ -1222,18 +1152,6 @@ mmctl channel users
 **Description**
 
   Manage channel users.
-
-**Format**
-
-.. code-block:: sh
-
- mmctl channel users [channel]
-  
-**Examples**
-
-.. code-block:: sh
-
-  x
 
 **Options**
 
