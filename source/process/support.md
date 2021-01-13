@@ -5,7 +5,7 @@ Encountering an error can be frustrating. To get you back to work as fast as pos
 
 - Configurations
 - Logs
-- Users Affected
+- Users affected
 - Environment
 - Steps to reproduce
 
