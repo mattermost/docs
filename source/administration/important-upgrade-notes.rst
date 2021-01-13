@@ -10,6 +10,9 @@ Important Upgrade Notes
 .. important::
    TLS versions 1.0 and 1.1 have been deprecated by browser vendors. In an upcoming release (version TBD), mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
+.. important::
+   Customers using the “--platform” flag to run the Mattermost server application via a systemd file or custom script will be required to update to “--mattermost” as the “--platform” flag will be deprecated in a future release.
+
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
