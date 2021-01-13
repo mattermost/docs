@@ -39,8 +39,10 @@ scv_whitelist_branches = ('master', 'versioning2')
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx_sitemap']
-
+extensions = [
+    'sphinx_sitemap',
+    'sphinx_reredirects'
+    ]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 templates_path = ['templates']
@@ -56,6 +58,11 @@ source_parsers = {
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
+
+# Redirects using: https://pypi.org/project/sphinx-reredirects/
+redirects = {
+    "cloud/cloud-test-redirects": "cloud/cloud-integrations.html",
+}
 
 # The master toctree document.
 master_doc = 'index'
