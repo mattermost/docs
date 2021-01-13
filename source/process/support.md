@@ -1,5 +1,6 @@
 # Support Handbook
-## Information Required to Open a Support Ticket
+
+## Information required to open a Support ticket
 
 Encountering an error can be frustrating. To get you back to work as fast as possible, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing, so think: C.L.U.E.S. to remember what we need:
 
@@ -11,22 +12,20 @@ Encountering an error can be frustrating. To get you back to work as fast as pos
 
 C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
 
-
 ## General Guidelines for Information
 
 Follow these guidelines when providing diagnostic data to us:
-Make sure the files you provide are as complete as possible, rather than providing a few lines. Entire log files and configurations provide us with important context.
-Provide configuration and log files in plaintext format if possible, as these are far easier for us to search than screenshots.
-Be sure to sanitize configuration and log files to remove usernames, passwords, and LDAP groups. Replace these details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
-Provide screenshots or screen recordings of unexpected product behavior so that we know exactly what your users are seeing.
 
+* Make sure the files you provide are as complete as possible, rather than providing a few lines. Entire log files and configurations provide us with important context.
+* Provide configuration and log files in plaintext format if possible, as these are far easier for us to search than screenshots.
+* Be sure to sanitize configuration and log files to remove usernames, passwords, and LDAP groups. Replace these details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+* Provide screenshots or screen recordings of unexpected product behavior so that we know exactly what your users are seeing.
 
 ## Configuration
 
 ### Why we need it
 
 On Linux systems, settings are generally stored in configuration files. Many problems can be resolved by enabling or disabling a configuration setting. In order to find a resolution, we need to have as complete a picture of your system setup as possible. This also helps us to reproduce bugs so our developers can fix them.
-
 
 ### What it is
 
@@ -55,7 +54,6 @@ Nginx usually splits its configuration into two parts: the main server configura
 SAML Configuration
 If the issue you're seeing is with SAML login, we will need to see the full configuration for the Mattermost service in the SAML provider. Providing screenshots similar to the ones in the setup documentation is sufficient because most SAML providers are configured using a web interface.
 
-
 #### LDAP Configuration
 
 The LDAP administrator should confirm the correct values for the following Mattermost LDAP settings:
@@ -68,11 +66,9 @@ The LDAP administrator should confirm the correct values for the following Matte
 
 These can be provided as a text file or as screenshots from the LDAP server.
 
-
 #### Other Configurations
 
 If you are experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A system administrator for the external system should be able to provide you with the configuration.
-
 
 ## Logs
 
@@ -80,30 +76,26 @@ If you are experiencing an issue on mobile, and you're using an MDM or VPN to co
 
 Nearly all computer systems have logs of errors and application behavior that can show us what's happening under the hood when an application is running. They're invaluable when diagnosing a problem, but only if they're as complete as possible.
 
-
 ### Where It Is
 
 #### Mattermost
 
 Mattermost has two log files, one for general messages and the other for notification-related messages. These are found at:
-`/opt/mattermost/logs/mattermost.log`
-`/opt/mattermost/logs/notification.log`
 
+* `/opt/mattermost/logs/mattermost.log`
+* `/opt/mattermost/logs/notification.log`
 
 #### Proxy
 
 The location of these depend on your proxy configuration, but a good place to start looking is in '/var/log'. Your proxy administrator should be able to help you find the logs.
 
-
 #### Database
 
 MySQL and PostgreSQL have different logs, and their location varies based on your configuration. If the issue is related to database connectivity, check the database documentation to locate the logs.
 
-
 #### SAML, LDAP, & Other Systems
 
 The system administrator should be able to find these for you.
-
 
 ### How to Get It
 
@@ -135,7 +127,6 @@ The compressed files will be located on the server at `/tmp/mattermost-logs` and
 
 If you are experiencing issues with Elasticsearch, SAML, LDAP, or the database, you can enable trace logging in `config.json` by setting `Trace` to `true` under their respective settings. Combining this with `DEBUG` level file log output will result in huge log files, so only leave trace logging on long enough to replicate the behavior. The resulting logs will also contain a lot more sensitive data, including user data, so be sure to sanitize it completely before sharing it with us.
 
-
 #### System Logs
 
 The location of log files for other systems varies, but a good way to get the logs for all processes on the Mattermost server is to use `journalctl` like this:
@@ -146,13 +137,11 @@ Replace `2020-08-23 17:15:00` with the date and time (relative to the server) wh
 
 `sudo journalctl --since "2020-08-23 17:15:00" --until "2020-08-23 16:30:00" > mattermost_journalctl.log`
 
-
 ## Users Affected
 
 ### Why We Need it
 
 Mattermost servers are chaotic places. Thousands of posts, websocket actions, and webhook calls happen every second while users can be in dozens of channels across multiple teams. Knowing which users are affected by a problem can help us sift through all this information to find the root cause.
-
 
 ### What It Is
 
@@ -168,7 +157,6 @@ Note for Agents: This information is also required:
 - Customer Contacts
 - Customer License, e.g. E20/PS
 - Customer Tier - Where to find this?
-
 
 ## Environment
 
@@ -204,7 +192,6 @@ Be sure to be as specific as possible when describing the environment. If you ar
 - Internal hostname: ldap.lan
 - OpenLDAP 2.4.54 (Docker container)
 
-
 - Mattermost Servers
 - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
 - Mattermost server versions
@@ -224,7 +211,6 @@ Be sure to be as specific as possible when describing the environment. If you ar
 - Elasticsearch 7.9 with these plugins
 - analysis-icu
 
-
 ## Steps to Reproduce
 
 ### What It Is
@@ -239,32 +225,27 @@ A short summary of the steps to reproduce is also helpful. If you want some exam
 
 Press CMD+SHIFT+5 to open the screen recording tool and select the region of the screen you want to record. To take a screenshot, press CMD+SHIFT+4 and select the region to take a screenshot. The screenshot files are placed on the desktop by default.
 
-
 #### Windows
 
 Press CTRL + SHIFT + S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install a third party software like [OBS](https://obsproject.com/).
-
 
 #### iOS
 
 [Take a screenshot or screen recording on iPhone](https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios)
 
-
 #### Android
 
 [Take a screenshot or record your screen on your Android device](https://support.google.com/android/answer/9075928?hl=en)
 
-
 ## Appendix
+
 ### A Note on Mobile Issues
 
 Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact your Customer Engineer for help setting these up.
 
-
 ### SAML Login Issues
 
 If the issue is with SAML login one important piece of information is the SAML login flow. This contains headers and authentication information that can reveal issues that are easy to fix. Follow these instructions to view the SAML login flow if you are experiencing SAML authentication.
-
 
 ### Checking Keys & Certificates
 
