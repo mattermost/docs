@@ -36,7 +36,7 @@ Configuration includes (but is not limited to):
 - The configuration for the reverse proxy, e.g. Nginx, HAProxy, AWS
 - The database configuration
 
-If the issue is regarding SAML authentication, the configuration for the Mattermost service in the SAML IdP
+If the issue is regarding SAML authentication, the configuration for the Mattermost service is in the SAML IdP.
 Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
 
 ### How to get them
