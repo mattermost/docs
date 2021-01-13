@@ -36,7 +36,9 @@ CSV
 4. Set the export file format to **CSV**.
 5. Choose **Save**.
 
-You can use the CSV format to easily transform exports in a desired format for your third-party archive system. For a sample CSV output, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+The daily compliance export job creates a zip file with a unique job identifier of all messages posted in the last 24 hours. You can unzip the file to easily transform the default CSV format into a desired format for your third-party archive system.
+
+For a sample CSV output, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 Actiance XML
 ~~~~~~~~~~~~
@@ -47,7 +49,9 @@ Actiance XML
 4. Set the export file format to **Actiance XML**.
 5. Choose **Save**.
 
-Once you have selected Actiance XML as your file format, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`__. For a sample Actiance output, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__.
+The daily compliance export job creates a zip file with a unique job identifier of all messages posted in the last 24 hours. Once you’ve selected Actiance XML as your file format, you can set up an integration with the Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`__. 
+
+For a sample Actiance output, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__.
 
 .. note::
   In Actiance XML exports, channel type is prepended to the channel names.
