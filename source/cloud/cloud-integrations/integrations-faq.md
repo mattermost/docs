@@ -91,7 +91,7 @@ Deployments that cannot create bot accounts via webhooks due to security reasons
    
    **Note:** Each session token has an expiry time, set depending on configuration. If the session token your bot is using expires, it will receive a `401 Unauthorized` response from requests using that token. When your bot receives this response, it should reapply the login logic (using the above steps) to get another session token. Then it should resend the request that received the `401` status code.
 5. Include the `Token` as part of the `Authorization` header on API requests from your integration.
-   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with the `Authorization: bearer <yourtokenhere>` in the header. If it returns a `200` with the bot's user object in the response, the API request was made successfully.
+   - To confirm the token works, you can have your bot make a simple `GET` request to `/api/v4/users/me` with `Authorization: bearer <yourtokenhere>` in the header. If it returns a `200` with the bot's user object in the response, the API request was made successfully.
      ```
      GET /api/v4/users/me HTTP/1.1
      Authorization: bearer <yourtokenhere>
