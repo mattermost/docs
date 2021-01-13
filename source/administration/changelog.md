@@ -9,7 +9,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2021-01-16**
 
 ### Highlights
- - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0.
+
+#### Improved status updates for [Incident Management (E20 Edition)](https://mattermost.com/incident-management/)
+ - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to more easily inform stakeholders of incident status updates
 
 ### Improvements
 
