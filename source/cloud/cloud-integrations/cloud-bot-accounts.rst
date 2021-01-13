@@ -12,7 +12,7 @@ Bot accounts are just like user accounts, except they:
 
 Additional benefits include:
 
-  - Bot accounts can be enabled to post to any channel in the system by System Admins, including private teams, Private Channels, or Direct Messages.
+  - Bot accounts can be enabled to post to any channel in the system by System Administrators, including private teams, Private Channels, or Direct Messages.
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
   - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
   - Bot accounts are a safe way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
@@ -20,7 +20,7 @@ Additional benefits include:
 
 Note that currently:
 
-  - Bot accounts can only be created or managed by plugins or System Admins.
+  - Bot accounts can only be created or managed by plugins or System Administrators.
   - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
   - Service accounts without an email address pulled from LDAP or SAML systems is not yet supported.
 
@@ -93,7 +93,7 @@ What happens if a plugin is using a bot account that already exists as a user ac
 
 For a concrete example, suppose you enable the `Mattermost GitHub plugin <https://github.com/mattermost/mattermost-plugin-github>`_, which uses a ``github`` bot account, while an existing ``github`` user account was created for webhook integrations.
 
-Once the plugin is enabled, the plugin posts as the ``github`` account but without a `BOT` tag. An error message is logged to the Mattermost logs recommending the System Admin to convert the ``github`` user to a bot account by using ``mmctl``:
+Once the plugin is enabled, the plugin posts as the ``github`` account but without a `BOT` tag. An error message is logged to the Mattermost logs recommending the System Administrator to convert the ``github`` user to a bot account by using ``mmctl``:
 
 .. code-block:: text
 
@@ -126,7 +126,7 @@ For more information about access tokens, see `the personal access tokens docume
 Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
+Possibly yes. Currently a System Administrator can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
 
 Mitigations:
 
@@ -149,7 +149,7 @@ If you find yourself unable to edit posts as a bot, check the following:
 1. Instead of using a slash command to respond directly, use an an API call for the initial interaction with a user to enable message edits.
 2. If your system is using `advanced permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_, then post edits could be disabled for users.
 
-If neither of the above help resolve your concern, you also have the option to choose what role the bot account has. If System Admin is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the System Admin role to a bot account enables them with other System Admin privileges so this should be done with care.
+If neither of the above help resolve your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
 
 If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
