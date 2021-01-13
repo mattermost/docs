@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -v -E
+SPHINXOPTS    = 
 SPHINXBUILD   = pipenv run sphinx-build
 PAPER         =
 BUILDDIR      = build
