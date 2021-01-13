@@ -11,7 +11,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Improved status updates for [Incident Management (E20 Edition)](https://mattermost.com/incident-management/)
- - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to more easily inform stakeholders of incident status updates
+ - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to more easily inform stakeholders of incident status updates.
 
 ### Improvements
 
@@ -19,12 +19,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added the ability to mute categories with the experimental channel sidebar feature.
  - Added support for multi-selection of channels when dragging and dropping between channels in the experimental sidebar feature.
  - Group messages are now returned in the channel switcher when only first names are typed.
- - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user status between “Do Not Disturb” and “Online”, and will only set the user’s status to “Do Not Disturb”.
+ - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user's status between “Do Not Disturb” and “Online”, and will only set the user’s status to “Do Not Disturb”.
 
 #### Administration
  - Added a new ``manage_remote_clusters`` permission.
 
 ### Bug Fixes
+ - Fixed an issue where a column in the ``ThreadMemberships`` table was missing.
  - Cleaned up the config store on server initialization errors.
  - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
  - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section read-only for the System Manager.
@@ -39,7 +40,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in config.json:
-    - Added ``CollapsedThreads`` for collapsed reply threads feature.
+    - Added ``CollapsedThreads`` for the collapsed reply threads feature.
     
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
@@ -51,17 +52,17 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
- - **Discard Changes** confirmation is not displayed when an admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page.
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
- - The Admin Filter option is not disabled on the AD/LDAP page for admin roles with the ``sysconsole_write_authentication`` permission.
+ - The **Admin Filter** option is not disabled on the AD/LDAP page for admin roles with the ``sysconsole_write_authentication`` permission.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
- - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Searching with Elasticsearch enabled may not always highlight the searched terms.
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
