@@ -60,9 +60,9 @@ source_parsers = {
 #source_encoding = 'utf-8-sig'
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
-redirects = {
-    "cloud/cloud-test-redirects": "cloud/cloud-integrations.html",
-}
+# redirects = {
+#    "cloud/cloud-test-redirects": "cloud/cloud-integrations.html",
+#}
 
 # The master toctree document.
 master_doc = 'index'
