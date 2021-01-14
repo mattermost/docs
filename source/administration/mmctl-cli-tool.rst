@@ -2361,7 +2361,7 @@ mmctl permissions remove
 
 **Description**
 
-  Remove one or more permissions from an existing role (only available in E10 and E20).
+  Remove one or more permissions from an existing role (available in Enterprise Edition E10 and E20).
 
 **Format**
 
