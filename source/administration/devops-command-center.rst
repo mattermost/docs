@@ -104,7 +104,7 @@ You can change a playbook's configuration at any time, but changes will only be 
 
 1. Go to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. 
- * Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
+ * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
 3. Select the name of the playbook, or select the **Action** menu next to the playbook name, then select **Edit**.
 4. Configure the playbook the same way a playbook is created or edited.
 
@@ -115,7 +115,7 @@ You can delete a playbook at any time. Ongoing or ended incidents previously sta
 
 1. Go to **Main Menu > Playbooks & Incidents**.
 2. Find the playbook to be edited. 
- * Only playbooks of which you are a member are listed. System administrators have unrestricted access to all playbooks on the team.
+ * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
 3. Select the **Action** menu next to the playbook name, then select **Edit**.
 4. Confirm that you want to **Delete Playbook**.
 
@@ -132,6 +132,7 @@ Starting an incident
 To start an incident, use any one of the following:
 
 * Run the ``/incident start`` slash command from any channel.
+
 * From the desktop or browser:
  * Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
  * Use the context menu of a post and select **Start incident**.
@@ -166,7 +167,6 @@ To change commanders, use any one of the following:
 * Run the ``/incident commander @username`` slash command from the incident channel.
 
 * From the desktop or browser:
-
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
 2. Select the **Summary** tab.
 3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
@@ -178,7 +178,6 @@ Providing a status update
 Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
 
 * From the desktop or browser:
-
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
 2. Select the **Summary** tab.
 3. Within the **Summary** tab, select **Update Status**.

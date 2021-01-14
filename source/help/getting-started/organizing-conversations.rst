@@ -171,11 +171,11 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Collapsible custom categories**: Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
 
-**Drag and drop channels and categories**: Drag channels between or within custom categories, or drag to reorder entire categories to prioritize important conversations.
-
 **Mute and unmute custom categories**: Mute and unmute all channels in a custom category, and selectively mute or unmute select channels within categories.
 
 **Select multiple channels at a time**: Using the Mattermost Web or Desktop App, select sequential channels by pressing and holding SHIFT. To select non-sequential channels press and hold CMD (for Mac) or CTRL (for Windows/Linux). To clear channel selections, press ESC.
+
+**Drag and drop channels and categories:** Drag selected channels between or within categories, or drag to reorder entire categories to prioritize important conversations. Multi-selected channels move together as a group in the order they originally appeared. You can also specify a destination for selected channels using the **Move to** option under the **More options** icon. The **Move to** option is available today for Cloud deployments and will be available for self-hosted deployments in Mattermost Server v5.32 and later.
 
 **Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 

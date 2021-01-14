@@ -2,13 +2,13 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 or later is highly recommended.
+   Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is highly recommended.
 
 .. important::
    PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
 
 .. important::
-   TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with those TLS versions. System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
+   TLS versions 1.0 and 1.1 have been deprecated by browser vendors. In an upcoming release (version TBD), mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |

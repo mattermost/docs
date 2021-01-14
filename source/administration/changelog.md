@@ -12,12 +12,12 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
 
 ### Compatibility
 
- - Support for Mattermost Server v5.25 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 or later is highly recommended.
+ - Support for Mattermost Server v5.25 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) or later is highly recommended.
 
 ### Highlights
 
 #### Improved status updates for [Incident Management (E20 Edition)](https://mattermost.com/incident-management/)
- - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to more easily inform stakeholders of incident status updates.
+ - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to easily inform stakeholders of incident status updates.
 
 ### Improvements
 
@@ -34,9 +34,9 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Fixed an issue where a column in the ``ThreadMemberships`` table was missing.
  - Cleaned up the config store on server initialization errors.
  - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
- - Fixed an issue where the site configuration ‘’Read only’’ permission did not make the "Notice" section read-only for the System Manager.
+ - Fixed an issue where the site configuration "Read only" permission did not make the "Notice" section read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
- - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close the LDAP Session.
+ - Fixed an issue where LDAP "FirstLoginSync" didn't close the LDAP session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
  - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
  - Fixed an issue where desktop notifications got sent for every message posted in a Direct Message channel.
@@ -45,7 +45,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Under ``ServiceSettings`` in config.json:
+ - Under ``ServiceSettings`` in ``config.json``:
     - Added ``CollapsedThreads`` for the collapsed reply threads feature.
     
 ### Go Version
@@ -78,7 +78,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Contributors
  - [a-c-sreedhar-reddy](https://github.com/a-c-sreedhar-reddy), [aeomin](https://github.com/aeomin), [agnivade](https://github.com/agnivade), [akshaychhajed](https://github.com/akshaychhajed), [amwsis](https://github.com/amwsis), [amyblais](https://github.com/amyblais), [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [avinashlng1080](https://github.com/avinashlng1080), [Ayanrocks](https://github.com/Ayanrocks), [calebroseland](https://github.com/calebroseland), [CandyZack](https://github.com/CandyZack), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [cinlloc](https://github.com/cinlloc), [cpanato](https://github.com/cpanato), [CrHasher](https://github.com/CrHasher), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [daniel-shuy](https://github.com/daniel-shuy), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DigasNikas](https://github.com/DigasNikas), [edtrist](https://github.com/edtrist), [enahum](https://github.com/enahum), [ethervoid](https://github.com/ethervoid), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [girish17](https://github.com/girish17), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [HeroicHitesh](https://github.com/HeroicHitesh), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jakaya123](https://github.com/jakaya123), [jakubnovak998](https://github.com/jakubnovak998), [jasonblais](https://github.com/jasonblais), [JeremyShih](https://github.com/JeremyShih), [jespino](https://github.com/jespino), [josephbaylon](https://github.com/josephbaylon), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kcc343](https://github.com/kcc343), [KevinMarioGerard](https://github.com/KevinMarioGerard), [larkox](https://github.com/larkox), [lawrencejohnson](https://github.com/lawrencejohnson), [Leryan](https://github.com/Leryan), [lieut-data](https://github.com/lieut-data), [marianunez](https://github.com/marianunez), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [MikeworX](https://github.com/MikeworX), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [msal4](https://github.com/msal4), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [nronas](https://github.com/nronas), [pablovelezvidal](https://github.com/pablovelezvidal), [reflog](https://github.com/reflog), [rodcorsi](https://github.com/rodcorsi), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [SBagaria2710](https://github.com/SBagaria2710), [sbishel](https://github.com/sbishel), [sbley](https://github.com/sbley), [snhardin](https://github.com/snhardin), [streamer45](https://github.com/streamer45), [sudheerDev](https://github.com/sudheerDev), [thePanz](https://github.com/thePanz), [tweichart](https://github.com/tweichart), [Tzunhei](https://github.com/Tzunhei), [uhlhosting](https://github.com/uhlhosting), [vraravam](https://github.com/vraravam), [wget](https://github.com/wget), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog)
 
-## Release v5.30
+## Release v5.30 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.30.1, released 2020-12-18**
   - Fixed the displayed modal Build Number version to standard semver.
