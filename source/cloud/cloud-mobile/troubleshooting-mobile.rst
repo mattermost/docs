@@ -10,19 +10,14 @@ Confirm that your server URL has no typos and that it includes ``https://``.
 Login with ADFS/Office365 is not working
 ----------------------------------------
 
-In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
-
-I’m not receiving push notifications on my device
--------------------------------------------------
-
-Please see our documentation on `troubleshooting push notifications <https://docs.mattermost.com/cloud/cloud-mobile/troubleshooting-mobile.html>`_.
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 ------------------------------------------------
@@ -42,8 +37,7 @@ and then ignore the gradle task with
 No image previews available in the mobile app
 ---------------------------------------------
 
-This can happen if the server running Mattermost has its mime types not set up correctly.
-A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
+This can happen if the server running Mattermost has its mime types not set up correctly. A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
 

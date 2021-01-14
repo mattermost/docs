@@ -21,6 +21,8 @@
  - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
+ 
+**Note:** Support for landscape orientation was removed for non-tablet devices.
 
 ### Improvements
  - Added gallery user interface improvements.

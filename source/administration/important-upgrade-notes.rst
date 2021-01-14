@@ -8,7 +8,7 @@ Important Upgrade Notes
    Support for Mattermost Server v5.19 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its lifecycle. Upgrading to v5.25 or later is required.
 
 .. important::
-   TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with those TLS versions. System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
+   TLS versions 1.0 and 1.1 have been deprecated by browser vendors. In an upcoming release (version TBD), mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
