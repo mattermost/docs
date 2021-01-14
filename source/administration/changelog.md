@@ -17,7 +17,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
 ### Highlights
 
 #### Improved status updates for [Incident Management (E20 Edition)](https://mattermost.com/incident-management/)
- - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to more easily inform stakeholders of incident status updates.
+ - Pre-packaged and pre-installed the Mattermost Incident Management v1.2.0, which enables incident responders to easily inform stakeholders of incident status updates.
 
 ### Improvements
 
