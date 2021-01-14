@@ -21,7 +21,7 @@ Additional benefits include:
 
 Note that currently:
 
-  - Only System Admins or plugins can create or manage Bot accounts.
+  - Only System Admins or plugins can create or manage bot accounts.
   - Only user accounts can create and configure webhooks and slash commands.
   - In Mattermost Enterprise Edition, service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
 
