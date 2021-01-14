@@ -6,6 +6,9 @@ Release v4.6
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.1>`_
 
+
+- **v4.6.2, release day TBD**
+ - Investigating fixing an issue where logging in to ``gitlab.com`` does not work on the Desktop App. `MM-31626 <https://mattermost.atlassian.net/browse/MM-31626>`_
 - **v4.6.1, released 2020-10-26**
  - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. `MM-29921 <https://mattermost.atlassian.net/browse/MM-29921>`_
 - **v4.6.0, released 2020-10-16**

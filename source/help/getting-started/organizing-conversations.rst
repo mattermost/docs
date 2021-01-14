@@ -156,7 +156,7 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Using the Mattermost Web or Desktop App, select multiple channels at a time. To select sequential channels, press and hold SHIFT. To select non-sequential channels press and hold CMD (for Mac) or CTRL (for Windows/Linux). To clear channel selections, press ESC.
 
-**Drag and drop channels and categories**: Drag and drop to move selected channels within or between custom categories, or drag to reorder entire categories to prioritize important conversations. Multi-selected channels move together as a group in the order they originally appeared.
+**Drag and drop channels and categories**: Drag selected channels between or within categories, or drag to reorder entire categories to prioritize important conversations. Multi-selected channels move together as a group in the order they originally appeared. You can also specify a destination for selected channels using the **Move to** option under the **More options** icon. The **Move to** option is available today for Cloud deployments and will be available for self-hosted deployments in Mattermost Server v5.32 and later.
 
 **Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 
