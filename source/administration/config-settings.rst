@@ -4714,6 +4714,21 @@ Audit settings
 
 The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
+Remote Clusters
+^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Enable this setting to add, remove, and view remote clusters for shared channels.
+
+**True**: When ``true`` System Admins can manage remote clusters using the System Console.
+
+**False**: Remote cluster management is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``.                                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Syslog configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -5374,6 +5389,19 @@ In previous Mattermost Server versions, and this documentation, the instructions
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Shared Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+**True**: Enables users from multiple Mattermost instances to collaborate with one another using shared channels.
+
+**False**: Disables channel sharing.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSharedChannels": false`` with options ``true`` and ``false``.                |
++---------------------------------------------------------------------------------------------------------------------------------+ 
 
 Deprecated Configuration Settings
 -----------------------------------

@@ -175,6 +175,8 @@ When configured by the System Admin, users can enable the features in **Account 
 
 **Mute and unmute custom categories**: Mute and unmute all channels in a custom category, and selectively mute or unmute select channels within categories.
 
+**Select multiple channels at a time**: Using the Mattermost Web or Desktop App, select sequential channels by pressing and holding SHIFT. To select non-sequential channels press and hold CMD (for Mac) or CTRL (for Windows/Linux). To clear channel selections, press ESC.
+
 **Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 
 **Unread filter**: Catch up on all your unread channels with a one-click unreads filter. When enabled, you'll see only unread channels in the sidebar.
