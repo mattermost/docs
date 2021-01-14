@@ -45,7 +45,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Under ``ServiceSettings`` in config.json:
+ - Under ``ServiceSettings`` in ``config.json``:
     - Added ``CollapsedThreads`` for the collapsed reply threads feature.
     
 ### Go Version
