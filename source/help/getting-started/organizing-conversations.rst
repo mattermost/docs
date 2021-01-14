@@ -14,7 +14,7 @@ Channels are used to organize conversations across different topics. There are t
 
 - Public channels
 - Private channels
-- Direct Messages
+- Direct Messages and Group Messages
 
 Public channels
 ~~~~~~~~~~~~~~~
@@ -41,7 +41,7 @@ If your System Admin has allowed it, you can start a Direct Message or a Group M
 Managing channels
 ------------------
 
-Channels can be created, joined, renamed, left, and archived.
+Channels can be created, joined, renamed, left, marked as a favorite, muted, unmuted, and archived.
 
 Creating a channel
 ~~~~~~~~~~~~~~~~~~~
@@ -137,12 +137,29 @@ To mark a channel as a favorite, open the channel:
 **On desktop:** At the top of the page, select on the star icon next to the channel name
 
     .. image:: ../../images/favorite_channels_desktop.png
+        :alt: Mark a channel as a favorite.
+        :scale: 40
        
 This adds the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
- .. image:: ../../images/favorite_channels_sidebar.png
+    .. image:: ../../images/favorite_channels_sidebar.png
+        :alt: Favorite channels in the left-hand sidebar.
+        :scale: 40
        
 **On mobile:** Open the dropdown list by the channel name, and select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
+
+Muting a channel
+~~~~~~~~~~~~~~~~
+
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
+
+Once a channel is muted:
+
+- Email, desktop, and push notifications are disabled.
+- A mute icon displays next to the channel name.
+- The channel is greyed out in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
+
+To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
 --------------------------------------------
 Experimental: Channel Organization Features
