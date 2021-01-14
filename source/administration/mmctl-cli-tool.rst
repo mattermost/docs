@@ -1503,7 +1503,7 @@ Configuration settings.
   Child Commands
     -  `mmctl config edit`_ - Edit the configuration settings
     -  `mmctl config get`_ - Get the value of a configuration setting
-    -  `mmctl config migrate`_ - Migrate existing config between backends
+    -  `mmctl config migrate`_ - Migrate existing configuration between backends
     -  `mmctl config reload`_ - Reload the server configuration
     -  `mmctl config reset`_ - Reset the configuration
     -  `mmctl config set`_ - Set the value of a configuration
@@ -1589,7 +1589,11 @@ mmctl config migrate
 
 **Description**
 
-Migrates a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it.
+Migrates a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. This command only migrates the configuration data from one type to another. 
+
+**Note:**
+  
+  To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable <https://docs.mattermost.com/administration/config-in-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
 
