@@ -966,7 +966,7 @@ mmctl channel move
 
 **Description**
 
-   Move the provided channels to the specified team. Validate that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved     along with the channel. Channels can be specified by ``[team]:[channel]`` (ie. myteam:mychannel) or by channel ID.
+   Move the provided channels to the specified team. Validate that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel) or by channel ID.
 
 **Format**
 
