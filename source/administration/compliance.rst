@@ -117,6 +117,8 @@ Compliance query results stored in ``posts.csv`` file
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | UserNickname        | Nickname of user posting the message containing keyword       | fan du                        | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
+| UserType            | Type of user posting the message ("user" or "bot")            | user                          |
++---------------------+---------------------------------------------------------------+-------------------------------+
 | PostId              | Unique ID of message post containing keyword                  | xt9anyx6x3fx9y84aehgakdpze    | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | PostCreateAt        | Timestamp at which post was created                           | 2016-03-02T16:01:59Z          | 
