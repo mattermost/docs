@@ -36,7 +36,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
  - Fixed an issue where the site configuration "Read only" permission did not make the "Notice" section read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
- - Fixed an issue where LDAP ‘’FirstLoginSync’’ didn't close the LDAP Session.
+ - Fixed an issue where LDAP "FirstLoginSync" didn't close the LDAP session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
  - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
  - Fixed an issue where desktop notifications got sent for every message posted in a Direct Message channel.
