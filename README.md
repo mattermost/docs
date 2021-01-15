@@ -35,7 +35,7 @@ If this is the first time you're contributing, click **Edit the file in your for
 2. Select **Create a new branch for this commit and start a pull request**.
 3. Check the **Propose file change** button.
 4. Scroll down to compare changes with the original document.
-5. Select **Create pull request**.
+5. Select **Create pull request**. 
 
 ### Using Labels
 
@@ -47,29 +47,21 @@ Once a pull request is submitted, multiple committers may comment on it and prov
 
 ### Reviewing Pull Requests
 
-Once a pull request has been submitted and the correct label assigned, the review process begins. This includes aligning the content with the Style Guide, validating processes, and tagging any other relevant committers. You can read more about the review process and expectations [here](https://developers.mattermost.com/contribute/getting-started/code-review/).
+Once a pull request has been submitted and the correct label assigned, the review process begins. This includes aligning the content with the Style Guide, validating processes, and tagging any other relevant committers. You can read more about the review process and expectations [here](https://developers.mattermost.com/contribute/getting-started/code-review/). 
 
-Once the review process is complete and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with the release. The branch is then deleted.
+Once the review process is complete and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with the release. The branch is then deleted. 
 
 Any merged PRs with an **Editor Review** or **Reviews Complete** label will be processed by the editor reviewer to ensure the documentation is correctly formatted at https://docs.mattermost.com/.
 
 ## Building and Validating
 
-If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests.
+If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests. 
 
 1. Download the Mattermost docs repo onto a machine with Python installed.
-2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`.
+2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`. 
 3. `cd` into the cloned repository.
 4. Install the required packages: `pipenv install`.
 5. Build the doc set using `make html`. This generates files in `/build` directory.
-6. Navigate to the `/build` directory to preview the page/s you've edited.
+6. Navigate to the `/build` directory to preview the page/s you've edited. 
 
-The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation.
-
-## ReadTheDocs Config
-
-1. Generate a requirements.txt file using
-```sh
-pipenv --venv lock -r >> requirements.txt
-```
-2. The RTD config is contained in the .readthedocs.yml file
+The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 
