@@ -29,7 +29,6 @@ def setup(app):
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
-scv_whitelist_branches = ('master', 'versioning2')
 
 # -- General configuration ------------------------------------------------
 
@@ -39,10 +38,8 @@ scv_whitelist_branches = ('master', 'versioning2')
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx_sitemap',
-    'sphinx_reredirects'
-    ]
+extensions = ['sphinx_sitemap']
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 templates_path = ['templates']
@@ -58,11 +55,6 @@ source_parsers = {
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
-
-# Redirects using: https://pypi.org/project/sphinx-reredirects/
-# redirects = {
-#    "cloud/cloud-test-redirects": "cloud/cloud-integrations.html",
-#}
 
 # The master toctree document.
 master_doc = 'index'
