@@ -85,5 +85,5 @@ To enable Team Admins to see statistics for their teams, System Administrators m
 Once the **Viewer** role is set up for reporting access only, System Admins can then `assign <https://docs.mattermost.com/deployment/admin-roles.html#assigning-admin-roles>`__ the **Viewer** role to Team Admins.
 
 .. note::
-  - System Admins must manually add people to or remove people from the **Viewer** admin role to address Team Admin changes, such as promotions or demotions. 
+  - System Admins must manually add or remove members from the **Viewer** role to address Team Admin changes, such as promotions or demotions.
   - Team Admins using the **Viewer** admin role will also have access to system level statistics in addition to statistics for their teams.
