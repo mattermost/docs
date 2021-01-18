@@ -78,7 +78,7 @@ Can Team Admins review their own team's statistics?
 
 System Administrators can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/cloud/cloud-user-management/user-management.html#about-system-roles-beta>`__ to enable Team Administrators to see team statistics.
 
-Once Team Admins are assigned to the **Viewer** admin role, they can access all statistics for all teams.
+Once Team Admins are assigned to the **Viewer** role, they can access all statistics for all teams.
 
 To enable Team Admins to see statistics for their teams, System Administrators must then `edit the privileges <https://docs.mattermost.com/cloud/cloud-user-management/user-management.html#editing-privileges-of-system-roles>`__ of the **Viewer** admin role to set all privileges to **No access** except the **Reporting** privileges.
 
