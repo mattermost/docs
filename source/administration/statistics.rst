@@ -121,7 +121,7 @@ Once Team Admins are assigned to the **Viewer** role, they can access all statis
 
 To enable Team Admins to see statistics for their teams, System Administrators must then `edit the privileges <https://docs.mattermost.com/deployment/admin-roles.html#editing-privileges-of-admin-roles-advanced>`__ of the **Viewer** admin role to set all privileges to **No access** except the **Reporting** privileges.
 
-Once the Viewer admin role is set up for Reporting access only, System Admins can then `assign <https://docs.mattermost.com/deployment/admin-roles.html#assigning-admin-roles>`__ the **Viewer** admin role to Team Admins.
+Once the **Viewer** role is set up for reporting access only, System Admins can then `assign <https://docs.mattermost.com/deployment/admin-roles.html#assigning-admin-roles>`__ the **Viewer** role to Team Admins.
 
 .. note::
   - System Admins must manually add people to or remove people from the **Viewer** admin role to address Team Admin changes, such as promotions or demotions. 
