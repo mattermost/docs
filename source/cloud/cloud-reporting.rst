@@ -86,4 +86,4 @@ Once the **Viewer** role is set up for reporting access only, System Admins can 
 
 .. note::
   - System Admins must manually add or remove members from the **Viewer** role to address Team Admin changes, such as promotions or demotions.
-  - Team Admins using the **Viewer** admin role will also have access to system level statistics in addition to statistics for their teams.
+  - Team Admins using the **Viewer** role will also have access to system level statistics in addition to statistics for their teams.
