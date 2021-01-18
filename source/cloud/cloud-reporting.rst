@@ -65,7 +65,25 @@ Recent Active Users
 Newly Created Users
     Most recent users who have joined the team.
 
-Troubleshooting
------------------
+Troubleshooting/FAQ
+-------------------
+
+I see an error: "Not enough data for a meaningful representation"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you're using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
+
+Can Team Admins review their own team's statistics?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+System Administrators can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/cloud/cloud-user-management/user-management.html#about-system-roles-beta>`__ to enable Team Administrators to see team statistics.
+
+Once Team Admins are assigned to the **Viewer** admin role, they can access all statistics for all teams.
+
+To enable Team Admins to see statistics for their teams, System Administrators must then `edit the privileges <https://docs.mattermost.com/cloud/cloud-user-management/user-management.html#editing-privileges-of-system-roles>`__ of the **Viewer** admin role to set all privileges to **No access** except the **Reporting** privileges.
+
+Once the Viewer admin role is set up for Reporting access only, System Admins can then `assign <https://docs.mattermost.com/cloud/cloud-user-management/user-management.html#assigning-system-roles>`__ the **Viewer** admin role to Team Admins.
+
+.. note::
+  - System Admins must manually add people to or remove people from the **Viewer** admin role to address Team Admin changes, such as promotions or demotions. 
+  - Team Admins using the **Viewer** admin role will also have access to system level statistics in addition to statistics for their teams.
