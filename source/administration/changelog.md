@@ -58,6 +58,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
+ - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
  - Reddit link previews no longer work in Mattermost.
  - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
