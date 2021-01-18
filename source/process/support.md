@@ -35,8 +35,8 @@ Configuration includes (but is not limited to):
 - The configuration for the reverse proxy, e.g. Nginx, HAProxy, AWS
 - The database configuration
 
-If the issue is regarding SAML authentication, the configuration for the Mattermost service is in the SAML IdP.
-Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
+* If the issue is regarding SAML authentication, the configuration for the Mattermost service is in the SAML IdP.
+* Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
 
 ### How to get them
 
@@ -51,32 +51,33 @@ SELECT Value FROM Configurations WHERE Active = 1;
 #### Reverse Proxy Configuration
 
 Nginx usually splits its configuration into two parts: the main server configuration at `/etc/nginx/nginx.conf`, and a virtual server configuration. On Ubuntu, this is stored in `/etc/nginx/sites-available`. Providing both of these configuration files is helpful, but providing the latter is more important.
-SAML Configuration
+
+#### SAML configuration
 If the issue you're seeing is with SAML login, we will need to see the full configuration for the Mattermost service in the SAML provider. Providing screenshots similar to the ones in the setup documentation is sufficient because most SAML providers are configured using a web interface.
 
-#### LDAP Configuration
+#### LDAP configuration
 
 The LDAP administrator should confirm the correct values for the following Mattermost LDAP settings:
 
-- LDAP Server hostname
-- LDAP Connection Port, Security, and certificates
-- BaseDN, Bind Username, and Bind Password
+- LDAP server hostname
+- LDAP connection port, security, and certificates
+- BaseDN, bind username, and bind password
 - User, Group, Guest, and Admin filters
 - Display attributes
 
 These can be provided as a text file or as screenshots from the LDAP server.
 
-#### Other Configurations
+#### Other configurations
 
-If you are experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A system administrator for the external system should be able to provide you with the configuration.
+If you're experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A System Administrator for the external system should be able to provide you with the configuration.
 
 ## Logs
 
-### Why We Need It
+### Why we need it
 
-Nearly all computer systems have logs of errors and application behavior that can show us what's happening under the hood when an application is running. They're invaluable when diagnosing a problem, but only if they're as complete as possible.
+Nearly all computer systems have logs of errors and application behavior that can show us what's happening  when an application is running. They're invaluable when diagnosing a problem, but only if they're as complete as possible.
 
-### Where It Is
+### Where it is
 
 #### Mattermost
 
@@ -93,11 +94,11 @@ The location of these depend on your proxy configuration, but a good place to st
 
 MySQL and PostgreSQL have different logs, and their location varies based on your configuration. If the issue is related to database connectivity, check the database documentation to locate the logs.
 
-#### SAML, LDAP, & Other Systems
+#### SAML, LDAP, and other systems
 
-The system administrator should be able to find these for you.
+Your organization's System Administrator should be able to find these for you.
 
-### How to Get It
+### How to get it
 
 #### Mattermost
 
@@ -115,7 +116,7 @@ If the log files generated are too large to send, compress them with this comman
 
 The compressed logs will be on the server at `/tmp/mattermost.log.tgz`.
 
-If the compressed file is still too big, use these commands to split the compressed file into 20MB chunks:
+If the compressed file is still too big, use these commands to split the compressed file into two or more 20MB files:
 
 ```
 `mkdir -p /tmp/mattermost-logs`
@@ -127,7 +128,7 @@ The compressed files will be located on the server at `/tmp/mattermost-logs` and
 
 If you are experiencing issues with Elasticsearch, SAML, LDAP, or the database, you can enable trace logging in `config.json` by setting `Trace` to `true` under their respective settings. Combining this with `DEBUG` level file log output will result in huge log files, so only leave trace logging on long enough to replicate the behavior. The resulting logs will also contain a lot more sensitive data, including user data, so be sure to sanitize it completely before sharing it with us.
 
-#### System Logs
+#### System logs
 
 The location of log files for other systems varies, but a good way to get the logs for all processes on the Mattermost server is to use `journalctl` like this:
 
@@ -137,7 +138,7 @@ Replace `2020-08-23 17:15:00` with the date and time (relative to the server) wh
 
 `sudo journalctl --since "2020-08-23 17:15:00" --until "2020-08-23 16:30:00" > mattermost_journalctl.log`
 
-## Users Affected
+## Users affected
 
 ### Why We Need it
 
@@ -150,7 +151,7 @@ This should be a detailed explanation of anything the end users who are reportin
 - Authentication methods
 - Client operating system and app versions
 - How users connect to the Mattermost server
-- Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synced via LDAP
+- Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synchronized via LDAP
 
 Note for Agents: This information is also required:
 - Customer Name
@@ -175,7 +176,7 @@ Because of this, having a complete picture of the servers and network that the M
 - LDAP provider - Windows Server 2016 Active Directory, Okta, OpenLDAP
 - The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
 
-Be sure to be as specific as possible when describing the environment. If you are seeing errors like Connection Refused be sure to include any firewalls or filtering proxies that may be on your network, either inbound or outbound.
+Be as specific as possible when describing the environment. If you are seeing errors like **Connection Refused** be sure to include any firewalls or filtering proxies that may be on your network, either inbound or outbound.
 
 ### Examples
 
@@ -227,7 +228,7 @@ Press CMD+SHIFT+5 to open the screen recording tool and select the region of the
 
 #### Windows
 
-Press CTRL + SHIFT + S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install a third party software like [OBS](https://obsproject.com/).
+Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install a third party software like [OBS](https://obsproject.com/).
 
 #### iOS
 
@@ -239,15 +240,15 @@ Press CTRL + SHIFT + S to open the snipping tool to take a screenshot. If you wa
 
 ## Appendix
 
-### A Note on Mobile Issues
+### A note on mobile issues
 
 Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact your Customer Engineer for help setting these up.
 
-### SAML Login Issues
+### SAML login issues
 
-If the issue is with SAML login one important piece of information is the SAML login flow. This contains headers and authentication information that can reveal issues that are easy to fix. Follow these instructions to view the SAML login flow if you are experiencing SAML authentication.
+If the issue is with SAML login one important piece of context is the SAML login flow. This contains headers and authentication information that can reveal issues that are easy to fix. Follow these instructions to view the SAML login flow if you are experiencing SAML authentication.
 
-### Checking Keys & Certificates
+### Checking keys and certificates
 
 Key and certificate files should never be shared, but if the error indicates a problem with the format of a key or certificate, then verify the format of the keys and certificates by running this command:
 
