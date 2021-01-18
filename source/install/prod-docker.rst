@@ -40,7 +40,7 @@ Find out the uid:gid of the host by running:
    
        id <my_username>
 
-Replace `<my_username>` with the actual username to run the docker. The following setup assumes the result is uid=1000 and gid=1000.
+Replace :code:`<my_username>` with the actual username to run the docker. The following setup assumes the result is uid=1000 and gid=1000.
 
 Setup by running:
 
