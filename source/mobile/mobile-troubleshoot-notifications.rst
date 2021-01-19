@@ -22,4 +22,4 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 7. **IMPORTANT:** In order to conserve disk space, once the issue is resolved, go to  **System Console > Environment > Logging > File Log Level** (or **System Console** > **General** > **Logging** > **File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level from DEBUG to Errors Only.
 
-8. If you are facing push notification issues not being delivered on the mobile device, please double check that you are logged in to the **Native** mobile app session through **Account Settings > Security > View and Log Out of Active Sessions**. Else, the `DeviceId` will not get registered in the `Sessions` table resulting to the absence of the notifications.
+8. If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Account Settings > Security > View and Log Out of Active Sessions**. Else, the `DeviceId` will not get registered in the `Sessions` table and notifications won't be delivered.
