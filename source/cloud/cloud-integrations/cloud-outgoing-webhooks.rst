@@ -100,7 +100,7 @@ which would render in Mattermost as:
 Messages with advanced formatting can be created by including an `attachment array <https://docs.mattermost.com/developer/message-attachments.html>`_ and `interactive message buttons <https://docs.mattermost.com/developer/interactive-messages.html>`_ in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Administrator to do so. If not enabled, the username is set to webhook.
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
 
   Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
