@@ -58,6 +58,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
+ - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
  - Reddit link previews no longer work in Mattermost.
  - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
@@ -80,7 +81,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.30 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.30.2, released 2021-01-16**
+- **v5.30.2, released 2021-01-18**
   - Fixed an issue where the ``UnreadMentions`` column was missing in the ``ThreadMemberships`` table for servers upgrading from v5.29.0. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.30.2 or later.
 - **v5.30.1, released 2020-12-18**
   - Fixed the displayed modal Build Number version to standard semver.
@@ -190,7 +191,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.29 - [Quality Release](https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-overview)
 
-- **v5.29.2, released 2021-01-16**
+- **v5.29.2, released 2021-01-18**
   - Fixed an issue where the ``UnreadMentions`` column was missing in the ``ThreadMemberships`` table for servers upgrading from v5.29.0. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.29.2 or later.
 - **v5.29.1, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
