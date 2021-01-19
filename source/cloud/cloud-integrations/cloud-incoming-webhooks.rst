@@ -4,7 +4,7 @@ Incoming Webhooks
 .. note::
   This is the admin documentation for incoming webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate>`__.
 
-Mattermost supports webhooks to easily integrate external applications into the Cloud workspace.
+Mattermost supports webhooks to easily integrate external applications into the cloud workspace.
 
 Use incoming webhooks to post messages to Mattermost public channels, private channels and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload in the request body.
 
