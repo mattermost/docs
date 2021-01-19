@@ -1228,7 +1228,7 @@ mmctl channel users remove
 
 .. code-block:: sh
 
-  --all-users   Remove all users from the indicated channel.
+  --all-users   Remove all users from the indicated channel
   -h, --help        help for remove
   
 **Options inherited from parent commands**
