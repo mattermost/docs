@@ -31,7 +31,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 1. Go to **Main Menu > Integrations > Incoming Webhooks**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so.
 2. Select **Add Incoming Webhook** and add a title and description for the webhook. The description can be up to 500 characters. 
 3. Choose the channel to receive webhook payloads, then select **Save** to create the webhook.
-4. Use a curl command from your terminal or command line to send the following JSON payload in a HTTP POST request:
+4. Use a curl command from terminal or command prompt to send the following JSON payload in a HTTP POST request:
 
 .. code-block:: text
 
