@@ -743,7 +743,7 @@ mattermost db init
 ------------------
 
   Description
-    Initializes the database for a given DSN (data name source), executes migrations, and loads custom defaults when specified.
+    Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
 
   Format
     .. code-block:: none
