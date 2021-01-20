@@ -136,7 +136,7 @@ If MFA has stopped working, confirm that your server clock is not out of sync. O
 Config.json Resets to Default Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A version check can cause the config.json to rollback. Running the binary as root, which has a different home directory, will take the default config.json and reset that. The fix should be to run the version check as the same user which is running the mattermost service. It is suggested to use mmctl (which is the new way you mentioned) for any CLI purposes to interact with Mattermost.
+The ``disableconfigwatch`` flag can cause the config.json to rollback. Running the binary as root, which has a different home directory, will take the default config.json and reset the value. To fix this, run the version check as the same user which is running the Mattermost service. It is suggested to use `mmctl Command Line Tool (Beta) <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_ for any CLI purposes to interact with Mattermost.
 
 SAML issues
 -----------
