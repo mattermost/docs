@@ -69,6 +69,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
  - Added a ``CollapsedThreads`` feature flag.
  - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
+ - Added a ``AppCustomURLSchemes`` setting under .
     
 ### Go Version
  - 5.32 is built with Go ``1.15.5``.
