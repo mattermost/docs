@@ -5,7 +5,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ## Release 2021-01-26
 
 ### Highlights
- - Channel sidebar GA
+
+#### Channel Sidebar General Availability
+ - The new channel sidebar is enabled system-wide by default. Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users now gain full personalization of their sidebar to improve productivity, reduce clutter and focus on what matters. Features include custom, collapsible sidebar categories, unread channel management, and new channel menus.
 
 ### Improvements
 
