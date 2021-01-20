@@ -11,6 +11,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 ### Breaking Changes
+ - The minimum required Postgres version is now 10.0. Mattermost will now fail to start if the Postgres version is below that.
 
 ### Highlights
  - Channel sidebar GA
@@ -28,6 +29,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Enabled experimental support for arm64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
 
 #### Administration
+ - Mattermost does not support Postgres 9.4 anymore. The minimum required version for Postgres will be 10.
  - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
  - Added a ``CollapsedThreads`` feature flag.
@@ -35,13 +37,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Removed the word "experimental" from gossip setting in the System Console.
  - The Database search using Postgresql now supports searching for terms with underscore.
  - Updated the Go version to v1.15.5.
+ - Added the ability to redirect to the mobile app after OAuth & SAML auth completion.
  - Added support for automatic installation and enablement of plugins using feature flags.
  - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
  - Added a Mattermost CLI command to initialize the database.
  - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
  - Added support for processing import files through the API.
  - Added support for protocol-relative URLs while using the Image Proxy.
- - Added shared channels and ``remote_cluster_service`` under a license check.
  - A Striped LRU cache is now used by default.
 
 ### Bug Fixes
@@ -68,9 +70,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed the `ExperimentalChannelSidebarOrganization` setting and added an `EnableLegacySidebar` setting. The new channel sidebar will be enabled system-wide by default.
     
 ### Go Version
- - 
+ - 5.32 is built with Go ``1.15.5``.
 
 ### API Changes
+ - Thread related API routes now include ``teamId`` path parameter.
  - Changed output of ``Get Threads API`` to include ``total_unread_threads`` instead of ``total_unread_replies``.
  - Added ``collapsedThreads`` and ``collapsedThreadsExtended`` query parameters to:
     - 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts'
@@ -78,6 +81,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - 'api/v4/posts/{post_id:[A-Za-z0-9]+}/thread'
 
 ### Database Changes
+ - Added a new ``Shared`` column to the ``Channels`` table.
 
 ### Websocket Event Changes
 
