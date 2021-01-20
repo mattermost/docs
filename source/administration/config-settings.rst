@@ -4244,7 +4244,7 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 Data Prefetch
 ^^^^^^^^^^^^^^
 
-*Removed in January 16, 2020 release*
+*Removed in February 16, 2020 release*
 
 **True**: Messages in all unread channels are pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
 
