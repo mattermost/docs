@@ -133,7 +133,7 @@ Multi-Factor Authentication (MFA)
 
 If MFA has stopped working, confirm that your server clock is not out of sync. On Unix systems you can view the hardware time of your system using ``# hwclock -r``. If you're using systemd you can also use ``# timedatectl``.
 
-Config.json Resets to Default Values
+config.json Resets to Default Values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``disableconfigwatch`` flag can cause the config.json to rollback. Running the binary as root, which has a different home directory, will take the default config.json and reset the value. To fix this, run the version check as the same user which is running the Mattermost service. It is suggested to use `mmctl Command Line Tool (Beta) <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_ for any CLI purposes to interact with Mattermost.
