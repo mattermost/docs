@@ -4,6 +4,87 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2021-02-16**
+
+### Compatibility
+
+### Breaking Changes
+
+### Highlights
+ - Channel sidebar GA
+ - Pre-packaged and pre-installed Mattermost Incident Management v1.2.0.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added new languages, Bulgarian and Swedish.
+ - Moved the header icons to the left of the header beside the channel description.
+ - Changed the number of file attachments allowed per post, from 5 to 10.
+ - Added support to move multi-selected groups of channels to another category via the **More options** menu.
+
+#### Plugins
+ - Enabled experimental support for arm64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
+
+#### Administration
+ - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
+ - Added a ``CollapsedThreads`` feature flag.
+ - The Help text for Rate Limiting setting was updated to explain the purpose of rate limiting.
+ - Removed the word "experimental" from gossip setting in the System Console.
+ - The Database search using Postgresql now supports searching for terms with underscore.
+ - Updated the Go version to v1.15.5.
+ - Added support for automatic installation and enablement of plugins using feature flags.
+ - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
+ - Added a Mattermost CLI command to initialize the database.
+ - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
+ - Added support for processing import files through the API.
+ - Added support for protocol-relative URLs while using the Image Proxy.
+ - Added shared channels and ``remote_cluster_service`` under a license check.
+ - A Striped LRU cache is now used by default.
+
+### Bug Fixes
+ - Fixed an issue where the Admin Filter option was not disabled in the AD/LDAP page for Admin roles with a ``sysconsole_write_authentication`` permission.
+ - Fixed an issue where channels would sometimes be removed from custom categories when a user left a team.
+ - Fixed an issue where the error text was missing when the team name was left blank on the Team Create page.
+ - Fixed an issue where the System Manager was able to download the Compliance Export files.
+ - Fixed an issue where themed button colours in interactive message attachments in Mattermost’s default dark theme were mismatched.
+ - Fixed an issue where bold and italics shortcuts triggered with ctrl+b on Mac.
+ - Fixed an issue where a "Your license does not support cloud requests” log error appeared on self-hosted servers.
+ - Fixed an issue where the permissions of a System Admin role got deleted when changing the access level to any permission.
+ - Fixed an issue where editing a ``/me`` post behaved differently within the Mattermost Web App and the Mobile App.
+ - Fixed an issue where the hover state on category headers did not span the whole width of the left-hand navigation.
+ - Fixed an issue where plugins on the left-hand side of the System Console were sorted differently than the ones in the Plugin Management page.
+ - Fixed an issue where 15-character team names were truncated when the experimental channel sidebar was enabled.
+ - Fixed an issue where the sidebar menus weren't styled correctly in mobile browser view.
+ - Fixed an issue where jumping into an archive channel and clicking the link to jump to recent messages sent the user out of the archived channel.
+ - Fixed an issue where the tooltip text for copying an incoming webhook URL was unclear.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Removed the `ExperimentalChannelSidebarOrganization` setting and added an `EnableLegacySidebar` setting. The new channel sidebar will be enabled system-wide by default.
+    
+### Go Version
+ - 
+
+### API Changes
+ - Changed output of ``Get Threads API`` to include ``total_unread_threads`` instead of ``total_unread_replies``.
+ - Added ``collapsedThreads`` and ``collapsedThreadsExtended`` query parameters to:
+    - 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts'
+    - 'api/v4/users/{user_id:[A-Za-z0-9]+}/channels/{channel_id:[A-Za-z0-9]+}/posts/unread'
+    - 'api/v4/posts/{post_id:[A-Za-z0-9]+}/thread'
+
+### Database Changes
+
+### Websocket Event Changes
+
+### Contributors 
+ 
+### Known Issues
+
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 **Release Day: 2021-01-16**
