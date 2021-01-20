@@ -30,10 +30,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Enabled experimental support for arm64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
 
 #### Administration
- - Mattermost does not support Postgres 9.4 anymore. The minimum required version for Postgres will be 10.
- - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - Mattermost does not support Postgres 9.4 anymore. The minimum required version for Postgres is 10.
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
- - Added a ``CollapsedThreads`` feature flag.
  - The Help text for Rate Limiting setting was updated to explain the purpose of rate limiting.
  - Removed the word "experimental" from gossip setting in the System Console.
  - The Database search using Postgresql now supports searching for terms with underscore.
@@ -42,7 +40,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added support for automatic installation and enablement of plugins using feature flags.
  - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
  - Added a Mattermost CLI command to initialize the database.
- - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
  - Added support for processing import files through the API.
  - Added support for protocol-relative URLs while using the Image Proxy.
  - A Striped LRU cache is now used by default.
@@ -69,6 +66,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Removed the `ExperimentalChannelSidebarOrganization` setting and added an `EnableLegacySidebar` setting. The new channel sidebar will be enabled system-wide by default.
+ - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - Added a ``CollapsedThreads`` feature flag.
+ - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
     
 ### Go Version
  - 5.32 is built with Go ``1.15.5``.
