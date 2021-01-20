@@ -9,6 +9,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2021-02-16**
 
 ### Compatibility
+ - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. In Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 ### Breaking Changes
  - The minimum required Postgres version is now 10.0. Mattermost will now fail to start if the Postgres version is below that.
