@@ -10,9 +10,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
  - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. In Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
+ - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning. From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/). Mattermost will now fail to start if the Postgres version is below that.
 
 ### Breaking Changes
- - The minimum required Postgres version is now 10.0. Mattermost will now fail to start if the Postgres version is below that.
+ - 
 
 ### Highlights
  - Channel sidebar GA
@@ -30,13 +31,11 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Enabled experimental support for arm64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
 
 #### Administration
- - Mattermost does not support Postgres 9.4 anymore. The minimum required version for Postgres is 10.
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
  - The Help text for Rate Limiting setting was updated to explain the purpose of rate limiting.
  - Removed the word "experimental" from gossip setting in the System Console.
  - The Database search using Postgresql now supports searching for terms with underscore.
  - Updated the Go version to v1.15.5.
- - Added the ability to redirect to the mobile app after OAuth & SAML auth completion.
  - Added support for automatic installation and enablement of plugins using feature flags.
  - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
  - Added a Mattermost CLI command to initialize the database.
@@ -69,7 +68,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
  - Added a ``CollapsedThreads`` feature flag.
  - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
- - Added a ``AppCustomURLSchemes`` setting under .
+ - Under ``NativeAppSettings`` in ``config.json``:
+     - Added a ``AppCustomURLSchemes`` setting to add the ability to redirect to the mobile app after OAuth & SAML auth completion.
     
 ### Go Version
  - 5.32 is built with Go ``1.15.5``.
