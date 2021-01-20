@@ -133,6 +133,11 @@ Multi-Factor Authentication (MFA)
 
 If MFA has stopped working, confirm that your server clock is not out of sync. On Unix systems you can view the hardware time of your system using ``# hwclock -r``. If you're using systemd you can also use ``# timedatectl``.
 
+Config.json Resets to Default Values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A version check can cause the config.json to rollback. Running the binary as root, which has a different home directory, will take the default config.json and reset that. The fix should be to run the version check as the same user which is running the mattermost service. It is suggested to use mmctl (which is the new way you mentioned) for any CLI purposes to interact with Mattermost.
+
 SAML issues
 -----------
 
