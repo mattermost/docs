@@ -16,6 +16,7 @@
 ### Bug Fixes
  
 #### All apps
+ - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
  - Fixed an issue where "(you)" did not appear after the current username when using `@yourself` autocomplete in a channel.
 
 #### Android specific
