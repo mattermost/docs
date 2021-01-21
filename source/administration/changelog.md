@@ -16,8 +16,15 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - 
 
 ### Highlights
- - Channel sidebar GA
- - Pre-packaged and pre-installed Mattermost Incident Management v1.2.0.
+
+#### Channel sidebar general availability
+ - The new channel sidebar is now enabled system-wide by default. Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users now gain full personalization of their sidebar to improve productivity, reduce clutter, and focus on what matters most. Features include custom, collapsible sidebar categories, unread channel management, and new channel menus.
+
+#### Self-serve renewal (E10 & E20)
+ - Adds the ability to renew self-managed E10 or E20 license subscription online with a credit card! This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales.
+
+#### Pre-packaged and pre-installed Mattermost Incident Management v1.2.0
+ - 
 
 ### Improvements
 
@@ -28,13 +35,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added support to move multi-selected groups of channels to another category via the **More options** menu.
 
 #### Plugins
- - Enabled experimental support for arm64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
+ - Enabled experimental support for ARM64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
 
 #### Administration
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
- - The Help text for Rate Limiting setting was updated to explain the purpose of rate limiting.
- - Removed the word "experimental" from gossip setting in the System Console.
- - The Database search using Postgresql now supports searching for terms with underscore.
+ - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
+ - Removed the word "experimental" from the Gossip setting in the System Console.
+ - The Database search using PostgreSQL now supports searching for terms that contain underscores.
  - Updated the Go version to v1.15.5.
  - Added support for automatic installation and enablement of plugins using feature flags.
  - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
@@ -49,7 +56,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the error text was missing when the team name was left blank on the Team Create page.
  - Fixed an issue where the System Manager was able to download the Compliance Export files.
  - Fixed an issue where themed button colours in interactive message attachments in Mattermost’s default dark theme were mismatched.
- - Fixed an issue where bold and italics shortcuts triggered with ctrl+b on Mac.
+ - Fixed an issue where bold and italics shortcuts triggered with CTRL+B on Mac.
  - Fixed an issue where a "Your license does not support cloud requests” log error appeared on self-hosted servers.
  - Fixed an issue where the permissions of a System Admin role got deleted when changing the access level to any permission.
  - Fixed an issue where editing a ``/me`` post behaved differently within the Mattermost Web App and the Mobile App.
@@ -64,8 +71,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Removed the `ExperimentalChannelSidebarOrganization` setting and added an `EnableLegacySidebar` setting. The new channel sidebar will be enabled system-wide by default.
- - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - Deprecated the ``ExperimentalChannelSidebarOrganization`` setting and added a new ``EnableLegacySidebar`` setting. The new channel sidebar will be enabled system-wide by default.
+ - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the Gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
  - Added a ``CollapsedThreads`` feature flag.
  - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
  - Under ``NativeAppSettings`` in ``config.json``:
