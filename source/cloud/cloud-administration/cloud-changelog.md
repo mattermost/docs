@@ -6,9 +6,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Highlights
 
-#### Channel Sidebar General Availability
- - The new channel sidebar is enabled system-wide by default. Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users now gain full personalization of their sidebar to improve productivity, reduce clutter and focus on what matters. Features include custom, collapsible sidebar categories, unread channel management, and new channel menus.
-
+#### Channel Sidebar Improvements
+ - The new channel sidebar improvements include configurable unreads section and sorting of categories by recent activity or alpha (or manually as available before).
+ 
 ### Improvements
 
 #### User Interface (UI)
@@ -16,16 +16,16 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Moved the header icons to the left of the header beside the channel description.
 
 #### Plugins
- - Enabled experimental support for arm64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
+ - Enabled experimental support for ARM64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
 
 #### Administration
- - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the Gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
  - Added a ``CollapsedThreads`` feature flag.
- - The Help text for Rate Limiting setting was updated to explain the purpose of rate limiting.
- - Removed the word "experimental" from gossip setting in the System Console.
- - The Database search using Postgresql now supports searching for terms with underscore.
- - Removed the `ExperimentalChannelSidebarOrganization` setting and added an `EnableLegacySidebar` setting. The new channel sidebar will be enabled system-wide by default.
+ - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
+ - Removed the word "experimental" from the Gossip setting in the System Console.
+ - The Database search using PostgreSQL now supports searching for terms that contain underscores.
+ - Deprecated the ``ExperimentalChannelSidebarOrganization`` setting and added a new ``EnableLegacySidebar`` setting. The new channel sidebar will be enabled system-wide by default.
 
 #### Bug Fixes
  - Fixed an issue where the Admin Filter option was not disabled in the AD/LDAP page for Admin roles with a ``sysconsole_write_authentication`` permission.
@@ -33,12 +33,12 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where the error text was missing when the team name was left blank on the Team Create page.
  - Fixed an issue where the System Manager was able to download the Compliance Export files.
  - Fixed an issue where themed button colours in interactive message attachments in Mattermost’s default dark theme were mismatched.
- - Fixed an issue where bold and italics shortcuts triggered with ctrl+b on Mac.
+ - Fixed an issue where bold and italics shortcuts triggered with CTRL+B on Mac.
  - Fixed an issue where a "Your license does not support cloud requests” log error appeared on self-hosted servers.
 
 #### Known Issues
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
- - System Roles shows License and Environment as possible permissions but they are always hidden in Cloud.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-01-12
 
