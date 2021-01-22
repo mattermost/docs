@@ -26,7 +26,7 @@
 #### iOS specific
  - Fixed an issue where custom URL schemes didn't work.
 
-#### Known Issues
+### Known Issues
  - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
  - The app has been reported to perform slowly on Android 11 devices.
 
