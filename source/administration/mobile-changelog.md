@@ -26,6 +26,10 @@
 #### iOS specific
  - Fixed an issue where custom URL schemes didn't work.
 
+#### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - The app has been reported to perform slowly on Android 11 devices.
+
 ## 1.38.1 Release
 - Release Date: December 18, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
