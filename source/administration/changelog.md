@@ -23,9 +23,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Self-serve renewal (E10 & E20)
  - Adds the ability to renew self-managed E10 or E20 license subscription online with a credit card! This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales.
 
-#### Pre-packaged and pre-installed Mattermost Incident Management v1.2.0
- - 
-
 ### Improvements
 
 #### User Interface (UI)
