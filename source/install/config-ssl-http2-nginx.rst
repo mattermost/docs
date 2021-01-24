@@ -14,13 +14,13 @@ You can use any certificate that you want, but these instructions show you how t
 .. note::
    If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
 
-**To configure NGINX as a proxy with SSL and HTTP/2:**
+**To configure NGINX as a proxy with SSL and HTTP/2**
 
 If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation `here <https://certbot.eff.org>`_ .
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
-2. Open the your mattermost nginx conf file as root in a text editor and update the ip address in the ``upstream backend`` to point towards mattermost, and the ``server_name`` to be your domain for Mattermost. 
+2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor and update the IP address in the ``upstream backend`` to point towards Mattermost, and the ``server_name`` to be your domain for Mattermost.
 
 .. note::
    On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file run ``sudo touch /etc/nginx/sites-available/mattermost``.
@@ -81,22 +81,19 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
    }
 
 
-
 3. Remove the existing default sites-enabled file.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
    On RHEL 7+: ``sudo rm /etc/nginx/conf.d/default``
 
-4. Enable the mattermost configuration.
+4. Enable the Mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
    On RHEL 7+: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
    
-
-5. Run ``sudo nginx -t`` to ensure your configuration is done properly. If you get an error, look into the nginx config and make the needed changes to the file under ``/etc/nginx/sites-available/mattermost``
-
+5. Run ``sudo nginx -t`` to ensure your configuration is done properly. If you get an error, look into the NGINX config and make the needed changes to the file under ``/etc/nginx/sites-available/mattermost``.
 
 6. Restart NGINX.
 
@@ -108,14 +105,13 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
   ``curl http://localhost``
 
-  If everything is working, you will see the HTML for the Mattermost signup page. You will see invalid certificate when accessing through the IP or localhost. Use the full FQDN domain to verify if the SSL certificate has pinned properly and is valid.    
-
+  If everything is working, you will see the HTML for the Mattermost signup page. You will see invalid certificate when accessing through the IP or localhost. Use the full FQDN domain to verify if the SSL certificate has pinned properly and is valid.
 
 8. Install and update Snap.
 
   ``sudo snap install core; sudo snap refresh core``
 
-9. Install the Certbot package
+9. Install the Certbot package.
 
   ``sudo snap install --classic certbot``
 
@@ -234,17 +230,13 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
    }
 
-
-
 14. Check that your SSL certificate is set up correctly.
 
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-
-
 NGINX Configuration FAQ
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why are Websocket connections returning a 403 error?**
 
@@ -273,9 +265,9 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 **How do I setup an NGINX proxy with the Mattermost Docker installation?**
 
-1. Find the name of the Mattermost network and connect it to the NGINX proxy:
+1. Find the name of the Mattermost network and connect it to the NGINX proxy.
 
-  .. code-block:: none
+.. code-block:: none
 
     docker network ls
     # Grep the name of your Mattermost network like "mymattermost_default".
@@ -283,7 +275,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 2. Restart the Mattermost Docker containers.
 
-  .. code-block:: none
+.. code-block:: none
 
     docker-compose stop app
     docker-compose start app
@@ -294,7 +286,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 3. Update your ``docker-compose.yml`` file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
 
-  .. code-block:: none
+.. code-block:: none
 
     environment:
       # set same as db credentials and dbname
@@ -312,15 +304,14 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 
 1. Log in to your GitLab instance as the admin.
 2. Go to **Admin > Applications**.
-3. Click **Edit** on GitLab-Mattermost.
+3. Select **Edit** on GitLab-Mattermost.
 4. Update the Callback URLs to your new domain/URL.
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
 
-
 **Why does Certbot fail the http-01 challenge?**
 
-   .. code-block:: none
+.. code-block:: none
 
       Requesting a certificate for yourdomain.com
       Performing the following challenges:
@@ -333,14 +324,14 @@ You may need to update the Callback URLs for the Application entry of Mattermost
    
 If you see the above errors this is typically because certbot was not able to access port 80. This can be due to a firewall or other DNS configuration. Ensure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config does not have a redirect.
 
-.. note:: 
+.. note::
    If you're using Cloudflare you'll need to disable ``force traffic to https``.
 
 **Certbot Rate Limiting**
 
-If running certbot stand alone you will see the below error:
+If running certbot as stand-alone you'll see the below error:
 
-   .. code-block:: none
+.. code-block:: none
 
       Error: Could not issue a Let's Encrypt SSL/TLS certificate for example.com.
       One of the Let's Encrypt rate limits has been exceeded for example.com.
@@ -352,10 +343,10 @@ If running certbot stand alone you will see the below error:
       Status: 429
       Detail: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/
 
-If running Let's Encrypt within Mattermost you will see the below error:
+If running Let's Encrypt within Mattermost you'll see the below error:
 
-   .. code-block:: none
+.. code-block:: none
 
       {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
 
-This error means that you've attempted to generate a cert too many times. You can fund more information here - https://letsencrypt.org/docs/rate-limits/.
+This error means that you've attempted to generate a cert too many times. You can find more information here - https://letsencrypt.org/docs/rate-limits/.
