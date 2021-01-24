@@ -71,12 +71,32 @@ You may incur retroactive charges for any unique users added that exceed the lic
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ability to renew your license in the Customer Portal will be available in a future release.
+You can renew your Mattermost license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
-To renew your license in the meantime, contact your Customer Success Manager to start the renewal process. Alternatively, `contact us <https://mattermost.com/contact-us/>`_ for assistance.
+If you are a reseller, have a non-standard contract, or want to adjust the number of active users on your license please contact sales@mattermost.com.
+
+System Admins will be alerted 60 days prior to the license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
+
+The renewal page in the Customer Portal lists your license information and contact details which is pre-populated based on your existing license subscription. 
+
+**To process your license renewal:**
+
+1. Enter your contact and billing information.
+2. Confirm the Mattermost Enterprise Edition version.
+3. Confirm the listed number of active users is correct.
+4. Select **Complete purchase**. 
+
+An email with the new license key and information on how to upload the license in the System Console will be sent to the primary email address.
+
+As a final step you can optionally, you can create a Customer Portal account to manage your license subscriptions. This account is linked to your license and not your usrname or user ID, and can be accessed by other Mattermost System Admins.
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How do I renew my license if I don't have internet access?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you don't have access to the internet, we'll assist you via email.
 
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,12 +134,7 @@ How will I know when to renew my license?
 
 You will be notified 60 days prior to your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
 
-You can select **Please renew** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser refreshes.
-
-How do I renew my license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can renew your license in Mattermost via the blue renewal reminder banner. Select **Please Renew** to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided.
+You can select **Renew license now** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser refreshes.
 
 How long does it take to renew a license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
