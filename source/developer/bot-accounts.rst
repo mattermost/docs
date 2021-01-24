@@ -155,7 +155,7 @@ Add the bot to a team and channel you belong to, then use the following curl com
 
   curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<channel-id>", "message":"This is a message from a bot", "props":{"attachments": [{"pretext": "Look some text","text": "This is text"}]}}' -H 'Authorization: Bearer <bot-access-token>' <mattermost-url>/api/v4/posts
 
-Replacing the following parameters:
+Replace the following parameters:
 
 - ``<channel-id>`` with the channel you added the bot to
 - ``<bot-access-token>`` with the bot access token generated when you created the bot account
