@@ -7,7 +7,7 @@ Slash Commands
 
   This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/>`__.
 
-Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to :doc:`outgoing webhooks <../developer/webhooks-outgoing/>`, except they can be used in any channel - including Private channels and direct messages.
+Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to :doc:`outgoing webhooks <../developer/webhooks-outgoing/>`, except they can be used in any channel - including Private channels and Direct Messages.
 
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/developer/slash-commands.html#built-in-commands>`__ and `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`__.
 
@@ -167,7 +167,7 @@ Share Your Integration
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
 
-The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------
