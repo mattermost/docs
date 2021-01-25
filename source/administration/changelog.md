@@ -25,7 +25,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Added the ability to mute categories with the experimental channel sidebar feature.
  - Added support for multi-selection of channels when dragging and dropping between channels in the experimental sidebar feature.
  - Group messages are now returned in the channel switcher when only first names are typed.
- - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user's status between “Do Not Disturb” and “Online”, and will only set the user’s status to “Do Not Disturb”.
+ - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user's status between "Do Not Disturb" and "Online", and will only set the user’s status to "Do Not Disturb".
 
 #### Administration
  - Added a new ``manage_remote_clusters`` permission.
@@ -36,7 +36,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
  - Fixed an issue where the site configuration "Read only" permission did not make the "Notice" section read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
- - Fixed an issue where LDAP "FirstLoginSync" didn't close the LDAP session.
+ - Fixed an issue where LDAP ``FirstLoginSync`` didn't close the LDAP session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
  - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
  - Fixed an issue where desktop notifications got sent for every message posted in a Direct Message channel.
@@ -68,7 +68,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
  - Slow typing has been experienced when the channel sidebar has many channels. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
  - The new experimental sidebar occasionally loses custom categories. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
- - Slack theme import fails due to changes in formatting of Slack export colour schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
+ - Slack theme import fails due to changes in formatting of Slack export color schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side. [MM-30446](https://mattermost.atlassian.net/browse/MM-30446)
  - The **Admin Filter** option is not disabled on the AD/LDAP page for Admin roles with the ``sysconsole_write_authentication`` permission. [MM-29089](https://mattermost.atlassian.net/browse/MM-29089)
  - Google login fails on the Classic mobile apps.
@@ -317,12 +317,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### User Interface (UI)
  - Improved the readability of the toast banner message timestamp, post timestamp, and date separators.
  - Added animation for emoji reactions on webapp.
- - Added the ability to use ``Ctrl + B`` and ``Ctrl + I`` to add bold and italics markdown formatting to selected text.
+ - Added the ability to use CTRL+B and CTRL+I to add bold and italics markdown formatting to selected text.
  - Clicking on original message creator's username in discontinuing posts now opens the user's profile popover.
  - Added support for PSD file preview.
- - When the ``Enable Latex Rendering`` option is set to ``true``, the current code now doesn't highlight.
- - Updated the UX of the ``More unreads`` indicator in the channel sidebar.
- - ``Select Team`` list container now scales in width based on browser window width.
+ - When the **Enable Latex Rendering** option is set to ``true``, the current code now doesn't highlight.
+ - Updated the UX of the **More unreads** indicator in the channel sidebar.
+ - **Select Team** list container now scales in width based on browser window width.
  - Added support for signaling login to other tabs (Windows, macOS and Linux browsers).
 
 #### Search
