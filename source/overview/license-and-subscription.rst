@@ -94,7 +94,7 @@ Frequently Asked Questions
 How do I renew my license if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't have access to the internet, we'll assist you via email.
+If you don't have access to the internet, please email support@mattermost.com for assistance.
 
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
