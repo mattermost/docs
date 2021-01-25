@@ -41,6 +41,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Unlocking the Desktop App on Mac marks the currently viewed channel as read. `MM-31429 <https://mattermost.atlassian.net/browse/MM-31429>`_
 - On Ubuntu, auto-focus is lost when using alt+tab to switch between windows. `MM-29705 <https://mattermost.atlassian.net/browse/MM-29705>`_
 - Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.

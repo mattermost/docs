@@ -58,21 +58,22 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
- - The config.json may reset itself to default values if the binary is run with the root user.
+ - The ``config.json`` may reset itself to default values if the binary is run with the root user. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
- - Reddit link previews no longer work in Mattermost.
- - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
- - Error text is missing when the team name is left blank on the team creation page.
- - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page.
- - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
- - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
- - The **Admin Filter** option is not disabled on the AD/LDAP page for admin roles with the ``sysconsole_write_authentication`` permission.
- - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console. To fix this, the System Admin should restart the server.
- - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - ``PermanentDeleteChannel`` fails with "failed to get a thread". [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
+ - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
+ - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes. [MM-29927](https://mattermost.atlassian.net/browse/MM-29927)
+ - Error text is missing when the team name is left blank on the team creation page. [MM-31361](https://mattermost.atlassian.net/browse/MM-31361)
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
+ - Slow typing has been experienced when the channel sidebar has many channels. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+ - The new experimental sidebar occasionally loses custom categories. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
+ - Slack theme import fails due to changes in formatting of Slack export colour schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
+ - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side. [MM-30446](https://mattermost.atlassian.net/browse/MM-30446)
+ - The **Admin Filter** option is not disabled on the AD/LDAP page for Admin roles with the ``sysconsole_write_authentication`` permission. [MM-29089](https://mattermost.atlassian.net/browse/MM-29089)
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
- - Searching with Elasticsearch enabled may not always highlight the searched terms.
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
@@ -168,7 +169,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new API endpoints to work with experimental collapsed threads.
  
 ### Known Issues
- - The config.json may reset itself to default values if the binary is run with the root user.
+ - The ``config.json`` may reset itself to default values if the binary is run with the root user.
  - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
  - Line numbers do not line up with the text on code file previews.
