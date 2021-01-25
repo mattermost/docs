@@ -58,7 +58,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
- - The config.json may reset itself to default values if the binary is run with the root user. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
+ - The ``config.json`` may reset itself to default values if the binary is run with the root user. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
  - ``PermanentDeleteChannel`` fails with "failed to get a thread". [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
  - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
@@ -169,7 +169,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new API endpoints to work with experimental collapsed threads.
  
 ### Known Issues
- - The config.json may reset itself to default values if the binary is run with the root user.
+ - The ``config.json`` may reset itself to default values if the binary is run with the root user.
  - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
  - Line numbers do not line up with the text on code file previews.
