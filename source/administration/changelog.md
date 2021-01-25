@@ -1753,7 +1753,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``GuestAccountsSettings``:
     - Added ``Enable``, ``AllowEmailAccounts``, ``EnforceMultifactorAuthentication``, and	``RestrictCreationToDomains``, to enable Guest Accounts feature.
  - Changed ``SqlSettings.DataSource``, ``ElasticsearchSettings.ConnectionUrl``, and ``EmailSettings.SMTPServer`` to default to using localhost (instead of dockerhost).
- - Changed ``NativeAppSettings.AppDownloadLink`` to default to ``https://mattermost.com/download/#mattermostApps`` (instead of ``https://about.mattermost.com/downloads/``).
+ - Changed ``NativeAppSettings.AppDownloadLink`` to default to ``https://mattermost.com/download/#mattermostApps`` (instead of ``https://mattermost.com/download/``).
  
 ### Open Source Components
  - Added ``react-native-android-open-settings`` in https://github.com/mattermost/mattermost-mobile.
