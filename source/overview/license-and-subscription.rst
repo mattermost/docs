@@ -88,8 +88,6 @@ The renewal page in the Customer Portal lists your license information and conta
 
 An email with the new license key and information on how to upload the license in the System Console will be sent to the primary email address.
 
-As a final step you can optionally, you can create a Customer Portal account to manage your license subscriptions. This account is linked to your license and not your usrname or user ID, and can be accessed by other Mattermost System Admins.
-
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
