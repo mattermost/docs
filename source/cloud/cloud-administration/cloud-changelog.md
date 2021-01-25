@@ -7,7 +7,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Highlights
 
 #### Channel Sidebar Improvements
- - The new channel sidebar improvements include configurable unreads section and sorting of categories by recent activity or alpha (or manually as available before).
+ - New channel sidebar improvements include a configurable **Unreads** category as well as the ability to sort categories by recent activity or alphabetically in addition to manually.
  
 ### Improvements
 
