@@ -28,8 +28,8 @@ If this is your first time contributing to Mattermost, first read the [Mattermos
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
 If this is the first time you're contributing, follow these steps: 
-1. Select **Fork** in the top-right corner of the GitHub page to fork the repo.
-2. Navigate to file you want to edit and select the pencil icon (**Edit the file**) to open the editing interface.
+1. Select **Fork** in the top-right corner of the GitHub page to fork the repository.
+2. Navigate to file you want to edit and select the Pencil icon (**Edit the file**) to open the editing interface.
 
 ### Creating Pull Requests
 
@@ -57,15 +57,15 @@ Any merged PRs with an **Editor Review** or **Reviews Complete** label will be p
 
 ## Building and Validating
 
-If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests.
+If you've downloaded the repository and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review your changes before you commit them or create pull requests.
 
-**Note:** Commands can be executed on Linux, Mac, and Windows (using Powershell)
+**Note:** Commands can be executed on Linux, Mac, and Windows (using Powershell).
 
-1. Open a terminal window and clone the forked copy of the docs repo by running:
+1. Open a terminal window, and clone the forked copy of the documentation repository by running the following command::
 ```sh
 git clone https://github.com/mattermost/docs.git
 ```
-2. Install [pipenv](https://docs.pipenv.org/) by using:     
+2. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands:
 
 -> for Mac users, if you have Homebrew installed
 ```sh
@@ -75,16 +75,16 @@ brew install pipenv
 ```python
 pip install pipenv 
 ```
-3. Open your terminal and navigate into the cloned repository:
+3. Open your terminal, and navigate into the cloned repository:
 ```sh
 cd docs
 ```
-4. Install the required packages by running
+4. Install the required packages by running the following command:
 ```python
 pipenv install
 ```
 5. Build the doc set using `make html`. This generates files in `/build` directory.
-6. Navigate to the `/build` directory to preview the page/s you've edited, by runnning 
+6. Navigate to the `/build` directory to preview your changes by running the following command:
 ```sh
 cd /build
 ```
