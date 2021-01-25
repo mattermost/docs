@@ -7,7 +7,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.1, release day TBD**
-  - Fixed an issue where the npm packaging did not allow overwriting a version. There was a problem with the mattermost-redux version that was published for v5.31.1 and downstream projects were affected by this.
+  - Fixed an issue where mattermost-redux was not including the built code for v5.31.0 and downstream projects were affected by this.
   - Fixed an issue where the About Mattermost modal didn't display the correct Database Schema version.
 - **v5.31.0, released 2021-01-16**
   - Original 5.30.0 release
