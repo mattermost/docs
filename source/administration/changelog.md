@@ -6,7 +6,11 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-**Release Day: 2021-01-16**
+- **v5.31.1, release day TBD**
+  - Fixed an issue where the npm packaging did not allow overwriting a version. There was a problem with the mattermost-redux version that was published for v5.31.1 and downstream projects were affected by this.
+  - Fixed an issue where the About Mattermost modal didn't display the correct Database Schema version.
+- **v5.31.0, released 2021-01-16**
+  - Original 5.30.0 release
 
 Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -59,7 +63,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ### Known Issues
  - The config.json may reset itself to default values if the binary is run with the root user.
- - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
  - Reddit link previews no longer work in Mattermost.
  - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes.
  - Error text is missing when the team name is left blank on the team creation page.
