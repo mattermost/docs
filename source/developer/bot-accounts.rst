@@ -64,7 +64,7 @@ User Interface (UI)
 RESTful API
 ^^^^^^^^^^^
 
-Use the RESTful API ``POST /bots`` to create a bot. Must have permissions to create bots.
+Use the RESTful API ``POST /bots`` to create a bot. You must have permissions to create bots.
 
 See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to learn more about creating and managing bots through the API.
 
