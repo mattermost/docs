@@ -61,21 +61,21 @@ If you've downloaded the repository and are editing Mattermost documentation on 
 
 **Note:** Commands can be executed on Linux, Mac, and Windows (using Powershell).
 
-1. Open a terminal window, and clone the forked copy of the documentation repository by running the following command::
+1. Open a terminal window, then clone a forked copy of the documentation repository by running the following command::
 ```sh
 git clone https://github.com/mattermost/docs.git
 ```
-2. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands:
+2. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
 
--> for Mac users, if you have Homebrew installed
+For Mac users where Homebrew is installed:
 ```sh
 brew install pipenv  
 ```
--> for other operating systems
+For other operating systems
 ```python
 pip install pipenv 
 ```
-3. Open your terminal, and navigate into the cloned repository:
+3. In the terminal window, navigate into the cloned repository:
 ```sh
 cd docs
 ```
@@ -83,7 +83,7 @@ cd docs
 ```python
 pipenv install
 ```
-5. Build the doc set using `make html`. This generates files in `/build` directory.
+5. Build the documentation set using `make html`. This generates files in `/build` directory.
 6. Navigate to the `/build` directory to preview your changes by running the following command:
 ```sh
 cd /build
