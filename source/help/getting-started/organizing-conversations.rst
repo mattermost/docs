@@ -160,29 +160,3 @@ Once a channel is muted:
 - The channel is greyed out in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
 
 To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
-
---------------------------------------------
-Experimental: Channel Organization Features
---------------------------------------------
-
-Join us in testing an experimental feature set offering additional functionality for managing channels in your sidebar. The features can be enabled using an opt-in config setting configured by a System Admin: `ExperimentalChannelSidebar <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features-experimental>`_.
-
-When configured by the System Admin, users can enable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include:
-
-**Collapsible custom categories:** Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
-
-**Mute and unmute custom categories**: Mute and unmute all channels in a custom category, and selectively mute or unmute select channels within categories.
-
-**Select multiple channels at a time**: Using the Mattermost Web or Desktop App, select sequential channels by pressing and holding SHIFT. To select non-sequential channels press and hold CMD (for Mac) or CTRL (for Windows/Linux). To clear channel selections, press ESC.
-
-**Drag and drop channels and categories:** Drag selected channels between or within categories, or drag to reorder entire categories to prioritize important conversations. Multi-selected channels move together as a group in the order they originally appeared. You can also specify a destination for selected channels using the **Move to** option under the **More options** icon. The **Move to** option is available today for Cloud deployments and will be available for self-hosted deployments in Mattermost Server v5.32 and later.
-
-**Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
-
-**Unread filter**: Catch up on all your unread channels with a one-click unreads filter. When enabled, you'll see only unread channels in the sidebar.
-
-**History arrows**: Navigate recently viewed channels more easily with arrows to move back and forth through channel history. Available in the Desktop app only.
-
-`Learn more about upcoming additions to this feature set and give us feedback here <https://about.mattermost.com/default-sidebar/>`_.
-
- .. image:: ../../images/sidebar-phase-2.gif
