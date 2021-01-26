@@ -4181,7 +4181,7 @@ Enable Legacy Sidebar
 
 *Not available in Mattermost Cloud. Available in Mattermost Server v5.32 and later.*
 
-This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend that you leave this configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar and a number of new features that make channel management easier.
+This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend that you leave this configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar and includes a number of new features that make channel management easier.
 
 **Disabled by default**. When disabled, the new sidebar functionality is enabled including custom collapsible channel categories, multi-channel select, drag, drop, and move channel organization, channel and category sorting, and more.
 
