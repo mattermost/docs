@@ -3857,8 +3857,10 @@ Allow Authentication Transfer (Experimental)
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``.                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Autoclose Direct Messages in Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Autoclose Direct Messages in Sidebar
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
 **True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings > Sidebar**.
 
@@ -4107,8 +4109,10 @@ This setting defines how frequently "user is typing..." messages are updated, me
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input.                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable X to Leave Channels from Left-Hand Sidebar 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
 **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
 
@@ -4191,12 +4195,18 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 | This feature's ``config.json`` setting is ``"EnableLegacySidebar": disabled`` with options ``enabled``, and ``disabled``.                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Sidebar Organization (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sidebar Organization
+^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
-**False**: Hides the channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**.
+.. note::
+
+  We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar, and includes a number of new features that make channel management easier.
+
+**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
+
+**False**: Hides the channel sidebar organization options in **Account Settings**.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``.                                         |
@@ -4215,10 +4225,12 @@ Select the timezone used for timestamps in the user interface and email notifica
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
-Town Square is Hidden in Left-Hand Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Town Square is Hidden in Left-Hand Sidebar
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Available in Enterprise Edition E10 and higher*
+
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
 **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
 
@@ -4911,19 +4923,23 @@ This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLo
 Service Settings
 ~~~~~~~~~~~~~~~~
 
-Group Unread Channels (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Group Unread Channels
+^^^^^^^^^^^^^^^^^^^^^
 
-*Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
+This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
-**Disabled**: Unread channels section is disabled for all users.
+.. note::
 
-**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings > Sidebar**.
+  In cases where users have previously enabled this functionality in **Account Settings**, changing this configuration setting won't change the user experience. The user's preference for this functionality is saved over the server-side setting.
 
-**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings > Sidebar**.
+**Off**: Unread channels section is disabled for all users.
+
+**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings > Sidebar**. 
+
+**Default Off**: Unread channels section is disabled for all users.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``"disabled"``, ``"default_on"``, and ``"default_off"``.                          |
+| This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``"off"``, ``"default_on"``, and ``"default_off"``.                          |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Strict CSRF Token Enforcement (Experimental)
