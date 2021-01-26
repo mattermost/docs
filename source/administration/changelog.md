@@ -8,9 +8,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 - **v5.31.1, release day TBD**
   - Fixed an issue where mattermost-redux was not including the built code for v5.31.0 and downstream projects were affected by this.
-  - Fixed an issue where the About Mattermost modal didn't display the correct Database Schema version.
+  - Fixed an issue where the **About Mattermost** modal didn't display the correct Database Schema version.
 - **v5.31.0, released 2021-01-16**
-  - Original 5.30.0 release
+  - Original 5.31.0 release
 
 Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
