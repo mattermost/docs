@@ -4159,17 +4159,36 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Experimental Sidebar Features (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Experimental Sidebar Features
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Not available in Mattermost Cloud. Not available in Mattermost Server v5.32 and later.*
+
+This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
-**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering.
 
-**Enabled (Default Off)**: Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default Off)**: Users must enable the experimental sidebar features in **Account Settings**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Legacy Sidebar
+^^^^^^^^^^^^^^^^^^^^^
+
+*Not available in Mattermost Cloud. Available in Mattermost Server v5.32 and later.*
+
+This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend that you leave this configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar and a number of new features that make channel management easier.
+
+**Disabled by default**. When disabled, the new sidebar functionality is enabled including custom collapsible channel categories, multi-channel select, drag, drop, and move channel organization, channel and category sorting, and more.
+
+**Enabled**: When enabled, the legacy sidebar features are enabled for all users on this server. However, Mattermost users can’t disable legacy sidebar functionality in **Account Settings**.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLegacySidebar": off`` with options ``off``, ``default_on`` and ``default_off``.                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization (Experimental)
