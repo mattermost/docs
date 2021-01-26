@@ -4173,7 +4173,7 @@ This configuration setting has been deprecated in favor of `Enable Legacy Sideba
 **Enabled (Default Off)**: Users must enable the experimental sidebar features in **Account Settings**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
+| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": disabled`` with options ``enabled`` and ``disabled``.                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Legacy Sidebar
