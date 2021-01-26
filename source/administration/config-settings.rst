@@ -4188,7 +4188,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 **Enabled**: When enabled, the legacy sidebar features are enabled for all users on this server. However, Mattermost users can’t disable legacy sidebar functionality in **Account Settings**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLegacySidebar": off`` with options ``off``, ``default_on`` and ``default_off``.                                                            |
+| This feature's ``config.json`` setting is ``"EnableLegacySidebar": disabled`` with options ``enabled``, and ``disabled``.                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization (Experimental)
