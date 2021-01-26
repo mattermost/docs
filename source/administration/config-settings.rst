@@ -4183,7 +4183,7 @@ Enable Legacy Sidebar
 
 This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend that you leave this configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar and includes a number of new features that make channel management easier.
 
-**Disabled by default**. When disabled, the new sidebar functionality is enabled including custom collapsible channel categories, multi-channel select, drag, drop, and move channel organization, channel and category sorting, and more.
+**Disabled**: The new sidebar functionality is enabled including custom collapsible channel categories, multi-channel select, drag, drop, and move channel organization, channel and category sorting, and more. This is the default setting.
 
 **Enabled**: When enabled, the legacy sidebar features are enabled for all users on this server. However, Mattermost users can’t disable legacy sidebar functionality in **Account Settings**.
 
