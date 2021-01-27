@@ -141,9 +141,3 @@ Then, enable batched email notifications by setting **System Console > Notificat
 Mattermost Enterprise Edition E20 customers can enable `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ for optimized search performance at enterprise-scale. Elasticsearch solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
 
 Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to ``true``. See the `Elasticsearch <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__ configuration settings documentation for details. Enabling Elasticsearch requires `setting up an Elasticsearch server <https://docs.mattermost.com/deployment/elasticsearch.html#setting-up-an-elasticsearch-server>`__.
-
-**10. Try Experimental Features**
-
-Mattermost often releases experimental features to get user feedback on new functionality and product enhancements. For example, new `experimental sidebar features <https://mattermost.com/blog/dev-sneak-peek-experimental-sidebar-features>`__ include custom, collapsible channel categories, unread filtering, and many more enhancements for managing channels in your sidebar.  
-
-Enable experimental sidebar features by enabling **System Console > Experimental > Experimental Sidebar Features**. See the `Experimental sidebar features (Experimental) <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features-experimental>`__ configuration settings documentation for details.
