@@ -34,7 +34,7 @@ Docker Setup on Ubuntu
 
 3. **Deploy the Mattermost Docker** 
 
-Find out the :code:`uid` (user ID) and :code:`gid` (group ID) of the user to run the docker, by running:
+You can get the :code:`uid` (user ID) and :code:`gid` (group ID) of the Docker user by running:
 
    .. code:: bash
    
@@ -42,7 +42,7 @@ Find out the :code:`uid` (user ID) and :code:`gid` (group ID) of the user to run
 
 Replace :code:`<username>` with the actual username. The following setup assumes the result above is :code:`uid=1000` and :code:`gid=1000`.
 
-Setup by running:
+Set up using:
 
    .. code:: bash
    
