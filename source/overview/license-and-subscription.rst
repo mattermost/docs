@@ -81,7 +81,7 @@ Once you click **Renew license now**, you are taken to the renewal page in the C
 
 **To process your license renewal:**
 
-1. Enter your contact and billing information.
+1. Enter your **Account Details**, **Additional Contact**, and **Payment Details**.
 2. Confirm the `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>_`.
 3. Confirm the listed number of active users is correct.
 4. Select **Complete purchase**. 
