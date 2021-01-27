@@ -1,7 +1,7 @@
 Organizing Your Sidebar
 =======================
 
-You can organize your sidebar based on how you use Mattermost. Customizations you make you to your sidebar only changes your sidebar. 
+You can organize your sidebar based on how you use Mattermost. Customizations you make to your sidebar only changes your Mattermost sidebar.
 
 Here's how your sidebar is set up by default:
 
@@ -50,7 +50,7 @@ Making categories work for you
 
 - Click and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
 
-    .. image:: ../../images/sidebar_ga.png
+    .. image:: ../../images/sidebar_ga.gif
 
 Renaming categories
 ^^^^^^^^^^^^^^^^^^^
@@ -82,19 +82,19 @@ Using the Mattermost Web or Desktop App:
 
 Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.
 
-Drag and drop selections
-^^^^^^^^^^^^^^^^^^^^^^^^
+Dragging and dropping selections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Messages between or within categories. 
 
-    .. image:: ../../images/multi-select-drag.png
+    .. image:: ../../images/multi-select-drag.gif
 
-Move selections
-^^^^^^^^^^^^^^^
+Moving selections
+^^^^^^^^^^^^^^^^^
 
 In addition to selecting and dragging, you can also specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
 
-    .. image:: ../../images/multi-select-move.png
+    .. image:: ../../images/multi-select-move.gif
 
 Muting and unmuting categories
 ------------------------------
@@ -112,7 +112,7 @@ Once a category is muted:
 
 To unmute the category, select the **Category options** icon in the sidebar, then select **Unmute Category**.
 
-    .. image:: ../../images/mute-categories.png
+    .. image:: ../../images/mute-categories.gif
 
 Sorting category channels
 -------------------------
@@ -121,7 +121,7 @@ Using the Mattermost Web or Desktop App, you can control how channels are sorted
 
 Select the **Category options** icon in the sidebar, then select **Sort** and choose from **Alphabetically**, **Recent Activity**, or **Manually**.
 
-    .. image:: ../../images/sort-categories.png
+    .. image:: ../../images/sort-categories.gif
 
 Grouping unread messages
 ------------------------
@@ -139,7 +139,7 @@ When enabled, the **Unreads** category is organized as follows:
 - Unread messages that do not contain mentions are sorted by most recent and appear directly below unread messages containing mentions.
 - Muted channels that contain mentions are sorted by most recent and appear directly below unread messages without mentions.
 
-    .. image:: ../../images/unreads.png
+    .. image:: ../../images/unreads.gif
 
 .. tip::
   If you prefer to see a decicated unread-only view in your sidebar, collapse all custom categories to show only unread messages, then disable **Grouping unread messages** under **Account Settings > Sidebar**.
@@ -151,7 +151,7 @@ Sort your Direct Messages alphabetically or by recent conversations first.
 
 Select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
-    .. image:: ../../images/dm-sorts.png
+    .. image:: ../../images/dm-sorts.gif
 
 How many Direct Messages to display?
 ------------------------------------
@@ -172,4 +172,4 @@ Once you exceed the number of Direct Messages configured, older messages are hid
 
 Mobile support for this feature is coming in a future release.
 
-    .. image:: ../../images/dm-display.png
+    .. image:: ../../images/dm-display.gif
