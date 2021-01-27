@@ -18,10 +18,11 @@
 #### All apps
  - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
  - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
+ - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
  - Fixed an issue where "(you)" did not appear after the current username when using `@yourself` autocomplete in a channel.
 
 #### Android specific
- - 
+ - Fixed an issue where frequent logouts from the app were experienced on the latest Android OS.
 
 #### iOS specific
  - Fixed an issue where users were unable to scroll horizontally to view multiple file attachments.
