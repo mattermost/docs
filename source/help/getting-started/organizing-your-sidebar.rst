@@ -1,16 +1,20 @@
 Organizing Your Sidebar
 =======================
 
-You can manage and customize channels in your sidebar to better support how you use Mattermost. Any customizations you make you to your sidebar affects only your Mattermost instance. 
+You can organize your sidebar based on how you use Mattermost. Any customizations you make you to your sidebar affects only your Mattermost instance. 
 
-Your new sidebar is set up as follows by default:
-- All of the channels you've joined display in a **Channels** category, and all channels are sorted in alphabetical order.
-- All Direct Messages display in a **Direct Messages** category below channels, and all Direct Messages are sorted by recent activity.
+Here's how your sidebar is set up by default:
 
-What's customizable in your sidebar?
-------------------------------------
+- All of the channels you've joined display in a **Channels** category. 
+- All channels are sorted in alphabetical order.
+- All Direct Messages display in a **Direct Messages** category below channels.
+- All Direct Messages are sorted by recent activity.
 
-You can choose to customize your sidebar in the following ways:
+What can you customize?
+-----------------------
+
+You can customize your sidebar in the following ways:
+
 - Group and order channels into categories customized just for you.
 - Mute and unmute entire categories or mute and unmute selected channels or Direct Messages.
 - Sort category channels manually, alphabetically, or by recent activity.
@@ -18,45 +22,49 @@ You can choose to customize your sidebar in the following ways:
 - Control how many Direct Message conversations to display.
 - Control how Direct Messages are sorted.
 
-[TOC]
-
 Creating custom categories
 --------------------------
 
 Creating your own custom categories enables you to group channels together for easier navigation (e.g. “Design” or “Marketing”).
 
-1. Select the **+** symbol to the right of the **History** arrows, or select the **Channel options** icon [image], then select **Create New Category**.
-2. Type a category name, then select **Create**.
-3. Drag any channels into this new category. You can also multi-select channels to drag them together as a group.
+Categories can be created in two ways:
 
-**Your custom categories are collapsible.**
+- Select the **+** symbol to the right of the **History** arrows at the top of the sidebar.
+- Select the **Channel options** icon in the sidebar, then select **Create New Category**.
+
+Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group.
+
+**Custom categories are collapsible.**
+
 - When collapsed, only unread channels display to reduce unnecessary scrolling.
 - When expanded, all channels in the category display, including channels with unread messages.
 
-**Your can organize your custom categories.**
+**You can organize your custom categories.**
+
 - Drag to reorder entire categories to prioritize important conversations. 
 
 **Your custom categories can contain Direct Message conversations.**
+
 - Click and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
 
-[animated gif]
+    .. image:: ../../images/sidebar_ga.png
 
 Renaming categories
 ~~~~~~~~~~~~~~~~~~~
 
-1. Select the **Category options** icon [image], then select **Rename Category**.
+1. Select the **Category options** icon in the sidebar, then select **Rename Category**.
 2. Type a new category name, then select **Rename**.
 
 Deleting categories
 ~~~~~~~~~~~~~~~~~~~
 
-1. Select the **Category options** icon [image], then select **Delete Category**.
+1. Select the **Category options** icon in the sidebar, then select **Delete Category**.
 2. Select **Delete** to confirm or select **X** to cancel.
 
 All channels and Direct Message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined. 
 
-Organizing Channels into Categories
-------------------------------------
+Organizing Channels in Categories
+---------------------------------
 
 Once you have categories, you can move channels into your categories to organize your sidebar.
 
@@ -67,32 +75,28 @@ Using the Mattermost Web or Desktop App:
 
 - Select sequential channels and/or Direct Messages by pressing and holding SHIFT. 
 - Select non-sequential channels and/or Direct Messages by pressing and holding CMD (for Mac) or CTRL (for Windows/Linux). 
-- To clear channel or Direct Message selections, press ESC.
+- Press ESC to clear channel or Direct Message selections.
 
-[animated gif]
+Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.
 
-Dragging and dropping channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Drag and drop selections**
 
-Using the Mattermost Web or Desktop App:
+Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Messages between or within categories. 
 
-Drag selected channels and/or Direct Messages between or within categories. Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.
+    .. image:: ../../images/multi-select-drag.png
 
-[animated gif]
+**Move selections**
 
-Moving channels
-~~~~~~~~~~~~~~~
+In addition to selecting and dragging, you can also specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
 
-In addition to selecting and dragging, you can also specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon.  
-
-[animated gif]
+    .. image:: ../../images/multi-select-move.png
 
 Muting and unmuting categories
 ------------------------------
 
 When you mute or unmute a category, all channels within that category are also muted or unmuted. 
 
-Select the **Channel options** icon [image], then select **Mute Category**.
+Select the **Category options** icon in the sidebar, then select **Mute Category**.
 
 Once a category is muted:
 
@@ -101,18 +105,18 @@ Once a category is muted:
 - The category and all of its channels are greyed out in the left-hand sidebar. Channels in the category aren't marked as unread unless you’re mentioned directly.
 - You can selectively unmute specific channels within the category.
 
-To unmute the category, select the **Channel options** icon [image], then select **Unmute Category**.
+To unmute the category, select the **Category options** icon in the sidebar, then select **Unmute Category**.
 
-[animated gif]
+    .. image:: ../../images/mute-categories.png
 
 Sorting category channels
 -------------------------
 
 Using the Mattermost Web or Desktop App, you can control how channels are sorted for each category. Sort category channels manually (by dragging and dropping), alphabetically, or by recent conversations first.
 
-Select the **Category options** icon [image], then select **Sort** and choose from **Alphabetically**, **Recent Activity**, or **Manually**.
+Select the **Category options** icon in the sidebar, then select **Sort** and choose from **Alphabetically**, **Recent Activity**, or **Manually**.
 
-[animated gif]
+    .. image:: ../../images/sort-categories.png
 
 Grouping unread messages
 ------------------------
@@ -120,16 +124,18 @@ Grouping unread messages
 Catch up on all your unread channels in one place at the top of your sidebar with a one-click **Unreads** category.
 
 Go to **Main Menu > Account Settings > Sidebar**, set **Group unread channels separately** to **On**, then select **Save**.
+
 - When this setting is enabled, all unread messages appear only in the **Unreads** category.
 - When this setting is disabled, all unread messages appear within their respective categories and channels.
 
 When enabled, the **Unreads** category is organized as follows:
+
 - Unread messages that contain mentions are sorted to the top by most recent activity.
 - Unread messages that do not contain mentions are sorted by most recent and appear directly below unread messages containing mentions.
 - Muted channels that contain mentions are sorted by most recent and appear directly below unread messages without mentions.
 Screenshot
 
-[animated gif]
+    .. image:: ../../images/unreads.png
 
 .. tip::
   If you prefer to see a decicated unread-only view in your new sidebar, collapse all custom categories to show only unread messages, then disable **Grouping unread messages** under **Account Settings > Sidebar**.
@@ -139,9 +145,9 @@ Sorting your Direct Messages
 
 Sort your Direct Messages alphabetically or by recent conversations first.
 
-Select the **Channel options** icon [image], then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
+Select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
-[animated gif]
+    .. image:: ../../images/dm-sorts.png
 
 Controlling how many Direct Message conversations to display
 ------------------------------------------------------------
@@ -149,8 +155,9 @@ Controlling how many Direct Message conversations to display
 Control how many Direct Message conversations display in the **Direct Messages* category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
 
 You can configure the number of Direct Messages to display in one of two ways:
+
 - Go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**.
-- Select the **Channel options** icon [image], then select **Show**
+- Select the **Channel options** icon in the sidebar, then select **Show**
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages.
 
@@ -160,3 +167,5 @@ Once you exceed the number of Direct Messages configured, older messages are hid
   Any direct message conversations you've added to custom categories do not count against the maximum number of conversations shown in the **Direct Messages** category.
 
 Mobile support for this feature is coming in a future release.
+
+    .. image:: ../../images/dm-display.png
