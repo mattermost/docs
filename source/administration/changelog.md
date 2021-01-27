@@ -46,7 +46,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``CollapsedThreads`` for the collapsed reply threads feature.
+    - Added ``CollapsedThreads`` for the collapsed reply threads feature. This is currently a backend change but the user interface is not available yet. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.29.2 or later.
     
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
