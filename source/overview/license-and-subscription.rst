@@ -82,7 +82,7 @@ The renewal page in the Customer Portal lists your license information and conta
 **To process your license renewal:**
 
 1. Enter your contact and billing information.
-2. Confirm the Mattermost Enterprise Edition version.
+2. Confirm the `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>_`.
 3. Confirm the listed number of active users is correct.
 4. Select **Complete purchase**. 
 
