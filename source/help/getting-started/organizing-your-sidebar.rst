@@ -151,8 +151,6 @@ Sort your Direct Messages alphabetically or by recent conversations first.
 
 Select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
-    .. image:: ../../images/dm-sorts.gif
-
 How many Direct Messages to display?
 ------------------------------------
 
