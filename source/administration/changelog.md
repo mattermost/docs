@@ -40,13 +40,6 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Fixed an issue where line numbers did not line up with the text on code file previews.
  - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
  - Fixed an issue where desktop notifications got sent for every message posted in a Direct Message channel.
-
-### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
- - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``CollapsedThreads`` for the collapsed reply threads feature. This is currently a backend change but the user interface is not available yet. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.29.2 or later.
     
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
