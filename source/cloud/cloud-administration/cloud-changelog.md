@@ -37,6 +37,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where a "Your license does not support cloud requests” log error appeared on self-hosted servers.
 
 #### Known Issues
+ - Setting changes do not get saved on **System Console > Site Configuration > Public Links**.
+ - Alignment of team icons are off on **System Console > User Management >Teams Page**.
+ - Alignment of channel header text "This channel has guests" is off.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role on **User Management > Channel**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
