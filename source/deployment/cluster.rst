@@ -84,7 +84,7 @@ Configuration Settings
             "ClusterName": "production",
             "OverrideHostname": "",
             "UseIpAddress": true,
-            "UseExperimentalGossip": false,
+            "UseGossip": true,
             "ReadOnlyConfig": true,
             "GossipPort": 8074,
             "StreamingPort": 8075
