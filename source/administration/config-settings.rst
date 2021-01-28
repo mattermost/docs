@@ -4201,12 +4201,12 @@ Enable Legacy Sidebar
 
 This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend that you leave this configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar and includes a number of new features that make channel management easier.
 
-**Disabled**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ to learn more about these features.
+**True**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ to learn more about these features.
 
-**Enabled**: When enabled, the legacy sidebar features are enabled for all users on this server. Users cannot access any new channel sidebar features, and the legacy sidebar is enabled for all users on this server.
+**False**: When enabled, the legacy sidebar features are enabled for all users on this server. Users cannot access any new channel sidebar features, and the legacy sidebar is enabled for all users on this server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLegacySidebar": off`` with options ``off``, ``default_on`` and ``default_off``.                                                            |
+| This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization
