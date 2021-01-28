@@ -48,7 +48,7 @@ Making categories work for you
 
 **Categories can contain Direct Message conversations**
 
-- Click and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
+- Select and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
 
     .. image:: ../../images/sidebar_ga.gif
 
