@@ -159,6 +159,8 @@ Control how many Direct Message conversations display in the **Direct Messages**
 You have two ways to configure the number of Direct Messages to display:
 
 - Go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**.
+
+or
 - Select the **Channel options** icon in the sidebar, then select **Show**
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages.
