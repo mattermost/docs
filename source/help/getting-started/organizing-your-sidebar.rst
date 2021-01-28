@@ -37,7 +37,7 @@ Next, type a category name, select **Create**, then drag any channels or Direct 
 Making categories work for you
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Categories are collapsible.**
+**Categories are collapsible**
 
 - When collapsed, only unread channels display to reduce unnecessary scrolling.
 - When expanded, all channels in the category display, including channels with unread messages.
