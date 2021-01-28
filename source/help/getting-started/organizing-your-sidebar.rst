@@ -170,6 +170,6 @@ Once you exceed the number of Direct Messages configured, older messages are hid
 .. note::
   Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
 
-Mobile support for this feature is coming in a future release.
+Mobile support for this feature will be available in a future release.
 
     .. image:: ../../images/dm-display.gif
