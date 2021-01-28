@@ -964,8 +964,8 @@ Use IP Address
 | This feature's ``config.json`` setting is ``"UseIpAddress": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Use Experimental Gossip
-^^^^^^^^^^^^^^^^^^^^^^^
+Use Gossip
+^^^^^^^^^^
 
 **True**: The server attempts to communicate via the gossip protocol over the gossip port.
 
@@ -974,7 +974,7 @@ Use Experimental Gossip
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
 +-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
 +-------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
