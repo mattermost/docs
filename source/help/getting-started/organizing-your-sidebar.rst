@@ -163,7 +163,7 @@ You have two ways to configure the number of Direct Messages to display:
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages.
 
-Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. Increase the number of conversations displayed to see older Direct Messages.
+Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can increase the number of conversations displayed to see older Direct Messages.
 
 .. note::
   Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
