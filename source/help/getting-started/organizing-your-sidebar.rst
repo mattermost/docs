@@ -25,7 +25,7 @@ You can customize your sidebar in the following ways:
 Creating custom categories
 --------------------------
 
-Creating your own custom categories enables you to group channels together for easier navigation (e.g. “Design” or “Marketing”).
+Create custom categories to group channels together for quicker and easier navigation (e.g. “Design” or “Marketing”).
 
 Categories can be created in two ways:
 
