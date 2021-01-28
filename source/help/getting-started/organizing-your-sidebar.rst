@@ -166,7 +166,7 @@ Choose from **All direct messages**, or choose to show **10**, **15**, **20**, o
 Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. Increase the number of conversations displayed to see older Direct Messages.
 
 .. note::
-  Any direct message conversations you've added to custom categories do not count against the maximum number of conversations shown in the **Direct Messages** category.
+  Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
 
 Mobile support for this feature is coming in a future release.
 
