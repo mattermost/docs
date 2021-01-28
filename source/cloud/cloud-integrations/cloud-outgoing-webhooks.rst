@@ -3,7 +3,7 @@ Outgoing Webhooks
 =================
 
 .. note::
-  This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/>`__.
+  This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
 Mattermost supports webhooks to easily integrate external applications into Mattermost.
 

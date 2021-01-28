@@ -4,7 +4,7 @@ Slash Commands
 
 .. note::
 
-  This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/>`__.
+  This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
 Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to `outgoing webhooks <https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and Direct Messages.
 
