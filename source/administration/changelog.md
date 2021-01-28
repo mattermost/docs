@@ -32,6 +32,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added support to move multi-selected groups of channels to another category via the **More options** menu.
 
 #### Plugins
+ - Updated bundled plugin packages, including GitHub and Jenkins plugins.
  - Enabled experimental support for ARM64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
 
 #### Administration
