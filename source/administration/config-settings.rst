@@ -3860,7 +3860,7 @@ Allow Authentication Transfer (Experimental)
 Autoclose Direct Messages in Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud. Available from Mattermost Server v5.32.*
+*Not available in Mattermost Cloud.*
 
 This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -4120,7 +4120,7 @@ This setting defines how frequently "user is typing..." messages are updated, me
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud. Available from Mattermost Server v5.32.*
+*Not available in Mattermost Cloud.*
 
 This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -4184,12 +4184,6 @@ Experimental Sidebar Features
 
 This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
 
-.. note::
-
-  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
-
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ to learn more about these features.
-
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
 **Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering.
@@ -4197,7 +4191,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 **Enabled (Default Off)**: Users must enable the experimental sidebar features in **Account Settings**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": disabled`` with options ``enabled`` and ``disabled``.                                         |
+| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Legacy Sidebar
@@ -4218,7 +4212,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 Sidebar Organization
 ^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud. Available from Mattermost Server v5.32.*
+*Not available in Mattermost Cloud.*
 
 This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -4957,10 +4951,6 @@ Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
-
-.. note::
-
-  In cases where users have previously enabled this functionality in **Account Settings**, changing this configuration setting won't change the user experience. The user's preference for this functionality is saved over the server-side setting.
 
 **Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Account Settings > Sidebar > Group unread channels separately**.
 
