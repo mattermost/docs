@@ -42,7 +42,7 @@ Making categories work for you
 - When collapsed, only unread channels display to reduce unnecessary scrolling.
 - When expanded, all channels in the category display, including channels with unread messages.
 
-**You can reorder categories.**
+**You can reorder categories**
 
 - Drag to reorder entire categories to prioritize important conversations. 
 
