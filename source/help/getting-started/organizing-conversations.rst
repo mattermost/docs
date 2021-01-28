@@ -46,39 +46,53 @@ Channels can be created, joined, renamed, left, marked as a favorite, muted, unm
 Creating a channel
 ~~~~~~~~~~~~~~~~~~~
 
-Create a new Public channel or Private channel by selecting the **+** symbol next to the **Public Channels*** or **Private Channels** header on the left hand navigation. To start a Direct Message thread, select the **+** symbol next to the **Direct Messages** bar or select **More** at the bottom of the list to view team members you can message.
+Create a new Public or Private channel by selecting the **+** symbol at the top of the sidebar, next to the **History** arrows, then selecting **Create New Channel**.
 
-    .. image:: ../../images/Create_private_channel.png
-
+    .. image:: ../../images/create-new-channel.png
+    
 Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
+
+You have two ways to start a Direct or Group message:
+
+Select the **+** symbol at the top of the sidebar, next to the **History** arrows, then select **Open a Direct Message**.
+
+or
+
+Select the **+** symbol next to the **Direct Messages** category.
+
+    .. image:: ../../images/write-dm.png
 
 Joining a channel
 ~~~~~~~~~~~~~~~~~~
 
-Select **More** at the bottom of the **Public Channels** list to view and search through a list of Public channels you can join. To join a Private channel you need to be added by a member of that channel.
+Join a Public channel by selecting the **+** symbol at the top of the sidebar, next to the **History** arrows, then selecting **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
+
+To join a Private channel, you need to be added to the channel by a member of that channel.
 
 Adding members to a channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. Any member of a channel can add new members by choosing **Add** next to a user's name. Users already added to the channel will not appear in this list.
 
-    .. image:: ../../images/add_members.png
+    .. image:: ../../images/add-member-to-channel.png
 
 You can also add users to channels within their profile pop-over by choosing **Add to a Channel** and selecting the channel you want them to join.
 
-    .. image:: ../../images/add_members_pop.png
+    .. image:: ../../images/add-member-pop.png
 
 Removing members from a channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Any member of a channel can remove other members by choosing **Remove** next to a user's name.
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Any member of a channel can remove other members by selecting the member’s channel role, then selecting **Remove from Channel**.
+
+    .. image:: ../../images/remove-member-from-channel.png
 
 Naming a channel
 ~~~~~~~~~~~~~~~~~
 
 Channels can be identified in two ways:
 
-1. **Channel display name:** This appears in the Mattermost user interface. Click the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, click the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
 2. **Channel handle:** This is part of the channel URL. You may also change the channel handle when renaming a channel, but changing channel handles may break existing links.
 
 For example, for the following channel, https://community.mattermost.com/core/channels/ux-design:
@@ -119,13 +133,13 @@ In addition to this, System Admins can also unarchive channels `via the CLI <htt
 Converting Public channels to Private channels (and vice versa)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Convert to Private Channel**. Team and System Admins can convert Public channels to Private channels. Please note that default channels such as ``Town Square`` and ``Off-Topic`` cannot be converted to Private channels.
+Select the Public channel name at the top of the center pane to access the drop-down menu, then select **Convert to Private Channel**. Team and System Admins can convert Public channels to Private channels. Please note that default channels such as ``Town Square`` and ``Off-Topic`` cannot be converted to Private channels.
 
-System Admins can also access this setting in **System Console > Channels > Edit (Channel Configuration)**. Due to security concerns of sharing Private channel history, only System Admins can convert Private channels to Public. 
+When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly shared files remain accessible to anyone with the link. 
 
-When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly shared files remain accessible to anyone with the link.
+.. note::
 
-Note that conversion of Private channels to Public channels can only be performed by a System Admin via the System Console or via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-modify>`__.
+  Due to security concerns of sharing Private channel history, only System Admins can convert Private channels to Public channels. System Admins can access this setting in **System Console > Channels > Edit (Channel Configuration)**, or they can perform this action via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-modify>`__.
 
 Favoriting a channel
 ~~~~~~~~~~~~~~~~~~~~
@@ -136,17 +150,17 @@ To mark a channel as a favorite, open the channel:
 
 **On desktop:** At the top of the page, select on the star icon next to the channel name
 
-    .. image:: ../../images/favorite_channels_desktop.png
+    .. image:: ../../images/favorite-channel-desktop.png
         :alt: Mark a channel as a favorite.
         :scale: 40
        
 This adds the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
-    .. image:: ../../images/favorite_channels_sidebar.png
+    .. image:: ../../images/favorites-list-sidebar.png
         :alt: Favorite channels in the left-hand sidebar.
         :scale: 40
        
-**On mobile:** Open the dropdown list by the channel name, and select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
+**On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
 
 Muting a channel
 ~~~~~~~~~~~~~~~~
@@ -160,3 +174,11 @@ Once a channel is muted:
 - The channel is greyed out in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
 
 To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
+
+Navigating recently viewed channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the **History** arrows to move back and forth through your channel history. 
+
+- Select the left arrow to go back one page. 
+- Select the right arrow to go forward one page.
