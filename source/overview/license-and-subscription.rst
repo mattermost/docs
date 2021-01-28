@@ -71,7 +71,9 @@ You may incur retroactive charges for any unique users added that exceed the lic
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can renew your Mattermost license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+You can renew your self-managed Mattermost Enterprise license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+
+If you're a Mattermost Cloud customer, your subscription auto-renews so you don't need to follow this process.
 
 If you are a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
 
