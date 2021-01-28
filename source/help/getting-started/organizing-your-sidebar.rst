@@ -46,7 +46,7 @@ Making categories work for you
 
 - Drag to reorder entire categories to prioritize important conversations. 
 
-**Categories can contain Direct Message conversations.**
+**Categories can contain Direct Message conversations**
 
 - Click and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
 
