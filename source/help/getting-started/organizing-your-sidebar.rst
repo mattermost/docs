@@ -15,7 +15,7 @@ What can you customize?
 
 You can customize your sidebar in the following ways:
 
-- Group and order channels into categories customized just for you.
+- Group and order channels into categories you create.
 - Mute and unmute entire categories.
 - Sort category channels manually, alphabetically, or by recent activity.
 - Group unread messages into an **Unreads** category.
