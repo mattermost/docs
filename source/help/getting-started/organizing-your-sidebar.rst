@@ -69,7 +69,7 @@ All channels and Direct Message conversations in the deleted category move back 
 Organizing channels in categories
 ---------------------------------
 
-Once you have categories, you can move channels into your categories to organize your sidebar.
+Once you've created categories, you can move channels within them to organize your sidebar.
 
 Multi-selecting channels and Direct Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
