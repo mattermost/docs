@@ -58,7 +58,7 @@ Select the **+** symbol at the top of the sidebar, next to the **History** arrow
 
 or
 
-Select the **+** symbol next to the **Direct Messages** category.
+Select the **+** symbol next to the **Direct Messages** category in the sidebar.
 
     .. image:: ../../images/write-dm.png
 
