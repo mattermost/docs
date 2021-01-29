@@ -216,7 +216,6 @@ Language
 
 Select what language Mattermost displays in the user interface. Options include:
 
-- български - Bulgarian
 - Deutsch - German
 - English
 - Español - Spanish
@@ -228,6 +227,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Română - Romanian
 - Svenska - Swedish
 - Türkçe - Turkish
+- български - Bulgarian
 - Pусский - Russian
 - Yкраїнська - Ukrainian
 - 한국어 - Korean
