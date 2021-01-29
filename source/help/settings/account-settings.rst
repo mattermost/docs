@@ -246,7 +246,7 @@ This feature groups unread channels at the top of the channel sidebar in an **Un
 
 You can choose to enable it or disable it in **Account Settings > Sidebar**. 
 
-Legacy Sidebar Settings
+Legacy sidebar settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The legacy sidebar `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. The following sidebar settings apply only to the legacy sidebar:
