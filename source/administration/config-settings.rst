@@ -1038,7 +1038,7 @@ Changes to properties in this section require a server restart before taking eff
 Enable Rate Limiting
 ^^^^^^^^^^^^^^^^^^^^^
 
-Rate limiting prevents server overload from too many requests. This is useful to prevent third-party applications or malicous attacks from impacting your server.
+Rate limiting prevents your server from being overloaded with too many requests. This decreases the risk and impact of third-party applications or malicious attacks on your server.
 
 **True**: APIs are throttled at the rate specified by **PerSec**.
 
