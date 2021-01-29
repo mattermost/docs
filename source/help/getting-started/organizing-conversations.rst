@@ -92,7 +92,7 @@ Naming a channel
 
 Channels can be identified in two ways:
 
-1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, click the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
 2. **Channel handle:** This is part of the channel URL. You may also change the channel handle when renaming a channel, but changing channel handles may break existing links.
 
 For example, for the following channel, https://community.mattermost.com/core/channels/ux-design:
