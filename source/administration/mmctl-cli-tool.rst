@@ -2978,7 +2978,7 @@ mmctl roles
 
 **Description**
 
-  Management of user roles.
+  Manage user roles.
 
 **Options**
 
