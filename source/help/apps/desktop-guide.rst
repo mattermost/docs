@@ -64,7 +64,7 @@ Start app on login (Windows, Linux only)
     This setting is enabled by default.
 
 Check spelling
-    Highlight misspelled words in your messages. Highlight misspelled words in your messages. Available for English, French, German, Portuguese, Russian, Ukrainian, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
+    Highlight misspelled words in your messages. Available for English, French, German, Portuguese, Russian, Ukrainian, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
 
     This setting is enabled by default.
 
