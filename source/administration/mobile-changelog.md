@@ -16,6 +16,7 @@
 ### Bug Fixes
  
 #### All apps
+ - Fixed an issue where deeply nested asterisks caused the app to crash.
  - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
  - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
  - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
