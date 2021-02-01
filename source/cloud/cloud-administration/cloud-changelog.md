@@ -2,6 +2,42 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-02-10
+
+### Highlights
+ - OpenID Connect
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the Add Members to channel modal.
+ - Added Formatting Shortcut Keys to Shortcut modal.
+ - Added localization to date picker used when searching for posts around a given date.
+ - The autocomplete popover is now positioned relative to the @, ~, or / trigger in the post draft.
+
+#### Notifications
+ - Posts from OAuth 2.0 bots no longer trigger mentions for the user.
+
+#### Administration
+ - Added a ``ImportDelete`` job to periodically delete unused import files after a configurable retention period has passed.
+ - Introduced a new ``mattermost_system_server_start_time`` and ``mattermost_jobs_active`` metrics for improved debugging with Grafana dashboards.
+ - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
+ - Changed default ``MaxFileSize`` from 50Mb to 100Mb.
+ - Updated Go dependencies to their latest minor version.
+
+### Bug Fixes
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change config value.
+ - The ``DownloadComplianceReport`` function in the golang driver has been fixed to download a full report as a zip archive.
+ - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
+ - Fixed a bug in product notices where a date constraint might fail to match, and would lead to the notice not being fetched.
+ - Fixed an issue where the channel switcher did not focus first list result after a backspace.
+ - Fixed an issue where the instructions to search for users under Reporting > Server Logs were outdated.
+ - Fixed an issue where no error message was displayed when adding a LDAP Group Synced Team in System Console > Users page.
+
+### Known Issues
+
+
+
 ## Release 2021-01-26
 
 ### Highlights
