@@ -120,3 +120,12 @@ Verify Group Policy settings in the installed Desktop app
 2. Verify the app loads the first server defined in the ``Edit group policy`` app.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00018.png
+
+Silent Installation Guide
+--------------------------------------------
+
+Perform a silent installation of MSI by running the following command:
+
+``msiexec /i mattermost-desktop-v4.6.1-x64.msi /qn``
+
+Note: Current version is 4.6.1. In the future, you may need to change this command accordingly.
