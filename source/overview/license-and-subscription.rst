@@ -86,13 +86,21 @@ Once you click **Renew license now**, you are taken to the renewal page in the C
 **To process your license renewal**
 
 1. Enter your **Account Details**, **Additional Contact**, and **Payment Details**.
-2. Confirm the `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>_`.
+2. Confirm the `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed>`_.
   * You can upgrade from E10 to E20, but it's not possible to downgrade.
 3. Confirm the listed number of active users is correct. 
  * You can increase the number of licensed users, but you can't decrease it.
 4. Select **Complete purchase**. 
 
 An email with the new license key and information on how to upload the license in the System Console will be sent to the email address provided.
+
+You can watch a video overview of the renewal process on `YouTube <https://www.youtube.com/watch?v=Sz_1nhVufHY>`_.
+
+.. raw:: html
+
+   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <iframe src="https://www.youtube.com/watch?v=Sz_1nhVufHY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 80%; height: 80%;"></iframe>
+   </div>
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
