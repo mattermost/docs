@@ -2978,7 +2978,47 @@ mmctl roles
 
 **Description**
 
-  Manage user roles.
+  Promote users to the System Admin role, or remove System Admin privileges from users.
+
+**Format**
+
+Promote users to the System Admin role:
+
+.. code-block:: sh
+
+   mmctl roles system_admin [users] [flags]
+
+Remove System Admin privileges:
+
+.. code-block:: sh
+
+   mmctl roles member [users] [flags]
+
+**Examples**
+
+Promote a user to the System Admin role:
+
+.. code-block:: sh
+
+    mmctl roles system_admin john_doe
+
+Promote multiple users to the System Admin role:
+
+.. code-block:: sh
+
+    mmctl roles system_admin john_doe jane_doe
+
+Remove System Admin privileges from a user:
+
+.. code-block:: sh
+
+    mmctl roles member john_doe
+
+Remove System Admin privileges from multiple users:
+
+.. code-block:: sh
+
+    mmctl roles member john_doe jane_doe
 
 **Options**
 
