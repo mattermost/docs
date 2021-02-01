@@ -162,6 +162,7 @@ The following list details the types of Incident Management metadata we collect:
 - ``ActiveStage``: A number indicating the stage of the incident (0-based).
 - ``Action``: The type of action performed against the incident: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``.
 - ``Public``: When creating an incident, ``true`` if it is public, and ``false`` if it is private.
+- ``ReminderTimerSeconds``: The next timer for the reminder to update the status, in seconds. It's tracked only when ``Action`` equals ``update_status``.
 
 **Data collected in tasks events**
 
@@ -181,6 +182,9 @@ The following list details the types of Incident Management metadata we collect:
 - ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
 - ``NumMembers``: The number of members with access to this playbook.
 - ``NumSlashCommands``: The number of tasks with slash commands in this playbook.
+- ``ReminderTimerDefaultSeconds``: The default timer for the reminder to update the status, in seconds.
+- ``BroadcastChannelID``: Unique identifier of the channel where the status updates will be broadcasted.
+- ``UsesReminderMessageTemplate``: ``true`` if the playbook has a template for the reminder message, ``false`` otherwise.
 - ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
   
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
