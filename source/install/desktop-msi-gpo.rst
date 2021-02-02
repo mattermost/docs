@@ -126,6 +126,6 @@ Silent Installation Guide
 
 Perform a silent installation of MSI by running the following command:
 
-``msiexec /i mattermost-desktop-v4.6.1-x64.msi /qn``
+``msiexec /i mattermost-desktop-v4.6.2-x64.msi /qn``
 
-Note: Current version is 4.6.1. In the future, you may need to change this command accordingly.
+Note: Current version is 4.6.2. In the future, you may need to change this command accordingly.
