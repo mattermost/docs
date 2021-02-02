@@ -3,19 +3,23 @@
 Deploying a Mattermost Installation
 ===================================
 
-This guide describes deploying a complete Mattermost installation in Kubernetes including a database. In most
-cases you'll create and apply a single manifest. In the case of an Enterprise installation, two manifests will be applied - one
-for the license and one for the cluster installation.
+.. warning::
+  If you used the Mattermost Operator in version prior to v1.12.x or still using ``ClusterInstallation`` Custom Resource 
+  check out `this guide <https://github.com/mattermost/mattermost-operator/blob/master/docs/migration.md>`__ to see how to migrate to new ``Mattermost`` resource.
+  
+  The ``ClusterInstallation`` is deprecated and will be removed in version v2.0.
 
-Manifest files contain the configurations needed for the
-operator to perform tasks and communicate with Kubernetes. Create the manifest file locally in a text editor,
-copy and paste the contents, and save the file. Recommended file names are provided, but your naming conventions may differ.
+This guide describes deploying a complete Mattermost installation in Kubernetes. 
+
+Manifest files contain the configurations needed for the operator to properly setup the Mattermost installation. 
+Create the manifest files locally in a text editor, copy and paste the contents, and save the file. Recommended file names are provided, but your naming conventions may differ.
+Manifesets are applied with ``kubectl``. Before running the commands make sure you are connected to your Kubernetes cluster.
 
 **1. (Enterprise only) Create a Mattermost license secret**
 
-Open a text editor and create a text file with the following details.
+Open a text editor and create a secret manifest containing the Mattermost license.
 
-**Note:** Replace ``%LICENSE_FILE_CONTENTS%`` with the contents of your Mattermost license file.
+Make sure to replace ``[LICENSE_FILE_CONTENTS]`` with the contents of your Mattermost license file.
 
 .. code-block:: yaml
 
@@ -25,13 +29,15 @@ Open a text editor and create a text file with the following details.
     name: mattermost-license
   type: Opaque
   stringData:
-    license: %LICENSE_FILE_CONTENTS%
+    license: [LICENSE_FILE_CONTENTS]
 
 Save the file as ``mattermost-license-secret.yaml``.
 
 **2. Create an installation manifest file**
 
-The Mattermost installation manifest contains fields which must be edited in line with your configuration and environment requirements.
+The Mattermost installation manifest contains fields which must be adjusted for your configuration and environment requirements. 
+
+Some of the most commonly used fields are:
 
 .. csv-table::
     :header: "Field", "Description", "Must Edit"
@@ -40,47 +46,38 @@ The Mattermost installation manifest contains fields which must be edited in lin
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
     "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
     "spec.version", "The Mattermost version.", "No"
-    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license-secret). Required for Enterprise deployments.", "No"
-    "spec.database.storageSize", "The storage size for your database. Your Kubernetes cluster must have persistent volumes this size or larger.", "No"
-    "spec.minio.storageSize", "The storage size for your file storage. Your Kubernetes cluster must have persistent volumes this size or larger.", "No"
-    "spec.elasticSearch", "The section for Elasticsearch settings. Remove this section if you will not be using Elasticsearch.", "No"
-    "spec.elasticSearch.host", "The hostname for your Elasticsearch instance. Remove this section if you will not be using Elasticsearch", "No"
-    "spec.elasticSearch.username", "The username for your Elasticsearch instance.Remove this section if you will not be using Elasticsearch", "No"
-    "spec.elasticSearch.password", "The password for your Elasticsearch instance. Remove this section if you will not be using Elasticsearch", "No"
+    "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments.", "No"
+    "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance.", "No"
+    
+More fields are documented `in the example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__.
+If you have previous experience with Kubernetes Custom Resources you can also check the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`__.
 
-There are more advanced fields documented `here <https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/examples/full.yaml>`__.
-
-Open a text editor and create a text file with the following details.
+Open a text editor and create a Mattermost installation manifest:
 
 .. code-block:: yaml
 
-  apiVersion: mattermost.com/v1alpha1
-  kind: ClusterInstallation
+  apiVersion: installation.mattermost.com/v1beta1
+  kind: Mattermost
   metadata:
-    name: mm-example-full
+    name: mm-example-full                         # Chose the desired name
   spec:
-    size: 5000users
-    ingressName: example.mattermost-example.com
+    size: 5000users                               # Adjust to your requirements
+    ingressName: example.mattermost-example.com   # Adjust to your domain
     ingressAnnotations:
       kubernetes.io/ingress.class: nginx
-    version: 5.14.0
-    mattermostLicenseSecret: ""
-    database:
-      storageSize: 50Gi
-    minio:
-      storageSize: 50Gi
-    elasticSearch:
-      host: ""
-      username: ""
-      password: ""
-
+    version: 5.28.0
+    licenseSecret: ""                             # If you have created secret in step 1, put its name here
+    
 Save the file as ``mattermost-installation.yaml``.
 
-To configure the Mattermost Installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding.
-
+.. warning::
+  To configure the Mattermost Installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding.
+  If the external database and file store are not configured, the MySQL and MinIO Operators will be used.  
+  It requires both Operators to be installed on the cluster and it is not **not recomended for production usage**.
+  
 **3. Apply the installation manifest file**
 
-First, create the Mattermost namespace with this command:
+First, create the Mattermost namespace:
 
 .. code-block:: sh
 
@@ -90,15 +87,22 @@ If you're deploying Mattermost Enterprise Edition, apply the license file by spe
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f /path/to/mattermost-license-secret.yaml
+  $ kubectl apply -n mattermost -f [PATH_TO_LICENCE_SECRET_MANIFEST]
 
 Finally, apply the installation file, specifying path to file you created in step 2:
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
+  $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
-The deployment process can be monitored in the Kubernetes user interface.
+The deployment process can be monitored in the Kubernetes user interface or in command line by running:
+
+.. code-block:: sh
+
+  $ kubectl -n mattermost get mm -w
+
+The installation should be deployed successfuly, when the Custom Resource reaches the ``stable`` state.
+
 
 **4. Configure DNS and use Mattermost**
 
@@ -114,6 +118,14 @@ Use your domain registration service to create a canonical name or IP address re
 
 Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 
+If you just want to try it out on your local machine without configuring the domain, run:
+
+.. code-block:: sh
+
+  $ kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
+
+And navigate to http://localhost:8065.
+
 Configuring external database and filestore (Recommended)
 ----------------------------------------------------------
 
@@ -126,9 +138,9 @@ The database secret needs to be created in the namespace that will hold the Matt
 .. csv-table::
     :header: "Key", "Description", "Required"
 
-    "DB_CONNECTION_STRING", "Connection string to the database.", "true"
-    "MM_SQLSETTINGS_DATASOURCEREPLICAS", "Connection string to read replicas of the database.", "false"
-    "DB_CONNECTION_CHECK_URL", "The URL used for checking that the database is accessible.", "false"
+    "DB_CONNECTION_STRING", "Connection string to the database.", "Yes"
+    "MM_SQLSETTINGS_DATASOURCEREPLICAS", "Connection string to read replicas of the database.", "No"
+    "DB_CONNECTION_CHECK_URL", "The URL used for checking that the database is accessible.", "No"
 
 Example secret for AWS Aurora compatible with PostgreSQL:
 
@@ -155,8 +167,8 @@ The filestore secret needs to be created in the namespace that will hold the Mat
 .. csv-table::
     :header: "Key", "Description", "Required"
 
-    "accesskey", "Filestore access key.", "true"
-    "secretkey", "Filestore secret key.", "true"
+    "accesskey", "Filestore access key.", "Yes"
+    "secretkey", "Filestore secret key.", "Yes"
 
 Example secret for AWS S3:
 
@@ -171,7 +183,7 @@ Example secret for AWS S3:
     name: my-s3-iam-access-key
   type: Opaque
 
-**3. Adjust cluster installation**
+**3. Adjust installation manifest**
 
 To instruct Mattermost Operator to use the external database, modify the following fields:
 
@@ -180,6 +192,7 @@ To instruct Mattermost Operator to use the external database, modify the followi
   spec:
   ...
     database:
+      external:
         secret: my-postgres-connection
 
 To instruct Mattermost Operator to use the external filestore, modify the following fields:
@@ -188,10 +201,11 @@ To instruct Mattermost Operator to use the external filestore, modify the follow
 
   spec:
   ...
-    minio:
-      externalBucket: my-s3-bucket
-      externalURL: s3.amazonaws.com
-      secret: my-s3-iam-access-key
+    fileStore:
+      external:
+        url: s3.amazonaws.com
+        bucket: my-s3-bucket
+        secret: my-s3-iam-access-key
 
 Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
@@ -199,19 +213,19 @@ Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and `
 
   spec:
   ...
-      mattermostEnv:
+    mattermostEnv:
       ...
       - name: MM_FILESETTINGS_AMAZONS3SSE
         value: "true"
       - name: MM_FILESETTINGS_AMAZONS3SSL
         value: "true"
 
-Example cluster installation configured with both external databases and filestore:
+Example of full Mattermost manifest configured with both external databases and filestore:
 
 .. code-block:: yaml
 
-  apiVersion: mattermost.com/v1alpha1
-  kind: ClusterInstallation
+  apiVersion: installation.mattermost.com/v1beta1
+  kind: Mattermost
   metadata:
     name: mm-example-external-db
   spec:
@@ -220,19 +234,20 @@ Example cluster installation configured with both external databases and filesto
     ingressAnnotations:
       kubernetes.io/ingress.class: nginx
     version: 5.28.0
-    mattermostLicenseSecret: ""
+    licenseSecret: ""
     database:
-      secret: my-postgres-connection
-      storageSize: 50Gi
-    minio:
-      externalBucket: my-s3-bucket
-      externalURL: s3.amazonaws.com
-      secret: my-s3-iam-access-key
-      storageSize: 50Gi
-    elasticSearch:
-      host: ""
-      username: ""
-      password: ""
+      external:
+        secret: my-postgres-connection
+    fileStore:
+      external:
+        url: s3.amazonaws.com
+        bucket: my-s3-bucket
+        secret: my-s3-iam-access-key
+    mattermostEnv:
+    - name: MM_FILESETTINGS_AMAZONS3SSE
+      value: "true"
+    - name: MM_FILESETTINGS_AMAZONS3SSL
+      value: "true"
 
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
