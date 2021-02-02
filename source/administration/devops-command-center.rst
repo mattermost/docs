@@ -6,10 +6,15 @@ Mattermost Incident Management
 Incidents are situations which require an immediate response, and incidents benefit from a clearly defined process that guides toward resolution. Mattermost Incident Management equips your team to coordinate, manage, and resolve incidents from within Mattermost:
 
 * Starting an incident automatically creates a dedicated incident channel to coordinate discussion. 
+  
   - Use custom categories in the left-hand sidebar to streamline access to ongoing incidents.
+
 * Playbooks define the tasks toward resolution as your team manages the incident.
+  
   - Define your playbooks in advance with automated actions such as creating a Jira ticket, starting a Zoom call, or finding out who is on-call in Opsgenie.
+
 * Reviewing the timeline and conversation helps refine the process for future such incidents.
+  
   - Export the incident channel conversation to conduct a post-mortem review.
 
 Delivering more reliable services requires an efficient resolution process. Use Mattermost Incident Management not only to resolve incidents more efficiently, but also to learn from past incidents and refine the process your team relies upon for success.
