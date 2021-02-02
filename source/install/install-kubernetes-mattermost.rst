@@ -220,7 +220,7 @@ Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and `
       - name: MM_FILESETTINGS_AMAZONS3SSL
         value: "true"
 
-Example of full Mattermost manifest configured with both external databases and filestore:
+Example Mattermost manifest configured with both external databases and filestore:
 
 .. code-block:: yaml
 
