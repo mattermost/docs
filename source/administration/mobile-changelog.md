@@ -10,8 +10,8 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
+ - Added support for OpenID Connect (E20 Edition) - **This feature is available with an upcoming v5.33.0 (March 16th) release.**
  - Added new languages, Bulgarian and Swedish.
- - Added support for OpenID Connect - to be supported with v5.33
 
 ### Bug Fixes
  
@@ -20,13 +20,18 @@
  - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
  - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
  - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
- - Fixed an issue where "(you)" did not appear after the current username when using `@yourself` autocomplete in a channel.
+ - Fixed an issue where "(you)" did not appear after the current username when using ``@yourself`` autocomplete in a channel.
 
 #### Android specific
- - Fixed an issue where frequent logouts from the app were experienced on the latest Android OS.
+ - 
 
 #### iOS specific
  - Fixed an issue where users were unable to scroll horizontally to view multiple file attachments.
+ 
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
 ## 1.39.0 Release
 - Release Date: January 16, 2021
