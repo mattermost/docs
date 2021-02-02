@@ -12,10 +12,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Improvements
 
 #### User Interface (UI)
- - Improved the Add Members to channel modal.
- - Added Formatting Shortcut Keys to Shortcut modal.
- - Added localization to date picker used when searching for posts around a given date.
- - The autocomplete popover is now positioned relative to the @, ~, or / trigger in the post draft.
+ - Improved the Add Members modal user interface.
+ - Added formatting shortcut keys to the Shortcut modal.
+ - Added localization to the date picker, for use when searching for posts around a given date.
+ - The autocomplete popover is now positioned relative to the ``@``, ``~``, or ``/`` trigger in the post draft.
 
 #### Notifications
  - Posts from OAuth 2.0 bots no longer trigger mentions for the user.
@@ -28,17 +28,20 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Updated Go dependencies to their latest minor version.
 
 ### Bug Fixes
- - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change config value.
- - The ``DownloadComplianceReport`` function in the golang driver has been fixed to download a full report as a zip archive.
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change the config value.
+ - The ``DownloadComplianceReport`` function in the Golang driver has been fixed to be able to download a full report as a zip archive.
  - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
- - Fixed a bug in product notices where a date constraint might fail to match, and would lead to the notice not being fetched.
+ - Fixed a bug in in-product notices where a date constraint sometimes failed to match and would lead to the notice not being fetched.
  - Fixed an issue where the channel switcher did not focus first list result after a backspace.
- - Fixed an issue where the instructions to search for users under Reporting > Server Logs were outdated.
- - Fixed an issue where no error message was displayed when adding a LDAP Group Synced Team in System Console > Users page.
+ - Fixed an issue where the instructions to search for users under **Reporting > Server Logs** were outdated.
+ - Fixed an issue where no error message was displayed when adding a LDAP Group Synced Team in **System Console > Users page**.
 
 ### Known Issues
-
-
+ - Setting changes do not get saved on **System Console > Site Configuration > Public Links**.
+ - Alignment of channel header text "This channel has guests" is off.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role on **User Management > Channel**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-01-26
 
