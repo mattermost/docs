@@ -5,7 +5,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ## Release 2021-02-10
 
 ### Highlights
- - OpenID Connect
+
+#### OpenID Connect (Cloud Professional & Enterprise)
+ - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. **This feature will be available for Mobile Apps in v1.40 (February 16th) release.**
 
 ### Improvements
 
