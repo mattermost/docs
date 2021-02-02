@@ -9,19 +9,21 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2021-02-16**
 
 ### Compatibility
- - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. In Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
+ - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/). Mattermost will now fail to start if the Postgres version is below that.
 
 ### Breaking Changes
- - 
+ - ``ExperimentalChannelOrganization``, ``EnableXToLeaveChannelsFromLHS``, ``CloseUnusedDirectMessages``, and ``ExperimentalHideTownSquareinLHS`` settings are only functional if the Legacy Sidebar (``EnableLegacySidebar``) is enabled since they are not compatible with the new sidebar experience.                        - ``ExperimentalChannelSidebarOrganization`` has been deprecated, since the new sidebar is now enabled for all users. Breaking changes to the Golang client API were introduced: ``GetPostThread``, ``GetPostsForChannel``, ``GetPostsSince``, ``GetPostsAfter``, ``GetPostsBefore``, and ``GetPostsAroundLastUnread`` now require an additional collapsedThreads parameter to be passed. Any client making use of these functions will need to update them when upgrading its dependencies.
+ 
+**IMPORTANT:** If you upgrade from a release earlier than v5.31, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
 
-#### Channel sidebar general availability
- - The new channel sidebar is now enabled system-wide by default. Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users now gain full personalization of their sidebar to improve productivity, reduce clutter, and focus on what matters most. Features include custom, collapsible sidebar categories, unread channel management, and new channel menus.
+#### General availability of custom, collapsible channel categories
+ - Mattermost now gives users flexibility to organize channels and direct messages into custom, collapsible sidebar categories. Users gain full personalization of their sidebar to improve productivity, reduce clutter and focus on what matters.  Learn more about the new [channel sidebar enhancements](https://mattermost.com/blog/custom-collapsible-channel-categories/).
 
-#### Self-serve renewal (E10 & E20)
- - Adds the ability to renew self-managed E10 or E20 license subscription online with a credit card! This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales.
+#### Self-serve renewals (E10 & E20)
+ - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales. The renewal process takes place in [the customer portal](https://customers.mattermost.com/signup) and only takes a few minutes to complete.
 
 ### Improvements
 
