@@ -32,7 +32,17 @@ Docker Setup on Ubuntu
       sudo curl -L "https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
 
-3. **Deploy the Mattermost Docker** setup by running:
+3. **Deploy the Mattermost Docker** 
+
+You can get the :code:`uid` (user ID) and :code:`gid` (group ID) of the Docker user by running:
+
+   .. code:: bash
+   
+       id <username>
+
+Replace :code:`<username>` with the actual username. The following setup assumes the result above is :code:`uid=1000` and :code:`gid=1000`.
+
+Set up using:
 
    .. code:: bash
    
@@ -41,7 +51,7 @@ Docker Setup on Ubuntu
        cd mattermost-docker
        docker-compose build
        mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-       sudo chown -R 2000:2000 ./volumes/app/mattermost/
+       sudo chown -R 1000:1000 ./volumes/app/mattermost/
        docker-compose up -d
 
 The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.
