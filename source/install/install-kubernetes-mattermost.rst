@@ -71,9 +71,9 @@ Open a text editor and create a Mattermost installation manifest:
 Save the file as ``mattermost-installation.yaml``.
 
 .. warning::
-  To configure the Mattermost Installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding.
-  If the external database and file store are not configured, the MySQL and MinIO Operators will be used.  
-  It requires both Operators to be installed on the cluster and it is not **not recomended for production usage**.
+
+  To configure the Mattermost installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding. 
+  If the external database and file store are not configured, the MySQL and MinIO Operators will be used. It requires both Operators to be installed on the cluster and it is not **not recomended for production usage**.
   
 **3. Apply the installation manifest file**
 
