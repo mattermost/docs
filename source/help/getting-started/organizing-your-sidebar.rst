@@ -64,7 +64,7 @@ Deleting categories
 1. Select the **Category options** icon in the sidebar, then select **Delete Category**.
 2. Select **Delete** to confirm or select **X** to cancel.
 
-All channels and Direct Message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined. 
+All channels and Direct Message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined.
 
 Organizing channels in categories
 ---------------------------------
