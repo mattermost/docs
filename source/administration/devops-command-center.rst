@@ -53,7 +53,7 @@ Mattermost Incident Management has the following components:
 * **Slash commands** may be assigned to tasks defined in the playbook to help to streamline common actions.
 
 .. note:: 
-  From v1.3.0, stages have been deprecated. Existing playbooks are not affected and will retain their configuration.
+   From v1.3.0, stages have been renamed to checklists, and serve only as a grouping mechanism for tasks. Tasks from any checklist may now be completed at any time.
 
 To access Mattermost Incident Management:
 
