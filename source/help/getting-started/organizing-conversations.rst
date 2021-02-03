@@ -160,7 +160,7 @@ This adds the channel to a **Favorites** list at the top of the sidebar, so it's
         :alt: Favorite channels in the left-hand sidebar.
         :scale: 40
        
-**On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
+**On mobile:** Tap the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, tap **Favorite** again.
 
 Muting a channel
 ~~~~~~~~~~~~~~~~
