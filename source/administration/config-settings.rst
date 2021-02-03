@@ -4197,13 +4197,13 @@ This configuration setting has been deprecated in favor of `Enable Legacy Sideba
 Enable Legacy Sidebar
 ^^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud. Available from Mattermost Server v5.32.*
+*Not available in Mattermost Cloud.*
 
-This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend that you leave this configuration setting disabled. The new sidebar offers most of the same functionality available in the legacy sidebar and includes a number of new features that make channel management easier.
+This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
-**True**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ to learn more about these features.
+**False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ to learn more about these features.
 
-**False**: When enabled, the legacy sidebar features are enabled for all users on this server. Users cannot access any new channel sidebar features, and the legacy sidebar is enabled for all users on this server.
+**True**: When enabled, the legacy sidebar features are enabled for all users on this server. Users cannot access any new channel sidebar features, and the legacy sidebar is enabled for all users on this server.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
