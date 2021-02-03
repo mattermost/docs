@@ -70,68 +70,13 @@ Open a text editor and create a Mattermost installation manifest:
     
 Save the file as ``mattermost-installation.yaml``.
 
-.. warning::
+.. note::
+    Steps 3 to 5 cover configuring Mattermost with external database and filestore which is recommended installation configuration. 
 
-  To configure the Mattermost installation with an external database and filestore refer to `Configuring external database and filestore (Recommended)`_ before proceeding. 
-  If the external database and file store are not configured, the MySQL and MinIO Operators will be used. It requires both Operators to be installed on the cluster and it is not **not recomended for production usage**.
-  
-**3. Apply the installation manifest file**
+    When using MySQL and MinIO operators this steps can be skipped. 
+    It requires both Operators to be installed on the cluster and it is **not recomended for production usage**.
 
-First, create the Mattermost namespace:
-
-.. code-block:: sh
-
-  $ kubectl create ns mattermost
-
-If you're deploying Mattermost Enterprise Edition, apply the license file by specifying the path to the file you created in step 1:
-
-.. code-block:: sh
-
-  $ kubectl apply -n mattermost -f [PATH_TO_LICENCE_SECRET_MANIFEST]
-
-Finally, apply the installation file, specifying path to file you created in step 2:
-
-.. code-block:: sh
-
-  $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
-
-The deployment process can be monitored in the Kubernetes user interface or in command line by running:
-
-.. code-block:: sh
-
-  $ kubectl -n mattermost get mm -w
-
-The installation should be deployed successfuly, when the Custom Resource reaches the ``stable`` state.
-
-
-**4. Configure DNS and use Mattermost**
-
-When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
-
-.. code-block:: sh
-
-  $ kubectl -n mattermost get ingress
-
-Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
-
-Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
-
-Navigate to the ``ingressName`` URL in your browser and use Mattermost.
-
-If you just want to try it out on your local machine without configuring the domain, run:
-
-.. code-block:: sh
-
-  $ kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
-
-And navigate to http://localhost:8065.
-
-Configuring external database and filestore (Recommended)
-----------------------------------------------------------
-
-When installing Mattermost using the Mattermost Operator in a production scenario, it's recommended that you use an external database and filestore.
-
-**1. Create database secret**
+**3. Create external database secret**
 
 The database secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
@@ -160,7 +105,7 @@ Example secret for AWS Aurora compatible with PostgreSQL:
   For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
   For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
-**2. Create filestore secret**
+**4. Create filestore secret**
 
 The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
@@ -183,9 +128,9 @@ Example secret for AWS S3:
     name: my-s3-iam-access-key
   type: Opaque
 
-**3. Adjust installation manifest**
+**5. Adjust installation manifest**
 
-To instruct Mattermost Operator to use the external database, modify the following fields:
+To instruct Mattermost Operator to use the external database, modify Mattermost manifest by adding the following fields:
 
 .. code-block:: yaml
 
@@ -195,7 +140,7 @@ To instruct Mattermost Operator to use the external database, modify the followi
       external:
         secret: my-postgres-connection
 
-To instruct Mattermost Operator to use the external filestore, modify the following fields:
+To instruct Mattermost Operator to use the external filestore, modify Mattermost manifest by adding the following fields:
 
 .. code-block:: yaml
 
@@ -233,7 +178,7 @@ Example Mattermost manifest configured with both external databases and filestor
     ingressName: example.mattermost-example.com
     ingressAnnotations:
       kubernetes.io/ingress.class: nginx
-    version: 5.28.0
+    version: 5.31.0
     licenseSecret: ""
     database:
       external:
@@ -248,6 +193,57 @@ Example Mattermost manifest configured with both external databases and filestor
       value: "true"
     - name: MM_FILESETTINGS_AMAZONS3SSL
       value: "true"
+
+**6. Apply the installation manifest file**
+
+First, create the Mattermost namespace:
+
+.. code-block:: sh
+
+  $ kubectl create ns mattermost
+
+If you're deploying Mattermost Enterprise Edition, apply the license file by specifying the path to the file you created in step 1:
+
+.. code-block:: sh
+
+  $ kubectl apply -n mattermost -f [PATH_TO_LICENCE_SECRET_MANIFEST]
+
+Finally, apply the installation file, specifying path to file you created in step 2:
+
+.. code-block:: sh
+
+  $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
+
+The deployment process can be monitored in the Kubernetes user interface or in command line by running:
+
+.. code-block:: sh
+
+  $ kubectl -n mattermost get mm -w
+
+The installation should be deployed successfuly, when the Custom Resource reaches the ``stable`` state.
+
+
+**7. Configure DNS and use Mattermost**
+
+When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
+
+.. code-block:: sh
+
+  $ kubectl -n mattermost get ingress
+
+Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
+
+Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+
+Navigate to the ``ingressName`` URL in your browser and use Mattermost.
+
+If you just want to try it out on your local machine without configuring the domain, run:
+
+.. code-block:: sh
+
+  $ kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
+
+And navigate to http://localhost:8065.
 
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
