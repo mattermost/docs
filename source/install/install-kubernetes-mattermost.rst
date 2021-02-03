@@ -73,7 +73,7 @@ Save the file as ``mattermost-installation.yaml``.
 .. note::
     Steps 3 to 5 cover configuring Mattermost with external database and filestore which is recommended installation configuration. 
 
-    When using MySQL and MinIO operators this steps can be skipped. 
+    When using MySQL and MinIO operators these steps can be skipped. 
     It requires both Operators to be installed on the cluster and it is **not recomended for production usage**.
 
 **3. Create external database secret**
