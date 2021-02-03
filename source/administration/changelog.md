@@ -78,7 +78,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
 ## Release v5.30 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.30.3, released 2021-02-02**
-  - Fixed an issue where the **Edition** telemetry field was reporting as "null" for Team Edition servers on 5.30.
+  - Fixed an issue where the **Edition** diagnostics field was reporting as "null" for Team Edition servers on 5.30.
 - **v5.30.2, released 2021-01-18**
   - Fixed an issue where the ``UnreadMentions`` column was missing in the ``ThreadMemberships`` table for servers upgrading from v5.29.0. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.30.2 or later.
 - **v5.30.1, released 2020-12-18**
