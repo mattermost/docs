@@ -105,7 +105,7 @@ Example secret for AWS Aurora compatible with PostgreSQL:
   For PostgreSQL the connection is checked with `pg_isready <https://www.postgresql.org/docs/9.3/app-pg-isready.html>`__ so the ``DB_CONNECTION_CHECK_URL`` is the same as connection string.
   For MySQL the check is performed via HTTP call therefore ``DB_CONNECTION_CHECK_URL`` should be an HTTP URL.
 
-**4. Create filestore secret**
+**4. Create external filestore secret**
 
 The filestore secret needs to be created in the namespace that will hold the Mattermost installation. The secret should contain the following data:
 
@@ -221,7 +221,6 @@ The deployment process can be monitored in the Kubernetes user interface or in c
   $ kubectl -n mattermost get mm -w
 
 The installation should be deployed successfuly, when the Custom Resource reaches the ``stable`` state.
-
 
 **7. Configure DNS and use Mattermost**
 
