@@ -4,16 +4,16 @@ Deploying a Mattermost Installation
 ===================================
 
 .. warning::
-  If you used the Mattermost Operator in version prior to v1.12.x or still using ``ClusterInstallation`` Custom Resource 
+  If you used the Mattermost Operator in version prior to v1.12.x or are still using ``ClusterInstallation`` Custom Resource 
   check out `this guide <https://github.com/mattermost/mattermost-operator/blob/master/docs/migration.md>`__ to see how to migrate to new ``Mattermost`` resource.
   
   The ``ClusterInstallation`` is deprecated and will be removed in version v2.0.
 
-This guide describes deploying a complete Mattermost installation in Kubernetes. 
+This guide describes deploying a complete Mattermost installation in Kubernetes.
 
-Manifest files contain the configurations needed for the operator to properly setup the Mattermost installation. 
+Manifest files contain the configurations needed for the Operator to properly set up the Mattermost installation.
 Create the manifest files locally in a text editor, copy and paste the contents, and save the file. Recommended file names are provided, but your naming conventions may differ.
-Manifesets are applied with ``kubectl``. Before running the commands make sure you are connected to your Kubernetes cluster.
+Manifests are applied with ``kubectl``. Before running the commands make sure you are connected to your Kubernetes cluster.
 
 **1. (Enterprise only) Create a Mattermost license secret**
 
@@ -35,9 +35,9 @@ Save the file as ``mattermost-license-secret.yaml``.
 
 **2. Create an installation manifest file**
 
-The Mattermost installation manifest contains fields which must be adjusted for your configuration and environment requirements. 
+The Mattermost installation manifest contains fields which must be adjusted for your configuration and environment requirements.
 
-Some of the most commonly used fields are:
+Some of the most commonly-used fields are:
 
 .. csv-table::
     :header: "Field", "Description", "Must Edit"
@@ -65,7 +65,7 @@ Open a text editor and create a Mattermost installation manifest:
     ingressName: example.mattermost-example.com   # Adjust to your domain
     ingressAnnotations:
       kubernetes.io/ingress.class: nginx
-    version: 5.28.0
+    version: 5.31.0
     licenseSecret: ""                             # If you have created secret in step 1, put its name here
     
 Save the file as ``mattermost-installation.yaml``.

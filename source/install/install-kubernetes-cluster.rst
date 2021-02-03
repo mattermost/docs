@@ -9,9 +9,9 @@ Prerequisites
 Prerequisites for using the Mattermost Operator:
 
 - Kubernetes cluster in version 1.16 or higher.
-- Kubernetes CLI - `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ - installed on local machine.
+- Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine.
 
-It’s also recommended to have a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). It's also advisable to consult the `official Kubernetes setup documentation <https://kubernetes.io/docs/setup/>`__ on how to set up a cluster in your environment. 
+It’s recommended that you have a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). It's also advisable to consult the `official Kubernetes setup documentation <https://kubernetes.io/docs/setup/>`__ on how to set up a cluster in your environment.
 
 If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
 
