@@ -4203,7 +4203,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 
 **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ to learn more about these features.
 
-**True**: When enabled, the legacy sidebar features are enabled for all users on this server. Users cannot access any new channel sidebar features, and the legacy sidebar is enabled for all users on this server.
+**True**: WWhen enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
