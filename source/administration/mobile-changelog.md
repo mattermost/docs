@@ -18,6 +18,7 @@
 #### All apps
  - Fixed an issue where deeply nested asterisks caused the app to crash.
  - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
+ - Fixed an issue where posts with at-mentions were double posting if the user hit the **Send** button quickly multiple times in a thread.
  - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
  - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
  - Fixed an issue where "(you)" did not appear after the current username when using ``@yourself`` autocomplete in a channel.
