@@ -6,7 +6,14 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-**Release Day: 2021-01-16**
+- **v5.31.1, release day TBD**
+  - Fixing an issue where the ``config.json`` is sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
+  - Fixing an issue where ``FeatureFlags`` section is getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
+  - Fixing an issue where channels are sometimes removed from custom categories when a user leaves a team. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
+  - Fixing an issue where users are unable to mark Direct Messages in a thread as unread. [MM-32253](https://mattermost.atlassian.net/browse/MM-32253)
+  - Fixing an issue where ``PermanentDeleteChannel`` fails with "failed to get a thread" error. [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
+- **v5.31.0, released 2021-01-16**
+  - Original 5.31.0 release
 
 Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -51,16 +58,13 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
- - The ``config.json`` may reset itself to default values if the binary is run with the root user. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
- - ``PermanentDeleteChannel`` fails with "failed to get a thread". [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
  - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
  - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes. [MM-29927](https://mattermost.atlassian.net/browse/MM-29927)
  - Error text is missing when the team name is left blank on the team creation page. [MM-31361](https://mattermost.atlassian.net/browse/MM-31361)
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
  - Slow typing has been experienced when the channel sidebar has many channels. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
- - The new experimental sidebar occasionally loses custom categories. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
  - Slack theme import fails due to changes in formatting of Slack export color schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side. [MM-30446](https://mattermost.atlassian.net/browse/MM-30446)
  - The **Admin Filter** option is not disabled on the AD/LDAP page for Admin roles with the ``sysconsole_write_authentication`` permission. [MM-29089](https://mattermost.atlassian.net/browse/MM-29089)
