@@ -2423,8 +2423,9 @@ Management of permissions and roles.
 
 Child Commands
   -  `mmctl permissions add`_ - Add permissions to a role
-  -  `mmctl permissions role assign`_ - Assign users to role
   -  `mmctl permissions remove`_ - Remove permissions from a role
+  -  `mmctl permissions reset`_ - Reset default permissions for a role
+  -  `mmctl permissions role assign`_ - Assign users to role
   -  `mmctl permissions show`_ - Show the role information
   -  `mmctl permissions role unassign`_ - Unassign users from a role
 
@@ -2468,12 +2469,82 @@ mmctl permissions add
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
+mmctl permissions remove
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+  Remove one or more permissions from an existing role (available in Enterprise Edition E10 and E20).
+
+**Format**
+
+.. code-block:: sh
+
+      mmctl permissions remove [role_name] [permission...] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+      permissions remove system_user list_open_teams
+
+**Options**
+
+.. code-block:: sh
+
+     -h, --help   help for remove
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl permissions reset
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Reset the given role's permissions to the default settings and overwrite custom settings (available in Enterprise Edition E10 and E20).
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl permissions reset [role_name] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+    # Reset the permissions of the 'system_read_only_admin' role.
+    $ mmctl permissions reset system_read_only_admin
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for reset
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
+
 mmctl permissions role assign
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
 
-  Assign users to a role by username (only available in Enterprise Edition E10 and E20).
+Assign users to a role by username (available in Enterprise Edition E10 and E20).
 
 **Format**
 
@@ -2508,40 +2579,6 @@ mmctl permissions role assign
       --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
       --local                        allows communicating with the server through a unix socket
       --strict                       will only run commands if the mmctl version matches the server one
-
-mmctl permissions remove
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Description**
-
-  Remove one or more permissions from an existing role (only available in E10 and E20).
-
-**Format**
-
-.. code-block:: sh
-
-      mmctl permissions remove [role_name] [permission...] [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-      permissions remove system_user list_open_teams
-
-**Options**
-
-.. code-block:: sh
-
-     -h, --help   help for remove
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl permissions show
 ^^^^^^^^^^^^^^^^^^^^^^^

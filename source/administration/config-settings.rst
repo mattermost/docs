@@ -1553,10 +1553,10 @@ Set the link for the support website.
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`__ for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`__ for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://about.mattermost.com/downloads/"`` with string input.                                                            |
+| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/"`` with string input.                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Android App Download Link
@@ -4714,6 +4714,21 @@ Audit settings
 
 The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
+Remote Clusters
+^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Enable this setting to add, remove, and view remote clusters for shared channels.
+
+**True**: When ``true`` System Admins can manage remote clusters using the System Console.
+
+**False**: Remote cluster management is disabled.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``.                                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Syslog configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -5374,6 +5389,19 @@ In previous Mattermost Server versions, and this documentation, the instructions
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Shared Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+**True**: Enables users from multiple Mattermost instances to collaborate with one another using shared channels.
+
+**False**: Disables channel sharing.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSharedChannels": false`` with options ``true`` and ``false``.                |
++---------------------------------------------------------------------------------------------------------------------------------+ 
 
 Deprecated Configuration Settings
 -----------------------------------
