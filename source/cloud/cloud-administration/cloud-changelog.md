@@ -12,34 +12,34 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Improvements
 
 #### User Interface (UI)
- - Improved the Add Members modal user interface.
- - Added formatting shortcut keys to the Shortcut modal.
- - Added localization to the date picker, for use when searching for posts around a given date.
+ - Improved the **Add Members** modal user interface.
+ - Added formatting shortcut keys to the **Shortcut** modal.
+ - Added localization to the date picker used when searching for posts around a given date.
  - The autocomplete popover is now positioned relative to the ``@``, ``~``, or ``/`` trigger in the post draft.
 
 #### Notifications
  - Posts from OAuth 2.0 bots no longer trigger mentions for the user.
 
 #### Administration
- - Added a ``ImportDelete`` job to periodically delete unused import files after a configurable retention period has passed.
- - Introduced a new ``mattermost_system_server_start_time`` and ``mattermost_jobs_active`` metrics for improved debugging with Grafana dashboards.
+ - Added an ``ImportDelete`` job to periodically delete unused import files after a configurable retention period has passed.
+ - Introduced new ``mattermost_system_server_start_time`` and ``mattermost_jobs_active`` metrics for improved debugging with Grafana dashboards.
  - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
- - Changed default ``MaxFileSize`` from 50Mb to 100Mb.
+ - Changed default ``MaxFileSize`` from 50MB to 100MB.
  - Updated Go dependencies to their latest minor version.
 
 ### Bug Fixes
- - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change the config value.
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change the configuration value.
  - The ``DownloadComplianceReport`` function in the Golang driver has been fixed to be able to download a full report as a zip archive.
  - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
- - Fixed a bug in in-product notices where a date constraint sometimes failed to match and would lead to the notice not being fetched.
- - Fixed an issue where the channel switcher did not focus first list result after a backspace.
- - Fixed an issue where the instructions to search for users under **Reporting > Server Logs** were outdated.
- - Fixed an issue where no error message was displayed when adding a LDAP Group Synced Team in **System Console > Users page**.
+ - Fixed a bug with in-product notices where a date constraint sometimes failed to match, and would lead to the notice not being fetched.
+ - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
+ - Fixed an issue where the in-product instructions to search for users under **System Console > Reporting > Server Logs** were outdated.
+ - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
 
 ### Known Issues
- - Setting changes do not get saved on **System Console > Site Configuration > Public Links**.
- - Alignment of channel header text "This channel has guests" is off.
- - Sometimes an "Unable to get role" error appears when changing a channel member role on **User Management > Channel**.
+ - Setting changes do not get saved in **System Console > Site Configuration > Public Links**.
+ - Channel header text "This channel has guests" is misaligned.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channel**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
