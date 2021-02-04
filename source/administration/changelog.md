@@ -25,6 +25,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 #### Self-serve renewals (E10 & E20)
  - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales. The renewal process takes place in [the customer portal](https://customers.mattermost.com/signup) and only takes a few minutes to complete.
+ 
+#### Incident Collaboration v1.3.1
+ - Pre-packaged Incident Collaboration v1.3.1.
 
 ### Improvements
 
