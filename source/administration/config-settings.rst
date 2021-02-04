@@ -589,7 +589,7 @@ Maximum File Size
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxFileSize": 52428800`` with numerical input.                                                                          |
+| This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
