@@ -27,20 +27,26 @@ jobs:
       - name: Build
         run: make html
 
+      - name: Build Previews
+        if: env.IS_MEMBER == 'true'
+        run: |
+          rm -rf ./dist
+          hugo -F -s site --destination ../dist/html
       - name: Deploy
+        if: env.IS_MEMBER == 'true'
         uses: peaceiris/actions-gh-pages@v3.7.0-1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          destination_dir: ./${{ github.actor }}
-          publish_dir: ./build/html
+          destination_dir: ./${{ github.event.number }}
+          publish_dir: ./dist/html
           publish_branch: gh-pages
           keep_files: true
-
+          
       - name: Add comment to PR
+        if: env.IS_MEMBER == 'true'
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Published to [preview environment ${{ github.actor }}](https://mattermost.github.io/docs/${{ github.actor }}/index.html)
-
+            Newest code from ${{ github.actor}} has been published to [preview environment](https://mattermost.github.io/docs/${{ github.event.number }})
