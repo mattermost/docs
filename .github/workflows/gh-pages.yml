@@ -54,7 +54,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_dir: ./${{ github.event.number }}
-          publish_dir: ./dist/html
+          publish_dir: ./build/html
           publish_branch: gh-pages
           keep_files: true
           
