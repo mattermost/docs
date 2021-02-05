@@ -4122,7 +4122,7 @@ Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 
 *Not available in Mattermost Cloud.*
 
-This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
 
 .. note::
 
