@@ -208,9 +208,10 @@ Incident members can end an incident using any one of the following:
 
 * From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-2. Select the **Tasks** tab.
-3. Within the **Tasks** tab, if you are on the final stage, select **End Incident**.
-4. Otherwise, to end the incident from an earlier stage, select the **...** menu, then select **End Incident**.
+2. Select **Update Status**.
+3. From the **Status** drop-down menu, select **Resolved**.
+4. Enter a message with additional details.
+5. Select **Update Status**
 
 Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
 
@@ -223,8 +224,10 @@ If an incident was ended prematurely, it can be restarted using any one of the f
 
 * From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the RHS.
-2. Select the **Tasks** tab.
-3. Within the **Tasks** tab select **Restart Incident**.
+2. Select **Update Status**.
+3. From the **Status** drop-down menu, select **Active**.
+4. Enter a message with additional details.
+5. Select **Update Status**
 
 Reviewing past incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,13 +249,13 @@ The ``/incident`` slash command allows interaction with incidents via the post t
 
 - ``/incident start`` - Start a new incident.
 - ``/incident end`` - End an ongoing incident.
+- ``/incident update`` - Update the current incident's status.
 - ``/incident restart`` - Restart an ended incident.
-- ``/incident check [stage #] [task #]`` - Check/uncheck the specified stage's task.
-- ``/incident announce ~channel`` - Announce the current incident in other channels.
+- ``/incident check [checklist item]`` - Check/uncheck the specified task.
+- ``/incident announce ~[channels]`` - Announce the current incident in other channels.
 - ``/incident list`` - List all your incidents.
 - ``/incident commander [@username]`` - Show or change the current commander.
 - ``/incident info`` - Show a summary of the current incident.
-- ``/incident stage [next/prev]`` - Move to the next or previous stage.
 
 Channel Export
 --------------
