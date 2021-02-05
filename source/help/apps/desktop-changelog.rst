@@ -4,7 +4,7 @@ Desktop Application Changelog
 Release v4.6
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.2>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 - **v4.6.2, released 2021-01-25**
  - Fixed an issue where logging in to ``gitlab.com`` did not work on the Desktop App. `MM-31626 <https://mattermost.atlassian.net/browse/MM-31626>`_
