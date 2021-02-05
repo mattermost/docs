@@ -11,7 +11,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v5.31.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr>`__ - `Download <https://releases.mattermost.com/5.31.1/mattermost-5.31.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.31.1/mattermost-5.31.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``05e4631a1c755925981838a331addf9575e5ff16f5c4ade2354ef66325f3d06d``
+  - SHA-256 Checksum: ``9dbe720b1e54fab31061fe186d39187f84aeb99b263c2377bb248cbaa8a21bef``
   - GPG Signature: https://releases.mattermost.com/5.31.1/mattermost-5.31.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.30.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-30>`__ - `Download <https://releases.mattermost.com/5.30.3/mattermost-5.30.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.30.3/mattermost-5.30.3-linux-amd64.tar.gz``
@@ -220,7 +220,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v5.31.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr>`__ - `Download <https://releases.mattermost.com/5.31.1/mattermost-team-5.31.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.31.1/mattermost-team-5.31.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``3c9e862df1166000566772876f38713cf1eb8b64b675bcef3819fb9cc255d7bc``
+  - SHA-256 Checksum: ``83abcef77caf19f2b620e54b2a996b8d6d9f434fcfd8f7402a76cc7183c105b0``
   - GPG Signature: https://releases.mattermost.com/5.31.1/mattermost-team-5.31.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.30.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-30>`__ - `Download <https://releases.mattermost.com/5.30.3/mattermost-team-5.30.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.30.3/mattermost-team-5.30.3-linux-amd64.tar.gz``
