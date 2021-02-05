@@ -156,7 +156,7 @@ Join an incident by joining the incident channel. If the incident channel is pub
 If the incident channel is private, an existing member of the incident channel must invite you. System Admins may join private incident channels without permission.
 
 Working with tasks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Any member of the incident channel can work with tasks:
 
