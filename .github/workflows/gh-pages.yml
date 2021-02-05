@@ -8,30 +8,46 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if organization member
+        run: |
+          value=false
+          for value in $(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/users/${{ github.event.pull_request.user.login }}/orgs | jq '.[] | contains({"login":"mattermost"})')
+          do
+            if [[ $value ]]; then
+              break
+            fi
+          done
+          echo "IS_MEMBER=$value" >> $GITHUB_ENV
+          if [[ $value ]]; then
+            echo "Is a member of the Mattermost Organization"
+          else
+            echo "Is not a member of the Mattermost Organization"
+          fi
+          
       - uses: actions/checkout@v2
+        if: env.IS_MEMBER == 'true'
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Python
+        if: env.IS_MEMBER == 'true'
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
 
       - name: Install pipenv
+        if: env.IS_MEMBER == 'true'
         run: pip install pipenv
 
       - name: Install dependencies
+        if: env.IS_MEMBER == 'true'
         run: pipenv install --dev
 
       - name: Build
+        if: env.IS_MEMBER == 'true'
         run: make html
 
-      - name: Build Previews
-        if: env.IS_MEMBER == 'true'
-        run: |
-          rm -rf ./dist
-          hugo -F -s site --destination ../dist/html
       - name: Deploy
         if: env.IS_MEMBER == 'true'
         uses: peaceiris/actions-gh-pages@v3.7.0-1
