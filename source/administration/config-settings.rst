@@ -49,7 +49,7 @@ When starting the server, specify the license key as ``MM_LICENSE`` with the con
 .. note::
    If ``MM_LICENSE`` is set to a non-empty string, but the license specified is not valid, the Mattermost server will be started without a license.
    
-   In a high-availability environment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
+   In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
 
 Load Custom Configuration Defaults
 ----------------------------------
