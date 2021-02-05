@@ -41,8 +41,8 @@ Mattermost Incident Collaboration is available in the Plugin Marketplace:
 4. From the plugin configuration page, set **Enable Plugin** to ``true``.
 5. Select **Save** to enable the plugin.
 
-Getting Started with Incident Collaboration
--------------------------------------------
+Getting Started with Mattermost Incident Collaboration
+------------------------------------------------------
 
 Mattermost Incident Collaboration has the following components:
 
