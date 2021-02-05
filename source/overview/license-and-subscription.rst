@@ -96,6 +96,10 @@ An email with the new license key and information on how to upload the license i
 
 You can watch a video overview of the renewal process on `YouTube <https://www.youtube.com/watch?v=Sz_1nhVufHY>`_.
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
