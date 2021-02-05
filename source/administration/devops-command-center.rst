@@ -1,9 +1,9 @@
-Mattermost Incident Management
-==============================
+Mattermost Incident Collaboration
+=================================
 
 *Available in Mattermost Enterprise Edition E20, Mattermost Cloud Professional, and Mattermost Cloud Enterprise.*
 
-Incidents are situations which require an immediate response, and incidents benefit from a clearly defined process that guides toward resolution. Mattermost Incident Management equips your team to coordinate, manage, and resolve incidents from within Mattermost:
+Incidents are situations which require an immediate response, and incidents benefit from a clearly defined process that guides toward resolution. Mattermost Incident Collaboration equips your team to coordinate, manage, and resolve incidents from within Mattermost:
 
 * Starting an incident automatically creates a dedicated incident channel to coordinate discussion. 
   
@@ -17,34 +17,34 @@ Incidents are situations which require an immediate response, and incidents bene
   
   - Export the incident channel conversation to conduct a post-mortem review.
 
-Delivering more reliable services requires an efficient resolution process. Use Mattermost Incident Management not only to resolve incidents more efficiently, but also to learn from past incidents and refine the process your team relies upon for success.
+Delivering more reliable services requires an efficient resolution process. Use Mattermost Incident Collaboration not only to resolve incidents more efficiently, but also to learn from past incidents and refine the process your team relies upon for success.
 
 .. contents::
   :depth: 1
   :local:
   :backlinks: entry
   
-Installing Mattermost Incident Management
------------------------------------------
+Installing Mattermost Incident Collaboration
+--------------------------------------------
 
 *For Cloud deployments*
 
-Mattermost Incident Management is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
+Mattermost Incident Collaboration is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
 
 *For self-managed deployments*
 
-Mattermost Incident Management is available in the Plugin Marketplace:
+Mattermost Incident Collaboration is available in the Plugin Marketplace:
 
 1. As a System Admin, go to **Main Menu > Plugin Marketplace**.
-2. Search for **Incident Management**.
+2. Search for **Incident Collaboration**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
 4. From the plugin configuration page, set **Enable Plugin** to ``true``.
 5. Select **Save** to enable the plugin.
 
-Getting Started with Incident Management
-----------------------------------------
+Getting Started with Incident Collaboration
+-------------------------------------------
 
-Mattermost Incident Management has the following components:
+Mattermost Incident Collaboration has the following components:
 
 * **Incidents** are situations that require an immediate response. Every reported incident results in a newly-created, public or private incident channel exposing a custom user interface for collaboration and resolution.
 * **Playbooks** define the process to guide an incident toward resolution. Playbooks are created in advance by defining the tasks, checklists, and other configuration used during an incident.
@@ -55,7 +55,7 @@ Mattermost Incident Management has the following components:
 .. note:: 
    From v1.3.0, stages have been renamed to checklists, and serve only as a grouping mechanism for tasks. Tasks from any checklist may now be completed at any time.
 
-To access Mattermost Incident Management:
+To access Mattermost Incident Collaboration:
 
 * From the Main Menu, select **Playbooks & Incidents** to configure playbooks and review incidents of which you are a member. System administrators have unrestricted access.
 * From the channel header, select the **Incidents** icon to open the right-hand sidebar. From there, create a new incident or collaborate on active incidents of which you are a member.
@@ -86,7 +86,7 @@ Creating a playbook
 A playbook must be defined before starting an incident.
 
 1. Go to **Main Menu > Playbooks & Incidents**.
-2. Start a **Blank Playbook**, or use the built-in **Incident Management Playbook** as a template.
+2. Start a **Blank Playbook**, or use the built-in **Incident Collaboration Playbook** as a template.
 3. Name your playbook and provide a description.
 4. Select the **Tasks** tab.
 5. Within the **Tasks** tab, customize the checklists and tasks:
@@ -153,7 +153,7 @@ Joining an incident
 
 Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
 
-If the incident channel is private, an existing member of the incident channel must invite you. System administrators may join private incident channels without permission.
+If the incident channel is private, an existing member of the incident channel must invite you. System Admins may join private incident channels without permission.
 
 Working with checklists and tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -262,4 +262,4 @@ Exporting the contents of an incident channel requires the channel export plugin
 API Documentation
 -----------------
 
-To interact with the incidents data model programmatically, consult the `REST API specification <https://github.com/mattermost/mattermost-plugin-incident-management/blob/master/server/api/api.yaml>`_.
+To interact with the incidents data model programmatically, consult the `REST API specification <https://github.com/mattermost/mattermost-plugin-incident-collaboration/blob/master/server/api/api.yaml>`_.
