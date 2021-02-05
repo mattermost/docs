@@ -158,7 +158,7 @@ If the incident channel is private, an existing member of the incident channel m
 Working with tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Any member of the incident channel may work with checklists and tasks:
+Any member of the incident channel can work with tasks:
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
