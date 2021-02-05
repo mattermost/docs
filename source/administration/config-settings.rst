@@ -42,7 +42,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 Override Mattermost License File
 --------------------------------
 
-Starting from Mattermost v5.26, you can specify a license override using an environment variable to override any license in the database or file configuration without replacing those licenses.
+Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
 
 When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
 
