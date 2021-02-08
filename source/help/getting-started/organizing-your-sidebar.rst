@@ -54,6 +54,7 @@ Create custom categories to group channels together for quicker and easier navig
 Categories can be created in two ways:
 
 - Select the **+** symbol at the top of the sidebar; or,
+
   - Select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
 Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
@@ -101,7 +102,6 @@ Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Me
 .. tip::
 
   Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.
-  
 - Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select.
 - Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
 - Press ESC to clear channel or Direct Message selections.
@@ -170,7 +170,8 @@ Control how many Direct Message conversations display in the **Direct Messages**
 You have two ways to configure the number of Direct Messages to display:
 
 - Go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**; or
-  - Select the **Channel options** icon in the sidebar, then select **Show**.
+ 
+ - Select the **Channel options** icon in the sidebar, then select **Show**.
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
 
