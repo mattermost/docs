@@ -14,6 +14,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### User Interface (UI)
  - Added new languages, Bulgarian and Swedish.
  - Moved the header icons to the left of the header beside the channel description.
+ - The Database search using PostgreSQL now supports searching for terms that contain underscores.
 
 #### Plugins
  - Enabled experimental support for ARM64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
@@ -24,7 +25,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Added a ``CollapsedThreads`` feature flag.
  - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
  - Removed the word "experimental" from the Gossip setting in the System Console.
- - The Database search using PostgreSQL now supports searching for terms that contain underscores.
  - Deprecated the ``ExperimentalChannelSidebarOrganization`` setting and added a new ``EnableLegacySidebar`` setting. The new channel sidebar will be enabled system-wide by default.
 
 #### Bug Fixes
