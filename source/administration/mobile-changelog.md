@@ -10,7 +10,7 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
- - Added support for OpenID Connect (E20 Edition) - **This feature is available with an upcoming v5.33.0 (March 16th) release.**
+ - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
  - Added new languages, Bulgarian and Swedish.
 
 ### Bug Fixes
@@ -22,9 +22,6 @@
  - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
  - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
  - Fixed an issue where "(you)" did not appear after the current username when using ``@yourself`` autocomplete in a channel.
-
-#### Android specific
- - 
 
 #### iOS specific
  - Fixed an issue where users were unable to scroll horizontally to view multiple file attachments.
