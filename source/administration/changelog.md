@@ -26,8 +26,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Self-serve renewals (E10 & E20)
  - Mattermost is introducing the ability to renew your self-managed E10 or E20 license subscription online with a credit card. This feature creates a frictionless experience for System Administrators to renew their license without the need to contact sales. The renewal process takes place in [the customer portal](https://customers.mattermost.com/signup) and only takes a few minutes to complete.
  
-#### Incident Collaboration v1.3.1
- - Pre-packaged Incident Collaboration v1.3.1.
+#### Incident Collaboration v1.3.2
+ - Pre-packaged Incident Collaboration v1.3.2.
 
 ### Improvements
 
@@ -88,9 +88,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Thread related API routes now include ``teamId`` path parameter.
  - Changed output of ``Get Threads API`` to include ``total_unread_threads`` instead of ``total_unread_replies``.
  - Added ``collapsedThreads`` and ``collapsedThreadsExtended`` query parameters to:
-    - 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts'
-    - 'api/v4/users/{user_id:[A-Za-z0-9]+}/channels/{channel_id:[A-Za-z0-9]+}/posts/unread'
-    - 'api/v4/posts/{post_id:[A-Za-z0-9]+}/thread'
+    - ``api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts``
+    - ``api/v4/users/{user_id:[A-Za-z0-9]+}/channels/{channel_id:[A-Za-z0-9]+}/posts/unread``
+    - ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread``
 
 ### Database Changes
  - Added a new ``Shared`` column to the ``Channels`` table.
