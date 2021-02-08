@@ -6,12 +6,6 @@ Conversations in Mattermost are crucial to company productivity and success. Kee
 Channel types
 -------------
 
-Channels are used to organize conversations across different topics. There are three types of channels:
-
-- Public channels
-- Private channels
-- Direct Messages and Group Messages
-
 Public channels
 ~~~~~~~~~~~~~~~
 
@@ -20,34 +14,24 @@ Public channels are open to everyone on a team. New team members are automatical
 Private channels
 ~~~~~~~~~~~~~~~~
 
-Private channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admin and System Admin <https://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`__.
+Private channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admins and System Admins <https://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`__.
 
 Direct Messages and Group Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Direct Messages are conversations between two people. Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
-
-Use a Direct Message when you want a private conversation with one person. Use a Group Message when you want to set up a conversation with up to seven other participants. If you want to communicate with more than seven people, you must create a Private channel.
+Use a Direct Message when you want a private conversation with one person. Use a Group Message when you want to set up a private conversation with up to seven other participants. If you want to communicate with more than seven people, you must create a Private channel. Direct and Group Messages are visible only to the people involved.
 
 If your System Admin has allowed it, you can start a Direct Message or a Group Message with people on other teams.
-
-.. tip:: 
-
-  Check the online status indicator next to names in the Direct Message list. 
-- **Online**: A green checkmark indicates an active user.
-- **Away**: An orange clock indicates no user activity for at least 5 minutes.
-- **Do Not Disturb**: A red dash indicates the user has disabled email, desktop, and push notifications.
-- **Offline**: A circle outline indicates the user is offline.
 
 Customizing your sidebar
 ------------------------
 
-You can organize your sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
+You can organize your channel sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
 
 Here’s how your sidebar is set up by default:
 
-- All channels you've joined are listed in the **Channels** category, sorted alphabetically.
-- All your Direct Messages are listed in the **Direct Messages** category, sorted by recent activity.
+- All Public and Private Channels you've joined are listed in the **Channels** category, sorted alphabetically.
+- All your Direct Messages and Group Messages are listed in the **Direct Messages** category, sorted by recent activity.
 
 What can you customize?
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +39,7 @@ What can you customize?
 You can customize your sidebar in the following ways:
 
 - Group and order channels into collapsible categories you create.
-- Sort each channel in a category manually, alphabetically, or by recent activity.
+- Sort channels in each category manually, alphabetically, or by recent activity.
 - Mute and unmute entire categories.
 - Filter your sidebar to view unread channels only, or choose to group unread messages into an **Unreads** category.
 - Sort Direct Messages alphabetically or by recent activity, and choose how many are displayed in your sidebar.
@@ -65,17 +49,14 @@ You can customize your sidebar in the following ways:
 Creating custom categories
 --------------------------
 
-Create custom categories to group channels together for quicker and easier navigation (e.g. “Design” or “Marketing”). For example, you can create a category called "Design" or "Marketing".
+Create custom categories to group channels together for quicker and easier navigation. For example, you can create a category called "Design" or "Marketing".
 
 Categories can be created in two ways:
 
-- Select the **+** symbol at the top of the sidebar.
+- Select the **+** symbol at the top of the sidebar; or,
+  - Select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
-Or
-
-- Select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
-
-Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group using CTRL/CMD or SHIFT. See **Dragging and dropping selections** below for details.
+Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
 
 Making categories work for you
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,11 +100,11 @@ Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Me
 
 .. tip::
 
-  - Select sequential channels and/or Direct Messages by pressing and holding SHIFT. 
-- Select non-sequential channels and/or Direct Messages by pressing and holding CMD (for Mac) or CTRL (for Windows/Linux). 
+  Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.
+  
+- Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select.
+- Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
 - Press ESC to clear channel or Direct Message selections.
-
-Multi-selected channels and Direct Messages move together as a group in the order they originally appeared.
 
     .. image:: ../../images/multi-select-drag.gif
 
@@ -161,12 +142,12 @@ Select the **Category options** icon in the sidebar, then select **Sort** and ch
 Group unread channels separately
 --------------------------------
 
-Catch up on all your unread channels in one place at the top of your sidebar with a one-click **Unreads** category. By default, Mattermost offers a one-click **Unreads** filter to only show channels with unread activity. Instead, you may choose to automatically group unread channels in their own category at the top of your sidebar.
+By default, Mattermost provides a one-click **Unreads** filter to only show channels with unread activity. Alternatively, you may choose to automatically group unread channels in their own category at the top of your sidebar.
 
 Go to **Main Menu > Account Settings > Sidebar**, set **Group unread channels separately** to **On**, then select **Save**.
 
-- When this setting is enabled, all unread messages appear only in the **Unreads** category.
-- When this setting is disabled, all unread messages appear within their respective categories and channels.
+- When this setting is enabled, all unread messages appear only in the **Unreads** category, sorted with mentions first.
+- When this setting is disabled, all unread messages appear within their respective categories and channels. You can use the **Unread filter** to focus on only unread channels in the sidebar.
 
 When enabled, unread channels with mentions will sort to the top of the category.
 
@@ -176,25 +157,20 @@ When enabled, unread channels with mentions will sort to the top of the category
   
   If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling **Group unread channels separately** under **Account Settings > Sidebar**.
 
-Sorting your Direct Messages
-----------------------------
+Managing Direct Messages
+------------------------
 
-Sort your Direct Messages alphabetically or by recent conversations first.
-
-Select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
+To sort your Direct Messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
 How many Direct Messages to display?
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Control how many Direct Message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
 
 You have two ways to configure the number of Direct Messages to display:
 
-- Go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**.
-
-Or
-
-- Select the **Channel options** icon in the sidebar, then select **Show**.
+- Go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**; or
+  - Select the **Channel options** icon in the sidebar, then select **Show**.
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
 
