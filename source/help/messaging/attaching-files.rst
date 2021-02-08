@@ -53,4 +53,4 @@ Attachment Limits and Sizes
 
 A maximum of 10 files can be attached per post.
 
-The default maximum file size for Cloud deployments is 100 MB, and this file size increase will be available for self-hosted deployments from Mattermost Server v5.33. 
+The default maximum file size for attachments for Cloud deployments is 100 MB. For self-hosted deployments, this can be changed by the System Admin. 
