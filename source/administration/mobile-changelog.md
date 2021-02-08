@@ -1,5 +1,36 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.40.0 Release
+- Release Date: February 16, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
+ - Added new languages, Bulgarian and Swedish.
+
+### Bug Fixes
+ 
+#### All apps
+ - Fixed an issue where deeply nested asterisks caused the app to crash.
+ - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
+ - Fixed an issue where posts with at-mentions were double posting if the user hit the **Send** button quickly multiple times in a thread.
+ - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
+ - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
+ - Fixed an issue where "(you)" did not appear after the current username when using ``@yourself`` autocomplete in a channel.
+
+#### iOS specific
+ - Fixed an issue where users were unable to scroll horizontally to view multiple file attachments.
+ 
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
 ## 1.39.0 Release
 - Release Date: January 16, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
