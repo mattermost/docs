@@ -221,7 +221,7 @@
                 "sha256:c1c00fc4f6e8b101a0d037065043460dffc2d507257f2f11acaed71fd2b0c83c"
             ],
             "index": "pypi",
-            "version": "==1.8.4"
+            "version": "==3.4.3"
         },
         "sphinx-autobuild": {
             "hashes": [
