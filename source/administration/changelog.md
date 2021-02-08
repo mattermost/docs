@@ -6,12 +6,12 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-- **v5.31.1, release day TBD**
-  - Fixing an issue where the ``config.json`` is sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
-  - Fixing an issue where ``FeatureFlags`` section is getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
-  - Fixing an issue where channels are sometimes removed from custom categories when a user leaves a team. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
-  - Fixing an issue where users are unable to mark Direct Messages in a thread as unread. [MM-32253](https://mattermost.atlassian.net/browse/MM-32253)
-  - Fixing an issue where ``PermanentDeleteChannel`` fails with "failed to get a thread" error. [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
+- **v5.31.1, released 2021-02-05**
+  - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
+  - Fixed an issue where ``FeatureFlags`` section was getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
+  - Fixed an issue where channels were sometimes removed from custom categories when a user left a team. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
+  - Fixed an issue where users were unable to mark Direct Messages in a thread as unread. [MM-32253](https://mattermost.atlassian.net/browse/MM-32253)
+  - Fixed an issue where ``PermanentDeleteChannel`` failed with "failed to get a thread" error. [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
 - **v5.31.0, released 2021-01-16**
   - Original 5.31.0 release
 
