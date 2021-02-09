@@ -34,10 +34,9 @@ Once the App Registration has been created, you can configure it further. The st
 
 2. Provide a description, define the expiry for the token, then select **Add**.
 
+3. In Azure Portal, select **Overview** from the menu, then copy and paste both the _Application (client) ID_ and the _Directory (tenant) ID_ to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
+
    ![](../../../source/images/AzureApp_Client_Secret_Expiry.png)
-
-In Azure Portal, select **Overview** from the menu, then copy and paste both the _Application (client) ID_ and the _Directory (tenant) ID_ to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
-
    ![](../../../source/images/AzureApp_App_Directory_IDsv2.png)
 
 ### Step 3: Configure Mattermost for Office 365 SSO
