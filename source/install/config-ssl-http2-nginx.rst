@@ -230,7 +230,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
    }
 
-14. Check that your SSL certificate is set up correctly.
+15. Check that your SSL certificate is set up correctly.
 
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
@@ -327,9 +327,9 @@ If you see the above errors this is typically because certbot was not able to ac
 .. note::
    If you're using Cloudflare you'll need to disable ``force traffic to https``.
 
-**Certbot Rate Limiting**
+**Certbot rate limiting**
 
-If running certbot as stand-alone you'll see the below error:
+If you're running certbot as stand-alone you'll see this error:
 
 .. code-block:: none
 
@@ -343,10 +343,10 @@ If running certbot as stand-alone you'll see the below error:
       Status: 429
       Detail: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/
 
-If running Let's Encrypt within Mattermost you'll see the below error:
+If you're running Let's Encrypt within Mattermost you'll see this error:
 
 .. code-block:: none
 
       {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
 
-This error means that you've attempted to generate a cert too many times. You can find more information here - https://letsencrypt.org/docs/rate-limits/.
+This means that you've attempted to generate a cert too many times. You can find more information `here <https://letsencrypt.org/docs/rate-limits>`_.
