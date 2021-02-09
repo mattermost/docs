@@ -232,7 +232,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
 15. Check that your SSL certificate is set up correctly.
 
-  * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html
+  * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html.
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
 NGINX Configuration FAQ
