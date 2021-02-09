@@ -1,14 +1,14 @@
 # Google Single Sign-On
 
-Follow these steps to configure Mattermost to use Google as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
-
-**Note:** The [Google People API](https://developers.google.com/people) has replaced the Google+ API, which was deprecated by Google as of March 7th, 2019 [per their notice](https://developers.google.com/+/api-shutdown).
-
-## Migrating OAuth 2.0 configuration to OpenID Connect
+## Migrating from OAuth 2.0 to OpenID Connect
 
 OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration] for Google Apps to the new OpenID Connect standard.
 
 ## Configuring Google Apps as a Single Sign-On (SSO) service
+
+Follow these steps to configure Mattermost to use Google as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
+
+**Note:** The [Google People API](https://developers.google.com/people) has replaced the Google+ API, which was deprecated by Google as of March 7th, 2019 [per their notice](https://developers.google.com/+/api-shutdown).
 
 ### Step 1: Create an OpenID Connect project in Google API Manager
 
@@ -76,4 +76,3 @@ OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the produ
     - `Scope`: `profile email`
     - `AuthEndpoint`: `https://accounts.google.com/o/oauth2/v2/auth`
     - `TokenEndpoint`: `https://www.googleapis.com/oauth2/v4/token`
-    - `UserApiEndpoint`: `https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`
