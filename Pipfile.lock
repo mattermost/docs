@@ -239,6 +239,14 @@
             "index": "pypi",
             "version": "==0.4.2"
         },
+         "sphinxcontrib-serializinghtml": {
+            "hashes": [
+                "sha256:eaa0eccc86e982a9b939b2b82d12cc5d013385ba5eadcc7e4fed23f4405f77bc",
+                "sha256:f242a81d423f59617a8e5cf16f5d4d74e28ee9a66f9e5b637a18082991db5a9a"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==1.1.4"
+        },
         "sphinx-sitemap": {
             "hashes": [
                 "sha256:2d1f1c17af44cb17d476e735b73c0d2c37b5b468c2557ef700c5a299e3eb844d"
