@@ -5,15 +5,13 @@ Follow these steps to configure Mattermost to use your Office 365 logon credenti
 
 **Note:** The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.
 
-## Migrating an existing connection
+## Migrating OAuth 2.0 configuration to OpenID Connect
 
-To migrate an existing Office 365 OAuth connection to OpenID:
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration] for Office 365 to the new OpenID Connect standard.
 
-[TBD]
+## Configuring Office 365 as a Single Sign-On (SSO) service
 
-## Creating a new connection
-
-### Step 1: Creating new app registration in Azure Portal
+### Step 1: Register an application in Azure Portal
 
 1. Log in to your [Azure Portal](https://portal.azure.com/) with the account that relates to the Azure Active Directory tenant where you want to register the application. You can confirm the tenant in the top right corner of the portal.
 
@@ -31,7 +29,7 @@ To migrate an existing Office 365 OAuth connection to OpenID:
 
 Once the App Registration has been created, you can configure it further. The standard Azure AD documentation is [here](https://docs.microsoft.com/en-gb/azure/active-directory/develop/quickstart-register-app) for reference.
 
-### Step 2: Generating a new client secret in Azure Portal
+### Step 2: Generate a new client secret in Azure Portal
 
 1. In the Azure Portal, select **Certificates and Secrets** from the menu, then select the button to generate a **New Client secret**. 
 
@@ -39,39 +37,45 @@ Once the App Registration has been created, you can configure it further. The st
 
    ![](../../../source/images/AzureApp_Client_Secret_Expiry.png)
 
-You are provided with the _client secret value_. Copy and paste it to a temporary location. You will enter this value as a **Client Secret** in the Mattermost System Console.
-
-### Step 3: Copying values for Mattermost configuration
-
 In Azure Portal, select **Overview** from the menu, then copy and paste both the _Application (client) ID_ and the _Directory (tenant) ID_ to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
 
    ![](../../../source/images/AzureApp_App_Directory_IDsv2.png)
 
-### Step 4: Configuring Mattermost for Office 365 SSO
+### Step 3: Configure Mattermost for Office 365 SSO
 
 1. Log in to Mattermost, then go to the **System Console > Authentication > OpenID Connect**.
 
 2. Select **Office 365** as the service provider.
 
-3. Paste in _client secret value_ as the **Client Secret**.
+3. Paste in the _Directory (tenant) ID_ from Azure Portal as the **Directory (tenant) ID** in Mattermost.
 
-4. Paste in the _Application (client) ID_ as the **Client ID**
+4. The **Discovery Endpoint** for OpenID Connect with Office 365 is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
 
-5. Paste in the _Directory (tenant) ID_ as the **Directory (tenant) ID**.
+5. Paste in the _Application (client) ID_ from Azure Portal as the **Client ID** in Mattermost.
+
+6. Paste in the _client secret value_ from Azure Portal as the **Client Secret** in Mattermost.
 
 6. Open the Mattermost `config.json` file.
 
-7. In the `Office365Settings` section of `config.json` file, update the following default values:
+7. In the `Office365Settings` section of the `config.json` file, update the default configuration values to include the _Directory (tenant) ID_ value. For example:
 
-   - ``AuthEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/authorize``
-   - ``TokenEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token``
+.. code-block:: none
 
-to include the _Directory (tenant) ID_ value, for example:
+   ``AuthEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/authorize``
+   
+   ``TokenEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token``
 
-   - ``AuthEndpoint: https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize``
-   - ``TokenEndpoint: https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token``
+would change to:
 
-Restart your Mattermost server to see the changes take effect.
+.. code-block:: none
+
+   ``AuthEndpoint: https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize``
+   
+   ``TokenEndpoint: https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token``
+
+8. Select **Save**.
+
+9. Restart your Mattermost server to see the changes take effect.
 
 ### Note about Microsoft Active Directory Tenants
 
@@ -81,4 +85,4 @@ To allow your Azure AD users to sign in to Mattermost using Office 365 SSO, you 
 
 If you don't register Mattermost in the Microsoft Azure AD tenant your organization uses, Office 365 SSO will likely fail for your users.
 
-Note that if you do not use Azure Active Directory, you may simply register Mattermost with your Office 365 or Azure account (either your personal, work or school account) and set up Office 365 SSO with Mattermost using the steps provided above.
+**Note:** If you do not use Azure Active Directory, you may register Mattermost with your Office 365 or Azure account (a personal, work, or school account), then set up Office 365 SSO with Mattermost using the steps provided above.
