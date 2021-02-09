@@ -37,6 +37,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
 
 ### Known Issues
+ - The slash command autocomplete options cover the input box on some reply threads on the right-hand side.
  - Setting changes do not get saved in **System Console > Site Configuration > Public Links**.
  - Channel header text "This channel has guests" is misaligned.
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channel**.
