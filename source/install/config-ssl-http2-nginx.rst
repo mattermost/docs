@@ -129,7 +129,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
   ``sudo certbot``
 
-  This will run certbot and will automatically edit your nginx conf file for the site(s) selected.
+  This will run certbot and will automatically edit your NGINX config file for the site(s) selected.
   
 13. Ensure your SSL is configured properly by running:
 
