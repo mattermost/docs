@@ -305,7 +305,7 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 1. Log in to your GitLab instance as the admin.
 2. Go to **Admin > Applications**.
 3. Select **Edit** on GitLab-Mattermost.
-4. Update the Callback URLs to your new domain/URL.
+4. Update the callback URLs to your new domain/URL.
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
 
