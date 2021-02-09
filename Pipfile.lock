@@ -228,8 +228,8 @@
         },
         "sphinx-autobuild": {
             "hashes": [
-                "sha256:66388f81884666e3821edbe05dd53a0cfb68093873d17320d0610de8db28c74e",
-                "sha256:e60aea0789cab02fa32ee63c7acae5ef41c06f1434d9fd0a74250a61f5994692"
+                "sha256:4b184a7db893f2100bbd831991ae54ca89167a2b9ce68faea71eaa9e37716aed",
+                "sha256:df5c72cb8b8fc9b31279c4619780c4e95029be6de569ff60a8bb2e99d20f63dd"
             ],
             "index": "pypi",
             "version": "==2020.9.1"
