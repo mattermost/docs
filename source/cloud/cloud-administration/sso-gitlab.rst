@@ -1,37 +1,36 @@
 GitLab Single Sign-On
 =====================
 
+Migrating from OAuth 2.0 to OpenID Connect
+------------------------------------------------------
+
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to [convert your existing OAuth configuration] for GitLab to the new OpenID Connect standard. 
+
+Configuring GitLab as a Single Sign-On (SSO) service
+----------------------------------------------------
+
 Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in.
 
 .. Note::  
   Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required, they're not officially supported, and they're known not to work in some cases. 
 
-Migrating OAuth 2.0 configuration to OpenID Connect
-------------------------------------------------------
-
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration] for GitLab to the new OpenID Connect standard. 
-
-Configuring GitLab as a Single Sign-On (SSO) service
-----------------------------------------------------
-
 Step 1: Add an OpenID Connect application to your GitLab account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Sign in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. 
-
-  For *{gitlab-site-name}* use the name of your GitLab instance. If you're using GitLab itself as your service provider, use *gitlab.com*.
+1. Sign in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. For *{gitlab-site-name}* use the name of your GitLab instance. If you're using GitLab itself as your service provider, use *gitlab.com*.
 
 2. Add a new application:
 
   a. In the **Name** field, type *Mattermost*.
-  b. In the **Redirect URI** field add the following two lines, using your own value for *{mattermost-site-name}*.
+  b. In the **Redirect URI** field, add the following two lines using your own value for *{mattermost-site-name}*.
 
     .. code-block:: text
 
       https://{mattermost-site-name}/login/gitlab/complete
       https://{mattermost-site-name}/signup/gitlab/complete
 
-     If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
+ .. Note::
+   If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
 
   c. Do not select any options under **Scopes**.
 
@@ -55,5 +54,4 @@ Step 2: Configure Mattermost for GitLab SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To force all users to sign-up with SSO only, set **System Console > Authentication > Email > Enable sign-in with email** to ``false``
-
 Users must change their sign-in method before they can sign in to Mattermost with GitLab.
