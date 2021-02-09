@@ -94,18 +94,24 @@ Organizing channels in categories
 Once you've created categories, you can move channels within them to organize your sidebar.
 
 Dragging and dropping selections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To select multiple channels:
+
+- Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select. 
+- Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
+- Press ESC to clear channel or Direct Message selections.
 
 Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Messages between or within categories. 
 
 .. tip::
 
-  Multi-selected channels and Direct Messages move together as a group in the order they originally appeared. Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select. Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). Press ESC to clear channel or Direct Message selections.
+  Multi-selected channels and Direct Messages move together as a group in the order they originally appeared. 
 
-    .. image:: ../../images/multi-select-drag.gif
+.. image:: ../../images/multi-select-drag.gif
 
 Moving selections
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 In addition to selecting and dragging, you can also specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
 
