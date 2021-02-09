@@ -15,12 +15,20 @@
 import sys
 import os
 import shlex
+from recommonmark.parser import CommonMarkParser
+from recommonmark.transform import AutoStructify
 
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+        'enable_auto_doc_ref': True,
+        'enable_auto_toc_tree': False,
+    }, True)
+    app.add_transform(AutoStructify)
+    
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('..'))
-import recommonmark
+#sys.path.insert(0, os.path.abspath('..'))
 
 # -- General configuration ------------------------------------------------
 
