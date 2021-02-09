@@ -189,7 +189,7 @@
         },
         "recommonmark": {
             "hashes": [
-                "sha256:1b1db69af0231efce3fa21b94ff627ea33dee7079a01dd0a7f8482c3da148b3f",              
+                "sha256:1b1db69af0231efce3fa21b94ff627ea33dee7079a01dd0a7f8482c3da148b3f"              
             ],
             "index": "pypi",
             "version": "==0.7.1"
