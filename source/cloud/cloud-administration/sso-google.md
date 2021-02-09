@@ -4,15 +4,13 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 
 **Note:** The [Google People API](https://developers.google.com/people) has replaced the Google+ API, which was deprecated by Google as of March 7th, 2019 [per their notice](https://developers.google.com/+/api-shutdown).
 
-## Migrating an existing connection
+## Migrating OAuth 2.0 configuration to OpenID Connect
 
-To migrate an existing Google Apps OAuth connection to OpenID:
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration] for Google Apps to the new OpenID Connect standard.
 
-[TBD]
+## Configuring Google Apps as a Single Sign-On (SSO) service
 
-## Creating a new connection
-
-### Step 1: Creating a project in Google API Manager
+### Step 1: Create an OpenID Connect project in Google API Manager
 
 1. Go to [Google API Manager](https://console.developers.google.com).
 
@@ -22,7 +20,7 @@ To migrate an existing Google Apps OAuth connection to OpenID:
 
 ![](../../../source/images/google_1_credentials.png)
 
-### Step 2: Enabling APIs and Services
+### Step 2: Enable APIs and Services
 
 1. In the **Dashboard** select the option to **ENABLE APIS AND SERVICES**.
 
@@ -30,11 +28,11 @@ To migrate an existing Google Apps OAuth connection to OpenID:
 
 ![](../../../source/images/google_enable_api.png)
 
-### Step 3: Adding MM instance as authorized domain
+### Step 3: Add Mattermost as an authorized domain
 
-1. Leave the Google+ API menu to return to the **APIs & Services menu**. 
+1. Leave the **Google+ API menu** to return to the **APIs & Services menu**. 
 
-2. In the left hand sidebar, select **Credentials**, select the **OAuth consent screen** header, enter "Mattermost" as the **Application Name**, then select **Save**.
+2. In the left-hand sidebar, select **Credentials**, select the **OAuth consent screen** header, enter "Mattermost" as the **Application Name**, then select **Save**.
 
 3. Scroll further down to add your Mattermost instance to a list of authorized domains that can access the API. For example, if it is hosted on `mattermost.yourdomain.com` add `yourdomain.com`.
 
@@ -42,7 +40,9 @@ To migrate an existing Google Apps OAuth connection to OpenID:
 
 5. Select **Web Application** as the **Application type**, and choose a descriptive **Name** for the OAuth connection.
 
-6. Under **Restrictions > Authorized redirect URIs**, enter `your-mattermost-url/signup/google/complete` (example: `http://localhost:8065/signup/google/complete`). Select **Create**.
+6. Under **Restrictions > Authorized redirect URIs**, enter `your-mattermost-url/signup/google/complete` (example: `http://localhost:8065/signup/google/complete`), then select **Create**.
+
+7. Copy and paste the **Client ID** and **Client Secret** values to a temporary location. You will enter these values in the Mattermost System Console.
 
 ![](../../../source/images/google_3_oauth_consent_screen.png)
 
@@ -52,26 +52,26 @@ To migrate an existing Google Apps OAuth connection to OpenID:
 
 ![](../../../source/images/google_4_web_app.png)
 
-### Step 4: Copying values for Mattermost configuration
-
-Copy and paste the **Client ID** and **Client Secret** values to a temporary location. You will enter these values as a **Client ID** and **Client Secret** in the Mattermost System Console.
-
 ![](../../../source/images/google_5_client_id_secret.PNG)
 
-### Step 5: Configuring Mattermost for Google Apps SSO
+### Step 4: Configure Mattermost for Google Apps SSO
 
 1. Log in to Mattermost, then go to the **System Console > Authentication > OpenID Connect**.
 
 2. Select **Google Apps** as the service provider.
 
-3. Paste in the **Client ID**.
+3. The **Discovery Endpoint** for OpenID Connect with Google Apps is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
 
-3. Paste in the **Client Secret**.
+3. Paste in the **Client ID** from Google in Mattermost.
 
-4. Restart your Mattermost server to see the changes take effect.
+3. Paste in the **Client Secret** from Google in Mattermost.
+
+4. Select **Save**.
+
+5. Restart your Mattermost server to see the changes take effect.
 
 **Note:**
-- Alternatively, you may also enter **Client ID** and **Client Secret** values directly into the `GoogleSettings` section of the Mattermost `config/config.json` file.
+- Alternatively, you may enter **Client ID** and **Client Secret** values directly into the `GoogleSettings` section of the Mattermost `config/config.json` file.
 - The following default values are recommended:
     - `Scope`: `profile email`
     - `AuthEndpoint`: `https://accounts.google.com/o/oauth2/v2/auth`
