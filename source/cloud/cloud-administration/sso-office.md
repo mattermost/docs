@@ -1,15 +1,14 @@
 # Office 365 Single Sign-On
-___
 
-Follow these steps to configure Mattermost to use your Office 365 logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
-
-**Note:** The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.
-
-## Migrating OAuth 2.0 configuration to OpenID Connect
+## Migrating from OAuth to OpenID Connect
 
 OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration] for Office 365 to the new OpenID Connect standard.
 
 ## Configuring Office 365 as a Single Sign-On (SSO) service
+
+Follow these steps to configure Mattermost to use your Office 365 logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
+
+**Note:** The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.
 
 ### Step 1: Register an application in Azure Portal
 
@@ -21,7 +20,7 @@ OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the produ
 
 4. Define which **Supported account types** can access the application. For example, if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. 
 
-5. Define the **Redirect URI** as Web client, then input the URL with the host name that will be specific to your Mattermost service followed by `/signup/office365/complete`. An example below is: https://your.mattermost.com/signup/office365/complete
+5. Define the **Redirect URI** as Web client, then input the URL with the host name that will be specific to your Mattermost service followed by `/signup/office365/complete`. An example below is: `https://your.mattermost.com/signup/office365/complete`
 
    ![](../../../source/images/AzureApp_New_Registration.png)
 
@@ -57,21 +56,21 @@ In Azure Portal, select **Overview** from the menu, then copy and paste both the
 
 6. Open the Mattermost `config.json` file.
 
-7. In the `Office365Settings` section of the `config.json` file, update the default configuration values to include the _Directory (tenant) ID_ value. For example:
+7. In the `Office365Settings` section of the `config.json` file, update the default configuration values to include the _Directory (tenant) ID_ value. 
 
-.. code-block:: none
+   For example:
 
-   ``AuthEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/authorize``
-   
-   ``TokenEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token``
+   ```
+   AuthEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+   TokenEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token
+   ```
 
-would change to:
+   would change to:
 
-.. code-block:: none
-
-   ``AuthEndpoint: https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize``
-   
-   ``TokenEndpoint: https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token``
+   ```
+   AuthEndpoint: https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize
+   TokenEndpoint: https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token
+   ```
 
 8. Select **Save**.
 
