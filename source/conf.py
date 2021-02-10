@@ -15,7 +15,6 @@
 import sys
 import os
 import shlex
-from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 
 def setup(app):
