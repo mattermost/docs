@@ -33,7 +33,7 @@ Emoji <https://docs.mattermost.com/help/settings/custom-emoji.html>`__.
 **Attach files** by dragging and dropping them into Mattermost or clicking
 the attachment icon in the text input box.
 
-**Save messages for follow up** by clicking the **Save** icon next to the
+**Save messages for follow up** using the **Save** icon next to the
 message.
 
 .. figure:: ../../images/save-message.png
