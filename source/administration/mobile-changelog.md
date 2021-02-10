@@ -15,8 +15,9 @@
 
 ### Bug Fixes	
 
-#### All apps	
- - Fixed an issue where deeply nested asterisks caused the app to crash.	
+#### All apps
+ - Fixed an issue where deeply nested asterisks caused the app to crash.
+ - Fixed an issue where the app crashed when attempting to render a post whose attachment value was null.
  - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.	
  - Fixed an issue where posts with at-mentions were double posting if the user hit the **Send** button quickly multiple times in a thread.	
  - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.	
