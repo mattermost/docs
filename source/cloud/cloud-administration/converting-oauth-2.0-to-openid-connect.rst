@@ -1,5 +1,5 @@
-Converting OAuth 2.0 Configuration to OpenID Connect
-====================================================
+Converting OAuth 2.0 to OpenID Connect
+=======================================
 
 OAuth 2.0 is being deprecated and replaced by OpenID Connect. You need to migrate your OAuth configuration to the new OpenID Connect standard. 
 [within what timeframe?] [failure to do so will result in....tbd]
@@ -13,7 +13,7 @@ A one-time, one-click conversion tool is available within the existing **OAuth 2
 Select **Convert to OpenID Connect** to migrate your active service provider configuration to the new standard. No further changes are required. 
 
 .. Note::
-  Inactive service providers configured for OAuth 2.0 are also migrated to the new OpenID Connect standard. Converting to OpenID Connect removes the OAuth 2.0 option from the System Console menu.
+  Inactive service providers configured for OAuth 2.0 are also migrated to the new OpenID Connect standard. Converting to OpenID Connect removes the **OAuth 2.0** option from the System Console menu.
 
 Configuring OpenID Connect Single Sign-On
 -----------------------------------------
