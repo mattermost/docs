@@ -44,5 +44,5 @@ Learn more about:
 * `Composing Messages and Replies <https://docs.mattermost.com/help/messaging/sending-messages.html>`__
 * `Mentioning Teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__
 * `Formatting Messages using Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
-* `Attaching Files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
+* `Sharing Files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
 * `Executing Commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__

@@ -14,7 +14,7 @@ Channels are used to organize conversations across different topics. There are t
 
 - Public channels
 - Private channels
-- Direct Messages
+- Direct Messages and Group Messages
 
 Public channels
 ~~~~~~~~~~~~~~~
@@ -41,7 +41,7 @@ If your System Admin has allowed it, you can start a Direct Message or a Group M
 Managing channels
 ------------------
 
-Channels can be created, joined, renamed, left, and archived.
+Channels can be created, joined, renamed, left, marked as a favorite, muted, unmuted, and archived.
 
 Creating a channel
 ~~~~~~~~~~~~~~~~~~~
@@ -137,12 +137,29 @@ To mark a channel as a favorite, open the channel:
 **On desktop:** At the top of the page, select on the star icon next to the channel name
 
     .. image:: ../../images/favorite_channels_desktop.png
+        :alt: Mark a channel as a favorite.
+        :scale: 40
        
 This adds the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
- .. image:: ../../images/favorite_channels_sidebar.png
+    .. image:: ../../images/favorite_channels_sidebar.png
+        :alt: Favorite channels in the left-hand sidebar.
+        :scale: 40
        
 **On mobile:** Open the dropdown list by the channel name, and select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
+
+Muting a channel
+~~~~~~~~~~~~~~~~
+
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
+
+Once a channel is muted:
+
+- Email, desktop, and push notifications are disabled.
+- A mute icon displays next to the channel name.
+- The channel is greyed out in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
+
+To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
 --------------------------------------------
 Experimental: Channel Organization Features
@@ -152,9 +169,13 @@ Join us in testing an experimental feature set offering additional functionality
 
 When configured by the System Admin, users can enable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include:
 
-**Collapsible custom categories**: Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
+**Collapsible custom categories:** Create custom categories in the sidebar to group channels together for easier navigation (e.g. “Design” or “Marketing”). Collapse categories to display only unread channels and reduce unnecessary scrolling.
 
-**Drag and drop channels and categories**: Drag channels between or within categories, or drag to reorder entire categories to prioritize important conversations.
+**Mute and unmute custom categories**: Mute and unmute all channels in a custom category, and selectively mute or unmute select channels within categories.
+
+**Select multiple channels at a time**: Using the Mattermost Web or Desktop App, select sequential channels by pressing and holding SHIFT. To select non-sequential channels press and hold CMD (for Mac) or CTRL (for Windows/Linux). To clear channel selections, press ESC.
+
+**Drag and drop channels and categories:** Drag selected channels between or within categories, or drag to reorder entire categories to prioritize important conversations. Multi-selected channels move together as a group in the order they originally appeared. You can also specify a destination for selected channels using the **Move to** option under the **More options** icon. The **Move to** option is available today for Cloud deployments and will be available for self-hosted deployments in Mattermost Server v5.32 and later.
 
 **Sort Direct Messages by recent conversations**: Choose to sort Direct Messages alphabetically or by recent conversations first. 
 

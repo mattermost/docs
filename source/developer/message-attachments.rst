@@ -109,9 +109,9 @@ Here is an example message attachment:
             "value":"Testing"
           },
           {
-          "short":false,
-          "title":"Another Field",
-          "value":"Testing"
+            "short":false,
+            "title":"Another Field",
+            "value":"Testing"
           }
         ],
         "image_url": "https://mattermost.org/wp-content/uploads/2016/03/logoHorizontal_WS.png"
