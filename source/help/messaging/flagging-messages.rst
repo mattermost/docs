@@ -22,7 +22,7 @@ To view a list of your **Saved Posts**, select the **Save** icon at the top of t
 Unsaving Messages
 =================
 
-To remove an item from the **Saved Posts** list, click the **Save** icon beside a message to clear it.
+To remove an item from the **Saved Posts** list, select the **Save** icon next to message to clear it.
 
 .. image:: ../../images/remove-from-saved-posts.png
    
