@@ -1,5 +1,5 @@
-Organizing Conversations
-========================
+Managing Channels
+==================
 
 Channels can be created, joined, renamed, left, marked as a favorite, muted, unmuted, and archived.
 
