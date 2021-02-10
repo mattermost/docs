@@ -30,7 +30,7 @@ Frequently Asked Questions (FAQs)
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The message is removed from the Mattermost user interface and permanently deleted from the database. The message is no longer searchable and cannot be retrieved in pinned posts or flagged posts lists.
+The message is removed from the Mattermost user interface and permanently deleted from the database. The message is no longer searchable and cannot be retrieved in pinned posts or saved posts lists.
 
 Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 
