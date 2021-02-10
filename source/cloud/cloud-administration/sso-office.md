@@ -2,7 +2,7 @@
 
 ## Migrating from OAuth to OpenID Connect
 
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration] for Office 365 to the new OpenID Connect standard.
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to [convert your existing OAuth configuration](https://docs.mattermost.com/cloud/cloud-administration/converting-oauth-2.0-to-openid-connect) for Office 365 to the new OpenID Connect standard.
 
 ## Configuring Office 365 as a Single Sign-On (SSO) service
 
@@ -41,7 +41,7 @@ Once the App Registration has been created, you can configure it further. The st
 
 ### Step 3: Configure Mattermost for Office 365 SSO
 
-1. Log in to Mattermost, then go to the **System Console > Authentication > OpenID Connect**.
+1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 
 2. Select **Office 365** as the service provider.
 
@@ -53,9 +53,9 @@ Once the App Registration has been created, you can configure it further. The st
 
 6. Paste in the _client secret value_ from Azure Portal as the **Client Secret** in Mattermost.
 
-6. Open the Mattermost `config.json` file.
+7. Open the Mattermost `config.json` file.
 
-7. In the `Office365Settings` section of the `config.json` file, update the default configuration values to include the _Directory (tenant) ID_ value. 
+8. In the `Office365Settings` section of the `config.json` file, update the default configuration values to include the _Directory (tenant) ID_ value. 
 
    For example:
 
