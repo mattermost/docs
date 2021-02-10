@@ -6,7 +6,14 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-**Release Day: 2021-01-16**
+- **v5.31.1, released 2021-02-05**
+  - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
+  - Fixed an issue where ``FeatureFlags`` section was getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
+  - Fixed an issue where channels were sometimes removed from custom categories when a user left a team. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
+  - Fixed an issue where users were unable to mark Direct Messages in a thread as unread. [MM-32253](https://mattermost.atlassian.net/browse/MM-32253)
+  - Fixed an issue where ``PermanentDeleteChannel`` failed with "failed to get a thread" error. [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
+- **v5.31.0, released 2021-01-16**
+  - Original 5.31.0 release
 
 Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -25,7 +32,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Added the ability to mute categories with the experimental channel sidebar feature.
  - Added support for multi-selection of channels when dragging and dropping between channels in the experimental sidebar feature.
  - Group messages are now returned in the channel switcher when only first names are typed.
- - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user's status between “Do Not Disturb” and “Online”, and will only set the user’s status to “Do Not Disturb”.
+ - Issuing ``/dnd`` consecutively no longer unexpectedly toggles the user's status between "Do Not Disturb" and "Online", and will only set the user’s status to "Do Not Disturb".
 
 #### Administration
  - Added a new ``manage_remote_clusters`` permission.
@@ -36,17 +43,10 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  - Fixed an issue where permissions did not grant read and/or write access to the Global Relay configuration settings.
  - Fixed an issue where the site configuration "Read only" permission did not make the "Notice" section read-only for the System Manager.
  - Fixed an issue where importing Client4 in a node server caused an exception due to rudder modules.
- - Fixed an issue where LDAP "FirstLoginSync" didn't close the LDAP session.
+ - Fixed an issue where LDAP ``FirstLoginSync`` didn't close the LDAP session.
  - Fixed an issue where line numbers did not line up with the text on code file previews.
  - Fixed an issue where the threshold from the bottom of the screen was sometimes not respected for received messages.
  - Fixed an issue where desktop notifications got sent for every message posted in a Direct Message channel.
-
-### config.json
-Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
- - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``CollapsedThreads`` for the collapsed reply threads feature.
     
 ### Go Version
  - 5.31 is built with Go ``1.14.6``.
@@ -58,19 +58,17 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added new websocket events ``thread_updated``, ``thread_follow_changed``, and ``thread_read_changed``.
  
 ### Known Issues
- - The ``config.json`` may reset itself to default values if the binary is run with the root user. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
- - ``PermanentDeleteChannel`` fails with "failed to get a thread". [MM-31731](https://mattermost.atlassian.net/browse/MM-31731)
  - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
  - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes. [MM-29927](https://mattermost.atlassian.net/browse/MM-29927)
  - Error text is missing when the team name is left blank on the team creation page. [MM-31361](https://mattermost.atlassian.net/browse/MM-31361)
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
  - Slow typing has been experienced when the channel sidebar has many channels. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
- - The new experimental sidebar occasionally loses custom categories. [MM-30314](https://mattermost.atlassian.net/browse/MM-30314)
- - Slack theme import fails due to changes in formatting of Slack export colour schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
+ - Slack theme import fails due to changes in formatting of Slack export color schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side. [MM-30446](https://mattermost.atlassian.net/browse/MM-30446)
  - The **Admin Filter** option is not disabled on the AD/LDAP page for Admin roles with the ``sysconsole_write_authentication`` permission. [MM-29089](https://mattermost.atlassian.net/browse/MM-29089)
+ - Users are unable to mark Direct Messages in a thread as unread. [MM-32253](https://mattermost.atlassian.net/browse/MM-32253)
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
@@ -83,6 +81,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.30 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.30.3, released 2021-02-02**
+  - Fixed an issue where the **Edition** diagnostics field was reporting as "null" for Team Edition servers on 5.30.
 - **v5.30.2, released 2021-01-18**
   - Fixed an issue where the ``UnreadMentions`` column was missing in the ``ThreadMemberships`` table for servers upgrading from v5.29.0. Admins planning to enable [Collapsed Reply Threads](https://mattermost.com/blog/dev-sneak-peek-collapsed-reply-threads/) (available in beta in Q1 2021) are recommended to upgrade to v5.30.2 or later.
 - **v5.30.1, released 2020-12-18**
@@ -317,12 +317,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### User Interface (UI)
  - Improved the readability of the toast banner message timestamp, post timestamp, and date separators.
  - Added animation for emoji reactions on webapp.
- - Added the ability to use ``Ctrl + B`` and ``Ctrl + I`` to add bold and italics markdown formatting to selected text.
+ - Added the ability to use CTRL+B and CTRL+I to add bold and italics markdown formatting to selected text.
  - Clicking on original message creator's username in discontinuing posts now opens the user's profile popover.
  - Added support for PSD file preview.
- - When the ``Enable Latex Rendering`` option is set to ``true``, the current code now doesn't highlight.
- - Updated the UX of the ``More unreads`` indicator in the channel sidebar.
- - ``Select Team`` list container now scales in width based on browser window width.
+ - When the **Enable Latex Rendering** option is set to ``true``, the current code now doesn't highlight.
+ - Updated the UX of the **More unreads** indicator in the channel sidebar.
+ - **Select Team** list container now scales in width based on browser window width.
  - Added support for signaling login to other tabs (Windows, macOS and Linux browsers).
 
 #### Search
