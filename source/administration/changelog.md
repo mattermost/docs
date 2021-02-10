@@ -34,7 +34,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### User Interface (UI)
  - Added new languages, Bulgarian and Swedish.
  - Moved the header icons to the left of the header beside the channel description.
- - Changed the number of file attachments allowed per post, from 5 to 10.
  - Added support to move multi-selected groups of channels to another category via the **More options** menu.
 
 #### Plugins
