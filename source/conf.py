@@ -55,14 +55,11 @@ templates_path = ['templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-
-from recommonmark.parser import CommonMarkParser
+source_suffix = ['.rst', '.md']
 
 source_parsers = {
     '.md': CommonMarkParser,
 }
-
-source_suffix = ['.rst', '.md']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
