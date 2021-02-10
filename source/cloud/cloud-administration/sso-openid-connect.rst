@@ -15,7 +15,7 @@ Step 1: Create an OpenID Connect Application
 Step 2: Configure Mattermost for an OpenID Connect SSO
 -------------------------------------------------------
 
-1. Log in to Mattermost, then go to the **System Console > Authentication > OpenID Connect**.
+1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 2. Select **OpenID Connect (Other)** as the service provider.
 3. Enter the **Discovery Endpoint**.
 4. Enter the **Client ID**.
