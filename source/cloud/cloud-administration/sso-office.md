@@ -53,27 +53,9 @@ Once the App Registration has been created, you can configure it further. The st
 
 6. Paste in the _client secret value_ from Azure Portal as the **Client Secret** in Mattermost.
 
-7. Open the Mattermost `config.json` file.
+7. Select **Save**.
 
-8. In the `Office365Settings` section of the `config.json` file, update the default configuration values to include the _Directory (tenant) ID_ value. 
-
-   For example:
-
-   ```
-   AuthEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
-   TokenEndpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token
-   ```
-
-   would change to:
-
-   ```
-   AuthEndpoint: https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize
-   TokenEndpoint: https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token
-   ```
-
-8. Select **Save**.
-
-9. Restart your Mattermost server to see the changes take effect.
+8. Restart your Mattermost server to see the changes take effect.
 
 ### Note about Microsoft Active Directory Tenants
 
