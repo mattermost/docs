@@ -96,8 +96,8 @@ Learn how to configure settings to meet your unique requirements.
    /install/i18n*
    /install/config-apache2.rst
    
-Incident Management
--------------------
+Incident Collaboration
+----------------------
 
 .. toctree::
    :maxdepth: 1
