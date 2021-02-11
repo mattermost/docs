@@ -56,10 +56,6 @@ templates_path = ['templates']
 # You can specify multiple suffix as a list of string:
 source_suffix = ['.rst', '.md']
 
-source_parsers = {
-    '.md': CommonMarkParser,
-}
-
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
 
