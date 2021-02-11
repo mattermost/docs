@@ -12,25 +12,35 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 
 ### Step 1: Create OpenID Connect project in Google API Manager
 
-1. Go to [Google API Manager](https://console.developers.google.com).
+1. Go to [Google Cloud Platform](https://console.developers.google.com).
 
-2. Select **Credentials** in the left-hand sidebar, then select **OAuth client ID**.
+2. Select **Credentials** in the left-hand sidebar.
 
-3. Under **Credentials**, select **Create credentials**.
+3. Select **Create Credentials**, then select **OAuth client ID**.
 
-4. Select the **Web application application** type.
+4. select the **Web application** as the application type.
 
-5. Enter `Mattermost - your-company-name` as the **Name**, then select **Create**.
+5. Enter `Mattermost - your-company-name` as the **Name**,
 
-6. Under **Authorized redirect URIs, enter `{your-mattermost-url}/signup/google/complete`. For example: `http://localhost:8065/signup/google/complete`.
+6. Under **Authorized redirect URIs, select Add URL, then enter `{your-mattermost-url}/signup/google/complete`. For example: `http://localhost:8065/signup/google/complete`.
 
-7. Copy and paste the **Client ID** and **Client Secret** values to a temporary location. You will enter these values in the Mattermost System Console.
+7. Select **Create**.
+
+8. Copy and paste the **Your Client ID** and **Your Client Secret** values to a temporary location. You will enter these values in the Mattermost System Console.
+
+![](../../../source/images/create-google-sso-credentials.png)
+
+![](../../../source/images/select-google-sso-web-app.png)
+
+![](../../../source/images/google-sso-web-app-name.png)
+
+![](../../../source/images/google-sso-redirect-uri.png)
+
+![](../../../source/images/google-sso-credentials.png)
 
 ### Step 2: Enable Google People API
 
 Go to the [Google People API](https://console.developers.google.com/apis/api/plus/overview), then select **Enable** in the header. This might take a few minutes to propagate through Google's systems.
-
-![](../../../source/images/google_enable_api.png)
 
 ### Step 3: Configure Mattermost for Google Apps SSO
 
