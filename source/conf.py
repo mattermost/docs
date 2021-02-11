@@ -15,6 +15,7 @@
 import sys
 import os
 import shlex
+from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 
 def setup(app):
@@ -55,6 +56,10 @@ templates_path = ['templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 source_suffix = ['.rst', '.md']
+
+source_parsers = {
+    '.md': CommonMarkParser,
+}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
