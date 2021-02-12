@@ -22,7 +22,7 @@ Step 1: Add an OpenID Connect application to your GitLab account
 
 2. Add a new application:
 
-  a. In the **Name** field, type ``Mattermost``.
+  a. In the **Name** field, enter ``Mattermost``.
   b. In the **Redirect URI** field, add the following two lines using your own value for *{mattermost-site-name}*.
 
     .. code-block:: text
