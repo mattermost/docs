@@ -51,7 +51,7 @@ Once the App Registration has been created, you can configure it further. The st
 
 5. Paste in the _Application (client) ID_ from Azure Portal as the **Client ID** in Mattermost.
 
-6. Paste in the _client secret value_ from Azure Portal as the **Client Secret** in Mattermost.
+6. Paste the client secret value from Azure Portal as the **Client Secret** in Mattermost.
 
 7. Select **Save**.
 
