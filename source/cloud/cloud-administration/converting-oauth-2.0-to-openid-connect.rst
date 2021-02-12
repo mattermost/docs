@@ -2,7 +2,7 @@
 Converting OAuth 2.0 to OpenID Connect
 =======================================
 
-OAuth 2.0 is being deprecated in the System Console and being replaced by OpenID Connect. Using the System Console, you can migrate your OAuth configuration to the OpenID Connect standard. 
+OAuth 2.0 is being deprecated in the System Console and replaced by OpenID Connect. Using the System Console, you can migrate your OAuth configuration to the OpenID Connect standard. 
 
 .. image:: ../../images/OAuth20Deprecated.png
 
