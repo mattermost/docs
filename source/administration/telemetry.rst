@@ -124,8 +124,8 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Team and Account Setup Diagnostics:* Account creation via email, invite or UI, account creation page view, account creation completion; tutorial step and tip completion or opt out, team creation page view, team name and URL entry, team creation completion, clicks on all form elements, buttons, textboxes and links on sign up page, team selection page and team creation pages
   - *Sign-in Diagnostics:* Login succeeded or failed for email, LDAP, or SAML/SSO; logout succeeded; switched authentication method from email to LDAP or SAML/SSO or vice versa; reset password; updated password
   - *Navigation Discovery Diagnostics:* Joined a channel from the "More" list, through an invite or by clicking a public link; created a channel, direct, or group direct message conversation; renamed, joined, left or deleted an existing channel; updated header or purpose; added or removed members; updated channel notification preferences; loaded more messages in a channel; switched a channel or a team; opened the "More" modal for channels or direct message conversations; updated team name; invited members; updated account settings
-  - *Core Feature Discovery Diagnostics:* Created, edited or deleted a message; posted a message containing a hashtag, link, mention or file attachment; searched for a term; searched for flagged posts or recent mentions
-  - *Advanced Feature Discovery Diagnostics:* Reacted to a message; favorited or un-favorited a channel; flagged or un-flagged a message; pinned or un-pinned a message; replied to a message; expanded the right-hand sidebar; started or finished a WebRTC video call (only in v5.5 and earlier); created or deleted a personal access token; added or removed post:all or post:channels permission; created a category in the sidebar
+  - *Core Feature Discovery Diagnostics:* Created, edited or deleted a message; posted a message containing a hashtag, link, mention or file attachment; searched for a term; searched for saved posts or recent mentions
+  - *Advanced Feature Discovery Diagnostics:* Reacted to a message; favorited or unfavorited a channel; saved or unsaved a message; pinned or unpinned a message; replied to a message; expanded the right-hand sidebar; started or finished a WebRTC video call (only in v5.5 and earlier); created or deleted a personal access token; added or removed post:all or post:channels permission; created a category in the sidebar
   - *Integration Discovery Diagnostics:* Created or triggered a webhook or slash command; created, authroized or deleted an OAuth 2.0 app; created, posted, or deleted a custom emoji
   - *Plugin Discovery Diagnostics:* Number of installed plugins containing either server or webapp portions, or both; number of those plugins being activated
   - *Plugin Marketplace Diagnostics:* Plugin id, current version, and target version for all install and update events. Only sent when the default Marketplace is configured
@@ -162,6 +162,7 @@ The following list details the types of Incident Management metadata we collect:
 - ``ActiveStage``: A number indicating the stage of the incident (0-based).
 - ``Action``: The type of action performed against the incident: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``.
 - ``Public``: When creating an incident, ``true`` if it is public, and ``false`` if it is private.
+- ``ReminderTimerSeconds``: The next timer for the reminder to update the status, in seconds. It's tracked only when ``Action`` equals ``update_status``.
 
 **Data collected in tasks events**
 
@@ -181,9 +182,12 @@ The following list details the types of Incident Management metadata we collect:
 - ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
 - ``NumMembers``: The number of members with access to this playbook.
 - ``NumSlashCommands``: The number of tasks with slash commands in this playbook.
+- ``ReminderTimerDefaultSeconds``: The default timer for the reminder to update the status, in seconds.
+- ``BroadcastChannelID``: Unique identifier of the channel where the status updates will be broadcasted.
+- ``UsesReminderMessageTemplate``: ``true`` if the playbook has a template for the reminder message, ``false`` otherwise.
 - ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
   
-Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
+Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
 Android Mobile App Performance Monitoring
 -----------------------------------------

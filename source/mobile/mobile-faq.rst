@@ -152,7 +152,7 @@ First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) 
 How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server?
 -------------------------------------------------------------------------------------------------------
 
-See our `developer documentation about the Mattermost Push Notification Service with Corporate Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy>`_.
+See our `developer documentation about the Mattermost Push Notification Service with Corporate Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/>`_.
 
 How do I white label the app and customize build settings?
 ----------------------------------------------------------
