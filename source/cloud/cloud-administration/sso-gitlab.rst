@@ -12,7 +12,7 @@ Configuring GitLab as a Single Sign-On (SSO) service
 
 Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in.
 
-.. Note::  
+.. note::  
   Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required, they're not officially supported, and they're known not to work in some cases. 
 
 Step 1: Add an OpenID Connect application to your GitLab account
