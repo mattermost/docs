@@ -8,9 +8,9 @@ Login with ADFS/Office365 is not working
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 I have a different problem!
--------------------------------
+----------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're a Cloud Enterprise subscriber, you may open a support ticket in the `Mattermost Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're a Cloud subscriber, you may reach our Support team via our `Contact Us page <https://customers.mattermost.com/cloud/contact-us>`_.
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app please try the following steps and include the results in your support request:
 
