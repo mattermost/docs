@@ -52,9 +52,7 @@ Creating custom categories
 
 Create custom categories to group channels together for quicker and easier navigation. For example, you can create a category called "Design" or "Marketing".
 
-Categories can be created in two ways:
-
-- Select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
+To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
 Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
 
@@ -169,9 +167,7 @@ How many Direct Messages to display?
 
 Control how many Direct Message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
 
-You have two ways to configure the number of Direct Messages to display:
-
-- Go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
+To configure the number of Direct Messages to display, go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
 
