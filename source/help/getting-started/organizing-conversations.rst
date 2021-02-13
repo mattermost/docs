@@ -99,7 +99,7 @@ When a channel is converted, its history and membership are preserved. Membershi
 
 .. note::
 
-  Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels. System Admins can access this setting in **System Console > Channels > Edit (Channel Configuration)**, or they can perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
+  Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
 
 Favoriting a channel
 --------------------
