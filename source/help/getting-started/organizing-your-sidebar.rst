@@ -27,7 +27,7 @@ If your System Admin has allowed it, you can start a Direct Message or a Group M
 Customizing your sidebar
 ------------------------
 
-You can organize your channel sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
+You can organize the sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
 
 Here’s how your sidebar is set up by default:
 
