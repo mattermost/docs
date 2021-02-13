@@ -129,7 +129,7 @@ Once a channel is muted:
 
 - Email, desktop, and push notifications are disabled.
 - A mute icon displays next to the channel name.
-- The channel appear at reduced opacity in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly. 
+- The channel appears at reduced opacity in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly.
 
 To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
