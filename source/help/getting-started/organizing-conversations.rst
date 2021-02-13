@@ -82,7 +82,7 @@ System Admins `can archive channels in the System Console <https://docs.mattermo
 Unarchiving a channel
 ---------------------
 
-Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Unarchive Channel**. System Admins and Team Admins can unarchive the Public channels or Private channels they belonged to when it was archived.
+Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. System Admins and Team Admins can unarchive Public channels or Private channels they belonged to when it was archived.
 
     .. image:: ../../images/unarchive-channel.png
 
