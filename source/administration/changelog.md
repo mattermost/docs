@@ -54,6 +54,7 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
  - Added support for processing import files through the API.
  - Added support for protocol-relative URLs while using the Image Proxy.
  - A Striped LRU cache is now used by default.
+ - Added shared channels and ``remote_cluster_service`` under a license check.
 
 ### Bug Fixes
  - Fixed an issue where the Admin Filter option was not disabled in the AD/LDAP page for Admin roles with a ``sysconsole_write_authentication`` permission.
