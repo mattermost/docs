@@ -2,7 +2,7 @@
 Organizing Your Sidebar
 =======================
 
-Conversations in Mattermost are crucial to company productivity and success. Keeping conversations organized in the sidebar creates an efficient workplace. 
+Conversations in Mattermost are crucial to company productivity and success. Keeping conversations organized in the sidebar creates an efficient workplace.
 
 Channel types
 -------------
