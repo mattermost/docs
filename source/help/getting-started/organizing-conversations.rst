@@ -95,7 +95,7 @@ Converting Public channels to Private channels (and vice versa)
 
 Select the Public channel name at the top of the center pane to access the drop-down menu, then select **Convert to Private Channel**. Team and System Admins can convert Public channels to Private channels. Please note that default channels such as ``Town Square`` and ``Off-Topic`` cannot be converted to Private channels.
 
-When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly shared files remain accessible to anyone with the link. 
+When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly-shared files remain accessible to anyone with the link. 
 
 .. note::
 
