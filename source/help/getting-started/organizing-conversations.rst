@@ -25,7 +25,7 @@ Select the **+** symbol next to the **Direct Messages** category in the sidebar.
 Joining a channel
 -----------------
 
-Join a Public channel by selecting the **+** symbol at the top of the sidebar, then selecting **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
+To join a Public channel, select the **+** symbol at the top of the sidebar, then select **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
 
 To join a Private channel, you need to be added to the channel by a member of that channel.
 
