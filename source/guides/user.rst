@@ -15,6 +15,7 @@ Getting Started
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
    /help/getting-started/organizing-conversations.md
+   /help/getting-started/organizing-your-sidebar.md
    /help/getting-started/searching.md
    /help/getting-started/creating-teams.md
    /help/getting-started/managing-members.md
