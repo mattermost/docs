@@ -40,8 +40,6 @@ Under **Restrictions > Authorized redirect URIs**, enter `your-mattermost-url/si
 
 7. In **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Google Apps** as the service provider and enter **Client ID** and **Client Secret** from step 6 in their respective fields.
 
-8. Restart your Mattermost server to see the changes take effect.
-
 **Note:**
 - You may also enter **Client ID** and **Client Secret** fields from step 6 directly in `GoogleSettings` section of `config/config.json`.
 - The following default values in `GoogleSettings` section of `config/config.json` are recommended:

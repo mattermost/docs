@@ -5,9 +5,9 @@ Slash Commands
 
 .. note::
 
-  This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate>`__.
+  This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
-Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to :doc:`outgoing webhooks <../developer/webhooks-outgoing/>`, except they can be used in any channel - including Private channels and direct messages.
+Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to :doc:`outgoing webhooks <../developer/webhooks-outgoing/>`, except they can be used in any channel - including Private channels and Direct Messages.
 
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/developer/slash-commands.html#built-in-commands>`__ and `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html#custom-slash-command>`__.
 
@@ -139,7 +139,7 @@ which would render in Mattermost as:
 .. image:: ../images/weatherBot.PNG
   :alt: Shows what the JSON response renders as in Mattermost
 
-11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
+11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands/>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
@@ -165,9 +165,9 @@ Tips and Best Practices
 Share Your Integration
 ----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------
@@ -201,4 +201,4 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for troubleshooting, or `join the Mattermost user community for help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+See `developer documentation <https://developers.mattermost.com/integrate/slash-commands/>`__ for troubleshooting, or `join the Mattermost user community for help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.

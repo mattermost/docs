@@ -4,8 +4,11 @@ Desktop Application Changelog
 Release v4.6
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.1>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
+- **v4.6.2, released 2021-01-25**
+ - Fixed an issue where logging in to ``gitlab.com`` did not work on the Desktop App. `MM-31626 <https://mattermost.atlassian.net/browse/MM-31626>`_
+ - Fixed an issue where macOS entitlements had not been enabled for using camera and microphone on the Desktop App for third-party plugins such as Jitsi. `MM-31987 <https://mattermost.atlassian.net/browse/MM-31987>`_
 - **v4.6.1, released 2020-10-26**
  - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. `MM-29921 <https://mattermost.atlassian.net/browse/MM-29921>`_
 - **v4.6.0, released 2020-10-16**
@@ -38,8 +41,9 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- On Ubuntu, auto-focus is lost when using alt+tab to switch between windows. `MM-29705 <https://mattermost.atlassian.net/browse/MM-29705>`_
-- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- Unlocking the Desktop App on macOS marks the currently viewed channel as read. `MM-31429 <https://mattermost.atlassian.net/browse/MM-31429>`_
+- On Ubuntu, auto-focus is lost when using ALT+TAB to switch between windows. `MM-29705 <https://mattermost.atlassian.net/browse/MM-29705>`_
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
