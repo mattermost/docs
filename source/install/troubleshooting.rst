@@ -656,12 +656,12 @@ Follow these guidelines when providing diagnostic data to us:
 Configuration
 ~~~~~~~~~~~~~
 
-Why we need it
+Why we need your configuration data
 ^^^^^^^^^^^^^^
 
-On Linux systems, settings are generally stored in configuration files. Many problems can be resolved by enabling or disabling a configuration setting. In order to find a resolution, we need to have as complete a picture of your system setup as possible. This also helps us to reproduce bugs so our developers can fix them.
+On Linux systems, settings are generally stored in configuration files. Many issues can be resolved by enabling or disabling a configuration setting. In order to find a resolution, we need to have as complete a picture of your system setup as possible. This also helps us to reproduce bugs so our developers can fix them.
 
-What it is
+What configuration data includes
 ^^^^^^^^^^
 
 Configuration includes (but is not limited to):
@@ -670,13 +670,13 @@ Configuration includes (but is not limited to):
 - The configuration for the reverse proxy, e.g. Nginx, HAProxy, AWS.
 - The database configuration.
 
-* If the issue is regarding SAML authentication, the configuration for the Mattermost service is in the SAML IdP.
+* SAML configuration when the issue is regarding SAML authentication. The configuration for the Mattermost service is in the SAML IdP.
 * Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
 
-How to get them
+How to access your configuration data
 ^^^^^^^^^^^^^^^
 
-**Mattermost Configuration**
+**Mattermost configuration**
 
 The Mattermost configuration is usually stored at ``/opt/mattermost/config/config.json``. If you've migrated the Mattermost configuration to the database, you can get the configuration using ``mmctl`` or by running this database query:
 
@@ -684,7 +684,7 @@ The Mattermost configuration is usually stored at ``/opt/mattermost/config/confi
     
    SELECT Value FROM Configurations WHERE Active = 1;
 
-**Reverse Proxy Configuration**
+**Reverse Proxy configuration**
 
 Nginx usually splits its configuration into two parts: the main server configuration at ``/etc/nginx/nginx.conf``, and a virtual server configuration. On Ubuntu, this is stored in ``/etc/nginx/sites-available``. Providing both of these configuration files is helpful, but providing the latter is more important.
 
@@ -714,9 +714,9 @@ Logs
 Why we need it
 ^^^^^^^^^^^^^^
 
-Nearly all computer systems have logs of errors and application behavior that can show us what's happening  when an application is running. They're invaluable when diagnosing a problem, but only if they're as complete as possible.
+Nearly all computer systems have logs of errors and application behavior that can show us what's happening when an application is running. Error logs are invaluable when diagnosing a problem, but only if they're as complete as possible.
 
-Where it is
+What logs are available
 ^^^^^^^^^^^
 
 **Mattermost**
@@ -738,7 +738,7 @@ MySQL and PostgreSQL have different logs, and their location varies based on you
 
 Your organization's System Administrator should be able to find these for you.
 
-How to get it
+How to access logs
 ^^^^^^^^^^^^^
 
 **Mattermost**
@@ -757,7 +757,7 @@ Replace 2020-08-23 17:15:00 with the date and time (relative to the server) when
    
    tar -czf /tmp/mattermost.log.tgz
 
-The compressed logs will be on the server at ``/tmp/mattermost.log.tgz``.
+The compressed logs will be located on the server at ``/tmp/mattermost.log.tgz``.
 
 If the compressed file is still too big, use these commands to split the compressed file into two or more 20MB files:
 
@@ -788,12 +788,12 @@ Replace 2020-08-23 17:15:00` with the date and time (relative to the server) whe
 Users affected
 ~~~~~~~~~~~~~~
 
-Why We Need it
+Why we need it
 ^^^^^^^^^^^^^^
 
 Mattermost servers are chaotic places. Thousands of posts, websocket actions, and webhook calls happen every second while users can be in dozens of channels across multiple teams. Knowing which users are affected by a problem can help us sift through all this information to find the root cause.
 
-What It Is
+What information to include
 ^^^^^^^^^^
 
 This should be a detailed explanation of anything the end users who are reporting the unexpected behavior have in common. This includes (but is not limited to):
@@ -814,7 +814,7 @@ Note for Agents: This information is also required:
 Environment
 ~~~~~~~~~~~
 
-What it is
+What information to include
 ^^^^^^^^^^
 
 Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost. 
@@ -876,7 +876,7 @@ If the behavior only happens when the user performs a specific action, providing
 
 A short summary of the steps to reproduce is also helpful. If you want some examples, look at the bug tickets on some Mattermost Jira tickets.
 
-How to Get It
+How to provide these details
 ^^^^^^^^^^^^^
 
 **macOS**
@@ -885,7 +885,7 @@ Press CMD+SHIFT+5 to open the screen recording tool and select the region of the
 
 **Windows**
 
-Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install a third party software like [OBS](https://obsproject.com/).
+Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as [OBS](https://obsproject.com/).
 
 **iOS**
 
@@ -909,7 +909,7 @@ If the issue is with SAML login, one important piece of context is the SAML logi
 Checking keys and certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Key and certificate files should never be shared, but if the error indicates a problem with the format of a key or certificate, then verify the format of the keys and certificates by running this command:
+Key and certificate files should never be shared, but if the error indicates a problem with the format of a key or certificate, then you should verify the format of the keys and certificates by running this command:
 
 .. code-block:: none
 
