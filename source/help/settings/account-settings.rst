@@ -236,41 +236,40 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
-Channel grouping and sorting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The channel sidebar includes `enhanced sidebar features <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
-These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#sidebar-organization-experimental>`__.
+The following sidebar settings apply to your current sidebar only:
+
+**Group unread channels separately**
+
+This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__ for you. 
+
+You can choose to enable it or disable it in **Account Settings > Sidebar**. 
+
+Legacy sidebar settings
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The legacy sidebar `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. The following sidebar settings apply only to the legacy sidebar:
 
 Channel grouping
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list.
+^^^^^^^^^^^^^^^^
+
+Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list. 
 
 Channel sorting
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+
 Channels can be sorted within their sidebar sections alphabetically (default) or by most recent message.
 
-Unreads grouped separately
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If enabled, this feature groups unread channels at the top of the channel sidebar.
+Channel switcher
+^^^^^^^^^^^^^^^^
 
-Favorites grouped separately
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If enabled, this feature groups favorite channels in their own sidebar section.
+Hide the channel switcher used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD+K.
 
-Group unreads channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Autoclose Direct Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Removed in December 16, 2018 release and replaced by a new ExperimentalChannelOrganization setting*
-
-If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
-
-Channel Switcher
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD + K.
-
-Automatically close direct messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the **+** button in the sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------
@@ -300,7 +299,7 @@ Turn on preview features to view them early, ahead of their official release:
 - **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
 
 Deactivate Account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
 

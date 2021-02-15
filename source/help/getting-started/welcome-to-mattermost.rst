@@ -88,7 +88,7 @@ Since messaging is at the core of your Mattermost application, below are other e
 - `Formatting text (styling, emojis, code, and so on) <https://docs.mattermost.com/help/messaging/formatting-text.html>`__
 - `Share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__
 - `Execute commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__
-- `Flag <https://docs.mattermost.com/help/messaging/flagging-messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging/pinning-messages.html>`__ messages
+- `Save <https://docs.mattermost.com/help/messaging/flagging-messages.html>`__ and `pin <https://docs.mattermost.com/help/messaging/pinning-messages.html>`__ messages
 - `Keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`__
 
 `Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ for a complete list of messaging basics with instructions.
