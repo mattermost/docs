@@ -12,7 +12,7 @@ You can access your Customer Portal account to view information about your:
 - Customer Portal account password
 - Organization information
 - Payment methods
-- Renewals (available in a future release)
+- Renewals
 - Active users (available in a future release)
 
 Purchasing an Enterprise license
@@ -97,10 +97,8 @@ An email with the new license key and information on how to upload the license i
 You can watch a video overview of the renewal process on `YouTube <https://www.youtube.com/watch?v=Sz_1nhVufHY>`_.
 
 .. raw:: html
-
-   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/watch?v=Sz_1nhVufHY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 80%; height: 80%;"></iframe>
-   </div>
+  
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,7 +159,7 @@ Once you’ve started the renewal process, we'll be in contact with you to confi
 What happens to my license if I don't renew in time?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. During the grace period, the notificaton banner is not dismissable.
+If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. During the grace period, the notification banner is not dismissable.
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  

@@ -589,7 +589,7 @@ Maximum File Size
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxFileSize": 52428800`` with numerical input.                                                                          |
+| This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
@@ -964,8 +964,8 @@ Use IP Address
 | This feature's ``config.json`` setting is ``"UseIpAddress": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Use Experimental Gossip
-^^^^^^^^^^^^^^^^^^^^^^^
+Use Gossip
+^^^^^^^^^^
 
 **True**: The server attempts to communicate via the gossip protocol over the gossip port.
 
@@ -974,7 +974,7 @@ Use Experimental Gossip
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
 +-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
 +-------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
@@ -1037,6 +1037,8 @@ Changes to properties in this section require a server restart before taking eff
 
 Enable Rate Limiting
 ^^^^^^^^^^^^^^^^^^^^^
+
+Rate limiting prevents your server from being overloaded with too many requests. This decreases the risk and impact of third-party applications or malicious attacks on your server.
 
 **True**: APIs are throttled at the rate specified by **PerSec**.
 
@@ -1550,6 +1552,17 @@ Set the link for the support website.
 | This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` with string input.                                            |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+App Custom URL Schemes
+^^^^^^^^^^^^^^^^^^^^^^
+
+Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client. 
+
+When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1587,18 +1600,18 @@ Default language for system messages and logs.
 
 Changes to this setting require a server restart before taking effect.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Default language for newly-created users and pages where the user hasn't logged in.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^
@@ -1608,9 +1621,9 @@ Sets which languages are available for users in **Account Settings > Display > L
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Users and Teams
 ~~~~~~~~~~~~~~~
@@ -3860,6 +3873,16 @@ Allow Authentication Transfer (Experimental)
 Autoclose Direct Messages in Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*Not available in Mattermost Cloud.*
+
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+
+.. note::
+
+  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+
+We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
+
 **True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings > Sidebar**.
 
 **False**: Conversations remain in the sidebar until they are manually closed.
@@ -4108,7 +4131,17 @@ This setting defines how frequently "user is typing..." messages are updated, me
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Not available in Mattermost Cloud.*
+
+This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
+
+.. note::
+
+  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+
+We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
 
 **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
 
@@ -4159,23 +4192,50 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Experimental Sidebar Features (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Experimental Sidebar Features
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
-**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering.
 
-**Enabled (Default Off)**: Users must enable the experimental sidebar features in Account Settings. `Learn more or give us feedback <https://about.mattermost.com/default-sidebar/>`_.
+**Enabled (Default Off)**: Users must enable the experimental sidebar features in **Account Settings**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Sidebar Organization (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable Legacy Sidebar
+^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
+*Not available in Mattermost Cloud.*
+
+This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
+
+**False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
+
+**True**: WWhen enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Sidebar Organization
+^^^^^^^^^^^^^^^^^^^^
+
+*Not available in Mattermost Cloud.*
+
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+
+.. note::
+
+  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+
+We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
+
+**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
 
 **False**: Hides the channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**.
 
@@ -4197,9 +4257,17 @@ Select the timezone used for timestamps in the user interface and email notifica
 +------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Hidden in Left-Hand Sidebar (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Available in Enterprise Edition E10 and higher*
+
+This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+
+.. note::
+
+  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+
+We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
 
 **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
 
@@ -4263,9 +4331,10 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Data Prefetch
 ^^^^^^^^^^^^^^
+
+*Removed in February 16, 2021 release*
 
 **True**: Messages in all unread channels are pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
 
@@ -4895,16 +4964,14 @@ Service Settings
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
+This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
-**Disabled**: Unread channels section is disabled for all users.
+**Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Account Settings > Sidebar > Group unread channels separately**.
 
-**Default On**: Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings > Sidebar**.
-
-**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings > Sidebar**.
+**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Account Settings > Sidebar > Group unread channels separately**. 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``"disabled"``, ``"default_on"``, and ``"default_off"``.                          |
+| This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``.                                        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Strict CSRF Token Enforcement (Experimental)
