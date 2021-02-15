@@ -657,24 +657,23 @@ Configuration
 ~~~~~~~~~~~~~
 
 Why we need your configuration data
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On Linux systems, settings are generally stored in configuration files. Many issues can be resolved by enabling or disabling a configuration setting. In order to find a resolution, we need to have as complete a picture of your system setup as possible. This also helps us to reproduce bugs so our developers can fix them.
 
 What configuration data includes
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configuration includes (but is not limited to):
 
 - The Mattermost ``config.json`` file.
 - The configuration for the reverse proxy, e.g. Nginx, HAProxy, AWS.
 - The database configuration.
-
-* SAML configuration when the issue is regarding SAML authentication. The configuration for the Mattermost service is in the SAML IdP.
-* Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
+- SAML configuration when the issue is regarding SAML authentication. The configuration for the Mattermost service is in the SAML IdP.
+- Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
 
 How to access your configuration data
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Mattermost configuration**
 
@@ -717,7 +716,7 @@ Why we need it
 Nearly all computer systems have logs of errors and application behavior that can show us what's happening when an application is running. Error logs are invaluable when diagnosing a problem, but only if they're as complete as possible.
 
 What logs are available
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **Mattermost**
 
@@ -739,7 +738,7 @@ MySQL and PostgreSQL have different logs, and their location varies based on you
 Your organization's System Administrator should be able to find these for you.
 
 How to access logs
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 **Mattermost**
 
@@ -794,7 +793,7 @@ Why we need it
 Mattermost servers are chaotic places. Thousands of posts, websocket actions, and webhook calls happen every second while users can be in dozens of channels across multiple teams. Knowing which users are affected by a problem can help us sift through all this information to find the root cause.
 
 What information to include
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This should be a detailed explanation of anything the end users who are reporting the unexpected behavior have in common. This includes (but is not limited to):
 
@@ -815,7 +814,7 @@ Environment
 ~~~~~~~~~~~
 
 What information to include
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost. 
 
@@ -869,7 +868,7 @@ Be as specific as possible when describing the environment. If you are seeing er
 Steps to Reproduce
 ~~~~~~~~~~~~~~~~~~
 
-What It Is
+What it is
 ^^^^^^^^^^
 
 If the behavior only happens when the user performs a specific action, providing detailed steps to reproduce it will help us make sure we find and fix the right bug. These details should be as descriptive as possible, but nothing is better than a screenshot or a screen recording of the behavior.
@@ -877,7 +876,7 @@ If the behavior only happens when the user performs a specific action, providing
 A short summary of the steps to reproduce is also helpful. If you want some examples, look at the bug tickets on some Mattermost Jira tickets.
 
 How to provide these details
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **macOS**
 
