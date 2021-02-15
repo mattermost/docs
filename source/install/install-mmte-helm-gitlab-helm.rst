@@ -73,7 +73,7 @@ Here's a light way to install it:
 
 Once you've deployed the GitLab instance, follow the instructions for the `initial login <https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__.
 
-If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.
+If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ and we'll be happy to help.
 
 Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart
 ----------------------------------------------------------------

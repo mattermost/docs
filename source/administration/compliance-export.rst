@@ -1,7 +1,7 @@
 Compliance Export Beta (E20)
 =====================================
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including:
 
@@ -25,7 +25,7 @@ Enterprise deployments with a requirement to archive history beyond the data ret
     :maxdepth: 2
 
 Set Up Guide
-----------------------------
+---------------
 
 Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`__ in the chosen format. If you have configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
 
@@ -33,7 +33,7 @@ Use the following guides to configure exports for CSV, Actiance XML, or Global R
   The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
 
 CSV
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
 
 1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
 2. Set **Enable Compliance Exports** to ``true``.  
@@ -41,12 +41,13 @@ CSV
 4. Set the export file format to **CSV**.
 5. Choose **Save**.
 
-You can use the CSV format to easily transform exports in a desired format for your third-party archive system.
+The daily compliance export job creates a zip file with a unique job identifier of all messages posted in the last 24 hours. You can unzip the file to easily transform the default CSV format into a desired format for your third-party archive system.
+
 
 For a sample CSV output, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 Actiance XML
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
 2. Set **Enable Compliance Exports** to ``true``.  
@@ -54,13 +55,13 @@ Actiance XML
 4. Set the export file format to **Actiance XML**.
 5. Choose **Save**.
 
-Once you have selected Actiance XML as your file format, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`__. For a sample Actiance output, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__.
+The daily compliance export job creates a zip file with a unique job identifier of all messages posted in the last 24 hours. Once you've selected Actiance XML as your file format, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`__. For a sample Actiance output, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__.
 
 .. note::
   In Actiance XML exports, channel type is prepended to the channel names.
 
 Global Relay EML
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
 2. Set **Enable Compliance Exports** to ``true``.  

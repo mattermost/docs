@@ -10,7 +10,7 @@ This overview summarizes various compliances and certifications Mattermost is de
 GDPR Compliance
 ----------------
 
-The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)
+The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)
 
 Continual Commitment to the Principles of GDPR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,7 +18,7 @@ Continual Commitment to the Principles of GDPR
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost completes this mission through the use of:
 
 - **Security Infrastructure:** Continual investment in security, privacy and compliance capabilities.
-- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://about.mattermost.com/terms>`__.
+- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://mattermost.com/terms-of-service/>`__.
 - **Privacy Measures:** Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 - **Product Features:** To ensure data management and data portability.
 
@@ -75,7 +75,7 @@ Compliance with accessibility standards is achieved in the following ways:
 - **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
 - **WCAG 2.0L** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
-- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`__ so that it may be resolved.
+- **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://mattermost.org/filing-issues/>`__ so that it may be resolved.
 
 U.S. Export Compliance Overview
 -------------------------------

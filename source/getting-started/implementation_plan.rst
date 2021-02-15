@@ -9,7 +9,7 @@ Implementation Plan
 
 Mattermost is an open source, private cloud alternative to proprietary SaaS messaging solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You have chosen to implement Mattermost in our supported `editions:`_
 
-.. _`editions:`: https://about.mattermost.com/features/
+.. _`editions:`: https://mattermost.com/product/
 
  - Team Edition
 
@@ -252,7 +252,7 @@ Mattermost has configuration settings for the terms of service, privacy policy, 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.
 
 **References**: 
- - Links to download Mattermost apps:  https://about.mattermost.com/download/#mattermostApps 
+ - Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
  - User Guides: https://docs.mattermost.com/guides/user.html 
 
 3.4 Implementation Schedule

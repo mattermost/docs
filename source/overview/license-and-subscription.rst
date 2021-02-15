@@ -12,7 +12,7 @@ You can access your Customer Portal account to view information about your:
 - Customer Portal account password
 - Organization information
 - Payment methods
-- Renewals (available in a future release)
+- Renewals
 - Active users (available in a future release)
 
 Purchasing an Enterprise license
@@ -25,7 +25,7 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 **If you have an existing Customer Portal account**
 
 1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account.
-2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://about.mattermost.com/pricing/#faq>`_.
+2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`_.
 3. (Optional for E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
 4. Select **Next Step**.
 5. Enter your billing and payment information.
@@ -71,9 +71,34 @@ You may incur retroactive charges for any unique users added that exceed the lic
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ability to renew your license in the Customer Portal will be available in a future release.
+From Mattermost Server version 5.32 and later you can renew your self-managed Mattermost Enterprise license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
-To renew your license in the meantime, contact your Customer Success Manager to start the renewal process. Alternatively, `contact us <https://mattermost.com/contact-us/>`_ for assistance.
+If you have not upgraded to v5.32 you can contact Support (support@mattermost.com) to renew your license.
+
+If you're a Mattermost Cloud customer, your subscription auto-renews so you don't need to follow this process.
+
+If you are a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
+
+System Admins will be alerted 60 days prior to the license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
+
+Once you click **Renew license now**, you are taken to the renewal page in the Customer Portal, which lists your license information and account details. These are pre-populated based on the email address associated with your existing license subscription. 
+
+**To process your license renewal**
+
+1. Enter your **Account Details**, **Additional Contact**, and **Payment Details**.
+2. Confirm the `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed>`_.
+  * You can upgrade from E10 to E20, but it's not possible to downgrade.
+3. Confirm the listed number of active users is correct. 
+ * You can increase the number of licensed users, but you can't decrease it.
+4. Select **Complete purchase**. 
+
+An email with the new license key and information on how to upload the license in the System Console will be sent to the email address provided.
+
+You can watch a video overview of the renewal process on `YouTube <https://www.youtube.com/watch?v=Sz_1nhVufHY>`_.
+
+.. raw:: html
+  
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,10 +110,20 @@ We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
+How do I renew my license if I don't have internet access?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you don't have access to the internet, please email support@mattermost.com for assistance.
+
+I'm a Mattermost Cloud customer, how do I renew?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Your Mattermost Cloud subscription auto-renews so you don't need to follow this process.
+
 How is user defined for Enterprise Edition subscriptions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`__.
+See our `frequently asked questions about licensing <https://mattermost.com/pricing-self-managed/#faq>`__.
 
 Do I need to pay for deactivated users?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,8 +132,8 @@ No. If you deactivate a user that user is not counted as an active user during y
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
-Can I use the same license key on multiple Enterprise Edition servers?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Can I use the same license key on multiple self-managed Enterprise Edition servers?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
 
@@ -114,12 +149,7 @@ How will I know when to renew my license?
 
 You will be notified 60 days prior to your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
 
-You can select **Please renew** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser refreshes.
-
-How do I renew my license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can renew your license in Mattermost via the blue renewal reminder banner. Select **Please Renew** to begin the process. You can also visit https://mattermost.com/renew, and complete the form provided.
+You can select **Renew license now** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser is refreshed or you reload the desktop app.
 
 How long does it take to renew a license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -129,7 +159,7 @@ Once you’ve started the renewal process, we'll be in contact with you to confi
 What happens to my license if I don't renew in time?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features.
+If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. During the grace period, the notification banner is not dismissable.
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  

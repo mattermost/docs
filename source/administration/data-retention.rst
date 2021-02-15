@@ -1,7 +1,7 @@
 Data Retention Policy (E20)
 =================================
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users.
 
@@ -35,7 +35,7 @@ Frequently Asked Questions (FAQs)
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or flagged posts lists.
+The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or saved posts lists.
 
 Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 

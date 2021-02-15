@@ -65,7 +65,7 @@ Bespoke communication products that provide weak security assurance can dramatic
 
 When early adopters of a bespoke solutions ask IT to "take over" and assume the risk of managing a rapidly installed, difficult-to-maintain system with limited or no assurance of security, the IT team is under a great deal of pressure.
 
-Often at this point, IT teams accelerate their exploration of Mattermost as a long-term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://about.mattermost.com/success-stories/>`__.
+Often at this point, IT teams accelerate their exploration of Mattermost as a long-term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://mattermost.com/customers/>`__.
 
 Why IT Teams Choose Mattermost over Bespoke Solutions
 ``````````````````````````````````````````````````````
@@ -75,10 +75,10 @@ Mattermost is designed to replace bespoke messaging solutions through a platform
 In addition, IT teams prefer Mattermost for its specific `security assurances <https://docs.mattermost.com/overview/security.html>`__:
 
 1. Mattermost products are backed by Mattermost, Inc., which has commercial contracts with hundreds of enterprises around the world, many with Fortune 500 and Global 2000 organizations who require significant obligations and assurances from vendors of critical infrastructure.
-2. Mattermost offers a `security bulletin <https://about.mattermost.com/security-bulletin/>`__ to alert IT teams and customers of high priority security updates, with step-by-step instructions for upgrade and options for commercial support.
-3. Mattermost maintains an `up-to-date list of security updates <https://about.mattermost.com/security-updates/>`__ for both its open source and commercial offerings.
+2. Mattermost offers a `security bulletin <https://mattermost.com/security-updates/#sign-up>`__ to alert IT teams and customers of high priority security updates, with step-by-step instructions for upgrade and options for commercial support.
+3. Mattermost maintains an `up-to-date list of security updates <https://mattermost.com/security-updates/>`__ for both its open source and commercial offerings.
 4. To keep IT teams safe, Mattermost waits 14 days after releasing a security patch before disclosing the specific details of the vulnerability each addresses.
-5. A `Responsible Disclosure Policy <https://about.mattermost.com/report-security-issue/>`__ is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.
+5. A `Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__ is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.
 
 Bringing Data from Bespoke Solutions into Mattermost 
 `````````````````````````````````````````````````````
@@ -99,7 +99,7 @@ If your data in the bespoke messenger is not vital, consider:
 
 Sometimes systems running in parallel turn into a hard switch migration when a bespoke or deprecated system experiences a major outage or a security exploit. In 2017, this was experienced by many companies using Mattermost and HipChat.com in parallel when `HipChat suffered a major security breach where customer data was stolen by an unknown attacker <https://thenextweb.com/insider/2017/04/24/hipchat-hacked-weekend-bad/#.tnw_lAotA9OV>`__.
 
-When IT adopts management of Mattermost, often they will purchase the commercial version for additional compliance, access control, and scale features, in addition to high quality commercial support for upgrades and migrations. Teams can `purchase Mattermost Enterpise Edition with a credit card online <https://about.mattermost.com/pricing/>`__ or `contact sales <https://about.mattermost.com/contact/>`__ to engage in an enterprise procurement process.
+When IT adopts management of Mattermost, often they will purchase the commercial version for additional compliance, access control, and scale features, in addition to high quality commercial support for upgrades and migrations. Teams can `purchase Mattermost Enterpise Edition with a credit card online <https://mattermost.com/pricing-self-managed/>`__ or `contact sales <https://mattermost.com/contact-us/>`__ to engage in an enterprise procurement process.
 
 Migrating from Slack
 ~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +110,7 @@ Slack offers two ways to `export your data from their product <https://get.slack
 2. You can request a "Corporate Export" from Slack directly to get a larger export including private channels, direct, and group messages.
 
 .. note:: 
-  As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`__.
+  As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://mattermost.org/filing-issues/>`__.
 
 Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
 `````````````````````````````````````````````````````````````````````
@@ -169,7 +169,7 @@ Migrating from Jabber to Mattermost
 
 BrightScout helped a major U.S. Federal Agency rapidly migrate from Jabber to Mattermost and open sourced their Extract, Transform and Load (ETL) tool at https://github.com/Brightscout/mattermost-etl.
 
-Read more about their `case study <https://about.mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`__ online.
+Read more about their `case study <https://mattermost.com/blog/u-s-federal-agency-migrates-from-jabber-to-mattermost-the-open-source-way/>`__ online.
 
 Migrating from Pidgin to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

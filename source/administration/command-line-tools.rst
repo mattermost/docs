@@ -53,13 +53,15 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
     sudo -u mattermost bin/mattermost version
 
 .. note::
-   Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
-  
-When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows:
 
+Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+
+.. note::
+
+  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
 .. code-block:: bash
  
-  bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+ bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -654,7 +656,7 @@ mattermost config migrate
     .. code-block:: none
 
        bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
-       
+
 mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -670,7 +672,7 @@ mattermost config reset
     .. code-block:: none
 
        bin/mattermost config reset SqlSettings.DriverName LogSettings
-       
+
    Options
     .. code-block:: none
 
@@ -736,6 +738,37 @@ mattermost config validate
       .. code-block:: none
 
         bin/mattermost config validate
+	
+mattermost db init
+------------------
+
+  Description
+    Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
+
+  Format
+    .. code-block:: none
+
+      mattermost db init
+
+  Examples
+  
+    Use the ``config`` flag to pass the DSN:
+    
+    .. code-block:: none
+
+       mattermost db init --config postgres://localhost/mattermost
+       
+    Run this command to use the ``MM_CONFIG`` environment variable:
+    
+    .. code-block:: none
+      
+       MM_CONFIG=postgres://localhost/mattermost mattermost db init
+    
+    Run this command to set a custom defaults file to be loaded into the database: 
+    
+    .. code-block:: none
+    
+       MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
 
 mattermost export
 -----------------
@@ -2279,7 +2312,7 @@ mattermost version
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl version <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-version>`__.
+   This command will be replaced in a future release with the mmctl command `mmctl system version <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-system-version>`__.
 
 
 Description
@@ -2667,7 +2700,7 @@ CLI Documentation:
               platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
 
       -upgrade_db_30                   Upgrades the database from a version 2.x schema to version 3 see
-                                        http://www.mattermost.org/upgrading-to-mattermost-3-0/
+                                        https://mattermost.org/upgrading-to-mattermost-3-0/
 
           Example:
               platform -upgrade_db_30
@@ -2687,4 +2720,4 @@ If you have Bleve search indexing enabled, temporarily disable it in **System Co
 
 Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
 
-If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ to get help.
+If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ to get help.

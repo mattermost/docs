@@ -5,7 +5,7 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 
 .. important::
 
-  Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 has come to the end of its lifecycle. Upgrading to server v5.25 or later is required.
+  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is highly recommended.
 
 Upgrading to the Latest Version
 -------------------------------
@@ -48,7 +48,7 @@ Location of your local storage directory
 
      cd /tmp
 
-#. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+#. Download `the latest version of Mattermost Server <https://mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
    .. code-block:: sh
 

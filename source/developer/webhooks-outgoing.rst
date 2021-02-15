@@ -4,7 +4,7 @@ Outgoing Webhooks
 =================
 
 .. note::
-  This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate>`__.
+  This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
 Mattermost supports webhooks to easily integrate external applications into the server.
 
@@ -127,9 +127,9 @@ Tips and Best Practices
 Share Your Integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------
@@ -143,8 +143,8 @@ Mattermost automatically translates the data coming from Slack:
 
 1. JSON responses written for Slack, that contain the following, are translated to Mattermost markdown and rendered equivalently to Slack:
    
-   - ``<>`` to denote a URL link, such as ``{"text": "<http://www.mattermost.com/>"}``
-   - ``|`` within a ``<>`` to define linked text, such as ``{"text": "Click <http://www.mattermost.com/|here> for a link."}``
+   - ``<>`` to denote a URL link, such as ``{"text": "<https://mattermost.com/>"}``
+   - ``|`` within a ``<>`` to define linked text, such as ``{"text": "Click <https://mattermost.com/|here> for a link."}``
    - ``<userid>``  to trigger a mention to a user, such as ``{"text": "<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification."}``
    - ``<!channel>``, ``<!here>`` or ``<!all>`` to trigger a mention to a channel, such as ``{"text": "<!channel> this is a notification."}``
 

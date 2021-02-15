@@ -7,7 +7,7 @@ The following instructions use Docker to install Mattermost in *Preview Mode* fo
 
 **Note:** This configuration should not be used in production, as it uses a known password string, contains other non-production configuration settings, and does not support upgrade. 
 
-If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <http://docs.mattermost.com/install/prod-docker.html>`__.
+If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <https://docs.mattermost.com/install/prod-docker.html>`__.
 
 .. note::
   If you have any problems installing Mattermost, see
@@ -29,7 +29,7 @@ Otherwise, follow the step-by-step instructions:
 macOS
 ^^^^^^^^
 
-1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`__ 
+1. Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__ 
 
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview``
@@ -41,7 +41,7 @@ macOS
 Windows 10
 ^^^^^^^^^^
 
-1. Install `Docker for Windows <http://docs.docker.com/installation/windows/>`__
+1. Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__
 
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview``
@@ -116,7 +116,7 @@ functionality, enabling SMTP email is recommended.
 Configuration Settings
 -----------------------------------
 
-See `Configuration Settings <http://docs.mattermost.com/administration/config-settings.html>`__
+See `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html>`__
 documentation to customize your deployment.
 
 Updating Docker Preview

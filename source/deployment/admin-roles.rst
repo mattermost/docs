@@ -2,15 +2,21 @@
 Additional System Admin Roles (E20)
 ====================================
 
-From v5.28, System Admins can assign roles to members, allowing them access only to designated areas of the System Console. This allows other members of your organization to perform certain administrative tasks without providing access to all system administrative capabilities.
+From v5.28, System Admins can use the command line to assign roles that permit members to have admin access to specified areas of the System Console. This allows members of your organization to perform certain administrative tasks without providing them with access to all system administrative capabilities.
+
+From v5.30, System Admins can also use the System Console to manage additional System Admin roles and privileges.
 
 - **System Manager:** The System Manager has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read only.
-- **Read Only Admin:** This role is able to access all pages of the System Console but has no write access to any.
+- **Viewer:** This role is able to access all pages of the System Console but has no write access to any pages.
 
-Roles are assigned via the command line, using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_.
+There are two ways to assign roles:
 
-Each role has a set of default permissions, and when a user is assigned a role, they are able to access the System Console. The items that they can view depend on the role they've been assigned.
+1. In the System Console under **User Management > System Roles (Beta)**.
+
+2. Using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_.
+
+When a user is assigned a role, they have access to the System Console. As each role has a different set of default permissions the items that they can view depend on the role they've been assigned.
 
 **System Manager**
 
@@ -37,7 +43,7 @@ Each role has a set of default permissions, and when a user is assigned a role, 
       - (User Management) Permissions
       - Authentication
 
-**Read Only Admin**
+**Viewer**
 
   - Read Only
      - All pages within the System Console
@@ -45,50 +51,154 @@ Each role has a set of default permissions, and when a user is assigned a role, 
 Assigning Admin Roles
 ---------------------
 
-System Admins can assign roles and modify privileges using the mmctl tool. This can be done either locally or remotely.
+System Admins can assign roles using the System Console or the mmctl tool. This can be done either locally or remotely.
 
-The format of the mmctl command is:
+  **In the System Console**
 
-``mmctl permissions role assign [role_name] [username...]``
+- Go to **System Console > User Management > System Roles (Beta) > Assigned People**. 
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign [role_name] [username...]``
 
 **To grant the System Manager role to a single user called Bob Smith:**
 
-``mmctl permissions role assign system_manager bob-smith``
+  **In the System Console**
+
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **System Manager** role.
+
+  2. Under **Assigned People**, choose **Add People**.
+
+  3. Search for and select ``Bob Smith``, then select **Add** to grant the System Manager role to that user.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign system_manager bob-smith``
 
 **To grant the User Manager role to two users, Bob Smith and Sue Clark:**
 
-``mmctl permissions role assign system_user_manager bob-smith sue-clark``
+  **In the System Console**
 
-**To grant the Read Only Admin role to two users, Bob Smith and Sue Clark:**
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
 
-``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
+  2. Under **Assigned People**, choose **Add People**.
+
+  3. Search for and select **Bob Smith** and **Sue Clark**, then select **Add** to grant the User Manager role to those users.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign system_user_manager bob-smith sue-clark``
+
+**To grant the Viewer role to two users, Bob Smith and Sue Clark:**
+
+  **In the System Console**
+
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **Viewer** role.
+
+  2. Under **Assigned People**, select **Add People**.
+
+  3. Search for and select **Bob Smith** and **Sue Clark**, then select **Add** to grant the Viewer role to those users.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role assign system_read_only_admin bob-smith sue-clark``
 
 **To remove the System Manager role from a single user called Bob Smith:**
 
-``mmctl permissions role unassign system_manager bob-smith``
+  **In the System Console**
+
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **Viewer** role.
+
+  2. Under **Assigned People** search for **Bob Smith**, then select **Remove**.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions role unassign system_manager bob-smith``
 
 Editing Privileges of Admin Roles (Advanced)
 --------------------------------------------
 
 Each of the admin roles have defined, default privileges as outlined above. 
 
-System Admins can grant read and write access to other areas of the System Console, as well as remove read write access (including default access), for each role. This is completed using the mmctl tool, either locally or remotely.
+System Admins can grant read and write access to other areas of the System Console, as well as remove read and write access (including default access), for each role. This is completed using the System Console or the mmctl tool, either locally or remotely.
 
-The format of the mmctl command is:
+  **In the System Console**
 
-``mmctl permissions add [role_name] [permission...]``
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **System Manager**, **User Manager**, or **Viewer** role.
+
+  2. For each set of privileges, select the access level as **Can edit**, **Read only**, or **No access**.
+
+  **Note:** If you set privilege subsections to different access levels then the privilege access level displays as **Mixed Access**.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions add [role_name] [permission...]``
 
 **To grant write access to the Authentication section of the System Console for all users with the User Manager role:**
 
-``mmctl permissions add system_user_manager sysconsole_write_authentication``
+  **In the System Console**
+
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+
+  2. Under **Privileges > Authentication** select **Can edit**, then select **Save**.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions add system_user_manager sysconsole_write_authentication``
 
 **To grant read only access to the Authentication section of the System Console for all users with the User Manager role:**
 
-``mmctl permissions remove system_user_manager sysconsole_read_authentication``
+  **In the System Console**
+
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+
+  2. Under **Privileges > Authentication** select **Read only**, then select **Save**.
+
+  **Using the mmctl tool**
+
+  The format of the mmctl command is:
+
+  ``mmctl permissions remove system_user_manager sysconsole_read_authentication``
 
 **To remove write access to the Authentication section of the System Console for all users with the User Manager role:**
+  
+  **In the System Console**
 
-``mmctl permissions remove system_user_manager sysconsole_write_authentication``
+  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+
+  2. Under **Privileges > Authentication** select **No access**, then choose **Save**.
+
+  **Using the mmctl tool**
+  
+  The format of the mmctl command is:
+
+  ``mmctl permissions remove system_user_manager sysconsole_write_authentication``
+
+**To reset a role to its default set of permissions:**
+
+This is completed using the mmctl tool only, either locally or remotely.
+
+The format of the mmctl command is:
+
+``mmctl permissions reset [role_name]``
+
+For example, to reset the permissions of the ``system_read_only_admin`` role:
+
+``mmctl permissions reset system_read_only_admin``
 
 Admin Roles and Privileges
 ---------------------------

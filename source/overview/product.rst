@@ -37,17 +37,17 @@ Features include:
 - Continuous archiving
 - Multi-factor authentication
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
-- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__ and `third party extensions <https://about.mattermost.com/default-app-directory/>`__
+- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
 - Easily scalable to dozens of users per team
-- New features and improvements released every two months
-- Multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian
+- New features and improvements released every month
+- Multiple languages including U.S. English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
 
 To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
 Mattermost Enterprise Edition
 ----------------------------
 
-To explore the benefits of Mattermost's enterprise features, you can replace the Mattermost Team Edition binary with a `Mattermost Enterprise Edition binary <https://about.mattermost.com/download>`__. This version supports upgrading to Mattermost Enterprise Edition E10 or E20.
+To explore the benefits of Mattermost's enterprise features, you can replace the Mattermost Team Edition binary with a `Mattermost Enterprise Edition binary <https://mattermost.com/download/>`__. This version supports upgrading to Mattermost Enterprise Edition E10 or E20.
 
 Once you've downloaded and installed Mattermost Enterprise Edition you have the option to use it as-is, or you can access Enterprise Edition E20 features such as AD/LDAP, Guest Accounts, read-only channels, and advanced compliance support for a trial period. Start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 
@@ -78,4 +78,4 @@ A commercial enterprise-grade messaging system that scales from hundreds to tens
 
 For a complete list of features across editions, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`_.
 
-For purchases above 3,000 seats, please contact our `enterprise sales team <https://about.mattermost.com/contact/>`__.
+For purchases above 3,000 seats, please contact our `enterprise sales team <https://mattermost.com/contact-us/>`__.

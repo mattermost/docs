@@ -84,7 +84,7 @@ Configuration Settings
             "ClusterName": "production",
             "OverrideHostname": "",
             "UseIpAddress": true,
-            "UseExperimentalGossip": false,
+            "UseGossip": true,
             "ReadOnlyConfig": true,
             "GossipPort": 8074,
             "StreamingPort": 8075
@@ -280,6 +280,31 @@ Transparent Failover
 
 The database can be configured for High Availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
+Recommended Configuration Settings
+``````````````````````````````````
+
+If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
+
+The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7.
+
+1. **max_connections**: If you are using read-replicas set reader connections to 1024, and writer connections to 256. If you are using a single instance, then only setting it to 1024 should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number. Also tune the `MaxOpenConns` setting under the `SqlSettings` of Mattermost app accordingly.
+
+2. **random_page_cost**: Set it to 1.1, unless the DB is using spinning disks.
+
+3. **work_mem**: Set it to 16 MB for readers, and 32 MB for writers. If it's a single instance, 16 MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
+
+4. **effective_cache_size**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+
+5. **shared_buffers**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+
+6. **tcp_keepalives_count**: 5
+
+7. **tcp_keepalives_idle**: 5
+
+8. **tcp_keepalives_interval**: 1
+
+Note that if you are using pgbouncer or any similar connection pooling proxy in front of your DB, then the keepalive settings should be applied to the proxy instead and revert the keepalive settings for the DB back to defaults.
+
 Leader Election
 ^^^^^^^^^^^^^^^^
 
@@ -399,7 +424,7 @@ Starting with Mattermost Server version 4.0, when a server starts up it can auto
         "ClusterName": "production",
         "OverrideHostname": "",
         "UseIpAddress": true,
-        "UseExperimentalGossip": false,
+        "UseGossip": true,
         "ReadOnlyConfig": true,
         "GossipPort": 8074,
         "StreamingPort": 8075
@@ -431,6 +456,19 @@ For example, if you're deploying Mattermost on AWS with Amazon Aurora we recomme
 Troubleshooting
 ---------------
 
+Capturing High Availability Troubleshooting Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
+
+You may be asked to provide this data to Mattermost for analysis and troubleshooting purposes.
+
+.. note::
+
+  - Ensure that server log files are being created. You can find more on working with Mattermost logs `here <https://docs.mattermost.com/install/troubleshooting.html#review-mattermost-logs>`__.
+  - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
+  - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster.
+
 Red Server Status
 ~~~~~~~~~~~~~~~~~
 
@@ -439,7 +477,7 @@ When High Availability is enabled, the System Console displays the server status
 A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same configuration file to function properly.
-- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect

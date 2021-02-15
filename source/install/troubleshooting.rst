@@ -330,7 +330,7 @@ When High Availability is enabled, the System Console displays the server status
 A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
-- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It's recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It's recommended to use the `latest version of Mattermost <https://mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping down the server in 15-second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
@@ -482,7 +482,7 @@ User Statuses get Stuck on "Away" or "Offline" Status
 
 If you notice more than one user being stuck at an "Away" or "Offline" status, try one of the following steps:
 
-1. If you're using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`__.
+1. If you're using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <https://nginx.org/en/docs/http/load_balancing.html>`__.
 2. If you're using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
 
 If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
@@ -621,9 +621,9 @@ To help us narrow down whether it’s a server configuration issue, device speci
 
 **Connect to another server**
 
-1. Create an account at https://demo.mattermost.com.
+1. Create an account at https://community.mattermost.com.
 2. Erase your mobile application and reinstall it.
-3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to test whether the connection is working.
+3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to test whether the connection is working.
 
 **Connect with another device**
 

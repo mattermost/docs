@@ -15,6 +15,7 @@ Getting Started
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
    /help/getting-started/organizing-conversations.md
+   /help/getting-started/organizing-your-sidebar.md
    /help/getting-started/searching.md
    /help/getting-started/creating-teams.md
    /help/getting-started/managing-members.md
@@ -30,6 +31,7 @@ Messaging
    :glob:
 
    /help/messaging/sending-messages.md
+   /help/messaging/emoji.rst
    /help/messaging/reading-messages.md
    /help/messaging/mentioning-teammates.md
    /help/messaging/formatting-text.md

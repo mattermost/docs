@@ -159,14 +159,14 @@ A push proxy is a key technology behind notification transmission. It enables no
 
 Mattermost provides a self-hosted Push Proxy you can deploy, the Mattermost Push Notification Service (MPNS). This is also available via a hosted-by-Mattermost option, or Hosted Push Notification Service (HPNS).
 
-    **Note:** `Only Mattermost Enterprise Edition E10 <https://about.mattermost.com/pricing/>`_ or higher can be used to receive access to our Hosted Push Notification Service (HPNS)
+    **Note:** `Only Mattermost Enterprise Edition E10 <https://mattermost.com/pricing-self-managed/>`_ or higher can be used to receive access to our Hosted Push Notification Service (HPNS)
 
 If you will be using the Mattermost applications via Google Play and Apple App Store, the HPNS is all you need.
 
 Our Hosted Push Notification Service offers:
 
 - Access to a publicly-hosted Hosted Push Notification Service (HPNS).
-- An explicit `privacy policy <https://about.mattermost.com/hpns-privacy/>`_ for the contents of unencrypted messages.
+- An explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`_ for the contents of unencrypted messages.
 - Encrypted TLS connections:
     - Between HPNS and Apple Push Notification Services
     - HPNS and Google’s Firebase Cloud Messaging service

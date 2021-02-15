@@ -84,7 +84,7 @@ Security Updates
 Branding 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-1. **Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://www.mattermost.org/brand-guidelines/) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials. 
+1. **Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://mattermost.org/brand-guidelines/) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials. 
 
 Upgrade 
 ~~~~~~~~~~~~~~~~~~~~~~~

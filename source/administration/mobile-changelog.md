@@ -1,5 +1,84 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.39.0 Release
+- Release Date: January 16, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Teams in the sidebar are now ordered by user preference.
+ - Typing an emoji in a post now adds the emoji to the list of recently used emojis.
+
+### Bug Fixes
+ 
+#### All apps
+ - Fixed an issue where users were unable to open files with file names that contained multiple dots.
+ - Fixed an issue where ``/mscalendar settings`` did not redirect a user to the bot Direct Message channel.
+ - Fixed an issue where tapping on an archived channel link from the app did not redirect the user to the archived channel.
+
+#### Android specific
+ - Fixed an issue where in some cases the deviceID used to receive push notifications wasn't being attached to the session as the registration completed.
+
+#### iOS specific
+ - Fixed an issue where custom URL schemes didn't work.
+
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - In-app notification banner locks user interaction until the notification banner is dismissed.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
+## 1.38.1 Release
+- Release Date: December 18, 2020
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Bug Fixes
+ - Fixed an issue where the v1.38.0 app crashed on iPadOS 14 when reopened from the app switcher.
+ - Fixed an issue where the at-mention and slash command suggestion autocomplete modals blocked the post draft.
+
+## 1.38.0 Release
+- Release Date: December 16, 2020
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+ 
+**Note:** Support for landscape orientation was removed for non-tablet devices.
+
+### Improvements
+ - Added gallery user interface improvements.
+ - Images now load progressively as the image comes into view-port instead of loading all the images on mount.
+ - Mattermost is now resizeable on Android Desktops such as Samsung DeX.
+ - "Something went wrong" message block is now vertically centered.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the apps frequently failed to load channels for initial team.
+ - Fixed an issue where all channel push notifications were cleared when opening one channel's push notification.
+ - Fixed an issue where post edits and deletes propagated inconsistently.
+ 
+#### Android specific
+ - Fixed an issue where the list of Group Mentions was not updated when Groups were added or removed in an LDAP Group Synced Team.
+ - Fixed an issue where a group mention was highlighted by default before it was posted.
+
+#### iOS specific
+ - Fixed an issue where the header area overlapped notch on launch on iPhone 12.
+ 
+### Known Issues
+ - At-mention and slash command suggestion autocomplete modals block post draft.
+
 ## 1.37.0 Release
 - Release Date: November 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -191,7 +270,7 @@
 ### Breaking Changes
  - Starting with mobile app v1.33.0, users on server versions below v5.19 may experience issues with how attachments, link previews, reactions and embed data are displayed. Updating your server to v5.19 or later is required.
  
-**Note:** Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+**Note:** Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  
 ### Highlights
  -  System admins will now receive an in-app notification to upgrade their server version if they are running versions v5.18 and below.
@@ -309,7 +388,7 @@
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  
 ### Bug Fixes
  - Fixed an issue where file uploads failed due to a time out when the [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) was enabled.
@@ -389,7 +468,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
  
 **Note:** v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
 
@@ -566,7 +645,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
  
-Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
