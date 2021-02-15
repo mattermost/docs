@@ -4331,9 +4331,10 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Data Prefetch
 ^^^^^^^^^^^^^^
+
+*Removed in February 16, 2021 release*
 
 **True**: Messages in all unread channels are pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
 
