@@ -34,7 +34,7 @@ Set up Database Server
 Install and Configure MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2. `Download the MySQL 5.6+ <https://dev.mysql.com/downloads/windows/installer/>`__ installer, or (PostgreSQL 9.3+).
+2. `Download the MySQL 5.6+ <https://dev.mysql.com/downloads/windows/installer/>`__ installer, (or PostgreSQL 10.0+).
    For the purposes of this guide, we'll be downloading and installing the latest version of MySQL Community Server
    Edition MSI-installer (version 5.7 at the time of writing this guide). Note that the appropriate link refers 
    to 32-bit (as shown in the figure below); however, this installer is 32-bit but is capable of installing the 
