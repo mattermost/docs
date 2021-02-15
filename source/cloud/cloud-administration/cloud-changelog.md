@@ -2,6 +2,126 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-02-10
+
+### Highlights
+
+#### OpenID Connect (Cloud Professional & Enterprise)
+ - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. **This feature will be available for Mobile Apps in v1.40 (February 16th) release.**
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the **Add Members** modal user interface.
+ - Added formatting shortcut keys to the **Shortcut** modal.
+ - Added localization to the date picker used when searching for posts around a given date.
+ - The autocomplete popover is now positioned relative to the ``@``, ``~``, or ``/`` trigger in the post draft.
+
+#### Notifications
+ - Posts from OAuth 2.0 bots no longer trigger mentions for the user.
+
+#### Administration
+ - Added an ``ImportDelete`` job to periodically delete unused import files after a configurable retention period has passed.
+ - Introduced new ``mattermost_system_server_start_time`` and ``mattermost_jobs_active`` metrics for improved debugging with Grafana dashboards.
+ - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
+ - Changed default ``MaxFileSize`` from 50MB to 100MB.
+ - Updated Go dependencies to their latest minor version.
+
+### Bug Fixes
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change the configuration value.
+ - The ``DownloadComplianceReport`` function in the Golang driver has been fixed to be able to download a full report as a zip archive.
+ - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
+ - Fixed a bug with in-product notices where a date constraint sometimes failed to match, and would lead to the notice not being fetched.
+ - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
+ - Fixed an issue where the in-product instructions to search for users under **System Console > Reporting > Server Logs** were outdated.
+ - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
+
+### Known Issues
+ - The slash command autocomplete options cover the input box on some reply threads on the right-hand side.
+ - Setting changes do not get saved in **System Console > Site Configuration > Public Links**.
+ - Channel header text "This channel has guests" is misaligned.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channel**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-01-26
+
+### Highlights
+
+#### Channel Sidebar Improvements
+ - New channel sidebar improvements include a configurable **Unreads** category as well as the ability to sort categories by recent activity or alphabetically in addition to manually.
+ 
+### Improvements
+
+#### User Interface (UI)
+ - Added new languages, Bulgarian and Swedish.
+ - Moved the header icons to the left of the header beside the channel description.
+ - The Database search using PostgreSQL now supports searching for terms that contain underscores.
+
+#### Plugins
+ - Enabled experimental support for ARM64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
+
+#### Administration
+ - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the Gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
+ - Added a ``CollapsedThreads`` feature flag.
+ - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
+ - Removed the word "experimental" from the Gossip setting in the System Console.
+ - Deprecated the ``ExperimentalChannelSidebarOrganization`` setting and added a new ``EnableLegacySidebar`` setting. The new channel sidebar will be enabled system-wide by default.
+
+#### Bug Fixes
+ - Fixed an issue where the Admin Filter option was not disabled in the AD/LDAP page for Admin roles with a ``sysconsole_write_authentication`` permission.
+ - Fixed an issue where channels would sometimes be removed from custom categories when a user left a team.
+ - Fixed an issue where the error text was missing when the team name was left blank on the Team Create page.
+ - Fixed an issue where the System Manager was able to download the Compliance Export files.
+ - Fixed an issue where themed button colours in interactive message attachments in Mattermost’s default dark theme were mismatched.
+ - Fixed an issue where bold and italics shortcuts triggered with CTRL+B on Mac.
+ - Fixed an issue where a "Your license does not support cloud requests” log error appeared on self-hosted servers.
+
+#### Known Issues
+ - Setting changes do not get saved on **System Console > Site Configuration > Public Links**.
+ - Alignment of team icons are off on **System Console > User Management >Teams Page**.
+ - Alignment of channel header text "This channel has guests" is off.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role on **User Management > Channel**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-01-12
+
+### Highlights
+ - Pre-packaged and pre-installed Mattermost Incident Management v1.2.0.
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed the number of file attachments allowed per post, from 5 to 10.
+ - Added support to move multi-selected groups of channels to another category via the **More options** menu.
+ 
+#### Administration
+ - Updated the Go version to v1.15.5.
+ - Added support for automatic installation and enablement of plugins using feature flags.
+ - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
+ - Added a Mattermost CLI command to initialize the database.
+ - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
+ - Added support for processing import files through the API.
+ - Added support for protocol-relative URLs while using the Image Proxy.
+ - Added shared channels and ``remote_cluster_service`` under a license check.
+ - A Striped LRU cache is now used by default.
+
+### Bug Fixes
+ - Fixed an issue where the permissions of a System Admin role got deleted when changing the access level to any permission.
+ - Fixed an issue where editing a ``/me`` post behaved differently within the Mattermost Web App and the Mobile App.
+ - Fixed an issue where the hover state on category headers did not span the whole width of the left-hand navigation.
+ - Fixed an issue where plugins on the left-hand side of the System Console were sorted differently than the ones in the Plugin Management page.
+ - Fixed an issue where 15-character team names were truncated when the experimental channel sidebar was enabled.
+ - Fixed an issue where the sidebar menus weren't styled correctly in mobile browser view.
+ - Fixed an issue where jumping into an archive channel and clicking the link to jump to recent messages sent the user out of the archived channel.
+ - Fixed an issue where the tooltip text for copying an incoming webhook URL was unclear.
+
+### Known Issues
+ - Cloud > "Tips & Next Steps" should not show an "Explore channels" section for guest users.
+ - System Roles shows License and Environment as possible permissions but they are always hidden in Cloud.
+
 ## Release 2020-12-18
 
 ### Bug Fixes

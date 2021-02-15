@@ -80,7 +80,7 @@ There are three different settings that allow you to control file sharing and fi
 Localization
 ------------
 
-Mattermost can be localized into 16 languages. You can set the default language for newly-created users and pages where the user hasn't logged in and which languages are available for users in **Account Settings > Display > Languages**. 
+Mattermost can be localized into 18 languages. You can set the default language for newly-created users and pages where the user hasn't logged in and which languages are available for users in **Account Settings > Display > Languages**. 
 
 New languages are added automatically by default. You can add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the Default Client Language must be added before saving the setting.
 

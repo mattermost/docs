@@ -172,7 +172,7 @@ How do you manage multiple messaging solutions in an enterprise?
 
 Our customers address multiple collaboration solutions in different ways depending on whether the organization is more top down or bottom up.
 
-**For top-down, customers want to simplify and leverage investments in a central, flexible, innovative solution that can scale.** There's generally a lot of pain with different teams and departments running their own messaging tools, creating silos, redundancy, and significant productivity loss. They'll roll out Mattermost as an official solution and centralize communication there. For an example of this, see our `Uber case study <https://about.mattermost.com/blog/how-uber-uses-mattermost-to-enhance-enterprise-wide-communications/>`__.
+**For top-down, customers want to simplify and leverage investments in a central, flexible, innovative solution that can scale.** There's generally a lot of pain with different teams and departments running their own messaging tools, creating silos, redundancy, and significant productivity loss. They'll roll out Mattermost as an official solution and centralize communication there. For an example of this, see our `Uber case study <https://mattermost.com/customers/>`__.
 
 **For bottom-up, customers want to supplement for strategic advantage.** We've seen teams flock to Mattermost because of its productivity benefits for DevOps, remote work, rapid response, and scaling large teams where people are overloaded with email. Those organizations, which can have hundreds to thousands of users, will use Mattermost in parallel with general purpose messaging that doesn't meet their specific needs.
 
@@ -477,7 +477,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
     "Search highlighting", "X", "X"
-    "View/marking pinned or flagged posts", "X", "X", "X"
+    "View/marking pinned or saved posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
     "Notifications", "X", "X", "X"
