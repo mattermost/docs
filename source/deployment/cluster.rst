@@ -84,7 +84,7 @@ Configuration Settings
             "ClusterName": "production",
             "OverrideHostname": "",
             "UseIpAddress": true,
-            "UseExperimentalGossip": false,
+            "UseGossip": true,
             "ReadOnlyConfig": true,
             "GossipPort": 8074,
             "StreamingPort": 8075
@@ -424,7 +424,7 @@ Starting with Mattermost Server version 4.0, when a server starts up it can auto
         "ClusterName": "production",
         "OverrideHostname": "",
         "UseIpAddress": true,
-        "UseExperimentalGossip": false,
+        "UseGossip": true,
         "ReadOnlyConfig": true,
         "GossipPort": 8074,
         "StreamingPort": 8075
