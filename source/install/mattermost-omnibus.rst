@@ -64,20 +64,22 @@ The properties that you can configure in this file are:
 - ``data_directory``: This is the directory where Mattermost stores its data.
 - ``enable_plugin_uploads``: This setting can be ``true`` or ``false`` and is used to configure the ``PluginSettings.EnableUploads`` Mattermost configuration property.
 - ``enable_local_mode``: This setting can be ``true`` or ``false`` and is used to configure the ``ServiceSettings.EnableLocalMode`` Mattermost configuration property.
-- ``nginx_template``: Optional path to a custom nginx template.
+- ``nginx_template``: Optional path to a custom NGINX template.
 
 After modifying the ``mmomni.yml`` configuration file, you need to run ``mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
 
-Using a custom nginx template
+Using a custom NGINX template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Omnibus generates a ``nginx`` configuration depending on how the different properties of the ``mmomni.yml`` file are set, but it is possible that you need to customize the configuration further to support other use cases, like using custom SSL certificates, for example. For those cases, Omnibus supports using a custom ``nginx`` template to generate its configuration. To use this feature, you need to copy and modify the original template located at ``/opt/mattermost/mmomni/ansible/playbooks/mattermost.conf`` to a new location and then customize it to your needs. You can either use the variables and internal logic that is already bundled in the template, modifying the parts that you need, or just use a fully static configuration instead.
+Mattermost Omnibus generates an ``nginx`` configuration depending on how the different properties of the ``mmomni.yml`` file are set. However, you may need to customize the configuration further to support other use cases, such as using custom SSL certificates. For those cases, Omnibus supports using a custom ``nginx`` template to generate its configuration. 
 
-After the template has been customized, you need to add a ``nginx_template`` property to the ``/etc/mattermost/mmomni.yml`` configuration file, and then run ``mmomni reconfigure``. The reconfigure process will use the new template to generate the nginx final configuration, and you can check the contents of the ``/etc/nginx/conf.d/mattermost.conf`` file to validate that the changes were applied successfully.
+To use this feature, you need to copy and modify the original template located at ``/opt/mattermost/mmomni/ansible/playbooks/mattermost.conf`` to a new location. Then, you can either use the variables and internal logic already bundled in the template and modify the parts that you need, or use a fully static configuration instead.
 
-Please be careful when using this feature, as making changes to the custom template can cause the reconfigure process to fail, or the generated nginx configuration to be invalid.
+After the template has been customized, add an ``nginx_template`` property to the ``/etc/mattermost/mmomni.yml`` configuration file, and then run ``mmomni reconfigure``. The reconfigure process will use the new template to generate the NGINX final configuration. You can check the contents of the ``/etc/nginx/conf.d/mattermost.conf`` file to validate that the changes were applied successfully.
 
-This feature is available since Mattermost Omnibus version 5.32.0.
+Please be careful when using this feature, as making changes to the custom template can cause the reconfigure process to fail, or the generated NGINX configuration to be invalid.
+
+This feature is available from Mattermost Omnibus version 5.32.0.
 
 Removing Mattermost Omnibus
 ---------------------------
