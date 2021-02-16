@@ -35,6 +35,7 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
 
 #### User Interface (UI)
  - Added new languages, Bulgarian and Swedish.
+ - The team sidebar was re-designed, e.g. icons were made rounder and new animations were added.
  - Moved the header icons to the left of the header beside the channel description.
  - Added support to move multi-selected groups of channels to another category via the **More options** menu.
 
