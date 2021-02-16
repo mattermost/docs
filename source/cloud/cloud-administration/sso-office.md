@@ -45,7 +45,7 @@ Once the App Registration has been created, you can configure it further. The st
 
 2. Select **Office 365** as the service provider.
 
-3. Paste the Directory (tenant) ID from Azure Portal as the **Directory (tenant) ID** in Mattermost.
+3. Paste the **Directory (tenant) ID** from the Azure Portal as the **Directory (tenant) ID** in Mattermost.
 
 4. The **Discovery Endpoint** for OpenID Connect with Office 365 is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
 
