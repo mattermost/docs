@@ -6,7 +6,7 @@ OAuth 2.0 is being deprecated in the System Console and replaced by OpenID Conne
 
 .. image:: ../../images/OAuth20Deprecated.png
 
-A one-time, one-click conversion tool is available within the existing **OAuth 2.0** page or within the new **OpenID Connect** page by going to **System Console > Authentication**.
+A one-time, one-click conversion tool is available within the existing **OAuth 2.0** page. You can also go to **System Console > Authentication > OpenID Connect**.
 
 .. image:: ../../images/Convert-to-OpenID-Connect.png
 
