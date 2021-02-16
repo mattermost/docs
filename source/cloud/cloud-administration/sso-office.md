@@ -49,7 +49,7 @@ Once the App Registration has been created, you can configure it further. The st
 
 4. The **Discovery Endpoint** for OpenID Connect with Office 365 is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
 
-5. Paste the Application (client) ID from Azure Portal as the **Client ID** in Mattermost.
+5. Paste the **Application (client) ID** from the Azure Portal as the **Client ID** in Mattermost.
 
 6. Paste the **client secret** value from the Azure Portal as the **Client Secret** in Mattermost.
 
