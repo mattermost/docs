@@ -56,7 +56,7 @@ Go to the [Google People API](https://console.developers.google.com/apis/api/plu
 
 6. Select **Save**.
 
-5. Restart your Mattermost server to see the changes take effect.
+7. Restart your Mattermost server to see the changes take effect.
 
 **Note:**
 - Alternatively, you may enter **Client ID** and **Client Secret** values directly into the `GoogleSettings` section of the Mattermost `config/config.json` file.
