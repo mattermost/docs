@@ -52,7 +52,7 @@ Go to the [Google People API](https://console.developers.google.com/apis/api/plu
 
 3. Paste in the **Client ID** from Google in Mattermost.
 
-3. Paste in the **Client Secret** from Google in Mattermost.
+5. Paste in the **Client Secret** from Google in Mattermost.
 
 4. Select **Save**.
 
