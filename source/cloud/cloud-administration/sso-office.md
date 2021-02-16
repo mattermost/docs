@@ -12,7 +12,7 @@ Follow these steps to configure Mattermost to use your Office 365 logon credenti
 
 ### Step 1: Register an application in Azure Portal
 
-1. Log in to your [Azure Portal](https://portal.azure.com/) with the account that relates to the Azure Active Directory tenant where you want to register the application. You can confirm the tenant in the top right corner of the portal.
+1. Log in to the [Azure Portal](https://portal.azure.com/) with the account that relates to the Azure Active Directory tenant where you want to register the application. You can confirm the tenant in the top right corner of the portal.
 
 2. In the left-hand navigation pane, select the **Azure Active Directory service**, then select **App registrations > New registration**.
 
