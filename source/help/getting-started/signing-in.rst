@@ -4,7 +4,7 @@ Signing in
 Accessing your Mattermost workspace
 ------------------------------------
 
-An ivite is required to access Mattermost. A member of your Mattermost workspace can send an invitation through an email or by providing you a link. 
+An invite is required to access Mattermost. A member of your Mattermost workspace can send an invitation via email or by providing you with a link.
 
 Sign In 
 --------
