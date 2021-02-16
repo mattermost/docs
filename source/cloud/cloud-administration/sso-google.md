@@ -18,7 +18,7 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 
 3. Select **Create Credentials**, then select **OAuth client ID**.
 
-4. select the **Web application** as the application type.
+4. Select the **Web application** as the application type.
 
 5. Enter `Mattermost - your-company-name` as the **Name**,
 
