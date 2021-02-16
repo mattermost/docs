@@ -54,7 +54,7 @@ Go to the [Google People API](https://console.developers.google.com/apis/api/plu
 
 5. Paste in the **Client Secret** from Google in Mattermost.
 
-4. Select **Save**.
+6. Select **Save**.
 
 5. Restart your Mattermost server to see the changes take effect.
 
