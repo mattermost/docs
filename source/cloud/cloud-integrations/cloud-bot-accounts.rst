@@ -99,7 +99,11 @@ Once the plugin is enabled, the plugin posts as the ``github`` account but witho
 
   mmctl user convert (--bot [emails] [usernames] [userIds] | --user <username> --password PASSWORD [--email EMAIL]) [flags]
 
-If the user is an existing user account you want to preserve, change its username and restart the Mattermost workspace, after which the plugin will create a bot account with the name ``github``.
+If the user is an existing user account you want to preserve, change its username. The plugin will create a bot account with the name ``github``.
+
+.. note::
+
+  A bot account and a user account cannot share the same username in the same Mattermost instance.
 
 How can I quickly test if my bot account is working?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
