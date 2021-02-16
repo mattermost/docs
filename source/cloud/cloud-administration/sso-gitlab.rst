@@ -45,7 +45,7 @@ Step 2: Configure Mattermost for GitLab SSO
 2. Select **GitLab** as the service provider.
 3. Enter the **Gitlab Site URL** of your GitLab instance. If your GitLab instance is not set up to use SSL, start the URL with ``http://`` instead of ``https://``. If you are using GitLab itself as your provider, use ``gitlab.com``.
 4. The **Discovery Endpoint** for OpenID Connect with GitLab is prepopulated with ``https://gitlab.com/.well-known/openid-configuration``.
-5. Paste the *Application ID* from GitLab as the **Client ID** in Mattermost.
+5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the *Application Secret Key* from GitLab as the **Client Secret** in Mattermost. 
 7. Select **Save**.
 8. Restart your Mattermost server to see the changes take effect.
