@@ -50,7 +50,7 @@ Go to the [Google People API](https://console.developers.google.com/apis/api/plu
 
 3. The **Discovery Endpoint** for OpenID Connect with Google Apps is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
 
-3. Paste in the **Client ID** from Google in Mattermost.
+4. Paste in the **Client ID** from Google in Mattermost.
 
 5. Paste in the **Client Secret** from Google in Mattermost.
 
