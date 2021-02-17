@@ -477,7 +477,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
     "Search highlighting", "X", "X"
-    "View/marking pinned or flagged posts", "X", "X", "X"
+    "View/marking pinned or saved posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
     "Notifications", "X", "X", "X"

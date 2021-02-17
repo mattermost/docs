@@ -1,31 +1,28 @@
-Flagging Messages
--------------------
+Saving Messages
+---------------
 
-Flags are a way to mark messages for follow up. Your flags are personal, and cannot be seen by other users. There is no limit to the number of posts you can flag.
+Saving a message helps you mark messages for follow up. Your saved messages are personal, and can't be seen by other users. There's no limit to the number of posts you can save.
 
-One way we like to use flags is to mark messages we want to respond to later. It's useful when someone asks for something that requires work. We flag the post, keep doing what we're doing, and then go back to our list of flagged posts. After the work is completed, we can reply back to the post and unflag it to clear it from the list.
+One way to use saved messages is to mark messages you want to respond to later. You can save the post in the list of **Saved Posts**, refer back to it later, and once complete, you can remove it from the list.
 
-Flagging a Message
-======================
+Saving a Message
+=================
 
-To try it out, hover over a message to show the flag icon. Click the icon to flag the message for follow up.
+To try it out, hover over a message to show the **Save** icon. Click the icon to save the message for follow up.
 
-.. image:: ../../images/flag.png
-  :width: 500px
+.. image:: ../../images/save-message.png
 
-Viewing Flagged Messages
-===========================
+Viewing Saved Messages
+=====================
 
-To view a list of your flagged messages, click the flag beside the search box.
+To view a list of your **Saved Posts**, select the **Save** icon at the top of the channel.
 
-.. image:: ../../images/flaglist.png
-  :width: 500px
+.. image:: ../../images/saved-posts.png
 
-Unflagging Messages
-===========================
+Unsaving Messages
+=================
 
-To remove an item from the flagged list, click the flag beside a message to clear it.
+To remove an item from the **Saved Posts** list, select the **Save** icon next to message to clear it.
 
-.. image:: ../../images/unflag.png
-  :width: 500px
+.. image:: ../../images/remove-from-saved-posts.png
    
