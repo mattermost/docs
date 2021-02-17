@@ -805,10 +805,10 @@ This should be a detailed explanation of anything the end users who are reportin
 
 Note for Agents: This information is also required:
 
-- Customer Name
-- Customer Contacts
-- Customer License, e.g. E20/PS
-- Customer Tier
+- Customer name
+- Customer contacts
+- Customer license, e.g. E20/PS
+- Customer tier
 
 Environment
 ~~~~~~~~~~~
@@ -823,7 +823,7 @@ Because of this, having a complete picture of the servers and network that the M
 - Mattermost version (e.g. 5.28.0, 5.25.5)
 - Server OS and version (e.g. RHEL7, Ubuntu 18.04)
 - Any orchestration/automation used like Docker or Kubernetes
-- Reverse Proxy and version (e.g. NGINX 1.16)
+- Reverse proxy and version (e.g. NGINX 1.16)
 - Database type and version (e.g. MySQL 5.7, PostgreSQL 12.4)
 - SAML provider (e.g. Windows Server 2012 Active Directory, Okta, KeyCloak)
 - LDAP provider (e.g. Windows Server 2016 Active Directory, Okta, OpenLDAP)
