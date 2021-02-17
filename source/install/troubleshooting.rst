@@ -689,7 +689,7 @@ NGINX usually splits its configuration into two parts: the main server configura
 
 **SAML configuration**
 
-If the issue you're seeing is with SAML login, we will need to see the full configuration for the Mattermost service in the SAML provider. Providing screenshots similar to the ones in the setup documentation is sufficient because most SAML providers are configured using a web interface.
+If the issue you're seeing is with SAML login, we will need to see the full configuration for the Mattermost service in the SAML provider. The configuration for the Mattermost service is in the SAML IdP. Providing screenshots similar to the ones in the setup documentation is sufficient because most SAML providers are configured using a web interface.
 
 **LDAP configuration**
 
