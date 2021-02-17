@@ -19,7 +19,7 @@ General Troubleshooting
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
 Review Mattermost Logs
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_.
 
@@ -30,8 +30,8 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 
 The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
 
-.. Note::
-For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
+.. note::
+    For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
@@ -103,9 +103,9 @@ If email sign in was turned off before the System Admin switched sign in methods
 
 1. Sign in to the server Mattermost is running on via ``ssh``.
 2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
-3. Run
+3. Run:
 
-  .. code-block:: none
+.. code-block:: none
 
     $ sudo -u mattermost bin/mattermost roles system_admin {username}
 
@@ -179,7 +179,7 @@ This error indicates that the installation does not have an Enterprise license. 
 To resolve the issue, upload an Enterprise License and restart the process.
 
 ``SAML 2.0 is not configured or supported on this server.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The error indicates that the installation is using the Mattermost Team Edition. The error message you receive will look similar to this:
 
@@ -443,7 +443,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
          2. Asking the user to switch sign-in methods before turning the sign-in option off.
 
 ``Failed to upgrade websocket connection``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
 
@@ -478,7 +478,7 @@ Settings
 --------
 
 User Statuses get Stuck on "Away" or "Offline" Status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice more than one user being stuck at an "Away" or "Offline" status, try one of the following steps:
 
@@ -495,7 +495,7 @@ If you try to save a System Console page and notice that the settings revert to 
 Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the Mattermost user and restart the server.
 
 Mattermost Can't Connect to LDAP/AD Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 LDAP and Active Directory troubleshooting can be found on `this page <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__.
 
@@ -503,19 +503,19 @@ Mobile
 -------
 
 Login with ADFS/Office365 is Not Working
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 The “Connecting…” Bar Doesn't Clear
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
 If you're seeing this message all the time, and your internet connection seems fine, ask your server administrator whether the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 I’m Not Receiving Push Notifications on my Device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you didn't receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
@@ -533,7 +533,7 @@ If you didn't receive a push notification when :doc:`testing push notifications 
 7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
@@ -556,7 +556,7 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
 
 Configuration Issues
----------------------
+--------------------
 
 In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost.
 
@@ -584,13 +584,13 @@ Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integ
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` file and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
 
 Gfycat gifs are not loading even though they show up in the emoji picker
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Check whether the server has access to the Gfycat servers. It may be behind a proxy or firewall which is blocking outgoing connections.
 2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
 
 Mobile
-~~~~~
+~~~~~~
 
 Build Gets Stuck at ``bundleReleaseJsAndAssets``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -667,7 +667,7 @@ What configuration data includes
 Configuration includes (but is not limited to):
 
 - The Mattermost ``config.json`` file.
-- The configuration for the reverse proxy, e.g. Nginx, HAProxy, AWS.
+- The configuration for the reverse proxy, e.g. NGINX, HAProxy, AWS.
 - The database configuration.
 - SAML configuration when the issue is regarding SAML authentication. The configuration for the Mattermost service is in the SAML IdP.
 - Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
@@ -685,7 +685,7 @@ The Mattermost configuration is usually stored at ``/opt/mattermost/config/confi
 
 **Reverse Proxy configuration**
 
-Nginx usually splits its configuration into two parts: the main server configuration at ``/etc/nginx/nginx.conf``, and a virtual server configuration. On Ubuntu, this is stored in ``/etc/nginx/sites-available``. Providing both of these configuration files is helpful, but providing the latter is more important.
+NGINX usually splits its configuration into two parts: the main server configuration at ``/etc/nginx/nginx.conf``, and a virtual server configuration. On Ubuntu, this is stored in ``/etc/nginx/sites-available``. Providing both of these configuration files is helpful, but providing the latter is more important.
 
 **SAML configuration**
 
@@ -710,8 +710,8 @@ If you're experiencing an issue on mobile, and you're using an MDM or VPN to con
 Logs
 ~~~~
 
-Why we need it
-^^^^^^^^^^^^^^
+Why we need them
+^^^^^^^^^^^^^^^^
 
 Nearly all computer systems have logs of errors and application behavior that can show us what's happening when an application is running. Error logs are invaluable when diagnosing a problem, but only if they're as complete as possible.
 
@@ -797,7 +797,7 @@ What information to include
 
 This should be a detailed explanation of anything the end users who are reporting the unexpected behavior have in common. This includes (but is not limited to):
 
-- Team and Channel memberships, including direct and group messages
+- Team and Channel memberships, including Direct and Group Messages
 - Authentication methods
 - Client operating system and app versions
 - How users connect to the Mattermost server
@@ -808,7 +808,7 @@ Note for Agents: This information is also required:
 - Customer Name
 - Customer Contacts
 - Customer License, e.g. E20/PS
-- Customer Tier - Where to find this?
+- Customer Tier
 
 Environment
 ~~~~~~~~~~~
@@ -816,54 +816,59 @@ Environment
 What information to include
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost. 
+Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost.
 
 Because of this, having a complete picture of the servers and network that the Mattermost server operates in is key to solving problems. This includes (but is not limited to):
 
-- Mattermost version - 5.28.0, 5.25.5
-- Server OS and version - RHEL7, Ubuntu 18.04
+- Mattermost version (e.g. 5.28.0, 5.25.5)
+- Server OS and version (e.g. RHEL7, Ubuntu 18.04)
 - Any orchestration/automation used like Docker or Kubernetes
-- Reverse Proxy and version - Nginx 1.16
-- Database type and version - MySQL 5.7, PostgreSQL 12.4
-- SAML provider - Windows Server 2012 Active Directory, Okta, KeyCloak
-- LDAP provider - Windows Server 2016 Active Directory, Okta, OpenLDAP
+- Reverse Proxy and version (e.g. NGINX 1.16)
+- Database type and version (e.g. MySQL 5.7, PostgreSQL 12.4)
+- SAML provider (e.g. Windows Server 2012 Active Directory, Okta, KeyCloak)
+- LDAP provider (e.g. Windows Server 2016 Active Directory, Okta, OpenLDAP)
 - The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
 
 Be as specific as possible when describing the environment. If you are seeing errors like **Connection Refused** be sure to include any firewalls or filtering proxies that may be on your network, either inbound or outbound.
 
 **Examples**
 
-- Mattermost Server 
-- External hostname: mattermost.example.com
-- Internal hostname: mattermost.lan
-- Mattermost v5.28.0 
-- Zoom plugin v1.4.1
-- Nginx v1.18.0
-- Database server
-- Internal hostname: mysql.lan
-- MySQL v5.7
-- LDAP Provider - 192.168.1.102
-- Internal hostname: ldap.lan
-- OpenLDAP 2.4.54 (Docker container)
+- Mattermost server
+  - External hostname: mattermost.example.com
+  - Internal hostname: mattermost.lan
+  - Mattermost v5.28.0
+  - Zoom plugin v1.4.1
+  - NGINX v1.18.0
 
-- Mattermost Servers
-- Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
+- Database server
+  - Internal hostname: mysql.lan
+  - MySQL v5.7
+  - LDAP Provider - 192.168.1.102
+  - Internal hostname: ldap.lan
+  - OpenLDAP 2.4.54 (Docker container)
+
+- Mattermost servers
+  - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
+
 - Mattermost server versions
-- mm1-3: 5.25.4
-- mm4: 5.21.0
+  - mm1-3: 5.25.4
+  - mm4: 5.21.0
+
 - Proxy server
-- External hostname: mattermost.example.com
-- Internal hostname: proxy.local.lan
-- Nginx v1.16.0
-- Database Servers
-- Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
-- Primary: db1.local.lan
-- Read-Only: db2.local.lan, db3.local.lan
-- MySQL v5.6
-- Elasticsearch Server
-- Hostname: elastic.local.lan
-- Elasticsearch 7.9 with these plugins
-- analysis-icu
+  - External hostname: mattermost.example.com
+  - Internal hostname: proxy.local.lan
+  - NGINX v1.16.0
+
+- Database servers
+  - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
+  - Primary: db1.local.lan
+  - Read-Only: db2.local.lan, db3.local.lan
+  - MySQL v5.6
+
+- Elasticsearch server
+  - Hostname: elastic.local.lan
+  - Elasticsearch 7.9 with these plugins
+  - analysis-icu
 
 Steps to Reproduce
 ~~~~~~~~~~~~~~~~~~
