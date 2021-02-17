@@ -2,6 +2,48 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-02-10
+
+### Highlights
+
+#### OpenID Connect (Cloud Professional & Enterprise)
+ - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. **This feature will be available for Mobile Apps in an upcoming v1.40 release.**
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the **Add Members** modal user interface.
+ - Added formatting shortcut keys to the **Shortcut** modal.
+ - Added localization to the date picker used when searching for posts around a given date.
+ - The autocomplete popover is now positioned relative to the ``@``, ``~``, or ``/`` trigger in the post draft.
+
+#### Notifications
+ - Posts from OAuth 2.0 bots no longer trigger mentions for the user.
+
+#### Administration
+ - Added an ``ImportDelete`` job to periodically delete unused import files after a configurable retention period has passed.
+ - Introduced new ``mattermost_system_server_start_time`` and ``mattermost_jobs_active`` metrics for improved debugging with Grafana dashboards.
+ - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
+ - Changed default ``MaxFileSize`` from 50MB to 100MB.
+ - Updated Go dependencies to their latest minor version.
+
+### Bug Fixes
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change the configuration value.
+ - The ``DownloadComplianceReport`` function in the Golang driver has been fixed to be able to download a full report as a zip archive.
+ - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
+ - Fixed a bug with in-product notices where a date constraint sometimes failed to match, and would lead to the notice not being fetched.
+ - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
+ - Fixed an issue where the in-product instructions to search for users under **System Console > Reporting > Server Logs** were outdated.
+ - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
+
+### Known Issues
+ - The slash command autocomplete options cover the input box on some reply threads on the right-hand side.
+ - Setting changes do not get saved in **System Console > Site Configuration > Public Links**.
+ - Channel header text "This channel has guests" is misaligned.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channel**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-01-26
 
 ### Highlights
@@ -14,6 +56,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### User Interface (UI)
  - Added new languages, Bulgarian and Swedish.
  - Moved the header icons to the left of the header beside the channel description.
+ - The Database search using PostgreSQL now supports searching for terms that contain underscores.
 
 #### Plugins
  - Enabled experimental support for ARM64 plugins by allowing any matching ``GOOS-GOOARCH`` combination in the plugin manifest.
@@ -24,7 +67,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Added a ``CollapsedThreads`` feature flag.
  - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
  - Removed the word "experimental" from the Gossip setting in the System Console.
- - The Database search using PostgreSQL now supports searching for terms that contain underscores.
  - Deprecated the ``ExperimentalChannelSidebarOrganization`` setting and added a new ``EnableLegacySidebar`` setting. The new channel sidebar will be enabled system-wide by default.
 
 #### Bug Fixes
