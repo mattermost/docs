@@ -87,11 +87,11 @@ Users can view a list of authorized apps from **Account Settings > Security > OA
 
 OAuth login endpoints
 -------------------------------
-authorize uri ``/oauth/authorize``
+- Authorize URI ``/oauth/authorize``
 
-token uri ``/oauth/access_token``
+- Token URI ``/oauth/access_token``
 
-user info uri ``/api/v4/users/me``
+- User info URI ``/api/v4/users/me``
 
 Deleting your application 
 ---------------------------------------------------------
