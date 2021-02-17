@@ -1,23 +1,31 @@
-# Mattermost Mobile Apps Changelog
+Mattermost Mobile Apps Changelog
+================================
 
-## 1.40.0 Release
+1.40.0 Release
+--------------
 
 **Please note that the next Mobile App release, v1.40.0 (February 16th), is currently delayed as we're in the process of reviewing Apple's new Privacy statement.**
 
-## 1.39.0 Release
+1.39.0 Release
+--------------
+
 - Release Date: January 16, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
-### Compatibility
+Compatibility
+~~~~~~~~~~~~~~
  - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
 
-### Improvements
+Improvements
+~~~~~~~~~~~~~
+
  - Teams in the sidebar are now ordered by user preference.
  - Typing an emoji in a post now adds the emoji to the list of recently used emojis.
 
-### Bug Fixes
+Bug Fixes
+~~~~~~~~~
  
 #### All apps
  - Fixed an issue where users were unable to open files with file names that contained multiple dots.
