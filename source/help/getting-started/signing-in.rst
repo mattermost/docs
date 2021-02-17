@@ -1,16 +1,17 @@
-Signing in
+Signing In
 ==========
 
-Accessing your Mattermost workspace
+Accessing your Mattermost Workspace
 ------------------------------------
 
 An invite is required to access Mattermost. A member of your Mattermost workspace can send an invitation via email or by providing you with a link.
 
 Sign In 
 --------
-To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your administrator or in an invitation email. We recommend bookmarking the site so you can easily find it again. 
 
-After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection
+To sign in, navigate to the Mattermost sign-in page. You can get the URL of the sign-in page from your System Admin or in an invitation email. We recommend bookmarking the site so you can easily find it again.
+
+After signing in, the team that appears first on your team sidebar will open. If you have not joined a team, the Team Selection
 page opens where you can view a list of teams that you can join.
 
 .. contents::
