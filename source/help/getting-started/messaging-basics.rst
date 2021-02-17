@@ -11,7 +11,7 @@ line without sending a message. To send messages on CTRL+ENTER and use ENTER to 
 **Reply to messages** by clicking the reply arrow next to the message
 text.
 
-.. image:: ../../images/replyIcon.PNG
+.. image:: ../../images/reply-icon.PNG
    :alt: reply arrow
 
 **Notify teammates** when they are needed by typing ``@username``.
@@ -33,10 +33,10 @@ Emoji <https://docs.mattermost.com/help/settings/custom-emoji.html>`__.
 **Attach files** by dragging and dropping them into Mattermost or clicking
 the attachment icon in the text input box.
 
-**Flag messages for follow up** by clicking the flag icon next to the
-message timestamp.
+**Save messages for follow up** using the **Save** icon next to the
+message.
 
-.. figure:: ../../images/flagicon.png
+.. figure:: ../../images/save-message.png
    :alt: flags
 
 Learn more about:

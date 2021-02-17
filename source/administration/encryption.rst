@@ -30,7 +30,7 @@ Encryption-at-rest
 Database
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. Encryption options at the disk level are documented both for `MySQL <https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/>`__ and `PostgreSQL <https://www.postgresql.org/docs/8.1/static/encryption-options.html>`__.
+Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. Encryption options at the disk level are documented both for `MySQL <https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/>`__ and `PostgreSQL <https://www.postgresql.org/docs/10/encryption-options.html>`__.
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~
