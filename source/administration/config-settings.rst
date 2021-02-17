@@ -8,15 +8,17 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
 Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
-On new installations starting from version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+On new installations starting from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
-**Configuration in Database**
+Configuration in Database
+--------------------------
 
 Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
 
-**Environment Variables**
+Environment Variables
+---------------------
 
-Starting from Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
+Starting from Mattermost v3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
 The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
 
@@ -37,13 +39,25 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
-**Load Custom Configuration Defaults**
+Override Mattermost License File
+--------------------------------
+
+Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
+
+When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
+
+.. note::
+   If ``MM_LICENSE`` is set to a non-empty string, but the license specified is not valid, the Mattermost server will be started without a license.
+   
+   In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
+
+Load Custom Configuration Defaults
+----------------------------------
 
 Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
 
 1. Create a JSON file that contains the custom configuration defaults. For example, ``custom.json``.
 2. When starting the server, point the custom defaults environment variable to the defaults file: ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
-
 
 .. contents::
   :depth: 2
@@ -4216,7 +4230,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 
 **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: WWhen enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
+**True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
