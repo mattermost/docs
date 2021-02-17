@@ -65,13 +65,23 @@ The properties that you can configure in this file are:
 - ``enable_plugin_uploads``: This setting can be ``true`` or ``false`` and is used to configure the ``PluginSettings.EnableUploads`` Mattermost configuration property.
 - ``enable_local_mode``: This setting can be ``true`` or ``false`` and is used to configure the ``ServiceSettings.EnableLocalMode`` Mattermost configuration property.
 - ``nginx_template``: Optional path to a custom NGINX template.
+- ``monitoring_installed``: This setting can be ``true`` or ``false`` and is used to install the monitoring component.
+- ``monitoring_enabled``: This setting can be ``true`` or ``false`` and is used to enable the monitoring component.
+- ``grafana_user``: The monitoring component Grafana username. This setting should be set if the monitoring component is enabled.
+- ``grafana_password``: The monitoring component Grafana password. This setting should be set if the monitoring component is enabled.
+- ``jitsi_installed``: This setting can be ``true`` or ``false`` and is used to install the Jitsi component.
+- ``jitsi_enabled``: This setting can be ``true`` or ``false`` and is used to enable the Jitsi component.
+- ``jitsi_fqdn``: The domain name of the Jitsi component.
+- ``jitsi_jvb_secret``: An internal Jitsi secret used to communicate between its prosody and video-bridge modules.
+- ``jitsi_focus_secret``: An internal Jitsi secret used to communicate between its prosody and jicofo modules.
+- ``jitsi_focus_password``: An internal Jitsi secret used to connect jicofo and prosody.
 
 After modifying the ``mmomni.yml`` configuration file, you need to run ``mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
 
 Using a custom NGINX template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Omnibus generates an ``nginx`` configuration depending on how the different properties of the ``mmomni.yml`` file are set. However, you may need to customize the configuration further to support other use cases, such as using custom SSL certificates. For those cases, Omnibus supports using a custom ``nginx`` template to generate its configuration. 
+Mattermost Omnibus generates an ``nginx`` configuration depending on how the different properties of the ``mmomni.yml`` file are set. However, you may need to customize the configuration further to support other use cases, such as using custom SSL certificates. For those cases, Omnibus supports using a custom ``nginx`` template to generate its configuration.
 
 To use this feature, you need to copy and modify the original template located at ``/opt/mattermost/mmomni/ansible/playbooks/mattermost.conf`` to a new location. Then, you can either use the variables and internal logic already bundled in the template and modify the parts that you need, or use a fully static configuration instead.
 
@@ -80,6 +90,40 @@ After the template has been customized, add an ``nginx_template`` property to th
 Please be careful when using this feature, as making changes to the custom template can cause the reconfigure process to fail, or the generated NGINX configuration to be invalid.
 
 This feature is available from Mattermost Omnibus version 5.32.0.
+
+Omnibus Components
+------------------
+
+Mattermost Omnibus can be used to install and manage several external components.
+
+Jitsi
+^^^^^
+
+This component will install and configure `Jitsi <https://jitsi.org/>`_, an Open Source video conferencing software that can be used connected with Mattermost. As a precondition to enable Jitsi, you will need to have a different domain name than the one used for Mattermost pointing to the Omnibus server.
+
+To enable Jitsi, follow this steps on a running Omnibus installation:
+
+- Set the ``jitsi_installed`` and ``jitsi_enabled`` configuration properties to ``true``.
+- Set the ``jitsi_fqdn`` property to the domain name that you will be using for Jitsi. It needs to be different from the domain used for ``fqdn``.
+- Set the ``jitsi_jvb_secret``, ``jitsi_focus_secret`` and ``jitsi_focus_password`` properties. Those are internal values used between different Jitsi modules to communicate in a secure fashion, and should have random values. You can use any secure password generator to obtain values for them.
+- With all the values set, run ``sudo mmomni reconfigure`` to apply the changes. When the reconfigure process is finished, use the ``jitsi_fqdn`` to access your new Jitsi instance.
+
+To integrate both Mattermost and Jitsi, you can install and configure the `Mattermost Jitsi plugin <https://github.com/mattermost/mattermost-plugin-jitsi>`_.
+
+Finally, to uninstall the Jitsi component, simply set ``jitsi_installed`` and ``jitsi_enabled`` to ``false`` and run ``sudo mmomni reconfigure`` to apply the changes.
+
+Monitoring
+^^^^^^^^^^
+
+This component will install and configure a `Grafana <https://grafana.com/>`_ instance to monitor your Mattermost Omnibus platform, with a set of default dashboards that monitor the health of the system.
+
+To enable monitoring, follow this steps on a running Omnibus installation:
+
+- Set the ``monitoring_installed`` and ``monitoring_enabled`` configuration properties to ``true``.
+- Set the ``grafana_user`` and ``grafana_password`` properties. They would be the credentials to use when accessing the monitoring panel.
+- With all the values set, run ``sudo mmomni reconfigure`` to apply the changes. When the reconfigure process is finished, append ``/monitoring`` to the URL of your Mattermost Omnibus instance to access the monitoring panel, and introduce the credentials defined in the configuration.
+
+Finally, to uninstall the monitoring component, simply set ``monitoring_installed`` and ``monitoring_enabled`` to ``false`` and run ``sudo mmomni reconfigure`` to apply the changes.
 
 Removing Mattermost Omnibus
 ---------------------------
