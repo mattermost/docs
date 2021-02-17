@@ -50,6 +50,8 @@ Authentication
    /cloud/cloud-administration/sso-saml.rst
    /cloud/cloud-administration/saml-technical.rst
    /cloud/cloud-administration/sso-ldap.md
+   /cloud/cloud-administration/converting-oauth-2.0-to-openid-connect.rst
+   /cloud/cloud-administration/sso-openid-connect.rst
    /cloud/cloud-administration/sso-gitlab.rst
    /cloud/cloud-administration/sso-google.md
    /cloud/cloud-administration/sso-office.md
