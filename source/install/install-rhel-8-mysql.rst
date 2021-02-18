@@ -11,6 +11,12 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 2. Install MySQL.
 
+  .. note::
+    1. If your RHEL is a fresh install, you will need to add the [MySQL Yum repository](https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html).
+    2. You can download the release package (make sure you get the latest one) file with wget (wget "https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm").
+    3. Once it's downloaded, you can install it with: `sudo yum localinstall platform-and-version-specific-package-name.rpm`
+    4. Next disable the system mysql: `sudo yum module disable mysql` and then install mysql
+
   ``sudo yum install mysql-community-release``
 
 3. Start the MySQL server.
