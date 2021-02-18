@@ -74,7 +74,7 @@ The properties that you can configure in this file are:
 - ``jitsi_fqdn``: The domain name of the Jitsi component.
 - ``jitsi_jvb_secret``: An internal Jitsi secret used to communicate between its prosody and video-bridge modules.
 - ``jitsi_focus_secret``: An internal Jitsi secret used to communicate between its prosody and jicofo modules.
-- ``jitsi_focus_password``: An internal Jitsi secret used to connect jicofo and prosody.
+- ``jitsi_focus_password``: An internal Jitsi secret used as the password for the ``focus`` user in prosody. This is used to connect jicofo and prosody.
 
 After modifying the ``mmomni.yml`` configuration file, you need to run ``mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
 
@@ -99,7 +99,7 @@ Mattermost Omnibus can be used to install and manage several external components
 Jitsi
 ^^^^^
 
-This component installs and configures `Jitsi <https://jitsi.org/>`_. Jitsi is an Open Source video conferencing software that can be used within Mattermost. 
+This component installs and configures `Jitsi <https://jitsi.org/>`_. Jitsi is an Open Source video conferencing software that can be used within Mattermost.
 
 As Jitsi is a separate service to Mattermost, ensure that you have access to a different domain name than the one used for Mattermost pointing to the Omnibus server. This domain name is used to log into the Jitsi instance.
 
