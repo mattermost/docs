@@ -99,7 +99,9 @@ Mattermost Omnibus can be used to install and manage several external components
 Jitsi
 ^^^^^
 
-This component will install and configure `Jitsi <https://jitsi.org/>`_, an Open Source video conferencing software that can be used connected with Mattermost. As a precondition to enable Jitsi, you will need to have a different domain name than the one used for Mattermost pointing to the Omnibus server.
+This component installs and configures `Jitsi <https://jitsi.org/>`_. Jitsi is an Open Source video conferencing software that can be used within Mattermost. 
+
+As Jitsi is a separate service to Mattermost, ensure that you have access to a different domain name than the one used for Mattermost pointing to the Omnibus server. This domain name is used to log into the Jitsi instance.
 
 To enable Jitsi, follow this steps on a running Omnibus installation:
 
