@@ -106,26 +106,28 @@ As Jitsi is a separate service to Mattermost, ensure that you have access to a d
 To enable Jitsi on a running Omnibus installation, open the ``mmomni.yml`` configuration file and apply the following changes:
 
 - Set the ``jitsi_installed`` and ``jitsi_enabled`` configuration properties to ``true``.
-- Set the ``jitsi_fqdn`` property to the domain name that you will be using for Jitsi. It needs to be different from the domain used for ``fqdn``.
+- Set the ``jitsi_fqdn`` property to the domain name you'll be using for Jitsi. It needs to be different from the domain used for ``fqdn``.
 - Set the ``jitsi_jvb_secret``, ``jitsi_focus_secret`` and ``jitsi_focus_password`` properties. Those are internal values used between different Jitsi modules to communicate in a secure fashion, and should have random values. You can use any secure password generator to obtain values for them.
-- With all the values set, run ``sudo mmomni reconfigure`` to apply the changes. When the reconfigure process is finished, use the ``jitsi_fqdn`` to access your new Jitsi instance.
 
-To integrate both Mattermost and Jitsi, you can install and configure the `Mattermost Jitsi plugin <https://github.com/mattermost/mattermost-plugin-jitsi>`_.
+With all the values set, run ``sudo mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost. When the reconfigure process is finished, use ``jitsi_fqdn`` to access your new Jitsi instance.
 
-Finally, to uninstall the Jitsi component, simply set ``jitsi_installed`` and ``jitsi_enabled`` to ``false`` and run ``sudo mmomni reconfigure`` to apply the changes.
+To integrate Jitsi and Mattermost, you can install and configure the `Mattermost Jitsi plugin <https://github.com/mattermost/mattermost-plugin-jitsi>`_.
+
+To uninstall the Jitsi component, open the ``mmomni.yml`` configuration file and set ``jitsi_installed`` and ``jitsi_enabled`` to ``false``. Then run ``sudo mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
 
 Monitoring
 ^^^^^^^^^^
 
-This component will install and configure a `Grafana <https://grafana.com/>`_ instance to monitor your Mattermost Omnibus platform, with a set of default dashboards that monitor the health of the system.
+This component installs and configures a `Grafana <https://grafana.com/>`_ instance with a set of default dashboards that monitor the health of your Mattermost Omnibus platform.
 
-To enable monitoring, follow this steps on a running Omnibus installation:
+To enable monitoring, open the ``mmomni.yml`` configuration file and apply the following changes:
 
 - Set the ``monitoring_installed`` and ``monitoring_enabled`` configuration properties to ``true``.
-- Set the ``grafana_user`` and ``grafana_password`` properties. They would be the credentials to use when accessing the monitoring panel.
-- With all the values set, run ``sudo mmomni reconfigure`` to apply the changes. When the reconfigure process is finished, append ``/monitoring`` to the URL of your Mattermost Omnibus instance to access the monitoring panel, and introduce the credentials defined in the configuration.
+- Set the ``grafana_user`` and ``grafana_password`` properties. These are the credentials you'll use to access the monitoring panel.
 
-Finally, to uninstall the monitoring component, simply set ``monitoring_installed`` and ``monitoring_enabled`` to ``false`` and run ``sudo mmomni reconfigure`` to apply the changes.
+With all the values set, run ``sudo mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost. When the reconfigure process is finished, append ``/monitoring`` to the URL of your Mattermost Omnibus instance to access the monitoring panel, and introduce the credentials defined in the configuration.
+
+To uninstall the monitoring component, open the ``mmomni.yml`` configuration file and set ``monitoring_installed`` and ``monitoring_enabled`` to ``false``. Then run ``sudo mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
 
 Removing Mattermost Omnibus
 ---------------------------
