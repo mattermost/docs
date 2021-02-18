@@ -103,7 +103,7 @@ This component installs and configures `Jitsi <https://jitsi.org/>`_. Jitsi is a
 
 As Jitsi is a separate service to Mattermost, ensure that you have access to a different domain name than the one used for Mattermost pointing to the Omnibus server. This domain name is used to log into the Jitsi instance.
 
-To enable Jitsi, follow this steps on a running Omnibus installation:
+To enable Jitsi on a running Omnibus installation, open the ``mmomni.yml`` configuration file and apply the following changes:
 
 - Set the ``jitsi_installed`` and ``jitsi_enabled`` configuration properties to ``true``.
 - Set the ``jitsi_fqdn`` property to the domain name that you will be using for Jitsi. It needs to be different from the domain used for ``fqdn``.
