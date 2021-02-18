@@ -118,7 +118,7 @@ To uninstall the Jitsi component, open the ``mmomni.yml`` configuration file and
 Monitoring
 ^^^^^^^^^^
 
-This component installs and configures a `Grafana <https://grafana.com/>`_ instance with a set of default dashboards that monitor the health of your Mattermost Omnibus platform.
+This component installs and configures the `Mattermost Performance Monitoring System <https://docs.mattermost.com/deployment/metrics.html>`_. It can only be used with an Enterprise Edition E20 license, and it includes the installation of both Grafana and Prometheus as part of the Omnibus platform.
 
 To enable monitoring, open the ``mmomni.yml`` configuration file and apply the following changes:
 
