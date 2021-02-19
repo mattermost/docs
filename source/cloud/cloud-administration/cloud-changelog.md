@@ -7,7 +7,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Highlights
 
 #### Custom Statuses
- - Users can set a custom status by using the custom status dropdown in the status menu.
+ - Custom Statuses allow users to add a descriptive status message and emoji that’s visible to everyone. Users now gain the flexibility to express their current status in any way they prefer. Mobile support is coming soon.
 
 #### Support Packet Generation
  - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
