@@ -258,8 +258,8 @@ Loading a Multi-database Configuration onto an Active Server
 
 After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12) and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12) and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12), then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
@@ -270,8 +270,8 @@ If the need arises to switch from the current master database - for example, if 
 
 To apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12) and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12) and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12), then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
@@ -366,7 +366,7 @@ You can apply updates during a period of low load, but if your High Availability
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
 3. Copy the ``config.json`` file to the other servers.
 4. Shut down Mattermost on all but one server.
-5. Reload the configuration file on the server that is still running. Go to in prior versions or **System Console > Environment > Web Server** (or  **System Console > Configuration** in versions prior to 5.12) and click **Reload Configuration from Disk**.
+5. Reload the configuration file on the server that is still running. Go to in prior versions or **System Console > Environment > Web Server** (or  **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk**.
 6. Start the other servers.
 
 Updating Server Version While Operating Continuously
