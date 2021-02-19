@@ -32,7 +32,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where creation of a bot would fail due to replica lag.
  - Fixed an issue where ``mmctl channel move`` did not allow private channels to move.
  - Fixed an issue where markdown tables did not wrap correctly.
- - Fixed an issue where the search bar styling on dark themes was off on mobile web view.
+ - Fixed an issue where the search bar styling on dark themes was incorrect on mobile web view.
  - Fixed an issue where the **Main Menu** on webapp appeared more left-aligned than previous releases.
  - Fixed an issue where sticky sidebar headings appeared under **More Unreads**.
  - Fixed an issue where the group channel icon was misaligned in the channel switcher.
