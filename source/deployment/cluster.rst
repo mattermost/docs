@@ -339,6 +339,13 @@ If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` `
 
 Note a slight behavior change in 5.15: When you reinstall a plugin in 5.14, the previous **Enabled** or **Disabled** state is retained. As of 5.15, a reinstalled plugin's initial state is **Disabled**.
 
+CLI and High Availability
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, performing tasks such as creating and deleting users or changing configuration settings will require a server restart. This is because the CLI is run in a single node which bypasses the mechanisms that a High Availability environment uses to perform actions across all nodes in the cluster. 
+
+In a High Availability environment, we recommend using `mmctl <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__ instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
+
 Upgrade Guide
 -------------
 
