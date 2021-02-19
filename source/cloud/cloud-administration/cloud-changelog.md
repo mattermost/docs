@@ -7,10 +7,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Highlights
 
 #### Custom Statuses
-Users can set a custom status by using the custom status dropdown in the status menu.
+ - Users can set a custom status by using the custom status dropdown in the status menu.
 
 #### Support Packet Generation
-Allows a System Admin to download a support packet which provides helpful information to our internal support team.
+ - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
 
 ### Improvements
 
