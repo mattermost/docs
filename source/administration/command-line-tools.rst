@@ -5,7 +5,7 @@ From the directory where the Mattermost server is installed, a ``mattermost`` co
 
 .. note::
 
-  When running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__, performing tasks such as creating and deleting users or changing configuration settings will require a server restart. This is because the CLI is run in a single node which bypasses the mechanisms that a High Availability environment uses to perform actions across all nodes in the cluster. 
+  The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
 
