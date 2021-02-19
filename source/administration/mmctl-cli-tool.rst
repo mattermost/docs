@@ -3,12 +3,13 @@ mmctl Command Line Tool (Beta)
 
 The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token.
 
-Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be deprecated.
+Being installed locally enables System Admins for both self-managed and Cloud Mattermost instances to run CLI commands even in instances where there is no access to the server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be deprecated.
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
 **Notes**
 
+-  System Admins have two ways to run `mmctl` commands: by downloading `mmctl` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
 -  Parameters in CLI commands are order-specific.
 -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
