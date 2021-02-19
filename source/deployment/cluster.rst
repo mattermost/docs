@@ -342,9 +342,9 @@ Note a slight behavior change in 5.15: When you reinstall a plugin in 5.14, the 
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, performing tasks such as creating and deleting users or changing configuration settings will require a server restart. This is because the CLI is run in a single node which bypasses the mechanisms that a High Availability environment uses to perform actions across all nodes in the cluster. 
+The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
-In a High Availability environment, we recommend using `mmctl <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__ instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
+We recommend using `mmctl <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__ in a High Availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
 
 Upgrade Guide
 -------------
