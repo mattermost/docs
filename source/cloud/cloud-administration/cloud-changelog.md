@@ -39,6 +39,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where the group channel icon was misaligned in the channel switcher.
  - Fixed an issue where line breaks were ignored when used with inline images.
  - Fixed a panic when the OAuth discovery endpoint would not return a Cache-Control header.
+ - Fixed an issue where the Cloud onboarding flow referenced OAuth, not OpenID Connect.
 
 ### Known Issues
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
