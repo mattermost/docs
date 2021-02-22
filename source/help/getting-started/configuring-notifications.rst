@@ -16,13 +16,15 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
 .. image:: ../../images/desktop_notification.png
 
--  Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications** and choose your sound selection.
+-  Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
 -  Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
-  - By default, all channels use the global setting configured in **Account Settings**.
+- By default, all channels use the global setting configured in **Account Settings**.
    
 **Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
 
-.. tip :: Configure desktop notification sounds in **Account Settings > Notifications > Desktop notifications > Notification sounds**.
+.. tip:: 
+
+  Configure desktop notification sounds in **Account Settings > Notifications > Desktop notifications > Notification sounds**.
 
 Email Notifications
 -------------------------------------
@@ -34,13 +36,11 @@ By default, you'll get email notifications if you're not actively using Mattermo
 -  Configure email notifications in **Account Settings > Notifications > Email notifications**.
 -  Configure the email address where notifications are sent in **Account Settings > General > Email**.
 
-Messages in email notifications can be opened in the Mattermost Desktop App, Mobile App or in your browser:
+Messages in email notifications can be opened in the Mattermost Desktop App, Mobile App, or in your browser:
 
 .. image:: ../../images/deep_linking.png
 
 **Not getting an email notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-an-email-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
-
-
 
 Mobile Push Notifications
 --------------------------------------------
@@ -50,11 +50,13 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 .. image:: ../../images/push_notification.png
 
 -  Configure push notifications in **Account Settings > Notifications > Mobile push notifications > Send mobile push notifications**.
--  Configure when push notifications are sent depending on your status in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
+-  Configure when push notifications are sent depending on your Mattermost availability in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
    
 **Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.   
 
-.. tip :: Learn more about how Mattermost detects your status as **Online**, **Away** or **Offline** `here <https://docs.mattermost.com/help/getting-started/signing-in.html#setting-your-status>`_.
+.. tip::
+
+  Learn more about how Mattermost detects your `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ as **Online**, **Away** or **Offline**.
 
 Browser Tab Notifications
 ----------------------------------------
@@ -72,7 +74,9 @@ When you mute a channel, you do not receive any notifications (desktop, email, o
 
 To mute a channel, click on the channel name and select **Mute Channel**. To unmute it, click on the channel name and select **Unmute Channel**.
 
-.. tip :: Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_. Learn more about `mentioning teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
+.. tip:: 
+
+  Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__. Learn more about `mentioning teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
 
 Ignoring Mentions
 -----------------
