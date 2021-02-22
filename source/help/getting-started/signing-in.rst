@@ -97,15 +97,35 @@ You can switch between teams you have joined using the team sidebar that appears
 Setting Your Status
 -------------------
 
-You can set your status as **Online**, **Away**, **Do not disturb**, or **Offline** by choosing a status from the menu that appears when you select your avatar at the top of the channel list. **Do not disturb** disables desktop, email, and push notifications.
+Let your team know whether you're available by setting your status in Mattermost. There are four standard status options including: **Online**, **Away**, **Do not disturb**, or **Offline**.
 
-.. image:: ../../images/avatar-online-status-218x247.png
-  :width: 239px
-  :height: 232px
-  :alt: Image of avatar showing the status selection menu with the options online, away, and offline
+To set your status, select your avatar at the top of the left-hand sidebar, then select a standard status from the list. 
 
-How Mattermost determines your status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. image:: ../../images/online-status.png
+  :alt: Set your online status to online, away, do not disturb, or offline.
+
+When you set your status, a status icon displays next to your name. Setting your status as **Do not disturb** automatically disables desktop, email, and push notifications.
+
+Other members can see your status anywhere they can see your name, such as the left-hand sidebar, within conversations, and within Direct Messages. 
+
+Setting a Custom Status
+-----------------------
+
+Set a custom status to add an optional emoji to a more descriptive status message that’s visible to everyone.
+
+1. To set a custom status, select your avatar at the top of the left-hand sidebar, then select **Set a status**.
+2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji.
+
+.. image:: ../../images/Custom-Status-Marketing-Animation.gif
+  :alt: Set a custom status that includes an optional emoji and a descriptive message.
+
+.. note::
+
+  - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
+  - Custom statuses are available in Mattermost Cloud, Mattermost Desktop, and Mattermost Web App. Custom statuses will be available in Mattermost Server v5.33 on March 16, 2021, and in the Mattermost Mobile App in a future release. 
+
+How Mattermost Determines Your Status
+-------------------------------------
 
 .. csv-table::
     :header: "Client", "**Online**", "**Away**", "**Offline**"
@@ -116,6 +136,11 @@ How Mattermost determines your status
     - The tab is unfocused for 5 minutes
     - The browser is in the background or minimized for 5 minutes", "You close the Mattermost browser window"
     "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen" 
+    
+Clearing Your Status
+--------------------
+
+Select your avatar at the top of the left-hand sidebar, then select the "x" next to your current status.
 
 Logging Out
 -----------
