@@ -37,7 +37,7 @@ jobs:
           arguments: '--acl public-read'
           overwrite: true
           
-  deploy_stagging:
+  deploy_staging:
     docker:
       - image: circleci/python:3.6
     steps:
