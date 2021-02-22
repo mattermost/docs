@@ -70,4 +70,4 @@ workflows:
             - build
           filters:
             branches:
-              only: stagging
+              only: staging
