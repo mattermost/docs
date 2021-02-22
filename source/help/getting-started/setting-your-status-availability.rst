@@ -19,12 +19,12 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
   - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
   - Custom statuses are available in Mattermost Cloud. Custom statuses will be available in Mattermost Server v5.33 on March 16, 2021, and in the Mattermost Mobile App in a future release. 
 
-Clearing Your Status
---------------------
+Clearing a Custom Status
+------------------------
 
-Select your avatar at the top of the left-hand sidebar, then select the "x" next to your current custom status.
+To clear a custom status, select your avatar at the top of the left-hand sidebar, then select the "x" next to your current status.
 
-Setting your availability
+Setting Your Availability
 -------------------------
 
 To set your availability, select your avatar, then specify your availability as  **Online**, **Away**, **Do not disturb**, or **Offline**.
