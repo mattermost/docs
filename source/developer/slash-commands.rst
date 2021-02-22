@@ -26,10 +26,10 @@ Each Mattermost installation comes with some built-in slash commands that are re
 .. csv-table::
     :header: "Command", "Description", "Example"
 
-    "/away", "Set your status away", "/away"
-    "/offline", "Set your status offline", "/offline"
-    "/online", "Set your status online", "/online"
-    "/dnd", "Set your status to Do Not Disturb", "/dnd"
+    "/away", "Set your availablity to away", "/away"
+    "/offline", "Set your availablity to offline", "/offline"
+    "/online", "Set your availablity to online", "/online"
+    "/dnd", "Set your availablity to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
     "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews", "/expand"
@@ -53,6 +53,8 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/settings", "Open the Account Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
+    "/status *{emoji_name}* *{descriptive status_message}*", Set a custom status that includes an optional emoji and a descriptive status message, "/status sick Feeling unwell and taking time off to recover"
+    "/status clear", Clear the current status, "/status clear" 
 
 Custom Slash Command
 --------------------
@@ -63,7 +65,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 1. Open **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** (or **System Console > Integrations > Custom Integrations** in versions prior to 5.12) or ask your Mattermost System Admin to do so.
 
-2. Click **Add Slash Command** and add name and description for the command.
+2. Select **Add Slash Command** and add name and description for the command.
 
 3. Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/help/messaging/executing-commands.html#built-in-commands>`__.
 
@@ -77,7 +79,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 6. (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 
-7. Hit **Save**. On the next page, copy the **Token** value. This will be used in a later step.
+7. Select **Save**. On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/slash_commands_token.png
   :width: 500 px
