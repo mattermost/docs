@@ -64,7 +64,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy_stagging:
+      - deploy_staging:
           context: matterbuild-docs
           requires:
             - build
