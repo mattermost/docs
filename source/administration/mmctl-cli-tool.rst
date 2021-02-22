@@ -3165,7 +3165,66 @@ mmctl post list
 mmctl roles
 -----------
 
-This command will be available in a future release.
+**Description**
+
+  Promote users to the System Admin role, or remove System Admin privileges from users.
+
+**Format**
+
+Promote users to the System Admin role:
+
+.. code-block:: sh
+
+   mmctl roles system_admin [users] [flags]
+
+Remove System Admin privileges:
+
+.. code-block:: sh
+
+   mmctl roles member [users] [flags]
+
+**Examples**
+
+Promote a user to the System Admin role:
+
+.. code-block:: sh
+
+    mmctl roles system_admin john_doe
+
+Promote multiple users to the System Admin role:
+
+.. code-block:: sh
+
+    mmctl roles system_admin john_doe jane_doe
+
+Remove System Admin privileges from a user:
+
+.. code-block:: sh
+
+    mmctl roles member john_doe
+
+Remove System Admin privileges from multiple users:
+
+.. code-block:: sh
+
+    mmctl roles member john_doe jane_doe
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help   help for roles
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --format string                the format of the command output [plain, json] (default "plain")
+      --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+      --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+      --local                        allows communicating with the server through a unix socket
+      --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system
 ------------
