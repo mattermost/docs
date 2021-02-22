@@ -26,7 +26,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Optimized Direct Message creation by fetching all users involved in a single database call.
  - During the user import process, a change in a user's ``NotifyProps`` will not send an email notification. This is done to make it consistent with other parts of the import process where a change in user's attributes would also not send any notifications.
  - Implemented a job to delete unused export files.
- - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD based distributions. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
+ - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
 
 ### Bug Fixes
  - Fixed an issue where demoting a user to a guest would not take effect in an environment with read replicas.
