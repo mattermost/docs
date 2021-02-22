@@ -15,6 +15,7 @@ System Administration
    /cloud/cloud-reporting.rst
    /cloud/cloud-administration/create-new-workspace.rst
    /cloud/cloud-administration/cloud-changelog*
+   /cloud/cloud-administration/downloading-support-packet.rst
    
 User Management
 ---------------
