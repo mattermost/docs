@@ -994,9 +994,9 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: All communication through the cluster uses the gossip protocol will be encrypted.
+**True**: All communication through the cluster using the gossip protocol will be encrypted.
 
-**False**: All communication uses gossip protocol remains unencrypted.
+**False**: All communication using gossip protocol remains unencrypted.
 
 The encryption uses AES-256 by default, and it is not kept configurable by design. However, you can manually set the ``ClusterEncryptionKey`` row value in the Systems table. A key is a byte array converted to base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256.
 
@@ -1007,7 +1007,7 @@ The encryption uses AES-256 by default, and it is not kept configurable by desig
 Enable Gossip Compression
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: All communication through the cluster uses gossip compression to maintain compatibility with older servers in a cluster.
+**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with olders servers.
 
 **False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
 
