@@ -6,8 +6,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.32.1, release day TBD**
-  - Fixing an issue where any search containing an underscore fail on PostgreSQL databases. This will be fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
+- **v5.32.1, released 2021-02-17**
+  - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
 - **v5.32.0, released 2021-02-16**
   - Original 5.32.0 release
 
