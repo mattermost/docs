@@ -2,7 +2,7 @@
 Cloud Administrator's Guide
 ============================
 
-In-depth documentation on deployment and administration of Mattermost Cloud workspaces.
+In-depth documentation on deployment and administration of Mattermost Cloud workspaces. To administer Mattermost Cloud, you must be assigned the System Administrator role or have been promoted by a System Administrator to access the System Console. You can access the System Console from the Main Menu (next to your username) and selecting System Console.
   
 System Administration 
 ---------------------
