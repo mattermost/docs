@@ -135,7 +135,7 @@ If you're actively viewing a channel (Public or Private), Direct Message, or Gro
 Trigger Mobile Push Notifications When
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can also choose when to send push notifications depending on your Mattermost availability. By default, push notifications are sent if your availability is "Away" or "Offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Administrator has not set up push notifications, this setting will be disabled.
+You can also choose when to send push notifications depending on your Mattermost availability. By default, push notifications are sent if your availability is "Away" or "Offline". If "Send Mobile Push Notifications" is set as "Never", this setting is hidden. If your System Admin has not set up push notifications, this setting will be disabled.
 
 Words That Trigger Mentions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
