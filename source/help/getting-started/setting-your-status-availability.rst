@@ -1,14 +1,18 @@
 Setting Your Status and Availability
 ====================================
 
-Let your team know whether you're responsive and available by setting a custom status and your availability in Mattermost.
+Let your team know whether you're available by setting a custom status and your availability in Mattermost.
 
 Setting a Custom Status
 -----------------------
 
 Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the left-hand sidebar, within conversations, and within Direct Messages. 
 
-1. To set a custom status, select your avatar at the top of the left-hand sidebar, then select **Set a status**.
+1. To set a custom status, select your avatar at the top of the left-hand sidebar, then select **Set a Custom Status**.
+
+.. image:: ../../images/set-custom-status.png
+  :alt: Set a custom status.
+
 2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji.
 
 .. image:: ../../images/Custom-Status-Marketing-Animation.gif
@@ -22,17 +26,20 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 Clearing a Custom Status
 ------------------------
 
-To clear a custom status, select your avatar at the top of the left-hand sidebar, then select the "x" next to your current status.
+To clear a custom status, select your avatar at the top of the left-hand sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
+
+.. image:: ../../images/clear-custom-status.png
+  :alt: Clear your custom status.
 
 Setting Your Availability
 -------------------------
 
-To set your availability, select your avatar, then specify your availability as  **Online**, **Away**, **Do not disturb**, or **Offline**.
+To set your availability, select your avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
 
-.. image:: ../../images/online-status.png
+.. image:: ../../images/set-your-availability.png
   :alt: Set your availability to online, away, do not disturb, or offline.
 
-When you set your availability, an availability icon displays next to your name. Setting your availability as **Do not disturb** automatically disables desktop, email, and push notifications.
+When you set your availability, an availability icon displays next to your name. Setting your availability as **Do Not Disturb** automatically disables desktop, email, and push notifications.
 
 Other members can see your availability anywhere they can see your name, such as the left-hand sidebar, within conversations, and within Direct Messages. 
 
