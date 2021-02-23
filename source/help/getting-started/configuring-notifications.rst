@@ -50,7 +50,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 .. image:: ../../images/push_notification.png
 
 -  Configure push notifications in **Account Settings > Notifications > Mobile push notifications > Send mobile push notifications**.
--  Configure when push notifications are sent depending on your Mattermost availability in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
+-  Configure when push notifications are sent depending on your availability in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
    
 **Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.   
 
