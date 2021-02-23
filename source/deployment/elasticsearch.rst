@@ -37,7 +37,7 @@ The set up process for the Elasticsearch server is documented in the `official E
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
+Follow these steps to connect your Elasticsearch server to Mattermost and to generate the post index.
 
 1. Open **System Console > Environment > Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions prior to 5.12).
 2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
@@ -49,9 +49,9 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
     - Note: For AWS Elasticsearch leave this field blank.
   d) Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
     - Note: For AWS Elasticsearch this field should be set to ``false``.
-4. Click **Test Connection** and **Save** the configuration.
+4. Select **Test Connection** and **Save** the configuration.
   - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch.
-5. Build the post index of existing posts by clicking **Build Index**.
+5. Build the post index of existing posts by selecting **Build Index**.
   - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
 6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``.
   - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
@@ -61,7 +61,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
     Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
 
 .. note::
-    If your deployment has a large number of posts (typically in excess of 1 million but not strictly defined) the reindexing progress percentage may stay at 99% for a long time.
+    If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases, estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
     
 Limitations
 ------------
