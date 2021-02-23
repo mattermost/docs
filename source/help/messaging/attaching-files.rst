@@ -54,3 +54,5 @@ Attachment Limits and Sizes
 Up to five files can be attached per post.
 
 The default maximum file size is 100 MB, but this can be changed by the System Admin.
+
+Images have a max size of 6048px x 4032px OR 24 megapixels, roughly 36MB as a raw image
