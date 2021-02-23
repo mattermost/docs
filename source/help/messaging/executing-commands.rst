@@ -49,7 +49,7 @@ Begin by typing `/` and a list of slash command options appears above the text i
 .. image:: ../../images/slashCommandsAutocomplete.PNG
 
 .. note::
-  Custom status slash commands marked with an asterisk (*) in the table above are available in Mattermost Cloud. Custom statuses will be available in Mattermost Server v5.33 on March 16, 2021, and in the Mattermost Mobile App in a future release.
+  Custom status slash commands marked with an asterisk *(*)* in the table above are available in Mattermost Cloud. Custom statuses will be available in Mattermost Server v5.33 on March 16, 2021, and in the Mattermost Mobile App in a future release.
 
 Custom Commands
 ---------------
