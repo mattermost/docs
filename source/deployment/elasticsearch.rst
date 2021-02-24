@@ -54,7 +54,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 5. Select **Build Index** to build the post index of existing posts.
   - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
 6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``.
-  - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
+  - **Note:** It's recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
 7. Restart the Mattermost server.
 
 .. note::
