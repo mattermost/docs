@@ -39,6 +39,8 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where the Cloud onboarding flow referenced OAuth, not OpenID Connect.
 
 ### Known Issues
+ - PDF zoom fails to respond to zoom in/out/reset actions until the user scrolls.
+ - In a reply thread with the right-hand side expanded, attachments in a post draft get hidden behind the center channel text box.
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
