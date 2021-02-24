@@ -1007,7 +1007,7 @@ The encryption uses AES-256 by default, and it is not kept configurable by desig
 Enable Gossip Compression
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with olders servers.
+**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with older servers.
 
 **False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
 
