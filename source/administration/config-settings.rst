@@ -1427,7 +1427,7 @@ Some examples of when you may want to modify this setting include:
 - When running a bot or webhook-based integration on your local network, you will need to add the hostname of the bot/integration to this list.
 - If your network is configured in such a way that publicly accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
 
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses, and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
+This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 .. note::
    Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
