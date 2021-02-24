@@ -81,7 +81,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Deprecated the ``ExperimentalChannelSidebarOrganization`` setting and added a new ``EnableLegacySidebar`` setting. The new channel sidebar will be enabled system-wide by default.
- - The ``UseExperimentalGossip`` field under ClusterSettings is now ``true`` by default. This means that new installations will use the Gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
+ - The ``UseExperimentalGossip`` field under ``ClusterSettings`` was replaced with ``UseGossip`` and is now ``true`` by default. This means that new installations will use the Gossip protocol for cluster communication. There will be no changes to existing installations. The Gossip protocol is now considered to be in General Availability and is the recommended clustering mode.
  - Enabled ``ExperimentalDataPrefetch`` for all servers and removed the corresponding setting.
  - Under ``NativeAppSettings`` in ``config.json``:
      - Added a ``AppCustomURLSchemes`` setting to add the ability to redirect to the mobile app after OAuth & SAML auth completion.
