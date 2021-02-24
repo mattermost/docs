@@ -1013,7 +1013,7 @@ Enable Gossip Compression
 
 .. note::
 
-  This configuration setting is available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
+  This configuration setting is available in Mattermost Cloud. It will be available in Mattermost Server v5.33 on March 16, 2021.
 
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableGossipCompression": true`` with options ``true`` and ``false``.             |
