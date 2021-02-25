@@ -26,7 +26,7 @@ Important Upgrade Notes
 |                                                    | them when upgrading its dependencies.                                                                                                                            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | `A breaking change was introduced when upgrading the Go version to v1.15.5 <https://golang.org/doc/go1.15#commonname>`_ where user logins fail with AD/LDAP Sync |
-|                                                    | when the certificate of the LDAP server has no Subject Alternative Name (SAN) in it. Creating a new certificate on the AD/LDAP Server with the SAN inside fixes  |
+|                                                    | when the certificate of the LDAP Server has no Subject Alternative Name (SAN) in it. Creating a new certificate on the AD/LDAP Server with the SAN inside fixes  |
 |                                                    | this.                                                                                                                                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.29.0                                            | A new configuration setting ``ThreadAutoFollow`` has been added to support `Collapsed Reply Threads                                                              |
