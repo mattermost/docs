@@ -42,9 +42,9 @@ Navigation
 | CTRL+.                                 | CMD+.                                  | Open and close the Right-Hand Sidebar                                        |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 
+.. note::
 
-
-Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
+  Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
 
 Files
 =====
@@ -78,6 +78,22 @@ Messages
 | CTRL+SHIFT+\\                          |  CMD+SHIFT+\\                          | React to last message in channel or thread                                 |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 
+Formatting
+==========
+
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+| On Windows                             | On Mac                                 | Description                                                    |
++========================================+========================================+================================================================+
+| CTRL+B                                 | CMD+B                                  | Bold text                                                      |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+| CTRL+I                                 | CMD+I                                  | Italicize text                                                 |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+| CTRL+ALT+K                             | CMD+ALT+K                              | Format text as a link                                          |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+
+.. note::
+
+  Formatting shortcuts are available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
 
 Browser Built-in
 ================
