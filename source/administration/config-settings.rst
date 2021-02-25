@@ -1000,9 +1000,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
-+-------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.        |
++-------------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1017,6 +1017,21 @@ The encryption uses AES-256 by default, and it is not kept configurable by desig
 | This feature's ``config.json`` setting is ``"EnableExperimentalGossipEncryption": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+    
     
+Enable Gossip Compression
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with older servers.
+
+**False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
+
+.. note::
+
+  This configuration setting is available in Mattermost Cloud. It will be available in Mattermost Server v5.33 on March 16, 2021.
+
++--------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableGossipCompression": true`` with options ``true`` and ``false``.             |
++--------------------------------------------------------------------------------------------------------------------------------+    
+
 Gossip Port
 ^^^^^^^^^^^
 
