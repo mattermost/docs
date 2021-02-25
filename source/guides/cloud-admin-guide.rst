@@ -2,7 +2,7 @@
 Cloud Administrator's Guide
 ============================
 
-In-depth documentation on deployment and administration of Mattermost Cloud workspaces.
+In-depth documentation on deployment and administration of Mattermost Cloud workspaces. To manage Mattermost Cloud using the System Console, you must be assigned the *System Admin* role, or be promoted by a System Admin. Access the System Console from the **Main Menu** (next to your avatar) by selecting **System Console**.
   
 System Administration 
 ---------------------
@@ -50,6 +50,8 @@ Authentication
    /cloud/cloud-administration/sso-saml.rst
    /cloud/cloud-administration/saml-technical.rst
    /cloud/cloud-administration/sso-ldap.md
+   /cloud/cloud-administration/converting-oauth-2.0-to-openid-connect.rst
+   /cloud/cloud-administration/sso-openid-connect.rst
    /cloud/cloud-administration/sso-gitlab.rst
    /cloud/cloud-administration/sso-google.md
    /cloud/cloud-administration/sso-office.md
