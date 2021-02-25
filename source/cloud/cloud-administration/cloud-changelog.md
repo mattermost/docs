@@ -2,6 +2,89 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-02-24
+
+### Highlights
+
+#### Support Packet Generation
+ - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
+
+### Improvements
+
+#### User Interface (UI)
+ - Removed the 5-page limit on previewing PDFs.
+ - Added "files" as a reserved team name.
+ - Searching for a channel by URL now returns the channel.
+ - Users are now provided with feedback when creating a custom category name that exceeds the character limit.
+
+#### Administration
+ - Added support for compressed export files with attachments.
+ - Server crashes due to runtime panics are now captured as a log line.
+ - Optimized Direct Message creation by fetching all users involved in a single database call.
+ - During the user import process, a change in a user's ``NotifyProps`` will not send an email notification. This is done to make it consistent with other parts of the import process where a change in user's attributes would also not send any notifications.
+ - Implemented a job to delete unused export files.
+ - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
+
+### Bug Fixes
+ - Fixed an issue where demoting a user to a guest would not take effect in an environment with read replicas.
+ - Fixed an issue where creation of a bot would fail due to replica lag.
+ - Fixed an issue where ``mmctl channel move`` did not allow private channels to move.
+ - Fixed an issue where markdown tables did not wrap correctly.
+ - Fixed an issue where the search bar styling on dark themes was incorrect on mobile web view.
+ - Fixed an issue where the **Main Menu** on webapp appeared more left-aligned than previous releases.
+ - Fixed an issue where sticky sidebar headings appeared under **More Unreads**.
+ - Fixed an issue where the group channel icon was misaligned in the channel switcher.
+ - Fixed an issue where line breaks were ignored when used with inline images.
+ - Fixed a panic when the OAuth discovery endpoint would not return a Cache-Control header.
+ - Fixed an issue where the Cloud onboarding flow referenced OAuth, not OpenID Connect.
+
+### Known Issues
+ - PDF zoom fails to respond to zoom in/out/reset actions until the user scrolls.
+ - In a reply thread with the right-hand side expanded, attachments in a post draft get hidden behind the center channel text box.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-02-10
+
+### Highlights
+
+#### OpenID Connect (Cloud Professional & Enterprise)
+ - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. **This feature will be available for Mobile Apps in an upcoming v1.40 release.**
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the **Add Members** modal user interface.
+ - Added formatting shortcut keys to the **Shortcut** modal.
+ - Added localization to the date picker used when searching for posts around a given date.
+ - The autocomplete popover is now positioned relative to the ``@``, ``~``, or ``/`` trigger in the post draft.
+
+#### Notifications
+ - Posts from OAuth 2.0 bots no longer trigger mentions for the user.
+
+#### Administration
+ - Added an ``ImportDelete`` job to periodically delete unused import files after a configurable retention period has passed.
+ - Introduced new ``mattermost_system_server_start_time`` and ``mattermost_jobs_active`` metrics for improved debugging with Grafana dashboards.
+ - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
+ - Changed default ``MaxFileSize`` from 50MB to 100MB.
+ - Updated Go dependencies to their latest minor version.
+
+### Bug Fixes
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` did not change the configuration value.
+ - The ``DownloadComplianceReport`` function in the Golang driver has been fixed to be able to download a full report as a zip archive.
+ - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
+ - Fixed a bug with in-product notices where a date constraint sometimes failed to match, and would lead to the notice not being fetched.
+ - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
+ - Fixed an issue where the in-product instructions to search for users under **System Console > Reporting > Server Logs** were outdated.
+ - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
+
+### Known Issues
+ - The slash command autocomplete options cover the input box on some reply threads on the right-hand side.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-01-26
 
 ### Highlights
