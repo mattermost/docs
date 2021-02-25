@@ -6,7 +6,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-02-16**
+- **v5.32.1, released 2021-02-17**
+  - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
+- **v5.32.0, released 2021-02-16**
+  - Original 5.32.0 release
 
 Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -36,6 +39,7 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
 
 #### User Interface (UI)
  - Added new languages, Bulgarian and Swedish.
+ - Added team sidebar user interface and animation enhancements.
  - Moved the header icons to the left of the header beside the channel description.
  - Added support to move multi-selected groups of channels to another category via the **More options** menu.
 
@@ -47,7 +51,6 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
  - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
  - Removed the word "experimental" from the Gossip setting in the System Console.
- - The Database search using PostgreSQL now supports searching for terms that contain underscores.
  - Updated the Go version to v1.15.5.
  - Added support for automatic installation and enablement of plugins using feature flags.
  - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
