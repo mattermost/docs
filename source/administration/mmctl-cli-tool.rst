@@ -3938,7 +3938,7 @@ Child Commands
   -  `mmctl user delete`_ - Delete users
   -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
   -  `mmctl user email`_ - Set user email
-  -  `mmctl user verify`_ - Verify the email address of a new user.
+  -  `mmctl user verify`_ - Verify the email address of a new user
   -  `mmctl user invite`_ - Invite user
   -  `mmctl user list`_ - List users
   -  `mmctl user reset_password`_ - Reset user password
