@@ -36,7 +36,7 @@ If you've forgotten your password, you can reset it by selecting **I forgot my p
 GitLab Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled by your System Admin, you can sign in using your GitLab account using a one-click sign in option.
+When enabled by your System Admin, you can sign in with your GitLab account using a one-click sign in option.
 
 .. image:: ../../images/sign-in-gitlab.png
   :alt: Sign in to Mattermost using your GitLab credentials.
