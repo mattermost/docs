@@ -28,7 +28,7 @@ Email Address or Username Sign In
 
 When enabled by your System Admin, you can sign in with the username or email address used to create your account.
 
-If you have forgotten your password, you can reset it by selecting **I forgot my password** on the sign-in screen, or contact your System Admin for help resetting your password.
+If you've forgotten your password, you can reset it by selecting **I forgot my password** on the sign-in screen, or contact your System Admin for help resetting your password.
 
 .. image:: ../../images/sign-in_with_email.png
   :alt: Sign in to Mattermost with your username or email address, or reset your password.
