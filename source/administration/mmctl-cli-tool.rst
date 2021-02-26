@@ -2626,18 +2626,6 @@ mmctl import job
 
  List and show import jobs.
 
-**Format**
-
-.. code-block:: sh
-
-     TBD
-
-**Examples**
-
-.. code-block:: sh
-
-     TBD
-
 **Options**
 
 .. code-block:: sh
@@ -2711,7 +2699,7 @@ mmctl import job show
 
 .. code-block:: sh
 
-     import job show
+     import job show f3d68qkkm7n8xgsfxwuo498rah
 
 **Options**
 
@@ -2737,17 +2725,11 @@ mmctl import list
 
  List all import files.
 
-**Format**
-
-.. code-block:: sh
-
-     TBD 
-
 **Examples**
 
 .. code-block:: sh
 
-     TBD
+     import list
 
 **Options**
 
