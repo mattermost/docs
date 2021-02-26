@@ -20,7 +20,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### OpenID Connect (Cloud Professional & Enterprise)
- - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. This feature will be available for Mobile Apps in v1.40 (date TBD) release.
+ - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. This feature is available for Mobile Apps in v1.40 release.
 
 #### Support Packet Generation
  - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
@@ -34,7 +34,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Improved the **Add Members** to channel modal.
- - Added **Formatting Shortcut Keys** to **Shortcut** modal.
+ - Added **Formatting** shortcut keys to the **Shortcut** modal.
  - Added localization to date picker used when searching for posts around a given date.
  - The autocomplete popover is now positioned relative to the @, ~, or / trigger in the post draft.
  - Removed the 5-page limit on previewing PDFs.
@@ -58,51 +58,52 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Implemented a job to delete unused export files.
 
 ### Bug Fixes
+ - Fixed an issue where ``mmctl channel move`` did not allow moving private channels.
  - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` to try to change a configuration value did not return an error.
- - The ``DownloadComplianceReport`` function in the golang driver has been fixed to download a full report as a zip archive.
- - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
- - Fixed a bug with in-product notices where a date constraint might fail to match, and would lead to the notice not being fetched.
- - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
  - Fixed an issue where the instructions to search for users in **System Console > Reporting > Server Logs** were not up-to-date.
  - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
- - Fixed an issue where demoting a user to a guest would not take effect in an environment with read replicas.
- - Fixed an issue where creation of a bot would fail due to replica lag.
- - Fixed an issue where ``mmctl channel move`` did not allow moving private channels.
  - Fixed an issue where markdown tables did not wrap correctly.
  - Fixed an issue where the search bar styling on dark themes was incorrect on mobile web view.
  - Fixed an issue where the **Main Menu** on webapp appeared more left-aligned than previous releases.
- - Fixed an issue where sticky sidebar headings appeared under More Unreads.
+ - Fixed an issue where sticky sidebar headings appeared under **More Unreads**.
  - Fixed an issue where the group channel icon was misaligned in the channel switcher.
  - Fixed an issue where line breaks were ignored when used with inline images.
+ - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
+ - Fixed an issue where demoting a user to a guest would not take effect in an environment with read replicas.
+ - Fixed a bug with in-product notices where a date constraint might fail to match, and would lead to the notice not being fetched.
+ - Fixed an issue where creation of a bot would fail due to replica lag.
+ - The ``DownloadComplianceReport`` function in the golang driver has been fixed to download a full report as a zip archive.
+ - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
  - Fixed a panic when the OAuth discovery endpoint would not return a Cache-Control header.
- - Fixed an issue where the Cloud onboarding flow referenced OAuth, not OpenID Connect.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added a flag ``EnableGossipCompression`` to disable compression in the Gossip protocol. By default the value of the flag is true, which is the existing default. This is done to maintain compatibility with old servers in a cluster. Once all servers in a cluster are upgraded, it is recommended to disable this flag for better performance.
- - A new config field called ``ConnMaxIdleTimeMilliseconds`` was added to ``DatabaseSettings`` which allows to control the maximum time a database connection can remain idle. The default value is set to 5 minutes.
+ - Under ``ClusterSettings`` in ``config.json``:
+     - Added ``EnableGossipCompression``, to disable compression in the Gossip protocol. By default the value of the setting is ``true``, which is the existing default. This is done to maintain compatibility with old servers in a cluster. Once all servers in a cluster are upgraded, it is recommended to disable this setting for better performance.
+ - Under ``SqlSettings`` in ``config.json``:
+     - Added ``ConnMaxIdleTimeMilliseconds`` was added to ``DatabaseSettings``, to allow controlling the maximum time a database connection can remain idle. The default value is set to 5 minutes.
  - Added a new config setting ``TeamSettings.EnableCustomUserStatuses``. **???**
     
 ### Go Version
  - 5.33 is built with Go ``1.15.5``.
 
 ### API Changes
- - API method ``GET /{team_id}/threads/{thread_id}`` was added for retrieving single threads.
- - The ``/api/v4/users/me/auth`` API endpoint can no longer be used to change passwords. This was a hidden feature that was not documented, but was nevertheless possible. We are just removing the hidden feature.
- - Updated ``/users/{user_id}/teams/{team_id}/threads`` API to support unread=true query parameter.
- - ``/api/v4/users/{user_id}/teams/{team_id}/threads`` now accepts "before" or "after" parameters instead of page index.
- - Removed session required restriction from ``GET api/v4/subscription/stats``.
- - Added a new API endpoint ``/users/{user_id}/teams/{team_id}/threads/mention_counts``.
- - Added a new API endpoint ``GET /api/v4/cloud/subscription/stats``.
- - Implemented ``/exports`` API endpoint to generate and manage export files.
+ - Added a new ``GET /{team_id}/threads/{thread_id}`` API method for retrieving single threads.
+ - Added a new ``/exports`` API endpoint to generate and manage export files.
+ - Added a new ``/users/{user_id}/teams/{team_id}/threads/mention_counts`` API endpoint.
+ - Added a new ``GET /api/v4/cloud/subscription/stats`` API endpoint. **???**
+ - Added a new ``GET /api/v4/cloud/subscription/limitreached/invite`` API endpoint. **???**
  - Added new API endpoints ``PUT /api/v4/users/<id>/status/custom``, ``DELETE /api/v4/users/<id>/status/custom``, and ``DELETE /api/v4/users/<id>/status/custom/recent``. **???**
- - Added a new API endpoint GET ``/api/v4/cloud/subscription/limitreached/invite``.
+ - The ``/api/v4/users/me/auth`` API endpoint can no longer be used to change passwords. This was a hidden feature that was not documented, but was nevertheless possible. We are just removing the hidden feature.
+ - Updated ``/users/{user_id}/teams/{team_id}/threads`` API to support ``unread=true`` query parameter.
+ - ``/api/v4/users/{user_id}/teams/{team_id}/threads`` API endpoint now accepts "before" and "after" parameters instead of a page index.
+ - Removed session required restriction from ``GET api/v4/subscription/stats`` API endpoint.
 
 ### Websocket Event Changes
- - UserUpdate WebSocket Event is now broadcast by 2 more APIs - ``plugin.UpdateUser`` and ``ConvertBotToUser``.
- - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using nginx as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
+ - ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
+ - Improved the WebSocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using nginx as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the WebSocket path.
 
 ### Database Changes
 
