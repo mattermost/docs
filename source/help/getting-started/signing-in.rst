@@ -56,7 +56,7 @@ Office 365 Single Sign-On (SSO)
 
 *Available in Enterprise Edition E20*
 
-When enabled by your System Admin, you can sign in using your Office 365 account using a one-click sign in option.
+When enabled by your System Admin, you can sign in with your Office 365 account using a one-click sign in option.
 
 .. image:: ../../images/sign-in-office365.png
   :alt: Sign in to Mattermost with your Office 365 credentials.
