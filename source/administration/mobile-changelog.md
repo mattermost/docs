@@ -1,5 +1,38 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.41.0 Release
+- Release Date: March 16, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Refined animations with the new image gallery.
+ - System Admins are now prompted before joining private channel via permalink.
+ - The ``filteredEmojis`` is now calculated on first change.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where users were unable to open post previews for search, pinned messages and notifications when getting a prompt to join a private channel.
+ - Fixed an issue where the status and reminder time did not get updated in "Update Status" screen in the Incident Collaboration plugin.
+ - Fixed an issue where a handler was missing for permalinks with ``_redirect``.
+
+#### Android specific
+ - 
+
+#### iOS specific
+ - 
+
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - On Pixel 4a, uploading PDFs crashes the app and sharing files does not work.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
 ## 1.40.0 Release
 - Release Date: February 25, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
