@@ -13,7 +13,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 .. image:: ../../images/set-custom-status.png
   :alt: Set a custom status.
 
-2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji.
+2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
 
 .. image:: ../../images/Custom-Status-Marketing-Animation.gif
   :alt: Set a custom status that includes an optional emoji and a descriptive message.
