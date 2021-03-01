@@ -19,13 +19,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### OpenID Connect (Cloud Professional & Enterprise)
+#### OpenID Connect (E20 Edition)
  - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. This feature is available for Mobile Apps in v1.40 release.
 
-#### Support Packet Generation
+#### Support Packet Generation (E10 & E20 Editions)
  - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
 
-#### Updated Incident Collaboration plugin to 1.4.0
+#### Updated Incident Collaboration plugin to 1.4.0 (E20 Edition)
  - 
  
 #### Custom Status ?
