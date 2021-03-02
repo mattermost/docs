@@ -89,6 +89,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Go Version
  - 5.33 is built with Go ``1.15.5``.
 
+### Open Source Components
+ - Added ``types/react-overlays``, ``crypto-browserify``, ``process`` and ``stream-browserify``, and removed ``node-semver`` from https://github.com/mattermost/mattermost-webapp.
+
 ### API Changes
  - Added a new ``GET /{team_id}/threads/{thread_id}`` API method for retrieving single threads.
  - Added a new ``/exports`` API endpoint to generate and manage export files.
