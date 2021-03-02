@@ -209,8 +209,8 @@ Logging Metrics
 - ``logger_dropped_total``: The total number of logging records dropped.
 - ``logger_blocked_total``: The total number of logging records blocked.
     
-Grafana Debugging Metrics
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Debugging Metrics
+^^^^^^^^^^^^^^^^^
 
 - ``mattermost_system_server_start_time``: Server start time. Set to the current time on server start. 
 - ``mattermost_jobs_active``: Increment when a job starts and decrement when the job ends. 
