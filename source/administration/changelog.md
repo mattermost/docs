@@ -91,6 +91,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Open Source Components
  - Added ``types/react-overlays``, ``crypto-browserify``, ``process`` and ``stream-browserify``, and removed ``node-semver`` from https://github.com/mattermost/mattermost-webapp.
+ - Removed ``isomorphic-fetch`` from https://github.com/mattermost/mattermost-redux.
 
 ### API Changes
  - Added a new ``GET /{team_id}/threads/{thread_id}`` API method for retrieving single threads.
