@@ -10,15 +10,14 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Improvements
- - Refined animations with the new image gallery.
- - System Admins are now prompted before joining private channel via permalink.
+ - Refined animations for the new image gallery.
+ - System Admins are now prompted before joining a private channel via a permalink.
  - The ``filteredEmojis`` is now calculated on first change.
 
 ### Bug Fixes
 
 #### All apps
- - Fixed an issue where users were unable to open post previews for search, pinned messages and notifications when getting a prompt to join a private channel.
- - Fixed an issue where the status and reminder time did not get updated in "Update Status" screen in the Incident Collaboration plugin.
+ - Fixed an issue where the status and reminder time did not get updated in "Update Status" screen in the Incident Collaboration plugin on the mobile apps.
  - Fixed an issue where a handler was missing for permalinks with ``_redirect``.
 
 #### Android specific
