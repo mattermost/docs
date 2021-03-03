@@ -1383,6 +1383,10 @@ mmctl command delete
 
 Delete a slash command. Commands can be specified by command ID.
 
+.. note::
+
+  This command has been deprecated in favor of `mmctl command archive`_.
+
 **Format**
 
 .. code-block:: sh
