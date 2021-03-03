@@ -5,13 +5,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ## Release 2021-03-10
 
 ### Highlights
-
+ - File search?
+ - Custom statuses?
 
 ### Improvements
 
 #### User Interface (UI)
- - System Admins are now prompted when joining a private channel via permalink.
- - Added support for adding in-product notices for external dependencies deprecation notices.
+ - System Admins are now prompted when joining a private channel via a permalink.
+ - Added support for adding in-product notices for external dependency deprecation notices.
  - Improved the timezone selector component and list of timezones.
  - Introduced a new theme variable for the team sidebar.
 
