@@ -102,8 +102,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``Shared`` column to the ``Channels`` table.
 
 ### Known Issues
- - Some known issues related to the new custom, collapsible channel categories feature, such as that the team icon on-click animation is laggy [MM-32198](https://mattermost.atlassian.net/browse/MM-11820).
- - The server tries to install E20 required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
+ - Some known issues related to the new custom, collapsible channel categories feature, including a laggy team icon on-click animation [MM-32198](https://mattermost.atlassian.net/browse/MM-11820).
+ - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too [MM-30407](https://mattermost.atlassian.net/browse/MM-30407).
@@ -174,8 +174,9 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  
 ### Known Issues
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
+ - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
- - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes [MM-29927](https://mattermost.atlassian.net/browse/MM-29927).
+ - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page, then clicks elsewhere before saving the changes [MM-29927](https://mattermost.atlassian.net/browse/MM-29927).
  - Error text is missing when the team name is left blank on the team creation page [MM-31361](https://mattermost.atlassian.net/browse/MM-31361).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
@@ -285,7 +286,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Known Issues
  - The ``config.json`` may reset itself to default values if the binary is run with the root user.
  - Reddit link previews no longer work in Mattermost. This affects older versions too.
- - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page, then clicks elsewhere before saving the changes.
  - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too.
  - Slack theme import fails due to changes in formatting of Slack export color schemes.
  - Error text is missing when the team name is left blank on the team creation page.
