@@ -22,38 +22,6 @@ By default, users can dismiss the banner until they log in again or until you up
 5. To prevent users from dismissing the banner, set **Allow Banner Dismissal** section to **false**.
 6. Select **Save**.
 
-In-Product Notices
-------------------
-
-Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
-
-.. image:: ../../images/notices.png
-
-Administrator Notices
-^^^^^^^^^^^^^^^^^^^^^
-
-Administrator notices are used to inform System Admins of important updates or recommended configuration options to optimize the user experience of their deployment.
-
-Administrator notices can be disabled in the **System Console > Site Configuration > Notices** page.
-
-End User Notices
-^^^^^^^^^^^^^^^^
-
-End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Site Configuration > Notices**.
-
-FAQs
-^^^^
-
-Are notices enabled by default?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Site Configuration > Notices**.
-
-How often will users receive notices?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Notices will be used to raise awareness of new features as part of our monthly release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
-
 Emoji
 -----
 
@@ -62,6 +30,25 @@ There are three different settings that allow you to control emoji.
 1. **Enable Emoji Picker:** An emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of Custom Emojis may slow down performance.
 2. **Enable Custom Emoji:** You can control whether or not the Custom Emoji option in the Main Menu, where users can go to create customized emoji, is accessible.
 3. **Restrict Custom Emoji Creation:** You can set which role is able to create Custom Emoji from **Main Menu > Custom Emoji** (all users, System and Team Admins, or System Admins only).
+
+In-Product Notices
+------------------
+
+Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases. Notices are used to raise awareness of new features as part of our monthly release cadence. 
+
+Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
+
+.. image:: ../../images/notices.png
+
+Administrator Notices
+^^^^^^^^^^^^^^^^^^^^^
+
+Administrator notices are used to inform System Admins of important updates or recommended configuration options to optimize the user experience of their deployment. Administrator notices are enabled for all Mattermost users.
+
+End User Notices
+^^^^^^^^^^^^^^^^
+
+End user notices are used to inform users and System Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Site Configuration > Notices** by setting **Enable End User Notices** to **false**.
 
 File Sharing and Downloads
 --------------------------
