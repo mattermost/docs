@@ -7,38 +7,42 @@ Being installed locally allows a System Admin to run CLI commands even in instan
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
-**Notes**
+.. note::
 
--  Parameters in CLI commands are order-specific.
--  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
-- Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
+   -  Parameters in CLI commands are order-specific.
+   -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
+   - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
-**mmctl Commands**
-   - `mmctl auth`_ - Authentication Management
-   - `mmctl bot`_ - Bot Management
-   - `mmctl channel`_ - Channel Management
-   - `mmctl command`_ - Command Management
-   - `mmctl completion`_ - Generates Autocompletion Scripts for ``bash`` and ``zsh``
-   - `mmctl config`_ - Configuration Management
-   - `mmctl docs`_ - Generates mmctl Documentation
-   - `mmctl group`_ - Group Management
-   - `mmctl integrity`_ - Database Record Integrity
-   - `mmctl ldap`_ - LDAP Management
-   - `mmctl license`_ - License Management
-   - `mmctl logs`_ - Log Management
-   - `mmctl permissions`_ - Permissions Management
-   - `mmctl plugin`_ - Plugin Management
-   - `mmctl post`_ - Post Management
-   - `mmctl roles`_ - Roles Management
-   - `mmctl system`_ - System Management
-   - `mmctl team`_ - Team Management
-   - `mmctl token`_ - Token Management
-   - `mmctl user`_ - User Management
-   - `mmctl version`_ - Version Management
-   - `mmctl webhook`_ - Webhook Management
-   - `mmctl websocket`_ - Websocket Management
 
-**Options**
+mmctl Commands
+---------------
+
+- `mmctl auth`_ - Authentication Management
+- `mmctl bot`_ - Bot Management
+- `mmctl channel`_ - Channel Management
+- `mmctl command`_ - Command Management
+- `mmctl completion`_ - Generates Autocompletion Scripts for ``bash`` and ``zsh``
+- `mmctl config`_ - Configuration Management
+- `mmctl docs`_ - Generates mmctl Documentation
+- `mmctl group`_ - Group Management
+- `mmctl integrity`_ - Database Record Integrity
+- `mmctl ldap`_ - LDAP Management
+- `mmctl license`_ - License Management
+- `mmctl logs`_ - Log Management
+- `mmctl permissions`_ - Permissions Management
+- `mmctl plugin`_ - Plugin Management
+- `mmctl post`_ - Post Management
+- `mmctl roles`_ - Roles Management
+- `mmctl system`_ - System Management
+- `mmctl team`_ - Team Management
+- `mmctl token`_ - Token Management
+- `mmctl user`_ - User Management
+- `mmctl version`_ - Version Management
+- `mmctl webhook`_ - Webhook Management
+- `mmctl websocket`_ - Websocket Management
+
+Options
+~~~~~~~
 
 .. code-block:: sh
 
@@ -95,8 +99,8 @@ Local mode allows platform administrators with access to the Mattermost server t
 
 The API that the socket exposes follows the same specification that can be found `in the API documentation <https://api.mattermost.com>`_, so mmctl is able to interact with it without needing any modifications. When a request comes in through the socket, it is flagged as local by the server, and this flag is taken into account when checking for session permissions to correctly authorize the sessions.
 
-Activate local mode
-~~~~~~~~~~~~~~~~~~~
+Activating local mode
+~~~~~~~~~~~~~~~~~~~~~
 
 To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
@@ -108,7 +112,7 @@ You need to append ``--local`` to the command you want to use or set the environ
 In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
 Running mmctl tests
-------------------
+-------------------
 
 mmctl has two types of tests: unit tests and end to end tests. 
 
@@ -131,25 +135,23 @@ Change your directory to ``mmctl`` and run the end to end test suite with:
 
   make test-e2e
 
-Authenticating and logging in
------------------------------
 
 mmctl auth
-^^^^^^^^^^
+----------
 
 **Description**
 
 Manage the credentials and authentication methods of remote Mattermost instances.
   
-Child Commands   
+   Child Commands   
 
-   -  `mmctl auth clean`_ - Clean credentials
-   -  `mmctl auth current`_ - Display current credentials
-   -  `mmctl auth delete`_ - Delete authentication details
-   -  `mmctl auth list`_ - List registered credentials
-   -  `mmctl auth login`_ - Log into Mattermost instance
-   -  `mmctl auth renew`_ - Renew login credentials
-   -  `mmctl auth set`_ - Set login credentials
+      - `mmctl auth clean`_ - Clean credentials
+      - `mmctl auth current`_ - Display current credentials
+      - `mmctl auth delete`_ - Delete authentication details
+      - `mmctl auth list`_ - List registered credentials
+      - `mmctl auth login`_ - Log into Mattermost instance
+      - `mmctl auth renew`_ - Renew login credentials
+      - `mmctl auth set`_ - Set login credentials
 
 **Options**
 
@@ -158,7 +160,7 @@ Child Commands
    -h, --help   help for auth
 
 mmctl auth clean
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -194,7 +196,7 @@ Clean the credentials associated with a Mattermost instance.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl auth current
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -230,7 +232,7 @@ Show the currently stored user credentials.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl auth delete
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -266,7 +268,7 @@ Delete a named credential.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl auth list
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -302,7 +304,7 @@ Print a list of registered credentials.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl auth login
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -347,7 +349,7 @@ Log in to an instance and store credentials.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl auth renew
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -386,7 +388,7 @@ Renew the credentials for a given server.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl auth set
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 **Description**
 
@@ -506,13 +508,13 @@ mmctl bot
 
 Management of bots.
 
-Child Commands
-   -  `mmctl bot assign`_ - Assign bot ownership
-   -  `mmctl bot create`_ - Create a new bot
-   -  `mmctl bot disable`_ - Disable a bot
-   -  `mmctl bot enable`_ - Enable a bot
-   -  `mmctl bot list`_ - List all bots
-   -  `mmctl bot update`_ - Update bot configuration
+   Child Commands
+      - `mmctl bot assign`_ - Assign bot ownership
+      - `mmctl bot create`_ - Create a new bot
+      - `mmctl bot disable`_ - Disable a bot
+      - `mmctl bot enable`_ - Enable a bot
+      - `mmctl bot list`_ - List all bots
+      - `mmctl bot update`_ - Update bot configuration
 
 **Options**
 
@@ -521,7 +523,7 @@ Child Commands
    -h, --help   help for bot
 
 mmctl bot assign
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -541,7 +543,7 @@ Assign the ownership of a bot to another user.
 
 **Options**
 
- .. code-block:: sh
+.. code-block:: sh
 
    -h, --help              help for assign
 
@@ -557,7 +559,7 @@ Assign the ownership of a bot to another user.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl bot create
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -577,7 +579,7 @@ Create a bot.
 
 **Options**
 
- .. code-block:: sh
+.. code-block:: sh
 
    --description string    Optional. The description text for the new bot.
    --display-name string   Optional. The display name for the new bot.
@@ -595,7 +597,7 @@ Create a bot.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl bot disable
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -615,9 +617,9 @@ Disable an enabled bot.
 
 **Options**
 
- .. code-block:: sh
+.. code-block:: sh
 
-   -h, --help              help for disable
+   -h, --help     help for disable
 
 **Options inherited from parent commands**
 
@@ -631,7 +633,7 @@ Disable an enabled bot.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl bot enable
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -651,7 +653,7 @@ Enable a disabled bot.
 
 **Options**
 
- .. code-block:: sh
+.. code-block:: sh
 
    -h, --help              help for enable
 
@@ -667,7 +669,7 @@ Enable a disabled bot.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl bot list
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 **Description**
 
@@ -687,7 +689,7 @@ List the bot's users.
 
 **Options**
 
- .. code-block:: sh
+.. code-block:: sh
 
    --all        Optional. Show all bots (including deleleted and orphaned)
    -h, --help   help for list
@@ -705,7 +707,7 @@ List the bot's users.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl bot update
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -725,7 +727,7 @@ Update bot information.
 
 **Options**
 
- .. code-block:: sh
+.. code-block:: sh
 
    --description string    Optional. The new description text for the bot
    --display-name string   Optional. The new display name for the bot
@@ -748,21 +750,21 @@ mmctl channel
 
 Commands for channel management.
 
-Child Commands
-   -  `mmctl channel archive`_ - Archive a channel
-   -  `mmctl channel create`_ - Create a channel
-   -  `mmctl channel delete`_ - Delete a channel
-   -  `mmctl channel list`_ - List all channels on specified teams
-   -  `mmctl channel make_private`_ - Set a channel's type to "private"
-   -  `mmctl channel modify`_ - Modify a channel's type (private/public)
-   -  `mmctl channel move`_ - Move channels to the specified team
-   -  `mmctl channel rename`_ - Rename a channel
-   -  `mmctl channel restore`_ - (Deprecated) Restore a channel from the archive
-   -  `mmctl channel search`_ - Search a channel by name
-   -  `mmctl channel unarchive`_ - Unarchive a channel
-   -  `mmctl channel users`_ - Manage channel users
-   -  `mmctl channel users add`_ - Add a user to a channel
-   -  `mmctl channel users remove`_ - Remove a user from a channel
+   Child Commands
+      -  `mmctl channel archive`_ - Archive a channel
+      -  `mmctl channel create`_ - Create a channel
+      -  `mmctl channel delete`_ - Delete a channel
+      -  `mmctl channel list`_ - List all channels on specified teams
+      -  `mmctl channel make_private`_ - Set a channel's type to "private"
+      -  `mmctl channel modify`_ - Modify a channel's type (private/public)
+      -  `mmctl channel move`_ - Move channels to the specified team
+      -  `mmctl channel rename`_ - Rename a channel
+      -  `mmctl channel restore`_ - (Deprecated) Restore a channel from the archive
+      -  `mmctl channel search`_ - Search a channel by name
+      -  `mmctl channel unarchive`_ - Unarchive a channel
+      -  `mmctl channel users`_ - Manage channel users
+      -  `mmctl channel users add`_ - Add a user to a channel
+      -  `mmctl channel users remove`_ - Remove a user from a channel
 
 **Options**
 
@@ -771,7 +773,7 @@ Child Commands
    -h, --help   help for channel
 
 mmctl channel archive
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -806,7 +808,7 @@ Archive one or multiple channels along with all related information including po
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel create
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -848,7 +850,7 @@ Create a channel.
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -884,7 +886,7 @@ Permanently delete one or multiple channels along with all related information i
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl channel list
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -919,7 +921,7 @@ List all public and archived channels on specified teams. Archived channels are 
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel make_private
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -954,7 +956,7 @@ Set the type of a channel from public to private. Channel can be specified by ``
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel modify
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -992,7 +994,7 @@ Change the public/private type of a channel. Channel can be specified by ``[team
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel move
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1028,7 +1030,7 @@ Move the provided channels to the specified team. Validate that all users in the
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel rename
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1068,7 +1070,7 @@ Rename an existing channel.
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel restore
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Deprecated in favor of `mmctl channel unarchive`_. Not used in Mattermost Server version v5.26 and later.
 
@@ -1104,7 +1106,7 @@ Restore a previously deleted channel. Channels can be specified by ``[team]:[cha
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel search
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1142,7 +1144,7 @@ Search a channel by channel name. Channel can be specified by team (e.g., ``--te
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel unarchive
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1177,7 +1179,7 @@ Unarchive a previously archived channel. Channels can be specified by ``[team]:[
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl channel users
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1200,7 +1202,7 @@ Manage channel users.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl channel users add
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1235,11 +1237,11 @@ Add one or multiple users to a channel.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl channel users remove
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-   Remove one or multiple users from a channel.
+Remove one or multiple users from a channel.
 
 **Format**
 
@@ -1276,14 +1278,14 @@ mmctl command
 
 Management of slash commands.
 
-Child Commands
-   -  `mmctl command archive`_ - Archive a slash command
-   -  `mmctl command create`_ - Create a custom command
-   -  `mmctl command delete`_ - Delete a specified slash command
-   -  `mmctl command list`_ - List slash commands on specified teams
-   -  `mmctl command modify`_ - Modify a slash command
-   -  `mmctl command move`_ - Move a slash command to a different team
-   -  `mmctl command show`_ - Show a custom slash command
+   Child Commands
+      -  `mmctl command archive`_ - Archive a slash command
+      -  `mmctl command create`_ - Create a custom command
+      -  `mmctl command delete`_ - Delete a specified slash command
+      -  `mmctl command list`_ - List slash commands on specified teams
+      -  `mmctl command modify`_ - Modify a slash command
+      -  `mmctl command move`_ - Move a slash command to a different team
+      -  `mmctl command show`_ - Show a custom slash command
 
 **Options**
 
@@ -1292,11 +1294,11 @@ Child Commands
    -h, --help      help for command
 
 mmctl command archive
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-   Archive a slash command. Commands can be specified by command ID.
+Archive a slash command. Commands can be specified by command ID.
 
 **Format**
 
@@ -1328,7 +1330,7 @@ mmctl command archive
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl command create
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1375,7 +1377,7 @@ Create a custom slash command for the specified team.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl command delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Dscription**
 
@@ -1409,7 +1411,7 @@ Delete a slash command. Commands can be specified by command ID.
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command list
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1445,7 +1447,7 @@ List all commands on specified teams.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl command modify
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1492,7 +1494,7 @@ Modify a slash command. Commands can be specified by command ID.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl command move
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1528,7 +1530,7 @@ Move a slash command to a different team. Commands can be specified by command I
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl command show
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1568,9 +1570,9 @@ mmctl completion
 
 Generates autocompletion scripts for `bash` and `zsh`.
 
-Child Commands
-   -  `mmctl completion bash`_ - Edit the configuration settings
-   -  `mmctl completion zsh`_ - Get the value of a configuration setting
+   Child Commands
+      -  `mmctl completion bash`_ - Edit the configuration settings
+      -  `mmctl completion zsh`_ - Get the value of a configuration setting
 
 **Options**
 
@@ -1579,7 +1581,7 @@ Child Commands
    -h, --help   help for completion
 
 mmctl completion bash
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1617,7 +1619,7 @@ To configure your ``bash`` shell to load completions for each session, add the a
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl completion zsh
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1659,15 +1661,15 @@ mmctl config
 
 Configuration settings.
 
-Child Commands
-   -  `mmctl config edit`_ - Edit the configuration settings
-   -  `mmctl config get`_ - Get the value of a configuration setting
-   -  `mmctl config migrate`_ - Migrate existing configuration between backends
-   -  `mmctl config reload`_ - Reload the server configuration
-   -  `mmctl config reset`_ - Reset the configuration
-   -  `mmctl config set`_ - Set the value of a configuration
-   -  `mmctl config show`_ - Write the server configuration to STDOUT
-   -  `mmctl config subpath`_ - Update client asset loading to use the configured subpath
+   Child Commands
+      -  `mmctl config edit`_ - Edit the configuration settings
+      -  `mmctl config get`_ - Get the value of a configuration setting
+      -  `mmctl config migrate`_ - Migrate existing configuration between backends
+      -  `mmctl config reload`_ - Reload the server configuration
+      -  `mmctl config reset`_ - Reset the configuration
+      -  `mmctl config set`_ - Set the value of a configuration
+      -  `mmctl config show`_ - Write the server configuration to STDOUT
+      -  `mmctl config subpath`_ - Update client asset loading to use the configured subpath
 
 **Options**
 
@@ -1676,7 +1678,7 @@ Child Commands
    -h, --help   help for config
 
 mmctl config edit
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1712,7 +1714,7 @@ Open the editor defined in the EDITOR environment variable to modify the server'
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config get
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1748,7 +1750,7 @@ Get the value of a configuration setting by its name in dot notation.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config migrate
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1787,7 +1789,7 @@ Migrates a file-based configuration to (or from) a database-based configuration.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config reload
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1822,7 +1824,7 @@ Reloads the server configuration and applies new settings.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config reset
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1859,7 +1861,7 @@ Reset the value of a configuration setting by its name in dot notation or a sett
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config set
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -1896,11 +1898,11 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config show
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-   Print the server configuration and writes to STDOUT in JSON format.
+Print the server configuration and writes to STDOUT in JSON format.
 
 **Format**
 
@@ -1932,7 +1934,7 @@ mmctl config show
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl config subpath
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2012,21 +2014,21 @@ mmctl group
 
 Management of groups (channel and teams).
 
-Child Commands
-   -  `mmctl group channel`_ - Manage channel groups
-   -  `mmctl group list-ldap`_ - List LDAP groups
-   -  `mmctl group team`_ - Manage team groups
+   Child Commands
+      -  `mmctl group channel`_ - Manage channel groups
+      -  `mmctl group list-ldap`_ - List LDAP groups
+      -  `mmctl group team`_ - Manage team groups
 
 mmctl group channel
 --------------------
 
 Management of channel groups
 
-Child Commands
-   -  `mmctl group channel disable`_ - Disable group channel constrains
-   -  `mmctl group channel enable`_ - Enable group channel constrains
-   -  `mmctl group channel list`_ - List channel groups
-   -  `mmctl group channel status`_ - Check group status
+   Child Commands
+      -  `mmctl group channel disable`_ - Disable group channel constrains
+      -  `mmctl group channel enable`_ - Enable group channel constrains
+      -  `mmctl group channel list`_ - List channel groups
+      -  `mmctl group channel status`_ - Check group status
 
 **Options**
 
@@ -2035,11 +2037,11 @@ Child Commands
    -h, --help   help for group
 
 mmctl group channel disable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-   Disable group constrains in the specified channel.
+Disable group constrains in the specified channel.
 
 **Format**
 
@@ -2071,7 +2073,7 @@ mmctl group channel disable
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group channel enable
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2107,7 +2109,7 @@ Enable group constrains in the specified channel.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group channel list
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2143,7 +2145,7 @@ List the groups associated with a channel.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group channel status
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2179,7 +2181,7 @@ Show the group constrain status for the specified channel.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group list-ldap
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2219,11 +2221,11 @@ mmctl group team
 
 Management of team groups.
 
-Child Commands
-   -  `mmctl group team disable`_ - Disable group team constrains
-   -  `mmctl group team enable`_ - Enable group team constrains
-   -  `mmctl group team list`_ - List team groups
-   -  `mmctl group team status`_ - Check group constrain status
+   Child Commands
+      -  `mmctl group team disable`_ - Disable group team constrains
+      -  `mmctl group team enable`_ - Enable group team constrains
+      -  `mmctl group team list`_ - List team groups
+      -  `mmctl group team status`_ - Check group constrain status
 
 **Options**
 
@@ -2232,7 +2234,7 @@ Child Commands
    -h, --help   help for group
 
 mmctl group team disable
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2268,7 +2270,7 @@ Disable group constrains in the specified team.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group team enable
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2304,7 +2306,7 @@ Enable group constrains in the specified team.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group team list
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2340,7 +2342,7 @@ List the groups associated with a team.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl group team status
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2414,8 +2416,8 @@ mmctl ldap
 
 LDAP-related utilities.
 
-Child Commands
-   -  `mmctl ldap sync`_ - Sync all LDAP users and groups
+   Child Commands
+      -  `mmctl ldap sync`_ - Sync all LDAP users and groups
 
 **Options**
 
@@ -2424,7 +2426,7 @@ Child Commands
    -h, --help   help for ldap
 
 mmctl ldap sync
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2462,9 +2464,9 @@ mmctl license
 
 Licensing management commands.
 
-Child Commands
-   -  `mmctl license remove`_ - Remove the current license
-   -  `mmctl license upload`_ - Upload a new license
+   Child Commands
+      -  `mmctl license remove`_ - Remove the current license
+      -  `mmctl license upload`_ - Upload a new license
 
 **Options**
 
@@ -2473,7 +2475,7 @@ Child Commands
    -h, --help   help for license
 
 mmctl license remove
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2507,7 +2509,7 @@ Remove the current license and use Mattermost in Team Edition.
    --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl license upload
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2577,13 +2579,13 @@ mmctl permissions
 
 Management of permissions and roles.
 
-Child Commands
-   -  `mmctl permissions add`_ - Add permissions to a role
-   -  `mmctl permissions remove`_ - Remove permissions from a role
-   -  `mmctl permissions reset`_ - Reset default permissions for a role
-   -  `mmctl permissions role assign`_ - Assign users to role
-   -  `mmctl permissions role show`_ - Show the role information
-   -  `mmctl permissions role unassign`_ - Unassign users from a role
+   Child Commands
+      -  `mmctl permissions add`_ - Add permissions to a role
+      -  `mmctl permissions remove`_ - Remove permissions from a role
+      -  `mmctl permissions reset`_ - Reset default permissions for a role
+      -  `mmctl permissions role assign`_ - Assign users to role
+      -  `mmctl permissions role show`_ - Show the role information
+      -  `mmctl permissions role unassign`_ - Unassign users from a role
 
 **Options**
 
@@ -2592,7 +2594,7 @@ Child Commands
    -h, --help   help for permissions
 
 mmctl permissions add
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2629,7 +2631,7 @@ Add one or more permissions to an existing role (available in Enterprise Edition
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl permissions remove
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2666,7 +2668,7 @@ Remove one or more permissions from an existing role (available in Enterprise Ed
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl permissions reset
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2703,7 +2705,7 @@ Reset the given role's permissions to the default settings and overwrite custom 
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl permissions role assign
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2745,7 +2747,7 @@ Assign users to a role by username (available in Enterprise Edition E10 and E20)
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl permissions role show
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2781,7 +2783,7 @@ Show all the information about a role.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl permissions role unassign
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2827,13 +2829,13 @@ mmctl plugin
 
 Management of plugins.
 
-Child Commands
-   -  `mmctl plugin add`_ - Add plugins
-   -  `mmctl plugin delete`_ - Remove plugins
-   -  `mmctl plugin disable`_ - Disable plugins
-   -  `mmctl plugin enable`_ - Enable plugins
-   -  `mmctl plugin install-url`_ - Install plugin from URL
-   -  `mmctl plugin list`_ - List plugins
+   Child Commands
+      -  `mmctl plugin add`_ - Add plugins
+      -  `mmctl plugin delete`_ - Remove plugins
+      -  `mmctl plugin disable`_ - Disable plugins
+      -  `mmctl plugin enable`_ - Enable plugins
+      -  `mmctl plugin install-url`_ - Install plugin from URL
+      -  `mmctl plugin list`_ - List plugins
   
 **Options**
 
@@ -2842,7 +2844,7 @@ Child Commands
    -h, --help   help for plugin
 
 mmctl plugin add
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2878,7 +2880,7 @@ mmctl plugin add
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl plugin delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2914,7 +2916,7 @@ Delete previously uploaded plugins from your Mattermost server.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl plugin disable
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2950,7 +2952,7 @@ Disable plugins. Disabled plugins are immediately removed from the user interfac
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl plugin enable
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2986,7 +2988,7 @@ Enable plugins for use on your Mattermost server.
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl plugin install-url
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3027,7 +3029,7 @@ Supply one or multiple URLs to plugins compressed in a ``.tar.gz`` file. Plugins
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl plugin list
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3067,9 +3069,9 @@ mmctl plugin marketplace
 
 Management of Plugin Marketplace plugins.
 
-Child Commands
-   -  `mmctl plugin marketplace install`_ - Install a plugin from the Plugin Marketplace
-   -  `mmctl plugin marketplace list`_ - List plugins on the Plugin Marketplace
+   Child Commands
+      -  `mmctl plugin marketplace install`_ - Install a plugin from the Plugin Marketplace
+      -  `mmctl plugin marketplace list`_ - List plugins on the Plugin Marketplace
 
 **Options**
 
@@ -3089,7 +3091,7 @@ Child Commands
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl plugin marketplace install
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3129,7 +3131,7 @@ Install a plugin listed on the Plugin Marketplace server.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl plugin marketplace list
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3184,9 +3186,9 @@ mmctl post
 
 Management of posts.
 
-Child Commands
-   -  `mmctl post create`_ - Create a post
-   -  `mmctl post list`_ - List posts
+   Child Commands
+      -  `mmctl post create`_ - Create a post
+      -  `mmctl post list`_ - List posts
 
 **Options**
 
@@ -3195,7 +3197,7 @@ Child Commands
    -h, --help   help for post
 
 mmctl post create
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3233,7 +3235,7 @@ Create a post.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl post list
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3341,12 +3343,12 @@ mmctl system
 
 System management commands for interacting with the server state and configuration.
 
-Child Commands
-   -  `mmctl system clearbusy`_ - Clear the busy state
-   -  `mmctl system getbusy`_ - Get the current busy state
-   -  `mmctl system setbusy`_ - Set the busy state to ``true``
-   -  `mmctl system status`_ - Print the status of the server
-   -  `mmctl system version`_ - Print the remote server version
+   Child Commands
+      -  `mmctl system clearbusy`_ - Clear the busy state
+      -  `mmctl system getbusy`_ - Get the current busy state
+      -  `mmctl system setbusy`_ - Set the busy state to ``true``
+      -  `mmctl system status`_ - Print the status of the server
+      -  `mmctl system version`_ - Print the remote server version
 
 **Options**
 
@@ -3366,7 +3368,7 @@ Child Commands
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system clearbusy
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3402,7 +3404,7 @@ Clear the busy state which re-enables non-critical services.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system getbusy
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3438,7 +3440,7 @@ Get the server busy state (high load) and timestamp corresponding to when the se
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system setbusy
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3475,7 +3477,7 @@ Set the busy state to ``true`` for the specified number of seconds, which disabl
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system status
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3511,7 +3513,7 @@ Print the server status calculated using several basic server healthchecks.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl system version
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3551,16 +3553,16 @@ mmctl team
 
 Management of teams.
 
-Child Commands
-   -  `mmctl team archive`_ - Archive some teams
-   -  `mmctl team create`_ - Create teams
-   -  `mmctl team delete`_ - Delete teams
-   -  `mmctl team list`_ - List teams
-   -  `mmctl team modify`_ - Modify teams
-   -  `mmctl team rename`_ - Rename teams
-   -  `mmctl team restore`_ - Restore teams
-   -  `mmctl team search`_ - Search teams
-   -  `mmctl team users`_ - Manage team users
+   Child Commands
+      -  `mmctl team archive`_ - Archive some teams
+      -  `mmctl team create`_ - Create teams
+      -  `mmctl team delete`_ - Delete teams
+      -  `mmctl team list`_ - List teams
+      -  `mmctl team modify`_ - Modify teams
+      -  `mmctl team rename`_ - Rename teams
+      -  `mmctl team restore`_ - Restore teams
+      -  `mmctl team search`_ - Search teams
+      -  `mmctl team users`_ - Manage team users
 
 **Options**
 
@@ -3569,7 +3571,7 @@ Child Commands
    -h, --help   help for team
 
 mmctl team archive
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3606,7 +3608,7 @@ Archive a team along with all related information including posts from the datab
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team create
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3647,7 +3649,7 @@ Create a team.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team delete
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3684,7 +3686,7 @@ Permanently delete a team along with all related information including posts fro
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team list
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3720,7 +3722,7 @@ List all teams on the server.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team modify
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3758,7 +3760,7 @@ Modify team's privacy setting to public or private.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team rename
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3795,7 +3797,7 @@ Rename an existing team.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team restore
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3831,7 +3833,7 @@ Restore archived teams.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team search
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3871,18 +3873,18 @@ mmctl team users
 
 Management of team users.
 
+   Child Commands
+      -  `mmctl team users add`_ - Add users to a team
+      -  `mmctl team users remove`_ - Remove users from a team
+
 **Options**
 
 .. code-block:: sh
 
    -h, --help       help for token
 
-Child Commands
-   -  `mmctl team users add`_ - Add users to a team
-   -  `mmctl team users remove`_ - Remove users from a team
-
 mmctl team users add
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -3958,10 +3960,10 @@ mmctl token
 
 Management of users' access tokens.
 
-Child Commands
-   -  `mmctl token generate`_ - Generate token for a user
-   -  `mmctl token list`_ - List users' tokens
-   -  `mmctl token revoke`_ - Revoke tokens for a user
+   Child Commands
+      -  `mmctl token generate`_ - Generate token for a user
+      -  `mmctl token list`_ - List users' tokens
+      -  `mmctl token revoke`_ - Revoke tokens for a user
 
 **Options**
 
@@ -3970,7 +3972,7 @@ Child Commands
    -h, --help       help for token
 
 mmctl token generate
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4006,7 +4008,7 @@ Generate token for a user.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl token list
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4047,7 +4049,7 @@ List the tokens belonging to a user.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl token revoke
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4087,23 +4089,23 @@ mmctl user
 
 Management of users.
 
-Child Commands
-   -  `mmctl user activate`_ - Activate a user
-   -  `mmctl user change-password`__ - Change a user's password
-   -  `mmctl user convert`__ - Convert users to bots, or convert a bot to a user
-   -  `mmctl user create`_ - Create user
-   -  `mmctl user deactivate`_ - Deactivate user
-   -  `mmctl user delete`_ - Delete users
-   -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
-   -  `mmctl user email`_ - Set user email
-   -  `mmctl user invite`_ - Invite user
-   -  `mmctl user list`_ - List users
-   -  `mmctl user migrate_auth`__ - Bulk migrate user accounts authentication type
-   -  `mmctl user reset_password`_ - Reset user password
-   -  `mmctl user resetmfa`_ - Reset a user's MFA token
-   -  `mmctl user search`_ - Search for a user
-   -  `mmctl user username`__ - Change username of the user
-   -  `mmctl user verify`__ - Verify user's email address
+   Child Commands
+      -  `mmctl user activate`_ - Activate a user
+      -  `mmctl user change-password`_ - Change a user's password
+      -  `mmctl user convert`_ - Convert users to bots, or convert bots to users
+      -  `mmctl user create`_ - Create user
+      -  `mmctl user deactivate`_ - Deactivate user
+      -  `mmctl user delete`_ - Delete users
+      -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
+      -  `mmctl user email`_ - Set user email
+      -  `mmctl user invite`_ - Invite user
+      -  `mmctl user list`_ - List users
+      -  `mmctl user migrate_auth`_ - Bulk migrate user accounts authentication type
+      -  `mmctl user reset_password`_ - Reset user password
+      -  `mmctl user resetmfa`_ - Reset a user's MFA token
+      -  `mmctl user search`_ - Search for a user
+      -  `mmctl user username`_ - Change username of the user
+      -  `mmctl user verify`_ - Verify user's email address
 
 **Options**
 
@@ -4112,7 +4114,7 @@ Child Commands
    -h, --help       help for user
 
 mmctl user activate
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4149,7 +4151,7 @@ Activate users that have been deactivated.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user change-password
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4201,8 +4203,61 @@ Changes the password of a user to the one provided. If the user is changing thei
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
 
+mmctl user convert
+~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Convert user accounts to bots, or convert bots to user accounts.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user convert (--bot [emails] [usernames] [userIds] | --user <username> --password PASSWORD [--email EMAIL]) [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # you can convert a user to a bot providing its email, id or username
+   $ mmctl user convert user@example.com --bot
+
+   # or multiple users in one go
+   $ mmctl user convert user@example.com anotherUser --bot
+
+   # you can convert a bot to a user specifying the email and password that the user will have after conversion
+   $ mmctl user convert botusername --email new.email@email.com --password password --user
+
+**Options**
+
+.. code-block:: sh
+
+   --bot                If supplied, convert users to bots
+   --email string       The email address for the converted user account. Required when the "bot" flag is set
+   --firstname string   The first name for the converted user account. Required when the "bot" flag is set
+   -h, --help           help for convert
+   --lastname string    The last name for the converted user account. Required when the "bot" flag is set
+   --locale string      The locale (ex: en, fr) for converted new user account. Required when the "bot" flag is set
+   --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
+   --password string    The password for converted new user account. Required when "user" flag is set
+   --system_admin       If supplied, the converted user will be a system administrator. Defaults to false. Required when the "bot" flag is set
+   --user               If supplied, convert a bot to a user
+   --username string    Username for the converted user account. Required when the "bot" flag is set
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
+
 mmctl user create
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4257,7 +4312,7 @@ Create a user.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user deactivate
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4294,7 +4349,7 @@ Deactivate users. Deactivated users are immediately logged out of all sessions a
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user delete
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4331,7 +4386,7 @@ Permanently delete one or multiple users along with all related information incl
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user deleteall
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4372,7 +4427,7 @@ Permanently delete all users and all related information including posts.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user email
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4408,7 +4463,7 @@ Change the email address associated with a user.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user invite
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4445,7 +4500,7 @@ Send an email invite to a user, to join a team. You can invite a user to multipl
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user list
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4484,8 +4539,47 @@ List all users.
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
 
+mmctl user migrate_auth
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Migrate accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to LDAP.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user migrate_auth [from_auth] [to_auth] [migration-options] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user migrate_auth email saml users.json
+
+**Options**
+
+.. code-block:: sh
+
+   --auto         Automatically migrate all users. Assumes the usernames and emails are identical between Mattermost and SAML services. (saml only)
+   --confirm      Confirm you really want to proceed with auto migration. (saml only)
+   --force        Force the migration to occur even if there are duplicates on the LDAP server. Duplicates will not be migrated. (ldap only)
+   -h, --help     help for migrate_auth
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
+
 mmctl user reset_password
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4521,7 +4615,7 @@ Send users an email to reset their password.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user resetmfa
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4557,7 +4651,7 @@ Turn off multi-factor authentication for a user. If MFA enforcement is enabled, 
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user search
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4593,7 +4687,7 @@ Search for users based on username, email, or user ID.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user username
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4629,7 +4723,7 @@ Change the username of the user.
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl user verify
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4701,14 +4795,14 @@ mmctl webhook
 
 Manage webhooks.
 
-Child Commands
-   -  `mmctl webhook create-incoming`_ - Create an incoming webhook
-   -  `mmctl webhook create-outgoing`_ - Create an outgoing webhook
-   -  `mmctl webhook delete`_ - Delete webhooks
-   -  `mmctl webhook list`_ - List webhooks
-   -  `mmctl webhook modify-incoming`_ - Modify an incoming webhook
-   -  `mmctl webhook modify-outgoing`_ - Modify an outgoing webhook
-   -  `mmctl webhook show`_ - Show a webhook
+   Child Commands
+      -  `mmctl webhook create-incoming`_ - Create an incoming webhook
+      -  `mmctl webhook create-outgoing`_ - Create an outgoing webhook
+      -  `mmctl webhook delete`_ - Delete webhooks
+      -  `mmctl webhook list`_ - List webhooks
+      -  `mmctl webhook modify-incoming`_ - Modify an incoming webhook
+      -  `mmctl webhook modify-outgoing`_ - Modify an outgoing webhook
+      -  `mmctl webhook show`_ - Show a webhook
 
 **Format**
 
@@ -4734,7 +4828,7 @@ Child Commands
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook create-incoming
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4776,7 +4870,7 @@ Create an incoming webhook to allow external posting of messages to a specific c
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook create-outgoing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4823,7 +4917,7 @@ Create an outgoing webhook to allow external posting of messages from a specific
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4859,7 +4953,7 @@ Delete a webhook with a given ID.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook list
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4895,7 +4989,7 @@ Print a list of all webhooks.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook modify-incoming
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4936,7 +5030,7 @@ Modify an existing incoming webhook by changing its title, description, channel,
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook modify-outgoing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -4980,7 +5074,7 @@ Modify an existing outgoing webhook by changing its title, description, channel,
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl webhook show
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 **Description**
 
