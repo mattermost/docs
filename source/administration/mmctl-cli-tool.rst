@@ -919,11 +919,12 @@ mmctl channel make_private
 
 .. code-block:: sh
 
-   --config-path string          path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl channel modify
 ^^^^^^^^^^^^^^^^^^^^
@@ -3622,10 +3623,12 @@ mmctl team modify
 
 .. code-block:: sh
 
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team rename
 ^^^^^^^^^^^^^^^^^^
@@ -3691,10 +3694,12 @@ mmctl team restore
 
 .. code-block:: sh
 
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl team search
 ^^^^^^^^^^^^^^^^^^
