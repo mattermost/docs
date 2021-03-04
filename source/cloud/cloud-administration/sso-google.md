@@ -57,22 +57,3 @@ Go to the [Google People API](https://console.developers.google.com/apis/api/plu
 6. Select **Save**.
 
 7. Restart your Mattermost server to see the changes take effect.
-
-**Note:**
-- Alternatively, you may enter **Client ID** and **Client Secret** values directly into the `GoogleSettings` section of the Mattermost `config/config.json` file.
-- The following default values are recommended:
-
-```
-"GoogleSettings": {
-        "Enable": false,
-        "Secret": "fake_secret",
-        "Id": "fake_id",
-        "Scope": "profile openid email",
-        "AuthEndpoint": "",
-        "TokenEndpoint": "",
-        "UserApiEndpoint": "",
-        "DiscoveryEndpoint": "https://accounts.google.com/.well-known/openid-configuration",
-        "ButtonText": "",
-        "ButtonColor": ""
-    },
-    ```
