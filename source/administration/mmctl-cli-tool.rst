@@ -101,7 +101,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 Using local mode
 ----------------
 
-You need to append ``--local`` to the command you want to use or set the environment variable as ``MMCTL_LOCAL=true``.
+You need to append ``--local`` to the command you want to use or set the environment variable as ``MMCTL_LOCAL=true``. If you want to use another socket file instead of the default one, you need to set it to ``MMCTL_LOCAL_SOCKET_PATH`` environment variable. Note that this file should be same with the `server configuration <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location>`.
 
 In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
