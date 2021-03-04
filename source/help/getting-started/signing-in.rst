@@ -28,42 +28,38 @@ Email Address or Username Sign In
 
 When enabled by your System Admin, you can sign in with the username or email address used to create your account.
 
-If you have forgotten your password, you can reset it by clicking **I forgot my password** on the sign-in screen, or contact your System Admin for help resetting your password.
+If you've forgotten your password, you can reset it by selecting **I forgot my password** on the sign-in screen, or contact your System Admin for help resetting your password.
 
 .. image:: ../../images/sign-in_with_email.png
-  :width: 239px
-  :height: 232px
+  :alt: Sign in to Mattermost with your username or email address, or reset your password.
 
 GitLab Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When enabled by your System Admin, you can sign in using your GitLab account using a one-click sign in option.
+When enabled by your System Admin, you can sign in with your GitLab account using a one-click sign in option.
 
-.. image:: ../../images/sign-in_with_gitlab.png
-  :width: 239px
-  :height: 232px
+.. image:: ../../images/sign-in-gitlab.png
+  :alt: Sign in to Mattermost using your GitLab credentials.
 
 Google Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
-When enabled by your System Admin, you can sign in using your Google account using a one-click sign in option.
+When enabled by your System Admin, you can sign in with your Google account using a one-click sign in option.
 
-.. image:: ../../images/sign-in_with_google_apps.png
-  :width: 239px
-  :height: 232px
+.. image:: ../../images/sign-in-google-apps.png
+  :alt: Sign in to Mattermost using your Google Apps credentials.
 
 Office 365 Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
-When enabled by your System Admin, you can sign in using your Office 365 account using a one-click sign in option.
+When enabled by your System Admin, you can sign in with your Office 365 account using a one-click sign in option.
 
-.. image:: ../../images/sign-in_with_office_365.png
-  :width: 239px
-  :height: 232px
+.. image:: ../../images/sign-in-office365.png
+  :alt: Sign in to Mattermost with your Office 365 credentials.
 
 AD/LDAP Sign In (SSO)
 ~~~~~~~~~~~~~~~~~~~~~
@@ -73,8 +69,7 @@ AD/LDAP Sign In (SSO)
 When enabled by your System Admin, you can sign in with your AD/LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services.
 
 .. image:: ../../images/sign-in_with_ldap.png
-  :width: 239px
-  :height: 232px
+  :alt: Sign in to Mattermost with your AD/LDAP credentials.
 
 SAML Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,8 +79,6 @@ SAML Single Sign-On (SSO)
 When enabled by your System Admin, you can sign in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. Mattermost officially supports `Okta`_ and `Microsoft ADFS`_ as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. Please see `documentation`_ to learn more about configuring SAML for Mattermost.
 
 .. image:: ../../images/sign-in_with_saml.png
-  :width: 239px
-  :height: 232px
 
 Switching Teams
 ---------------
@@ -93,6 +86,7 @@ Switching Teams
 You can switch between teams you have joined using the team sidebar that appears to the left of your channel list on the left-hand sidebar.
 
 .. image:: ../../images/team-sidebar.png
+  :alt: Switching teams in Mattermost.
 
 Setting Your Status
 -------------------
