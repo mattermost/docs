@@ -2,7 +2,7 @@ Use the System Console to generate a Mattermost Support Packet that includes con
 
 .. note:: 
 
-  System Admins should always remove sensitive information before sending the support packet to Mattermost by email or via a support ticket. 
+  System Admins should always sanitize the contents to remove sensitive information before sending the support packet to Mattermost by email or via a support ticket.
 
 To generate a support packet:
 
