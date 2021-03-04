@@ -17,6 +17,6 @@ A Mattermost Support Packet contains the following five files:
 - ``support_packet.yaml``
 - ``warning.txt``
 
-You are notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
+You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
 
 3. Sanitize configuration and log files in the Support Packet files to remove usernames, passwords, and LDAP groups. Replace these details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
