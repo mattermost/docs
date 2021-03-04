@@ -11,7 +11,7 @@ To generate a support packet:
 
 A Mattermost Support Packet contains the following five files:
 
-- mattermost.log
+- ``mattermost.log``
 - plugins.json
 - sanitized_config.json
 - support_packet.yaml
