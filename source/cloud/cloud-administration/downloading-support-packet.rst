@@ -23,5 +23,3 @@ A Mattermost Support Packet contains the following five files:
 You are notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
 
 3. Sanitize configuration and log files in the Support Packet files to remove usernames, passwords, and LDAP groups. Replace these details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
-
-The ability to generate a Mattermost Support Packet is available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021.
