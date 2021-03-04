@@ -21,7 +21,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 .. note::
 
   - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
-  - Custom statuses are available in Mattermost Cloud. Custom statuses will be available in Mattermost Server v5.33 on March 16, 2021, and in the Mattermost Mobile App in a future release. 
+  - Custom statuses will be available in the Mattermost Mobile App in a future release. 
 
 Clearing a Custom Status
 ------------------------
