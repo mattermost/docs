@@ -12,22 +12,31 @@ Install and set up the database for use by the Mattermost server. You can instal
 2. Install MySQL.
 
   .. note::
-    1. If your RHEL is a fresh install, you'll need to add the `MySQL Yum repository <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_.
-    2. Download the latest release package using wget: `wget "https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm")`.
-    3. Once downloaded, install it: `sudo yum localinstall platform-and-version-specific-package-name.rpm`
+    If you have additional questions for the process reference the MySQL docs `here <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_ that matches your system.
+  
+    1. If your RHEL is a fresh install, you'll need to add the `MySQL Yum repository <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_. You can also use the MySQL repo - https://repo.mysql.com/.
+    
+    2. Download the latest release package using wget: 
+    
+    ``wget https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm``
+        
+    3. Once downloaded, install it: `sudo yum localinstall platform-and-version-specific-package-name.rpm`. This will be the rpm package you installed in step 2. Now run a `sudo yum update`, this could take some time.
     4. Next disable the system mysql: `sudo yum module disable mysql` and then install mysql
 
-  ``sudo yum install mysql-community-release``
+  ``sudo yum install mysql-community-server``
 
 3. Start the MySQL server.
 
   ``sudo systemctl start mysqld.service``
   
   .. note::
-    1. The first time that you start MySQL, the superuser account ``'root'@'localhost'`` is created without a password.
+    1. The first time that you start MySQL, the superuser account ``'root'@'localhost'`` is created with a password. Run the command below to get this password.
+    
+    ``sudo grep 'temporary password' /var/log/mysqld.log``
+    
     2. Also the first time that you start MySQL, the ``validate_password`` plugin is installed. The plugin forces passwords to contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least 8 characters.
 
-4. Change the root password. Login with the the command below. Since the password is blank by default just press ENTER when prompted for a password.
+4. Change the root password. Login with the the command below. Use the password found in `sudo grep 'temporary password' /var/log/mysqld.log`.
 
   ``mysql -u root -p``
 
