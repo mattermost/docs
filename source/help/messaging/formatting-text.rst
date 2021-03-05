@@ -3,12 +3,12 @@ Formatting Text
 
 Markdown makes it easy to format messages. Type a message as you normally would and use these rules to render it with special formatting techniques.
 
-For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
+For a layman's guide to Markdown on Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
 
 Text Style
 ----------
 
-You can use either ``_`` or ``*`` around a word to make it italic, or ``__`` or ``**`` around a word to make it bold. You can also use common keyboard shortcuts, including CTRL/CMD + B to bold, and CTRL/CMD + I to italicize. 
+You can use either ``_`` or ``*`` around a word to make it italic, or ``__`` or ``**`` around a word to make it bold. You can also use common keyboard shortcuts, including CTRL/CMD+B to bold, and CTRL/CMD+I to italicize. 
 
 * ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
@@ -34,7 +34,7 @@ Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__
 Headings
 --------
 
-Make a heading by typing # and a space before your title. For smaller headings, use more #’s.
+Make a heading by typing # and a space before your title. For smaller headings, use more #s.
 
 .. code-block:: none
 
@@ -51,8 +51,8 @@ Alternatively, you can underline the text using ``===`` or ``---`` to create hea
 
 .. code-block:: none
 
-  Large Heading
-  -------------
+Large Heading
+-------------
 
 Renders as:
 
@@ -105,7 +105,6 @@ Renders as:
 5. The second list number is 5.
 6. The third list number is 6.
 
-
 Make a task list by including square brackets:
 
 .. code-block:: none
@@ -126,7 +125,7 @@ Creating a fixed width code block is recommended for pasting multi-line blocks o
 
 This can be accomplished in one of two ways:
 
- 1. Placing 3x backtics :kbd:`\`\`\`` on the line directly above and directly below your code
+ 1. Placing 3x backticks :kbd:`\`\`\`` on the line directly above and directly below your code:
 
 .. code-block:: none
 
@@ -135,11 +134,10 @@ This can be accomplished in one of two ways:
   code block
   ```
 
-
 * :guilabel:`TIP` - Enter 3x backticks :kbd:`\`\`\``, :kbd:`SHIFT + ENTER`, :kbd:`<type_your_code>`, :kbd:`SHIFT + ENTER`, and finally 3x backticks :kbd:`\`\`\``.
 
 
- 2. Indenting each line by four spaces
+ 2. Indenting each line by four spaces:
 
 .. code-block:: none
 
@@ -149,9 +147,9 @@ This can be accomplished in one of two ways:
   ^^^^ 4x spaces
 
 
-**Syntax Highlighting**
+**Syntax highlighting**
 
-To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**
+To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings > Display > Theme > Custom Theme > Center Channel Styles**.
 
 Supported languages are:
 ``applescript``, ``as``, ``atom``, ``bas``, ``bash``, ``boot``, ``_coffee``, ``c++``, 
@@ -176,7 +174,6 @@ Example:
 
 .. code-block:: none
 
-
   ``` go
   package main
   import "fmt"
@@ -184,7 +181,6 @@ Example:
       fmt.Println("Hello, 世界")
   }
   ```
-
 Renders as:
 
 **GitHub Theme**
@@ -214,7 +210,6 @@ Create in-line monospaced font by surrounding it with backticks (`), not with si
 
 .. code-block:: none
 
-
   `monospace`
 
 Renders as: ``monospace``.
@@ -230,8 +225,7 @@ If the height of the original image is more than 500 pixels, the system sets the
 
 You can set the width and height of the displayed image by using an equals sign and the width x height after the URL of the image. If you set only the width, the system adjusts the height to maintain the original aspect ratio.
 
-
-**Examples**:
+**Examples:**
 
 .. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
 .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
@@ -259,7 +253,6 @@ Inline image with link
   .. image:: ../../images/icon-76x76.png
     :target: https://github.com/mattermost/mattermost-server
    
-
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
 
@@ -281,8 +274,7 @@ Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. image:: ../../images/icon-76x76.png
     :alt: Mattermost
     :width: 50
-    
-
+ 
 Lines
 -----
 
@@ -310,7 +302,6 @@ Create a table by placing a dashed line under the header row and separating the 
 
 .. code-block:: none
 
-
   | Left-Aligned  | Center Aligned  | Right Aligned |
   | :------------ |:---------------:| -----:|
   | Left column 1 | this text       |  $100 |
@@ -322,7 +313,6 @@ Renders as:
 .. image:: ../../images/markdownTable1.PNG
    :alt: Markdown Table Sample
 
-
 Math Formulas
 -------------
 
@@ -331,7 +321,6 @@ Create formulas by using LaTeX in a ``latex`` `Code Block`_.
 Note: This feature is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
 .. code-block:: none
-
 
   ```latex
   X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
