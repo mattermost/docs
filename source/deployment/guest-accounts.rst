@@ -95,7 +95,7 @@ When a guest logs in without having any channels assigned to their account, they
 Guest Permission Settings
 -------------------------
 
-In E10 and E20, you can also control which users can invite guests. By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ in E20 that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
+In Enterprise Edition E10 and E20, you can also control which users can invite guests. By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ in E20 that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 
  - Edit posts
  - Delete posts
