@@ -133,7 +133,7 @@ System Admins can demote a member to a guest by updating their role in **System 
 
 The demoted user retains their existing channel and team memberships but is restricted from discovering public channels and collaborating with users outside of the channels they're in. This is useful if you're already collaborating with external contractors, and want to restrict their abilities within Mattermost.
 
-System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**. Select the guest, then select **Promote to Member**
+System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**. Select the guest, then select **Promote to Member**.
 
 .. note::
   You can filter the list in **System Console > User Management > Users** to view all guests in the system.
