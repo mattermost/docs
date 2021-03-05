@@ -255,7 +255,7 @@ Users are automatically removed from the team or private channel when removed fr
 
 A user can remove themselves from the team or from the private channel when it is managed by synchronized groups.  They can be added back by users who have permission to manage members for a team or private channel by using the ``/invite`` slash command or by mentioning the user in a channel.
 
-If the user is removed from a synchronized group and later readded to the group, they can be manually added back to the team or private channel as noted above.
+If the user is removed from a synchronized group and later re-added to the group, they can be manually added back to the team or Private channel as noted above.
 
 .. note:: 
 
