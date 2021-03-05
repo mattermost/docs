@@ -70,7 +70,7 @@ Configuring AD/LDAP Authentication
 When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 1. Enable Guest Access via **System Console > Authentication > Guest Access (Beta)**.
-2. Navigate to **System Console > Authentication > AD/LDAP**.
+2. Go to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
 4. Select **Save**.
 
