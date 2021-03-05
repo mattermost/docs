@@ -247,7 +247,7 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 1. Navigate to **System Console > User Management > Channels**.
 2. Select **Edit** next to the team you want to configure.
 3. Ensure that **Sync Group Members** is enabled.
-4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated with default users in the team, they'll be listed.
 5. Select the arrow next to the current role in the **Roles** column to display and select the **Channel Admin** option.
 6. Repeat as needed for any other synced groups you have added.
 7. Select **Save**.
