@@ -15,7 +15,7 @@ A Mattermost Support Packet can contain up to five files:
 - ``plugins.json``
 - ``sanitized_config.json``
 - ``support_packet.yaml``
-- ``warning.txt`` - present when issues are encountered during packet generation
+- ``warning.txt`` (present when issues are encountered during packet generation)
 
 You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
 
