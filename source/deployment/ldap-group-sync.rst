@@ -210,7 +210,7 @@ To manage membership of a private channel with synchronized groups:
 
 1. Navigate to **System Console > User Management > Channels**. Select the channel you want to manage with group synchronization.
 2. Under **Channel Management**, enable **Sync Group Members**. Please ensure the channel is set to ``private``.
-3. Add one or more groups to the channel. If there are groups already associated to default users into the channel, they will already be present.
+3. Add one or more groups to the channel. If there are groups already associated with default users in the team, they'll be listed.
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the channel on the next synchronization.
 5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
