@@ -4,7 +4,7 @@ Use the System Console to generate a Mattermost Support Packet that includes con
 
   When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, ``ServiceSettings.GfycatApiSecret``, and ``ServiceSettings.SplitKey``.
 
-To generate a support packet:
+To generate a Support Packet:
 
 1. Go to System Console, then select **Commercial Support** from the **Main Menu**.
 2. Select **Download Support Packet**. A zip file is downloaded to the local machine.
