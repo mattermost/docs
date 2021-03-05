@@ -196,7 +196,7 @@ To manage membership of a private team with synchronized groups:
 
 1. Navigate to **System Console > User Management > Teams**. Select the team you want to manage with group synchronization.
 2. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the Sync Group Members feature.
-3. Add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+3. Add one or more groups to the team. If there are groups already associated with default users in the team, they'll be listed.
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
 5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
