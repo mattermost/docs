@@ -33,7 +33,7 @@ Position can be used to describe your role or job title. It appears in the profi
 Email
 ~~~~~
 
-Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
+Email is used for signing in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
 
 Profile Picture
 ~~~~~~~~~~~~~~~
@@ -53,7 +53,7 @@ You may change your password if you’ve logged in by email. If you are signing 
 Multi-factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When this option is available you can require a phone-based passcode in addition to your password for sign-in.
+When this option is available, you can require a phone-based passcode in addition to your password when signing in.
 
 To enable, download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`__ for your phone, then:
 
