@@ -23,6 +23,6 @@ You'll be notified if any packet files are unavailable during packet generation.
 
 .. note::
 
-  When sanitizing support packet data, replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+  When sanitizing Support Packet data, replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
   LDAP groups are not included during support packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
