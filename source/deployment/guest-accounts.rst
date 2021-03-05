@@ -143,7 +143,7 @@ Disabling Guest Accounts
 
 To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta)**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual guest accounts by selecting **Activate**.
 
-From version 5.18, when a single Guest Account is deactivated or the Guest Account feature is disabled, guests are marked as ``inactive``, guests are logged out of Mattermost, and all guest sessions are revoked. In versions prior to 5.18, disabling the Guest Account feature leaves current Guest Accounts as active until they are manually deactivated.
+From Mattermost Server version 5.18, when a single Guest Account is deactivated or the Guest Account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the Guest Account feature leaves current Guest Accounts as active until they are manually deactivated.
 
 From 5.18, if you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
