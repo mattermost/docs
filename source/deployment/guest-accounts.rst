@@ -34,7 +34,7 @@ Enabling Guest Accounts
  
 .. note::
 
-  If you have team domain restrictions, you also need to add your guest domain by going to **System Console > User Management > Teams**, selecting a team, then enabling **Only specific email domains can join this team**.
+  If you have team domain restrictions, you also need to add your guest domain in **System Console > User Management > Teams**. Select a team, then enable **Only specific email domains can join this team**.
 
 Guest Authentication
 ---------------------
