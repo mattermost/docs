@@ -29,7 +29,7 @@ Enabling Guest Accounts
 
 1. Go to **System Console > Authentication > Guest Access (Beta)**.
 2. Set **Enable Guest Access** to **true**.
-3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the System Admin to set a list of approved guest domains. 
+3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the System Admin to set a list of approved guest domains.
 4. (Optional) Set **Enforce Multi-factor Authentication** to **true**. If you are enforcing MFA for your users, you can optionally choose to enforce MFA for your guest users.
  
 .. note::
