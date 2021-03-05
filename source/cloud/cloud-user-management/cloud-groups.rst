@@ -237,7 +237,7 @@ Once teams are managed by synchronized groups, a Team or System Admin can add ad
 
 Team or System Admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
-The system admin can also remove groups from  **System Console > User Management > Teams > Team Configuration > Synced Groups**.
+The System Admin can also remove groups from  **System Console > User Management > Teams > Team Configuration > Synced Groups**.
 
 Adding or Removing Groups from Private Channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
