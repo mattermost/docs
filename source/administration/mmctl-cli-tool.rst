@@ -2600,9 +2600,6 @@ mmctl import
 
 Manage imports.
 
-.. note::
-  This command and its child commands are available in Mattermost Cloud. They will be available in Mattermost Server v5.33 on March 16, 2021.
-
 Child Commands
   -  `mmctl import job`_ - List and show import jobs
   -  `mmctl import job list`_ - List import jobs
