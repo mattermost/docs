@@ -2,6 +2,49 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-02-24
+
+### Highlights
+
+#### Support Packet Generation
+ - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
+
+### Improvements
+
+#### User Interface (UI)
+ - Removed the 5-page limit on previewing PDFs.
+ - Added "files" as a reserved team name.
+ - Searching for a channel by URL now returns the channel.
+ - Users are now provided with feedback when creating a custom category name that exceeds the character limit.
+
+#### Administration
+ - Added support for compressed export files with attachments.
+ - Server crashes due to runtime panics are now captured as a log line.
+ - Optimized Direct Message creation by fetching all users involved in a single database call.
+ - During the user import process, a change in a user's ``NotifyProps`` will not send an email notification. This is done to make it consistent with other parts of the import process where a change in user's attributes would also not send any notifications.
+ - Implemented a job to delete unused export files.
+ - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
+
+### Bug Fixes
+ - Fixed an issue where demoting a user to a guest would not take effect in an environment with read replicas.
+ - Fixed an issue where creation of a bot would fail due to replica lag.
+ - Fixed an issue where ``mmctl channel move`` did not allow private channels to move.
+ - Fixed an issue where markdown tables did not wrap correctly.
+ - Fixed an issue where the search bar styling on dark themes was incorrect on mobile web view.
+ - Fixed an issue where the **Main Menu** on webapp appeared more left-aligned than previous releases.
+ - Fixed an issue where sticky sidebar headings appeared under **More Unreads**.
+ - Fixed an issue where the group channel icon was misaligned in the channel switcher.
+ - Fixed an issue where line breaks were ignored when used with inline images.
+ - Fixed a panic when the OAuth discovery endpoint would not return a Cache-Control header.
+ - Fixed an issue where the Cloud onboarding flow referenced OAuth, not OpenID Connect.
+
+### Known Issues
+ - PDF zoom fails to respond to zoom in/out/reset actions until the user scrolls.
+ - In a reply thread with the right-hand side expanded, attachments in a post draft get hidden behind the center channel text box.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-02-10
 
 ### Highlights
@@ -38,9 +81,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Known Issues
  - The slash command autocomplete options cover the input box on some reply threads on the right-hand side.
- - Setting changes do not get saved in **System Console > Site Configuration > Public Links**.
- - Channel header text "This channel has guests" is misaligned.
- - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channel**.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
