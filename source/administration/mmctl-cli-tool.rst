@@ -925,7 +925,7 @@ mmctl channel make_private
 
 **Description**
 
-Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
+Set the type of a channel from Public to Private. Channel can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel) or by channel ID.
 
 **Format**
 
