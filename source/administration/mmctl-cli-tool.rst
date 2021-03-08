@@ -4174,7 +4174,7 @@ Changes the password of a user to the one provided. If the user is changing thei
    # If you have system permissions, you can change other users' passwords
    $ mmctl user change-password john_doe --password new-password
 
-   # if you are changing your own password, you need to provide the current one
+   # If you're changing your own password, you need to include the current one
    $ mmctl user change-password my-username --current current-password --password new-password
 
    # You can omit these flags to introduce them interactively
