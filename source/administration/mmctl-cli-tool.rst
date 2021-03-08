@@ -1148,7 +1148,7 @@ mmctl channel unarchive
 
 **Description**
 
-Unarchive a previously archived channel. Channels can be specified by ``[team]:[channel]``. (e.g., myteam:mychannel) or by channel ID.
+Unarchive a previously archived channel. Channels can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel) or by channel ID.
 
 **Format**
 
