@@ -116,7 +116,7 @@ Running mmctl tests
 
 mmctl has two types of tests: unit tests and end to end tests. 
 
-To run the unit tests, you just need to execute:
+To run the unit tests, you need to execute:
 
 .. code-block:: sh
 
