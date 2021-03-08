@@ -4212,7 +4212,7 @@ mmctl user convert
 
 **Description**
 
-Convert user accounts to bots, or convert bots to user accounts.
+Convert user accounts to bots or convert bots to user accounts.
 
 **Format**
 
