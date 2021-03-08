@@ -1686,7 +1686,7 @@ mmctl config edit
 
 **Description**
 
-Open the editor defined in the EDITOR environment variable to modify the server's configuration. Once complete, save the file, then upload it to your server."
+Open the editor defined in the EDITOR environment variable to modify the server's configuration. Once complete, save the file, then upload it to your server.
 
 **Format**
 
