@@ -13,7 +13,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
 .. note::
  
-  If you have additional questions for the process reference the MySQL docs `here <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_ that matches your system. If your RHEL is a fresh install, you'll need to add the `MySQL Yum repository <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_. You can also use the MySQL repo - https://repo.mysql.com/.
+  If you have additional questions about the process reference the MySQL docs `here <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_ that matches your system. If your RHEL is a fresh install, you'll need to add the `MySQL Yum repository <https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html>`_. You can also use the MySQL repo - https://repo.mysql.com/.
 
 3. Download the latest release package using wget:
 
