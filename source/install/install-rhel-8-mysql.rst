@@ -19,7 +19,7 @@ Install and set up the database for use by the Mattermost server. You can instal
 
   ``wget https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm``
         
-4. Once downloaded, install it: ``sudo yum localinstall platform-and-version-specific-package-name.rpm``. This will be the rpm package you installed in step 2. Now run a `sudo yum update`, this could take some time.
+4. Once downloaded, install it: ``sudo yum localinstall platform-and-version-specific-package-name.rpm``. This will be the rpm package you installed in step 2. Now run a ``sudo yum update``, this could take some time.
 
 5. Next disable the system MySQL: 
 
