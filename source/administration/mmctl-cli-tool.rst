@@ -1850,7 +1850,7 @@ Reset the value of a configuration setting by its name in dot notation or a sett
 
 .. code-block:: sh
 
-   --confirm   Confirm you really want to reset all configuration settings to its default value
+   --confirm   Confirm you really want to reset all configuration settings to the default value
    -h, --help  help for reset
 
 **Options inherited from parent commands**
