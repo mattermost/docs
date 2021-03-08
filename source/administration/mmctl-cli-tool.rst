@@ -4224,7 +4224,7 @@ Convert user accounts to bots or convert bots to user accounts.
 
 .. code-block:: sh
 
-   # you can convert a user to a bot providing its email, id or username
+   # You can convert a user to a bot providing an email, an ID, or a username
    $ mmctl user convert user@example.com --bot
 
    # Or multiple users in one go
