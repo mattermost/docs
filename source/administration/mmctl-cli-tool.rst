@@ -4096,7 +4096,7 @@ Management of users.
    Child Commands
       -  `mmctl user activate`_ - Activate a user
       -  `mmctl user change-password`_ - Change a user's password
-      -  `mmctl user convert`_ - Convert users to bots, or convert bots to users
+      -  `mmctl user convert`_ - Convert users to bots or convert bots to users
       -  `mmctl user create`_ - Create user
       -  `mmctl user deactivate`_ - Deactivate user
       -  `mmctl user delete`_ - Delete users
