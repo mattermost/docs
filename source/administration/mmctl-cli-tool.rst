@@ -1055,7 +1055,7 @@ Rename an existing channel.
 .. code-block:: sh
 
    --display_name string   Channel Display Name
-   -h, --help                  help for rename
+   -h, --help              help for rename
    --name string           Channel Name
 
 **Options inherited from parent commands**
