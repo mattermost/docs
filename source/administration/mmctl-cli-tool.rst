@@ -4230,7 +4230,7 @@ Convert user accounts to bots or convert bots to user accounts.
    # Or multiple users in one go
    $ mmctl user convert user@example.com anotherUser --bot
 
-   # you can convert a bot to a user specifying the email and password that the user will have after conversion
+   # You can convert a bot to a user specifying the email and password that the user will have after conversion
    $ mmctl user convert botusername --email new.email@email.com --password password --user
 
 **Options**
