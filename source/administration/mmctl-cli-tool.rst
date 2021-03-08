@@ -4245,7 +4245,7 @@ Convert user accounts to bots, or convert bots to user accounts.
    --locale string      The locale (ex: en, fr) for converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
-   --system_admin       If supplied, the converted user will be a system administrator. Defaults to false. Required when the "bot" flag is set
+   --system_admin       If supplied, the converted user will be a System Admin. Defaults to false. Required when the "bot" flag is set
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
