@@ -5,8 +5,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ## Release 2021-03-10
 
 ### Highlights
- - File search?
- - Custom statuses?
+
+#### Custom Statuses (Beta)
+Custom Statuses allow users to add a descriptive status message and emoji that’s visible to everyone. Users now gain the flexibility to express their current status in any way they prefer. Mobile support is coming in a future release.
 
 ### Improvements
 
