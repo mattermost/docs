@@ -1572,7 +1572,7 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 mmctl completion
 ----------------
 
-Generates autocompletion scripts for `bash` and `zsh`.
+Generates autocompletion scripts for ``bash`` and ``zsh``.
 
    Child Commands
       -  `mmctl completion bash`_ - Edit the configuration settings
