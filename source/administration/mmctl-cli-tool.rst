@@ -3730,7 +3730,7 @@ mmctl team modify
 
 **Description**
 
-Modify team's privacy setting to public or private.
+Modify a team's privacy setting to public or private.
 
 **Format**
 
