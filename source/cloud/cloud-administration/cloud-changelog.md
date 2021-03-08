@@ -6,15 +6,15 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Highlights
 
-#### Custom Statuses (Beta)
+#### Custom Statuses
 Custom Statuses allow users to add a descriptive status message and emoji that’s visible to everyone. Users now gain the flexibility to express their current status in any way they prefer. Mobile support is coming in a future release.
 
 ### Improvements
 
 #### User Interface (UI)
  - System Admins are now prompted when joining a private channel via a permalink.
- - Added support for adding in-product notices for external dependency deprecation notices.
- - Improved the timezone selector component and list of timezones.
+ - Added support for adding in-product notices for external dependency deprecation details.
+ - Improved the timezone selector component.
  - Introduced a new theme variable for the team sidebar.
 
 #### Administration
