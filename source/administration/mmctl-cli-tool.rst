@@ -4280,7 +4280,7 @@ Create a user.
    # You can create a user
    $ mmctl user create --email user@example.com --username userexample --password Password1
 
-   # You can define optional fields like first name, last name and nick name too
+   # You can define optional fields like first name, last name, and nickname
    $ mmctl user create --email user@example.com --username userexample --password Password1 --firstname User --lastname        Example --nickname userex
 
    # Also you can create the user as system administrator
