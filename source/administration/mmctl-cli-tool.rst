@@ -4294,7 +4294,7 @@ Create a user.
 .. code-block:: sh
 
    --email string       Required. The email address for the new user account
-   --email_verified     Optional. If supplied, the new user will have the email verified. Defaults to false
+   --email_verified     Optional. If supplied, the new user will have the email verified. Defaults to "false"
    --firstname string   Optional. The first name for the new user account
    -h, --help           help for create
    --lastname string    Optional. The last name for the new user account
