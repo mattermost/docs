@@ -137,7 +137,7 @@ Your Mattermost teams can be accessed on Android mobile devices by downloading t
 2. Search for "Mattermost" and select **INSTALL** to download the app.
 3. Open Mattermost from your homescreen and enter your team and account information to login:
 
-   a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. It is in the format ``https://domain.com``. You can find the Server URL by asking your System Admin, or by looking at the address bar in a desktop browser tab with Mattermost open. 
+   a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. It's in the format ``https://domain.com``. You can find the Server URL by asking your System Admin, or by looking at the address bar in a desktop browser tab with Mattermost open. 
    b. **Sign in to Mattermost:** This is your account login information as described by one of the sign in methods above.
 
 .. _Okta: https://developer.okta.com/docs/guides/saml_guidance.html
