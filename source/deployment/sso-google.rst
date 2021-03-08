@@ -9,35 +9,35 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 
 1. Go to `Google API Manager <https://console.developers.google.com>`_, click **Credentials** in the left hand sidebar, click **Create a project** and enter "Mattermost - your-company-name" as the **Project Name**, then click **Create**.
 
- ..image:: ../../source/images/google_1_credentials.png
-
+ .. image:: ../../source/images/google_1_credentials.png
+ 
 2. In the **Dashboard** click the option to **ENABLE APIS AND SERVICES**.
 
-..image:: ../../source/images/google_enable_api.png
+ .. image:: ../../source/images/google_enable_api.png
 
 Once in the API Library, scroll down to [Google People API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 
 3. Leave the Google+ API menu to return to the **APIs & Services menu**. In the left hand sidebar select **Credentials**, click the **OAuth consent screen** header and enter "Mattermost" as the **Application Name**, then click **Save**.
 
-..image:: ../../source/images/google_3_oauth_consent_screen.png
+  .. image:: ../../source/images/google_3_oauth_consent_screen.png
 
 Scroll further down to add your Mattermost instance to a list of authorized domains that can access the API. For example, if it is hosted on `mattermost.yourdomain.com` add `yourdomain.com`.
 
-..image:: ../../source/images/google_authorised_domains.png
+ .. image:: ../../source/images/google_authorised_domains.png
 
 4. Select **Credentials** and click **Create credentials**, then choose **OAuth client ID** from the drop-down list.
 
-..image:: ../../source/images/google_3_oauth_client_id.png
+ .. image:: ../../source/images/google_3_oauth_client_id.png
 
 5. Select **Web Application** as the **Application type**, and choose a descriptive **Name** for the OAuth connection.
 
 Under **Restrictions > Authorized redirect URIs**, enter `your-mattermost-url/signup/google/complete` (example: `http://localhost:8065/signup/google/complete`). Click **Create**.
 
-..image:: ../../source/images/google_4_web_app.png
+ .. image:: ../../source/images/google_4_web_app.png
 
 6. Copy the **Client ID** and **Client Secret**, which will be used to configure Google SSO for Mattermost.
 
-..image:: ../../source/images/google_5_client_id_secret.PNG
+ .. image:: ../../source/images/google_5_client_id_secret.PNG
 
 7. In **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Google Apps** as the service provider and enter **Client ID** and **Client Secret** from step 6 in their respective fields.
 
