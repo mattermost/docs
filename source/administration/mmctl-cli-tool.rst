@@ -960,7 +960,7 @@ mmctl channel modify
 
 **Description**
 
-Change the public/private type of a channel. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
+Change the Public/Private type of a channel. Channel can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel) or by channel ID.
 
 **Format**
 
