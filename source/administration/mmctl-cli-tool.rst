@@ -4242,7 +4242,7 @@ Convert user accounts to bots or convert bots to user accounts.
    --firstname string   The first name for the converted user account. Required when the "bot" flag is set
    -h, --help           help for convert
    --lastname string    The last name for the converted user account. Required when the "bot" flag is set
-   --locale string      The locale (ex: en, fr) for converted new user account. Required when the "bot" flag is set
+   --locale string      The locale (e.g., EN, FR) for the converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
    --system_admin       If supplied, the converted user will be a System Admin. Defaults to false. Required when the "bot" flag is set
