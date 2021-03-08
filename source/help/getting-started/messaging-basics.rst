@@ -11,7 +11,7 @@ line without sending a message. To send messages on CTRL+ENTER and use ENTER to 
 **Reply to messages** by clicking the reply arrow next to the message
 text.
 
-.. image:: ../../images/reply-icon.PNG
+.. image:: ../../images/reply-icon.png
    :alt: reply arrow
 
 **Notify teammates** when they are needed by typing ``@username``.
