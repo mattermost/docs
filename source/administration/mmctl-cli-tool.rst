@@ -4183,7 +4183,7 @@ Changes the password of a user to the one provided. If the user is changing thei
    Current password:
    New password:
 
-   # if you have system permissions, you can update the password with the already hashed new
+   # If you have system permissions, you can update the password with the already hashed new
    # password. The hashing method should be the same that the server uses internally
    $ mmctl user change-password john_doe --password HASHED_PASSWORD --hashed
 
