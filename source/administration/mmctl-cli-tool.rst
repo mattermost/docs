@@ -4171,7 +4171,7 @@ Changes the password of a user to the one provided. If the user is changing thei
 
 .. code-block:: sh
 
-   # if you have system permissions, you can change other user's passwords
+   # If you have system permissions, you can change other users' passwords
    $ mmctl user change-password john_doe --password new-password
 
    # if you are changing your own password, you need to provide the current one
