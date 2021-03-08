@@ -3111,7 +3111,7 @@ Install a plugin listed on the Plugin Marketplace server.
 
 .. code-block:: sh
 
-   # you can specify with both the plugin id and its version
+   # You can specify using both the plugin ID and its version
    $ mmctl plugin marketplace install jitsi 2.0.0
 
    # if you don't specify the version, the latest one will be installed
