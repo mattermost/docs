@@ -133,7 +133,7 @@ Android Setup
 
 Your Mattermost teams can be accessed on Android mobile devices by downloading the Mattermost Mobile App.
 
-1. Open the `Google Play Store`_ on your Android device.
+1. Open the Play Store on your Android device.
 2. Search for “Mattermost” and select **INSTALL** to download the app.
 3. Open Mattermost from your homescreen and enter your team and account information to login:
 
