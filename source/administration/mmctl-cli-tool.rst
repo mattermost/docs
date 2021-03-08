@@ -4286,7 +4286,7 @@ Create a user.
    # Also you can create the user as system administrator
    $ mmctl user create --email user@example.com --username userexample --password Password1 --system-admin
 
-   # Finally you can verify user on creation if you have enough permissions
+   # Finally you can verify user on creation if you have the correct permissions
    $ mmctl user create --email user@example.com --username userexample --password Password1 --system-admin --email-verified
 
 **Options**
