@@ -890,7 +890,7 @@ mmctl channel list
 
 **Description**
 
-List all public and archived channels on specified teams. Archived channels are appended with ``(archived)``. Private channels the user is a member of or has access to are appended with ``(private)``.
+List all Public and archived channels on specified teams. Archived channels are appended with ``(archived)``. Private channels the user is a member of or has access to are appended with ``(private)``.
 
 **Format**
 
