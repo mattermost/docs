@@ -1110,7 +1110,7 @@ mmctl channel search
 
 **Description**
 
-Search a channel by channel name. Channel can be specified by team (e.g., ``--team myteam mychannel``) or by team ID.
+Search a channel by channel name. Channels can be specified by team (e.g., ``--team myteam mychannel``) or by team ID.
 
 **Format**
 
