@@ -333,7 +333,7 @@ Log in to an instance and store credentials.
    -h, --help                  help for login
    -m, --mfa-token string      MFA token for the credentials
    -n, --name string           Name for the credentials
-    --no-activate           If present, it won't activate the credentials after login
+    --no-activate             If present, it won't activate the credentials after login
    -p, --password string       Password for the credentials
    -u, --username string       Username for the credentials
 
