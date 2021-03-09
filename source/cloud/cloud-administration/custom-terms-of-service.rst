@@ -12,9 +12,9 @@ To enable custom terms of service:
 2. Set **Enable Custom Terms of Service** to **true**.
 3. Set **Custom Terms of Service Text** which contains your terms. Note that Markdown-formatting, including lists, headings and bolding, is supported.
 4. Set **Re-Acceptance Period**, which sets the number of days before Terms of Service acceptance expires, and the terms must be re-accepted. Set to 0 if you don't want your terms to expire.
-5. Click **Save**.
+5. Select **Save**.
 
-Once saved, all users must accept the terms of service by clicking **I Agree** next time they log in, or on the next page refresh. If they do not accept, they will be logged out.
+Once saved, all users must accept the terms of service by selecting **I Agree** next time they log in, or on the next page refresh. If they do not accept, they will be logged out.
 
 .. note::
 

@@ -383,6 +383,19 @@ Maximum number of idle connections held open to the database.
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Maximum Connection Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maximum time a database connection can remain idle.
+
+.. note::
+
+  This configuration setting is available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input.                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -987,9 +1000,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
-+-------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.        |
++-------------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1004,6 +1017,21 @@ The encryption uses AES-256 by default, and it is not kept configurable by desig
 | This feature's ``config.json`` setting is ``"EnableExperimentalGossipEncryption": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+    
     
+Enable Gossip Compression
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with older servers.
+
+**False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
+
+.. note::
+
+  This configuration setting is available in Mattermost Cloud. It will be available in Mattermost Server v5.33 on March 16, 2021.
+
++--------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableGossipCompression": true`` with options ``true`` and ``false``.             |
++--------------------------------------------------------------------------------------------------------------------------------+    
+
 Gossip Port
 ^^^^^^^^^^^
 
@@ -1424,15 +1452,15 @@ Requests that can only be configured by admins are considered trusted and will n
 Some examples of when you may want to modify this setting include:
 
 - When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
-- When running a bot or webhook-based integration on your local network, you will need to add the hostname of the bot/integration to this list.
-- If your network is configured in such a way that publicly accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
+- When running a bot or webhook-based integration on your local network, you'll need to add the hostname of the bot/integration to this list.
+- If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
 
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
+This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 .. note::
    Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
-IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
+IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution. We try to match IP addresses and hostnames without even resolving. If that fails, we resolve using the local resolver (by reading the ``/etc/hosts`` file first), then check for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input.                                                           |
