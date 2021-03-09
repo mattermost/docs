@@ -54,11 +54,11 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
     "/status *{emoji_name}* *{descriptive status_message}*", "Set a custom status that includes an optional emoji and a descriptive status message", "/status sick Feeling unwell and taking time off to recover"
-    "/status clear *", Clear the current status, "/status clear"
+    "/status clear", Clear the current status, "/status clear"
 
 .. note::
 
-  Custom status slash commands marked with an asterisk (*) in the table above will be available in the Mattermost Mobile App in a future release.
+  ``/status`` and ``/status clear`` slash commands listed above will be available in the Mattermost Mobile App in a future release.
 
 Custom Slash Command
 --------------------
