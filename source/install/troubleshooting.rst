@@ -746,7 +746,7 @@ How to access logs
 
 **Mattermost**
 
-Make sure debug logging is enabled so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging** and then set console and file log level to **DEBUG**.
+Make sure debug logging is enabled so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set console and file log level to **DEBUG**.
 
 If the behavior started at a known time or date, use ``journalctl`` to get the logs like this:
 
