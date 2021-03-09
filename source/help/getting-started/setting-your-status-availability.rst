@@ -6,9 +6,9 @@ Let your team know whether you're available by setting a custom status and your 
 Setting a Custom Status
 -----------------------
 
-Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the left-hand sidebar, within conversations, and within Direct Messages. 
+Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
-1. To set a custom status, select your avatar at the top of the left-hand sidebar, then select **Set a Custom Status**.
+1. To set a custom status, select your avatar at the top of the channel sidebar, then select **Set a Custom Status**.
 
 .. image:: ../../images/set-custom-status.png
   :alt: Set a custom status.
@@ -26,7 +26,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 Clearing a Custom Status
 ------------------------
 
-To clear a custom status, select your avatar at the top of the left-hand sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
+To clear a custom status, select your avatar at the top of the channel sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
 
 .. image:: ../../images/clear-custom-status.png
   :alt: Clear your custom status.
@@ -41,7 +41,7 @@ To set your availability, select your avatar, then specify your availability as 
 
 When you set your availability, an availability icon displays next to your name. Setting your availability as **Do Not Disturb** automatically disables desktop, email, and push notifications.
 
-Other members can see your availability anywhere they can see your name, such as the left-hand sidebar, within conversations, and within Direct Messages. 
+Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
 How Mattermost Determines Your Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
