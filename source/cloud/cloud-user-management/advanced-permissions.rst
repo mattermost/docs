@@ -75,7 +75,7 @@ Team Management
 
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
-1. Navigate to **System Console > User Management > Permissions**.
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members > Teams** panel, check the box for **Add Team Members**. This sets the system default for all teams.
 4. Select **Save**.
