@@ -35,7 +35,7 @@ Username Attribute
 
 (Optional) Enter a SAML assertion filter to use when searching for users.
 
-1. Navigate to **System Console > Authentication > SAML 2.0**.
+1. Go to **System Console > Authentication > SAML 2.0**.
 2. Complete the **Username Attribute** field.
 3. Select **Save**.
 
