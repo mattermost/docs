@@ -7,9 +7,9 @@ Deploy Mattermost on Docker
 
 Deploy Mattermost using a multi-node configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
 
-For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`__.
+For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <https://docs.mattermost.com/install/docker-local-machine.html>`__.
 
-If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click **Edit** at the top of this page.
+If you have any problems installing, see the `troubleshooting guide <https://mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click **Edit** at the top of this page.
 
 Docker Setup on Ubuntu
 ----------------------------------------------------
@@ -32,7 +32,17 @@ Docker Setup on Ubuntu
       sudo curl -L "https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
 
-3. **Deploy the Mattermost Docker** setup by running:
+3. **Deploy the Mattermost Docker** 
+
+You can get the :code:`uid` (user ID) and :code:`gid` (group ID) of the Docker user by running:
+
+   .. code:: bash
+   
+       id <username>
+
+Replace :code:`<username>` with the actual username. The following setup assumes the result above is :code:`uid=1000` and :code:`gid=1000`.
+
+Set up using:
 
    .. code:: bash
    
@@ -41,7 +51,7 @@ Docker Setup on Ubuntu
        cd mattermost-docker
        docker-compose build
        mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-       sudo chown -R 2000:2000 ./volumes/app/mattermost/
+       sudo chown -R 1000:1000 ./volumes/app/mattermost/
        docker-compose up -d
 
 The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.
@@ -58,11 +68,11 @@ To verify the current Docker network use the following command to list it (you c
 
 4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__.
 
-5. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`__.
+5. **Configure Email** by following the `SMTP email setup guide <https://docs.mattermost.com/install/smtp-email-setup.html>`__.
 
 6. (Optional) To enable enterprise features, go to **System Console > Edition and License** and select **Start trial**.
 
-7. **Configure your Server** based on the `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`__.
+7. **Configure your Server** based on the `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html>`__.
 
 Once you've saved your configurations, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 

@@ -4,19 +4,32 @@ This repository generates the documentation available at https://docs.mattermost
 
 If you have any questions, sign up to [community.mattermost.com](https://community.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676) and join the [Documentation](https://community.mattermost.com/core/channels/documentation) channel.
 
+# Table of Contents
+
+ * [Contributing](#contributing)
+     * [Getting Started](#getting-started)
+     * [Editing](#editing)
+     * [Creating Pull Requests](#creating-pull-requests)
+     * [Using Labels](#using-labels)
+     * [Commenting on Pull Requests](#commenting-on-pull-requests)
+     * [Reviewing Pull Requests](#reviewing-pull-requests)
+ * [Building and Validating](#building-and-validating)
+
 ## Contributing
 
 ### Getting Started
 
 You can edit or create Mattermost documentation directly in GitHub or by downloading the repo onto your machine and using an editor such as Atom. Consult the Mattermost [Documentation Style Guide](https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide) and [reStructuredText Markup](https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#using-restructuredtext-markup-rst) section for stylistic and technical guidance.
 
-If this is your first time contributing to Mattermost, first read the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
+If this is your first time contributing to Mattermost, first read the [Mattermost Contributor Agreement](https://mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
 ### Editing
 
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
-If this the first time you're contributing, click **Edit the file in your fork of this project** (pencil icon) on the top right corner to create a fork.
+If this is the first time you're contributing, follow these steps: 
+1. Select **Fork** in the top-right corner of the GitHub page to fork the repository.
+2. Navigate to file you want to edit and select the Pencil icon (**Edit the file**) to open the editing interface.
 
 ### Creating Pull Requests
 
@@ -44,13 +57,36 @@ Any merged PRs with an **Editor Review** or **Reviews Complete** label will be p
 
 ## Building and Validating
 
-If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests. 
+If you've downloaded the repository and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review your changes before you commit them or create pull requests.
 
-1. Download the Mattermost docs repo onto a machine with Python installed.
-2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`. 
-3. `cd` into the cloned repository.
-4. Install the required packages: `pipenv install`.
-5. Build the doc set using `make html`. This generates files in `/build` directory.
-6. Navigate to the `/build` directory to preview the page/s you've edited. 
+**Note:** Commands can be executed on Linux, Mac, and Windows (using Powershell).
+
+1. Open a terminal window, then clone a forked copy of the documentation repository by running the following command::
+```sh
+git clone https://github.com/mattermost/docs.git
+```
+2. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
+
+For Mac users where Homebrew is installed:
+```sh
+brew install pipenv  
+```
+For other operating systems
+```python
+pip install pipenv 
+```
+3. In the terminal window, navigate into the cloned repository:
+```sh
+cd docs
+```
+4. Install the required packages by running the following command:
+```python
+pipenv install
+```
+5. Build the documentation set using `make html`. This generates files in `/build` directory.
+6. Navigate to the `/build` directory to preview your changes by running the following command:
+```sh
+cd /build
+```
 
 The build process may generate this error: ``WARNING: toctree contains reference to document u'foo' that doesn't have a title: no link will be generated``. It can be ignored as it does not negatively impact the documentation. 

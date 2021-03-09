@@ -3,7 +3,7 @@ Customizing Mattermost
 
 There are several ways to customize your Mattermost server. 
 
-If customizing Mattermost, please avoid branding that could be confused with the Mattermost brand. For example, it's okay to brand as "Healthcare Central" because it's a completely different brand. "Mattermost Healthcare Central" is not okay, because it can potentially be confused with the Mattermost brand. Please see the `Mattermost trademark guidelines <https://www.mattermost.org/trademark-standards-of-use/>`__ for details.
+If customizing Mattermost, please avoid branding that could be confused with the Mattermost brand. For example, it's okay to brand as "Healthcare Central" because it's a completely different brand. "Mattermost Healthcare Central" is not okay, because it can potentially be confused with the Mattermost brand. Please see the `Mattermost trademark guidelines <https://mattermost.org/trademark-standards-of-use/>`__ for details.
 
 While you're welcome to add your own copyright notice in the user interface if you feel it is warranted by your changes, we ask that you do not remove the Mattermost, Inc. copyright notice from the login footer or from the About dialog.
 

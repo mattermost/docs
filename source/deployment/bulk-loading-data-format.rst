@@ -4,7 +4,7 @@ Data Format
 ===========
 
 The input data file must be a valid `JSONL
-<http://jsonlines.org>`__ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
+<https://jsonlines.org>`__ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
 
 Version
   Mandatory. The Version object must be the first line in the file, and must occur only once. The version is the version of the bulk importer tool, which is currently ``1``. 

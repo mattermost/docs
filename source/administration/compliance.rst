@@ -1,7 +1,7 @@
 Compliance Reporting and Oversight (E20)
 -----------------------------------------
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
+Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
 .. note::
   This feature is replaced by a new :doc:`Compliance Export feature <compliance-export>`, and will be removed in Mattermost v6.0. We recommend migrating to the new system.
@@ -116,6 +116,8 @@ Compliance query results stored in ``posts.csv`` file
 | UserEmail           | Email of user posting the message containing keyword          | "frank.yu@contosi.com"        | 
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | UserNickname        | Nickname of user posting the message containing keyword       | fan du                        | 
++---------------------+---------------------------------------------------------------+-------------------------------+
+| UserType            | Type of user posting the message ("user" or "bot")            | user                          |
 +---------------------+---------------------------------------------------------------+-------------------------------+
 | PostId              | Unique ID of message post containing keyword                  | xt9anyx6x3fx9y84aehgakdpze    | 
 +---------------------+---------------------------------------------------------------+-------------------------------+

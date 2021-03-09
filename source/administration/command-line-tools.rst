@@ -3,6 +3,10 @@ Command Line Tools
 
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
+.. note::
+
+  The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
+
 These ``mattermost`` commands include:
 
 **General Administration**
@@ -47,18 +51,21 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
-  .. code-block:: bash
+.. code-block:: bash
 
     cd /opt/mattermost/
     sudo -u mattermost bin/mattermost version
 
 .. note::
-  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
-  
-.. note::
-When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows: 
-``bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"`` 
 
+Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+
+.. note::
+
+  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+.. code-block:: bash
+ 
+ bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -67,7 +74,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 
 **For example, to get the Mattermost version on GitLab Omnibus:**
 
-  .. code-block:: bash
+.. code-block:: bash
 
     cd /opt/gitlab/embedded/service/mattermost
     sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
@@ -82,7 +89,7 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
 
 **For example, to get the Mattermost version on a Docker install:**
 
-  .. code-block:: bash
+.. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
 
@@ -103,7 +110,7 @@ Notes:
 
 -  Parameters in CLI commands are order-specific.
 -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
--  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
+-  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
 .. tip::
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
@@ -653,7 +660,7 @@ mattermost config migrate
     .. code-block:: none
 
        bin/mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
-       
+
 mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -669,7 +676,7 @@ mattermost config reset
     .. code-block:: none
 
        bin/mattermost config reset SqlSettings.DriverName LogSettings
-       
+
    Options
     .. code-block:: none
 
@@ -735,6 +742,37 @@ mattermost config validate
       .. code-block:: none
 
         bin/mattermost config validate
+	
+mattermost db init
+------------------
+
+  Description
+    Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
+
+  Format
+    .. code-block:: none
+
+      mattermost db init
+
+  Examples
+  
+    Use the ``config`` flag to pass the DSN:
+    
+    .. code-block:: none
+
+       mattermost db init --config postgres://localhost/mattermost
+       
+    Run this command to use the ``MM_CONFIG`` environment variable:
+    
+    .. code-block:: none
+      
+       MM_CONFIG=postgres://localhost/mattermost mattermost db init
+    
+    Run this command to set a custom defaults file to be loaded into the database: 
+    
+    .. code-block:: none
+    
+       MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
 
 mattermost export
 -----------------
@@ -1751,7 +1789,7 @@ Description
       bin/mattermost team remove myteam user@example.com username
 
 mattermost team rename
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -1776,7 +1814,7 @@ Description
       --display_name string   Team Display Name
 
 mattermost team restore
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Restore a previously archived team.
@@ -2081,8 +2119,8 @@ mattermost user migrate_auth
     .. code-block:: json
 
         {
-          "user1@email.com": "user.one",
-          "user2@email.com": "user.two"
+          "user1@email.com": "username.one",
+          "user2@email.com": "username.two"
         }
 
   Users file generation
@@ -2278,7 +2316,7 @@ mattermost version
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl version <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-version>`__.
+   This command will be replaced in a future release with the mmctl command `mmctl system version <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-system-version>`__.
 
 
 Description
@@ -2666,7 +2704,7 @@ CLI Documentation:
               platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
 
       -upgrade_db_30                   Upgrades the database from a version 2.x schema to version 3 see
-                                        http://www.mattermost.org/upgrading-to-mattermost-3-0/
+                                        https://mattermost.org/upgrading-to-mattermost-3-0/
 
           Example:
               platform -upgrade_db_30
@@ -2686,4 +2724,4 @@ If you have Bleve search indexing enabled, temporarily disable it in **System Co
 
 Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
 
-If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ to get help.
+If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ to get help.

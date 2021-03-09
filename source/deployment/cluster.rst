@@ -8,6 +8,7 @@ A High Availability cluster enables a Mattermost system to maintain service duri
 High Availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
 .. note::
+  
   This document applies to Mattermost Server version 4.0 and later. For previous versions, see :doc:`cluster-310`.
 
 .. contents::
@@ -30,7 +31,7 @@ Update sequence for continuous operation
 Deployment Guide
 ----------------
 
-Deployment guide to set up and maintain High Availability on your Mattermost servers.
+Deployment guide to set up and maintain High Availability on your Mattermost servers. This document does not cover the configuration of databases in terms of disaster recovery, however, you can refer to the `Frequently Asked Questions (FAQ)`_ section for our recommendations.
 
 Initial Setup Guide for High Availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,11 +39,12 @@ Initial Setup Guide for High Availability
 To ensure your instance and configuration are compatible with High Availability, please review the `Configuration and Compatibility`_ section.
 
 .. note::
+  
   Back up your Mattermost database and file storage locations before configuring High Availability. For more information about backing up, see :doc:`../administration/backup`.
 
 1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../administration/upgrade`.
 2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add ``ClusterSettings``` as described in :ref:`high-availability`.
+3. Modify the ``config.json`` files on both servers to add ``ClusterSettings`` as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
 6. Open **System Console > Environment > High Availability** (or **System Console > Advanced > High Availability** in versions prior to 5.12) to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -82,7 +84,7 @@ Configuration Settings
             "ClusterName": "production",
             "OverrideHostname": "",
             "UseIpAddress": true,
-            "UseExperimentalGossip": false,
+            "UseGossip": true,
             "ReadOnlyConfig": true,
             "GossipPort": 8074,
             "StreamingPort": 8075
@@ -101,7 +103,7 @@ Configuration Settings
     * soft nproc 8192
     * hard nproc 8192
 
-3. Increase the number of WebSocket connections
+3. Increase the number of WebSocket connections:
 
   Modify ``/etc/sysctl.conf`` on each machine that hosts a Mattermost server by adding the following lines:
 
@@ -113,16 +115,16 @@ Configuration Settings
     net.core.somaxconn = 4096
     net.ipv4.tcp_max_syn_backlog = 8192
 
-You can do the same for the proxy server too.
+You can do the same for the proxy server.
 
 Cluster Discovery
 ^^^^^^^^^^^^^^^^^
 
-If you have non-standard (i.e. not simple) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. complex) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
 If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
 
-You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the Hostname field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
+You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the **Hostname** field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
 
 In short, you should use:
 
@@ -200,6 +202,7 @@ File Storage Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
+
   1. File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
   3. If you’re using Amazon S3 or MinIO for file storage then no other configuration is required.
@@ -255,8 +258,8 @@ Loading a Multi-database Configuration onto an Active Server
 
 After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Environment > Web Server** and click **Reload Configuration from Disk** (or **System Console > Configuration** in versions prior to 5.12) to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database** and click **Recycle Database Connections** (or **System Console > Database** in versions prior to 5.12) to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12), then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
@@ -267,8 +270,8 @@ If the need arises to switch from the current master database - for example, if 
 
 To apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12) and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12)and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12), then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
@@ -276,6 +279,31 @@ Transparent Failover
 ````````````````````
 
 The database can be configured for High Availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
+
+Recommended Configuration Settings
+``````````````````````````````````
+
+If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
+
+The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7.
+
+1. **max_connections**: If you are using read-replicas set reader connections to 1024, and writer connections to 256. If you are using a single instance, then only setting it to 1024 should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number. Also tune the `MaxOpenConns` setting under the `SqlSettings` of Mattermost app accordingly.
+
+2. **random_page_cost**: Set it to 1.1, unless the DB is using spinning disks.
+
+3. **work_mem**: Set it to 16 MB for readers, and 32 MB for writers. If it's a single instance, 16 MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
+
+4. **effective_cache_size**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+
+5. **shared_buffers**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+
+6. **tcp_keepalives_count**: 5
+
+7. **tcp_keepalives_idle**: 5
+
+8. **tcp_keepalives_interval**: 1
+
+Note that if you are using pgbouncer or any similar connection pooling proxy in front of your DB, then the keepalive settings should be applied to the proxy instead and revert the keepalive settings for the DB back to defaults.
 
 Leader Election
 ^^^^^^^^^^^^^^^^
@@ -305,13 +333,18 @@ In previous Mattermost Server versions, and this documentation, the instructions
 Plugins and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically.
-
-File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
+As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
 
 If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory. If this is not the case High Availability will not function correctly and may corrupt your file storage.
 
 Note a slight behavior change in 5.15: When you reinstall a plugin in 5.14, the previous **Enabled** or **Disabled** state is retained. As of 5.15, a reinstalled plugin's initial state is **Disabled**.
+
+CLI and High Availability
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
+
+We recommend using `mmctl <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__ in a High Availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
 
 Upgrade Guide
 -------------
@@ -333,7 +366,7 @@ You can apply updates during a period of low load, but if your High Availability
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
 3. Copy the ``config.json`` file to the other servers.
 4. Shut down Mattermost on all but one server.
-5. Reload the configuration file on the server that is still running. Go to in prior versions or **System Console > Environment > Web Server** (or  **System Console > Configuration** in versions prior to 5.12) and click **Reload Configuration from Disk**
+5. Reload the configuration file on the server that is still running. Go to in prior versions or **System Console > Environment > Web Server** (or  **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk**.
 6. Start the other servers.
 
 Updating Server Version While Operating Continuously
@@ -342,6 +375,10 @@ Updating Server Version While Operating Continuously
 A service interruption is not required for security patch dot releases of the Mattermost server.
 
 You can apply updates during a period when the anticipated load is small enough that one server can carry the full load of the system during the update.
+
+.. note::
+
+  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
 
 Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
@@ -359,11 +396,11 @@ Server Upgrades Requiring Service Interruption
 
 A service interruption is required when the upgrade includes a change to the database schema or when a change to ``config.json`` requires a server restart, such as when making the following changes:
 
-  * Default Server Language
-  * Rate Limiting
-  * Webserver Mode
-  * Database
-  * High Availability
+  - Default Server Language
+  - Rate Limiting
+  - Webserver Mode
+  - Database
+  - High Availability
 
 If the upgrade includes a change to the database schema, the database is upgraded by the first server that starts.
 
@@ -394,7 +431,7 @@ Starting with Mattermost Server version 4.0, when a server starts up it can auto
         "ClusterName": "production",
         "OverrideHostname": "",
         "UseIpAddress": true,
-        "UseExperimentalGossip": false,
+        "UseGossip": true,
         "ReadOnlyConfig": true,
         "GossipPort": 8074,
         "StreamingPort": 8075
@@ -416,8 +453,28 @@ Does Mattermost support multi-region High Availability deployment?
 
 Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
 
+What does Mattermost recommend for diaster recovery of the databases?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When deploying Mattermost in a High Availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.
+
+For example, if you're deploying Mattermost on AWS with Amazon Aurora we recommend utilizing multiple Availability Zones. If you're deploying Mattermost on your own cluster please consult with your IT team for a solution best suited for your existing architecture.
+
 Troubleshooting
 ---------------
+
+Capturing High Availability Troubleshooting Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
+
+You may be asked to provide this data to Mattermost for analysis and troubleshooting purposes.
+
+.. note::
+
+  - Ensure that server log files are being created. You can find more on working with Mattermost logs `here <https://docs.mattermost.com/install/troubleshooting.html#review-mattermost-logs>`__.
+  - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
+  - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster.
 
 Red Server Status
 ~~~~~~~~~~~~~~~~~
@@ -427,7 +484,7 @@ When High Availability is enabled, the System Console displays the server status
 A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same configuration file to function properly.
-- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect

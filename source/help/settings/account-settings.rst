@@ -33,7 +33,7 @@ Position can be used to describe your role or job title. It appears in the profi
 Email
 ~~~~~
 
-Email is used for sign-in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
+Email is used for signing in, notifications, and password reset. Email requires verification if changed. If you are signing in using a single sign-on service, the email field is not editable and you will receive email notifications to the email you used to sign up to your SSO service.
 
 Profile Picture
 ~~~~~~~~~~~~~~~
@@ -53,7 +53,7 @@ You may change your password if you’ve logged in by email. If you are signing 
 Multi-factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When this option is available you can require a phone-based passcode in addition to your password for sign-in.
+When this option is available, you can require a phone-based passcode in addition to your password when signing in.
 
 To enable, download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`__ for your phone, then:
 
@@ -99,7 +99,7 @@ Desktop Notifications
 
 Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost.
 
-When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
 
 Send Desktop Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,7 +165,7 @@ Select **Custom Theme** to customize your theme colors and share them with other
 
 In Enterprise Edition, if you belong to multiple teams, you can optionally select the checkbox "Apply new theme to all my teams" to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
 
-Learn more about the custom theme color selectors `here <http://docs.mattermost.com/help/settings/theme-colors.html#custom-themes>`__.
+Learn more about the custom theme color selectors `here <https://docs.mattermost.com/help/settings/theme-colors.html#custom-themes>`__.
 
 Select **Import theme colors from Slack** to import a Slack theme. In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
 
@@ -225,7 +225,9 @@ Select what language Mattermost displays in the user interface. Options include:
 - Polski - Polish
 - Português (Brasil) - Portuguese
 - Română - Romanian
+- Svenska - Swedish
 - Türkçe - Turkish
+- български - Bulgarian
 - Pусский - Russian
 - Yкраїнська - Ukrainian
 - 한국어 - Korean
@@ -236,41 +238,40 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
-Channel grouping and sorting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The channel sidebar includes `enhanced sidebar features <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
-These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#sidebar-organization-experimental>`__.
+The following sidebar settings apply to your current sidebar only:
+
+**Group unread channels separately**
+
+This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__ for you. 
+
+You can choose to enable it or disable it in **Account Settings > Sidebar**. 
+
+Legacy sidebar settings
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The legacy sidebar `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. The following sidebar settings apply only to the legacy sidebar:
 
 Channel grouping
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list.
+^^^^^^^^^^^^^^^^
+
+Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list. 
 
 Channel sorting
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+
 Channels can be sorted within their sidebar sections alphabetically (default) or by most recent message.
 
-Unreads grouped separately
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If enabled, this feature groups unread channels at the top of the channel sidebar.
+Channel switcher
+^^^^^^^^^^^^^^^^
 
-Favorites grouped separately
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If enabled, this feature groups favorite channels in their own sidebar section.
+Hide the channel switcher used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD+K.
 
-Group unreads channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Autoclose Direct Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Removed in December 16, 2018 release and replaced by a new ExperimentalChannelOrganization setting*
-
-If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
-
-Channel Switcher
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD + K.
-
-Automatically close direct messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the **+** button in the sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------
@@ -285,7 +286,7 @@ If "On for all messages" is enabled, ENTER inserts a new line and CTRL+ENTER pos
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
+This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <https://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
 Enable Join/Leave Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -300,7 +301,7 @@ Turn on preview features to view them early, ahead of their official release:
 - **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
 
 Deactivate Account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
 

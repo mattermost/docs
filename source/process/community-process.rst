@@ -27,7 +27,7 @@ When responding to issues:
 
     - For reproducible bugs, create a Jira ticket
     - For product questions or troubleshooting, update docs.mattermost.com if appropriate
-    - For feature proposals, ask them to `create a feature proposal <https://www.mattermost.org/feature-ideas/>`__ and post the link back
+    - For feature proposals, ask them to `create a feature proposal <https://mattermost.org/feature-ideas/>`__ and post the link back
 
   - If appropriate, ask if the community member would be interested in contributing the feature / bug fix
 
@@ -72,7 +72,7 @@ The various community channels are outlined below. On a daily basis, the Communi
         - Started: When a developer has begun to work on the Jira ticket (the ticket shows that it is in progress)
         - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
         - Completed: When ticket is resolved
-        - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`__
+        - Declined: When the suggestion does not fit with the `product vision <https://mattermost.org/manifesto/>`__
         
       - where a PM might want to ask a question for clarification or ideas on how to design something
       - where the requester specifies they want to work on the feature
@@ -107,7 +107,7 @@ The various community channels are outlined below. On a daily basis, the Communi
       - https://github.com/mattermost/mattermost-push-proxy
       - [a month or older - reviews are monthly] https://github.com/mattermost/android/pulls
       - [a month or older - reviews are monthly] https://github.com/mattermost/ios/pulls
-      - http://stackoverflow.com/questions/tagged/mattermost?sort=newest&pageSize=15 
+      - https://stackoverflow.com/questions/tagged/mattermost?sort=newest&pageSize=15 
       - https://gitlab.com/search?utf8=%E2%9C%93&search=mattermost&group_id=&project_id=20699&scope=issues&repository_ref= 
       - https://gitlab.com/gitlab-org/gitlab-mattermost/issues 
       - https://gitlab.com/gitlab-org/omnibus-gitlab/issues?label_name=Mattermost

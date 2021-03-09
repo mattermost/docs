@@ -12,11 +12,11 @@ Desktop, email, and mobile push notifications notify you of activity in Mattermo
 Desktop Notifications
 -------------------------------------
 
-Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari, or the `Mattermost Desktop app <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely.
+Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
 
 .. image:: ../../images/desktop_notification.png
 
--  Configure desktop notifications in **Account Settings > Notifications > Desktop notifications > Send desktop notifications**.
+-  Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications** and choose your sound selection.
 -  Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
   - By default, all channels use the global setting configured in **Account Settings**.
    
@@ -72,7 +72,7 @@ When you mute a channel, you do not receive any notifications (desktop, email, o
 
 To mute a channel, click on the channel name and select **Mute Channel**. To unmute it, click on the channel name and select **Unmute Channel**.
 
-.. tip :: Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_. Learn more about `mentioning teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
+.. tip :: Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_. Learn more about `mentioning teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
 
 Ignoring Mentions
 -----------------

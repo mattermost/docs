@@ -117,7 +117,7 @@ Automating Mattermost installation within another application:
 
 1. Review the [Mattermost installation guides](https://docs.mattermost.com/guides/administrator.html#installing-mattermost) to understand configuration steps of the production deployment.
 2. Install Mattermost files to a dedicated `/opt/mattermost` directory by decompressing the `tar.gz` file of the latest release for your target platform (for example `linux-amd64`).
-3. Review [Configuration Settings](http://docs.mattermost.com/administration/config-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements.
+3. Review [Configuration Settings](https://docs.mattermost.com/administration/config-settings.html) in `config.json` and set your automation to customize your Mattermost deployment based on your requirements.
 4. For directory locations defined in `config.json`, such as the location of the local file storage directory (`./data/`) or logs directory (`./logs`), you can redefine those locations in your `config.json` settings and move the directories.
    - All other directories should remain as they are in `/mattermost`.
 5. Test that your Mattermost server is running with your new configuration.
@@ -125,12 +125,12 @@ Automating Mattermost installation within another application:
 
 Automating Mattermost upgrade within another application:
 
-1. Review the [upgrade guide](http://docs.mattermost.com/administration/upgrade.html) for an overview of the upgrade procedure.
+1. Review the [upgrade guide](https://docs.mattermost.com/administration/upgrade.html) for an overview of the upgrade procedure.
 2. Create automation to upgrade to the next Mattermost versions:
     - Back up the `config.json` file to preserve any settings a user may have made.
     - Back up the `./data` directory if local storage is used for files.
     - Replace the contents of `/mattermost` directory with the decompressed contents of the latest release.
     - Restore `config.json` and `./data` to their previous locations (which may have been overwritten).
-    - If you need to overwrite any `config.json` parameters use a [`sed` command](http://stackoverflow.com/questions/20568515/how-to-use-sed-to-replace-a-config-files-variable) or similar tool to update `config.json`
+    - If you need to overwrite any `config.json` parameters use a [`sed` command](https://stackoverflow.com/questions/20568515/how-to-use-sed-to-replace-a-config-files-variable) or similar tool to update `config.json`
     - Starting the Mattermost server to upgrade the database, `config.json` file, and `./data` as necessary.
 3. Optionally the upgrade procedure can be chained so users can upgrade across an arbitrary number of Mattermost versions rather than to just the latest release.

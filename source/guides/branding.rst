@@ -17,7 +17,7 @@ Mattermost Visual Design Guidelines
 Mattermost Logo
 -------------------------------
 
-For details on Mattermost logo usage guidelines please visit: https://www.mattermost.org/brand-guidelines/
+For details on Mattermost logo usage guidelines please visit: https://mattermost.org/brand-guidelines/
 
 Mattermost User Experience
 -------------------------------
@@ -71,7 +71,7 @@ Mattermost Team Edition Description
 
 When redistributing the open source Mattermost Team Edition binary, the following description may be used:
 
-  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`__.
+  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://mattermost.com/download/>`__.
 
 
 Mattermost Enterprise Edition Description
@@ -87,4 +87,4 @@ When redistributing the commercial Mattermost Enterprise Edition binary, the fol
 Mattermost Trademark Policy
 -------------------------------
 
-Please see our full trademark policy at: https://www.mattermost.org/trademark-standards-of-use/
+Please see our full trademark policy at: https://mattermost.org/trademark-standards-of-use/

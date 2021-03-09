@@ -5,7 +5,7 @@ Mattermost desktop applications are available for Windows, Mac and Linux operati
 
 .. image:: ../../images/desktop.png
 
-You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`__ for help during setup and for troubleshooting tips.
+You can `download the apps directly from our download page <https://mattermost.com/download/#mattermostApps>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`__ for help during setup and for troubleshooting tips.
 
 To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__.
 
@@ -64,7 +64,7 @@ Start app on login (Windows, Linux only)
     This setting is enabled by default.
 
 Check spelling
-    Highlight misspelled words in your messages. Available for English, French, German, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
+    Highlight misspelled words in your messages. Available for English, French, German, Portuguese, Russian, Ukrainian, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
 
     This setting is enabled by default.
 

@@ -9,11 +9,11 @@ The following are troubleshooting suggestions on common error messages and issue
 
   Second, ensure you have completed each step of the SAML configuration.
 
-If you are still having trouble with configuration, see further troubleshooting notes below or feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help with issues during setup.
+If you are still having trouble with configuration, see further troubleshooting notes below or feel free to post in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ and we'll be happy to help with issues during setup.
 
 2. System Administrator locks themselves out of the system
 
-  If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
+  If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
 3. Received error message: `An account with that username already exists. Please contact your Administrator.`
 

@@ -4,23 +4,23 @@ Audit Log v2 (Experimental) (E20)
 A new audit log allows System Admins to review a more comprehensive listing of events for more in-depth analysis. Additionally, it provides more control over where the logs are generated and stored.
 
 Configure audit log in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configuring the Mattermost server to use the new audit log requires editing the ``config.json`` file directly. The audit settings output audit records to syslog (local or remote server via TLS) as well as to a local file. Syslog and local file storage can be enabled simultaneously. Both are disabled by default.
 
 **Accessing configuration options for audit log**
 
-Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/administration/config-settings.html#audit-settings>`_ are available:  
+Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/administration/config-settings.html#audit-settings>`_ are available:
 
-- Syslog configuration options: 
+- Syslog configuration options:
 
-    - Enable settings to write audit records to a local or remote syslog 
+    - Enable settings to write audit records to a local or remote syslog
     - Specify the IP
     - Specify port
     - Add user-generated fields
     - Configure certificate settings
 
-- File configuration options: 
+- File configuration options:
 
     - Enable settings to write audit files locally
     - Specify file size
@@ -58,16 +58,16 @@ A single audit record is emitted for each event (``add``, ``delete``, ``login``,
 Log storage
 ~~~~~~~~~~~
 
-Audit records are stored separately from general logging. The general log storage location is configurable via ``LogSettings`` in the ``config.json`` file. 
+Audit records are stored separately from general logging. The general log storage location is configurable via ``LogSettings`` in the ``config.json`` file.
 
-During short spans of inability to write to targets, the audit records buffer in memory with a cap. Based on typical audit record volumes it could take many minutes to fill the buffer. After that, the records are dropped and the record drop event is logged. 
+During short spans of inability to write to targets, the audit records buffer in memory with a cap. Based on typical audit record volumes it could take many minutes to fill the buffer. After that, the records are dropped and the record drop event is logged.
 
 When using remote syslog, the current best practice is to also write to local file so no records are lost. Note that this does not automatically take records from local file and send it to syslog when syslog becomes available again.
 
 Planned enhancements to the audit log
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- To ensure audit logs cannot be unknowingly corrupted or tampered with, make it possible to configure the logging engine to sign log files for specific targets. When an audit store cannot be made secure, audit logs could be stored in multiple places (e.g. file and database) so they can be reconciled if needed.
+To ensure audit logs cannot be unknowingly corrupted or tampered with, make it possible to configure the logging engine to sign log files for specific targets. When an audit store cannot be made secure, audit logs could be stored in multiple places (e.g. file and database) so they can be reconciled if needed.
 
 Planned enhancements to logging in general
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,6 +76,6 @@ Planned enhancements to logging in general
 
 - Make logging engine enhancements implemented via the ``mlog`` package and will be compatible with existing usage.
 
-- Allow logging levels and discrete levels to different targets (files, databases, etc) via configuration. 
+- Allow logging levels and discrete levels to different targets (files, databases, etc) via configuration.
 
 See the `logging enhancements <https://docs.google.com/document/d/1DSE-SKfqwcpUIXKUokWFIh_uAp3nzw-5UkKBUt90ZqE/edit?usp=sharing>`_ proposal for more details.

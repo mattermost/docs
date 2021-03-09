@@ -1,7 +1,7 @@
 Keyboard Shortcuts
 ------------------
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <http://docs.mattermost.com/help/messaging/executing-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
 To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
 
@@ -42,9 +42,9 @@ Navigation
 | CTRL+.                                 | CMD+.                                  | Open and close the Right-Hand Sidebar                                        |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 
+.. note::
 
-
-Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
+  Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
 
 Files
 =====
@@ -75,9 +75,25 @@ Messages
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | :[character]+TAB                       | :[character]+TAB                       | Autocomplete emoji beginning with [character]                              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
-| CTRL+SHIFT+\\                          |  CMD+SHIFT+\\                          | React to last message in channel or thread            |
+| CTRL+SHIFT+\\                          |  CMD+SHIFT+\\                          | React to last message in channel or thread                                 |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 
+Formatting
+==========
+
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+| On Windows                             | On Mac                                 | Description                                                    |
++========================================+========================================+================================================================+
+| CTRL+B                                 | CMD+B                                  | Bold text                                                      |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+| CTRL+I                                 | CMD+I                                  | Italicize text                                                 |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+| CTRL+ALT+K                             | CMD+ALT+K                              | Format text as a link                                          |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------+
+
+.. note::
+
+  Formatting shortcuts are available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
 
 Browser Built-in
 ================

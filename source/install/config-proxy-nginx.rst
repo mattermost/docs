@@ -11,11 +11,17 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 2. Create a configuration file for Mattermost.
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
-  
-On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``
 
-3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
-On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
+On RHEL 7 and 8: ``sudo touch /etc/nginx/conf.d/mattermost``
+
+3. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+
+On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
+
+SSL and HTTP/2 with server push are enabled in the provided configuration example.
+
+.. note::
+  You will need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning Let's Encrypt, please see the `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
 
   .. code-block:: none
 
@@ -27,8 +33,42 @@ On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
     proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
 
     server {
-       listen 80;
+      listen 80 default_server;
+      server_name   mattermost.example.com;
+      return 301 https://$server_name$request_uri;
+    }
+
+    server {
+       listen 443 ssl http2;
        server_name    mattermost.example.com;
+
+       http2_push_preload on; # Enable HTTP/2 Server Push
+
+       ssl on;
+       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
+       ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
+       ssl_session_timeout 1d;
+
+       # Enable TLS versions (TLSv1.3 is required upcoming HTTP/3 QUIC).
+       ssl_protocols TLSv1.2 TLSv1.3;
+
+       # Enable TLSv1.3's 0-RTT. Use $ssl_early_data when reverse proxying to
+       # prevent replay attacks.
+       #
+       # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
+       ssl_early_data on;
+
+       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+       ssl_prefer_server_ciphers on;
+       ssl_session_cache shared:SSL:50m;
+       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+       add_header Strict-Transport-Security max-age=15768000;
+       # OCSP Stapling ---
+       # fetch OCSP records from URL in ssl_certificate and cache them
+       ssl_stapling on;
+       ssl_stapling_verify on;
+
+       add_header X-Early-Data $tls1_3_early_data;
 
        location ~ /api/v[0-9]+/(users/)?websocket$ {
            proxy_set_header Upgrade $http_upgrade;
@@ -71,42 +111,48 @@ On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
        }
     }
 
+    # This block is useful for debugging TLS v1.3. Please feel free to remove this
+    # and use the `$ssl_early_data` variable exposed by NGINX directly should you
+    # wish to do so.
+    map $ssl_early_data $tls1_3_early_data {
+      "~." $ssl_early_data;
+      default "";
+    }
+
 4. Remove the existing default sites-enabled file.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
-On RHEL 7: ``sudo rm /etc/nginx/conf.d/default``
+On RHEL 7 and 8: ``sudo rm /etc/nginx/conf.d/default``
 
 5. Enable the mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
-On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+On RHEL 7 and 8: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
 
 6. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6: ``sudo service nginx restart``
-
-  On Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, and RHEL 7: ``sudo systemctl restart nginx``
+ ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
-  ``curl http://localhost``
+  ``curl https://localhost``
 
   If everything is working, you will see the HTML for the Mattermost signup page.
 
 8. Restrict access to port 8065.
-  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use security groups to restrict access.
+
+By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use Security Groups to restrict access.
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
 
-**NGINX Configuration FAQ**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NGINX Configuration FAQ
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why are Websocket connections returning a 403 error?**
 
-This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned.  Open the file ``/etc/nginx/sites-available/mattermost`` 
-as root in a text editor and make sure that the host header being set in the proxy is dynamic:
+This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and make sure that the host header being set in the proxy is dynamic:
 
 .. code-block:: none
   :emphasize-lines: 4
@@ -139,16 +185,18 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
     # Grep the name of your Mattermost network like "mymattermost_default".
     docker network connect mymattermost_default nginx-proxy
 
-2. Restart the Mattermost Docker containers
+2. Restart the Mattermost Docker containers.
 
   .. code-block:: none
 
     docker-compose stop app
     docker-compose start app
 
-.. tip :: There is no need to run the 'web' container, since NGINX proxy accepts incoming requests.
+.. tip::
 
-3. Update your docker-compose.yml file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
+  You don't need to run the 'web' container, since NGINX proxy accepts incoming requests.
+
+3. Update your ``docker-compose.yml`` file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
 
   .. code-block:: none
 
@@ -160,16 +208,15 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
       - VIRTUAL_HOST=mymattermost.tld
     expose:
       - "80"
-
-If you are using SSL, you may also need to expose port 443. 
+      - "443"
 
 **Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
 
-You may need to update the Callback URLs for the Application entry of Mattermost inside your Gitlab instance.
+You may need to update the Callback URLs for the Application entry of Mattermost inside your GitLab instance.
 
-1. Log into your GitLab instance as the admin
-2. Go to **Admin > Applications**
-3. Click **Edit** on GitLab-Mattermost
-4. Update the Callback URLs to your new domain/URL
-5. Save the changes
-6. Update the external URL for Gitlab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
+1. Log in to your GitLab instance as the admin.
+2. Go to **Admin > Applications**.
+3. Click **Edit** on GitLab-Mattermost.
+4. Update the Callback URLs to your new domain/URL.
+5. Save the changes.
+6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.

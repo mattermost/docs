@@ -3,7 +3,7 @@ Performance Monitoring (E20)
 
 *Available in Enterprise Edition E20*.
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <http://grafana.org/>`__.
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__.
 
 The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/deployment/cluster.html>`__.
 
@@ -78,11 +78,11 @@ While you can use the Prometheus service to create graphs, we'll focus on creati
 Installing Grafana
 ------------------------------------------------
 
-1 - `Download a precompiled binary for Grafana <http://docs.grafana.org/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac.
+1 - `Download a precompiled binary for Grafana <https://docs.grafana.org/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac.
 
-For install instructions, see `Grafana install guides <http://docs.grafana.org/installation/debian/>`__
+For install instructions, see `Grafana install guides <https://docs.grafana.org/installation/debian/>`__
 
-2 - The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <http://docs.grafana.org/installation/debian/>`__ to learn more.
+2 - The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <https://docs.grafana.org/installation/debian/>`__ to learn more.
 
 3 - The default HTTP port is ``3000`` and default username and password are ``admin``.
 
@@ -90,9 +90,9 @@ For install instructions, see `Grafana install guides <http://docs.grafana.org/i
 
 .. image:: ../images/mattermost_datasource.png
 
-.. note:: For troubleshooting advice, check the `Grafana Troubleshooting page <http://docs.grafana.org/installation/troubleshooting/>`__.
+.. note:: For troubleshooting advice, check the `Grafana Troubleshooting page <https://docs.grafana.org/installation/troubleshooting/>`__.
 
-For user guides and tutorials, check the `Grafana documentation to learn more <http://docs.grafana.org/guides/basic_concepts/>`__.
+For user guides and tutorials, check the `Grafana documentation to learn more <https://docs.grafana.org/guides/basic_concepts/>`__.
 
 Getting Started
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +103,7 @@ To help you get started, you can download three sample dashboards shared in Graf
  - `Mattermost Performance Monitoring <https://grafana.com/dashboards/2542>`__, which contains detailed charts for performance monitoring.
  - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 
-See `this guide <http://docs.grafana.org/reference/export_import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+See `this guide <https://docs.grafana.org/reference/export_import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
 
 Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -187,6 +187,14 @@ WebSocket Metrics:
 
     - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
     - ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
+    
+Logging Metrics:
+
+    - ``logger_queue_used``: Current logging queue level(s).
+    - ``logger_logged_total``: The total number of logging records emitted.
+    - ``logger_error_total``: The total number of logging errors.
+    - ``logger_dropped_total``: The total number of logging records dropped.
+    - ``logger_blocked_total``: The total number of logging records blocked.
 
 Standard GO Metrics
 ------------------------------------------------

@@ -38,7 +38,7 @@ For example, you might begin with a general "Marketing" channel. As conversation
 
 As the organization grows, disciplines might split across business units, products and geographies, with channel names like "US: Marketing" and "UK: Marketing".
 
-.. tip :: If you need to shorten country names, use standard `2-letter country codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`__.
+.. tip :: If you need to shorten country names, use standard `2-letter country codes <https://www.nationsonline.org/oneworld/country_code_list.htm>`__.
 
 You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social Media``.
 
