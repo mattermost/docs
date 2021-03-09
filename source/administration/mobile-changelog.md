@@ -9,6 +9,8 @@
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
+**Note:** Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
 ### Improvements
  - Refined animations for the new image gallery.
  - System Admins are now prompted before joining a private channel via a permalink.
@@ -19,12 +21,6 @@
 #### All apps
  - Fixed an issue where the status and reminder time did not get updated in "Update Status" screen in the Incident Collaboration plugin on the mobile apps.
  - Fixed an issue where a handler was missing for permalinks with ``_redirect``.
-
-#### Android specific
- - 
-
-#### iOS specific
- - 
 
 ### Known Issues
  - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
