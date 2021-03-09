@@ -53,7 +53,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/settings", "Open the Account Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
-    "/status *{emoji_name}* *{descriptive status_message}* *", Set a custom status that includes an optional emoji and a descriptive status message, "/status sick Feeling unwell and taking time off to recover"
+    "/status *{emoji_name}* *{descriptive status_message}*", "Set a custom status that includes an optional emoji and a descriptive status message", "/status sick Feeling unwell and taking time off to recover"
     "/status clear *", Clear the current status, "/status clear"
 
 .. note::
