@@ -192,7 +192,7 @@ Integration Management
 
 Example: As the default for the entire system, only allow System Admins to create, edit, and delete integrations.
 
-1. Navigate to **System Console > User Management > Permissions**.
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** and **Team Administrators** panels, in the **Integrations & Customizations** section, uncheck the boxes for **Manage Incoming Webhooks**, **Manage Outgoing Webhooks**, and **Manage Slash Commands**.
 
