@@ -123,7 +123,6 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   c. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   d. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
 
-
 Convert Public channels to Private channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
