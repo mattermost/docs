@@ -1,4 +1,4 @@
-Generating a Support Packet (E10 and E20)
+Generating a Support Packet (E10/E20)
 =========================================
 
 Available in `Enterprise Edition E10 and higher <https://mattermost.com/pricing-self-managed/>`__.
