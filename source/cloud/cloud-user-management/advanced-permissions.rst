@@ -111,7 +111,7 @@ The **Manage Channel Settings** option is now only available to **Channel Admini
 
 Example: In Team C, restrict public channel creation to Admins. As the default for all other teams, allow everyone to create public channels.
 
-1. Navigate to **System Console > User Management > Permissions**.
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, in the **Manage Public Channels** menu, check the box for **Create Channels**. This sets the system default to allow creation of public channels on all teams.
 4. Select **Save**.
