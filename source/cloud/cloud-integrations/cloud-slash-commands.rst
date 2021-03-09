@@ -6,7 +6,7 @@ Slash Commands
 
   This is the admin documentation for slash commands. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
-Mattermost supports slash commands to easily integrate external applications into the server. They function similarly to `outgoing webhooks <https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and Direct Messages.
+Mattermost supports slash commands to easily integrate external applications into the workspace. They function similarly to `outgoing webhooks <https://docs.mattermost.com/cloud/cloud-integrations/cloud-outgoing-webhooks.html>`_, except they can be used in any channel - including Private channels and Direct Messages.
 
 Messages that begin with ``/`` are interpreted as slash commands. The commands will send an HTTP POST request to a web service, and process a response back to Mattermost. Mattermost supports both `built-in <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands>`__ and `custom slash commands <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html>`__.
 
@@ -61,7 +61,7 @@ Suppose you want to write an external application that is able to check the weat
 You can follow these general guidelines to set up a custom Mattermost slash command for your application.
 
 1. Open **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin to do so.
-2. Click **Add Slash Command** and add name and description for the command.
+2. Select **Add Slash Command**, then add a name and description for the command.
 3. Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands>`__.
 4. Set the **Request URL** and **Request Method**. The request URL is the endpoint that Mattermost hits to reach your application, and the request method is either POST or GET and specifies the type of request sent to the request URL.
 5. (Optional) Set the response username and icon the command will post messages as in Mattermost. If not set, the command will use your username and profile picture.
@@ -71,7 +71,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
     `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin.
 
 6. (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
-7. Choose **Save**. On the next page, copy the **Token** value. This will be used in a later step.
+7. Select **Save**. On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../../images/slash_commands_token.png
   :width: 500 px
