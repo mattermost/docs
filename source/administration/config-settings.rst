@@ -1755,7 +1755,7 @@ Show Full Name
 Enable Custom User Statuses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Users can set descriptive status messages and optional status emoji that are visible to all users.
+**True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
 
 **False**: Users are unable to set custom user statuses.
 
