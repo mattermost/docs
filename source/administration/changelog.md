@@ -81,7 +81,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``ClusterSettings`` in ``config.json``:
      - Added ``EnableGossipCompression``, to disable compression in the Gossip protocol. By default the value of the setting is ``true``, which is the existing default. This is done to maintain compatibility with old servers in a cluster. Once all servers in a cluster are upgraded, it is recommended to disable this setting for better performance.
  - Under ``SqlSettings`` in ``config.json``:
-     - Added ``ConnMaxIdleTimeMilliseconds`` was added to ``DatabaseSettings``, to allow controlling the maximum time a database connection can remain idle. The default value is set to 5 minutes.
+     - Added ``ConnMaxIdleTimeMilliseconds``, to allow controlling the maximum time a database connection can remain idle. The default value is set to 5 minutes.
  - Under ``TeamSettings`` in ``config.json``:
      - Added ``EnableCustomUserStatuses``, to allow users to set descriptive status messages and optional status emoji that are visible to all users.
     
@@ -98,7 +98,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``/users/{user_id}/teams/{team_id}/threads/mention_counts`` API endpoint.
  - Added a new ``GET /api/v4/cloud/subscription/stats`` API endpoint.
  - Added a new ``GET /api/v4/cloud/subscription/limitreached/invite`` API endpoint.
- - Added new API endpoints ``PUT /api/v4/users/<id>/status/custom``, ``DELETE /api/v4/users/<id>/status/custom``, and ``DELETE /api/v4/users/<id>/status/custom/recent``.
+ - Added new ``PUT /api/v4/users/<id>/status/custom``, ``DELETE /api/v4/users/<id>/status/custom``, and ``DELETE /api/v4/users/<id>/status/custom/recent`` API endpoints.
  - The ``/api/v4/users/me/auth`` API endpoint can no longer be used to change passwords. This was a hidden feature that was not documented, but was nevertheless possible. We are just removing the hidden feature.
  - Updated ``/users/{user_id}/teams/{team_id}/threads`` API to support ``unread=true`` query parameter.
  - ``/api/v4/users/{user_id}/teams/{team_id}/threads`` API endpoint now accepts "before" and "after" parameters instead of a page index.
