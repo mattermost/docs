@@ -79,7 +79,7 @@ When enabled, the **Guest Attribute** in Mattermost identifies external users wh
 If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
 1. Enable Guest Access via **System Console > Guest Access (Beta)**.
-2. Navigate to **System Console > Authentication > SAML 2.0**.
+2. Go to **System Console > Authentication > SAML 2.0**.
 3. Complete the **Guest Attribute** field.
 4. Select **Save**.
 
