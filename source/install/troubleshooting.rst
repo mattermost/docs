@@ -817,10 +817,10 @@ Note for Agents: This information is also required:
 Environment
 ~~~~~~~~~~~
 
+Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost.
+
 What information to include
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost.
 
 Because of this, having a complete picture of the servers and network that the Mattermost server operates in is key to solving problems. This includes (but is not limited to):
 
