@@ -47,7 +47,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   ``exit``
 
-9. (Optional) If you use a different server for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/10/main/postgresql.conf`` in a text editor as *root* user. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+9. (Optional) If you use a different server for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` in a text editor as *root* user. You will need to replace `{version}` with the version PostgreSQL is currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
@@ -65,7 +65,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` as *root* in a text editor.
+    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` as *root* in a text editor.
 
     b. Find the following lines:
 
@@ -81,7 +81,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   **If the Mattermost server and the database are on different machines:**
 
-    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` in a text editor as *root* user.
+    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` in a text editor as *root* user.
 
     b. Add the following line to the end of the file, where ``{mattermost-server-IP}`` is the IP address of the Mattermost server.
 
