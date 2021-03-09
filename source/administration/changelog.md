@@ -8,9 +8,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2021-03-16**
 
-### Compatibility
- - 
-
 ### Breaking Changes
  - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
  - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
@@ -19,16 +16,17 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### OpenID Connect (E20 Edition)
+#### OpenID Connect for OAuth 2.0 Authentication (E20 Edition)
  - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. This feature is available for Mobile Apps in v1.40 release.
 
 #### Support Packet Generation (E10 & E20 Editions)
- - Allows a System Admin to download a support packet which provides helpful information to our internal support team.
+ - Mattermost provides the ability to download configuration details, logs, and other deployment information when requesting commercial support for Mattermost self-managed E10 or E20 Enterprise editions, or Mattermost Cloud editions.
 
 #### Updated Incident Collaboration plugin to 1.4.0 (E20 Edition)
- - 
+ - Added an Incident Timeline, to add support for status updates and other key events to be shown in the right-hand sidebar in a chronological order, allowing users to easily gather information for post-incident reports.
  
-#### Custom Status ?
+#### Custom Statuses
+ - Users now gain the flexibility to express their current status in any way they prefer. Set a custom status to add a descriptive status message and emoji that’s visible to everyone throughout the app.
 
 ### Improvements
 
@@ -84,7 +82,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
      - Added ``EnableGossipCompression``, to disable compression in the Gossip protocol. By default the value of the setting is ``true``, which is the existing default. This is done to maintain compatibility with old servers in a cluster. Once all servers in a cluster are upgraded, it is recommended to disable this setting for better performance.
  - Under ``SqlSettings`` in ``config.json``:
      - Added ``ConnMaxIdleTimeMilliseconds`` was added to ``DatabaseSettings``, to allow controlling the maximum time a database connection can remain idle. The default value is set to 5 minutes.
- - Added a new config setting ``TeamSettings.EnableCustomUserStatuses``. **???**
+ - Under ``TeamSettings`` in ``config.json``:
+     - Added ``EnableCustomUserStatuses``, to allow users to set descriptive status messages and optional status emoji that are visible to all users.
     
 ### Go Version
  - 5.33 is built with Go ``1.15.5``.
@@ -97,9 +96,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``GET /{team_id}/threads/{thread_id}`` API method for retrieving single threads.
  - Added a new ``/exports`` API endpoint to generate and manage export files.
  - Added a new ``/users/{user_id}/teams/{team_id}/threads/mention_counts`` API endpoint.
- - Added a new ``GET /api/v4/cloud/subscription/stats`` API endpoint. **???**
- - Added a new ``GET /api/v4/cloud/subscription/limitreached/invite`` API endpoint. **???**
- - Added new API endpoints ``PUT /api/v4/users/<id>/status/custom``, ``DELETE /api/v4/users/<id>/status/custom``, and ``DELETE /api/v4/users/<id>/status/custom/recent``. **???**
+ - Added a new ``GET /api/v4/cloud/subscription/stats`` API endpoint.
+ - Added a new ``GET /api/v4/cloud/subscription/limitreached/invite`` API endpoint.
+ - Added new API endpoints ``PUT /api/v4/users/<id>/status/custom``, ``DELETE /api/v4/users/<id>/status/custom``, and ``DELETE /api/v4/users/<id>/status/custom/recent``.
  - The ``/api/v4/users/me/auth`` API endpoint can no longer be used to change passwords. This was a hidden feature that was not documented, but was nevertheless possible. We are just removing the hidden feature.
  - Updated ``/users/{user_id}/teams/{team_id}/threads`` API to support ``unread=true`` query parameter.
  - ``/api/v4/users/{user_id}/teams/{team_id}/threads`` API endpoint now accepts "before" and "after" parameters instead of a page index.
@@ -107,13 +106,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Websocket Event Changes
  - ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
- - Improved the WebSocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using nginx as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the WebSocket path.
-
-### Database Changes
 
 ### Known Issues
  - Config.json can reset when running any ``sudo -u mattermost ./bin/mattermost`` commands or when running ``systemctl restart mattermost`` [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
- - Some known issues related to the new custom, collapsible channel categories feature, including a laggy team icon on-click animation [MM-32198](https://mattermost.atlassian.net/browse/MM-11820).
  - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
