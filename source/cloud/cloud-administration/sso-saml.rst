@@ -64,7 +64,7 @@ Admin Attribute
 
 Existing members that are identified by this attribute will be promoted from member to System Admin upon next login. The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are manually demoted to members in **System Console > User Management** to ensure access is restricted immediately.
 
-1. Navigate to **System Console > Authentication > SAML 2.0**.
+1. Go to **System Console > Authentication > SAML 2.0**.
 2. Set **Enable Admin Attribute** to **true**.
 3. Complete the **Admin Attribute** field.
 4. Select **Save**.
