@@ -3,6 +3,10 @@ Command Line Tools
 
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
+.. note::
+
+  The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
+
 These ``mattermost`` commands include:
 
 **General Administration**
@@ -738,6 +742,37 @@ mattermost config validate
       .. code-block:: none
 
         bin/mattermost config validate
+	
+mattermost db init
+------------------
+
+  Description
+    Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
+
+  Format
+    .. code-block:: none
+
+      mattermost db init
+
+  Examples
+  
+    Use the ``config`` flag to pass the DSN:
+    
+    .. code-block:: none
+
+       mattermost db init --config postgres://localhost/mattermost
+       
+    Run this command to use the ``MM_CONFIG`` environment variable:
+    
+    .. code-block:: none
+      
+       MM_CONFIG=postgres://localhost/mattermost mattermost db init
+    
+    Run this command to set a custom defaults file to be loaded into the database: 
+    
+    .. code-block:: none
+    
+       MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
 
 mattermost export
 -----------------
