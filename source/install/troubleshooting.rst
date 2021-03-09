@@ -480,7 +480,7 @@ Settings
 User Availability gets Stuck on "Away" or "Offline"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you notice more than one user has their `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ stuck as "Away" or "Offline", try one of the following steps:
+If you notice more than one user has their `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ stuck as **Away** or **Offline**, try one of the following steps:
 
 1. If you're using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <https://nginx.org/en/docs/http/load_balancing.html>`__.
 2. If you're using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
