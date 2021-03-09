@@ -27,12 +27,14 @@ Additionally, guests are not automatically added to the default ``Town-square`` 
 Enabling Guest Accounts
 ------------------------
 
-1. Navigate to **System Console > Authentication > Guest Access**.
-2. Set **Enable Guest Access** to ``True``.
-3. (Optional) **Whitelist domains that are acceptable for Guest Access**.
- - This allows the System Administrators to set a list of approved guest domains. If you have team domain restrictions, you will also need to add your guest domain to **Team Settings > Allow only users with a specific email domain to join this team**.
-4. (Optional) **Enforce Multi-Factor Authentication (MFA) for your Guests**.
- - If you are enforcing MFA for your users, you can optionally choose to enforce MFA for your guest users.
+1. Go to **System Console > Authentication > Guest Access (Beta)**.
+2. Set **Enable Guest Access** to **true**.
+3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the System Admin to set a list of approved guest domains.
+4. (Optional) Set **Enforce Multi-factor Authentication** to **true**. If you're enforcing MFA for your users, you can optionally choose to also enforce MFA for your guest users.
+ 
+.. note::
+
+  If you have team domain restrictions, you also need to add your guest domain in **System Console > User Management > Teams**. Select a team, then enable **Only specific email domains can join this team**.
 
 Guest Authentication
 ---------------------
@@ -48,7 +50,8 @@ Inviting Guests to the Mattermost Server via Email
 
 Guests can be invited into one or more Mattermost channels within a team by System Admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.
 
-**Note:** Guest invitations are revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.
+.. note::
+  Guest invitations are revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.
 
 To invite guests into one or more Mattermost channels:
 
@@ -67,9 +70,9 @@ Configuring AD/LDAP Authentication
 When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 1. Enable Guest Access via **System Console > Authentication > Guest Access (Beta)**.
-2. Navigate to **System Console > Authentication > AD/LDAP**.
+2. Go to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
-4. Choose **Save**.
+4. Select **Save**.
 
 If a Mattermost guest user has the ``guest`` role removed in the AD/LDAP system, the synchronization process will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
@@ -85,14 +88,14 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 1. Enable Guest Access via **System Console > Guest Access (Beta)**.
 2. Navigate to **System Console > Authentication > SAML 2.0**.
 3. Complete the **Guest Attribute** field.
-4. Choose **Save**.
+4. Select **Save**.
 
 When a guest logs in without having any channels assigned to their account, they're advised to contact an administrator.
 
 Guest Permission Settings
 -------------------------
 
-In E10 and E20, you can also control which users can invite guests. By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ in E20 that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:
+In Enterprise Edition E10 and E20, you can also control which users can invite guests. By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ in E20 that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 
  - Edit posts
  - Delete posts
@@ -126,24 +129,25 @@ When a guest has been removed from all channels within a team, and if they belon
 Promoting and Demoting User Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System Admins can demote a member to guest by updating their role in **System Console > User Management > Users**. The demoted user will retain their existing channel and team memberships but will be restricted from discovering public channels and collaborating with users outside of the channels they are in.  This is useful if you are already collaborating with external contractors and want to restrict their abilities within your Mattermost instance.
+System Admins can demote a member to a guest by updating their role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. 
 
-System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**.
+The demoted user retains their existing channel and team memberships but is restricted from discovering public channels and collaborating with users outside of the channels they're in. This is useful if you're already collaborating with external contractors, and want to restrict their abilities within Mattermost.
 
-**Note:** You can filter the list in **System Console >  User Management > Users** to view all guests on the system.
+System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**. Select the guest, then select **Promote to Member**.
+
+.. note::
+  You can filter the list in **System Console > User Management > Users** to view all guests in the system.
 
 Disabling Guest Accounts
 ------------------------
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta) > Enable Guest Access** and select ``False``. In versions prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta)**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual guest accounts by selecting **Activate**.
 
-From 5.18, if you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
+From Mattermost Server version 5.18, when a single Guest Account is deactivated or the Guest Account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the Guest Account feature leaves current Guest Accounts as active until they are manually deactivated.
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta) > Enable Guest Access** and select ``False``. In versions prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
+From Mattermost Server version 5.18, if you're using AD/LDAP and the Guest Access setting is disabled, and the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
 Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
-
-You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. From version 5.18, when a single Guest Account is disabled or the feature is disabled, the guest will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
 
 Reinstating Guest Accounts
 --------------------------
@@ -194,7 +198,7 @@ The Guest Account feature was reviewed by the Mattermost security team. We do no
 How can I validate my guests' identity?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Guest Access > Whitelisted Guest Domains**.
+Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access (Beta) > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
