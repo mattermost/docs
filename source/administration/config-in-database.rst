@@ -41,7 +41,7 @@ Example output:
 
 Another way is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
-If ``SqlSettings.DataSource`` does not start with ``postgres://`` then you have to add ``mysql://`` to the beginning. Also, if you see ``\u0026`` replace it with ``&``.
+If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://`` then you have to add it to the beginning. Also, if you see ``\u0026`` replace it with ``&``.
 
 Here are two example connection strings:
 
