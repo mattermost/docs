@@ -143,11 +143,13 @@ For forest configurations that contain multiple domains which do NOT share a com
 
 See [Global Catalog and LDAP Searches](https://technet.microsoft.com/en-us/library/cc978012.aspx) for additional details.
 
-### Troubleshooting/FAQ
+Troubleshooting/FAQ
+~~~~~~~~~~~~~~~~~~~
 
 The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommended that you check your logs for errors as they can provide an idea of what the issue is.
 
-#### If the **AD/LDAP Test** button fails, how can I troubleshoot the connection?
+If the **AD/LDAP Test** button fails, how can I troubleshoot the connection?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See [LDAP Connection Test Example](http://ldaptool.sourceforge.net). If the AD/LDAP connection is verified to be working out side of Mattermost, try the following:
 
@@ -241,26 +243,30 @@ To do this, you can:
 
 **Note:** Currently the value is case sensitive. If the **ID Attribute** is set to the username and the username changes from `John.Smith` to `john.smith`, the user will experience problems logging in.
 
-#### I see the log error `LDAP Result Code 4 "Size Limit Exceeded"`.
+I see the log error ``LDAP Result Code 4 "Size Limit Exceeded"``.
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
-To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query. A max page size setting of 1500 is recommended.
+To address this issue you can set the `max page size <https://docs.mattermost.com/administration/config-settings.html#maximum-page-size>`_ in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query. A max page size setting of 1500 is recommended.
 
 If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
-#### Where can I find help on AD/LDAP configuration settings in `config.json`?
+Where can I find help on AD/LDAP configuration settings in ``config.json``?
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
+You can find an explanation of each of the configuration settings `here <https://docs.mattermost.com/administration/config-settings.html#ad-ldap>`_.
 
-#### Can the AD/LDAP User Filter read security groups?
+Can the AD/LDAP User Filter read security groups?
+'''''''''''''''''''''''''''''''''''''''''''''''''
 
 Yes it can, but make sure that:
 
 - Permissions are correctly configured on the service account you are using.
 - Each user object is a direct member of the security group.
 
-#### How do I know if an AD/LDAP sync job fails?
+How do I know if an AD/LDAP sync job fails?
+'''''''''''''''''''''''''''''''''''''''''''
 
 Mattermost provides the status of each AD/LDAP sync job in **System Console > Authentication > AD/LDAP**. Here you can see the number of users updated and if the job succeeded or failed.
 
