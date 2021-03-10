@@ -8,8 +8,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2021-03-16**
 
-### Breaking Changes
+### Important Upgrade Notes
  - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
+
+### Breaking Changes
  - A new websocket implementation requires the HTTP version to be 1.1. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
  
 **IMPORTANT:** If you upgrade from a release earlier than v5.32, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
@@ -110,7 +112,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
 
 ### Known Issues
- - Config.json can reset when running any ``sudo -u mattermost ./bin/mattermost`` commands or when running ``systemctl restart mattermost`` [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Config.json can reset when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
@@ -221,7 +223,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``Shared`` column to the ``Channels`` table.
 
 ### Known Issues
- - Config.json can reset when running any ``sudo -u mattermost ./bin/mattermost`` commands or when running ``systemctl restart mattermost`` [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Config.json can reset when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20 required plugins on non-E20 installations. [MM-32387](https://mattermost.atlassian.net/browse/MM-32387)
  - Some known issues related to the new channel sidebar, such as that the team icon on-click animation is laggy. [MM-32198](https://mattermost.atlassian.net/browse/MM-11820)
  - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
@@ -294,7 +296,7 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  
 ### Known Issues
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
- - Config.json can reset when running any ``sudo -u mattermost ./bin/mattermost`` commands or when running ``systemctl restart mattermost`` [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Config.json can reset when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
  - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes. [MM-29927](https://mattermost.atlassian.net/browse/MM-29927)
  - Error text is missing when the team name is left blank on the team creation page. [MM-31361](https://mattermost.atlassian.net/browse/MM-31361)
