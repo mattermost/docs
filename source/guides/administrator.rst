@@ -135,14 +135,14 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/migration-announcement-email-template*
    /administration/user-provisioning*
    /deployment/admin-roles*
-   /deployment/sso-ldap.rst
+   /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
    /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
    /deployment/sso-saml-technical*
    /deployment/sso-gitlab*
-   /deployment/sso-google.rst
+   /deployment/sso-google*
    /deployment/sso-office*
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
