@@ -23,7 +23,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Mattermost provides the ability to download configuration details, logs, and other deployment information when requesting commercial support for Mattermost self-managed E10 or E20 Enterprise editions, or Mattermost Cloud editions.
 
 #### Updated Incident Collaboration plugin to 1.4.0 (E20 Edition)
- - Added an Incident Timeline, to add support for status updates and other key events to be shown in the right-hand sidebar in a chronological order, allowing users to easily gather information for post-incident reports.
+ - Added an Incident Timeline to add support for status updates and other key events to be shown in the right-hand sidebar in a chronological order. The timeline enables users to easily gather information for post-incident reports.
  
 #### Custom Statuses
  - Users now gain the flexibility to express their current status in any way they prefer. Set a custom status to add a descriptive status message and emoji that’s visible to everyone throughout the app.
