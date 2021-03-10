@@ -1,8 +1,10 @@
-## Active Directory/LDAP Setup (E10/E20)
+Active Directory/LDAP Setup (E10/E20)
+=====================================
 
-_Available in Enterprise Edition E10 and E20_
+*Available in Enterprise Edition E10 and E20.*
 
-### Overview
+Overview
+--------
 
 Active Directory (AD) is a service that stores authentication and authorization details of users on your organization's network. When you integrate your AD/LDAP system with Mattermost, users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP, and changes are synced with the Mattermost server.
 
@@ -14,11 +16,13 @@ Benefits of integrating AD/LDAP with Mattermost include:
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
 - **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using LDAP filters.
 
-### Pre-installation Notes
+Pre-installation Notes
+----------------------
 
 - If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.
 
-### Getting Started
+Getting Started
+~~~~~~~~~~~~~~~
 
 There are two ways to set up AD/LDAP:
 
@@ -26,9 +30,10 @@ There are two ways to set up AD/LDAP:
      - Start the Mattermost server and create a new account using email and password. This is assigned the System Admin role as the first user created. Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP sign in method.
      
 2. **Configure AD/LDAP by editing `config.json`**
-     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on the [AD/LDAP settings documentation](https://docs.mattermost.com/administration/config-settings.html#ad-ldap). When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
+     - Before starting the Mattermost server, edit `config.json` to enable AD/LDAP based on the `AD/LDAP settings documentation <https://docs.mattermost.com/administration/config-settings.html#ad-ldap>`_. When you start the Mattermost server the first user to log in with valid AD/LDAP credentials will be assigned the System Administrator role.
 
-#### Configure AD/LDAP Sign In
+Configure AD/LDAP Sign In
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After installing Mattermost:
 
@@ -38,7 +43,7 @@ On a new server create an account using email and password, which is automatical
 
 2. **Configure AD/LDAP.**
 
-Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the [configuration settings documentation](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
+Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#ad-ldap>`_.
 
 3. **Confirm that AD/LDAP sign-on is enabled.**
 
@@ -50,15 +55,16 @@ Navigate to **Account Settings > Security > Sign-in Method > Switch to AD/LDAP**
 
 5. **(Optional) Restrict authentication to AD/LDAP.**
 
-Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to `false` and **Enable sign-in with username** to `false`. Then choose **Save** to save the changes. This should leave Active Directory/LDAP as the only sign in option.
+Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to ``false`` and **Enable sign-in with username** to ``false``. Then choose **Save** to save the changes. This should leave Active Directory/LDAP as the only sign in option.
 
 6. **(Optional) If you configured `First Name Attribute` and `Last Name Attribute` in the System Console.**
 
 Navigate to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the command line tool](https://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
+If you've made a mistake and lock yourself out of the system somehow, you can `set an existing account to System Administrator using the command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`_.
 
-#### Configure AD/LDAP Synchronization
+Configure AD/LDAP Synchronization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.
 
@@ -66,7 +72,7 @@ Note that the AD/LDAP sync depends on email. Make sure all users on your AD/LDAP
 
 To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
-1. Go to **System Console > Authentication > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to `true`.
+1. Go to **System Console > Authentication > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to ``true``.
 
 2. Scroll down to **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
 
@@ -74,13 +80,15 @@ If you want to synchronize immediately after disabling an account, use the **AD/
 
 **Note:** Make sure that at least one LDAP user is in Mattermost or the sync will not complete.
 
-To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
+To configure AD/LDAP synchronization with SAML sign-in, see the `SAML documentation <https://about.mattermost.com/default-saml-ldap-sync>`_.
 
-#### Configure AD/LDAP Sign-in Using Filters
+Configure AD/LDAP Sign-in Using Filters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using filters assigns roles to specified users on login. To access AD/LDAP filter settings navigate to **System Console > AD/LDAP**.
 
-##### User Filter
+User Filter
+'''''''''''
 
 (Optional) Enter an AD/LDAP filter to use when searching for user objects. Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.
 
@@ -90,31 +98,33 @@ Using filters assigns roles to specified users on login. To access AD/LDAP filte
 
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
-Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is `(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`.
+Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is ``(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))``.
 
-##### Guest Filter
+Guest Filter
+''''''''''''
 
 (Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in **System Console > User Management**.
 
-1. Navigate to **System Console > Authentication > Guest Access (Beta)** and set Guest Access to `true`.
+1. Navigate to **System Console > Authentication > Guest Access (Beta)** and set Guest Access to ``true``.
 2. Navigate to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
 4. Choose **Save**.
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the [Guest Accounts documentation](https://docs.mattermost.com/deployment/guest-accounts.html) for more information about this feature.
+See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information about this feature.
 
-##### Admin Filter
+Admin Filter
+''''''''''''
 
 (Optional) Enter an AD/LDAP filter to use for designating System Admins. The users selected by the query will have access to your Mattermost server as System Admins. By default, System Admins have complete access to the Mattermost System Console. Existing members that are identified by this attribute will be promoted from member to System Admin upon next login.
 
 The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are demoted to members manually in **System Console > User Management** to ensure access is restricted immediately.
 
 1. Navigate to **System Console > Authentication > AD/LDAP**.
-2. Set **Admin Filter** to `true`.
+2. Set **Admin Filter** to ``true``.
 3. Complete the **Admin Filter** field.
 4. Choose **Save**.
 
