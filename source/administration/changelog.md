@@ -122,7 +122,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.2, release day TBD**
-  - Fixing an issue where the Database Schema version 5.29.1 is not taken into account in releases 5.30 and later. [MM-33655](https://mattermost.atlassian.net/browse/MM-33655)
+  - Fixing an issue where the Database Schema upgrade step for version 5.29.1 is not taken into account in releases 5.30 and later. [MM-33655](https://mattermost.atlassian.net/browse/MM-33655)
 - **v5.31.1, released 2021-02-05**
   - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
   - Fixed an issue where ``FeatureFlags`` section was getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
