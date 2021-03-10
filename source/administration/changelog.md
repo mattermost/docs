@@ -10,7 +10,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Breaking Changes
  - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
- - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
+ - A new websocket implementation requires the HTTP version to be 1.1. If you are using NGINX as a proxy to Mattermost, please ensure to have ``proxy_http_version 1.1;`` in the block that handles the websocket path.
  
 **IMPORTANT:** If you upgrade from a release earlier than v5.32, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
@@ -105,6 +105,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed session required restriction from ``GET api/v4/subscription/stats`` API endpoint.
 
 ### Websocket Event Changes
+ - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.
  - ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
 
 ### Known Issues
