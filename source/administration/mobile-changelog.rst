@@ -1,23 +1,31 @@
-# Mattermost Mobile Apps Changelog
+Mattermost Mobile Apps Changelog
+================================
 
-## 1.40.0 Release
+1.40.0 Release
+~~~~~~~~~~~~~~
+
 - Release Date: February 25, 2021
-- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
-### Compatibility
- - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
- - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+Compatibility
+^^^^^^^^^^^^^
+ - **Upgrade to server version v5.25 or later is required.** Support for server `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ `is required by Google <https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html>`_.	
  - iPhone 5s devices and later with iOS 11+ is required.
  
-**Note:** Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+.. note::
 
-### Improvements
+  Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`_.
+
+Improvements
+^^^^^^^^^^^^
  - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
  - Added new languages, Bulgarian and Swedish.
 
-### Bug Fixes
-
-#### All apps
+Bug Fixes
+^^^^^^^^^
+All apps
+''''''''
  - Fixed an issue where deeply nested asterisks caused the app to crash.
  - Fixed an issue where the app crashed when attempting to render a post whose attachment value was null.
  - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
@@ -26,18 +34,21 @@
  - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
  - Fixed an issue where "(you)" did not appear after the current username when using ``@yourself`` autocomplete in a channel.
 
-#### iOS specific
+iOS specific
+''''''''''''
  - Fixed an issue where users were unable to scroll horizontally to view multiple file attachments.
 
-### Known Issues
+Known Issues
+^^^^^^^^^^^^
  - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
  - On Pixel 4a, uploading PDFs crashes the app and sharing files does not work.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
-## 1.39.0 Release
+1.39.0 Release
+~~~~~~~~~~~~~~~
 - Release Date: January 16, 2021
-- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
  - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
@@ -1847,24 +1858,27 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 Many thanks to all our contributors. In alphabetical order:
 - asaadmahmood, cpanato, csduarte, enahum, hmhealey, jarredwitt, JeffSchering, jasonblais, lfbrock, omar-dev, rthill
 
-## Beta Release
+Beta Release
+~~~~~~~~~~~~
 
 - Release Date: March 29, 2017
 - Server Versions Supported: Server v3.7+ is required, Self-Signed SSL Certificates are not yet supported
 
-Note: If you need an SSL certificate, consider using [Let's Encrypt](https://docs.mattermost.com/install/config-ssl-http2-nginx.html) instead of a self-signed one.
+Note: If you need an SSL certificate, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`_ instead of a self-signed one.
 
-### Highlights
+Highlights
+^^^^^^^^^^
+The Beta apps are a work in progress, supported features are listed below. You can become a beta tester by `downloading the Android app <https://play.google.com/store/apps/details?id=com.mattermost.react.native&hl=en>`_ or `signing up to test iOS <https://mattermost-fastlane.herokuapp.com/>`_. 
 
-The Beta apps are a work in progress, supported features are listed below. You can become a beta tester by [downloading the Android app](https://play.google.com/store/apps/details?id=com.mattermost.react.native&hl=en) or [signing up to test iOS](https://mattermost-fastlane.herokuapp.com/). 
-
-#### Authentication
+Authentication
+''''''''''''''
 - Email login
 - LDAP/AD login
 - Multi-factor authentication 
 - Logout
 
-#### Messaging
+Messaging
+'''''''''
 - View and send posts in the center channel
 - Automatically load more posts in the center channel when scrolling
 - View and send replies in thread view
@@ -1877,21 +1891,25 @@ The Beta apps are a work in progress, supported features are listed below. You c
 - Flag/Unflag posts
 - Basic markdown (lists, headers, bold, italics, links)
 
-#### Notifications
+Notifications
+'''''''''''''
 - Push notifications
 - In-app notifications when you receive a message in another channel while the app is open
 - Clicking on a push notification takes you to the channel
 
-#### User profiles
+User profiles
+'''''''''''''
 - Status indicators
 - View profile information by clicking on someone's username or profile picture
 
-#### Files
+Files
+'''''
 - File thumbnails for posts with attachments
 - Upload up to 5 images
 - Image previewer to view images when clicked on
 
-#### Channels
+Channels
+''''''''
 - Channel drawer for selecting channels
 - Bolded channel names for Unreads, and mention jewel for Mentions
 - (iOS only) Unread posts above/below indicator
@@ -1906,15 +1924,17 @@ The Beta apps are a work in progress, supported features are listed below. You c
 - Add/remove people from a channel
 - Loading screen when opening channels 
 
-#### Settings
+Settings
+''''''''
 - Account Settings > Notifications page
 - About Mattermost info dialog
 - Report a problem link that opens an email for bug reports
 
-#### Teams
+Teams
+'''''
 - Switch between teams using "Team Selection" in the main menu (viewing which teams have notifications is not yet supported) 
 
-### Contributors
-
+Contributors
+~~~~~~~~~~~~
 Many thanks to all our contributors. In alphabetical order:
 - csduarte, dmeza, enahum, hmhealey, it33, jarredwitt, jasonblais, lfbrock, mfpiccolo, saturninoabril, thomchop
