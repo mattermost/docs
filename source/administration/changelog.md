@@ -56,6 +56,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Implemented a job to delete unused export files.
 
 ### Bug Fixes
+ - Fixed an issue where the Database Schema upgrade step for version 5.29.1 was not taken into account in releases 5.30 and later.
  - Fixed an issue where ``mmctl channel move`` did not allow moving private channels.
  - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` to try to change a configuration value did not return an error.
  - Fixed an issue where the instructions to search for users in **System Console > Reporting > Server Logs** were not up-to-date.
