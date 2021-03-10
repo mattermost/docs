@@ -128,20 +128,21 @@ The next login is based upon Session lengths set in **System Console > Session L
 3. Complete the **Admin Filter** field.
 4. Choose **Save**.
 
-**Note:** If the Admin Filter is set to `false` the member's role as System Admin is retained. However if this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console.
+**Note:** If the Admin Filter is set to ``false`` the member's role as System Admin is retained. However if this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console.
 
 When this filter isn't in use, members can be manually promoted/demoted via **System Console > User Management**.
 
-#### Configure AD/LDAP Deployments with Multiple Domains
+Configure AD/LDAP Deployments with Multiple Domains
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see [Forests as Collections of Domain Controllers that Trust Each Other](https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396) for more information.
+Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see `Forests as Collections of Domain Controllers that Trust Each Other <https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396>`_ for more information.
 
-For forest configurations that contain multiple domains which do NOT share a common root, you can search across all of the domains using the Global Catalog. To do so, update your `config.json` as follows:
+For forest configurations that contain multiple domains which do NOT share a common root, you can search across all of the domains using the Global Catalog. To do so, update your ``config.json`` as follows:
 
 - Set the LdapPort to 3268 (instead of 389)
 - Set the BaseDN to " " (A single space character)
 
-See [Global Catalog and LDAP Searches](https://technet.microsoft.com/en-us/library/cc978012.aspx) for additional details.
+See `Global Catalog and LDAP Searches <https://technet.microsoft.com/en-us/library/cc978012.aspx>`_ for additional details.
 
 Troubleshooting/FAQ
 ~~~~~~~~~~~~~~~~~~~
@@ -151,66 +152,73 @@ The following are frequently asked questions and troubleshooting suggestions on 
 If the **AD/LDAP Test** button fails, how can I troubleshoot the connection?
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See [LDAP Connection Test Example](http://ldaptool.sourceforge.net). If the AD/LDAP connection is verified to be working out side of Mattermost, try the following:
+Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See `LDAP Connection Test Example <http://ldaptool.sourceforge.net>`_. If the AD/LDAP connection is verified to be working out side of Mattermost, try the following:
 
-- Check your AD/LDAP system to verify your `Bind Username` format.
+- Check your AD/LDAP system to verify your ``Bind Username`` format.
 - Check your **AD/LDAP Port** and **Connection Security** settings in the System Console. (**AD/LDAP Port** set to 389 typically uses **Connection Security** set to `None`. **AD/LDAP Port** set to 636 typically ties to **Connection Security** set to **TLS**).
-- If you're seeing `x509: certificate signed by unknown authority` in your logs, try installing an intermediate SSL certificate on the Mattermost servers or have your LDAP server send the complete certificate chain.
+- If you're seeing ``x509: certificate signed by unknown authority`` in your logs, try installing an intermediate SSL certificate on the Mattermost servers or have your LDAP server send the complete certificate chain.
 
 If these options don't work, please contact Mattermost support via the email address that came with your license key.
 
-#### When I first set up and synchronize AD/LDAP, are the users automatically created in Mattermost?
+When I first set up and synchronize AD/LDAP, are the users automatically created in Mattermost?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 No, each user is created on their first login.
 
-#### When I try to synchronize AD/LDAP, why does the Status show as `Pending` and not complete?
+When I try to synchronize AD/LDAP, why does the Status show as `Pending` and not complete?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to `true`.
+Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
 
-If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
+If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this `document <https://docs.mattermost.com/administration/config-settings.html#user-filter>`_ for guidance on setting a correct syntax format.
 
 Make sure that you also have at least one LDAP user in Mattermost or the sync will not complete.
 
-#### What is the difference between the Username Attribute, ID Attribute, and Login ID Attribute?
+What is the difference between the Username Attribute, ID Attribute, and Login ID Attribute?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 There are three AD/LDAP attributes that apear to be similar but serve a different purpose:
 
-1. **Username Attribute**: Used within the Mattermost user interface to identify and mention users. For example, if **Username Attribute** is set to `john.smith`, a user typing `@john` will see `@john.smith` in their autocomplete options and posting a message with `@john.smith` will send a notification to that user that they’ve been mentioned.
-2. **ID Attribute**: Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [mattermost ldap idmigrate CLI tool](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate).
+1. **Username Attribute**: Used within the Mattermost user interface to identify and mention users. For example, if **Username Attribute** is set to ``john.smith``, a user typing ``@john`` will see ``@john.smith`` in their autocomplete options and posting a message with ``@john.smith`` will send a notification to that user that they’ve been mentioned.
+2. **ID Attribute**: Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as ``ObjectGUID``. If a user's ID attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate CLI tool <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate>`_.
 3. **Login ID Attribute**: The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the **Username Attribute** field above, or another field that users can easily remember.
 
-#### If I want to add people to channels, can I pre-create users?
+If I want to add people to channels, can I pre-create users?
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
+Yes, using the `bulk import tool <https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data>`_.
 
-#### How do I deactivate users?
+How do I deactivate users?
+''''''''''''''''''''''''''
 
 When AD/LDAP authentication is used in Mattermost, user deactivation must be done via the AD/LDAP server.
 
 There are two main ways to do this:
 
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
-2. **User filter:** Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
+2. **User filter:** Set the `user filter <https://docs.mattermost.com/administration/config-settings.html#user-filter>`_ to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
 
 For Active Directory, to filter out deactivated users you must set the user filter to:
 
-`(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``
 
 Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is: 
 
-`(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)`
+``(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)``
 
-`(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))`
+``(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))``
 
 When a user is deactivated in Mattermost, all the user's current sessions are revoked and they will be unable to log in or access Mattermost.
 
-#### Can I connect to multiple Active Directory servers?
+Can I connect to multiple Active Directory servers?
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 There is currently no built-in way to connect to multiple AD servers. You will need to connect the instances in a forest before connecting to Mattermost.
 
-Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
+Consider upvoting the `feature request <https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry>`_ on our forum.
 
-#### When trying to sign in, I see the error `AD/LDAP not available on this server`.
+When trying to sign in, I see the error ``AD/LDAP not available on this server``.
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 This indicates that there is a problem somewhere with your configuration. We recommend that you:
 
@@ -218,19 +226,21 @@ This indicates that there is a problem somewhere with your configuration. We rec
 2. Check your license to confirm it's uploaded and not expired.
 3. Check your Mattermost configuration settings to ensure that AD/LDAP is enabled, and the settings are correct.
 
-If you're still having issues, you can [contact support](https://mattermost.com/support/) for additional troubleshooting.
+If you're still having issues, you can `contact support <https://mattermost.com/support/>`_ for additional troubleshooting.
 
-#### I see the error `User not registered on AD/LDAP server`.
+I see the error ``User not registered on AD/LDAP server``.
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 This means the query sent back to the AD/LDAP server returned no results. We recommend that you:
 
-1. Check that the user credentials were entered properly - you should log in with the field set as the [`ID Attribute`](https://docs.mattermost.com/administration/config-settings.html#id-attribute).
+1. Check that the user credentials were entered properly - you should log in with the field set as the `ID Attribute <https://docs.mattermost.com/administration/config-settings.html#id-attribute>`_.
 2. Check that the user account exists in the AD/LDAP server.
 3. Check the AD/LDAP configuration settings are correct.
 
-If you're still having issues, you can [contact support](https://mattermost.com/support/) for additional troubleshooting.
+If you're still having issues, you can `contact support <https://mattermost.com/support/>`_ for additional troubleshooting.
 
-#### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost.
+I updated a user account in AD/LDAP, and they can no longer log in to Mattermost.
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the **ID Attribute** for their account has changed.
 
@@ -238,10 +248,12 @@ The issue can be fixed by changing the value of the field used for the **ID Attr
 
 To do this, you can:
 
-1. Use the [CLI to migrate the **ID Attribute**](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate) to a non-changing field.
-2. Set the [**Login ID Attribute**](https://docs.mattermost.com/administration/config-settings.html#login-id-attribute) to whatever you would like users to log in with (e.g. username or email).
+1. Use the `CLI to migrate the **ID Attribute** <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate>`_ to a non-changing field.
+2. Set the `**Login ID Attribute** <https://docs.mattermost.com/administration/config-settings.html#login-id-attribute>`_ to whatever you would like users to log in with (e.g. username or email).
 
-**Note:** Currently the value is case sensitive. If the **ID Attribute** is set to the username and the username changes from `John.Smith` to `john.smith`, the user will experience problems logging in.
+.. note:: 
+   
+   Currently the value is case sensitive. If the **ID Attribute** is set to the username and the username changes from ``John.Smith`` to ``john.smith``, the user will experience problems logging in.
 
 I see the log error ``LDAP Result Code 4 "Size Limit Exceeded"``.
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
