@@ -5,8 +5,8 @@ Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-manage
 
 .. include:: ../cloud/cloud-administration/common-sso-google.rst
 
-Confgure Mattermost config.json for Google Apps SSO
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Mattermost ``config.json`` for Google Apps SSO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instead of using the System Console, you can add the Google settings directly to the ``config.json`` file directly on your Mattermost server.
 
