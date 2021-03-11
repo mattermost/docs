@@ -121,6 +121,7 @@ You can use any certificate that you want, but these instructions show you how t
            proxy_connect_timeout 90;
            proxy_send_timeout 300;
            proxy_read_timeout 90s;
+           proxy_http_version 1.1;
            proxy_pass http://backend;
        }
 
