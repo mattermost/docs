@@ -5,7 +5,7 @@ Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-manage
 
 .. include:: ../cloud/cloud-administration/common-sso-office365.rst
 
-Confgure Mattermost config.json for Office 365 SSO
+Configure Mattermost ``config.json`` for Office 365 SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instead of using the System Console, you can add the Office 365 settings directly to the ``config.json`` file directly on your Mattermost server.
