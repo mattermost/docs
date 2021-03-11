@@ -25,9 +25,9 @@ Step 1: Register an application in Azure Portal
 
 5. Define the **Redirect URI** as Web client, then input the URL with the host name that will be specific to your Mattermost service followed by ``/signup/office365/complete``. An example below is: ``https://your.mattermost.com/signup/office365/complete``
 
-.. image:: ../images/AzureApp_New_Registration.png
+.. image:: /images/AzureApp_New_Registration.png
 
-.. image:: ../images/AzureApp_SetupMenuv2.png
+.. image:: /images/AzureApp_SetupMenuv2.png
 
 Once the App Registration has been created, you can configure it further. See the standard `Azure AD documentation <https://docs.microsoft.com/en-gb/azure/active-directory/develop/quickstart-register-app>`__ for reference.
 
@@ -40,9 +40,9 @@ Step 2: Generate a new client secret in Azure Portal
 
 3. In Azure Portal, select **Overview** from the menu, then copy and paste both the Application (client) ID and the Directory (tenant) ID to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
 
-.. image:: ../images/AzureApp_Client_Secret_Expiry.png
+.. image:: /images/AzureApp_Client_Secret_Expiry.png
 
-.. image:: ../images/AzureApp_App_Directory_IDsv2.png
+.. image:: /images/AzureApp_App_Directory_IDsv2.png
 
 Step 3: Configure Mattermost for Office 365 SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
