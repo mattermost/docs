@@ -12,13 +12,7 @@ To create a new Public or Private channel, select the **+** symbol at the top of
     
 Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
 
-There are two ways to start a Direct or Group Message:
-
-Select the **+** symbol at the top of the sidebar, then select **Open a Direct Message**.
-
-or
-
-Select the **+** symbol next to the **Direct Messages** category in the sidebar.
+You can start a Direct or Group Message by selecting the **+** symbol at the top of the sidebar, then selecting **Open a Direct Message**. Or you can select the **+** symbol next to the **Direct Messages** category in the sidebar.
 
     .. image:: ../../images/write-dm.png
 

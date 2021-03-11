@@ -7,8 +7,6 @@ Migrating from OAuth 2.0 to OpenID Connect
 
 OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to `convert your existing OAuth configuration <https://docs.mattermost.com/cloud/cloud-administration/converting-oauth-2.0-to-openid-connect.html>`__ for GitLab to the OpenID Connect standard. 
 
-converting-oauth-2.0-to-openid-connect.rst
-
 Configuring GitLab as a Single Sign-On (SSO) service
 ----------------------------------------------------
 
@@ -50,7 +48,6 @@ Step 2: Configure Mattermost for GitLab SSO
 5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the **Application Secret Key** from GitLab as the **Client Secret** in Mattermost. 
 7. Select **Save**.
-8. Restart your Mattermost server to see the changes take effect.
 
 (Optional) Step 3: Force users to sign up using SSO only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

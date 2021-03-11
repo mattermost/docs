@@ -114,13 +114,6 @@ There are five different settings that allow you to control content in posts.
 4. **Custom URL Schemes:** A list of URL schemes that are used for autolinking in message text. HTTP, HTTPS, FTP, tel, and mailto always create links.
 5. **Google API Key:** Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key and add YouTube Data API v3 as a service to your key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript. Using a Google API Key allows Mattermost to detect when a video is no longer available and display the post with a Video not found label.
 
-Public Links
-------------
-
-Enabling Public File Links allows users to generate public links to files and images for sharing outside the Mattermost system with a public URL.
-
-When disabled, the Get Public Link option is hidden from the image preview user interface. Anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When switched back to True, old public links will work again unless the Public Link salt has been regenerated.
-
 Users and Teams
 ---------------
 
