@@ -141,9 +141,11 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
    /deployment/sso-saml-technical*
+   /deployment/sso-openid-connect.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
+   /deployment/converting-oauth-service-providers-to-openid-connect.rst
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
    /deployment/team-channel-management*
