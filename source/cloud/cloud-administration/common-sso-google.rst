@@ -31,11 +31,11 @@ Step 1: Create OpenID Connect project in Google API Manager
 
 8. Copy and paste the **Your Client ID** and **Your Client Secret** values to a temporary location. You will enter these values in the Mattermost System Console.
 
-.. image:: ../images/create-google-sso-credentials.png
+.. image:: /images/create-google-sso-credentials.png
 
-.. image:: ../images/select-google-sso-web-app.png
+.. image:: /images/select-google-sso-web-app.png
 
-.. image:: ../images/google-sso-web-app-name.png
+.. image:: /images/google-sso-web-app-name.png
 
 .. image:: ../images/google-sso-redirect-uri.png
 
