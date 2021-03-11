@@ -22,7 +22,7 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 
 5. Enter `Mattermost-<your-company-name>` as the **Name**, replacing <your-company-name> with the name of your organization.
 
-6. Under **Authorized redirect URIs, select Add URL, then enter `{your-mattermost-url}/signup/google/complete`. For example: `http://localhost:8065/signup/google/complete`.
+6. Under **Authorized redirect URIs**, select **Add URL**, then enter `{your-mattermost-url}/signup/google/complete`. For example: `http://localhost:8065/signup/google/complete`.
 
 7. Select **Create**.
 
