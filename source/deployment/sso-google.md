@@ -22,9 +22,9 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 7. Select **Create**.
 8. Copy and paste the **Your Client ID** and **Your Client Secret** values to a temporary location. You will enter these values in the Mattermost System Console.
 
-![](../../../source/images/create-google-sso-credentials.png)
+![](../../source/images/create-google-sso-credentials.png)
 
-![](../../../source/images/select-google-sso-web-app.png)
+![](../source/images/select-google-sso-web-app.png)
 
 ![](../../../source/images/google-sso-web-app-name.png)
 
@@ -52,7 +52,7 @@ Configure Mattermost for Google Apps SSO using the System Console or by adding t
 #### Modifying the ``config.json`` file
 
 1. Open ``config.json`` as root in a text editor. It’s usually in ``/opt/mattermost/config`` but it might be elsewhere on your system.
-2. Locate the ``GoiogleSettings`` section, then add or update the following information:
+2. Locate the ``GoogleSettings`` section, then add or update the following information:
 
 ```
 "Enable": true,
@@ -66,5 +66,4 @@ Configure Mattermost for Google Apps SSO using the System Console or by adding t
         "ButtonText": "",
         "ButtonColor": ""
 ```
-
 3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their sign-in method before they can sign in with Google Apps.
