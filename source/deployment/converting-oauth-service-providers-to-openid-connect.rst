@@ -7,7 +7,7 @@ A one-time, one-click conversion tool is available within the existing OAuth 2.0
 
 .. image:: 
 
-  ../images/Convert-to-OpenID-Connect.png
+../images/Convert-to-OpenID-Connect.png
 
 Select **Convert to OpenID Connect** to migrate your active service provider configuration to the new standard. No further changes are required.
 
