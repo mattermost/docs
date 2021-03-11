@@ -37,9 +37,9 @@ Step 1: Create OpenID Connect project in Google API Manager
 
 .. image:: /images/google-sso-web-app-name.png
 
-.. image:: ../images/google-sso-redirect-uri.png
+.. image:: /images/google-sso-redirect-uri.png
 
-.. image:: ../images/google-sso-credentials.png
+.. image:: /images/google-sso-credentials.png
 
 Step 2: Enable Google People API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
