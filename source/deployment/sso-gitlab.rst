@@ -103,7 +103,7 @@ Alternatively, you can add the GitLab settings directly to the ``config.json`` f
 Mattermost Enterprise Edition E20
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Enterprise Edition E20 customers can set up a new GitLab OpenID Connect identity provider, or they can convert an existing OAuth 2.0 configuration for GitLab to the OpenID Connect standard. From Mattermost Enterprise Edition v5.33, OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to **convert your existing OAuth configuration** for GitLab to the OpenID Connect Standard. 
+Mattermost Enterprise Edition E20 customers can set up a new GitLab OpenID Connect identity provider, or they can convert an existing OAuth 2.0 configuration for GitLab to the OpenID Connect standard. From Mattermost Enterprise Edition v5.33, OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to `convert your existing OAuth 2.0 service provider configuration for GitLab <https://docs.mattermost.com/deployment/converting-oauth-service-providers-to-openid-connect.html>`__ to the OpenID Connect Standard. 
 
 1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 2. Select **GitLab** as the service provider.
