@@ -6,7 +6,7 @@ Depending on the type of error or problem you're experiencing, refer to the sect
 
 Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. 
 
-Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community-release.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
 
 Important Notes
 ---------------
@@ -645,7 +645,7 @@ When opening a Support ticket, it's important that you provide us with as much i
 
 C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community-release.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
 
 General Guidelines for Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -837,42 +837,49 @@ Be as specific as possible when describing the environment. If you are seeing er
 
 **Examples**
 
-- Mattermost server
-  - External hostname: mattermost.example.com
-  - Internal hostname: mattermost.lan
-  - Mattermost v5.28.0
-  - Zoom plugin v1.4.1
-  - NGINX v1.18.0
+Mattermost server
 
-- Database server
-  - Internal hostname: mysql.lan
-  - MySQL v5.7
-  - LDAP Provider - 192.168.1.102
-  - Internal hostname: ldap.lan
-  - OpenLDAP 2.4.54 (Docker container)
+ - External hostname: mattermost.example.com
+ - Internal hostname: mattermost.lan
+ - Mattermost v5.28.0
+ - Zoom plugin v1.4.1
+ - NGINX v1.18.0
 
-- Mattermost servers
-  - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
+Database server
 
-- Mattermost server versions
-  - mm1-3: 5.25.4
-  - mm4: 5.21.0
+ - Internal hostname: mysql.lan
+ - MySQL v5.7
+ - LDAP Provider - 192.168.1.102
+ - Internal hostname: ldap.lan
+ - OpenLDAP 2.4.54 (Docker container)
 
-- Proxy server
-  - External hostname: mattermost.example.com
-  - Internal hostname: proxy.local.lan
-  - NGINX v1.16.0
+Mattermost servers
 
-- Database servers
-  - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
-  - Primary: db1.local.lan
-  - Read-Only: db2.local.lan, db3.local.lan
-  - MySQL v5.6
+ - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
 
-- Elasticsearch server
-  - Hostname: elastic.local.lan
-  - Elasticsearch 7.9 with these plugins
-  - analysis-icu
+Mattermost server versions
+
+ - mm1-3: 5.25.4
+ - mm4: 5.21.0
+
+Proxy server
+
+ - External hostname: mattermost.example.com
+ - Internal hostname: proxy.local.lan
+ - NGINX v1.16.0
+
+Database servers
+
+ - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
+ - Primary: db1.local.lan
+ - Read-Only: db2.local.lan, db3.local.lan  
+ - MySQL v5.6
+
+Elasticsearch server
+
+ - Hostname: elastic.local.lan
+ - Elasticsearch 7.9 with these plugins
+ - analysis-icu
 
 Steps to Reproduce
 ~~~~~~~~~~~~~~~~~~
@@ -893,7 +900,7 @@ Press CMD+SHIFT+5 to open the screen recording tool and select the region of the
 
 **Windows**
 
-Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as [OBS](https://obsproject.com/).
+Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as `OBS <https://obsproject.com/>`_.
 
 **iOS**
 
