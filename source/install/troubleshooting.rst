@@ -837,42 +837,49 @@ Be as specific as possible when describing the environment. If you are seeing er
 
 **Examples**
 
- - Mattermost server
-   - External hostname: mattermost.example.com
-   - Internal hostname: mattermost.lan
-   - Mattermost v5.28.0
-   - Zoom plugin v1.4.1
-   - NGINX v1.18.0
+Mattermost server
 
- - Database server
-   - Internal hostname: mysql.lan
-   - MySQL v5.7
-   - LDAP Provider - 192.168.1.102
-   - Internal hostname: ldap.lan
-   - OpenLDAP 2.4.54 (Docker container)
+ - External hostname: mattermost.example.com
+ - Internal hostname: mattermost.lan
+ - Mattermost v5.28.0
+ - Zoom plugin v1.4.1
+ - NGINX v1.18.0
 
- - Mattermost servers
-   - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
+Database server
 
- - Mattermost server versions
-   - mm1-3: 5.25.4
-   - mm4: 5.21.0
+ - Internal hostname: mysql.lan
+ - MySQL v5.7
+ - LDAP Provider - 192.168.1.102
+ - Internal hostname: ldap.lan
+ - OpenLDAP 2.4.54 (Docker container)
 
- - Proxy server
-   - External hostname: mattermost.example.com
-   - Internal hostname: proxy.local.lan
-   - NGINX v1.16.0
+Mattermost servers
 
- - Database servers
-   - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
-   - Primary: db1.local.lan
-   - Read-Only: db2.local.lan, db3.local.lan
-   - MySQL v5.6
+ - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
 
- - Elasticsearch server
-   - Hostname: elastic.local.lan
-   - Elasticsearch 7.9 with these plugins
-   - analysis-icu
+Mattermost server versions
+
+ - mm1-3: 5.25.4
+ - mm4: 5.21.0
+
+Proxy server
+
+ - External hostname: mattermost.example.com
+ - Internal hostname: proxy.local.lan
+ - NGINX v1.16.0
+
+Database servers
+
+ - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
+ - Primary: db1.local.lan
+ - Read-Only: db2.local.lan, db3.local.lan  
+ - MySQL v5.6
+
+Elasticsearch server
+
+ - Hostname: elastic.local.lan
+ - Elasticsearch 7.9 with these plugins
+ - analysis-icu
 
 Steps to Reproduce
 ~~~~~~~~~~~~~~~~~~
