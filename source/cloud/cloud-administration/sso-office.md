@@ -55,8 +55,6 @@ Once the App Registration has been created, you can configure it further. The st
 
 7. Select **Save**.
 
-8. Restart your Mattermost server to see the changes take effect.
-
 ### Note about Microsoft Active Directory Tenants
 
 A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service such as Azure or Office 365. Tenants are commonly used by organizations who want to store information about their users such as passwords, user profile data and permissions. You can learn more about [getting an Azure AD tenant here](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-howto-tenant).
