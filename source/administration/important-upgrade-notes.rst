@@ -19,7 +19,7 @@ Important Upgrade Notes
 | v5.33.0                                            | Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.|
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | A new websocket implementation requires the HTTP version to be 1.1. If you are using NGINX as a proxy to Mattermost, please ensure to have                       |
-|                                                    | ``proxy_http_version 1.1;`` in the block that handles the websocket path.                                                                                        |
+|                                                    | ``proxy_http_version 1.1;`` in the block that handles the websocket path. This can potentially affect other proxy/load balancer setups too.                      |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.32.0                                            | ``ExperimentalChannelOrganization``, ``EnableXToLeaveChannelsFromLHS``, ``CloseUnusedDirectMessages``, and ``ExperimentalHideTownSquareinLHS`` settings are only |
 |                                                    | functional if the Legacy Sidebar (``EnableLegacySidebar``) is enabled since they are not compatible with the new sidebar experience.                             |
