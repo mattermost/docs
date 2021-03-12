@@ -2,7 +2,7 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2021-03-10
+## Release 2021-03-12
 
 ### Highlights
 
@@ -39,7 +39,7 @@ Custom Statuses allow users to add a descriptive status message and emoji thatâ€
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
-## Release 2021-02-24
+## Release 2021-02-25
 
 ### Highlights
 
