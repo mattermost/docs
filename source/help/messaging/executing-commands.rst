@@ -13,10 +13,10 @@ The following slash commands are available on all Mattermost installations:
 .. csv-table::
     :header: "Command", "Description", "Example"
 
-    "/away", "Set your status away", "/away"
-    "/offline", "Set your status offline", "/offline"
-    "/online", "Set your status online", "/online"
-    "/dnd", "Set your status to Do Not Disturb", "/dnd"
+    "/away", "Set your availability to away", "/away"
+    "/offline", "Set your availability to offline", "/offline"
+    "/online", "Set your availability to online", "/online"
+    "/dnd", "Set your availability to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
     "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews", "/expand"
@@ -41,10 +41,15 @@ The following slash commands are available on all Mattermost installations:
     "/settings", "Open the Account Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
+    "/status *{emoji_name}* *{descriptive status_message}* *", Set a custom status that includes an optional emoji and a descriptive status message, "/status sick Feeling unwell and taking time off to recover" 
+    "/status clear * ", Clear the current status, "/status clear" 
 
 Begin by typing `/` and a list of slash command options appears above the text input box. The autocomplete suggestions help by providing a format example in black text and a short description of the slash command in grey text.
 
 .. image:: ../../images/slashCommandsAutocomplete.PNG
+
+.. note::
+  Custom status slash commands marked with an asterisk (*) in the table above will be available in the Mattermost Mobile App in a future release.
 
 Custom Commands
 ---------------
