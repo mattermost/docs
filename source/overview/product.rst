@@ -57,6 +57,7 @@ Mattermost Enterprise Edition E10
 A commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations. Building on the features in Team Edition, it also offers:
 
 - Active Directory/LDAP single-sign-on
+- OAuth 2.0 authentication for team creation, account creation, and user sign-in
 - Encrypted push notifications with service level agreements (SLAs) via HPNS
 - Advanced access control policy
 - Next business day support via online ticketing system
@@ -68,6 +69,7 @@ A commercial enterprise-grade messaging system that scales from hundreds to tens
 
 - Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services
 - Active Directory/LDAP group sync
+- OpenID Connect authentication for team creation, account creation, and user sign-in
 - Compliance exports of message histories with oversight protection
 - Custom retention policies for messages and files
 - High availability support with multi-node database deployment
