@@ -3282,7 +3282,7 @@ Choose whether OpenID Connect can be used for account creation and login. Option
     - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#gitlab-settings>`__ for more detail)
     - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google-settings>`__ for more detail)
     - **Office 365** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365-settings>`__ for more detail)
-    - **OpenID Connect (Other)** (available in Enterprise Edition E20, see `OpenID Connect Settings <https://docs.mattermost.com/administration/config-settings.html#openid-connect-settings>`__ for more detail)
+    - **OpenID Connect (Other)** (available in Enterprise Edition E20, see `OpenID Connect Settings <https://docs.mattermost.com/administration/config-settings.html#openid-connect-other-settings>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
