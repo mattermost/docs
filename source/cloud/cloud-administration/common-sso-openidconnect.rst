@@ -5,7 +5,7 @@ Follow these steps to configure a service provider using OpenID Connect.
 Step 1: Create an OpenID Connect Application
 ---------------------------------------------
 
-1. Follow service provider documentation for creating an OpenID Connect application. Most OpenID Connect service providers require authorization of all redirect URIs. 
+1. Follow service provider documentation for creating an OpenID Connect application. Most OpenID Connect service providers require authorization of all redirect URIs.
 2. In the appropriate field, enter ``{your-mattermost-url}/signup/openid/complete`` For example: ``http://domain.com/signup/openid/complete``
 3. Copy and paste values for the **Discovery Endpoint**, **Client ID**, and **Client Secret** values to a temporary location. You will enter these values when you configure Mattermost.
 
