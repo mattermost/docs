@@ -10,7 +10,7 @@ Follow these steps to configure Mattermost to use your Office 365 logon credenti
 
 .. note::
 
-  The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.
+  The system must be using SSL as Microsoft only allows OAuth redirect URIs that are SSL-enabled.
 
 Step 1: Register an application in Azure Portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
