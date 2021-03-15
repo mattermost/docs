@@ -8,7 +8,7 @@ Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-manage
 Configure Mattermost ``config.json`` for Office 365 SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Instead of using the System Console, you can add the Office 365 settings directly to the ``config.json`` file directly on your Mattermost server.
+Instead of using the System Console, you can add the Office 365 settings directly to the ``config.json`` file on your Mattermost server.
 
 1. Open ``config.json`` as root in a text editor. It’s usually in ``/opt/mattermost/config`` but it might be elsewhere on your system.
 2. Locate the ``Office365Settings`` section, then add or update the following information:
@@ -27,4 +27,3 @@ Instead of using the System Console, you can add the Office 365 settings directl
   }
 
 3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their sign-in method before they can sign in with Office 365.
-
