@@ -383,15 +383,6 @@ Maximum number of idle connections held open to the database.
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Maximum Connection Idle Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Maximum time a database connection can remain idle.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input.                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
