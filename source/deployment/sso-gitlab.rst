@@ -140,4 +140,4 @@ Alternatively, you can add the GitLab settings directly to the ``config.json`` f
 
 To force all users to sign-up with SSO only, go to **System Console > Authentication > Email**, then set **Enable sign-in with email** to **false**. 
 
-Alternatively, add this setting to the ``config.json`` file directly by locating the ``EmailSettings`` section, then set ``EnableSignUpWithEmail`` to ``false``. You must save your changes and restart the Mattermost server. Users must change their sign-in method before they can sign in to Mattermost with GitLab.
+Alternatively, add this setting to the ``config.json`` file directly in the ``EmailSettings`` section and set ``EnableSignUpWithEmail`` to ``false``. You must save your changes and restart the Mattermost server. Users must change their sign-in method before they can sign in to Mattermost with GitLab.
