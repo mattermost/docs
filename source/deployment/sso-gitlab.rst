@@ -75,7 +75,7 @@ Mattermost Enterprise Edition E10 customers can set up a GitLab OAuth 2.0 identi
 2. Select **GitLab** as the service provider.
 3. Paste the **Application ID** from GitLab into Mattermost.
 4. Paste the **Application Secret** from GitLab as the **Application Secret Key** in Mattermost
-5. Enter the **GitLab Site URL** of your GitLab instance. If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``. If you are using GitLab itself as your provider, use ``gitlab.com``.
+5. Enter the **GitLab Site URL** of your GitLab instance. If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``. If you're using GitLab itself as your provider, use ``gitlab.com``.
 6. (Optional) Enter a **User API Endpoint**.
 7. (Optional) Enter an **Auth Endpoint**.
 8. (Optional) Enter a **Token Endpoint**.
