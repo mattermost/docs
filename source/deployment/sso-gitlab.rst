@@ -9,7 +9,7 @@ Configure Mattermost to use GitLab as a single sign-on (SSO) service for team cr
 Step 1: Add an application to your GitLab account
 -------------------------------------------------
 
-1. Sign in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. For *{gitlab-site-name}* use the name of your GitLab instance. If you're using GitLab itself as your OAuth provider, use ``gitlab.com``.
+1. Sign in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. For ``{gitlab-site-name}`` use the name of your GitLab instance. If you're using GitLab itself as your OAuth provider, use ``gitlab.com``.
 2. Add a new application:
 
   a. In the **Name** field, enter ``Mattermost``.
