@@ -25,7 +25,7 @@ Step 1: Add an application to your GitLab account
   c. Do not select any options under **Scopes**.
 
 3. Click **Save application**.
-4. Keep the GitLab window open. You need the *Application Id* and *Application Secret* when you configure Mattermost.
+4. Keep the GitLab window open. You need the **Application Id** and **Application Secret** when you configure Mattermost.
 
 Step 2: Configure Mattermost for GitLab SSO
 --------------------------------------------
