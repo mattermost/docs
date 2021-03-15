@@ -2756,6 +2756,8 @@ SAML
 Use New SAML Library
 ^^^^^^^^^^^^^^^^^^^^^
 
+*Removed in December 16, 2020 release*
+
 **True**: Enable an updated SAML Library, which does not require the XML Security Library (xmlsec1) to be installed.
 
 **False**: Continue using the existing implementation which uses the XML Security Library (xmlsec1).
