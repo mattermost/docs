@@ -72,7 +72,7 @@ A commercial enterprise-grade messaging system that scales from hundreds to tens
 - OpenID Connect authentication for team creation, account creation, and user sign-in
 - Compliance exports of message histories with oversight protection
 - Custom retention policies for messages and files
-- High availability support with multi-node database deployment
+- High Availability support with multi-node database deployment
 - Horizontal scaling through cluster-based deployment
 - Elasticsearch support for highly efficient database searches in a cluster environment
 - Advanced performance monitoring
