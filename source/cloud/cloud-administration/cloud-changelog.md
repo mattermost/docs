@@ -4,9 +4,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ## Release 2021-03-24
 
-### Highlights
-
-
 ### Improvements
 
 #### User Interface (UI)
