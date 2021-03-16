@@ -47,7 +47,7 @@ Mattermost Team Edition customers can set up a GitLab OAuth 2.0 identity provide
 8. (Optional) Enter a **Token Endpoint**.
 9. Select **Save**.
 
-Alternatively, you can add the GitLab settings directly to the ``config.json`` file directly on your Mattermost server.
+Alternatively, you can add the GitLab settings directly to the ``config.json`` file on your Mattermost server.
 
 1. Open ``config.json`` as *root* in a text editor. It’s usually in ``/opt/mattermost/config`` but it might be elsewhere on your system.
 2. Locate the ``GitLabSettings`` section, then add or update the following information:
