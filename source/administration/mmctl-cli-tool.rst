@@ -2058,7 +2058,7 @@ Download export files.
   # You can indicate the name of the export and its destination path
    $ mmctl export download samplename sample_export.zip
 
-   # or if you only indicate the name, the path would match it
+   # If you only indicate the name, the path will match it
    $ mmctl export download sample_export.zip
 
 **Options**
