@@ -75,7 +75,7 @@ Groups that have been returned from the default filter or your AD/LDAP group fil
 
 Groups can be linked individually by the inline **Linked** button. You can also use the checkbox next the group name to select multiple groups and choosing **Link Selected Groups**. When selecting multiple groups with a mix of **Linked** and **Not Linked** states, the bulk action of the button will be **Link Selected Groups** until all selected are marked **Linked**. Using the bulk action speeds the process of creating Mattermost groups from your AD/LDAP Groups.
 
-If you see a **Link Failed** message, either click on the message or check the box alongside the group name to expose the inline link message and try again.
+If you see a **Link Failed** message, either select the message, or check the box alongside the group name to expose the inline link message and try again.
 
 .. image:: ../images/LinkFailed.png
 
@@ -131,7 +131,7 @@ It may take a few seconds to load all team and channel memberships for a user de
 Removing Configured Teams and Channels From a Group
 ---------------------------------------------------
 
-To remove a team or channel configured for a group, click **Remove** to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action.
+To remove a team or channel configured for a group, select **Remove** to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action.
 
 Viewing Users Belonging to The Group
 ------------------------------------
@@ -196,9 +196,9 @@ To manage membership of a private team with synchronized groups:
 
 1. Navigate to **System Console > User Management > Teams**. Select the team you want to manage with group synchronization.
 2. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the Sync Group Members feature.
-3. Add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+3. Add one or more groups to the team. If there are groups already associated with default users in the team, they'll be listed.
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
-5. Click **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
+5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
 Alternatively you can use the CLI tool to set the team to be managed by groups:
 
@@ -210,9 +210,9 @@ To manage membership of a private channel with synchronized groups:
 
 1. Navigate to **System Console > User Management > Channels**. Select the channel you want to manage with group synchronization.
 2. Under **Channel Management**, enable **Sync Group Members**. Please ensure the channel is set to ``private``.
-3. Add one or more groups to the channel. If there are groups already associated to default users into the channel, they will already be present.
+3. Add one or more groups to the channel. If there are groups already associated with default users in the team, they'll be listed.
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the channel on the next synchronization.
-5. Click save. Members will be updated on the next scheduled AD/LDAP synchronization.
+5. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
 
 Alternatively you can use the CLI tool to set a private channel to be managed by groups:
 
@@ -247,10 +247,10 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 1. Navigate to **System Console > User Management > Channels**.
 2. Select **Edit** next to the team you want to configure.
 3. Ensure that **Sync Group Members** is enabled.
-4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated with default users in the team, they'll be listed.
 5. Select the arrow next to the current role in the **Roles** column to display and select the **Channel Admin** option.
 6. Repeat as needed for any other synced groups you have added.
-7. Choose **Save**.
+7. Select **Save**.
 
 Roles are updated on the next scheduled AD/LDAP synchronization.
 
@@ -295,6 +295,15 @@ To remove the management of members by synchronized groups in a channel, disable
 
 Frequently Asked Questions
 ----------------------------
+
+Why do my LDAP users and groups exist in Mattermost, but my groups have no members?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order for Mattermost to detect group membership correctly, and to automatically add users to the group configured in the System Console, you must use one of the following AD/LDAP attributes to represent group members in Mattermost: ``member`` or ``uniqueMember``. These attributes use a ``Distinguished Name`` as the value on groups.
+
+.. note::
+
+  LDAP installations that use ``memberUid`` to indicate group membership are not supported because ``memberUid`` is an attribute of an object class ``posixGroup`` that does not use ``Distinguished Names`` as the value on groups.
 
 Why can't my existing users see the teams and channels they have been synced to?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
