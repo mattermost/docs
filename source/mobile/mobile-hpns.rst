@@ -12,7 +12,7 @@ Our Hosted Push Notification Service offers:
 - Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server.
 - Production-level uptime expectation.
 
-After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc. follow the instructions below to set up and test your system.
+After purchasing a subscription to Mattermost Enterprise Edition E10 or higher from Mattermost, Inc. follow the instructions below to set up and test your system.
 
 .. Note:: 
 
