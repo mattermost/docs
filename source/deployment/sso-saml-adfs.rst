@@ -119,7 +119,7 @@ Select **Pass through all claim values**, then select **Finish**.
 
   ``Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"``
 
-where *<display-name>* is the name you specified in step 4 when adding a relying party trust. In this example, *<display-name>* would be ``mattermost``.
+where ``<display-name>`` is the name you specified in step 4 when adding a relying party trust. In this example, ``<display-name>`` would be ``mattermost``.
 
 This action adds the signature to SAML messages, making verification successful.
 
