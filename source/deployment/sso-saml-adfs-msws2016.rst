@@ -163,7 +163,7 @@ Next, start the Mattermost server, then sign into Mattermost as a System Adminis
 This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically. The Identity Provider Public Certificate is also downloaded from the server and set locally.
 
 The following fields can be selected:
-  - Set **Enable Login With SAML 2.0** to ``true``.
+  - Set **Enable Login With SAML 2.0** to **true**.
   - Set **Enable Synchronizing SAML Accounts With AD/LDAP** to suit your environment.
   - Set **Override SAML bind data with AD/LDAP information** to suit your environment.
 
