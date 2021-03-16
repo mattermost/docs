@@ -112,7 +112,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
 
 ### Known Issues
- - A new regression where the **System Console > User Management > Channels > Edit > Add Members** dropdown is hard to view on dark themes [MM-33796](https://mattermost.atlassian.net/browse/MM-33796).
  - Config.json can reset when running the command ``systemctl restart mattermost`` and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
