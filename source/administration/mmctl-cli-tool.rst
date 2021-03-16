@@ -23,7 +23,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl completion`_ - Generates autocompletion scripts for bash and zsh
    - `mmctl config`_ - Configuration management
    - `mmctl docs`_ - Generates mmctl documentation
-   - `mmctl export`_ - Exports Management
+   - `mmctl export`_ - Exports management
    - `mmctl group`_ - Group management
    - `mmctl integrity`_ - Database record integrity
    - `mmctl ldap`_ - LDAP management
