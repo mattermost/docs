@@ -21,7 +21,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl channel`_ - Channel Management
    - `mmctl command`_ - Command Management
    - `mmctl completion`_ - Generates autocompletion scripts for bash and zsh
-   - `mmctl config`_ - Configuration Management
+   - `mmctl config`_ - Configuration management
    - `mmctl docs`_ - Generates mmctl documentation
    - `mmctl export`_ - Exports Management
    - `mmctl group`_ - Group Management
