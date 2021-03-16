@@ -29,7 +29,7 @@ Follow these steps to set up HPNS:
 
 2. Go to **System Console > Environment > Push Notification Server**.
 
-3. Set **Enable Push Notifications** to **Use HPNS connection with uptime SLA to send notifications to iOS and Android apps**. Note that this option appears only in Enterprise Edition.
+3. Set **Enable Push Notifications** to **Use HPNS connection with uptime SLA to send notifications to iOS and Android apps**. Note that this option is only available in Enterprise Edition.
 
 .. image:: ../images/mobile_hpns.png
 
