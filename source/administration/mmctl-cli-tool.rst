@@ -26,7 +26,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl export`_ - Exports Management
    - `mmctl group`_ - Group management
    - `mmctl integrity`_ - Database record integrity
-   - `mmctl ldap`_ - LDAP Management
+   - `mmctl ldap`_ - LDAP management
    - `mmctl license`_ - License Management
    - `mmctl logs`_ - Log Management
    - `mmctl permissions`_ - Permissions Management
