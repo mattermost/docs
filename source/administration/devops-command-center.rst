@@ -103,6 +103,7 @@ A playbook must be defined before starting an incident.
 8. Select the **Automation** tab.
 9. Within the **Automation** tab, customize automatically triggered tasks:
   * Optionally enable the **Invite members** toggle and select a set of members. This set of members are automatically invited to the incident channel when the incident starts.
+  * Optionally enable the **Assign commander** toggle and select a member. This member is automatically assigned as commander of the incident when the incident starts.
 10. On the right-hand side of the screen, configure the permissions:
   * Decide whether the automatically created incident channel should be Public or Private within the team.
   * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
