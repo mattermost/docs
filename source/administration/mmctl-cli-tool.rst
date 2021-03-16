@@ -24,7 +24,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl config`_ - Configuration management
    - `mmctl docs`_ - Generates mmctl documentation
    - `mmctl export`_ - Exports Management
-   - `mmctl group`_ - Group Management
+   - `mmctl group`_ - Group management
    - `mmctl integrity`_ - Database record integrity
    - `mmctl ldap`_ - LDAP Management
    - `mmctl license`_ - License Management
