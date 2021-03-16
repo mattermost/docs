@@ -6,7 +6,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Note: v5.33.0 is currently delayed until tomorrow as additional release testing time is needed.**
+**Note: v5.33.0 is currently delayed until tomorrow, 2021-03-17, as additional release testing time is needed.**
 
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
