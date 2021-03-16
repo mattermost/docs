@@ -8,9 +8,9 @@ When using Mattermost mobile apps in the Apple App Store and Google Play, purcha
 
 Our Hosted Push Notification Service offers:
 
-- Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ where the contents of unencrypted messages are not examined or stored
-- Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server
-- Production-level uptime expectation
+- Access to a publicly-hosted Mattermost Push Notification Service (MPNS) offering an explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ where the contents of unencrypted messages are not examined or stored.
+- Encrypted TLS connections between HPNS and Apple Push Notification Services, HPNS and Google’s Firebase Cloud Messaging service, and HPNS and your Mattermost server.
+- Production-level uptime expectation.
 
 After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc. follow the instructions below to set up and test your system.
 
@@ -20,13 +20,12 @@ After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc
 - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server, and for TPNS, it's port 80. If you host your own proxy server, the default port is 8086.
 - Mattermost, Inc. also offers a free basic hosted service for testing called the Test Push Notification Service (TPNS). It does not offer production-level uptime service level agreements (SLAs).
 
-
 Setting up HPNS Push Notifications in Enterprise Edition
 --------------------------------------------------------
 
 Follow these steps to set up HPNS:
 
-1. Follow the instructions to `install or upgrade to Enterprise Edition <https://docs.mattermost.com/install/ee-install.html>`__
+1. Follow the instructions to `install or upgrade to Enterprise Edition <https://docs.mattermost.com/install/ee-install.html>`__.
 
 2. Go to **System Console > Environment > Push Notification Server** (or go to **System Console > Notifications > Mobile Push > Send Push Notifications** in versions prior to v5.12).
 
@@ -43,4 +42,3 @@ Follow these steps to set up HPNS:
 5. Select **Save**
 
 After setup, :doc:`test push notifications <mobile-testing-notifications>` to confirm they are working.
-
