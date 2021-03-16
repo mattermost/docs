@@ -2055,7 +2055,7 @@ Download export files.
 
 .. code-block:: sh
 
-  # you can indicate the name of the export and its destination path
+  # You can indicate the name of the export and its destination path
    $ mmctl export download samplename sample_export.zip
 
    # or if you only indicate the name, the path would match it
