@@ -27,7 +27,7 @@ Follow these steps to set up HPNS:
 
 1. Follow the instructions to `install or upgrade to Enterprise Edition <https://docs.mattermost.com/install/ee-install.html>`__.
 
-2. Go to **System Console > Environment > Push Notification Server** (or go to **System Console > Notifications > Mobile Push > Send Push Notifications** in versions prior to v5.12).
+2. Go to **System Console > Environment > Push Notification Server**.
 
 3. Set **Enable Push Notifications** to **Use HPNS connection with uptime SLA to send notifications to iOS and Android apps**. Note that this option appears only in Enterprise Edition.
 
