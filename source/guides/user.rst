@@ -12,6 +12,7 @@ Getting Started
 
    /help/getting-started/welcome-to-mattermost.rst
    /help/getting-started/signing-in.rst
+   /help/getting-started/setting-your-status-availability.rst
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
    /help/getting-started/organizing-conversations.md
