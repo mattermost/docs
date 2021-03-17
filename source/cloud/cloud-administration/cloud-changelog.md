@@ -8,7 +8,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 #### User Interface (UI)
  - Added a UI field for restricted domains under **Site Configuration > Posts** in the System Console. Expanded the logic that determines whether a post has a preview or not.
- - Added support for auto-RTL detection in browsers.
+ - Added support for automatic right-to-left (RTL) detection in browsers.
  - Updated the font size for the **Add People** channel modal.
  - Online status is now shown in the channel switcher.
  - Improved the design and layout of email notifications.
@@ -19,11 +19,11 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Bug Fixes
  - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas.
- - Fixed an issue where Compliance report field headers were not correctly aligned.
+ - Fixed an issue where Compliance Report field headers were not correctly aligned.
  - Fixed an issue where the ``/join`` command was case-sensitive.
  - Fixed an issue where one-character sidebar category names were not displayed.
- - Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using custom team theme).
- - Fixed an issue where the text draft area in the right-hand side was jumpy with long text input when selected.
+ - Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using a custom team theme).
+ - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
  - Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.
 
 ### Known Issues
