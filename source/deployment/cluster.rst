@@ -180,6 +180,7 @@ A sample configuration for NGINX is provided below. It assumes that you have two
                 proxy_buffers 256 16k;
                 proxy_buffer_size 16k;
                 proxy_read_timeout 600s;
+                proxy_http_version 1.1;
                 proxy_pass http://backend;
           }
 
