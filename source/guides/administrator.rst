@@ -171,6 +171,7 @@ Learn how to maintain your Mattermost system.
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
+   /administration/generating-support-packet.rst
 
 Troubleshooting
 ----------------
