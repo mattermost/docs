@@ -88,31 +88,35 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
 
 
       rem "Step 1: Install Mattermost Desktop App silently into user's local disk"
-      start /wait \\SERVER\shared_folder\mattermost-setup-4.3.1-win64.exe --silent
+      start \\SERVER\shared_folder\mattermost-setup-4.6.2-win.exe --silent
+
+      if not exist "%APPDATA%\Mattermost" mkdir %APPDATA%\Mattermost
 
       rem "Step 2: Generate initial config.json into user's config directory"
       (
         echo {
-        echo   "version": 1,
+        echo   "version": 2,
         echo   "teams": [
         echo     {
-        echo       "name": "community",
-        echo       "url": "https://community.mattermost.com/core"
+        echo       "name": "core",
+        echo       "url": "https://community.mattermost.com",
+        echo       "order": 0
         echo     }
         echo   ],
-        echo   "showTrayIcon": false,
-        echo   "trayIconTheme": 'light',
-        echo   "minimizeToTray": false,
+        echo   "showTrayIcon": true,
+        echo   "trayIconTheme": "light",
+        echo   "minimizeToTray": true,
         echo   "notifications": {
-        echo     "flashWindow": 0,
-        echo     "bounceIcon": false,
-        echo     "bounceIconType": 'informational',
+        echo     "flashWindow": 2,
+        echo     "bounceIcon": true,
+        echo     "bounceIconType": "informational"
         echo   },
         echo   "showUnreadBadge": true,
         echo   "useSpellChecker": true,
         echo   "enableHardwareAcceleration": true,
         echo   "autostart": true,
-        echo   "spellCheckerLocale": 'en-US',
+        echo   "spellCheckerLocale": "en-US",
+        echo   "darkMode": false
         echo }
       ) > %APPDATA%\Mattermost\config.json
 
