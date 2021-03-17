@@ -268,3 +268,4 @@ Documentation on early previews and unofficial functionality.
    /install/deploy-cloudron*
    /administration/upgrade-script*
    /administration/light-install-hindi.rst
+   
