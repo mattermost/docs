@@ -13,14 +13,14 @@ Administration
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers when upgrading to v5.12 or later. However, the plugin will not be activated on any servers that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ disabled, meaning no surveys or data collection occurs.
+The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ disabled, meaning no surveys or data collection occurs.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
 
-If the plugin or surveys in the plugin configuration are disabled, they will remain disabled for subsequent server upgrades.
+If the plugin or surveys in the plugin configuration are disabled, they will remain disabled.
 
 When is the survey scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

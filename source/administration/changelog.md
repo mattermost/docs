@@ -4,6 +4,10 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Note: v5.33.0 is currently delayed until tomorrow, 2021-03-17, as additional release testing time is needed.**
+
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.32.1, released 2021-02-17**
@@ -102,13 +106,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``Shared`` column to the ``Channels`` table.
 
 ### Known Issues
- - The server tries to install E20 required plugins on non-E20 installations. [MM-32387](https://mattermost.atlassian.net/browse/MM-32387)
- - Some known issues related to the new channel sidebar, such as that the team icon on-click animation is laggy. [MM-32198](https://mattermost.atlassian.net/browse/MM-11820)
- - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
- - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
- - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
- - Slow typing has been experienced when the channel sidebar has many channels. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
- - Slack theme import fails due to changes in formatting of Slack export color schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
+ - Some known issues related to the new custom, collapsible channel categories feature, including a laggy team icon on-click animation [MM-32198](https://mattermost.atlassian.net/browse/MM-11820).
+ - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too [MM-30407](https://mattermost.atlassian.net/browse/MM-30407).
+ - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
+ - Slack theme import fails due to changes in formatting of Slack export color schemes [MM-30531](https://mattermost.atlassian.net/browse/MM-30531).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
@@ -174,15 +178,16 @@ Mattermost v5.31.0 contains a low level security fix. [Upgrading](https://docs.m
  
 ### Known Issues
  - The Database Schema Version is displayed as 5.30.0 in the About Mattermost modal.
- - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
- - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page and clicks elsewhere before saving the changes. [MM-29927](https://mattermost.atlassian.net/browse/MM-29927)
- - Error text is missing when the team name is left blank on the team creation page. [MM-31361](https://mattermost.atlassian.net/browse/MM-31361)
- - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
- - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
- - Slow typing has been experienced when the channel sidebar has many channels. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
- - Slack theme import fails due to changes in formatting of Slack export color schemes. [MM-30531](https://mattermost.atlassian.net/browse/MM-30531)
- - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side. [MM-30446](https://mattermost.atlassian.net/browse/MM-30446)
- - The **Admin Filter** option is not disabled on the AD/LDAP page for Admin roles with the ``sysconsole_write_authentication`` permission. [MM-29089](https://mattermost.atlassian.net/browse/MM-29089)
+ - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
+ - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
+ - **Discard Changes** confirmation is not displayed when a System Admin adds people on the **System Roles** System Console page, then clicks elsewhere before saving the changes [MM-29927](https://mattermost.atlassian.net/browse/MM-29927).
+ - Error text is missing when the team name is left blank on the team creation page [MM-31361](https://mattermost.atlassian.net/browse/MM-31361).
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too [MM-30407](https://mattermost.atlassian.net/browse/MM-30407).
+ - Slack theme import fails due to changes in formatting of Slack export color schemes [MM-30531](https://mattermost.atlassian.net/browse/MM-30531).
+ - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side [MM-30446](https://mattermost.atlassian.net/browse/MM-30446).
+ - The **Admin Filter** option is not disabled on the AD/LDAP page for Admin roles with the ``sysconsole_write_authentication`` permission [MM-29089](https://mattermost.atlassian.net/browse/MM-29089).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
@@ -284,7 +289,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ### Known Issues
  - The ``config.json`` may reset itself to default values if the binary is run with the root user.
- - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - Reddit link previews no longer work in Mattermost. This affects older versions too.
+ - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page, then clicks elsewhere before saving the changes.
+ - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too.
+ - Slack theme import fails due to changes in formatting of Slack export color schemes.
  - Error text is missing when the team name is left blank on the team creation page.
  - Line numbers do not line up with the text on code file previews.
  - In some cases reply posts cannot be marked as unread.
@@ -379,6 +387,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
+ - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too.
+ - Slack theme import fails due to changes in formatting of Slack export color schemes.
  - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
  - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
  - Twitter link previews no longer work in Mattermost as Twitter has removed OpenGraph data from its pages.
