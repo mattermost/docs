@@ -4,7 +4,7 @@ GitLab Single Sign-On
 Configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation, and user sign-in. 
 
 .. Note:: 
-  Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required they're not officially supported and are known not to work on some experiences. If having official AD, LDAP, SAML, or MFA support is critical to your enterprise, please consider `Mattermost Enterprise Edition <https://mattermost.com/pricing/>`__ as an option. 
+  Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required they're not officially supported and are known not to work in some instances. If having official AD, LDAP, SAML, or MFA support is critical to your enterprise, please consider `Mattermost Enterprise Edition <https://mattermost.com/pricing/>`__ as an option. 
 
 Step 1: Add an application to your GitLab account
 -------------------------------------------------
