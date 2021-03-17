@@ -1776,6 +1776,17 @@ Show Full Name
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Custom User Statuses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
+
+**False**: Users are unable to set custom user statuses.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomUserStatuses": true`` with options ``true`` and ``false``.                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Notifications
 ~~~~~~~~~~~~~~
 
