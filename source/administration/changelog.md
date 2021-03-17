@@ -132,7 +132,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-02-16**
+- **v5.32.1, released 2021-02-17**
+  - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
+- **v5.32.0, released 2021-02-16**
+  - Original 5.32.0 release
 
 Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -143,6 +146,7 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
 ### Breaking Changes
  - ``ExperimentalChannelOrganization``, ``EnableXToLeaveChannelsFromLHS``, ``CloseUnusedDirectMessages``, and ``ExperimentalHideTownSquareinLHS`` settings are only functional if the Legacy Sidebar (``EnableLegacySidebar``) is enabled since they are not compatible with the new sidebar experience. ``ExperimentalChannelSidebarOrganization`` has been deprecated, since the [new sidebar is now enabled for all users](https://mattermost.com/blog/custom-collapsible-channel-categories/). 
  - Breaking changes to the Golang client API were introduced: ``GetPostThread``, ``GetPostsForChannel``, ``GetPostsSince``, ``GetPostsAfter``, ``GetPostsBefore``, and ``GetPostsAroundLastUnread`` now require an additional collapsedThreads parameter to be passed. Any client making use of these functions will need to update them when upgrading its dependencies.
+ - [A breaking change was introduced when upgrading the Go version to v1.15.5](https://golang.org/doc/go1.15#commonname) where user logins fail with AD/LDAP Sync when the certificate of the LDAP Server has no Subject Alternative Name (SAN) in it. Creating a new certificate on the AD/LDAP Server with the SAN inside fixes this.
  
 **IMPORTANT:** If you upgrade from a release earlier than v5.31, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
@@ -161,6 +165,7 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
 
 #### User Interface (UI)
  - Added new languages, Bulgarian and Swedish.
+ - Added team sidebar user interface and animation enhancements.
  - Moved the header icons to the left of the header beside the channel description.
  - Added support to move multi-selected groups of channels to another category via the **More options** menu.
 
@@ -172,7 +177,6 @@ Mattermost v5.32.0 contains low level security fixes. [Upgrading](https://docs.m
  - ``AnalyticsPostCount`` now avoids unnecessary table scans during various background jobs.
  - The Help text for the Rate Limiting setting was updated to explain the purpose of rate limiting.
  - Removed the word "experimental" from the Gossip setting in the System Console.
- - The Database search using PostgreSQL now supports searching for terms that contain underscores.
  - Updated the Go version to v1.15.5.
  - Added support for automatic installation and enablement of plugins using feature flags.
  - Added ``webhook create`` endpoints to local mode and the ability to create webhooks for other users.
@@ -409,7 +413,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ### Known Issues
  - The ``config.json`` may reset itself to default values if the binary is run with the root user.
- - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page and clicks elsewhere before saving the changes.
+ - Reddit link previews no longer work in Mattermost. This affects older versions too.
+ - **Discard Changes** confirmation is not displayed when an admin adds people in the **System Roles** System Console page, then clicks elsewhere before saving the changes.
+ - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too.
+ - Slack theme import fails due to changes in formatting of Slack export color schemes.
  - Error text is missing when the team name is left blank on the team creation page.
  - Line numbers do not line up with the text on code file previews.
  - In some cases reply posts cannot be marked as unread.
@@ -504,6 +511,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Known Issues
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side.
  - A JavaScript error may appear in some cases when dismissing the new messages toast while scrolled up in the right-hand side.
+ - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too.
+ - Slack theme import fails due to changes in formatting of Slack export color schemes.
  - Pressing ENTER closes the Account Settings Edit modal when adjusting the settings for desktop notification sound.
  - Admin Filter option is not disabled in AD/LDAP page for admin roles with ``sysconsole_write_authentication`` permission.
  - Twitter link previews no longer work in Mattermost as Twitter has removed OpenGraph data from its pages.

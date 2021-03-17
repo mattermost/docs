@@ -6,7 +6,7 @@ This article covers the basics of Mattermost and gives a general overview of the
 Ready? Let's get started!
 
 What is Mattermost?
------------------------------------
+--------------------
 
 Mattermost is a modern, digital workspace that will help you be more productive in your day-to-day work life.
 
@@ -20,7 +20,7 @@ Some of the major benefits of using Mattermost include:
 - Sharing files
 
 The Basics
----------------------
+-----------
 
 This is a what a typical Mattermost workspace looks like: 
 
@@ -36,7 +36,8 @@ To understand how Mattermost works, below is a list of the main features of Matt
 - Notifications
 
 Teams
----------------------
+-----
+
 A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
 You have the ability to switch back and forth between teams on the Team Sidebar, located on the upper left side of the app.
@@ -45,7 +46,8 @@ You have the ability to switch back and forth between teams on the Team Sidebar,
    :alt: ui_teams
 
 Channels
----------------------
+--------
+
 Channels are used to organize conversations across different topics. They are located on the left-hand panel of Mattermost. 
 
 There are three types of channels: Public Channels, Private Channels, and Direct Messages.
@@ -53,7 +55,7 @@ There are three types of channels: Public Channels, Private Channels, and Direct
 .. image:: ../../images/ui_channels5.png
    :alt: ui_channels
 
-**Public Channels:**
+**Public Channels**
 
   Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
@@ -61,11 +63,11 @@ There are three types of channels: Public Channels, Private Channels, and Direct
 
   Click on the **More...** button at the bottom of the Public Channels section to explore more channels to join!
 
-**Private Channels:**
+**Private Channels**
 
-  Private Channels are for sensitive topics and are only visible to selected team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, but only the channel owner or Team Admin can remove other members.
+  Private Channels are for sensitive topics and are only visible to selected team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, and any member of a Private Channel can remove other members from the channel. 
 
-  Private Channels have a **lock icon**.
+  Private Channels are identified with a **lock icon**.
 
 **Direct Messages (DM) and Group Messages (GM)**
 
@@ -74,7 +76,8 @@ There are three types of channels: Public Channels, Private Channels, and Direct
 For more information on Channels and how to manage them, `click here <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
 
 Messages
----------------------
+--------
+
 Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
 
 In this example, a team manager is handing out assignments to various team members to complete as part of a review:
@@ -94,7 +97,8 @@ Since messaging is at the core of your Mattermost application, below are other e
 `Click here <https://docs.mattermost.com/guides/user.html#messaging>`__ for a complete list of messaging basics with instructions.
 
 Search
----------------------
+-------
+
 Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
 
 .. image:: ../../images/ui_search.png
@@ -103,7 +107,8 @@ Use the search box to find messages and replies that match the search terms that
 You can also do more advanced search using search modifiers `here <https://docs.mattermost.com/help/getting-started/searching.html>`__.
 
 Notifications
----------------------
+-------------
+
 Notifications in Mattermost alert you to unread messages and mentions.
 
 .. image:: ../../images/ui_notifications.png
@@ -113,6 +118,6 @@ You can configure your Mattermost account for how you want to be notified `here 
 
 
 What's Next?
---------------------- 
+------------
 Feel free to view our `Mattermost demo video  <https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ and browse through our `full user guide <https://docs.mattermost.com/guides/user.html>`__ for more information on how to use Mattermost!
   

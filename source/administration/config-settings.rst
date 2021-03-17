@@ -8,15 +8,17 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
 Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
-On new installations starting from version 5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+On new installations starting from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
-**Configuration in Database**
+Configuration in Database
+--------------------------
 
 Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
 
-**Environment Variables**
+Environment Variables
+---------------------
 
-Starting from Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
+Starting from Mattermost v3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
 The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
 
@@ -37,13 +39,25 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
-**Load Custom Configuration Defaults**
+Override Mattermost License File
+--------------------------------
+
+Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
+
+When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
+
+.. note::
+   If ``MM_LICENSE`` is set to a non-empty string, but the license specified is not valid, the Mattermost server will be started without a license.
+   
+   In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
+
+Load Custom Configuration Defaults
+----------------------------------
 
 Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
 
 1. Create a JSON file that contains the custom configuration defaults. For example, ``custom.json``.
 2. When starting the server, point the custom defaults environment variable to the defaults file: ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
-
 
 .. contents::
   :depth: 2
@@ -367,6 +381,19 @@ Maximum number of idle connections held open to the database.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input.                                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Connection Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maximum time a database connection can remain idle.
+
+.. note::
+
+  This configuration setting is available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Open Connections
@@ -973,9 +1000,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
-+-------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.        |
++-------------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -990,6 +1017,21 @@ The encryption uses AES-256 by default, and it is not kept configurable by desig
 | This feature's ``config.json`` setting is ``"EnableExperimentalGossipEncryption": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+    
     
+Enable Gossip Compression
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with older servers.
+
+**False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
+
+.. note::
+
+  This configuration setting is available in Mattermost Cloud. It will be available in Mattermost Server v5.33 on March 16, 2021.
+
++--------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableGossipCompression": true`` with options ``true`` and ``false``.             |
++--------------------------------------------------------------------------------------------------------------------------------+    
+
 Gossip Port
 ^^^^^^^^^^^
 
@@ -1410,15 +1452,15 @@ Requests that can only be configured by admins are considered trusted and will n
 Some examples of when you may want to modify this setting include:
 
 - When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
-- When running a bot or webhook-based integration on your local network, you will need to add the hostname of the bot/integration to this list.
-- If your network is configured in such a way that publicly accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
+- When running a bot or webhook-based integration on your local network, you'll need to add the hostname of the bot/integration to this list.
+- If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
 
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
+This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 .. note::
    Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
-IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
+IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution. We try to match IP addresses and hostnames without even resolving. If that fails, we resolve using the local resolver (by reading the ``/etc/hosts`` file first), then check for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input.                                                           |
@@ -1736,6 +1778,17 @@ Show Full Name
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Custom User Statuses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
+
+**False**: Users are unable to set custom user statuses.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomUserStatuses": true`` with options ``true`` and ``false``.                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notifications
@@ -4216,7 +4269,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 
 **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: WWhen enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
+**True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
