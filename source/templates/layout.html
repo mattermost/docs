@@ -177,7 +177,7 @@
           {% include "breadcrumbs.html" %}
           <article class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
           {%- block document %}
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" role="main">
             {% block body %}{% endblock %}
            </div>
            {% if self.comments()|trim %}
