@@ -6,7 +6,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-03-16**
+- **v5.33.1, release day TBD**
+  - Fixing an issue where WebSockets fail with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
+- **v5.33.0, released 2021-03-16**
+  - Original 5.33.0 release
 
 Mattermost v5.33.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
