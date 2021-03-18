@@ -1,6 +1,78 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.7
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+**Release day TBD**
+
+Highlights
+~~~~~~~~~~~~~~~
+- Added support for browserview.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+- Removed the dark mode toggle for Windows.
+
+MacOS
+^^^^^^^^^^^^^
+-
+
+All Platforms
+^^^^^^^^^^^^^
+- Added a setting to specify a default downloads location.
+- Updated the desktop app loading indicator.
+- Restored deeplinking.
+- Switched the dictionary to Electron's one to be able to fix spelling.
+- Improvements to get tab switching and drag and drop to work correctly in the BrowserView ecosystem.
+- Improvements to be consistent on the use of URL and URL libraries.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v11.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+- Fixed an issue where Windows desktop notifications did not auto-dismiss when another notification arrived.
+- Fixed an issue where the **Pin to Taskbar** icon got lost during an upgrade on Windows.
+
+MacOS
+^^^^^^^^^^^^^
+- Fixed an issue where changing the theme from the System Preferences changed the tray icon, but the red/blue dot indicating mentions/unreads got removed.
+- Fixed an issue where there was an invisible Mattermost icon in the top menu bar.
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where special characters were not shown for server names using GPO.
+- Fixed an issue where the close/back button in permanent link media previews was missing.
+- Fixed an issue where the text input focus was lost when closing the **Settings** window.
+- Fixed an issue where saving desktop settings didn't remove the saving label in the settings window.
+- Fixed an issue where users could not get the number of mentions jewel in the tab.
+- Fixed an issue where the desktop linting didn't match with the webapp one.
+- Fixed an issue where clicking on a notification did nothing when the wrong server tab was selected.
+- Fixed an issue where users were unable to copy text from desktop **About** window.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Unlocking the Desktop App on macOS marks the currently viewed channel as read. `MM-31429 <https://mattermost.atlassian.net/browse/MM-31429>`_
+- On Ubuntu, auto-focus is lost when using ALT+TAB to switch between windows. `MM-29705 <https://mattermost.atlassian.net/browse/MM-29705>`_
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
 Release v4.6
 ----------------------------
 
