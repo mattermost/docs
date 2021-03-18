@@ -2,7 +2,44 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2021-02-24
+## Release 2021-03-12
+
+### Highlights
+
+#### Custom Statuses
+ - Custom Statuses allow users to add a descriptive status message and emoji that’s visible to everyone. Users now gain the flexibility to express their current status in any way they prefer. Mobile support is coming in a future release.
+
+### Improvements
+
+#### User Interface (UI)
+ - System Admins are now prompted when joining a private channel via a permalink.
+ - Added support for adding in-product notices for external dependency deprecation details.
+ - Improved the timezone selector component.
+ - Introduced a new theme variable for the team sidebar.
+
+#### Administration
+ - Added schema migrations phase 0 (``Teams``, ``TeamMembers``).
+ - Removed any references to ``SqlLite3`` from the code.
+ - Bleve updates are now logged in the config only when there is an actual change in the ``BleveSettings`` instead of on every config update.
+
+### Bug Fixes
+ - Fixed unsafe access of properties of the plugin environment during ``ServePluginPublicRequest``.
+ - Fixed an issue where the Admin Console > Server Logs did not focus to the sidebar filter upon reload.
+ - Fixed an issue where the Gif picker appeared empty instead of showing a “No results” modal when no results were displayed.
+ - Fixed an issue where the keyboard accessibility controller was not allowed to resume left-hand side scroll after drag and drop.
+ - Fixed an issue where markdown links rendered incorrectly.
+ - Fixed an issue where the slack theme import failed due to changes in formatting of Slack export color schemes.
+ - Fixed an issue where tooltips were missing for channels with a long name.
+ - Fixed a race condition which would crash the app server due to improper handling of websocket closing.
+ - Fixed an issue where the PDF zoom failed to respond to zoom in/out/reset actions until the user scrolled.
+ - Fixed an issue where in a reply thread with the right-hand side expanded, attachments in a post draft got hidden behind the center channel text box.
+
+### Known Issues
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-02-25
 
 ### Highlights
 

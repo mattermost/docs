@@ -2,9 +2,11 @@
 
 This document summarizes common troubleshooting issues and techniques.
 
-Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. 
+
+Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
 
 Important Notes
 ---------------
@@ -19,7 +21,7 @@ General Troubleshooting
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
 Review Mattermost Logs
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_.
 
@@ -30,8 +32,8 @@ You can access logs for Mattermost and use them for troubleshooting. These steps
 
 The resulting server log file is called ``mattermost.log`` and can be opened with a standard text editor or shared directly.
 
-.. Note::
-For a more complete log open **System Console > Environment > Logging** and set **File Log Level** to **DEBUG**, then replicate the issue to have it logged again. Make sure to revert to **INFO** after troubleshooting to save disk space.
+.. note::
+    For a more complete log open **System Console > Environment > Logging**, set **File Log Level** to **DEBUG**, then replicate the issue to log it again. Make sure to revert the file log level to **INFO** after troubleshooting to save disk space.
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
@@ -103,9 +105,9 @@ If email sign in was turned off before the System Admin switched sign in methods
 
 1. Sign in to the server Mattermost is running on via ``ssh``.
 2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
-3. Run
+3. Run:
 
-  .. code-block:: none
+.. code-block:: none
 
     $ sudo -u mattermost bin/mattermost roles system_admin {username}
 
@@ -179,7 +181,7 @@ This error indicates that the installation does not have an Enterprise license. 
 To resolve the issue, upload an Enterprise License and restart the process.
 
 ``SAML 2.0 is not configured or supported on this server.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The error indicates that the installation is using the Mattermost Team Edition. The error message you receive will look similar to this:
 
@@ -376,7 +378,7 @@ If this issue is reported rarely, in some cases the issue comes from *intermitte
 If only a small number of users have this issue, it could be from intermittent internet access, if almost every user has this issue, it's likely from a misconfiguration of the ``wss`` connection.
 
 ``Cannot connect to the server. Please check your server URL and internet connection.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error may appear on some devices when trying to connect to a server that is using an SSL curve that's not supported by the client device.
 
@@ -443,7 +445,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
          2. Asking the user to switch sign-in methods before turning the sign-in option off.
 
 ``Failed to upgrade websocket connection``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
 
@@ -454,7 +456,7 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`__.
 
 ``Websocket closed`` or ``Websocket re-established connection``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This alert can appear every few seconds in the desktop application or web browser connected to Mattermost.
 
@@ -464,7 +466,7 @@ This alert can appear every few seconds in the desktop application or web browse
 - If you're using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
 
 ``context deadline exceeded``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
 
@@ -477,10 +479,10 @@ This error appears when a request from Mattermost to another system, such as an 
 Settings
 --------
 
-User Statuses get Stuck on "Away" or "Offline" Status
+User Availability gets Stuck on "Away" or "Offline"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you notice more than one user being stuck at an "Away" or "Offline" status, try one of the following steps:
+If you notice more than one user has their `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ stuck as **Away** or **Offline**, try one of the following steps:
 
 1. If you're using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <https://nginx.org/en/docs/http/load_balancing.html>`__.
 2. If you're using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
@@ -495,7 +497,7 @@ If you try to save a System Console page and notice that the settings revert to 
 Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the Mattermost user and restart the server.
 
 Mattermost Can't Connect to LDAP/AD Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 LDAP and Active Directory troubleshooting can be found on `this page <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__.
 
@@ -503,19 +505,19 @@ Mobile
 -------
 
 Login with ADFS/Office365 is Not Working
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 The “Connecting…” Bar Doesn't Clear
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
 If you're seeing this message all the time, and your internet connection seems fine, ask your server administrator whether the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 I’m Not Receiving Push Notifications on my Device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you didn't receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
@@ -533,7 +535,7 @@ If you didn't receive a push notification when :doc:`testing push notifications 
 7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
@@ -556,7 +558,7 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
 
 Configuration Issues
----------------------
+--------------------
 
 In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost.
 
@@ -584,13 +586,13 @@ Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integ
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` file and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
 
 Gfycat gifs are not loading even though they show up in the emoji picker
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Check whether the server has access to the Gfycat servers. It may be behind a proxy or firewall which is blocking outgoing connections.
 2. Check whether the server reaches the link metadata timeout (see **System Console > Experimental > Link Metadata Timeout**).
 
 Mobile
-~~~~~
+~~~~~~
 
 Build Gets Stuck at ``bundleReleaseJsAndAssets``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -615,7 +617,7 @@ This can happen if the server running Mattermost has its mime types not set up c
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
 
 None of These Solve my Problem!
-------------------------------
+-------------------------------
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and include the results in your support request or `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ post.
 
@@ -629,3 +631,307 @@ To help us narrow down whether it’s a server configuration issue, device speci
 
 - If you have another mobile device available, try connecting with that to see if your issue still reproduces.
 - If you don’t have another device available, check with other teammates to see if they are having the same issue.
+
+Opening a Support Ticket for Self-Managed Deployments
+-----------------------------------------------------
+
+When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
+
+* Configurations
+* Logs
+* Users affected
+* Environment
+* Steps to reproduce
+
+C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
+
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+
+General Guidelines for Information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow these guidelines when providing diagnostic data to us:
+
+* Make sure the files you provide are as complete as possible, rather than providing a few lines. Entire log files and configurations provide us with important context.
+* Provide configuration and log files in plaintext format if possible, as these are far easier for us to search than screenshots.
+* Be sure to sanitize configuration and log files to remove usernames, passwords, and LDAP groups. Replace these details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+* Provide screenshots or screen recordings of unexpected product behavior so that we know exactly what your users are seeing.
+
+Configuration
+~~~~~~~~~~~~~
+
+Why we need your configuration data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On Linux systems, settings are generally stored in configuration files. Many issues can be resolved by enabling or disabling a configuration setting. In order to find a resolution, we need to have as complete a picture of your system setup as possible. This also helps us to reproduce bugs so our developers can fix them.
+
+What configuration data includes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configuration includes (but is not limited to):
+
+- The Mattermost ``config.json`` file.
+- The configuration for the reverse proxy, e.g. NGINX, HAProxy, AWS.
+- The database configuration.
+- SAML configuration when the issue is regarding SAML authentication. The configuration for the Mattermost service is in the SAML IdP.
+- Any other systems that Mattermost connects to or systems that exist between the user and the Mattermost server.
+
+How to access your configuration data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Mattermost configuration**
+
+The Mattermost configuration is usually stored at ``/opt/mattermost/config/config.json``. If you've migrated the Mattermost configuration to the database, you can get the configuration using ``mmctl`` or by running this database query:
+
+.. code-block:: none
+    
+   SELECT Value FROM Configurations WHERE Active = 1;
+
+**Reverse Proxy configuration**
+
+NGINX usually splits its configuration into two parts: the main server configuration at ``/etc/nginx/nginx.conf``, and a virtual server configuration. On Ubuntu, this is stored in ``/etc/nginx/sites-available``. Providing both of these configuration files is helpful, but providing the latter is more important.
+
+**SAML configuration**
+
+If the issue you're seeing is with SAML login, we will need to see the full configuration for the Mattermost service in the SAML provider. The configuration for the Mattermost service is in the SAML IdP. Providing screenshots similar to the ones in the setup documentation is sufficient because most SAML providers are configured using a web interface.
+
+**LDAP configuration**
+
+The LDAP administrator should confirm the correct values for the following Mattermost LDAP settings:
+
+- LDAP server hostname
+- LDAP connection port, security, and certificates
+- BaseDN, bind username, and bind password
+- User, Group, Guest, and Admin filters
+- Display attributes
+
+These can be provided as a text file or as screenshots from the LDAP server.
+
+**Other configurations**
+
+If you're experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A System Administrator for the external system should be able to provide you with the configuration.
+
+Logs
+~~~~
+
+Why we need them
+^^^^^^^^^^^^^^^^
+
+Nearly all computer systems have logs of errors and application behavior that can show us what's happening when an application is running. Error logs are invaluable when diagnosing a problem, but only if they're as complete as possible.
+
+What logs are available
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Mattermost**
+
+Mattermost has two log files, one for general messages and the other for notification-related messages. These are found at:
+
+* ``/opt/mattermost/logs/mattermost.log``
+* ``/opt/mattermost/logs/notification.log``
+
+**Proxy**
+
+The location of these depend on your proxy configuration, but a good place to start looking is in ``/var/log``. Your proxy administrator should be able to help you find the logs.
+
+**Database**
+
+MySQL and PostgreSQL have different logs, and their location varies based on your configuration. If the issue is related to database connectivity, check the database documentation to locate the logs.
+
+**SAML, LDAP, and other systems**
+
+Your organization's System Administrator should be able to find these for you.
+
+How to access logs
+^^^^^^^^^^^^^^^^^^
+
+**Mattermost**
+
+Make sure debug logging is enabled so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set console and file log level to **DEBUG**.
+
+If the behavior started at a known time or date, use ``journalctl`` to get the logs like this:
+
+.. code-block:: none
+
+   sudo journalctl -u mattermost --since "2020-08-23 17:15:00" > mattermost_journalctl.log
+
+Replace 2020-08-23 17:15:00 with the date and time (relative to the server) when the behavior started. To get the server time, use the ``date`` command. If the log files generated are too large to send, compress them with this command:
+
+.. code-block:: none
+   
+   tar -czf /tmp/mattermost.log.tgz
+
+The compressed logs will be located on the server at ``/tmp/mattermost.log.tgz``.
+
+If the compressed file is still too big, use these commands to split the compressed file into two or more 20MB files:
+
+.. code-block:: none
+   
+   mkdir -p /tmp/mattermost-logs
+   cd /tmp/mattermost-logs
+   tar czf - /opt/mattermost/logs/mattermost.log | split -b 20m - mattermost.log.tgz.
+
+The compressed files will be located on the server at ``/tmp/mattermost-logs`` and be named ``mattermost.log.tgz.aa``, ``mattermost.log.tgz.ab``, and so on. Use a file transfer client that supports SSH/SFTP, such as Cyberduck, to copy these files from the server.
+
+If you are experiencing issues with Elasticsearch, SAML, LDAP, or the database, you can enable trace logging in ``config.json`` by setting ``Trace`` to ``true`` under their respective settings. Combining this with ``DEBUG`` level file log output will result in huge log files, so only leave trace logging on long enough to replicate the behavior. The resulting logs will also contain a lot more sensitive data, including user data, so be sure to sanitize it completely before sharing it with us.
+
+**System logs**
+
+The location of log files for other systems varies, but a good way to get the logs for all processes on the Mattermost server is to use ``journalctl`` like this:
+
+.. code-block:: none
+  
+   sudo journalctl --since "2020-08-23 17:15:00" > mattermost_journalctl.log
+
+Replace 2020-08-23 17:15:00` with the date and time (relative to the server) when the error occurred. You can use ``--until`` with the same timestamp format to get the logs between two times:
+
+.. code-block:: none
+  
+   sudo journalctl --since "2020-08-23 17:15:00" --until "2020-08-23 16:30:00" > mattermost_journalctl.log
+
+Users affected
+~~~~~~~~~~~~~~
+
+Why we need it
+^^^^^^^^^^^^^^
+
+Mattermost servers are chaotic places. Thousands of posts, websocket actions, and webhook calls happen every second while users can be in dozens of channels across multiple teams. Knowing which users are affected by a problem can help us sift through all this information to find the root cause.
+
+What information to include
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This should be a detailed explanation of anything the end users who are reporting the unexpected behavior have in common. This includes (but is not limited to):
+
+- Team and Channel memberships, including Direct and Group Messages
+- Authentication methods
+- Client operating system and app versions
+- How users connect to the Mattermost server
+- Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synchronized via LDAP
+
+Note for Agents: This information is also required:
+
+- Customer name
+- Customer contacts
+- Customer license, e.g. E20/PS
+- Customer tier
+
+Environment
+~~~~~~~~~~~
+
+Where the Mattermost server sits in your architecture has a lot of impact on potential issues. For example, a misconfigured proxy server can prevent users from connecting even if there's nothing wrong with Mattermost.
+
+What information to include
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Because of this, having a complete picture of the servers and network that the Mattermost server operates in is key to solving problems. This includes (but is not limited to):
+
+- Mattermost version (e.g. 5.28.0, 5.25.5)
+- Server OS and version (e.g. RHEL7, Ubuntu 18.04)
+- Any orchestration/automation used like Docker or Kubernetes
+- Reverse proxy and version (e.g. NGINX 1.16)
+- Database type and version (e.g. MySQL 5.7, PostgreSQL 12.4)
+- SAML provider (e.g. Windows Server 2012 Active Directory, Okta, KeyCloak)
+- LDAP provider (e.g. Windows Server 2016 Active Directory, Okta, OpenLDAP)
+- The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
+
+Be as specific as possible when describing the environment. If you are seeing errors like **Connection Refused** be sure to include any firewalls or filtering proxies that may be on your network, either inbound or outbound.
+
+**Examples**
+
+Mattermost server
+
+ - External hostname: mattermost.example.com
+ - Internal hostname: mattermost.lan
+ - Mattermost v5.28.0
+ - Zoom plugin v1.4.1
+ - NGINX v1.18.0
+
+Database server
+
+ - Internal hostname: mysql.lan
+ - MySQL v5.7
+ - LDAP Provider - 192.168.1.102
+ - Internal hostname: ldap.lan
+ - OpenLDAP 2.4.54 (Docker container)
+
+Mattermost servers
+
+ - Hostnames: mm1.local.lan, mm2.local.lan, mm3.local.lan, mm4.local.lan
+
+Mattermost server versions
+
+ - mm1-3: 5.25.4
+ - mm4: 5.21.0
+
+Proxy server
+
+ - External hostname: mattermost.example.com
+ - Internal hostname: proxy.local.lan
+ - NGINX v1.16.0
+
+Database servers
+
+ - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
+ - Primary: db1.local.lan
+ - Read-Only: db2.local.lan, db3.local.lan  
+ - MySQL v5.6
+
+Elasticsearch server
+
+ - Hostname: elastic.local.lan
+ - Elasticsearch 7.9 with these plugins
+ - analysis-icu
+
+Steps to Reproduce
+~~~~~~~~~~~~~~~~~~
+
+What it is
+^^^^^^^^^^
+
+If the behavior only happens when the user performs a specific action, providing detailed steps to reproduce it will help us make sure we find and fix the right bug. These details should be as descriptive as possible, but nothing is better than a screenshot or a screen recording of the behavior.
+
+A short summary of the steps to reproduce is also helpful. If you want some examples, look at the bug tickets on some Mattermost Jira tickets.
+
+How to provide these details
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**macOS**
+
+Press CMD+SHIFT+5 to open the screen recording tool and select the region of the screen you want to record. To take a screenshot, press CMD+SHIFT+4 and select the region to take a screenshot. The screenshot files are placed on the desktop by default.
+
+**Windows**
+
+Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as `OBS <https://obsproject.com/>`_.
+
+**iOS**
+
+Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios>`_.
+
+**Android**
+
+Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`_.
+
+Appendix
+--------
+
+**A note on mobile issues**
+
+Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact your Customer Engineer for help setting these up.
+
+**SAML login issues**
+
+If the issue is with SAML login, one important piece of context is the SAML login flow. This contains headers and authentication information that can reveal issues that are easy to fix. Follow these instructions to view the SAML login flow if you are experiencing SAML authentication.
+
+Checking keys and certificates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Key and certificate files should never be shared, but if the error indicates a problem with the format of a key or certificate, then you should verify the format of the keys and certificates by running this command:
+
+.. code-block:: none
+
+  cat -A /path/to/key-or.cert
+
+The output must meet these criteria exactly to be valid:
+
+* Start with ``-----BEGIN CERTIFICATE-----$``.
+* All lines must end with ``$``. If they end with ``^M$`` then convert them to UNIX line endings with ``dos2unix``.
+* End with ``-----END CERTIFICATE-----$``.

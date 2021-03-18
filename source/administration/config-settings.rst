@@ -388,10 +388,6 @@ Maximum Connection Idle Timeout
 
 Maximum time a database connection can remain idle.
 
-.. note::
-
-  This configuration setting is available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
-
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1024,10 +1020,6 @@ Enable Gossip Compression
 
 **False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
 
-.. note::
-
-  This configuration setting is available in Mattermost Cloud. It will be available in Mattermost Server v5.33 on March 16, 2021.
-
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableGossipCompression": true`` with options ``true`` and ``false``.             |
 +--------------------------------------------------------------------------------------------------------------------------------+    
@@ -1452,15 +1444,15 @@ Requests that can only be configured by admins are considered trusted and will n
 Some examples of when you may want to modify this setting include:
 
 - When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
-- When running a bot or webhook-based integration on your local network, you will need to add the hostname of the bot/integration to this list.
-- If your network is configured in such a way that publicly accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
+- When running a bot or webhook-based integration on your local network, you'll need to add the hostname of the bot/integration to this list.
+- If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
 
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
+This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 .. note::
    Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
-IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
+IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution. We try to match IP addresses and hostnames without even resolving. If that fails, we resolve using the local resolver (by reading the ``/etc/hosts`` file first), then check for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input.                                                           |
@@ -1778,6 +1770,17 @@ Show Full Name
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Custom User Statuses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
+
+**False**: Users are unable to set custom user statuses.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomUserStatuses": true`` with options ``true`` and ``false``.                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notifications
@@ -3057,6 +3060,8 @@ Settings to configure OAuth login for account creation and login.
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+*Available in Team Edition and Enterprise Edition E10*
+
 Choose whether OAuth can be used for account creation and login. Options include:
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
@@ -3067,10 +3072,11 @@ Choose whether OAuth can be used for account creation and login. Options include
 This feature's setting does not appear in ``config.json``.
 
 GitLab
-~~~~~~~~
+~~~~~~
 
 Enable authentication with GitLab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 **True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
 
 **False**: GitLab OAuth cannot be used for team creation or account signup.
@@ -3255,6 +3261,209 @@ It is recommended to use ``"https://login.microsoftonline.com/common/oauth2/v2.0
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input.                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Select OpenID Connect service provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in Enterprise Edition E20*
+
+Choose whether OpenID Connect can be used for account creation and login. Options include:
+
+    - **Do not allow sign-in via an OpenID provider**
+    - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#gitlab-settings>`__ for more detail)
+    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google-settings>`__ for more detail)
+    - **Office 365** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365-settings>`__ for more detail)
+    - **OpenID Connect (Other)** (available in Enterprise Edition E20, see `OpenID Connect Settings <https://docs.mattermost.com/administration/config-settings.html#openid-connect-other-settings>`__ for more detail)
+
+This feature's setting does not appear in ``config.json``.
+
+GitLab Settings
+~~~~~~~~~~~~~~~
+
+Enable authentication with GitLab
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Allow team creation and account signup using GitLab OpenID Connect. To configure, input the **Secret**, **Id**, and **DiscoveryEndpoint** credentials.
+
+**False**: GitLab OpenID Connect cannot be used for team creation or account signup.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Application ID
+^^^^^^^^^^^^^^^
+
+Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a **Name**, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Application Secret Key
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a **Name**, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Discovery Endpoint
+^^^^^^^^^^^^^^^^^^
+
+This value is prepopulated with ``https://gitlab.com/.well-known/openid-configuration``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Google Settings
+~~~~~~~~~~~~~~~
+
+*Available in Enterprise Edition E20*
+
+Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+
+**True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-google.html>`__ for more detail.
+
+**False**: Google OpenID Connect cannot be used for team creation or account signup.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client ID
+^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your Google account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client Secret
+^^^^^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your Google account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Discovery Endpoint
+^^^^^^^^^^^^^^^^^^
+
+This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Office 365 Settings
+~~~~~~~~~~~~~~~~~~~
+
+*Available in Enterprise Edition E20*
+
+.. note::
+   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+
+Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OpenID Connect > Select service provider**.
+
+**True**: Allow team creation and account signup using Office 365 OpenID Connect. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-office.html>`__ for more detail.
+
+**False**: Office 365 OpenID Connect cannot be used for team creation or account signup.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Application ID
+^^^^^^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Application Secret Password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Discovery Endpoint
+^^^^^^^^^^^^^^^^^^
+
+This value is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+OpenID Connect (Other) Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in Enterprise Edition E20*
+
+Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
+
+**True**: Allow team creation and account signup using OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-openidconnect.html>`__ for more detail.
+
+**False**: OpenID Connect cannot be used for team creation or account signup.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client ID
+^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your service provider account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Id": ""`` with string input.                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client Secret
+^^^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your service provider account.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Secret": ""`` with string input.                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Discovery Endpoint
+^^^^^^^^^^^^^^^^^^
+
+Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DiscoveryEndpoint": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Button Text
+^^^^^^^^^^^
+
+Specify the text that displays on the OpenID login button.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ButtonText": ""`` with string input.                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Button Color
+^^^^^^^^^^^^
+
+Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ButtonColor": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Guest Access (Beta)

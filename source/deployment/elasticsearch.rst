@@ -37,7 +37,7 @@ The set up process for the Elasticsearch server is documented in the `official E
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
+Follow these steps to connect your Elasticsearch server to Mattermost and to generate the post index.
 
 1. Open **System Console > Environment > Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions prior to 5.12).
 2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
@@ -49,19 +49,19 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
     - Note: For AWS Elasticsearch leave this field blank.
   d) Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
     - Note: For AWS Elasticsearch this field should be set to ``false``.
-4. Click **Test Connection** and **Save** the configuration.
+4. Select **Test Connection** and **Save** the configuration.
   - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch.
-5. Build the post index of existing posts by clicking **Build Index**.
+5. Select **Build Index** to build the post index of existing posts.
   - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
 6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``.
-  - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
+  - **Note:** It's recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
 7. Restart the Mattermost server.
 
 .. note::
     Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
 
 .. note::
-    If your deployment has a large number of posts (typically in excess of 1 million but not strictly defined) the reindexing progress percentage may stay at 99% for a long time.
+    If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
     
 Limitations
 ------------
@@ -134,3 +134,8 @@ How do I know if an Elasticsearch job fails?
 Mattermost provides the status of each Elasticsearch indexing job in **System Console > Environment > Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions prior to 5.12). Here you can see if the job succeeded or failed, including the details of the error.
 
 Failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Elasticsearch job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
+My Elasticsearch indexes won't complete, what should I do?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, please contact Mattermost support.
