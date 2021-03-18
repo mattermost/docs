@@ -14,6 +14,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Improved the design and layout of email notifications.
 
 #### Administration
+ - Added mmctl commands to create, list, download and delete export files.
  - Profiling the Mattermost server with pprof is now available for Team Edition.
  - Added attributes to split.io feature flags.
 
