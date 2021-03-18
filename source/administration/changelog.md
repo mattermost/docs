@@ -26,7 +26,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added support for adding in-product notices for external dependency deprecation details.
  - Improved the timezone selector component.
  - Introduced a new theme variable for the team sidebar.
- - Added a UI field for restricted domains under **Site Configuration > Posts** in the System Console. Expanded the logic that determines whether a post has a preview or not.
  - Added support for automatic right-to-left (RTL) detection in browsers.
  - Updated the font size for the **Add People** channel modal.
  - Online status is now shown in the channel switcher.
@@ -63,9 +62,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added ``EnableFileSearch``, ``ExtractContent``, ``ArchiveRecursion`` for file search.
- - Added ``ExportSettings``.
- - Added a string field to config for restricted domains with the key ``RestrictLinkPreviews``.
+ - Added ``EnableFileSearch``, ``ExtractContent``, ``ArchiveRecursion`` for file search. **XXXX ??**
+ - Added ``ExportSettings`` to add support for compressed export files with attachments.
 
 ### Go Version
 
