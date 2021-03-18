@@ -7,7 +7,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Improvements
 
 #### User Interface (UI)
- - Added a UI field for restricted domains under **Site Configuration > Posts** in the System Console. Expanded the logic that determines whether a post has a preview or not.
  - Added support for automatic right-to-left (RTL) detection in browsers.
  - Updated the font size for the **Add People** channel modal.
  - Online status is now shown in the channel switcher.
