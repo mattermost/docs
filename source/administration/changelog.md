@@ -29,12 +29,12 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added support for automatic right-to-left (RTL) detection in browsers.
  - Updated the font size for the **Add People** channel modal.
  - Online status is now shown in the channel switcher.
- - Improved the design and layout of email notifications.
+ - Improved the design and layout of email notifications for password resets, member invites, and member welcome and verifications.
 
 #### Administration
  - Added mmctl commands to create, list, download and delete export files.
  - Added schema migrations phase 0 (``Teams``, ``TeamMembers``).
- - Removed any references to ``SqlLite3`` from the code.
+ - Removed references to ``SqlLite3`` from the code.
  - Bleve updates are now logged in the config only when there is an actual change in the ``BleveSettings`` instead of on every config update.
  - Profiling the Mattermost server with pprof is now available for Team Edition.
  - Added attributes to split.io feature flags.
@@ -66,6 +66,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``ExportSettings`` to add support for compressed export files with attachments.
 
 ### Go Version
+ - v5.34 is built with Go ``1.15.5``.
 
 ### Open Source Components
 
@@ -73,7 +74,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - 
 
 ### API Changes
- - Added API for files search ``/teams/{team_id}/files/search``.
+ - Added API for files search ``/teams/{team_id}/files/search``. **XXXX ??**
 
 ### Websocket Event Changes
  - 
