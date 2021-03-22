@@ -20,7 +20,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
-2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor and update the IP address in the ``upstream backend`` to point towards Mattermost, and the ``server_name`` to be your domain for Mattermost.
+2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor and update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (ex: ``127.0.0.1:8065``, and the ``server_name`` to be your domain for Mattermost.
 
 .. note::
    On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file run ``sudo touch /etc/nginx/sites-available/mattermost``.
