@@ -10,10 +10,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Added support for automatic right-to-left (RTL) detection in browsers.
  - Updated the font size for the **Add People** channel modal.
  - Online status is now shown in the channel switcher.
- - Improved the design and layout of email notifications for password resets, member invites, and member welcome and verifications.
+ - Improved the design and layout of email notifications for password resets, member invites, member welcome, and verifications.
 
 #### Administration
- - Added mmctl commands to create, list, download and delete export files.
+ - Added ``mmctl`` commands to create, list, download, and delete export files.
  - Profiling the Mattermost server with pprof is now available for Team Edition.
  - Added attributes to split.io feature flags.
 
