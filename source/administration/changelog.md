@@ -6,8 +6,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.33.1, release day TBD**
-  - Fixing an issue where WebSockets fail with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
+- **v5.33.1, released 2021-03-22**
+  - Fixed an issue where WebSockets failed with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
+  - Fixed a race condition which would crash the app server due to improper handling of WebSockets closing. [MM-33233](https://mattermost.atlassian.net/browse/MM-33233)
+  - Fixed an issue where ``ClusterSettings.EnableGossipCompression`` mmctl command was missing from v5.33.0. [MM-34046](https://mattermost.atlassian.net/browse/MM-34046)
 - **v5.33.0, released 2021-03-17**
   - Original 5.33.0 release
 
