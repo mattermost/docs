@@ -133,7 +133,7 @@ GitLab is the leading open-source alternative to GitHub and offers built-in inte
 1. In GitLab, go to **Settings > Services** and select **Slack**.
 2. Paste the incoming webhook URL provided by Mattermost from **Main Menu > Integrations > Incoming Webhooks**.
 3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank.
-4. Select **Save** then test the settings to confirm messages are sent successfully to Mattermost.
+4. Select **Save**, then test the settings to confirm messages are sent successfully to Mattermost.
 
 Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
