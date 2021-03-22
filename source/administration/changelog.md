@@ -7,6 +7,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.33.2, release day TBD**
+  - Investigating an issue with WebSocket handling where client-side pings fail WebSocket connections [MM-34158](https://mattermost.atlassian.net/browse/MM-34158)
   - Improving typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
 - **v5.33.1, released 2021-03-22**
   - Fixed an issue where WebSockets failed with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
