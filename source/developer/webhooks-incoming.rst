@@ -96,7 +96,7 @@ Tips and Best Practices
 
   {"text": "Hello, this is some text."}
 
-7. When using the ``icon_emoji`` parameter - the user profile image is replaced by the emoji provided. This will also override the ``icon_url`` parameter if both are provided.
+7. When using the ``icon_emoji`` parameter, the user profile image is replaced by the emoji provided. This will also override the ``icon_url`` parameter if both are provided.
 
 Share Your Integration
 ----------------------
