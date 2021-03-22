@@ -147,7 +147,7 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-To debug incoming webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to **true** and set **System Console > Logging > Console Log Level** to **DEBUG**.
+To debug incoming webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to **true**, and set **System Console > Logging > Console Log Level** to **DEBUG**.
 
 Some common error messages include:
 
