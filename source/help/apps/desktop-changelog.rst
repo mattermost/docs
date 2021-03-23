@@ -31,6 +31,7 @@ All Platforms
 - Restored deeplinking.
 - Switched the dictionary to the one Electron uses to have the ability to fix spelling.
 - Added improvements to be consistent on the use of URL and URL libraries.
+- Updated CSP for Desktop App to avoid warnings in the dev tools.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
