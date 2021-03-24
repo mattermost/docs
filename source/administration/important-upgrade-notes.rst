@@ -21,6 +21,7 @@ Important Upgrade Notes
 |                                                    | WebSocket handshakes done with HTTP version lower than 1.1 will result in a warning, and the server will transparently upgrade the version to 1.1 to comply with |
 |                                                    | the WebSocket RFC. This is done to work around incorrect Nginx (and other proxy) configs that do not set the ``proxy_http_version`` directive to 1.1. This       |
 |                                                    | facility will be removed in a future Mattermost version and it is strongly recommended to fix the proxy configuration to correctly use the WebSocket protocol.   |
+|                                                    | **Note:** This requirement was removed in v5.33.2 dot release because ....                                                                                       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.32.0                                            | ``ExperimentalChannelOrganization``, ``EnableXToLeaveChannelsFromLHS``, ``CloseUnusedDirectMessages``, and ``ExperimentalHideTownSquareinLHS`` settings are only |
 |                                                    | functional if the Legacy Sidebar (``EnableLegacySidebar``) is enabled since they are not compatible with the new sidebar experience.                             |
