@@ -4816,6 +4816,24 @@ By default, in order to avoid leaking sensitive information, no method parameter
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Export Settings Default Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The directory where the exported files are stored. The path is relative to the ``FileSettings`` directory. By default, exports are stored under ``./data/export``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ExportSettings`` section is ``Directory: ./export`` with string input.                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Export Settings Default Retention Days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of days to retain the exported files before deleting them.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ExportSettings`` section is ``RetentionDays: 30`` with numerical input.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -5255,8 +5273,6 @@ Disable Legacy MFA API Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps on version 1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
-
-**False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``.                                                      |
