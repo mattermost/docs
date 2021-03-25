@@ -130,7 +130,7 @@ To unmute the channel, select the channel name again to access the drop-down men
 Switching channels
 ------------------
 
-Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review member availability at a glance. 
+Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance. 
 
 Navigating recently viewed channels
 -----------------------------------
