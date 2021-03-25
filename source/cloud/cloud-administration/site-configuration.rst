@@ -32,7 +32,7 @@ Mattermost in-product notices keep users and administrators informed of the newe
 Administrator Notices
 ^^^^^^^^^^^^^^^^^^^^^
 
-Administrator notices are used to inform System Admins when a new server version is available, or if a server upgrade is recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
+Administrator notices inform System Admins when a new server version is available, when external dependencies are being deprecated, or when a server upgrade is recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
 
 Administrator notices can be disabled in the **System Console > Notices** page.
 
