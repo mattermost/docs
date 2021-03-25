@@ -152,6 +152,8 @@ Starting an incident opens an interactive dialog. Provide an incident name and s
 
 The creator of an incident is automatically added as the first member and becomes the commander.
 
+When the incident is created, it is announced in the configured channel. If the channel does not exist or is archived/deleted, the bot posts a message in the channel warning the user about it.
+
 Joining an incident
 ~~~~~~~~~~~~~~~~~~~
 
