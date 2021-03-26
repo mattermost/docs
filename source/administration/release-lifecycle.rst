@@ -1,7 +1,7 @@
 Release Lifecycle
 ========================
 
-What is a Release Lifecycle?
+Self-Managed Release Lifecycle
 ------------------------------------
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/administration/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
 
@@ -101,3 +101,25 @@ During each monthly release, Mattermost backports high severity or high impact s
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+
+Desktop App Release Lifecycle
+------------------------------------
+There are no hard requirements for Self-Managed/Desktop App compatibility, but certain Self-Managed features that involve the operating system require a specific Desktop App version. Security and high severity bug fixes are normally not backported to previous Desktop App versions. Please review the `Desktop App changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_ notes for any specific Self-Managed or Desktop App requirements for features and functionalities, as well as notes on security fixes. We follow the same release cycle pattern for all upcoming releases.
+
++-------------+-----------------------+--------------------------+
+| Version     | Lifecyle Start Date   | Lifecycle End Date       |
++=============+=======================+==========================+
+| 4.6         | 2020-10-16            | TBD                      |
++-------------+-----------------------+--------------------------+
+| 4.5         | 2020-06-16            | 2020-10-15               |
++-------------+-----------------------+--------------------------+
+| 4.4         | 2020-02-16            | 2020-06-15               |
++-------------+-----------------------+--------------------------+
+| 4.3         | 2019-10-17            | 2020-02-15               |
++-------------+-----------------------+--------------------------+
+| 4.2         | 2018-11-27            | 2019-10-16               |
++-------------+-----------------------+--------------------------+
+| 4.1         | 2018-05-16            | 2018-11-26               |
++-------------+-----------------------+--------------------------+
+| 4.0         | 2018-01-19            | 2018-05-15               |
++-------------+-----------------------+--------------------------+
