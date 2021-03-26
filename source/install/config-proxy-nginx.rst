@@ -90,6 +90,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
            proxy_connect_timeout 90;
            proxy_send_timeout 300;
            proxy_read_timeout 90s;
+           proxy_http_version 1.1;
            proxy_pass http://backend;
        }
 

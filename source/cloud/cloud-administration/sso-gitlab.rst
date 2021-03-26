@@ -48,7 +48,6 @@ Step 2: Configure Mattermost for GitLab SSO
 5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the **Application Secret Key** from GitLab as the **Client Secret** in Mattermost. 
 7. Select **Save**.
-8. Restart your Mattermost server to see the changes take effect.
 
 (Optional) Step 3: Force users to sign up using SSO only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

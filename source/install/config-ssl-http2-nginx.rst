@@ -166,6 +166,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
            proxy_connect_timeout 90;
            proxy_send_timeout 300;
            proxy_read_timeout 90s;
+           proxy_http_version 1.1;
            proxy_pass http://backend;
        }
 
