@@ -4807,6 +4807,24 @@ By default, in order to avoid leaking sensitive information, no method parameter
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Import Settings Default Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The directory where the imported files are stored. The path is relative to the ``FileSettings`` directory. By default, imports are stored under ``./data/import``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input.                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Import Settings Default Retention Days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of days to retain the imported files before deleting them.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ImportSettings`` section is ``RetentionDays: 30`` with numerical input.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Export Settings Default Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
