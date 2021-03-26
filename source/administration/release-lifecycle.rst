@@ -104,7 +104,7 @@ During each monthly release, Mattermost backports high severity or high impact s
 
 Desktop App Release Lifecycle
 ------------------------------------
-There are no hard requirements for Self-Managed/Desktop App compatibility, but certain Self-Managed features that involve the operating system require a specific Desktop App version. Security and high severity bug fixes are normally not backported to previous Desktop App versions. Please review the `Desktop App changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_ notes for any specific Self-Managed or Desktop App requirements for features and functionalities, as well as notes on security fixes. We follow the same release cycle pattern for all upcoming releases.
+There are no hard requirements for Self-Managed/Desktop App compatibility, but certain Self-Managed features that involve the operating system require a specific Desktop App version. Security and high severity bug fixes are normally not backported to previous Desktop App versions. Please review the `Desktop App changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_ notes for any specific Self-Managed or Desktop App requirements for features and functionalities, as well as notes on security fixes. The Desktop App doesn't have a specific release cadence, but we follow the same release cycle pattern for all upcoming releases as shown below.
 
 +-------------+-----------------------+--------------------------+
 | Version     | Lifecyle Start Date   | Lifecycle End Date       |
