@@ -2,6 +2,37 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-03-24
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support for automatic right-to-left (RTL) detection in browsers.
+ - Updated the font size for the **Add People** channel modal.
+ - Online status is now shown in the channel switcher.
+ - Improved the design and layout of email notifications for password resets, member invites, member welcome, and verifications.
+
+#### Administration
+ - Added ``mmctl`` commands to create, list, download, and delete export files.
+ - Profiling the Mattermost server with pprof is now available for Team Edition.
+ - Added attributes to split.io feature flags.
+
+### Bug Fixes
+ - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas.
+ - Fixed an issue where Compliance Report field headers were not correctly aligned.
+ - Fixed an issue where the ``/join`` command was case-sensitive.
+ - Fixed an issue where one-character sidebar category names were not displayed.
+ - Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using a custom team theme).
+ - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
+ - Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.
+
+### Known Issues
+ - Deactivated users are not marked as "Deactivated" in the channel switcher.
+ - User nickname is not shown on channel switch.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-03-12
 
 ### Highlights

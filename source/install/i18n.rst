@@ -15,24 +15,23 @@ Below is additional information on how to configure the database for different l
 日本語 / Japanese
 -----------------
 
-改善された日本語の翻訳は大歓迎です。完全にここに書かれているものを交換すること自由に感じてください。
+日本語翻訳の改善は大歓迎です。自由に変更していただいて結構です。
 
 検索設定
 ~~~~~~~~
 
-MySQL:
-`データベース構成に関する日本ご覧ください。ドキュメントを検索するにはMattermostを設定します <https://docs.mattermost.com/install/requirements.html#database-software>`__
+Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
 
-Postgres:
-`ここでは、日本のために、より良い検索作業を行うための提案です <https://github.com/mattermost/mattermost-server/issues/2159#issuecomment-206444074>`__
+- `MySQL <https://docs.mattermost.com/install/requirements.html#database-software>`__
 
-私たちは、検索に日本語ドキュメントの改善を手助けしてください
+- `Postgres <https://github.com/mattermost/mattermost-server/issues/2159#issuecomment-206444074>`__
+
+日本語(CJK)検索設定のドキュメントの改善にご協力ください
 
 ガイド
 ~~~~~~
 
-`インストールおよび構成のガイドを提供していますQiitta上Mattermost
-、詳細については、こちらをご覧ください。 <http://qiita.com/tags/Mattermost>`__
+`Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、こちらをご覧ください。<http://qiita.com/tags/Mattermost>`__
 
 中文 / Chinese
 -----------------
