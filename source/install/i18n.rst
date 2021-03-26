@@ -12,27 +12,6 @@ Enabling search for Chinese, Japanese and Korean (CJK) requires special configur
 
 Below is additional information on how to configure the database for different languages. 
 
-日本語 / Japanese
------------------
-
-日本語翻訳の改善は大歓迎です。自由に変更していただいて結構です。
-
-検索設定
-~~~~~~~~
-
-Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
-
-- `MySQL <https://docs.mattermost.com/install/requirements.html#database-software>`__
-
-- `Postgres <https://github.com/mattermost/mattermost-server/issues/2159#issuecomment-206444074>`__
-
-日本語(CJK)検索設定のドキュメントの改善にご協力ください
-
-ガイド
-~~~~~~
-
-`Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、こちらをご覧ください。<http://qiita.com/tags/Mattermost>`__
-
 中文 / Chinese
 -----------------
 数据库版本请参考： `配置要求 <https://docs.mattermost.com/install/requirements.html#database-software>`__ 。
@@ -62,11 +41,11 @@ Mattermost で日本語検索をするためにはデータベースの設定変
     SCWS_HOME=/usr/local make && make install
 
 .. note::
-  通过 Docker 镜像（mattermost/mattermost-prod-db）应用数据库的用户，请按照下述方法安装依赖。
+  通过 Docker 镜像（mattermost/mattermost-prod-db）应用数据库的用户，请按照下述方法安装依赖项。
 
   .. code:: bash
 
-    # Alpine 通过 apk add 命令安装依赖
+    # Alpine 通过 apk add 命令安装依赖项
     apk add wget tar gcc git postgresql-dev 
 
 创建extension以及增加解析配置:
@@ -80,20 +59,41 @@ Mattermost で日本語検索をするためにはデータベースの設定変
    psql mattermost -c 'ALTER TEXT SEARCH CONFIGURATION simple_zh_cfg ADD MAPPING FOR n,v,a,i,e,l WITH simple;'
 
 
-配置postgresql
+设置postgresql
 ~~~~~~~~~~~~~~
 
 将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config 的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart
 
 调试
 ~~~~~~~~
-可以打开 mattermost 的配置 config/config.json 中 SqlSettings 的配置 Trace: true，然后可以在mattermost的标准输出看到执行的SQL语句。
+可以打开 mattermost 的配置 config/config.json 中 SqlSettings 的设置 Trace: true，然后可以在mattermost的标准输出看到执行的SQL语句。
 
 .. code:: sql
 
     SELECT to_tsvector('simple_zh_cfg', '开始全面整修道路');
     SELECT to_tsvector('simple_zh_cfg', '开始全面整修道路') @@ to_tsquery('simple_zh_cfg', '全面');
     SELECT * FROM Posts WHERE Message @@ to_tsquery('simple_zh_cfg', '全面');
+
+日本語 / Japanese
+-----------------
+
+日本語翻訳の改善は大歓迎です。自由に変更していただいて結構です。
+
+検索設定
+~~~~~~~~
+
+Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
+
+- `MySQL <https://docs.mattermost.com/install/requirements.html#database-software>`__
+
+- `Postgres <https://github.com/mattermost/mattermost-server/issues/2159#issuecomment-206444074>`__
+
+日本語(CJK)検索設定のドキュメントの改善にご協力ください
+
+ガイド
+~~~~~~
+
+`Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、こちらをご覧ください。<http://qiita.com/tags/Mattermost>`__
 
 한국어 / Korean
 -------------------
