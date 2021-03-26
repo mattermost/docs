@@ -52,7 +52,7 @@ To invite guests into one or more Mattermost channels:
 2. Navigate to **Main Menu > Invite People**. This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**.
 3. Select **Invite Guests**.
 4. Enter the guest’s email address.
-5. Choose the channels the guest can join (excluding managed teams).
+5. Select the channels the guest can join (excluding managed teams).
 6. (Optional) Enter a custom message.
 
 .. image:: ../images/Guest_Invite_Screen.png
@@ -122,11 +122,11 @@ When a guest has been removed from all channels within a team, and if they belon
 Promoting and Demoting User Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System Admins can demote a member to guest by updating their role in **System Console > User Management > Users**. The demoted user will retain their existing channel and team memberships but will be restricted from discovering public channels and collaborating with users outside of the channels they are in.  This is useful if you are already collaborating with external contractors and want to restrict their abilities within Mattermost.
+System Admins can demote a member to a guest by updating their role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. The demoted user retains their existing channel and team memberships, but will be restricted from discovering public channels and collaborating with users outside of the channels they are in. This is useful if you are already collaborating with external contractors, and want to restrict their abilities within Mattermost.
 
-System Admins can also promote a guest to member by updating their role in **System Console > User Management > Users**.
+System Admins can also promote a guest to a member by updating their role in **System Console > User Management > Users**. Select the guest, then select **Promote to Member**.
 
-**Note:** You can filter the list in **System Console >  User Management > Users** to view all guests on the system.
+**Note:** You can filter the list in **System Console >  User Management > Users** to view all guests in the system.
 
 Disabling Guest Accounts
 ------------------------

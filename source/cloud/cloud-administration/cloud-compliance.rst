@@ -17,7 +17,7 @@ Enabling Compliance Reporting
 
 1. Go to **System Console > Compliance > Compliance Monitoring** and set the **Enable Compliance Reporting** value to **true**.
 2. (Optional) In **Compliance Report Directory** specify the directory in which to place completed compliance reports. Defaults to ``./data/`` if left blank.
-3. Click **Save**.
+3. Select **Save**.
 
 This will enable the option to generate Daily Compliance Reports.
 
@@ -43,7 +43,7 @@ Compliance Reports are exports of all messages in Mattermost that match the repo
      - **To:** End Date of search in YYYY-MM-DD format (e.g. "2016-05-11").
      - **Emails:** Comma-separated list of email addresses of users whose posted messages you want to search (e.g. ``bill@example.com, bob@example.com``).
      - **Keywords:** Indicate the words that would be contained in a message for it to be included in the Compliance Report results.
-3. Click **Run Compliance Report**.
+3. Select **Run Compliance Report**.
 
 The report will be queued in the display below the fields described above. The properties of each compliance report run is explained as follows:
 

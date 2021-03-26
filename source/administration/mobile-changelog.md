@@ -1,5 +1,100 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.41.0 Release
+- Release Date: March 16, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+**Note:** Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
+### Improvements
+ - Refined animations for the new image gallery.
+ - System Admins are now prompted before joining a private channel via a permalink.
+ - The ``filteredEmojis`` is now calculated on first change.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the status and reminder time did not get updated in "Update Status" screen in the Incident Collaboration plugin on the mobile apps.
+ - Fixed an issue where a handler was missing for permalinks with ``_redirect``.
+
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - On Pixel 4a, uploading PDFs crashes the app and sharing files does not work.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
+## 1.40.0 Release
+- Release Date: February 25, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+ 
+**Note:** Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
+### Improvements
+ - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
+ - Added new languages, Bulgarian and Swedish.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where deeply nested asterisks caused the app to crash.
+ - Fixed an issue where the app crashed when attempting to render a post whose attachment value was null.
+ - Fixed an issue where in-app notification banner locked user interaction until the notification banner was dismissed.
+ - Fixed an issue where posts with at-mentions were double posting if the user hit the **Send** button quickly multiple times in a thread.
+ - Fixed an issue where users were unable to add more than 40 emoji reactions on a post.
+ - Fixed an issue where unexpected emoji picker sometimes appeared in search results.
+ - Fixed an issue where "(you)" did not appear after the current username when using ``@yourself`` autocomplete in a channel.
+
+#### iOS specific
+ - Fixed an issue where users were unable to scroll horizontally to view multiple file attachments.
+
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - On Pixel 4a, uploading PDFs crashes the app and sharing files does not work.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
+## 1.39.0 Release
+- Release Date: January 16, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Improvements
+ - Teams in the sidebar are now ordered by user preference.
+ - Typing an emoji in a post now adds the emoji to the list of recently used emojis.
+
+### Bug Fixes
+ 
+#### All apps
+ - Fixed an issue where users were unable to open files with file names that contained multiple dots.
+ - Fixed an issue where ``/mscalendar settings`` did not redirect a user to the bot Direct Message channel.
+ - Fixed an issue where tapping on an archived channel link from the app did not redirect the user to the archived channel.
+
+#### Android specific
+ - Fixed an issue where in some cases the deviceID used to receive push notifications wasn't being attached to the session as the registration completed.
+
+#### iOS specific
+ - Fixed an issue where custom URL schemes didn't work.
+
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - In-app notification banner locks user interaction until the notification banner is dismissed.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
 ## 1.38.1 Release
 - Release Date: December 18, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device

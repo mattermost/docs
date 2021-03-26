@@ -42,22 +42,21 @@ When the message list region is focused, use the **UP** or **DOWN** arrow keys t
 
 .. image:: ../../images/post_list_ada.gif
 
-
 Message Composition
 ~~~~~~~~~~~~~~~~~~~
-Mattermost is compatible with most popular screen readers. A custom readout is composed for each message by combining the message elements and reading them together in full sentences. Message elements will read in the following order:
+Mattermost is compatible with most popular screen readers, such as `Apple VoiceOver <https://www.apple.com/ca/accessibility/vision/>`__ or `JAWS for Windows <https://www.freedomscientific.com/products/software/jaws/>`__. A custom readout is composed for each message by combining the message elements and reading them together in full sentences. Message elements will read in the following order:
 
 1. Header: Author, timestamp, message type (i.e. parent post or reply)
 2. Main Content: The message content typed by the author
 3. Attachments: The number of attachments (if applicable)
 4. Emoji Reactions: The number of unique emoji reactions (if applicable)
-5. Flags/Pins: If a message is pinned or flagged (if applicable)
+5. Saves/Pins: If a message is saved or pinned (if applicable)
 
 For example, a message read by a screen reader may sound like the following:
 
   .. code-block:: none
   
-    Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is flagged and pinned.
+    Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
 
 Channel Sidebar Navigation
 --------------------------

@@ -37,10 +37,10 @@ Features include:
 - Continuous archiving
 - Multi-factor authentication
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
-- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__ and `third party extensions <https://about.mattermost.com/default-app-directory/>`__
+- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
 - Easily scalable to dozens of users per team
-- New features and improvements released every two months
-- Multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian
+- New features and improvements released every month
+- Multiple languages including U.S. English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
 
 To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
@@ -56,7 +56,8 @@ Mattermost Enterprise Edition E10
 
 A commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations. Building on the features in Team Edition, it also offers:
 
-- Active Directory/LDAP single-sign-on
+- Active Directory/LDAP Single Sign-on
+- OAuth 2.0 authentication for team creation, account creation, and user sign-in
 - Encrypted push notifications with service level agreements (SLAs) via HPNS
 - Advanced access control policy
 - Next business day support via online ticketing system
@@ -68,9 +69,10 @@ A commercial enterprise-grade messaging system that scales from hundreds to tens
 
 - Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services
 - Active Directory/LDAP group sync
+- OpenID Connect authentication for team creation, account creation, and user sign-in
 - Compliance exports of message histories with oversight protection
 - Custom retention policies for messages and files
-- High availability support with multi-node database deployment
+- High Availability support with multi-node database deployment
 - Horizontal scaling through cluster-based deployment
 - Elasticsearch support for highly efficient database searches in a cluster environment
 - Advanced performance monitoring
