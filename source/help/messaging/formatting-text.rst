@@ -62,13 +62,13 @@ Renders as:
 Lists
 -----
 
-Create a list by using ``*`` or ``-`` as bullets. Indent a bullet point by adding two spaces in front of it.
+Create a list by using ``*``, ``-``, and/or ``+`` interchangeably as bullets. Indent a bullet point by adding two spaces in front of it.
 
 .. code-block:: none
 
   * item one
-  * item two
-    * item two sub-point
+  - item two
+    + item two sub-point
 
 Renders as:
 
