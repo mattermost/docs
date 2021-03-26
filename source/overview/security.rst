@@ -102,7 +102,7 @@ For information on internal security policies, development guidelines, business 
 
 Moreover, Mattermost performs a penetration test on the software no less than once per twelve (12) month period. Customers may request a copy of any penetration test results upon five (5) days' written notice at any time, but no more than once per twelve (12) month period.
 
-HIPAA compliance
+HIPAA compliance*
 -----------------
 
 Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
@@ -129,10 +129,10 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
 
-FINRA compliance
+FINRA compliance*
 ------------------
 
-Mattermost Enterprise Edition E20 is designed to meet the `cybersecurity requirements of the United States Financial Industry Regulatory Authority (FINRA) <http://www.finra.org/industry/cybersecurity>`__ as part of a customer's existing operational systems, including technology governance, system change management, risk assessments, technical controls, incident response, vendor management, data loss prevention, and staff training.
+Mattermost Enterprise Edition E20 features assist users meet the requirements of the `cybersecurity requirements of the United States Financial Industry Regulatory Authority (FINRA) <http://www.finra.org/industry/cybersecurity>`__ as part of a customer's existing operational systems, including technology governance, system change management, risk assessments, technical controls, incident response, vendor management, data loss prevention, and staff training.
 
 FINRA reviews a firm’s ability to protect the confidentiality, integrity, and availability of sensitive customer information. This includes reviewing each firm’s compliance with SEC regulations, including:
 
@@ -148,3 +148,7 @@ Mattermost supports FINRA compliance as part of a customer's integrated operatio
 - **Secure deployment:** Deployment within private, public, and on-premesis networks with existing FINRA-compliant safeguards and infrastructure to protect customer information from cyber attack.
 - **Support for intrusion detection:** Ability to support multi-layered intrusion detection from authentication systems to application servers to database access, including configuration of proxy, application, and database logging to deeply audit system interactions.
 - **Multi-layered disaster recovery:** High Availability configuration, automated data back up, and enterprise information archiving integration to prevent data loss and recover from disaster.
+
+***DISCLAIMER:** MATTERMOST DOES NOT POSITION ITS PRODUCTS AS “GUARANTEED COMPLIANCE SOLUTIONS”. WE MAKE NO GUARANTEE THAT YOU WILL ACHIEVE REGULATORY COMPLIANCE USING MATTERMOST PRODUCTS. YOUR LEVEL OF SUCCESS IN ACHIEVING REGULATORY COMPLIANCE DEPENDS ON YOUR INTERPRETATION OF THE APPLICABLE REGULATION, AND THE ACTIONS YOU TAKE TO COMPLY WITH THEIR REQUIREMENTS. SINCE THESE FACTORS DIFFER ACCORDING TO INDIVIDUALS AND BUSINESSES, WE CANNOT GUARANTEE YOUR SUCCESS, NOR ARE WE RESPONSIBLE FOR ANY OF YOUR ACTIONS. NO GUARANTEES ARE MADE THAT YOU WILL ACHIEVE ANY SPECIFIC COMPLIANCE RESULTS FROM THE USE OF MATTERMOST OR FROM ANY RECOMMENDATIONS CONTAINED ON OUR WEBSITES, AND AS SUCH, THIS SHOULD NOT BE A SUBSTITUTE TO CONSULTING WITH YOUR OWN LEGAL AND COMPLIANCE REPRESENTATIVES ON THESE MATTERS.
+
+
