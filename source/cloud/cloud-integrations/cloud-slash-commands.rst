@@ -61,7 +61,7 @@ Suppose you want to write an external application that is able to check the weat
 You can follow these general guidelines to set up a custom Mattermost slash command for your application.
 
 1. Open **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin to do so.
-2. Select **Add Slash Command**, then add name and description for the command.
+2. Select **Add Slash Command**, then add a name and description for the command.
 3. Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html#built-in-commands>`__.
 4. Set the **Request URL** and **Request Method**. The request URL is the endpoint that Mattermost hits to reach your application, and the request method is either POST or GET and specifies the type of request sent to the request URL.
 5. (Optional) Set the response username and icon the command will post messages as in Mattermost. If not set, the command will use your username and profile picture.
