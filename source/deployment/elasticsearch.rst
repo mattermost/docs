@@ -134,3 +134,8 @@ How do I know if an Elasticsearch job fails?
 Mattermost provides the status of each Elasticsearch indexing job in **System Console > Environment > Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions prior to 5.12). Here you can see if the job succeeded or failed, including the details of the error.
 
 Failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Elasticsearch job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
+My Elasticsearch indexes won't complete, what should I do?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, please contact Mattermost support.

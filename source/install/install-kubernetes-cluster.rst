@@ -31,7 +31,7 @@ Running Mattermost in Kubernetes requires different resources based on your tota
 
 
 - These resources take into account all components required for Mattermost, including proxy, database, and file storage.
-- Requirements may be significantly lower when using the external database and filestore (recommended).  
+- Requirements may be significantly lower when using an external database and filestore (recommended).  
 - Resource requirements may vary depending on user usage and bot activity.
 - For larger installations, it may be beneficial to use nodes for the databases that have more memory and/or are optimized for memory.
 - For installations of more than 25,000 users please `contact us <https://mattermost.com/contact-us/>`__ for sizing guidelines.

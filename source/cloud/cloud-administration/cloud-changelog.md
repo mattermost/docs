@@ -2,7 +2,75 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2021-02-24
+## Release 2021-03-24
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support for automatic right-to-left (RTL) detection in browsers.
+ - Updated the font size for the **Add People** channel modal.
+ - Online status is now shown in the channel switcher.
+ - Improved the design and layout of email notifications for password resets, member invites, member welcome, and verifications.
+
+#### Administration
+ - Added ``mmctl`` commands to create, list, download, and delete export files.
+ - Profiling the Mattermost server with pprof is now available for Team Edition.
+ - Added attributes to split.io feature flags.
+
+### Bug Fixes
+ - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas.
+ - Fixed an issue where Compliance Report field headers were not correctly aligned.
+ - Fixed an issue where the ``/join`` command was case-sensitive.
+ - Fixed an issue where one-character sidebar category names were not displayed.
+ - Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using a custom team theme).
+ - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
+ - Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.
+
+### Known Issues
+ - Deactivated users are not marked as "Deactivated" in the channel switcher.
+ - User nickname is not shown on channel switch.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-03-12
+
+### Highlights
+
+#### Custom Statuses
+ - Custom Statuses allow users to add a descriptive status message and emoji that’s visible to everyone. Users now gain the flexibility to express their current status in any way they prefer. Mobile support is coming in a future release.
+
+### Improvements
+
+#### User Interface (UI)
+ - System Admins are now prompted when joining a private channel via a permalink.
+ - Added support for adding in-product notices for external dependency deprecation details.
+ - Improved the timezone selector component.
+ - Introduced a new theme variable for the team sidebar.
+
+#### Administration
+ - Added schema migrations phase 0 (``Teams``, ``TeamMembers``).
+ - Removed any references to ``SqlLite3`` from the code.
+ - Bleve updates are now logged in the config only when there is an actual change in the ``BleveSettings`` instead of on every config update.
+
+### Bug Fixes
+ - Fixed unsafe access of properties of the plugin environment during ``ServePluginPublicRequest``.
+ - Fixed an issue where the Admin Console > Server Logs did not focus to the sidebar filter upon reload.
+ - Fixed an issue where the Gif picker appeared empty instead of showing a “No results” modal when no results were displayed.
+ - Fixed an issue where the keyboard accessibility controller was not allowed to resume left-hand side scroll after drag and drop.
+ - Fixed an issue where markdown links rendered incorrectly.
+ - Fixed an issue where the slack theme import failed due to changes in formatting of Slack export color schemes.
+ - Fixed an issue where tooltips were missing for channels with a long name.
+ - Fixed a race condition which would crash the app server due to improper handling of websocket closing.
+ - Fixed an issue where the PDF zoom failed to respond to zoom in/out/reset actions until the user scrolled.
+ - Fixed an issue where in a reply thread with the right-hand side expanded, attachments in a post draft got hidden behind the center channel text box.
+
+### Known Issues
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-02-25
 
 ### Highlights
 
