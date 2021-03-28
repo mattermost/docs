@@ -6,6 +6,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.33.3, release day TBD**
+  - Fixing an issue where, after migrating to OpenID, Office 365 returns different ID attributes based on user type, causing an error for users with expired sessions when they try to sign in to Mattermost. [MM-34356](https://mattermost.atlassian.net/browse/MM-34356)
 - **v5.33.2, released 2021-03-25**
   - Improved typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Reverted the WebSocket improvement added in v5.33.0 where epoll was used to manually read from a WebSocket connection. It was reverted because unofficial Mattermost builds in several different platforms broke due to the WebSocket changes. [MM-34158](https://mattermost.atlassian.net/browse/MM-34158)
