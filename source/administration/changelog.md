@@ -9,7 +9,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 - **v5.33.3, release day TBD**
   - Fixing an issue where, after migrating to OpenID, Office 365 returns different ID attributes based on user type, causing an error for users with expired sessions when they try to sign in to Mattermost. [MM-34356](https://mattermost.atlassian.net/browse/MM-34356)
 - **v5.33.2, released 2021-03-25**
-  - Improved typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Reverted the WebSocket improvement added in v5.33.0 where epoll was used to manually read from a WebSocket connection. It was reverted because unofficial Mattermost builds in several different platforms broke due to the WebSocket changes. [MM-34158](https://mattermost.atlassian.net/browse/MM-34158)
 - **v5.33.1, released 2021-03-22**
   - Fixed an issue where WebSockets failed with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
@@ -260,7 +260,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.2, released 2021-03-29**
-  - Improved typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
 - **v5.31.1, released 2021-02-05**
   - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
