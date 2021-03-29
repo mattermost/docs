@@ -259,9 +259,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-- **v5.31.2, release day TBD**
-  - Improving typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
-  - Fixing bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
+- **v5.31.2, released 2021-03-29**
+  - Improved typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
 - **v5.31.1, released 2021-02-05**
   - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
   - Fixed an issue where ``FeatureFlags`` section was getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
