@@ -27,13 +27,13 @@ Assume that the IP address of this server is 10.10.10.1.
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-5.  Create the Mattermost user 'mmuser'.
+5.  Create the Mattermost user *mmuser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
 .. note::
   
-    Use a password that is more secure than 'mmuser-password'.
+    Use a password that's more secure than *mmuser-password*.
 
 6.  Grant the user access to the Mattermost database.
 
@@ -101,8 +101,9 @@ Assume that the IP address of this server is 10.10.10.1.
 
     ``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password``
 
-    .. note::
-      You might have to install the PostgreSQL client software to use the command.
+.. note::
+
+  You might have to install the PostgreSQL client software to use the command.
 
   The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press ENTER.
 
