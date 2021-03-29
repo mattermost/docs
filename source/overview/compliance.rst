@@ -137,7 +137,7 @@ Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.b
 
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
-**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories
+**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories.
 with specific prohibitions, such as Russia and Venezuela. Details can be
 located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`__ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`__. The countries and their sanctions are subject to change.
 
