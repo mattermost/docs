@@ -91,10 +91,6 @@ Formatting
 | CTRL+ALT+K                             | CMD+ALT+K                              | Format text as a link                                          |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------+
 
-.. note::
-
-  Formatting shortcuts are available in Mattermost Cloud, and will be available in Mattermost Server v5.33 on March 16, 2021. 
-
 Browser Built-in
 ================
 
