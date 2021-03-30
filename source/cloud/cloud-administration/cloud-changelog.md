@@ -7,12 +7,12 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Improvements
 
 #### User Interface (UI)
- - Added a string field to config for restricted domains with the key ``RestrictLinkPreviews``. Added a UI field for restricted domains under System Console > Site Configuration > Posts. Expanded the logic that determines whether a post has a preview or not.
- - Added an unread badge to the Main Menu icon and the Plugin Marketplace menu until an admin visits the Plugin Marketplace for the first time.
+ - Added a string field to config for restricted domains with the key ``RestrictLinkPreviews`` and added a UI field for restricted domains under **System Console > Site Configuration > Posts**. Also expanded the logic that determines whether a post has a preview or not.
+ - Added an unread badge to the **Main Menu** icon and the **Plugin Marketplace** menu until an admin visits the **Plugin Marketplace** for the first time.
  - Removed Beta tags from Swedish and Bulgarian languages.
  - Added profile pictures to Direct Messages channel list.
  - Added channel icons for email notifications as part of email notification redesigns.
- - Direct Messages More... modal is now sorted by recent conversations when the modal is opened.
+ - Direct Messages **More...** modal is now sorted by recent conversations when the modal is opened.
  - Removed legacy Open-Sans fonts and upgraded it to v18.
 
 #### Administration
@@ -25,9 +25,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e. Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
  - Fixed a possible panic on post creation when collapsed threads feature was enabled.
  - Fixed a database deadlock that could happen if a sidebar category was updated and deleted at the same time.
- - Fixed an issue where the sidebar Text Hover BG Theme color didn’t work on the left-hand side.
+ - Fixed an issue where the sidebar **Text Hover BG Theme** color didn’t work on the left-hand side.
  - Fixed an issue where the Team Admin’s current role was presented inconsistently in the different areas of the System Console.
- - Fixed an issue where the "Show more" background color on long posts was broken for permalinks.
+ - Fixed an issue where the **Show more** background color on long posts was broken for permalinks.
 
 ### Known Issues
  - Deactivated users are not marked as "Deactivated" in the channel switcher.
