@@ -41,6 +41,7 @@
 
 ### Improvements
  - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
+ - Changed the OAuth / SAML login flow to utilize an external browser instead of the WebView in the Mobile App.
  - Added new languages, Bulgarian and Swedish.
 
 ### Bug Fixes
