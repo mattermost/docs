@@ -40,7 +40,8 @@
 **Note:** Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Improvements
- - Added support for OpenID Connect (E20 Edition) and changed the OAuth / SAML login flow to utilize an external browser instead of the WebView in the Mobile App.  **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
+ - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
+ - Changed the OAuth / SAML login flow to utilize an external browser instead of the WebView in the Mobile App.
  - Added new languages, Bulgarian and Swedish.
 
 ### Bug Fixes
