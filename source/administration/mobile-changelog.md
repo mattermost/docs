@@ -1,5 +1,33 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.41.0 Release
+- Release Date: March 16, 2021
+- Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.25 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has ended and upgrading to server ESR v5.25 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+**Note:** Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
+### Improvements
+ - Refined animations for the new image gallery.
+ - System Admins are now prompted before joining a private channel via a permalink.
+ - The ``filteredEmojis`` is now calculated on first change.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the status and reminder time did not get updated in "Update Status" screen in the Incident Collaboration plugin on the mobile apps.
+ - Fixed an issue where a handler was missing for permalinks with ``_redirect``.
+
+### Known Issues
+ - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
+ - On Pixel 4a, uploading PDFs crashes the app and sharing files does not work.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
 ## 1.40.0 Release
 - Release Date: February 25, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -13,6 +41,7 @@
 
 ### Improvements
  - Added support for OpenID Connect (E20 Edition) - **This feature is available in Mattermost Cloud and will be available in upcoming server v5.33.0 (March 16th) release.**
+ - Changed the OAuth / SAML login flow to utilize an external browser instead of the WebView in the Mobile App.
  - Added new languages, Bulgarian and Swedish.
 
 ### Bug Fixes
