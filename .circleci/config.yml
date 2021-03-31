@@ -45,7 +45,7 @@ jobs:
           at: .
       - aws-s3/sync:
           from: build/html
-          to: 's3://docs-staging.mattermost.com/'
+          to: 's3://docs-stagging.mattermost.com/'
           arguments: '--acl public-read'
           overwrite: true
           
