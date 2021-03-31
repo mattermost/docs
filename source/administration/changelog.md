@@ -261,7 +261,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.3, release day TBD**
-  - Investigating an issue where cluster handlers are not immediately registered after starting the server, which leads to issues such as job servers not scheduling jobs. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
+  - Investigating an issue where cluster handlers are not immediately registered after starting the server, which leads to issues such as that jobs are not scheduled until a request hits to the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
 - **v5.31.2, released 2021-03-29**
   - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
