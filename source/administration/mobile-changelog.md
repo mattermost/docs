@@ -11,6 +11,7 @@
 
 ### Improvements
  - Apps Framework
+ - Added support for replacing double-dashes with emdashes on iOS.
 
 ### Bug Fixes
 
