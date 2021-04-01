@@ -10,7 +10,7 @@ Use *@* mentions to get the attention of specific team members.
 
 .. Note::
 
-  Editing an exiting message does not trigger new *@* mention notifications, desktop notifications, or notification sounds.
+  Editing an existing message does not trigger new *@* mention notifications, desktop notifications, or notification sounds.
 
 @username
 ~~~~~~~~~
