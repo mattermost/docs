@@ -147,7 +147,7 @@ A third-party tool is used for the screening process, but your details are not s
 What does “shipping address” mean for software that will be used in many places?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The shipping address will be the location where the individual is physically located who will be receiving the license key and will be able to access the software for installation. At that point they will be bound by the terms and subject to comply with export laws.
+In this case, the "shipping address" is the location where the individual, who will be receiving the license key, is physically located and will be able to access the software for installation.
 
 How do I renew my license if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
