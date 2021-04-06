@@ -18,12 +18,15 @@
 #### All apps
  - Fixed an issue where the parser of images did not accept URL escaped string, contrary to what happens in the webapp.
  - Fixed an issue where images with a transparent background showed as black in the gallery.
+ - Fixed an issue where the Mention Highlight Link Color was not being used properly.
+ - Fixed a minor typo in the search **in:** modifier label.
 
 #### Android specific
+ - Fixed an issue with frequent logouts from the app on the latest Android OS.
+ - Fixed an issue where the app crashed when pressing the back button while sharing an image.
  - Fixed an issue where uploading and sharing PDFs crashed the app.
 
 ### Known Issues
- - Frequent logouts from the app have been experienced on the latest Android OS. Some ways to recover include logging out from the app and then uninstalling and installing the app, as well as restarting the device.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
