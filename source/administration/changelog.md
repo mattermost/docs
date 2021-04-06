@@ -16,8 +16,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Added pre-packaged Incident Collaboration 1.5.0
- - 
+#### Added pre-packaged Incident Collaboration 1.5.0 (E20)
+ - Users can now configure playbooks to perform specific actions automatically when an incident starts, such as inviting members to the incident channel and assigning a commander.
 
 ### Improvements
 
@@ -70,6 +70,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v5.34 is built with Go ``1.15.5``.
 
 ### Open Source Components
+ - Removed ``core-js`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Database Changes
  - 
