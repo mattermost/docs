@@ -18,9 +18,7 @@ Details on integrating your Mattermost server with Prometheus and Grafana.
 Installing Prometheus
 ----------------------
 
-1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.
-
-For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
+1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux and Windows. For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
 
 2. The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
 
@@ -57,14 +55,18 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
         static_configs:
           - targets: ["<hostname1>:<port>", "<hostname2>:<port>"]
 
-The ``<hostname1>:<port>`` parameter has to be replaced with your Mattermost host ip address and port to scrape the data. It connects to ``/metrics`` using http. 
+Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using http. 
 
-3. Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`__. After enabling performance monitoring, make sure to reboot Mattermost.
+3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring>`__ for details. After enabling performance monitoring, restart the Mattermost Server.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
 
 4. To test the server is running, go to ``<ip>:<port>/metrics``.
+
+.. note::
+
+  A Mattermost Enterprise Edition installation with an E20 license is required to connect to ``/metrics`` using http.
 
 5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus.
 
@@ -248,6 +250,10 @@ The Prometheus integration provides standard GO metrics for HTTP server runtime 
   Profile reports are available without a Mattermost Enterprise Edition license.
 
 To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
+
+.. note::
+
+  A Mattermost Enterprise Edition installation with an E20 license is required to connect to ``/metrics`` using http.
 
 If enabled, you can run the profiler by
 
