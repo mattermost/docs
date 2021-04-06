@@ -22,9 +22,11 @@
  - Fixed a minor typo in the search **in:** modifier label.
 
 #### Android specific
- - Fixed an issue with frequent logouts from the app on the latest Android OS.
+ - Fixed an issue with frequent logouts on the latest Android OS.
  - Fixed an issue where the app crashed when pressing the back button while sharing an image.
  - Fixed an issue where uploading and sharing PDFs crashed the app.
+ - Fixed an issue where the image gallery view had a weird behaviour and did not close smoothly.
+ - Fixed an issue where sliding did not work when 5 images were uploaded.
 
 ### Known Issues
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
