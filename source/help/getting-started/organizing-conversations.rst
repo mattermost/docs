@@ -16,7 +16,7 @@ Anyone can create Public channels or Private channels, unless the System Admin h
 Creating a Direct or Group Message
 ----------------------------------
 
-To start a Direct or Group Message, select the **+** symbol at the top of the sidebar, then select **Open a Direct Message**. Or select the **+** symbol next to the **Direct Messages** category in the sidebar.
+To start a Direct or Group Message, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. Or select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
     .. image:: ../../images/write-dm.png
         :alt: Access recent Direct Messages and Group Messages.
