@@ -235,7 +235,7 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 
   Jobs where the runtime is less than the Prometheus polling interval are unlikely to be visible because Grafana is performing range queries over the raw Prometheus timeseries data, and rendering an event each time the value changes.
 
-Standard GO Metrics
+Standard Go Metrics
 ~~~~~~~~~~~~~~~~~~~
 
 The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
