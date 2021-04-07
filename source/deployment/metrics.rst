@@ -238,7 +238,7 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 Standard GO Metrics
 ~~~~~~~~~~~~~~~~~~~
 
-The Prometheus integration provides standard GO metrics for HTTP server runtime profiling data and system monitoring, such as:
+The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
 
 - ``go_memstats_alloc_bytes`` for memory usage
 - ``go_goroutines`` for GO routines
