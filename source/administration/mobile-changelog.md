@@ -1,7 +1,7 @@
 # Mattermost Mobile Apps Changelog
 
 ## 1.41.1 Release
-- Release Date: TBD
+- Release Date: April 7, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
@@ -10,7 +10,7 @@
  - iPhone 5s devices and later with iOS 11+ is required.
 
 ### Bug Fixes
- - Fixing an issue where authenticating with Okta opens the default browser, breaking the app VPN tunnel.
+ - Fixed an issue where authenticating with any SAML provider opened the default browser, breaking the app VPN tunnel.
 
 ## 1.41.0 Release
 - Release Date: March 16, 2021
