@@ -32,6 +32,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where the **Show more** background color on long posts was broken for permalinks.
 
 ### Known Issues
+ - Channel Members popover menu items have extra spacing.
  - Deactivated users are not marked as "Deactivated" in the channel switcher.
  - User nickname is not shown on channel switch.
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
