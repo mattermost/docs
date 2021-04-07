@@ -249,7 +249,7 @@ The performance monitoring feature provides standard Go metrics for HTTP server 
 
   Profile reports are available without a Mattermost Enterprise Edition license.
 
-To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
+To learn how to set up runtime profiling, see the `pprof package Go documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
 .. note::
 
