@@ -241,7 +241,7 @@ Standard Go Metrics
 The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
 
 - ``go_memstats_alloc_bytes`` for memory usage
-- ``go_goroutines`` for GO routines
+- ``go_goroutines`` for number of goroutines
 - ``go_gc_duration_seconds`` for garbage collection duration
 - ``go_memstats_heap_objects`` for object tracking on the heap
 
