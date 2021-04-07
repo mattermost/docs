@@ -144,7 +144,7 @@ Is my information shared with any third-parties?
 
 A third-party tool is used for the screening process, but your details are not stored by them.
 
-What does “shipping address” mean for software that will be used in many places?
+What does “physical address” mean for software that will be used in many places?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this case, the "shipping address" is the location where the individual, who will be receiving the license key, is physically located and will be able to access the software for installation.
