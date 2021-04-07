@@ -253,7 +253,7 @@ To learn how to set up runtime profiling, see the `pprof package Go documentatio
 
 .. note::
 
-  A Mattermost Enterprise Edition installation with an E20 license is required to connect to ``/metrics`` using http.
+   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
 
 If enabled, you can run the profiler by
 
