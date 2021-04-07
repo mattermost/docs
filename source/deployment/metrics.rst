@@ -55,7 +55,7 @@ Installing Prometheus
         static_configs:
           - targets: ["<hostname1>:<port>", "<hostname2>:<port>"]
 
-Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using http. 
+Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
 3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring>`__ for details.
 
