@@ -1,5 +1,5 @@
 Disabling MFA
-=============
+-------------
 
 System Admins can disable this option by going to **System Console > Authentication > MFA**. When **Enable Multi-factor Authentication** is set to **false**, users can't opt to use or disable MFA on their account in  **Account Settings > Security > Multi-factor Authentication**.
 
