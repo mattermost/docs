@@ -66,7 +66,7 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 
 .. note::
 
-  A Mattermost Enterprise Edition installation with an E20 license is required to connect to ``/metrics`` using http.
+   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
 
 5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus.
 
