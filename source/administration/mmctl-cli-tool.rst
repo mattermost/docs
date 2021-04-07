@@ -4198,17 +4198,19 @@ Management of users.
 
 Child Commands
   -  `mmctl user activate`_ - Activate a user
-  -  `mmctl user create`_ - Create user
-  -  `mmctl user deactivate`_ - Deactivate user
-  -  `mmctl user delete`_ - Delete users
+  -  `mmctl user create`_ - Create a user
+  -  `mmctl user deactivate`_ - Deactivate a user
+  -  `mmctl user delete`_ - Delete a user
   -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
+  -  `mmctl user demote`_ - Demote a user to a guest
   -  `mmctl user email`_ - Set user email
-  -  `mmctl user verify`_ - Verify the email address of a new user
-  -  `mmctl user invite`_ - Invite user
+  -  `mmctl user invite`_ - Invite a user
   -  `mmctl user list`_ - List users
-  -  `mmctl user reset_password`_ - Reset user password
+  -  `mmctl user promote`_ - Promote a guest to a user
+  -  `mmctl user reset_password`_ - Reset a user password
   -  `mmctl user resetmfa`_ - Reset a user's MFA token
   -  `mmctl user search`_ - Search for a user
+  -  `mmctl user verify`_ - Verify the email address of a new user
 
 **Options**
 
@@ -4278,6 +4280,7 @@ mmctl user create
    --firstname string   Optional. The first name for the new user account
    -h, --help           help for create
    --lastname string    Optional. The last name for the new user account
+   --guest              Optional. If supplied, the new user will be a guest. Defaults to false.
    --locale string      Optional. The locale (ex: en, fr) for the new user account
    --nickname string    Optional. The nickname for the new user account
    --password string    Required. The password for the new user account
@@ -4402,6 +4405,42 @@ mmctl user deleteall
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
+mmctl user demote
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Demote a user to a guest.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user demote [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user demote user1 user2
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for demote
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+    --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+    --format string                the format of the command output [plain, json] (default "plain")
+    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+    --local                        allows communicating with the server through a unix socket
+    --strict                       will only run commands if the mmctl version matches the server one
+
 mmctl user email
 ^^^^^^^^^^^^^^^^^
 
@@ -4436,43 +4475,6 @@ mmctl user email
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
-   
-mmctl user verify
-^^^^^^^^^^^^^^^^^
-
-**Description**
-
-    Verify the email address of a new user.
-
-**Format**
-
-.. code-block:: none
-
-   mmctl user verify [users] [flags]
-
-**Example**
-    
-.. code-block:: none
-
-   mmctl user verify user1
-     
-**Options**
-
-.. code-block:: sh
-
-    -h, --help       help for email
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
-
 
 mmctl user invite
 ^^^^^^^^^^^^^^^^^^
@@ -4545,6 +4547,42 @@ mmctl user list
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl user promote
+^^^^^^^^^^^^^^^^^^
+
+**Description**
+
+Promote a guest to a user.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user promote [guests] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   user promote guest1 guest2
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for promote
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl user reset_password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4645,6 +4683,42 @@ mmctl user search
 
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --local                       allows communicating with the server through a unix socket
+   --strict                      will only run commands if the mmctl version matches the server one
+
+mmctl user verify
+^^^^^^^^^^^^^^^^^
+
+**Description**
+
+    Verify the email address of a new user.
+
+**Format**
+
+.. code-block:: none
+
+   mmctl user verify [users] [flags]
+
+**Example**
+    
+.. code-block:: none
+
+   mmctl user verify user1
+     
+**Options**
+
+.. code-block:: sh
+
+    -h, --help       help for email
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string               the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --local                       allows communicating with the server through a unix socket
    --strict                      will only run commands if the mmctl version matches the server one
 
