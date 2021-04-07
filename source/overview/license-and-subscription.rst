@@ -139,11 +139,6 @@ The Office of Foreign Assets Control (OFAC) maintains a list of sanctioned entit
 
 This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and Companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
 
-Is my information shared with any third-parties?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A third-party tool is used for the screening process, but your details are not stored by them.
-
 What does “physical address” mean for software that will be used in many places?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
