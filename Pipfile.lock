@@ -250,6 +250,15 @@
             "index": "pypi",            
             "version": "==2.2.0"
         },
+        },
+        "sphinx-reredirects": {
+            "hashes": [                
+                "sha256:66388f81884666e3821edbe05dd53a0cfb68093873d17320d0610de8db28c74e",
+                "sha256:e60aea0789cab02fa32ee63c7acae5ef41c06f1434d9fd0a74250a61f5994692"
+            ],
+            "index": "pypi",            
+            "version": "==0.0.0"
+        },
         "sphinx-versions": {
             "hashes": [                
                 "sha256:db7d0c698e540a45ccf61ddbf2cab79fcd23222df59324f752ef918410ee4f0f",
