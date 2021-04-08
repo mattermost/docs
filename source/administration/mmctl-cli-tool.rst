@@ -4280,7 +4280,7 @@ mmctl user create
    --firstname string   Optional. The first name for the new user account
    -h, --help           help for create
    --lastname string    Optional. The last name for the new user account
-   --guest              Optional. If supplied, the new user will be a guest. Defaults to false.
+   --guest              Optional. If supplied, the new user will be a guest. (default "false")
    --locale string      Optional. The locale (ex: en, fr) for the new user account
    --nickname string    Optional. The nickname for the new user account
    --password string    Required. The password for the new user account
