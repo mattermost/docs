@@ -1,7 +1,7 @@
 Announcement Banner (E10)
 =========================
 
-*Available in `Enterprise Edition E10 and higher <https://mattermost.com/pricing-self-managed/>`__.*
+Available in `Enterprise Edition E10 and higher <https://mattermost.com/pricing-self-managed/>`__.
 
 In Mattermost Enterprise Edition, System Admins can display a notice that's visible to all users on the system via an announcement banner.
 
