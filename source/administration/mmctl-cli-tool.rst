@@ -4206,7 +4206,7 @@ Child Commands
   -  `mmctl user email`_ - Set user email
   -  `mmctl user invite`_ - Invite a user
   -  `mmctl user list`_ - List users
-  -  `mmctl user promote`_ - Promote a guest to a user
+  -  `mmctl user promote`_ - Promote a guest to user
   -  `mmctl user reset_password`_ - Reset a user password
   -  `mmctl user resetmfa`_ - Reset a user's MFA token
   -  `mmctl user search`_ - Search for a user
