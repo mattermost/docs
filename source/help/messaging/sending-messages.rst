@@ -36,7 +36,7 @@ Your System Admin `can disable the Edit feature or set a time limit <https://doc
 Deleting Messages
 ------------------
 
-Click the **[...]** link next to a message that you have sent, then click **Delete**.
+Select  the **[...]** link next to a message that you've sent, then select **Delete**.
 
 Your System Admin can `disable the Delete feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`__, available in Mattermost Enterprise Edition E10 and E20.
 
