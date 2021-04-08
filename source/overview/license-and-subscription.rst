@@ -125,7 +125,7 @@ What does Mattermost do with this information?
 The information you provide is used for a screening process. There are two different purposes for screening: 
 
 - One screening is to ensure against exports of certain restricted goods to countries that are embargoed. In our case, goods refer to our software that has encryption in it.
-- The other screening is against people and companies. There are certain people and companies that the government has put on a list (the Denied Party List) that US companies are prohibited from doing any business with for various reasons. They could be terrorists, on a terrorist watch list, they could help finance terrorists, they could participate in human rights violations, etc. If they are on the Denied Party List, we are not able to do any business with them.
+- The other screening is against people and companies. There are certain people and companies that the government has put on a list (the Denied Party List) that US companies are prohibited from doing any business with for various reasons. They could be terrorists, be on a terrorist watch list, could be helping finance terrorists, could be participating in human rights violations, etc. If they are on the Denied Party List, we are not able to do any business with them.
 
 Who are the sanctioned people, companies, and entities?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
