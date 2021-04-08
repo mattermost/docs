@@ -73,7 +73,7 @@ Server Configuration Settings
 
   **Counts (integer)**
 
-   **SqlSettings**: int DataSourceReplicas, int DataSourceSearchReplicas; **ThemeSettings**: int AllowedThemes; **PluginSettings**: int SignaturePublicKeyFiles
+   **SqlSettings**: int DataSourceReplicas, int DataSourceSearchReplicas, int ReplicaLagSettings; **ThemeSettings**: int AllowedThemes; **PluginSettings**: int SignaturePublicKeyFiles
 
   **True/false (boolean)** value whether setting remains default (true) or non-default (false). **NOTE: No input data is used**:
 
