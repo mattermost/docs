@@ -4715,7 +4715,7 @@ mmctl user verify
 
 .. code-block:: sh
 
-      --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+      --config-path string       path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string               the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
    --insecure-tls-version       allows to use TLS versions 1.0 and 1.1
