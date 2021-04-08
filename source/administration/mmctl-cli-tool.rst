@@ -4486,7 +4486,7 @@ Create an incoming webhook to allow external posting of messages to a specific c
    --icon string           Icon URL
    --lock-to-channel       Lock to channel
    --owner string          The username, email, or ID of the owner of the webhook
-   --user string           The username, email or ID of the user that the webhook should post as
+   --user string           The username, email, or ID of the user that the webhook should post as
 
 **Options inherited from parent commands**
 
