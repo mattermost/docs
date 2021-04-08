@@ -18,7 +18,7 @@ Details on integrating your Mattermost server with Prometheus and Grafana.
 Installing Prometheus
 ----------------------
 
-1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
+1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For installation instructions, see the `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
 
 2. The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
 
