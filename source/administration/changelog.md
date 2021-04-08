@@ -58,6 +58,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using a custom team theme).
  - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
  - Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.
+ - Fixed an issue where long image names pushed the show/hide control off the right side of the window.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
