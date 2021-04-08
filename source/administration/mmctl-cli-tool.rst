@@ -4410,7 +4410,7 @@ mmctl user demote
 
 **Description**
 
-Demote a user to a guest.
+Demote a user to guest.
 
 **Format**
 
