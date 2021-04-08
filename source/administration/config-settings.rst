@@ -2020,6 +2020,15 @@ Link previews are requested by the server, meaning the Mattermost server must be
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": true`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Disable Link Previews for Specific Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictLinkPreviews": ""`` with string input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable SVGs
 ^^^^^^^^^^^
 
