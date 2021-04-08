@@ -62,7 +62,7 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
 
-4. To test the server is running, go to ``<ip>:<port>/metrics``.
+4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
 .. note::
 
