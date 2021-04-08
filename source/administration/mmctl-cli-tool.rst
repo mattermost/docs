@@ -4553,7 +4553,7 @@ mmctl user promote
 
 **Description**
 
-Promote a guest to a user.
+Promote a guest to user.
 
 **Format**
 
