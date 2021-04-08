@@ -10,6 +10,9 @@ Sending Messages
 
 Write a message by typing into the text input box, then press ENTER to send it. Use SHIFT+ENTER to create a new line without sending a message. To send messages by pressing CTRL+ENTER, go to **Main Menu > Account Settings > Advanced > Send messages on Ctrl + Enter > Edit**.
 
+.. tip::
+  Mattermost automatically detects and displays messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian.
+
 Replying to Messages
 ---------------------
 
@@ -28,14 +31,14 @@ Click the **[...]** link next to a message that you have sent, then click **Edit
 .. note::
   Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
-Your System Admin `can disable the **Edit** feature or set a time limit <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-users-to-edit-their-messages>`__ before messages become uneditable, available in Mattermost Enterprise Edition E10 and E20.
+Your System Admin `can disable the Edit feature or set a time limit <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-users-to-edit-their-messages>`__ before messages become uneditable, available in Mattermost Enterprise Edition E10 and E20.
 
 Deleting Messages
 ------------------
 
 Click the **[...]** link next to a message that you have sent, then click **Delete**.
 
-Your System Admin can `disable the **Delete** feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`__, available in Mattermost Enterprise Edition E10 and E20.
+Your System Admin can `disable the Delete feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`__, available in Mattermost Enterprise Edition E10 and E20.
 
 Linking to Messages
 --------------------
