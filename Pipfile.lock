@@ -250,7 +250,6 @@
             "index": "pypi",            
             "version": "==2.2.0"
         },
-        },
         "sphinx-reredirects": {
             "hashes": [                
                 "sha256:66388f81884666e3821edbe05dd53a0cfb68093873d17320d0610de8db28c74e",
