@@ -50,7 +50,7 @@ Total Sessions
     The number of active user sessions connected to your system. Expired sessions are not counted.
 
 Total Commands
-    The number of active slash commands currently setup on your system. Slash commands that are created and then removed in the **Integrations** menu are not counted.
+    The number of active slash commands currently set up on your system. Slash commands that are created and then removed in the **Integrations** menu are not counted.
 
 Incoming Webhooks
     The number of active incoming webhooks currently setup on your system. Incoming webhooks that are created and then removed in the **Integrations** menu are not counted.
