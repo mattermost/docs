@@ -1699,7 +1699,7 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively.             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others posts
+Allow Team Administrators to edit others' posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *This permission is stored in the database and can be modified using the System Console user interface.*
@@ -1709,7 +1709,7 @@ Allow Team Administrators to edit others posts
 **False**: Only System Admins can edit other users' posts.
 
 .. note::
-   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
+   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
 
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^
