@@ -60,6 +60,11 @@ source_suffix = ['.rst', '.md']
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
 
+# Redirects using: https://pypi.org/project/sphinx-reredirects/
+ redirects = {
+     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
+}
+
 # The master toctree document.
 master_doc = 'index'
 
