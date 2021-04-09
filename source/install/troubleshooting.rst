@@ -526,13 +526,13 @@ If you didn't receive a push notification when :doc:`testing push notifications 
 3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
 4. On desktop, go to **Account Settings > Security > View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
 5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
-6. If no push notification appears go to **System Console > Logs** and select **Reload**. Look at the bottom of the logs for a message similar to:
+6. If no push notification appears go to **System Console > Logs**, then select **Reload**. Look at the bottom of the logs for a message similar to:
 
 ``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
 
   - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the support team.
   - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double-check each step.
-7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
+7. **IMPORTANT:** After your issue is resolved, to conserve disk space, go to **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -541,7 +541,7 @@ You can set up an internal server to proxy the connection out of their network t
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
 2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console > Environment > Push Notification Server > Enable Push Notifications** to **Manually enter Push Notification Service location**.
+3. In Mattermost, go to **System Console > Environment > Push Notification Server**, and set **Enable Push Notifications** to **Manually enter Push Notification Service location**.
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 **Note:** Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
