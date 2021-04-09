@@ -23,7 +23,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 #### User Interface (UI)
  - Removed Beta tags from Swedish and Bulgarian languages.
- - System Admins are now prompted when joining a private channel via a permalink.
+ - System Admins now see a prompt to join private channel when joining a private channel via a permalink.
  - Added support for adding in-product notices for external dependency deprecation details.
  - Improved the timezone selector component.
  - Introduced a new theme variable for the team sidebar.
