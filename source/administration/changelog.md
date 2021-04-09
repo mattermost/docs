@@ -30,10 +30,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added support for automatic right-to-left (RTL) detection in browsers.
  - Updated the font size for the **Add People** channel modal.
  - Online status is now shown in the channel switcher.
- - Improved the design and layout of email notifications for password resets, member invites, and member welcome and verifications.
+ - Improved the design and layout of email notifications for password resets, member invites, member welcomes, and verifications.
 
 #### Administration
- - Added mmctl commands to create, list, download and delete export files.
+ - Added mmctl commands to create, list, download, and delete export files.
  - Added schema migrations phase 0 (``Teams``, ``TeamMembers``).
  - Removed references to ``SqlLite3`` from the code.
  - Bleve updates are now logged in the config only when there is an actual change in the ``BleveSettings`` instead of on every config update.
@@ -43,19 +43,19 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Bug Fixes
  - Fixed unsafe access of properties of the plugin environment during ``ServePluginPublicRequest``.
  - Fixed an issue where the Admin Console > Server Logs did not focus to the sidebar filter upon reload.
- - Fixed an issue where the Gif picker appeared empty instead of showing a “No results” modal when no results were displayed.
+ - Fixed an issue where the GIF picker appeared empty instead of showing a “No results” modal when no results were displayed.
  - Fixed an issue where the keyboard accessibility controller was not allowed to resume left-hand side scroll after drag and drop.
  - Fixed an issue where markdown links rendered incorrectly.
- - Fixed an issue where the slack theme import failed due to changes in formatting of Slack export color schemes.
+ - Fixed an issue where the Slack theme import failed due to changes in formatting of Slack export color schemes.
  - Fixed an issue where tooltips were missing for channels with a long name.
- - Fixed a race condition which would crash the app server due to improper handling of websocket closing.
+ - Fixed a race condition which would crash the app server due to improper handling of WebSocket closing.
  - Fixed an issue where the PDF zoom failed to respond to zoom in/out/reset actions until the user scrolled.
- - Fixed an issue where in a reply thread with the right-hand side expanded, attachments in a post draft got hidden behind the center channel text box.
+ - Fixed an issue where, in a reply thread with the right-hand side expanded, attachments in a post draft were hidden behind the center channel text box.
  - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas.
  - Fixed an issue where Compliance Report field headers were not correctly aligned.
  - Fixed an issue where the ``/join`` command was case-sensitive.
  - Fixed an issue where one-character sidebar category names were not displayed.
- - Fixed an issue with a theme discrepancy on close buttons on some modals in the System Console (when using a custom team theme).
+ - Fixed an issue with a theme discrepancy on Close buttons on some modals in the System Console (when using a custom team theme).
  - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
  - Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.
  - Fixed an issue where long image names pushed the show/hide control off the right side of the window.
@@ -79,7 +79,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Known Issues
  - Deactivated users are not marked as "Deactivated" in the channel switcher [MM-33910](https://mattermost.atlassian.net/browse/MM-33910).
  - User nickname is not shown on channel switch [MM-33897](https://mattermost.atlassian.net/browse/MM-33897).
- - Config.json can reset when running the command ``systemctl restart mattermost`` and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - ``Config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
