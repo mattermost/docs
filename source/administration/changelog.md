@@ -6,12 +6,14 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.33.2, release day TBD**
-  - Investigating an issue with WebSocket handling where client-side pings fail WebSocket connections [MM-34158](https://mattermost.atlassian.net/browse/MM-34158)
-  - Improving typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+- **v5.33.3, released 2021-03-31**
+  - Fixed an issue where, after migrating to OpenID, Office 365 returned different ID attributes based on user type, causing an error for users with expired sessions when they tried to sign in to Mattermost. [MM-34356](https://mattermost.atlassian.net/browse/MM-34356)
+- **v5.33.2, released 2021-03-25**
+  - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Reverted the WebSocket improvement added in v5.33.0 where epoll was used to manually read from a WebSocket connection. It was reverted because unofficial Mattermost builds in several different platforms broke due to the WebSocket changes. [MM-34158](https://mattermost.atlassian.net/browse/MM-34158)
 - **v5.33.1, released 2021-03-22**
   - Fixed an issue where WebSockets failed with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
-  - Fixed a race condition which would crash the app server due to improper handling of WebSockets closing. [MM-33233](https://mattermost.atlassian.net/browse/MM-33233)
+  - Fixed a race condition which would crash the app server due to improper handling of WebSocket closing. [MM-33233](https://mattermost.atlassian.net/browse/MM-33233)
   - Fixed an issue where the ``mmctl config`` command  didn't recognize newer settings (e.g. ``ClusterSettings.EnableGossipCompression``)  that were introduced in v5.33.0. [MM-34046](https://mattermost.atlassian.net/browse/MM-34046)
 - **v5.33.0, released 2021-03-17**
   - Original 5.33.0 release
@@ -116,13 +118,14 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed the session required restriction from the ``GET api/v4/subscription/stats`` API endpoint.
 
 ### Websocket Event Changes
- - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.
+ - Improved the WebSocket implementation by using epoll to manually read from a WebSocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.
  - The ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
 
 ### Known Issues
  - Config.json can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
  - Adding an at-mention at the start of a post draft, then pressing the left or right arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - In some cases, the **New messages** toast appears without replacing variables with text. [MM-33829](https://mattermost.atlassian.net/browse/MM-33829)
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too [MM-30407](https://mattermost.atlassian.net/browse/MM-30407).
@@ -257,9 +260,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-- **v5.31.2, release day TBD**
-  - Improving typing performance on busy servers with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
-  - Fixing bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
+- **v5.31.3, released 2021-04-07**
+  - Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
+- **v5.31.2, released 2021-03-29**
+  - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
 - **v5.31.1, released 2021-02-05**
   - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
   - Fixed an issue where ``FeatureFlags`` section was getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
@@ -415,6 +420,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``react-native-image-gallery`` from https://github.com/mattermost/mattermost-mobile.
  - Added ``react-native-redash`` and ``react-native-share`` to https://github.com/mattermost/mattermost-mobile.
  
+### Database Changes
+ - Added a new column ``minipreview`` to ``FileInfo`` table.
+
 ### Websocket Event Changes
  - In ``post_deleted`` websocket event, System Admins are now notified when a user initiates a post deletion.
 

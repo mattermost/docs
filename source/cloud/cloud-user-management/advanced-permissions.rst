@@ -1,7 +1,7 @@
 Advanced Permissions
 ====================
 
-Mattermost Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
+Mattermost System Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
 Two permission schemes are provided in Mattermost: 
 
@@ -75,17 +75,19 @@ Team Management
 
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
-1. Navigate to **System Console > User Management > Permissions**.
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members > Teams** panel, check the box for **Add Team Members**. This sets the system default for all teams.
-4. Choose **Save**.
+4. Select **Save**.
 5. Select the back arrow to return to the **Permission Schemes** menu.
 6. Select **New Team Override Scheme**.
-  i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
-  iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
-  iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
-7. Choose **Save**. 
+
+  a. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
+  b. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
+  c. In the **All Members** panel, uncheck the box for **Add Team Members**.
+  d. In the **Team Administrators** panel, check the box for **Add Team Members**.
+  
+7. Select **Save**. 
 8. Select the back arrow to return to the **Permission Schemes** menu. 
 
 Public and Private Channel Management
@@ -109,17 +111,18 @@ The **Manage Channel Settings** option is now only available to **Channel Admini
 
 Example: In Team C, restrict public channel creation to Admins. As the default for all other teams, allow everyone to create public channels.
 
-1. Navigate to **System Console > User Management > Permissions**.
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, in the **Manage Public Channels** menu, check the box for **Create Channels**. This sets the system default to allow creation of public channels on all teams.
-4. Choose **Save**.
+4. Select **Save**.
 5. Select the arrow to return to the **Permission Schemes** interface.
 6. Select **New Team Override Scheme**.
-  i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
-  iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
-  iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
-  
+
+  a. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
+  b. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
+  c. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
+  d. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
+
 Convert Public channels to Private channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -142,7 +145,7 @@ Read only channels
 2. Select **Edit** next to the name of the channel you want to configure.
 3. In the **Create Posts** panel, uncheck **Guests**.
 4. In the **Post Reactions** panel, uncheck **Guests** if required.
-5. Choose **Save**.
+5. Select **Save**.
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
@@ -153,7 +156,7 @@ The channel is available for all members and guests to access, but guests can on
 3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
 4. In the **Create Posts** panel, uncheck **Guests** and **Members**.
 5. In the **Post Reactions** panel, uncheck **Guests** and **Members**.
-6. Choose **Save**.
+6. Select **Save**.
 
 The channel is available for all members and guests to access but only admins can post.
 
@@ -187,16 +190,15 @@ Integration Management
 
 **Restrict managing webhooks and slash commands**
 
-Example: As the default for the entire system, only allow System Admins to create, edit and delete integrations.
+Example: As the default for the entire system, only allow System Admins to create, edit, and delete integrations.
 
-1. Navigate to **System Console > User Management > Permissions**.
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** and **Team Administrators** panels, in the **Integrations & Customizations** section, uncheck the boxes for **Manage Incoming Webhooks**, **Manage Outgoing Webhooks**, and **Manage Slash Commands**.
 
 .. note::
 
   Permissions for creating, editing, and deleting integrations are currently grouped for each integration type. These will be split into separate permissions in a future release.
-
 
 Glossary
 --------

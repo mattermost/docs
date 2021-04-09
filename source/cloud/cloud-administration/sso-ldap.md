@@ -36,7 +36,7 @@ There are two ways to set up AD/LDAP:
 2. **Configure AD/LDAP.**
      - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
-3. **Confirm that AD/LDAP sign-on is enabled.**<
+3. **Confirm that AD/LDAP sign-on is enabled.**
      - After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
 4. **Switch your System Admin account from email to AD/LDAP authentication.**
@@ -85,7 +85,7 @@ Filters can also be used for excluding users who belong to certain groups. For A
 
 ##### Guest Filter
 
-(Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+(Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost workspace. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in **System Console > User Management**.
 

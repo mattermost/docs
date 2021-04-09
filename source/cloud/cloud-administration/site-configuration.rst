@@ -15,49 +15,12 @@ By default, users can dismiss the banner until they log in again or until you up
 
 **To enable the banner**:
 
-1. Open **System Console > Site Configuration**.
-2. For **Enable Announcement Banner**, select **true**.
+1. Go to **System Console > Site Configuration > Announcement Banner**.
+2. Set **Enable Announcement Banner** to **true**.
 3. In the **Banner Text** field, enter the text of the announcement that you want to make.
-4. Set the background and text colors.
-5. To prevent users from dismissing the banner, in the **Allow Banner Dismissal** section, select **false**.
+4. Set banner background and text colors.
+5. To prevent users from dismissing the banner, set **Allow Banner Dismissal** section to **false**.
 6. Select **Save**.
-
-In-Product Notices
-------------------
-
-Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.
-
-.. image:: ../../images/notices.png
-
-Administrator Notices
-^^^^^^^^^^^^^^^^^^^^^
-
-Administrator notices are used to inform System Admins when a new server version is available, or if a server upgrade is recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
-
-Administrator notices can be disabled in the **System Console > Notices** page.
-
-End User Notices
-^^^^^^^^^^^^^^^^
-
-End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
-
-FAQs
-^^^^
-
-Are notices enabled by default?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Notices**.
-
-Will I still receive notices if my server is air-gapped?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-No, the Mattermost server requires a connection to the internet to receive notices.
-
-How often will users receive notices?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Notices will be used to raise awareness of new features as part of our monthly release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
 
 Emoji
 -----
@@ -67,15 +30,48 @@ There are three different settings that allow you to control emoji.
 1. **Enable Emoji Picker:** An emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of Custom Emojis may slow down performance.
 2. **Enable Custom Emoji:** You can control whether or not the Custom Emoji option in the Main Menu, where users can go to create customized emoji, is accessible.
 3. **Restrict Custom Emoji Creation:** You can set which role is able to create Custom Emoji from **Main Menu > Custom Emoji** (all users, System and Team Admins, or System Admins only).
+4. Select **Save**.
+
+In-Product Notices
+------------------
+
+Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases. Notices are used to raise awareness of new features as part of our monthly release cadence. 
+
+Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
+
+.. image:: ../../images/notices.png
+
+Administrator Notices
+^^^^^^^^^^^^^^^^^^^^^
+
+System Admins may receive notices about recommended configuration options to optimize the user experience of their workspace.
+
+Administrator notices can be disabled in the **System Console > Site Configuration > Notices** page by setting **Enable Admin Notices** to **false**, then selecting **Save**.
+
+End User Notices
+^^^^^^^^^^^^^^^^
+
+End user notices are used to inform users and System Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Site Configuration > Notices** by setting **Enable End User Notices** to **false**, then selecting **Save**.
+
+Are notices enabled by default?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notices are enabled by default for all Mattermost users. System Admins may choose to disable administrator or end user notices in **System Console > Site Configuration > Notices**.
+
+How often will users receive notices?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notices will be used to raise awareness of new features as part of our monthly release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
 
 File Sharing and Downloads
 --------------------------
 
-There are three different settings that allow you to control file sharing and file downloading on your workspace and on mobile devices.
+There are three settings that allow you to control file sharing and file downloading on your workspace and on mobile devices.
 
 1. **Allow File Sharing:** When configuration is set to **false**, file sharing is disabled. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 2. **Allow File Uploads on Mobile:** When configuration is set to **false**, disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 3. **Allow File Downloads on Mobile:** When configuration is set to **false**, disables file downloads on mobile apps. Users can still download files from a mobile web browser.
+4. Select **Save**.
 
 Localization
 ------------
@@ -87,32 +83,32 @@ New languages are added automatically by default. You can add new languages usin
 Notifications
 -------------
 
-There are seven different settings that allow you to control notifications.
+There are six settings that allow you to control notifications.
 
 1. **Show @channel and @all confirmation dialog:** Users will be prompted to confirm when posting @channel and @all in channels with over five members.
 2. **Email Notification Contents:** You can specify the content shown in email notifications. 
   - **Send full message contents** will include Sender name and channel in email notifications. 
   - **Send generic description with only sender name** will include the team name and name of the person who sent the message. No information about channel name or message contents, is included in email notifications. This is typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.
 3. **Notification Display Name:** Set the name displayed on the email account used when sending notification emails from Mattermost system.
-4. **Notification From Address:** Set the address displayed on the email account used when sending notification emails from within Mattermost. So you don't miss messages, please make sure to change this value to an email your system administrator receives, such as "admin@yourcompany.com".
-5. **Notification Reply-To Address:** Set the email address used in the Reply-To header when sending notification emails from Mattermost.
-6. **Notification Footer Mailing Address:** Set the name and mailing address displayed in the footer of email notifications from Mattermost, such as *ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA*. If the field is left empty, the organization name and mailing address will not be displayed.
-7. **Push Notification Contents:** You can configure what information is provided in push notifications. 
+4. **Notification Reply-To Address:** Set the email address used in the Reply-To header when sending notification emails from Mattermost.
+5. **Notification Footer Mailing Address:** Set the name and mailing address displayed in the footer of email notifications from Mattermost, such as *ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA*. If the field is left empty, the organization name and mailing address will not be displayed.
+6. **Push Notification Contents:** You can configure what information is provided in push notifications. 
   - **Generic description with only sender name** will include only the name of the person who sent the message but no information about channel name or message text. 
   - **Generic description with sender and channel names** will include names of users and channels but no specific details from the message text. 
-  - **Full message content sent in the notification payload** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages.  
-  - **Only Push Notifications** means full message content is fetched from the server on receipt. The notification payload relayed through the Apple Push Notification service or Firebase Cloud Messaging service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a notification service app extention on iOS or an expandable notification pattern on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the Apple Push Notification service or Firebase Cloud Messaging service.
+  - **Full message content sent in the notification payload** will nclude the message contents in the push notification payload that is relayed through Apple's Push Notification Service (APNS) or Google's Firebase Cloud Messaging (FCM). It is highly recommended this option only be used with an "https" protocol to encrypt the connection and protect confidential information sent in messages.  
+  - **Full message content fetched from the server on receipt** means the notification payload relayed through APNS or FCM contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.
+7. Select **Save**.
 
 Posts
 -----
 
-There are five different settings that allow you to control content in posts.
+There are four settings that allow you to control content in posts.
 
 1. **Enable Link Previews:** Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**. You can also disable all website link previews, image link previews, and YouTube previews by changing this setting to false.
 2. **Enable SVGs:** Controls whether users have the ability to see previews of SVG file attachments and SVG image links.
 3. **Enable LaTeX Rendering:** Controls users' ability to render LaTeX code.
 4. **Custom URL Schemes:** A list of URL schemes that are used for autolinking in message text. HTTP, HTTPS, FTP, tel, and mailto always create links.
-5. **Google API Key:** Mattermost offers the ability to embed YouTube videos from URLs shared by end users. Set this key and add YouTube Data API v3 as a service to your key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript. Using a Google API Key allows Mattermost to detect when a video is no longer available and display the post with a Video not found label.
+5. Select **Save**.
 
 Users and Teams
 ---------------
@@ -126,6 +122,7 @@ There are seven different settings that allow you to control users and teams.
   - **Show username** displays the user's username. 
   - **Show nickname** if one exists displays the user's nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. 
   - **Show first and last name** displays the user's full name. If the user does not have a full name, their username is displayed. Recommended when using SAML or LDAP if first name and last name attributes are configured.
-5. **Allow Users to View Archived Channels (Beta):** Allows users to view, share, and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
+5. **Lock Teammate Name Display for all users::** Specifies whether users can change settings under **Main Menu > Account Settings > Display > Teammate Name Display**.
 6. **Show Email Address:** When set to **false**, this setting hides email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see email addresses in the UI.
 7. **Show Full Name:** WHen set to false, this setting hides full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the UI.
+8. Select **Save**.
