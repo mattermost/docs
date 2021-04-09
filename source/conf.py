@@ -61,7 +61,7 @@ source_suffix = ['.rst', '.md']
 #source_encoding = 'utf-8-sig'
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
- redirects = {
+redirects = {
      "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
 }
 
