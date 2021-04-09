@@ -56,7 +56,7 @@ Incoming Webhooks
     The number of active incoming webhooks currently setup on your system. Incoming webhooks that are created and then removed in the **Integrations** menu are not counted.
 
 Outgoing Webhooks
-    The number of active outgoing webhooks currently setup on your system. Outgoing webhooks that are created and then removed in the **Integrations** menu are not counted.
+    The number of active outgoing webhooks currently set up on your system. Outgoing webhooks that are created and then removed in the **Integrations** menu are not counted.
 
 WebSocket Conns
     The number of active WebSocket connections currently on your server.
