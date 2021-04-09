@@ -88,7 +88,7 @@ Migrating from bespoke messengers to Mattermost can be challenging. Because of t
 If your data in the bespoke messenger is vital, consider:
 
 1. `Mattermost Bulk Load tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ - Use the Mattermost Bulk Load tool to ETL from your bespoke system to Mattermost.
-2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__- Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
+2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__: Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
 3. **Legacy Slack import:** If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging the extensive support for Slack-import provided.
 4. **Export to Slack, then import to Mattermost:** `Export HipChat, Flowdock, Campfire, Chatwork, Hall, or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`__ and then export to a Slack export file and import the file into Mattermost.
 
