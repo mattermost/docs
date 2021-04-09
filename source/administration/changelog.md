@@ -16,8 +16,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Added pre-packaged Incident Collaboration 1.5.0 (E20)
- - Users can now configure playbooks to perform specific actions automatically when an incident starts, such as inviting members to the incident channel and assigning a commander.
+#### Incident Collaboration: Automated actions on incident start (E20 Edition)
+ - Users can now configure playbooks to automatically execute key actions when an incident is created to save time and reduce the chance of manual error. 
 
 ### Improvements
 
@@ -64,7 +64,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added ``EnableFileSearch``, ``ExtractContent``, ``ArchiveRecursion`` for file search. **XXXX ??**
  - Added ``ExportSettings`` to add support for compressed export files with attachments.
 
 ### Go Version
@@ -72,9 +71,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Open Source Components
  - Removed ``core-js`` from https://github.com/mattermost/mattermost-mobile.
-
-### API Changes
- - Added API for files search ``/teams/{team_id}/files/search``. **XXXX ??**
 
 ### Known Issues
  - Deactivated users are not marked as "Deactivated" in the channel switcher [MM-33910](https://mattermost.atlassian.net/browse/MM-33910).
