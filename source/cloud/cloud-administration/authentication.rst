@@ -17,14 +17,16 @@ Supported smartphones include iOS, Android, Blackberry, and Windows Phone device
 Enabling MFA
 ^^^^^^^^^^^^
 
-This option is enabled by the System Admin in the `System Console <https://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication > MFA > Enable Multi-factor Authentication**. 
+This option is enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**. 
 
 Once enabled, users can opt to use MFA on their account in the `Account Settings <https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication>`__ menu under **Security > Multi-factor Authentication**.
+
+.. include:: common-disable-mfa.rst 
 
 Enforcing MFA
 ^^^^^^^^^^^^^^
 
-This option can be enabled by the System Admin in the `System Console <https://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication > MFA > Enforce Multi-factor Authentication**.
+This option can be enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enforce Multi-factor Authentication** to **true**.
 
 When MFA enforcement is set to **true**, users with email or LDAP authentication who don't have MFA set up will be directed to the MFA setup page when they log in to Mattermost. They will not be able to access the site until MFA setup is complete. Any new users will be required to set up MFA during the sign up process.
 
