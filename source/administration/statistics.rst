@@ -1,5 +1,5 @@
 Statistics
-================
+==========
 
 Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
@@ -10,9 +10,9 @@ Statistics on users, posts, and channels are tracked for each system and team. E
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <https://docs.mattermost.com/deployment/metrics.html>`__.
 
 Site Statistics
------------------
+---------------
 
-System statistics are viewable under **System Console > Reporting** (or **System Console > Site Statistics** in versions prior to 5.12). The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
@@ -42,7 +42,7 @@ Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Advanced system statistics (Enterprise)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enterprise Edition includes additional system statistics.
 
@@ -50,13 +50,13 @@ Total Sessions
     The number of active user sessions connected to your system. Expired sessions are not counted.
 
 Total Commands
-    The number of active slash commands currently setup on your system. Slash commands that are created and then removed in the Integrations menu are not counted.
+    The number of active slash commands currently set up on your system. Slash commands that are created and then removed in the **Integrations** menu are not counted.
 
 Incoming Webhooks
-    The number of active Incoming Webhooks currently setup on your system. Incoming webhooks that are created and then removed in the Integrations menu are not counted.
+    The number of active incoming webhooks currently setup on your system. Incoming webhooks that are created and then removed in the **Integrations** menu are not counted.
 
 Outgoing Webhooks
-    The number of active Outgoing Webhooks currently setup on your system. Outgoing webhooks that are created and then removed in the Integrations menu are not counted.
+    The number of active outgoing webhooks currently set up on your system. Outgoing webhooks that are created and then removed in the **Integrations** menu are not counted.
 
 WebSocket Conns
     The number of active WebSocket connections currently on your server.
@@ -76,7 +76,7 @@ Posts, Files and Hashtags
 Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
+Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in Direct Message channels, which are not tied to a team.
 
 Total Users
     The total number of active accounts on this team. Excludes deactivated accounts.
@@ -88,7 +88,7 @@ Private Channels
     The number of private channels created in this team. Excludes deleted channels.
 
 Total Posts
-    The total number of posts made in this team, including deleted posts and posts made using automation. Excludes posts made in direct message channels, which are not tied to a team.
+    The total number of posts made in this team, including deleted posts and posts made using automation. Excludes posts made in Direct Message channels, which are not tied to a team.
 
 Total Posts (graph)
     The total number of posts made on a certain day in this team, including deleted posts and posts made using automation.
@@ -124,5 +124,6 @@ System Admins must then `edit the privileges <https://docs.mattermost.com/deploy
 Once the **Viewer** role is set up for reporting access only, System Admins can then `assign <https://docs.mattermost.com/deployment/admin-roles.html#assigning-admin-roles>`__ the **Viewer** role to Team Admins.
 
 .. note::
-  - System Admins must manually add people to or remove people from the **Viewer** admin role to address Team Admin changes, such as promotions or demotions. 
-  - Team Admins using the **Viewer** admin role will also have access to system level statistics in addition to statistics for their teams.
+
+  - System Admins must manually add people to or remove people from the **Viewer** admin role to address Team Admin changes, such as promotions or demotions.
+  - Team Admins using the **Viewer** admin role will also have access to system-level statistics in addition to statistics for their teams.
