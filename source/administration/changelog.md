@@ -73,14 +73,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Open Source Components
  - Removed ``core-js`` from https://github.com/mattermost/mattermost-mobile.
 
-### Database Changes
- - 
-
 ### API Changes
  - Added API for files search ``/teams/{team_id}/files/search``. **XXXX ??**
-
-### Websocket Event Changes
- - 
 
 ### Known Issues
  - Deactivated users are not marked as "Deactivated" in the channel switcher [MM-33910](https://mattermost.atlassian.net/browse/MM-33910).
