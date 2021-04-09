@@ -11,6 +11,7 @@
 
 ### Improvements
  - Apps Framework
+ - Improved performance of scrolling the post list on Android.
  - Added support for replacing double-dashes with emdashes on iOS.
 
 ### Bug Fixes
@@ -20,6 +21,7 @@
  - Fixed an issue where images with a transparent background showed as black in the gallery.
  - Fixed an issue where the Mention Highlight Link Color was not being used properly.
  - Fixed a minor typo in the search **in:** modifier label.
+ - Fixed an issue where OpenGraph without images did not show the image placeholder.
 
 #### Android specific
  - Fixed an issue with frequent logouts on the latest Android OS.
