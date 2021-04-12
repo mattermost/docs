@@ -30,6 +30,9 @@ Step 1: Add an application to your GitLab account
 Step 2: Configure Mattermost for GitLab SSO
 --------------------------------------------
 
+.. note::
+  When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
+
 The steps to configure Mattermost for GitLab SSO depends on your edition of Mattermost. To confirm your Mattermost edition, go to **System Console > About > Edition and License**.
 
 Mattermost Team Edition
