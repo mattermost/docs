@@ -57,7 +57,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where one-character sidebar category names were not displayed.
  - Fixed an issue with a theme discrepancy on Close buttons on some modals in the System Console (when using a custom team theme).
  - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
- - Fixed an issue where the Zoom level persisted across multi-attachment PDF previews.
+ - Fixed an issue where the zoom level persisted across multi-attachment PDF previews.
  - Fixed an issue where long image names pushed the show/hide control off the right side of the window.
 
 ### config.json
