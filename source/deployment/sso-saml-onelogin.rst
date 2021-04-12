@@ -36,9 +36,9 @@ Create a OneLogin Connection App for Mattermost SSO
 
   .. image:: ../../source/images/onelogin_3_configuration_1.png
   
-  b. In System Console,  `enable encryption <https://docs.mattermost.com/administration/prev-config-settings.html#enable-encryption>`__, save your changes, then return to the Configuration tab in access the **SAML Encryption** field.
+  b. In System Console,  `enable encryption <https://docs.mattermost.com/administration/prev-config-settings.html#enable-encryption>`__, then click **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
 
-  c. Paste the Public Key that you generated earlier into the **SAML Encryption** field.
+  c. Paste the Public Key that you generated earlier into the **SAML Encryption** field at the bottom of the page. This field displays in OneLogin only when encryption is enabled in Mattermost.
 
   .. image:: ../../source/images/onelogin_4_configuration_2.png
 
@@ -58,6 +58,8 @@ Create a OneLogin Connection App for Mattermost SSO
 | LastName       | Last Name   |  
 +----------------+-------------+
 | Name ID value  | Email       |  
++----------------+-------------+
+| Username       | Username    |
 +----------------+-------------+
 
   Attribute parameters map attributes between OneLogin and Mattermost. For more information on which attributes are configurable, see our :ref:`documentation on SAML configuration settings <saml-enterprise>`.
