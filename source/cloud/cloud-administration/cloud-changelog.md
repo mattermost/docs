@@ -33,7 +33,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### Administration
  - Added a command line document extraction command that allows indexing documents by content.
 
-#### Bug Fixes
+### Bug Fixes
  - Fixed link previews on a number of websites, including Reddit.
  - Fixed an issue where SAML assigned Mattermost UserID as username if the value was invalid and did not log this.
  - Fixed an issue where hover effects for category sorting and **Direct Messages** category limit submenus were too dark on a dark theme.
