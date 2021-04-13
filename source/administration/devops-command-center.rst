@@ -7,7 +7,7 @@ Incidents are situations which require an immediate response, and incidents bene
 
 * Starting an incident automatically creates a dedicated incident channel to coordinate discussion. 
   
-  - Use custom categories in the left-hand sidebar to streamline access to ongoing incidents.
+  - Use custom categories in the channel sidebar to streamline access to ongoing incidents.
 
 * Playbooks define the tasks toward resolution as your team manages the incident.
   
