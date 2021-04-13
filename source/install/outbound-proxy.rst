@@ -17,7 +17,7 @@ The ``HTTP_PROXY`` and ``HTTPS_PROXY`` environment variables store the address o
 
 If you wish to have Mattermost authenticate with your proxy, it supports HTTP basic authentication by specifying the address of the proxy such as ``http://mattermost:password@192.168.4.5:3128``.
 
-Note that when proxying HTTPS resources, you will need to configure your Mattermost server with the root certificate of the proxy. Otherwise, Mattermost will refuse any response from the proxy as it will detect that its connection has been intercepted.
+Note that when proxying through a proxy that uses the ``HTTPS`` protocol, you'll need to configure your Mattermost server with the root certificate of the proxy. Otherwise, Mattermost will refuse any response from the proxy as it will detect that its connection has been intercepted.
 
 ``NO_PROXY``
 ~~~~~~~~~~~~
