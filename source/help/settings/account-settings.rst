@@ -3,7 +3,7 @@ Account Settings
 
 --------------
 
-Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the left-hand sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the channel sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
 
 General
 -------
@@ -261,7 +261,7 @@ Channels can be grouped by type (Public, Private, or Direct Message), or all cha
 Channel sorting
 ^^^^^^^^^^^^^^^
 
-Channels can be sorted within their sidebar sections alphabetically (default) or by most recent message.
+Channels can be sorted within their channel sidebar sections alphabetically (default) or by most recent message.
 
 Channel switcher
 ^^^^^^^^^^^^^^^^
@@ -271,7 +271,7 @@ Hide the channel switcher used to jump between channels quickly. The channel swi
 Autoclose Direct Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the **+** button in the sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------
