@@ -1540,10 +1540,10 @@ Support Email
 
 Set an email address for feedback or support requests.
 
-So you don't miss messages, please make sure to change this value to an email address your System Administrator receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial for end users to ask support questions.
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": "feedback@mattermost.com"`` with string input.                                                           |
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Terms of Service link
