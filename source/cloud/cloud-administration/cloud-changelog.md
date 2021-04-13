@@ -2,6 +2,51 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-04-21
+
+### Highlights
+
+#### Apps Framework, lightweight interactive add-ons to Mattermost
+ - 
+
+#### Search results are returned on file search
+ -
+
+#### Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.
+ - 
+
+#### Shared Channels: Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default
+ - 
+
+#### Enterprise Trial enhancements Phase 1
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support for allowing collapsing in-line images over 100px in height.
+ - Implemented maximum length validation on the status modal for custom statuses.
+ - Synchronized collapsed channel sidebar categories on the server.
+ - Empty state is no longer off-centered in the **Channel Switcher**.
+ - Ephemeral message created from call response ``markdown`` field is now posted by bot.
+
+#### Administration
+ - Added a command line document extraction command that allows indexing documents by content.
+
+#### Bug Fixes
+ - Fixed link previews on a number of websites, including Reddit.
+ - Fixed an issue where SAML assigned Mattermost UserID as username if the value was invalid and did not log this.
+ - Fixed an issue where hover effects for category sorting and **Direct Messages** category limit submenus were too dark on a dark theme.
+ - Fixed an issue where users were unable to drag vertical scroll bar on a PDF preview.
+ - Fixed an issue with animations on long posts when highlighted as a permalink.
+ - Fixed an issue where the user nickname was not shown on channel switch.
+ - Fixed an issue where deactivated users were not marked as "Deactivated" in the channel switcher.
+
+### Known Issues
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-04-07
 
 ### Improvements
