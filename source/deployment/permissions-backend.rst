@@ -289,7 +289,6 @@ The following built-in roles and associated permissions are available:
 - create_post
 - edit_post
 
-
 *system_admin*
 
 - manage_others_slash_commands
