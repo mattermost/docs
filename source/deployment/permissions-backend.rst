@@ -236,7 +236,7 @@ Roles are dynamic and user configurable, necessitating a database table with the
 - ``Scheme Managed`` (bool): Indicates whether this role is managed as part of a scheme.
 - ``BuiltIn`` (bool): Indicates if this role is built-in to the Mattermost system and not removable by the user.
 
-Built-In Roles
+Built-in roles
 ~~~~~~~~~~~~~~
 
 The System Scheme is built-in to the product, and its roles are defined as ``BuiltIn: true`` in the ``Roles`` table. You can use the Mattermost API to `retrieve a list of permissions by role name <https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post>`__. 
