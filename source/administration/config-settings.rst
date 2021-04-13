@@ -4876,7 +4876,7 @@ Specifies a connection string and user-defined SQL queries on the database to me
 
 String array input consists of:
 
-- ``DataSource`` - The DB credentials to connect to the replica instance.
+- ``DataSource``: The DB credentials to connect to the replica instance.
 - ``QueryAbsoluteLag`` - A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
 - ``QueryTimeLag`` - A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
 
