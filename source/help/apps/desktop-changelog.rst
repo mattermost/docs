@@ -33,6 +33,7 @@ All Platforms
 - Added improvements to be consistent on the use of URL and URL libraries.
 - Removed the Finder functionality from the Desktop App.
 - Updated CSP for Desktop App to avoid warnings in the dev tools.
+- Removed the menu bar in the Settings window for Windows and Linux.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
