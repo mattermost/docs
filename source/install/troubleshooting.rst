@@ -4,7 +4,7 @@ This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. 
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
 
 Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
 
@@ -86,15 +86,15 @@ Switching System Administrator Account to Single Sign-on (SSO)
 
 When Mattermost is initially set up, the first account created becomes the System Admin account. This account will typically use email authentication to sign in, since it is usually created before other sign in methods are configured.
 
-After setting up SSO authentication, it is common for the System Admin to want to turn off email sign in so users will only have SSO as a sign in option.
+After setting up SSO authentication, it's common for the System Admin to want to turn off email sign-in so users will only have SSO as a sign-in option.
 
-Before doing this, the System Admin needs to change their sign in method to SSO by doing the following:
+Before doing this, the System Admin needs to change their sign-in method to SSO by doing the following:
 
 1. Sign in to Mattermost using an email and password.
 2. Go to **Account Settings > Security > Sign-in Method**.
 3. Select **Switch** to select a sign-in method and complete the process provided.
 
-The System Admin can now turn off email sign in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Admin ask them to switch authentication methods as well.
+The System Admin can now turn off email sign in and still access their account. To avoid locking other existing users out of their accounts, it's recommended that the System Admin ask them to switch authentication methods as well.
 
 Locked Out of System Administrator Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -521,18 +521,18 @@ I’m Not Receiving Push Notifications on my Device
 
 If you didn't receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
-1. Under **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) select **DEBUG** in order to watch for push notifications in the server log.
+1. Under **System Console > Environment > Logging > File Log Level** , then select **DEBUG** in order to watch for push notifications in the server log.
 2. Delete and reinstall your mobile application.
 3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
 4. On desktop, go to **Account Settings > Security > View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
 5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
-6. If no push notification appears go to **System Console > Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
+6. If no push notification appears go to **System Console > Logs**, then select **Reload**. Look at the bottom of the logs for a message similar to:
 
 ``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
 
   - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the support team.
   - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double-check each step.
-7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
+7. **IMPORTANT:** After your issue is resolved, to conserve disk space, go to **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -541,7 +541,7 @@ You can set up an internal server to proxy the connection out of their network t
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
 2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console > Environment > Push Notification Server > Enable Push Notifications** (or **System Console > Notification Settings > Mobile Push > Enable Push Notifications** in versions prior to 5.12) to **Manually enter Push Notification Service location**.
+3. In Mattermost, go to **System Console > Environment > Push Notification Server**, and set **Enable Push Notifications** to **Manually enter Push Notification Service location**.
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 **Note:** Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
@@ -577,8 +577,8 @@ YouTube Videos Show a "Video not found" Preview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
-2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
-3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
+2. If you're using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
+3. If you've specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
 
 Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -699,11 +699,11 @@ If the issue you're seeing is with SAML login, we will need to see the full conf
 
 The LDAP administrator should confirm the correct values for the following Mattermost LDAP settings:
 
-- LDAP server hostname
-- LDAP connection port, security, and certificates
-- BaseDN, bind username, and bind password
-- User, Group, Guest, and Admin filters
-- Display attributes
+- LDAP server hostname.
+- LDAP connection port, security, and certificates.
+- BaseDN, bind username, and bind password.
+- User, Group, Guest, and Admin filters.
+- Display attributes.
 
 These can be provided as a text file or as screenshots from the LDAP server.
 
@@ -801,11 +801,11 @@ What information to include
 
 This should be a detailed explanation of anything the end users who are reporting the unexpected behavior have in common. This includes (but is not limited to):
 
-- Team and Channel memberships, including Direct and Group Messages
-- Authentication methods
-- Client operating system and app versions
-- How users connect to the Mattermost server
-- Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synchronized via LDAP
+- Team and Channel memberships, including Direct and Group Messages.
+- Authentication methods.
+- Client operating system and app versions.
+- How users connect to the Mattermost server.
+- Any other things these users have in common such as when they joined, whether their login information recently changed, or if they are being synchronized via LDAP.
 
 Note for Agents: This information is also required:
 
