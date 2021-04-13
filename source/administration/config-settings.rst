@@ -1540,10 +1540,10 @@ Support Email
 
 Set an email address for feedback or support requests.
 
-So you don't miss messages, please make sure to change this value to an email address your System Administrator receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial for end users to ask support questions.
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": "feedback@mattermost.com"`` with string input.                                                           |
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Terms of Service link
@@ -1699,7 +1699,7 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively.             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others posts
+Allow Team Administrators to edit others' posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *This permission is stored in the database and can be modified using the System Console user interface.*
@@ -1709,7 +1709,7 @@ Allow Team Administrators to edit others posts
 **False**: Only System Admins can edit other users' posts.
 
 .. note::
-   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
+   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
 
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^
