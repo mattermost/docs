@@ -44,7 +44,7 @@ Users will only receive notices that specifically apply to them. For example, if
 Administrator Notices
 ^^^^^^^^^^^^^^^^^^^^^
 
-Administrator notices are used to inform System Admins of important updates or recommended configuration options to optimize the user experience of their deployment. Administrator notices are enabled for all Mattermost users.
+System Admins may receive notices about recommended configuration options to optimize the user experience of their workspace.
 
 Administrator notices can be disabled in the **System Console > Site Configuration > Notices** page by setting **Enable Admin Notices** to **false**, then selecting **Save**.
 
