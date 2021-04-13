@@ -14,7 +14,7 @@ Creating a Personal Access Token
 
 1. Enable personal access tokens in **System Console > Integrations > Integration Management**.
 2. Identify the account you want to create a personal access token with. You may optionally create a new user account for your integration, such as for a bot account. By default, only System Admins have permissions to create a personal access token. 
-3. To create an access token with a non-admin account, you must first give it the appropriate permissions. Go to **System Console > Users**, search for the user account, and select **Manage Roles** from the dropdown.
+3. To create an access token with a non-admin account, you must first give it the appropriate permissions. Go to **System Console > User Management > Users**, search for the user account, then select **Manage Roles** from the dropdown.
 
 .. image:: ../../../source/images/access_token_manage_roles.png
   :width: 500 px
@@ -63,7 +63,7 @@ Account Settings
 System Console
 .................
 
-1. Go to **System Console > User Management > Users**, search for the user account which the token belongs to, and select **Manage Tokens** from the dropdown.
+1. Go to **System Console > User Management > Users**, search for the user account which the token belongs to, then select **Manage Tokens** from the dropdown.
 2. Identify the access token you want to revoke, then select **Delete**. 
 3. Confirm the deletion.
 

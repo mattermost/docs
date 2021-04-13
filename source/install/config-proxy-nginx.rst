@@ -21,9 +21,12 @@ On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
 SSL and HTTP/2 with server push are enabled in the provided configuration example.
 
 .. note::
-  You will need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA signed certificate. If you need an example on full configuration with pinning Let's Encrypt, please see the `Nginx HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
+  If you're going to use Let's Encrypt to manage your SSL certificate stop at step 3 here and please see the `NGINX HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
 
-  .. code-block:: none
+.. note::
+  You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
+
+.. code-block:: none
 
     upstream backend {
        server 10.10.10.2:8065;
@@ -178,9 +181,9 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 **How do I setup an NGINX proxy with the Mattermost Docker installation?**
 
-1. Find the name of the Mattermost network and connect it to the NGINX proxy:
+1. Find the name of the Mattermost network and connect it to the NGINX proxy.
 
-  .. code-block:: none
+.. code-block:: none
 
     docker network ls
     # Grep the name of your Mattermost network like "mymattermost_default".
@@ -188,7 +191,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 2. Restart the Mattermost Docker containers.
 
-  .. code-block:: none
+.. code-block:: none
 
     docker-compose stop app
     docker-compose start app
@@ -199,7 +202,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 3. Update your ``docker-compose.yml`` file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
 
-  .. code-block:: none
+.. code-block:: none
 
     environment:
       # set same as db credentials and dbname
@@ -213,7 +216,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
 
 **Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
 
-You may need to update the Callback URLs for the Application entry of Mattermost inside your GitLab instance.
+You may need to update the callback URLs for the Application entry of Mattermost inside your GitLab instance.
 
 1. Log in to your GitLab instance as the admin.
 2. Go to **Admin > Applications**.
