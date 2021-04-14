@@ -10,7 +10,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - This feature is available on Mobile Apps when Apps Framework becomes available on Mattermost v5.35.0 and the proxy plugin is loaded on an instance. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th.
 
 #### Files Search
- - Users can now search file attachments by name and document contents. This feature is available on Mobile Apps in a future release.
+ - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/).
 
 #### Granular Access to System Console Pages
  - Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.
