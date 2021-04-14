@@ -89,26 +89,36 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-03-16**
+- **v5.33.3, released 2021-03-31**
+  - Fixed an issue where, after migrating to OpenID, Office 365 returned different ID attributes based on user type, causing an error for users with expired sessions when they tried to sign in to Mattermost. [MM-34356](https://mattermost.atlassian.net/browse/MM-34356)
+- **v5.33.2, released 2021-03-25**
+  - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Reverted the WebSocket improvement added in v5.33.0 where epoll was used to manually read from a WebSocket connection. It was reverted because unofficial Mattermost builds in several different platforms broke due to the WebSocket changes. [MM-34158](https://mattermost.atlassian.net/browse/MM-34158)
+- **v5.33.1, released 2021-03-22**
+  - Fixed an issue where WebSockets failed with TLS connections. [MM-34000](https://mattermost.atlassian.net/browse/MM-34000)
+  - Fixed a race condition which would crash the app server due to improper handling of WebSocket closing. [MM-33233](https://mattermost.atlassian.net/browse/MM-33233)
+  - Fixed an issue where the ``mmctl config`` command  didn't recognize newer settings (e.g. ``ClusterSettings.EnableGossipCompression``)  that were introduced in v5.33.0. [MM-34046](https://mattermost.atlassian.net/browse/MM-34046)
+- **v5.33.0, released 2021-03-17**
+  - Original 5.33.0 release
 
-Mattermost v5.33.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.33.0 contains low-level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Important Upgrade Notes
  - Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.
- - WebSocket handshakes done with HTTP version lower than 1.1 will result in a warning, and the server will transparently upgrade the version to 1.1 to comply with the WebSocket RFC. This is done to work around incorrect Nginx (and other proxy) configs that do not set the ``proxy_http_version`` directive to 1.1. This facility will be removed in a future Mattermost version and it is strongly recommended to fix the proxy configuration to correctly use the WebSocket protocol.
+ - WebSocket handshakes done with an HTTP version lower than 1.1 will result in a warning, and the server will transparently upgrade the version to 1.1 to comply with the WebSocket RFC. This is done to work around incorrect Nginx (and other proxy) configs that do not set the ``proxy_http_version`` directive to 1.1. This facility will be removed in a future Mattermost version. It is strongly recommended to fix the proxy configuration to correctly use the WebSocket protocol.
  
 **IMPORTANT:** If you upgrade from a release earlier than v5.32, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
 
 #### OpenID Connect for OAuth 2.0 Authentication (E20 Edition)
- - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. This feature is available for Mobile Apps in v1.40 release.
+ - OpenID Connect enables authentication to Mattermost using any OAuth 2.0 provider that adheres to the OpenID Connect specification. This feature is available for Mobile Apps in the v1.40 release.
 
 #### Support Packet Generation (E10 & E20 Editions)
  - Mattermost provides the ability to download configuration details, logs, and other deployment information when requesting commercial support for Mattermost self-managed E10 or E20 Enterprise editions, or Mattermost Cloud editions.
 
-#### Updated Incident Collaboration plugin to 1.4.0 (E20 Edition)
- - Added an Incident Timeline to add support for status updates and other key events to be shown in the right-hand sidebar in a chronological order. The timeline enables users to easily gather information for post-incident reports.
+#### Updated Incident Collaboration Plugin to 1.4.0 (E20 Edition)
+ - Added an Incident Timeline to support status updates and other key events shown chronologically in the right-hand sidebar. The timeline enables users to easily gather information for post-incident reports.
  
 #### Custom Statuses
  - Users now gain the flexibility to express their current status in any way they prefer. Set a custom status to add a descriptive status message and emoji that’s visible to everyone throughout the app.
@@ -118,7 +128,7 @@ Mattermost v5.33.0 contains low level security fixes. [Upgrading](https://docs.m
 #### User Interface (UI)
  - Improved the **Add Members** to channel modal.
  - Added **Formatting** shortcut keys to the **Shortcut** modal.
- - Added localization to date picker used when searching for posts around a given date.
+ - Added localization to the date picker used when searching for posts around a given date.
  - The autocomplete popover is now positioned relative to the @, ~, or / trigger in the post draft.
  - Removed the 5-page limit on previewing PDFs.
  - Added ``files`` as a reserved team name.
@@ -141,9 +151,9 @@ Mattermost v5.33.0 contains low level security fixes. [Upgrading](https://docs.m
  - Implemented a job to delete unused export files.
 
 ### Bug Fixes
- - Fixed an issue where the Database Schema upgrade step for version 5.29.1 was not taken into account in releases 5.30 and later.
+ - Fixed an issue where the Database Schema upgrade step for v5.29.1 was not taken into account in releases v5.30 and later.
  - Fixed an issue where ``mmctl channel move`` did not allow moving private channels.
- - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` to try to change a configuration value did not return an error.
+ - Fixed an issue where ``mmctl config set PluginSettings.EnableUploads`` to change a configuration value did not return an error.
  - Fixed an issue where the instructions to search for users in **System Console > Reporting > Server Logs** were not up-to-date.
  - Fixed an issue where no error message was displayed when adding an LDAP Group Synchronized Team in **System Console > User Management > Users**.
  - Fixed an issue where markdown tables did not wrap correctly.
@@ -154,9 +164,9 @@ Mattermost v5.33.0 contains low level security fixes. [Upgrading](https://docs.m
  - Fixed an issue where line breaks were ignored when used with inline images.
  - Fixed an issue where the channel switcher did not focus on the first list result after a backspace.
  - Fixed an issue where demoting a user to a guest would not take effect in an environment with read replicas.
- - Fixed a bug with in-product notices where a date constraint might fail to match, and would lead to the notice not being fetched.
+ - Fixed a bug with in-product notices where a date constraint might fail to match, which would lead to the notice not being fetched.
  - Fixed an issue where creation of a bot would fail due to replica lag.
- - The ``DownloadComplianceReport`` function in the golang driver has been fixed to download a full report as a zip archive.
+ - The ``DownloadComplianceReport`` function in the Golang driver has been fixed to download a full report as a zip archive.
  - Fixed Cache-Control headers to instruct that responses may only be cached on browsers.
  - Fixed a panic when the OAuth discovery endpoint would not return a Cache-Control header.
 
@@ -165,14 +175,14 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ClusterSettings`` in ``config.json``:
-     - Added ``EnableGossipCompression``, to disable compression in the Gossip protocol. By default the value of the setting is ``true``, which is the existing default. This is done to maintain compatibility with old servers in a cluster. Once all servers in a cluster are upgraded, it is recommended to disable this setting for better performance.
+     - Added ``EnableGossipCompression``, to disable compression in the Gossip protocol. By default the value of the setting is ``true``. This is done to maintain compatibility with old servers in a cluster. Once all servers in a cluster are upgraded, it is recommended to disable this setting for better performance.
  - Under ``SqlSettings`` in ``config.json``:
-     - Added ``ConnMaxIdleTimeMilliseconds``, to allow controlling the maximum time a database connection can remain idle. The default value is set to 5 minutes.
+     - Added ``ConnMaxIdleTimeMilliseconds``, to allow System Admins to control the maximum time a database connection can remain idle. The default value is set to 5 minutes.
  - Under ``TeamSettings`` in ``config.json``:
      - Added ``EnableCustomUserStatuses``, to allow users to set descriptive status messages and optional status emoji that are visible to all users.
     
 ### Go Version
- - 5.33 is built with Go ``1.15.5``.
+ - v5.33 is built with Go ``1.15.5``.
 
 ### Open Source Components
  - Added ``types/react-overlays``, ``crypto-browserify``, ``process`` and ``stream-browserify``, and removed ``node-semver`` from https://github.com/mattermost/mattermost-webapp.
@@ -185,19 +195,20 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``GET /api/v4/cloud/subscription/stats`` API endpoint.
  - Added a new ``GET /api/v4/cloud/subscription/limitreached/invite`` API endpoint.
  - Added new ``PUT /api/v4/users/<id>/status/custom``, ``DELETE /api/v4/users/<id>/status/custom``, and ``DELETE /api/v4/users/<id>/status/custom/recent`` API endpoints.
- - The ``/api/v4/users/me/auth`` API endpoint can no longer be used to change passwords. This was a hidden feature that was not documented, but was nevertheless possible. We are just removing the hidden feature.
- - Updated ``/users/{user_id}/teams/{team_id}/threads`` API to support ``unread=true`` query parameter.
- - ``/api/v4/users/{user_id}/teams/{team_id}/threads`` API endpoint now accepts "before" and "after" parameters instead of a page index.
- - Removed session required restriction from ``GET api/v4/subscription/stats`` API endpoint.
+ - The ``/api/v4/users/me/auth`` API endpoint can no longer be used to change passwords. This was a hidden feature that was not documented, but was nevertheless possible. We have removed this hidden feature.
+ - Updated ``/users/{user_id}/teams/{team_id}/threads`` API to support the ``unread=true`` query parameter.
+ - The ``/api/v4/users/{user_id}/teams/{team_id}/threads`` API endpoint now accepts "before" and "after" parameters instead of a page index.
+ - Removed the session required restriction from the ``GET api/v4/subscription/stats`` API endpoint.
 
 ### Websocket Event Changes
- - Improved the websocket implementation by using epoll to manually read from a websocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.
- - ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
+ - Improved the WebSocket implementation by using epoll to manually read from a WebSocket connection. As a result, the number of goroutines is expected to go down by half. This implementation is only available on Linux and FreeBSD-based distributions.
+ - The ``UserUpdate`` WebSocket Event is now broadcast by two more APIs, ``plugin.UpdateUser`` and ``ConvertBotToUser``.
 
 ### Known Issues
- - Config.json can reset when running the command ``systemctl restart mattermost`` and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Config.json can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
- - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Adding an at-mention at the start of a post draft, then pressing the left or right arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - In some cases, the **New messages** toast appears without replacing variables with text. [MM-33829](https://mattermost.atlassian.net/browse/MM-33829)
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
@@ -310,10 +321,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added a new ``Shared`` column to the ``Channels`` table.
 
 ### Known Issues
- - Config.json can reset when running the command ``systemctl restart mattermost`` and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Config.json can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - The server tries to install E20 required plugins on non-E20 installations. [MM-32387](https://mattermost.atlassian.net/browse/MM-32387)
  - Some known issues related to the new channel sidebar, such as that the team icon on-click animation is laggy. [MM-32198](https://mattermost.atlassian.net/browse/MM-11820)
- - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Adding an at-mention at the start of a post draft, then pressing the left or right arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Reddit link previews no longer work in Mattermost. [MM-31899](https://mattermost.atlassian.net/browse/MM-31899)
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side. [MM-31994](https://mattermost.atlassian.net/browse/MM-31994)
@@ -331,6 +342,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.3, released 2021-04-07**
+  - Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
+- **v5.31.2, released 2021-03-29**
+  - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
+  - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
 - **v5.31.1, released 2021-02-05**
   - Fixed an issue where the ``config.json`` was sporadically getting reset upon CLI command execution. [MM-32234](https://mattermost.atlassian.net/browse/MM-32234)
   - Fixed an issue where ``FeatureFlags`` section was getting erroneously written to ``config.json``. [MM-32389](https://mattermost.atlassian.net/browse/MM-32389)
@@ -486,6 +502,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``react-native-image-gallery`` from https://github.com/mattermost/mattermost-mobile.
  - Added ``react-native-redash`` and ``react-native-share`` to https://github.com/mattermost/mattermost-mobile.
  
+### Database Changes
+ - Added a new column ``minipreview`` to ``FileInfo`` table.
+
 ### Websocket Event Changes
  - In ``post_deleted`` websocket event, System Admins are now notified when a user initiates a post deletion.
 
