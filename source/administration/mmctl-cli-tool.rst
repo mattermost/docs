@@ -5023,6 +5023,8 @@ Convert a user into a guest.
 
 **Options inherited from parent commands**
 
+.. code-block:: sh
+
    --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
    --format string                the format of the command output [plain, json] (default "plain")
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
