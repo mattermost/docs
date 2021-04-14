@@ -6,25 +6,25 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Highlights
 
-#### Apps Framework, lightweight interactive add-ons to Mattermost
- - 
+#### Apps Framework (Developer Preview)
+ - This feature is available on Mobile Apps when Apps Framework becomes available on Mattermost v5.35.0 and the proxy plugin is loaded on an instance. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th.
 
-#### Search results are returned on file search
- -
+#### Files Search
+ - Users can now search file attachments by name and document contents. This feature is available on Mobile Apps in a future release.
 
-#### Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.
- - 
+#### Granular Access to System Console Pages
+ - Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.
 
-#### Shared Channels: Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default
- - 
+#### Shared Channels (Experimental)
+ - Experimental support was added for sharing channels between Mattermost clusters. This feature is disabled by default.
 
-#### Enterprise Trial enhancements Phase 1
+#### Enterprise Trial Enhancements Phase 1
  - 
 
 ### Improvements
 
 #### User Interface (UI)
- - Added support for allowing collapsing in-line images over 100px in height.
+ - Added support to collapse in-line images over 100px in height.
  - Implemented maximum length validation on the status modal for custom statuses.
  - Synchronized collapsed channel sidebar categories on the server.
  - Empty state is no longer off-centered in the **Channel Switcher**.
@@ -35,9 +35,9 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Bug Fixes
  - Fixed link previews on a number of websites, including Reddit.
- - Fixed an issue where SAML assigned Mattermost UserID as username if the value was invalid and did not log this.
+ - Fixed an issue where SAML assigned Mattermost ``UserID`` as username if the value was invalid and did not log this.
  - Fixed an issue where hover effects for category sorting and **Direct Messages** category limit submenus were too dark on a dark theme.
- - Fixed an issue where users were unable to drag vertical scroll bar on a PDF preview.
+ - Fixed an issue where users were unable to drag the vertical scroll bar on a PDF preview.
  - Fixed an issue with animations on long posts when highlighted as a permalink.
  - Fixed an issue where the user nickname was not shown on channel switch.
  - Fixed an issue where deactivated users were not marked as "Deactivated" in the channel switcher.
