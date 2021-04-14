@@ -8,21 +8,17 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2021-04-16**
 
-### Combatibility
-
-### Breaking Changes
- 
-**IMPORTANT:** If you upgrade from a release earlier than v5.33, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
-
 ### Highlights
 
 #### Incident Collaboration: Automated actions on incident start (E20 Edition)
- - Users can now configure playbooks to automatically execute key actions when an incident is created to save time and reduce the chance of manual error. 
+ - Users can now configure playbooks to automatically execute key actions when an incident is created to save time and reduce the chance of manual error.
+
+#### Bulgarian and Swedish language support
+ - Removed Beta tags from Swedish and Bulgarian languages. Mattermost is now available in 18 languages.
 
 ### Improvements
 
 #### User Interface (UI)
- - Removed Beta tags from Swedish and Bulgarian languages.
  - System Admins now see a prompt to join private channel when joining a private channel via a permalink.
  - Added support for adding in-product notices for external dependency deprecation details.
  - Improved the timezone selector component.
