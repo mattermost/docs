@@ -5545,9 +5545,9 @@ Create an outgoing webhook to allow external posting of messages from a specific
    --owner string               The username, email, or ID of the owner of the webhook
    --team string                Team name or ID
    --trigger-when string        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
-   --trigger-word stringArray   Word to trigger webhook (required)
-   --url stringArray            Callback URL (required)
-   --user string                User username, email, or ID (required)
+   --trigger-word stringArray   Word to trigger webhook
+   --url stringArray            Callback URL
+   --user string                The username, email, or ID of the user that the webhook should post as
 
 **Options inherited from parent commands**
 
