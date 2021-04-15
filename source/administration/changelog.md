@@ -7,7 +7,12 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.34.1, release day TBD**
-  - Fixing an issue where upgrading to 5.34.0 runs a migration that can cause timeouts on MySQL installations. [MM-34888](https://mattermost.atlassian.net/browse/MM-34888)
+  - Fixing an issue where upgrading to 5.34.0 runs a migration that can cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for 5.32.0. These addition can be lengthy on very big MySQL (version 5.x) installations.
+     - Altering of ``Posts.FileIds`` type (PostgreSQL only)
+     - Added new column ``ThreadMemberships.UnreadMentions``
+     - Added new column ``Channels.Shared``
+     - Added new column ``Reactions.UpdateAt``
+     - Added new column ``Reactions.DeleteAt``
 - **v5.34.0, released 2021-04-16**
   - Original 5.34.0 release
 
