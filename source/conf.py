@@ -83,6 +83,7 @@ redirects = {
      "process/product-manager-hiring": "https://handbook.mattermost.com/contributors/join-us/recruiting-cadences/product-manager-hiring",
      "process/new-bug-tickets": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets",
      "process/sg_grammar-spelling-mechanics": "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+     "process/sg_document-structure": "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
      "process/release-scorecard-definitions": "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-scorecard-definitions",
      "process/software-requirement": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
      "process/mobile-release-process": "https://handbook.mattermost.com/operations/research-and-development/product/release-process/mobile-release",
