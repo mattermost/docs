@@ -11,7 +11,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v5.34.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-34-feature-release>`__ - `Download <https://releases.mattermost.com/5.34.1/mattermost-5.34.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.34.1/mattermost-5.34.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``506bd096062b8b214a9ecb3e562bf3498de1168aefa1e138b4f9269e92764ba7``
+  - SHA-256 Checksum: ``eb6e332f57913599a0774a56403089e989086201b7809a4dd9b37dd2a6dbfe68``
   - GPG Signature: https://releases.mattermost.com/5.34.1/mattermost-5.34.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.33.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-33-feature-release>`__ - `Download <https://releases.mattermost.com/5.33.3/mattermost-5.33.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.33.3/mattermost-5.33.3-linux-amd64.tar.gz``
