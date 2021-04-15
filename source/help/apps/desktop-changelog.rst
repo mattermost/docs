@@ -34,6 +34,7 @@ All Platforms
 - Removed the Finder functionality from the Desktop App.
 - Updated CSP for Desktop App to avoid warnings in the dev tools.
 - Removed the menu bar in the Settings window for Windows and Linux.
+- Shortened the max-length/width for server tab names to 224px.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
