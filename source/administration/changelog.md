@@ -6,7 +6,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-04-16**
+- **v5.34.1, release day TBD**
+  - Fixing an issue where upgrading to 5.34.0 runs a migration that can cause timeouts on MySQL installations. [MM-34888](https://mattermost.atlassian.net/browse/MM-34888)
+- **v5.34.0, released 2021-04-16**
+  - Original 5.34.0 release
 
 ### Highlights
 
