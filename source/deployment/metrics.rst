@@ -151,6 +151,8 @@ Database Metrics
 - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
 - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
 - ``mattermost_db_store_time``: The total time in seconds to execute a given database store method.
+- ``mattermost_db_replica_lag_abs``: Absolute lag time based on binlog distance/transaction queue length.
+- ``mattermost_db_replica_lag_time``: The time taken for the replica to catch up.
 
 HTTP Metrics
 ^^^^^^^^^^^^
