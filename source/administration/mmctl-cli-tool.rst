@@ -5492,13 +5492,14 @@ Create an incoming webhook to allow external posting of messages to a specific c
 
 .. code-block:: sh
 
-   --channel string        Channel ID (required)
+   --channel string        Channel name or ID of the new webhook
    --description string    Incoming webhook description
    --display-name string   Incoming webhook display name
    -h, --help              help for create-incoming
    --icon string           Icon URL
    --lock-to-channel       Lock to channel
-   --user string           User ID (required)
+   --owner string          The username, email, or ID of the owner of the webhook
+   --user string           The username, email, or ID of the user that the webhook should post as
 
 **Options inherited from parent commands**
 
@@ -5538,15 +5539,16 @@ Create an outgoing webhook to allow external posting of messages from a specific
    --channel string             Channel name or ID
    --content-type string        Content-type
    --description string         Outgoing webhook description
-   --display-name string        Outgoing webhook display name (required)
+   --display-name string        Outgoing webhook display name
    -h, --help                   help for create-outgoing
    --icon string                Icon URL
-   --team string                Team name or ID (required)
+   --owner string               The username, email, or ID of the owner of the webhook
+   --team string                Team name or ID
    --trigger-when string        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
    --trigger-word stringArray   Word to trigger webhook (required)
    --url stringArray            Callback URL (required)
    --user string                User username, email, or ID (required)
-    
+
 **Options inherited from parent commands**
 
 .. code-block:: sh
