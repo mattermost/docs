@@ -1,4 +1,4 @@
-name: github pages
+name: github pages cleanup
 
 on:
   pull_request:
@@ -17,23 +17,23 @@ jobs:
       - name: Remove closed PR dirs from the generated site
         run: |
           rm -rf ${{ github.event.number }}
-        
+
       - name: Commit chanages
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Remove files for PR ${{ github.event.number }}" -a
-    
+          git commit -am "Remove files for PR ${{ github.event.number }}"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: 'gh-pages'
-       
+
       - name: Add comment to PR
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Removed preview code for ${{ github.event.number }
+            Removed preview code for ${{ github.event.number }}
