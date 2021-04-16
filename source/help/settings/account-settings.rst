@@ -196,10 +196,16 @@ Website Link Previews
 
 When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`__.
 
-Link Previews
-~~~~~~~~~~~~~
+Default Appearance of Image Previews
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select whether links posted in Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
+When messages in Mattermost include images, an image link preview can display directly below the message for image attachements as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images.html>`__ over 100px in height.
+
+Enable this preference to show image previews. Disable this preference to hide link previews in Mattermost.
+
+.. note::
+
+  This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
 
 Message Display
 ~~~~~~~~~~~~~~~
