@@ -18,9 +18,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### Shared Channels (Experimental)
  - Experimental support was added for sharing channels between Mattermost clusters. This feature is disabled by default.
 
-#### Enterprise Trial Enhancements Phase 1
- - 
-
 ### Improvements
 
 #### User Interface (UI)
