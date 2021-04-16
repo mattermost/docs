@@ -6,6 +6,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.34.2, release day TBD**
+  - Fixing an issue where installs with some special characters in the MySQL password will break and fail to start.
 - **v5.34.1, released 2021-04-15**
   - Fixed an issue where upgrading to v5.34.0 runs a migration that could cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.
      - Altering of ``Posts.FileIds`` type (PostgreSQL only)
