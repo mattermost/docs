@@ -1,5 +1,39 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.42.0 Release
+- Release Date: April 16, 2021
+- Server Versions Supported: Server v5.31+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.31 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Highlights
+
+#### Support for Apps Framework (Developer Preview)
+ - This feature is available on Mobile Apps when Apps Framework becomes available on Mattermost v5.35.0 and the proxy plugin is loaded on an instance. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the parser of images did not accept URL escaped string, contrary to what happens in the webapp.
+ - Fixed an issue where images with a transparent background showed as black in the gallery.
+ - Fixed an issue where the Mention Highlight Link Color was not being used properly.
+ - Fixed an issue where sliding did not work when 5 images were uploaded.
+ - Fixed a minor typo in the search **in:** modifier label.
+ - Fixed an issue where OpenGraph without images did not show the image placeholder.
+
+#### Android specific
+ - Fixed an issue with frequent logouts on the latest Android OS.
+ - Fixed an issue where the app crashed when pressing the back button while sharing an image.
+ - Fixed an issue where uploading and sharing PDFs crashed the app.
+ - Fixed an issue where the image gallery view had a weird behaviour and did not close smoothly.
+
+### Known Issues
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+ - The last message in a channel is sometimes rendered behind the message box on iPad devices.
+
 ## 1.41.1 Release
 - Release Date: April 7, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
