@@ -206,7 +206,7 @@ Renders as:
 In-line Code
 ------------
 
-Create in-line monospaced code text by surrounding it with backticks (`). Don't use single quotes (').
+Create in-line monospaced code text by surrounding it with backticks `````. Don't use single quotes ``'``.
 
 .. code-block:: none
 
