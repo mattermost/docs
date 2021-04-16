@@ -121,9 +121,7 @@ Code Block
 
 Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files.
 
-This can be accomplished in one of two ways:
-
- 1. Placing 3 backticks :kbd:`\`\`\`` on the line directly above and directly below your code:
+This can be accomplished by placing 3 backticks :kbd:`\`\`\`` on the line directly above and directly below your code:
 
 .. code-block:: none
 
@@ -137,7 +135,7 @@ This can be accomplished in one of two ways:
   Type 3 backticks ``\\\``, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type 3 more backticks ``\\\``.
 
 
- 2. Indenting each line by four spaces:
+Or by indenting each line by four spaces:
 
 .. code-block:: none
 
