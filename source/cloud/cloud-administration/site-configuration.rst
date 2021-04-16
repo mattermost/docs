@@ -133,7 +133,7 @@ Select **Save** to apply your changes.
 Users and Teams
 ---------------
 
-Control the following users and teams ettings under **System Console > Site Configuration > Users and Teams**:
+Control the following users and teams settings under **System Console > Site Configuration > Users and Teams**:
 
 - **Max Users Per Team:** Specify the size of the *team site* which is a workspace a *team of people* inhabits. 
 
