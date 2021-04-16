@@ -4053,6 +4053,17 @@ Enable Daily Report
 | This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Batch Size
+^^^^^^^^^^
+
+Set the size of the batches in which posts will be read from the database to generate the compliance report.
+
+This setting is currently not available in the System Console and can only be set in ``config.json``.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``.                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Custom Terms of Service (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
