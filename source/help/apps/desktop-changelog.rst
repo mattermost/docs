@@ -36,6 +36,7 @@ All Platforms
 - Removed the menu bar in the Settings window for Windows and Linux.
 - Shortened the max-length/width for server tab names to 224px.
 - For Windows and Linux, the system language is now used and the spell checker's option help text was improved. languages are no longer selectable and toggling the spellchecker requires a restart.
+- Udpated the menubar and system tray icons for improved contrast.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
