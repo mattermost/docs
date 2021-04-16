@@ -203,7 +203,7 @@ When messages in Mattermost include images, an image preview can display directl
 
 Enable this preference to show image previews. Disable this preference to hide link previews in Mattermost.
 
-.. note::
+.. tip::
 
   This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
 
