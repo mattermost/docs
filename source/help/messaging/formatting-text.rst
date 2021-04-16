@@ -238,9 +238,9 @@ Examples:
 
 Inline image with hover text
 
-  .. code-block:: none
+.. code-block:: none
 
-    ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
+  ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
 
   Renders as:
 
@@ -250,11 +250,11 @@ Inline image with hover text
 
 Inline image with link
 
-  An extra set of square brackets ``[ ]`` is required around the alt text and the image URL.
+An extra set of square brackets ``[ ]`` is required around the alt text and the image URL.
 
-  .. code-block:: none
+.. code-block:: none
 
-    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
+  [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
   Renders as:
 
@@ -263,9 +263,9 @@ Inline image with link
    
 Inline image displayed at 50 pixels wide and 76 pixels high
 
-  .. code-block:: none
+.. code-block:: none
 
-    ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
+  ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
 
   Renders as:
 
@@ -275,9 +275,9 @@ Inline image displayed at 50 pixels wide and 76 pixels high
 
 Inline image displayed at 50 pixels wide and the height adjusted to suit
 
-  .. code-block:: none
+.. code-block:: none
 
-    ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
+  ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
 
   Renders as:
 
