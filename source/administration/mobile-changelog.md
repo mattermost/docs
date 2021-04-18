@@ -31,6 +31,8 @@
  - Fixed an issue where the image gallery view had a weird behaviour and did not close smoothly.
 
 ### Known Issues
+ - The iOS app can crash on launch. Reinstalling the app fixes the issue.
+ - The "Unsupported server version" error can be fixed by upgrading to Mattermost v5.31.3.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
