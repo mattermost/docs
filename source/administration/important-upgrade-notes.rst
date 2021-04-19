@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is highly recommended.
+   Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
 
 .. important::
    PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
@@ -16,6 +16,14 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.34.1                                            | v5.34.1 fixes an issue where upgrading to v5.34.0 runs a migration that can cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing |
+|                                                    | migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.                                        |
+|                                                    |       - Altering of ``Posts.FileIds`` type (PostgreSQL only)                                                                                                     |
+|                                                    |       - Added new column ``ThreadMemberships.UnreadMentions``                                                                                                    |
+|                                                    |       - Added new column ``Channels.Shared``                                                                                                                     |
+|                                                    |       - Added new column ``Reactions.UpdateAt``                                                                                                                  |
+|                                                    |       - Added new column ``Reactions.DeleteAt``                                                                                                                  |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.33.0                                            | Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.|
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | WebSocket handshakes done with HTTP version lower than 1.1 will result in a warning, and the server will transparently upgrade the version to 1.1 to comply with |
