@@ -223,7 +223,7 @@ Example:
 
 .. code-block:: none
 
-  ![{alt text}]({URL of image} "{Hover text}")
+  ![alt text](URL of image "Hover text")
 
 If the height of the original image is more than 500 pixels, Mattermost sets the image height at 500 pixels and adjusts the width to maintain the original aspect ratio.
 
@@ -236,7 +236,7 @@ Examples:
   .. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
   .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 
-Inline image with hover text
+In-line image with hover text
 
 .. code-block:: none
 
@@ -248,7 +248,7 @@ Inline image with hover text
     :alt: Mattermost
     :name: Mattermost Icon
 
-Inline image with link
+In-line image with link
 
 An extra set of square brackets ``[ ]`` is required around the alt text and the image URL.
 
@@ -261,7 +261,7 @@ An extra set of square brackets ``[ ]`` is required around the alt text and the 
   .. image:: ../../images/icon-76x76.png
     :target: https://github.com/mattermost/mattermost-server
    
-Inline image displayed at 50 pixels wide and 76 pixels high
+In-line image displayed at 50 pixels wide and 76 pixels high
 
 .. code-block:: none
 
@@ -273,7 +273,7 @@ Inline image displayed at 50 pixels wide and 76 pixels high
     :alt: Mattermost
     :name: Mattermost Icon 
 
-Inline image displayed at 50 pixels wide and the height adjusted to suit
+In-line image displayed at 50 pixels wide and the height adjusted to suit
 
 .. code-block:: none
 
