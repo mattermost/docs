@@ -6,6 +6,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.34.2, released 2021-04-17**
+  - Fixed an issue where installs with some special characters in the MySQL password would break and fail to start.
 - **v5.34.1, released 2021-04-15**
   - Fixed an issue where upgrading to v5.34.0 runs a migration that could cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.
      - Altering of ``Posts.FileIds`` type (PostgreSQL only)
@@ -352,6 +354,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v5.31.3, released 2021-04-07**
   - Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
+  - Fixed an issue where the server version was reported as v5.30.0.
 - **v5.31.2, released 2021-03-29**
   - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
