@@ -262,29 +262,29 @@ In-line image with link
 Renders as:
 
   .. image:: ../../images/icon-76x76.png
-  :target: https://github.com/mattermost/mattermost-server
+    :target: https://github.com/mattermost/mattermost-server
    
 In-line image displayed wtih fixed width and height
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
-  .. code-block:: none
+.. code-block:: none
 
   ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
 
 Renders as:
 
   .. image:: ../../images/icon-50x76.png
-  :alt: Mattermost
-      :name: Mattermost Icon 
+    :alt: Mattermost
+    :name: Mattermost Icon 
 
 In-line image displayed with fixed width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example: An in-line image that's 50 pixels wide where the system adjusts the height to maintain the original aspect ratio.
 
-  .. code-block:: none
+.. code-block:: none
 
   ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
 
