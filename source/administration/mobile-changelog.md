@@ -12,7 +12,7 @@
 ### Bug Fixes
 
 #### All apps
- - Fixed an issue where the "Unsupported server version" in-app notification appeared even when users were on Mattermost v5.31.0.
+ - Set the minimum server version to 5.31.3 instead of 5.31.0 for the "Unsupported server version" in-app notice. Users will need to be on v5.31.3 for the in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
 
 #### iOS specific
  - Fixed an issue where the app crashes on launch.
@@ -48,6 +48,7 @@
  - Fixed an issue where the image gallery view had a weird behaviour and did not close smoothly.
 
 ### Known Issues
+ - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
  - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
