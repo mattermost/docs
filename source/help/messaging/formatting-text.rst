@@ -236,7 +236,7 @@ Examples:
   .. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
   .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 
-  In-line image with hover text
+In-line image with hover text
 
   .. code-block:: none
 
@@ -248,7 +248,7 @@ Examples:
       :alt: Mattermost
       :name: Mattermost Icon
 
-  In-line image with link
+In-line image with link
 
   .. note::
     An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
@@ -262,7 +262,7 @@ Examples:
     .. image:: ../../images/icon-76x76.png
       :target: https://github.com/mattermost/mattermost-server
    
-  In-line image displayed at 50 pixels wide and 76 pixels high
+In-line image displayed at 50 pixels wide and 76 pixels high
 
   .. code-block:: none
 
@@ -274,7 +274,7 @@ Examples:
       :alt: Mattermost
       :name: Mattermost Icon 
 
-  In-line image displayed at 50 pixels wide and the height adjusted to suit
+In-line image displayed at 50 pixels wide and the height adjusted to suit
 
   .. code-block:: none
 
