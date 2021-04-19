@@ -30,7 +30,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/online", "Set your status online", "/online"
     "/dnd", "Set your status to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
-    "/collapse", "Turn on auto-collapsing of image previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/collapse"
+    "/collapse", "Turn on auto-collapsing of image link previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/expand"
     "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
     "/header *{text}*", "Edit the channel header", "/header File bugs here"
