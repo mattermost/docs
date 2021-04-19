@@ -23,7 +23,7 @@ jobs:
           else
             echo "Is not a member of the Mattermost Organization"
           fi
-          
+
       - uses: actions/checkout@v2
         if: env.IS_MEMBER == 'true'
         with:
@@ -57,7 +57,7 @@ jobs:
           publish_dir: ./build/html
           publish_branch: gh-pages
           keep_files: true
-          
+
       - name: Add comment to PR
         if: env.IS_MEMBER == 'true'
         uses: peter-evans/create-or-update-comment@v1
@@ -65,4 +65,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Newest code from ${{ github.actor}} has been published to [preview environment](https://mattermost.github.io/docs/${{ github.event.number }})
+            Newest code from ${{ github.actor}} has been published to [preview environment](https://mattermost.github.io/docs/${{ github.event.number }}) for SHA ${{ github.sha }}
