@@ -237,54 +237,62 @@ Examples:
   .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
 
 In-line image with hover text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  .. code-block:: none
+.. code-block:: none
 
-    ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
+  ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
 
-    Renders as:
+  Renders as:
 
-    .. image:: ../../images/icon-76x76.png
-      :alt: Mattermost
-      :name: Mattermost Icon
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon
 
 In-line image with link
+~~~~~~~~~~~~~~~~~~~~~~~
 
-  .. note::
-    An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
+.. note::
+  An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
 
-  .. code-block:: none
+.. code-block:: none
 
-    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
+  [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
-    Renders as:
+  Renders as:
 
-    .. image:: ../../images/icon-76x76.png
-      :target: https://github.com/mattermost/mattermost-server
+  .. image:: ../../images/icon-76x76.png
+  :target: https://github.com/mattermost/mattermost-server
    
-In-line image displayed at 50 pixels wide and 76 pixels high
+In-line image displayed wtih fixed width and height
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
   .. code-block:: none
 
-    ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
+  ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
 
-    Renders as:
+  Renders as:
 
-    .. image:: ../../images/icon-50x76.png
-      :alt: Mattermost
+  .. image:: ../../images/icon-50x76.png
+  :alt: Mattermost
       :name: Mattermost Icon 
 
-In-line image displayed at 50 pixels wide and the height adjusted to suit
+In-line image displayed with fixed width
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Example: An in-line image that's 50 pixels wide where the system adjusts the height to maintain the original aspect ratio.
 
   .. code-block:: none
 
-    ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
+  ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
 
-    Renders as:
+  Renders as:
 
-    .. image:: ../../images/icon-76x76.png
-      :alt: Mattermost
-      :width: 50
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :width: 50
  
 Lines
 -----
