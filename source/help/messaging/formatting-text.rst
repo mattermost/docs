@@ -243,7 +243,7 @@ In-line image with hover text
 
   ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
 
-  Renders as:
+Renders as:
 
   .. image:: ../../images/icon-76x76.png
     :alt: Mattermost
@@ -259,7 +259,7 @@ In-line image with link
 
   [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
-  Renders as:
+Renders as:
 
   .. image:: ../../images/icon-76x76.png
   :target: https://github.com/mattermost/mattermost-server
@@ -273,7 +273,7 @@ Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
   ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
 
-  Renders as:
+Renders as:
 
   .. image:: ../../images/icon-50x76.png
   :alt: Mattermost
@@ -288,7 +288,7 @@ Example: An in-line image that's 50 pixels wide where the system adjusts the hei
 
   ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
 
-  Renders as:
+Renders as:
 
   .. image:: ../../images/icon-76x76.png
     :alt: Mattermost
