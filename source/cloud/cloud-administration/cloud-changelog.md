@@ -38,6 +38,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue with animations on long posts when highlighted as a permalink.
  - Fixed an issue where the user nickname was not shown on channel switch.
  - Fixed an issue where deactivated users were not marked as "Deactivated" in the channel switcher.
+ - Fixed an issue where queries executed during the upgrade process would preemptively timeout on the application side.
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
