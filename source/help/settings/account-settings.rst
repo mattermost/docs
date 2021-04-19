@@ -199,9 +199,7 @@ When available, the first web link in a message will show a preview of the websi
 Default Appearance of Image Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images.html>`__ over 100px in height.
-
-Enable this preference to show image previews. Disable this preference to hide link previews in Mattermost.
+When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images.html>`__ over 100px in height. You can set this preference to **Expanded** or **Collapsed**.
 
 .. tip::
 
