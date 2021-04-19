@@ -12,10 +12,10 @@
 ### Bug Fixes
 
 #### All apps
- - Set the minimum server version to 5.31.3 instead of 5.31.0 for the "Unsupported server version" in-app notice. Users will need to be on v5.31.3 for the in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - Set the minimum server version to 5.31.3 instead of 5.31.0 for the "Unsupported server version" in-app notice. Servers will need to be on v5.31.3 for the in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
 
 #### iOS specific
- - Fixed an issue where the app crashes on launch.
+ - Fixed an issue where the app crashed on launch.
 
 ## 1.42.0 Release
 - Release Date: April 16, 2021
