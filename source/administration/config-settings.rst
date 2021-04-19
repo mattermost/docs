@@ -2020,6 +2020,15 @@ Link previews are requested by the server, meaning the Mattermost server must be
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": true`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Disable Link Previews for Specific Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictLinkPreviews": ""`` with string input.                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable SVGs
 ^^^^^^^^^^^
 
@@ -4880,6 +4889,43 @@ Changes to this setting require a server restart before taking effect.
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Replica Lag Settings
+^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
++-------------------------------------------------------------------------------------------------------+
+
+String array input consists of:
+
+- ``DataSource``: The DB credentials to connect to the replica instance.
+- ``QueryAbsoluteLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
+- ``QueryTimeLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
+
+Examples:
+
+For AWS Aurora instances, ``QueryAbsoluteLag`` can be:
+
+.. code-block:: sh
+
+   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>
+
+And for AWS Aurora instances, ``QueryTimeLag`` can be:
+
+.. code-block:: sh
+
+   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>
+
+For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:
+
+.. code-block:: sh
+
+   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
 
 File Settings
 ~~~~~~~~~~~~~~
