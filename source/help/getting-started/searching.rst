@@ -6,33 +6,33 @@ Use the Mattermost search box to find messages, replies, and file attachments ac
 All Searches
 ------------
 
-- Multiple-word searches return results that contain _all_ the terms you enter.
+- Multiple-word searches return results that contain *all* of your search criteria.
 - Search modifiers can help narrow down searches. See the `Search Modifiers`_ section for details.
-- You can search Archived channels as long as you're a member of that channel. If you're unable to see messages in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**. To remove archived channels from your search results, you can leave Archived channels. 
+- You can search Archived channels as long as you're a member of that channel. 
+  - If you're unable to see messages in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**. 
+  - To remove archived channels from your search results, you can leave Archived channels. 
 - Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search results because they typically return too many results. See the `Technical Notes`_ section below for details.
 - IP addresses (e.g. ``10.100.200.101``) don't return results.
+- When no search type is selected, message results are returned first by default.
 
 .. Tip::
-  In the **Search Results** pane, you can review both message and file search results by selecting **Messages** or **Files**.
+  In the **Search Results** pane, you can switch between message and file search results by selecting the **Messages** and **Files** options.
   
   .. image:: ../../images/review-all-search-results.png
 
-Message Searches
-----------------
+Searching for Messages 
+----------------------
 
 Select the search option, then select **Messages** as the search type, followed by your search criteria. 
 
 .. image:: ../../images/search-messages.png
 
-.. note::
-  When no search type is selected, message results are returned first by default.
-
 When message results display in the **Search Results** pane, select **Jump** to view the full message in context.
 
 .. image:: ../../images/jump-to-message.png
 
-File Searches
--------------
+Searching for Files
+-------------------
 
 Select the search option, then select **Files** as the search type, followed by your search criteria. Search returns file attachments that match on file name or contain matching text content within supported document types. Each search result includes the file name, extension, size, as well as when and where the file was originally attached.
 
@@ -42,7 +42,7 @@ Select the search option, then select **Files** as the search type, followed by 
 - For Mattermost Self-Managed workspaces, supported document types include PDF, PPTX, ODT, HTML, and plain text documents. Your System Admin can also enable the ability to perform content searches for DOCX, RTF, and PAGES files. See XXX for details.
 - The abiliy to search for documents within ZIP files can be enabled by a System Admin. See XXX for details.  
 
-To narrow your search results further in the **Search Results** pane, select the filter option, then select the file types to filter by, such as documents, spreadsheets, code, images, videos, and more.
+To narrow your file search results further in the **Search Results** pane, select the filter option, then select the file types to filter by, such as documents, spreadsheets, images, and more.
   
 .. image:: ../../images/file-search-filter.png
 
@@ -52,16 +52,15 @@ Search Modifiers
 You can apply search modifiers to reduce the number of results returned. Select a search modifier to add it to the search input field. Supported modifiers are described below.
 
 .. image:: ../../images/search-modifiers.png
-  
 
 ``from:`` and ``in:``
 ^^^^^^^^^^^^^^^^^^^^
 
 Use ``from:`` to find posts from specific users. 
-- For example, searching ``from:john.smith`` only returns messages from your Direct Message history with John Smith.
+For example, searching ``from:john.smith`` only returns messages from your Direct Message history with John Smith.
 
 Use ``in:`` to find messages and replies in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. 
-- For example, searching ``Mattermost in:town-square`` only returns messages in the Town Square Public channel that contain the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns messages that contain the term ``Mattermost`` in your Direct Message history with John Smith.
+For example, searching ``Mattermost in:town-square`` only returns messages in the Town Square Public channel that contain the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns messages that contain the term ``Mattermost`` in your Direct Message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
