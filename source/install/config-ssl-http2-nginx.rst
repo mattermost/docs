@@ -121,7 +121,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
 11. Run the Let's Encrypt installer dry-run to ensure your DNS is configured properly.
 
-  ``sudo certbot certbot --dry-run``
+  ``sudo certbot certonly --dry-run``
 
   This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate. If this finishes successfully, proceed to step 12.
   
