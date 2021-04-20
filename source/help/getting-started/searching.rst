@@ -1,85 +1,114 @@
 Searching
 =========
 
-Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
+Use the Mattermost search box to find messages, replies, and file attachments across all channels you're a member of in the current team. 
 
-- Multiple-word search terms return results that contain all of the terms.
-- When results appear, click **Jump** to view that post in the channel archive.
-- File attachments and their filenames are not searched. If file attachments show up in the search results, it's because they are attached to messages that match the search query.
-- Archived channels can be searched as long as you're a member of that channel. To remove archived channels from your search results, you can leave those channels. If you're unable to see messages in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Users and Teams**.
--  You can use search modifiers such as ``from:dave`` to return results only from certain people or in certain channels. For more information about this, see the `Search Modifiers`_ section.
+All Searches
+------------
 
-Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search because they typically return too many results. See database documentation on `MySQL`_ and `Postgres`_ for a full list.
+- Multiple-word searches return results that contain _all_ the terms you enter.
+- Search modifiers can help narrow down searches. See the `Search Modifiers`_ section for details.
+- You can search Archived channels as long as you're a member of that channel. If you're unable to see messages in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**. To remove archived channels from your search results, you can leave Archived channels. 
+- Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search results because they typically return too many results. See the `Technical Notes`_ section below for details.
+- IP addresses (e.g. ``10.100.200.101``) don't return results.
+
+.. Tip::
+  In the **Search Results** pane, you can review both message and file search results by selecting **Messages** or **Files**.
+  
+  .. image:: ../../images/review-all-search-results.png
+
+Message Searches
+----------------
+
+Select the search option, then select **Messages** as the search type. Message results are returned first by default when no search type is selected.
+
+.. image:: ../../images/search-messages.png
+
+When message results display in the **Search Results** pane, select **Jump** to view the full message in context.
+
+.. image:: ../../images/jump-to-message.png
+
+File Searches
+-------------
+
+Select the search option, then select **Files** as the search type to return attachments that match on file name or contain matching text content within supported document types.
+
+.. image:: ../../images/search-files.png
+
+- For Mattermost Cloud workspaces, supported document types include .pdf, .docx, .pptx, .odt, .html, and plain text documents. 
+- For Mattermost Self-Managed workspaces, supported document types include .pdf, .pptx, .odt, .html, and plain text documents. Your System Admin can also enable you to perform content searches for .docx, .rtf, and .pages files. See XXX for details.
+- The abiliy to search for documents within ZIP files can be enabled by a System Admin. See XXX for details.  
+
+In the **Search Results** pane, select the filter option to return results by file type, such as documents, spreadsheets, code, images, videos, and more.
+  
+.. image:: ../../images/file-search-filter.png
 
 Search Modifiers
 ----------------
 
-Clicking inside the search field offers a selection of search filters to narrow down your query. Click on a search filter to add it to the search input.
+You can apply search modifiers to reduce the number of results returned. Select a search modifier to add it to the search input field. Supported modifiers are described below.
 
-.. image:: ../../images/search-pop.png
-  :width: 300 px
+.. image:: ../../images/search-modifiers.png
+  
 
 ``from:`` and ``in:``
 ^^^^^^^^^^^^^^^^^^^^
 
-Use ``from:`` to find posts from specific users and ``in:`` to find posts in specific public or private channels, as well as direct and group messages. Channels can be searched by display name or ID.
+Use ``from:`` to find posts from specific users. For example, searching ``from:john.smith`` only returns messages from your Direct Message history with John Smith.
 
--  For example: Searching ``Mattermost in:town-square`` only returns messages in Town Square that contain ``Mattermost``.
--  Searching ``Mattermost in: @john.doe`` returns messages that contain ``Mattermost`` in your direct message history with John Doe.
+Use ``in:`` to find messages and replies in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. For example, searching ``Mattermost in:town-square`` only returns messages in the Town Square Public channel that contain the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns messages that contain the term ``Mattermost`` in your Direct Message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use ``before:`` to find posts before a specified date and ``after:`` to find posts after a specified date. Use both ``before:`` and ``after:`` together to search in a specified date range.  Use ``on:`` to find posts from a specific date.  You can use the date picker to select a date or you can type it in YYYY-MM-DD format. For example:
-
--  Searching ``website before: 2018-09-01`` will return messages containing the keyword ``website`` posted prior to September 1, 2018.
--  Searching ``website after: 2018-08-01`` will return messages containing the keyword ``website`` posted after August 1, 2018.
--  Searching ``website before: 2018-09-01 after: 2018-08-01`` will return all messages that contain the keyword ``website`` that were posted between August 1, 2018 and September 1, 2018.
--  Searching ``website on: 2018-09-01`` will return messages that contain the keyword ``website`` that were posted on September 1, 2018.
+Use ``before:`` to find posts before a specified date.
+Use ``after:`` to find posts after a specified date. 
+Use both ``before:`` and ``after:`` together to search in a specified date range.  
+Use ``on:`` to find posts from a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format. 
 
 .. image:: ../../images/calendar2.png
   :width: 300 px
+
+Examples:
+
+-  Searching ``website before: 2018-09-01`` returns messages containing the term ``website`` posted prior to September 1, 2018.
+-  Searching ``website after: 2018-08-01`` returns messages containing the term ``website`` posted after August 1, 2018.
+-  Searching ``website before: 2018-09-01 after: 2018-08-01`` returns all messages containing the term ``website`` posted between August 1, 2018 and September 1, 2018.
+-  Searching ``website on: 2018-09-01`` returns messages containing the term ``website`` posted on September 1, 2018.
   
 Exclusions
 ^^^^^^^^^^
 
-Use the ``-`` symbol to exclude posts from your search results. For example, ``test -release`` will only return results with the word ``test`` that also do not contain the word ``release``.
+Use the hyphen ``-`` symbol to exclude message terms from your search results. For example, searching ``test -release`` only returns results that include the term ``test`` that  do not contain the term ``release``.
 
-This can be used in combination with modifiers to refine search results. For example, ``test -release -in:release-discussion -from:eric`` will return all results with the word ``test``, excluding posts with the word ``release``, excluding posts made in the ``release-discussion`` channel, and excluding posts from ``@eric``.
+This exclusion modifier can be used in combination with other modifiers to further refine search results. For example, searching ``test -release -in:release-discussion -from:eric`` returns all results with the term ``test``, excludes posts with the term ``release``, excludes posts made in the ``release-discussion`` channel, and excludes messages sent in Direct Messages by ``eric``.
 
 Quotation Marks
 ^^^^^^^^^^^^^^^
 
-Use quotation marks to return search results for exact terms.
-
-- For example: Searching ``"Mattermost website"`` returns messages containing the exact phrase ``Mattermost website``, but not messages containing ``Mattermost`` and ``website`` separately.
+Use quotation marks ``" "`` to return search results for exact terms. For example, searching ``"Mattermost website"`` returns messages containing the exact phrase ``Mattermost website``, but doesn't return messages containing ``Mattermost`` and ``website`` as separate terms.
 
 Wildcard
 ^^^^^^^^
 
-Use the ``*`` character for wildcard searches that match within words.
-
-- For example: Searching for ``rea*`` brings back messages containing ``reach``, ``reason`` and other words starting with ``rea``.
+Use the asterisk ``*`` symbol for wildcard searches that match within words. For example, searching ``rea*`` returns messages containing ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``.
 
 Hashtags
 --------
 
-Hashtags are searchable labels for posts. Search for any posts containing a hashtag by clicking the hashtag in an existing post or typing the hashtag with the pound symbol into the search bar. Create hashtags in any post by using the pound sign ``#`` followed by alphanumeric or other unicode characters.
+Hashtags are searchable labels for messages. Anyone can create a hashtag in a message by using the pound sign ``#`` followed by alphanumeric or other unicode characters. Hashtag examples include: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, ``#check-in``, ``#마케팅``
 
 Valid hashtags:
 
 - Don't start with a number.
-- Are at least 3 characters long, excluding the ``#``.
+- Are at least three characters long, excluding the ``#``.
 - Are made up of alphanumeric or other unicode characters.
 - May contain dots, dashes, or underscores.
 
-- Examples: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, ``#check-in``, ``#마케팅``
+To search for messages containing hashtags, select a hashtag in an existing post, or type the hashtag (including the pound ``#`` symbol) into the search bar. 
 
-Hashtags don't link to channels. For example, if you have a channel named “Marketing”, clicking a ``#marketing`` hashtag does not redirect you to that channel. You can link to public channels using ``~`` followed by the channel name, for example ``~marketing``.
-
-Other notes:
-
-- IP addresses (e.g. ``10.100.200.101``) don't return results.
+.. note::
+  Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
 Technical Notes
 ---------------
@@ -87,15 +116,17 @@ Technical Notes
 Searching Chinese, Korean, and Japanese
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- The best experience for searching in Chinese, Korean and Japanese is to use MySQL 5.7.6 or later with special configuration. Please see `documentation`_.
-- You can search to some degree without this configuration by adding ``*`` to the end of search terms.
+- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation <https://docs.mattermost.com/install/i18n.html>`__ for details.
+- You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
 
 Differences between PostgreSQL and MySQL Search
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Main Menu > About Mattermost** to see which database you’re using.
 
-For example, different databases have different “stop words” filtered out of search results. See database documentation on `MySQL`_ and `Postgres`_ for a full list. Other differences include:
+For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list. 
+
+Other database-specific differences include:
 
 PostgreSQL:
 
@@ -107,7 +138,3 @@ MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot don't return search results.
 - Stop words that are excluded from search in MySQL: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.
-
-.. _documentation: https://docs.mattermost.com/install/i18n.html
-.. _MySQL: https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
-.. _Postgres: https://www.apt-browse.org/browse/debian/jessie/main/amd64/postgresql-9.4/9.4.18-0+deb8u1/file/usr/share/postgresql/9.4/tsearch_data/english.stop
