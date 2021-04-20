@@ -151,7 +151,7 @@ Control the following users and teams settings under **System Console > Site Con
   - **Show nickname** if one exists displays the user's nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. 
   - **Show first and last name:** displays the user's full name. If the user doesn't have a full name, their username is displayed. Recommended when using SAML or LDAP if first name and last name attributes are configured.
 - **Lock Teammate Name Display for all users:** Specifies whether users can change settings under **Main Menu > Account Settings > Display > Teammate Name Display**.
-- **Show Email Address:** When set to **false**, this setting hides email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see email addresses in the UI.
+- **Show Email Address:** When set to **false**, this setting hides a user's email address from other users, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see email addresses in the user interface.
 - **Show Full Name:** When set to **false**, this setting hides full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the user interface.
 - **Enable Custom Statuses:** Sets whether users can set descriptive status messages and emoji visible to all users.
 
