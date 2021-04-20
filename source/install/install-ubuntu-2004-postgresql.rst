@@ -105,6 +105,6 @@ Assume that the IP address of this server is 10.10.10.1.
 
   You might have to install the PostgreSQL client software to use the command.
 
-  The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press ENTER.
+The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press ENTER.
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
