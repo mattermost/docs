@@ -101,7 +101,7 @@ Control notifications using the following six settings under **System Console > 
 
   - **Send full message contents** will include Sender name and channel in email notifications. 
   - **Send generic description with only sender name** will include the team name and name of the person who sent the message. No information about channel name or message contents, is included in email notifications. This is typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.
-- **Notification Display Name:** Set the name displayed on the email account used when sending notification emails from Mattermost system.
+- **Notification Display Name:** Set the name displayed on the email account used when sending notification emails from Mattermost.
 - **Notification Reply-To Address:** Set the email address used in the Reply-To header when sending notification emails from Mattermost.
 - **Notification Footer Mailing Address:** Set the name and mailing address displayed in the footer of email notifications from Mattermost, such as *ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA*. If the field is left empty, the organization name and mailing address will not be displayed.
 - **Push Notification Contents:** You can configure what information is provided in push notifications. 
