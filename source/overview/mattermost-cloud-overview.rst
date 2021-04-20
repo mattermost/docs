@@ -44,7 +44,7 @@ Mattermost Cloud Enterprise is an annual subscription. Please contact us for a q
 How can customers trial Mattermost Cloud?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Professional edition is available to trial for 14 days. 
+Mattermost Cloud Professional edition is available to try free for up to 14 days. 
 
 Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
