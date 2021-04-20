@@ -7,7 +7,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Highlights
 
 #### Apps Framework (Developer Preview)
- - This feature is available on Mobile Apps when Apps Framework becomes available on Mattermost v5.35.0 and the proxy plugin is loaded on an instance. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th.
+ - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they're comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature will be available for self-managed customers when Mattermost v5.35.0 ships and the Apps Framework Plugin is loaded on an instance, before then developers can use the `cloud` branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th. Learn more: https://developers.mattermost.com/apps/getting-started/.
 
 #### Files Search
  - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/).
@@ -26,6 +26,8 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Synchronized collapsed channel sidebar categories on the server.
  - Empty state is no longer off-centered in the **Channel Switcher**.
  - Ephemeral message created from call response ``markdown`` field is now posted by bot.
+ - Added improvements and fixes for the custom status feature, such as fixed an issue where recently selected statuses were missing from the **Set a Status** confirmation screen and updated **Mobile Push Notifications** text in **Account Settings** to refer to user **availability** instead of **online status**.
+ - Moved the user status in the channel switcher to overlap with avatar and added a URL 'Slug' information to channel names in Channel Switcher.
 
 #### Administration
  - Paused admin advisor notifications from triggering.
