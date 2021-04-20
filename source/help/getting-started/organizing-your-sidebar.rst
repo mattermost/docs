@@ -27,7 +27,7 @@ If your System Admin has allowed it, you can start a Direct Message or a Group M
 Customizing your sidebar
 ------------------------
 
-You can organize the sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
+You can customize your sidebar based on how you use Mattermost. Customizations you make are only visible to you and won't affect what your teammates see in their sidebars.
 
 Here’s how your sidebar is set up by default:
 
@@ -39,11 +39,12 @@ What can you customize?
 
 You can customize your sidebar in the following ways:
 
-- Group and order channels into collapsible categories you create.
-- Sort channels in each category manually, alphabetically, or by recent activity.
-- Mute and unmute entire categories.
-- Filter your sidebar to view unread channels only, or choose to group unread messages into an **Unreads** category.
-- Sort Direct Messages alphabetically or by recent activity, and choose how many are displayed in your sidebar.
+- `Create custom categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#creating-custom-categories>`_.
+- `Group and order channels into your categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#organizing-channels-in-categories>`_.
+- `Mute and unmute entire categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#muting-and-unmuting-categories>`_.
+- `Sort channels in each category <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#sorting-channels-in-categories>`_ manually, alphabetically, or by recent activity.
+- `Filter your sidebar to view unread channels only <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#group-unread-channels-separately>`_, or choose to group unread messages into an **Unreads** category.
+- `Manage your Direct Messages <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#managing-direct-messages>`_ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
 
   .. image:: ../../images/channel_sidebar_updates.gif
 
