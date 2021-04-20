@@ -39,7 +39,7 @@ Select **Save** to apply your changes.
 
 Under **System Console > Permissions > Edit Scheme**:
 
-- Restrict management of custom emoji to specific roles, such as System Admins, System Admins, or Team Admins, or allow all users to create and/or delete their own custom emoji. 
+- Restrict management of custom emoji to specific roles, such as System Admins, Channel Admins, or Team Admins, or allow all users to create and/or delete their own custom emoji. 
 - The **Create Custom Emoji** and **Delete Own Custom Emoji** permissions are grouped under **Integrations & Customizations**, and can be set for all members or specific roles. 
 
 Select **Save** to apply your changes.
