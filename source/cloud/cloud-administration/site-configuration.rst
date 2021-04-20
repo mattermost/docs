@@ -13,7 +13,7 @@ You can display an announcement banner notification that's visible to all users 
 
 By default, users can dismiss the banner until they log in again or until you update the banner.
 
-- Update the banner by either changing the text of the banner, or by re-enabling the banner after it has been disabled. 
+- Update the banner by either changing the text of the banner, or by re-enabling the banner after it's been disabled.
 - You can also control the text color, the background color, and allow or prevent users from dismissing the banner.
 
 To enable the banner:
