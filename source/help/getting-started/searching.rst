@@ -20,9 +20,12 @@ All Searches
 Message Searches
 ----------------
 
-Select the search option, then select **Messages** as the search type. Message results are returned first by default when no search type is selected.
+Select the search option, then select **Messages** as the search type, followed by your search criteria. 
 
 .. image:: ../../images/search-messages.png
+
+.. note::
+  When no search type is selected, message results are returned first by default.
 
 When message results display in the **Search Results** pane, select **Jump** to view the full message in context.
 
@@ -31,15 +34,15 @@ When message results display in the **Search Results** pane, select **Jump** to 
 File Searches
 -------------
 
-Select the search option, then select **Files** as the search type to return attachments that match on file name or contain matching text content within supported document types.
+Select the search option, then select **Files** as the search type, followed by your search criteria. Search returns file attachments that match on file name or contain matching text content within supported document types. Each search result includes the file name, extension, size, as well as when and where the file was originally attached.
 
 .. image:: ../../images/search-files.png
 
-- For Mattermost Cloud workspaces, supported document types include .pdf, .docx, .pptx, .odt, .html, and plain text documents. 
-- For Mattermost Self-Managed workspaces, supported document types include .pdf, .pptx, .odt, .html, and plain text documents. Your System Admin can also enable you to perform content searches for .docx, .rtf, and .pages files. See XXX for details.
+- For Mattermost Cloud workspaces, supported document types include PDF, DOCX, PPTX, ODT, HTML, and plain text documents. 
+- For Mattermost Self-Managed workspaces, supported document types include PDF, PPTX, ODT, HTML, and plain text documents. Your System Admin can also enable the ability to perform content searches for DOCX, RTF, and PAGES files. See XXX for details.
 - The abiliy to search for documents within ZIP files can be enabled by a System Admin. See XXX for details.  
 
-In the **Search Results** pane, select the filter option to return results by file type, such as documents, spreadsheets, code, images, videos, and more.
+To narrow your search results further in the **Search Results** pane, select the filter option, then select the file types to filter by, such as documents, spreadsheets, code, images, videos, and more.
   
 .. image:: ../../images/file-search-filter.png
 
@@ -54,16 +57,21 @@ You can apply search modifiers to reduce the number of results returned. Select 
 ``from:`` and ``in:``
 ^^^^^^^^^^^^^^^^^^^^
 
-Use ``from:`` to find posts from specific users. For example, searching ``from:john.smith`` only returns messages from your Direct Message history with John Smith.
+Use ``from:`` to find posts from specific users. 
+- For example, searching ``from:john.smith`` only returns messages from your Direct Message history with John Smith.
 
-Use ``in:`` to find messages and replies in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. For example, searching ``Mattermost in:town-square`` only returns messages in the Town Square Public channel that contain the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns messages that contain the term ``Mattermost`` in your Direct Message history with John Smith.
+Use ``in:`` to find messages and replies in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. 
+- For example, searching ``Mattermost in:town-square`` only returns messages in the Town Square Public channel that contain the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns messages that contain the term ``Mattermost`` in your Direct Message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use ``before:`` to find posts before a specified date.
+
 Use ``after:`` to find posts after a specified date. 
+
 Use both ``before:`` and ``after:`` together to search in a specified date range.  
+
 Use ``on:`` to find posts from a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format. 
 
 .. image:: ../../images/calendar2.png
