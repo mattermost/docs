@@ -9,7 +9,7 @@ Mattermost Cloud is built on open-source software powered by a thriving develope
 Mattermost Cloud Professional
 -----------------------------
 
-Mattermost Cloud Professional includes the full set of collaboration and DevOps features and is available from the Mattermost.com website. Signing up requires creating an account with an email and specifying a domain for the workspace. Once you sign up and create your workspace, a wizard will guide you through a quick setup, invitation for team members, and integration with developer tools. The service is free for up to 10 users and converts to per-user pricing after that.
+Mattermost Cloud Professional includes the full set of collaboration and DevOps features and is available from the Mattermost.com website. Signing up requires creating an account with an email and specifying a domain for the workspace. Once you sign up and create your workspace, a wizard will guide you through a quick setup, invitation for team members, and integration with developer tools. You can trial Mattermost Cloud Professional for free for 14 days.
 
 Mattermost Cloud Professional offers all enterprise-grade administration features, including:
 
@@ -37,21 +37,21 @@ Frequently Asked Questions (FAQs)
 How much does Mattermost Cloud cost?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Professional is free for up to 10 users. After 10 users, it is $10 USD per user, per month as a pay-as-you-go subscription. If you have over 1000 users please contact us.
+Mattermost Cloud Professional is $10 USD per user, per month as a pay-as-you-go subscription. If you have over 1000 users please contact us.
 
 Mattermost Cloud Enterprise is an annual subscription. Please contact us for a quote.    
 
 How can customers trial Mattermost Cloud?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Professional edition is free for up to ten users and all features are provided in this free offering.
+Mattermost Cloud Professional edition is available to trial for 14 days. 
 
 Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
 When will support for other regions be available?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Enterprise will support data residency in early 2021. We appreciate feedback from our customers on regional support for both editions.
+Mattermost Cloud Enterprise will support data residency in 2021. We appreciate feedback from our customers on regional support for both editions.
 
 How is Mattermost Cloud secured?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
