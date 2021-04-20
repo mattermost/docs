@@ -28,6 +28,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Ephemeral message created from call response ``markdown`` field is now posted by bot.
 
 #### Administration
+ - Paused admin advisor notifications from triggering.
  - Added a command line document extraction command that allows indexing documents by content.
 
 ### Bug Fixes
