@@ -144,7 +144,7 @@ Control the following users and teams settings under **System Console > Site Con
 - **Enable users to open Direct Message channels with:** Configure whether users can message any user on the Mattermost workspace or only users in the same team as them.
 
   - This setting adjusts the users returned in the Direct Messages **More** menu. The CTRL/CMD+K channel switcher only lists users on the current team. 
-  - This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
+  - This setting only affects the user interface, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
 - **Teammate Name Display:** Specify how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
 
   - **Show username** displays the user's username. 
