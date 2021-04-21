@@ -730,6 +730,8 @@ Ensures that the user can access the server and that the settings are valid.
 Enable Document Search by Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+File search is available now in Mattermost Cloud, and in Mattermost Self-Managed from v5.35, with mobile support coming soon.
+
 **True**: When **true**, supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
 
 **False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
@@ -743,6 +745,8 @@ Enable Document Search by Content
 
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File search is available now in Mattermost Cloud, and in Mattermost Self-Managed from v5.35, with mobile support coming soon.
 
 **True**: When **true**, content of documents within ZIP files are returned in search results. This may have an impact on server performance for large files. 
 
