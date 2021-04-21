@@ -1,7 +1,7 @@
 Searching
 =========
 
-Use the Mattermost search box to find messages, replies, and file attachments across all channels you're a member of in your team's conversation history. File search is available now in Mattermost Cloud, and in Mattermost Self-Managed from v5.35, with mobile support coming soon.
+Use the Mattermost search box to find messages, replies, and file attachments across all channels you're a member of in your team's conversation history. File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.
 
 .. tip::
   You can now easily access files recently shared in any channel by selecting the **Channel Files** icon below the channel name. 
