@@ -741,7 +741,7 @@ File search is available now in Mattermost Cloud, and in Mattermost Self-Managed
 +---------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  Search results for existing documents may be incomplete until a `data migration is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. 
+  Search results for documents shared before the file search was available may be incomplete until a `data migration is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. 
 
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
