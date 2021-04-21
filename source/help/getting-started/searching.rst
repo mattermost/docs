@@ -40,7 +40,7 @@ When message results display in the **Search Results** pane, select **Jump** to 
 Searching for Files
 -------------------
 
-Select the search option, then select **Files** as the search type, followed by your search criteria. Search returns file attachments that match on file name or contain matching text content within supported document types. Each search result includes the file name, extension, size, as well as when and where the file was originally attached.
+Select the search option, then select **Files** as the search type, followed by your search criteria. The search returns file attachments that match on file name or contain matching text content within supported document types. Each search result includes the file name, extension, size, as well as when and where the file was originally attached.
 
 .. image:: ../../images/search-files.png
 
