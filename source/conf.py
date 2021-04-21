@@ -196,7 +196,8 @@ html_extra_path = ['_static/robots.txt']
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
 html_additional_pages = {
-    'index': 'index.html'
+    'index': 'index.html',
+    '404': '404.html'
 }
 
 # If false, no module index is generated.
