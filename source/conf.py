@@ -64,7 +64,7 @@ source_suffix = ['.rst', '.md']
 redirects = {
      "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
      "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
-     "process/sg_rest_markup.html": "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+     "process/sg_rest_markup": "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
      "process/security-release": "https://handbook.mattermost.com/operations/research-and-development/product/release-process/security-release",
      "process/community-overview": "https://handbook.mattermost.com/contributors/contributors/community",
      "process/handbook": "https://handbook.mattermost.com/company/about-mattermost",
@@ -85,7 +85,7 @@ redirects = {
      "process/sg_grammar-spelling-mechanics": "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
      "process/sg_document-structure": "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
      "process/release-scorecard-definitions": "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-scorecard-definitions",
-     "process/software-requirement": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
+     "process/software-requirements": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
      "process/mobile-release-process": "https://handbook.mattermost.com/operations/research-and-development/product/release-process/mobile-release",
      "process/documentation-UItext-guidelines": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/user-interface-text-guidelines",
      "process/bug-fix-release": "https://handbook.mattermost.com/operations/research-and-development/product/release-process/bug-fix-release",
@@ -95,7 +95,7 @@ redirects = {
      "process/bug-severity-guidelines": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets/bug-severity-guidelines",
      "process/accepting-pull-request": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
      "process/pm-faq": "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
-     
+    
 }
 
 # The master toctree document.
