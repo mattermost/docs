@@ -727,6 +727,31 @@ Test Connection
 
 Ensures that the user can access the server and that the settings are valid.
 
+Enable Document Search by Content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: When **true**, supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
+
+**False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
++---------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Search results for existing documents may be incomplete until a data migration is executed using the CLI. See XXX for details.
+
+Enable Searching Content of Documents within ZIP Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: When **true**, content of documents within ZIP files are returned in search results. This may have an impact on server performance for large files. 
+
+**False**: The content of documents within ZIP files aren't returned in search results.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                   |
++---------------------------------------------------------------------------------------------------------------------+
+
 Image Proxy
 ~~~~~~~~~~~~
 
