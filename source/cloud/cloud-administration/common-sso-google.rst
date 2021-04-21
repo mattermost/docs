@@ -60,3 +60,6 @@ Step 3: Configure Mattermost for Google Apps SSO
 5. Paste in the **Client Secret** from Google in Mattermost.
 
 6. Select **Save**.
+
+.. note::
+  When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
