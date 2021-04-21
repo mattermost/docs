@@ -22,7 +22,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
 .. note::
 
-  File search results will be imcomplete for file attachments shared before the file search was made available until a `database migration command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed and the search index is rebuilt. After executing the database migration command, go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file attachments. 
+  File searches performed in Mattermost Cloud or Mattermost Self-Managed from v5.35 will be incomplete for file attachments shared before the file search was made available until a `database migration command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed and the search index is rebuilt. After executing the database migration command, go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file attachments. 
 
 Using Bleve Search
 ------------------
