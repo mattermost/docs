@@ -748,7 +748,7 @@ Enable Searching Content of Documents within ZIP Files
 
 File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.
 
-**True**: When **true**, content of documents within ZIP files are returned in search results. This may have an impact on server performance for large files. 
+**True**: When **true**, contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
 
 **False**: The content of documents within ZIP files aren't returned in search results.
 
