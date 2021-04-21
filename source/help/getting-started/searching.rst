@@ -21,7 +21,7 @@ All Searches
 - IP addresses (e.g. ``10.100.200.101``) don't return results.
 - When no search type is selected, message search results are returned first.
 
-.. Tip::
+.. tip::
   In the **Search Results** pane, you can switch between message and file search results by selecting the **Messages** and **Files** options.
   
   .. image:: ../../images/review-all-search-results.png
