@@ -20,10 +20,15 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 6. Set **Enable Bleve for search queries** to **true**.
 7. Set **Enable Bleve for autocomplete queries** to **true**.
 
+.. note::
+
+  File search results will be imcomplete for file attachments shared before the file search was made available until a `database migration command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed and the search index is rebuilt. After executing the database migration command, go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file attachments. 
+
 Using Bleve Search
-------------
+------------------
 
 The following conditions are applied when using Bleve search:
 
 * **Unquoted terms:** Search terms that contain non-alphanumeric characters/special characters outside of quotation marks are removed. For example, using ``abcd "**" && abc`` as a search term will return results for a search for ``abcd "**" abc`` as the ``&&`` characters weren't within the quotation marks.
 * **Wildcard search:** Wildcard search (e.g., ``abc*``) is supported.
+
