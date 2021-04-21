@@ -63,6 +63,9 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 .. note::
     If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
     
+.. note::
+    File search results will be imcomplete for file attachments shared before the file search was made available until a `database migration command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed and the search index is rebuilt. After executing the database migration command, go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file attachments. 
+    
 Limitations
 ------------
 
