@@ -735,11 +735,11 @@ Enable Document Search by Content
 **False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
 
 +---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
+| This feature's ``config.json`` setting is ``"XXX": true`` with options ``true`` and ``false``.                      |
 +---------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  Search results for existing documents may be incomplete until a data migration is executed using the CLI. See XXX for details.
+  Search results for existing documents may be incomplete until a `data migration is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. 
 
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -749,7 +749,7 @@ Enable Searching Content of Documents within ZIP Files
 **False**: The content of documents within ZIP files aren't returned in search results.
 
 +---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                   |
+| This feature's ``config.json`` setting is ``"XXX": false`` with options ``true`` and ``false``.                     |
 +---------------------------------------------------------------------------------------------------------------------+
 
 Image Proxy
