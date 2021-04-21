@@ -94,7 +94,7 @@ Examples:
 Exclusions
 ^^^^^^^^^^
 
-Use the hyphen ``-`` symbol to exclude message terms from your search results. For example, searching ``test -release`` only returns results that include the term ``test`` that  do not contain the term ``release``.
+Use the hyphen ``-`` symbol to exclude message terms from your search results. For example, searching ``test -release`` only returns results that include the term ``test`` and exclude the term ``release``.
 
 This exclusion modifier can be used in combination with other modifiers to further refine search results. For example, searching ``test -release -in:release-discussion -from:eric`` returns all results with the term ``test``, excludes posts with the term ``release``, excludes posts made in the ``release-discussion`` channel, and excludes messages sent in Direct Messages by ``eric``.
 
