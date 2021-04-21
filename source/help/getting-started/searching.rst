@@ -1,19 +1,25 @@
 Searching
 =========
 
-Use the Mattermost search box to find messages, replies, and file attachments across all channels you're a member of in the current team. 
+Use the Mattermost search box to find messages, replies, and file attachments across all channels you're a member of in your team's conversation history.
+
+.. tip::
+  You can now easily access files recently shared in any channel by selecting the **Channel Files** icon below the channel name. 
+  
+  .. image:: ../../images/channel-files-icon.png
 
 All Searches
 ------------
 
 - Multiple-word searches return results that contain *all* of your search criteria.
-- Search modifiers can help narrow down searches. See the `Search Modifiers`_ section for details.
+- Search modifiers can help narrow down searches. See the `Search Modifiers`_ section below for details.
 - You can search Archived channels as long as you're a member of that channel. 
+
   - If you're unable to see messages in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**. 
   - To remove archived channels from your search results, you can leave Archived channels. 
 - Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search results because they typically return too many results. See the `Technical Notes`_ section below for details.
 - IP addresses (e.g. ``10.100.200.101``) don't return results.
-- When no search type is selected, message results are returned first by default.
+- When no search type is selected, message search results are returned first.
 
 .. Tip::
   In the **Search Results** pane, you can switch between message and file search results by selecting the **Messages** and **Files** options.
@@ -38,11 +44,11 @@ Select the search option, then select **Files** as the search type, followed by 
 
 .. image:: ../../images/search-files.png
 
-- For Mattermost Cloud workspaces, supported document types include PDF, DOCX, PPTX, ODT, HTML, and plain text documents. 
-- For Mattermost Self-Managed workspaces, supported document types include PDF, PPTX, ODT, HTML, and plain text documents. Your System Admin can also enable the ability to perform content searches for DOCX, RTF, and PAGES files. See XXX for details.
-- The abiliy to search for documents within ZIP files can be enabled by a System Admin. See XXX for details.  
+- For Mattermost Cloud workspaces, supported document file formats include PDF, DOCX, PPTX, ODT, HTML, and plain text documents. 
+- For Mattermost Self-Managed workspaces, supported document file formats include PDF, PPTX, ODT, HTML, and plain text documents. Your System Admin can `extend content search support to include DOCX, RTF, and PAGES file formats <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__.
+- Your System Admin can also `extend content search support to include documents within ZIP files <https://docs.mattermost.com/administration/config-settings.html#enable-searching-content-of-documents-within-zip-files>`__. 
 
-To narrow your file search results further in the **Search Results** pane, select the filter option, then select the file types to filter by, such as documents, spreadsheets, images, and more.
+To narrow your file search results further in the **Search Results** pane, select the filter option, then select the types of files to filter by, such as documents, spreadsheets, images, and more.
   
 .. image:: ../../images/file-search-filter.png
 
