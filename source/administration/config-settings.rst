@@ -730,7 +730,7 @@ Ensures that the user can access the server and that the settings are valid.
 Enable Document Search by Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-File search is available now in Mattermost Cloud, and in Mattermost Self-Managed from v5.35, with mobile support coming soon.
+File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.
 
 **True**: When **true**, supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
 
