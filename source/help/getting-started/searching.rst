@@ -45,7 +45,7 @@ Select the search option, then select **Files** as the search type, followed by 
 .. image:: ../../images/search-files.png
 
 - For Mattermost Cloud workspaces, supported document file formats include PDF, DOCX, PPTX, ODT, HTML, and plain text documents. 
-- For Mattermost Self-Managed workspaces, supported document file formats include PDF, PPTX, ODT, HTML, and plain text documents. 
+- For Mattermost self-managed deployments, supported document file formats include PDF, PPTX, ODT, HTML, and plain text documents. 
 
   - System Admins can `extend content search support to include DOCX, RTF, and PAGES file formats <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__.
   - System Admins can also `extend content search support to include documents within ZIP files <https://docs.mattermost.com/administration/config-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
