@@ -105,3 +105,8 @@ How can I obtain a SAML metadata XML file consumed by Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can obtain the XML file by calling the Mattermost RESTful API endpoint at ``/api/v4/saml/metadata``. For other useful SAML API calls, see the `API reference <https://api.mattermost.com/#tag/SAML>`_.
+
+Can I update user attributes using the API?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. When Mattermost is configured to use SAML for user authentication, the following user attribute changes can't be made through the API:  first name, last name, position, nickname, email, profile image, or username. SAML must be the authoritative source for these user attributes.
