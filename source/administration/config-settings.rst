@@ -750,7 +750,7 @@ File search is available now in Mattermost Cloud and in Mattermost Server from v
 
 **True**: When **true**, contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
 
-**False**: The content of documents within ZIP files aren't returned in search results.
+**False**: The contents of documents within ZIP files aren't returned in search results.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"XXX": false`` with options ``true`` and ``false``.                     |
