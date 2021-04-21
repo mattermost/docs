@@ -36,10 +36,11 @@ Features include:
 - Tools for custom branding
 - Continuous archiving
 - Multi-factor authentication
-- Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
+- Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
 - Easily scalable to dozens of users per team
-- New features and improvements released every month
+- `Runtime profiling data and system monitoring reports <https://docs.mattermost.com/deployment/metrics.html#standard-go-metrics>`__
+- New features and improvements released regularly
 - Multiple languages including U.S. English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
 
 To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.

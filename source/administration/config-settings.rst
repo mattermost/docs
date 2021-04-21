@@ -996,9 +996,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.        |
-+-------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
++-------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1540,10 +1540,10 @@ Support Email
 
 Set an email address for feedback or support requests.
 
-So you don't miss messages, please make sure to change this value to an email address your System Administrator receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial for end users to ask support questions.
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": "feedback@mattermost.com"`` with string input.                                                           |
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Terms of Service link
@@ -1699,7 +1699,7 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively.             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others posts
+Allow Team Administrators to edit others' posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *This permission is stored in the database and can be modified using the System Console user interface.*
@@ -1709,7 +1709,7 @@ Allow Team Administrators to edit others posts
 **False**: Only System Admins can edit other users' posts.
 
 .. note::
-   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
+   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
 
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2018,6 +2018,15 @@ Link previews are requested by the server, meaning the Mattermost server must be
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": true`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Disable Link Previews for Specific Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictLinkPreviews": ""`` with string input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable SVGs
@@ -4816,6 +4825,24 @@ By default, in order to avoid leaking sensitive information, no method parameter
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Import Settings Default Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The directory where the imported files are stored. The path is relative to the ``FileSettings`` directory. By default, imports are stored under ``./data/import``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input.                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Import Settings Default Retention Days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of days to retain the imported files before deleting them.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ImportSettings`` section is ``RetentionDays: 30`` with numerical input.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Export Settings Default Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4862,6 +4889,43 @@ Changes to this setting require a server restart before taking effect.
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Replica Lag Settings
+^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
++-------------------------------------------------------------------------------------------------------+
+
+String array input consists of:
+
+- ``DataSource``: The DB credentials to connect to the replica instance.
+- ``QueryAbsoluteLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
+- ``QueryTimeLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
+
+Examples:
+
+For AWS Aurora instances, ``QueryAbsoluteLag`` can be:
+
+.. code-block:: sh
+
+   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>
+
+And for AWS Aurora instances, ``QueryTimeLag`` can be:
+
+.. code-block:: sh
+
+   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>
+
+For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:
+
+.. code-block:: sh
+
+   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
 
 File Settings
 ~~~~~~~~~~~~~~
@@ -5273,6 +5337,8 @@ Disable Legacy MFA API Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps on version 1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
+
+**False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``.                                                      |
