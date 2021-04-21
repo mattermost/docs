@@ -899,9 +899,8 @@ mattermost extract-documents-content
 
   Description
     Extracts document content and stores it in the database for document searches. This database migration is strongly recommended so that `users can search for file attachments <https://docs.mattermost.com/help/getting-started/searching.html#searching-for-files>`__ shared in Mattermost prior to v5.35. Otherwise, search results for files shared in the past may be incomplete. The database migration command extracts and indexes the content of past file attachments.
-
-.. note::
-  Running this migration adds load to your server. For large deployments or teams that share many large text heavy documents, it is recommended to review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test this feature in a staging environment before enabling document content search in production. 
+    
+    Running this migration adds load to your server. For large deployments or teams that share many large text heavy documents, it is recommended to review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test this feature in a staging environment before enabling document content search in production. 
   
   Format
     .. code-block:: none
