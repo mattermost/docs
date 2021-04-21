@@ -20,3 +20,6 @@ Step 2: Configure Mattermost for an OpenID Connect SSO
 6. Specify a **Button Name** and **Button Color** for the OpenID Connect option on the Mattermost login page.
 7. Select **Save**.
 8. Restart your Mattermost server to see the changes take effect.
+
+.. note::
+  When Mattermost is configured to use OpenID Connect for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect must be the authoritative source for these user attributes.
