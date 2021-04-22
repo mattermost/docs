@@ -898,9 +898,9 @@ mattermost extract-documents-content
 -------------------------------------
 
   Description
-    Extracts document content and stores it in the database for file searches available in Mattermost Cloud, and in Mattermost Server from v5.35. This database migration is strongly recommended so that `users can search for file attachments <https://docs.mattermost.com/help/getting-started/searching.html#searching-for-files>`__ shared in Mattermost prior to v5.35. Otherwise, search results for files shared in the past may be incomplete. The database migration command extracts and indexes the content of past file attachments.
+    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this extraction command is strongly recommended since search results for past file contents may be incomplete.
     
-    Running this migration adds load to your server. For large deployments or teams that share many large, text-heavy documents we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test this feature in a staging environment before enabling file search in production.
+    Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test `enabling this feature <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
   
   Format
     .. code-block:: none
@@ -915,8 +915,8 @@ mattermost extract-documents-content
   Options
     .. code-block:: none
     
-      	 --from    Optional. The timestamp of the earliest file to extract, expressed in seconds, since the unix epoch (Jan 1, 1970). (default 0)
-     	 --to 	   Optional. The timestamp of the latest file to extract, expressed in seconds, since the unix epoch (Jan 1, 1970). (default TBD)
+      	 --from    Optional. Unix timestamp (seconds since epoch, UTC) of the earliest file to extract. (default 0)
+     	 --to 	   Optional. Unix timestamp (seconds since epoch, UTC) of the latest file to extract. (default now)
 
 mattermost group
 -----------------
