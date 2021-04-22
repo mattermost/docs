@@ -65,9 +65,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
     
 .. note::
 
-    Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. 
-    
-    After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+    Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
     
 Limitations
 ------------
