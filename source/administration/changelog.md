@@ -4,6 +4,116 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2021-05-16**
+
+#### Important Upgrade Notes
+   - Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. [More details on the performance impact of the migration and possible mitigation strategies are provided here](https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1).
+   - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.34, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Apps Framework (Developer Preview)
+ - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they're comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance, before then developers can use the ``cloud`` branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th. Learn more: https://developers.mattermost.com/integrate/apps/.
+
+#### Granular Access to System Console Pages
+ - Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.
+
+#### Shared Channels (Experimental)
+ - Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.
+
+#### Enterprise Trial enhancements Phase 1
+ - 
+
+#### Search results are returned on file search
+ - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/). To be available for mobile apps in a later release.
+
+#### Incident Collaboration
+ - Updated prepackaged Incident Collaboration plugin to v1.6.0 and v1.7.0.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support to collapse in-line images over 100px in height.
+ - Implemented maximum length validation on the status modal for custom statuses.
+ - Synchronized collapsed channel sidebar categories on the server.
+ - Empty state is no longer off-centered in the **Channel Switcher**.
+ - Ephemeral message created from call response ``markdown`` field is now posted by bot.
+ - Added improvements and fixes for the custom status feature. For example, fixed an issue where recently selected statuses were missing from the **Set a Status** confirmation screen, and updated the **Mobile Push Notifications** text in **Account Settings** to refer to user **availability** instead of **online status**.
+ - Moved the user status in the channel switcher to overlap with user avatars, and added URL 'Slug' information to channel names in the channel switcher.
+ - Added a string field to configuration for restricted domains with the key ``RestrictLinkPreviews`` and added a UI field for restricted domains under **System Console > Site Configuration > Posts**. Also expanded the logic that determines whether a post has a preview or not.
+ - Added an unread badge to the **Main Menu** icon and the **Plugin Marketplace** menu that displays until a System Admin visits the **Plugin Marketplace** for the first time.
+ - Removed Beta tags from Swedish and Bulgarian languages.
+ - Added profile pictures to the **Direct Messages** channel list.
+ - Added channel icons for email notifications as part of email notification redesigns.
+ - Direct Messages **More...** modal is now sorted by recent conversations when the modal is opened.
+ - Removed legacy Open-Sans fonts and upgraded Open-Sans to v18.
+
+#### Administration
+ - Paused admin advisor notifications from triggering.
+ - Added a command line document extraction command that allows indexing documents by content.
+ - Removed the utility function ``model.GeneratePassword()`` for security reasons. An improved version is now being used internally to generate passwords for bulk-imported users.
+ - Only the System Admin is allowed to have the ability to assign system roles.
+ - Two new gauge metrics were added: ``mattermost_db_replica_lag_abs`` and ``mattermost_db_replica_lag_time``, both containing a label of "node", signifying which database host is the metric from. 
+     - These metrics signify the replica lag in absolute terms and in the time dimension capturing the whole picture of replica lag. To use these metrics, a separate config section ``ReplicaLagSettings`` was added under ``SqlSettings``. This is an array of maps which contain three keys: ``DataSource``, ``QueryAbsoluteLag``, and ``QueryTimeLag``. Each map entry is for a single replica instance. ``DataSource`` contains the database credentials to connect to the replica instance. ``QueryAbsoluteLag`` is a plain SQL query that must return a single row of which the first column must be the node value of the Prometheus metric, and the second column must be the value of the lag. ``QueryTimeLag`` is the same as above, but used to measure the time lag. 
+     - As an example, for AWS Aurora instances, the ``QueryAbsoluteLag`` can be: ``select server_id highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status()`` where ``server_id=<>`` and ``QueryTimeLag`` can be: ``select server_id, visibility_lag_in_msec aurora_global_db_instance_status()`` where ``server_id=<>``. For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue: ``select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats`` where ``member_id=<>``. Overall, what query to choose is left to the administrator, and depending on the database and need, an appropriate query can be chosen.
+
+### Bug Fixes
+ - Fixed link previews on a number of websites, including Reddit.
+ - Fixed an issue where SAML assigned Mattermost ``UserID`` as username if the value was invalid and did not log this.
+ - Fixed an issue where hover effects for category sorting and **Direct Messages** category limit submenus were too dark on a dark theme.
+ - Fixed an issue where users were unable to drag the vertical scroll bar on a PDF preview.
+ - Fixed an issue with animations on long posts when highlighted as a permalink.
+ - Fixed an issue where the user's nickname was not shown on channel switch.
+ - Fixed an issue where deactivated users were not marked as "Deactivated" in the channel switcher.
+ - Fixed an issue where queries executed during the upgrade process would preemptively time out on the application side.
+ - Fixed an issue where users were unable to deactivate MFA for their accounts even if MFA was disabled on the server.
+ - Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e., Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
+ - Fixed a possible panic on post creation when the collapsed threads feature was enabled.
+ - Fixed a database deadlock that could happen if a sidebar category was updated and deleted at the same time.
+ - Fixed an issue where the sidebar **Text Hover BG Theme** color didn’t work on the left-hand side.
+ - Fixed an issue where the Team Admin’s current role was presented inconsistently in the different areas of the System Console.
+ - Fixed an issue where the **Show more** background color on long posts was broken for permalinks.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``EnableFileSearch`` for files search feature.
+     - Added ``EnableReliableWebSockets``.
+     - Added ``RestrictLinkPreviews`` setting.
+ - Under ``FileSettings`` in ``config.json``:
+     -  Added ``ExtractContent`` and ``ArchiveRecursion`` for files search feature.
+ - Under ``ExperimentalSettings`` in ``config.json``:
+     - Added ``EnableRemoteClusterService`` for Shared Channels.
+ - Under ``SqlSettings`` in ``config.json``:
+     - Added ``ReplicaLagSettings``. This is an array of maps which contain three keys: ``DataSource``, ``QueryAbsoluteLag``, and ``QueryTimeLag``.
+
+#### Database Changes
+ - Added new column in ``ChannelMembers`` table called ``MentionCountRoot``. Please note that on installations with large amount of Channels/Users the migration can take up to a few minutes.
+ - Added ``TotalMsgCountRoot`` to ``Channels`` table and ``MsgCountRoot`` column to ``ChannelMembers`` table. Please note that the migration on large MySQL instances can take several minutes to complete.
+
+#### API Changes
+ - Added ``/teams/{team_id}/files/search`` API endpoint for files search.
+ - For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e. Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
+
+### Go Version
+ - v5.35 is built with Go ``1.15.5``.
+
+### Open Source Components
+ - 
+
+### Known Issues
+ - Pinned posts are no longer highlighted.
+
+### Contributors
+
+
+
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.34.1, released 2021-04-15**
