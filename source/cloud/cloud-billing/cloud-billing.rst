@@ -5,7 +5,7 @@ Mattermost Cloud is offered as a pay-as-you-go subscription service.
 
 You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
 
-Mattermost is available free of charge for all workspaces that have 10 or fewer registered users. Your subscription will be upgraded to a per-user pricing model once you reach 11 or more registered users.
+Customers who signed up for a Mattermost Cloud workspace from our October 2020 launch can continue to use their Cloud instance free of charge for up to ten registered users; however, these customers must upgrade to a per-user pricing model after reaching 11 or more registered users. New Mattermost Cloud workspaces can trial Mattermost Cloud free for 14 days before being required to upgrade to a monthly per-user subscription. 
 
 Billing Period
 --------------
