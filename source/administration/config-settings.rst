@@ -620,6 +620,35 @@ Maximum file size for message attachments entered in megabytes in the System Con
 .. note::
   If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
 
+Enable Document Search by Content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+
+**True**: When **true**, supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
+
+.. note::
+   Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. 
+
+**False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
++---------------------------------------------------------------------------------------------------------------------------------+
+  
+Enable Searching Content of Documents within ZIP Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+
+**True**: When **true**, contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
+
+**False**: The contents of documents within ZIP files aren't returned in search results.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ArchiveRecursion": false`` with options ``true`` and ``false``.       |
++---------------------------------------------------------------------------------------------------------------------------------+
+
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
 
@@ -726,35 +755,6 @@ Test Connection
 ^^^^^^^^^^^^^^^^
 
 Ensures that the user can access the server and that the settings are valid.
-
-Enable Document Search by Content
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.
-
-**True**: When **true**, supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
-
-**False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"XXX": true`` with options ``true`` and ``false``.                      |
-+---------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-  Search results for documents shared before the file search was available may be incomplete until a `data migration is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. 
-
-Enable Searching Content of Documents within ZIP Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-File search is available now in Mattermost Cloud and in Mattermost Server from v5.35, with mobile support coming soon.
-
-**True**: When **true**, contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
-
-**False**: The contents of documents within ZIP files aren't returned in search results.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"XXX": false`` with options ``true`` and ``false``.                     |
-+---------------------------------------------------------------------------------------------------------------------+
 
 Image Proxy
 ~~~~~~~~~~~~
