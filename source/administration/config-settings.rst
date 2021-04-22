@@ -628,7 +628,7 @@ Document content search is available in Mattermost Server from v5.35, with mobil
 **True**: When **true**, supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
 
 .. note::
-   Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. 
+   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
 
 **False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
 
