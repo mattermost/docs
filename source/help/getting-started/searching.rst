@@ -15,25 +15,25 @@ When message results display in the Search Results pane, select **Jump** to view
 .. image:: ../../images/jump-to-message.png
 
 .. tip::
-  Message search results return first automatically if **Messages** isn't selected. In the Search Results pane, you can switch between message and file results by selecting the **Messages** and **Files** options.
+  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to switch between results.
   
-  .. image:: ../../images/review-all-search-results.png
-
 Searching for File Contents
 ---------------------------
 
-Select the **Search** field, then select **Files** as the search type, then type your search criteria. File attachments that match on file name or contain matching text content within supported document types are returned in the Search Results pane. Each search result includes the file name, extension, size, as well as when and where the file was originally shared.
+Select the **Search** field, select **Files**, then type your search criteria. 
 
 .. image:: ../../images/search-files.png
+
+File contents that match on file name or contain matching text content within supported document types are returned in the Search Results pane. Each search result includes the file name, extension, size, as well as when and where the file was originally shared.
 
 - For Mattermost Cloud workspaces, supported document file formats include PDF, DOCX, PPTX, ODT, HTML, and plain text documents. RTF, PAGES, and the contents of ZIP files are not supported.
 - For Mattermost Server deployments, supported document file formats include PDF, PPTX, ODT, HTML, and plain text documents. 
 
-  - System Admins can `extend content search support to include `file attachments shared before upgrading to Mattermost Server 5.35 <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content >`__.
+  - System Admins can `extend content search support to include `files shared before upgrading to Mattermost Server v5.35 <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__.
   - System Admins can `extend content search support to include DOCX, RTF, and PAGES file formats <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__.
   - System Admins can also `extend content search support to include documents within ZIP files <https://docs.mattermost.com/administration/config-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
-To narrow results further in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, images, and more.
+To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
   
 .. image:: ../../images/file-search-filter.png
 
