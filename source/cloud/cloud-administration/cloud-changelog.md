@@ -42,7 +42,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
- - Posts in a channel disappear when deleting a post from a permalink view.
+ - Posts in the thread disappear when deleting a post from a permalink view.
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
