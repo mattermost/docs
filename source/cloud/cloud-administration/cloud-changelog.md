@@ -2,15 +2,12 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2021-04-21
+## Release 2021-04-22
 
 ### Highlights
 
 #### Apps Framework (Developer Preview)
  - The Mattermost Apps Framework introduces a new way to integrate with external tools to allow developers to create interactive Apps in Mattermost using any development language they're comfortable with. These Apps work seamlessly across mobile and desktop clients. This is a developer preview that is not yet intended for production instances of Mattermost. The Apps Framework will be available for self-managed customers in Mattermost v5.35 once the Apps Framework Plugin is loaded on an instance. Until then, developers can use the `cloud` branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th, 2021. Learn more: https://developers.mattermost.com/integrate/apps/.
-
-#### Files Search
- - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/).
 
 #### Granular Access to System Console Pages
  - Migrated the following System Console sections to their respective sub-section permissions: Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, and Compliance.
@@ -45,6 +42,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
+ - Posts in a channel disappear when deleting a post from a permalink view.
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
