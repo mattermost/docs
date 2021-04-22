@@ -2,6 +2,51 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-04-22
+
+### Highlights
+
+#### Apps Framework (Developer Preview)
+ - The Mattermost Apps Framework introduces a new way to integrate with external tools to allow developers to create interactive Apps in Mattermost using any development language they're comfortable with. These Apps work seamlessly across mobile and desktop clients. This is a developer preview that is not yet intended for production instances of Mattermost. The Apps Framework will be available for self-managed customers in Mattermost v5.35 once the Apps Framework Plugin is loaded on an instance. Until then, developers can use the `cloud` branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th, 2021. Learn more: https://developers.mattermost.com/integrate/apps/.
+
+#### Granular Access to System Console Pages
+ - Migrated the following System Console sections to their respective sub-section permissions: Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, and Compliance.
+
+#### Shared Channels (Experimental)
+ - Experimental support was added for sharing channels between Mattermost clusters. This feature is disabled by default.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support to collapse in-line images over 100px in height.
+ - Implemented maximum length validation on the status modal for custom statuses.
+ - Synchronized collapsed channel sidebar categories on the server.
+ - Empty state is no longer off-centered in the **Channel Switcher**.
+ - Ephemeral message created from call response ``markdown`` field is now posted by bot.
+ - Added improvements and fixes for the custom status feature. For example, fixed an issue where recently selected statuses were missing from the **Set a Status** confirmation screen, and updated the **Mobile Push Notifications** text in **Account Settings** to refer to user **availability** instead of **online status**.
+ - Moved the user status in the channel switcher to overlap with user avatars, and added URL 'Slug' information to channel names in the channel switcher.
+
+#### Administration
+ - Paused admin advisor notifications from triggering.
+ - Added a command line document extraction command that allows indexing documents by content.
+
+### Bug Fixes
+ - Fixed link previews on a number of websites, including Reddit.
+ - Fixed an issue where SAML assigned Mattermost ``UserID`` as username if the value was invalid and did not log this.
+ - Fixed an issue where hover effects for category sorting and **Direct Messages** category limit submenus were too dark on a dark theme.
+ - Fixed an issue where users were unable to drag the vertical scroll bar on a PDF preview.
+ - Fixed an issue with animations on long posts when highlighted as a permalink.
+ - Fixed an issue where the user's nickname was not shown on channel switch.
+ - Fixed an issue where deactivated users were not marked as "Deactivated" in the channel switcher.
+ - Fixed an issue where queries executed during the upgrade process would preemptively time out on the application side.
+
+### Known Issues
+ - Pinned posts are no longer highlighted.
+ - Posts in the thread disappear when deleting a post from a permalink view.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-04-07
 
 ### Improvements
