@@ -6,8 +6,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.34.2, release day TBD**
-  - Fixing an issue where installs with some special characters in the MySQL password will break and fail to start.
+- **v5.34.2, released 2021-04-17**
+  - Fixed an issue where installs with some special characters in the MySQL password would break and fail to start.
 - **v5.34.1, released 2021-04-15**
   - Fixed an issue where upgrading to v5.34.0 runs a migration that could cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.
      - Altering of ``Posts.FileIds`` type (PostgreSQL only)
@@ -79,6 +79,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``core-js`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - Text alignment in right-to-left support does not work correctly [MM-35084](https://mattermost.atlassian.net/browse/MM-35084).
  - Deactivated users are not marked as "Deactivated" in the channel switcher [MM-33910](https://mattermost.atlassian.net/browse/MM-33910).
  - User nickname is not shown on channel switch [MM-33897](https://mattermost.atlassian.net/browse/MM-33897).
  - ``Config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
@@ -354,6 +355,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v5.31.3, released 2021-04-07**
   - Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
+  - Fixed an issue where the server version was reported as v5.30.0.
 - **v5.31.2, released 2021-03-29**
   - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)
