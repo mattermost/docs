@@ -9,6 +9,11 @@
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
+### Highlights
+
+#### Support for Apps Framework (Developer Preview)
+ - Apps Framework is now supported on the mobile client and allows developers to create Apps which have interactivity and buttons on mobile. You can learn more at https://developers.mattermost.com/integrate/apps/.
+
 ### Improvements
  - Team channels including archived channels are fetched since last known timestamp.
 
