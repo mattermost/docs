@@ -353,6 +353,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.4, released 2021-04-23**
+  - Fixed an issue with client-side slash commands being processed by multiple plugins. [MM-35074](https://mattermost.atlassian.net/browse/MM-35074)
 - **v5.31.3, released 2021-04-07**
   - Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
   - Fixed an issue where the server version was reported as v5.30.0.
