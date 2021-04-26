@@ -80,7 +80,7 @@ Show icon in the notification area (Linux only)
     When enabled, the Mattermost icon is added to the Linux notification area. This setting is enabled by default.
 
 Leave app running in notification center when application window is closed (Linux only)
-    When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you want to check for unread mentions while away from the app. This setting is enabled by default.
+    When enabled, closing the application window leaves the Mattermost Desktop App running in your notification center. This can be useful if you want to check for unread mentions while away from the app. This setting is enabled by default.
     
 Use GPU hardware acceleration
     If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting. 
