@@ -59,7 +59,7 @@ In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/se
 The options appear in the Settings page, available on Windows from **... > File > Settings**, or on Mac from **Mattermost > Preferences**.
 
 Start app on login (Windows, Linux only)
-    When enabled, Mattermost application starts when you log in to your machine. This setting is enabled by default.
+    When enabled, the Mattermost application starts when you log in to your machine. This setting is enabled by default.
 
 Check spelling
     When enabled, based on your system language configuration misspelled words in your messages are highlighted. This setting is enabled by default. You must restart the app to change this setting.
