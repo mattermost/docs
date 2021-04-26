@@ -71,7 +71,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 Configure SAML Sign-in for Mattermost
 --------------------------------------
 
-Start the Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML 2.0**, then paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field, and select **Get SAML Metadata from IdP**.
+Start the Mattermost server and sign into Mattermost as a System Admin. Go to **System Console > Authentication > SAML 2.0**, then paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field, and select **Get SAML Metadata from IdP**.
 
         .. image:: ../../source/images/saml-identity-provider-metadata-url.PNG
 
