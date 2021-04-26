@@ -1,7 +1,7 @@
 Using Mattermost Desktop App
 ============================
 
-Mattermost desktop applications are available for Windows, Mac, and Linux operating systems.
+The Mattermost Desktop Applications are available for Windows, macOS, and Linux operating systems.
 
 .. image:: ../../images/desktop.png
 
