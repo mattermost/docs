@@ -105,7 +105,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v5.35 is built with Go ``1.15.5``.
 
 ### Open Source Components
- - 
+ - Added ``country-list``, ``form-data``, ``gfycat-sdk``, ``redux-thunk``, ``rudder-sdk-js``, ``serialize-error`` and ``shallow-equals``, and removed ``mattermost-redux`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
