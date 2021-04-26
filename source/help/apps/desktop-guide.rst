@@ -54,7 +54,7 @@ To remove a server from your desktop app environment:
 App Options
 -----------
 
-In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`__, the desktop app provides additional options to customize your experience.
+In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`__, the Desktop App provides additional options to customize your experience.
 
 The options appear in the Settings page, available on Windows from **... > File > Settings**, or on Mac from **Mattermost > Preferences**.
 
