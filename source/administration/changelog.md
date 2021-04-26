@@ -4,6 +4,100 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+- **v5.34.2, released 2021-04-17**
+  - Fixed an issue where installs with some special characters in the MySQL password would break and fail to start.
+- **v5.34.1, released 2021-04-15**
+  - Fixed an issue where upgrading to v5.34.0 runs a migration that could cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.
+     - Altering of ``Posts.FileIds`` type (PostgreSQL only)
+     - Added new column ``ThreadMemberships.UnreadMentions``
+     - Added new column ``Channels.Shared``
+     - Added new column ``Reactions.UpdateAt``
+     - Added new column ``Reactions.DeleteAt``
+- **v5.34.0, released 2021-04-15**
+  - Original 5.34.0 release
+
+### Highlights
+
+#### Incident Collaboration: Automated actions on incident start (E20 Edition)
+ - Users can now configure playbooks to automatically execute key actions when an incident is created to save time and reduce the chance of manual error.
+
+#### Bulgarian and Swedish language support
+ - Removed Beta tags from Swedish and Bulgarian languages. Mattermost is now available in 18 languages.
+
+### Improvements
+
+#### User Interface (UI)
+ - System Admins now see a prompt to join private channel when joining a private channel via a permalink.
+ - Added support for adding in-product notices for external dependency deprecation details.
+ - Improved the timezone selector component.
+ - Introduced a new theme variable for the team sidebar.
+ - Added support for automatic right-to-left (RTL) detection in browsers.
+ - Updated the font size for the **Add People** channel modal.
+ - Online status is now shown in the channel switcher.
+ - Improved the design and layout of email notifications for password resets, member invites, member welcomes, and verifications.
+
+#### Administration
+ - Added mmctl commands to create, list, download, and delete export files.
+ - Added schema migrations phase 0 (``Teams``, ``TeamMembers``).
+ - Removed references to ``SqlLite3`` from the code.
+ - Bleve updates are now logged in the config only when there is an actual change in the ``BleveSettings`` instead of on every config update.
+ - Profiling the Mattermost server with pprof is now available for Team Edition.
+ - Added attributes to split.io feature flags.
+
+### Bug Fixes
+ - Fixed unsafe access of properties of the plugin environment during ``ServePluginPublicRequest``.
+ - Fixed an issue where the Admin Console > Server Logs did not focus to the sidebar filter upon reload.
+ - Fixed an issue where the GIF picker appeared empty instead of showing a “No results” modal when no results were displayed.
+ - Fixed an issue where the keyboard accessibility controller was not allowed to resume left-hand side scroll after drag and drop.
+ - Fixed an issue where markdown links rendered incorrectly.
+ - Fixed an issue where the Slack theme import failed due to changes in formatting of Slack export color schemes.
+ - Fixed an issue where tooltips were missing for channels with a long name.
+ - Fixed a race condition which would crash the app server due to improper handling of WebSocket closing.
+ - Fixed an issue where the PDF zoom failed to respond to zoom in/out/reset actions until the user scrolled.
+ - Fixed an issue where, in a reply thread with the right-hand side expanded, attachments in a post draft were hidden behind the center channel text box.
+ - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas.
+ - Fixed an issue where Compliance Report field headers were not correctly aligned.
+ - Fixed an issue where the ``/join`` command was case-sensitive.
+ - Fixed an issue where one-character sidebar category names were not displayed.
+ - Fixed an issue with a theme discrepancy on Close buttons on some modals in the System Console (when using a custom team theme).
+ - Fixed an issue where long text input in the right-hand pane was jumpy when selected.
+ - Fixed an issue where the zoom level persisted across multi-attachment PDF previews.
+ - Fixed an issue where long image names pushed the show/hide control off the right side of the window.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Added ``ExportSettings`` to add support for compressed export files with attachments.
+
+### Go Version
+ - v5.34 is built with Go ``1.15.5``.
+
+### Open Source Components
+ - Removed ``core-js`` from https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Text alignment in right-to-left support does not work correctly [MM-35084](https://mattermost.atlassian.net/browse/MM-35084).
+ - Deactivated users are not marked as "Deactivated" in the channel switcher [MM-33910](https://mattermost.atlassian.net/browse/MM-33910).
+ - User nickname is not shown on channel switch [MM-33897](https://mattermost.atlassian.net/browse/MM-33897).
+ - ``Config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - The server tries to install E20-required plugins on non-E20 installations [MM-32387](https://mattermost.atlassian.net/browse/MM-32387).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+[abdullahceylan](https://github.com/abdullahceylan), [aconitumnapellus](https://github.com/aconitumnapellus), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [aggmoulik](https://github.com/aggmoulik), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [appleboy](https://github.com/appleboy), [asaadmahmood](https://github.com/asaadmahmood), [asimsedhain](https://github.com/asimsedhain), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [berkeka](https://github.com/berkeka), [BharatKalluri](https://github.com/BharatKalluri), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [christian-lim](https://github.com/christian-lim), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [Crimson-riot](https://github.com/Crimson-riot), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [CyrilLD](https://github.com/CyrilLD), [danielsischy](https://github.com/danielsischy), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [djanda97](https://github.com/djanda97), [ebati](https://github.com/ebati), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [ethervoid](https://github.com/ethervoid), [firasm](https://github.com/firasm), [flexo3001](https://github.com/flexo3001), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [haonm](https://github.com/haonm), [hastadhana](https://github.com/hastadhana), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ianatha](https://github.com/ianatha), [icelander](https://github.com/icelander), [IndushaS](https://github.com/IndushaS), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jbutler992](https://github.com/jbutler992), [jbutlerdev](https://github.com/jbutlerdev), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jials](https://github.com/jials), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jp0707](https://github.com/jp0707), [JtheBAB](https://github.com/JtheBAB), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [khos2ow](https://github.com/khos2ow), [larkox](https://github.com/larkox), [lawrencejohnson](https://github.com/lawrencejohnson), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lucievr](https://github.com/lucievr), [lutfuahmet](https://github.com/lutfuahmet), [Maekes](https://github.com/Maekes), [mahmud2011](https://github.com/mahmud2011), [mantlecurve](https://github.com/mantlecurve), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [microolapshare](https://github.com/microolapshare), [migbot](https://github.com/migbot), [minecraftchest1](https://github.com/minecraftchest1), [mistikel](https://github.com/mistikel), [mkdbns](https://github.com/mkdbns), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mrtpcet](https://github.com/mrtpcet), [msal4](https://github.com/msal4), [Mshahidtaj](https://github.com/Mshahidtaj), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [nevyangelova](https://github.com/nevyangelova), [nronas](https://github.com/nronas), [ogi-m](https://github.com/ogi-m), [opr77](https://github.com/opr77), [pablovelezvidal](https://github.com/pablovelezvidal), [pat-s](https://github.com/pat-s), [phntom](https://github.com/phntom), [pidgelar](https://github.com/pidgelar), [potatogim](https://github.com/potatogim), [prapti](https://github.com/prapti), [Prescise](https://github.com/Prescise), [proffalken](https://github.com/proffalken), [r-52](https://github.com/r-52), [rakhi2104](https://github.com/rakhi2104), [rbradleyhaas](https://github.com/rbradleyhaas), [reflog](https://github.com/reflog), [renjithgr](https://github.com/renjithgr), [rodcorsi](https://github.com/rodcorsi), [saf6260](https://github.com/saf6260), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shazm](https://github.com/shazm), [spirosoik](https://github.com/spirosoik), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [thePanz](https://github.com/thePanz), [toto6038](https://github.com/toto6038), [tsabi](https://github.com/tsabi), [uhlhosting](https://github.com/uhlhosting), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xlanor](https://github.com/xlanor), [YoheiZuho](https://github.com/YoheiZuho), [youtsumi](https://github.com/youtsumi), [zefhemel](https://github.com/zefhemel), [Zukerherr](https://github.com/Zukerherr)
+
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.33.3, released 2021-03-31**
@@ -128,7 +222,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - In some cases, the **New messages** toast appears without replacing variables with text. [MM-33829](https://mattermost.atlassian.net/browse/MM-33829)
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
- - Slow typing has been experienced when the channel sidebar has many channels. This has been reported in older versions too [MM-30407](https://mattermost.atlassian.net/browse/MM-30407).
  - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
  - Slack theme import fails due to changes in formatting of Slack export color schemes [MM-30531](https://mattermost.atlassian.net/browse/MM-30531).
  - Google login fails on the Classic mobile apps.
@@ -260,8 +353,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.4, released 2021-04-23**
+  - Fixed an issue with client-side slash commands being processed by multiple plugins. [MM-35074](https://mattermost.atlassian.net/browse/MM-35074)
 - **v5.31.3, released 2021-04-07**
   - Fixed an issue where cluster handlers were not immediately registered after starting the server. This led to issues where jobs were not scheduled until a request hit the cluster. [MM-34179](https://mattermost.atlassian.net/browse/MM-34179)
+  - Fixed an issue where the server version was reported as v5.30.0.
 - **v5.31.2, released 2021-03-29**
   - Improved typing performance on busy servers with lots of active users and with the new sidebar enabled. [MM-30407](https://mattermost.atlassian.net/browse/MM-30407)
   - Fixed bugs related to replication lag for Enterprise Edition instances configured to use read replicas. [MM-31094](https://mattermost.atlassian.net/browse/MM-31094)

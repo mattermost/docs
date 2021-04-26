@@ -18,9 +18,7 @@ Details on integrating your Mattermost server with Prometheus and Grafana.
 Installing Prometheus
 ----------------------
 
-1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.
-
-For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
+1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For installation instructions, see the `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
 
 2. The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
 
@@ -57,14 +55,18 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
         static_configs:
           - targets: ["<hostname1>:<port>", "<hostname2>:<port>"]
 
-The ``<hostname1>:<port>`` parameter has to be replaced with your Mattermost host ip address and port to scrape the data. It connects to ``/metrics`` using http. 
+Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
-3. Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`__. After enabling performance monitoring, make sure to reboot Mattermost.
+3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring>`__ for details.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
 
-4. To test the server is running, go to ``<ip>:<port>/metrics``.
+4. To test that the server is running, go to ``<ip>:<port>/metrics``.
+
+.. note::
+
+   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
 
 5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus.
 
@@ -149,6 +151,8 @@ Database Metrics
 - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
 - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
 - ``mattermost_db_store_time``: The total time in seconds to execute a given database store method.
+- ``mattermost_db_replica_lag_abs``: Absolute lag time based on binlog distance/transaction queue length.
+- ``mattermost_db_replica_lag_time``: The time taken for the replica to catch up.
 
 HTTP Metrics
 ^^^^^^^^^^^^
@@ -233,17 +237,25 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 
   Jobs where the runtime is less than the Prometheus polling interval are unlikely to be visible because Grafana is performing range queries over the raw Prometheus timeseries data, and rendering an event each time the value changes.
 
-Standard GO Metrics
+Standard Go Metrics
 ~~~~~~~~~~~~~~~~~~~
 
-The Prometheus integration also provides standard GO metrics for HTTP server runtime profiling data and system monitoring, such as:
+The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
 
 - ``go_memstats_alloc_bytes`` for memory usage
-- ``go_goroutines`` for GO routines
+- ``go_goroutines`` for number of goroutines
 - ``go_gc_duration_seconds`` for garbage collection duration
 - ``go_memstats_heap_objects`` for object tracking on the heap
 
-To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
+.. note::
+
+  Profile reports are available to Team Edition and Enterprise Edition users.
+
+To learn how to set up runtime profiling, see the `pprof package Go documentation <https://golang.org/pkg/net/http/pprof/>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
+
+.. note::
+
+   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
 
 If enabled, you can run the profiler by
 
