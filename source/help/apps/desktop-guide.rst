@@ -83,7 +83,7 @@ Leave app running in notification center when application window is closed (Linu
     When enabled, closing the application window leaves the Mattermost Desktop App running in your notification center. This can be useful if you want to check for unread mentions while away from the app. This setting is enabled by default.
     
 Use GPU hardware acceleration
-    If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting. 
+    When enabled, the Mattermost user interface is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting.
     
 Dark Theme
 ~~~~~~~~~~
