@@ -70,7 +70,7 @@ Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
 Flash taskbar icon when a new message is received (Windows, Linux only)
     Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers. This setting is enabled by default.
     
-Bounce the Dock icon when receiving a notification (Mac only)
+Bounce the Dock icon when receiving a notification (macOS only)
     When enabled, the Dock icon will either bounce once or bounce until the user opens the app when receiving a notification. This setting is enabled by default.
 
 Show Mattermost icon in the menu bar (Mac only)
