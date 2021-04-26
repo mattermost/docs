@@ -65,7 +65,7 @@ Check spelling
     Highlight misspelled words in your messages based on your system language configuration. This setting is enabled by default. You must restart the app to change this setting. 
 
 Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
-    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions or direct messages. If disabled, a red badge is only shown for unread mentions (with a number count). This setting is enabled by default.
+    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions or Direct Messages. If disabled, a red badge is only shown for unread mentions (with a number count). This setting is enabled by default.
 
 Flash taskbar icon when a new message is received (Windows, Linux only)
     Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers. This setting is enabled by default.
