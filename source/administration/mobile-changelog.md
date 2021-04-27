@@ -21,6 +21,7 @@
 
 #### All apps
  - Fixed an issue where appended skin tone emoji didn't render on the app.
+ - Fixed an issue where users were unable to get to the last line when editing a very long post.
 
 #### Android specific
  - Fixed an issue where archived teams were accessible and functional.
