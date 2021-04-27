@@ -15,6 +15,7 @@
  - Apps Framework is now supported on the mobile client and allows developers to create Apps which have interactivity and buttons on mobile. You can learn more at https://developers.mattermost.com/integrate/apps/.
 
 ### Improvements
+ - On Websocket reconnect, instead of getting all the groups, only the updated groups are fetched.
  - Team channels including archived channels are fetched since last known timestamp.
 
 ### Bug Fixes
