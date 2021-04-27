@@ -79,7 +79,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``core-js`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Text alignment in right-to-left support does not work correctly [MM-35084](https://mattermost.atlassian.net/browse/MM-35084).
+ - Text alignment in right-to-left support does not work correctly in v5.34. This issue is fixed in the latest version of the [mattermost-rtl plugin](https://github.com/QueraTeam/mattermost-rtl).
  - Deactivated users are not marked as "Deactivated" in the channel switcher [MM-33910](https://mattermost.atlassian.net/browse/MM-33910).
  - User nickname is not shown on channel switch [MM-33897](https://mattermost.atlassian.net/browse/MM-33897).
  - ``Config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
