@@ -42,7 +42,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_5_advanced_saml_settings.PNG
 
-9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings <https://docs.mattermost.com/administration/config-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute <https://docs.mattermost.com/administration/config-settings.html#id17>`__ is also required, and that ID must be mapped to ``user.id``. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.
+9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings <https://docs.mattermost.com/administration/config-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute <https://docs.mattermost.com/administration/config-settings.html#id17>`__ is also required, and that ID must be mapped to ``user.id``. 
 
 	.. image:: ../../source/images/okta_6_attribute_statements.png
 
@@ -96,7 +96,6 @@ Alternatively you can enter the following fields manually:
 
 5. Set attributes for the SAML Assertions used to update user information in Mattermost. 
 	- Attributes for Email, Username, and Id are required and should match the values you entered in Okta earlier.
-	- For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.
 	
 	.. image:: ../../source/images/okta_13_mattermost_attributes.png	
 
