@@ -2,10 +2,10 @@
 
 ## 1.43.0 Release
 - Release Date: May 16, 2021
-- Server Versions Supported: Server v5.31+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+- Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
 
 ### Compatibility
- - **Upgrade to server version v5.31 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
@@ -15,8 +15,8 @@
  - Apps Framework is now supported on the mobile client and allows developers to create Apps which have interactivity and buttons on mobile. You can learn more at https://developers.mattermost.com/integrate/apps/.
 
 ### Improvements
- - On Websocket reconnect, instead of getting all the groups, only the updated groups are fetched.
- - Team channels including archived channels are fetched since last known timestamp.
+ - On Websocket reconnect, instead of getting all the groups, only the updated groups are now fetched.
+ - Team channels including archived channels are now fetched since the last known timestamp.
 
 ### Bug Fixes
 
@@ -28,7 +28,7 @@
  - Fixed an issue where archived teams were accessible and functional.
 
 #### iOS specific
- - Fixed an issue where the automatic replies setting's **done** button on keyboard added a new line.
+ - Fixed an issue where the **Automatic replies** setting's **Done** button on the keyboard added a new line.
 
 ### Known Issues
  - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
