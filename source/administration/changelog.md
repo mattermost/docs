@@ -46,7 +46,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Moved the user status in the channel switcher to overlap with user avatars, and added URL 'Slug' information to channel names in the channel switcher.
  - Added a string field to configuration for restricted domains with the key ``RestrictLinkPreviews`` and added a UI field for restricted domains under **System Console > Site Configuration > Posts**. Also expanded the logic that determines whether a post has a preview or not.
  - Added an unread badge to the **Main Menu** icon and the **Plugin Marketplace** menu that displays until a System Admin visits the **Plugin Marketplace** for the first time.
- - Removed Beta tags from Swedish and Bulgarian languages.
  - Added profile pictures to the **Direct Messages** channel list.
  - Added channel icons for email notifications as part of email notification redesigns.
  - Direct Messages **More...** modal is now sorted by recent conversations when the modal is opened.
@@ -83,13 +82,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
-     - Added ``EnableFileSearch`` for files search feature.
+     - Added ``EnableFileSearch`` for file search feature.
      - Added ``EnableReliableWebSockets``.
-     - Added ``RestrictLinkPreviews`` setting.
+     - Added ``RestrictLinkPreviews`` setting to allow disabling link previews from certain domains.
  - Under ``FileSettings`` in ``config.json``:
-     -  Added ``ExtractContent`` and ``ArchiveRecursion`` for files search feature.
+     -  Added ``ExtractContent`` and ``ArchiveRecursion`` for file search feature.
  - Under ``ExperimentalSettings`` in ``config.json``:
-     - Added ``EnableRemoteClusterService`` for Shared Channels.
+     - Added ``EnableRemoteClusterService`` for Shared Channels feature.
  - Under ``SqlSettings`` in ``config.json``:
      - Added ``ReplicaLagSettings``. This is an array of maps which contain three keys: ``DataSource``, ``QueryAbsoluteLag``, and ``QueryTimeLag``.
 
@@ -109,6 +108,16 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
+ - ``Config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
