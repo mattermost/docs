@@ -83,7 +83,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
      - Added ``EnableFileSearch`` for file search feature.
-     - Added ``EnableReliableWebSockets``.
      - Added ``RestrictLinkPreviews`` setting to allow disabling link previews from certain domains.
  - Under ``FileSettings`` in ``config.json``:
      -  Added ``ExtractContent`` and ``ArchiveRecursion`` for file search feature.
