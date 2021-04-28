@@ -129,7 +129,7 @@ If your integration sends back a JSON response, make sure it returns the ``appli
 
 which would render in Mattermost as:
 
-.. image:: ../../images/weatherBot.PNG
+.. image:: ../../images/weatherBot.png
   
 11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
 

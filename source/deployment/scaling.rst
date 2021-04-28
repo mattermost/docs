@@ -59,7 +59,7 @@ As deployments scale above 5,000 users, additional servers are added for perform
 
 Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 
-.. image:: ../images/scaling-3.PNG
+.. image:: ../images/scaling-3.png
 
 For more information, check out our `Administrator's Guide <https://docs.mattermost.com/guides/administrator.html>`__.
 

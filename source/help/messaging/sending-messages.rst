@@ -18,7 +18,7 @@ Replying to Messages
 
 When replying to a message you should do so by hovering over message and clicking the reply link (arrow icon |replyarrow|). This organizes the conversation into a thread, makes it easier to follow, and enables multiple parallel conversations to occur at the same time without confusion. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
-.. |replyarrow| image:: ../../images/replyIcon.PNG
+.. |replyarrow| image:: ../../images/replyIcon.png
    :alt: reply arrow
 
 Clicking the reply link will open a sidebar on the right-hand side. To expand the right-hand sidebar to its full width, click the expand/shrink icon with two arrows at the top of the sidebar. To shrink the right-hand sidebar to its original width, click the same expand/shrink icon.
