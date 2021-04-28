@@ -14,10 +14,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### User Interface (UI)
  - If message autoresponder is set, only one message is now sent to a given user irrespective of how many Direct Message messages the user receives.
  - Added status icons on **Add members** to channel and **Add members** to team lists.
- - Added a keyboard shortcut to focus search bar and search in the current channel.
+ - Added a keyboard shortcut to focus on the Search bar and search in the current channel.
 
 #### Administration
- - Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. **Note:** If an existing system is not using gossip, then one cannot upgrade one node in a cluster and keep the other one to the older version if a High Availability upgrade is intended. All nodes in the cluster must use a single protocol. Either the customer must use gossip if they want to do an High Availability upgrade, or shut down all nodes and bring up all of them after doing an upgrade.
+ - Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. **Note:** For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using gossip, one node in a cluster can't be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.
  - ``TCP_NO_DELAY`` is disabled for Websocket connections to allow for higher throughput.
  - Compliance Monitoring CSV files are no longer limited to 30,000 rows.
 
@@ -29,8 +29,8 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Fixed an issue where a user with 'No Access' permission could still access **Groups**, **Channels** and **Teams** configuration pages through a URL.
  - Fixed an issue where **Remove from channel** and **Remove Team Member** menu items were visible in a group-synced channel or team.
  - Fixed various bugs related to hardcoded theme colours.
- - Fixed UI issues related to hard coded variables and misalignment of the channel header with the **Has guests** text.
- - Fixed an issue with SAML Sign-on where admins were unable to modify **Service Provider Login URL** unless ``VerifySignature`` was enabled.
+ - Fixed UI issues related to hardcoded variables and misalignment of the channel header with the **Has guests** text.
+ - Fixed an issue with SAML Sign-on where System Admins were unable to modify **Service Provider Login URL** unless ``VerifySignature`` was enabled.
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
