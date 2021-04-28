@@ -13,10 +13,10 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 * ``***bold-italic***`` renders as |bold_italics|
 * ``~~strikethrough~~`` renders as |strikethrough|
 
-.. |bold_italics| image:: ../../images/bold_italics.PNG
+.. |bold_italics| image:: ../../images/bold_italics.png
   :width: 100px
   :alt: Bold Italics
-.. |strikethrough| image:: ../../images/strikethrough.PNG
+.. |strikethrough| image:: ../../images/strikethrough.png
   :width: 100px
   :alt: Strike Through
 
@@ -42,7 +42,7 @@ Make a heading by typing ``#`` and a space before your title. For smaller headin
 
 Renders as:
 
-.. image:: ../../images/Headings1.PNG
+.. image:: ../../images/Headings1.png
    :alt: Large Heading
 
 Alternatively, you can underline the text using equal signs ``===`` or hyphens ``---`` to create headings.
@@ -54,7 +54,7 @@ Alternatively, you can underline the text using equal signs ``===`` or hyphens `
 
 Renders as:
 
-.. image:: ../../images/Headings2.PNG
+.. image:: ../../images/Headings2.png
    :alt: Smaller Heading
 
 Lists
@@ -113,7 +113,7 @@ Make a task list by including square brackets ``[ ]``. Mark a task as complete b
 
 Renders as:
 
-.. image:: ../../images/checklist.PNG
+.. image:: ../../images/checklist.png
    :alt: List
 
 Code Block
@@ -183,22 +183,22 @@ Renders as:
 
 **GitHub Theme**
 
-.. image:: ../../images/syntax-highlighting-github.PNG
+.. image:: ../../images/syntax-highlighting-github.png
    :alt: Syntax Highlighting in GitHub
 
 **Solarized Dark Theme**
 
-.. image:: ../../images/syntax-highlighting-sol-dark.PNG
+.. image:: ../../images/syntax-highlighting-sol-dark.png
    :alt: Syntax Highlighting Dark
 
 **Solarized Light Theme**
 
-.. image:: ../../images/syntax-highlighting-sol-light.PNG
+.. image:: ../../images/syntax-highlighting-sol-light.png
    :alt: Syntax Highlighting Light
 
 **Monokai Theme**
 
-.. image:: ../../images/syntax-highlighting-monokai.PNG
+.. image:: ../../images/syntax-highlighting-monokai.png
    :alt: Syntax Highlighting Monokai
 
 In-line Code
@@ -312,7 +312,7 @@ Create block quotes using ``>``.
 
 ``> block quotes`` renders as:
 
-.. image:: ../../images/blockQuotes.PNG
+.. image:: ../../images/blockQuotes.png
 
 Tables
 ------
@@ -329,7 +329,7 @@ Create a table by placing a dashed line ``---`` under the header row, then separ
 
 Renders as:
 
-.. image:: ../../images/markdownTable1.PNG
+.. image:: ../../images/markdownTable1.png
    :alt: Markdown Table Sample
 
 Math Formulas
@@ -349,5 +349,5 @@ Create formulas by using LaTeX in a ``latex`` `Code Block`_.
 
 Renders as:
 
-.. image:: ../../images/markdownMath.PNG
+.. image:: ../../images/markdownMath.png
    :alt: Markdown Math Sample
