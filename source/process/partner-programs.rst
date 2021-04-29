@@ -86,7 +86,7 @@ Commercial and open source organizations who demonstrate the ability to automate
 - Guest writer opportunities on the Mattermost blog
 - Joint-webinar opportunties 
 - Promotion on Mattermost social media accounts 
-- Partner Evaluation License for Mattermost Enterprise Editoin E20 
+- Partner Evaluation License for Mattermost Enterprise Edition E20 
 
 To apply for the program, complete the `contact form <https://mattermost.com/contact-us/>`__ with Mattermost requesting a deployment solutions partner discussion.
 
