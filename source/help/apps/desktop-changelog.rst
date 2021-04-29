@@ -41,6 +41,7 @@ All Platforms
 - Shortened the max-length/width for server tab names to 224px.
 - For Windows and Linux, the system language is now used and the spell checker's option help text was improved. languages are no longer selectable and toggling the spellchecker requires a restart.
 - Udpated the menubar and system tray icons for improved contrast.
+- Removed ``libappnotify1`` as a dependency requirement in Debian installers as it is no longer shipped in Debian's Bullseye. It is still recommeded to install where available.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
