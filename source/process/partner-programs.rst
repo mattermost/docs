@@ -46,7 +46,7 @@ Benefits of being a Mattermost Value-Added Reseller ("VAR")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Reseller discount from list prices for selling Mattermost Enterprise Edition. 
-- Renewable NOT FOR RESALE license key for 50 users of Mattermost Enterprise Edition E20. 
+- Partner Evaluation License for Mattermost Enterprise Edition E20 
 - Relationship with Mattermost field sales for fulfilling orders customer orders.
 
 Becoming a Mattermost Value-Added Reseller ("VAR") 
@@ -86,6 +86,7 @@ Commercial and open source organizations who demonstrate the ability to automate
 - Guest writer opportunities on the Mattermost blog
 - Joint-webinar opportunties 
 - Promotion on Mattermost social media accounts 
+- Partner Evaluation License for Mattermost Enterprise Editoin E20 
 
 To apply for the program, complete the `contact form <https://mattermost.com/contact-us/>`__ with Mattermost requesting a deployment solutions partner discussion.
 
@@ -118,7 +119,7 @@ For example: A well-known city with a unique name like Johanesberg would be disp
 Partner Evaluation License 
 ----------------------------------
 
-As a Value-Added Reseller you can request a renewable 1-year E20 license for up to 20 users.
+As a Value-Added Reseller or Deployment Solution Partner you can request a renewable 1-year E20 license for up to 50 users.
 
 - Go to https://www.mattermost.com/trial/ to complete a trial form and enter [RESELLER] after your organization name.
 - In the “Where are you with Mattermost” section, select “other”. 
