@@ -66,7 +66,6 @@ Mobile
 Redux
 ------------------------------
 
- - Mattermost Enterprise Edition v5.35.0 - `View Open Source Components <https://github.com/mattermost/mattermost-redux/blob/release-5.35/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.34.0 - `View Open Source Components <https://github.com/mattermost/mattermost-redux/blob/release-5.34/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.33.0 - `View Open Source Components <https://github.com/mattermost/mattermost-redux/blob/release-5.33/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.32.0 - `View Open Source Components <https://github.com/mattermost/mattermost-redux/blob/release-5.32/NOTICE.txt>`_.
