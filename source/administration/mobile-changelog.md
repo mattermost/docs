@@ -15,6 +15,7 @@
  - Apps Framework is now supported on the mobile client and allows developers to create Apps which have interactivity and buttons on mobile. You can learn more at https://developers.mattermost.com/integrate/apps/.
 
 ### Improvements
+ - Added avatars to the sidebar Direct Messages and channel info.
  - On Websocket reconnect, instead of getting all the groups, only the updated groups are now fetched.
  - Team channels including archived channels are now fetched since the last known timestamp.
 
@@ -26,6 +27,7 @@
 
 #### Android specific
  - Fixed an issue where archived teams were accessible and functional.
+ - Fixed an issue where uploading files failed when uploading multiple files.
 
 #### iOS specific
  - Fixed an issue where the **Automatic replies** setting's **Done** button on the keyboard added a new line.
