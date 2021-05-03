@@ -31,12 +31,12 @@
  - Fixed an issue where uploading files failed when uploading multiple files.
 
 #### iOS specific
+ - Fixed an issue on iPad where the last message rendered behind the input box.
  - Fixed an issue where the **Automatic replies** setting's **Done** button on the keyboard added a new line.
 
 ### Known Issues
  - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
- - The last message in a channel is sometimes rendered behind the message box on iPad devices.
 
 ## 1.42.1 Release
 - Release Date: April 19, 2021
