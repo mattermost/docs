@@ -451,7 +451,7 @@ All Cluster Nodes Must Use a Single Protocol
 
 All cluster traffic uses the gossip protocol. From Mattermost Server v5.35, `gossip clustering can no longer be disabled <https://docs.mattermost.com/administration/config-settings.html#use-gossip>`__.
 
-When upgrading a High Availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a High Availability upgrade, or you can shut down all nodes and bring them all up following an upgrade.
+When upgrading a High Availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a High Availability upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
