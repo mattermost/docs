@@ -42,7 +42,7 @@ A team is a digital workspace where you and your teammates can collaborate in Ma
 
 You have the ability to switch back and forth between teams on the Team Sidebar, located on the upper left side of the app.
 
-.. image:: ../../images/ui_teams.png
+.. image:: ../../images/teams.gif
    :alt: ui_teams
 
 Channels
