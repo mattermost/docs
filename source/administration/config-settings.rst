@@ -1020,7 +1020,7 @@ Use Gossip
 ^^^^^^^^^^
 
 .. note::
-   Gossip clustering can no longer be disabled from Mattermost Server v5.35. All cluster traffic uses the gossip protocol.
+   All cluster traffic uses the gossip protocol. From Mattermost Server v5.35 gossip clustering can no longer be disabled.
 
 **True**: The server attempts to communicate via the gossip protocol over the gossip port.
 
