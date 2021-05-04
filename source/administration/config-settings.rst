@@ -1019,6 +1019,9 @@ Use IP Address
 Use Gossip
 ^^^^^^^^^^
 
+.. note::
+   Gossip clustering can no longer be disabled from Mattermost Server v5.35. All cluster traffic uses the gossip protocol.
+
 **True**: The server attempts to communicate via the gossip protocol over the gossip port.
 
 **False**: The server attempts to communicate over the streaming port.
