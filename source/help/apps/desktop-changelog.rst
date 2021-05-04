@@ -46,7 +46,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v11.0.0. Electron is the underlying technology used to build the Desktop apps.
+- Major version upgrade of Electron to v11.4.4. Electron is the underlying technology used to build the Desktop apps.
 - Added support for M1 architecture in the build pipeline.
 
 Bug Fixes
