@@ -100,7 +100,7 @@ When run manually via the System Console, ``.csv`` and Actiance XML files are wr
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. In Mattermost Cloud and from Mattermost Server v5.35, there's no limit to the number of rows within Compliance Monitoring CSV files.
+No. From Mattermost Server v5.35, there's no limit to the number of rows within Compliance Monitoring CSV files.
 
 Why is the Compliance Exports feature in Beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
