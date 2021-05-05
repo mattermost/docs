@@ -43,10 +43,10 @@ Notices will be used to raise awareness of new features as part of our monthly r
 Admin Advisor notices
 ---------------------
 
+Admin Advisor notices are designed to provide guidance and assist in choosing features to support your deployment as it scales.
+
 .. note::
   Admin Advisor notices are disabled in v5.35 and later.
-
-Admin Advisor notices are designed to provide guidance and assist in choosing features to support your deployment as it scales.
 
 When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
