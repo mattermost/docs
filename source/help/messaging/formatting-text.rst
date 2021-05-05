@@ -230,7 +230,7 @@ If the height of the original image is more than 500 pixels, Mattermost sets the
 You can set the width and height of the displayed image after the URL of the image by using an equals sign ``=`` followed by values for both width and height ``##x##``. If you set only the width, Mattermost adjusts the height to maintain the original aspect ratio.
 
 .. warning::
-  The native apps do not support fixed width and height and will display the image full-size.
+  The native apps do not support fixed width and height and will display the full-size image.
 
 Examples:
 
