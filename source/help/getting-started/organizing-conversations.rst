@@ -6,20 +6,30 @@ Channels can be created, joined, renamed, left, marked as a favorite, muted, unm
 Creating a channel
 ------------------
 
-To create a new Public or Private channel, select the **+** symbol at the top of the sidebar, then select **Create New Channel**.
+To create a new Public or Private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
     .. image:: ../../images/create-new-channel.png
+        :alt: Create a channel.
     
 Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
 
-You can start a Direct or Group Message by selecting the **+** symbol at the top of the sidebar, then selecting **Open a Direct Message**. Or you can select the **+** symbol next to the **Direct Messages** category in the sidebar.
+Creating a Direct or Group Message
+----------------------------------
+
+To start a Direct or Group Message, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. Or select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
     .. image:: ../../images/write-dm.png
+        :alt: Access recent Direct Messages and Group Messages.
+    
+In the **Direct Messages** popup, identify your most recent conversations by relative timestamps.     
+
+    .. image:: ../../images/recent-direct-group-messages.png
+        :alt: Write a Direct Message or Group Message.
 
 Joining a channel
 -----------------
 
-To join a Public channel, select the **+** symbol at the top of the sidebar, then select **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
+To join a Public channel, select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
 
 To join a Private channel, you need to be added to the channel by a member of that channel.
 
@@ -33,6 +43,7 @@ Select the channel name at the top of the center pane to access the drop-down me
 You can also add users to channels within their profile pop-over by choosing **Add to a Channel** and selecting the channel you want them to join.
 
     .. image:: ../../images/add-member-pop.png
+        :alt: Add a member to a channel.
 
 Removing members from a channel
 -------------------------------
@@ -40,6 +51,7 @@ Removing members from a channel
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Any member of a channel can remove other members by selecting the member’s channel role, then selecting **Remove from Channel**.
 
     .. image:: ../../images/remove-member-from-channel.png
+        :alt: Remove a member from a channel.
 
 Naming a channel
 ----------------
@@ -79,6 +91,7 @@ Unarchiving a channel
 Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. System Admins and Team Admins can unarchive Public channels or Private channels they belonged to when it was archived.
 
     .. image:: ../../images/unarchive-channel.png
+        :alt: Unarchive a channel.
 
 When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :doc:`data retention policy <data-retention>`.
 
@@ -98,7 +111,7 @@ When a channel is converted, its history and membership are preserved. Membershi
 Favoriting a channel
 --------------------
 
-Favorite channels are a great way to organize your sidebar by choosing which Public channels, Private channels, and Direct Messages are most important to you.
+Favorite channels are a great way to organize your channel sidebar by choosing which Public channels, Private channels, and Direct Messages are most important to you.
 
 To mark a channel as a favorite, open the channel:
 
@@ -107,10 +120,10 @@ To mark a channel as a favorite, open the channel:
     .. image:: ../../images/favorite-channel-desktop.png
         :alt: Mark a channel as a favorite.
        
-This adds the channel to a **Favorites** list at the top of the sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
+This adds the channel to a **Favorites** list at the top of the channel sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
     .. image:: ../../images/favorites-list-sidebar.png
-        :alt: Favorite channels in the left-hand sidebar.
+        :alt: Favorite channels in the channel sidebar.
        
 **On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
 
@@ -123,9 +136,14 @@ Once a channel is muted:
 
 - Email, desktop, and push notifications are disabled.
 - A mute icon displays next to the channel name.
-- The channel appears at reduced opacity in the left-hand sidebar, and the channel isn't marked as unread unless you're mentioned directly.
+- The channel appears at reduced opacity in the channel sidebar, and the channel isn't marked as unread unless you're mentioned directly.
 
 To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
+
+Switching channels
+------------------
+
+Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance. 
 
 Navigating recently viewed channels
 -----------------------------------

@@ -1,4 +1,4 @@
-name: github pages
+name: preview-env-setup-update
 
 on:
   pull_request:
@@ -23,12 +23,12 @@ jobs:
           else
             echo "Is not a member of the Mattermost Organization"
           fi
-          
+
       - uses: actions/checkout@v2
         if: env.IS_MEMBER == 'true'
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true
+          fetch-depth: 0
 
       - name: Setup Python
         if: env.IS_MEMBER == 'true'
@@ -48,16 +48,15 @@ jobs:
         if: env.IS_MEMBER == 'true'
         run: make html
 
-      - name: Deploy
-        if: env.IS_MEMBER == 'true'
-        uses: peaceiris/actions-gh-pages@v3.7.0-1
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload Preview Env
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          destination_dir: ./${{ github.event.number }}
-          publish_dir: ./build/html
-          publish_branch: gh-pages
-          keep_files: true
-          
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: ./build/html
+          destination_dir: ${{ github.event.number }}
+
       - name: Add comment to PR
         if: env.IS_MEMBER == 'true'
         uses: peter-evans/create-or-update-comment@v1
@@ -65,4 +64,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
           body: |
-            Newest code from ${{ github.actor}} has been published to [preview environment](https://mattermost.github.io/docs/${{ github.event.number }})
+            Newest code from ${{ github.actor }} has been published to [preview environment](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ github.event.number }}) for Git SHA ${{ github.event.pull_request.head.sha }}

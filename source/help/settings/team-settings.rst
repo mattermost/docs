@@ -3,7 +3,7 @@ Team Settings
 
 --------------
 
-The Team Settings menu offers Team Administrators and System Administrators the ability to adjust settings applied to a specific team. To access the settings, open the main menu at the top of the left sidebar and select **Team Settings**. 
+The Team Settings menu offers Team Administrators and System Administrators the ability to adjust settings applied to a specific team. To access the settings, open the main menu at the top of the channel sidebar and select **Team Settings**. 
 
 General
 -------
@@ -13,7 +13,7 @@ General settings provide options around how teams are displayed to users.
 Team Name
 ~~~~~~~~~
 
-Your **Team Name** is displayed on the sign-in screen, and in the top of the left-hand sidebar for your team. 
+Your **Team Name** is displayed on the sign-in screen, and in the top of the channel sidebar for your team. 
 
 You can enter a name up to 15 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. The length of team names is limited to ensure readability.
 
@@ -29,7 +29,7 @@ Team Icon
 
 Your **Team Icon** appears in the team sidebar, visible if users are members of more than one team. 
 
-You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended, since transparency in PNG icons fills with a white background in the Team Sidebar. Removing the team icon resets it to the default icon that contains the first two letters of the team name.
+You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended, since transparency in PNG icons fills with a white background in the team sidebar. Removing the team icon resets it to the default icon that contains the first two letters of the team name.
 
 Allow only users with a specific email domain to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -7,7 +7,7 @@ Incidents are situations which require an immediate response, and incidents bene
 
 * Starting an incident automatically creates a dedicated incident channel to coordinate discussion. 
   
-  - Use custom categories in the left-hand sidebar to streamline access to ongoing incidents.
+  - Use custom categories in the channel sidebar to streamline access to ongoing incidents.
 
 * Playbooks define the tasks toward resolution as your team manages the incident.
   
@@ -38,7 +38,7 @@ Mattermost Incident Collaboration is available in the Plugin Marketplace:
 1. As a System Admin, go to **Main Menu > Plugin Marketplace**.
 2. Search for **Incident Collaboration**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
-4. From the plugin configuration page, set **Enable Plugin** to ``true``.
+4. From the plugin configuration page, set **Enable Plugin** to **true**.
 5. Select **Save** to enable the plugin.
 
 Getting Started with Mattermost Incident Collaboration
@@ -57,7 +57,7 @@ Mattermost Incident Collaboration has the following components:
 
 To access Mattermost Incident Collaboration:
 
-* From the Main Menu, select **Playbooks & Incidents** to configure playbooks and review incidents of which you are a member. System administrators have unrestricted access.
+* From the Main Menu, select **Incident Collaboration** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
 * From the channel header, select the **Incidents** icon to open the right-hand sidebar. From there, create a new incident or collaborate on active incidents of which you are a member.
 
 Playbooks and Incidents
@@ -85,26 +85,29 @@ Creating a playbook
 
 A playbook must be defined before starting an incident.
 
-1. Go to **Main Menu > Playbooks & Incidents**.
-2. Start a **Blank Playbook**, or use the built-in **Incident Collaboration Playbook** as a template.
-3. Name your playbook and provide a description.
-4. Select the **Tasks** tab.
-5. Within the **Tasks** tab, customize the checklists and tasks:
+1. Go to **Main Menu > Incident Collaboration**.
+2. Select **Playbooks**.
+3. Start a **Blank Playbook**, or use the built-in **Incident Collaboration Playbook** as a template.
+4. Name your playbook and provide a description.
+5. Select the **Tasks** tab.
+6. Within the **Tasks** tab, customize the checklists and tasks:
   * Create and name new tasks to capture actions your team should take to resolve the incident.
   * Create new checklists to group tasks meant to be completed together.
   * Drag and drop to reorganize checklists and tasks.
   * Optionally add task descriptions to give additional context to members of the incident channel. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
   * Optionally add a slash command to the task that can be executed by members of the incident channel as needed.
-6. Select the **Preferences** tab.
-7. Within the **Preferences** tab, customize how status updates are communicated:
+7. Select the **Preferences** tab.
+8. Within the **Preferences** tab, customize how status updates are communicated:
   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
   * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
   * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
-8. Select the **Automation** tab.
-9. Within the **Automation** tab, customize automatically triggered tasks:
+9. Select the **Automation** tab.
+10. Within the **Automation** tab, customize automatically triggered tasks:
   * Optionally enable the **Invite members** toggle and select a set of members. This set of members are automatically invited to the incident channel when the incident starts.
   * Optionally enable the **Assign commander** toggle and select a member. This member is automatically assigned as commander of the incident when the incident starts.
-10. On the right-hand side of the screen, configure the permissions:
+  * Optionally enable the **Announce it in another channel** toggle and select a channel. When the incident is started, an announcement is made in the selected channel.
+  * Optionally enable the **Send a webhook** toggle and enter the webhook you want to use.
+11. On the right-hand side of the screen, configure the permissions:
   * Decide whether the automatically created incident channel should be Public or Private within the team.
   * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
 
@@ -113,22 +116,24 @@ Configuring a playbook
 
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **Main Menu > Playbooks & Incidents**.
-2. Find the playbook to be edited. 
+1. Go to **Main Menu > Incident Collaboration**.
+2. Select **Playbooks**.
+3. Find the playbook to be edited.
  * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
-3. Select the name of the playbook, or select the **Action** menu next to the playbook name, then select **Edit**.
-4. Configure the playbook the same way a playbook is created or edited.
+4. Select the name of the playbook, or select the **Actions** menu next to the playbook name, then select **Edit**.
+5. Configure the playbook the same way a playbook is created or edited.
 
 Deleting a playbook
 ~~~~~~~~~~~~~~~~~~~
 
 You can delete a playbook at any time. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **Main Menu > Playbooks & Incidents**.
-2. Find the playbook to be edited. 
+1. Go to **Main Menu > Incident Collaboration**.
+2. Select **Playbooks**.
+3. Find the playbook to be edited.
  * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
-3. Select the **Action** menu next to the playbook name, then select **Edit**.
-4. Confirm that you want to **Delete Playbook**.
+4. Select the **Actions** menu next to the playbook name, then select **Edit**.
+5. Confirm that you want to **Delete Playbook**.
 
 Incidents
 ^^^^^^^^^
@@ -151,6 +156,8 @@ To start an incident, use any one of the following:
 Starting an incident opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
 
 The creator of an incident is automatically added as the first member and becomes the commander.
+
+When the incident is created, it is announced in the configured channel. If that channel is archived or deleted, the bot posts a notification in the incident channel.
 
 Joining an incident
 ~~~~~~~~~~~~~~~~~~~
@@ -189,15 +196,16 @@ Incident status updates ensure that stakeholders remain informed about the progr
 
 * From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-2. Select the **Summary** tab.
-3. Within the **Summary** tab, select **Update Status**.
-4. Add a Markdown-formatted message.
+2. Find the incident you're looking for and select **Go to Incident Channel**.
+3. Select the **Summary** tab.
+4. Within the **Summary** tab, select **Update Status**.
+5. Add a Markdown-formatted message.
  * If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
  * If this is a subsequent status update, the message from the last status update will be pre-populated here.
-5. Optionally set a reminder to prompt for the next status update.
+6. Optionally set a reminder to prompt for the next status update.
  * If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
  * If this is a subsequent status update, the last reminder timer will be pre-populated here.
-6. Select **Update Status** to post your status update.
+7. Select **Update Status** to post your status update.
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
@@ -212,10 +220,11 @@ Incident members can end an incident using any one of the following:
 
 * From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-2. Select **Update Status**.
-3. From the **Status** drop-down menu, select **Resolved**.
-4. Enter a message with additional details.
-5. Select **Update Status**
+2. Find the incident you're looking for and select **Go to Incident Channel**.
+3. Select **Update Status**.
+4. From the **Status** drop-down menu, select **Resolved**.
+5. Enter a message with additional details.
+6. Select **Update Status**.
 
 Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
 
@@ -228,22 +237,23 @@ If an incident was ended prematurely, it can be restarted using any one of the f
 
 * From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the RHS.
-2. Select **Update Status**.
-3. From the **Status** drop-down menu, select **Active**.
-4. Enter a message with additional details.
-5. Select **Update Status**
+2. Find the incident you're looking for and select **Go to Incident Channel**.
+3. Select **Update Status**.
+4. From the **Status** drop-down menu, select **Active**.
+5. Enter a message with additional details.
+6. Select **Update Status**.
 
 Reviewing past incidents
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To view past incidents of which you are a member, from the desktop or browser:
 
-1. Navigate to **Main Menu > Playbooks & Incidents**.
+1. Navigate to **Main Menu > Incident Collaboration**.
 2. Select the **Incidents** tab.
 3. Within the **Incidents** tab, find the incident to be reviewed, then select the name of the incident.
 4. Review the incident details:
  * The duration, total number of members ever involved, and messages sent in the channel are listed.
- * A graphical timeline shows how much time elapsed between completed tasks.
+ * A graphical timeline shows how much time elapsed between completed checklist items.
 5. Optionally export the contents of the incident channel to review during a post-mortem.
 
 Built-in slash commands

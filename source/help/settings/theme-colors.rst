@@ -5,38 +5,42 @@ Theme Colors
 
 The colors of the Mattermost user interface are customizable in **Account Settings > Display > Theme**. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
 
-Any changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
-
-Standard Themes
----------------
-
-Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, click a standard theme and then select **Custom Theme** to load the standard theme into the custom theme color selectors.
+Any color changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
 
 Import Theme from Slack
 -----------------------
 
-To import a theme, go to **Preferences > Sidebar Theme** from within Slack, open the custom theme option, copy the theme color vector and then paste it into the *Input Slack Theme* input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings.
+To import a theme, in Slack, go to **Preferences > Themes**, select **Create a custom theme**, then copy the theme color values. 
+
+In Mattermost, select **Import theme colors from Slack**, then paste the color values into the input box and select **Submit**. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings. Select **Save** to confirm your theme changes.
 
 Custom Themes
 -------------
 
-Observe a live preview as you customize theme colors and then click **Save** to confirm your changes. Discard your changes by exiting the settings window and clicking **Yes, Discard**.
+Select **Custom Theme**, then expand the `Sidebar Styles <https://docs.mattermost.com/help/settings/theme-colors.html#sidebar-styles>`__, `Center Channel Styles <https://docs.mattermost.com/help/settings/theme-colors.html#center-channel-styles>`__, and `Link and Button Styles <https://docs.mattermost.com/help/settings/theme-colors.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
+
+Your custom theme changes are applied in Mattermost as you make them. Select **Save** to confirm your theme changes. Discard your changes by exiting the **Display Settings** window and selecting **Yes, Discard**.
+
+Standard Themes
+---------------
+
+Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, select a standard theme, then select **Custom Theme** to further customize that standard theme based on your preferences. Select **Save** to confirm your theme changes.
 
 Sidebar Styles
 ~~~~~~~~~~~~~~
 
 Sidebar BG
-  Background color of the Channels pane, and Account and Team settings navigation sidebars.
+  	Background color of the Channels pane, and Account and Team settings navigation sidebars.
 Sidebar Text
-  Text color of read channels in the Channels pane, and tabs in the Account and Team settings navigation sidebar.
+  	Text color of read channels in the Channels pane, and tabs in the Account and Team settings navigation sidebar.
 Sidebar Header BG
-  Background color of the header above the Channels pane and all dialog window headers.
+ 	Background color of the header above the Channels pane and all dialog window headers.
 Sidebar Header Text
-  Text color of the header above the Channels pane and all dialog window headers.
+ 	Text color of the header above the Channels pane and all dialog window headers.
 Sidebar Unread Text
-  Text color of unread channels in the Channels pane.
+	Text color of unread channels in the Channels pane.
 Sidebar Text Hover BG
-  Background color behind channel names and settings tabs as you hover over them.
+	Background color behind channel names and settings tabs as you hover over them.
 Sidebar Text Active Border
 	Color of the rectangular marker on the left side of the Channels pane or Settings sidebar indicating the active channel or tab.
 Sidebar Text Active Color
@@ -60,7 +64,9 @@ Center Channel BG
 Center Channel Text
 	Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, right-hand sidebar, and dialogs.
 New Message Separator
-	The new massage separator appears below the last read message when you click into a channel with unread messages.
+	The new message separator appears below the last read message when you switch to a channel with unread messages.
+Error Text Color
+	Color of all error text.
 Mention Highlight BG
 	Highlight color behind your words that trigger mentions in the center pane and right-hand sidebar.
 Mention Highlight Link
@@ -81,26 +87,26 @@ Button Text
 Exporting a Custom Theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can export a theme by copying the "Theme Code" from the Custom Theme menu.
+You can export a theme from Mattermost by copying the theme values from the Custom Theme menu.
 
-Go to **Account Settings > Display > Custom Theme > Copy and paste to share theme colors** and copy the theme code to export it.
+Go to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
 
 Importing a Custom Theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can import a theme by pasting a "Theme Code" into the Custom Theme menu.
+You can import a theme into Mattermost by pasting the theme values into the Custom Theme menu.
 
-Go to **Account Settings > Display > Custom Theme > Copy and paste to share theme colors** and paste a theme code to import it, then click **Save**.
+Copy existing theme values, then go to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
 
 Custom Theme Examples
 ~~~~~~~~~~~~~~~~~~~~~
 
-Customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Below are some example themes with their corresponding theme vectors.
+Customize your theme colors and share them with others by copying and pasting theme values into the input box. Below are some example themes with their corresponding theme values.
 
 GitHub theme
 ^^^^^^^^^^^^
 
-.. image:: ../../images/theme2.PNG
+.. image:: ../../images/theme2.png
   :alt: theme2
 
 .. code-block:: none
@@ -110,7 +116,7 @@ GitHub theme
 Monokai theme
 ^^^^^^^^^^^^^
 
-.. image:: ../../images/theme3.PNG
+.. image:: ../../images/theme3.png
   :alt: theme3
 
 .. code-block:: none
@@ -120,7 +126,7 @@ Monokai theme
 Solarized Dark theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeSolarizedDark.PNG
+.. image:: ../../images/themeSolarizedDark.png
   :alt: themeSolarizedDark
 
 .. code-block:: none
@@ -130,7 +136,7 @@ Solarized Dark theme
 Gruvbox Dark theme
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeGruvboxDark.PNG
+.. image:: ../../images/themeGruvboxDark.png
   :alt: themeGruvboxDark
 
 .. code-block:: none
@@ -164,7 +170,7 @@ Discord Dark Theme
 Night Owl Dark theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/nightOwlDark.PNG
+.. image:: ../../images/nightOwlDark.png
   :alt: nightOwlDark
 
 .. code-block:: none

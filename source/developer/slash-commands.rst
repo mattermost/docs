@@ -21,7 +21,7 @@ Messages that begin with ``/`` are interpreted as slash commands. The commands w
 Built-in Commands
 -----------------
 
-Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are available in the `latest Mattermost release <https://mattermost.com/download/>`__:
+Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are available in the `latest Mattermost release <https://mattermost.com/download>`__:
 
 .. csv-table::
     :header: "Command", "Description", "Example"
@@ -67,9 +67,9 @@ Suppose you want to write an external application that is able to check the weat
 
 You can follow these general guidelines to set up a custom Mattermost slash command for your application.
 
-1. Open **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** (or **System Console > Integrations > Custom Integrations** in versions prior to 5.12) or ask your Mattermost System Admin to do so.
+1. Open **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin to do so.
 
-2. Select **Add Slash Command** and add name and description for the command.
+2. Select **Add Slash Command** and add a name and description for the command.
 
 3. Set the **Command Trigger Word**. The trigger word must be unique and cannot begin with a slash or contain any spaces. It also cannot be one of the `built-in commands <https://docs.mattermost.com/help/messaging/executing-commands.html#built-in-commands>`__.
 
@@ -79,7 +79,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 .. note::
   
-    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Integration Management** (or **System Console > Integrations > Custom Integrations** in versions prior to 5.12) or ask your Mattermost System Admin.
+    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin.
 
 6. (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 
@@ -142,18 +142,18 @@ If your integration sends back a JSON response, make sure it returns the ``appli
 
 which would render in Mattermost as:
 
-.. image:: ../images/weatherBot.PNG
+.. image:: ../images/weatherBot.png
   :alt: Shows what the JSON response renders as in Mattermost
 
-11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands/>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
+11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
   
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** (or **System Console > Integrations > Custom Integrations** in versions prior to 5.12) or ask your Mattermost System Admin. If not enabled, the username is set to ``webhook``.
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the username is set to ``webhook``.
   
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** (or **System Console > Integrations > Custom Integrations** in versions prior to 5.12) or ask your Mattermost System Admin. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
@@ -171,9 +171,9 @@ Tips and Best Practices
 Share Your Integration
 ----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects>`__ in our `app directory <https://about.mattermost.com/default-app-directory>`__.
 
-The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://about.mattermost.com/default-app-directory>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------
@@ -207,4 +207,4 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-See `developer documentation <https://developers.mattermost.com/integrate/slash-commands/>`__ for troubleshooting, or `join the Mattermost user community for help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for troubleshooting, or `join the Mattermost user community for help <https://mattermost.com/pl/default-ask-mattermost-community>`_.
