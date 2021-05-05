@@ -25,6 +25,8 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl docs`_ - Generates mmctl documentation
    - `mmctl export`_ - Exports management
    - `mmctl group`_ - Group management
+   - `mmctl group channel`_ - Channel group management
+   - `mmctl group team`_ - Team group management
    - `mmctl import`_ - Import Management
    - `mmctl integrity`_ - Database record integrity
    - `mmctl ldap`_ - LDAP management
@@ -36,6 +38,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl roles`_ - Roles Management
    - `mmctl system`_ - System Management
    - `mmctl team`_ - Team Management
+   - `mmctl team users`_ - Team user management
    - `mmctl token`_ - Token Management
    - `mmctl user`_ - User Management
    - `mmctl version`_ - Version Management
@@ -2019,14 +2022,14 @@ mmctl export
 
 Management of exports.
 
-Child Commands
-  -  `mmctl export create`_ - Create an export file
-  -  `mmctl export delete`_ - Delete an export file
-  -  `mmctl export download`_ - Download export files
-  -  `mmctl export job`_ - List and show export jobs
-  -  `mmctl export job list`_ - List export jobs
-  -  `mmctl export job show`_ - Show export job
-  -  `mmctl export list`_ - List export files
+   Child Commands
+      -  `mmctl export create`_ - Create an export file
+      -  `mmctl export delete`_ - Delete an export file
+      -  `mmctl export download`_ - Download export files
+      -  `mmctl export job`_ - List and show export jobs
+      -  `mmctl export job list`_ - List export jobs
+      -  `mmctl export job show`_ - Show export job
+      -  `mmctl export list`_ - List export files
   
 **Options**
 
