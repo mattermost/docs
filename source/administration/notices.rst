@@ -44,7 +44,7 @@ Admin Advisor notices
 ---------------------
 
 .. note::
-  Admin Advisor notices are disabled in Mattermost Server from v5.35.
+  Admin Advisor notices are disabled in v5.35 and later.
 
 Admin Advisor notices are designed to provide guidance and assist in choosing features to support your deployment as it scales.
 
