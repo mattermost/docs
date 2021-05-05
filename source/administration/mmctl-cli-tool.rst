@@ -2038,7 +2038,7 @@ Management of exports.
    -h, --help   help for group
 
 mmctl export create
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2069,7 +2069,7 @@ Create an export file.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2105,7 +2105,7 @@ Delete an export file.
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl export download
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2146,7 +2146,7 @@ Download export files.
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl export job
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2170,7 +2170,7 @@ List and show export jobs.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export job list
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2209,7 +2209,7 @@ List export jobs.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export job show
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2245,7 +2245,7 @@ Show export job.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export list
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2273,7 +2273,6 @@ List export files.
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
-
 
 mmctl group
 -----------
