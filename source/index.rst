@@ -21,4 +21,4 @@ Mattermost Documentation
    User's Guide <guides/user>
    Integration Guide <guides/integration>
    Developer's Guide <https://developers.mattermost.com/>
-  
+

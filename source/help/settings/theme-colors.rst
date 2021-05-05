@@ -106,7 +106,7 @@ Customize your theme colors and share them with others by copying and pasting th
 GitHub theme
 ^^^^^^^^^^^^
 
-.. image:: ../../images/theme2.PNG
+.. image:: ../../images/theme2.png
   :alt: theme2
 
 .. code-block:: none
@@ -116,7 +116,7 @@ GitHub theme
 Monokai theme
 ^^^^^^^^^^^^^
 
-.. image:: ../../images/theme3.PNG
+.. image:: ../../images/theme3.png
   :alt: theme3
 
 .. code-block:: none
@@ -126,7 +126,7 @@ Monokai theme
 Solarized Dark theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeSolarizedDark.PNG
+.. image:: ../../images/themeSolarizedDark.png
   :alt: themeSolarizedDark
 
 .. code-block:: none
@@ -136,7 +136,7 @@ Solarized Dark theme
 Gruvbox Dark theme
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeGruvboxDark.PNG
+.. image:: ../../images/themeGruvboxDark.png
   :alt: themeGruvboxDark
 
 .. code-block:: none
@@ -170,7 +170,7 @@ Discord Dark Theme
 Night Owl Dark theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/nightOwlDark.PNG
+.. image:: ../../images/nightOwlDark.png
   :alt: nightOwlDark
 
 .. code-block:: none

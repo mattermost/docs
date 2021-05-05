@@ -22,13 +22,13 @@ You should save the two files that are generated, which will be referred to as t
 
 5 - Click **Create New App** and choose `SAML 2.0` as the Sign on method.
 
-![okta_1_new_app](../../source/images/okta_1_new_app.PNG)
+![okta_1_new_app](../../source/images/okta_1_new_app.png)
 
 6 - Enter **General Settings** for the application, including `App name` and `App logo` (optional). It is recommended to display the application icon to users, including in the Okta Mobile app.
 
 If you’d like to use a Mattermost logo for the application, you are free to download one [from our page](https://mattermost.org/brand-guidelines/).
 
-![okta_2_general_settings](../../source/images/okta_2_general_settings.PNG)
+![okta_2_general_settings](../../source/images/okta_2_general_settings.png)
 
 7 - Enter **SAML Settings**, including:
  - Single sign on URL: `https://<your-mattermost-url>/login/sso/saml`
@@ -36,35 +36,35 @@ If you’d like to use a Mattermost logo for the application, you are free to do
  - Name ID format: `unspecified`
  - Application username: `Email`
 
-![okta_3_initial_saml_settings.PNG](../../source/images/okta_3_initial_saml_settings.PNG)
+![okta_3_initial_saml_settings.png](../../source/images/okta_3_initial_saml_settings.png)
 
 8 - (Optional) Set up encryption for your SAML connection. First, click **Show Advanced Settings**.
 
-![okta_4_initial_saml_settings.PNG](../../source/images/okta_4_initial_saml_settings.PNG)
+![okta_4_initial_saml_settings.png](../../source/images/okta_4_initial_saml_settings.png)
 
 Then, set **Assertion Encryption** as `Encrypted` and upload the **Service Provider Public Certificate** you generated in step 2 to the **Encryption Certificate** field.
 
-![okta_5_advanced_saml_settings.PNG](../../source/images/okta_5_advanced_saml_settings.PNG)
+![okta_5_advanced_saml_settings.png](../../source/images/okta_5_advanced_saml_settings.png)
 
 9 - Enter attribute statements, which will be used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our [documentation on SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise). Email and username attributes are required. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.
 
-![okta_6_attribute_statements.PNG](../../source/images/okta_6_attribute_statements.PNG)
+![okta_6_attribute_statements.png](../../source/images/okta_6_attribute_statements.png)
 
 10 - Click **Next**. Then, set Okta support parameters for the application. Recommended settings:
  - I’m an Okta customer adding an internal app
  - This is an internal app that we have created
 
-![okta_7_support_configuration.PNG](../../source/images/okta_7_support_configuration.PNG)
+![okta_7_support_configuration.png](../../source/images/okta_7_support_configuration.png)
 
 11 - Click **Finish**. On the next screen, click the **Sign On** tab and click **View Setup Instructions**.
 
-![okta_8_view_instructions.PNG](../../source/images/okta_8_view_instructions.PNG)
+![okta_8_view_instructions.png](../../source/images/okta_8_view_instructions.png)
 
 12 - Take note of `Identity Provider Single Sign-On URL` (also known as `SAML SSO URL`), and the Identity Provider Issuer, as both will be needed to configure SAML for Mattermost. 
 
 Furthermore, you **must download the X.509 Public Certificate file** and save it. You will need to upload it to Mattermost at a later step.
 
-![okta_9_view_instructions.PNG](../../source/images/okta_9_view_instructions.PNG)
+![okta_9_view_instructions.png](../../source/images/okta_9_view_instructions.png)
 
 ### Configure SAML for Mattermost
 
@@ -73,25 +73,25 @@ Furthermore, you **must download the X.509 Public Certificate file** and save it
  - **Identity Provider Issuer URL**: `Identity Provider Issuer` from Okta, specified in step 12.
  - **Identity Provider Public Certificate**: X.509 Public Certificate file you downloaded from Okta in step 12.
 
-![okta_10_mattermost_basics.PNG](../../source/images/okta_10_mattermost_basics.PNG)
+![okta_10_mattermost_basics.png](../../source/images/okta_10_mattermost_basics.png)
 
 14 - (Optional) Configure Mattermost to verify the signature. The **Service Provider Login URL** is the `Single sign on URL` you specified in Okta in step 7.
 
-![okta_11_mattermost_verification.PNG](../../source/images/okta_11_mattermost_verification.PNG)
+![okta_11_mattermost_verification.png](../../source/images/okta_11_mattermost_verification.png)
 
 15 - (Optional) Enable encryption based on the parameters provided in step 8.
 
-![okta_12_mattermost_encryption.PNG](../../source/images/okta_12_mattermost_encryption.PNG)
+![okta_12_mattermost_encryption.png](../../source/images/okta_12_mattermost_encryption.png)
 
 16 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in Okta in step 9. See [documentation on SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
 
 For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.
 
-![okta_13_mattermost_attributes.PNG](../../source/images/okta_13_mattermost_attributes.PNG)
+![okta_13_mattermost_attributes.png](../../source/images/okta_13_mattermost_attributes.png)
 
 17 - (Optional) Lastly, customize the login button text.
 
-![okta_14_mattermost_login_button.PNG](../../source/images/okta_14_mattermost_login_button.PNG)
+![okta_14_mattermost_login_button.png](../../source/images/okta_14_mattermost_login_button.png)
 
 18 - Click **Save**.
 
