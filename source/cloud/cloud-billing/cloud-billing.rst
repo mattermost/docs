@@ -80,3 +80,5 @@ You will be notified immediately of failed payments both in-product with a banne
    "97 days", "The workspace and all data is deleted."
 
 Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
+
+Once a workspace has been deleted, contents can not be re-instated.  You will need to create a new workspace at that time. 
