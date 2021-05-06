@@ -3,4 +3,4 @@
 API
 =================
 
-See the `API documentation <https://api.mattermost.com>`__.
+See the `TEST API documentation <https://api.mattermost.com>`__.
