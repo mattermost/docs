@@ -77,5 +77,6 @@ You will be notified immediately of failed payments both in-product with a banne
    "14 days", "Another email is sent to the workspace Administrator with directions to update payment information."
    "30 days", "An email is sent to the workspace Administrator indicating that the workspace will be suspended in a further 60 days."
    "90 days", "The workspace will be suspended, preventing access by all users and Administrators."
+   "97 days", "The workspace and all data is deleted."
 
 Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
