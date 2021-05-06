@@ -51,6 +51,19 @@ jobs:
           body: |
             Newest code from ${{ github.actor }} has been published to [preview environment](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ github.event.number }}) for Git SHA ${{ github.event.pull_request.head.sha }}
 
+      - name: 'Comment on PR'
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Preview environment is not enabled for PRs comming from fork repositories.'
+            });
+
       - name: Add comment to PR
         if: github.event.pull_request.head.repo.full_name != github.repository
         uses: peter-evans/create-or-update-comment@v1
