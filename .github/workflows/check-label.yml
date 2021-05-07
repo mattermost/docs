@@ -1,0 +1,13 @@
+name: check-label-preview-env
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  check-label-preview-env:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check-label
+      if: contains(github.event.pull_request.labels.*.name, 'preview-environment')
+      run: echo "label exist, will trigger the preview environment"
