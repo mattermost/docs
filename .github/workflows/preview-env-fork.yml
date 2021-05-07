@@ -9,16 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Get PR number
+      - name: Dump GitHub context
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        uses: actions/download-artifact@v2
-        with:
-          name: pr.txt
-      - name: See PR
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        run: |
-          echo "TEST"
-          cat pr.txt
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Check label
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: actions/github-script@v4
