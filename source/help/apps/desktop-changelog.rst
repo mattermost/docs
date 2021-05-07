@@ -14,14 +14,16 @@ Breaking Changes or Upgrade Notes
 
 Highlights
 ~~~~~~~~~~~~~~~
-- Added support for BrowserView.
+
+#### BrowserView
+ - Added support for Electron BrowserView, an underlying architecture change that improves performance and offers snappier interactions (i.e., less lag), lower CPU usage, and faster launch times.
 
 Improvements
 ~~~~~~~~~~~~~~~
 
 Windows
 ^^^^^^^^^^^^^
-- Removed the dark mode toggle option for Windows.
+- Windows desktop now automatically switches between light and dark themes based on the operating system settings.
 
 MacOS
 ^^^^^^^^^^^^^
@@ -31,15 +33,14 @@ All Platforms
 ^^^^^^^^^^^^^
 - Added Swedish language to the spellchecker.
 - Added a setting to specify the default desktop app download location.
-- Updated the desktop app loading indicator.
+- Improved the launch screen and loading indicator.
 - Restored deeplinking.
-- Switched the dictionary to the one Electron uses to have the ability to fix spelling.
+- Improved the spell check dictionary to provide more accurate spelling suggestions in more languages. The spell check language is now automatically based on the operating system setting.
 - Added improvements to be consistent on the use of URL and URL libraries.
-- Removed the Finder functionality from the Desktop App.
+- Ctrl/CMD + F functionality has been replaced with in-channel search (requires Mattermost server v5.35+).
 - Updated CSP for Desktop App to avoid warnings in the dev tools.
 - Removed the menu bar in the Settings window for Windows and Linux.
 - Shortened the max-length/width for server tab names to 224px.
-- For Windows and Linux, the system language is now used and the spell checker's option help text was improved. languages are no longer selectable and toggling the spellchecker requires a restart.
 - Udpated the menubar and system tray icons for improved contrast.
 - Removed ``libappnotify1`` as a dependency requirement in Debian installers as it is no longer shipped in Debian's Bullseye. It is still recommeded to install where available.
 
@@ -47,6 +48,7 @@ Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Major version upgrade of Electron to v11.4.4. Electron is the underlying technology used to build the Desktop apps.
+- Added support for Electron BrowserView.
 - Added support for M1 architecture in the build pipeline.
 
 Bug Fixes
