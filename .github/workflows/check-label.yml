@@ -11,3 +11,5 @@ jobs:
     - name: check-label
       if: contains(github.event.pull_request.labels.*.name, 'preview-environment')
       run: echo "label exist, will trigger the preview environment"
+    - name: Set PR
+      run: echo '::set-output name=FORK_PR_NUMBER::${{ github.event.pull_request.number }}'

@@ -14,6 +14,12 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: See PR
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: |
+          echo "TEST"
+          echo ${{ github.event.check-label-preview-env.FORK_PR_NUMBER }}
+          echo ${{ github.event.workflow_run.FORK_PR_NUMBER }}
       - name: Check label
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: actions/github-script@v4
