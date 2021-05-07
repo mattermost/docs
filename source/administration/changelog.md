@@ -9,7 +9,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2021-05-16**
 
 #### Important Upgrade Notes
-   - Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. [More details on the performance impact of the migration and possible mitigation strategies are provided here](https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1).
+   - Due to the introduction of backend database architecture required for upcoming new features, including Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. [More details on the performance impact of the migration and possible mitigation strategies are provided here](https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1).
    - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.34, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
@@ -23,7 +23,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/). To be available for mobile apps in a later release.
 
 #### Granular Access to System Console Pages (E20 Edition)
- - Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, Compliance sections to their respective sub-section permissions.
+ - Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, and Compliance sections to their respective sub-section permissions.
 
 #### Shared Channels (Experimental, E20 Edition)
  - Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.
@@ -32,7 +32,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - 
 
 #### Incident Collaboration (E20 Edition)
- - Updated prepackaged Incident Collaboration plugin with updates to Ad hoc tasks, stakeholder overview, and more.
+ - Updated prepackaged Incident Collaboration plugin with to include Ad hoc tasks, stakeholder overview, and more.
 
 ### Improvements
 
@@ -44,7 +44,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Ephemeral message created from call response ``markdown`` field is now posted by bot.
  - Added improvements and fixes for the custom status feature. For example, fixed an issue where recently selected statuses were missing from the **Set a Status** confirmation screen, and updated the **Mobile Push Notifications** text in **Account Settings** to refer to user **availability** instead of **online status**.
  - Moved the user status in the channel switcher to overlap with user avatars, and added URL 'Slug' information to channel names in the channel switcher.
- - Added a string field to configuration for restricted domains with the key ``RestrictLinkPreviews`` and added a UI field for restricted domains under **System Console > Site Configuration > Posts**. Also expanded the logic that determines whether a post has a preview or not.
+ - Added a string field to restricted domains configuration with the key ``RestrictLinkPreviews``, and added a UI field for restricted domains under **System Console > Site Configuration > Posts**. Also expanded the logic that determines whether a post has a preview or not.
  - Added an unread badge to the **Main Menu** icon and the **Plugin Marketplace** menu that displays until a System Admin visits the **Plugin Marketplace** for the first time.
  - Added profile pictures to the **Direct Messages** channel list.
  - Added channel icons for email notifications as part of email notification redesigns.
