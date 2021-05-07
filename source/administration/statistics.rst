@@ -113,7 +113,7 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes. Using Mattermost Enterprise Edition E20, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the `Additional System Admin Roles (E20) <https://docs.mattermost.com/deployment/admin-roles.html>`__ documentation.
+Yes. In Mattermost Enterprise Edition E20, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the `Additional System Admin Roles (E20) <https://docs.mattermost.com/deployment/admin-roles.html>`__ documentation.
 
 To enable Team Admins to access their team's statistics:
 
