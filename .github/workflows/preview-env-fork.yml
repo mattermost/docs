@@ -9,13 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Download pr artifact
+      - name: Download PR number artifact
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: ${{ github.event.workflow_run.workflow_id }}
           name: pr.txt
-      - name: Dave PR number
+      - name: Save PR number
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         id: pr
         run: |
