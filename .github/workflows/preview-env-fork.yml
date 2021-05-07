@@ -9,7 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Check label
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: actions/github-script@v4
         id: label-checker
         with:
