@@ -4,7 +4,7 @@ Implementation Plan
 1   Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.1 Purpose
+1.1 Purpose 
 .........................................
 
 Mattermost is an open source, private cloud alternative to proprietary SaaS messaging solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You have chosen to implement Mattermost in our supported `editions:`_
@@ -19,6 +19,8 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 The purpose of this Implementation Plan is to:
 
  - Describe the solution to be deployed;
+
+ - THIS IS A TEST;
 
  - Outline the process for implementing the solution (key personnel, tasks, schedule, etc.);
 
