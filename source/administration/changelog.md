@@ -91,11 +91,11 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``SqlSettings`` in ``config.json``:
      - Added ``ReplicaLagSettings``. This is an array of maps which contain three keys: ``DataSource``, ``QueryAbsoluteLag``, and ``QueryTimeLag``.
 
-#### Database Changes
+### Database Changes
  - Added new column in ``ChannelMembers`` table called ``MentionCountRoot``. Please note that on installations with large amount of Channels/Users the migration can take up to a few minutes.
  - Added ``TotalMsgCountRoot`` to ``Channels`` table and ``MsgCountRoot`` column to ``ChannelMembers`` table. Please note that the migration on large MySQL instances can take several minutes to complete.
 
-#### API Changes
+### API Changes
  - Added ``/teams/{team_id}/files/search`` API endpoint for files search.
  - For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e. Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
 
