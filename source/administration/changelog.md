@@ -17,7 +17,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Apps Framework (Developer Preview)
- - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they're comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance, before then developers can use the ``cloud`` branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th. Learn more: https://developers.mattermost.com/integrate/apps/.
+ - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they're comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.
 
 #### Search results are returned on file search
  - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/). To be available for mobile apps in a later release.
@@ -28,8 +28,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Shared Channels (Experimental, E20 Edition)
  - Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.
 
-#### Enterprise Trial enhancements Phase 1
- - 
+#### Enterprise Trial Enhancements 
+ - Added banners to alert System Admins when an E20 trial has started, when there are three days left of the trial, and when the trial is on the last day. 
 
 #### Incident Collaboration (E20 Edition)
  - Updated prepackaged Incident Collaboration plugin with to include Ad hoc tasks, stakeholder overview, and more.
