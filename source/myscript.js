@@ -1,5 +1,32 @@
 $(document).ready(function(){
-	var thermometerHtml = "<div class='c-thermometer'><div class='c-thermometer__trigger'><div>🙂</div></div><div class='c-thermometer__popup'><div class='c-thermometer__close'>×</div><p class='c-thermometer__paragraph'>How would you rate this page?</p> <div class='c-thermometer__emojis'> <a href='javascript:void(0)' onClick=\"ga('send', 'event', {'sendTo':'UA-67846571-2', eventCategory: 'Feedback', eventAction: 'Click', eventLabel: 'Excellent', eventValue: 3});\"> <span class='c-thermometer__emoji'>😀</span> <p>Excellent</p> </a> <a href='javascript:void(0)' onClick=\"ga('send', 'event', {'sendTo':'UA-67846571-2', eventCategory: 'Feedback', eventAction: 'Click', eventLabel: 'Average', eventValue: 2});\"> <span class='c-thermometer__emoji'>😐</span> <p>Average</p> </a> <a href='javascript:void(0)' onClick=\"ga('send', 'event', {'sendTo':'UA-67846571-2', eventCategory: 'Feedback', eventAction: 'Click', eventLabel: 'Poor', eventValue: 1});\"> <span class='c-thermometer__emoji'>🙁</span> <p>Poor</p> </a> </div></div></div>";
+	// Init GTM dataLayer for Analytics
+	var dataLayer = window.dataLayer || [];
+
+	var thermometerHtml = 
+		"<div class='c-thermometer'> \
+			<div class='c-thermometer__trigger'> \
+				<div>🙂</div> \
+			</div> \
+			<div class='c-thermometer__popup'> \
+				<div class='c-thermometer__close'>×</div> \
+				<p class='c-thermometer__paragraph'>How would you rate this page?</p> \
+				<div class='c-thermometer__emojis'> \
+					<a href='javascript:void(0);' class='rate-this-page-action' data-rating='Excellent'> \
+						<span class='c-thermometer__emoji'>😀</span> \
+						<p>Excellent</p> \
+					</a> \
+					<a href='javascript:void(0);' class='rate-this-page-action' data-rating='Average'> \
+						<span class='c-thermometer__emoji'>😐</span> \
+						<p>Average</p> \
+					</a> \
+					<a href='javascript:void(0);' class='rate-this-page-action' data-rating='Poor'> \
+						<span class='c-thermometer__emoji'>🙁</span> \
+						<p>Poor</p> \
+					</a> \
+				</div> \
+			</div> \
+		</div>";
+
 	$('body').append(thermometerHtml);
 
 	$('header .links__icon').on('click', function (){
@@ -42,13 +69,41 @@ $(document).ready(function(){
 		$('.c-thermometer__popup').fadeToggle();
 	});
 
-    $('body').on('click', '.c-thermometer__emojis a', function(){
+	// Click Event for Ratings
+    $('body').on('click', '.c-thermometer__emojis a.rate-this-page-action', function(){
+		var click_elem = $(this);
+
+		// UX Update
 		$('.c-thermometer__paragraph').text('Thank you for submitting your rating.');
 		setTimeout(() => {
 			$('.c-thermometer').fadeOut(() => {
 				$('.c-thermometer').remove();
 			});
 		}, 3000);
+		
+		// Prepare DataLayer Vars
+		var rating = click_elem.attr('data-rating');
+		var event_value = 0;
+		switch (rating) {
+			case 'Excellent':
+				event_value = 3;
+				break;
+			case 'Average':
+				event_value = 2;
+				break;
+			case 'Poor':
+				event_value = 1;
+				break;
+		}
+
+		if (event_value > 0) {
+			// Submit DataLayer Event
+			dataLayer.push({
+				event: 'rateThisPage',
+				eventLabel: rating,
+				eventValue: event_value
+			});
+		}
 	});
 
 });
