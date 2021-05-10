@@ -32,6 +32,7 @@
 
 #### iOS specific
  - Fixed an issue on iPad where the last message rendered behind the input box.
+ - Fixed an issue that caused the draft to be saved for a different channel when running the app on tablet devices.
  - Fixed an issue where the **Automatic replies** setting's **Done** button on the keyboard added a new line.
 
 ### Known Issues
