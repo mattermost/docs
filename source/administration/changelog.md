@@ -20,34 +20,34 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Apps Framework (Developer Preview)
  - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they're comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.
 
-#### Search results are returned on file search
- - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/). To be available for mobile apps in a later release.
+#### Search for files and document contents
+ - Searching in Mattermost now finds both relevant messages and files in your team’s conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/).
 
 #### Granular Access to System Console Pages (E20 Edition)
- - Migrated Experimental, About, Reporting, Environment, Site Configuration, Authentication, Integrations, and Compliance sections to their respective sub-section permissions.
+ - Migrated **Experimental**, **About**, **Reporting**, **Environment**, **Site Configuration**, **Authentication**, **Integrations**, and **Compliance** sections to their respective sub-section permissions.
 
 #### Shared Channels (Experimental, E20 Edition)
  - Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.
 
-#### Enterprise Trial Enhancements 
+#### Enterprise Trial Enhancements (E20 Edition)
  - Added banners to alert System Admins when an E20 trial has started, when there are three days left of the trial, and when the trial is on the last day. 
 
 #### Incident Collaboration (E20 Edition)
- - Updated prepackaged Incident Collaboration plugin with to include Ad hoc tasks, stakeholder overview, and more.
+ - Updated prepackaged Incident Collaboration plugin with to include ad hoc tasks, stakeholder overview, and more.
 
 ### Improvements
 
 #### User Interface (UI)
  - Added support to collapse in-line images over 100px in height.
  - Implemented maximum length validation on the status modal for custom statuses.
- - Synchronized collapsed channel sidebar categories on the server.
+ - Synchronized collapsed channel sidebar categories on the server to keep category collapse states in-sync across devices.
  - Empty state is no longer off-centered in the **Channel Switcher**.
  - Ephemeral message created from call response ``markdown`` field is now posted by bot.
- - Added improvements and fixes for the custom status feature. For example, fixed an issue where recently selected statuses were missing from the **Set a Status** confirmation screen, and updated the **Mobile Push Notifications** text in **Account Settings** to refer to user **availability** instead of **online status**.
- - Moved the user status in the channel switcher to overlap with user avatars, and added URL 'Slug' information to channel names in the channel switcher.
+ - Added various enhancements to custom status to allow users to switch to recent statuses with less clicks.
+ - Users can now see online status on user profile images in the channel switcher.
  - Added a string field to restricted domains configuration with the key ``RestrictLinkPreviews``, and added a UI field for restricted domains under **System Console > Site Configuration > Posts**. Also expanded the logic that determines whether a post has a preview or not.
  - Added an unread badge to the **Main Menu** icon and the **Plugin Marketplace** menu that displays until a System Admin visits the **Plugin Marketplace** for the first time.
- - Added profile pictures to the **Direct Messages** channel list.
+ - Profile images are now visible on **Direct Messages** in the channel sidebar.
  - Added channel icons for email notifications as part of email notification redesigns.
  - Direct Messages **More...** modal is now sorted by recent conversations when the modal is opened.
  - Removed legacy Open-Sans fonts and upgraded Open-Sans to v18.
