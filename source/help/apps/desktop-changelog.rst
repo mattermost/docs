@@ -33,7 +33,7 @@ All Platforms
 - Added improvements to be consistent with the use of URL and URL libraries.
 - Ctrl/CMD + F functionality has been replaced with in-channel search (requires Mattermost server v5.35+).
 - Updated the Content Security Policy for Desktop App to avoid warnings in the dev tools.
-- Removed the menu bar in the Settings window for Windows and Linux.
+- On Linux and Windows, each settings menu is now in a separate window.
 - Shortened the maximum length (width) for server tab names to 224px.
 - Updated the menu bar and system tray icons for improved contrast.
 - Removed ``libappnotify1`` as a dependency requirement in Debian installers as it's no longer shipped in Debian's Bullseye. It's still recommended to install where available.
