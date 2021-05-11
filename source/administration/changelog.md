@@ -18,7 +18,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Apps Framework (Developer Preview)
- - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive Apps in Mattermost, using any development language they're comfortable with. The new Apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35.0 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.
+ - Apps Framework is a new way to integrate with external tools, and allows developers to create interactive apps in Mattermost, using any development language they're comfortable with. The new apps work seamlessly across mobile and desktop clients. This is a developer preview and is not intended for production instances of Mattermost yet. This feature is available for self-managed customers with v5.35 when the Apps Framework Plugin is loaded on an instance. Learn more: https://developers.mattermost.com/integrate/apps/.
 
 #### Search for files and document contents
  - Searching in Mattermost now finds both relevant messages and files in your team’s conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/).
@@ -26,13 +26,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Granular Access to System Console Pages (E20 Edition)
  - Migrated **Experimental**, **About**, **Reporting**, **Environment**, **Site Configuration**, **Authentication**, **Integrations**, and **Compliance** sections to their respective sub-section permissions.
 
-#### Shared Channels (Experimental, E20 Edition)
- - Experimental support added for sharing channels between Mattermost clusters. Requires an E20 license. The Shared Channels feature is disabled by default.
+#### Shared Channels (Experimental, Enterprise Edition E20)
+ - Experimental support added for sharing channels between Mattermost clusters. Requires an Enterprise Edition E20 license. The Shared Channels feature is disabled by default.
 
 #### Enterprise Trial Enhancements (E20 Edition)
- - Added banners to alert System Admins when an E20 trial has started, when there are three days left of the trial, and when the trial is on the last day. 
+ - Added banners to alert System Admins when an Enterprise Edition E20 trial has started, when there are three days left of the trial, and when the trial is on the last day.
 
-#### Incident Collaboration (E20 Edition)
+#### Incident Collaboration (Enterprise Edition E20)
  - Updated prepackaged Incident Collaboration plugin with to include ad hoc tasks, stakeholder overview, and more.
 
 ### Improvements
@@ -53,7 +53,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Removed legacy Open-Sans fonts and upgraded Open-Sans to v18.
 
 #### Administration
- - Paused admin advisor notifications from triggering.
+ - Paused Admin Advisor notifications from triggering.
  - Added a command line document extraction command that allows indexing documents by content.
  - Removed the utility function ``model.GeneratePassword()`` for security reasons. An improved version is now being used internally to generate passwords for bulk-imported users.
  - Only the System Admin is allowed to have the ability to assign system roles.
@@ -68,10 +68,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where users were unable to drag the vertical scroll bar on a PDF preview.
  - Fixed an issue with animations on long posts when highlighted as a permalink.
  - Fixed an issue where the user's nickname was not shown on channel switch.
- - Fixed an issue where deactivated users were not marked as "Deactivated" in the channel switcher.
+ - Fixed an issue where deactivated users were not marked as **Deactivated** in the channel switcher.
  - Fixed an issue where queries executed during the upgrade process would preemptively time out on the application side.
  - Fixed an issue where users were unable to deactivate MFA for their accounts even if MFA was disabled on the server.
- - Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e., Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
+ - Fixed an issue where user settings on API could be set if LDAP Sync was on. For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAuth users (i.e., GitLab, Google, Office365, and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
  - Fixed a possible panic on post creation when the collapsed threads feature was enabled.
  - Fixed a database deadlock that could happen if a sidebar category was updated and deleted at the same time.
  - Fixed an issue where the sidebar **Text Hover BG Theme** color didn’t work on the left-hand side.
@@ -93,12 +93,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
      - Added ``ReplicaLagSettings``. This is an array of maps which contain three keys: ``DataSource``, ``QueryAbsoluteLag``, and ``QueryTimeLag``.
 
 ### Database Changes
- - Added new column in ``ChannelMembers`` table called ``MentionCountRoot``. Please note that on installations with large amount of Channels/Users the migration can take up to a few minutes.
- - Added ``TotalMsgCountRoot`` to ``Channels`` table and ``MsgCountRoot`` column to ``ChannelMembers`` table. Please note that the migration on large MySQL instances can take several minutes to complete.
+ - Added new column in ``ChannelMembers`` table called ``MentionCountRoot``. Please note that the migration can take up to a few minutes on installations with large numbers of channels/users.
+ - Added ``TotalMsgCountRoot`` to ``Channels`` table and ``MsgCountRoot`` column to ``ChannelMembers`` table. Please note that the migration can take several minutes to complete on large MySQL instances.
 
 ### API Changes
  - Added ``/teams/{team_id}/files/search`` API endpoint for files search.
- - For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAUTH users (i.e. Gitlab, Google, Office365 and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
+ - For LDAP and SAML users, the following fields cannot be changed via the API if the corresponding LDAP/SAML attributes have been set: first name, last name, position, nickname, email, profile picture. For OAuth users (i.e., GitLab, Google, Office365, and OpenID), the following fields cannot be changed via the API: first name, last name. All users who authenticate via a method other than email cannot change their username via the API.
 
 ### Go Version
  - v5.35 is built with Go ``1.15.5``.
@@ -108,7 +108,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
- - ``Config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
