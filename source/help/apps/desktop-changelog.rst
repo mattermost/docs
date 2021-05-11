@@ -30,18 +30,18 @@ All Platforms
 - Improved the launch screen and loading indicator.
 - Restored deeplinking.
 - Improved the spell check dictionary to provide more accurate spelling suggestions in more languages. The spell check language is now automatically based on the operating system setting.
-- Added improvements to be consistent on the use of URL and URL libraries.
+- Added improvements to be consistent with the use of URL and URL libraries.
 - Ctrl/CMD + F functionality has been replaced with in-channel search (requires Mattermost server v5.35+).
 - Updated the Content Security Policy for Desktop App to avoid warnings in the dev tools.
 - Removed the menu bar in the Settings window for Windows and Linux.
-- Shortened the max-length/width for server tab names to 224px.
-- Udpated the menubar and system tray icons for improved contrast.
-- Removed ``libappnotify1`` as a dependency requirement in Debian installers as it is no longer shipped in Debian's Bullseye. It is still recommeded to install where available.
+- Shortened the maximum length (width) for server tab names to 224px.
+- Updated the menu bar and system tray icons for improved contrast.
+- Removed ``libappnotify1`` as a dependency requirement in Debian installers as it's no longer shipped in Debian's Bullseye. It's still recommended to install where available.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v11.4.4. Electron is the underlying technology used to build the Desktop apps.
+- Major version upgrade of Electron to v11.4.4. Electron is the underlying technology used to build the Desktop app.
 - Added support for Electron BrowserView.
 - Added support for M1 architecture (beta) in the build pipeline.
 
@@ -65,15 +65,15 @@ All Platforms
 - Fixed an issue where the close/back button in permanent link media previews was missing.
 - Fixed an issue where the text input focus was lost when closing the **Settings** window.
 - Fixed an issue where saving the desktop app settings didn't remove the **saving** indicator in the settings window.
-- Fixed an issue where the number of mentions jewel were not shown in the tab.
-- Fixed an issue where the desktop linting didn't match with the webapp one.
+- Fixed an issue where the jewel indicating the number of mentions was not shown in the tab.
+- Fixed an issue where the desktop linting didn't match the webapp linting.
 - Fixed an issue where clicking on a notification did nothing when the wrong server tab was selected.
 - Fixed an issue where users were unable to copy text from desktop **About** window.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - An error may occur when installing the MSI Installer on any Windows version.
-- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
