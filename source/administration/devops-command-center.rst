@@ -63,7 +63,7 @@ To access Mattermost Incident Collaboration:
 Playbooks and Incidents
 -----------------------
 
-Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a name, description, and playbook. The name and description are used as the initial channel name and channel description, but may be modified later. The selected playbook defines the process (using tasks or checklists), how incident statuses are communicated, and whether or not the incident channel is Public or Private. Read more about `Public and Private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a playbook and incident name. The selected playbook defines the process, communication options, channel permissions, and automation. You can read more about `channel permissions (Public and Private channels) <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_. 
 
 Playbooks are always private by default. Membership in the playbook is required to configure the playbook or start an incident using that playbook. Once an incident is started, any member of the team may be added to the incident channel. Users who are not members of the team are unable to access playbooks or incidents belonging to that team.
 
