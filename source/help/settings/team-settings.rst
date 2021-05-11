@@ -1,8 +1,6 @@
 Team Settings
 =============
 
---------------
-
 The Team Settings menu offers Team Administrators and System Administrators the ability to adjust settings applied to a specific team. To access the settings, open the main menu at the top of the channel sidebar and select **Team Settings**. 
 
 General
@@ -25,7 +23,7 @@ Your **Team Description** is displayed when viewing the list of teams available 
 You can enter a description up to 50 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. 
 
 Team Icon
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 Your **Team Icon** appears in the team sidebar, visible if users are members of more than one team. 
 

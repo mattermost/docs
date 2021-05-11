@@ -1,14 +1,20 @@
 Signing In
 ==========
 
+Sign in methods
+---------------
+
+There are several options for signing in to your Mattermost team depending on how your System Admin has configured your server:
+
+- Email Address or Username Sign In (link)
+- Single sign-on through GitLab, Google, Office 365, AD/LDAP, or SAML (link)
+
+Sign in to Mattermost
+---------------------
+
 To sign in, navigate to the Mattermost sign-in screen. You can get the URL of the sign-in screen from your System Admin or in an invitation email. We recommend bookmarking the site so you can easily find it again.
 
 After signing in, the team that appears first on your team sidebar will open. If you have not joined a team, the Team Selection page opens where you can view a list of teams that you can join.
-
-.. contents::
-  :depth: 2
-  :local:
-  :backlinks: entry
 
 Email Address or Username Sign In
 ---------------------------------

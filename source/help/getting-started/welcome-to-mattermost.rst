@@ -1,13 +1,6 @@
 Welcome to Mattermost!
 ======================
 
-This article covers the basics of Mattermost and gives a general overview of the application to help you start using it the right way.
-
-Ready? Let's get started!
-
-What is Mattermost?
---------------------
-
 Mattermost is a modern, digital workspace that will help you be more productive in your day-to-day work life.
 
 Some of the major benefits of using Mattermost include:
@@ -19,7 +12,5 @@ Some of the major benefits of using Mattermost include:
 - Searching across messages and channels
 - Sharing files
 
-What's Next?
-------------
 Feel free to view our `Mattermost demo video  <https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ and browse through our `full user guide <https://docs.mattermost.com/guides/user.html>`__ for more information on how to use Mattermost!
   

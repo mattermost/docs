@@ -3,8 +3,8 @@ Mattermost Messaging
 
 Product documentation for Mattermost Messaging.
 
-Welcome to Mattermost Messaging
-===============================
+Welcome
+=======
 
 .. toctree::
    :maxdepth: 2
@@ -16,17 +16,16 @@ Access Your Workspace
 =====================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
-   /help/getting-started/access-your-workspace
-   /help/getting-started/sign-in-methods
+   /help/getting-started/access-your-workspace.rst
    /help/getting-started/signing-in.rst
-   /help/getting-started/switch-between-teams
-   /help/getting-started/teams-channels-messages
+   /help/getting-started/switch-between-teams.rst
+   /help/getting-started/about-teams-channels-messages.rst
 
-Send and Receive Messages
-=========================
+Work with Messages
+==================
 
 .. toctree::
    :maxdepth: 2
@@ -36,15 +35,15 @@ Send and Receive Messages
    /help/messaging/sending-messages.rst
    /help/messaging/formatting-text.rst
    /help/messaging/emoji.rst
-	/help/settings/custom-emoji.rst
    /help/messaging/mentioning-teammates.rst
    /help/messaging/attaching-files.rst
    /help/messaging/executing-commands.rst
    /help/messaging/flagging-messages.rst
    /help/messaging/pinning-messages.rst
+   /help/getting-started/searching.rst
 
-Manage Teams
-============
+Manage Teams, Channels, and Members
+===================================
    
 .. toctree::
    :maxdepth: 2
@@ -53,38 +52,10 @@ Manage Teams
 
    /help/getting-started/creating-teams.rst
 	/help/settings/team-settings.rst   
-
-Manage Channels
-===============
-      
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :glob:
-      
    /help/getting-started/organizing-conversations.rst
 	/help/getting-started/organizing.rst
    /help/settings/channel-settings.rst
-
-Manage Members
-===============
-      
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :glob:
-      
    /help/getting-started/managing-members.rst
-
-Search Mattermost
-=================
-      
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :glob:
-      
-   /help/getting-started/searching.rst
 
 Customize Mattermost
 ====================
@@ -99,8 +70,8 @@ Customize Mattermost
    /help/getting-started/organizing-your-sidebar.rst
    /help/settings/account-settings.rst
    /help/settings/theme-colors.rst
-   /help/settings/desktop-app-options
-   /help/settings/manage-servers
+   /help/settings/desktop-app-options.rst
+   /help/settings/manage-servers.rst
 
 Navigate Mattermost
 ===================
@@ -113,8 +84,8 @@ Navigate Mattermost
    /help/getting-started/accessibility.rst
    /help/messaging/keyboard-shortcuts.rst
 
-Messaging Integrations
-======================
+Extending Mattermost
+=====================
       
 .. toctree::
    :maxdepth: 2
