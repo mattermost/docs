@@ -1,6 +1,22 @@
 Configuring Notifications
 =========================
 
+Basics about notifications
+Notifications
+-------------
+
+Notifications in Mattermost alert you to unread messages and mentions.
+
+.. image:: ../../images/ui_notifications.png
+   :alt: ui_notifications
+
+You can configure your Mattermost account for how you want to be notified `here <https://docs.mattermost.com/help/getting-started/configuring-notifications.html>`__.
+
+-------
+
+Original intro
+
+
 Desktop, email, and mobile push notifications notify you of activity in Mattermost. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
 
 - Mentions you specifically with `@username`

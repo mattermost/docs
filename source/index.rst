@@ -18,7 +18,7 @@ Mattermost Documentation
    Overview <overview/index>
    Self-Managed Administrator's Guide <guides/administrator>
    Cloud Administrator's Guide <guides/cloud-admin-guide>
-   User's Guide <guides/user>
+   User's Guide <guides/messaging>
    Integration Guide <guides/integration>
    Developer's Guide <https://developers.mattermost.com/>
 
