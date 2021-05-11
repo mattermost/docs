@@ -51,9 +51,9 @@ Manage Teams, Channels, and Members
    :glob:
 
    /help/getting-started/creating-teams.rst
-	/help/settings/team-settings.rst   
+   /help/settings/team-settings.rst   
    /help/getting-started/organizing-conversations.rst
-	/help/getting-started/organizing.rst
+   /help/getting-started/organizing.rst
    /help/settings/channel-settings.rst
    /help/getting-started/managing-members.rst
 
