@@ -2982,7 +2982,7 @@ mmctl ldap
 LDAP-related utilities.
 
    Child Commands
-      -  `mmctl ldap idmigrate` - Migrate LDAP IdAttribute to a new value
+      -  `mmctl ldap idmigrate`_ - Migrate LDAP IdAttribute to a new value
       -  `mmctl ldap sync` - Sync all LDAP users and groups
 
 **Options**
