@@ -25,6 +25,8 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl docs`_ - Generates mmctl documentation
    - `mmctl export`_ - Exports management
    - `mmctl group`_ - Group management
+   - `mmctl group channel`_ - Channel group management
+   - `mmctl group team`_ - Team group management
    - `mmctl import`_ - Import Management
    - `mmctl integrity`_ - Database record integrity
    - `mmctl ldap`_ - LDAP management
@@ -36,6 +38,7 @@ This feature was developed to a large extent by community contributions and we'd
    - `mmctl roles`_ - Roles Management
    - `mmctl system`_ - System Management
    - `mmctl team`_ - Team Management
+   - `mmctl team users`_ - Team user management
    - `mmctl token`_ - Token Management
    - `mmctl user`_ - User Management
    - `mmctl version`_ - Version Management
@@ -2019,14 +2022,14 @@ mmctl export
 
 Management of exports.
 
-Child Commands
-  -  `mmctl export create`_ - Create an export file
-  -  `mmctl export delete`_ - Delete an export file
-  -  `mmctl export download`_ - Download export files
-  -  `mmctl export job`_ - List and show export jobs
-  -  `mmctl export job list`_ - List export jobs
-  -  `mmctl export job show`_ - Show export job
-  -  `mmctl export list`_ - List export files
+   Child Commands
+      -  `mmctl export create`_ - Create an export file
+      -  `mmctl export delete`_ - Delete an export file
+      -  `mmctl export download`_ - Download export files
+      -  `mmctl export job`_ - List and show export jobs
+      -  `mmctl export job list`_ - List export jobs
+      -  `mmctl export job show`_ - Show export job
+      -  `mmctl export list`_ - List export files
   
 **Options**
 
@@ -2035,7 +2038,7 @@ Child Commands
    -h, --help   help for group
 
 mmctl export create
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2066,7 +2069,7 @@ Create an export file.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export delete
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2102,7 +2105,7 @@ Delete an export file.
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl export download
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2143,7 +2146,7 @@ Download export files.
    --strict                       will only run commands if the mmctl version matches the server one
    
 mmctl export job
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2167,7 +2170,7 @@ List and show export jobs.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export job list
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2206,7 +2209,7 @@ List export jobs.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export job show
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2242,7 +2245,7 @@ Show export job.
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl export list
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2270,7 +2273,6 @@ List export files.
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
-
 
 mmctl group
 -----------
