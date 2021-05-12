@@ -148,7 +148,7 @@ Users can be removed from the Mattermost group on subsequent synchronizations. H
 Disabling and Re-activating AD/LDAP Users
 -----------------------------------------
 
-If a member is removed from an AD/LDAP group, deactivated in AD/LDAP, or filtered from the AD/LDAP user filter, that member loses access to Mattermost.
+From Mattermost Server v5.36, if a member is removed from an AD/LDAP group, deactivated in AD/LDAP, or filtered from the AD/LDAP user filter, that member loses access to Mattermost.
 
 If that member is later re-added, reactivated, or included in the user filter, they aren't automatically re-added to Mattermost groups. A System Admin must re-add that member manually to Mattermost teams and channels.
 
