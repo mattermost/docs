@@ -152,7 +152,7 @@ If a member is removed from an AD/LDAP group, deactivated in AD/LDAP, or filtere
 
 If that member is later re-added, reactivated, or included in the user filter, they aren't automatically re-added to Mattermost groups. A System Admin must re-add that member manually to Mattermost teams and channels.
 
-Using the API, System Admins can manually re-add all group members back into synchronized teams or channels by forcing members in an LDAP group to join the teams and channels synchronized to that group, even if members left on their own, were removed, were filtered out, or were deactivated. See our `API documentation <https://api.mattermost.com/#operation/SyncLdap>`__ for details on synchronizing user attribute changes in the configured AD/LDAP server with Mattermost.
+Using the Mattermost API, System Admins can manually re-add all group members back into synchronized teams or channels by forcing members in an LDAP group to join the teams and channels synchronized to that group, even if members left on their own, were removed, were filtered out, or were deactivated. See our `Mattermost API documentation <https://api.mattermost.com/#operation/SyncLdap>`__ for details on synchronizing user attribute changes in the configured AD/LDAP server with Mattermost.
 
 Managing Groups
 ---------------
