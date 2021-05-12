@@ -80,6 +80,7 @@ Mattermost v5.35.0 contains low and medium level security fixes. [Upgrading](htt
  - Fixed an issue where the sidebar **Text Hover BG Theme** color didn’t work on the left-hand side.
  - Fixed an issue where the Team Admin’s current role was presented inconsistently in the different areas of the System Console.
  - Fixed an issue where the **Show more** background color on long posts was broken for permalinks.
+ - Fixed an issue where redirecting with JS failed when Content Security Policy was enabled and restricted with ``unsafe-inline``.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
