@@ -8,6 +8,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2021-05-16**
 
+Mattermost v5.35.0 contains low and medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
 #### Important Upgrade Notes
    - Due to the introduction of backend database architecture required for upcoming new features, including Shared Channels and Collapsed Reply Threads, the performance of the migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike in database CPU usage should also be expected during this process. [More details on the performance impact of the migration and possible mitigation strategies are provided here](https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1).
    - v5.35.0 introduces a new feature to search for files. Search results for files shared in the past may be incomplete until a [content extraction command](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content) is executed to extract and index the content of files already in the database. Instances running Elasticsearch or Bleve search backends will also need to execute a Bulk Indexing after the content extraction is complete. Please see more details in [this blog post](https://mattermost.com/blog/file-search/).
@@ -24,13 +26,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Search for files and document contents
  - Searching in Mattermost now finds both relevant messages and files in your team’s conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. [Learn more](https://mattermost.com/blog/file-search/).
 
-#### Granular Access to System Console Pages (E20 Edition)
+#### Granular Access to System Console Pages (Enterprise E20 Edition)
  - Migrated **Experimental**, **About**, **Reporting**, **Environment**, **Site Configuration**, **Authentication**, **Integrations**, and **Compliance** sections to their respective sub-section permissions.
 
 #### Shared Channels (Experimental, Enterprise Edition E20)
  - Experimental support added for sharing channels between Mattermost clusters. Requires an Enterprise Edition E20 license. The Shared Channels feature is disabled by default.
 
-#### Enterprise Trial Enhancements (E20 Edition)
+#### Enterprise Trial Enhancements (Enterprise E20 Edition)
  - Added banners to alert System Admins when an Enterprise Edition E20 trial has started, when there are three days left of the trial, and when the trial is on the last day.
 
 #### Incident Collaboration (Enterprise Edition E20)
