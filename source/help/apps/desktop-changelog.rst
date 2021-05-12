@@ -31,7 +31,7 @@ All Platforms
 - Restored deeplinking.
 - Improved the spell check dictionary to provide more accurate spelling suggestions in more languages. The spell check language is now automatically based on the operating system setting.
 - Added improvements to be consistent with the use of URL and URL libraries.
-- Ctrl/CMD + F functionality has been replaced with in-channel search (requires Mattermost server v5.35+).
+- Ctrl/CMD + F functionality has been replaced with in-channel search (requires Mattermost server v5.36+).
 - Updated the Content Security Policy for Desktop App to avoid warnings in the dev tools.
 - On Linux and Windows, each settings menu is now in a separate window.
 - Shortened the maximum length (width) for server tab names to 224px.
