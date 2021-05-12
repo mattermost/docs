@@ -85,9 +85,13 @@ Leave app running in notification center when application window is closed (Linu
 Use GPU hardware acceleration
     When enabled, the Mattermost user interface is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting.
     
-Dark Theme
-~~~~~~~~~~
+Dark Theme (Linux only)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-On macOS, the Mattermost desktop app respects the System Preferences appearance setting of the operating system to set the theme of the title bar. On Windows, you can toggle the theme of the Mattermost desktop app title bar in **... > View > Toggle Dark Mode**.  
+On Linux, you can run the Mattermost desktop app in dark mode by selecting Mattermost, then selecting **View > Toggle Dark Mode**.
 
 .. image:: ../../images/dark_theme.png
+
+On Windows and macOS, the Mattermost desktop app respects the operating system Appearance setting configured through System Preferences.
+
+
