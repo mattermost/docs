@@ -2996,7 +2996,7 @@ mmctl ldap idmigrate
 
 **Description**
 
-Migrate the LDAP IdAttribute to a new value. Run this utility then change the IdAttribute to the new value.
+Migrate LDAP ``IdAttribute`` to a new value. Run this utility then change the IdAttribute to the new value.
 
 **Format**
 
