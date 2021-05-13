@@ -17,10 +17,10 @@ Mattermost Product Documentation
 
    About Mattermost <overview/index>
    Install, Deploy, Upgrade, and Scale <guides/administrator>
-   onfigure, Manage, Onboard, and Comply <guides/cloud-admin-guide>
+   Configure, Manage, Onboard, and Comply <guides/cloud-admin-guide>
    Messaging <guides/user>
    Incident Management <guides/integration>
-   FocalBoard <https://developers.mattermost.com/>
+   Focalboard <https://developers.mattermost.com/>
    Mattermost for Developers <https://developers.mattermost.com/>
    Support Knowledge Base <https://developers.mattermost.com/>
 
