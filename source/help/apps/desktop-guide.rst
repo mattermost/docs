@@ -88,7 +88,7 @@ Use GPU hardware acceleration
 Dark Theme
 ~~~~~~~~~~
 
-On Windows 10 and macOS, the Mattermost desktop app respects the operating system Appearance setting configured through System Preferences.
+On Windows 10 and macOS, the Mattermost Desktop App respects the operating system **Appearance** setting configured through System Preferences.
 
 On Linux, you can run the Mattermost desktop app in dark mode by selecting Mattermost, then selecting **View > Toggle Dark Mode**.
 
