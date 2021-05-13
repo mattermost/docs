@@ -1,20 +1,20 @@
 Custom Branding Tools
 ============================
 
-Use custom branding tools to present a Mattermost experience that is tailored to the branding of your organization. 
+Use custom branding tools to present a Mattermost experience that is tailored to the branding of your organization.
 
-.. figure:: ../images/custom-branding-tools.PNG
+.. figure:: ../images/custom-branding-tools.png
 
 Enable Custom Branding
 ----------------------
 
-1. Go to **System Console > Site Configuration > Customization > Enable Custom Branding** (or **System Console > Customization > Custom Branding** in versions prior to 5.12) and set the value to ``true``. 
+1. Go to **System Console > Site Configuration > Customization > Enable Custom Branding** (or **System Console > Customization > Custom Branding** in versions prior to 5.12) and set the value to ``true``.
 2. Choose a **Site Name**, upload a **Custom Brand Image**, and enter **Custom Brand Text**.
 3. Click **Save**.
 
 Users should see your new custom branding on the login page of your Mattermost server the next time they sign in.
 
-From version 5.16, you can remove the custom brand image by selecting the **X** in the top right corner of the image. To apply the change, choose **Save**. Note that the value must be set to ``true`` in order to perform this step. 
+From version 5.16, you can remove the custom brand image by selecting the **X** in the top right corner of the image. To apply the change, choose **Save**. Note that the value must be set to ``true`` in order to perform this step.
 
 More about settings available in **Customer Branding Tools**:
 

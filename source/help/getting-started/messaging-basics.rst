@@ -22,7 +22,7 @@ in-line images.
 
 You can use either ``_`` or ``*`` for italics and bold text. See the table below for examples.
 
-.. image:: ../../images/messagesTable1.PNG
+.. image:: ../../images/messagesTable1.png
    :alt: markdown
 
 **Quickly add emojis** by typing ":" followed by two characters, which will open an emoji

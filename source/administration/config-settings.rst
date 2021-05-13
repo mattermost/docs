@@ -620,6 +620,35 @@ Maximum file size for message attachments entered in megabytes in the System Con
 .. note::
   If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
 
+Enable Document Search by Content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+
+**True**: Supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
+
+.. note::
+   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
+
+**False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
++---------------------------------------------------------------------------------------------------------------------------------+
+  
+Enable Searching Content of Documents within ZIP Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+
+**True**: Contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
+
+**False**: The contents of documents within ZIP files aren't returned in search results.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ArchiveRecursion": false`` with options ``true`` and ``false``.       |
++---------------------------------------------------------------------------------------------------------------------------------+
+
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
 
@@ -1218,6 +1247,19 @@ Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false``.                                 |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Colorize plain text console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
+**True**: When logged events are output to the console as plain text, colorize log levels details.
+
+**False**: Plain text log details aren't colorized in the console.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
 Output logs to file
@@ -4052,6 +4094,17 @@ Enable Daily Report
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Batch Size
+^^^^^^^^^^
+
+Set the size of the batches in which posts will be read from the database to generate the compliance report.
+
+This setting is currently not available in the System Console and can only be set in ``config.json``.
+
++------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``. |
++------------------------------------------------------------------------------------------------+
 
 Custom Terms of Service (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
