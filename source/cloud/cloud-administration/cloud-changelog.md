@@ -12,16 +12,16 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Improvements
 
 #### User Interface (UI)
- - Added Hungarian (beta) language.
- - Search tip is now shown when scrolling back a lot in a channel.
- - Users can now set a Do Not Disturb status for a specified period of time, after which the status will go back to the previous one.
- - Improved the error text in the Edit Channel Header modal.
+ - Added Hungarian (Beta) language.
+ - A search tip is now shown when scrolling back in a channel.
+ - Users can now set a **Do Not Disturb** status for a specified period of time, after which the status will go back to the previous one.
+ - Improved the error text in the **Edit Channel Header** modal.
  - Added the ability to clear a custom status when only an emoji and no text is set.
  - Redesigned message notification emails.
 
 #### Administration
- - The default value of the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt system admins about missing configuration for the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email). It is required to set this value to ensure Mattermost account requests are sent to the correct team for resolution.
- - The Marketplace button in the Main Menu is now displayed if the user has the ``sysconsole_write_plugins`` permission.
+ - The default value of the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email). It is required to set this value to ensure Mattermost account requests are sent to the correct team for resolution.
+ - The **Marketplace** button in the **Main Menu** is now displayed if the user has the ``sysconsole_write_plugins`` permission.
  - Added new feature discoveries in the System Console, such as for Data Retention Policy and OpenID Connect.
  - Added basic intra-cluster communication support for plugins.
  - Improved error messages for ``/header`` and ``/purpose`` commands.
@@ -29,10 +29,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Bug Fixes
  - Fixed a race condition where enabling plugins would result in spurious errors in the logs.
  - Fixed a bug where team member permissions were not updated after associating a team and a permission scheme.
- - Fixed the responses of the role by id and all roles API endpoints when the role was associated to channel schemes.
+ - Fixed the responses of the role by ID and all roles of API endpoints when the role was associated to channel schemes.
  - Removed sticky sidebar headings in favor of fixing nesting errors.
- - Fixed an issue where the Close button in the Create New Category modal was not visible except on hover.
- - Fixed a bug where session expiration was extended with activity regardless of the config setting ``ServiceSettings.ExtendSessionLengthWithActivity``.
+ - Fixed an issue where the **Close** button in the **Create New Category** modal was only visible on mouse hover.
+ - Fixed a bug where session expiration was extended with activity regardless of what the config setting ``ServiceSettings.ExtendSessionLengthWithActivity`` was set to.
  - Fixed an issue where the ``idmigrate`` command did not update values if they were not already present as LDAP attributes in the ``config.json``.
 
 ### Known Issues
