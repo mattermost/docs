@@ -63,15 +63,27 @@ To access Mattermost Incident Collaboration:
 Playbooks and Incidents
 -----------------------
 
-Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a name, description, and playbook. The name and description are used as the initial channel name and channel description, but may be modified later. The selected playbook defines the process (using tasks or checklists), how incident statuses are communicated, and whether or not the incident channel is Public or Private. Read more about `Public and Private channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+Playbooks and incidents are associated with teams in Mattermost. Starting an incident prompts for a playbook and incident name. The selected playbook defines the process, communication options, channel permissions, and automation. You can read more about `channel permissions (Public and Private channels) <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_.
+
+System Admins can configure Incident Collaboration access permissions in the System Console. This allows for specific teams to better manage who can create playbooks, start incidents, and access potentially sensitive information.
+
+.. image:: ../images/IC-access-control.gif
+  :alt: Access control in the System Console.
 
 Playbooks are always private by default. Membership in the playbook is required to configure the playbook or start an incident using that playbook. Once an incident is started, any member of the team may be added to the incident channel. Users who are not members of the team are unable to access playbooks or incidents belonging to that team.
 
 While the commander of an incident has a dedicated, named role, all members of an incident channel have unrestricted access to modify the current state of the incident. This permissive access model ensures the incident is never blocked on any one individual. Use Private channels and channel membership to restrict access, or configure the playbook as public if everyone on the team is trusted with access to the incident.
 
-During an ongoing incident, use the channel to communicate status updates to stakeholders without requiring their membership in the incident channel. Providing regular status updates increases visibility and helps ensure continued momentum toward resolution. Any member of the channel can write a status update, post that update to the channel, and optionally start a reminder timer to prompt for a subsequent update.  Also, if configured in the playbook, status updates may also be broadcast to another channel.
+During an ongoing incident, use the channel to communicate status updates which are visible to stakeholders via the Overview page without requiring their membership in the incident channel. Providing regular status updates increases visibility and helps ensure continued momentum toward resolution.
 
-Once an incident is ended, be sure to schedule a post-mortem meeting to iterate on the design of your playbook. Automatic posts can help expose a timeline of events for review, such as when a task is marked as complete or when the commander changes. You can export the messages from the incident channel and use them to build a post-mortem document. Identify bottlenecks by explaining gaps between task completion, and suggest changes to the playbook for the next incident.
+Stakeholders can view updates on the Overview page.
+
+.. image:: ../images/incident-overview.png
+  :alt: Incident Collaboration overview page.
+  
+Any member of the channel can write a status update, post that update to the channel, and optionally start a reminder timer to prompt for a subsequent update. Also, if configured in the playbook, status updates may also be broadcast to another channel.
+
+Once an incident is ended, schedule a post-mortem meeting to iterate on the design of your playbook. Automatic posts can help expose a timeline of events for review, such as when a task is marked as complete or when the commander changes. You can export the messages from the incident channel and use them to build a post-mortem document. Identify bottlenecks by explaining gaps between task completion, and suggest changes to the playbook for the next incident.
 
 Playbooks
 ^^^^^^^^^
@@ -108,7 +120,7 @@ A playbook must be defined before starting an incident.
   * Optionally enable the **Announce it in another channel** toggle and select a channel. When the incident is started, an announcement is made in the selected channel.
   * Optionally enable the **Send a webhook** toggle and enter the webhook you want to use.
 11. On the right-hand side of the screen, configure the permissions:
-  * Decide whether the automatically created incident channel should be Public or Private within the team.
+  * Decide whether the automatically-created incident channel should be Public or Private within the team.
   * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
 
 Configuring a playbook
@@ -145,11 +157,8 @@ Incidents
 Starting an incident
 ~~~~~~~~~~~~~~~~~~~~
 
-To start an incident, use any one of the following:
+To start an incident you can run the ``/incident start`` slash command from any channel. You can also use the desktop or browser to:
 
-* Run the ``/incident start`` slash command from any channel.
-
-* From the desktop or browser:
  * Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
  * Use the context menu of a post and select **Start incident**.
 
@@ -169,21 +178,20 @@ If the incident channel is private, an existing member of the incident channel m
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Any member of the incident channel can work with tasks:
+Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks:
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
 * To view any description associated with a task, select the information icon to the right of the task name.
 * To execute a slash command associated with a task, select **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
 
+.. image:: ../images/IC-ad-hoc-tasks.gif
+
 Changing commanders
 ~~~~~~~~~~~~~~~~~~~
 
-To change commanders, use any one of the following:
+To change commanders you can run the ``/incident commander @username`` slash command from the incident channel. You can also use the desktop or browser to:
 
-* Run the ``/incident commander @username`` slash command from the incident channel.
-
-* From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
 2. Select the **Summary** tab.
 3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
@@ -194,7 +202,6 @@ Providing a status update
 
 Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
 
-* From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
 2. Find the incident you're looking for and select **Go to Incident Channel**.
 3. Select the **Summary** tab.
@@ -214,11 +221,8 @@ The most recent status post will also appear in the right-hand sidebar of the in
 Ending an incident
 ~~~~~~~~~~~~~~~~~~~
 
-Incident members can end an incident using any one of the following:
+Incident members can end an incident using the ``/incident end`` slash command. Incidents can also be ended from the desktop or browser:
 
-* Within the incident channel, run the ``/incident end`` slash command.
-
-* From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
 2. Find the incident you're looking for and select **Go to Incident Channel**.
 3. Select **Update Status**.
@@ -231,11 +235,8 @@ Ending an incident signals to all members of the channel that the incident is no
 Restarting an incident
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If an incident was ended prematurely, it can be restarted using any one of the following:
+If an incident was ended prematurely, it can be restarted within the incident channel using the ``/incident restart`` slash command. Incidents can also be restarted from the desktop or browser:
 
-* Within the incident channel, run the ``/incident restart`` slash command.
-
-* From the desktop or browser:
 1. Select the **Incidents** icon in the channel header to open the RHS.
 2. Find the incident you're looking for and select **Go to Incident Channel**.
 3. Select **Update Status**.
