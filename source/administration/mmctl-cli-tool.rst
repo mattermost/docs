@@ -3002,7 +3002,7 @@ Migrate LDAP ``IdAttribute`` to a new value. Run this utility then change the Id
 
 .. code-block:: sh
 
-   mmctl ldap idmigrate [flags]
+   mmctl ldap idmigrate <objectGUID> [flags]
 
 **Examples**
 
