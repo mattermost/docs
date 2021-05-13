@@ -353,6 +353,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.5, released 2021-05-12**
+  - Fixed an issue where ``mmctl channel move`` did not allow moving private channels. [MM-32746](https://mattermost.atlassian.net/browse/MM-32746)
 - **v5.31.4, released 2021-04-23**
   - Fixed an issue with client-side slash commands being processed by multiple plugins. [MM-35074](https://mattermost.atlassian.net/browse/MM-35074)
 - **v5.31.3, released 2021-04-07**
