@@ -18,8 +18,8 @@ The following slash commands are available on all Mattermost installations:
     "/online", "Set your availability to online", "/online"
     "/dnd", "Set your availability to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
-    "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
-    "/expand", "Turn off auto-collapsing of image previews", "/expand"
+    "/collapse", "Turn on auto-collapsing of image previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/collapse"
+    "/expand", "Turn off auto-collapsing of image previews, image attachments, as well as `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height", "/expand"
     "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
     "/header *{text}*", "Edit the channel header", "/header File bugs here"
     "/invite *@{user}* *~{channel-name}*", "Invite user to the channel","/invite @john ~sampleChannel"
@@ -46,7 +46,8 @@ The following slash commands are available on all Mattermost installations:
 
 Begin by typing `/` and a list of slash command options appears above the text input box. The autocomplete suggestions help by providing a format example in black text and a short description of the slash command in grey text.
 
-.. image:: ../../images/slashCommandsAutocomplete.PNG
+.. image:: ../../images/slash-commands.gif
+    :alt: Enter slash commands in the message field.
 
 .. note::
   Custom status slash commands marked with an asterisk (*) in the table above will be available in the Mattermost Mobile App in a future release.

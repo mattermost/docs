@@ -149,7 +149,8 @@ In addition to **Words that Trigger Mentions**, this setting allows you to recei
 
 Automatic Direct Message Replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set a custom message that will be automatically sent in response to Direct Messages. Mentions in Public and Private Channels will not trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#enable-automatic-replies-experimental>`__.
+
+Set an automated custom message that will be sent once per day in response to Direct Messages. Mentions in Public and Private Channels won't trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#enable-automatic-replies-experimental>`__.
 
 Display
 -------
@@ -196,10 +197,14 @@ Website Link Previews
 
 When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`__.
 
-Link Previews
-~~~~~~~~~~~~~
+Default Appearance of Image Previews
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select whether links posted in Mattermost show a preview below them. When "On", a preview will be shown below links to Youtube Videos and GIF, PNG, JPEG, and BMP files. When "Off", no preview will be shown. This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
+When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images.html>`__ over 100px in height. You can set this preference to **Expanded** or **Collapsed**.
+
+.. tip::
+
+  This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
 
 Message Display
 ~~~~~~~~~~~~~~~

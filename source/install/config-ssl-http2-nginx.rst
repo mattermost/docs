@@ -121,7 +121,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
 
 11. Run the Let's Encrypt installer dry-run to ensure your DNS is configured properly.
 
-  ``sudo certbot certbot --dry-run``
+  ``sudo certbot certonly --dry-run``
 
   This will prompt you to enter your email, accept the TOS, share your email, and select the domain you're activating certbot for. This will validate that your DNS points to this server properly and you are able to successfully generate a certificate. If this finishes successfully, proceed to step 12.
   
@@ -207,7 +207,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
        # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
        ssl_early_data on;
 
-       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SH>
+       ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA;
        ssl_prefer_server_ciphers on;
        ssl_session_cache shared:SSL:50m;
        # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
