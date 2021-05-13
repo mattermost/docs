@@ -1,6 +1,5 @@
-
 Custom Emoji
-------------------
+-------------
 
 You can create Custom Emojis which are available to everyone on your Mattermost server. 
 
