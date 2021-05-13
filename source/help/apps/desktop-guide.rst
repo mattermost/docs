@@ -90,6 +90,6 @@ Dark Theme
 
 On Windows 10 and macOS, the Mattermost Desktop App respects the operating system **Appearance** setting configured through System Preferences.
 
-On Linux, you can run the Mattermost desktop app in dark mode by selecting Mattermost, then selecting **View > Toggle Dark Mode**.
+On Linux, you can run the Mattermost Desktop App in dark mode by selecting Mattermost, then selecting **View > Toggle Dark Mode**.
 
 .. image:: ../../images/dark_theme.png
