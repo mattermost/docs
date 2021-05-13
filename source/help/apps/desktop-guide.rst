@@ -47,7 +47,7 @@ Removing Servers
 
 To remove a server from your desktop app environment:
 
-1. On Windows, go to **... > File > Settings**. On Mac or Linux, go to **Mattermost > Preferences**.
+1. On Windows, go to **... > File > Settings**. On macOS or Linux, go to **Mattermost > Preferences**.
 2. Next to the server or team that you want to remove, select **Remove**.
 3. select **Remove**.
 
