@@ -1,10 +1,10 @@
 Mattermost Messaging
---------------------
+====================
 
 Product documentation for Mattermost Messaging.
 
 Welcome
-=======
+-------
 
 .. toctree::
    :maxdepth: 2
@@ -13,7 +13,7 @@ Welcome
    /help/getting-started/welcome-to-mattermost.rst
 
 Access Your Workspace
-=====================
+---------------------
 
 .. toctree::
    :maxdepth: 1
@@ -23,9 +23,10 @@ Access Your Workspace
    /help/getting-started/signing-in.rst
    /help/getting-started/switch-between-teams.rst
    /help/getting-started/about-teams-channels-messages.rst
+   /help/getting-started/log-out.rst
 
 Work with Messages
-==================
+------------------
 
 .. toctree::
    :maxdepth: 2
@@ -35,6 +36,7 @@ Work with Messages
    /help/messaging/sending-messages.rst
    /help/messaging/formatting-text.rst
    /help/messaging/emoji.rst
+   /help/messaging/custom-emoji.rst
    /help/messaging/mentioning-teammates.rst
    /help/messaging/attaching-files.rst
    /help/messaging/executing-commands.rst
@@ -43,7 +45,7 @@ Work with Messages
    /help/getting-started/searching.rst
 
 Manage Teams, Channels, and Members
-===================================
+-----------------------------------
    
 .. toctree::
    :maxdepth: 2
@@ -57,8 +59,8 @@ Manage Teams, Channels, and Members
    /help/settings/channel-settings.rst
    /help/getting-started/managing-members.rst
 
-Customize Mattermost
-====================
+Customize Mattermost Messaging
+------------------------------
       
 .. toctree::
    :maxdepth: 2
@@ -73,8 +75,8 @@ Customize Mattermost
    /help/settings/desktop-app-options.rst
    /help/settings/manage-servers.rst
 
-Navigate Mattermost
-===================
+Navigate Mattermost Messaging
+-----------------------------
       
 .. toctree::
    :maxdepth: 2
@@ -84,8 +86,8 @@ Navigate Mattermost
    /help/getting-started/accessibility.rst
    /help/messaging/keyboard-shortcuts.rst
 
-Extending Mattermost
-=====================
+Extending Mattermost Messaging
+------------------------------
       
 .. toctree::
    :maxdepth: 2

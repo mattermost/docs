@@ -13,8 +13,8 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 .. tip::
   Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
 
-Reply to a Messages
--------------------
+Reply to Messages
+------------------
 
 When replying to a message you should do so by hovering over message and clicking the reply link (arrow icon |replyarrow|). This organizes the conversation into a thread, makes it easier to follow, and enables multiple parallel conversations to occur at the same time without confusion. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 

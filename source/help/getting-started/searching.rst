@@ -1,20 +1,12 @@
 Searching
 =========
 
-Basics about Search
-
-Use the search box to find messages and replies that match the search terms that you enter. All channels that you are a member of in the current team are searched.
+Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available now in Mattermost Cloud, and in Mattermost Server from v5.35, with mobile support coming soon.
 
 .. image:: ../../images/ui_search.png
    :alt: ui_search
 
-You can also do more advanced search using search modifiers
-
---------
-
-Original intro
-
-Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available now in Mattermost Cloud, and in Mattermost Server from v5.35, with mobile support coming soon.
+You can also do more advanced search using `search modifiers <https://docs.mattermost.com/help/getting-started/searching.html#search-modifiers>`__.
 
 Searching for Message Contents 
 ------------------------------

@@ -1,21 +1,16 @@
 About Teams, Channels, and Messages
 ===================================
 
-The Basics
------------
-
 This is a what a typical Mattermost workspace looks like: 
 
 .. image:: ../../images/ui2.png
    :alt: ui
 
-To understand how Mattermost works, below is a list of the main features of Mattermost with instructions on how to use them:
+To understand how Mattermost works, here are the three main parts of Mattermost:
 
 - Teams
 - Channels
 - Messages
-- Search
-- Notifications
 
 Teams
 -----
