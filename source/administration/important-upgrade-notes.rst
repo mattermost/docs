@@ -15,7 +15,7 @@ Important Upgrade Notes
 |                                                    | in database CPU usage should also be expected during this process. `More details on the performance impact of the migration and possible mitigation strategies   | 
 |                                                    | are provided here <https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1>`_.                                                                       |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | The existing password generation logic used during the bulk user import process was comparatively weak. Hence its advised for admins to immediately reset the    |
+|                                                    | The existing password generation logic used during the bulk user import process was comparatively weak. Hence it's advised for admins to immediately reset the   |
 |                                                    | passwords for all the users who were generated during the bulk import process and whose password has not been changed even once.                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | v5.35.0 introduces a new feature to search for files. Search results for files shared in the past may be incomplete until a                                      |
