@@ -4,8 +4,8 @@
    landing page.  Updates to this top-level item must also
    be transposed in the 'templates/index.html' file.
 
-Mattermost Documentation
-------------------------
+Mattermost Product Documentation
+--------------------------------
 
 .. _`mattermost.org/download`: https://mattermost.com/download/
 .. _contacting Mattermost, Inc.: https://mattermost.com/contact-us/

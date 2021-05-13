@@ -65,7 +65,7 @@
 
         .tile {
             /* looks */
-            border-top: 8px solid #343537;
+            border-top: 8px solid #0058CC;
             background-color: #fff;
             box-shadow: .5px 2px 4px 0 #bdbdbd;
             /* sizing/boxing */
@@ -99,7 +99,48 @@
             align-items: stretch;
         }
 
+        .tile-last {
+            /* looks */
+            border-top: 8px solid #22406D;
+            background-color: #fff;
+            box-shadow: .5px 2px 4px 0 #bdbdbd;
+            /* sizing/boxing */
+            width: 300px;
+            height: 180px;
+            margin: 10px;
+            padding: 10px;
+            /* animation */
+            -webkit-transition: 250ms;
+            transition: 250ms;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            will-change: transform;
+            /* layout */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-line-pack: stretch;
+            align-content: stretch;
+            -webkit-box-align: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+        }
+
         .tile:hover {
+            -webkit-transform: translate3d(0,-6px,0);
+            transform: translate3d(0,-6px,0)
+        }
+
+        .tile-last:hover {
             -webkit-transform: translate3d(0,-6px,0);
             transform: translate3d(0,-6px,0)
         }
@@ -128,11 +169,45 @@
             justify-content:space-around;
         }
 
+        .tile-last .tile-title {
+            /* looks */
+            font-size: 20px;
+            letter-spacing: .4px;
+            color: #676363;
+            /* sizing/boxing */
+            height: 89px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px 20px;
+            /* layout */
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+            -webkit-box-orient:vertical;
+            -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+            flex-direction:column;
+            -ms-flex-pack:distribute;
+            justify-content:space-around;
+        }
+
         .tile .tile-divider {
             height:2px;
             width: 100%;
             margin: 0 5px;
-            border: .5px solid #343537;
+            border: .5px solid #0058CC;
+            background-color: #343537;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+        }
+
+        .tile-last .tile-divider {
+            height:2px;
+            width: 100%;
+            margin: 0 5px;
+            border: .5px solid #0058CC;
             background-color: #343537;
             -ms-flex-item-align: auto;
             align-self: auto;
@@ -162,9 +237,33 @@
             justify-content:space-around;
         }
 
+        .tile-last .tile-description {
+            /* looks */
+            font-size: 14px;
+            letter-spacing: .2px;
+            line-height: 1.25;
+            color: #757575;
+            /* sizing/boxing */
+            height: 75px;
+            width: 100%;
+            margin: 0px;
+            /* layout */            
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+            -webkit-box-orient:vertical;
+            -webkit-box-direction:normal;
+            -ms-flex-direction:column;
+            flex-direction:column;
+            -ms-flex-pack:distribute;
+            justify-content:space-around;
+        }
+
     </style>
 
-<div class="landing">
+    <div class="landing">
         <h1 class="landing-title">Mattermost Product Documentation</h1>
         <div class="landing-search" role="search">
             <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
