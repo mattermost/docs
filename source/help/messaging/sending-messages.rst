@@ -11,7 +11,7 @@ Sending Messages
 Write a message by typing into the text input box, then press ENTER to send it. Use SHIFT+ENTER to create a new line without sending a message. To send messages by pressing CTRL+ENTER, go to **Main Menu > Account Settings > Advanced > Send messages on Ctrl + Enter > Edit**.
 
 .. tip::
-  Mattermost automatically detects and displays messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian.
+  Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
 
 Replying to Messages
 ---------------------

@@ -1249,6 +1249,19 @@ Changes to this setting require a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false``.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
+Colorize plain text console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
+**True**: When logged events are output to the console as plain text, colorize log levels details.
+
+**False**: Plain text log details aren't colorized in the console.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^
 

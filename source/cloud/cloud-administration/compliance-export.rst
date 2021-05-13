@@ -89,6 +89,11 @@ If the compliance export job is run automatically, manually via the System Conso
 
 When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`__. Files will be written to a folder with names based on an epoch time range. Global Relay EML export format will be mailed to the configured email address when run manually.
 
+Is there a maximum row limit for CSV files?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. There's no limit to the number of rows within Compliance Monitoring CSV files.
+
 Why are compliance exports beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
