@@ -10,7 +10,7 @@ This overview summarizes how Mattermost can help users in support of their inter
 GDPR Compliance
 ----------------
 
-The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements. 
+The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
 Continual Commitment to the Principles of GDPR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,6 +179,9 @@ What information is shared when I click **Contact us** on a Mattermost Admin Adv
 
 Clicking **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
+.. note::
+    `Mattermost Admin Advisor notices are disabled <https://docs.mattermost.com/administration/notices.html#admin-advisor-notices>`__ in v5.35 and later.
+
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -196,7 +199,7 @@ How do you ensure personal data stays within European Union?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When the customer’s installation of Mattermost is self-hosted, Mattermost does not process any personal data under the jurisdiction of the data privacy laws governing within the European Union. The Mattermost support team leverages Zendesk customer service software, which hosts Mattermost information within the United States. For more information on Zendesk, please see their `Privacy and Data Protection <https://www.zendesk.com/company/privacy-and-data-protection/#gdpr-sub>`__ page.
 
-Zendesk privacy and data protection safeguards notwithstanding, the provision of support services is part of the contractual obligations between Mattermost and its customers. In order for Mattermost to provide such support, a customer must be able to identify as a licensed user, therefore requiring the user to provide personal data to the support agent. Regardless of where the support agent is located, the personal data will indeed be hosted outside of the EU. 
+Zendesk privacy and data protection safeguards notwithstanding, the provision of support services is part of the contractual obligations between Mattermost and its customers. In order for Mattermost to provide such support, a customer must be able to identify as a licensed user, therefore requiring the user to provide personal data to the support agent. Regardless of where the support agent is located, the personal data will indeed be hosted outside of the EU.
 
 However, pursuant to Section (b) of Article 49 of GDPR, transfers of personal data which are "necessary for the performance of a contract between the data subject and the controller" may be transferred to a third country or international organization. Accordingly these transfers would be done in alignment with the requirements of GDPR. For more information, see our `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ page.
 

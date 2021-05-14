@@ -1,0 +1,109 @@
+name: preview-env-fork-setup-update
+
+on:
+  workflow_run:
+    workflows: ["check-label-preview-env"]
+    types: [completed]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download PR number artifact
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: ${{ github.event.workflow_run.workflow_id }}
+          name: pr.txt
+      - name: Save PR number
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        id: pr
+        run: |
+          cat pr.txt
+          echo "::set-output name=id::$(<pr.txt)"
+      - name: Check label
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        uses: actions/github-script@v4
+        id: label-checker
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const query = `query($owner:String!, $name:String!, $pr:Int!) {
+              repository(owner:$owner, name:$name){
+                pullRequest(number:$pr) {
+                  labels(first:50) {
+                    nodes{
+                      name
+                    }
+                  }
+                }
+              }
+            }`;
+            const variables = {
+              owner: 'mattermost',
+              name: 'docs',
+              pr: ${{ steps.pr.outputs.id }}
+            };
+            const result = await github.graphql(query, variables);
+            console.log(result.repository.pullRequest.labels.nodes);
+            const labels = result.repository.pullRequest.labels.nodes;
+            for (var index = 0; index < labels.length; ++index) {
+              var label = labels[index];
+              if(label.name == 'preview-environment') {
+                return true;
+              }
+            }
+            return false;
+
+      - uses: actions/checkout@v2
+        if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Python
+        if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install pipenv
+        if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        run: pip install pipenv
+
+      - name: Install dependencies
+        if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        run: pipenv install --dev
+
+      - name: Build
+        if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        run: make html
+
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload Preview Env
+        if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: ./build/html
+          destination_dir: ${{ steps.pr.outputs.id }}
+
+      - name: Add comment to PR
+        uses: peter-evans/create-or-update-comment@v1
+        if: ${{ success() &&  github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ steps.pr.outputs.id }}
+          body: |
+            Newest code from ${{ github.actor }} has been published to [preview environment](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ steps.pr.outputs.id }}) for Git SHA ${{ github.event.workflow_run.head_sha }}
+
+      - name: The job has failed
+        if: ${{ failure() && github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ steps.pr.outputs.id }}
+          body: Preview environment failed.

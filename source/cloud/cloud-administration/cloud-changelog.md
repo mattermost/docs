@@ -2,6 +2,37 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-05-05
+
+### Improvements
+
+#### User Interface (UI)
+ - If message autoresponder is set, only one message is now sent to a given user irrespective of how many Direct Message messages the user receives.
+ - Added status icons on **Add members** to channel and **Add members** to team lists.
+ - Added a keyboard shortcut to focus on the Search bar and search in the current channel.
+
+#### Administration
+ - Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. **Note:** For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using gossip, one node in a cluster can't be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.
+ - ``TCP_NO_DELAY`` is disabled for Websocket connections to allow for higher throughput.
+ - Compliance Monitoring CSV files are no longer limited to 30,000 rows.
+
+### Bug Fixes
+ - Fixed an issue where bulk export generated invalid Direct Message channels between deactivated users.
+ - Fixed an issue where the custom status cleared slash commands on mobile.
+ - Fixed an issue with an incorrect error message when trying to change handle via API to another one that already existed.
+ - Fixed an issue where LDAP Group Sync didn't work when using SAML (ADFS) for authentication and AD/LDAP Group Sync unless ``EnableSyncWithLdapIncludeAuth`` was set to ``true``, which caused the ``AuthData`` to be stored in AD/LDAP format.
+ - Fixed an issue where a user with 'No Access' permission could still access **Groups**, **Channels** and **Teams** configuration pages through a URL.
+ - Fixed an issue where **Remove from channel** and **Remove Team Member** menu items were visible in a group-synced channel or team.
+ - Fixed various bugs related to hardcoded theme colours.
+ - Fixed UI issues related to hardcoded variables and misalignment of the channel header with the **Has guests** text.
+ - Fixed an issue with SAML Sign-on where System Admins were unable to modify **Service Provider Login URL** unless ``VerifySignature`` was enabled.
+
+### Known Issues
+ - Pinned posts are no longer highlighted.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-04-22
 
 ### Highlights
@@ -9,7 +40,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### Apps Framework (Developer Preview)
  - The Mattermost Apps Framework introduces a new way to integrate with external tools to allow developers to create interactive Apps in Mattermost using any development language they're comfortable with. These Apps work seamlessly across mobile and desktop clients. This is a developer preview that is not yet intended for production instances of Mattermost. The Apps Framework will be available for self-managed customers in Mattermost v5.35 once the Apps Framework Plugin is loaded on an instance. Until then, developers can use the `cloud` branch to get a local test environment running. The launch for the Developer Preview of the Apps Framework is scheduled for April 29th, 2021. Learn more: https://developers.mattermost.com/integrate/apps/.
 
-#### Search results are returned on file search
+#### Search Results Are Returned on File Search
  - Searching in Mattermost now finds both relevant messages and files in your team's conversation history. Search will return results for attachments that match the file name or contain matching text content within supported document types. Learn more. To be available for mobile apps in a later release.
 
 #### Granular Access to System Console Pages
