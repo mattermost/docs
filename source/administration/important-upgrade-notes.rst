@@ -2,20 +2,35 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is highly recommended.
-
-.. important::
-   PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. From v5.26 Mattermost officially supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.
-
-.. important::
-   TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
-
-.. important::
-   The ``platform`` binary and “--platform” flag will be deprecated in a future release. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the ``mattermost`` binary.
+   - Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
+   - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
+   - The ``platform`` binary and “--platform” flag will be deprecated in a future release. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the ``mattermost`` binary.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.35.0                                            | Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the |
+|                                                    | migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual |
+|                                                    | upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike   |
+|                                                    | in database CPU usage should also be expected during this process. `More details on the performance impact of the migration and possible mitigation strategies   | 
+|                                                    | are provided here <https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1>`_.                                                                       |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The existing password generation logic used during the bulk user import process was comparatively weak. Hence it's advised for admins to immediately reset the   |
+|                                                    | passwords for all the users who were generated during the bulk import process and whose password has not been changed even once.                                 |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | v5.35.0 introduces a new feature to search for files. Search results for files shared in the past may be incomplete until a                                      |
+|                                                    | `content extraction command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`_ is executed to extract   |
+|                                                    | and index the content of files already in the database. Instances running Elasticsearch or Bleve search backends will also need to execute a Bulk Indexing after |
+|                                                    | the content extraction is complete. Please see more details in `this blog post <https://mattermost.com/blog/file-search/>`_.                                     |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v5.34.1                                            | v5.34.1 fixes an issue where upgrading to v5.34.0 runs a migration that can cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing |
+|                                                    | migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.                                        |
+|                                                    |       - Altering of ``Posts.FileIds`` type (PostgreSQL only)                                                                                                     |
+|                                                    |       - Added new column ``ThreadMemberships.UnreadMentions``                                                                                                    |
+|                                                    |       - Added new column ``Channels.Shared``                                                                                                                     |
+|                                                    |       - Added new column ``Reactions.UpdateAt``                                                                                                                  |
+|                                                    |       - Added new column ``Reactions.DeleteAt``                                                                                                                  |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.33.0                                            | Deleting a reaction is now a soft delete in the ``Reactions`` table. A schema update is required and may take up to 15 seconds on first run with large data sets.|
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | WebSocket handshakes done with HTTP version lower than 1.1 will result in a warning, and the server will transparently upgrade the version to 1.1 to comply with |
@@ -34,6 +49,13 @@ Important Upgrade Notes
 |                                                    | `A breaking change was introduced when upgrading the Go version to v1.15.5 <https://golang.org/doc/go1.15#commonname>`_ where user logins fail with AD/LDAP Sync |
 |                                                    | when the certificate of the LDAP Server has no Subject Alternative Name (SAN) in it. Creating a new certificate on the AD/LDAP Server with the SAN inside fixes  |
 |                                                    | this.                                                                                                                                                            |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to    |
+|                                                    | Mattermost servers deployed with these TLS versions. System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend    |
+|                                                    | upgrading to TLS version 1.2 or higher.                                                                                                                          |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v5.31.0                                            | For Mobile Apps v1.42.0+, the minimum server version is set to 5.31.3 as                                                                                         |
+|                                                    | `5.31.3 fixed an issue <https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr>`_ where the server version was reported as v5.30.0.         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.29.0                                            | A new configuration setting ``ThreadAutoFollow`` has been added to support `Collapsed Reply Threads                                                              |
 |                                                    | <https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245>`_ releasing in beta in Q1 2021. This       |
@@ -72,6 +94,11 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled. Follow instructions at                                                                  |
 |                                                    | https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                        |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. From v5.26 Mattermost officially supports| 
+|                                                    | PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current    |
+|                                                    | ESR, will continue to be compatible with PostgreSQL 9.4. PostgreSQL 9.4 and all 9.x versions are now fully deprecated in our v5.30 release (December 16, 2020).  |
+|                                                    | Please follow the instructions under the Upgrading Section within `the PostgreSQL documentation <https://www.postgresql.org/support/versioning/>`_.              |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.25.0                                            | Some incorrect instructions regarding SAML setup with Active Directory ADFS for setting the “Relying Party Trust Identifier” were corrected. Although the        |
 |                                                    | settings will continue to work, it is encouraged that you                                                                                                        |

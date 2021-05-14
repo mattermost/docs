@@ -86,7 +86,7 @@ Integration or Feature Promotion
 4. Update representative art following the guidelines in `Feature Representative Art`_.
 5. Update representative logo(s) following the guidelines in `Mattermost and Representative Logos`_.
 6. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
-7. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
+7. Save the finished asset draft in both .TIF and .png format, and upload to your "Dropbox Share" folder.
 
 Guest Blog Posts
 ^^^^^^^^^^^^^^^^^
@@ -96,7 +96,7 @@ Guest Blog Posts
 3. Update representative logo following the guidelines in `Mattermost and Representative Logos`_.
 4. Obtain a photo of the guest company member and apply a gray-scale effect. You can also consider applying a `Puppet Module effect <https://mattermost.org/puppet-module-for-mattermost/>`__.
 5. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
-6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
+6. Save the finished asset draft in both .TIF and .png format, and upload to your "Dropbox Share" folder.
 
 Asset Elements
 ---------------

@@ -6,7 +6,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ is coming to the end of its life cycle on April 16, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is highly recommended.
+  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -20,7 +20,7 @@ Please see `Release Lifecycle documentation <https://docs.mattermost.com/adminis
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/ESR20212.png
+.. image:: ../images/ESR20213.png
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
@@ -44,7 +44,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 5.31        | Feature        | January 16, 2021 | October 15, 2021 | `5.31.1 <https://releases.mattermost.com/5.31.1/mattermost-5.31.1-linux-amd64.tar.gz>`_    |                                                     |
+| 5.31        | Feature        | January 16, 2021 | October 15, 2021 | `5.31.5 <https://releases.mattermost.com/5.31.5/mattermost-5.31.5-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.25        | Quality        | July 16, 2020    | April 15, 2021   | `5.25.7 <https://releases.mattermost.com/5.25.7/mattermost-5.25.7-linux-amd64.tar.gz>`_    | The xmlsec1-based SAML library was disabled in      |
 |             |                |                  |                  |                                                                                            | favor of the re-enabled and improved SAML library   |

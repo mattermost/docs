@@ -1,8 +1,8 @@
 ========================================
-Certifications and Compliance Overview
+Certifications and Compliance Overview*
 ========================================
 
-This overview summarizes various compliances and certifications Mattermost is designed to support, including:
+This overview summarizes how Mattermost can help users in support of their internal compliance initiatives, including:
 
 - GDPR Compliance
 - U.S. Export Compliance
@@ -10,19 +10,19 @@ This overview summarizes various compliances and certifications Mattermost is de
 GDPR Compliance
 ----------------
 
-The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)
+The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
 Continual Commitment to the Principles of GDPR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost completes this mission through the use of:
+Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
 
 - **Security Infrastructure:** Continual investment in security, privacy and compliance capabilities.
 - **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://mattermost.com/terms-of-service/>`__.
-- **Privacy Measures:** Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
+- **Privacy Measures:** Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 - **Product Features:** To ensure data management and data portability.
 
-To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__.
+To stay up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__.
 
 Security Infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,8 +44,6 @@ Mattermost adheres to contractual obligations for ensuring the proper management
 
 Privacy Measures
 ~~~~~~~~~~~~~~~~~
-
-Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy Shield** principles of notice, choice, onward transfer, security, data integrity, access and enforcement for personal data submitted by our customers and partners.
 
 Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
@@ -70,10 +68,10 @@ Data Portability
 Accessibility Compliance
 -------------------------
 
-Compliance with accessibility standards is achieved in the following ways:
+Adherence with accessibility standards is assisted in the following ways:
 
 - **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
-- **WCAG 2.0L** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.
+- **WCAG 2.0L:** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a third-party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://mattermost.org/filing-issues/>`__ so that it may be resolved.
 
@@ -139,7 +137,7 @@ Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.b
 
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
-**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Sudan, Syria and other countries/territories
+**Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories.
 with specific prohibitions, such as Russia and Venezuela. Details can be
 located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`__ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`__. The countries and their sanctions are subject to change.
 
@@ -181,6 +179,9 @@ What information is shared when I click **Contact us** on a Mattermost Admin Adv
 
 Clicking **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
+.. note::
+    `Mattermost Admin Advisor notices are disabled <https://docs.mattermost.com/administration/notices.html#admin-advisor-notices>`__ in v5.35 and later.
+
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -198,6 +199,8 @@ How do you ensure personal data stays within European Union?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When the customer’s installation of Mattermost is self-hosted, Mattermost does not process any personal data under the jurisdiction of the data privacy laws governing within the European Union. The Mattermost support team leverages Zendesk customer service software, which hosts Mattermost information within the United States. For more information on Zendesk, please see their `Privacy and Data Protection <https://www.zendesk.com/company/privacy-and-data-protection/#gdpr-sub>`__ page.
 
-Zendesk privacy and data protection safeguards notwithstanding, the provision of support services is part of the contractual obligations between Mattermost and its customers. In order for Mattermost to provide such support, a customer must be able to identify as a licensed user, therefore requiring the user to provide personal data to the support agent. Regardless of where the support agent is located, the personal data will indeed be hosted outside of the EU. 
+Zendesk privacy and data protection safeguards notwithstanding, the provision of support services is part of the contractual obligations between Mattermost and its customers. In order for Mattermost to provide such support, a customer must be able to identify as a licensed user, therefore requiring the user to provide personal data to the support agent. Regardless of where the support agent is located, the personal data will indeed be hosted outside of the EU.
 
 However, pursuant to Section (b) of Article 49 of GDPR, transfers of personal data which are "necessary for the performance of a contract between the data subject and the controller" may be transferred to a third country or international organization. Accordingly these transfers would be done in alignment with the requirements of GDPR. For more information, see our `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ page.
+
+***DISCLAIMER:** MATTERMOST DOES NOT POSITION ITS PRODUCTS AS “GUARANTEED COMPLIANCE SOLUTIONS”. WE MAKE NO GUARANTEE THAT YOU WILL ACHIEVE REGULATORY COMPLIANCE USING MATTERMOST PRODUCTS. YOUR LEVEL OF SUCCESS IN ACHIEVING REGULATORY COMPLIANCE DEPENDS ON YOUR INTERPRETATION OF THE APPLICABLE REGULATION, AND THE ACTIONS YOU TAKE TO COMPLY WITH THEIR REQUIREMENTS. SINCE THESE FACTORS DIFFER ACCORDING TO INDIVIDUALS AND BUSINESSES, WE CANNOT GUARANTEE YOUR SUCCESS, NOR ARE WE RESPONSIBLE FOR ANY OF YOUR ACTIONS. NO GUARANTEES ARE MADE THAT YOU WILL ACHIEVE ANY SPECIFIC COMPLIANCE RESULTS FROM THE USE OF MATTERMOST OR FROM ANY RECOMMENDATIONS CONTAINED ON OUR WEBSITES, AND AS SUCH, THIS SHOULD NOT BE A SUBSTITUTE TO CONSULTING WITH YOUR OWN LEGAL AND COMPLIANCE REPRESENTATIVES ON THESE MATTERS.

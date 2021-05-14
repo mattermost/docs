@@ -13,9 +13,9 @@ Deployment Overview
 
 Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/deployment/deployment.html>`__ documentation for a summary of software systems whose requirements are described in this document.
 
-.. figure:: ../images/network.PNG
+.. figure:: ../images/network.png
    :alt: image
-`View Mattermost Network Diagram <https://github.com/mattermost/docs/blob/master/source/images/network.PNG>`__
+`View Mattermost Network Diagram <https://github.com/mattermost/docs/blob/master/source/images/network.png>`__
 
 Software Requirements
 ---------------------

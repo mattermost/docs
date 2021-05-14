@@ -20,8 +20,12 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 6. Set **Enable Bleve for search queries** to **true**.
 7. Set **Enable Bleve for autocomplete queries** to **true**.
 
+.. note::
+
+  Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+
 Using Bleve Search
-------------
+------------------
 
 The following conditions are applied when using Bleve search:
 

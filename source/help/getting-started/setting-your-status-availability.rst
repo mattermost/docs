@@ -6,7 +6,7 @@ Let your team know whether you're available by setting a custom status and your 
 Setting a Custom Status
 -----------------------
 
-Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
+Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
 
 1. To set a custom status, select your avatar at the top of the channel sidebar, then select **Set a Custom Status**.
 

@@ -3,9 +3,9 @@ Mattermost Cloud Billing
 
 Mattermost Cloud is offered as a pay-as-you-go subscription service.
 
-You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
+You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
 
-Mattermost is available free of charge for all workspaces that have 10 or fewer registered users. Your subscription will be upgraded to a per-user pricing model once you reach 11 or more registered users.
+Customers who signed up for a Mattermost Cloud workspace from our October 2020 launch can continue to use their Cloud instance free of charge for up to ten registered users; however, these customers must upgrade to a per-user pricing model after reaching 11 or more registered users. New Mattermost Cloud workspaces can trial Mattermost Cloud free for 14 days before being required to upgrade to a monthly per-user subscription. 
 
 Billing Period
 --------------
@@ -76,6 +76,9 @@ You will be notified immediately of failed payments both in-product with a banne
    "7 days", "An email is sent to the workspace Administrator with directions to update payment information."
    "14 days", "Another email is sent to the workspace Administrator with directions to update payment information."
    "30 days", "An email is sent to the workspace Administrator indicating that the workspace will be suspended in a further 60 days."
-   "90 days", "The workspace will be suspended, preventing access by all users and Administrators."
+   "90 days", "A final email is sent to the workspace owner. The workspace will be suspended, preventing access by all users and Administrators."
+   "97 days", "The workspace and all data is deleted."
 
 Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
+
+Once a workspace has been deleted, contents can not be re-instated.  You will need to create a new workspace at that time from https://mattermost.com/get-started/. 

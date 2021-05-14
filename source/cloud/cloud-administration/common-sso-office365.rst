@@ -61,6 +61,9 @@ Step 3: Configure Mattermost for Office 365 SSO
 
 7. Select **Save**.
 
+.. note::
+  When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
+
 Note about Microsoft Active Directory Tenants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

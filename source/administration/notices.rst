@@ -9,7 +9,7 @@ Mattermost in-product notices keep users and administrators informed of the newe
 Administrator notices
 ---------------------
 
-Administrator notices are used to inform System Admins when a new server version is available, or if a server upgrade is recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
+Administrator notices inform System Admins when a new server version is available, when external dependencies are being deprecated, or when server upgrades are recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
 
 .. image:: ../images/notices_admin.png
 
@@ -43,7 +43,10 @@ Notices will be used to raise awareness of new features as part of our monthly r
 Admin Advisor notices
 ---------------------
 
-Admin Advisor notices are included in Mattermost from v5.26. They're designed to provide guidance and assist in choosing features to support your deployment as it scales.
+Admin Advisor notices are designed to provide guidance and assist in choosing features to support your deployment as it scales.
+
+.. note::
+  Admin Advisor notices are disabled in v5.35 and later.
 
 When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 

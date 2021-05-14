@@ -234,9 +234,371 @@ Roles are dynamic and user configurable, necessitating a database table with the
 - ``Description`` (String)
 - ``Permissions`` (String): Space-separated permissions names
 - ``Scheme Managed`` (bool): Indicates whether this role is managed as part of a scheme.
-- ``BuiltIn`` (bool): Indicates if this role is built in to the Mattermost system and not removable by the user.
+- ``BuiltIn`` (bool): Indicates if this role is built-in to the Mattermost system and not removable by the user.
 
-The System Scheme is built in to the product and it's roles are defined as ``BuiltIn: true`` in the ``Roles`` table.
+Built-in roles
+~~~~~~~~~~~~~~
+
+The System Scheme is built-in to the product, and its roles are defined as ``BuiltIn: true`` in the ``Roles`` table. You can use the Mattermost API to `retrieve a list of permissions by role name <https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post>`__. 
+
+The following built-in roles and associated permissions are available:
+
+*channel_admin*
+
+- manage_private_channel_members
+- read_public_channel_groups
+- use_channel_mentions
+- create_post
+- use_group_mentions
+- add_reaction
+- read_private_channel_groups
+- remove_reaction
+- manage_public_channel_members
+- manage_channel_roles
+
+*channel_guest*
+
+- use_slash_commands
+- read_channel
+- add_reaction
+- remove_reaction
+- upload_file
+- edit_post
+- create_post
+- use_channel_mentions
+
+*channel_user*
+
+- manage_public_channel_properties
+- use_group_mentions
+- add_reaction
+- delete_private_channel
+- manage_private_channel_members
+- read_private_channel_groups
+- delete_public_channel
+- read_public_channel_groups
+- use_channel_mentions
+- read_channel
+- delete_post
+- get_public_link
+- remove_reaction
+- manage_public_channel_members
+- use_slash_commands
+- upload_file
+- manage_private_channel_properties
+- create_post
+- edit_post
+
+*system_admin*
+
+- manage_others_slash_commands
+- sysconsole_write_user_management_permissions
+- edit_brand
+- remove_reaction
+- manage_incoming_webhooks
+- sysconsole_write_user_management_groups
+- create_public_channel
+- manage_private_channel_members
+- sysconsole_write_authentication
+- join_private_teams
+- create_post_ephemeral
+- list_users_without_team
+- sysconsole_write_reporting
+- join_public_channels
+- invite_guest
+- list_private_teams
+- sysconsole_write_user_management_channels
+- manage_others_bots
+- read_user_access_token
+- add_user_to_team
+- view_members
+- edit_post
+- demote_to_guest
+- delete_others_posts
+- sysconsole_write_plugins
+- delete_private_channel
+- sysconsole_read_user_management_system_roles
+- sysconsole_read_user_management_users
+- revoke_user_access_token
+- read_others_bots
+- read_public_channel_groups
+- sysconsole_write_user_management_teams
+- sysconsole_write_billing
+- convert_public_channel_to_private
+- remove_user_from_team
+- manage_team
+- add_reaction
+- manage_oauth
+- list_team_channels
+- create_team
+- read_jobs
+- invite_user
+- manage_shared_channels
+- remove_others_reactions
+- manage_remote_clusters
+- sysconsole_write_user_management_users
+- sysconsole_read_experimental
+- sysconsole_write_compliance
+- edit_others_posts
+- assign_bot
+- manage_bots
+- manage_others_outgoing_webhooks
+- manage_system_wide_oauth
+- delete_others_emojis
+- manage_others_incoming_webhooks
+- promote_guest
+- sysconsole_write_experimental
+- sysconsole_read_plugins
+- create_group_channel
+- sysconsole_read_environment
+- manage_roles
+- use_channel_mentions
+- manage_public_channel_properties
+- manage_channel_roles
+- get_public_link
+- sysconsole_read_billing
+- sysconsole_write_integrations
+- download_compliance_export_result
+- manage_slash_commands
+- assign_system_admin_role
+- create_post
+- delete_post
+- create_direct_channel
+- list_public_teams
+- create_post_public
+- read_private_channel_groups
+- sysconsole_read_integrations
+- read_other_users_teams
+- manage_jobs
+- sysconsole_read_site
+- manage_outgoing_webhooks
+- sysconsole_write_environment
+- manage_system
+- sysconsole_read_user_management_permissions
+- manage_public_channel_members
+- sysconsole_write_about
+- import_team
+- sysconsole_write_user_management_system_roles
+- sysconsole_read_reporting
+- upload_file
+- read_channel
+- sysconsole_read_user_management_teams
+- delete_emojis
+- manage_private_channel_properties
+- view_team
+- sysconsole_read_user_management_groups
+- create_private_channel
+- create_bot
+- join_public_teams
+- delete_public_channel
+- read_public_channel
+- sysconsole_read_about
+- use_slash_commands
+- read_bots
+- sysconsole_read_authentication
+- edit_other_users
+- sysconsole_read_user_management_channels
+- convert_private_channel_to_public
+- use_group_mentions
+- create_user_access_token
+- sysconsole_write_site
+- manage_team_roles
+- sysconsole_read_compliance
+- create_emojis
+
+*system_guest*
+
+- create_group_channel
+- create_direct_channel
+
+*system_manager*
+
+- sysconsole_write_user_management_permissions
+- sysconsole_read_about
+- sysconsole_read_user_management_channels
+- join_private_teams
+- delete_private_channel
+- view_team
+- read_jobs
+- sysconsole_read_user_management_teams
+- sysconsole_read_plugins
+- manage_channel_roles
+- manage_public_channel_members
+- remove_user_from_team
+- sysconsole_read_environment
+- list_private_teams
+- manage_private_channel_members
+- manage_private_channel_properties
+- edit_brand
+- add_user_to_team
+- convert_public_channel_to_private
+- read_private_channel_groups
+- sysconsole_write_environment
+- manage_jobs
+- sysconsole_read_reporting
+- read_public_channel
+- manage_team
+- read_channel
+- convert_private_channel_to_public
+- sysconsole_read_integration
+- read_public_channel_groups
+- list_public_teams
+- manage_team_roles
+- sysconsole_read_user_management_groups
+- manage_public_channel_properties
+- sysconsole_write_user_management_groups
+- sysconsole_read_user_management_permissions
+- sysconsole_write_site
+- sysconsole_read_site
+- sysconsole_write_user_management_channels
+- sysconsole_write_integrations
+- delete_public_channel
+- sysconsole_write_user_management_teams
+- join_public_teams
+
+*system_post_all*
+
+- create_post
+- use_channel_mentions
+- use_group_mentions
+
+*system_post_all_public*
+
+- create_post_public
+- use_group_mentions
+- use_channel_mentions
+
+*system_read_only_admin*
+
+- sysconsole_read_compliance
+- read_other_users_teams
+- sysconsole_read_reporting
+- list_private_teams
+- sysconsole_read_experimental
+- read_jobs
+- read_public_channel
+- view_team
+- sysconsole_read_user_management_users
+- sysconsole_read_plugins
+- sysconsole_read_user_management_teams
+- read_public_channel_groups
+- sysconsole_read_user_management_channels
+- sysconsole_read_user_management_permissions
+- sysconsole_read_about
+- download_compliance_export_result
+- read_channel
+- sysconsole_read_authentication
+- sysconsole_read_site
+- list_public_teams
+- sysconsole_read_integrations
+- read_private_channel_groups
+- sysconsole_read_environment
+- sysconsole_read_user_management_groups
+
+*system_user*
+
+- list_public_teams
+- join_public_teams
+- create_direct_channel
+- create_group_channel
+- view_members
+- create_team
+- create_emojis
+- delete_emojis
+
+*system_user_access_token*
+
+- create_user_access_token
+- read_user_access_token
+- revoke_user_access_token
+
+*system_user_manager*
+
+- manage_public_channel_members
+- sysconsole_write_user_management_groups
+- manage_private_channel_properties
+- read_channel
+- sysconsole_read_authentication
+- manage_private_channel_members
+- read_jobs
+- view_team
+- sysconsole_read_user_management_groups
+- list_private_teams
+- join_public_teams
+- manage_team
+- list_public_teams
+- add_user_to_team
+- sysconsole_read_user_management_channels
+- sysconsole_write_user_management_teams
+- read_public_channel
+- sysconsole_read_user_management_permissions
+- manage_public_channel_properties
+- join_private_teams
+- convert_public_channel_to_private
+- manage_channel_roles
+- sysconsole_read_user_management_teams
+- convert_private_channel_to_public
+- read_public_channel_groups
+- delete_public_channel
+- remove_user_from_team
+- manage_team_roles
+- delete_private_channel
+- sysconsole_write_user_management_channels
+- read_private_channel_groups
+
+*team_admin*
+
+- remove_user_from_team
+- manage_others_slash_commands
+- manage_team_roles
+- manage_public_channel_members
+- use_group_mentions
+- manage_others_outgoing_webhooks
+- manage_slash_commands
+- manage_team
+- manage_others_incoming_webhooks
+- manage_channel_roles
+- read_public_channel_groups
+- convert_private_channel_to_public
+- remove_reaction
+- delete_post
+- manage_outgoing_webhooks
+- use_channel_mentions
+- manage_incoming_webhooks
+- delete_others_posts
+- read_private_channel_groups
+- create_post
+- manage_private_channel_members
+- convert_public_channel_to_private
+- add_reaction
+- import_team
+
+*team_guest*
+
+- view_team
+
+*team_post_all*
+
+- create_post
+- use_group_mentions
+- use_channel_mentions
+
+*team_post_all_public*
+
+- use_group_mentions
+- create_post_public
+- use_channel_mentions
+
+*team_user*
+
+- invite_user
+- add_user_to_team
+- list_team_channels
+- join_public_channels
+- read_public_channel
+- view_team
+- create_public_channel
+- create_private_channel
 
 ``Schemes`` Table
 ~~~~~~~~~~~~~~~~~~

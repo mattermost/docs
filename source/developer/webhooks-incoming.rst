@@ -23,15 +23,16 @@ Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTT
    :maxdepth: 2
 
 Simple Incoming Webhook
------------------------------------
+-----------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
 .. image:: ../images/incoming_webhooks_create_simple.png
   :width: 400 px
   
-1. First, go to **Main Menu > Integrations > Incoming Webhook**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so.
-2. Click **Add Incoming Webhook** and add name and description for the webhook. The description can be up to 500 characters. 
+1. First, go to **Main Menu > Integrations > Incoming Webhook**. 
+  - If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. They can be enabled by a System Admin from **System Console > Integrations > Integration Management**. Then continue with the steps below.
+2. Select **Add Incoming Webhook** and add name and description for the webhook. The description can be up to 500 characters.
 3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
 
@@ -72,12 +73,12 @@ This content will be displayed in the Town Square channel.
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so. If not enabled, the username is set to `webhook`.
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management**, or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
   
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override profile picture icons. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override profile picture icons. Enable them from **System Console > Integrations > Integration Management**, or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
-------------------------
+-----------------------
 
 1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`__.
 
@@ -89,16 +90,16 @@ Tips and Best Practices
 
 5. The external application may be written in any programming language as long as it supports sending an HTTP POST request in the required JSON format to a specified Mattermost URL.
 
-6. For the HTTP request body, if `Content-Type` is specified as ``application/json`` in the header of the HTTP request, then the body can be direct JSON. For example,
+6. For the HTTP request body, if ``Content-Type`` is specified as ``application/json`` in the header of the HTTP request, then the body can be direct JSON. For example,
 
 .. code-block:: text
 
   {"text": "Hello, this is some text."}
 
-7. When using the ``icon_emoji`` parameter - the user profile image is replaced by the emoji provided. This will also override the ``icon_url`` parameter if both are provided. 
+7. When using the ``icon_emoji`` parameter, the user profile image is replaced by the emoji provided. This will also override the ``icon_url`` parameter if both are provided.
 
 Share Your Integration
------------------------
+----------------------
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
 
@@ -107,9 +108,7 @@ The `app directory <https://integrations.mattermost.com/>`__ lists open source i
 Slack Compatibility
 -------------------
 
-Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
-
-Using the Slack ``icon_emoji`` parameter overrides the profile icon and the icon_url parameter and is supported as of v5.14.
+Mattermost makes it easy to migrate integrations written for Slack to Mattermost. Using the Slack ``icon_emoji`` parameter overrides the profile icon and the ``icon_url`` parameter and is supported from version 5.14.
 
 Translate Slack's data format to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,12 +133,12 @@ GitLab is the leading open-source alternative to GitHub and offers built-in inte
 1. In GitLab, go to **Settings > Services** and select **Slack**.
 2. Paste the incoming webhook URL provided by Mattermost from **Main Menu > Integrations > Incoming Webhooks**.
 3. Optionally set the **Username** you'd like displayed when the notification is made. Leave the **Channel** field blank.
-4. Click **Save** then test the settings to confirm messages are sent successfully to Mattermost.
+4. Select **Save**, then test the settings to confirm messages are sent successfully to Mattermost.
 
 Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Referencing  channels using <#CHANNEL_ID> does not link to the channel.
+1. Referencing  channels using ``<#CHANNEL_ID>`` does not link to the channel.
 2. ``<!everyone>`` and ``<!group>`` are not supported.
 3. Parameters "mrkdwn", "parse", and "link_names" are not supported. Mattermost converts Markdown by default and automatically links @mentions.
 4. Bold formatting as ``*bold*`` is not supported (must be done as ``**bold**``).
@@ -148,7 +147,7 @@ Known Slack compatibility issues
 Troubleshooting
 ---------------
 
-To debug incoming webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
+To debug incoming webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to **true**, and set **System Console > Logging > Console Log Level** to **DEBUG**.
 
 Some common error messages include:
 
@@ -164,20 +163,20 @@ If your integration prints the JSON payload data instead of rendering the genera
 For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Frequently Asked Questions
-----------------------------
+--------------------------
 
-How do I send a webhook post to a direct message channel?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How do I send a webhook post to a Direct Message channel?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To send a message to a direct message channel, add an "@" symbol followed by the username to the channel parameter. You can add your own username to send the webhook posts to a direct message channel with yourself.
+To send a message to a Direct Message channel, add an "@" symbol followed by the username to the channel parameter. You can add your own username to send the webhook posts to a Direct Message channel with yourself.
 
 .. code-block:: text
 
   payload={"channel": "@username", "text": "Hello, this is some text\nThis is more text. :tada:"}
 
-This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
+This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a Direct Message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
 
-To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search>`__.
+To send a message to a different Direct Mssage channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search>`__.
 
 .. code-block:: text
 

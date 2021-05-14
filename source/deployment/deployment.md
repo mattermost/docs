@@ -1,13 +1,13 @@
 # Deployment Overview
 
-The below diagram illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
+The Mattermost network diagram below illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
-![image](../images/network.PNG)
+![image](../images/network.png)
 
-[View Mattermost Network Diagram](https://docs.mattermost.com/_images/network.PNG)
 
-Notes:
-- GitLab Mattermost deployment is [documented separately](https://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
+**Note**
+
+  - GitLab Mattermost deployment is [documented separately](https://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 
 ## Requirements and Installation Guides
 
@@ -41,11 +41,11 @@ If the HTTPS connection is not available, the Mattermost service will not work. 
 
 ### WSS Connection (Secure WebSocket Protocol)
 
+WSS is a secure, encrypted connection and is highly recommended. An unencrypted WSS connection may be used in initial testing and configuration but it is not recommended for production.
+
 The WSS connection to the Mattermost server enables real-time updates and notifications. If the WSS connection is not available, but HTTPS is available, the system will appear to work, but real-time updates and notifications will not work. Updates will only appear on a page refresh. WSS will be a persistent connection to the Mattermost server while you are connected, while HTTPS will be intermittent depending on when you load a page or a file.
 
 Typically a "Mattermost unreachable" error message will be displayed warning users that the Mattermost server is either unreachable or the WebSocket connection is not properly configured.
-
-WSS is a secure, encrypted connection and is highly recommended. An unencrypted WSS connection may be used in initial testing and configuration but it is not recommended for production.
 
 ## Network Access and Multi-Factor Authentication
 
@@ -59,12 +59,14 @@ If outside access is required, a virtual private network client (VPN), such as [
 
 If Mattermost is accessible from the open internet, the following is recommended:
 
-1. An IT admin should be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://mattermost.com/security-updates/#sign-up) and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html).
-2. The organization upgrades to [Mattermost Enterprise Edition](https://mattermost.com/pricing-self-managed/) to enable SAML single sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended.
+1. An IT admin should be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://mattermost.com/security-updates/#sign-up), and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html).
+2. The organization upgrades to [Mattermost Enterprise Edition](https://mattermost.com/pricing-self-managed/) to enable SAML Single Sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended.
 
 If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential.
 
-**Note:** Not-for-profit and academic institutions are eligible for special [not-for-profit](https://mattermost.com/nonprofit/) and [academic pricing](https://mattermost.com/education/) for Mattermost Enterprise Edition.
+**Note** 
+
+  Not-for-profit and academic institutions are eligible for special [not-for-profit](https://mattermost.com/nonprofit/) and [academic pricing](https://mattermost.com/education/) for Mattermost Enterprise Edition.
 
 ## Data Center Infrastructure
 
@@ -85,15 +87,15 @@ The proxy manages Secure Socket Layer (SSL) encryption and sets the policy on ho
 
 Mattermost install guides include setup instructions for the NGNIX software proxy by default. For large scale deployments, a hardware proxy with dedicated devices for processing SSL encryption and decryption could potentially increase efficiencies.
 
-In a high availability configuration (Enterprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
+In a High Availability configuration (Enterprise Edition only) the proxy would also balance network load across multiple Mattermost servers.
 
 ### Microsoft Active Directory Single Sign-On (Enterprise Edition)
 
-Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP single sign-on with secure transport over TLS or stunnel.
+Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP Single Sign-on with secure transport over TLS or stunnel.
 
 ### Private Cloud Integrations
 
-Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your on-premises systems.
+Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your self-managed systems.
 
 [Visit our app directory](https://about.mattermost.com/default-app-directory/) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and SVN, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
@@ -103,7 +105,7 @@ For notifications and account verification, Mattermost connects to your existing
 
 ## Mattermost Server
 
-The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, ``config/config.json``, which can be updated directly or via a web-based System Console user interface.
+The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, ``config/config.json``, which can be updated directly or via the web-based System Console user interface.
 
 #### RESTful JSON Web Service
 
@@ -113,7 +115,7 @@ The entirety of the Mattermost server is accessible through a RESTful Web Servic
 
 Authenticates users by email or username plus password.
 
-For customers of Enterprise Edition, single sign-on via Microsoft Active Directory and LDAP is also available.
+For customers of Enterprise Edition, Single Sign-on via Microsoft Active Directory and LDAP is also available.
 
 #### Authentication Provider
 
@@ -129,19 +131,21 @@ Connects to and manages supported databases.
 
 ### High Availability (Enterprise Edition)
 
-Large organizations needing sophisticated, high scale, high availability configurations can set up a [highly available, horizontally scalable](https://docs.mattermost.com/deployment/cluster.html) deployment. Contact the [enterprise team](https://mattermost.com/contact-us/) for guidance on configuring and sizing Mattermost Enterprise Edition to support your specific needs.
+Large organizations needing sophisticated, large scale, High Availability configurations can set up a [highly available, horizontally scalable](https://docs.mattermost.com/deployment/cluster.html) deployment. Contact the [Enterprise team](https://mattermost.com/contact-us/) for guidance on configuring and sizing Mattermost Enterprise Edition to support your specific needs.
 
 ## Data Stores
 
 ### Databases
 
-Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives can be used for faster read times to increase performance.
+Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives (SSDs) can be used for faster read times to increase performance.
 
 See [Database requirements](https://docs.mattermost.com/install/requirements.html#database-software) for full details.
 
 #### Multiple Read Replicas (Enterprise Edition)
 
-For enterprise deployments, the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
+For enterprise deployments, the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. 
+
+The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
 
 #### Search Replicas (Enterprise Edition)
 
@@ -149,18 +153,18 @@ You can configure one or more search replicas to isolate search queries. A searc
 
 #### Global Deployments (Enterprise Edition)
 
-Enterprise customers with deployments spanning many time zones can contact the [Enterprise Team](https://mattermost.com/contact-us/) for advanced configurations to minimize latency by:    
+Enterprise customers with deployments spanning many time zones can contact the [Enterprise team](https://mattermost.com/contact-us/) for advanced configurations to minimize latency by:
 
-1. Storing static assets over a global CDN.   
-2. Deploying multiple Mattermost servers to host API communication closer to the location of end users.   
-3. Deploying multiple database read replicas closer to the location of end users.   
+1. Storing static assets over a global CDN.
+2. Deploying multiple Mattermost servers to host API communication closer to the location of end users.
+3. Deploying multiple database read replicas closer to the location of end users.
 
 ### File Store
 
 Images and files shared by users are stored and retrieved in one of three options.
 
-1. For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.    
-2. For enterprises sharing very large amounts of data, a Network-Attached Storage server may be used, which can scale to peta-bytes if necessary.    
+1. For teams sharing only modest amounts of file data, local storage on the same physical machine as the Mattermost server may be sufficient.
+2. For enterprises sharing very large amounts of data, a Network Attached Storage (NAS) server may be used, which can scale to petabytes if necessary.
 3. Alternatively, for both ease-of-use and scale, a third option is to use Amazon's S3 file storage service.
 
 ## Deployment Options
@@ -175,11 +179,11 @@ The [Mattermost Push Notification Service](https://docs.mattermost.com/deploymen
 
 ### Mobile Devices without VPN Clients
 
-If Mattermost is available on the internet, we recommend Mattermost Enterprise Edition featuring SAML-based single sign-on and multi-factor authentication (MFA) using Google Authenticator.
+If Mattermost is available on the internet, we recommend Mattermost Enterprise Edition featuring SAML-based Single Sign-on and multi-factor authentication (MFA) using Google Authenticator.
 
-The [Mattermost Push Notification Service](https://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iOS App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
+The [Mattermost Push Notification Service](https://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
-For support for certificate-based authentication for mobile devices, [contact the Enterprise Sales Team for more information](https://mattermost.com/contact-us/).
+For support for certificate-based authentication for mobile devices, [contact the Enterprise Sales team for more information](https://mattermost.com/contact-us/).
 
 ### Mobile Devices with an EMM Provider
 

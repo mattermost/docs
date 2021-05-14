@@ -110,6 +110,40 @@ We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
+Why do I need to provide my name and physical address when purchasing a license?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mattermost is a U.S. corporation and therefore all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
+
+The United States has a number of export control regulations it has implemented to protect national security interests and to promote its foreign policy objectives. Based on these regulations, U.S. companies are prohibited from doing business with specific countries which have been embargoed by the U.S. government. They are also prohibited from exporting certain items to certain countries that have been sanctioned by the U.S. government. In addition, U.S. companies are prohibited from doing business with specific people and/or companies that have been named and listed by the U.S. government. 
+
+In order to comply with these requirements, Mattermost must collect the name and physical address of all individuals and companies it does business with so that it can comply with the U.S. export controls regulations.
+
+What does Mattermost do with this information?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The information you provide is used for a screening process. There are two different purposes for screening: 
+
+- One screening is to ensure against exports of certain restricted goods to countries that are embargoed. In our case, goods refer to our software that has encryption in it.
+- The other screening is against people and companies. There are certain people and companies that the government has put on a list (the Denied Party List) that US companies are prohibited from doing any business with for various reasons. They could be terrorists, be on a terrorist watch list, could be helping finance terrorists, could be participating in human rights violations, etc. If they are on the Denied Party List, we are not able to do any business with them.
+
+Who are the sanctioned people, companies, and entities?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Office of Foreign Assets Control (OFAC) maintains a list of sanctioned entities. Some examples include:
+
+- Terrorists
+- Banks or other financial institutions that are involved in financing terrorism
+- Companies or people that have been involved in human or drug trafficking
+- Organizations that have been sanctioned for human rights violations
+
+This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and Companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
+
+What does “physical address” mean for software that will be used in many places?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this case, the "physical address" is the location where the individual, who will be receiving the license key, is physically located and will be able to access the software for installation.
+
 How do I renew my license if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

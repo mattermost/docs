@@ -89,7 +89,7 @@ The availability of channel moderation settings can also be affected by existing
 2. Select **Edit** next to the name of the channel you want to configure.
 3. In the **Create Posts** panel, uncheck **Guests**.
 4. In the **Post Reactions** panel, uncheck **Guests** if required.
-5. Choose **Save**.
+5. Select **Save**.
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
@@ -100,7 +100,7 @@ The channel is available for all members and guests to access, but guests can on
 3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
 4. In the **Create Posts** panel, uncheck **Guests** and **Members**.
 5. In the **Post Reactions** panel, uncheck **Guests** and **Members**.
-6. Choose **Save**.
+6. Select **Save**.
 
 The channel is available for all members and guests to access but only Admins can post.
 

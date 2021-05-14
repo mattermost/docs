@@ -211,47 +211,215 @@ Admin Roles and Privileges
 
 **Privileges**
 
-- ``PERMISSION_SYSCONSOLE_READ_ABOUT``
-- ``PERMISSION_SYSCONSOLE_WRITE_ABOUT``
-
-- ``PERMISSION_SYSCONSOLE_READ_REPORTING``
-- ``PERMISSION_SYSCONSOLE_WRITE_REPORTING``
-
-- ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_USERS``
-- ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_USERS``
-
-- ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_GROUPS``
-- ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_GROUPS``
-
-- ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_TEAMS``
-- ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_TEAMS``
-
-- ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_CHANNELS``
-- ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_CHANNELS``
-
-- ``PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_PERMISSIONS``
-- ``PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_PERMISSIONS``
-
-- ``PERMISSION_SYSCONSOLE_READ_ENVIRONMENT``
-- ``PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT``
-
-- ``PERMISSION_SYSCONSOLE_READ_SITE``
-- ``PERMISSION_SYSCONSOLE_WRITE_SITE``
-
-- ``PERMISSION_SYSCONSOLE_READ_AUTHENTICATION``
-- ``PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION``
-
-- ``PERMISSION_SYSCONSOLE_READ_PLUGINS``
-- ``PERMISSION_SYSCONSOLE_WRITE_PLUGINS``
-
-- ``PERMISSION_SYSCONSOLE_READ_INTEGRATIONS``
-- ``PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS``
-
-- ``PERMISSION_SYSCONSOLE_READ_COMPLIANCE``
-- ``PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE``
-
-- ``PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL``
-- ``PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL``
++------------------------+--------------------------------------------------------------------------+
+| System Console Section | Permissions                                                              |
++========================+==========================================================================+
+| About                  |  - PERMISSION_SYSCONSOLE_READ_ABOUT_EDITION_AND_LICENSE                  |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ABOUT_EDITION_AND_LICENSE                 |
++------------------------+--------------------------------------------------------------------------+
+| Reporting              | **Site Statistics**                                                      |
+|                        |  - PERMISSION_SYSCONSOLE_READ_REPORTING_SITE_STATISTICS                  |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_REPORTING_SITE_STATISTICS                 |
+|                        |                                                                          |
+|                        | **Team Statistics**                                                      |
+|                        |  - PERMISSION_SYSCONSOLE_READ_REPORTING_TEAM_STATISTICS                  |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_REPORTING_TEAM_STATISTICS                 |
+|                        |                                                                          |
+|                        | **Server Logs**                                                          |
+|                        |  - PERMISSION_SYSCONSOLE_READ_REPORTING_SERVER_LOGS                      |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_REPORTING_SERVER_LOGS                     |
++------------------------+--------------------------------------------------------------------------+
+| User Management        | **Users**                                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_USERS                       |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_USERS                      |
+|                        |                                                                          |
+|                        | **Groups**                                                               |
+|                        |  - PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_GROUPS                      |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_GROUPS                     |
+|                        |                                                                          |
+|                        | **Teams**                                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_TEAMS                       |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_TEAMS                      |
+|                        |                                                                          |
+|                        | **Channels**                                                             |
+|                        |  - PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_CHANNELS                    |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_CHANNELS                   |
+|                        |                                                                          |
+|                        | **Permissions**                                                          |
+|                        |  - PERMISSION_SYSCONSOLE_READ_USERMANAGEMENT_PERMISSIONS                 |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_USERMANAGEMENT_PERMISSIONS                |
++------------------------+--------------------------------------------------------------------------+
+| Environment            | **Web Server**                                                           |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_WEB_SERVER                     |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_WEB_SERVER                    |
+|                        |                                                                          |
+|                        | **Database**                                                             |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_DATABASE                       |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_DATABASE                      |
+|                        |                                                                          |
+|                        | **Elasticsearch**                                                        |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_ELASTICSEARCH                  |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_ELASTICSEARCH                 |
+|                        |                                                                          |
+|                        | **File Storage**                                                         |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_FILE_STORAGE                   |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_FILE_STORAGE                  |
+|                        |                                                                          |
+|                        | **Image Proxy**                                                          |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_IMAGE_PROXY                    |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_IMAGE_PROXY                   |
+|                        |                                                                          |
+|                        | **SMTP**                                                                 |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_SMTP                           |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_SMTP                          |
+|                        |                                                                          |
+|                        | **Push Notification Server**                                             |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_PUSH_NOTIFICATION_SERVER       |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_PUSH_NOTIFICATION_SERVER      |
+|                        |                                                                          |
+|                        | **High Availability**                                                    |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_HIGH_AVAILABILITY              |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_HIGH_AVAILABILITY             |
+|                        |                                                                          |
+|                        | **Rate Limiting**                                                        |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_RATE_LIMITING                  |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_RATE_LIMITING                 |
+|                        |                                                                          |
+|                        | **Logging**                                                              |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_LOGGING                        |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_LOGGING                       |
+|                        |                                                                          |
+|                        | **Session Lengths**                                                      |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_SESSION_LENGTHS                |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_SESSION_LENGTHS               |
+|                        |                                                                          |
+|                        | **Performance Monitoring**                                               |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_PERFORMANCE_MONITORING         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_PERFORMANCE_MONITORING        |
+|                        |                                                                          |
+|                        | **Developer**                                                            |
+|                        |  - PERMISSION_SYSCONSOLE_READ_ENVIRONMENT_DEVELOPER                      |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_DEVELOPER                     |
++------------------------+--------------------------------------------------------------------------+
+| Site Configuration     | **Customization**                                                        |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_CUSTOMIZATION                         | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_CUSTOMIZATION                        |   
+|                        |                                                                          |
+|                        | **Localization**                                                         |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_LOCALIZATION                          | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_LOCALIZATION                         |   
+|                        |                                                                          |   
+|                        | **Users and Teams**                                                      | 
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_USERS_AND_TEAMS                       |   
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_USERS_AND_TEAMS                      | 
+|                        |                                                                          | 
+|                        | **Notifications**                                                        |   
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_NOTIFICATIONS                         |   
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_NOTIFICATIONS                        |  
+|                        |                                                                          |   
+|                        | **Announcement Banner**                                                  |    
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_ANNOUNCEMENT_BANNER                   |    
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_ANNOUNCEMENT_BANNER                  |  
+|                        |                                                                          | 
+|                        | **Emoji**                                                                |     
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_EMOJI                                 |  
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_EMOJI                                |
+|                        |                                                                          | 
+|                        | **Posts**                                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_POSTS                                 |  
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_POSTS                                |    
+|                        |                                                                          |
+|                        | **File Sharing and Downloads**                                           |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_FILE_SHARING_AND_DOWNLOADS            |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_FILE_SHARING_AND_DOWNLOADS           | 
+|                        |                                                                          |  
+|                        | **Public Links**                                                         |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_PUBLIC_LINKS                          | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_PUBLIC_LINKS                         |    
+|                        |                                                                          |     
+|                        | **Notices**                                                              |      
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_NOTICES                               |   
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_NOTICES                              |    
++------------------------+--------------------------------------------------------------------------+
+| Authentication         | **Signup**                                                               |
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SIGNUP                      |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SIGNUP                     |
+|                        |                                                                          |
+|                        | **Email**                                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_EMAIL                       | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_EMAIL                      |  
+|                        |                                                                          |
+|                        | **Password**                                                             |   
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_PASSWORD                    |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_PASSWORD                   |   
+|                        |                                                                          |    
+|                        | **MFA**                                                                  |     
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_MFA                         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA                        |
+|                        |                                                                          |
+|                        | **AD/LDAP**                                                              |
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_MFA                         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA                        |     
+|                        |                                                                          |    
+|                        | **SAML 2.0**                                                             |     
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SAML                        |   
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SAML                       | 
+|                        |                                                                          |
+|                        | **OpenID Connect**                                                       | 
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_OPENID                      |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_OPENID                     |
+|                        |                                                                          |
+|                        | **Guest Access (Beta)**                                                  | 
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_GUEST_ACCESS                |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_GUEST_ACCESS               | 
++------------------------+--------------------------------------------------------------------------+
+| Plugin (Beta)          |  - PERMISSION_SYSCONSOLE_READ_PLUGINS                                    |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_PLUGINS                                   |
++------------------------+--------------------------------------------------------------------------+
+| Integrations           | **Integration Management**                                               |
+|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_INTEGRATION_MANAGEMENT        |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_INTEGRATION_MANAGEMENT       |
+|                        |                                                                          |
+|                        | **Bot Accounts**                                                         |   
+|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_BOT_ACCOUNTS                  |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_BOT_ACCOUNTS                 |
+|                        |                                                                          |
+|                        | **GIF (Beta)**                                                           | 
+|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_GIF                           |   
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_GIF                          | 
+|                        |                                                                          |       
+|                        | **CORS**                                                                 |
+|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_CORS                          | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_CORS                         |                       
++------------------------+--------------------------------------------------------------------------+
+| Compliance             | **Data Retention Policy**                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_DATA_RETENTION_POLICY           |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_DATA_RETENTION_POLICY          |
+|                        |                                                                          |
+|                        | **Compliance Export (Beta)**                                             |
+|                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_COMPLIANCE_EXPORT               |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_COMPLIANCE_EXPORT              |
+|                        |                                                                          |
+|                        | **Compliance Monitoring**                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_COMPLIANCE_MONITORING           |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_COMPLIANCE_MONITORING          |
+|                        |                                                                          |
+|                        | **Custom Terms of Service (Beta)**                                       |
+|                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_CUSTOM_TERMS_OF_SERVICE         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_CUSTOM_TERMS_OF_SERVICE        |
++------------------------+--------------------------------------------------------------------------+
+| Experimental           | **Features**                                                             |
+|                        |  - PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL_FEATURES                      |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL_FEATURES                     |
+|                        |                                                                          |
+|                        | **Feature Flags**                                                        |
+|                        |  - PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL_FEATURE_FLAGS                 |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL_FEATURE_FLAGS                |
+|                        |                                                                          |
+|                        | **Bleve**                                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_EXPERIMENTAL_BLEVE                         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_EXPERIMENTAL_BLEVE                        |
++------------------------+--------------------------------------------------------------------------+
 
 Frequently Asked Questions
 --------------------------

@@ -69,7 +69,7 @@ A Mattermost Enterprise E20 implementation consists of the following system comp
 
 The following diagram is a high-level illustration of the Mattermost platform and how its various components interact with each other within a network:
 
-.. image:: ../images/network.PNG
+.. image:: ../images/network.png
 **Reference**: https://docs.mattermost.com/deployment/deployment.html
 
 A recommended installation of Mattermost Enterprise E20 configured with a redundant, highly available, highly scalable mode, with application (Mattermost Server) and database high availability features enabled, will require the following physical, or virtual, servers:

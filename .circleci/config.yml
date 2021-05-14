@@ -36,7 +36,7 @@ jobs:
           to: 's3://docs.mattermost.com/'
           arguments: '--acl public-read'
           overwrite: true
-          
+
   deploy_staging:
     docker:
       - image: circleci/python:3.6
@@ -45,10 +45,10 @@ jobs:
           at: .
       - aws-s3/sync:
           from: build/html
-          to: 's3://docs-staging.mattermost.com/'
+          to: 's3://docs-stagging.mattermost.com/'
           arguments: '--acl public-read'
           overwrite: true
-          
+
 workflows:
   version: 2
   build_and_deploy:

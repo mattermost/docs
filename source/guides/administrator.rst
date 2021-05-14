@@ -135,7 +135,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/migration-announcement-email-template*
    /administration/user-provisioning*
    /deployment/admin-roles*
-   /deployment/sso-ldap*
+   /deployment/sso-ldap.md
    /deployment/auth*
    /deployment/ldap-group-sync.rst
    /deployment/ldap-group-constrained-team-channel.rst

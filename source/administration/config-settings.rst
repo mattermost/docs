@@ -620,6 +620,35 @@ Maximum file size for message attachments entered in megabytes in the System Con
 .. note::
   If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
 
+Enable Document Search by Content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+
+**True**: Supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
+
+.. note::
+   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
+
+**False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
++---------------------------------------------------------------------------------------------------------------------------------+
+  
+Enable Searching Content of Documents within ZIP Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+
+**True**: Contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
+
+**False**: The contents of documents within ZIP files aren't returned in search results.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ArchiveRecursion": false`` with options ``true`` and ``false``.       |
++---------------------------------------------------------------------------------------------------------------------------------+
+
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
 
@@ -996,9 +1025,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.        |
-+-------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
++-------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1218,6 +1247,19 @@ Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false``.                                 |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Colorize plain text console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
+**True**: When logged events are output to the console as plain text, colorize log levels details.
+
+**False**: Plain text log details aren't colorized in the console.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
 Output logs to file
@@ -1540,10 +1582,10 @@ Support Email
 
 Set an email address for feedback or support requests.
 
-So you don't miss messages, please make sure to change this value to an email address your System Administrator receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial for end users to ask support questions.
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": "feedback@mattermost.com"`` with string input.                                                           |
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Terms of Service link
@@ -1699,7 +1741,7 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively.             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others posts
+Allow Team Administrators to edit others' posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *This permission is stored in the database and can be modified using the System Console user interface.*
@@ -1709,7 +1751,7 @@ Allow Team Administrators to edit others posts
 **False**: Only System Admins can edit other users' posts.
 
 .. note::
-   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
+   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
 
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2018,6 +2060,15 @@ Link previews are requested by the server, meaning the Mattermost server must be
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": true`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Disable Link Previews for Specific Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictLinkPreviews": ""`` with string input.                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable SVGs
@@ -2747,6 +2798,8 @@ SAML
 
 Use New SAML Library
 ^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in December 16, 2020 release*
 
 **True**: Enable an updated SAML Library, which does not require the XML Security Library (xmlsec1) to be installed.
 
@@ -4042,6 +4095,17 @@ Enable Daily Report
 | This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Batch Size
+^^^^^^^^^^
+
+Set the size of the batches in which posts will be read from the database to generate the compliance report.
+
+This setting is currently not available in the System Console and can only be set in ``config.json``.
+
++------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``. |
++------------------------------------------------------------------------------------------------+
+
 Custom Terms of Service (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -4814,6 +4878,42 @@ By default, in order to avoid leaking sensitive information, no method parameter
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Import Settings Default Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The directory where the imported files are stored. The path is relative to the ``FileSettings`` directory. By default, imports are stored under ``./data/import``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input.                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Import Settings Default Retention Days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of days to retain the imported files before deleting them.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ImportSettings`` section is ``RetentionDays: 30`` with numerical input.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Export Settings Default Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The directory where the exported files are stored. The path is relative to the ``FileSettings`` directory. By default, exports are stored under ``./data/export``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ExportSettings`` section is ``Directory: ./export`` with string input.                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Export Settings Default Retention Days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The number of days to retain the exported files before deleting them.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under the ``ExportSettings`` section is ``RetentionDays: 30`` with numerical input.                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -4842,6 +4942,43 @@ Changes to this setting require a server restart before taking effect.
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Replica Lag Settings
+^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
++-------------------------------------------------------------------------------------------------------+
+
+String array input consists of:
+
+- ``DataSource``: The DB credentials to connect to the replica instance.
+- ``QueryAbsoluteLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
+- ``QueryTimeLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
+
+Examples:
+
+For AWS Aurora instances, ``QueryAbsoluteLag`` can be:
+
+.. code-block:: sh
+
+   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>
+
+And for AWS Aurora instances, ``QueryTimeLag`` can be:
+
+.. code-block:: sh
+
+   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>
+
+For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:
+
+.. code-block:: sh
+
+   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
 
 File Settings
 ~~~~~~~~~~~~~~

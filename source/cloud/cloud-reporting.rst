@@ -7,7 +7,7 @@ Statistics on users, posts, and channels are tracked for each system and team.
 Site Statistics
 ---------------
 
-System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
@@ -39,7 +39,7 @@ Active Users with Posts (graph)
 Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
+Team Statistics are viewable under **System Console > Reporting > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
 
 Total Users
     The total number of active accounts on this team. Excludes deactivated accounts.

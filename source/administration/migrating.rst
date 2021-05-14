@@ -20,7 +20,7 @@ The following instructions migrate Mattermost from one server to another by back
     1. See `Mattermost Upgrade Guide <https://docs.mattermost.com/guides/administrator.html#upgrade-mattermost>`__.
 3. Install the latest major build of Mattermost server as your DESTINATION.
     1. See `Installing Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ for install guides. Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
-    2. Stop the DESTINATION server using ``sudo stop mattermost``, then backup the database and ``config.json`` file.
+    2. Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
 4. Migrate database from SOURCE to DESTINATION.
     1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected.
 5. Migrate ``config.json`` from SOURCE to DESTINATION.
@@ -30,7 +30,7 @@ The following instructions migrate Mattermost from one server to another by back
     2. If you use a directory other than ``./data``, copy that directory instead.
 7. Start the DESTINATION deployment.
     1. Run ``sudo start mattermost``.
-    2. Open the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
+    2. Go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
 8. Test that the system is working by going to the URL of an existing team.
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
@@ -46,7 +46,7 @@ Many enterprises run bespoke, unsupported, lightly documented messaging systems 
 
 Often the solutions were championed by tech-savvy early adopters who loved a few features and pushed out the solution broadly.
 
-Over time, management moves to an IT team, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often selected to replace bespoke solutions by IT and DevOps teams as a stable, enterprise-grade, commercially supported solution on an open source platform that meets and exceeds the flexibility and innovation of bespoke solutions.
+Over time, management moves to an IT team, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often selected to replace bespoke solutions by IT and DevOps teams as a stable, enterprise-grade, commercially-supported solution on an open source platform that meets and exceeds the flexibility and innovation of bespoke solutions.
 
 Why IT Teams Choose to Leave Bespoke Solutions
 ```````````````````````````````````````````````
@@ -87,15 +87,15 @@ Migrating from bespoke messengers to Mattermost can be challenging. Because of t
 
 If your data in the bespoke messenger is vital, consider:
 
-1. `Mattermost Bulk Load tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ - Use the Mattermost Bulk Load tool to ETL from your bespoke system to Mattermost.
-2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__- Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
-3. **Legacy Slack import** - If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging the extensive support for Slack-import provided.
-4. **Export to Slack, then import to Mattermost** - `Export HipChat, Flowdock, Campfire, Chatwork, Hall, or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`__ and then export to a Slack export file and import the file into Mattermost.
+1. `Mattermost Bulk Load tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__: Use the Mattermost Bulk Load tool to ETL from your bespoke system to Mattermost.
+2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__: Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
+3. **Legacy Slack import:** If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging the extensive support for Slack-import provided.
+4. **Export to Slack, then import to Mattermost:** `Export HipChat, Flowdock, Campfire, Chatwork, Hall, or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`__ and then export to a Slack export file and import the file into Mattermost.
 
 If your data in the bespoke messenger is not vital, consider:
 
-1. **Parallel systems** - Running Mattermost in parallel with your bespoke system until the majority of workflow and collaboration has moved to Mattermost
-2. **Hard switch** - Announce a "hard switch" to Mattermost after a period of time of running both systems in parallel. Often this has been done due to security concerns in bespoke products or products nearing end-of-life.
+1. **Parallel systems:** Running Mattermost in parallel with your bespoke system until the majority of workflow and collaboration has moved to Mattermost
+2. **Hard switch:** Announce a "hard switch" to Mattermost after a period of time of running both systems in parallel. Often this has been done due to security concerns in bespoke products or products nearing end-of-life.
 
 Sometimes systems running in parallel turn into a hard switch migration when a bespoke or deprecated system experiences a major outage or a security exploit. In 2017, this was experienced by many companies using Mattermost and HipChat.com in parallel when `HipChat suffered a major security breach where customer data was stolen by an unknown attacker <https://thenextweb.com/insider/2017/04/24/hipchat-hacked-weekend-bad/#.tnw_lAotA9OV>`__.
 
@@ -109,38 +109,42 @@ Slack offers two ways to `export your data from their product <https://get.slack
 1. A Slack export file can be generated from **Slack > Administration > Workspace settings > Import/Export Data > Export > Start Export**. This export does not include private channels, direct, or group messages.
 2. You can request a "Corporate Export" from Slack directly to get a larger export including private channels, direct, and group messages.
 
-.. note:: 
+.. note::
+
   As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://mattermost.org/filing-issues/>`__.
 
 Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
 `````````````````````````````````````````````````````````````````````
 
-.. note:: 
+.. note::
+  
   This method is the recommended way to import Slack's corporate export file. It can be used with Mattermost v5.0 and onwards.
 
 1. Use the `slack-advanced-exporter <https://github.com/grundleborg/slack-advanced-exporter>`_ to download attachments and add users' email addresses to your Slack corporate export file.
 2. Use the `mmetl tool <https://github.com/mattermost/mmetl>`_ to transform Slack's corporate export file into the ``jsonl`` format required by the bulk import tool.
-3. Bulk load the files using the steps provided in the `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data>`_. 
+3. Bulk load the files using the steps provided in the `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data>`_.
 
 Migrating from Slack using the Mattermost Web App
 `````````````````````````````````````````````````
 
-.. note:: 
+.. note::
+  
   For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
-2. In Mattermost go to **Team Settings > Import > Import from Slack**. Team Admin or System Admin permission is required to access this menu option.
-3. Click **Select file** to upload Slack export file and click **Import**.
+2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team Admin or System Admin permission is required to access this menu option.
+3. Choose **Select file** to upload the Slack export file and select **Import**.
 
 Migrating from Slack Using the Mattermost CLI
 `````````````````````````````````````````````
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**.
-2. Run the following Mattermost CLI command, with the name of a team you have already created:
+2. Run the following Mattermost CLI command, with the name of a team you've already created:
 
    ``$ mattermost import slack team_name /path/to/your-slack-export.zip``
    
-.. note:: 
+.. note::
+
   To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
 
 Using the Imported Team

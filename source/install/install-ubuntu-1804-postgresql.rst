@@ -27,12 +27,13 @@ Assume that the IP address of this server is 10.10.10.1.
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-5.  Create the Mattermost user 'mmuser'.
+5.  Create the Mattermost user *mmuser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
-  .. note::
-    Use a password that is more secure than 'mmuser-password'.
+.. note::
+   
+   Use a password that's more secure than *mmuser-password*.
 
 6.  Grant the user access to the Mattermost database.
 
@@ -46,7 +47,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   ``exit``
 
-9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/10/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` in a text editor as *root* user. Replace ``{version}`` with the version of PostgreSQL that's currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
@@ -62,9 +63,9 @@ Assume that the IP address of this server is 10.10.10.1.
 
 10. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
-  **If the Mattermost server and the database are on the same machine**:
+  **If the Mattermost server and the database are on the same machine:**
 
-    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` in a text editor as *root* user.
 
     b. Find the following lines:
 
@@ -78,11 +79,11 @@ Assume that the IP address of this server is 10.10.10.1.
       
       ``host    all             all         ::1/128        trust``
 
-  **If the Mattermost server and the database are on different machines**:
+  **If the Mattermost server and the database are on different machines:**
 
-    a. Open ``/etc/postgresql/10/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` in a text editor as *root* user.
 
-    b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
+    b. Add the following line to the end of the file, where ``{mattermost-server-IP}`` is the IP address of the machine that contains the Mattermost server.
 
       ``host all all {mattermost-server-IP}/32 md5``
 
@@ -100,9 +101,10 @@ Assume that the IP address of this server is 10.10.10.1.
 
     ``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password``
 
-    .. note::
-      You might have to install the PostgreSQL client software to use the command.
+.. note::
 
-  The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press **Enter**.
+  You might have to install the PostgreSQL client software to use the command.
+
+The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press ENTER.
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
