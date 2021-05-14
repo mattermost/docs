@@ -90,7 +90,7 @@ Download Location
 
 You can specify where files downloaded from the Mattermost desktop app are saved on your local machine. By default, files are saved to the ``Downloads`` folder.
 
-1. On Windows, go to **... > File > Settings**. On Mac or Linux, go to **Mattermost > Preferences**.
+1. On Windows, go to **... > File > Settings**. On macOS or Linux, go to **Mattermost > Preferences**.
 2. Select **Change**.
 3. Select the location where you want files saved to your machine.
     
