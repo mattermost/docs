@@ -56,7 +56,7 @@ App Options
 
 In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`__, the Desktop App provides additional options to customize your experience.
 
-The options appear on the Settings page, available on Windows from **... > File > Settings**, or on Mac or Linux from **Mattermost > Preferences**.
+The options appear on the Settings page, available on Windows from **... > File > Settings**, and on macOS or Linux from **Mattermost > Preferences**.
 
 Start app on login (Windows, Linux only)
     When enabled, the Mattermost application starts when you log in to your machine. This setting is enabled by default.
