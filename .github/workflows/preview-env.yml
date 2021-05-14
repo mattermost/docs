@@ -1,0 +1,52 @@
+name: preview-env-setup-update
+
+on:
+  pull_request:
+    types: [assigned, opened, reopened, synchronize]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Python
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install pipenv
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        run: pip install pipenv
+
+      - name: Install dependencies
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        run: pipenv install --dev
+
+      - name: Build
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        run: make html
+
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload Preview Env
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: ./build/html
+          destination_dir: ${{ github.event.number }}
+
+      - name: Add comment to PR
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          body: |
+            Newest code from ${{ github.actor }} has been published to [preview environment](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ github.event.number }}) for Git SHA ${{ github.event.pull_request.head.sha }}
