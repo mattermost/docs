@@ -6,7 +6,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-05-16**
+- **v5.35.1, release day TBD**
+  - Fixing an issue where 5.35.0 migration is failing on MySQL installations with an "invalid connection" error due to an issue with the ``readTimeout`` parameter in ``SqlSettings.DataSource`` (default is 30 seconds). To mitigate this, ``readTimeout`` can be either removed or increased to a high enough value to allow the migration to happen. [MM-35767](https://mattermost.atlassian.net/browse/MM-35767)
+- **v5.35.0, released 2021-05-16**
+  - Original 5.35.0 release
 
 Mattermost v5.35.0 contains low and medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
