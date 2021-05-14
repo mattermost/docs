@@ -8,7 +8,7 @@ Mattermost offers multiple partner programs:
 - `Mattermost Value-Added Reseller Program`_ for on-going resellers providing first and second tier support in local language and local timezone.
 - `Mattermost Deployment Solutions Partner Program`_ - for co-marketing relationships with both commercial and open source partners automating the deployment of Mattermost.
 
-Mattermost Authorized Partner Program
+Mattermost Authorized Reseller Program
 -------------------------------------
 
 The purpose of the Mattermost Authorized Reseller Program is to enable customers to purchase Mattermost Enterprise Edition via a fulfillment partner who earns a fee from the customer for reselling Mattermost into their procurement department and navigating the various approval processes, but who does not provide support or installation services.
