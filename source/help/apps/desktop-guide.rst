@@ -37,7 +37,7 @@ Editing Servers
 
 To edit a server in your desktop app environment:
 
-1. On Windows, go to **... > File > Settings**. On Mac or Linux, go to **Mattermost > Preferences**.
+1. On Windows, go to **... > File > Settings**. On macOS or Linux, go to **Mattermost > Preferences**.
 2. Next to the server you want to update, select **Edit**.
 3. Edit **Name** and/or **URL**.
 4. Select **Save**.
