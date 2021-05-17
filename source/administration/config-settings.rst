@@ -1196,7 +1196,23 @@ Additional configuration options include:
 - Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
 - Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-All access to the REST API or CLI is audited. System Admins can configure whether the content of posts is included and whether permissions failures are audited.
+All access to the REST API or CLI is audited. When using Advanced Logging for audit and specifying a file or JSON configuration, System Admins can capture the following auditing in the target configuration:
+
+.. code-block:: none
+
+   "Levels": [
+      {"ID": 100, "Name": "audit-api"},
+      {"ID": 101, "Name": "audit-content"},
+      {"ID": 102, "Name": "audit-permissions"},
+      {"ID": 103, "Name": "audit-cli"},
+   ],
+
+Where:
+
+- ``audit-api `` - Enables output of REST API calls.
+- ``audit-content`` - Enables output of API calls that generate content (e.g. create post, create reaction).
+- ``audit-permissions`` - Enables output of all permissions failures.
+- ``audit-cli`` - Enables output of legacy CLI calls.
 
 Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified. New log levels must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.
 
@@ -1217,7 +1233,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 | **Levels**    |                                                                                                                                                        |             |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
-| ID            | Unique log level identifier. Must be registered in mlog/levels.go.                                                                                     | int         |
+| ID            | Unique log level identifier. Must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.                                             | int         |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
 | Name          | Human-readable name for the log level identifier.                                                                                                      | string      |
@@ -1308,7 +1324,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 .. Note::
-    Filenames for ``AdvancedLoggingConfig`` can be absolute or relative, and can also contain the JSON directly embedded.
+    Filenames for ``AdvancedLoggingConfig`` can be absolute or relative, and can also contain the JSON embedded directly.
 
 See the `Advanced Logging Options Sample JSON ZIP file <https://github.com/mattermost/docs/source/samples/advanced-logging-options-sample-json.zip>`__ for a sample configuration file. 
 
