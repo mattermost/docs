@@ -19,7 +19,7 @@ Mattermost Product Documentation
    Install, Deploy, Upgrade, and Scale <guides/administrator>
    Configure, Manage, Onboard, and Comply <guides/cloud-admin-guide>
    Messaging <guides/messaging>
-   Incident Collaboration <guides/incident-collaboration>
+   Incident Collaboration <guides/incidentcollaboration>
    Focalboard <https://developers.mattermost.com/>
    Mattermost for Developers <https://developers.mattermost.com/>
    Support Knowledge Base <https://developers.mattermost.com/>
