@@ -34,24 +34,24 @@ To clear a custom status, select your avatar at the top of the channel sidebar, 
 Setting Your Availability
 -------------------------
 
-To set your availability, select your avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
+To set your availability, select your avatar, then select **Online**, **Away**, **Do Not Disturb**, or **Offline**.
 
 .. image:: ../../images/set-your-availability.png
-  :alt: Set your availability to online, away, do not disturb, or offline.
+  :alt: Set your availability to Online, Away, Do Not Disturb, or Offline.
 
-When you set your availability, an availability icon displays next to your name. Setting your availability as **Do Not Disturb** automatically disables desktop, email, and push notifications.
+When you set your availability, an availability icon displays next to your name. 
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
-Do Not Disturb Timer
---------------------
+Do Not Disturb
+~~~~~~~~~~~~~~
 
-From Mattermost v5.36, you can set a Do Not Disturb timer when you need to concentrate or when you're unavailable.  
+Set your availabilty to **Do Not Disturb** (DND) when you need to concentrate, or when you're unavailable, to disable all desktop, email, and push notifications.
 
-To set your **Do Not Disturb** timer, select your avatar, select **Do Not Disturb**, then choose when your **Do Not Disturb** timer expires. Choose from preset timers or define a custom timer. Your availability reverts back to its previous setting automatically when the timer expires.
+From Mattermost v5.36, you can set DND for a specific period of time by choosing a preset or a custom DND expiration. Your availability automatically reverts to its previous setting when DND expires.
 
 .. image:: ../../images/dnd-timer.gif
-  :alt: Set a Do Not Disturb timer that automatically reverts to a previous setting on expiry.
+  :alt: Set DND to expire after a period of time and revert to your previous availability setting automatically.
 
 .. Note::
   It may take up to five minutes for your availability to revert back to its previous setting.
