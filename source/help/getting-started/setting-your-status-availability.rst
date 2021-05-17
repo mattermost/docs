@@ -43,7 +43,7 @@ When you set your availability, an availability icon displays next to your name.
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
-Pause All Notifications
+Pausing All Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 From Mattermost v5.36, you can pause all notifications for a period of time when you need to concentrate or when you're unavailable.  
