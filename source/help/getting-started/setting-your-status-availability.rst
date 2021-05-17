@@ -43,21 +43,21 @@ When you set your availability, an availability icon displays next to your name.
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
-Pausing All Notifications
-~~~~~~~~~~~~~~~~~~~~~~~
+Do Not Disturb Timer
+--------------------
 
-From Mattermost v5.36, you can pause all notifications for a period of time when you need to concentrate or when you're unavailable.  
+From Mattermost v5.36, you can set a Do Not Disturb timer when you need to concentrate or when you're unavailable.  
 
-To configure your availability as **Do Not Disturb** for a period of time, select your avatar, select **Do Not Disturb**, then choose a timeframe or define a custom timeframe. Once that timeframe elapses, your availability reverts back to its previous setting automatically. 
+To set your **Do Not Disturb** timer, select your avatar, select **Do Not Disturb**, then choose when your **Do Not Disturb** timer expires. Choose from preset timers or define a custom timer. Your availability reverts back to its previous setting automatically when the timer expires.
 
 .. image:: ../../images/dnd-timer.gif
-  :alt: Pause all notifications for a while.
+  :alt: Set a Do Not Disturb timer that automatically reverts to a previous setting on expiry.
 
 .. Note::
   It may take up to five minutes for your availability to revert back to its previous setting.
 
 How Mattermost Determines Your Availability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 .. csv-table::
     :header: "Client", "**Online**", "**Away**", "**Offline**"
