@@ -7,7 +7,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Highlights
 
 #### Custom Data Retention
- - hidden behind a feature flag called ``CustomDataRetentionEnabled``. **(?)**
+ - Added the ability to create a custom granular data retention policy and apply it to a specific team or channel, thereby overriding the global data retention policies.
 
 ### Improvements
 
