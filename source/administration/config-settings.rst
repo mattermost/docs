@@ -1310,7 +1310,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 .. Note::
     Filenames for ``AdvancedLoggingConfig`` can be absolute or relative, and can also contain the JSON directly embedded.
 
-See `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/tree/master/source/samples/Advanced.Logging.Options.Sample.json.zip>`__ for a sample configuration file. 
+See `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/source/samples/Advanced.Logging.Options.Sample.json.zip>`__ for a sample configuration file. 
 
 Standard Logging 
 ~~~~~~~~~~~~~~~~
