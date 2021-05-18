@@ -15,7 +15,7 @@ Mattermost Product Documentation
    :maxdepth: 1
    :glob:
 
-   About Mattermost <overview/index>
+   About Mattermost <guides/about-mattermost>
    Install, Deploy, Upgrade, and Scale <guides/administrator>
    Configure, Manage, Onboard, and Comply <guides/cloud-admin-guide>
    Messaging <guides/messaging>
