@@ -23,7 +23,7 @@ You can `download the apps directly from our downloads page <https://mattermost.
 .. contents::
     :backlinks: top
 
-Windows 10+, Windows 8.1+, Windows 7+
+Windows 10+, Windows 8.1+
 --------------------------------------
 
 1. Download the latest version of the Mattermost desktop app:
