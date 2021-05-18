@@ -1,0 +1,137 @@
+Install, Deploy, Upgrade, and Scale Mattermost
+==============================================
+
+Install, host, and grow with Mattermost.
+
+Before You Begin
+----------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /overview/architecture.rst
+   /deployment/deployment.md
+   /help/getting-started/light-install.rst
+   /getting-started/enterprise-roll-out-checklist.rst
+   /deployment/on-boarding.rst
+   /getting-started/implementation_plan.rst
+   /getting-started/welcome_email.rst
+
+Install Mattermost Server
+-------------------------
+   
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+    
+   /install/requirements.rst
+   /install/install-ubuntu-2004.rst
+   /install/install-ubuntu-1804.rst
+   /install/mattermost-omnibus.rst
+   /install/install-kubernetes.rst
+   /install/install-debian.rst
+   /install/install-rhel-7.rst
+   /install/install-rhel-8.rst
+   /install/install-centos-oracle-scientific.rst
+   /install/sockets-db.rst
+   /install/ee-install.rst
+   /install/transport-encryption/config.rst
+   /install/deploy-bitnami.rst
+   /install/docker-local-machine.rst
+   /install/docker-ebs.rst
+   /install/install-mmte-helm-gitlab-helm.rst
+   /administration/changelog.md
+
+Install Mattermost Desktop App
+------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /install/desktop.rst
+   /install/desktop-managed-resources.rst
+   /install/desktop-msi-gpo.rst
+   /help/apps/desktop-changelog.rst
+
+Install Mattermost Mobile Apps
+------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /help/getting-started/ios-setup
+   /help/getting-started/android-setup
+   /administration/mobile-changelog.md 
+
+Deploy Mattermost Server
+------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /deployment/deployment.md
+   /administration/image-proxy.rst
+   /administration/encryption.rst
+   /administration/backup.rst
+   /deployment/bleve.rst
+
+Deploy Mattermost Desktop App
+-----------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /deployment/desktop-app-deployment.rst
+
+Deploy Mobile Apps
+------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /mobile/mobile-overview.rst
+   /deployment/client-side-data.rst
+
+Upgrade Mattermost Server
+-------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /administration/upgrade.rst
+   /administration/important-upgrade-notes.rst
+   /administration/version-archive.rst
+   /administration/extended-support-release.rst
+   /administration//release-lifecycle.rst
+   /administration/downgrade.rst
+   /administration/open-source-components.rst
+   /administration/release-definitions.rst
+
+Scale Mattermost
+----------------
+   
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   /deployment/scaling.rst
+   /deployment/cluster.rst
+   /deployment/elasticsearch.rst
+   /deployment/metrics.rst
+   /administration/performance-alerting-guide.rst
