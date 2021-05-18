@@ -16,7 +16,7 @@ Mattermost Product Documentation
    :glob:
 
    About Mattermost <overview/index>
-   Install, Deploy, Upgrade, and Scale <guides/administrator>
+   Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
    Configure, Manage, Onboard, and Comply <guides/cloud-admin-guide>
    Messaging <guides/messaging>
    Incident Management <guides/integration>
