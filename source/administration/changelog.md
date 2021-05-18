@@ -6,8 +6,8 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.35.1, release day TBD**
-  - Fixing an issue where 5.35.0 migration is failing on MySQL installations with an "invalid connection" error due to an issue with the ``readTimeout`` parameter in ``SqlSettings.DataSource`` (default is 30 seconds). To mitigate this, ``readTimeout`` can be either removed or increased to a high enough value to allow the migration to happen. [MM-35767](https://mattermost.atlassian.net/browse/MM-35767)
+- **v5.35.1, released 2021-05-18**
+  - Fixed an issue where 5.35.0 migration failed on MySQL installations with an "invalid connection" error due to an issue with the ``readTimeout`` parameter in ``SqlSettings.DataSource`` (default is 30 seconds). The ``readTimeout`` datasource query parameter is now being ignored and the application provided ``SqlSettings.QueryTimeout`` should be used instead. [MM-35767](https://mattermost.atlassian.net/browse/MM-35767)
 - **v5.35.0, released 2021-05-16**
   - Original 5.35.0 release
 
