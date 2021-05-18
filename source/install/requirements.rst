@@ -29,7 +29,7 @@ Desktop Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "Windows", "Windows 7, 8.1, and 10"
+    "Windows", "Windows 8.1, and 10"
     "Mac", "MacOS 10.12+"
     "Linux", "Ubuntu LTS releases 18.04 or later"
 
