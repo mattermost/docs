@@ -6,7 +6,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
 Below is an overview of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /overview/product.rst
