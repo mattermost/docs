@@ -178,12 +178,16 @@ If the incident channel is private, an existing member of the incident channel m
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks:
+Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks.
+
+.. note::
+  Tasks added during an active incident (ad-hoc tasks) are not saved to the playbook. They only apply to that incident and incident channel.
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
 * To view any description associated with a task, select the information icon to the right of the task name.
 * To execute a slash command associated with a task, select **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
+* To add an ad-hoc task, select **+ Add new task**.
 
 .. image:: ../images/IC-ad-hoc-tasks.gif
 
