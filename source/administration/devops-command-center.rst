@@ -178,7 +178,7 @@ If the incident channel is private, an existing member of the incident channel m
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks.
+Tasks can be part of pre-configured task templates in playbooks, and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks.
 
 .. note::
   Tasks added during an active incident (ad-hoc tasks) are not saved to the playbook. They only apply to that incident and incident channel.
