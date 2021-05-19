@@ -1272,7 +1272,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 | Filename      | Path and filename for logs.                                                                                                                            | string      |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
-| MaxAgeDays    | Number of days until a rotation is triggered. Set to ``0 ``to not rotate based on age.                                                                 | int         |
+| MaxAgeDays    | Number of days until a rotation is triggered. Set to ``0`` to not rotate based on age.                                                                 | int         |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
 | MaxBackups    | Maximum number of rotated files to keep where the oldest are deleted. Set to ``0`` to discard rotated files.                                           | int         |
