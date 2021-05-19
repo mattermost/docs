@@ -41,7 +41,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v12.0.0. Electron is the underlying technology used to build the Desktop app.
+- Major version upgrade of Electron to v12.0.7. Electron is the underlying technology used to build the Desktop app.
 - Added support for Electron BrowserView.
 - Added support for M1 architecture (beta) in the build pipeline.
 
