@@ -86,8 +86,8 @@ Navigate Mattermost Messaging
    /help/getting-started/accessibility.rst
    /help/messaging/keyboard-shortcuts.rst
 
-Extending Mattermost Messaging
-------------------------------
+Extend Mattermost Messaging
+---------------------------
       
 .. toctree::
    :maxdepth: 2
