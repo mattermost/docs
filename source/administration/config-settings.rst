@@ -1210,7 +1210,7 @@ All access to the REST API or CLI is audited. When using Advanced Logging for au
 Where:
 
 - ``audit-api``: Enables output of REST API calls.
-- ``audit-content`` - Enables output of API calls that generate content (e.g. create post, create reaction).
+- ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
 - ``audit-permissions`` - Enables output of all permissions failures.
 - ``audit-cli`` - Enables output of legacy CLI calls.
 
