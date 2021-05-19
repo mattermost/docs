@@ -1,6 +1,6 @@
 
 Desktop Application Install Guides
-===================================
+==================================
 
 Mattermost desktop applications are available for Windows, Mac, and Linux operating systems. They support all the features of the web experience, plus:
 
@@ -23,8 +23,8 @@ You can `download the apps directly from our downloads page <https://mattermost.
 .. contents::
     :backlinks: top
 
-Windows 10+, Windows 8.1+, Windows 7+
---------------------------------------
+Windows 10+, Windows 8.1+
+-------------------------
 
 1. Download the latest version of the Mattermost desktop app:
 
@@ -35,7 +35,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
 MSI Installer and Group Policies (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download the latest version of the Mattermost desktop app MSI installer (Beta):
 
@@ -55,7 +55,7 @@ The following Group Policies are available:
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 
 macOS 10.9+
--------------
+-----------
 
 1. Download the `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.6.2/mattermost-desktop-4.6.2-mac.dmg>`__.
 
@@ -66,7 +66,7 @@ macOS 10.9+
 `Homebrew <https://brew.sh>`__ users can install with ``brew install --cask mattermost``.
 
 Linux
---------
+-----
 
 Generic Linux package
 ~~~~~~~~~~~~~~~~~~~~~
@@ -118,20 +118,20 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 2. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
 Troubleshooting
------------------
+---------------
 
 "Installation has failed" dialog
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The app data might be corrupted. Remove all the files in ``%LOCALAPPDATA%\mattermost``, then try reinstalling the app.
     
 "The application "Mattermost" can't be opened" dialog
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as `Keka <https://www.keka.io>`_ or `Unarchiver <https://macpaw.com/the-unarchiver>`_ may resolve the problem.
 
 Desktop App window is black and doesn't load the page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. First, make sure you have installed the latest desktop app version `from our website <https://mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
 2. Try to clear cache and reload the app from **View > Clear Cache and Reload** or use CTRL/CMD+SHIFT+R.
@@ -188,7 +188,7 @@ Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\S
 For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Reporting Issues
------------------
+----------------
 
 When reporting bugs found in the Mattermost desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`__. To access the Developer Tools Console, follow these instructions:
 
