@@ -54,7 +54,7 @@ From Mattermost v5.36, you can set DND for a specific period of time by choosing
   :alt: Set DND to expire after a period of time and revert to your previous availability setting automatically.
 
 .. Note::
-  It may take up to five minutes for your availability to revert back to its previous setting.
+  It may take up to five minutes for your availability to revert to its previous setting.
 
 How Mattermost Determines Your Availability
 -------------------------------------------
