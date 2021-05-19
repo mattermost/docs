@@ -1196,7 +1196,7 @@ Additional configuration options include:
 - Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
 - Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-All access to the REST API or CLI is audited. When using Advanced Logging for audit and specifying a file or JSON configuration, System Admins can capture the following auditing in the target configuration:
+All access to the REST API or CLI is audited. When using Advanced Logging for auditing, System Admins can capture the following auditing in the target configuration in addition to discrete log levels:
 
 .. code-block:: none
 
@@ -1324,7 +1324,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 .. Note::
-    Filenames for ``AdvancedLoggingConfig`` can be absolute or relative, and can also contain the JSON embedded directly.
+    Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
 
 See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
 
