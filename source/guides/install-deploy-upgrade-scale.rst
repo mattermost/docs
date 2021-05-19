@@ -19,8 +19,11 @@ Before You Begin
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
-Install Mattermost Server
--------------------------
+Install Mattermost
+------------------
+
+Mattermost Server
+^^^^^^^^^^^^^^^^^
    
 .. toctree::
    :maxdepth: 1
@@ -45,33 +48,37 @@ Install Mattermost Server
    /install/install-mmte-helm-gitlab-helm.rst
    /administration/changelog.md
 
-Install Mattermost Desktop App
-------------------------------
+Desktop App
+^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
    :glob:
 
+   /help/getting-started/install-desktop-app.rst
    /install/desktop.rst
    /install/desktop-managed-resources.rst
    /install/desktop-msi-gpo.rst
    /help/apps/desktop-changelog.rst
 
-Install Mattermost Mobile Apps
-------------------------------
+Mobile App
+^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
    :glob:
 
-   /help/getting-started/ios-setup
-   /help/getting-started/android-setup
+   /help/getting-started/install-ios-app.rst
+   /help/getting-started/install-android-app.rst
    /administration/mobile-changelog.md 
 
-Deploy Mattermost Server
-------------------------
+Deploy Mattermost
+-----------------
+
+Mattermost Server
+^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -84,8 +91,8 @@ Deploy Mattermost Server
    /administration/backup.rst
    /deployment/bleve.rst
 
-Deploy Mattermost Desktop App
------------------------------
+Desktop App
+^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -94,8 +101,8 @@ Deploy Mattermost Desktop App
 
    /deployment/desktop-app-deployment.rst
 
-Deploy Mobile Apps
-------------------
+Mobile Apps
+^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -105,8 +112,8 @@ Deploy Mobile Apps
    /mobile/mobile-overview.rst
    /deployment/client-side-data.rst
 
-Upgrade Mattermost Server
--------------------------
+Upgrade Mattermost
+------------------
 
 .. toctree::
    :maxdepth: 1
