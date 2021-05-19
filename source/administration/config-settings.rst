@@ -1212,7 +1212,7 @@ Where:
 - ``audit-api``: Enables output of REST API calls.
 - ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
 - ``audit-permissions``: Enables output of all permissions failures.
-- ``audit-cli`` - Enables output of legacy CLI calls.
+- ``audit-cli``: Enables output of legacy CLI calls.
 
 Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified. New log levels must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.
 
