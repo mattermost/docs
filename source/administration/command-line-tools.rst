@@ -1791,8 +1791,8 @@ mattermost team modify
   Example
     .. code-block:: none
 
-      bin/mattermost team myteam --private
-      bin/mattermost team myteam --public
+      bin/mattermost modify team myteam --private
+      bin/mattermost modify team myteam --public
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
