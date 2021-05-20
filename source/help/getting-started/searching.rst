@@ -57,7 +57,7 @@ You can apply search modifiers to any search to reduce the number of results ret
 .. image:: ../../images/search-modifiers.png
 
 ``from:`` and ``in:``
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Use ``from:`` to find messages or files from specific users. 
 For example, searching ``from:john.smith`` only returns content from your Direct Message history with John Smith.
@@ -66,7 +66,7 @@ Use ``in:`` to find messages or files posted in specific Public channels, Privat
 For example, searching ``Mattermost in:town-square`` only returns results in the Town Square Public channel that contains the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns results that contains the term ``Mattermost`` in your Direct Message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use ``before:`` to find messages or files posted before a specified date.
 

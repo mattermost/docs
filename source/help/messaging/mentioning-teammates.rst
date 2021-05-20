@@ -8,7 +8,7 @@ Mentioning Teammates
 
 Use *@* mentions to get the attention of specific team members.
 
-.. Note::
+.. note::
 
   Editing an existing message does not trigger new *@* mention notifications, desktop notifications, or notification sounds.
 
@@ -91,7 +91,7 @@ For any mention that will trigger notifications for more than five users, the us
 This confirmation dialog only appears when ``TeamSettings.EnableConfirmNotificationsToChannel`` in ``config.json`` is enabled. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled.
 
 Highlighting
----------------
+------------
 
 Valid mentions will have highlighted font text with some exceptions, for example if mentions are disabled at the channel level. The highlighted text becomes a hyperlink when a username is displayed. When the username is clicked, the profile popover is displayed.
 

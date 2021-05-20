@@ -3,8 +3,8 @@ Set Up, Onboard, Manage, and Comply
 
 Set up and manage Mattermost based on your business needs.
 
-Configure Mattermost
---------------------
+Set Up Mattermost
+------------------
 
 Self-Managed Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^

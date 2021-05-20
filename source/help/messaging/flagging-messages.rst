@@ -13,7 +13,7 @@ To try it out, hover over a message to show the **Save** icon. Click the icon to
 .. image:: ../../images/save-message.png
 
 Viewing Saved Messages
-=====================
+======================
 
 To view a list of your **Saved Posts**, select the **Save** icon at the top of the channel.
 
