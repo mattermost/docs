@@ -159,7 +159,7 @@ It is highly recommended that pilots are run before enterprise-wide deployments 
 
 Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 
-System Requirements
+System Requirements 
 ^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
