@@ -247,7 +247,6 @@ Renders as:
 
   .. image:: ../../images/icon-76x76.png
     :alt: Mattermost
-    :name: Mattermost Icon
 
 In-line image with link
 ~~~~~~~~~~~~~~~~~~~~~~~

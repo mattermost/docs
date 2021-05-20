@@ -3,22 +3,15 @@ Mattermost Messaging
 
 Product documentation for Mattermost Messaging.
 
-Welcome
--------
-
-.. toctree::
-   :maxdepth: 2
-   :glob:
-
-   /help/getting-started/welcome-to-mattermost.rst
-
 Access Your Workspace
 ---------------------
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :glob:
 
+   /help/getting-started/welcome-to-mattermost.rst
    /help/getting-started/access-your-workspace.rst
    /help/getting-started/signing-in.rst
    /help/getting-started/switch-between-teams.rst
@@ -29,14 +22,14 @@ Work with Messages
 ------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :glob:
 
    /help/messaging/sending-messages.rst
    /help/messaging/formatting-text.rst
    /help/messaging/emoji.rst
-   /help/messaging/custom-emoji.rst
+   /help/settings/custom-emoji.rst
    /help/messaging/mentioning-teammates.rst
    /help/messaging/attaching-files.rst
    /help/messaging/executing-commands.rst
@@ -48,7 +41,7 @@ Manage Teams, Channels, and Members
 -----------------------------------
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :glob:
 
@@ -63,7 +56,7 @@ Customize Mattermost Messaging
 ------------------------------
       
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :glob:
       
@@ -79,7 +72,7 @@ Navigate Mattermost Messaging
 -----------------------------
       
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :glob:
       
@@ -90,7 +83,7 @@ Extend Mattermost Messaging
 ---------------------------
       
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :glob:
       
