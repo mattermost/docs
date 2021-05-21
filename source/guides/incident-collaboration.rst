@@ -8,7 +8,7 @@ Welcome to Incident Collaboration
    :maxdepth: 2
    :glob:
 
-   /incident-collaboration/introduction.rst
+   /incident-collaboration/overview.rst
    /incident-collaboration/incident-components.rst
    
 Planning
