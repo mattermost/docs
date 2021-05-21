@@ -15,7 +15,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
   When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
-2. Access postgres with one of the below options:
+2. Access PostgreSQL with one of the following options:
 
   a.  ``sudo --login --user postgres`` then ``psql``
   b. ``sudo -u postgres psql``
