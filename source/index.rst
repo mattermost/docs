@@ -22,5 +22,5 @@ Mattermost Product Documentation
    Incident Management <guides/integration>
    Focalboard <https://developers.mattermost.com/>
    Mattermost for Developers <https://developers.mattermost.com/>
-   Support Knowledge Base <https://developers.mattermost.com/>
+   Support Knowledge Base <https://support.mattermost.com/hc/en-us/>
 
