@@ -14,7 +14,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### User Interface (UI)
  - Added Hungarian (Beta) language.
  - A search tip is now shown when scrolling back in a channel.
- - Users can now set a **Do Not Disturb** status for a specified period of time, after which the status will go back to the previous one.
  - Improved the error text in the **Edit Channel Header** modal.
  - Added the ability to clear a custom status when only an emoji and no text is set.
  - Redesigned message notification emails.
