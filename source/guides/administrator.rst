@@ -111,7 +111,7 @@ Mobile Apps
 Learn how to configure and administer Mattermost apps.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /mobile/mobile-overview.rst
