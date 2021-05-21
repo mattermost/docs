@@ -111,10 +111,13 @@ Mobile Apps
 Learn how to configure and administer Mattermost apps.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /mobile/mobile-overview.rst
+   /mobile/use-prebuilt-mobile-apps.rst
+   /mobile/build-custom-mobile-apps.rst
+   /mobile/deploy-mobile-apps-using-emm-provider.rst
    /mobile/mobile-appconfig.rst
    /mobile/mobile-hpns.rst
    /mobile/mobile-faq.rst
