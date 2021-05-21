@@ -17,8 +17,8 @@ Assume that the IP address of this server is 10.10.10.1.
 
 2. Access PostgreSQL with one of the following options:
 
-  a.  ``sudo --login --user postgres`` then ``psql``
-  b. ``sudo -u postgres psql``
+  - ``sudo --login --user postgres`` then ``psql``
+  - ``sudo -u postgres psql``
   
 3.  Create the Mattermost database.
 
@@ -90,11 +90,11 @@ Assume that the IP address of this server is 10.10.10.1.
 
 11. Verify that you can connect with the user *mmuser*.
 
-  a. If the Mattermost server and the database are on the same machine, use the following command:
+  - If the Mattermost server and the database are on the same machine, use the following command:
 
     ``psql --dbname=mattermost --username=mmuser --password``
 
-  b. If the Mattermost server is on a different machine, log into that machine and use the following command:
+  - If the Mattermost server is on a different machine, log into that machine and use the following command:
 
     ``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password``
 
