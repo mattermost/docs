@@ -39,4 +39,4 @@ Installing the Operators via Helm
 =================================
 
 The operators can be installed using the Mattermost Operator Helm chart.
-Follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__
+Follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__.
