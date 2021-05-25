@@ -2982,6 +2982,7 @@ mmctl ldap
 LDAP-related utilities.
 
    Child Commands
+      -  `mmctl ldap idmigrate`_ - Migrate LDAP IdAttribute to a new value
       -  `mmctl ldap sync`_ - Sync all LDAP users and groups
 
 **Options**
@@ -2989,6 +2990,42 @@ LDAP-related utilities.
 .. code-block:: sh
 
    -h, --help   help for ldap
+
+mmctl ldap idmigrate
+~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Migrate LDAP ``IdAttribute`` to a new value. Run this utility then change the IdAttribute to the new value.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl ldap idmigrate <objectGUID> [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   ldap idmigrate objectGUID
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for sync
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config-path string           path to the configuration directory. If "$HOME/.mmctl" exists it will take precedence over the default value (default "$XDG_CONFIG_HOME")
+   --format string                the format of the command output [plain, json] (default "plain")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --local                        allows communicating with the server through a unix socket
+   --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl ldap sync
 ~~~~~~~~~~~~~~~

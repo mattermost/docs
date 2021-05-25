@@ -7,7 +7,7 @@ The Mattermost network diagram below illustrates a private cloud deployment of M
 
 **Note**
 
-  - GitLab Mattermost deployment is [documented separately](https://doc.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
+  - GitLab Mattermost deployment is [documented separately](https://docs.gitlab.com/omnibus/gitlab-mattermost/) and not included below.
 
 ## Requirements and Installation Guides
 
