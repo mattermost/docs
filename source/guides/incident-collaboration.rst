@@ -10,6 +10,7 @@ Welcome to Incident Collaboration
 
    /incident-collaboration/overview.rst
    /incident-collaboration/incident-components.rst
+   /incident-collaboration/getting-started.rst
    
 Planning
 --------
