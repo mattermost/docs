@@ -24,3 +24,8 @@ Planning
 Launching
 ---------
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /incident-collaboration/launching-playbooks.rst
