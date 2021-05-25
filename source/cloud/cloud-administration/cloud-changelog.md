@@ -2,12 +2,7 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2021-05-19
-
-### Highlights
-
-#### Custom Data Retention
- - Added the ability to create a custom granular data retention policy and apply it to a specific team or channel, thereby overriding the global data retention policies.
+## Release 2021-05-21
 
 ### Improvements
 
