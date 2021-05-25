@@ -1,9 +1,6 @@
 Incident Collaboration Guide
 ============================
 
-Welcome to Incident Collaboration
----------------------------------
-
 .. toctree::
    :maxdepth: 2
    :glob:
@@ -24,7 +21,7 @@ Launching
 ---------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /incident-collaboration/launching-playbooks.rst
