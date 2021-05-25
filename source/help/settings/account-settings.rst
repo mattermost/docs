@@ -1,8 +1,6 @@
 Account Settings
 ================
 
---------------
-
 Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the channel sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
 
 General
@@ -188,7 +186,7 @@ Teammate Name Display
 Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`__.
 
 Timezone
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
 Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in config.json.
 
@@ -203,7 +201,6 @@ Default Appearance of Image Previews
 When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images.html>`__ over 100px in height. You can set this preference to **Expanded** or **Collapsed**.
 
 .. tip::
-
   This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
 
 Message Display
@@ -212,7 +209,7 @@ Message Display
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
 Channel Display
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
 
@@ -226,6 +223,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Español - Spanish
 - Français - French
 - Italiano - Italian
+- Magyar - Hungarian
 - Nederlands - Dutch
 - Polski - Polish
 - Português (Brasil) - Portuguese
