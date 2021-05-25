@@ -539,21 +539,19 @@ This list describes the quality levels of Mattermost features, and what can be e
 Production Level Quality
   - Recommended for use in production environments
   - Eligible for commercial support by `Mattermost, Inc. <https://mattermost.com/support/>`__
-  - Documentation is complete
-  - Included in security reviews
+  - Detailed documentation is available
   - Tested on several platforms
 Beta Level Quality
-  - `Premier Support <https://mattermost.com/support/>`__ is recommended for use in production environments
+  - Support best-effort only. `Premier Support <https://mattermost.com/support/>`__ is recommended for use in production environments
   - Core functionality is stable, but iteration based on feedback is ongoing
-  - Documentation may not be completed yet
-  - Disabled by default and must be enabled by modifying the configuration setting
-  - Tested thoroughly on a small set of platforms, and made available for testing and feedback on additional platforms
+  - Detailed documentation may not be available yet
+  - Data schema may not be complete, and may require manual migrations to future versions
 Experimental Level Quality
   - Not recommended for use in production
   - Unknown level of stability
-  - Minimal feature set that is not yet complete, and functionality may change over time
+  - Feature set covers a small or specific set of use cases. Additional use and edge cases will be added over time
+  - Data loss can occur as data schemas and configurations may change
   - Minimal documentation is available
-  - Disabled by default and must be enabled by modifying the configuration setting
 
 High Trust Questions
 ----------------------
