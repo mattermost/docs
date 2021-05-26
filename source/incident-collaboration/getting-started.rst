@@ -19,11 +19,11 @@ To access Mattermost Incident Collaboration:
 * From the channel header, select the **Incidents** icon to open the right-hand sidebar. From there, create a new incident or collaborate on active incidents of which you are a member.
 
 Channel Export
---------------
+~~~~~~~~~~~~~~
 
 Exporting the contents of an incident channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
 
 API Documentation
------------------
+~~~~~~~~~~~~~~~~~~
 
 To interact with the incidents data model programmatically, consult the `REST API specification <https://github.com/mattermost/mattermost-plugin-incident-collaboration/blob/master/server/api/api.yaml>`_.
