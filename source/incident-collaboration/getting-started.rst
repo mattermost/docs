@@ -18,11 +18,6 @@ To access Mattermost Incident Collaboration:
 * From the Main Menu, select **Incident Collaboration** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
 * From the channel header, select the **Incidents** icon to open the right-hand sidebar. From there, create a new incident or collaborate on active incidents of which you are a member.
 
-Channel Export
-~~~~~~~~~~~~~~
-
-Exporting the contents of an incident channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
-
 API Documentation
 ~~~~~~~~~~~~~~~~~~
 
