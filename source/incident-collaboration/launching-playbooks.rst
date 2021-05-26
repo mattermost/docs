@@ -30,14 +30,14 @@ The creator of a playbook run is automatically added as the first member and bec
 When the playbook run is created, it's announced in the configured channel. If that channel is archived or deleted, the bot posts a notification in the incident channel.
 
 Joining an incident
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
 
 If the incident channel is private, an existing member of the incident channel must invite you. System Admins may join private incident channels without permission.
 
 Working with tasks
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks:
 
@@ -49,7 +49,7 @@ Tasks can be part of pre-configured task templates in playbooks and they can als
 .. image:: ../images/IC-ad-hoc-tasks.gif
 
 Changing commanders
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 To change commanders you can run the ``/incident commander @username`` slash command from the incident channel. You can also use the desktop or browser to:
 
@@ -59,7 +59,7 @@ To change commanders you can run the ``/incident commander @username`` slash com
   * To change the commander to a user who is not in the channel, first add the user to the channel.
 
 Providing a status update
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
 
@@ -80,7 +80,7 @@ Incident status updates ensure that stakeholders remain informed about the progr
 The most recent status post will also appear in the right-hand sidebar of the incident channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
 Ending an incident
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Incident members can end an incident using the ``/incident end`` slash command. Incidents can also be ended from the desktop or browser:
 
@@ -94,7 +94,7 @@ Incident members can end an incident using the ``/incident end`` slash command. 
 Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
 
 Restarting an incident
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 If an incident was ended prematurely, it can be restarted within the incident channel using the ``/incident restart`` slash command. Incidents can also be restarted from the desktop or browser:
 
@@ -106,7 +106,7 @@ If an incident was ended prematurely, it can be restarted within the incident ch
 6. Select **Update Status**.
 
 Reviewing past incidents
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 To view past incidents of which you are a member, from the desktop or browser:
 
