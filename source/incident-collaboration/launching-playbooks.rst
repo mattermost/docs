@@ -1,19 +1,19 @@
-Starting an incident
-~~~~~~~~~~~~~~~~~~~~
+Using Playbooks
+---------------
 
-To start an incident you can run the ``/incident start`` slash command from any channel. You can also use the desktop or browser to:
+To run a playbook use the ``/incident start`` slash command from any channel. You can also use the desktop or browser to:
 
  * Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
  * Use the context menu of a post and select **Start incident**.
 
-Starting an incident opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
+Running a playbook opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
 
-The creator of an incident is automatically added as the first member and becomes the commander.
+The creator of a playbook run is automatically added as the first member and becomes the commander.
 
-When the incident is created, it is announced in the configured channel. If that channel is archived or deleted, the bot posts a notification in the incident channel.
+When the playbook run is created, it's announced in the configured channel. If that channel is archived or deleted, the bot posts a notification in the incident channel.
 
 Joining an incident
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
 
