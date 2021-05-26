@@ -1,5 +1,5 @@
-Refining and Improving
-======================
+Learning
+========
 
 Retrospectives and reviews are an important part of playbooks.
 
