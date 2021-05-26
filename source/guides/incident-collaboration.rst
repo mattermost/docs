@@ -7,7 +7,7 @@ Before You Begin
 ----------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
    /incident-collaboration/overview.rst
