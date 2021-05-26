@@ -19,7 +19,7 @@ Mattermost Product Documentation
    Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
    Messaging <guides/messaging>
-   Incident Management <guides/integration>
+   Incident Collaboration <guides/incident-collaboration>
    Focalboard <https://developers.mattermost.com/>
    Mattermost for Developers <https://developers.mattermost.com/>
    Support Knowledge Base <https://support.mattermost.com/hc/en-us/>
