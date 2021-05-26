@@ -1,8 +1,13 @@
-Incident Collaboration Guide
-============================
+Incident Collaboration 
+=======================
+
+Product documentation for Mattermost Incident Collaboration.
+
+Before You Begin
+----------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /incident-collaboration/overview.rst
