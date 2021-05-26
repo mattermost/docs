@@ -534,7 +534,11 @@ The following chart highlights the end user features of Mattermost and their sup
 What feature quality levels does Mattermost have?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We strive to release viable features. This means that we put in a significant amount of effort to ensure we solve a use case with a high bar for quality.  A feature that is viable and meets our criteria for our production quality levels will be released as production. However, occasionally, we will need to test large and complex features, or even new products, with a higher volume of customers and users. For these scenarios, we may opt to release them as experimental or beta and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release.  We dog food our own features on our community server and provide many configuration options that ensure customers can opt-in to to trying experimental or beta features. 
+We strive to release viable features. This means that we put in a significant amount of effort to ensure we solve a use case with a high bar for quality. A feature that's viable and meets our criteria for our production quality levels will be released to production.
+
+However, when we're working on large and complex features or new products we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as experimental or beta and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release.
+
+We dog food our own features on our community server and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
 
 This list describes the quality levels of Mattermost features, and what can be expected at each level.
 
