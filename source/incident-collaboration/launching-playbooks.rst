@@ -1,5 +1,5 @@
 Using Playbooks
----------------
+===============
 
 To run a playbook use the ``/incident start`` slash command from any channel. You can also use the desktop or browser to:
 
