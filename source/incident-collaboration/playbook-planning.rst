@@ -1,5 +1,5 @@
-Planning
-========
+Setting Up Playbooks
+====================
 
 A playbook must be defined before starting an incident.
 
