@@ -8,7 +8,6 @@ Access Your Workspace
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
    :glob:
 
    /help/getting-started/welcome-to-mattermost.rst
