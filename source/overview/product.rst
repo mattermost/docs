@@ -69,8 +69,21 @@ The on-premise and cloud editions of Mattermost have equivalent features, aside 
 Our open-source, self-managed Team Edition will remain free forever with features that align with our Starter Edition on-premise.  We do not currently offer a free edition of Mattermost Cloud, however, provide it at a very low cost to make it a plausible option for teams with budgetary limitations. 
 
 Mattermost Starter Edition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Mattermost Starter Edition is collaboration solution for individual practioners and small teams who 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mattermost Starter Edition is collaboration solution for individual practioners and small teams.  Features include:
+
+- One-to-one and group messaging, file sharing, and unlimited search history
+- Native apps for iOS, Android, Windows, Mac, Linux
+- Threaded messaging, emoji, and custom emoji
+- Tools for custom branding
+- Continuous archiving
+- Multi-factor authentication
+- Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
+- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
+- Easily scalable to dozens of users per team
+- `Runtime profiling data and system monitoring reports <https://docs.mattermost.com/deployment/metrics.html#standard-go-metrics>`__
+- New features and improvements released regularly
+- Multiple languages including U.S. English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
 
 Mattermost Professional Edition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,8 +115,8 @@ For a complete list of features across editions, visit the `detailed comparison 
 
 For purchases above 3,000 seats, please contact our `enterprise sales team <https://mattermost.com/contact-us/>`__.
 
-Packaging Changes
-------------------
-As the platform matures, and new features are added, features will be evaluated and included in the edition that best matches the primary use case(s) for the feature as outlined above. Multiple factors are considered in determining which tier to include a feature including, security, compliance, scalability, mission-critical impact, and relative value to the enterprise.
+Packaging Decisions
+-------------------
+As the platform matures, and new features are added, features are evaluated for inclusion in the edition that best matches the primary use case for the feature as outlined above. Multiple factors are considered in determining which tier to include a feature including, security, compliance, scalability, mission-critical impact, and relative value to the enterprise.
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into a tier to find later there is much demand for it by individuals or teams; we will not hesitate to move that feature to a lower tier.  We value feedback from our community and iterate based on feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from a higher tier.
