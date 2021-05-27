@@ -3,7 +3,7 @@ Refining and Improving
 
 Retrospectives and reviews are an important part of playbooks.
 
-Channel Export
+Channel export
 ~~~~~~~~~~~~~~
 
 Exporting the contents of an incident channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
@@ -20,4 +20,3 @@ To view past incidents of which you are a member, from the desktop or browser:
  * The duration, total number of members ever involved, and messages sent in the channel are listed.
  * A graphical timeline shows how much time elapsed between completed checklist items.
 5. Optionally export the contents of the incident channel to review during a post-mortem.
-
