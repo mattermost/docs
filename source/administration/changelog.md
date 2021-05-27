@@ -8,6 +8,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 - **v5.35.2, release day TBD**
   - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Fixing an issue where the server may crash if content extractor dependencies for PDFs are not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
   - Fixing an issue where the setting to allow disabling link previews from certain domains is grayed out in the System Console. [MM-35796](https://mattermost.atlassian.net/browse/MM-35796)
   - Fixing an issue where SMTP test connection shows a permission error when upgrading from version < 5.35 to 5.35 or greater. [MM-35861](https://mattermost.atlassian.net/browse/MM-35861)
 - **v5.35.1, released 2021-05-18**
