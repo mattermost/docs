@@ -22,7 +22,6 @@ Work with Messages
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
    :glob:
 
    /help/messaging/sending-messages.rst
