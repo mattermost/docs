@@ -40,7 +40,7 @@ The following table summarizes the key differences between these two approaches:
 |                                                                |                                                                     |  
 | - Easiest way to deploy Mattermost Apps.                       | You maintain full control over the distribution of applications,    |
 | - Test push notifications using the Test Push                  | including the look, feel, and capabilities of your mobile app.      |
-|   Notification Service (TPNS)                                  |                                                                     |
+|   Notification Service (TPNS).                                  |                                                                     |
 | - Mattermost Enterprise includes a                             | **Limitations:**                                                    |
 |   Hosted Push Notification Service (HPNS).                     |                                                                     |
 | - Apps update automatically with the latest                    | - Requires development knowledge and resources to maintain mobile   |
