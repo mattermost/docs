@@ -1,7 +1,7 @@
 Building and Distributing Your Own Custom Mattermost Mobile Apps
 ================================================================
 
-You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you have decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores.
+You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores.
 
 This approach is recommended for:
 
