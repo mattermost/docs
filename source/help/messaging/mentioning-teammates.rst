@@ -6,11 +6,11 @@ Mentioning Teammates
 @Mentions
 ---------
 
-Use *@* mentions to get the attention of specific team members.
+Use @mentions to get the attention of specific team members.
 
 .. note::
 
-  Editing an existing message does not trigger new *@* mention notifications, desktop notifications, or notification sounds.
+  Editing an existing message does not trigger new @mention notifications, desktop notifications, or notification sounds.
 
 @username
 ~~~~~~~~~
@@ -45,14 +45,14 @@ If a channel has five or more members, you're prompted to confirm that you want 
 
 You can mention everyone who is online in a channel by typing ``@here``. This sends a desktop notification and push notification to members of the channel who are online. It's counted as a mention in the sidebar. Members who are offline don't receive a notification. When they return to Mattermost they won't see a mention counted in the channel sidebar. Members who are away receive a desktop notification only if they have notifications set to **For all activity**, and they won't see a mention counted in the sidebar.
 
-You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
-
 .. code-block:: none
 
   @here can someone do a quick review of this?
   
-@groupname (Beta) (E20)
-~~~~~~~~~~~~~~~~~~~~~~~
+You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
+  
+@groupname (Beta) (Mattermost Enterprise)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ via the Group Configuration page. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
 
@@ -81,7 +81,12 @@ You can add a list of customized words to get mention notifications for by typin
 Recent Mentions
 ---------------
 
-Click **@** next to the search box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
+Select **@** next to the **Search** box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). 
+
+.. image:: ../../images/recent-mentions.png
+   :alt: See your most recent @mentions
+
+Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
 Confirmation Dialog Warnings
 ----------------------------
@@ -93,6 +98,6 @@ This confirmation dialog only appears when ``TeamSettings.EnableConfirmNotificat
 Highlighting
 ------------
 
-Valid mentions will have highlighted font text with some exceptions, for example if mentions are disabled at the channel level. The highlighted text becomes a hyperlink when a username is displayed. When the username is clicked, the profile popover is displayed.
+Valid mentions will have highlighted font text with some exceptions, for example if mentions are disabled at the channel level. The highlighted text becomes a hyperlink when a username is displayed. When the username is selected, the profile popover is displayed.
 
 When mentions trigger a notification, the user being notified will see highlighted font text and highlighted font background. This functions as an identifier of which mentions in the post triggered a notification for the user.
