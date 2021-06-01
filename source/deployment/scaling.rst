@@ -25,7 +25,7 @@ Deployments between 2,000 and 10,000 registered users with moderate usage can ru
 Cluster-based Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E20*
+*Available in Mattermost Enterprise*
 
 Deployments over 10,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, High Availability configuration. To date, the largest simulation included `70,000 concurrent users on a single Mattermost instance <https://mattermost.com/blog/performance-scale-mattermost/>`__.
 
@@ -43,6 +43,7 @@ Mattermost can be deployed on-premises or on the cloud platform of your choice, 
 Based on the `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, here’s what Mattermost’s server architecture looks like for a 10,000-user deployment:
 
 .. image:: ../images/scaling-1.png
+   :alt: Mattermost server architecture for a 10,000 user deployment
 
 **Sizing Guide Using AWS**
 
@@ -60,6 +61,7 @@ As deployments scale above 5,000 users, additional servers are added for perform
 Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 
 .. image:: ../images/scaling-3.png
+   :alt: Hardware needed for a 10,000 user deployment
 
 For more information, check out our `Administrator's Guide <https://docs.mattermost.com/guides/administrator.html>`__.
 
