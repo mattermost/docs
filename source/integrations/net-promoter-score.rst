@@ -70,7 +70,7 @@ Data is only collected when a user selects a score or provides written feedback 
    - Installation date of the server
    - Diagnostic ID used for error and diagnostics reporting
    - License ID used for error and diagnostics reporting (if applicable)
-   - E10 or E20 (if applicable)
+   - Mattermost Professional or Mattermost Enterprise (if applicable)
 - User information:
    - User role (System Admin, Team Admin, or member)
    - Account creation timestamp

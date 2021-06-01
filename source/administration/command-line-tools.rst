@@ -4,7 +4,6 @@ Command Line Tools
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
 .. note::
-
   The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
@@ -19,10 +18,8 @@ These ``mattermost`` commands include:
 
 **Advanced Administration**
 
--  Permanently deleting users (use cautiously - database backup
-   recommended before use)
--  Permanently deleting teams (use cautiously - database backup
-   recommended before use)
+-  Permanently deleting users (use cautiously - database backup recommended before use)
+-  Permanently deleting teams (use cautiously - database backup recommended before use)
 
 **Advanced Automation**
 
@@ -677,10 +674,10 @@ mattermost config reset
 
        bin/mattermost config reset SqlSettings.DriverName LogSettings
 
-   Options
+  Options
     .. code-block:: none
 
-        --confirm  Confirm you really want to reset the config setting and a backup has been performed.
+       --confirm  Confirm you really want to reset the config setting and a backup has been performed.
 
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
@@ -698,10 +695,10 @@ mattermost config set
 
        bin/mattermost config set SqlSettings.DriverName mysql
 
- Options
-    .. code-block:: none
+  Options
+   .. code-block:: none
 
-          --path string  Optional subpath; defaults to value in Site URL.
+       --path string  Optional subpath; defaults to value in Site URL.
 
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -733,12 +730,12 @@ mattermost config validate
     - Has attributes of the correct type, such as *bool*, *int*, and *str*.
     - All entries are valid. For example, checks that entries are below the maximum length.
 
-    Format
+  Format
       .. code-block:: none
 
         mattermost config validate
 
-    Example
+  Example
       .. code-block:: none
 
         bin/mattermost config validate
@@ -781,10 +778,10 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise license.
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
-    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise license.
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise license.
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -827,7 +824,7 @@ mattermost export bulk
   Options
     .. code-block:: none
 
-	  --all-teams bool [REQUIRED]  Export all teams from the server.
+	--all-teams bool [REQUIRED]  Export all teams from the server.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
@@ -848,7 +845,7 @@ mattermost export csv
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+        --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 
 mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -869,7 +866,7 @@ mattermost export global-relay-zip
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+        --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,4 +1,4 @@
-Bulk export data
+Bulk Export Data
 ================
 
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
@@ -169,10 +169,10 @@ User object
       <td valign="middle">string</td>
       <td>The authentication service used for this user account. This field will be absent for user/password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
-        <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
-        <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
-        <kbd>"google"</kbd> - Google OAuth authentication (E20)<br>
-        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (E20)</td>
+        <kbd>"ldap"</kbd> - LDAP authentication (Mattermost Professional and Mattermost Enterprise)<br>
+        <kbd>"saml"</kbd> - Generic SAML based authentication (Mattermost Enterprise)<br>
+        <kbd>"google"</kbd> - Google OAuth authentication (Mattermost Enterprise)<br>
+        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (Mattermost Enterprise)</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">auth_data</td>
