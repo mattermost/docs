@@ -92,7 +92,7 @@ Generate and assign a device profile for device-wide configurations through the 
 Consider Mobile VPN Options
 ---------------------------
 
-A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network. Most enterprise teams are familiar with VPNs, so we won’t go into many VPN details here. 
+A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network.
 
 .. note::
 
