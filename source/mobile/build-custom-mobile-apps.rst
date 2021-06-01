@@ -30,7 +30,7 @@ This process can be complicated and can greatly increase deployment time, not on
 In general, building your own Mobile apps will present some challenges, including:
 
 - Installing the necessary developer tools (such as Nodejs, XCode Developer Tools, Android SDKs, as well as others).
-- Obtaining and providing certificates for your custom Mattermost Mobile apps. *****
+- Obtaining and providing certificates for your custom Mattermost Mobile apps*.
 - Signing your custom Mattermost Mobile apps. *****
 - Distributing your Mobile app to your users.
 
