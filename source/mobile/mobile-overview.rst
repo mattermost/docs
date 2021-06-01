@@ -1,7 +1,7 @@
 Deploy Mattermost Mobile Apps
 =============================
 
-This documentation provides foundational information you need when developing a plan for an enterprise mobile application deployment. It’s intended for business leaders, system administrators, and mobile app champions responsible for deploying Mattermost in their organization.
+This documentation provides foundational information you need when developing a plan for an enterprise mobile application deployment. It’s intended for business leaders, system administrators, and mobile app developers responsible for deploying Mattermost in their organization.
 
 This documentation provides information to help you: 
 
