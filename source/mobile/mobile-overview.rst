@@ -17,7 +17,7 @@ This documentation provides information to help you:
 Decision Summary
 ----------------
 
-When planning for a mobile app deployment, you have two important decisions to make: 
+When planning for a Mobile app deployment, you have two important decisions to make: 
 
 - What app will you deploy?
 - How will you deploy it?
