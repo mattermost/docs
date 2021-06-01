@@ -1,12 +1,12 @@
 Bots
-============================================
+=====
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect bots in Mattermost.
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
 WelcomeBot
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
  - Welcome users to your Mattermost instance, developed by Mattermost.
  - Add a Welcome Bot that helps add new team members to channels to improve onboarding and HR processes.
