@@ -65,7 +65,7 @@ Enabling MPNS in Mattermost
 3. Enter the location of your MPNS in the **Push Notification Server**  field, then select **Save**.
 4. (Optional) Customize mobile push notification contents. Most deployments choose to include the full message content sent in the notification payload.
     i. Go to **System Console > Site Configuration > Notifications**.
-    b. Under **Push Notification Contents**, select the type of information to include in push notifications, then select **Save**.
+    ii. Under **Push Notification Contents**, select the type of information to include in push notifications, then select **Save**.
 5. Subscribe to `Mattermost Security Bulletins <https://mattermost.com/security-updates/#sign-up>`__. When notified of security updates, apply them promptly.
 
 .. note:: 
