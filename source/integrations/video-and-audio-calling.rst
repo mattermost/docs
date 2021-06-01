@@ -1,5 +1,5 @@
 Voice, video, and screensharing
-================================
+===============================
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
@@ -44,7 +44,7 @@ BigBlueButton
 - Source code and docs available at: https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton.
 
 Skype for Business (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Start and join voice calls, video calls and use screensharing with your team members, developed by kosgrz, and maintained by Mattermost.
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
