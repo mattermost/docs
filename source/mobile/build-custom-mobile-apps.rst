@@ -21,7 +21,7 @@ When you decide to build your own Mattermost Mobile apps, you have multiple ways
 Developing and Maintaining Your Custom App
 ------------------------------------------
 
-The Mattermost Mobile app is an open source project. Customizing Mattermost Mobile apps requires a fork of the source code. Your team will be responsible for maintaining that fork, as well as keeping that fork updated with any changes made by Mattermost. 
+The Mattermost Mobile App is an open source project. Customizing Mattermost Mobile apps requires a fork of the source code. Your team will be responsible for maintaining that fork, as well as keeping that fork updated with any changes made by Mattermost.
 
 This means that you must maintain your custom Mattermost Mobile apps. Maintenance includes rebuilding and incorporating feature and/or security updates. Otherwise, your applications will not match the functionality of our publicly available applications, and could be incompatible with future versions of Mattermost server.
 
