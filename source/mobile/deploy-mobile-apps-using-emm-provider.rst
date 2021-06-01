@@ -100,7 +100,7 @@ A Virtual Private Network (VPN) allows a device outside a firewall to access con
 
 We recommend one of two options: `per-app VPN <#per-app-vpn>`_ or a `device VPN <#device-vpn>`_ to secure your deployment. Both options are compatible with most EMM providers. 
 
-We also recommend following our `recommended steps to secure your deployment <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`__ and to review the following Frequently Asked Questions about data security on mobile devices:
+We also recommend following our `recommended steps to secure your deployment <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`__ and to review the following commonly-asked questions about data security on mobile devices:
 
 - `How data is handled on a device after an account is deleted? <https://docs.mattermost.com/mobile/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`__
 - `What post metadata is sent in mobile push notifications? <https://docs.mattermost.com/mobile/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`__
