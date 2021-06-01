@@ -76,7 +76,7 @@ We highly recommend you update your custom Mattermost Mobile apps to incorporate
 
 .. important::
 
-    Not all provided updates are compatible with all previous versions of Mattermost Server. Updating only Mattermost Mobile apps or updating the mobile apps before Mattermost server can result in incompatibility issues.
+    Not all provided updates are compatible with all previous versions of Mattermost Server. Updating only Mattermost Mobile apps or updating the mobile apps before Mattermost Server can result in incompatibility issues.
 
 Using Another Distribution Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
