@@ -61,7 +61,7 @@ See our `Supported Devices/Mobile Device Requirements <https://docs.mattermost.c
 We recommend running the latest version of the Mattermost Server as it contains the most recent features and applicable security updates. If this isn't possible, we encourage you to be on the most recent Extended Support Release version of Mattermost. This release has critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
 Important
-Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile apps or updating the mobile apps before updating Mattermost Server can result in incompatibility issues.
+Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.
 
 You should also start thinking about technical and security requirements in parallel with an implementation plan. Feel free to use our `implementation plan template <https://docs.mattermost.com/getting-started/implementation_plan.html>`__ available in the Mattermost documentation. 
 
