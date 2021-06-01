@@ -70,7 +70,7 @@ Enabling MPNS in Mattermost
 
 .. note:: 
 
-    As part of the process of building the applications you will need to sign the applications. You must also obtain the appropriate certificate for both Android and iOS. If this is not done, the applications will not be able to interact with your instance of the MPNS. Once this is complete, you can proceed with the deployment of your MPNS instance.
+    As part of the process of building the applications you will need to sign the applications. You must also obtain the appropriate certificate for both Android and iOS. If this isn't done, the applications won't be able to interact with your instance of the MPNS. Once this is complete, you can proceed with the deployment of your MPNS instance.
 
 Enroll Devices
 --------------
