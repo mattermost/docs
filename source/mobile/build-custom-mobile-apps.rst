@@ -25,7 +25,7 @@ The Mattermost Mobile App is an open source project. Customizing Mattermost Mobi
 
 This means that you must maintain your custom Mattermost Mobile apps. Maintenance includes rebuilding and incorporating feature and/or security updates. Otherwise, your applications will not match the functionality of our publicly available applications, and could be incompatible with future versions of Mattermost server.
 
-This process can be complicated. It will also greatly increase deployment time, not only initially, but whenever the apps need to be updated. We recommend having your development team `review the Mattermost Mobile Apps developer documentation <https://developers.mattermost.com/contribute/mobile/>`__ to ensure they understand the scale and requirements of taking this path. This documentation provides guidance on building, compiling, signing, and customizing Mattermost Mobile apps. 
+This process can be complicated and can greatly increase deployment time, not only initially, but whenever the apps need to be updated. We recommend having your development team `review the Mattermost Mobile Apps developer documentation <https://developers.mattermost.com/contribute/mobile/>`__ to ensure they understand the scale and requirements of taking this path. This documentation provides guidance on building, compiling, signing, and customizing Mattermost Mobile apps.
 
 In general, building your own Mobile apps will present some challenges, including:
 
