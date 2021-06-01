@@ -1,12 +1,12 @@
 Atlassian Tools
-============================================
+================
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect Atlassian tools in Mattermost.
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
 Jira Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 - Two-way integration between Mattermost and Jira, developed by Mattermost.
 - Send event notifications from your Jira projects to Mattermost channels, with full JQL filtering support.
