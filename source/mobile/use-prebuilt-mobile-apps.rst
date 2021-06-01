@@ -36,7 +36,7 @@ Configuring your Mattermost instance to use the Mattermost HPNS is a single, one
 ID-Only Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud and Enterprise customers can limit the data sent to the HPNS through a configuration setting. 
+Mattermost Cloud and Enterprise Edition customers can limit the data sent to the HPNS through a configuration setting. 
 
 When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ documentation to learn more about ID-only push notifications.
 
