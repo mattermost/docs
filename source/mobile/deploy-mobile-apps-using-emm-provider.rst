@@ -51,7 +51,7 @@ See our `developer documentation <https://developers.mattermost.com/contribute/m
 Securing Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To secure your push notifications, make sure to use encrypted TLS connections between:
+To secure your push notifications, ensure you use encrypted TLS connections between:
 
 - MPNS and Apple Push Notification Service
 - MPNS and Google’s Firebase Cloud Messaging
