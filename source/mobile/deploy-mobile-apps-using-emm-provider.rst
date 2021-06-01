@@ -33,7 +33,7 @@ You need to set up a way to connect to your private network Mattermost instance,
 
 Depending on your security policies, we recommend deploying Mattermost behind a VPN and using a per-app VPN with your EMM provider, or a mobile VPN client.
 
-Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as, GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA.
+Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA.
 
 Host Your Own Push Proxy Service
 --------------------------------
