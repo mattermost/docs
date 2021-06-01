@@ -55,7 +55,7 @@ To secure your push notifications, ensure you use encrypted TLS connections betw
 
 - MPNS and Apple Push Notification Service
 - MPNS and Google’s Firebase Cloud Messaging
-- MPNS and your Mattermost Server
+- MPNS and your Mattermost server
 
 Enabling MPNS in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
