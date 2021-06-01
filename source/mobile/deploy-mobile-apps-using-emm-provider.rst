@@ -45,7 +45,7 @@ See our `developer documentation <https://developers.mattermost.com/contribute/m
 .. note::
 
 - The MPNS should be behind your firewall inside your private network, or in your DMZ, in a way that the Mattermost server can access it.
-- The MPNS does not connect with Mobile apps directly; it parses and forwards push notifications from the Mattermost Server to the Apple Push Notification Service (APNS) or the Firebase Cloud Messaging (FCM). 
+- The MPNS does not connect with Mobile apps directly; it parses and forwards push notifications from the Mattermost Server to the Apple Push Notification Service (APNS) or the Firebase Cloud Messaging (FCM).
 - The MPNS must be able to communicate with the Apple Push Notification Service over HTTP/2. If an outbound proxy appliance is deployed between the MPNS and APNS please ensure it supports HTTP/2.
   
 Securing Push Notifications
