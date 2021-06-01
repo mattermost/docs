@@ -13,7 +13,7 @@ Deployment Options
 
 When you decide to build your own Mattermost Mobile apps, you have multiple ways to deploy it: 
 
-- Submitting your app to `an Enterprise App Store <#using-an-enterprise-app-store>`_
+- Submitting your app to `an Enterprise App Store <#using-an-enterprise-app-store>`_.
 - Using `an Enterprise Mobile Management (EMM) provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__.
 - Submitting your app to `public app stores <#using-public-app-stores>`_
 - Using `another distribution method <#using-another-distribution-method>`_.
