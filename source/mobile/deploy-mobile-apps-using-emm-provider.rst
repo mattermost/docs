@@ -123,7 +123,7 @@ With this option, all internet traffic routes through the VPN specified in the p
 Connecting via Corporate Proxy Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Review the following Frequently Asked Questions about connecting through a corporate proxy server:
+Review the following commonly-asked questions about connecting through a corporate proxy server:
 
 - `How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`__
 - `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://docs.mattermost.com/mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`__
