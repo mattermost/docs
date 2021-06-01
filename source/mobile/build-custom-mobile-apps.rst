@@ -69,7 +69,7 @@ This update strategy should include:
 
 - Reviewing compatibility requirements.
 - Validating mobile app versions connecting to the server.
-- Updating Mattermost Server
+- Updating Mattermost Server.
 - Updating Mattermost Mobile apps.
 
 We highly recommend you update your custom Mattermost Mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the Mobile apps and the Mattermost Server. Consult the `Mattermost Mobile App Changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`__ and the `Mattermost Server Changelog <https://docs.mattermost.com/administration/changelog.html>`__ for details.
