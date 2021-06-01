@@ -24,7 +24,7 @@ Setting Up Push Notifications
 Mattermost hosts a push proxy option available for Mattermost Cloud and Enterprise Edition deployments. The HPNS offers:
 
 - An explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ for the contents of unencrypted messages.
-- Encrypted TLS connections
+- Encrypted TLS connections:
     - Between HPNS and Apple Push Notification Services
     - HPNS and Google’s Firebase Cloud Messaging service
     - HPNS and your Mattermost Server
