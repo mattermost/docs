@@ -34,7 +34,7 @@ In general, building your own Mobile apps will present some challenges, includin
 - Signing your custom Mattermost Mobile apps*.
 - Distributing your Mobile app to your users.
 
-***** Mattermost Mobile apps are signed and have certificates associated with Mattermost and public app stores. This means Mattermost’s Mobile App won’t work if you choose to privately host the Mattermost Push Proxy Service (MPNS). You'll need to build your own custom mobile app.
+* Mattermost Mobile apps are signed and have certificates associated with Mattermost and public app stores. This means Mattermost’s Mobile App won’t work if you choose to privately host the Mattermost Push Proxy Service (MPNS). You'll need to build your own custom mobile app.
 
 Custom Mobile App Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
