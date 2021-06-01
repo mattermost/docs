@@ -1,25 +1,7 @@
-Mattermost Integration Guide
-----------------------------
+Mattermost Apps and Integrations
+--------------------------------
 
-**Are you looking to install an integration?**
-
-See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://integrations.mattermost.com/>`__.
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-   
-   /integrations/jira*
-   /integrations/zoom*
-   /integrations/zapier*
-
-**Are you looking to develop an integration?**
-
-See `our developer documentation <https://developers.mattermost.com/>`__. 
-
-**Are you looking for an overview of what capabilities Mattermost offers for integrations?**
-
-See our documentation below. 
+Are you looking for an overview of what capabilities Mattermost offers for integrations?
 
 .. toctree::
    :maxdepth: 1
