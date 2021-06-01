@@ -6,7 +6,15 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-05-16**
+- **v5.35.2, release day TBD**
+  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Fixing an issue where the server may crash if content extractor dependencies for PDFs are not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
+  - Fixing an issue where the setting to allow disabling link previews from certain domains is grayed out in the System Console. [MM-35796](https://mattermost.atlassian.net/browse/MM-35796)
+  - Fixing an issue where SMTP test connection shows a permission error when upgrading from version < 5.35 to 5.35 or greater. [MM-35861](https://mattermost.atlassian.net/browse/MM-35861)
+- **v5.35.1, released 2021-05-18**
+  - Fixed an issue where 5.35.0 migration failed on MySQL installations with an "invalid connection" error due to an issue with the ``readTimeout`` parameter in ``SqlSettings.DataSource`` (default is 30 seconds). The ``readTimeout`` datasource query parameter is now being ignored and the application provided ``SqlSettings.QueryTimeout`` should be used instead. [MM-35767](https://mattermost.atlassian.net/browse/MM-35767)
+- **v5.35.0, released 2021-05-16**
+  - Original 5.35.0 release
 
 Mattermost v5.35.0 contains low and medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -129,6 +137,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.34.3, release day TBD**
+  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.34.2, released 2021-04-17**
   - Fixed an issue where installs with some special characters in the MySQL password would break and fail to start.
 - **v5.34.1, released 2021-04-15**
@@ -223,6 +233,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.33.4, release day TBD**
+  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.33.3, released 2021-03-31**
   - Fixed an issue where, after migrating to OpenID, Office 365 returned different ID attributes based on user type, causing an error for users with expired sessions when they tried to sign in to Mattermost. [MM-34356](https://mattermost.atlassian.net/browse/MM-34356)
 - **v5.33.2, released 2021-03-25**
@@ -359,6 +371,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.32.2, release day TBD**
+  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.32.1, released 2021-02-17**
   - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
 - **v5.32.0, released 2021-02-16**
@@ -476,6 +490,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.6, release day TBD**
+  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.31.5, released 2021-05-12**
   - Fixed an issue where ``mmctl channel move`` did not allow moving private channels. [MM-32746](https://mattermost.atlassian.net/browse/MM-32746)
 - **v5.31.4, released 2021-04-23**
