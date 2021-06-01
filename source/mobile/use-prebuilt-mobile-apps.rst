@@ -45,7 +45,7 @@ Test Push Notifications Service (TPNS)
 
 After setting up push notifications, we strongly recommend that you test push notifications to ensure they're working.
 
-Mattermost offers a free basic hosted service to test push notifications for self-managed deployments. The TPNS isn’t recommended for use in Production environments, and doesn’t offer production-level update service level agreements (SLAs). To use the Mattermost TPNS:
+Mattermost offers a free basic hosted service to test push notifications for self-managed deployments. The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs). To use the Mattermost TPNS:
 
 1. In System Console, go to **Environment > Push Notification Server > Enable Push Notifications**, then select **Use TPNS connection to send notifications to iOS and Android apps**.
 2. Specify the URL of the **Push Notification Server** based on your Mattermost edition.
