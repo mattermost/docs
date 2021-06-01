@@ -6,7 +6,7 @@ You can build and distribute custom versions of the Mattermost Mobile App. Choos
 This approach is recommended for:
 
 - Organizations that want to customize their Mattermost Mobile Apps.
-- Customers using Mattermost Team Edition or Enterprise Edition servers that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions.
+- Customers using self-hosted Mattermost Team Edition or Enterprise Editions that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions.
   
 Deployment Options
 ------------------
