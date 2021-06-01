@@ -1,7 +1,7 @@
-Compliance Export Beta (E20)
-============================
+Compliance Export Beta (Enterprise)
+===================================
 
-Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
+*Available in Mattermost Enterprise*
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including:
 
@@ -12,18 +12,15 @@ This feature enables compliance exports to be produced from the System Console, 
 
 The exports include information on channel member history at the time the message was posted.
 
-From Mattermost 5.18, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
+From Mattermost v5.18, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
-By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Enterprise Edition E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
+By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
 
 .. note::
   
-  This feature will replace the existing :doc:`Compliance feature <compliance>` in a future release. Compliance exports to CSV will continue to be available in Enterprise Edition E20.
-
-.. toctree::
-    :maxdepth: 2
+  This feature will replace the existing :doc:`Compliance feature <compliance>` in a future release. Compliance exports to CSV will continue to be available in Mattermost Enterprise.
 
 Set Up Guide
 ------------
