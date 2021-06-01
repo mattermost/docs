@@ -7,7 +7,7 @@ You can use an EMM to:
 
 - Enforce users to download a mobile app
 - Set default server connections.
-- Restrict users from changing servers
+- Restrict users from changing servers.
 - Enforce security policies
 
 An EMM provider pushes Mattermost Mobile apps to EMM-enrolled devices. This approach is recommended for organizations that typically use EMM solutions to deploy Mobile apps to meet security and compliance policies. 
