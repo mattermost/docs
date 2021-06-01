@@ -6,7 +6,7 @@ An EMM Provider builds `Enterprise Mobile Management software <https://en.wikipe
 You can use an EMM to: 
 
 - Enforce users to download a mobile app
-- Set default server connections
+- Set default server connections.
 - Restrict users from changing servers
 - Enforce security policies
 
@@ -129,4 +129,3 @@ Review the following Frequently Asked Questions about connecting through a corpo
 - `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://docs.mattermost.com/mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`__
 - `Whitelist Mattermost push notification proxy to bypass your corporate proxy server <https://docs.mattermost.com/mobile/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`__
 - `Run App Store versions of the Mattermost Mobile apps <https://docs.mattermost.com/mobile/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps>`__
-
