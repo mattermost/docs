@@ -1,5 +1,5 @@
 Mattermost Apps and Integrations
---------------------------------
+================================
 
 Are you looking for an overview of what capabilities Mattermost offers for integrations?
 
