@@ -82,4 +82,4 @@ If you need assistance, please reach out using one or more of the following meth
 - **Documentation** - We link to a lot of mobile-specific documentation within this guide, but we encourage you to visit all of our `product documentation <https://docs.mattermost.com/>`__.
 - **Forums** - For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue.
 - **GitHub** - `Visit us on GitHub <https://github.com/mattermost/>`__ to create issues in any of our repositories.
-- **Enterprise Support** - If you are a Mattermost Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.
+- **Enterprise Support** - If you're a Mattermost Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.
