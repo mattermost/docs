@@ -1,7 +1,9 @@
-Audit Log v2 (Experimental) (E20)
-=====================================
+Audit Log v2 (Experimental) (Enterprise)
+========================================
 
-A new audit log allows System Admins to review a more comprehensive listing of events for more in-depth analysis. Additionally, it provides more control over where the logs are generated and stored.
+*Available in Mattermost Enterprise*
+
+System Admins can review a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored.
 
 Configure audit log in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
