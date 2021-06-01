@@ -68,7 +68,7 @@ As part of the submission process, you need to identify an update strategy that 
 This update strategy should include:
 
 - Reviewing compatibility requirements.
-- Validating mobile app versions connecting to the server
+- Validating mobile app versions connecting to the server.
 - Updating Mattermost Server
 - Updating Mattermost Mobile apps.
 
