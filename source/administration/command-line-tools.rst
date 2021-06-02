@@ -778,10 +778,10 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise license.
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise Edition E20 license.
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise license.
-    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise license.
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise Edition E20 license.
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise Edition E20 license.
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
