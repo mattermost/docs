@@ -1,11 +1,11 @@
-Data Retention Policy (Enterprise)
-==================================
+Data Retention Policy (E20)
+===========================
 
-*Available in Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E20*
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users.
 
-In Mattermost Enterprise, you can set a custom policy to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
+In Mattermost Enterprise E20, you can set a custom policy to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up a custom data retention policy.
