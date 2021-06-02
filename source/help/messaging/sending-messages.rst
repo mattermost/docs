@@ -6,7 +6,7 @@ Sending and Receiving Messages
 Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
 
 .. note::
-  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__, available in `Mattermost Professional <https://docs.mattermost.com/overview/product.html#mattermost-enterprise-edition-e10>`__.
+  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__, available in `Mattermost Enterprise Edition E10 or later <https://docs.mattermost.com/overview/product.html#mattermost-enterprise-edition-e10>`__.
 
 Send a Message
 ---------------
