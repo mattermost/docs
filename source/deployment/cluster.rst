@@ -1,7 +1,7 @@
-High Availability Cluster (Enterprise)
-=====================================
+High Availability Cluster (E20)
+===============================
 
-*Available in Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E20*
 
 A High Availability cluster enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
@@ -204,7 +204,7 @@ File Storage Configuration
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
   3. If you’re using Amazon S3 or MinIO for file storage then no other configuration is required.
 
-If you’re using the Compliance Reports feature in Mattermost Enterprise, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
+If you’re using the Compliance Reports feature in Mattermost Enterprise Edition E20, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
 
