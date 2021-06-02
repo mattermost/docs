@@ -1,5 +1,38 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.44.0 Release
+- Release Date: June 16, 2021
+- Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Highlights
+
+### Improvements
+ - Added support for localization with country variants.
+ - Added support for the shared channels by displaying information and icons for the shared channels and remote users. 
+ - Added shared channel filter for browser channels.
+ - Added a new language Hungarian (beta).
+
+### Bug Fixes
+
+#### All apps
+ - 
+
+#### Android specific
+ - 
+
+#### iOS specific
+ - 
+
+### Known Issues
+ - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
+ - The app has been reported to perform slowly on Android devices that run at 120fps instead of the normal 60fps.
+
 ## 1.43.0 Release
 - Release Date: May 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
