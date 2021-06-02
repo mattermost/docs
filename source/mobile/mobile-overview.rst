@@ -12,7 +12,7 @@ This documentation provides information to help you:
 .. note::
 
     - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
-    - Some features described in this guide are available only in Mattermost Enterprise.
+    - Some features described in this guide are available only in Mattermost Professional or Mattermost Enterprise.
 
 Decision Summary
 ----------------
