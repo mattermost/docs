@@ -1,7 +1,7 @@
-Announcement Banner (Professional)
-==================================
+Announcement Banner (E10)
+=========================
 
-*Available in Mattermost Professional and Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E10 and higher*
 
 System Admins can display a notice that's visible to all users on the system via an announcement banner.
 
