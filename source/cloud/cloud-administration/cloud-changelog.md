@@ -4,10 +4,6 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ## Release 2021-06-02
 
-### Highlights
- - Focalboard and new three-tier packaging structure XXXX
- - Custom data retention? XXXX
-
 ### Improvements
 
 #### User Interface (UI)
