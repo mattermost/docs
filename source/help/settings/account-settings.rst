@@ -1,8 +1,6 @@
 Account Settings
 ================
 
---------------
-
 Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the channel sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
 
 General
@@ -188,12 +186,12 @@ Teammate Name Display
 Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`__.
 
 Timezone
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
 
 Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in config.json.
 
 Website Link Previews
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`__.
 
@@ -203,7 +201,6 @@ Default Appearance of Image Previews
 When messages in Mattermost include images, an image preview can display directly below the message for image attachments, image link previews, and `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images.html>`__ over 100px in height. You can set this preference to **Expanded** or **Collapsed**.
 
 .. tip::
-
   This setting can also be controlled using the slash commands ``/expand`` and ``/collapse``.
 
 Message Display
@@ -212,7 +209,7 @@ Message Display
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
 Channel Display
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
 
@@ -247,7 +244,8 @@ The channel sidebar includes `enhanced sidebar features <https://docs.mattermost
 
 The following sidebar settings apply to your current sidebar only:
 
-**Group unread channels separately**
+Group unread channels separately
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__ for you. 
 
@@ -286,7 +284,9 @@ Settings to configure when messages are sent.
 Send messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If "On for all messages" is enabled, ENTER inserts a new line and CTRL+ENTER posts a message. If "On only for code blacks starting with ```" is enabled, ENTER inserts a new line inside an open code block and CTRL+ENTER automatically closes the code block and posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message.
+- If **On for all messages** is enabled, pressing ENTER inserts a new line, and pressing CTRL+ENTER posts a message. 
+- If **On only for code blacks starting with ```** is enabled, pressing ENTER inserts a new line inside an open code block, and pressing CTRL+ENTER automatically closes the code block and posts the message. 
+- If disabled, pressing SHIFT+ENTER inserts a new line, and pressing ENTER posts the message.
 
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~

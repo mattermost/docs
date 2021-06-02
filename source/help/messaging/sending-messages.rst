@@ -1,5 +1,3 @@
-.. _sending-messages:
-
 Sending and Receiving Messages
 ==============================
  

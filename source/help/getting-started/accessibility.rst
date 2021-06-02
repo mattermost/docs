@@ -1,5 +1,6 @@
 Keyboard Accessibility
 ======================
+
 Navigational keyboard shortcuts help you use Mattermost without requiring a mouse. Below is a list of supported shortcuts. Elements in focus have a colored outline, as shown here:
 
 .. image:: ../../images/focus.png
@@ -21,9 +22,9 @@ Navigational keyboard shortcuts help you use Mattermost without requiring a mous
 | ENTER                                  | Take action on the focused element                                               |
 +----------------------------------------+----------------------------------------------------------------------------------+
 
-
 Region Navigation
 --------------------
+
 Mattermost has eight regions that can be focused for navigation. Use **F6** (Desktop App) or **CTRL+F6** (Browser) repeatedly to move focus and loop through the regions in this order:
 
 1. Message list region
@@ -40,6 +41,7 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (Des
 
 Message Navigation
 ------------------
+
 When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages. Press **TAB** to navigate through message actions.
 
 .. image:: ../../images/message-navigation.gif
@@ -47,6 +49,7 @@ When the message list region is focused, use the **UP** or **DOWN** arrow keys t
 
 Message Composition
 ~~~~~~~~~~~~~~~~~~~
+
 Mattermost is compatible with most popular screen readers, such as `Apple VoiceOver <https://www.apple.com/ca/accessibility/vision/>`__ or `JAWS for Windows <https://www.freedomscientific.com/products/software/jaws/>`__. A custom readout is composed for each message by combining the message elements and reading them together in full sentences. Message elements will read in the following order:
 
 1. Header: Author, timestamp, message type (i.e. parent post or reply)
@@ -57,12 +60,13 @@ Mattermost is compatible with most popular screen readers, such as `Apple VoiceO
 
 For example, a message read by a screen reader may sound like the following:
 
-  .. code-block:: none
+.. code-block:: none
   
-    Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
+  Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
 
 Channel Sidebar Navigation
 --------------------------
+
 When the channel sidebar region is focused, use the **UP** or **DOWN** arrow keys to focus individual sidebar sections, such as Favorites, Public Channels, Private Channels and Direct Messages. Press **TAB** to navigate through channels or other buttons within a sidebar section.
 
 .. image:: ../../images/channel-sidebar-navigation.gif

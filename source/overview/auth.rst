@@ -1,6 +1,5 @@
-================================
 Corporate Directory Integration 
-================================
+===============================
 
 Mattermost Enterprise Edition offers advanced security and authentication options for integrating with corporate directories. This guide outlines the options available.
 

@@ -3,11 +3,12 @@ Mattermost Messaging
 
 Product documentation for Mattermost Messaging.
 
-Access Your Workspace
----------------------
+Getting Started
+----------------
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
    :glob:
 
    /help/getting-started/welcome-to-mattermost.rst
@@ -38,7 +39,7 @@ Work with Messages
 
 Manage Teams, Channels, and Members
 -----------------------------------
-   
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
@@ -53,12 +54,12 @@ Manage Teams, Channels, and Members
 
 Customize Mattermost Messaging
 ------------------------------
-      
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
    :glob:
-      
+
    /help/getting-started/setting-your-status-availability.rst
    /help/getting-started/configuring-notifications.rst
    /help/getting-started/organizing-your-sidebar.rst
@@ -69,21 +70,21 @@ Customize Mattermost Messaging
 
 Navigate Mattermost Messaging
 -----------------------------
-      
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
    :glob:
-      
+
    /help/getting-started/accessibility.rst
    /help/messaging/keyboard-shortcuts.rst
 
 Extend Mattermost Messaging
 ---------------------------
-      
+ 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
    :glob:
-      
+
    /help/settings/integration-settings.md

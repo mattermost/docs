@@ -2,8 +2,8 @@
 Integrations Overview
 =====================
 
-  .. note::
-    To see a list of open source integrations please see the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`__.
+.. note::
+  To see a list of open source integrations please see the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`__.
 
 Mattermost offers a host of options for connecting to systems on your private network as well as services hosted on hybrid and public clouds.
 
@@ -21,7 +21,7 @@ Mattermost offers a host of options for connecting to systems on your private ne
 3. `Slack-compatible Slash Commands (private and public cloud)`_.
 
 Pre-configured integrations
----------------------------------------------------------
+----------------------------
 
 Open source, self-hosted integrations (private and public cloud)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,7 +33,7 @@ Many of these use Mattermost incoming webhooks to deliver data into Mattermost f
 - Learn about `Mattermost open source apps and integrations <https://integrations.mattermost.com/>`__.
 
 Slack-compatible webhooks (private and public cloud)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost webhooks are "Slack-compatible, not Slack limited". In applications supporting Slack webhooks you can replace the Slack webhook URL with a Mattermost webhook URL and the integration will work.
 
@@ -41,7 +41,7 @@ Mattermost webhooks are "Slack-compatible, not Slack limited". In applications s
 - Learn about `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__.
 
 Over 700 app integrations using Zapier (public cloud only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost's Zapier support enables you to connect to over 700 public cloud services, like Email, Gmail, GitHub, Jira, BitBucket, and Confluence.
 
@@ -56,18 +56,18 @@ You can deploy interactive bots with Mattermost to issue commands and receive re
 - Learn about `all the open source community bots available <https://integrations.mattermost.com/>`__.
 
 Custom integrations
----------------------------------------------------------
+-------------------
 
 Command line interface (private and public cloud)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can send data into Mattermost real-time using command line tools by posting HTTP requests with JSON payloads into a Mattermost webhook. You can do this using `curl` or use an open source tool, like `mattersend <https://github.com/mtorromeo/mattersend>`__, to create an integration.
+You can send data into Mattermost real-time using command line tools by posting HTTP requests with JSON payloads into a Mattermost webhook. You can do this using ``curl`` or use an open source tool, like `mattersend <https://github.com/mtorromeo/mattersend>`__, to create an integration.
 
 - Learn about `incoming webhooks <https://docs.mattermost.com/developer/webhooks-incoming.html>`__.
 - Learn about the `mattersend CLI integration in Python <https://github.com/mtorromeo/mattersend>`__.
 
 Custom applications using APIs and drivers (private and public cloud)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost provides complete access to `server APIs <https://api.mattermost.com/>`__, along with language-specific drivers to integrate into your own applications. You can also draw from dozens of open source applications to build your own.
 

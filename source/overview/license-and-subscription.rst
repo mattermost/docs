@@ -1,5 +1,5 @@
 Licensing and Subscription
---------------------------
+==========================
 
 Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`_ where you can easily purchase and manage your Mattermost Enterprise subscriptions.
 
@@ -111,7 +111,7 @@ We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
 Why do I need to provide my name and physical address when purchasing a license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost is a U.S. corporation and therefore all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
 

@@ -1,6 +1,5 @@
-============================
 Product Overview
-============================
+================
 
 **Mattermost** provides high trust collaboration and messaging solutions through an open source, community-powered approach. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers.
 
@@ -66,6 +65,7 @@ A commercial enterprise messaging solution for teams, groups and departments wor
 
 Mattermost Enterprise Edition E20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 A commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. E20 is your "virtual city", with cluster-based horizontal scaling, high availability deployment, performance monitoring systems and compliance reporting plus advanced corporate directory integration. Building on the features in E10, it also offers:
 
 - Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services

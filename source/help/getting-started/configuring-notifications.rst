@@ -8,16 +8,16 @@ Notifications in Mattermost alert you to unread messages and mentions. Desktop, 
 
 You can configure your Mattermost account for how and when you want to be notified of Mattermost activity. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
 
-- Mentions you specifically with `@username`
+- Mentions you specifically with ``@username``
 - Sends you a Direct Message
 - Mentions your username or first name in a channel
 - Notifies a channel you're in using @channel or @all
-- Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
+- Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__ 
 
 Desktop Notifications
 ----------------------
 
-Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
+Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`__. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
 
 .. image:: ../../images/desktop_notification.png
 
@@ -25,10 +25,9 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 -  Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
 - By default, all channels use the global setting configured in **Account Settings**.
    
-**Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
+**Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`__ and see what other factors influence if a notification should be triggered.
 
 .. tip:: 
-
   Configure desktop notification sounds in **Account Settings > Notifications > Desktop notifications > Notification sounds**.
 
 Email Notifications
@@ -45,7 +44,7 @@ Messages in email notifications can be opened in the Mattermost Desktop App, Mob
 
 .. image:: ../../images/deep_linking.png
 
-**Not getting an email notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-an-email-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
+**Not getting an email notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-an-email-notification-should-be-triggered>`__ and see what other factors influence if a notification should be triggered.
 
 Mobile Push Notifications
 -------------------------
@@ -57,7 +56,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 -  Configure push notifications in **Account Settings > Notifications > Mobile push notifications > Send mobile push notifications**.
 -  Configure when push notifications are sent depending on your availability in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
    
-**Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.   
+**Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`__ and see what other factors influence if a notification should be triggered.   
 
 .. tip::
 
@@ -92,4 +91,4 @@ When this setting is on you will still receive notifications for direct mentions
 
 **Note:** If you have muted a channel and also enabled **Ignore mentions for @channel, @here and @all** then you will not receive any notifications (whether they're direct or channel-wide). However, if you are directly mentioned in the muted channel a badge counter will be displayed in the sidebar. 
 
-You can also view the `notifications flow charts <https://docs.mattermost.com/overview/faq.html?#notifications>`_ for more information about notification behavior in Mattermost.  
+You can also view the `notifications flow charts <https://docs.mattermost.com/overview/faq.html?#notifications>`__ for more information about notification behavior in Mattermost.  

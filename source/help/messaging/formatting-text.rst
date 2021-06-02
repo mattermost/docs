@@ -1,7 +1,7 @@
 Formatting Text
 ===============
 
-Markdown makes it easy to format messages. Type a message as you normally would, then use these the following formatting syntax to render the message a specific way. For a guide to using Markdown in Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
+Markdown makes it easy to format messages. Type a message as you normally would, then use these the following formatting syntax to render the message a specific way. For a guide to using Markdown in Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`__.
 
 Text Style
 ----------
@@ -16,6 +16,7 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 .. |bold_italics| image:: ../../images/bold_italics.png
   :width: 100px
   :alt: Bold Italics
+  
 .. |strikethrough| image:: ../../images/strikethrough.png
   :width: 100px
   :alt: Strike Through
@@ -121,7 +122,7 @@ Code Block
 
 Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files.
 
-This can be accomplished by placing three backticks :kbd:`\`\`\`` on the line directly above and directly below your code:
+This can be accomplished by placing three backticks ``````` on the line directly above and directly below your code:
 
 .. code-block:: none
 
@@ -131,9 +132,7 @@ This can be accomplished by placing three backticks :kbd:`\`\`\`` on the line di
   ```
 
 .. tip::
-
   Type three backticks ``\\\``, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type three more backticks ``\\\``.
-
 
 Or by indenting each line by four spaces:
 
@@ -144,8 +143,8 @@ Or by indenting each line by four spaces:
 
   ^^^^ 4x spaces
 
-
-**Syntax highlighting**
+Syntax Highlighting
+-------------------
 
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, and Monokai) that can be changed in **Account Settings > Display > Theme > Custom Theme > Center Channel Styles**.
 
@@ -179,7 +178,8 @@ Example:
       fmt.Println("Hello, 世界")
   }
   ```
-Renders as:
+
+  Renders as:
 
 **GitHub Theme**
 
@@ -245,8 +245,8 @@ In-line image with hover text
 
 Renders as:
 
-  .. image:: ../../images/icon-76x76.png
-    :alt: Mattermost
+.. image:: ../../images/icon-76x76.png
+  :alt: Mattermost
 
 In-line image with link
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -260,8 +260,8 @@ In-line image with link
 
 Renders as:
 
-  .. image:: ../../images/icon-76x76.png
-    :target: https://github.com/mattermost/mattermost-server
+.. image:: ../../images/icon-76x76.png
+  :target: https://github.com/mattermost/mattermost-server
    
 In-line image displayed wtih fixed width and height
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,9 +274,9 @@ Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
 Renders as:
 
-  .. image:: ../../images/icon-50x76.png
-    :alt: Mattermost
-    :name: Mattermost Icon 
+.. image:: ../../images/icon-50x76.png
+  :alt: Mattermost Icon
+  :name: Mattermost Icon 
 
 In-line image displayed with fixed width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,9 +289,9 @@ Example: An in-line image that's 50 pixels wide where the system adjusts the hei
 
 Renders as:
 
-  .. image:: ../../images/icon-76x76.png
-    :alt: Mattermost
-    :width: 50
+.. image:: ../../images/icon-76x76.png
+  :alt: Mattermost
+  :width: 50
  
 Lines
 -----
@@ -338,7 +338,7 @@ Create formulas by using LaTeX in a ``latex`` `Code Block`_.
 
 .. note::
 
-  This feature is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+  This feature is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
 .. code-block:: none
 

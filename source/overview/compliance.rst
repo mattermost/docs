@@ -1,6 +1,5 @@
-========================================
 Certifications and Compliance Overview*
-========================================
+=======================================
 
 This overview summarizes how Mattermost can help users in support of their internal compliance initiatives, including:
 
@@ -13,7 +12,7 @@ GDPR Compliance
 The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
 Continual Commitment to the Principles of GDPR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
 
@@ -43,7 +42,7 @@ Mattermost adheres to contractual obligations for ensuring the proper management
 - **Mattermost Privacy Policy** sharing how data is handled on the online infrastructure controlled by Mattermost, Inc.
 
 Privacy Measures
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
@@ -53,14 +52,14 @@ Product Features
 Mattermost supports features that ensure data management and data portability.
 
 Data Management
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 - **Data Retention:** Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
 - **Profile Deletion:** Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`__. The command permanently deletes all user information including messages created by the user.
 - **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`__ to learn more.
 
 Data Portability
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 - **Data Import:** Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
 - **Data Export:** Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
@@ -117,13 +116,13 @@ jurisdictions in which you operate. Although Mattermost cannot provide advice on
 This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`__ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__.
 
 General Information
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`__ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
 the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”).
 
 Export Classification and Licensing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although what is subject to the Export Administration Regulations is quite broad, that does not mean an export license
 is required for every transaction. The foundation of understanding export controls related to hardware, software and
@@ -162,8 +161,8 @@ This information is subject to change without notice. The materials on this site
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
 
-FAQ
-----
+Frequently Asked Questions
+--------------------------
 
 To be compliant with GDPR, do I need to remove message contents of email notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
