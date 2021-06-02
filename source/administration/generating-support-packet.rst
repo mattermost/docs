@@ -1,6 +1,6 @@
-Generating a Support Packet (Professional/Enterprise)
+Generating a Support Packet (E10/E20)
 =====================================================
 
-*Available in Mattermost Professional and Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E10 higher*
 
 .. include:: ../cloud/cloud-administration/common-support-packet.rst

@@ -169,10 +169,10 @@ User object
       <td valign="middle">string</td>
       <td>The authentication service used for this user account. This field will be absent for user/password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
-        <kbd>"ldap"</kbd> - LDAP authentication (Mattermost Professional and Mattermost Enterprise)<br>
-        <kbd>"saml"</kbd> - Generic SAML based authentication (Mattermost Enterprise)<br>
-        <kbd>"google"</kbd> - Google OAuth authentication (Mattermost Enterprise)<br>
-        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (Mattermost Enterprise)</td>
+        <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
+        <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
+        <kbd>"google"</kbd> - Google OAuth authentication (E20)<br>
+        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (E20)</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">auth_data</td>

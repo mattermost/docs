@@ -1,5 +1,5 @@
-Managing Team and Channel Members (Enterprise)
-==============================================
+Managing Team and Channel Members (E20)
+=======================================
 
 System Admins can manage channel configuration in the System Console, including:
 
@@ -66,10 +66,10 @@ Channel Management
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation (Enterprise)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Channel Moderation (E20)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E20*
 
 From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 

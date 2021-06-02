@@ -1,7 +1,7 @@
-Elasticsearch (Enterprise)
-==========================
+Elasticsearch (E20)
+===================
 
-*Available in Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E20*
 
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts.
 
