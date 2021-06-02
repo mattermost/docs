@@ -1,7 +1,7 @@
-Performance Monitoring (Enterprise)
+Performance Monitoring (E20)
 ===================================
 
-*Available in Mattermost Enterprise*
+*Available in Mattermost Enterprise Edition E20*
 
 Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__.
 
@@ -63,7 +63,7 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
 .. note::
-   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
+   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
 
 5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
 
@@ -251,7 +251,7 @@ The performance monitoring feature provides standard Go metrics for HTTP server 
 To learn how to set up runtime profiling, see the `pprof package Go documentation <https://golang.org/pkg/net/http/pprof/>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
 .. note::
-   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
+   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
 
 If enabled, you can run the profiler by
 
