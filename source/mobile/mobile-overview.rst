@@ -60,8 +60,8 @@ See our `Supported Devices/Mobile Device Requirements <https://docs.mattermost.c
 
 We recommend running the latest version of the Mattermost Server as it contains the most recent features and applicable security updates. If this isn't possible, we encourage you to be on the most recent Extended Support Release version of Mattermost. This release has critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
-Important
-Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.
+.. important::
+    Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.
 
 You should also start thinking about technical and security requirements in parallel with an implementation plan. Feel free to use our `implementation plan template <https://docs.mattermost.com/getting-started/implementation_plan.html>`__ available in the Mattermost documentation. 
 
@@ -78,8 +78,8 @@ Getting Help
 
 If you need assistance, please reach out using one or more of the following methods.
 
-- **Community** - Join our Mattermost community and post your specific questions in the `Developers: Mobile <https://community-daily.mattermost.com/core/channels/native-mobile-apps>`__ channel.
-- **Documentation** - We link to a lot of mobile-specific documentation within this guide, but we encourage you to visit all of our `product documentation <https://docs.mattermost.com/>`__.
-- **Forums** - For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue.
-- **GitHub** - `Visit us on GitHub <https://github.com/mattermost/>`__ to create issues in any of our repositories.
-- **Enterprise Support** - If you're a Mattermost Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.
+- **Community**: Join our Mattermost community and post your specific questions in the `Developers: Mobile <https://community-daily.mattermost.com/core/channels/native-mobile-apps>`__ channel.
+- **Documentation**: We link to a lot of mobile-specific documentation within this guide, but we encourage you to visit all of our `product documentation <https://docs.mattermost.com/>`__.
+- **Forums**: For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue.
+- **GitHub**: `Visit us on GitHub <https://github.com/mattermost/>`__ to create issues in any of our repositories.
+- **Enterprise Support**: If you're a Mattermost Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.
