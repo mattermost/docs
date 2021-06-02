@@ -1,5 +1,5 @@
-Welcome to Mattermost!
-======================
+Welcome to Mattermost
+=====================
 
 Mattermost is a modern, digital workspace that will help you be more productive in your day-to-day work life.
 
