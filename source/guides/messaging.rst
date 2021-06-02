@@ -7,10 +7,10 @@ Access Your Workspace
 ---------------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
 
-   /help/getting-started/welcome-to-mattermost*
+   /help/getting-started/welcome-to-mattermost.rst
    /help/getting-started/access-your-workspace.rst
    /help/getting-started/signing-in.rst
    /help/getting-started/switch-between-teams.rst
@@ -21,7 +21,7 @@ Work with Messages
 ------------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
    :glob:
 
