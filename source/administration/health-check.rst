@@ -3,7 +3,7 @@ Health Check
 
 This page describes how to configure health check probes for a Mattermost server.
 
-Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`__.  Note that `highly available Mattermost cluster <https://docs.mattermost.com/deployment/cluster.html>`__ is available in Mattermost Enterprise.
+Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`__.  Note that `highly available Mattermost cluster support <https://docs.mattermost.com/deployment/cluster.html>`__ is available in Mattermost Enterprise Edition E20.
 
 You can perform a health check with two methods:
 
