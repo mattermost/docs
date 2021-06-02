@@ -19,7 +19,7 @@ Each of the options is discussed in detail below.
 Mattermost Compliance Exports
 -----------------------------
 
-Mattermost Enterprise has compliance report export capabilities.
+Mattermost Enterprise E20 has compliance report export capabilities.
 
 Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML, and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
@@ -28,7 +28,7 @@ For more information about the exports feature and how to set up reporting, see 
 Mattermost RESTful API
 ----------------------
 
-The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
+The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise E20. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
 
 To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl you can authenticate using the following command:
 
