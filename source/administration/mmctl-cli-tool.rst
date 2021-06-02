@@ -3206,7 +3206,7 @@ mmctl permissions add
 
 **Description**
 
-Add one or more permissions to an existing role. Available in Mattermost Professional and Mattermost Enterprise.
+Add one or more permissions to an existing role. Available in Mattermost Enterprise Edition E10 and E20.
 
 **Format**
 
@@ -3243,7 +3243,7 @@ mmctl permissions remove
 
 **Description**
 
-Remove one or more permissions from an existing role. Available in Mattermost Professional and Mattermost Enterprise.
+Remove one or more permissions from an existing role. Available in Mattermost Enterprise Edition E10 and E20.
 
 **Format**
 
@@ -3280,7 +3280,7 @@ mmctl permissions reset
 
 **Description**
 
-Reset the given role's permissions to the default settings and overwrite custom settings. Available in Mattermost Professional and Mattermost Enterprise.
+Reset the given role's permissions to the default settings and overwrite custom settings. Available in Mattermost Enterprise Edition E10 and E20.
 
 **Format**
 
@@ -3317,7 +3317,7 @@ mmctl permissions role assign
 
 **Description**
 
-Assign users to a role by username. Available in Mattermost Professional and Mattermost Enterprise.
+Assign users to a role by username. Available in Mattermost Enterprise Edition E10 and E20.
 
 **Format**
 
