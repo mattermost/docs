@@ -1,5 +1,5 @@
 Performance Monitoring (E20)
-===================================
+============================
 
 *Available in Mattermost Enterprise Edition E20*
 
