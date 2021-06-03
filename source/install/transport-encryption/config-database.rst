@@ -69,7 +69,7 @@ Configuring Mattermost
 On the Mattermost server, open the file ``config.json`` and look for the ``DataSource``
 value in the ``SqlSettings`` section. It should look similar to this:
 
-``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",``
+``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026QueryTimeout=30s\u0026writeTimeout=30s",``
 
 At the end of the line, we can configure that TLS must be turned on with the ``tls`` flag
 which supports the following values:
@@ -82,7 +82,7 @@ which supports the following values:
 In our case we need to use ``skip-verify`` since we use a self-signed certificate.
 The configuration setting will now look like this:
 
-``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s&tls=skip-verify",``
+``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026QueryTimeout=30s\u0026writeTimeout=30s&tls=skip-verify",``
 
 If you are running Mattermost in a cluster, be sure to update the value on each node
 of the cluster. If you are using configuration in the database, be sure to update the
@@ -101,7 +101,7 @@ Once complete, restart the Mattermost server and ensure the system is operationa
    Main PID: 3443 (mattermost)
       Tasks: 20 (limit: 2361)
      CGroup: /system.slice/mattermost.service
-             ├─3443 /opt/mattermost/bin/mattermost --config=mysql://mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s&tls=skip-verify
+             ├─3443 /opt/mattermost/bin/mattermost --config=mysql://mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s&tls=skip-verify
              └─3459 plugins/com.mattermost.nps/server/dist/plugin-linux-amd64
 
   Oct 18 16:47:08 transport-encryption-mattermost1 mattermost[3443]: {"level":"debug","ts":1571417228.8637397,"caller":"scheduler/worker.go:36","msg":"Worker started","worker":"Plugins"}
