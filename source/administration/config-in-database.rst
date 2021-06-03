@@ -34,7 +34,7 @@ Example output:
 
 .. code-block:: text
 
-   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"
+   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026QueryTimeout=30s\u0026writeTimeout=30s"
 
 .. note::
    Be sure to run this command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
@@ -49,7 +49,7 @@ Here are two example connection strings:
 
 .. code-block:: text
 
-   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s
+   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s
 
 **PostgreSQL**
 
@@ -69,7 +69,7 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
 
 .. code-block:: text
 
-   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'
+   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s'
 
 **PostgreSQL**
 
@@ -78,11 +78,11 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
    MM_CONFIG='postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10'
 
 .. note::
-  Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'``
+  Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s'``
 
 .. code-block:: text
 
-   MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'
+   MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s'
 
 Finally, run this command to verify the permissions on your Mattermost directory:
 
@@ -151,7 +151,7 @@ The command to migrate the config to the database should always be run as the *m
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'
+   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s'
 
 .. warning::
    When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/administration/config-settings.html#configuration-settings>`_
