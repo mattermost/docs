@@ -13,9 +13,8 @@
 
 ### Improvements
  - Added support for localization with country variants.
- - Added support for the shared channels by displaying information and icons for the shared channels and remote users. 
- - Added shared channel filter for browser channels.
- - Added a new language Hungarian (beta).
+ - Added support for Shared Channels feature (Experimental, Enterprise Edition E20) by displaying information and icons for the shared channels and remote users. Also added shared channel filter for browser channels. This feature is available in Mattermost server versions v5.35.0+.
+ - Added a new language, Hungarian (beta).
 
 ### Bug Fixes
 
@@ -23,7 +22,7 @@
  - 
 
 #### Android specific
- - Fixed an issue where the app was performing slowly on Android devices that ran at 120fps instead of the normal 60fps.
+ - Fixed an issue where the app performed slowly on Android devices that ran at 120fps instead of the normal 60fps.
 
 #### iOS specific
  - 
