@@ -375,6 +375,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v5.32.2, release day TBD**
   - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Fixing an issue where plugin icons are showing as a column instead of as a row in the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
 - **v5.32.1, released 2021-02-17**
   - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
 - **v5.32.0, released 2021-02-16**
