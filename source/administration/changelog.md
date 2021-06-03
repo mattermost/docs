@@ -6,12 +6,12 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.35.2, release day TBD**
-  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
-  - Fixing an issue where the server may crash if content extractor dependencies for PDFs are not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
-  - Fixing an issue where the setting to allow disabling link previews from certain domains is grayed out in the System Console. [MM-35796](https://mattermost.atlassian.net/browse/MM-35796)
-  - Fixing an issue where SMTP test connection shows a permission error when upgrading from version < 5.35 to 5.35 or greater. [MM-35861](https://mattermost.atlassian.net/browse/MM-35861)
-  - Fixing an issue with extracting OpenDocument Text files as part of content extraction. [MM-36103](https://mattermost.atlassian.net/browse/MM-36103)
+- **v5.35.2, released 2021-06-03**
+  - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Fixed an issue where the server would crash if content extractor dependencies for PDFs were not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
+  - Fixed an issue where the setting to allow disabling link previews from certain domains was grayed out in the System Console. [MM-35796](https://mattermost.atlassian.net/browse/MM-35796)
+  - Fixed an issue where SMTP test connection showed a permission error when upgrading from version < 5.35 to 5.35 or greater. [MM-35861](https://mattermost.atlassian.net/browse/MM-35861)
+  - Fixed an issue with extracting OpenDocument Text files as part of content extraction. [MM-36103](https://mattermost.atlassian.net/browse/MM-36103)
 - **v5.35.1, released 2021-05-18**
   - Fixed an issue where 5.35.0 migration failed on MySQL installations with an "invalid connection" error due to an issue with the ``readTimeout`` parameter in ``SqlSettings.DataSource`` (default is 30 seconds). The ``readTimeout`` datasource query parameter is now being ignored and the application provided ``SqlSettings.QueryTimeout`` should be used instead. [MM-35767](https://mattermost.atlassian.net/browse/MM-35767)
 - **v5.35.0, released 2021-05-16**
@@ -120,7 +120,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``country-list``, ``form-data``, ``gfycat-sdk``, ``redux-thunk``, ``rudder-sdk-js``, ``serialize-error`` and ``shallow-equals``, and removed ``mattermost-redux`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
- - The setting to allow disabling link previews from certain domains may appear as grayed out in the System Console. [MM-35796](https://mattermost.atlassian.net/browse/MM-35796)
  - A persistent unread badge on sidebar hamburger menu may show if **Enable Marketplace** or **Enable Plugins** is disabled in the System Console [MM-36160](https://mattermost.atlassian.net/browse/MM-36160).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -139,8 +138,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.34.3, release day TBD**
-  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+- **v5.34.3, released 2021-06-03**
+  - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.34.2, released 2021-04-17**
   - Fixed an issue where installs with some special characters in the MySQL password would break and fail to start.
 - **v5.34.1, released 2021-04-15**
@@ -235,8 +234,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.33.4, release day TBD**
-  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+- **v5.33.4, released 2021-06-03**
+  - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Added a performance improvement to the emoji picker overlay to improve typing performance.
 - **v5.33.3, released 2021-03-31**
   - Fixed an issue where, after migrating to OpenID, Office 365 returned different ID attributes based on user type, causing an error for users with expired sessions when they tried to sign in to Mattermost. [MM-34356](https://mattermost.atlassian.net/browse/MM-34356)
 - **v5.33.2, released 2021-03-25**
