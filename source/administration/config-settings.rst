@@ -5167,12 +5167,12 @@ Experimental Settings only in ``config.json``
 ---------------------------------------------
 
 Audit settings
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
 Enable Reliable Websockets
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived.
 
@@ -5181,7 +5181,7 @@ Enable this setting to make websocket messages more reliable by buffering messag
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Remote Clusters
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
@@ -5196,7 +5196,7 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog configuration options
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
 
