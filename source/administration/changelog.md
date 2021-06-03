@@ -15,12 +15,14 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Pre-packaged Focalboard plugin
+#### Focalboard (Beta)
+ - Focalboard is now integrated with Mattermost as a beta feature in v5.36. It brings easy-to-use project and work management to replace tools such as Trello, Notion, and Asana.
 
 #### Incident Collaboration (Enterprise Edition E20)
  - Retrospective report, automated welcome message, team-wide playbook access, and permission control for playbook creation.
 
 #### Hungarian Language Support (Beta)
+ - Mattermost is now available in Hungarian.
 
 ### Improvements
 
@@ -28,12 +30,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - If message autoresponder is set, only one message is now sent to a given user irrespective of how many Direct Message messages the user receives.
  - Added status icons on **Add members** to channel and **Add members** to team lists.
  - Added a keyboard shortcut to focus on the Search bar and search in the current channel.
- - Added Hungarian (Beta) language.
  - A search tip is now shown when scrolling back in a channel.
  - Improved the error text in the **Edit Channel Header** modal.
  - Added the ability to clear a custom status when only an emoji and no text is set.
  - Redesigned message notification emails.
  - Status icon was removed from the profile image in the center channel and the right-hand side view.
+
+#### Performance
  - Added a performance improvement to the emoji picker overlay to improve typing performance.
  - Added performance improvements when receiving new posts.
 
@@ -91,27 +94,26 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Response field names changed for experimental API ``GetAllSharedChannels`` to match the field names for other channels APIs.
  - Added a new function to the plugin API, ``RequestTrialLicense``.
  - The ``/ldap/sync`` endpoint now accepts a parameter ``include_removed_members`` which will force all LDAP group members back into the teams and channels synced to that group.
- - Added new API endpoints ``POST /api/v4/foo``, ``GET api/v4/foo``, and ``GET api/v4/foo/:foo_id``.
  - Added a new API endpoint to ``removeUserRecentCustomStatus POST /status/custom/recent/delete``.
  - Added ``GetGroupMemberUsers and GetGroupsBySource`` to the plugin API to add plugin support for user groups.
  - Added a new API endpoint ``POST /api/v4/saml/reset_auth_data`` to reset SAML users' AuthData field to their email.
  - Added new API endpoints:
-  - ``GET    /data_retention/policies``
-  - ``GET    /data_retention/policies_count``
-  - ``POST   /data_retention/policies``
-  - ``GET    /data_retention/policies/{policy_id}``
-  - ``PATCH  /data_retention/policies/{policy_id}``
-  - ``DELETE /data_retention/policies/{policy_id}``
-  - ``GET    /data_retention/policies/{policy_id}/teams``
-  - ``POST   /data_retention/policies/{policy_id}/teams``
-  - ``DELETE /data_retention/policies/{policy_id}/teams``
-  - ``POST   /data_retention/policies/{policy_id}/teams/search``
-  - ``GET    /data_retention/policies/{policy_id}/channels``
-  - ``POST   /data_retention/policies/{policy_id}/channels``
-  - ``DELETE /data_retention/policies/{policy_id}/channels``
-  - ``POST   /data_retention/policies/{policy_id}/channels/search``
-  - ``GET    /users/{user_id}/data_retention/team_policies``
-  - ``GET    /users/{user_id}/data_retention/channel_policies``
+    - ``GET    /data_retention/policies``
+    - ``GET    /data_retention/policies_count``
+    - ``POST   /data_retention/policies``
+    - ``GET    /data_retention/policies/{policy_id}``
+    - ``PATCH  /data_retention/policies/{policy_id}``
+    - ``DELETE /data_retention/policies/{policy_id}``
+    - ``GET    /data_retention/policies/{policy_id}/teams``
+    - ``POST   /data_retention/policies/{policy_id}/teams``
+    - ``DELETE /data_retention/policies/{policy_id}/teams``
+    - ``POST   /data_retention/policies/{policy_id}/teams/search``
+    -  ``GET    /data_retention/policies/{policy_id}/channels``
+    - ``POST   /data_retention/policies/{policy_id}/channels``
+    - ``DELETE /data_retention/policies/{policy_id}/channels``
+    - ``POST   /data_retention/policies/{policy_id}/channels/search``
+    - ``GET    /users/{user_id}/data_retention/team_policies``
+    - ``GET    /users/{user_id}/data_retention/channel_policies``
 
 ### Go Version
  - v5.36 is built with Go ``1.15.5``.
