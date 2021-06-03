@@ -9,9 +9,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2021-06-16**
 
 ### Important Upgrade Notes
- - 
+ - Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. **Note:** For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using gossip, one node in a cluster can't be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.34, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.35, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -38,7 +38,6 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added performance improvements when receiving new posts.
 
 #### Administration
- - Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the System Console. **Note:** For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using gossip, one node in a cluster can't be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.
  - ``TCP_NO_DELAY`` is disabled for Websocket connections to allow for higher throughput.
  - Compliance Monitoring CSV files are no longer limited to 30,000 rows.
  - The default value of the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email) (previously ``_feedback@mattermost.com_``) has been removed. Admin Advisor will now prompt System Admins about missing configuration for the [Support Email](https://docs.mattermost.com/administration/config-settings.html#support-email). This value is required, and it ensures Mattermost account requests are sent to the correct team for resolution.
@@ -85,10 +84,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``LogSettings`` in ``config.json``:
      - A new setting ``EnableColor`` was added to ``LogSettings`` and ``NotificationLogSettings``. Non-JSON console logs will now be colored if that field is set to ``true``.
  - Under ``ServiceSettings`` in ``config.json``:
-     - Added ``EnableReliableWebSockets``, to **XXX**
-
-#### Database Changes
- - Added a new column ``Foo`` to the ``Users`` table.
+     - Added ``EnableReliableWebSockets``, to make WebSocket messages more reliable by bufferring messages during a connection loss and then re-transmitting all unsent messages when the connection is revived.
 
 ### API Changes
  - Added support to include config diff in audit records for the related API calls (``updateConfig`` and ``patchConfig``).
@@ -121,7 +117,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v5.36 is built with Go ``1.15.5``.
 
 ### Open Source Components
- - 
+ - Added ``lodash``, ``memoize-one``, and ``sass`` to https://github.com/mattermost/mattermost-webapp.
+ - Added ``react-native-startup-time`` and removed ``react-native-status-bar-size`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
