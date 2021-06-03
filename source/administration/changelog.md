@@ -33,7 +33,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Improved the error text in the **Edit Channel Header** modal.
  - Added the ability to clear a custom status when only an emoji and no text is set.
  - Redesigned message notification emails.
- - Removed status icon from the profile image in the center channel and the right-hand side view.
+ - Status icon was removed from the profile image in the center channel and the right-hand side view.
  - Added a performance improvement to the emoji picker overlay to improve typing performance.
  - Added performance improvements when receiving new posts.
 
@@ -78,11 +78,14 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added a new config setting ``ServiceSettings.FooBar``.
- - Added a new config setting ``BatchSize``. Compliance Monitoring CSV files are no longer limited to 30,000 rows.
- - ``SupportEmail`` default value is now empty instead of ``_feedback@mattermost.com_``.
- - A new field ``EnableColor`` was added to ``LogSettings`` and ``NotificationLogSettings``. Non-JSON console logs will now be colored if that field is set to ``true``.
- - Added ``EnableReliableWebSockets``
+ - Under ``ComplianceSettings`` in ``config.json``:
+     - Added a new config setting ``BatchSize``. Compliance Monitoring CSV files are no longer limited to 30,000 rows.
+ - Under ``SupportSettings`` in ``config.json``:
+     - ``SupportEmail`` default value is now empty instead of ``_feedback@mattermost.com_``.
+ - Under ``LogSettings`` in ``config.json``:
+     - A new setting ``EnableColor`` was added to ``LogSettings`` and ``NotificationLogSettings``. Non-JSON console logs will now be colored if that field is set to ``true``.
+ - Under ``ServiceSettings`` in ``config.json``:
+     - Added ``EnableReliableWebSockets``, to **XXX**
 
 #### Database Changes
  - Added a new column ``Foo`` to the ``Users`` table.
