@@ -15,7 +15,7 @@ Mattermost Product Documentation
    :maxdepth: 1
    :glob:
 
-   About Mattermost <overview/index.rst>
+   About Mattermost <overview/index>
    Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
    Messaging <guides/messaging>
