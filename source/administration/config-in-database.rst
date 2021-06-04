@@ -34,7 +34,7 @@ Example output:
 
 .. code-block:: text
 
-   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026\u0026writeTimeout=30s"
+   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
 
 .. note::
    Be sure to run this command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
