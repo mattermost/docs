@@ -1257,7 +1257,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 | Options       | Map of options specific to the target type.                                                                                                            | {}          |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
-| MaxQueueSize  | The number of audit records that can be queued/buffered at any poitn in time when writing to syslog. Default is 1000.                                  | int         |
+| MaxQueueSize  | The number of audit records that can be queued/buffered at any point in time when writing to syslog. Default is 1000.                                  | int         |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
 | **Console**   |                                                                                                                                                        |             |
