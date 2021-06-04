@@ -69,7 +69,7 @@ Configuring Mattermost
 On the Mattermost server, open the file ``config.json`` and look for the ``DataSource``
 value in the ``SqlSettings`` section. It should look similar to this:
 
-``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026\u0026writeTimeout=30s",``
+``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s",``
 
 At the end of the line, we can configure that TLS must be turned on with the ``tls`` flag
 which supports the following values:
