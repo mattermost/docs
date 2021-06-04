@@ -82,7 +82,7 @@ which supports the following values:
 In our case we need to use ``skip-verify`` since we use a self-signed certificate.
 The configuration setting will now look like this:
 
-``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026\u0026writeTimeout=30s&tls=skip-verify",``
+``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s&tls=skip-verify",``
 
 If you are running Mattermost in a cluster, be sure to update the value on each node
 of the cluster. If you are using configuration in the database, be sure to update the
