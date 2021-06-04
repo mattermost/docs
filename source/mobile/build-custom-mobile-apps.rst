@@ -31,7 +31,7 @@ In general, building your own Mobile apps will present some challenges, includin
 
 - Installing the necessary developer tools (such as Nodejs, XCode Developer Tools, Android SDKs, as well as others).
 - Obtaining and providing certificates for your custom Mattermost Mobile apps*.
-- Signing your custom Mattermost Mobile apps *.
+- Signing your custom Mattermost Mobile apps*.
 - Distributing your Mobile app to your users.
 
 * Mattermost Mobile apps are signed and have certificates associated with Mattermost and public app stores. This means Mattermost’s Mobile App won’t work if you choose to privately host the Mattermost Push Proxy Service (MPNS). You'll need to build your own custom mobile app.
