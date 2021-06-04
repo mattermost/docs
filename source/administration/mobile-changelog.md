@@ -11,21 +11,22 @@
 
 ### Highlights
 
+#### Custom Statuses
+ - Added the custom status feature support for mobile apps. Mattermost server v5.36+ is required to access custom statuses on mobile.
+ 
+#### Shared Channels
+ - Added support for Shared Channels feature (Experimental, Enterprise Edition E20) by displaying information and icons for the shared channels and remote users. Also added shared channel filter for browser channels. This feature is available in Mattermost server versions v5.35.0+.
+
+#### Hungarian Language (Beta)
+ - Added a new language, Hungarian (beta).
+
 ### Improvements
  - Added support for localization with country variants.
- - Added support for Shared Channels feature (Experimental, Enterprise Edition E20) by displaying information and icons for the shared channels and remote users. Also added shared channel filter for browser channels. This feature is available in Mattermost server versions v5.35.0+.
- - Added a new language, Hungarian (beta).
 
 ### Bug Fixes
 
-#### All apps
- - 
-
 #### Android specific
  - Fixed an issue where the app performed slowly on Android devices that ran at 120fps instead of the normal 60fps.
-
-#### iOS specific
- - 
 
 ### Known Issues
  - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
