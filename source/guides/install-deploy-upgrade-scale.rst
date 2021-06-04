@@ -8,8 +8,6 @@ Before You Begin
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /overview/architecture.rst
    /deployment/deployment.md
@@ -27,8 +25,6 @@ Mattermost Server
    
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
     
    /install/requirements.rst
    /install/install-ubuntu-2004.rst
@@ -53,8 +49,6 @@ Desktop App
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /help/getting-started/install-desktop-app.rst
    /install/desktop.rst
@@ -67,8 +61,6 @@ Mobile App
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /help/getting-started/install-ios-app.rst
    /help/getting-started/install-android-app.rst
@@ -82,8 +74,6 @@ Mattermost Server
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /deployment/deployment.md
    /administration/image-proxy.rst
@@ -96,8 +86,6 @@ Desktop App
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /deployment/desktop-app-deployment.rst
 
@@ -106,8 +94,6 @@ Mobile Apps
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /mobile/mobile-overview.rst
    /deployment/client-side-data.rst
@@ -117,8 +103,6 @@ Upgrade Mattermost
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /administration/upgrade.rst
    /administration/important-upgrade-notes.rst
@@ -134,8 +118,6 @@ Scale Mattermost
    
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
-   :glob:
 
    /deployment/scaling.rst
    /deployment/cluster.rst
