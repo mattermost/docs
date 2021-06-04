@@ -7,7 +7,6 @@ Below is an overview of our products, features, security, integrations, licensin
 
 .. toctree::
    :maxdepth: 2
-   :glob:
 
    /overview/product.rst
    /overview/security.rst
