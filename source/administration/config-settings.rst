@@ -1214,10 +1214,9 @@ Where:
 - ``audit-permissions``: Enables output of all permissions failures.
 - ``audit-cli``: Enables output of legacy CLI calls.
 
-Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified. New log levels must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.
-
 .. Note::
-   Configure the available discrete log levels listed in ``mattermost/mattermost-server/shared/mlog/levels.go`` via ``AdvancedLoggingConfig``  by setting a target destination and the specific log levels to be used. Logs are recorded asynchronously to reduce latency to the caller. Advanced logging supports hot-reloading of logger configuration.
+  - Logs are recorded asynchronously to reduce latency to the caller. 
+  - Advanced logging supports hot-reloading of logger configuration.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
