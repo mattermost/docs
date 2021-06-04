@@ -10,7 +10,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
   - Fixed an issue where the server would crash if content extractor dependencies for PDFs were not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
   - Fixed an issue where the setting to allow disabling link previews from certain domains was grayed out in the System Console. [MM-35796](https://mattermost.atlassian.net/browse/MM-35796)
-  - Fixed an issue where SMTP test connection showed a permission error when upgrading from version < 5.35 to 5.35 or greater. [MM-35861](https://mattermost.atlassian.net/browse/MM-35861)
+  - Fixed an issue where SMTP showed a permission error when upgrading from version < 5.35 to 5.35 or greater. [MM-35861](https://mattermost.atlassian.net/browse/MM-35861)
   - Fixed an issue with extracting OpenDocument Text files as part of content extraction. [MM-36103](https://mattermost.atlassian.net/browse/MM-36103)
 - **v5.35.1, released 2021-05-18**
   - Fixed an issue where 5.35.0 migration failed on MySQL installations with an "invalid connection" error due to an issue with the ``readTimeout`` parameter in ``SqlSettings.DataSource`` (default is 30 seconds). The ``readTimeout`` datasource query parameter is now being ignored and the application provided ``SqlSettings.QueryTimeout`` should be used instead. [MM-35767](https://mattermost.atlassian.net/browse/MM-35767)
