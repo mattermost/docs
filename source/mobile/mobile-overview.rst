@@ -80,6 +80,6 @@ If you need assistance, please reach out using one or more of the following meth
 
 - **Community:** Join our Mattermost community and post your specific questions in the `Developers: Mobile <https://community-daily.mattermost.com/core/channels/native-mobile-apps>`__ channel.
 - **Documentation:** We link to a lot of mobile-specific documentation within this guide, but we encourage you to visit all of our `product documentation <https://docs.mattermost.com/>`__.
-- **Forums**: For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue.
+- **Forums:** For more troubleshooting help, `open a new topic in our forum <https://forum.mattermost.org/c/trouble-shoot>`__ and include the steps to reproduce your issue so we can test on our side.
 - **GitHub**: `Visit us on GitHub <https://github.com/mattermost/>`__ to create issues in any of our repositories.
 - **Enterprise Support**: If you're a Mattermost Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.
