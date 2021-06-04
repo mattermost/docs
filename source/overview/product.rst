@@ -1,6 +1,6 @@
-============================
+=================
 Product Overview
-============================
+=================
 
 **Mattermost** provides high trust collaboration and messaging solutions through an open source, community-powered approach. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers.
 
