@@ -75,6 +75,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Fixed an error caused by a post created with a non-string attachment field.
  - Fixed the opacity of the read state in the channel sidebar, as well as enhanced the opacity of the channel icon when the channel was unread.
  - Fixed an issue where users were unable to sign in with O365 authentication when the AuthData was formatted differently between Office365 OAuth and Office 365 OpenID.
+ - Fixed an issue where custom emojis for custom statuses were not loaded on page refresh.
+ - Fixed an issue where the “Set a status” placeholder in the profile popover was not correctly themed.
+ - Fixed an issue where bots showed the integration owner's custom status in the post header in the right-hand side.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
