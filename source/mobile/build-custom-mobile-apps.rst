@@ -61,7 +61,7 @@ See our `Deployment Using an EMM Provider <https://docs.mattermost.com/mobile/de
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the same process Mattermost uses to make Mattermost Mobile apps available for everyone. It’s a good choice if you're looking to white-label your own Mobile apps to remove Mattermost branding. To submit an app to the public app stores, you need to submit the app to public app stores for review and approval.
+This is the same process Mattermost uses to make Mattermost Mobile apps available for everyone. It’s a good choice if you're looking to white-label your own Mobile apps to remove Mattermost branding. Before your app can be listed on the public app stores, you need to submit it to the public app stores for review and approval.
 
 As part of the submission process, you need to identify an update strategy that accounts for the release of new versions of Mattermost Mobile apps. 
 
