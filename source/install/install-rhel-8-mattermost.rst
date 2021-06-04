@@ -47,7 +47,7 @@ Assume that the IP address of this server is ``10.10.10.2``.
   -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
-    ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&QueryTimeout=30s&writeTimeout=30s"``
+    ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
     
     .. note::
 
