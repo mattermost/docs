@@ -1183,7 +1183,7 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen to support the vast majority of log aggregators, and other log analysis tools, without having to install additional software.
+Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
 
 System Admins can define multiple log targets to:
 
