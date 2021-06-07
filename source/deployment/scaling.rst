@@ -7,7 +7,7 @@ Mattermost is designed to scale from small teams hosted on a single server to la
 Server requirements vary based on usage and it is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs.
 
 Single Machine Deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 Organizations can typically run Mattermost on a single server with up to 2,000 users, though more users have been observed based on different usage and server configurations.
 
@@ -15,7 +15,7 @@ Organizations can typically run Mattermost on a single server with up to 2,000 u
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`__.
 
 Multi Machine Deployment
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Deployments between 2,000 and 10,000 registered users with moderate usage can run on a standard three-machine Mattermost deployment with a proxy, an application server and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration.
 
@@ -23,7 +23,7 @@ Deployments between 2,000 and 10,000 registered users with moderate usage can ru
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`__.
 
 Cluster-based Deployment
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 *Available in Mattermost Enterprise Edition E20*
 
@@ -34,7 +34,7 @@ This configuration uses a load balancer to distribute requests from users across
 For more information, see `High Availability deployment guide for horizontal scaling setup <https://docs.mattermost.com/deployment/cluster.html>`__.
 
 Sample Scaling Guide
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 This guide demonstrates how to budget for, and build, large-scale Mattermost deployments.
 
@@ -66,7 +66,7 @@ Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 For more information, check out our `Administrator's Guide <https://docs.mattermost.com/guides/administrator.html>`__.
 
 Hosting Recommendation for 100,000+ users
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 
 The following matrix presents key features for a successful multi-region Mattermost implementation that scales to 100,000 users with support for high availability and geographically based traffic routing in on premises, AWS, and Azure deployments.
 

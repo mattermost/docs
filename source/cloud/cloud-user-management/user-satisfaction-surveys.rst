@@ -10,6 +10,7 @@ Mattermost provides in-product feedback surveys. Feedback is used to measure use
 
 Administration
 --------------
+
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

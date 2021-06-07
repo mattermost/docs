@@ -1,5 +1,5 @@
 Frequently Asked Questions
---------------------------------
+--------------------------
 
 How to Bind Authentication to Id Attribute instead of Email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,19 +20,19 @@ This process was designed with backwards compatibility to email binding. Here is
  Note:  Existing accounts will not update until they log in to the server. 
  
 Can SAML via Microsoft ADFS be configured with Integrated Windows Authentication (IWA)?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. IWA is supported on the browser, with support added to iOS and Android mobile apps in Q2/2019 (mobile apps v1.18 and later).
 
 However, IWA is not supported on the Mattermost Desktop Apps due to a limitation in Electron. As a workaround you may create a browser desktop shortcut for quick access to Mattermost, just like a Desktop App.
 
 How do I migrate users from one authentication method (e.g. email) to SAML?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the :doc:`mattermost user migrate_auth CLI command <cli-user-migrate-auth>`.
 
 How is SAML different from OAuth 2.0 and OpenId Connect?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OAuth 2.0 was primarily intended for delegated authorization, where an app is authorized to access resources, such as Google contact list. It doesn’t deal with authentication.
 

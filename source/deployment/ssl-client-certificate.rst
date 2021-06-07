@@ -1,5 +1,5 @@
 SSL Client Certificate Setup (Beta)
-==================================================
+===================================
 
 Follow these steps to configure SSL client certificates for your browser and the Mattermost Desktop Apps on Windows, Mac and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
 
@@ -122,6 +122,6 @@ You should see the Mattermost login page. If you see:
 10. Go to https://example.mattermost.com. You should see a popup for the client certificate request.
 
 Troubleshooting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 `Follow this process <https://mattermost.org/troubleshoot/>`__ to resolve configuration issues and to ask for help.

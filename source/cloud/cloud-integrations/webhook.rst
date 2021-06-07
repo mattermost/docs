@@ -1,4 +1,4 @@
-==============================
+
 Using Mattermost with Webhook
 ==============================
 
@@ -18,7 +18,7 @@ Mattermost's :doc:`interactive message buttons <../developer/interactive-message
 
 
 Responding to the request
----------------------------
+-------------------------
 
 If you don't respond to the request you'll see an error in your Mattermost logs that looks like ``Action integration error [details: err=EOF]``.
 
@@ -27,7 +27,7 @@ To solve this, use the ``response-message`` configuration property to send back 
 If your script doesn't take very long to run you can use the ``include-command-output-in-response`` property to send that output to the Mattermost server.
 
 Authenticating Requests
-------------------------
+-----------------------
 
 Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration:
 

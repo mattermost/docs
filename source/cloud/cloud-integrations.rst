@@ -21,7 +21,7 @@ Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTT
    :maxdepth: 2
 
 Simple Incoming Webhook
------------------------------------
+-----------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
