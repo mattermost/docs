@@ -22,7 +22,7 @@ Work with Messages
 .. toctree::
    :maxdepth: 1
 
-   /help/messaging/sending-messages.rst
+   /help/messaging/sending-messages.md
    /help/messaging/formatting-text.rst
    /help/messaging/emoji.rst
    /help/settings/custom-emoji.rst
