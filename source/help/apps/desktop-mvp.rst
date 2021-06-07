@@ -1,3 +1,6 @@
+Desktop MVP
+==========
+
 **The following awards have been given for significant contributions to the Mattermost Desktop App:**
 
 Mattermost Desktop Top Contributor: **Jonas Schwabe** (`jnugh <https://github.com/jnugh>`__) - v3.4 - September 22, 2016
