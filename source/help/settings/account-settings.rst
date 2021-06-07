@@ -1,8 +1,6 @@
 Account Settings
 ================
 
---------------
-
 Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the channel sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
 
 General
