@@ -24,7 +24,7 @@ When planning for a Mobile app deployment, you have two important decisions to m
 
 Using Mattermost’s pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. Alternatively, you can use an EMM provider to enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
 
-If you want to control the look, feel, or capabilities of the mobile apps, host your own push proxy server, or to maintain full control over app distribution, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`__ to learn more about working with custom apps.
+If you want to control the look, feel, or capabilities of the Mobile apps, host your own push proxy server, or to maintain full control over app distribution, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`__ to learn more about working with custom apps.
 
 The following table summarizes the key differences between these two approaches:
 
