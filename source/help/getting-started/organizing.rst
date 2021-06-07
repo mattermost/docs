@@ -1,4 +1,3 @@
-=====================
 Organizing Mattermost
 =====================
 
@@ -10,7 +9,6 @@ This document shares best practices from various Mattermost deployments includin
 2. `How to navigate and organize channels`_
 3. `Channel naming examples`_
 
--------------------------------
 The importance of channel names
 -------------------------------
 
@@ -46,7 +44,6 @@ You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-T
 
 Good naming can take a team up to several thousand channels without significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate the large number of channels.
 
--------------------------------------
 How to navigate and organize channels
 -------------------------------------
 
@@ -127,7 +124,6 @@ There is a wide array of options. Examples: Bugs, Support Tickets, Twitter, News
 	
 People might use these channels like a daily newspaper, reading about everything that's happened in the last day, while other configurations allow notifications to alert only when their username or certain key words are mentioned.
 
------------------------
 Channel naming examples
 -----------------------
 
