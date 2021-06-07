@@ -2,6 +2,30 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-06-16
+
+### Improvements
+
+#### User Interface (UI)
+ - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
+ - Added two new fields in the ``CustomStatus`` struct and modified the APIs to validate and handle them to add support for expiry support in custom status APIs.
+ - Updated the help text on the **Add Users** channel modal.
+ - Updated the webapp to pass `collapsed_threads_supported` parameters to the server to indicate that the WebApp supports collapsed reply threads. Also updated the WebApp to correctly mark channels and threads as unread/read when marking root and reply posts as unread/read.
+
+#### Administration
+ - The platform binary file is removed from the distribution files. It should be replaced by mattermost binary file if it is being used in scripts.
+ - Improved memory performance for large image uploads, particularly PNGs with transparency.
+
+### Bug Fixes
+ - Fixed an issue where users were unable to set a custom status emoji via slash command by adding the logic for detecting unicode emoji and setting it as custom status emoji via slash commands.
+ - Fixed an issue where messages with fallback text were repeated.
+
+### Known Issues
+ - Pinned posts are no longer highlighted.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-06-02
 
 ### Improvements
