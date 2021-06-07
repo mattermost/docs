@@ -5,38 +5,27 @@ Installing PostgreSQL Database
 
 1. Log in to the server that will host the database, and open a terminal window.
 
-2. Download the PostgreSQL 9.4 Yum repository.
+2. Download the PostgreSQL 13 Yum repository. For more detailed install instructions visit the PostgreSQL docs site [here](https://www.postgresql.org/download/linux/redhat/).
 
-  For RHEL 7
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
-  For CentOS 7
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-3.noarch.rpm``
-  For Scientific Linux
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-sl94-9.4-3.noarch.rpm``
-  For Oracle
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-oraclelinux-9.4-3.noarch.rpm``
+  ``sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm``
 
-3. Install the Yum repository from the file that you downloaded.
+3. Install PostgreSQL.
 
-  ``sudo yum localinstall pgdg-*-9.4-3.noarch.rpm``
+  ``sudo yum install -y postgresql13-server``
 
-4. Install PostgreSQL.
+4. Initialize the database.
 
-  ``sudo yum install postgresql94-server postgresql94-contrib``
+  ``sudo /usr/pgsql-13/bin/postgresql-13-setup initdb``
 
-5. Initialize the database.
+5. Set PostgreSQL to start on boot.
 
-  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
+  ``sudo systemctl enable postgresql-13``
 
-6. Set PostgreSQL to start on boot.
+6. Start the PostgreSQL server.
 
-  ``sudo systemctl enable postgresql-9.4``
+  ``sudo systemctl start postgresql-13``
 
-7. Start the PostgreSQL server.
-
-  ``sudo systemctl start postgresql-9.4``
-
-8. Switch to the *postgres* Linux user account that was created during the installation.
+7. Switch to the *postgres* Linux user account that was created during the installation.
 
   ``sudo -iu postgres``
 
@@ -67,9 +56,9 @@ Installing PostgreSQL Database
 
   ``exit``
 
-15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/var/lib/pgsql/13/data/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
-  a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor.
+  a. Open ``/var/lib/pgsql/13/data/postgresql.conf`` as root in a text editor.
 
   b. Find the following line:
 
@@ -81,13 +70,13 @@ Installing PostgreSQL Database
 
   d. Restart PostgreSQL for the change to take effect:
 
-    ``sudo systemctl restart postgresql-9.4``
+    ``sudo systemctl restart postgresql-13``
 
 16. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/13/data/pg_hba.conf`` as root in a text editor.
 
     b. Find the following lines:
 
@@ -103,7 +92,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/13/data/pg_hba.conf`` as root in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
@@ -111,7 +100,7 @@ Installing PostgreSQL Database
 
 17. Reload PostgreSQL:
 
-  ``sudo systemctl reload postgresql-9.4``
+  ``sudo systemctl reload postgresql-13``
 
 18. Verify that you can connect with the user *mmuser*.
 
