@@ -34,12 +34,12 @@ In general, building your own Mobile apps will present some challenges, includin
 - Signing your custom Mattermost Mobile apps*.
 - Distributing your Mobile app to your users.
 
-* Mattermost Mobile apps are signed and have certificates associated with Mattermost and public app stores. This means Mattermost’s Mobile App won’t work if you choose to privately host the Mattermost Push Proxy Service (MPNS). You'll need to build your own custom mobile app.
+***** Mattermost Mobile apps are signed, and they have certificates and keys associated with Mattermost and public app stores. This means Mattermost’s Mobile App won’t work if you choose to privately host the Mattermost Push Proxy Service (MPNS). You'll need to build your own custom mobile app.
 
 Custom Mobile App Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Chat". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines>`__ in our Company Handbook for branding details.
+Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Chat". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
 
 Deploying Your Custom App
 -------------------------
@@ -51,7 +51,7 @@ Using an Enterprise App Store
 
 This is the most common way for customers to distribute their apps, and it’s our recommended approach. Once your custom app is added to your own Enterprise App Store, your users can download it from the store directly or from an EMM catalog. 
 
-Alternatively, you can use an EMM provider to push the application to the user’s device, then use the AppConfig standard to enforce a selection of app-specific controls. See our `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig>`__ documentation for details.
+Alternatively, you can use an EMM provider to push the application to the user’s device, then use the AppConfig standard to enforce a selection of app-specific controls. See our `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig.html>`__ documentation for details.
 
 Using an EMM Provider
 ~~~~~~~~~~~~~~~~~~~~~
@@ -72,11 +72,11 @@ This update strategy should include:
 - Updating Mattermost Server.
 - Updating Mattermost Mobile apps.
 
-We highly recommend you update your custom Mattermost Mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the Mobile apps and the Mattermost server. Consult the `Mattermost Mobile App Changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`__ and the `Mattermost Server Changelog <https://docs.mattermost.com/administration/changelog.html>`__ for details.
+We highly recommend you update your custom Mattermost Mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the Mobile apps and the Mattermost server. Consult the `Mattermost Mobile App Changelog <https://docs.mattermost.com/administration/mobile-changelog.html>`__ and the `Mattermost Server Changelog <https://docs.mattermost.com/administration/changelog.html>`__ for details.
 
 .. important::
 
-    Not all provided updates are compatible with all previous versions of Mattermost Server. Updating only Mattermost Mobile apps or updating the mobile apps before Mattermost Server can result in incompatibility issues.
+  Not all provided updates are compatible with all previous versions of Mattermost Server. Updating only Mattermost Mobile apps or updating the mobile apps before Mattermost Server can result in incompatibility issues.
 
 Using Another Distribution Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
