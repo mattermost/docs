@@ -11,8 +11,8 @@ This documentation provides information to help you:
 
 .. note::
 
-    - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
-    - Some features described in this guide are available only in Mattermost Enterprise Edition.
+  - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
+  - Some features described in this guide are available only in Mattermost Enterprise Edition.
 
 Decision Summary
 ----------------
@@ -40,7 +40,7 @@ The following table summarizes the key differences between these two approaches:
 |                                                                |                                                                     |  
 | - Easiest way to deploy Mattermost Apps.                       | You maintain full control over the distribution of applications,    |
 | - Test push notifications using the Test Push                  | including the look, feel, and capabilities of your mobile app.      |
-|   Notification Service (TPNS).                                  |                                                                     |
+|   Notification Service (TPNS).                                 |                                                                     |
 | - Mattermost Enterprise includes a                             | **Limitations:**                                                    |
 |   Hosted Push Notification Service (HPNS).                     |                                                                     |
 | - Apps update automatically with the latest                    | - Requires development knowledge and resources to maintain mobile   |
@@ -48,8 +48,7 @@ The following table summarizes the key differences between these two approaches:
 |                                                                | - You must deploy your own push proxy server.                       |
 | **Limitations:**                                               |                                                                     |
 |                                                                |                                                                     |  
-| - Can’t control the look, feel, and capabilities               |                                                                     |  
-|   of Mattermost Mobile Apps.                                   |                                                                     |
+| - Can’t white-label Mattermost Mobile Apps.                    |                                                                     |
 | - Can’t deploy your own push proxy server.                     |                                                                     |  
 +----------------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -61,7 +60,7 @@ See our `Supported Devices/Mobile Device Requirements <https://docs.mattermost.c
 We recommend running the latest version of the Mattermost Server as it contains the most recent features and applicable security updates. If this isn't possible, we encourage you to be on the most recent Extended Support Release version of Mattermost. This release has critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
 .. important::
-    Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.
+  Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.
 
 You should also start thinking about technical and security requirements in parallel with an implementation plan. Feel free to use our `implementation plan template <https://docs.mattermost.com/getting-started/implementation_plan.html>`__ available in the Mattermost documentation. 
 
