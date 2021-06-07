@@ -1,7 +1,7 @@
 Using Mattermost's Pre-Built Mobile Apps
 ========================================
 
-We strongly recommend using Mattermost’s pre-built Mobile App. This approach is recommended for Mattermost Cloud and Enterprise Edition customers.
+We strongly recommend using Mattermost’s pre-built Mobile App. This approach is recommended for all Mattermost Cloud Self-Managed Editions.
 
 Deployment Options
 ------------------
