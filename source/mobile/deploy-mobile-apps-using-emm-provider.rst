@@ -6,7 +6,7 @@ An EMM Provider builds `Enterprise Mobile Management software <https://en.wikipe
 You can use an EMM to: 
 
 - Enforce users to download a mobile app.
-- Set default server connections.
+- Set default server url address.
 - Restrict users from changing servers.
 - Enforce security policies.
 
