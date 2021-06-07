@@ -143,7 +143,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v5.34.4, release day TBD**
   - Investigating fixing an issue where missing query parameters in the datasource can cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
-  - Fixing an issue where plugin icons are showing as a column instead of as a row in the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
+  - Fixing an issue where plugin icons are displaying as a column instead of as a row on the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
 - **v5.34.3, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.34.2, released 2021-04-17**
