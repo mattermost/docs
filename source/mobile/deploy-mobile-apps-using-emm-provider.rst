@@ -1,11 +1,11 @@
 Deploying Mobile Apps Using an EMM Provider
 ===========================================
 
-An EMM Provider builds `Enterprise Mobile Management software <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`__ that helps enterprise teams manage secure mobile endpoints with managed app configuration. 
+`Enterprise Mobile Management software <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`__ helps enterprise teams manage secure mobile endpoints with managed app configuration. 
 
 You can use an EMM to: 
 
-- Enforce users to download a mobile app.
+- Enforce users to download the Mattermost pre-built or custom apps managed by your organization.
 - Set default server url address.
 - Restrict users from changing servers.
 - Enforce security policies.
