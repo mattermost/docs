@@ -1,6 +1,5 @@
 .. _bulk-export:
 
-=================
 Bulk Export Tool
 =================
 
@@ -19,7 +18,7 @@ You can export the following data types:
 .. include:: bulk-export-data.rst
 
 Running the bulk export command
-===============================
+-------------------------------
 
 The export command runs in the `CLI <https://docs.mattermost.com/administration/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
 

@@ -10,10 +10,10 @@ Step 1:  Set up your Mattermost Instance
 Questions? Please visit our `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
 
 Step 2:  Export your data from HipChat Data Center or HipChat Server
-------------------------------------------------------------------------
+---------------------------------------------------------------------
 
-HipChat Server / HipChat Data Server:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HipChat Server/HipChat Data Server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you’re able to upgrade HipChat Server or HipChat Data Center to the latest version, we recommend using Group Export Dashboard to export your data. If you’re unable to upgrade, see Command Line Interface procedure below. 
 
@@ -46,7 +46,8 @@ If you’re interested in contributing or testing any community contributed solu
 3. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`__ for partner recommendations for your region to assist in your import. 
   
 Step 4: Onboard your users into Mattermost
----------------------------------------------
+-------------------------------------------
+
 After importing users, you can send out an announcement via email or via your old system (or both) to let users know how to log into Mattermost with their old accounts or how to create new accounts.
  
 **Announcing Mattermost onboarding in your previous messaging system:**
@@ -61,7 +62,7 @@ Use the following message template to alert users of the migration::
 #. Adapt the `migration announcement email template <https://docs.mattermost.com/administration/migration-announcement-email-template.html>`__ to let users know how to reclaim their old accounts or start new ones.
 
 Onboard users using SSO in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively, you can choose to set up SSO (Single Sign-on) with Mattermost if you are using an Enterprise version.  
 

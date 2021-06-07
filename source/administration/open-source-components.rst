@@ -1,10 +1,10 @@
 Open Source Components
-===========================
+=======================
 
 The following open source components are used to provide the full benefits of Mattermost Enterprise Edition.
 
 Desktop
-------------------------------
+--------
 
  - Mattermost Desktop v4.6.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.6/NOTICE.txt>`_.
  - Mattermost Desktop v4.5.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.5/NOTICE.txt>`_.
@@ -16,7 +16,7 @@ Desktop
  - Mattermost Desktop v3.7.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-3.7/NOTICE.txt>`_.
 
 Mobile
-------------------------------
+-------
 
  - Mattermost Mobile v1.43.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.43/NOTICE.txt>`_.
  - Mattermost Mobile v1.42.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.42/NOTICE.txt>`_.

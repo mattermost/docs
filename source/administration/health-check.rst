@@ -1,5 +1,5 @@
 Health Check
-=============
+============
 
 This page describes how to configure health check probes for a Mattermost server.
 
@@ -30,7 +30,7 @@ This endpoint can also be provided to schedulers like `Kubernetes <https://kuber
   status, err := Client.GetPing()
 
 Mattermost Probe
------------------
+----------------
 
 The `Mattermost Probe <https://github.com/csduarte/mattermost-probe>`__ constantly pings a Mattermost server using a variety of probes.
 

@@ -7,7 +7,7 @@ Remember to replace all the items in bold with your information.
 
 
 Email Template
--------------------
+--------------
 
 To: End users
 

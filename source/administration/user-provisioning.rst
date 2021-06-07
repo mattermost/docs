@@ -1,7 +1,7 @@
 .. _user-provisoning:
 
 Provisioning Workflows
-=====================================
+======================
 
 This document provides an overview of user provisioning and deprovisioning workflows in Mattermost.
 

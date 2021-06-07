@@ -38,7 +38,7 @@ Supported logging events
 - Events evoked from the legacy Mattermost CLI
 
 Data model
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 A single audit record is emitted for each event (``add``, ``delete``, ``login``, ``...``). Multiple auditable events may be emitted for a single API call.
 
