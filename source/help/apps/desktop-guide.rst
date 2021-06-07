@@ -10,12 +10,3 @@ You can `download the apps directly from our download page <https://mattermost.c
 To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__.
 
 Below are a few tips to get you started and to configure your experience on the desktop app:
-
-.. contents::
-    :backlinks: top
-    :local:
-
-
-3. Click **Remove**.
-
-
