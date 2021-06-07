@@ -13,7 +13,9 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``sudo apt-get install postgresql postgresql-contrib``
 
-  When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
+  When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created. 
+  
+  Confirm this version is PostgresSQL version 10 or higher. You can do this by running ``psql -V``. If this is not version 10 or higher you can reference the PostgreSQL documentation [here](https://www.postgresql.org/download/linux/ubuntu/) to install an updated version of PostgreSQL.
 
 2. Log in to the *postgres* account.
 
@@ -46,7 +48,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``exit``
 
-9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
@@ -64,7 +66,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/etc/postgresql/9.5/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` as root in a text editor.
 
     b. Find the following line:
 
@@ -76,7 +78,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/etc/postgresql/9.5/main/pg_hba.conf`` as root in a text editor.
+    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` as root in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
@@ -105,6 +107,6 @@ Assume that the IP address of this server is 10.10.10.1
 
 This leaves the security to the user running the application. If you run it as a service, then you need *sudo* permissions to start a service file. As a result only *root* user has read-write access. 
  
-For further info on the pgpass file please refer to `the official PostgreSQL documentation   <https://www.postgresql.org/docs/9.4/libpq-pgpass.html>`_
+For further info on the pgpass file please refer to `the official PostgreSQL documentation   <https://www.postgresql.org/docs/>`_
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.
