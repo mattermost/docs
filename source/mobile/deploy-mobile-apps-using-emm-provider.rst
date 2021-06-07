@@ -114,7 +114,7 @@ Per-app VPN
 A common approach is to use a per-app VPN. This provides a connection to the VPN when needed (on-demand). If using a per-app VPN with Mattermost, you can configure the following options:
 
 - **useVPN**: Mattermost waits until the connection to the VPN server is established before making any requests (otherwise they will fail). Only supported on iOS given Android OS cannot support waiting - still works but the first connection attempt may fail. 
-- **timeoutVPN** (iOS only): How long to wait for the connection to the VPN server before trying.
+- **timeoutVPN (iOS only):** How long to wait for the connection to the VPN server before trying.
 
 Device VPN
 ~~~~~~~~~~
