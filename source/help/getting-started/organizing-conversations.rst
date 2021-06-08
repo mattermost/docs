@@ -105,8 +105,8 @@ Select the Public channel name at the top of the center pane to access the drop-
 When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly-shared files remain accessible to anyone with the link. 
 
 .. note::
-
-  Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
+ 
+   Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
 
 Favoriting a channel
 --------------------

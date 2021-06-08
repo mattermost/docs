@@ -45,7 +45,6 @@ Navigation
 | CTRL+F (Desktop App)                   | CMD+F (Desktop App)                    |                                                                                 |
 +----------------------------------------+----------------------------------------+---------------------------------------------------------------------------------+
 
-
 .. note::
 
   Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
