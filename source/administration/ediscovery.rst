@@ -88,7 +88,7 @@ When the export process is complete (the execution time is based on the number o
   --output report-zip.zip \
   https://yourmattermosturl/api/v4/compliance/reports/du6kektczifqxexeroywpz3nbc/download
 
-When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to safe that file as. In the example above the file will be saved as ``report-zip.zip``.
+When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to save that file as. In the example above the file will be saved as ``report-zip.zip``.
 
 Mattermost Database
 ------------------------------------
