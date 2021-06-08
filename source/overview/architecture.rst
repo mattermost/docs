@@ -7,7 +7,7 @@ This page provides an overview of the Mattermost architecture with reference arc
     :maxdepth: 2
 
 Basics
-----------
+------
 
 At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`__.
 
@@ -23,12 +23,12 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 .. image:: ../images/architecture_basics.png
 
 Push Notification Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost `hosted push notification service <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/overview/faq.html#tpns>`__ or deploy their own push notification service and `compile their mobile applications <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ to use that service.
 
 Proxy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~
 
 A proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. Mattermost recommends using a proxy in front of Mattermost to increase security, performance and the ability to monitor and shape traffic connecting to Mattermost:
 
@@ -41,7 +41,7 @@ Mattermost provides documentation and support for the `NGINX proxy <https://www.
 .. image:: ../images/architecture_with_proxy.png
 
 Communication Protocols
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 There are also communication protocols (HTTPS and WS) that define the type of connection the user makes with the Mattermost server.
 
@@ -60,29 +60,29 @@ If a WSS connection is not available and HTTPS is substituted, the system will a
 .. image:: ../images/architecture_with_protocol.png
 
 High Availability and Scalability
--------------------------------------------
+---------------------------------
 
 Enterprise Edition E20 supports:
 
 1) Clustered Mattermost servers, which minimize latency by:
 
-- storing static assets over a global CDN
-- deploying multiple Mattermost servers to host API communication closer to the location of end users
+- Storing static assets over a global CDN.
+- Deploying multiple Mattermost servers to host API communication closer to the location of end users.
 
 They can also be used to handle scale and failure handoffs in disaster recovery scenarios.
 
 2) Database read replicas, where replicas can be:
 
-- configured as a redundant backup to the active database server
-- used to scale up the number of concurrent users
-- deployed closer to the location of end users, reducing latency
+- Configured as a redundant backup to the active database server.
+- Used to scale up the number of concurrent users.
+- Deployed closer to the location of end users, reducing latency.
 
 Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../images/architecture_high_availability.png
 
 Reference Architectures
-----------------------------------
+-----------------------
 
 The following diagrams show the suggested architecture configurations for E20 enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
 
@@ -93,49 +93,49 @@ Each generalized diagram represents a full high availability deployment across a
 Each AWS diagram represents a full high availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
 
 5,000 Users on E20 - General
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kUsers.png
 
 5,000 Users on E20 - AWS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kaws.png
 
 10,000 Users on E20 - General
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kUsers.png
 
 10,000 Users on E20 - AWS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kaws.png
 
 25,000 Users on E20 - General
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kUsers.png
 
 25,000 Users on E20 - AWS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kaws.png
 
 50,000 Users on E20 - AWS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment50kaws.png
 
 Database with VIPs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The following diagram is a suggested configuration for highly-available databases through virtual IPs.
 
 .. image:: ../images/DatabasewithVIPs.png
 
 Load Testing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~
 
 Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
 

@@ -17,7 +17,7 @@ This guide provides steps to install the MSI and use Group Policies in Windows P
     :backlinks: top
 
 Installation Guide
---------------------------------------------
+-------------------
 
 Download Group Policy and MSI Installer files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

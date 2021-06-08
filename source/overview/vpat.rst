@@ -1,4 +1,4 @@
-=================================================================
+
 Voluntary Product Accessibility Template (VPAT) 
 =================================================================
 
@@ -14,7 +14,7 @@ The following Voluntary Product Accessiblity Template for 508 Compliance is comp
     :backlinks: top
 
 Summary 
-----------------------------
+--------
 
 A summary of Mattermost's support of 508 compliance standards is as follows:
 
@@ -67,7 +67,7 @@ Section 1194.41 Information, Documentation and Support
 - **Remarks and Explanations**: No additional comments. 
 
 Section 1194.21 Software Applications and Operating Systems - Detail 
----------------------------------------------------------------------------------
+--------------------------------------------------------------------
 
 (a) When software is designed to run on a system that has a keyboard, product functions shall be executable from a keyboard where the function itself or the result of performing a function can be discerned textually.
 
@@ -142,7 +142,7 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 - **Remarks and Explanations**: Nothing to add. 
 
 Section 1194.22 Web-based Intranet and Internet information and Applications - Detail 
-----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 
 (a) A text equivalent for every non-text element shall be provided (e.g., via "alt", "longdesc", or in element content).
 
@@ -241,7 +241,7 @@ Section 1194.22 Web-based Intranet and Internet information and Applications - D
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product. There are no timed responses used in the system. 
 
 Section 1194.23 Telecommunications Products - Detail
---------------------------------------------------------------
+----------------------------------------------------
 
 (a) Telecommunications products or systems which provide a function allowing voice communication and which do not themselves provide a TTY functionality shall provide a standard non-acoustic connection point for TTYs. Microphones shall be capable of being turned on and off to allow the user to intermix speech with TTY use.
 
@@ -328,7 +328,7 @@ Section 1194.23 Telecommunications Products - Detail
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
 Section 1194.24 Video and Multi-media Products - Detail  
--------------------------------------------------------------
+-------------------------------------------------------
 
 a) All analog television displays 13 inches and larger, and computer equipment that includes analog television receiver or display circuitry, shall be equipped with caption decoder circuitry which appropriately receives, decodes, and displays closed captions from broadcast, cable, videotape, and DVD signals. As soon as practicable, but not later than July 1, 2002, widescreen digital television (DTV) displays measuring at least 7.8 inches vertically, DTV sets with conventional displays measuring at least 13 inches vertically, and stand-alone DTV tuners, whether or not they are marketed with display screens, and computer equipment that includes DTV receiver or display circuitry, shall be equipped with caption decoder circuitry which appropriately receives, decodes, and displays closed captions from broadcast, cable, videotape, and DVD signals.
 
@@ -361,7 +361,7 @@ a) All analog television displays 13 inches and larger, and computer equipment t
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
 Section 1194.25 Self-Contained, Closed Products - Detail 
---------------------------------------------------------------
+--------------------------------------------------------
 
 (a) Self contained products shall be usable by people with disabilities without requiring an end-user to attach Assistive Technology to the product. Personal headsets for private listening are not Assistive Technology.
 
@@ -441,9 +441,8 @@ Section 1194.25 Self-Contained, Closed Products - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-
 Section 1194.26 Desktop and Portable Computers - Detail 
------------------------------------------------------------------
+-------------------------------------------------------
 
 (a) All mechanically operated controls and keys shall comply with 1194.23 (k) (1) through (4).
 
@@ -469,9 +468,8 @@ Section 1194.26 Desktop and Portable Computers - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-
 Section 1194.31 Functional Performance Criteria – Detail
------------------------------------------------------------------
+--------------------------------------------------------
 
 (a) At least one mode of operation and information retrieval that does not require user vision shall be provided, or support for Assistive Technology used by people who are blind or visually impaired shall be provided.
 
@@ -510,7 +508,7 @@ Section 1194.31 Functional Performance Criteria – Detail
 - **Remarks and Explanations**: System can be operated with computer keyboard only, which can meet stated requirements when in accessibility mode. 
 
 Section 1194.41 Information, Documentation and Support – Detail
-------------------------------------------------------------------------------
+---------------------------------------------------------------
 
 (a) Product support documentation provided to end-users shall be made available in alternate formats upon request, at no additional charge
 

@@ -23,7 +23,7 @@ If MySQL is not running, review the instructions for installation on your distri
   Some of the commands used in this section alter the database. **Use these commands only if your Mattermost installation has failed.** Do not directly manipulate the MySQL database for a working Mattermost installation.
 
 The ``mattermost`` Database
------------------------
+---------------------------
 
 The database created during installation is named ``mattermost``. If you fail to create this database or you misname it, you will see an error such as the following when you attempt to start the Mattermost server:
 

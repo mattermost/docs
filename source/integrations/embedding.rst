@@ -1,6 +1,6 @@
-================================================
+
 Embedding Mattermost in Other Applications
-================================================
+==========================================
 
 This guide discusses how to embed Mattermost into other applications in different ways.
 
