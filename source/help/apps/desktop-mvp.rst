@@ -1,5 +1,5 @@
 Desktop MVP
-==========
+===========
 
 **The following awards have been given for significant contributions to the Mattermost Desktop App:**
 

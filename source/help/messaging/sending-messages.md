@@ -1,5 +1,4 @@
 # Sending Messages
-_____
 
 ## Message Types
 Reply to posts to keep conversations organized in threads.

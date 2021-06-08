@@ -1,7 +1,7 @@
 .. _use-kubernetes-mattermost:
 
 Using Mattermost Operator Functionality
-======================================
+=======================================
 
 Rolling Upgrades
 ----------------

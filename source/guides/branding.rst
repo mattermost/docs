@@ -4,13 +4,12 @@ Mattermost Branding and Naming Guidelines
 
 The Mattermost branding and naming guidelines are intended to help keep users safe and to support the development of community integrations through a set of consistent guidelines for use of the Mattermost name and brand.
 
-OVERVIEW:
+Overview
 
 .. contents::
   :backlinks: top
   :local:
 
---------------------------------------
 Mattermost Visual Design Guidelines
 --------------------------------------
 
@@ -24,7 +23,6 @@ Mattermost User Experience
 
 For details on the visual design of the Mattermost user experience, please see: https://docs.mattermost.com/developer/fx-guidelines.html.
 
--------------------------------
 Naming Usage Guidelines
 -------------------------------
 
@@ -73,7 +71,6 @@ When redistributing the open source Mattermost Team Edition binary, the followin
 
   Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://mattermost.com/download/>`__.
 
-
 Mattermost Enterprise Edition Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -83,7 +80,6 @@ When redistributing the commercial Mattermost Enterprise Edition binary, the fol
 
   Mattermost Enterprise Edition is free to use in "team mode" and is functionally equivalent to the open source Mattermost Team Edition, with the added benefit of being able to enable advanced enterprise features with purchase of an annual subscription.
 
--------------------------------
 Mattermost Trademark Policy
 -------------------------------
 

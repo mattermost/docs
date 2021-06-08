@@ -239,7 +239,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - 日本語 - Japanese
 
 Sidebar
---------
+-------
 
 The channel sidebar includes `enhanced sidebar features <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 

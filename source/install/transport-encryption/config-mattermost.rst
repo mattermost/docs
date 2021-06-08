@@ -1,6 +1,6 @@
-=============================================
+
 Configuring Proxy to Mattermost Transport Encryption
-=============================================
+====================================================
 
 Mattermost is able to encrypt the traffic between the proxy and the application
 server using TLS.
