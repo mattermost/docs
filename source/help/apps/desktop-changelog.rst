@@ -41,7 +41,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v12.0.7. Electron is the underlying technology used to build the Desktop app.
+- Major version upgrade of Electron to v12.0.10. Electron is the underlying technology used to build the Desktop app.
 - Added support for Electron BrowserView.
 - Added support for M1 architecture (beta) in the build pipeline.
 
@@ -58,6 +58,10 @@ MacOS
 ^^^^^^^^^^^^^
 - Fixed an issue where changing the theme from the **System Preferences** changed the tray icon, but the red/blue dot indicating unreads got removed.
 - Fixed an issue where there was an invisible Mattermost icon in the top menu bar.
+
+Linux
+^^^^^^^^^^^^^
+- Fixed an issue where Shift+Alt moved the focus to the main menu instead of changing keyboard layout.
 
 All Platforms
 ^^^^^^^^^^^^^
