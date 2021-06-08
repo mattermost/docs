@@ -16,13 +16,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Focalboard (Beta)
- - Focalboard is now integrated with Mattermost as a beta feature in v5.36. It brings easy-to-use project and work management to replace tools such as Trello, Notion, and Asana.
+ - Focalboard is now integrated with Mattermost as a beta feature in v5.36. To enable Focalboard, open the Marketplace from the sidebar menu, install the Focalboard plugin, then click on **Configure**, enable it, and save.
 
 #### Incident Collaboration (Enterprise Edition E20)
- - Retrospective report, automated welcome message, team-wide playbook access, and permission control for playbook creation.
+ - Includes retrospective report, automated welcome message, team-wide playbook access, and permission control for playbook creation.
 
 #### Hungarian Language Support (Beta)
- - Mattermost is now available in Hungarian.
+ - Mattermost is now available in Hungarian language.
 
 ### Improvements
 
