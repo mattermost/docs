@@ -8,9 +8,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 #### User Interface (UI)
  - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
- - Added two new fields in the ``CustomStatus`` struct, and modified the APIs to validate and handle them to add support for expiry support in custom status APIs.
  - Updated the help text on the **Add Users** channel modal.
- - Updated the webapp to pass `collapsed_threads_supported` parameters to the server to indicate that the WebApp supports collapsed reply threads. Also updated the WebApp to correctly mark channels and threads as unread/read when marking root and reply posts as unread/read.
 
 #### Administration
  - The platform binary file has been removed from the distribution files. It should be replaced by the Mattermost binary file if it's being used in scripts.
