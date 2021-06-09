@@ -1025,9 +1025,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
-+-------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.         |
++--------------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
