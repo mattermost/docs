@@ -17,6 +17,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Bug Fixes
  - Fixed an issue where users were unable to set a custom status emoji via slash command by adding the logic for detecting unicode emoji and setting it as custom status emoji via slash commands.
  - Fixed an issue where messages with fallback text were repeated.
+ - Fixed an issue where a persistent unread badge showed on the **Main Menu** when **Enable Marketplace** or **Enable Plugins** was disabled.
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
