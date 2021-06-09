@@ -1244,10 +1244,10 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 | **Targets**   |                                                                                                                                                        |             |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
-| Type          | Can be one of: ``console``, ``file``, ``syslog`` or ``tcp``.                                                                                                  | string      |
+| Type          | Can be one of: ``console``, ``file``, ``syslog``, or ``tcp``.                                                                                          | string      |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
-| Format        | Can be either ``json`` or ``plain``.                                                                                                                       | string      |
+| Format        | Can be either ``json`` or ``plain``.                                                                                                                   | string      |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
 | Levels        | Array of log levels.                                                                                                                                   | []          |
@@ -1262,7 +1262,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 | **Console**   |                                                                                                                                                        |             |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
-| Out           | Can be either ``stdout`` or ``stderr``.                                                                                                                    | string      |
+| Out           | Can be either ``stdout`` or ``stderr``.                                                                                                                | string      |
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
 |               |                                                                                                                                                        |             |
 | **File**      |                                                                                                                                                        |             |
@@ -5473,7 +5473,11 @@ Allow any combination of local file, syslog, and TCP socket targets.
 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Options are outlined in this text file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
 
 Service Settings
 ~~~~~~~~~~~~~~~~
