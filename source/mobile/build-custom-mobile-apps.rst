@@ -1,7 +1,7 @@
 Building and Distributing Your Own Custom Mattermost Mobile Apps
 ================================================================
 
-You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores.
+You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/mobile/mobile-hpns.html#id4>`__.
 
 This approach is recommended for:
 
@@ -11,10 +11,10 @@ This approach is recommended for:
 Deployment Options
 ------------------
 
-When you decide to build your own Mattermost Mobile apps, you have multiple ways to deploy it: 
+When you decide to build your own Mattermost Mobile apps, you have multiple ways to deploy: 
 
 - Submitting your app to `an Enterprise App Store <#using-an-enterprise-app-store>`_.
-- Using `an Enterprise Mobile Management (EMM) provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__.
+- Using `an Enterprise Mobile Management (EMM) provider <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html#using-an-emm-provider>`__.
 - Submitting your app to `public app stores <#using-public-app-stores>`_.
 - Using `another distribution method <#using-another-distribution-method>`_.
 
@@ -25,7 +25,7 @@ The Mattermost Mobile App is an open source project. Customizing Mattermost Mobi
 
 This means that you manage the maintenance of your custom Mattermost Mobile apps, such as rebuilding and incorporating feature and/or security updates. If this isn't done regularly, your applications won't match the functionality of our publicly-available applications, and could be incompatible with future versions of Mattermost Server.
 
-This process can be complicated and can greatly increase deployment time, not only initially, but whenever the apps need to be updated. We recommend having your development team `review the Mattermost Mobile Apps developer documentation <https://developers.mattermost.com/contribute/mobile/>`__ to ensure they understand the scale and requirements of taking this path. This documentation provides guidance on building, compiling, signing, and white labeling Mattermost Mobile apps.
+This process can be complicated and can greatly increase deployment time, not only initially, but whenever the mobile apps need to be updated. We recommend having your development team `review the Mattermost Mobile Apps developer documentation <https://developers.mattermost.com/contribute/mobile/>`__ to ensure they understand the scale and requirements of taking this path. This documentation provides guidance on building, compiling, signing, and white-labeling Mattermost Mobile apps.
 
 In general, building your own Mobile apps will present some challenges, including:
 
@@ -51,12 +51,16 @@ Using an Enterprise App Store
 
 This is the most common way for customers to distribute their apps, and it’s our recommended approach. Once your custom app is added to your own Enterprise App Store, your users can download it from the store directly or from an EMM catalog. 
 
-Alternatively, you can use an EMM provider to push the application to the user’s device, then use the AppConfig standard to enforce a selection of app-specific controls. See our `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig.html>`__ documentation for details.
-
 Using an EMM Provider
 ~~~~~~~~~~~~~~~~~~~~~
 
-See our `Deployment Using an EMM Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ documentation to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
+Alternatively, you can use an EMM provider to push the application to the user’s device, then use the AppConfig standard to enforce a selection of app-specific controls. 
+
+For additional details, see the following documentation:
+
+- `Deployment Using an EMM Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
+- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig.html>`__  to learn more about managing your app configuration using App Config.
+- `Mattermost AppConfig Values <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values>`__  for information on the configuration options that can be sent from the EMM provider to Mattermost Mobile apps. 
 
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,3 +86,4 @@ Using Another Distribution Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an alternate distribution method to deploy your custom app, such as a file sharing platform.
+

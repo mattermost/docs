@@ -22,7 +22,7 @@ When planning for a Mobile app deployment, you have two important decisions to m
 - What app will you deploy?
 - How will you deploy it?
 
-Using Mattermost’s pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. Alternatively, you can use an EMM provider to enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
+Mattermost provides official mobile Apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using these pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
 
 If you want to control the look, feel, or capabilities of the Mobile apps, host your own push proxy server, or to maintain full control over app distribution, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`__ to learn more about working with custom apps.
 
@@ -33,8 +33,8 @@ The following table summarizes the key differences between these two approaches:
 +================================================================+=====================================================================+
 | **Recommended for:**                                           | **Recommended for:**                                                |
 |                                                                |                                                                     |
-| Self-supporting teams who need standard features               | Teams that need to customize the app, adhere to corporate           |
-| and have minimal corporate compliance rules.                   | compliance rules, or prefer to host their own push proxy server.    |
+| Self-supporting teams who need standard features.              | Teams that need to customize the app, need to adhere to corporate   |
+|                                                                | compliance rules, or prefer to host their own push proxy server.    |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
 | **Benefits:**                                                  | **Benefits:**                                                       |
 |                                                                |                                                                     |  
@@ -45,7 +45,7 @@ The following table summarizes the key differences between these two approaches:
 |   Hosted Push Notification Service (HPNS).                     |                                                                     |
 | - Apps update automatically with the latest                    | - Requires development knowledge and resources to maintain mobile   |
 |   features, enhancements, and security updates.                |   app code as Mattermost releases new product updates.              |
-|                                                                | - You must deploy your own push proxy server.                       |
+|                                                                | - Must deploy your own push proxy server.                           |
 | **Limitations:**                                               |                                                                     |
 |                                                                |                                                                     |  
 | - Can’t white-label Mattermost Mobile Apps.                    |                                                                     |

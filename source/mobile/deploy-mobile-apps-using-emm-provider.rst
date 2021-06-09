@@ -36,43 +36,6 @@ Depending on your security policies, we recommend deploying Mattermost behind a 
 
 Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA.
 
-Host Your Own Push Proxy Service
---------------------------------
-
-A push proxy is a key technology behind notification transmission. It enables notifications between the server and a Mobile app. Mattermost provides a self-hosted push proxy you can deploy called the `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deployment/deployment.html#push-notification-service>`__. However, if you choose to build custom versions of the Mattermost Mobile app, you must host your own instance of the MPNS by compiling your own MPNS from the `open source repository <https://github.com/mattermost/mattermost-push-proxy>`__, or by using the `pre-compiled version available on GitHub <https://github.com/mattermost/mattermost-push-proxy/releases>`__. 
-
-See our `developer documentation <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`__ on installing the Mattermost Push Notification Service for details.
-
-.. note::
-
-- The MPNS should be behind your firewall inside your private network, or in your DMZ, in a way that the Mattermost server can access it.
-- The MPNS does not connect with Mobile apps directly; it parses and forwards push notifications from the Mattermost server to the Apple Push Notification Service (APNS) or the Firebase Cloud Messaging (FCM).
-- The MPNS must be able to communicate with the Apple Push Notification Service over HTTP/2. If an outbound proxy appliance is deployed between the MPNS and APNS please ensure it supports HTTP/2.
-  
-Securing Push Notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To secure your push notifications, ensure you use encrypted TLS connections between:
-
-- MPNS and Apple Push Notification Service
-- MPNS and Google’s Firebase Cloud Messaging
-- MPNS and your Mattermost server
-
-Enabling MPNS in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Go to **System Console > Environment > Push Notification Server**.
-2. Under **Enable Push Notifications**, select **Manually enter Push Notification Service location**.
-3. Enter the location of your MPNS in the **Push Notification Server**  field, then select **Save**.
-4. (Optional) Customize mobile push notification contents. Most deployments choose to include the full message content sent in the notification payload.
-    i. Go to **System Console > Site Configuration > Notifications**.
-    ii. Under **Push Notification Contents**, select the type of information to include in push notifications, then select **Save**.
-5. Subscribe to `Mattermost Security Bulletins <https://mattermost.com/security-updates/#sign-up>`__. When notified of security updates, apply them promptly.
-
-.. note:: 
-
-    As part of the process of building the applications you'll need to sign the applications. You must also obtain the appropriate certificate for both Android and iOS. If this isn't done, the applications won't be able to interact with your instance of the MPNS. Once this is complete, you can proceed with the deployment of your MPNS instance.
-
 Enroll Devices
 --------------
 
