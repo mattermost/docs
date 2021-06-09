@@ -6,7 +6,7 @@ Account Settings is accessible from the **Main Menu** by selecting the three hor
 General
 -------
 
-Settings to configure name, username, nickname, email and profile picture.
+Settings to configure name, username, nickname, email, and profile picture.
 
 Full Name
 ~~~~~~~~~
@@ -123,8 +123,8 @@ Email notifications are sent for mentions and direct messages after you’ve bee
 
 If your System Administrator has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
 
-Send Mobile Push Notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mobile Push Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your Mattermost `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ is hidden. If your System Admin has not set up push notifications, this setting will be disabled.
 
@@ -185,13 +185,18 @@ Teammate Name Display
 
 Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`__.
 
+Show online availability on profile images
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Online availability icons display on user profile avatars in the center channel by default. Disable this setting to hide online availability icons within the center channel.
+
 Timezone
 ~~~~~~~~~
 
 Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in config.json.
 
 Website Link Previews
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`__.
 
