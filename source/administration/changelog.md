@@ -6,6 +6,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.35.3, release day TBD**
+  - Investigating fixing an issue where missing query parameters in the datasource can cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
+  - Adding a performance improvement to the emoji picker overlay to improve typing performance.
 - **v5.35.2, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
   - Fixed an issue where the server would crash if content extractor dependencies for PDFs were not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
@@ -138,6 +141,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.34.4, release day TBD**
+  - Investigating fixing an issue where missing query parameters in the datasource can cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
+  - Fixing an issue where plugin icons are displaying as a column instead of as a row on the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
 - **v5.34.3, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.34.2, released 2021-04-17**
@@ -373,9 +379,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.32 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.32.2, release day TBD**
-  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
-  - Fixing an issue where plugin icons are showing as a column instead of as a row in the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
 - **v5.32.1, released 2021-02-17**
   - Fixed an issue where any search containing an underscore failed on PostgreSQL databases. This was fixed by reverting a v5.32.0 feature that added support for searching for terms on PostgreSQL that contain underscores.
 - **v5.32.0, released 2021-02-16**
@@ -495,6 +498,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v5.31.6, release day TBD**
   - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Fixing an issue where messages with fallback text are repeated. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
 - **v5.31.5, released 2021-05-12**
   - Fixed an issue where ``mmctl channel move`` did not allow moving private channels. [MM-32746](https://mattermost.atlassian.net/browse/MM-32746)
 - **v5.31.4, released 2021-04-23**
