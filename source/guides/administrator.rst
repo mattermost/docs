@@ -118,6 +118,7 @@ Learn how to configure and administer Mattermost apps.
    /mobile/use-prebuilt-mobile-apps.rst
    /mobile/build-custom-mobile-apps.rst
    /mobile/deploy-mobile-apps-using-emm-provider.rst
+   /mobile/consider-mobile-vpn-options.rst
    /mobile/mobile-appconfig.rst
    /mobile/mobile-hpns.rst
    /mobile/mobile-faq.rst

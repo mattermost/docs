@@ -68,7 +68,7 @@ Also, start engaging your technical and security teams with the following questi
 
 - Are there any known security or access requirements?
 - Is an `Enterprise Mobile Management (EMM) Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ needed?
-- Is a `VPN connection required <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html#consider-mobile-vpn-options>`__?
+- Is a `VPN connection required <https://docs.mattermost.com/mobile/consider-mobile-vpn-options.html>`__?
 
 Asking questions like these requires you to pause before jumping into your Mattermost mobile project. However, it will help ensure you see a return on your investment.
 

@@ -1,7 +1,7 @@
 Building and Distributing Your Own Custom Mattermost Mobile Apps
 ================================================================
 
-You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/mobile/mobile-hpns.html#id4>`__.
+You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/mobile/mobile-hpns.html#mobile-push-notifications>`__.
 
 This approach is recommended for:
 
@@ -14,7 +14,7 @@ Deployment Options
 When you decide to build your own Mattermost Mobile apps, you have multiple ways to deploy: 
 
 - Submitting your app to `an Enterprise App Store <#using-an-enterprise-app-store>`_.
-- Using `an Enterprise Mobile Management (EMM) provider <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html#using-an-emm-provider>`__.
+- Using `an Enterprise Mobile Management (EMM) provider <#using-an-emm-provider>`_.
 - Submitting your app to `public app stores <#using-public-app-stores>`_.
 - Using `another distribution method <#using-another-distribution-method>`_.
 
@@ -59,8 +59,8 @@ Alternatively, you can use an EMM provider to push the application to the userâ€
 For additional details, see the following documentation:
 
 - `Deployment Using an EMM Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
-- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig.html>`__  to learn more about managing your app configuration using App Config.
-- `Mattermost AppConfig Values <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values>`__  for information on the configuration options that can be sent from the EMM provider to Mattermost Mobile apps. 
+- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config.
+- `Mattermost AppConfig Values <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values.html>`__  for information on the configuration options that can be sent from the EMM provider to Mattermost Mobile apps. 
 
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~
