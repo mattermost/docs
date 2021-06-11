@@ -6,9 +6,10 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.35.3, release day TBD**
-  - Investigating fixing an issue where missing query parameters in the datasource can cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
-  - Adding a performance improvement to the emoji picker overlay to improve typing performance.
+- **v5.35.3, released 2021-06-11**
+  - Mattermost v5.35.3 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Fixed an issue where missing query parameters in the datasource could cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
+  - Added performance improvements to the emoji picker overlay to improve typing performance and reduced the time taken to re-render when a post is received.
 - **v5.35.2, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
   - Fixed an issue where the server would crash if content extractor dependencies for PDFs were not present. [MM-35990](https://mattermost.atlassian.net/browse/MM-35990)
@@ -141,9 +142,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.34.4, release day TBD**
-  - Investigating fixing an issue where missing query parameters in the datasource can cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
-  - Fixing an issue where plugin icons are displaying as a column instead of as a row on the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
+- **v5.34.4, released 2021-06-11**
+  - Mattermost v5.34.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Fixed an issue where missing query parameters in the datasource could cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
+  - Fixed an issue where plugin icons were displaying as a column instead of as a row on the left-hand side. [MM-36199](https://mattermost.atlassian.net/browse/MM-36199)
 - **v5.34.3, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
 - **v5.34.2, released 2021-04-17**
@@ -240,6 +242,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.33 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.33.5, released 2021-06-11**
+  - Mattermost v5.33.5 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.33.4, released 2021-06-03**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
   - Added a performance improvement to the emoji picker overlay to improve typing performance.
@@ -496,9 +500,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
-- **v5.31.6, release day TBD**
-  - Fixing an issue where subsequent migrations fail to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
-  - Fixing an issue where messages with fallback text are repeated. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
+- **v5.31.6, released 2021-06-11**
+  - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
+  - Fixed an issue where messages with fallback text were repeated. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
 - **v5.31.5, released 2021-05-12**
   - Fixed an issue where ``mmctl channel move`` did not allow moving private channels. [MM-32746](https://mattermost.atlassian.net/browse/MM-32746)
 - **v5.31.4, released 2021-04-23**
