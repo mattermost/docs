@@ -8,10 +8,6 @@ Release v4.7
 
 **Release day TBD**
 
-Breaking Changes or Upgrade Notes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- 
-
 Highlights
 ~~~~~~~~~~~~~~~
 
@@ -76,6 +72,9 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Notification badge does not get cleared when reading a channel with unread messages until navigating away from the channel `MM-35946 <https://mattermost.atlassian.net/browse/MM-35946>`_.
+- Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
+- Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
 - An error may occur when installing the MSI Installer on any Windows version.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
