@@ -1,7 +1,7 @@
 .. _faq_kubernetes:
 
 Frequently Asked Questions
-=========================================
+===========================
 
 What's the difference between the Mattermost Operator and Helm Charts?
 -----------------------------------------------------------------------

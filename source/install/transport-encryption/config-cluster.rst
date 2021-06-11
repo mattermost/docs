@@ -1,13 +1,13 @@
 
 Configuring Cluster Transport Encryption (E20)
-=============================================
+==============================================
 
 Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 18.04, but it can be adapted for any Linux operating system.
 
 While this document only describes the configuration of a three-node cluster, it is by no means limited to that number.
 
 Prerequisites
-------------
+-------------
 
 - SSH port whitelisted between each node of the deployment.
 - Active ufw/iptables on each node.

@@ -1,6 +1,6 @@
 
 Configuring Apache2 (Unofficial)
-==================================
+================================
 
 Unofficial, community-maintained guides for configuring Apache as a proxy instead of NGINX.
 

@@ -1,5 +1,3 @@
-.. _jira:
-
 Jira Plugin 
 ===========
 

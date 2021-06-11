@@ -59,10 +59,11 @@ Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as `
 
 .. note::
 
-  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+   When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+
 .. code-block:: bash
  
- bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+   bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -77,7 +78,8 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
     sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
 
 .. note::
-  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+   
+   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
 
 Using the CLI on Docker Install
 -------------------------------

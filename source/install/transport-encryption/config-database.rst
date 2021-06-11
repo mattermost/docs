@@ -1,6 +1,6 @@
 
 Configuring Database Transport Encryption
-=============================================
+==========================================
 
 Mattermost is able to encrypt the traffic between the database and the application using TLS. This guide describes the setup steps for a single, separate MySQL server.
 

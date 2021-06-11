@@ -1,4 +1,3 @@
-
 Embedding Mattermost in Other Applications
 ==========================================
 

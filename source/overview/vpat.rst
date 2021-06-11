@@ -1,6 +1,6 @@
 
 Voluntary Product Accessibility Template (VPAT) 
-=================================================================
+===============================================
 
 The following Voluntary Product Accessiblity Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.state.gov/m/irm/impact/126343.htm>`__.
 
@@ -14,7 +14,7 @@ The following Voluntary Product Accessiblity Template for 508 Compliance is comp
     :backlinks: top
 
 Summary 
---------
+-------
 
 A summary of Mattermost's support of 508 compliance standards is as follows:
 

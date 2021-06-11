@@ -3,6 +3,7 @@ Integrations Overview
 =====================
 
   .. note::
+    
     To see a list of open source integrations please see the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`__.
 
 Mattermost offers a host of options for connecting to systems on your private network as well as services hosted on hybrid and public clouds.
