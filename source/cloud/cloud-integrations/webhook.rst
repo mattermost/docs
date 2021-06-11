@@ -16,7 +16,6 @@ Mattermost's :doc:`interactive message buttons <../developer/interactive-message
   	"source": "entire-payload"
   }
 
-
 Responding to the request
 -------------------------
 
