@@ -633,7 +633,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 
 - ``docconv``: A Go library used to extract document text.
 - ``tidy``: Used to search the contents of HTML and PAGES documents.
-- ``wv``: Used to search the contents of DOC and DOCX documents.
+- ``wv``: Used to search the contents of DOC documents.
 - ``popplerutils``: Used to significantly improve server performance when extracting the contents of PDF documents.
 - ``unrtf``: Used to search the contents of RTF documents.
 - ``Justtext``: Used to search HTML documents.
