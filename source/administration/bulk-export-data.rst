@@ -20,7 +20,7 @@ You can export the following data types:
 
 .. note::
 
-  Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
+   Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
   
   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 

@@ -63,7 +63,7 @@ The report will be queued in the display below the fields described above. The p
 Each compliance report includes a **Download** link which downloads a compressed file named ``adhoc-[UNIQUE_ID].zip``. Inside the file is ``meta.json``, which includes the parameters of the search executed and ``posts.csv`` which includes the contents of messages found by the request.
 
 Compliance query definition stored in ``meta.json``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``meta.json`` file contains the following information about the compliance query:
 
@@ -94,7 +94,7 @@ The ``meta.json`` file contains the following information about the compliance q
 +---------------------+---------------------------------------------------------------+-----------------------------------+
 
 Compliance query results stored in ``posts.csv`` file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``posts.csv`` contains the following information about the compliance query results, one search result per row:
 

@@ -1,5 +1,5 @@
 Encryption Options
-===================
+==================
 
 Mattermost provides encryption-in-transit and encryption-at-rest capabilities. This page guides you through setting up appropriate encryption security.
 
@@ -22,7 +22,6 @@ Gossip Encryption (Experimental)
 In a High Availability mode, Mattermost supports encryption of cluster data in-transit when using the gossip protocol.  
 
 The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the ``Systems`` table for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It can be set to a length of 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
-
 
 Encryption-at-rest
 ------------------

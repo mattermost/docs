@@ -37,7 +37,7 @@ An appropriate disaster recovery plan weighs the benefits of mitigating specific
 There are two common approaches: 
 
 Automated backup
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Automating backups for a Mattermost server provides a copy of the server's state at a particular point in time, which can be restored if a failure in the future leads to loss of data. Options include:
 
@@ -49,7 +49,7 @@ Automating backups for a Mattermost server provides a copy of the server's state
 Recovering from a failure using a backup is typically a manual process and will incur downtime. The alternative is to automate recovery using a high availability deployment.
 
 High Availability deployment 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deploying Mattermost in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`__ allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include:
 
@@ -62,25 +62,25 @@ A properly deployed High Availability deployment automatically switches over to 
 
 A "complete" disaster recovery solution would protect against both real-time hardware failures using High Availability, data corruption failures using automation, and failures of the primary data center by offering both offsite backup and offsite redundant infrastructure. Because the complexity of a full disaster recovery solution is high, it is common for customers to consider trade-offs in cost and complexity relative to the anticipated risks and target recovery times.
 
-Failover from single sign-in outage 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failover from Single Sign-On outage 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When using single sign-on with Mattermost Enterprise Edition an outage to your SSO provider can cause a partial outage on your Mattermost instance.
+When using Single Sign-on with Mattermost Enterprise Edition an outage to your SSO provider can cause a partial outage on your Mattermost instance.
 
 **What happens during an SSO outage?**
 
 - **Most people can still log in.** By default, when a user logs in to Mattermost they receive a session token lasting 30 days (the duration can be configured in the System Console). During an SSO outage, users with valid session tokens can continue to using Mattermost uninterrupted.
 - **Some people can't log in.** During an SSO outage, there are two situations under which a user cannot log in:
   
-  * Users whose session token expires during the outage
-  * Users trying to log in to new devices
+  * Users whose session token expires during the outage.
+  * Users trying to log in to new devices.
 
-In each case, the user cannot reach the SSO provider, and cannot log in. In this case, there are several potential mitigations:  
+In each case, the user cannot reach the SSO provider, and cannot log in. In this case, there are several potential mitigations:
 
 Configure your SSO provider for High Availability 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you're using a self-hosted single sign-on provider, several options are available for `High Availability configurations that protect your system from unplanned outages <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`__.
+If you're using a self-hosted Single Sign-on provider, several options are available for `High Availability configurations that protect your system from unplanned outages <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`__.
 
 For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `High Availability LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`__ to further reduce the chances of an outage.
 
@@ -98,6 +98,6 @@ When users are unable to reach your organization's SSO provider during an outage
 
 Once IT is contacted about an SSO outage issue, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use password to claim the account, until the SSO outage is over and the account can be converted back to SSO.
 
-If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
+If the System Admin is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 When the outage is over, it's critical to switch everyone back to SSO from email-password to maintain consistency and security.

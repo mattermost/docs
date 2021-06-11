@@ -13,7 +13,7 @@ GDPR Compliance
 The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
 Continual Commitment to the Principles of GDPR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
 

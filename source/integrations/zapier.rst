@@ -81,7 +81,7 @@ Create a Zap
   e. **Test the Zap**: You may want to test your zap formatting in a Private Channel before posting in a channel that is visible to your entire team.
 
 Message Formatting Tips
--------------------------
+-----------------------
 
 Here are some useful tips we recommend to get the most out of Zapier integration:
 
@@ -123,7 +123,7 @@ Troubleshooting Guide
 Possible solutions to common issues encountered during setup.
 
 Cannot connect a Mattermost account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. ``"Token named access_token was not found in oauth response!"``
   a. Possible Solution: Try removing any trailing ``/``'s on the end of your **Mattermost URL**.

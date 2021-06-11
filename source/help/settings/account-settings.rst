@@ -210,7 +210,7 @@ Message Display
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
 Channel Display
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
 
@@ -292,7 +292,7 @@ Enable Post Formatting
 This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <https://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
 Enable Join/Leave Messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting controls whether system messages about users joining or leaving a channel are visible. When **On** these messages will appear. When **Off**, these messages will be hidden. If any users are added to or removed from a channel, a system message will still be shown even if this setting is **Off**.
 

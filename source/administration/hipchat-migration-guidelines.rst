@@ -5,6 +5,7 @@ You can migrate HipChat users and message histories to Mattermost using the foll
 
 Step 1:  Set up your Mattermost Instance
 -----------------------------------------
+
 - `Go to Mattermost download page <https://mattermost.com/download/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
 
 Questions? Please visit our `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
@@ -32,7 +33,6 @@ If you’re able to upgrade HipChat Server or HipChat Data Center to the latest 
 #. Once the export is done, you will receive an email with a link to download the file.
 
 More detailed instructions can be found on Hipchat's `documentation <https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html>`__ and `knowledge base <https://confluence.atlassian.com/hipchatkb/exporting-from-hipchat-server-or-data-center-for-data-portability-950821555.html>`__.
-
 
 Step 3: Import your data into Mattermost 
 ----------------------------------------

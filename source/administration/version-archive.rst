@@ -4,7 +4,8 @@ Version Archive
 If you want to check that the version of Mattermost you are installing is the official, unmodified version, compare the SHA-265 checksum or the file's GPG signature with the one published in this version archive. To verify the GPG signature of a Mattermost release, use the public key stored in Keybase: https://keybase.io/mattermost.
 
 .. important::
-  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
+   
+   Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
 
 Mattermost Enterprise Edition
 ------------------------------

@@ -42,7 +42,7 @@ These ``mattermost`` commands include:
     :local:
 
 Using the CLI
-^^^^^^^^^^^^^
+-------------
 
 To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
@@ -96,12 +96,13 @@ Using the CLI on Docker Preview
 The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
 
 Mattermost 3.6 and later
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
 
 .. note::
-  For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
+   
+   For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
 
 Notes:
 
