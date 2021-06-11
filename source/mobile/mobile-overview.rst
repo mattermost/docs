@@ -19,12 +19,12 @@ Decision Summary
 
 When planning for a Mobile app deployment, you have two important decisions to make: 
 
-- What app will you deploy?
+- What app will you deploy - a pre-built app or your own custom build?
 - How will you deploy it?
 
-Mattermost provides official mobile Apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using these pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
+Mattermost provides official mobile Apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
 
-If you want to control the look, feel, or capabilities of the Mobile apps, host your own push proxy server, or to maintain full control over app distribution, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`__ to learn more about working with custom apps.
+If you want to control the app's look and feel, or host your own push proxy server, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`__ to learn more about working with custom built apps.
 
 The following table summarizes the key differences between these two approaches:
 
@@ -33,21 +33,19 @@ The following table summarizes the key differences between these two approaches:
 +================================================================+=====================================================================+
 | **Recommended for:**                                           | **Recommended for:**                                                |
 |                                                                |                                                                     |
-| Self-supporting teams who need standard features.              | Teams that need to customize the app, need to adhere to corporate   |
-|                                                                | compliance rules, or prefer to host their own push proxy server.    |
+| Self-supporting teams who need standard features.              | Teams that need to customize the app, or prefer to host their own   |
+|                                                                | push proxy server.                                                  |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
 | **Benefits:**                                                  | **Benefits:**                                                       |
 |                                                                |                                                                     |  
-| - Easiest way to deploy Mattermost Apps.                       | You maintain full control over the distribution of applications,    |
-| - Test push notifications using the Test Push                  | including the look, feel, and capabilities of your mobile app.      |
-|   Notification Service (TPNS).                                 |                                                                     |
-| - Mattermost Enterprise includes a                             | **Limitations:**                                                    |
-|   Hosted Push Notification Service (HPNS).                     |                                                                     |
-| - Apps update automatically with the latest                    | - Requires development knowledge and resources to maintain mobile   |
-|   features, enhancements, and security updates.                |   app code as Mattermost releases new product updates.              |
+| - Easiest way to deploy Mattermost Apps.                       | You maintain full control over the look and feel of your mobile     |
+| - Test push notifications using Mattermost mobile push proxy   | app.                                                                |
+|   options.                                                     |                                                                     |
+| - Apps update automatically with the latest features           | **Limitations:**                                                    |
+|   enhancements, and security updates.                          |                                                                     |
+|                                                                | - Requires development knowledge and resources to maintain mobile   |
+| **Limitations:**                                               |   app code as Mattermost releases new product updates.              |
 |                                                                | - Must deploy your own push proxy server.                           |
-| **Limitations:**                                               |                                                                     |
-|                                                                |                                                                     |  
 | - Can’t white-label Mattermost Mobile Apps.                    |                                                                     |
 | - Can’t deploy your own push proxy server.                     |                                                                     |  
 +----------------------------------------------------------------+---------------------------------------------------------------------+
@@ -57,7 +55,9 @@ Technical and Security Requirements
 
 See our `Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`__ documentation for basic mobile device requirements, and our `Supported Mattermost Server Versions <https://docs.mattermost.com/administration/mobile-changelog.html>`__ documentation for details on Mattermost Server minimum requirements. 
 
-We recommend running the latest version of the Mattermost Server as it contains the most recent features and applicable security updates. If this isn't possible, we encourage you to be on the most recent Extended Support Release version of Mattermost. This release has critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
+We recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. 
+
+If this isn't possible, we encourage you to be on the most recent Extended Support Release version of Mattermost Server. This release has critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
 .. important::
   Not all provided updates are compatible with all previous versions of Mattermost. Updating only Mattermost Mobile Apps or updating the Mobile apps before updating Mattermost Server can result in compatibility issues.

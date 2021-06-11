@@ -39,7 +39,7 @@ In general, building your own Mobile apps will present some challenges, includin
 Custom Mobile App Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Chat". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
+Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Messaging". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
 
 Deploying Your Custom App
 -------------------------
@@ -59,13 +59,12 @@ Alternatively, you can use an EMM provider to push the application to the userâ€
 For additional details, see the following documentation:
 
 - `Deployment Using an EMM Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
-- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config.
-- `Mattermost AppConfig Values <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values.html>`__  for information on the configuration options that can be sent from the EMM provider to Mattermost Mobile apps. 
+- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost Mobile apps.
 
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the same process Mattermost uses to make Mattermost Mobile apps available for everyone. Itâ€™s a good choice if you're looking to white-label your own Mobile apps to remove Mattermost branding. Before your app can be listed on the public app stores, you need to submit it to the public app stores for review and approval.
+This is the same process Mattermost uses to make Mattermost Mobile apps available for everyone. Before your app can be listed on the public app stores, you need to submit it to the public app stores for review and approval.
 
 As part of the submission process, you need to identify an update strategy that accounts for the release of new versions of Mattermost Mobile apps. 
 

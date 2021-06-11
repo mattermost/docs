@@ -6,7 +6,7 @@ We strongly recommend using Mattermost’s pre-built Mobile App. This approach i
 Deployment Options
 ------------------
 
-When you decide to use the pre-built Mattermost Mobile apps, you have two ways to deploy them: through public app stores, or through an Enterprise Mobile Management (EMM) provider.
+When you decide to use the pre-built Mattermost Mobile apps, you have two ways to distribute them: as your users to download them, or distribute them through an Enterprise Mobile Management (EMM) provider.
   
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~

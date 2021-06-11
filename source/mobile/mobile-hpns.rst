@@ -13,15 +13,13 @@ Mattermost offers push proxy options for Mattermost Team Edition, Cloud, and Ent
 Test Push Notifications Service (TPNS)
 --------------------------------------
 
-Mattermost offers a free, basic hosted service for self-managed deployments. The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs). 
+Mattermost offers a free, basic hosted service for self-managed deployments. 
 
-To use the Mattermost TPNS:
+.. note::
+  - The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs). 
+  - The TPNS isn't available for Mattermost Cloud deployments.
 
-1. Go to **System Console > Environment > Push Notification Server > Enable Push Notifications**, then select **Use TPNS connection to send notifications to iOS and Android apps**.
-2. Specify the URL of the **Push Notification Server** based on your Mattermost edition.
-
-   - Mattermost Team Edition: ``https://push-test.mattermost.com``
-   - Mattermost Enterprise Edition: ``https://push.mattermost.com``
+To use the Mattermost TPNS, go to **System Console > Environment > Push Notification Server > Enable Push Notifications**, then select **Use TPNS connection to send notifications to iOS and Android apps**.
 
 See our `Testing Push Notifications <https://docs.mattermost.com/mobile/mobile-testing-notifications.html>`__ documentation to learn more about testing mobile push notifications.
 
@@ -67,17 +65,22 @@ Configuring your existing Mattermost instance to use the Mattermost HPNS is a si
 
 2. Go to **System Console > Environment > Push Notification Server**.
 
-3. Set **Enable Push Notifications** to **Use HPNS connection with uptime SLA to send notifications to iOS and Android apps**. Note that this option is only available in Enterprise Edition.
+3. Set **Enable Push Notifications** to **Use HPNS connection with uptime SLA to send notifications to iOS and Android apps**. Note that this option is only available in Mattermost Enterprise Edition.
+
+4. Specify the URL of the **Push Notification Server** based on your Mattermost edition.
+
+- Mattermost Team Edition: ``https://push-test.mattermost.com``
+- Mattermost Enterprise Edition: ``https://push.mattermost.com``
 
 .. image:: ../images/mobile_hpns.png
 
-4. Review the Mattermost Terms of Service and the Mattermost Privacy Policy, then select the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy" to acknowledge that you understand the terms of use.
+5. Review the Mattermost Terms of Service and the Mattermost Privacy Policy, then select the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy" to acknowledge that you understand the terms of use.
 
 .. note:: 
 
   The default **Push Notification Server** address is ``https://push.mattermost.com``. The server is hosted inside the United States. Mattermost also offers a push notification server hosted in Germany. If you wish to use the server in Germany, update the **Push Notification Server** address to ``https://hpns-de.mattermost.com/``.
 
-5. Select **Save**
+6. Select **Save**
 
 After setup, test push notifications to confirm they are working.
 
@@ -93,9 +96,8 @@ Enabling MPNS in Mattermost
 2. Under **Enable Push Notifications**, then select **Manually enter Push Notification Service location**.
 3. Enter the location of your MPNS in the **Push Notification Server** field, then select **Save**.
 4. (Optional) Customize mobile push notification contents. Most deployments choose to include the full message content sent in the notification payload.
-
-    i. Go to **System Console > Site Configuration > Notifications**.
-    ii. Under **Push Notification Contents**, select the type of information to include in push notifications, then select **Save**.
+  a. Go to **System Console > Site Configuration > Notifications**.
+  b. Under **Push Notification Contents**, select the type of information to include in push notifications, then select **Save**.
 
 Host Your Own Push Proxy Service
 --------------------------------
@@ -106,7 +108,7 @@ See our `developer documentation <https://developers.mattermost.com/contribute/m
 
 .. note::
 
-   - Your instance of the MPNS should be behind your firewall inside your private network, or in your DMZ, in a way that the Mattermost server can access it.
+   - We recommend that your instance of the MPNS be behind your firewall inside your private network, or in your DMZ, in a way that the Mattermost server can access it.
    - The MPNS does not connect with Mattermost mobile apps directly; the MPNS parses and forwards push notifications from the Mattermost server to the Apple Push Notification Service (APNS) or the Firebase Cloud Messaging (FCM).
    - The MPNS must be able to communicate with the Apple Push Notification Service over HTTP/2. If an outbound proxy appliance is deployed between the MPNS and APNS, ensure it supports HTTP/2.
      - Ensure you use encrypted TLS connections between your MPNS and Apple, between your MPNS and Facebook, and between your MPNS and your Mattermost server.

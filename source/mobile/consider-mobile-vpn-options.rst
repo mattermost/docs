@@ -10,8 +10,8 @@ Depending on your security policies, we recommend deploying Mattermost behind a 
 
 Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ enabled.
 
-Consider Mobile VPN Options
----------------------------
+Mobile VPN Options
+------------------
 
 A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network.
 
