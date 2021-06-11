@@ -44,7 +44,7 @@ Our Hosted Push Notification Service offers:
 - Out-of-box configuration for new servers, so nothing is required to enable it on new deployments.
 
 .. note:: 
-  - The TPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy server <#id4>`_.
+  - The HPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy server <#id4>`_.
   - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server.
 
 ID-Only Push Notifications
@@ -111,7 +111,7 @@ See our `developer documentation <https://developers.mattermost.com/contribute/m
    - We recommend that your instance of the MPNS be behind your firewall inside your private network, or in your DMZ, in a way that the Mattermost server can access it.
    - The MPNS does not connect with Mattermost mobile apps directly; the MPNS parses and forwards push notifications from the Mattermost server to the Apple Push Notification Service (APNS) or the Firebase Cloud Messaging (FCM).
    - The MPNS must be able to communicate with the Apple Push Notification Service over HTTP/2. If an outbound proxy appliance is deployed between the MPNS and APNS, ensure it supports HTTP/2.
-     - Ensure you use encrypted TLS connections between your MPNS and Apple, between your MPNS and Facebook, and between your MPNS and your Mattermost server.
+     - Ensure you use encrypted TLS connections between your MPNS and Apple Push Notification Service, between your MPNS and Google FCM, and between your MPNS and your Mattermost server.
    - You must ensure that the push proxy can be reached on the correct port. The default port is 8086.
    - As part of the process of building the applications, you'll need to sign the applications. You must also obtain the appropriate certificate for both Android and iOS. If this isn't done, the applications won't be able to interact with your instance of the MPNS. Once this is complete, you can proceed with the deployment of your MPNS instance.
    - We strongly recommend that you subscribe to `Mattermost Security Bulletins <https://mattermost.com/security-updates/#sign-up>`__. When you're notified of security updates for the MPNS, apply them promptly.
