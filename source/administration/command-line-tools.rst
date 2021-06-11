@@ -42,7 +42,7 @@ These ``mattermost`` commands include:
     :local:
 
 Using the CLI
-^^^^^^^^^^^^^
+-------------
 
 To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
@@ -59,10 +59,11 @@ Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as `
 
 .. note::
 
-  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+   When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+
 .. code-block:: bash
  
- bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+   bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -77,7 +78,8 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
     sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
 
 .. note::
-  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+   
+   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
 
 Using the CLI on Docker Install
 -------------------------------
@@ -96,12 +98,13 @@ Using the CLI on Docker Preview
 The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
 
 Mattermost 3.6 and later
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
 
 .. note::
-  For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
+   
+   For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
 
 Notes:
 

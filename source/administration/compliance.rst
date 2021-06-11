@@ -4,7 +4,8 @@ Compliance Reporting and Oversight (E20)
 *Available in Mattermost Enterprise Edition E20*
 
 .. note::
-  This feature is replaced by a new :doc:`Compliance Export feature <compliance-export>`, and will be removed in Mattermost v6.0. We recommend migrating to the new system.
+   
+   This feature is replaced by a new :doc:`Compliance Export feature <compliance-export>`, and will be removed in Mattermost v6.0. We recommend migrating to the new system.
   
   For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
@@ -63,7 +64,7 @@ The report will be queued in the display below the fields described above. The p
 Each compliance report includes a **Download** link which downloads a compressed file named ``adhoc-[UNIQUE_ID].zip``. Inside the file is ``meta.json``, which includes the parameters of the search executed and ``posts.csv`` which includes the contents of messages found by the request.
 
 Compliance query definition stored in ``meta.json``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``meta.json`` file contains the following information about the compliance query:
 
@@ -94,7 +95,7 @@ The ``meta.json`` file contains the following information about the compliance q
 +---------------------+---------------------------------------------------------------+-----------------------------------+
 
 Compliance query results stored in ``posts.csv`` file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``posts.csv`` contains the following information about the compliance query results, one search result per row:
 

@@ -1,8 +1,7 @@
 .. _bulk-export:
 
-=================
 Bulk Export Tool
-=================
+================
 
 Moving data from one Mattermost instance into another begins with exporting data to a `JSONL <https://jsonlines.org>`__ file using the
 `bulk loading feature <https://docs.mattermost.com/deployment/bulk-loading.html>`__. This tool is useful if you have created a server for a proof of concept, have created another server for production use, and now want to retain the history from the proof of concept instance.
@@ -19,7 +18,7 @@ You can export the following data types:
 .. include:: bulk-export-data.rst
 
 Running the bulk export command
-===============================
+-------------------------------
 
 The export command runs in the `CLI <https://docs.mattermost.com/administration/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
 

@@ -23,7 +23,7 @@ Your **Team Description** is displayed when viewing the list of teams available 
 You can enter a description up to 50 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. 
 
 Team Icon
-~~~~~~~~~~
+~~~~~~~~~
 
 Your **Team Icon** appears in the team sidebar, visible if users are members of more than one team. 
 

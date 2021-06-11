@@ -57,7 +57,7 @@ You can apply search modifiers to any search to reduce the number of results ret
 .. image:: ../../images/search-modifiers.png
 
 ``from:`` and ``in:``
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Use ``from:`` to find messages or files from specific users. 
 For example, searching ``from:john.smith`` only returns content from your Direct Message history with John Smith.
@@ -66,7 +66,7 @@ Use ``in:`` to find messages or files posted in specific Public channels, Privat
 For example, searching ``Mattermost in:town-square`` only returns results in the Town Square Public channel that contains the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns results that contains the term ``Mattermost`` in your Direct Message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use ``before:`` to find messages or files posted before a specified date.
 
@@ -87,19 +87,19 @@ Examples:
 -  Searching ``website on: 2018-09-01`` returns messages or files containing the term ``website`` posted on September 1, 2018.
   
 Exclusions
-^^^^^^^^^^
+~~~~~~~~~~
 
 Use the hyphen ``-`` symbol to exclude terms from your search results. For example, searching ``test -release`` only returns results that include the term ``test`` and exclude the term ``release``.
 
 This exclusion modifier can be used in combination with other modifiers to further refine search results. For example, searching ``test -release -in:release-discussion -from:eric`` returns all results with the term ``test``, excludes posts with the term ``release``, excludes posts made in the ``release-discussion`` channel, and excludes messages sent in Direct Messages by ``eric``.
 
 Quotation Marks
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Use quotation marks ``" "`` to return search results for exact terms. For example, searching ``"Mattermost website"`` returns messages containing the exact phrase ``Mattermost website``, but doesn't return results containing ``Mattermost`` and ``website`` as separate terms.
 
 Wildcard
-^^^^^^^^
+~~~~~~~~
 
 Use the asterisk ``*`` symbol for wildcard searches that match within words. For example, searching ``rea*`` returns messages or files containing ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``.
 
@@ -136,13 +136,13 @@ Technical Notes
 ---------------
 
 Searching Chinese, Korean, and Japanese
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation <https://docs.mattermost.com/install/i18n.html>`__ for details.
 - You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
 
-Differences between PostgreSQL and MySQL Search
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Differences between PostgreSQL and MySQL search
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Main Menu > About Mattermost** to see which database you’re using.
 

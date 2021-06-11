@@ -7,9 +7,8 @@ Access Your Workspace
 ---------------------
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
-
+   :maxdepth: 2
+   
    /help/getting-started/welcome-to-mattermost.rst
    /help/getting-started/access-your-workspace.rst
    /help/getting-started/signing-in.rst
@@ -21,9 +20,7 @@ Work with Messages
 ------------------
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
+   :maxdepth: 2
 
    /help/messaging/sending-messages.rst
    /help/messaging/formatting-text.rst
@@ -40,9 +37,7 @@ Manage Teams, Channels, and Members
 -----------------------------------
    
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
+   :maxdepth: 2
 
    /help/getting-started/creating-teams.rst
    /help/settings/team-settings.rst   
@@ -55,9 +50,7 @@ Customize Mattermost Messaging
 ------------------------------
       
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
+   :maxdepth: 2
       
    /help/getting-started/setting-your-status-availability.rst
    /help/getting-started/configuring-notifications.rst
@@ -71,9 +64,7 @@ Navigate Mattermost Messaging
 -----------------------------
       
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
+   :maxdepth: 2
       
    /help/getting-started/accessibility.rst
    /help/messaging/keyboard-shortcuts.rst
@@ -82,8 +73,6 @@ Extend Mattermost Messaging
 ---------------------------
       
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
+   :maxdepth: 2
       
    /help/settings/integration-settings.md

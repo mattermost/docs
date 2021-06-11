@@ -1,5 +1,5 @@
 iOS Setup
----------
+=========
 
 Your Mattermost teams can be accessed on iOS mobile devices via the Mattermost Mobile App.
 

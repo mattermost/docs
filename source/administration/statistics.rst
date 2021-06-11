@@ -42,7 +42,7 @@ Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Advanced system statistics (Enterprise)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enterprise Edition includes additional system statistics.
 
@@ -106,12 +106,12 @@ Troubleshooting/FAQ
 -------------------
 
 I see an error: "Not enough data for a meaningful representation"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you're using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
 
 Can Team Admins review their own team's statistics?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Mattermost Enterprise Edition E20*
 

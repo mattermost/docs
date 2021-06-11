@@ -5,7 +5,7 @@ Mobile Applications Guide
 There are three main options for deploying the Mattermost Mobile Apps.
 
 Install from Apple App Store and Google Play
----------------------------------------------
+--------------------------------------------
 
 For quick and easy deployment, you can download the Mattermost mobile apps directly from the Apple App Store and Google Play. Please see our guide on :doc:`installing from the Apple App Store and Google Play Store <mobile-appstore-install>` for more details. 
 

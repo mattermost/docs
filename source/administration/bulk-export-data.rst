@@ -1,5 +1,5 @@
 Bulk Export Data
-================
+----------------
 
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
@@ -18,8 +18,9 @@ You can export the following data types:
 - Direct Message Channels
 - Direct Message Posts
 
-.. note:: 
-  Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
+.. note::
+
+   Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
   
   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 

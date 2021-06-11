@@ -1,4 +1,3 @@
-=====================
 Organizing Mattermost
 =====================
 
@@ -10,7 +9,6 @@ This document shares best practices from various Mattermost deployments includin
 2. `How to navigate and organize channels`_
 3. `Channel naming examples`_
 
--------------------------------
 The importance of channel names
 -------------------------------
 
@@ -34,19 +32,24 @@ It's natural to start with broadly defined channels and let them divide into nar
 
 For example, you might begin with a general "Marketing" channel. As conversations progress, you might divide that channel into: "Marketing: Website", "Marketing: Social Media", "Marketing: General".
 
-.. tip :: Use colons to separate sections of channel names, rather than `` - `` or `` > `` which require more spaces to display.
+.. tip:: 
+
+   Use colons to separate sections of channel names, rather than `` - `` or `` > `` which require more spaces to display.
 
 As the organization grows, disciplines might split across business units, products and geographies, with channel names like "US: Marketing" and "UK: Marketing".
 
-.. tip :: If you need to shorten country names, use standard `2-letter country codes <https://www.nationsonline.org/oneworld/country_code_list.htm>`__.
+.. tip:: 
+   
+   If you need to shorten country names, use standard `2-letter country codes <https://www.nationsonline.org/oneworld/country_code_list.htm>`__.
 
 You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social Media``.
 
-.. tip :: Shorten words, particularly categories, by removing vowels, endings and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
+.. tip:: 
+   
+   Shorten words, particularly categories, by removing vowels, endings and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
 
 Good naming can take a team up to several thousand channels without significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate the large number of channels.
 
--------------------------------------
 How to navigate and organize channels
 -------------------------------------
 
@@ -61,7 +64,9 @@ Entering CTRL+K brings up a dialog where users can type in the first few letters
 
 Keeping names clear and short lets users navigate large collections of channels quickly.
 
-.. tip :: Use ALT+SHIFT+UP and ALT+SHIFT+DOWN to move up and down to the next channel with an unread message.
+.. tip:: 
+   
+   Use ALT+SHIFT+UP and ALT+SHIFT+DOWN to move up and down to the next channel with an unread message.
 
 Topic Channels
 ~~~~~~~~~~~~~~
@@ -83,7 +88,9 @@ There are three built-in features to make meetings in Mattermost easier:
 
 You can number and format messages as agenda items to discuss for the next meeting.
 
-.. tip :: Try pasting the following as an example in a channel designated for meetings::
+.. tip:: 
+   
+   Try pasting the following as an example in a channel designated for meetings::
 
 	#### 1) Agenda item example
         #### Commentary about agenda item to be discussed.
@@ -127,7 +134,6 @@ There is a wide array of options. Examples: Bugs, Support Tickets, Twitter, News
 	
 People might use these channels like a daily newspaper, reading about everything that's happened in the last day, while other configurations allow notifications to alert only when their username or certain key words are mentioned.
 
------------------------
 Channel naming examples
 -----------------------
 
@@ -156,7 +162,7 @@ DIRECT MESSAGES
 * [Recruiter]
 * [Manager]
 
-Here is an example of what a marketer's channels might look like if she was working in the Palo Alto, California office of a large enterprise, working on a product called "Pontoon":
+Here's an example of what a marketer's channels might look like if she was working in the Palo Alto, California office of a large enterprise, working on a product called "Pontoon":
 
 CHANNELS
 

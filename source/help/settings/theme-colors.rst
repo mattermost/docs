@@ -10,7 +10,7 @@ Any color changes you make are applied to all teams that you belong to. In Enter
 Import Theme from Slack
 -----------------------
 
-To import a theme, in Slack, go to **Preferences > Themes**, select **Create a custom theme**, then copy the theme color values. 
+To import a theme, in Slack, go to **Preferences > Themes**, select **Create a custom theme**, then copy the theme color values.
 
 In Mattermost, select **Import theme colors from Slack**, then paste the color values into the input box and select **Submit**. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings. Select **Save** to confirm your theme changes.
 

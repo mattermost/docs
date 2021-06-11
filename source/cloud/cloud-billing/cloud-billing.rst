@@ -13,7 +13,7 @@ Billing Period
 After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
 
 Adding and removing users in the middle of a billing period
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you add new users in the middle of a billing cycle, you'll only be charged for the days that the user is registered.
 
@@ -33,12 +33,12 @@ Viewing and Managing Billing Details
 You can view your billing details in **System Console > Billing & Account**.
 
 Subscription
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The subscription screen outlines the details of your Mattermost Cloud plan, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
 
-Billing History
-^^^^^^^^^^^^^^^
+Billing history
+~~~~~~~~~~~~~~~
 
 The Billing History screen contains a list of all your monthly invoices and payments. Invoices appear immediately after the billing period ends.
 
@@ -47,12 +47,12 @@ Billing periods begin at 12 AM UTC on the first day of each calendar month and e
 If you have a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
 
 Company information
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 The **Company Information** screen contains an area to add your company address where you are physically located. The company address will appear on your invoice if specified. Otherwise the billing address associated with the credit card on file will be used.
 
 Payment information
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted.
 
@@ -61,12 +61,12 @@ Mattermost has engaged third party payments processor Stripe to safely collect a
 We offer pricing and billing only in U.S. Dollars (USD) at this time. Payment will be made in USD converted using the exchange rate from at the time of the transaction.
 
 Sales tax and VAT
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
 
 Failed or late payments
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 You will be notified immediately of failed payments both in-product with a banner and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you will be charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here's what to expect:
 

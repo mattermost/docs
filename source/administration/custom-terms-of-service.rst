@@ -27,12 +27,12 @@ Frequently Asked Questions
 --------------------------
 
 What happens if I update my terms of service text?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There will be no impact to your end users. Users will simply be required to accept the new terms on next login or page refresh.
 
 How do I know if my users accepted the terms of service?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each time a user agrees to the terms of service, the agreement is recorded in the database:
 
@@ -40,14 +40,14 @@ Each time a user agrees to the terms of service, the agreement is recorded in th
 - Each time a user accepts the terms, the action is recorded in the **Audits** table, containing the username, timestamp of acceptance, and other relevant information.
 
 Why isn't this feature in Team Edition for GDPR compliance?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Terms of service is presented to users on login and account creation, and available to users at all times in the link specified at **System Console > Customization > Legal and Support > Terms of Service link** in prior versions or **System Console > Site Configuration > Customization** in versions after 5.12.
 
 This feature is intended to meet compliance requirements for large Enterprise companies.
 
 Why are custom terms of service beta?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature is labelled as beta while we verify the quality of the feature in various scenarios. Known issues include:
 

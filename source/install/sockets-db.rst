@@ -1,10 +1,9 @@
 Using Sockets for Database
-====================
+==========================
 
 Mattermost requires a database back-end. If you plan to run it on the machine,
 install MySQL or PostgreSQL as the database. In this document let's understand how
 you can use sockets for setting up the database.
-
 
 MySQL
 -----

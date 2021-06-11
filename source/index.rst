@@ -15,11 +15,11 @@ Mattermost Product Documentation
    :maxdepth: 1
    :glob:
 
-   About Mattermost <guides/about-mattermost>
+   About Mattermost <overview/index>
    Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
    Messaging <guides/messaging>
    Incident Collaboration <guides/incident-collaboration>
-   Focalboard <https://github.com/mattermost/focalboard/>
+   Focalboard <https://www.focalboard.com/guide/user/>
    Mattermost for Developers <https://developers.mattermost.com/>
    Support Knowledge Base <https://support.mattermost.com/hc/en-us/>

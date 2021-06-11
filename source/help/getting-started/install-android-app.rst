@@ -1,5 +1,5 @@
 Android Setup
--------------
+=============
 
 Your Mattermost teams can be accessed on Android mobile devices by downloading the Mattermost Mobile App.
 

@@ -7,7 +7,6 @@ Teams run a playbook every time they want to orchestrate people, tools, and data
 
 Every reported incident or new checklist results in a newly-created, public or private incident channel exposing a custom user interface for collaboration, resolution, and feedback.
 
-
 * Starting a playbook run automatically creates a dedicated incident channel to coordinate discussion. 
   
   - Use custom categories in the channel sidebar to streamline access to ongoing playbook runs.

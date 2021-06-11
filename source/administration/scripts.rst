@@ -4,7 +4,8 @@ Scripts
 This repository contains a series of scripts to perform descrete tasks: https://github.com/icelander/mattermost-scripts.
 
 .. note::
-  This code is provided as-is without any warranty and is not sponsored by Mattermost. Please use cautiously and test before running any of these scripts against a production server.
+   
+   This code is provided as-is without any warranty and is not sponsored by Mattermost. Please use cautiously and test before running any of these scripts against a production server.
 
 These useful Mattermost scripts are outlined in the repository's README file (https://github.com/icelander/mattermost-scripts/blob/master/README.md) and include:
 

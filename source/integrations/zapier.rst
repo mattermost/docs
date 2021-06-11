@@ -24,7 +24,7 @@ The first time you set up Zapier on your Mattermost instance you will be require
 To learn more about OAuth 2.0 applications, including what permissions they have access to, see the `OAuth 2.0 documentation <https://docs.mattermost.com/developer/oauth-2-0-applications.html>`__.
 
 Enable OAuth 2.0
-`````````````````
+^^^^^^^^^^^^^^^^
 
 1. Open **Main Menu > System Console**.
 2. Under **Integrations > Integration Management** (or **Integrations > Custom Integrations** in versions prior to 5.12):
@@ -33,7 +33,7 @@ Enable OAuth 2.0
   b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
 
 Register Zapier as an OAuth 2.0 Application
-````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Go to **Main Menu** > **Integrations**.
 2. Select **OAuth 2.0 Applications > Add OAuth 2.0 Application** and enter the following fields:
@@ -81,7 +81,7 @@ Create a Zap
   e. **Test the Zap**: You may want to test your zap formatting in a Private Channel before posting in a channel that is visible to your entire team.
 
 Message Formatting Tips
--------------------------
+-----------------------
 
 Here are some useful tips we recommend to get the most out of Zapier integration:
 
@@ -123,7 +123,7 @@ Troubleshooting Guide
 Possible solutions to common issues encountered during setup.
 
 Cannot connect a Mattermost account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. ``"Token named access_token was not found in oauth response!"``
   a. Possible Solution: Try removing any trailing ``/``'s on the end of your **Mattermost URL**.

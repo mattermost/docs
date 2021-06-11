@@ -1,21 +1,21 @@
-=======================================
+
 Community Engagement Guidelines 
 =======================================
 
 Below is a list of guidelines for maintainers, key contributors and Mattermost, Inc. staff to use when engaging with the broader community in forums, GitHub issues, Twitter, our Mattermost servers and other places of online conversation. 
 
 Best Practices 
-============================================================================
+--------------
 
 1. Don't offer advice on database modification without a clear warning
-----------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Never give DB advice without a warning similar to: 
 
 ``Manual database modification bypasses checks in the code and could make a system unrecoverable. It's not recommended and if you do make a change, make sure to back up your DB, and verify changes carefully.``
 
 2. Answer with docs
-----------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~
 
 When answering a common question, always include a link to the docs so the person asking--along with people in future who read your response--has a reference. If no doc exists, do one of two things: 
 
@@ -25,16 +25,14 @@ When answering a common question, always include a link to the docs so the perso
 During the triage process, if the information missed should have obviously been included, assign the ticket to the last approver for the doc PR, otherwise assign to doc PR author. 
 
 3. Avoid speculation 
-----------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Circumstances change frequently. Don't set expectations for something that you're not 100% sure will happen. If it doesn't happen, people will be more upset than if you didn't say anything. 
 
 For example, if you haven't seen a feature merged into a specific product in a specific edition, don't tell people the feature will be in until you see it merged. 
 
-
-
 Speaking in the Voice of Mattermost 
-============================================================================
+-----------------------------------
 
 Mattermost serves a global audience, who might not use English as their first language.
 
