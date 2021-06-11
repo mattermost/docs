@@ -46,7 +46,7 @@ Our Hosted Push Notification Service offers:
 - Out-of-box configuration for new servers, so nothing is required to enable it on new deployments.
 
 .. note:: 
-  - The TPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy server <#id4>`_.
+  - The HPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy server <#id4>`_.
   - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server.
 
 ID-Only Push Notifications
