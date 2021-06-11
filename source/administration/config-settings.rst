@@ -629,7 +629,7 @@ Document content search is available in Mattermost Server from v5.35, with mobil
 
 **False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
 
-You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include PDF, DOC, DOCX, RTF, XML, HTML, ODT, and PAGES documents. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
+You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
 
 - ``docconv``: A Go library used to extract document text.
 - ``tidy``: Pre-processes XML-based documents before they are parsed and searched.
