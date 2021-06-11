@@ -625,12 +625,20 @@ Enable Document Search by Content
 
 Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
-**True**: Supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
-
-.. note::
-   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
+**True**: Supported document types are searchable by their content. 
 
 **False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+
+You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
+
+- ``tidy``: Used to search the contents of HTML and PAGES documents.
+- ``wv``: Used to search the contents of DOC documents.
+- ``popplerutils``: Used to significantly improve server performance when extracting the contents of PDF documents.
+- ``unrtf``: Used to search the contents of RTF documents.
+- ``Justtext``: Used to search HTML documents.
+
+.. note::
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older documents based on file name only.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
