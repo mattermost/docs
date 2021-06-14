@@ -1,7 +1,7 @@
 .. _install-kubernetes-operator:
 
 Installing the Operators
-========================
+------------------------
 
 The operators are installed using ``kubectl`` and each operator is created in its own namespace. You can install and run multiple Mattermost installations in the same cluster using different namespaces.
 
@@ -17,7 +17,7 @@ Follow the instructions `here <https://kubernetes.github.io/ingress-nginx/deploy
   $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
 
 Installing MySQL and MinIO operator
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The MySQL operator and MinIO operator are a good way to try out the Mattermost Operator or develop it on a local cluster but they **are not recommended for production usage**.
 
