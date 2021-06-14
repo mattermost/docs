@@ -146,12 +146,12 @@ in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/4
 
 **General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/documents/regulations-docs/413-part-736-general-prohibitions/file>`__. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
 
-**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <http://apps.export.gov/csl-search#/csl-search>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
+**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <https://www.trade.gov/consolidated-screening-list>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
 
 **Deemed Exports**:  Release of controlled technology to foreign persons in the U.S. is "deemed" to be an export to the
 person’s country or countries of nationality and is found in `734.2(b) <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ of the EAR, which you can read about under the Export Administration Regulations on the BIS website.
 
-**Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of `“Red Flags” <https://www.bis.doc.gov/index.php/compliance-a-training/export-management-a-compliance/freight-forwarder-guidance/23-compliance-a-training/51-red-flag-indicators>`__. Be sure to screen business partners and customers to ensure compliance.
+**Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of “Red Flags”. Be sure to screen business partners and customers to ensure compliance.
 
 Disclaimer
 ~~~~~~~~~~
@@ -162,8 +162,8 @@ This information is subject to change without notice. The materials on this site
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
 
-FAQ
-----
+Frequently Asked Questions
+--------------------------
 
 To be compliant with GDPR, do I need to remove message contents of email notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

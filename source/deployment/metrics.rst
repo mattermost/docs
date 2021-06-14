@@ -88,8 +88,8 @@ Installing Grafana
 
 .. note:: 
 
-  - For troubleshooting advice, check the `Grafana Troubleshooting page <https://docs.grafana.org/installation/troubleshooting/>`__. 
-  - For user guides and tutorials, check the `Grafana documentation to learn more <https://docs.grafana.org/guides/basic_concepts/>`__.
+  - For troubleshooting advice, check the `Grafana Troubleshooting page <https://grafana.com/docs/grafana/latest/troubleshooting/>`__. 
+  - For user guides and tutorials, check the `Grafana documentation to learn more <https://grafana.com/docs/grafana/latest/>`__.
 
 Getting Started
 ---------------

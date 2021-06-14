@@ -10,7 +10,6 @@ Before You Begin
    :maxdepth: 1
 
    /overview/architecture.rst
-   /deployment/deployment.md
    /help/getting-started/light-install.rst
    /getting-started/enterprise-roll-out-checklist.rst
    /deployment/on-boarding.rst
@@ -96,6 +95,10 @@ Mobile Apps
    :maxdepth: 1
 
    /mobile/mobile-overview.rst
+   /mobile/mobile-appconfig.rst
+   /mobile/mobile-hpns.rst
+   /mobile/mobile-faq.rst
+   /mobile/mobile-troubleshoot.rst
    /deployment/client-side-data.rst
 
 Upgrade Mattermost

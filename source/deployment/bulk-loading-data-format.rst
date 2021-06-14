@@ -1,7 +1,7 @@
 .. _data-format:
 
 Data Format
-===========
+-----------
 
 The input data file must be a valid `JSONL
 <https://jsonlines.org>`__ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
