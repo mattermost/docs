@@ -16,7 +16,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Focalboard (Beta)
- - Focalboard is now integrated with Mattermost as a beta feature in v5.36. To enable Focalboard, open the Marketplace from the sidebar menu, install the Focalboard plugin, then click on **Configure**, enable it, and save.
+ - Focalboard is now integrated with Mattermost as a beta feature in v5.36. To enable Focalboard, open the Marketplace from the sidebar menu, install the Focalboard plugin, then click on **Configure**, enable it, and save. Update your NGINX or Apache web proxy config following [these steps](https://github.com/mattermost/focalboard/discussions/566).
 
 #### Incident Collaboration (Enterprise Edition E20)
  - Includes automated welcome message, team-wide playbook access, and permission control for playbook creation.
@@ -128,7 +128,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Known Issues
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
- - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Pinned posts are no longer highlighted.
  - Google login fails on the Classic mobile apps.
