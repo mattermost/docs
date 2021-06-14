@@ -14,3 +14,4 @@ Below is an overview of our products, features, security, integrations, licensin
    /overview/license-and-subscription.rst
    /overview/auth.rst
    /overview/compliance.rst
+   /overview/faq.html

@@ -24,7 +24,7 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
   f. Include an @ mention in the mention field, if you want to send mentions when an alert is posted to Mattermost
   g. Press **Send Test** to test the alert
 
-If you would also like to get email alerts, you can follow `these instructions <https://docs.grafana.org/alerting/notifications/#email.>`__ to set that up.
+If you would also like to get email alerts, you can follow `these instructions <https://grafana.com/docs/grafana/latest/alerting/>`__ to set that up.
 
 **Configuring Alerts**
 

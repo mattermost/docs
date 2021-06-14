@@ -83,7 +83,7 @@ In the future roadmap, the main consideration is an integration with SCIM, via p
 
 Currently user provisioning and deprovisioning can be handled with SAML sync, but relies on AD/LDAP. SCIM enables admins to control user provisioning and deprovisioning within the IdP itself.
 
-For examples, see `Microsoft Azure AD integration with SCIM <https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups>`_ and `Okta user provisioning with SCIM <https://www.okta.com/integrate/documentation/scim/>`_.
+For examples, see `Microsoft Azure AD integration with SCIM <https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups>`__ and `Okta user provisioning with SCIM <https://help.okta.com/en/prod/Content/Topics/Apps/Provisioning_Deprovisioning_Overview.htm>`__.
 
 Configuration Assistance
 ------------------------
