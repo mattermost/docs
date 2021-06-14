@@ -105,3 +105,10 @@ During each monthly release, Mattermost backports high severity or high impact s
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+
+Desktop and Mobile App Server Compatibility
+-------------------------------------------
+
+There are no hard requirements for server compatibility, however certain features that involve the operating system require a specific desktop or mobile app version. E.g., in Desktop App 4.6 we added a setting for choosing desktop notification sounds which requires server v5.28+. Please review `the Desktop App changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_ and `the Mobile App changelog <https://docs.mattermost.com/administration/mobile-changelog.html>`_ notes for any specific Self-Managed version requirements for features and functionalities, as well as notes on security fixes.
+
+Bug fixes are not normally backported to previous desktop or mobile app versions. It is also recommended to upgrade to the latest desktop and mobile app versions to stay up to date with security fixes.
