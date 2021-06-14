@@ -30,7 +30,7 @@ Desktop Apps
     :header: "Operating System", "Technical Requirement"
 
     "Windows", "Windows 7, 8.1, and 10"
-    "Mac", "MacOS 10.12+"
+    "Mac", "MacOS 10.14+"
     "Linux", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
@@ -44,7 +44,7 @@ PC Web
     :header: "Browser", "Technical Requirement"
 
     "Chrome", "v77+"
-    "Firefox", "v68+"
+    "Firefox", "v78+"
     "Safari", "v12+"
     "Edge", "v44+"
 
@@ -83,7 +83,7 @@ Server Software
 Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
+- Ubuntu 18.04+, Debian Buster, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 7+.
 - Using the Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
