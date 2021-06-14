@@ -27,21 +27,21 @@ Mattermost Server
    :maxdepth: 1
     
    /install/requirements.rst
-   /install/install-ubuntu-2004.rst
-   /install/install-ubuntu-1804.rst
-   /install/mattermost-omnibus.rst
-   /install/install-kubernetes.rst
-   /install/install-debian.rst
-   /install/install-rhel-7.rst
-   /install/install-rhel-8.rst
-   /install/install-centos-oracle-scientific.rst
-   /install/sockets-db.rst
+   Installing on Ubuntu 20.04 LTS </install/install-ubuntu-2004.rst>
+   Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
+   Installing Mattermost Omnibus </install/mattermost-omnibus.rst>
+   Installing on Kubernetes </install/install-kubernetes.rst>
+   Installing on Debian Buster </install/install-debian.rst>
+   Installing on RHEL 7 </install/install-rhel-7.rst>
+   Installing on RHEL 8 </install/install-rhel-8.rst>
+   Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
+   Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
    /install/ee-install.rst
    /install/transport-encryption/config.rst
    /install/deploy-bitnami.rst
    /install/docker-local-machine.rst
    /install/docker-ebs.rst
-   /install/install-mmte-helm-gitlab-helm.rst
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /administration/changelog.md
 
 Desktop App

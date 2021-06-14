@@ -1,5 +1,5 @@
 Configuring Mattermost Server
-=============================
+-----------------------------
 
 Create the System Admin user and set up Mattermost for general use.
 
