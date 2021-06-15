@@ -898,11 +898,11 @@ mattermost extract-documents-content
 -------------------------------------
 
   Description
-    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this extraction command is strongly recommended since search results for past file contents may be incomplete. If this command is not run, users can search older files based on file name only.
+    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on file name only.
     
-    If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ or `Bleve <https://docs.mattermost.com/deployment/bleve.html>`__ search, you must also rebuild the search index.
+    If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ or `Bleve <https://docs.mattermost.com/deployment/bleve.html>`__ search, you must also rebuild the search index after running the content extraction command.
 
-    Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test `enabling content search <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
+    You can run this extraction command while the server is running. Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test `enabling content search <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
   
   Format
     .. code-block:: none
@@ -938,7 +938,7 @@ mattermost group channel
    This command will be replaced in a future release with the mmctl command `mmctl group channel <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-group-channel>`__.
 
 
-Description
+  Description
     Commands for managing Mattermost groups linked to a channel.
 
   Child Commands
@@ -954,11 +954,13 @@ mattermost group channel enable
 
    This command will be replaced in a future release with the mmctl command `mmctl group channel enable <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-group-channel-enable>`__.
 
-Description
+
+  Description
     Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
 
 .. note::
   To enable a group constraint on a specific channel, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a channel.
+
 
   Format
     .. code-block:: none
