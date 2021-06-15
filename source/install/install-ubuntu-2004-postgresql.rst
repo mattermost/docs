@@ -15,19 +15,16 @@ Assume that the IP address of this server is 10.10.10.1.
 
   When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
-2. Log in to the *postgres* account.
+2. Access PostgreSQL with one of the following options:
 
-  ``sudo --login --user postgres``
-
-3. Start the PostgreSQL interactive terminal.
-
-  ``sudo -u postgres psql``
-
-4.  Create the Mattermost database.
+  - ``sudo --login --user postgres`` then ``psql``
+  - ``sudo -u postgres psql``
+  
+3.  Create the Mattermost database.
 
   ``postgres=# CREATE DATABASE mattermost;``
 
-5.  Create the Mattermost user *mmuser*.
+4.  Create the Mattermost user *mmuser*.
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
@@ -35,19 +32,19 @@ Assume that the IP address of this server is 10.10.10.1.
   
     Use a password that's more secure than *mmuser-password*.
 
-6.  Grant the user access to the Mattermost database.
+5.  Grant the user access to the Mattermost database.
 
   ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
 
-7. Exit the PostgreSQL interactive terminal.
+6. Exit the PostgreSQL interactive terminal.
 
   ``postgres=# \q``
 
-8. Log out of the *postgres* account.
+7. Log out of the *postgres* account.
 
   ``exit``
 
-9. (Optional) If you use a different server for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` in a text editor as *root* user. Replace ``{version}`` with the version of PostgreSQL that's currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+8. (Optional) If you use a different server for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/etc/postgresql/{version}/main/postgresql.conf`` in a text editor as *root* user. Replace ``{version}`` with the version of PostgreSQL that's currently running. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
@@ -61,7 +58,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
     ``sudo systemctl restart postgresql``
 
-10. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
+9. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
   **If the Mattermost server and the database are on the same machine:**
 
@@ -87,17 +84,17 @@ Assume that the IP address of this server is 10.10.10.1.
 
       ``host all all {mattermost-server-IP}/32 md5``
 
-11. Reload PostgreSQL:
+10. Reload PostgreSQL:
 
   ``sudo systemctl reload postgresql``
 
-12. Verify that you can connect with the user *mmuser*.
+11. Verify that you can connect with the user *mmuser*.
 
-  a. If the Mattermost server and the database are on the same machine, use the following command:
+  - If the Mattermost server and the database are on the same machine, use the following command:
 
     ``psql --dbname=mattermost --username=mmuser --password``
 
-  b. If the Mattermost server is on a different machine, log into that machine and use the following command:
+  - If the Mattermost server is on a different machine, log into that machine and use the following command:
 
     ``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password``
 

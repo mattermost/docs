@@ -1,7 +1,7 @@
 .. _ediscovery:
 
 Electronic Discovery
-====================
+=====================
 
 Electronic discovery (also known as eDiscovery) refers to a process where where electronic data is searched with the intent to use it as evidence in a legal case.
 
@@ -57,7 +57,7 @@ Include the ``token`` value sent in the response as part of the Authorization he
 
   curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
 
-Once you are authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl-based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com
+Once you're authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com:
 
 .. note::
 
@@ -87,7 +87,7 @@ When the export process is complete (the execution time is based on the number o
   --output report-zip.zip \
   https://yourmattermosturl/api/v4/compliance/reports/du6kektczifqxexeroywpz3nbc/download
 
-When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to safe that file as. In the example above the file will be saved as ``report-zip.zip``.
+When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to save that file as. In the example above the file will be saved as ``report-zip.zip``.
 
 Mattermost Database
 -------------------
