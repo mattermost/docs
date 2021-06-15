@@ -502,6 +502,8 @@ The following chart highlights the end user features of Mattermost and their sup
     "Add members to team", "X", "X",
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
+    **FOCALBOARD**
+    "Boards, cards, and views", "X", "O"
     **INTEGRATIONS**
     "Slash commands", "X", "X", "O"
     "Server-side plugins", "X", "X", "X"

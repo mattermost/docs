@@ -2,6 +2,34 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-06-02
+
+### Improvements
+
+#### User Interface (UI)
+ - Removed status icon from the profile image in the center channel and the right-hand side view.
+ - Added a performance improvement to the emoji picker overlay to improve typing performance.
+ - Added performance improvements when receiving new posts.
+
+#### Administration
+ - Team-restricted direct channel creation is now also applied to the backend. Previously, this was restricted to the frontend.
+ - Refactored the config storing logic to improve its robustness and performance.
+ - Added a visual grouping of related settings under AD/LDAP in the System Console.
+
+### Bug Fixes
+ - Fixed an issue where the job scheduler server could miss a "changed leader" cluster event.
+ - Fixed an issue where using ``Ctrl+Cmd+F`` on the MacOS Desktop App opened the search instead of full-screened the app.
+ - Fixed an issue where the message input box was shadowed when uploading a file in the center channel.
+ - Fixed an error caused by a post created with a non-string attachment field.
+ - Fixed the opacity of the read state in the channel sidebar, as well as enhanced the opacity of the channel icon when the channel was unread.
+ - Fixed an issue where users were unable to sign in with O365 authentication when the AuthData was formatted differently between Office365 OAuth and Office 365 OpenID.
+
+### Known Issues
+ - Pinned posts are no longer highlighted.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-05-21
 
 ### Improvements
