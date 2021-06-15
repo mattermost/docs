@@ -24,7 +24,7 @@ Mattermost v5.36.0 contains a high level security fix. [Upgrading](https://docs.
  - Includes automated welcome message, team-wide playbook access, and permission control for playbook creation.
 
 #### Hungarian Language Support (Beta)
- - Mattermost is now available in Hungarian language.
+ - Mattermost is now available in Hungarian.
 
 ### Improvements
 
