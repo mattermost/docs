@@ -15,10 +15,8 @@ Copy and save the following script to your Mattermost server as ``upgrade_matter
    # command statement fails or a variable is used unset.
    set -e
 
-
-   ################################################################################
-   # Configuration - please adapt it to your environment
-   ################################################################################
+Configuration - please adapt it to your environment
+-----------------------------------------------------
 
    # Mattermost path
    mattermostdir="/opt/mattermost"
@@ -39,9 +37,7 @@ Copy and save the following script to your Mattermost server as ``upgrade_matter
    # Set 1 for overriding the database backup question
    backupdatabase=0
 
-   ################################################################################
-
-   # Check dependencies
+      # Check dependencies
    if ((EUID != 0)); then
    	echo "[-] This script needs to be run as root to work properly. Aborted."
    	exit 1
@@ -163,11 +159,9 @@ Copy and save the following script to your Mattermost server as ``upgrade_matter
    GROUP="$(stat -c '%G' ${mattermostdir}/bin/mattermost)"
    chown -hR "$USER":"$GROUP" "${downloaddir}/mattermost-upgrade/"
 
-
    # Clean up Mattermost directory
    find "${mattermostdir}" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/config" -o -path "${mattermostdir}/logs" -o -path "${mattermostdir}/plugins" -o -path "${mattermostdir}/data" -o -path "${mattermostdir}/client" \) -exec rm -rf {} \;
    find "${mattermostdir}/client" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/client/plugins" \) -exec rm -rf {} \;
-
 
    # Rename plugin directory
    if [ "${plugins}" -eq 0 ];  then

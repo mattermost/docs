@@ -1,5 +1,5 @@
 Release Definitions
-========================
+===================
 
 Mattermost ships with a new version on the 16th of each month in `binary form <https://docs.mattermost.com/administration/upgrade.html>`_.
 

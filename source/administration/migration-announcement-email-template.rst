@@ -5,9 +5,8 @@ To notify your end users of your migration to Mattermost, we created a sample em
 
 Remember to replace all the items in bold with your information.
 
-
 Email Template
--------------------
+--------------
 
 To: End users
 

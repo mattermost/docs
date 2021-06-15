@@ -27,7 +27,7 @@ When Docker is done fetching the image, open http://localhost:8065/ in your brow
 Otherwise, follow the step-by-step instructions:
 
 macOS
-^^^^^^^^
+~~~~~
 
 1. Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__ 
 
@@ -39,7 +39,7 @@ macOS
 
 
 Windows 10
-^^^^^^^^^^
+~~~~~~~~~~
 
 1. Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__
 
@@ -50,7 +50,7 @@ Windows 10
    in your browser.
 
 Ubuntu
-^^^^^^
+~~~~~~
 
 1. Follow the instructions at
    https://docs.docker.com/installation/ubuntulinux/ or use the summary
@@ -75,7 +75,7 @@ Ubuntu
    in your browser.
 
 Fedora
-^^^^^^
+~~~~~~
 
 1. Follow the instructions at https://docs.docker.com/engine/installation/linux/fedora/ or use the summary below:
 
@@ -98,7 +98,7 @@ Fedora
 3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
 Arch Linux
-^^^^^^^^^^
+~~~~~~~~~~
 
 To install the preview on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost#With_Docker>`__ on the Arch Linux wiki.
 
@@ -114,13 +114,13 @@ functionality, enabling SMTP email is recommended.
   :start-after: How to Enable Email
 
 Configuration Settings
------------------------------------
+----------------------
 
 See `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html>`__
 documentation to customize your deployment.
 
 Updating Docker Preview
------------------------------------
+-----------------------
 
 To delete your existing Docker preview and run a new version use: 
 
@@ -130,7 +130,7 @@ To delete your existing Docker preview and run a new version use:
        docker rm -v mattermost-preview
 
 Accessing Your Container
------------------------------------
+------------------------
 
 -  If you wish to gain access to a shell on the container use:
 

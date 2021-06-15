@@ -34,6 +34,7 @@ Sharing Public Links
 Public URLs allow you to share attachments with anyone outside the Mattermost system. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
 
 .. tip::
+  
   If **Get Public Link** is not visible in the file previewer, and you prefer that the feature is enabled, you can request your System Admin to enable the feature from the System Console under **Site Configuration > Public Links**.
 
 Viewing Media
@@ -51,8 +52,6 @@ Other document previews (such as Word, Excel, or PPT) are not yet supported.
 Attachment Limits and Sizes
 ---------------------------
 
-Up to five files can be attached per post.
-
-The default maximum file size is 100 MB, but this can be changed by the System Admin.
+Up to five files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin.
 
 Image files can be a maximum size of 6048 pixels x 4032 pixels, or 24 MP (mega pixels), or a raw image file size of approximately 36 MB.
