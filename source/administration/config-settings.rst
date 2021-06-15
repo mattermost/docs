@@ -625,7 +625,7 @@ Enable Document Search by Content
 
 This configuration setting enables users to search the contents of documents attached to messages.
 
-**True**: Supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include additional file formats, including DOCX, RTF, and PAGES files. 
+**True**: Document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include additional file formats, including DOCX, RTF, and PAGES files. 
 
 .. note::
    Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
