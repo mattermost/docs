@@ -253,7 +253,7 @@ Send all users a welcome email with instructions on how to get started using Mat
  - User Guides: https://docs.mattermost.com/guides/user.html 
 
 3.4 Implementation Schedule
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this section, provide a schedule of activities to be accomplished during implementation.  Show the required tasks (described in Section 3.3, Major Tasks) in chronological order, with the beginning and end dates of each task.
 
@@ -282,12 +282,12 @@ In this section, provide a schedule of activities to be accomplished during impl
 +----+--------------------------------------------+------------+------------+
 
 3.5 Security
-------------
+~~~~~~~~~~~~
 
 If appropriate for the system to be implemented, include an overview of the system security features and requirements during the implementation.
 
 3.5.1 System Security Features
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Mattermost platform will be secured in the following ways:
 
@@ -302,7 +302,7 @@ The Mattermost platform will be secured in the following ways:
 **Reference**: https://docs.mattermost.com/overview/security.html
 
 3.5.2 Security During Implementation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section addresses security issues specifically related to the implementation effort, if any. For example, if LAN servers or workstations will be installed at a site with sensitive data preloaded on non-removable hard disk drives, address how security would be provided for the data on these devices during shipping, transport, and installation because theft of the devices could compromise the sensitive data.
 
@@ -362,11 +362,11 @@ If training will be provided by one or more commercial vendors, identify them, t
 If the training will be provided by State staff, provide the course name(s) and an outline of the content of each course.  Identify the resources, support materials, and proposed instructors required to teach the course(s).
 
 4.3 Performance Monitoring (E20)
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/deployment/metrics.html
 
 4.4 Configuration Management Interface
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the interactions required with the Configuration Management (CM) representative on CM-related issues, such as when software listings will be distributed, and how to confirm that libraries have been moved from the development to the production environment.
