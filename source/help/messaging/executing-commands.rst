@@ -46,7 +46,8 @@ The following slash commands are available on all Mattermost installations:
 
 Begin by typing `/` and a list of slash command options appears above the text input box. The autocomplete suggestions help by providing a format example in black text and a short description of the slash command in grey text.
 
-.. image:: ../../images/slashCommandsAutocomplete.png
+.. image:: ../../images/slash-commands.gif
+    :alt: Enter slash commands in the message field.
 
 .. note::
   Custom status slash commands marked with an asterisk (*) in the table above will be available in the Mattermost Mobile App in a future release.
