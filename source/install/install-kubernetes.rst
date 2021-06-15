@@ -1,8 +1,7 @@
 .. _install-kubernetes:
 
-=========================================
 Installing Mattermost on Kubernetes
-=========================================
+===================================
 
 This document describes installing and deploying a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes operator.
 
