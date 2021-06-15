@@ -625,12 +625,20 @@ Enable Document Search by Content
 
 Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
-**True**: Supported document types are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include DOCX, RTF, and PAGES files. 
-
-.. note::
-   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
+**True**: Supported document types are searchable by their content. 
 
 **False**: Supported document types aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+
+You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
+
+- ``tidy``: Used to search the contents of HTML and PAGES documents.
+- ``wv``: Used to search the contents of DOC documents.
+- ``popplerutils``: Used to significantly improve server performance when extracting the contents of PDF documents.
+- ``unrtf``: Used to search the contents of RTF documents.
+- ``Justtext``: Used to search HTML documents.
+
+.. note::
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older documents based on file name only.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
@@ -1025,9 +1033,9 @@ Use Gossip
 
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseGossip": true`` with options ``true`` and ``false``.              |
-+-------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.         |
++--------------------------------------------------------------------------------------------------------------------------+
 
 Enable Experimental Gossip Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1183,20 +1191,149 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Allow any combination of local file, syslog, and TCP socket targets and send log records to multiple targets:
+Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+
+System Admins can define multiple log targets to:
+
+- Mirror log output to files and log aggregators for redundancy.
+- Log certain entries to specific destinations. For example, all errors could be routed to a specific destination for review.
+
+Additional configuration options include:
 
 - Multiple local file targets: Supports rotation and compression triggered by size and/or duration.
 - Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
 - Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-These three targets have been chosen to support the vast majority of log aggregators and other log analysis tools without having to install additional software. 
+All access to the REST API or CLI is audited. When using Advanced Logging for auditing, System Admins can capture the following auditing in the target configuration in addition to discrete log levels:
 
-Beyond the standard log levels (trace, debug, info, panic), discrete log levels can also be specified.
+.. code-block:: none
 
-.. note::
-   Available discrete log levels are listed in ``mattermost-server:mlog/levels.go``. Logs are recorded asynchronously to reduce latency to the caller. Advanced logging supports hot-reloading of logger configuration.
+   "Levels": [
+      {"ID": 100, "Name": "audit-api"},
+      {"ID": 101, "Name": "audit-content"},
+      {"ID": 102, "Name": "audit-permissions"},
+      {"ID": 103, "Name": "audit-cli"},
+   ],
 
-This feature's ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
+Where:
+
+- ``audit-api``: Enables output of REST API calls.
+- ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
+- ``audit-permissions``: Enables output of all permissions failures.
+- ``audit-cli``: Enables output of legacy CLI calls.
+
+.. Note::
+  - Logs are recorded asynchronously to reduce latency to the caller. 
+  - Advanced logging supports hot-reloading of logger configuration.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
+
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **Key**       | **Definition**                                                                                                                                         | **Type**    |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **Levels**    |                                                                                                                                                        |             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| ID            | Unique log level identifier. Must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.                                             | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Name          | Human-readable name for the log level identifier.                                                                                                      | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Stacktrace    | Set to ``true`` to generate a stacktrace. Set to ``false`` to prevent a stacktrace from being generated.                                               | bool        |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **Targets**   |                                                                                                                                                        |             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Type          | Can be one of: ``console``, ``file``, ``syslog``, or ``tcp``.                                                                                          | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Format        | Can be either ``json`` or ``plain``.                                                                                                                   | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Levels        | Array of log levels.                                                                                                                                   | []          |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Options       | Map of options specific to the target type.                                                                                                            | {}          |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| MaxQueueSize  | The number of audit records that can be queued/buffered at any point in time when writing to syslog. Default is 1000.                                  | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **Console**   |                                                                                                                                                        |             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Out           | Can be either ``stdout`` or ``stderr``.                                                                                                                | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **File**      |                                                                                                                                                        |             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Filename      | Path and filename for logs.                                                                                                                            | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| MaxAgeDays    | Number of days until a rotation is triggered. Set to ``0`` to not rotate based on age.                                                                 | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| MaxBackups    | Maximum number of rotated files to keep where the oldest are deleted. Set to ``0`` to discard rotated files.                                           | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| MaxSizeMB     | Maximum file size before a rotation is triggered. Set to ``0`` to prevent rotation based on file size.                                                 | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Compress      | Set to ``true`` to compress files after rotation. Set to ``false`` to not compress files after rotation.                                               | bool        |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **SysLog**    |                                                                                                                                                        |             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| IP            | IP address or domain of the syslog server.                                                                                                             | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Port          | Listening port of syslog server.                                                                                                                       | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Tag           | Typically the program name, machine name, or node name.                                                                                                | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| TLS           | Set to ``true`` to connect via TLS. Set to ``false`` to prevent connecting via TLS.                                                                    | bool        |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Cert          | For TLS connections where TLS is set to ``true``, the filename of client certificate or base64-encoded certificate.                                    | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Insecure      | Used for testing purposes only. Set to ``true`` to prevent a certificate check from being performed. Set to ``false`` to perform a certificate check.  | bool        |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| **TCP**       |                                                                                                                                                        |             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| IP            | IP address or domain of the socket server.                                                                                                             | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Port          | Listening port of the socket server.                                                                                                                   | int         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| TLS           | Set to ``true`` to connect via TLS. Set to ``false`` to prevent connecting via TLS.                                                                    | bool        |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Cert          | For TLS connections where TLS is set to ``true``, the filename of client certificate or base64-encoded certificate.                                    | string      |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+|               |                                                                                                                                                        |             |
+| Insecure      | Used for testing purposes only. Set to ``true`` to prevent a certificate check from being performed. Set to ``false`` to perform a certificate check.  | bool        |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
+
+.. Note::
+    Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
+
+See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
 
 Standard Logging 
 ~~~~~~~~~~~~~~~~
@@ -5344,7 +5481,11 @@ Allow any combination of local file, syslog, and TCP socket targets.
 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
-This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON. Options are outlined in this txt file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``ExperimentalAuditSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Options are outlined in this text file: `Log Settings Options <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`_. Sample config: `Advanced Logging Options Sample.json.zip <https://github.com/mattermost/docs/files/5066597/Advanced.Logging.Options.Sample.json.zip>`_.
 
 Service Settings
 ~~~~~~~~~~~~~~~~
