@@ -42,7 +42,7 @@ Configuration
 ~~~~~~~~~~~~~~
 
 Site URL
-^^^^^^^^^^
+^^^^^^^^
 
 The URL that users will use to access Mattermost. The port number is required if it's not a standard port such as 80 or 443.
 

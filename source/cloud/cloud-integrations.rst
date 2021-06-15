@@ -2,7 +2,8 @@ Incoming Webhooks
 =================
 
 .. note::
-  This is the admin documentation for incoming webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
+   
+   This is the admin documentation for incoming webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
 Mattermost supports webhooks to easily integrate external applications into the server.
 
@@ -21,7 +22,7 @@ Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTT
    :maxdepth: 2
 
 Simple Incoming Webhook
------------------------------------
+-----------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 

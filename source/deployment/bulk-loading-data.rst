@@ -1,7 +1,7 @@
 .. _bulk-loading-data:
 
 Running the bulk loading command
-================================
+--------------------------------
 
 Before running the bulk loading command, you must first create a `JSONL
 <https://jsonlines.org>`__ file that contains the data that you want to import. After you create the file, run the bulk load command in validation mode. In this mode, the data is checked for correctness, but is not written to the database. After validating, run the command in apply mode, which saves the data to the database.

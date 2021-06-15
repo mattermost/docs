@@ -79,7 +79,8 @@ Channel moderation settings allow Admins to restrict actions within specific cha
 These settings are modified in **System Console > User Management > Channels**.
 
 .. note:: 
-  These settings are applicable only to Guests and Members. System, Team, and Channel Admins are not affected. If you wish to grant posting ability to a specific member, you must first promote that member to Channel Admin.
+   
+   These settings are applicable only to Guests and Members. System, Team, and Channel Admins are not affected. If you wish to grant posting ability to a specific member, you must first promote that member to Channel Admin.
 
 The availability of channel moderation settings can also be affected by existing system and team permissions configurations. If there are existing configurations that override the channel settings you would like to apply, it will be indicated in the user interface. These settings can then be adjusted in the relevant panel in the **Permissions** section of the System Console.
 

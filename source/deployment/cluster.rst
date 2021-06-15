@@ -1,7 +1,7 @@
 High Availability Cluster (E20)
 ===============================
 
-*Available in Enterprise Edition E20*
+*Available in Mattermost Enterprise Edition E20*
 
 A High Availability cluster enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
@@ -9,11 +9,7 @@ High Availability in Mattermost consists of running redundant Mattermost applica
 
 .. note::
   
-  This document applies to Mattermost Server version 4.0 and later. For previous versions, see :doc:`cluster-310`.
-
-.. contents::
-  :backlinks: top
-  :local:
+  This document applies to Mattermost Server v4.0 and later.
 
 Requirements for Continuous Operation
 -------------------------------------
@@ -47,7 +43,7 @@ To ensure your instance and configuration are compatible with High Availability,
 3. Modify the ``config.json`` files on both servers to add ``ClusterSettings`` as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
-6. Open **System Console > Environment > High Availability** (or **System Console > Advanced > High Availability** in versions prior to 5.12) to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+6. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,14 +51,14 @@ Adding a Server to the Cluster
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
 3. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
-4. Open **System Console > Environment > High Availability** (or **System Console > Advanced > High Availability** in versions prior to 5.12) to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+4. Open **System Console > Environment > High Availability** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
-3. Open **System Console > Environment > High Availability** (or **System Console > Advanced > High Availability** in versions prior to 5.12) to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and Compatibility
 -------------------------------
@@ -128,9 +124,9 @@ You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see
 
 In short, you should use:
 
- 1. IP address discovery if the first non-local address can be seen from the other machines.
- 2. Override Hostname on the operating system so that it's a proper discoverable name for the other nodes in the cluster.
- 3. Override Hostname in ``config.json`` if the above steps do not work. You can put an IP address in this field if needed. The ``config.json`` will be different for each cluster node.
+1. IP address discovery if the first non-local address can be seen from the other machines.
+2. Override Hostname on the operating system so that it's a proper discoverable name for the other nodes in the cluster.
+3. Override Hostname in ``config.json`` if the above steps do not work. You can put an IP address in this field if needed. The ``config.json`` will be different for each cluster node.
 
 Time Synchronization
 ^^^^^^^^^^^^^^^^^^^^
@@ -208,7 +204,7 @@ File Storage Configuration
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
   3. If you’re using Amazon S3 or MinIO for file storage then no other configuration is required.
 
-If you’re using the Compliance Reports feature in Enterprise Edition E20, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
+If you’re using the Compliance Reports feature in Mattermost Enterprise Edition E20, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
 
@@ -238,6 +234,8 @@ To configure a multi-database Mattermost server:
 
 Here's an example ``SqlSettings`` block for one master and two read replicas:
 
+.. code-block:: none
+
   "SqlSettings": {
         "DriverName": "mysql",
         "DataSource": "master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
@@ -259,8 +257,8 @@ Loading a Multi-database Configuration onto an Active Server
 
 After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12), then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Environment > Database**, then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
@@ -271,8 +269,8 @@ If the need arises to switch from the current master database - for example, if 
 
 To apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Environment > Web Server** (or **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database** (or **System Console > Database** in versions prior to 5.12), then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Environment > Database**, then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
@@ -309,7 +307,7 @@ Note that if you are using pgbouncer or any similar connection pooling proxy in 
 Leader Election
 ^^^^^^^^^^^^^^^^
 
-In Mattermost v4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
+From Mattermost v4.2, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
 
 The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the leader.
 
@@ -318,10 +316,10 @@ Job Server
 
 Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`__. These tasks include:
 
- - LDAP sync
- - Data retention
- - Compliance exports
- - Elasticsearch indexing
+- LDAP sync
+- Data retention
+- Compliance exports
+- Elasticsearch indexing
 
 Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in ``config.json`` for all app and job servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
 
@@ -334,11 +332,11 @@ In previous Mattermost Server versions, and this documentation, the instructions
 Plugins and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
+From Mattermost v5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
 
 If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory. If this is not the case High Availability will not function correctly and may corrupt your file storage.
 
-Note a slight behavior change in 5.15: When you reinstall a plugin in 5.14, the previous **Enabled** or **Disabled** state is retained. As of 5.15, a reinstalled plugin's initial state is **Disabled**.
+Note a slight behavior change from Mattermost v5.15: When you reinstall a plugin in v5.14, the previous **Enabled** or **Disabled** state is retained. As of v5.15, a reinstalled plugin's initial state is **Disabled**.
 
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -367,7 +365,7 @@ You can apply updates during a period of low load, but if your High Availability
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
 3. Copy the ``config.json`` file to the other servers.
 4. Shut down Mattermost on all but one server.
-5. Reload the configuration file on the server that is still running. Go to in prior versions or **System Console > Environment > Web Server** (or  **System Console > Configuration** in versions prior to 5.12), then select **Reload Configuration from Disk**.
+5. Reload the configuration file on the server that is still running. Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk**.
 6. Start the other servers.
 
 Updating Server Version While Operating Continuously
@@ -397,11 +395,11 @@ Server Upgrades Requiring Service Interruption
 
 A service interruption is required when the upgrade includes a change to the database schema or when a change to ``config.json`` requires a server restart, such as when making the following changes:
 
-  - Default Server Language
-  - Rate Limiting
-  - Webserver Mode
-  - Database
-  - High Availability
+- Default Server Language
+- Rate Limiting
+- Webserver Mode
+- Database
+- High Availability
 
 If the upgrade includes a change to the database schema, the database is upgraded by the first server that starts.
 
@@ -419,7 +417,7 @@ Apply upgrades during a period of low load. The system downtime is brief, and de
 Upgrading to Version 4.0 and Later
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Starting with Mattermost Server version 4.0, when a server starts up it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from 3.10 or earlier to 4.0 or later, you must manually add the new items to your existing ``config.json``.
+Starting with Mattermost Server v4.0, when a server starts up it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
 
 1. Review the upgrade procedure in :doc:`../administration/upgrade`.
 2. Make a backup of your existing ``config.json`` file.
