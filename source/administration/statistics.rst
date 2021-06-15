@@ -113,17 +113,26 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E20.*
+Yes. In Mattermost Enterprise Edition E20, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the `Additional System Admin Roles (E20) <https://docs.mattermost.com/deployment/admin-roles.html>`__ documentation.
 
-System Admins can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/deployment/admin-roles.html>`__ to enable Team Admins to see team statistics.
+To enable Team Admins to access their team's statistics:
 
-Once Team Admins are assigned to the **Viewer** role, they can access all statistics for all teams.
+1. Go to **System Console > User Management > System Roles (Beta)**, then edit the **Viewer** System Admin role. 
 
-System Admins must then `edit the privileges <https://docs.mattermost.com/deployment/admin-roles.html#editing-privileges-of-admin-roles-advanced>`__ of the **Viewer** role. Only the **Reporting** privileges need to be enabled to allow Team Admins to see statistics for their teams.
+.. image:: ../images/edit-viewer-system-admin-role.png
 
-Once the **Viewer** role is set up for reporting access only, System Admins can then `assign <https://docs.mattermost.com/deployment/admin-roles.html#assigning-admin-roles>`__ the **Viewer** role to Team Admins.
+2. Under **Privileges**, expand the **Reporting** section, set **Team Statistics** to **Read only**, then set **Site Statistics** and **Server Logs** to **No access**.
+
+3. Set all other privileges to **No access** to restrict all users with the **Viewer** role to access only the **Team Statistics** page in the System Console.   
+
+.. image:: ../images/restrict-role-access.png
+
+4. Under **Assigned People**, select **Add People** to assign Team Admins to the **Viewer** role, and enable them to access their team's statistics.
+
+.. image:: ../images/assign-people-to-system-role.png
+
+5. Select **Save**.
 
 .. note::
 
-  - System Admins must manually add people to or remove people from the **Viewer** admin role to address Team Admin changes, such as promotions or demotions.
-  - Team Admins using the **Viewer** admin role will also have access to system-level statistics in addition to statistics for their teams.
+  - System Admins must manually add people to or remove people from the **Viewer** System Admin role to address Team Admin changes, such as promotions or demotions.
