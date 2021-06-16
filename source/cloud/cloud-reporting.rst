@@ -69,12 +69,12 @@ Troubleshooting/FAQ
 -------------------
 
 I see an error: "Not enough data for a meaningful representation"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you're using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
 
 Can Team Admins review their own team's statistics?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 System Administrators can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/cloud/cloud-user-management/user-management.html#about-system-roles-beta>`__ to enable Team Administrators to see team statistics.
 

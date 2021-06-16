@@ -1,16 +1,16 @@
 Health Check
-=============
+============
 
 This page describes how to configure health check probes for a Mattermost server.
 
-Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`__.  Note that `highly available Mattermost cluster <https://docs.mattermost.com/deployment/cluster.html>`__ is available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
+Before you begin, you should have a running Mattermost server. If you don't, you can `install Mattermost on various distributions <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or deploy a `Kubernetes cluster with Minikube <https://github.com/mattermost/mattermost-kubernetes>`__.  Note that `highly available Mattermost cluster support <https://docs.mattermost.com/deployment/cluster.html>`__ is available in Mattermost Enterprise Edition E20.
 
 You can perform a health check with two methods:
 
 ``/ping`` APIv4 Endpoint
 -------------------------
 
-In Mattermost version 3.10 and later, you can use the `GET /system/ping APIv4 endpoint <https://api.mattermost.com/#tag/system%2Fpaths%2F~1system~1ping%2Fget>`__ to check for system health.
+From Mattermost v3.10 and later, you can use the `GET /system/ping APIv4 endpoint <https://api.mattermost.com/#tag/system%2Fpaths%2F~1system~1ping%2Fget>`__ to check for system health.
 
 A sample request is included below. The endpoint checks if the server is up and healthy based on the configuration setting ``GoRoutineHealthThreshold``.
 
@@ -30,7 +30,7 @@ This endpoint can also be provided to schedulers like `Kubernetes <https://kuber
   status, err := Client.GetPing()
 
 Mattermost Probe
------------------
+----------------
 
 The `Mattermost Probe <https://github.com/csduarte/mattermost-probe>`__ constantly pings a Mattermost server using a variety of probes.
 

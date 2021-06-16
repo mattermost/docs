@@ -23,7 +23,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
      cd ~
 
-#. Stop Mattermost Server.
+#. Stop Mattermost server.
 
    On Ubuntu 14.04 and RHEL 6:
 
@@ -37,8 +37,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
      sudo systemctl stop mattermost
      
-
-     
+    
 #. Back up your data and application.
 
    a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.

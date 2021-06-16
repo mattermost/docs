@@ -12,9 +12,7 @@ As a workaround, you can install the released Mattermost mobile app and sign up 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
 
-Mattermost Classic mobile apps support tablets.
-
-Our second generation mobile apps (Mattermost) have beta support for tablets.
+Mattermost Classic mobile apps support tablets. Our second generation mobile apps (Mattermost) have beta support for tablets.
 
 Can the permanent sidebar on tablet devices be disabled?
 --------------------------------------------------------

@@ -1,5 +1,5 @@
 Mattermost Integration Guide
-----------------------------
+============================
 
 **Are you looking to install an integration?**
 
