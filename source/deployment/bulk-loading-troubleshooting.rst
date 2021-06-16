@@ -1,7 +1,7 @@
 .. _bulk-loading-troubleshooting:
 
 Troubleshooting
-================
+---------------
 
 Running bulk loading tool hangs and doesn't complete
 -----------------------------------------------------
