@@ -13,7 +13,7 @@ Mobile Web Experience
 
 
 Mobile App Experience
-----------------------------------
+---------------------
 
 To speed up initial loading time, Mattermost mobile apps cache data locally on the device for v1.1 and later. Below are common questions on cached data: 
 

@@ -1,7 +1,7 @@
 .. _config-ssl-http2-nginx:
 
 Configuring NGINX with SSL and HTTP/2
-=====================================
+-------------------------------------
 
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 

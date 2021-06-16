@@ -1,6 +1,6 @@
 
 Personal Access Tokens
-=======================
+======================
 
 Personal access tokens function similar to session tokens and can be used by integrations to `authenticate against the REST API <https://about.mattermost.com/default-api-authentication>`__. It is the most commonly used type of token for integrations.
 
@@ -10,7 +10,7 @@ Personal access tokens function similar to session tokens and can be used by int
   :local:
 
 Creating a Personal Access Token
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Enable personal access tokens in **System Console > Integrations > Integration Management**.
 2. Identify the account you want to create a personal access token with. You may optionally create a new user account for your integration, such as for a bot account. By default, only System Admins have permissions to create a personal access token. 

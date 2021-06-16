@@ -2,8 +2,7 @@
 
 The Mattermost network diagram below illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
-![image](../images/network.png)
-
+![image](../images/network_diagram.png)
 
 **Note**
 

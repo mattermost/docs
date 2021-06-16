@@ -1,9 +1,9 @@
 Managing Team and Channel Members (E20)
 =======================================
 
-System Admins can manage channel configuration in the System Console.
+System Admins can manage channel configuration in the System Console, including:
 
-- **Management:** Manage sync, moderation, and membership settings.
+- **Management:** Manage synchronization, moderation, and membership settings.
 - **Promoting/demoting Team and Channel Admins:** Team and Channel Admins can be demoted via the System Console.
 - **View channel members:** System Admins can view members of a channel without having to join the channel.
 - **Member count:** Total member count in a team or channel.
@@ -67,9 +67,9 @@ Channel Management
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
 Channel Moderation (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E20.*
+*Available in Mattermost Enterprise Edition E20*
 
 From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 
@@ -91,7 +91,7 @@ The availability of channel moderation settings can also be affected by existing
 2. Select **Edit** next to the name of the channel you want to configure.
 3. In the **Create Posts** panel, uncheck **Guests**.
 4. In the **Post Reactions** panel, uncheck **Guests** if required.
-5. Choose **Save**.
+5. Select **Save**.
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
@@ -102,9 +102,9 @@ The channel is available for all members and guests to access, but guests can on
 3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
 4. In the **Create Posts** panel, uncheck **Guests** and **Members**.
 5. In the **Post Reactions** panel, uncheck **Guests** and **Members**.
-6. Choose **Save**.
+6. Select **Save**.
 
-The channel is available for all members and guests to access but only Admins can post.
+The channel is available for all members and guests to access but only Admins can post to the channel.
 
 Groups
 ~~~~~~

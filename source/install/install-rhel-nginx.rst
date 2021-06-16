@@ -1,7 +1,7 @@
 .. _install-rhel-nginx:
 
 Installing NGINX Server
-=======================
+-----------------------
 
 In a production setting, use a proxy server for greater security and performance of Mattermost.
 
