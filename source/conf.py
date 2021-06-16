@@ -95,8 +95,8 @@ redirects = {
      "process/bug-severity-guidelines": "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets/bug-severity-guidelines",
      "process/accepting-pull-request": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
      "process/pm-faq": "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
-     "process/product-manager": "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring", 
-    
+     "process/product-manager": "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring",
+     "process/partner-programs": "https://handbook.mattermost.com/operations/sales/partner-programs",    
 }
 
 # The master toctree document.
