@@ -137,19 +137,19 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 3. MySQL 5.6 which reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
-4. Elasticsearch 5 & 6 - [versions 5.x EOL in March of 2019, versions 6.x EOL in November 2020](https://www.elastic.co/support/eol).
+4. Elasticsearch 5 & 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol).
 
-5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for desktop app issues on Windows 7.
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
 
 6. [DisablePostMetaData](https://docs.mattermost.com/administration/config-settings.html#disable-post-metadata) https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings configuration setting.
 
 7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
 
-8. [All configuration that has been previously marked “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings) configuration setting.
+8. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
 
 9. Remove deprecated ``model.CommandArgs.Session``.
 
-10. Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to enterprise licenced instances only.
+10. Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to Mattermost Enterprise instances only.
 
 11. Changes to ``mattermost-server/model`` for naming consistency.
 
