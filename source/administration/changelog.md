@@ -135,25 +135,23 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 2. [Slack Import via the Web App](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [MMETL](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for types of data it can assist in uploading. 
 
-3. PostgreSQL versions prior 10.0 - [versions 9.5 EOL in February 2021 and 9.6 will be EOL in November 2021](https://www.postgresql.org/support/versioning/).
+3. MySQL 5.6 which reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
-4. MySQL 5.6 which reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+4. Elasticsearch 5 & 6 - [versions 5.x EOL in March of 2019, versions 6.x EOL in November 2020](https://www.elastic.co/support/eol).
 
-5. Elasticsearch 5 & 6 - [versions 5.x EOL in March of 2019, versions 6.x EOL in November 2020](https://www.elastic.co/support/eol).
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for desktop app issues on Windows 7.
 
-6. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for desktop app issues on Windows 7.
+6. [DisablePostMetaData](https://docs.mattermost.com/administration/config-settings.html#disable-post-metadata) https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings configuration setting.
 
-7. [DisablePostMetaData](https://docs.mattermost.com/administration/config-settings.html#disable-post-metadata) https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings configuration setting.
+7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
 
-8. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+8. [All configuration that has been previously marked “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings) configuration setting.
 
-9. [All configuration that has been previously marked “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings) configuration setting.
+9. Remove deprecated ``model.CommandArgs.Session``.
 
-10. Remove deprecated ``model.CommandArgs.Session``.
+10. Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to enterprise licenced instances only.
 
-11. Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to enterprise licenced instances only.
-
-12. Changes to ``mattermost-server/model`` for naming consistency.
+11. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
