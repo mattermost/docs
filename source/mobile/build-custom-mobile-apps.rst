@@ -18,6 +18,11 @@ When you decide to build your own Mattermost Mobile apps, you have multiple ways
 - Submitting your app to `public app stores <#using-public-app-stores>`_.
 - Using `another distribution method <#using-another-distribution-method>`_.
 
+Setting Up Push Notifications
+-----------------------------
+
+See our `Mobile Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom built mobile apps.
+
 Developing and Maintaining Your Custom App
 ------------------------------------------
 
