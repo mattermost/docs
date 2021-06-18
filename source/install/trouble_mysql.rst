@@ -23,7 +23,7 @@ If MySQL is not running, review the instructions for installation on your distri
   Some of the commands used in this section alter the database. **Use these commands only if your Mattermost installation has failed.** Do not directly manipulate the MySQL database for a working Mattermost installation.
 
 The ``mattermost`` Database
------------------------
+---------------------------
 
 The database created during installation is named ``mattermost``. If you fail to create this database or you misname it, you will see an error such as the following when you attempt to start the Mattermost server:
 
@@ -67,7 +67,7 @@ If the ``mattermost`` database does exist, confirm that you have defined the dat
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 You should also confirm that ``DriverName`` element (found immediately above the ``DataSource`` element) is set to ``mysql``.
 
@@ -128,7 +128,7 @@ If the user ``mmuser`` exists, the DataSource element of the ``/opt/mattermost/c
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 If you correct an error, restart the Mattermost server by navigating to the ``/opt/mattermost`` directory and issuing the command: ``sudo -u mattermost bin/mattermost``.
 
@@ -149,7 +149,7 @@ The DataSource element of the ``/opt/mattermost/config/config.json`` file refere
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 Check that the password is correct. If you correct an error, restart the Mattermost server by navigating to ``/opt/mattermost`` and issuing the command: ``sudo -u mattermost bin/mattermost``.
 

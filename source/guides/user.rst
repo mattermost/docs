@@ -1,10 +1,10 @@
 Mattermost User's Guide
------------------------
+=======================
 
 End user help and documentation.
 
 Getting Started
-===============
+---------------
 
 .. toctree::
    :maxdepth: 2
@@ -25,7 +25,7 @@ Getting Started
    /help/apps/desktop-guide.rst
 
 Messaging
-=========
+---------
 
 .. toctree::
    :maxdepth: 2
@@ -41,7 +41,7 @@ Messaging
    /help/messaging/*
 
 Settings
-========
+--------
 
 .. toctree::
    :maxdepth: 2

@@ -4,7 +4,6 @@ Command Line Tools
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
 .. note::
-
   The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
@@ -19,10 +18,8 @@ These ``mattermost`` commands include:
 
 **Advanced Administration**
 
--  Permanently deleting users (use cautiously - database backup
-   recommended before use)
--  Permanently deleting teams (use cautiously - database backup
-   recommended before use)
+-  Permanently deleting users (use cautiously - database backup recommended before use)
+-  Permanently deleting teams (use cautiously - database backup recommended before use)
 
 **Advanced Automation**
 
@@ -45,7 +42,7 @@ These ``mattermost`` commands include:
     :local:
 
 Using the CLI
-^^^^^^^^^^^^^
+-------------
 
 To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
@@ -62,10 +59,11 @@ Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as `
 
 .. note::
 
-  When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+   When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
+
 .. code-block:: bash
  
- bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
+   bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -80,7 +78,8 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
     sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
 
 .. note::
-  The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
+   
+   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
 
 Using the CLI on Docker Install
 -------------------------------
@@ -99,12 +98,13 @@ Using the CLI on Docker Preview
 The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
 
 Mattermost 3.6 and later
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
 
 .. note::
-  For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
+   
+   For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
 
 Notes:
 
@@ -258,6 +258,10 @@ Description
 
 mattermost channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   This command will be replaced in a future release with the mmctl command `mmctl channel delete <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-delete>`__.
 
 Description
     Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
@@ -677,10 +681,10 @@ mattermost config reset
 
        bin/mattermost config reset SqlSettings.DriverName LogSettings
 
-   Options
+  Options
     .. code-block:: none
 
-        --confirm  Confirm you really want to reset the config setting and a backup has been performed.
+       --confirm  Confirm you really want to reset the config setting and a backup has been performed.
 
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
@@ -698,10 +702,10 @@ mattermost config set
 
        bin/mattermost config set SqlSettings.DriverName mysql
 
- Options
-    .. code-block:: none
+  Options
+   .. code-block:: none
 
-          --path string  Optional subpath; defaults to value in Site URL.
+       --path string  Optional subpath; defaults to value in Site URL.
 
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -733,12 +737,12 @@ mattermost config validate
     - Has attributes of the correct type, such as *bool*, *int*, and *str*.
     - All entries are valid. For example, checks that entries are below the maximum length.
 
-    Format
+  Format
       .. code-block:: none
 
         mattermost config validate
 
-    Example
+  Example
       .. code-block:: none
 
         bin/mattermost config validate
@@ -781,10 +785,10 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise Edition E20 license.
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
-    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise Edition E20 license.
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise Edition E20 license.
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -827,7 +831,7 @@ mattermost export bulk
   Options
     .. code-block:: none
 
-	  --all-teams bool [REQUIRED]  Export all teams from the server.
+	--all-teams bool [REQUIRED]  Export all teams from the server.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
@@ -848,7 +852,7 @@ mattermost export csv
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+        --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 
 mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -869,7 +873,7 @@ mattermost export global-relay-zip
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+        --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -898,11 +902,11 @@ mattermost extract-documents-content
 -------------------------------------
 
   Description
-    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this extraction command is strongly recommended since search results for past file contents may be incomplete. If this command is not run, users can search older files based on file name only.
+    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on file name only.
     
-    If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ or `Bleve <https://docs.mattermost.com/deployment/bleve.html>`__ search, you must also rebuild the search index.
+    If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ or `Bleve <https://docs.mattermost.com/deployment/bleve.html>`__ search, you must also rebuild the search index after running the content extraction command.
 
-    Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test `enabling content search <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
+    You can run this extraction command while the server is running. Running this command adds load to your server. For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test `enabling content search <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__ in a staging environment before enabling it in a production environment.
   
   Format
     .. code-block:: none
@@ -938,7 +942,7 @@ mattermost group channel
    This command will be replaced in a future release with the mmctl command `mmctl group channel <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-group-channel>`__.
 
 
-Description
+  Description
     Commands for managing Mattermost groups linked to a channel.
 
   Child Commands
@@ -954,11 +958,13 @@ mattermost group channel enable
 
    This command will be replaced in a future release with the mmctl command `mmctl group channel enable <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-group-channel-enable>`__.
 
-Description
+
+  Description
     Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
 
 .. note::
   To enable a group constraint on a specific channel, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a channel.
+
 
   Format
     .. code-block:: none

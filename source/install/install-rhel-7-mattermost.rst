@@ -1,7 +1,7 @@
 ..  _install-rhel-7-mattermost:
 
 Installing Mattermost Server
-============================
+----------------------------
 
 Install Mattermost Server on a 64-bit machine.
 
@@ -45,7 +45,7 @@ Assume that the IP address of this server is 10.10.10.2
   -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
-      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"``
+      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
 
@@ -101,11 +101,11 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl enable mattermost``
 
-10. Start the Mattermost server.
+11. Start the Mattermost server.
 
   ``sudo systemctl start mattermost``
 
-11. Verify that Mattermost is running.
+12. Verify that Mattermost is running.
 
   ``curl http://localhost:8065``
 

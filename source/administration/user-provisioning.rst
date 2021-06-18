@@ -1,7 +1,7 @@
 .. _user-provisoning:
 
 Provisioning Workflows
-=====================================
+======================
 
 This document provides an overview of user provisioning and deprovisioning workflows in Mattermost.
 
@@ -41,4 +41,4 @@ Once deactivated, users still exist in the Mattermost database and their message
 
 .. note::
 
-  As long as the ID attribute selected via AD/LDAP or SAML 2.0 is a unique identifier, the user’s email address or name (along with other attributes) can be updated without breaking the user’s account.
+   As long as the ID attribute selected via AD/LDAP or SAML 2.0 is a unique identifier, the user’s email address or name (along with other attributes) can be updated without breaking the user’s account.

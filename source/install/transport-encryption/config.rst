@@ -1,6 +1,6 @@
-=============================================
+
 Configuring Transport Encryption
-=============================================
+=================================
 
 The components of the Mattermost setup are shown in the following diagram,
 including the transport encryption used. Aside from the encryption between the nodes
