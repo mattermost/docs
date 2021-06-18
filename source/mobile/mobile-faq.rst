@@ -2,7 +2,7 @@ Mobile Apps FAQ
 ===============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
