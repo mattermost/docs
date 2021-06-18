@@ -154,6 +154,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 11. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
+ - Batched email notifications from a single post have a wrong title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
