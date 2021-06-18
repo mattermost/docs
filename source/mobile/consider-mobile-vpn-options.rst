@@ -1,8 +1,8 @@
 Consider Mobile VPN Options
 ===========================
 
-Connecting to your Private Network Mattermost Instance
-------------------------------------------------------
+Connect to your Private Network Mattermost Instance
+---------------------------------------------------
 
 You need to set up a way to connect to your private network Mattermost instance, using an external proxy with encrypted transport through HTTPS and WSS network connections.
 
@@ -16,8 +16,7 @@ Mobile VPN Options
 A Virtual Private Network (VPN) allows a device outside a firewall to access content inside the firewall as if it were on the same network.
 
 .. note::
-
-    Some mobile VPN options depend on the requirements of your organization and the demands and/or the needs of your users. 
+  Some mobile VPN options depend on the requirements of your organization and the demands and/or the needs of your users. 
 
 We recommend one of two options: `per-app VPN <#id3>`_ or a `device VPN <#id4>`_ to secure your deployment. Both options are compatible with most EMM providers. 
 
@@ -41,8 +40,8 @@ Device VPN
 
 With this option, all internet traffic routes through the VPN specified in the profile. This could cause issues for personal applications.
 
-Connecting via Corporate Proxy Server
--------------------------------------
+Connect via Corporate Proxy Server
+----------------------------------
 
 Review the following commonly-asked questions about connecting through a corporate proxy server:
 
