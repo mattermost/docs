@@ -135,7 +135,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 2. [Slack Import via the Web App](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [MMETL](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for types of data it can assist in uploading. 
 
-3. MySQL 5.6 which reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+3. MySQL versions below to 5.7.7. Minimum support will now be for 5.7.8. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props), Additionally, 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
 4. Elasticsearch 5 & 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol).
 
