@@ -1,8 +1,9 @@
 Mobile Apps FAQ
 ===============
 
-.. toctree::
-   :maxdepth: 2
+.. contents::
+  :backlinks: top
+  :local:
 
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
