@@ -99,6 +99,7 @@ Mobile Apps
    /mobile/build-custom-mobile-apps.rst
    /mobile/deploy-mobile-apps-using-emm-provider.rst
    /mobile/mobile-appconfig.rst
+   /mobile/consider-mobile-vpn-options.rst
    /mobile/mobile-hpns.rst
    /mobile/mobile-faq.rst
    /mobile/mobile-troubleshoot.rst
