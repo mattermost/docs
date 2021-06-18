@@ -21,7 +21,11 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 Reply to Messages
 -----------------
 
-When replying to a message, hover over message and select the **Reply** link to organize the conversation into a thread.
+.. tip::
+
+   A new way to organize conversations using Collapsed Reply Threads is available from Mattermost v5.37. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more. 
+
+When Collapsed Reply Threads is disabled, you can reply to a message by hovering over a message and selecting the **Reply** link to organize the conversation into a thread.
 
 .. image:: ../../images/reply-to-message.png
    :alt: Reply to Mattermost messages

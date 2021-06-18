@@ -4282,6 +4282,19 @@ Experimental
 
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
+Collapsed Reply Threads (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Collapsed Reply Threads offers users an enhanced user experience for organizing conversations featuring threads that are easier to find, follow, and resume. Collapsed Reply Threads are available from Mattermost v5.37, and are disabled by default. See our `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+
+To enable Collapsed Reply Threads, go to **System Console > Experimental > Features**, then set **Collapsed Reply Threads** to **Enabled (Default On)** to or **Enabled (Default Off)**. 
+
+When **Collapsed Reply Threads** is set to **Enabled (Default Off)**, `users can choose to enable this functionality <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ in **Account Settings**.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"XXX": XXX`` with options ``true`` and ``false``.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
 
