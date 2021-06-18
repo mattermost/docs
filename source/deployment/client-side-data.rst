@@ -1,10 +1,6 @@
 Client-side Data Storage FAQ
 ============================
 
-.. contents::
-  :backlinks: top
-  :local:
-
 Mobile Web Experience
 ---------------------
 
@@ -49,13 +45,13 @@ To speed up initial loading time, Mattermost mobile apps cache data locally on t
   The messages are deleted from the client.
 
 **7. What data is stored on a mobile device after an account is deactivated in the following cases:**
-  1. *The mobile device is connected with app running.*
+  a. *The mobile device is connected with app running.*
     All the data listed in Questions 1 and 2, but within 60 seconds after an account is deactivated on the server, all app data is deleted from the cache.
-  2. *The mobile device is disconnected with app running.*
+  b. *The mobile device is disconnected with app running.*
     All the data listed in Questions 1 and 2, but within 60 seconds after the device reconnects, all app data is deleted from the cache.
-  3. *The mobile device is connected with the app not running.*
+  c. *The mobile device is connected with the app not running.*
     All the data listed in Questions 1 and 2, but within 60 seconds after the app is started, all app data is deleted from the cache.
-  4. *The mobile device is disconnected and app is not running.*
+  d. *The mobile device is disconnected and app is not running.*
     All the data listed in Questions 1 and 2, but within 60 seconds after the device reconnects and the app is started, all app data is deleted from the cache.
 
 **8. What data might be on the device after a user account is deactivated and all data is deleted from the cache?**
