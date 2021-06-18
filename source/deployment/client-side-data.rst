@@ -1,6 +1,10 @@
 Client-side Data Storage FAQ
 ============================
 
+.. contents::
+  :backlinks: top
+  :local:
+
 Mobile Web Experience
 ---------------------
 
