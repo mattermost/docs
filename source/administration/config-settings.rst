@@ -4285,11 +4285,9 @@ There are a number of settings considered "experimental" that are configurable f
 Collapsed Reply Threads (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Collapsed Reply Threads offers users an enhanced user experience for organizing conversations with threads that are easier to find, follow, and resume. Collapsed Reply Threads are available from Mattermost v5.37, and are disabled by default. See our `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+Collapsed Reply Threads offers users an enhanced user experience for organizing conversations with threads that are easier to find, follow, and resume. Collapsed Reply Threads are available from Mattermost v5.37, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
-System Admins can set the default appearance of collapsed reply threads for their end users, as follows:
-
-To enable Collapsed Reply Threads, go to **System Console > Experimental > Features**, then set **Collapsed Reply Threads** to **Enabled (Default On)** to or **Enabled (Default Off)**.
+System Admins can set the default appearance of collapsed reply threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
 
 **Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to enable `Collapsed Reply Threads <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**
 
@@ -4298,7 +4296,7 @@ To enable Collapsed Reply Threads, go to **System Console > Experimental > Featu
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": default_on`` with options ``disabled``, ``default-on``, and ``default-off``.     |
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled``, ``default-on``, and ``default-off``.     |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
