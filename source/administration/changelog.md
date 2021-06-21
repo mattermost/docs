@@ -132,6 +132,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``react-native-startup-time`` and removed ``react-native-status-bar-size`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - Batched email notifications from a single post have incorrect title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
