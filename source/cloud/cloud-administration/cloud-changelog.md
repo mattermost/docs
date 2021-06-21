@@ -14,7 +14,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 #### User Interface (UI)
  - Added English-Australian language variation.
  - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
- - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency. The number of channels shown here in the default state are capped to maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
+ - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency in the channel switcher. The number of channels shown in the channel switcher in the default state are capped to maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
  - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
 
 #### Administration
