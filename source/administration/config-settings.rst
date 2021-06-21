@@ -4285,15 +4285,21 @@ There are a number of settings considered "experimental" that are configurable f
 Collapsed Reply Threads (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Collapsed Reply Threads offers users an enhanced user experience for organizing conversations featuring threads that are easier to find, follow, and resume. Collapsed Reply Threads are available from Mattermost v5.37, and are disabled by default. See our `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+Collapsed Reply Threads offers users an enhanced user experience for organizing conversations with threads that are easier to find, follow, and resume. Collapsed Reply Threads are available from Mattermost v5.37, and are disabled by default. See our `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
-To enable Collapsed Reply Threads, go to **System Console > Experimental > Features**, then set **Collapsed Reply Threads** to **Enabled (Default On)** to or **Enabled (Default Off)**. 
+System Admins can set the default appearance of collapsed reply threads for their end users, as follows:
 
-When **Collapsed Reply Threads** is set to **Enabled (Default Off)**, `users can choose to enable this functionality <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ in **Account Settings**.
+To enable Collapsed Reply Threads, go to **System Console > Experimental > Features**, then set **Collapsed Reply Threads** to **Enabled (Default On)** to or **Enabled (Default Off)**.
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"XXX": XXX`` with options ``true`` and ``false``.                                 |
-+-------------------------------------------------------------------------------------------------------------------------------+
+**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to enable `Collapsed Reply Threads <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**
+
+**Enabled (Default On)**: Enable Collapsed Reply Threads functionality on the server, and enable it for all users. Individual users can disable this functionality in **Account Settings** for their Mattermost account, if preferred.
+
+**Disabled**: Disable Collapsed Reply Threads functionality.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": Enabled (Default Off)`` with options ``Disabled``, ``Enabled (Default On)``, and ``Enabled (Default Off)``.     |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
