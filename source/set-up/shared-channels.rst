@@ -109,7 +109,7 @@ Alternatively, you can extend a read-only invitation to a secure connection by a
 
     You can re-extend an invitation to a secure connection by omitting the optional ``--readonly`` parameter that also enables remote member participation in that channel.
 
-For example, :
+For example:
 
 ``/share-channel invite --connectionID "AcmeUS"``
  
@@ -186,4 +186,3 @@ What happens if two secure connections share the same usernames?
 In cases where members share the same usernames across Mattermost secure connections, usernames on the local server instance are appended with the secure connection ID of the remote server.
 
 For example, if multiple members named John Smith exist after two Mattermost instances establish a secure connection with one another, all remote John Smith members include their Secure Connection ID following their username to help differentiate members across multiple Mattermost instances.
-
