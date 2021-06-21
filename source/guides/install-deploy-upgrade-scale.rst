@@ -47,7 +47,7 @@ Desktop App
 ^^^^^^^^^^^
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    /help/getting-started/install-desktop-app.rst
    /install/desktop.rst
@@ -59,7 +59,7 @@ Mobile App
 ^^^^^^^^^^
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    /help/getting-started/install-ios-app.rst
    /help/getting-started/install-android-app.rst
