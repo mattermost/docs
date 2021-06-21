@@ -4297,9 +4297,9 @@ To enable Collapsed Reply Threads, go to **System Console > Experimental > Featu
 
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CollapsedThreads": Enabled (Default Off)`` with options ``Disabled``, ``Enabled (Default On)``, and ``Enabled (Default Off)``.     |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": default_on`` with options ``disabled``, ``default-on``, and ``default-off``.     |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
