@@ -190,6 +190,8 @@ Tasks can be part of pre-configured task templates in playbooks, and they can al
 
 .. image:: ../images/IC-ad-hoc-tasks.gif
 
+.. image:: ../images/IC-ad-hoc-tasks.gif
+
 Changing commanders
 ~~~~~~~~~~~~~~~~~~~
 

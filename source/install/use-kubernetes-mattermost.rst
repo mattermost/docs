@@ -1,10 +1,10 @@
 .. _use-kubernetes-mattermost:
 
 Using Mattermost Operator Functionality
-======================================
+---------------------------------------
 
 Rolling Upgrades
-----------------
+~~~~~~~~~~~~~~~~
 
 The Mattermost Kubernetes Operator supports rolling upgrades so you can upgrade
 your Mattermost deployment with zero downtime. This process

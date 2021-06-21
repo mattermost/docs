@@ -1,4 +1,4 @@
-========================================
+
 Certifications and Compliance Overview*
 ========================================
 
@@ -13,7 +13,7 @@ GDPR Compliance
 The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
 Continual Commitment to the Principles of GDPR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
 
@@ -146,12 +146,12 @@ in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/4
 
 **General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/documents/regulations-docs/413-part-736-general-prohibitions/file>`__. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
 
-**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <http://apps.export.gov/csl-search#/csl-search>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
+**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <https://www.trade.gov/consolidated-screening-list>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
 
 **Deemed Exports**:  Release of controlled technology to foreign persons in the U.S. is "deemed" to be an export to the
 person’s country or countries of nationality and is found in `734.2(b) <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ of the EAR, which you can read about under the Export Administration Regulations on the BIS website.
 
-**Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of `“Red Flags” <https://www.bis.doc.gov/index.php/compliance-a-training/export-management-a-compliance/freight-forwarder-guidance/23-compliance-a-training/51-red-flag-indicators>`__. Be sure to screen business partners and customers to ensure compliance.
+**Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of “Red Flags”. Be sure to screen business partners and customers to ensure compliance.
 
 Disclaimer
 ~~~~~~~~~~
@@ -162,8 +162,8 @@ This information is subject to change without notice. The materials on this site
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
 
-FAQ
-----
+Frequently Asked Questions
+--------------------------
 
 To be compliant with GDPR, do I need to remove message contents of email notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,10 +193,12 @@ Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/le
 
 Do you have Fed or Department of Defense (DOD) Certification?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 We are in the process of acquiring Authority to Operate (ATO) and Certificate of Networthiness (CON) certifications.
 
 How do you ensure personal data stays within European Union?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 When the customer’s installation of Mattermost is self-hosted, Mattermost does not process any personal data under the jurisdiction of the data privacy laws governing within the European Union. The Mattermost support team leverages Zendesk customer service software, which hosts Mattermost information within the United States. For more information on Zendesk, please see their `Privacy and Data Protection <https://www.zendesk.com/company/privacy-and-data-protection/#gdpr-sub>`__ page.
 
 Zendesk privacy and data protection safeguards notwithstanding, the provision of support services is part of the contractual obligations between Mattermost and its customers. In order for Mattermost to provide such support, a customer must be able to identify as a licensed user, therefore requiring the user to provide personal data to the support agent. Regardless of where the support agent is located, the personal data will indeed be hosted outside of the EU.

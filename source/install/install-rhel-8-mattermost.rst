@@ -1,7 +1,7 @@
 ..  _install-rhel-8-mattermost:
 
 Installing Mattermost Server
-============================
+----------------------------
 
 Install Mattermost Server on a 64-bit machine.
 

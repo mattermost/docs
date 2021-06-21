@@ -1,7 +1,7 @@
 ..  _install-rhel-7-mattermost:
 
 Installing Mattermost Server
-============================
+----------------------------
 
 Install Mattermost Server on a 64-bit machine.
 
@@ -101,11 +101,11 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl enable mattermost``
 
-10. Start the Mattermost server.
+11. Start the Mattermost server.
 
   ``sudo systemctl start mattermost``
 
-11. Verify that Mattermost is running.
+12. Verify that Mattermost is running.
 
   ``curl http://localhost:8065``
 
