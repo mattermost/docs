@@ -24,6 +24,7 @@
 
 ### Improvements
  - Added support for localization with country variants.
+ - The "swipe up to refresh" functionality was removed to fix an issue where the app performed slowly on Android devices.
 
 ### Bug Fixes
 
