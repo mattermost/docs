@@ -55,6 +55,7 @@ All Mattermost Instances
    /deployment/sso-google.rst
    /deployment/sso-office.rst
    /deployment/converting-oauth20-service-providers-to-openidconnect.rst
+   /set-up/shared-channels.rst
 
 Self-Managed Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
