@@ -32,6 +32,7 @@
  - Fixed an issue where the app performed slowly on Android devices that ran at 120fps instead of the normal 60fps.
 
 ### Known Issues
+ - When changing the custom status from the webapp while the Mobile App is in the background, the custom status does not get reflected on the Mobile App until you close and re-open the Mobile App.
  - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
  - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
 
