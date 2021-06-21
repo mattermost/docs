@@ -16,6 +16,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
  - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
  - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency in the channel switcher. The number of channels shown in the channel switcher in the default state are capped to maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
  - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
+ - Added the ability in the custom status tooltips, status dropdown and profile popover to select an expiry time for custom statuses. Also added new components ``ExpiryMenu`` and ``DateTimeInput`` to the custom status modal.
 
 #### Administration
  - Optimized the bulk import process by no longer requiring the server to write the incoming archive to the filesystem when unzipping it.
