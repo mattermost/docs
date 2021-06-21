@@ -2,6 +2,39 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-06-30
+
+### Highlights
+
+### Unlimited E10/20 trials
+ - Users are now prohibited from starting unlimited E10/20 trials.
+
+### Emoji Enhancements with Skin Tone Selection
+ - Added support for emoji standard v13.0. Users will see Reactions and Emoji rendered based on their operating system or device, and have the ability to choose various skin tones using the Mattermost emoji picker.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added English-Australian English language variation.
+ - Added the ability to upload ``.jpeg`` files on Linux.
+ - Before anything is typed, a list of channels you are a member of are now shown and sorted by recency. The number of channels shown here in the default state are capped to maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown showing **My Channels** first and other **Public Channels** next, still capped at 20 for the default state.
+ - Polish, German, and Italian languages were downgraded to beta.
+
+#### Administration
+ - Optimized the bulk import process by removing the need for the server to write the incoming archive to the filesystem when unzipping it.
+ - Added channel restore and channel privacy change endpoints to the local mode using the System bot.
+
+### Bug Fixes
+ - Fixed an issue where sidebar icons were not aligned with the navigator area icons.
+ - Fixed an issue where using CTRL+F in a **Direct Message** channel added the user ID rather than the user's name into the search field.
+ - Fixed an issue where user icons were displayed at full opacity in muted channels.
+ - Fixed an issue where a redundant ``user_update`` websocket event was generated for bot users.
+
+### Known Issues
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-06-16
 
 ### Improvements
