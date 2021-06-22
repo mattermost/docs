@@ -57,7 +57,7 @@ The following Group Policies are available:
 macOS 10.9+
 -----------
 
-1. Download the `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac.dmg>`__.
+1. Download the `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac-m1.dmg>`__ (beta).
 
 2. Double-click the download to open the disk image.
 
@@ -98,6 +98,27 @@ Unofficial, community-driven ``.deb`` packages are available.
     ``sudo dpkg -i mattermost-desktop-4.7.0-linux-amd64.deb``
  - 32-bit systems
     ``sudo dpkg -i mattermost-desktop-4.7.0-linux-i386.deb``
+
+3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
+
+Linux rpm files (beta)
+~~~~~~~~~~~~~~~~~~~~~~
+
+Unofficial, community-driven ``.rpm`` packages are available.
+
+1. Download the latest version of the Mattermost Desktop App:
+
+ - 64-bit systems
+   `mattermost-desktop-4.7.0-linux-i686.rpm <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-i686.rpm>`__
+ - 32-bit systems
+   `mattermost-desktop-4.7.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-x86_64.rpm>`__
+
+2. At the command line, execute one of the following commands depending on the package that you downloaded:
+
+ - 64-bit systems
+    ``sudo dpkg -i mattermost-desktop-4.7.0-linux-i686.rpm``
+ - 32-bit systems
+    ``sudo dpkg -i mattermost-desktop-4.7.0-linux-x86_64.rpm``
 
 3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
