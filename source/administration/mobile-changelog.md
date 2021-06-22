@@ -24,7 +24,7 @@
 
 ### Improvements
  - Added support for localization with country variants.
- - Search results, pinned messages, saved messages, and recent mentions go straight to the thread and do not open a permalink modal anymore. Only permalinks open a permalink view.
+ - Search results, pinned messages, saved messages, recent mentions, and clicking "Show more" on long posts now go straight to the thread and do not open a permalink modal anymore. Only permalinks open a permalink view.
  - The "swipe up to refresh" functionality was removed to fix an issue where the app performed slowly on Android devices.
 
 ### Bug Fixes
