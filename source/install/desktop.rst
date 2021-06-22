@@ -59,7 +59,7 @@ macOS 10.9+
 
 1. Download the latest version of the Mattermost desktop app:
   - `Intel systems <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac.dmg>`__
-  - `M1 systems <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac-m1.dmg>`__ (beta)
+  - `M1 systems <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac-m1.dmg>`__ (Beta)
 
 2. Double-click the download to open the disk image.
 
@@ -103,7 +103,7 @@ Unofficial, community-driven ``.deb`` packages are available.
 
 3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
-Linux rpm files (beta)
+Linux rpm files (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Unofficial, community-driven ``.rpm`` packages are available.
