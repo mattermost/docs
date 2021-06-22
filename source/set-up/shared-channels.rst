@@ -125,7 +125,7 @@ Within a specific channel, use the following slash command to uninvite a secure 
 
 ``/share-channel uninvite --connectionID``
 
-This slash command removes a secure connection from the current channel based on its Connection ID. This secure connection may continue to be invited to other shared channels.
+This slash command removes a secure connection from the current channel based on its Connection ID. The channel continues to function for local users as expected., and the secure connection may continue to be invited to other shared channels.  
 
 Removing All Secure Connections from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,6 +159,11 @@ Status details include:
 
 Frequently Asked Questions
 ---------------------------
+
+Why is this feature in Beta?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This feature is in beta while we recruit customer testing partners. This feature has been tested by Mattermost QA, but as we build the interface for managing shared channels, we want to work with System Admins to build the most optimal experience.
 
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
