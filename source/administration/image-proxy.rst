@@ -1,7 +1,7 @@
 .. _image-proxy:
 
 Image Proxy
-================================
+===========
 
 Using an image proxy means that all requests for images made by Mattermost clients will go through the proxy instead of contacting third-party servers directly. This helps protect user privacy by preventing third-party servers from tracking who views an image. This also prevents the use of tracking pixels (invisible images that do the same thing without the user even seeing an image).
 
@@ -14,7 +14,7 @@ Mattermost clients will use the image proxy to load all external images. The Mat
 An image proxy can be configured in **System Console > Environment > Image Proxy** (or **System Console < Files > Storage** in versions prior to 5.12).
 
 Local Image Proxy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
 
 The local image proxy is available as part of the Mattermost server deployment. When using the local image proxy, images are served to clients through the server which helps anonymize users. If SSL is enabled on the server, it provides a secure connection. This method does not offer any caching behavior.
 
@@ -24,7 +24,7 @@ The local image proxy is available as part of the Mattermost server deployment. 
 .. _atmos-camo:
 
 atmos/camo Image Proxy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also be used if isolation between the Mattermost server and image proxy is desired.
 

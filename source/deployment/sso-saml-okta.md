@@ -1,8 +1,8 @@
-## Configure SAML with Okta
+# Configure SAML with Okta
 
 The following process provides steps to configure SAML with Okta for Mattermost.
 
-### Pre-installation
+## Pre-installation
 
 1 - Before configuring SAML with Okta, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
 
@@ -14,7 +14,7 @@ Also confirm if the `xmlsec1-openssl` library was successfully installed. If not
 
 You should save the two files that are generated, which will be referred to as the **Service Provider Private Key** and the **Service Provider Public Certificate** in this guide.
 
-### Set up a connection app for Mattermost SSO
+## Set up a connection app for Mattermost SSO
 
 3 - Sign into Okta as an administrator.
 
@@ -66,7 +66,7 @@ Furthermore, you **must download the X.509 Public Certificate file** and save it
 
 ![okta_9_view_instructions.png](../../source/images/okta_9_view_instructions.png)
 
-### Configure SAML for Mattermost
+## Configure SAML for Mattermost
 
 13 - Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, and enter the following fields:
  - **SAML SSO URL**: `Identity Provider Single Sign-On URL` from Okta, specified in step 12.
@@ -101,27 +101,27 @@ It is also recommended to post an announcement about how the migration will work
 
 You may also configure SAML for Okta by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart the Mattermost server for the changes to take effect.
 
-#### Troubleshooting
+### Troubleshooting
 
 The following are troubleshooting suggestions on common error messages and issues. 
 
-##### 1. System Administrator locks themselves out of the system
+#### 1. System Administrator locks themselves out of the system
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](https://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
-##### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
+#### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-##### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
+#### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
+#### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 
 Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Okta configuration and in **System Console > SAML**.
 
-##### 5. Unable to switch to SAML authentication successfully
+#### 5. Unable to switch to SAML authentication successfully
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 

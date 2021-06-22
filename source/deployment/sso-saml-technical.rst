@@ -1,4 +1,4 @@
-===================================================
+
 SAML Single-Sign-On (E20): Technical Documentation
 ===================================================
 
@@ -23,7 +23,7 @@ For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :d
   :local:
 
 SAML Providers
---------------------------------------------
+--------------
 
 **Identity Providers (IdP)**: An identity provider performs the authentication. When a user clicks to log in, the identity provider confirms who the user is, and sends data to the service provider with the proper authorization to access the site.
 
@@ -34,7 +34,7 @@ SAML Providers
 *Examples*: Mattermost, Zendesk, Zoom, Salesforce.
 
 SAML Request (AuthNRequest)
---------------------------------------------
+---------------------------
 
 When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string
 
@@ -70,7 +70,7 @@ AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case
   </samlp:AuthnRequest>
 
 SAML Responses
-------------------------------------------------------------
+--------------
 
 There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user.
 
@@ -109,10 +109,10 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
  - If the corresponding ``LdapSettings.EmailAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
 
 Frequently Asked Questions
-------------------------------------------------------------
+--------------------------
 
 How can I obtain a SAML metadata XML file consumed by Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can obtain the XML file by calling the Mattermost RESTful API endpoint at ``/api/v4/saml/metadata``.
 

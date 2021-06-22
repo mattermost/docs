@@ -1,8 +1,8 @@
-## Configure SAML with Microsoft ADFS (Active Directory Federation Services)
+# Configure SAML with Microsoft ADFS (Active Directory Federation Services)
 
 The following process provides steps to configure SAML with Microsoft ADFS for Mattermost.
 
-### Basic Requirements for ADFS
+## Basic Requirements for ADFS
 
 The following are basic requirements to use ADFS for Mattermost:
  - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
@@ -10,7 +10,7 @@ The following are basic requirements to use ADFS for Mattermost:
  - An SSL certificate to sign your ADFS login page.
  - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in [this article](https://msdn.microsoft.com/en-us/library/gg188612.aspx).
 
-### Pre-installation
+## Pre-installation
 
 1 - On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be `/adfs/ls/`.
 
@@ -24,7 +24,7 @@ Also confirm if the `xmlsec1-openssl` library was successfully installed. If not
 
 You should save the two files that are generated, which will be referred to as the **Service Provider Private Key** and the **Service Provider Public Certificate** in this guide.
 
-### Adding a Relying Party Trust
+## Adding a Relying Party Trust
 
 4 - In ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts** and click **Add Relying Party Trust…**
 
@@ -78,7 +78,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 ![adfs_13_finish_trust.png](../../source/images/adfs_13_finish_trust.png)
 
-### Creating Claim Rules
+## Creating Claim Rules
 
 16 - In the **Issuance Transform Rules** of the **Claim Rules** editor, click the **Add Rule…** button. This action opens an **Add Transform Claim Rule Wizard**.
 
@@ -127,7 +127,7 @@ where <display-name> is the name you specified in step 7. In our example it woul
 
 This action will add the signature to SAML messages, making verification successful.
 
-### Export Identity Provider Certificate
+## Export Identity Provider Certificate
 
 Next, we export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
 
@@ -155,7 +155,7 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 You’re now about to finish configuring SAML for Mattermost!
 
-### Configure SAML for Mattermost
+## Configure SAML for Mattermost
 
 30 - Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   - `SAML SSO URL`: **SAML 2.0/W-Federation URL** ADFS Endpoint you noted in step 1.
@@ -190,15 +190,15 @@ It is also recommended to post an announcement about how the migration will work
 
 You may also configure SAML for ADFS by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart Mattermost server for the changes to take effect.
 
-#### Troubleshooting
+### Troubleshooting
 
 The following are troubleshooting suggestions on common error messages and issues. 
 
-##### 1. System Administrator locks themselves out of the system
+#### 1. System Administrator locks themselves out of the system
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](https://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
-##### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
+#### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If the user wants to use the existing account for SAML authentication, they should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
@@ -207,15 +207,15 @@ If the user wants to use another ADFS account for SAML instead, they will first 
  - Go to the ADFS provider and log out from the account
  - Delete the existing session cookie by [invoking a passive sign out](https://social.technet.microsoft.com/wiki/contents/articles/1439.ad-fs-how-to-invoke-a-ws-federation-sign-out.aspx) via `https://{DNS_name_of_RP_STS}/adfs/ls/?wa=wsignout1.0` where [RP_STS is the relying party security token service](https://msdn.microsoft.com/en-us/library/ee748489.aspx).
 
-##### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
+#### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
+#### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 
 Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the ADFS configuration and in **System Console > SAML**.
 
-##### 5. Unable to switch to SAML authentication successfully
+#### 5. Unable to switch to SAML authentication successfully
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 

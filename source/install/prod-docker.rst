@@ -1,7 +1,7 @@
 ..  _docker-local-machine:
 
 Deploy Mattermost on Docker
-==============================
+============================
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback and improvements are welcome and greatly appreciated. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst>`__.
 
@@ -12,7 +12,7 @@ For a single-node preview of Mattermost (without email) see `Local Machine Setup
 If you have any problems installing, see the `troubleshooting guide <https://mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click **Edit** at the top of this page.
 
 Docker Setup on Ubuntu
-----------------------------------------------------
+-----------------------
 
 1. **Install Docker** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`__ or these instructions:
 
@@ -82,15 +82,13 @@ Additional guides:
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker#aws>`__
 
-
 Docker Setup on Arch Linux
--------------------------------------
+--------------------------
 
 To install on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost>`__ on the Arch Linux wiki.
 
-
 Docker Setup on macOS
---------------------------------
+---------------------
 
 You can run a deployment on macOS by `installing Docker Compose using the online guide <https://docs.docker.com/docker-for-mac/>`__ then following the above instructions.
 

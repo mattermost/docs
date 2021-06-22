@@ -6,7 +6,11 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.36 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-06-16**
+- **v5.36.1, released 2021-06-21**
+  - Mattermost v5.36.1 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+  - Added performance improvements by reducing the time taken to re-render when a post is received.
+- **v5.36.0, released 2021-06-16**
+  - Original 5.36.0 release
 
 Mattermost v5.36.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -159,7 +163,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - Batched email notifications from a single post have a wrong title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).
+ - Batched email notifications from a single post have incorrect title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
@@ -176,6 +180,8 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.35 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.35.4, released 2021-06-21**
+  - Mattermost v5.35.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.35.3, released 2021-06-11**
   - Mattermost v5.35.3 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where missing query parameters in the datasource could cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
@@ -312,6 +318,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.34 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.34.5, released 2021-06-21**
+  - Mattermost v5.34.5 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 - **v5.34.4, released 2021-06-11**
   - Mattermost v5.34.4 contains a high level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where missing query parameters in the datasource could cause MySQL servers to crash on startup. [MM-36236](https://mattermost.atlassian.net/browse/MM-36236)
@@ -670,6 +678,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.7, released 2021-06-21**
+  - Fixed an issue with an infinite recursion during message export for Hitachi HCP file backends. [MM-36440](https://mattermost.atlassian.net/browse/MM-36440)
 - **v5.31.6, released 2021-06-11**
   - Fixed an issue where subsequent migrations failed to run after running a dot release on new installations. [MM-35931](https://mattermost.atlassian.net/browse/MM-35931)
   - Fixed an issue where messages with fallback text were repeated. [MM-30980](https://mattermost.atlassian.net/browse/MM-30980)
