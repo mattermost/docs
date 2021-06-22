@@ -57,9 +57,9 @@ The following Group Policies are available:
 macOS 10.9+
 -----------
 
-1. Download the `latest version of the Mattermost desktop app 
-- Intel systems: <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac.dmg>`__ .
-- M1 systems: <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac-m1.dmg>`__ (beta).
+1. Download the latest version of the Mattermost desktop app:
+  - `Intel systems <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac.dmg>`__
+  - `M1 systems <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-mac-m1.dmg>`__ (beta)
 
 2. Double-click the download to open the disk image.
 
