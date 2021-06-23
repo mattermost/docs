@@ -27,36 +27,36 @@ Adding Servers
 
 To add a new server to your desktop app environment:
 
-1. Click the **+** button in the desktop window bar at the top of the screen.
+1. Select the **+** button in the desktop window bar at the top of the screen.
 2. In the **Name** field, enter the name that you want for the tab.
-3. In the **URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
-4. Click **Add**.
+3. In the **URL** field, enter the complete URL of the server that you want to connect to. URLs must begin with either ``http://`` or ``https://``.
+4. Select **Add**.
 
 Editing Servers
 ~~~~~~~~~~~~~~~
 
 To edit a server in your desktop app environment:
 
-1. On Windows, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
-2. Next to the server you want to update, click **Edit**.
+1. On Windows, go to **... > File > Settings**. On macOS or Linux, go to **Mattermost > Preferences**.
+2. Next to the server you want to update, select **Edit**.
 3. Edit **Name** and/or **URL**.
-4. Click **Save**.
+4. Select **Save**.
 
 Removing Servers
 ~~~~~~~~~~~~~~~~
 
 To remove a server from your desktop app environment:
 
-1. On Windows, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
-2. Next to the server or team that you want to remove, click **Remove**.
-3. Click **Remove**.
+1. On Windows, go to **... > File > Settings**. On macOS or Linux, go to **Mattermost > Preferences**.
+2. Next to the server or team that you want to remove, select **Remove**.
+3. Select **Remove**.
 
 App Options
 -----------
 
 In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`__, the Desktop App provides additional options to customize your experience.
 
-The options appear in the Settings page, available on Windows from **... > File > Settings**, or on Mac from **Mattermost > Preferences**.
+The options appear on the Settings page, available on Windows from **... > File > Settings**, and on macOS or Linux from **Mattermost > Preferences**.
 
 Start app on login (Windows, Linux only)
     When enabled, the Mattermost application starts when you log in to your machine. This setting is enabled by default.
@@ -85,11 +85,18 @@ Leave app running in notification center when application window is closed (Linu
 Use GPU hardware acceleration
     When enabled, the Mattermost user interface is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting.
     
+Download Location
+~~~~~~~~~~~~~~~~~
+
+You can specify where files downloaded from the Mattermost desktop app are saved on your local machine. By default, files are saved to the ``Downloads`` folder.
+
+1. On Windows, go to **... > File > Settings**. On macOS or Linux, go to **Mattermost > Preferences**.
+2. Select **Change**.
+3. Select the location where you want files saved to your machine.
+    
 Dark Theme
 ~~~~~~~~~~
 
-On Windows 10 and macOS, the Mattermost Desktop App respects the operating system **Appearance** setting configured through System Preferences.
-
-On Linux, you can run the Mattermost Desktop App in dark mode by selecting Mattermost, then selecting **View > Toggle Dark Mode**.
+On macOS, the Mattermost desktop app respects the System Preferences appearance setting of the operating system to set the theme of the title bar. On Windows, you can toggle the theme of the Mattermost desktop app title bar in **... > View > Toggle Dark Mode**.  
 
 .. image:: ../../images/dark_theme.png
