@@ -29,7 +29,7 @@ Centralized Security and Administration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    - Manage users, teams, access control, and system settings in a web-based `System Console user interface <https://docs.mattermost.com/administration/config-settings.html>`__.
-   - Centralized authentication through AD/LDAP (E10, E20) and SAML (E20). 
+   - Centralized authentication through AD/LDAP (Enterprise Edition E10 and Enterprise Edition E20) and SAML (Enterprise Edition E20).
    - Syncronize users and groups through the built-in `AD/LDAP integration <https://docs.mattermost.com/deployment/sso-ldap.html>` (E20).
 
 Transmission Security
