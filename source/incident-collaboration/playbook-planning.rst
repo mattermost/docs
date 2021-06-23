@@ -1,34 +1,42 @@
 Setting Up Playbooks
 ====================
 
-A playbook must be defined before starting an incident.
+Playbooks are made up of:
 
-Adding tasks
-~~~~~~~~~~~~~
+- Checklists: The list of tasks to be completed for the run.
+- Templates: Create templates for frequently-used actions such as updates and reminders. 
+- Actions: Automation options for inviting members, webhooks, welcome messages and more.
+- Permissions: Manages permissions at a channel and a playbook level.
+
+Creating checklists
+-------------------
 
 1. Go to **Main Menu > Incident Collaboration**.
 2. Select **Playbooks**.
 3. Start a **Blank Playbook**, or use the built-in **Incident Collaboration Playbook** as a template.
 4. Name your playbook and provide a description.
-5. Select the **Tasks** tab.
-6. Within the **Tasks** tab, customize the checklists and tasks:
-  * Create and name new tasks to capture actions your team should take to resolve the incident.
-  * Create new checklists to group tasks meant to be completed together.
-  * Drag and drop to reorganize checklists and tasks.
-  * Optionally add task descriptions to give additional context to members of the incident channel. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
-  * Optionally add a slash command to the task that can be executed by members of the incident channel as needed.
-  
-Setting preferences
-~~~~~~~~~~~~~~~~~~~
+5. Select the **Checklists** tab.
+6. Select **+New checklist**.
 
+    * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+    * Drag and drop to reorganize checklists and tasks.
+    * Optionally add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
+    * Optionally add a slash command to the task that can be executed by members of the playbook as needed.
+7. Choose **Save**.
+  
+Configuring templates
+---------------------
+
+1. Go to **Main Menu > Incident Collaboration**.
+2. Select **Playbooks**.
 1. Select the **Preferences** tab.
 2. Within the **Preferences** tab, customize how status updates are communicated:
   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
   * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
   * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
   
-Setting automation
-~~~~~~~~~~~~~~~~~~
+Defining actions
+----------------
 
 1. Select the **Automation** tab.
 2. Within the **Automation** tab, customize automatically triggered tasks:
@@ -39,9 +47,15 @@ Setting automation
 3. On the right-hand side of the screen, configure the permissions:
   * Decide whether the automatically-created incident channel should be Public or Private within the team.
   * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
+  
+Setting permissions
+-------------------
+
+1. Go to **Main Menu > Incident Collaboration**.
+2. Select **Playbooks**.
 
 Editing a playbook
-~~~~~~~~~~~~~~~~~~~
+------------------
 
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
