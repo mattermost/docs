@@ -2,6 +2,29 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+## Release 2021-06-16
+
+### Improvements
+
+#### User Interface (UI)
+ - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
+ - Updated the help text on the **Add Users** channel modal.
+
+#### Administration
+ - The platform binary file has been removed from the distribution files. It should be replaced by the Mattermost binary file if it's being used in scripts.
+ - Improved memory performance for large image uploads, particularly PNGs with transparency.
+
+### Bug Fixes
+ - Fixed an issue where users were unable to set a custom status emoji via slash command by adding the logic for detecting unicode emoji and setting it as custom status emoji via slash commands.
+ - Fixed an issue where messages with fallback text were repeated.
+ - Fixed an issue where a persistent unread badge showed on the **Main Menu** when **Enable Marketplace** or **Enable Plugins** was disabled.
+
+### Known Issues
+ - Pinned posts are no longer highlighted.
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
 ## Release 2021-06-02
 
 ### Improvements

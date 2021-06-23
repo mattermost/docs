@@ -28,11 +28,10 @@ Install Windows Server 2012+
 Set up Database Server
 ----------------------
 
-1.  Login to the database server.  For the purposes of this guide we will assume this server has an IP
-    address of 10.0.0.1.
+1.  Log in to the database server. For the purposes of this guide we will assume this server has an IP address of 10.0.0.1.
 
 Install and Configure MySQL
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2. `Download the MySQL 5.6+ <https://dev.mysql.com/downloads/windows/installer/>`__ installer, (or PostgreSQL 10.0+).
    For the purposes of this guide, we'll be downloading and installing the latest version of MySQL Community Server
@@ -64,15 +63,14 @@ Install and Configure MySQL
    d. On the **Plugins and Extensions** page, keep the defaults and press the Next button.
    e. On the **Apply Server Configuration** page, press the Execute button to configure the MySQL Server installation.
 
-10. Returning to the **Product Configuration** page, press the Next button.
+10. Returning to the **Product Configuration** page, select **Next**.
 
-11. On the **Installation Complete** page, press the Finish button.
+11. On the **Installation Complete** page, select **Finish**.
 
 Configure Windows PATH
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Adding MySQL to the Windows PATH variable will allow you run various commands from the console, and 
-allow 3rd party applications to execute various MySQL commands.
+Adding MySQL to the Windows PATH variable will allow you run various commands from the console, and allow third-party applications to execute various MySQL commands.
 
 12. Press the ``WIN + PAUSEBREAK`` key combination to open the **System** Control Panel Applet.
 
@@ -84,21 +82,18 @@ allow 3rd party applications to execute various MySQL commands.
 
 16. In the **System Variables** section, select the **Path** variable in the list, then press the Edit button.
 
-17. Append the path to your MySQL Server bin directory (make sure to add a semi-colon after any existing 
-    items in the path before appending the new path). The default path for a 64-bit 
-    installation is ``C:\Program Files\MySQL\MySQL Server 5.7\bin``.
+17. Append the path to your MySQL Server bin directory (make sure to add a semi-colon after any existing items in the path before appending the new path). The default path for a 64-bit  installation is ``C:\Program Files\MySQL\MySQL Server 5.7\bin``.
 
 Create Mattermost Database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that MySQL has been installed and configured, a database and user account must be provisioned 
-for Mattermost to utilize.
+Now that MySQL has been installed and configured, a database and user account must be provisioned for Mattermost to utilize.
 
 18. Open a command prompt and enter ``mysql -u root -p`` to connect to the MySQL server
 
 19. When prompted, enter the password created in step 9.a.       
 
-20. At the ``mysql>`` prompt, execute the following commands to create the database and user account
+20. At the ``mysql>`` prompt, execute the following commands to create the database and user account:
 
     .. code:: sql
 
@@ -107,27 +102,21 @@ for Mattermost to utilize.
        GRANT ALL ON mattermost.* TO mmuser;
        exit
 
-21. To confirm the database and user were configured correctly
+21. To confirm the database and user were configured correctly:
 
-    a. Connect to the MySQL server/datbase by executing ``mysql -u mmuser -p mattermost`` 
-    b. When prompted, entering ``mmuser-password``
-    c. If If successful, you will be at the ``mysql>`` prompt 
-    d. Type ``exit`` to finish
+    a. Connect to the MySQL server/datbase by executing ``mysql -u mmuser -p mattermost``.
+    b. When prompted, entering ``mmuser-password``.
+    c. If If successful, you will be at the ``mysql>`` prompt.
+    d. Type ``exit`` to finish.
 
 Set up Mattermost Server
 ------------------------
 
-1. For the purposes of this guide we will assume this server has an IP
-   address of 10.0.0.2
+1. For the purposes of this guide we will assume this server has an IP address of 10.0.0.2.
 
-2. `Download <https://mattermost.org/download/>`__ the latest Mattermost Server by opening your 
-   favorite browser and navigating to 
-   ``https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-windows-amd64.zip`` 
-   where `X.X.X` is the latest Mattermost release version. For example, 3.4.0.
+2. `Download <https://mattermost.org/download/>`__ the latest Mattermost Server by opening your favorite browser and navigating to ``https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-windows-amd64.zip`` where `X.X.X` is the latest Mattermost release version. For example, 3.4.0.
 
-3. Create the storage directory for files. We assume you will have attached a large drive for storage 
-   of images and files. For this setup we will assume the directory is located at ``c:\mattermost\data``.  
-   Your directory structure should look similar to the image below.
+3. Create the storage directory for files. We assume you will have attached a large drive for storage of images and files. For this setup we will assume the directory is located at ``c:\mattermost\data``. Your directory structure should look similar to the image below.
 
    .. image:: ../images/windows_1_expected_directory_structure.png
 
@@ -141,7 +130,7 @@ Set up Mattermost Server
    .. note :: Optionally you may continue to edit configuration settings in ``config.json`` or use the 
       System Console described in a later section to finish the configuration.
 
-5. Test the Mattermost Server
+5. Test the Mattermost server.
 
    a. Open a command prompt, and execute ``cd c:\mattermost\bin`` to change your working directory
 
@@ -155,7 +144,7 @@ Set up Mattermost Server
    d. Stop the server by pressing CTRL+C
    
 Configure the Firewall
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: This is not required if you are installing on a single server.
 
@@ -168,19 +157,17 @@ Configure the Firewall
       netsh advfirewall firewall add rule name="Mattermost" dir=in action=allow program="C:\mattermost\bin\mattermost.exe" enable=yes 
 
 Establish a Windows Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Establishing a windows service to supervise the Mattermost process is recommended to prevent the need to 
-manually start/stop Mattermost.  The included binary cannot be directly registered as a windows service; therefore, 
-a wrapper-utility must be used.
+Establishing a Windows service to supervise the Mattermost process is recommended to prevent the need to manually start/stop Mattermost. The included binary cannot be directly registered as a Windows service; therefore, a wrapper-utility must be used.
 
 8. Download the latest version of `NSSM (Non-Sucking Service Manager) <https://nssm.cc/download>`__.
 
-9. From the downloaded zip-file, extract ``win64\nssm.exe`` to ``C:\mattermost\bin\``
+9. From the downloaded zip-file, extract ``win64\nssm.exe`` to ``C:\mattermost\bin\``.
 
-10. Open a command line as an administrator
+10. Open the command line tool as an administrator.
 
-11. To create the windows service, execute the following
+11. To create the Windows service, execute the following:
 
     .. code:: batch
 
@@ -196,15 +183,13 @@ a wrapper-utility must be used.
       tasklist /FI "IMAGENAME eq mattermost.exe"
 
 Verify Mattermost Connectivity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To verify all steps executed thus far, we'll attempt to access Mattermost through standard HTTP traffic.  To perform 
-this step, you'll need access to a client machine with a compatible browser (e.g. Safari, Firefox, Edge, Chrome, etc).
+To verify all steps executed thus far, we'll attempt to access Mattermost through standard HTTP traffic. To perform this step, you'll need access to a client machine with a compatible browser (e.g. Safari, Firefox, Edge, Chrome, etc).
 
 13. From a client workstation meeting the criteria above, launch your favorite web browser.
 
-14. Navigate to ``http://10.0.0.2:8065``.  If successful, you should reach an initialization web-page similar to
-    the screenshot below.
+14. Navigate to ``http://10.0.0.2:8065``.  If successful, you should reach an initialization web-page similar to the screenshot below.
 
     .. image:: ../images/windows_3_confirm_mattermost_browser.png
 
@@ -221,55 +206,48 @@ A reverse proxy is recommended in order to provide:
 - Standard request logs
 - Load balancing (not described in this guide).
 
-Internet Information Server (IIS) for Windows Server is the standard capability provided out-of-the-box that
-provides this function.  
+Internet Information Server (IIS) for Windows Server is the standard capability provided out-of-the-box that provides this function.  
 
-1. For the purposes of this guide we will assume this server has an IP
-   address of 10.0.0.3.
+1. For the purposes of this guide we will assume this server has an IP address of 10.0.0.3.
 
 2. Map a FQDN (fully qualitified domain name), like **mattermost.example.com** to the proxy server (e.g. 10.0.0.2).
 
 Install IIS
-^^^^^^^^^^^
+~~~~~~~~~~~
 
-3. On the **Start** page, click the **Server Manager** tile, and then click OK.
+3. On the **Start** page, click the **Server Manager** tile, and then select **OK**.
 
 4. In **Server Manager**, select **Dashboard**, and click **Add roles and features**.
 
-5. In the **Add Roles and Features Wizard**, on the **Before you begin** page, click Next.
+5. In the **Add Roles and Features Wizard**, on the **Before you begin** page, select **Next**.
 
-6. On the **Select installation type** page, select Role-based or feature-based installation, and click Next.
+6. On the **Select installation type** page, select Role-based or feature-based installation, and select **Next**.
 
-7. On the **Select destination server** page, select **Select a server from the server pool**, 
-   select your server, and click Next.
+7. On the **Select destination server** page, select **Select a server from the server pool**, select your server, and choose Next.
 
 8. On the **Select server roles** page, select **Web Server (IIS)**.
 
-9. Expand **Web Server (IIS) > Web Server > Application Development** and select **WebSockets Protocol**, and then click Next.
+9. Expand **Web Server (IIS) > Web Server > Application Development** and select **WebSockets Protocol**, and then select **Next**.
 
-10. On the **Add Roles and Features Wizard** popup dialog, click Add Features, and then click Next.
+10. On the **Add Roles and Features Wizard** popup dialog, click Add Features, and select **Next**.
 
-11. On the **Select features** page, click Next.
+11. On the **Select features** page, select **Next**.
 
-12. On the **Web Server Role (IIS)** page, click Next.
+12. On the **Web Server Role (IIS)** page, select **Next**.
 
-13. On the **Select role services** page, accept the default selections, and click Next.
+13. On the **Select role services** page, accept the default selections, and select **Next**.
 
-14. On the **Summary of Features to Install** page, click Install.
+14. On the **Summary of Features to Install** page, select **Install**.
 
-15. On the Installation progress page, confirm that your installation of the Web Server (IIS) role and 
-    required role services completed successfully, and then click Close.
+15. On the Installation progress page, confirm that your installation of the Web Server (IIS) role and required role services completed successfully, and then select **Close**.
  
-16. To verify that IIS installed successfully, navigate to ``http://localhost`` in a web browser on 
-    the server, and confirm the default IIS Welcome page is displayed.
+16. To verify that IIS installed successfully, navigate to ``http://localhost`` in a web browser on the server, and confirm the default IIS Welcome page is displayed.
 
 Configure Reverse Proxy
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Reverse proxying involves rewriting an HTTP request and relaying it to a back-end server.  IIS does not natively support this; however, Microsoft
-provides a `URL Rewrite <https://www.iis.net/learn/extensions/url-rewrite-module>`__ module and an `Application Request Routing 
-<https://www.iis.net/downloads/microsoft/application-request-routing>`__ module which, when combined, are capable of performing these functions.
-We'll start by installing these module, and then configure the proxy.
+Reverse proxying involves rewriting an HTTP request and relaying it to a back-end server. IIS does not natively support this; however, Microsoft provides a `URL Rewrite <https://www.iis.net/learn/extensions/url-rewrite-module>`__ module and an `Application Request Routing 
+<https://www.iis.net/downloads/microsoft/application-request-routing>`__ module which, when combined, are capable of performing these functions. We'll start by installing these module, and then configure the proxy.
 
 17. `Download <https://go.microsoft.com/fwlink/?LinkID=615137>`__ the URL Rewrite 2.0 x64 module.
 
@@ -277,7 +255,7 @@ We'll start by installing these module, and then configure the proxy.
 
 19. Install the modules (trivial installers with no customizations or options to select).
 
-20. On the **Start** page, click the **Server Manager** tile, and then click OK.
+20. On the **Start** page, click the **Server Manager** tile, and then select **OK**.
 
 21. Expand the **Tools** menu, and select **Information Information Services (IIS) Manager**.
 
@@ -291,36 +269,32 @@ We'll start by installing these module, and then configure the proxy.
 
 24. In the actions pane (far-right), select **Add Rule(s)...**
 
-25. Select **Reverse Proxy** and press OK.
+25. Select **Reverse Proxy** and select **OK**.
 
-26. If prompted to enable proxy functionality, press OK.
+26. If prompted to enable proxy functionality, select **OK**.
 
-27. In the **Add Reverse Proxy Rules** dialog, 
+27. In the **Add Reverse Proxy Rules** dialog:
 
     a. Enter ``10.0.0.2:8065`` in the **Enter the server name or IP address where HTTP requests will be forwarded** field.
 
     b. Ensure the **Enable SSL Offloading** option is checked.
 
-    c. Check **Rewrite the domain names of the links in HTTP responses**
+    c. Check **Rewrite the domain names of the links in HTTP responses**.
 
     d. Enter ``10.0.0.2:8065`` in the **From** field.
 
     e. Enter ``mattermost.example.com`` in the **To** field.
 
-    f. Press OK
+    f. Select **OK**.
 
-28. At this point, your configuration will relay all incoming traffic from `http://mattermost.example.com` 
-    to `http://10.0.0.2:8065/`.  To confirm this, open your favorite browser and attempt to access
-    `http://mattermost.example.com`, and upon success, you'll see the Mattermost initialization screen.
+28. At this point, your configuration will relay all incoming traffic from `http://mattermost.example.com` to `http://10.0.0.2:8065/`.  To confirm this, open your favorite browser and attempt to access `http://mattermost.example.com`, and upon success, you'll see the Mattermost initialization screen.
 
 Configure SSL
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
-.. note:: SSL communication requires that the web server have a well-formed and trusted certificate.  A common
-   freely-available SSL encryption and certificate managemet is Let's Encrypt; however, this service does
-   not formally support the Windows Operating system. A number of third-parties have created clients to support this, and
-   you are free to try out any of them.  This section assumes that you have taken the necessary steps
-   to obtain a web-server certificate that will be trusted by your users.
+.. note:: 
+
+   SSL communication requires that the web server have a well-formed and trusted certificate. A common freely-available SSL encryption and certificate managemet is Let's Encrypt; however, this service does not formally support the Windows Operating system. A number of third-parties have created clients to support this, and you are free to try out any of them.  This section assumes that you have taken the necessary steps to obtain a web-server certificate that will be trusted by your users.
 
 29. Within the IIS Manager, select the server node in the left-hand connections pane.
 
@@ -332,34 +306,34 @@ Configure SSL
 
 33. Enter the password to the certificate file.
 
-34. Select the **Web Hosting** certificate store, and press OK.
+34. Select the **Web Hosting** certificate store, and select **OK**.
 
 35. In the left-hand navigation tree, expand the server node, expand **Sites**, and select **Default Web Site**.
 
 36. In the right-hand-side **Actions** pane, select **Bindings...**.
 
-37. Press **Add**
+37. Select **Add**,
 
 38. In the **Add Site Binding** dialog, Set the type to **https** and set the **SSL Certificate** to the certificate loaded previously.  Press OK.
 
 Redirect HTTP to HTTPS
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 39. In the left-hand navigation tree, expand the server node, expand **Sites** and select **Default Web Site**.
 
-40. Double-click to open the Url Rewrite feature.
+40. Double-click to open the **Url Rewrite** feature.
 
-41. In the actions-pane (far-right), select **Add Rule(s)..**
+41. In the actions-pane (far-right), select **Add Rule(s)..**.
 
-42. Under the **Inbound Rules** section, select **Blank rule** and press OK.
+42. Under the **Inbound Rules** section, select **Blank rule** and select **OK**.
 
-43. Populate the fields in the rule to match the screenshot below
+43. Populate the fields in the rule to match the screenshot below:
 
     .. image:: ../images/windows_6_http_to_https_redirect.png   
 
-44. Press **Apply** and then press **Back to Rules**.
+44. Select **Apply**, and then **Back to Rules**.
 
-45. Ensure that the **HTTP to HTTPS Redirect** rule is at the top of the list of inbound rules.  If nceessary, you can select a rule and use the **Move Up** and **Move Down** actions to reorganize.
+45. Ensure that the **HTTP to HTTPS Redirect** rule is at the top of the list of inbound rules. If nceessary, you can select a rule and use the **Move Up** and **Move Down** actions to reorganize.
 
 46. On a client workstation, open your favorite browser and navigate to `http://mattermost.example.com` and confirm that you are redirected to `https://mattermost.example.com`.
 
@@ -368,52 +342,50 @@ Finish Mattermost Server Setup
 
 1. Navigate to ``https://mattermost.example.com`` and create a user and team.
 
-2. The first user in the system is automatically granted the
-   ``system_admin`` role, which gives you access to the System Console.
+2. The first user in the system is automatically granted the ``system_admin`` role, which gives you access to the System Console.
 
-3. From the ``town-square`` channel click the dropdown next to your team name and choose the
-   ``System Console`` option
+3. From the ``town-square`` channel select the dropdown next to your team name and choose **System Console**.
    
-4. Update **General** > **Configuration** settomgs in prior versions or **Environment** > **Web Server** in versions after 5.12 to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**
+4. Update **Environment > Web Server** to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**.
 
-   .. attention:: Failure to properly set the Site URL properly __will__ result in unexpected behavior.
+ .. attention:: 
+    
+    Failure to properly set the Site URL properly will result in unexpected behavior.
 
-5. Update **Notification** > **Email** settings in prior versions or **Authentication** > **SMTP** in versions after 5.12 to setup an SMTP email service. The example below assumes AmazonSES.
+5. Update **Authentication > SMTP** to set up an SMTP email service. The example below assumes AmazonSES.
 
-   a. Set **SMTP Username** to ``[YOUR_SMTP_USERNAME]`` 
-   b. Set **SMTP Password** to ``[YOUR_SMTP_PASSWORD]``
-   c. Set **SMTP Server** to ``email-smtp.us-east-1.amazonaws.com``
-   d. Set **SMTP Port** to ``465``
-   e. Set **Connection Security** to ``TLS``
-   f. Set **Send Email Notifications** to ``true`` (located at **Site Configuration** > **Notifications** in versions after 5.12)
-   g. Set **Notification Display Name** to ``No-Reply`` (located at **Site Configuration** > **Notifications** in versions after 5.12)
-   h. Set **Notification From Address** to ``mattermost@example.com`` (located at **Site Configuration** > **Notifications** in versions after 5.12)
-   i. Set **Require Email Verification** to ``true`` (located at **Authentication** > **Email** in versions after 5.12)
+   a. Set **SMTP Username** to ``[YOUR_SMTP_USERNAME]``.
+   b. Set **SMTP Password** to ``[YOUR_SMTP_PASSWORD]``.
+   c. Set **SMTP Server** to ``email-smtp.us-east-1.amazonaws.com``.
+   d. Set **SMTP Port** to ``465``.
+   e. Set **Connection Security** to ``TLS``.
+   f. Set **Send Email Notifications** to **true** (located at **Site Configuration > Notifications**).
+   g. Set **Notification Display Name** to **No-Reply** (located at **Site Configuration > Notifications**).
+   h. Set **Notification From Address** to ``mattermost@example.com`` (located at **Site Configuration > Notifications**).
+   i. Set **Require Email Verification** to **true** (located at **Authentication > Email**).
 
-6. (Optional) Update **Security** > **Sign Up** settings in prior versions or **Authentication** > **Signup** in versions after 5.12:
+6. (Optional) Update **Authentication > Signup**:
 
-   - Set **Enable Email Invitations** to ``true``
+   - Set **Enable Email Invitations** to **true**.
 
-7. Update **File** > **Storage** settings in prior versions or **Environment** > **File Storage** in versions after 5.12:
+7. Update **Environment > File Storage**:
 
-   - Change **Local Directory Location** from ``./data/`` to
-     ``/mattermost/data``
+   - Change **Local Directory Location** from ``./data/`` to ``/mattermost/data``
 
-8. Update **General** > **Logging** settings:
+8. Update **General > Logging** settings:
 
-   - Set **Log to The Console** to ``false``
+   - Set **Log to The Console** to **false**.
 
-9. Update **Advanced** > **Rate Limiting** settings in prior versions or  **Environment** > **Rate Limiting** settings in versions after 5.12:
+9. Update **Environment > Rate Limiting** settings:
 
-   - Set **Vary By Remote Address** to false
-   - Set **Vary By HTTP Header** to X-Real-IP
+   - Set **Vary By Remote Address** to **false**.
+   - Set **Vary By HTTP Header** to **X-Real-IP**.
 
 10. Feel free to modify other settings.
 
-11. Login to the Mattermost server (10.0.0.2) and restart the Mattermost Service by typing the following into a command line 
+11. Login to the Mattermost server (10.0.0.2) and restart the Mattermost Service by typing the following into a command line:
 
    .. code:: batch
 
       net stop mattermost
       net start mattermost
-

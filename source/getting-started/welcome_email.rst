@@ -1,14 +1,12 @@
 Welcome Email to End Users
 ===========================
 
-
 To make it easy for your end users to start using Mattermost right away, we created a sample email template that you can use.
 
 Remember to replace all the items below in bold with your information.
 
-
 Email Template
--------------------
+---------------
 
 From: **[company name]** IT Team
 

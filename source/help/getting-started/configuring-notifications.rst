@@ -1,7 +1,12 @@
 Configuring Notifications
 =========================
 
-Desktop, email, and mobile push notifications notify you of activity in Mattermost. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
+Notifications in Mattermost alert you to unread messages and mentions. Desktop, email, and mobile push notifications notify you of activity in Mattermost. 
+
+.. image:: ../../images/ui_notifications.png
+   :alt: ui_notifications
+
+You can configure your Mattermost account for how and when you want to be notified of Mattermost activity. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
 
 - Mentions you specifically with `@username`
 - Sends you a Direct Message
@@ -10,7 +15,7 @@ Desktop, email, and mobile push notifications notify you of activity in Mattermo
 - Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
 
 Desktop Notifications
--------------------------------------
+----------------------
 
 Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
 
@@ -27,7 +32,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
   Configure desktop notification sounds in **Account Settings > Notifications > Desktop notifications > Notification sounds**.
 
 Email Notifications
--------------------------------------
+-------------------
 
 By default, you'll get email notifications if you're not actively using Mattermost. You can change the default preference for email notifications to turn them off entirely.
 
@@ -43,7 +48,7 @@ Messages in email notifications can be opened in the Mattermost Desktop App, Mob
 **Not getting an email notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-an-email-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
 
 Mobile Push Notifications
---------------------------------------------
+-------------------------
 
 Mobile push notifications appear on the lock screen of your mobile device if the Mattermost Android or iOS app is installed. By default, these notifications are triggered when you're not actively using Mattermost, but this is configurable. You can also change the default preference to trigger push notifications for all messages sent in channels you're a member of, or turn them off entirely.
 
@@ -59,14 +64,14 @@ Mobile push notifications appear on the lock screen of your mobile device if the
   Learn more about how Mattermost detects your `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ as **Online**, **Away** or **Offline**.
 
 Browser Tab Notifications
-----------------------------------------
+-------------------------
 
 If Mattermost is open in a browser tab, the favicon updates to notify you of unread messages (\*) and a count of mentions or Direct Messages. Browser tab notifications are available on Chrome, Edge, Firefox, Safari.
 
 .. image:: ../../images/browser_notification.png
 
 Muting a Channel
-----------------------------------------
+----------------
 
 Channels in the sidebar are **bold** when there are unread messages in the channel and show a badge count if you are mentioned specifically. 
 

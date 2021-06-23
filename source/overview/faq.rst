@@ -79,10 +79,10 @@ To add yourself to the `Mattermost page on LinkedIn <https://www.linkedin.com/co
   - Description: Leave blank or write a sentence about what you have contributed.
 
 Notifications
--------------------
+-------------
 
 What determines if a desktop notification should be triggered?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Desktop notifications are triggered under to following conditions. Click to expand the flow chart.
 
@@ -91,7 +91,7 @@ Desktop notifications are triggered under to following conditions. Click to expa
   :height: 232px
 
 What determines if an email notification should be triggered?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Email notifications are triggered under to following conditions. Click to expand the flow chart.
 
@@ -502,6 +502,8 @@ The following chart highlights the end user features of Mattermost and their sup
     "Add members to team", "X", "X",
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
+    **FOCALBOARD**
+    "Boards, cards, and views", "X", "O"
     **INTEGRATIONS**
     "Slash commands", "X", "X", "O"
     "Server-side plugins", "X", "X", "X"

@@ -1,7 +1,7 @@
 .. _about-bulk-loading-command:
 
 About the bulk loading command
-==============================
+------------------------------
 
 The bulk loading command is interruptible and idempotent
   If the import is interrupted for any reason, it continues from where it left off the next time you run it. You can run the command repeatedly with the same data file, and the data is imported only once. From v5.20, posts with matching timestamps to incoming posts will have their attachments replaced by the incoming data. Prior to v5.20 any updates to posts with matching timestamps were appended to older posts. 

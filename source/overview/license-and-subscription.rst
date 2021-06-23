@@ -106,12 +106,12 @@ Frequently Asked Questions
 Are my credit card details safe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://support.payfast.co.za/article/96-what-is-3d-secure-visa-secure-mastercard-securecode>`__, which is PCI-DSS compliant.
+We use `Stripe <https://stripe.com/payments>`_ and `Solupay <https://www.solupay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`__, which is PCI-DSS compliant.
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
 
 Why do I need to provide my name and physical address when purchasing a license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost is a U.S. corporation and therefore all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
 
