@@ -6,7 +6,7 @@ Release v4.7
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
-**Release day TBD**
+**Released 2021-06-23**
 
 **Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
 
