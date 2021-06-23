@@ -61,7 +61,7 @@ Channels can be identified in two ways:
 1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
 2. **Channel handle:** This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.
 
-For example, for the following channel, https://community.mattermost.com/core/channels/ux-design:
+For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``:
 
 - Channel display name: ``UX Design``
 - Channel handle: ``ux-design`` 
@@ -74,7 +74,7 @@ Select the channel name at the top of the center pane to access the drop-down me
 Archiving a channel
 -------------------
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. Anyone can archive the Public channels or Private channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#id2>`__.
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. Anyone can archive the Public channels or Private channels they belong to, unless the System Admin has restricted the permissions.
 
 When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons at a later stage. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
@@ -93,7 +93,7 @@ Search for the channel if required. Then, open the channel, select the channel n
     .. image:: ../../images/unarchive-channel.png
         :alt: Unarchive a channel.
 
-When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :doc:`data retention policy <data-retention>`.
+When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/administration/config-settings.html#data-retention-policy>`__.
 
 In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
 
@@ -105,8 +105,8 @@ Select the Public channel name at the top of the center pane to access the drop-
 When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly-shared files remain accessible to anyone with the link. 
 
 .. note::
-
-  Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
+ 
+   Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
 
 Favoriting a channel
 --------------------

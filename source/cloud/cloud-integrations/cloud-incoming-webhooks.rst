@@ -21,7 +21,7 @@ Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTT
    :maxdepth: 2
 
 Simple Incoming Webhook
------------------------------------
+-----------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
@@ -162,7 +162,7 @@ If your integration prints the JSON payload data instead of rendering the genera
 For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Frequently Asked Questions
-----------------------------
+--------------------------
 
 How do I send a webhook post to a direct message channel?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

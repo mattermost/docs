@@ -13,7 +13,7 @@ The groups feature is useful for organizations that have many new users to onboa
 - AD/LDAP nested groups. 
 - Using synchronized groups to manage `membership of teams and Private channels <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
 
-For more details about this feature and future plans read `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__. For a technical overview of the feature by Martin Kraft, who led the development of the feature, please see `this blog post <https://developers.mattermost.com/blog/2019-06-05-ldap-nested-groups-modelling-and-representation-in-code/>`_.
+For a technical overview of the feature by Martin Kraft, who led the development of the feature, please see `this blog post <https://developers.mattermost.com/blog/ldap-nested-groups-modelling-and-representation-in-code>`__.
 
 You can also watch a video overview about adding users to Mattermost with AD/LDAP on `YouTube <https://www.youtube.com/watch?v=zyku2ibsG0M>`_.
 

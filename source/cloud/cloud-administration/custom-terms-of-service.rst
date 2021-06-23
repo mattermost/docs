@@ -1,10 +1,10 @@
 Custom Terms of Service (Beta)
-========================
+==============================
 
 You can outline custom Terms of Service for your team members to accept before they can access Mattermost on web, desktop, or mobile.
 
 Configuring Terms of Service
----------------------------------------
+----------------------------
 
 To enable custom terms of service:
 
@@ -26,17 +26,17 @@ Frequently Asked Questions
 ----------------------------
 
 What happens if I update my terms of service text?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There will be no impact to your end users. Users will simply be required to accept the new terms on next login or page refresh.
 
 What happens if a user does not accept the terms of service?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A user will not be able to log in if they do not accept the terms of service. 
 
 Why are custom terms of service beta?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature is labeled as beta while we verify the quality of the feature in various scenarios. Known issues include:
 

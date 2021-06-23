@@ -8,13 +8,12 @@ Electronic discovery (also known as eDiscovery) refers to a process where where 
 This page describes how to extract data from Mattermost for eDiscovery. There are three primary methods that can be used to accomplish the goal of extracting user post data from Mattermost:
 
 - `Mattermost Compliance Exports <https://docs.mattermost.com/administration/compliance-export.html>`__
-- Mattermost RESTful API
-- Mattermost database using standard SQL queries
+- `Mattermost RESTful API <https://docs.mattermost.com/administration/ediscovery.html#mattermost-restful-api>`__
+- `Mattermost database using standard SQL queries <https://docs.mattermost.com/administration/ediscovery.html#mattermost-database>`__
 
 Each of the options is discussed in detail below.
 
 .. note::
-
   Litigation hold (also known as legal hold) is an extension of eDiscovery where in addition to searching for records, no electronically stored information nor paper documents may be discarded if they may be deemed relevant for a present or future legal case.
 
 Mattermost Compliance Exports
@@ -22,7 +21,7 @@ Mattermost Compliance Exports
 
 Mattermost Enterprise E20 has compliance report export capabilities.
 
-Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
+Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML, and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
 For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/administration/compliance-export.html>`__.
 
@@ -31,7 +30,7 @@ Mattermost RESTful API
 
 The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise E20. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
 
-To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using Curl you can authenticate using the following command:
+To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl you can authenticate using the following command:
 
 .. code-block:: json
 
@@ -105,6 +104,5 @@ If you want to limit the results of the query based on the date and time that th
   
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username' AND CreateAt > 1530405832000 AND CreateAt < 1532997832000);
 
-.. note::
-
-  The Mattermost database stores date/time stamps in the Unix Epoch (https://en.wikipedia.org/wiki/Unix_time) format and a tool like https://www.epochconverter.com/ can be useful in converting to and from the required format.
+.. note:: 
+  The Mattermost database stores date and time stamps in the Unix Epoch (https://en.wikipedia.org/wiki/Unix_time) format. A tool like https://www.epochconverter.com/ can be useful in converting to and from the required format.
