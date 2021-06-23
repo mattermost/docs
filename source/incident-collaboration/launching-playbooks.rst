@@ -1,38 +1,36 @@
 Running Playbooks
 =================
 
-Use slash commands to initiate playbook runs, make announcements, and get information about an incident.
+Use slash commands to initiate playbook runs, make announcements, and get information about a playbook run.
 
 Slash commands
 ~~~~~~~~~~~~~~
 
-The ``/incident`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile for:
+The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile for:
 
-- ``/incident start`` - Start a new incident.
-- ``/incident end`` - End an ongoing incident.
-- ``/incident update`` - Update the current incident's status.
-- ``/incident restart`` - Restart an ended incident.
-- ``/incident check [checklist item]`` - Check/uncheck the specified task.
-- ``/incident announce ~[channels]`` - Announce the current incident in other channels.
-- ``/incident list`` - List all your incidents.
-- ``/incident commander [@username]`` - Show or change the current commander.
-- ``/incident info`` - Show a summary of the current incident.
+- ``/playbook run`` - Start a playbook run.
+- ``/playbook end`` - End a playbook run.
+- ``/playbook update`` - Update the current playbook run's status.
+- ``/playbook restart`` - Restart an ended playbook run.
+- ``/playbook check [checklist item]`` - Check/uncheck the specified task.
+- ``/playbook announce ~[channels]`` - Announce the current playbook run in other channels.
+- ``/playbook list`` - List all your running playbooks.
+- ``/playbook owner [@username]`` - Show or change the current playbook run owner.
+- ``/playbook info`` - Show a summary of the current playbook's activities.
 
-To run a playbook use the ``/incident start`` slash command from any channel. You can also use the desktop or browser to:
+To run a playbook use the ``/playbook start`` slash command from any channel. You can also use the desktop or browser to:
 
- * Select the **Incidents** icon in the channel header, and select **Start Incident** from the right-hand sidebar.
- * Use the context menu of a post and select **Start incident**.
+ * Select the **Playbook** icon in the channel header, and select **Run playbook** from the right-hand sidebar.
+ * Use the context menu of a post and select **Run playbook**.
 
-Running a playbook opens an interactive dialog. Provide an incident name and select a playbook to be used with the incident. Optionally provide a description to offer immediate context into the newly started incident. Only playbooks of which you are a member are listed in the **Playbook** drop-down menu.
-
-The creator of a playbook run is automatically added as the first member and becomes the commander.
+Running a playbook opens an interactive dialog. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the run owner.
 
 When the playbook run is created, it's announced in the configured channel. If that channel is archived or deleted, the bot posts a notification in the incident channel.
 
-Joining an incident
-~~~~~~~~~~~~~~~~~~~
+Joining a playbook run
+~~~~~~~~~~~~~~~~~~~~~~
 
-Join an incident by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
+Join a playbook run by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
 
 If the incident channel is private, an existing member of the incident channel must invite you. System Admins may join private incident channels without permission.
 
