@@ -13,7 +13,7 @@ The groups feature is useful for organizations that have many new users to onboa
 - AD/LDAP nested groups. 
 - Using synchronized groups to manage `membership of teams and Private channels <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
 
-For more details about this feature and future plans read `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__. For a technical overview of the feature by Martin Kraft, who led the development of the feature, please see `this blog post <https://developers.mattermost.com/blog/2019-06-05-ldap-nested-groups-modelling-and-representation-in-code/>`_.
+For a technical overview of the feature by Martin Kraft, who led the development of the feature, please see `this blog post <https://developers.mattermost.com/blog/ldap-nested-groups-modelling-and-representation-in-code>`__.
 
 You can also watch a video overview about adding users to Mattermost with AD/LDAP on `YouTube <https://www.youtube.com/watch?v=zyku2ibsG0M>`_.
 
@@ -143,12 +143,16 @@ Users can be removed from the Mattermost group on subsequent synchronizations. H
 
 .. note::
 
-   When a member removes themselves manually from a channel, that action is tracked in the **Channel Member History** table. Users are not re-added to channels from which they previously removed themselves.
+   When a member removes themselves manually from a channel, that action is tracked in the **Channel Member History** table. If a System Admin manually forces all members in a specific LDAP group to join the teams and channels synchronized to that group, members can potentially be re-added to channels from which they were previously removed.
 
 Disabling and Re-activating AD/LDAP Users
 -----------------------------------------
 
-If a user is removed from an AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a user is deactivated in AD/LDAP or filtered from the AD/LDAP user filter, they will be removed from the group and will lose access to Mattermost. If that user is reactivated, they will regain access and will have access to the teams and channels as well as any additional teams and channels added to the Mattermost group configuration.
+From Mattermost Server v5.36, if a member is removed from an AD/LDAP group, deactivated in AD/LDAP, or filtered from the AD/LDAP user filter, that member loses access to Mattermost.
+
+If that member is later re-added, reactivated, or included in the user filter, they aren't automatically re-added to Mattermost groups. A System Admin must re-add that member manually to Mattermost teams and channels.
+
+Using the Mattermost API, System Admins can manually re-add all group members back into synchronized teams or channels by forcing members in an LDAP group to join the teams and channels synchronized to that group, even if members left on their own, were removed, were filtered out, or were deactivated. See our `Mattermost API documentation <https://api.mattermost.com/#operation/SyncLdap>`__ for details on synchronizing user attribute changes in the configured AD/LDAP server with Mattermost.
 
 Managing Groups
 ---------------

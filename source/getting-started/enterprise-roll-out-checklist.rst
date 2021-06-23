@@ -5,6 +5,7 @@ This checklist is intended to serve as a guide to Enterprises who are rolling ou
 
 Checklist Overview
 -------------------
+
   - `Prepare for the Roll Out`_ 
    - `1. Define the Roll Out Project`_ 
    - `2. Validate Essential Security and Compliance Requirements`_ 

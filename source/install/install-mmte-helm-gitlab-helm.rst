@@ -7,7 +7,6 @@ This document describes how to use Mattermost Team Edition Helm Chart in proximi
 
 As the Mattermost Helm Chart is installed in a separate namespace, it is recommended that ``cert-manager`` and ``nginx-ingress`` be configured to manage cluster-wide ingress and certificate resources.
 
-
 Prerequisites
 --------------
 

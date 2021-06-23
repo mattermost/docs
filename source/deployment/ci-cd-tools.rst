@@ -1,12 +1,12 @@
 CI/CD Tools
-============================================
+============
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect CI/CD tools in Mattermost.
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
 GitHub
-~~~~~~~~
+~~~~~~~
 
  - Two-way integration between Mattermost and GitHub, developed by Mattermost.
  - Get reminders on issues and pull requests that need your attention.
@@ -15,7 +15,7 @@ GitHub
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-github 
 
 GitLab
-~~~~~~~~
+~~~~~~~
 
  - Two-way integration between Mattermost and GitLab, developed by Romain Maneschi, supported by Mattermost.
  - Get reminders on issues and merge requests that need your attention.

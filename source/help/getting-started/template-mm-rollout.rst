@@ -36,8 +36,8 @@ Direct Messages and Group Messages
 
 For more information about using channels, groups, and direct messages, see `Organizing Conversations <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
 
-Instructions for System Administrator
--------------------------------------
+Instructions for System Admin
+------------------------------
 
 Replace {name-of-organization} and {web-address} with appropriate values.
 

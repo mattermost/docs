@@ -52,9 +52,6 @@ Mattermost Incident Collaboration has the following components:
 * The **Commander** is a defined role during the incident. This person is responsible for ensuring forward momentum on resolving the incident. By default, the reporter of the incident starts as the commander, but the commander may be changed at any time to another member of the incident channel.
 * **Slash commands** may be assigned to tasks defined in the playbook to help to streamline common actions.
 
-.. note:: 
-   From v1.3.0, stages have been renamed to checklists, and serve only as a grouping mechanism for tasks. Tasks from any checklist may now be completed at any time.
-
 To access Mattermost Incident Collaboration:
 
 * From the Main Menu, select **Incident Collaboration** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
@@ -112,14 +109,16 @@ A playbook must be defined before starting an incident.
 8. Within the **Preferences** tab, customize how status updates are communicated:
   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
   * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
-  * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
+  * Create an incident overview template which will be periodically updated throughout the incident. 
+  * Create an incident update template. You can use the default structure or customize it to suit your use case.
 9. Select the **Automation** tab.
 10. Within the **Automation** tab, customize automatically triggered tasks:
   * Optionally enable the **Invite members** toggle and select a set of members. This set of members are automatically invited to the incident channel when the incident starts.
   * Optionally enable the **Assign commander** toggle and select a member. This member is automatically assigned as commander of the incident when the incident starts.
   * Optionally enable the **Announce it in another channel** toggle and select a channel. When the incident is started, an announcement is made in the selected channel.
   * Optionally enable the **Send a webhook** toggle and enter the webhook you want to use.
-11. On the right-hand side of the screen, configure the permissions:
+  * Optionally enable the **Send a welcome message** toggle so new members are greeted with a welcome message. You can use the default text or delete it and add your own.
+11. Select the **Permissions** tab.
   * Decide whether the automatically-created incident channel should be Public or Private within the team.
   * Share this playbook with other members of the team to allow them to use the playbook to start an incident, as well as edit the playbook.
 
@@ -178,12 +177,18 @@ If the incident channel is private, an existing member of the incident channel m
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks:
+Tasks can be part of pre-configured task templates in playbooks, and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks.
+
+.. note::
+  Tasks added during an active incident (ad-hoc tasks) are not saved to the playbook. They only apply to that incident and incident channel.
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
 * To view any description associated with a task, select the information icon to the right of the task name.
 * To execute a slash command associated with a task, select **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
+* To add an ad-hoc task, select **+ Add new task**.
+
+.. image:: ../images/IC-ad-hoc-tasks.gif
 
 .. image:: ../images/IC-ad-hoc-tasks.gif
 

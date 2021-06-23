@@ -1,7 +1,7 @@
 ..  _install-rhel-8-server:
 
 Installing Red Hat Enterprise Linux 8
-=======================================
+-------------------------------------
 
 Install the 64-bit version of RHEL 8 on each machine that hosts one or more of the components.
 

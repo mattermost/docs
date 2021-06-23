@@ -15,7 +15,7 @@ Supported smartphones include iOS, Android, Blackberry, and Windows Phone device
   As the MFA implementation relies on Time-based One-time passwords (TOTP) ensure that your server system time is accurate. If there is a discrepancy, users may not be able to log in successfully.
 
 Enabling MFA
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This option is enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**. 
 
@@ -24,7 +24,7 @@ Once enabled, users can opt to use MFA on their account in the `Account Settings
 .. include:: common-disable-mfa.rst 
 
 Enforcing MFA
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 This option can be enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enforce Multi-factor Authentication** to **true**.
 
@@ -34,4 +34,4 @@ Users will not be able to remove MFA from their account while enforcement is on.
 
 .. note::
 
-  Turning on MFA enforcement prevents users from accessing the site until set up is complete. It is recommended that you turn on enforcement during non-peak hours when people are less likely to be using Mattermost.
+   Turning on MFA enforcement prevents users from accessing the site until set up is complete. It is recommended that you turn on enforcement during non-peak hours when people are less likely to be using Mattermost.
