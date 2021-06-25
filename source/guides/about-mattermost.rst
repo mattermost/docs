@@ -8,10 +8,10 @@ Below is an overview of our products, features, security, integrations, licensin
 .. toctree::
    :maxdepth: 2
 
-   /overview/product.rst
-   /overview/security.rst
-   /overview/integrations.rst
-   /overview/license-and-subscription.rst
-   /overview/auth.rst
-   /overview/compliance.rst
-   /overview/faq.html
+   /about/product.rst
+   /about/security.rst
+   /about/integrations.rst
+   /about/licensing-and-subscription.rst
+   /about/corporate-directory-integration.rst
+   /about/certifications-and-compliance.rst
+   /about/frequently-asked-questions.rst

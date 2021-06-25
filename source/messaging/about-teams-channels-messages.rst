@@ -3,7 +3,7 @@ About Teams, Channels, and Messages
 
 This is a what a typical Mattermost workspace looks like: 
 
-.. image:: ../../images/ui2.png
+.. image:: ../images/ui2.png
    :alt: ui
 
 To understand how Mattermost works, here are the three main parts of Mattermost:
@@ -19,7 +19,7 @@ A team is a digital workspace where you and your teammates can collaborate in Ma
 
 You have the ability to switch back and forth between teams on the Team Sidebar, located on the upper left side of the app.
 
-.. image:: ../../images/teams.gif
+.. image:: ../images/teams.gif
    :alt: ui_teams
 
 Channels
@@ -29,7 +29,7 @@ Channels are used to organize conversations across different topics. They are lo
 
 There are three types of channels: Public Channels, Private Channels, and Direct Messages.
 
-.. image:: ../../images/ui_channels5.png
+.. image:: ../images/ui_channels5.png
    :alt: ui_channels
 
 Public Channels
@@ -62,7 +62,7 @@ Sending messages and replying to messages are important ways to keep conversatio
 
 In this example, a release manager is notifying teams about an upcoming release and confirming outstanding tasks:
 
-.. image:: ../../images/ui_messages.png
+.. image:: ../images/ui_messages.png
    :alt: ui_messages
 
 Since messaging is at the core of your Mattermost application, below are other examples of what you can do:

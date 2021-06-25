@@ -36,9 +36,9 @@ To ensure your instance and configuration are compatible with High Availability,
 
 .. note::
   
-  Back up your Mattermost database and file storage locations before configuring High Availability. For more information about backing up, see :doc:`../administration/backup`.
+  Back up your Mattermost database and file storage locations before configuring High Availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
-1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../administration/upgrade`.
+1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../upgrade/upgrading-mattermost-server`.
 2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
 3. Modify the ``config.json`` files on both servers to add ``ClusterSettings`` as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
@@ -48,7 +48,7 @@ To ensure your instance and configuration are compatible with High Availability,
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
+1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
 3. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
 4. Open **System Console > Environment > High Availability** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -56,7 +56,7 @@ Adding a Server to the Cluster
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
+1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
 3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
@@ -381,7 +381,7 @@ You can apply updates during a period when the anticipated load is small enough 
 
 Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
 
-1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../administration/upgrade`.
+1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
 3. Set your proxy to move all new requests to a single server. If you are using NGINX and it's configured with an upstream backend section in ``/etc/nginx/sites-available/mattermost`` then comment out all but the one server that you intend to update first, and reload NGINX.
 4. Shut down Mattermost on each server except the one that you are updating first.
@@ -405,7 +405,7 @@ If the upgrade includes a change to the database schema, the database is upgrade
 
 Apply upgrades during a period of low load. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications.
 
-1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../administration/upgrade`.
+1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
 3. Stop NGINX.
 4. Upgrade each Mattermost instance.
@@ -419,7 +419,7 @@ Upgrading to Version 4.0 and Later
 
 Starting with Mattermost Server v4.0, when a server starts up it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
 
-1. Review the upgrade procedure in :doc:`../administration/upgrade`.
+1. Review the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
 3. Revise your existing ``config.json`` to update the ``ClusterSettings`` section. The following settings should work in most cases:
 
@@ -490,7 +490,7 @@ When High Availability is enabled, the System Console displays the server status
 A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same configuration file to function properly.
-- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server` for any server that needs to be upgraded.
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
