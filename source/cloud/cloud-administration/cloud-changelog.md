@@ -7,7 +7,7 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Highlights
 
 #### Emoji Enhancements with Skin Tone Selection
- - Added support for emoji standard v13.0. Users will see Reactions and Emoji rendered based on their operating system or device, and have the ability to choose various skin tones using the Mattermost emoji picker.
+ - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker.
 
 ### Improvements
 
