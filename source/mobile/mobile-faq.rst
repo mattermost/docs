@@ -1,6 +1,10 @@
 Mobile Apps FAQ
 ===============
 
+.. contents::
+  :backlinks: top
+  :local:
+
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 

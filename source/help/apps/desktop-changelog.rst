@@ -1,6 +1,94 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.7
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+**Released 2021-06-23**
+
+**Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Added support for Electron BrowserView, an underlying architecture change that improves performance and offers snappier interactions (i.e., less lag), lower CPU usage, and faster launch times.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+- Windows desktop now automatically switches between light and dark themes based on the operating system settings.
+
+All Platforms
+^^^^^^^^^^^^^
+- Added a setting to specify the default desktop app download location.
+- Improved the launch screen and loading indicator.
+- Restored deeplinking.
+- Improved the spell check dictionary to provide more accurate spelling suggestions in more languages. The spell check language is now automatically based on the operating system setting.
+- Added improvements to be consistent with the use of URL and URL libraries.
+- Ctrl/CMD + F functionality has been replaced with in-channel search (requires Mattermost server v5.36+).
+- Updated the Content Security Policy for Desktop App to avoid warnings in the dev tools.
+- On Linux and Windows, each settings menu is now in a separate window.
+- Shortened the maximum length (width) for server tab names to 224px.
+- Updated the menu bar and system tray icons for improved contrast.
+- Removed ``libappnotify1`` as a dependency requirement in Debian installers as it's no longer shipped in Debian's Bullseye. It's still recommended to install where available.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v12.0.10. Electron is the underlying technology used to build the Desktop app.
+- Added support for Electron BrowserView.
+- Added support for M1 architecture (beta) in the build pipeline.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+- Fixed an issue where Windows desktop notifications did not auto-dismiss when another notification arrived.
+- Fixed an issue on Windows where the **Pin to Taskbar** icon got lost during an upgrade.
+- Fixed an issue with the MSI build that caused notifications to not open the application and navigate to the correct channel.
+
+MacOS
+^^^^^^^^^^^^^
+- Fixed an issue where changing the theme from the **System Preferences** changed the tray icon, but the red/blue dot indicating unreads got removed.
+- Fixed an issue where there was an invisible Mattermost icon in the top menu bar.
+
+Linux
+^^^^^^^^^^^^^
+- Fixed an issue where Shift+Alt moved the focus to the main menu instead of changing keyboard layout.
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where special characters were not shown for server names using GPO.
+- Fixed an issue where the close/back button in permanent link media previews was missing.
+- Fixed an issue where the text input focus was lost when closing the **Settings** window.
+- Fixed an issue where saving the desktop app settings didn't remove the **saving** indicator in the settings window.
+- Fixed an issue where the jewel indicating the number of mentions was not shown in the tab.
+- Fixed an issue where the desktop linting didn't match the webapp linting.
+- Fixed an issue where clicking on a notification did nothing when the wrong server tab was selected.
+- Fixed an issue where users were unable to copy text from desktop **About** window.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Notification badge does not get cleared when reading a channel with unread messages until navigating away from the channel `MM-35946 <https://mattermost.atlassian.net/browse/MM-35946>`_.
+- Clicking on **View > Find** doesn't work. `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
+- Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
+- Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
+- The ``create_desktop_file.sh`` script is removed from the .tar.gz release. As a workaround, it can be downloaded from `GitHub here <https://github.com/mattermost/desktop/blob/master/src/assets/linux/create_desktop_file.sh>`_.
+- An error may occur when installing the MSI Installer on any Windows version.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+- `devinbinnie <https://github.com/devinbinnie>`_, `FalseHonesty <https://github.com/FalseHonesty>`_, `nevyangelova <https://github.com/nevyangelova>`_, `petermcj <https://github.com/petermcj>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
+
 Release v4.6
 ----------------------------
 

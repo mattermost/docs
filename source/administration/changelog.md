@@ -131,6 +131,37 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``lodash``, ``memoize-one``, and ``sass`` to https://github.com/mattermost/mattermost-webapp.
  - Added ``react-native-startup-time`` and removed ``react-native-status-bar-size`` from https://github.com/mattermost/mattermost-mobile.
 
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/09/15. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [MMCTL](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the Web App](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [MMETL](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for types of data it can assist in uploading. 
+
+3. MySQL versions below to 5.7.7. Minimum support will now be for 5.7.8. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props), Additionally, 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 & 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol).
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
+
+6. [DisablePostMetaData](https://docs.mattermost.com/administration/config-settings.html#disable-post-metadata) configuration setting.
+
+7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+
+8. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+
+9. Legacy Sidebar experimental configuration settings, including:
+   - "EnableLegacySidebar"
+   - "ExperimentalTownSquareIsReadOnly"
+   - "ExperimentalHideTownSquareinLHS"
+   - "EnableXToLeaveChannelsFromLHS"
+   - "CloseUnusedDirectMessages"
+   - "ExperimentalChannelOrganization"
+   - "ExperimentalChannelSidebarOrganization"  
+
+10. Changes to ``mattermost-server/model`` for naming consistency.
+
 ### Known Issues
  - Batched email notifications from a single post have incorrect title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
