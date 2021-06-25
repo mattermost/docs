@@ -4754,6 +4754,10 @@ Town Square is Read-Only (Experimental)
 
 **False**: Anyone can post in Town Square.
 
+.. note::
+
+  This feature will be deprecated in a future release in favor of `channel moderation settings <https://docs.mattermost.com/deployment/advanced-permissions.html#read-only-channels>`_ which allow you to set any channel as read-only, including Town Square 
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``.                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
