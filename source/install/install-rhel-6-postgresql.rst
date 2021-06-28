@@ -5,7 +5,7 @@ Installing PostgreSQL Database
 
 1. Log in to the server that will host the database, and open a terminal window.
 
-2. Download the PostgreSQL 13 Yum repository. For more detailed install instructions visit the PostgreSQL docs site [here](https://www.postgresql.org/download/linux/redhat/).
+2. Download the PostgreSQL 13 Yum repository. For more detailed install instructions visit the PostgreSQL docs site `here <https://www.postgresql.org/download/linux/redhat/>`_.
 
   ``sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-6-x86_64/pgdg-redhat-repo-latest.noarch.rpm``
 
