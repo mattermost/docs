@@ -6,6 +6,10 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 ### Highlights
 
+#### Collapsed Reply Threads (Early Beta Access)
+
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/administration/config-settings.html#collapsed-reply-threads-beta).
+
 #### Emoji Enhancements with Skin Tone Selection
  - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker.
 
