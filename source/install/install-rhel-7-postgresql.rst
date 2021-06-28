@@ -56,7 +56,7 @@ Installing PostgreSQL Database
 
   ``exit``
 
-15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/var/lib/pgsql/13/data/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
+15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP addresses. To do so, open ``/var/lib/pgsql/13/data/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Open ``/var/lib/pgsql/13/data/postgresql.conf`` as root in a text editor.
 
