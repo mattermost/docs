@@ -904,7 +904,7 @@ mattermost extract-documents-content
   Description
     Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server v5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on filename only.
     
-    If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>` search, you must rebuild the search index after running the content extraction command.
+    If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ search, you must rebuild the search index after running the content extraction command.
     
     If you're using `Bleve <https://docs.mattermost.com/deployment/bleve.html>`__ search, you must disable Bleve before running the content extraction command. Once extraction is complete, re-enable Bleve, then rebuild the search index.
 
