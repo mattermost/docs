@@ -1,6 +1,10 @@
 Troubleshooting Mobile Applications
 ===================================
 
+.. contents::
+  :backlinks: top
+  :local:
+
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
 --------------------------------------------------------------------------------------------------------------
 
