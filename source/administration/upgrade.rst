@@ -5,12 +5,12 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 
 .. important::
 
-  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
+  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ or later is required.
 
 Upgrading to the Latest Version
 -------------------------------
 
-If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
+If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first upgrade to version 3.0.3.
 
 .. _before-you-begin:
 
@@ -54,7 +54,7 @@ Location of your local storage directory
 
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
-#. Confirm no other mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file
+#. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file
 
    .. code-block:: sh
      
@@ -78,9 +78,9 @@ Location of your local storage directory
 
 #. Back up your data and application.
 
-   #. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
+   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
 
-   #. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
+   b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
       .. code-block:: sh
 
@@ -89,39 +89,34 @@ Location of your local storage directory
 
 #. Remove all files *except data and custom directories* from within the current mattermost directory.
 
-.. important::
+  .. important::
 
-   - Data directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). 
-   - Custom directories are directories that you have added to Mattermost. Generally these are TLS keys or other custom information. If you're running a stock Mattermost install you may not have these and can skip to ``d`` below.
+    - Data directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). 
+    - Custom directories are directories that you have added to Mattermost. Generally these are TLS keys or other custom information. If you're running a stock Mattermost install you may not have these and can skip to step #12 below.
    
+9. Run ``ls`` on your Mattermost install directory to identify what folders exist. 
    
-a. Run ``ls`` on your Mattermost install directory to identify what folders exist. 
+10. Identify if any custom directories need to be preserved. With the default command data directories will be preserved within mattermost (see above for these directories). 
    
-b. Identify if any custom directories need to be preserved. With the default command data directories will be preserved within mattermost (see above for these directories). 
+11. For each custom directory within the mattermost folder add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved. For example:
    
-c. For each custom directory within the mattermost folder add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved.
-   
-   **Example:**
-   
-    .. code-block:: sh
+  .. code-block:: sh
 
-     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
+    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
    
-d. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command be sure to add those to this below command.
-   
+12. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command be sure to add those to this below command. For example:
    
    .. code-block:: sh
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
    
-   
-e. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command.
+13. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command. For example:
 
    .. code-block:: sh
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
     
-#. Change ownership of the new files before copying them.
+14. Change ownership of the new files before copying them. For example:
 
    .. code-block:: sh
 
@@ -132,9 +127,7 @@ e. Clear the contents of this directory. If you've added custom directories to t
 
      If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
 
-#. Copy the new files to your install directory and remove the temporary files.
-
-   Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
+15. Copy the new files to your install directory and remove the temporary files. Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important. For example:
 
    .. code-block:: sh
 
@@ -142,26 +135,25 @@ e. Clear the contents of this directory. If you've added custom directories to t
      sudo rm -r /tmp/mattermost-upgrade/
      sudo rm -i /tmp/mattermost*.gz
 
-#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+16. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports. For example:
 
    .. code-block:: sh
 
      cd {install-path}/mattermost
      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
-#. Start your Mattermost server.
-
+17. Start your Mattermost server.
 
    .. code-block:: sh
 
      sudo systemctl start mattermost
 
-#. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+18. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
 If they still show yellow, then you need to trigger a config propagation across the cluster:
 
-   #. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
-   #. Click **Save**.
+   a. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
+   b. Click **Save**.
 
    This will not change any config, but sends the existing config to all nodes in the cluster.
 
