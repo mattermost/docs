@@ -95,11 +95,11 @@ Location of your local storage directory
    - Custom directories are directories that you have added to Mattermost. Generally these are TLS keys or other custom information. If you're running a stock Mattermost install you may not have these and can skip to ``d`` below.
    
    
-   a. Run ``ls`` on your Mattermost install directory to identify what folders exist. 
+a. Run ``ls`` on your Mattermost install directory to identify what folders exist. 
    
-   b. Identify if any custom directories need to be preserved. With the default command data directories will be preserved within mattermost (see above for these directories). 
+b. Identify if any custom directories need to be preserved. With the default command data directories will be preserved within mattermost (see above for these directories). 
    
-   c. For each custom directory within the mattermost folder add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved.
+c. For each custom directory within the mattermost folder add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved.
    
    **Example:**
    
@@ -107,7 +107,7 @@ Location of your local storage directory
 
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
    
-   d. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command be sure to add those to this below command.
+d. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command be sure to add those to this below command.
    
    
    .. code-block:: sh
@@ -115,7 +115,7 @@ Location of your local storage directory
      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
    
    
-   e. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command.
+e. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command.
 
    .. code-block:: sh
 
