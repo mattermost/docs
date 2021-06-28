@@ -5,25 +5,29 @@ Installing PostgreSQL Database
 
 1. Log in to the server that will host the database, and open a terminal window.
 
-2. Download the PostgreSQL 13 Yum repository. For more detailed install instructions visit the PostgreSQL docs site `here <https://www.postgresql.org/download/linux/redhat/>`_.
+2. Download the latest PostgreSQL repository. For more detailed install instructions visit the PostgreSQL docs site `here <https://www.postgresql.org/download/linux/redhat/>`_.
 
   ``sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-6-x86_64/pgdg-redhat-repo-latest.noarch.rpm``
 
-3. Install PostgreSQL.
+3. Install PostgreSQL version 10 or greater. Replace the contents of the ``{version}`` with the version you wish to install.
+
+  ``sudo yum install -y postgresql{version}-server``
+
+  **Example:**
 
   ``sudo yum install -y postgresql13-server``
 
 4. Initialize the database.
 
-  ``sudo service postgresql-13 initdb``
+  ``sudo service postgresql-{version} initdb``
 
 5. Set PostgreSQL to start on boot.
 
-  ``sudo chkconfig postgresql-13 on``
+  ``sudo chkconfig postgresql-{version} on``
 
 7. Start the PostgreSQL server.
 
-  ``sudo service postgresql-13 start``
+  ``sudo service postgresql-{version} start``
 
 8. Switch to the *postgres* Linux user account that was created during the installation.
 
@@ -58,7 +62,7 @@ Installing PostgreSQL Database
 
 15. Allow Postgres to listen on all assigned IP Addresses.
 
-  a. Open ``/var/lib/pgsql/13/data/postgresql.conf`` as root in a text editor.
+  a. Open ``/var/lib/pgsql/{version}/data/postgresql.conf`` as root in a text editor.
 
   b. Find the following line:
 
@@ -70,13 +74,13 @@ Installing PostgreSQL Database
 
   d. Restart PostgreSQL for the change to take effect:
 
-    ``sudo service postgresql-9.4 restart``
+    ``sudo service postgresql-{version} restart``
 
 16. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
   **If the Mattermost server and the database are on the same machine**:
 
-    a. Open ``/var/lib/pgsql/13/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/{version}/data/pg_hba.conf`` as root in a text editor.
 
     b. Find the following line:
 
@@ -88,7 +92,7 @@ Installing PostgreSQL Database
 
   **If the Mattermost server and the database are on different machines**:
 
-    a. Open ``/var/lib/pgsql/13/data/pg_hba.conf`` as root in a text editor.
+    a. Open ``/var/lib/pgsql/{version}/data/pg_hba.conf`` as root in a text editor.
 
     b. Add the following line to the end of the file, where *{mattermost-server-IP}* is the IP address of the machine that contains the Mattermost server.
 
@@ -96,7 +100,7 @@ Installing PostgreSQL Database
 
 17. Reload PostgreSQL:
 
-  ``sudo service postgresql-13 reload``
+  ``sudo service postgresql-{version} reload``
 
 18. Verify that you can connect with the user *mmuser*.
 
