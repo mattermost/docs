@@ -61,10 +61,5 @@ Select **Threads** at the top of the channel sidebar to see all your followed th
 
 Select **Unreads** to filter your followed threads by only those with unread replies.
 
-.. tip::  
-
-  - Use the **More Actions** menu or ALT+Select, then select **Mark as Unread** if you want to come back to threads later.
-  - Use UP and DOWN arrow keys to switch between threads in this list.
-
 .. image:: ../../images/crt-thread-view.png
   :alt: Select Threads in the channel sidebar to see all thread updates in your Threads View.
