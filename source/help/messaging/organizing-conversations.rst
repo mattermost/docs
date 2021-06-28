@@ -8,7 +8,7 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 .. image:: ../../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
 
-Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You may additionally need to enable this feature for your Mattermost account by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
+Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
 
 Known Issues
 ------------
@@ -22,8 +22,7 @@ Known Issues
       - Use the **Mark all as read** button in the **Threads** view to mark your threads as read. Work in-progress ticket: `MM-35345 <https://mattermost.atlassian.net/browse/MM-35345>`__
     - You may experience lag in your desktop or web client if you're following many threads or opening threads with many replies. Work in-progress tickets: `MM-36696 <https://mattermost.atlassian.net/browse/MM-36696>`__, `MM-36697 <https://mattermost.atlassian.net/browse/MM-36697>`__, `MM-36698 <https://mattermost.atlassian.net/browse/MM-36698>`__
     - Mobile support for Collapsed Reply Threads is expected next month. For early access, join our `mobile beta program <https://github.com/mattermost/mattermost-mobile#testing>`__. 
-    
-For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.
+    - For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.
 
 
 Start or Reply to Threads
