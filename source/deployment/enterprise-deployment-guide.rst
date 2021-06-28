@@ -1,23 +1,17 @@
-###########################
+
 Enterprise Deployment Guide
-###########################
+===========================
 
-================
 About This Guide
-================
+----------------
 
-********
-Audience
-********
+Audience: IT Leaders, System Administrators, and/or Project Managers
 
-IT Leaders, System Administrators, and/or Project Managers
-
-.. Note::
+.. note::
     Some features described in this guide are only available to Enterprise Edition E10 and/or E20. We will highlight specific licenses needed whenever applicable.
 
-*******************
 Learning Objectives
-*******************
+-------------------
 
 This guide provides foundational information necessary when developing a plan for a proof of concept and/or production-level enterprise deployment of Mattermost.
 
@@ -32,9 +26,8 @@ This includes:
 - Integrating Mattermost with existing Single sign-on (SSO) providers.
 - First steps/best practices for onboarding users.
 
-*******
 Support
-*******
+-------
 
 If at any point you need additional help, we are ready to assist, just reach out using any of these methods:
 
@@ -45,13 +38,11 @@ If at any point you need additional help, we are ready to assist, just reach out
 .. Recommendation::
     Visit the `Mattermost Community server <https://community.mattermost.com/>`_ and create an account. Join channel `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ to not only experience Mattermost right away but also for support if you get stuck at any point in this guide.
 
-================================
 Before You Begin Your Deployment
-================================
+--------------------------------
 
-********************************
 What Makes Mattermost Different?
-********************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a high-trust messaging platform for enterprise use. As enterprises come in all shapes and sizes, Mattermost has been built to provide an optimal experience for all customers.
 
@@ -67,10 +58,6 @@ Here is a sample of the types of integrations our customers are deploying:
 - Trello
 
 Taking this further, because Mattermost is an open source application, it can be customized, in many ways, to suit your organizational needs.
-
-***************
-Further Reading
-***************
 
 Mattermost Scaling
 ------------------
@@ -98,15 +85,13 @@ Client Usage
 
 Depending on your environment and your users, you have several options when deploying Mattermost: web browser, `desktop <https://docs.mattermost.com/install/desktop.html>`_, `mobile <https://docs.mattermost.com/mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/download/#mattermostApps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
 
-======================
 Deployment First Steps
-======================
+----------------------
 
 Deploying Mattermost with an enterprise environment is not a small project. Depending on your use case multiple physical machines have to be set up with Mattermost server, a proxy, and a database while thousands of users need to be imported through AD/LDAP. While we strive to make this as easy as possible it will take time and iteration.
 
-***********************
 Determine Your Use Case
-***********************
+~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned above it is essential for a successful deployment to know your specific use case. To get started try answering the following questions:
 
@@ -117,12 +102,11 @@ As mentioned above it is essential for a successful deployment to know your spec
 - What compliance requirements do you need to meet?
 - What are your organization's security requirements?
 
-************************
 Planning Your Deployment
-************************
+------------------------
 
 Technical Requirements
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The hardware requirements for the Mattermost server and database `grow based on the number of users <https://docs.mattermost.com/install/requirements.html>`_.
 
@@ -191,21 +175,18 @@ Security is a major concern with regard to selecting the right tools. Mattermost
 - Certificate-Based Authentication - `Certificate-Based Authentication <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`_ is available as an experimental feature.
 - Multi-factor Authentication - Mattermost supports `multi factor authentication <https://docs.mattermost.com/deployment/auth.html>`_.
 
-============================
 User Onboarding and Adoption
-============================
+----------------------------
 
-************************
 Integrations and Plugins
-************************
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 On the first look considering `integrations <https://integrations.mattermost.com>`_ and `plugins <https://docs.mattermost.com/administration/plugins.html>`_ as part of the deployment might seem counterintuitive. But they are essential parts of the adoption process, empowering your organization to better understand the tools used by each department.
 
 When choosing integrations and plugins for your deployment, focus on those bringing value to the organization. For example, if your organization is mostly working remotely the Zoom plugin might be essential, whereas a single office organization might not need it but heavily relies on Outlook integration.
 
-*************
 Notifications
-*************
+~~~~~~~~~~~~~
 
 Notifications have gained importance in our daily lives. Modern operating systems all have a way to point the user's attention towards important events from specific apps. There are three different types of notifications in Mattermost: desktop, email, and mobile push notifications. Mattermost will notify you of messages with any of these characteristics:
 
@@ -214,5 +195,6 @@ Notifications have gained importance in our daily lives. Modern operating system
 - A channel you’re in is notified with @channel, @here, or @all.
 - Any of `your configured keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ are used.
 
-.. Note::
+.. note::
+    
     All notification behavior can be controlled globally or individually by channel. Desktop, email, and mobile push notifications have separate settings.

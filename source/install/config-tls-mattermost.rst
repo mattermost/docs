@@ -1,5 +1,5 @@
 Configuring TLS on Mattermost Server
-====================================
+------------------------------------
 
 You have two options if you want users to connect with HTTPS:
 

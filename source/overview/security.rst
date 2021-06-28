@@ -1,4 +1,4 @@
-==================
+
 Security Overview
 ==================
 
@@ -20,8 +20,8 @@ Private Cloud Deployment with Secure Mobile Apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    - Mattermost can run entirely behind your firewall as a single Linux binary with MySQL or PostgreSQL.
-   - Mattermost mobile apps can be deployed to an `internal Enterprise App Store <https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas>`__ by using source code available for Mattermost mobile apps and push notification service. Optionally `VPN clients on PC and mobile devices <https://docs.mattermost.com/deployment/deployment.html#vpn-setup>`__ can be used outside your private network.
-   - Optionally, Mattermost mobile apps can run without a VPN by opening standard ports on your Mattermost server, such as 80 or 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. <https://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns>`__ (E10, E20), as well as enabling `multi-factor authentication <https://docs.mattermost.com/administration/config-settings.html#enable-multi-factor-authentication-enterprise>`__ (E10, E20).
+   - Mattermost mobile apps can be deployed to an `internal Enterprise App Store <https://docs.mattermost.com/deployment/push.html#enterprise-app-store-easy>`__ by using source code available for Mattermost mobile apps and push notification service. Optionally `VPN clients on PC and mobile devices <https://docs.mattermost.com/deployment/deployment.html#vpn-setup>`__ can be used outside your private network.
+   - Optionally, Mattermost mobile apps can run without a VPN by opening standard ports on your Mattermost server, such as 80 or 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. <https://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns>`__ (E10, E20), as well as enabling `multi-factor authentication <https://docs.mattermost.com/administration/config-settings.html#enable-multi-factor-authentication>`__ (E10, E20).
    - User sessions across web, PC, and mobile can be `remotely revoked through account settings <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
    - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 
@@ -110,7 +110,7 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
-     - `Integrity Controls <https://docs.mattermost.com/overview/security.html#integrity-audit-controls>`__
+     - `Integrity Controls <https://docs.mattermost.com/overview/security.html#integrity-and-audit-controls>`__
      - `Access Control <https://docs.mattermost.com/overview/security.html#access-control-policy>`__
      - `Transmission Security <https://docs.mattermost.com/overview/security.html#transmission-security>`__
      - `Audit Controls <https://docs.mattermost.com/overview/security.html#integrity-audit-controls>`__

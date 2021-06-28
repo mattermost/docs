@@ -1,7 +1,7 @@
 .. _config-ssl-http2-apache2:
 
 Configuring Apache2 with SSL and HTTP/2 (Unofficial)
-=====================================================
+----------------------------------------------------
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`__.
 

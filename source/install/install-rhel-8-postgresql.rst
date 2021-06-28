@@ -1,7 +1,7 @@
 ..  _install-rhel-8-postgresql:
 
 Installing PostgreSQL Database
-==============================
+------------------------------
 
 1. Log in to the server that will host the database, and open a terminal window.
 

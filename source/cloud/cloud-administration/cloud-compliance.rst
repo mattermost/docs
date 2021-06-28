@@ -1,5 +1,5 @@
 Compliance Reporting and Oversight
------------------------------------
+==================================
 
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries.
 
@@ -10,10 +10,11 @@ Daily compliance reports may also be generated, supporting integration with comp
 By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded.
 
 .. note::
-  This feature is replaced by `Compliance Export (Beta) <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost in a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+   
+   This feature is replaced by `Compliance Export (Beta) <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost in a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 Enabling Compliance Reporting
-=============================
+-----------------------------
 
 1. Go to **System Console > Compliance > Compliance Monitoring** and set the **Enable Compliance Reporting** value to **true**.
 2. (Optional) In **Compliance Report Directory** specify the directory in which to place completed compliance reports. Defaults to ``./data/`` if left blank.
@@ -22,7 +23,7 @@ Enabling Compliance Reporting
 This will enable the option to generate Daily Compliance Reports.
 
 Turn on Daily Compliance Reports
-================================
+--------------------------------
 
 After enabling compliance reporting:
 
@@ -31,7 +32,7 @@ Go to **System Console > Compliance > Compliance Monitoring**, set the **Enable 
 Your system will now export all new messages posted within a 24-hour period as a ``.csv`` file to the location specified in **Compliance Report Directory**. This feature can be used in conjunction with centralized compliance reporting systems that move.
 
 Run Compliance Reports
-======================
+----------------------
 
 Compliance Reports are exports of all messages in Mattermost that match the report criteria. To run a report:
 
@@ -58,7 +59,7 @@ The report will be queued in the display below the fields described above. The p
 Each compliance report includes a **Download** link which downloads a compressed file named ``adhoc-[UNIQUE_ID].zip``. Inside the file is ``meta.json``, which includes the parameters of the search executed and ``posts.csv`` which includes the contents of messages found by the request.
 
 Compliance query definition stored in ``meta.json`` file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``meta.json`` contains the following information about the compliance query:
 
@@ -89,7 +90,7 @@ Compliance query definition stored in ``meta.json`` file
 +---------------------+---------------------------------------------------------------+-----------------------------------+
 
 Compliance query results stored in ``posts.csv`` file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``posts.csv`` contains the following information about the compliance query results, one search result per row:
 
@@ -128,7 +129,7 @@ Compliance query results stored in ``posts.csv`` file
 +---------------------+---------------------------------------------------------------+-------------------------------+
 
 Global Relay Support
-====================
+--------------------
 
 Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files.
 
