@@ -902,7 +902,7 @@ mattermost extract-documents-content
 -------------------------------------
 
   Description
-    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server 5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on filename only.
+    Extracts and indexes the contents of files shared prior to upgrading to Mattermost Server v5.35. Running this command is strongly recommended since search results for past file contents may be incomplete. If this command isn't run, users can search older files based on filename only.
     
     If you're using `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>` search, you must rebuild the search index after running the content extraction command.
     
