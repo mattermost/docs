@@ -54,10 +54,18 @@ Location of your local storage directory
 
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
+#. Confirm no other mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file
+
+   .. code-block:: sh
+     
+     ls -- mattermost*.gz
+  
+   If anything except the new release is returned above, rename this file or delete it completely.
+
 #. Extract the Mattermost Server files.
 
    .. code-block:: sh
-
+     
      tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
   
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
@@ -79,12 +87,35 @@ Location of your local storage directory
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-#. Remove all files *except special directories* from within the current mattermost directory.
+#. Remove all files *except data and custom directories* from within the current mattermost directory.
 
-   The special directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
-   You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
+.. important::
 
-   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should add ``-o -path mattermost/yourFolderHere`` to the below command or you will have to manually copy the TLSCert/TLSKey files from the backup into the new install.
+   - Data directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). 
+   - Custom directories are directories that you have added to Mattermost. Generally these are TLS keys or other custom information. If you're running a stock Mattermost install you may not have these and can skip to ``d`` below.
+   
+   
+   a. Run ``ls`` on your Mattermost install directory to identify what folders exist. 
+   
+   b. Identify if any custom directories need to be preserved. With the default command data directories will be preserved within mattermost (see above for these directories). 
+   
+   c. For each custom directory within the mattermost folder add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved.
+   
+   **Example:**
+   
+    .. code-block:: sh
+
+     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
+   
+   d. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command be sure to add those to this below command.
+   
+   
+   .. code-block:: sh
+
+     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
+   
+   
+   e. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command.
 
    .. code-block:: sh
 
@@ -109,6 +140,7 @@ Location of your local storage directory
 
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
      sudo rm -r /tmp/mattermost-upgrade/
+     sudo rm -i /tmp/mattermost*.gz
 
 #. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
