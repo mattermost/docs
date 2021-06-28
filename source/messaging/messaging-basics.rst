@@ -6,7 +6,7 @@ Messaging Basics
 
 **Reply to messages** by clicking the reply arrow next to the message text.
 
-.. image:: ../../images/reply-icon.png
+.. image:: ../images/reply-icon.png
    :alt: reply arrow
 
 **Notify teammates** when they are needed by typing ``@username``.
@@ -15,7 +15,7 @@ Messaging Basics
 
 You can use either ``_`` or ``*`` for italics and bold text. See the table below for examples.
 
-.. image:: ../../images/messagesTable1.png
+.. image:: ../images/messagesTable1.png
    :alt: markdown
 
 **Quickly add emojis** by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji <https://docs.mattermost.com/help/settings/custom-emoji.html>`__.
@@ -24,7 +24,7 @@ You can use either ``_`` or ``*`` for italics and bold text. See the table below
 
 **Save messages for follow up** using the **Save** icon next to the message.
 
-.. figure:: ../../images/save-message.png
+.. figure:: ../images/save-message.png
    :alt: flags
 
 Learn more about:

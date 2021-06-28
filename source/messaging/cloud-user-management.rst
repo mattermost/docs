@@ -6,7 +6,7 @@ Inviting Team Members
 
 If you have the required permissions, you can add people to your team via a direct invite, a public team invite link, or if they already have an account on the server, you can add them to the team yourself.
 
-You can also `enable guest access <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When this is enabled, you can invite guests or users external to the organization such as vendors or customers.
+You can also `enable guest access <https://docs.mattermost.com/deployment/guest-accounts.html>`__. A guest is a special role that is restricted to only the channels they have been invited to. When this is enabled, you can invite guests or users external to the organization such as vendors or customers.
 
 Sending Direct Invites
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -232,7 +232,7 @@ When a user is assigned a system role, they have access the System Console. As e
      - All pages within the System Console
      
 Assigning System Roles
----------------------
+-----------------------
 
 **To grant the System Manager role to a single user called Bob Smith:**
 

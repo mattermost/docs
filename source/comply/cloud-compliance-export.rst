@@ -80,7 +80,7 @@ Frequently Asked Questions (FAQ)
 How do I export past history?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specify an `exportFrom` option to export data from a specified timestamp. All posts that were made after this timestamp will be exported.
+Run the ``export`` :doc:`command line tool <../manage/command-line-tools>`. You can specify an `exportFrom` option to export data from a specified timestamp. All posts that were made after this timestamp will be exported.
 
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

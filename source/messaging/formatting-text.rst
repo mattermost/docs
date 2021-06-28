@@ -13,10 +13,10 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 * ``***bold-italic***`` renders as |bold_italics|
 * ``~~strikethrough~~`` renders as |strikethrough|
 
-.. |bold_italics| image:: ../../images/bold_italics.png
+.. |bold_italics| image:: ../images/bold_italics.png
   :width: 100px
   :alt: Bold Italics
-.. |strikethrough| image:: ../../images/strikethrough.png
+.. |strikethrough| image:: ../images/strikethrough.png
   :width: 100px
   :alt: Strike Through
 
@@ -42,7 +42,7 @@ Make a heading by typing ``#`` and a space before your title. For smaller headin
 
 Renders as:
 
-.. image:: ../../images/Headings1.png
+.. image:: ../images/Headings1.png
    :alt: Large Heading
 
 Alternatively, you can underline the text using equal signs ``===`` or hyphens ``---`` to create headings.
@@ -54,7 +54,7 @@ Alternatively, you can underline the text using equal signs ``===`` or hyphens `
 
 Renders as:
 
-.. image:: ../../images/Headings2.png
+.. image:: ../images/Headings2.png
    :alt: Smaller Heading
 
 Lists
@@ -113,7 +113,7 @@ Make a task list by including square brackets ``[ ]``. Mark a task as complete b
 
 Renders as:
 
-.. image:: ../../images/checklist.png
+.. image:: ../images/checklist.png
    :alt: List
 
 Code Block
@@ -183,22 +183,22 @@ Renders as:
 
 **GitHub Theme**
 
-.. image:: ../../images/syntax-highlighting-github.png
+.. image:: ../images/syntax-highlighting-github.png
    :alt: Syntax Highlighting in GitHub
 
 **Solarized Dark Theme**
 
-.. image:: ../../images/syntax-highlighting-sol-dark.png
+.. image:: ../images/syntax-highlighting-sol-dark.png
    :alt: Syntax Highlighting Dark
 
 **Solarized Light Theme**
 
-.. image:: ../../images/syntax-highlighting-sol-light.png
+.. image:: ../images/syntax-highlighting-sol-light.png
    :alt: Syntax Highlighting Light
 
 **Monokai Theme**
 
-.. image:: ../../images/syntax-highlighting-monokai.png
+.. image:: ../images/syntax-highlighting-monokai.png
    :alt: Syntax Highlighting Monokai
 
 In-line Code
@@ -236,19 +236,19 @@ Examples:
 
 .. code-block:: none
 
-  .. |mattermost-icon-76x76| image:: ../../images/icon-76x76.png
-  .. |mattermost-icon-50x76| image:: ../../images/icon-50x76.png
+  .. |mattermost-icon-76x76| image:: ../images/icon-76x76.png
+  .. |mattermost-icon-50x76| image:: ../images/icon-50x76.png
 
 In-line image with hover text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
 
-  ![Mattermost](../../images/icon-76x76.png "Mattermost Icon")
+  ![Mattermost](../images/icon-76x76.png "Mattermost Icon")
 
 Renders as:
 
-  .. image:: ../../images/icon-76x76.png
+  .. image:: ../images/icon-76x76.png
     :alt: Mattermost
 
 In-line image with link
@@ -259,11 +259,11 @@ In-line image with link
 
 .. code-block:: none
 
-  [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
+  [![Mattermost](../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
 Renders as:
 
-  .. image:: ../../images/icon-76x76.png
+  .. image:: ../images/icon-76x76.png
     :target: https://github.com/mattermost/mattermost-server
    
 In-line image displayed with fixed width and height
@@ -273,11 +273,11 @@ Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
 .. code-block:: none
 
-  ![Mattermost](../../images/icon-76x76.png =50x76 "Mattermost Icon")
+  ![Mattermost](../images/icon-76x76.png =50x76 "Mattermost Icon")
 
 Renders as:
 
-  .. image:: ../../images/icon-50x76.png
+  .. image:: ../images/icon-50x76.png
     :alt: Mattermost
     :name: Mattermost Icon 
 
@@ -288,11 +288,11 @@ Example: An in-line image that's 50 pixels wide where the system adjusts the hei
 
 .. code-block:: none
 
-  ![Mattermost](../../images/icon-76x76.png =50 "Mattermost Icon")
+  ![Mattermost](../images/icon-76x76.png =50 "Mattermost Icon")
 
 Renders as:
 
-  .. image:: ../../images/icon-76x76.png
+  .. image:: ../images/icon-76x76.png
     :alt: Mattermost
     :width: 50
  
@@ -314,7 +314,7 @@ Create block quotes using ``>``.
 
 ``> block quotes`` renders as:
 
-.. image:: ../../images/blockQuotes.png
+.. image:: ../images/blockQuotes.png
 
 Tables
 ------
@@ -331,7 +331,7 @@ Create a table by placing a dashed line ``---`` under the header row, then separ
 
 Renders as:
 
-.. image:: ../../images/markdownTable1.png
+.. image:: ../images/markdownTable1.png
    :alt: Markdown Table Sample
 
 Math Formulas
@@ -351,5 +351,5 @@ Create formulas by using LaTeX in a ``latex`` `Code Block`_.
 
 Renders as:
 
-.. image:: ../../images/markdownMath.png
+.. image:: ../images/markdownMath.png
    :alt: Markdown Math Sample

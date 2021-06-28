@@ -1,4 +1,3 @@
-
 Additional System Admin Roles (E20)
 ===================================
 
@@ -14,7 +13,7 @@ There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles (Beta)**.
 
-2. Using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`_.
+2. Using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__.
 
 When a user is assigned a role, they have access to the System Console. As each role has a different set of default permissions the items that they can view depend on the role they've been assigned.
 
@@ -445,7 +444,7 @@ Can a System Manager change their own permissions or elevate their role?
 No. System Managers can't elevate their role, and aren't able to elevate other members' roles.
 
 Can any of the new roles view API keys/passwords or other sensitive information within the System Console (such as SMTP, AWS, Elastic Search)?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No, password information is only visible to System Admins and is obfuscated for other roles.
 

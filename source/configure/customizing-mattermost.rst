@@ -21,7 +21,7 @@ The Mattermost webapp is licensed under the Apache 2.0 license. To modify and us
 7. Run ``tar -xvf mattermost-webapp.tar.gz`` to extract your new customized ``client`` folder
 8. Restart your Mattermost server
 
-It is possible to customize certain parts of the webapp without forking by using our :doc:`Custom Branding <../administration/branding>` settings. 
+It is possible to customize certain parts of the webapp without forking by using our :doc:`Custom Branding <../configure/custom-branding-tools>` settings. 
 
 To replace the logo in email notifications, change the file located in the ``/images`` directory. To change the app icon, modify the ``/app/components/app_icon.js`` file.
 
@@ -43,7 +43,7 @@ To brand the mobile apps:
 
 1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__ repository
 2. Replace the name, images, and any key text strings
-3. :doc:`Compile the apps <../mobile/mobile-compile-yourself>`
+3. :doc:`Compile the apps <../deploy/build-custom-mobile-apps>`
 4. Deploy the apps to an app store
 
 While most organizations deploy to internal enterprise app stores, you are welcome to deploy to iTunes and Google Play as long as the branding is not confusable with official Mattermost products.

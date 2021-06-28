@@ -74,7 +74,7 @@ Upgrading Enterprise Edition to a Newer Version
 Upgrade a previous version of Mattermost Enterprise Edition to a later version by following the `upgrade procedure <https://docs.mattermost.com/administration/upgrade.html#upgrade-enterprise-edition>`__.
 
 Converting Team Edition to Enterprise Edition
---------------------------------------------
+----------------------------------------------
 
 From Mattermost v5.27 on, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise Edition in the System Console using a built-in conversion utility. This tool is recommended if you'd like to run an Enterprise trial or upgrade to Enterprise E10 or E20 on standalone servers.
 

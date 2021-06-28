@@ -18,9 +18,9 @@ One-line Docker Install
 
 If you have Docker set up, Mattermost installs in one-line:
 
-   .. code:: bash
+.. code:: bash
 
-       docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
+   docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
  
 When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
@@ -110,7 +110,7 @@ for product evaluation, and sets ``SendEmailNotifications=false`` so the
 product can function without enabling email. To see the product's full
 functionality, enabling SMTP email is recommended.
 
-.. include:: smtp-email-setup.rst 
+.. include:: ../configure/smtp-email.rst 
   :start-after: How to Enable Email
 
 Configuration Settings
@@ -124,10 +124,10 @@ Updating Docker Preview
 
 To delete your existing Docker preview and run a new version use: 
 
-   .. code:: bash
+.. code:: bash
 
-       docker stop mattermost-preview
-       docker rm -v mattermost-preview
+   docker stop mattermost-preview
+   docker rm -v mattermost-preview
 
 Accessing Your Container
 ------------------------

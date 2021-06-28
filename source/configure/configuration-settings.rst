@@ -785,7 +785,7 @@ Enable Image Proxy
 
 When ``true``, enables an image proxy for loading external images. The image proxy is used by the Mattermost apps to prevent them from connecting directly to remote servers. This anonymizes their connections and prevents them from accessing insecure content.
 
-See the :doc:`documentation <image-proxy>` to learn more.
+See the :doc:`Image Proxy documentation <../deploy/image-proxy>` to learn more.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
@@ -798,9 +798,9 @@ The type of image proxy used by Mattermost. There are two options:
 
 **local**: The Mattermost server itself acts as the image proxy. This is the default option.
 
-**atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`_ image proxy is used.
+**atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`__ image proxy is used.
 
-See the `documentation <https://docs.mattermost.com/administration/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
+See the `documentation <https://docs.mattermost.com/deploy/image-proxy.html#atmos-camo-image-proxy>`__ to learn more.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ImageProxyType": "local"``, with options ``"local"`` and ``"atmos/camo"`` for the above settings, respectively. |
@@ -914,7 +914,7 @@ Skip Server Certificate Verification
 Enable Security Alerts
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enable System Admins to be notified by email if a relevant security fix alert is announced. Requires email to be enabled. To learn more about this feature, see :doc:`telemetry`.
+**True**: Enable System Admins to be notified by email if a relevant security fix alert is announced. Requires email to be enabled. To learn more about this feature, see :doc:`../manage/telemetry`.
 
 **False**: Security alerts are disabled.
 
@@ -1485,7 +1485,7 @@ Enable Webhook Debugging
 Enable Diagnostics and Error Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. All diagnostics and error reporting is encrypted in transit and does not include personally identifiable information or message contents. To learn more about this feature, see :doc:`telemetry`.
+**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. All diagnostics and error reporting is encrypted in transit and does not include personally identifiable information or message contents. To learn more about this feature, see :doc:`../manage/telemetry`.
 
 **False**: Diagnostics and error reporting are disabled.
 
@@ -4925,7 +4925,7 @@ Allow Cookies for Subdomains
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^
 
-This setting defines the frequency of cluster request time logging for :doc:`../deployment/metrics`, measured in milliseconds.
+This setting defines the frequency of cluster request time logging for :doc:`../scale/performance-monitoring`, measured in milliseconds.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with numerical input.                                                            |

@@ -22,7 +22,7 @@ This option is enabled by the System Admin by going to **System Console > Authen
 
 Once enabled, users can opt to use MFA on their account in the `Account Settings <https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication>`__ menu under **Security > Multi-factor Authentication**.
 
-.. include:: ../cloud/cloud-administration/common-disable-mfa.rst
+.. include:: common-disable-mfa.rst
 
 Enforcing MFA (E10)
 -------------------
@@ -35,4 +35,4 @@ Users will not be able to remove MFA from their account while enforcement is on.
 
 .. note::
 
-  Turning on MFA enforcement prevents users from accessing the site until set up is complete. It is recommended that you turn on enforcement during non-peak hours when people are less likely to be using Mattermost.
+  Turning on MFA enforcement prevents users from accessing the site until set up is complete. We recommended that you turn on enforcement during non-peak hours when people are less likely to be using Mattermost.

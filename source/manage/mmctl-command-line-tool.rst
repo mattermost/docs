@@ -2649,15 +2649,15 @@ mmctl import
 
 Manage imports.
 
-Child Commands
-  -  `mmctl import job`_ - List and show import jobs
-  -  `mmctl import job list`_ - List import jobs
-  -  `mmctl import job show`_ - Show import job
-  -  `mmctl import list`_ - List all import files
-  -  `mmctl import list available`_ - List available import files
-  -  `mmctl import list incomplete`_ - List incomplete import files uploads
-  -  `mmctl import process`_ - Start an import job
-  -  `mmctl import upload`_ - Upload import files
+   Child Commands
+      -  `mmctl import job`_ - List and show import jobs
+      -  `mmctl import job list`_ - List import jobs
+      -  `mmctl import job show`_ - Show import job
+      -  `mmctl import list`_ - List all import files
+      -  `mmctl import list available`_ - List available import files
+      -  `mmctl import list incomplete`_ - List incomplete import files uploads
+      -  `mmctl import process`_ - Start an import job
+      -  `mmctl import upload`_ - Upload import files
 
 **Options**
 
@@ -2666,7 +2666,7 @@ Child Commands
    -h, --help   help for import
 
 mmctl import job
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2690,7 +2690,7 @@ mmctl import job
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl import job list
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2729,7 +2729,7 @@ mmctl import job list
     --strict                       will only run commands if the mmctl version matches the server one 
 
 mmctl import job show
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2765,7 +2765,7 @@ mmctl import job show
    --strict                       will only run commands if the mmctl version matches the server one
 
 mmctl import list
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2795,7 +2795,7 @@ mmctl import list
    --strict                       will only run commands if the mmctl version matches the server one 
 
 mmctl import list available
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2831,7 +2831,7 @@ mmctl import list available
    --strict                       will only run commands if the mmctl version matches the server one 
 
 mmctl import list incomplete
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2867,7 +2867,7 @@ mmctl import list incomplete
    --strict                       will only run commands if the mmctl version matches the server one 
 
 mmctl import process
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -2903,7 +2903,7 @@ mmctl import process
    --strict                       will only run commands if the mmctl version matches the server one 
 
 mmctl import upload
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 

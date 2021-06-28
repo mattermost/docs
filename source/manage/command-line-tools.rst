@@ -4,6 +4,7 @@ Command Line Tools
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
 .. note::
+  
   The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
@@ -55,7 +56,7 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
 
 .. note::
 
-Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
 
 .. note::
 
@@ -100,19 +101,16 @@ The preceding documentation and command reference below also applies to the `Mat
 Mattermost 3.6 and later
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
+The new CLI tool is supported in Mattermost v3.6 and later.
 
 .. note::
-   
-   For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
 
-Notes:
-
--  Parameters in CLI commands are order-specific.
--  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
--  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
+  -  Parameters in CLI commands are order-specific.
+  -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
+  -  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
 .. tip::
+  
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 mattermost

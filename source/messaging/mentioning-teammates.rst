@@ -54,7 +54,7 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
 @groupname (Beta) (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ via the Group Configuration page. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
+System Admins can enable mentions for `LDAP synced groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ via the Group Configuration page. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
 
 Once enabled for a specific group, users can mention and notify the entire group in a channel (similar to ``@channel`` or ``@all``). Members of the group in that channel will receive a notification. If members of the group mentioned are not members of the channel, the user who posted the mention is prompted to invite them.
 
@@ -83,7 +83,7 @@ Recent Mentions
 
 Select **@** next to the **Search** box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). 
 
-.. image:: ../../images/recent-mentions.png
+.. image:: ../images/recent-mentions.png
    :alt: See your most recent @mentions
 
 Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.

@@ -9,10 +9,10 @@ Telemetry data is encrypted in transit, does not include personally identifiable
 
 We use the data for the following purposes:
 
-  - To identify security and reliability issues.
-  - To analyze and fix software problems.
-  - To help improve the quality of Mattermost software and related services.
-  - To make design decisions for future releases.
+- To identify security and reliability issues.
+- To analyze and fix software problems.
+- To help improve the quality of Mattermost software and related services.
+- To make design decisions for future releases.
 
 Security Update Check Feature
 -----------------------------
@@ -20,18 +20,19 @@ Security Update Check Feature
 New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share diagnostic information with Mattermost Inc. so that we can provide appropriate alerts.
 
 The following data is collected once every 24 hours:
-  - Mattermost server build number and version
-  - Type of build (Enterprise Edition or Team Edition)
-  - Server operating system
-  - The server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data)
-  - Database type
-  - Database version
-  - Number of teams
-  - Number of users 
-  - Number of active users
-  - Whether or not the unit tests have been run
-  - Date and time of the last check for security updates
-  - The location of the Amazon Cloudfront server used for telemetry data
+
+- Mattermost server build number and version
+- Type of build (Enterprise Edition or Team Edition)
+- Server operating system
+- The server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data)
+- Database type
+- Database version
+- Number of teams
+- Number of users 
+- Number of active users
+- Whether or not the unit tests have been run
+- Date and time of the last check for security updates
+- The location of the Amazon Cloudfront server used for telemetry data
 
 To opt out, disable the feature in **System Console > Environment > SMTP**. When the feature is disabled, you will not receive any security alerts.
 
@@ -39,30 +40,31 @@ Error and Diagnostics Reporting Feature
 ---------------------------------------
 
 Mattermost error and diagnostic data is collected for the following purposes:
-  - To add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues.
-  - To analyze and fix software problems.
-  - To help improve the quality of Mattermost software and related services.
-  - To make design decisions for future releases.
+- To add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues.
+- To analyze and fix software problems.
+- To help improve the quality of Mattermost software and related services.
+- To make design decisions for future releases.
 
 .. note:: 
-Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. From Mattermost version 5.23 the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. To opt out, you can disable the feature in **System Console > Environment > Logging > Enable Diagnostics and Error Reporting**. Starting in Mattermost version 5.26, when this feature is enabled, any 500 errors will be automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
+
+  Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. From Mattermost v5.23 the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. To opt out, you can disable the feature in **System Console > Environment > Logging > Enable Diagnostics and Error Reporting**. Starting in Mattermost v5.26, when this feature is enabled, any 500 errors will be automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
 
 Deployment and Server Configuration Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reporting Frequency
-  - When starting the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
-  - At the 24 hour mark and every 24 hours thereafter.
+- When starting the server for the first time: Every 10 minutes for the first hour, then every hour for the first 12 hours.
+- At the 24 hour mark and every 24 hours thereafter.
 
 Deployment Configuration Information
   Basic information including Mattermost server version, database and operating system type and version, and count of System Administrator accounts.
 
 Deployment Type
-  - Manual install (includes ``wget`` installs)
-  - Docker
-  - Mattermost Omnibus
-  - Kubernetes operator
-  - GitLab Omnibus
+- Manual install (includes ``wget`` installs)
+- Docker
+- Mattermost Omnibus
+- Kubernetes operator
+- GitLab Omnibus
 
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of ``type`` ("enumerated integer" or "enumerated boolean") values, ``true/false`` ("boolean"), and ``count`` ("integer"). Specifically these include:
@@ -92,7 +94,7 @@ Groups Configuration Information (Enterprise Edition Only)
   Information related to AD/LDAP groups, including number of groups synced to Mattermost, teams and channels associated to groups, teams and channels synced with groups, and number of group members.
 
 Plugin Configuration Information
-  Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/app/diagnostics.go#L668>`_ are enabled along with their versions. Some plugins may send summary data such as number of authenticated users of the plugin. From version 5.26, the list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
+  Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/app/diagnostics.go#L668>`__ are enabled along with their versions. Some plugins may send summary data such as number of authenticated users of the plugin. From version 5.26, the list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
 
 Permissions Configuration Information (Enterprise Edition Only)
   Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; team user permissions; Channel Admin permissions; channel user permissions; number of teams the scheme is associated with; number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.
@@ -108,7 +110,7 @@ Reporting Frequency
 
 .. note::
 
-  The majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`_.
+  The majority of these events have been disabled since Mattermost v5.8. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`__.
 
 Non-personally Identifiable Error Information, distinguished by end users and System Admins
   Boolean when the following events occur:

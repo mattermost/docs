@@ -1,4 +1,3 @@
-
 Desktop Managed Resources
 ==========================
 
@@ -14,6 +13,7 @@ In addition to customizing the Mattermost Desktop App, the `Managed Resource Pat
 In the below example we add the managed resource ``/video``.
 
 .. code-block:: json
+
     [...]
     managedResources: ['trusted', 'video'],
     [...]

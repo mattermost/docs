@@ -15,10 +15,10 @@ Self-Managed Deployments
 
    /configure/configuration-settings.rst
    /configure/configuation-in-mattermost-database.rst
-   /configure/customize-mattermost.rst
+   /configure/customizing-mattermost.rst
    /configure/email-templates.rst
-   /configure/branding.rst
-   /configure/smtp-email-setup.rst
+   /configure/custom-branding-tools.rst
+   /configure/smtp-email.rst
    /configure/configuring-cloudfront-to-host-mattermost-static-assets.rst
    /configure/using-outbound-proxy.rst
    /configure/enabling-chinese-japanese-korean-search.rst

@@ -1,6 +1,3 @@
 ..  _prod-ubuntu-1604:
 
-Production Install on Ubuntu 16.04 LTS
-======================================
-
-This document is superseded by :doc:`install-ubuntu-1604`.
+Ubuntu 16.04 reached end of life April, 2019. Please refer to install guides for :doc:`Ubuntu 18.04 LTS <../install/installing-ubuntu-1804-LTS>` or :doc:`Ubuntu 20.04 LTS <../install/installing-ubuntu-2004-LTS>` instead.

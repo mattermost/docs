@@ -3,7 +3,7 @@ Searching
 
 Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available now in Mattermost Cloud, and in Mattermost Server from v5.35, with mobile support coming soon.
 
-.. image:: ../../images/ui_search.png
+.. image:: ../images/ui_search.png
    :alt: ui_search
 
 You can also do more advanced search using `search modifiers <https://docs.mattermost.com/help/getting-started/searching.html#search-modifiers>`__.
@@ -13,11 +13,11 @@ Searching for Message Contents
 
 Select the Search field, then type your search criteria. 
 
-.. image:: ../../images/search-messages.png
+.. image:: ../images/search-messages.png
 
 When message results display in the Search Results pane, select **Jump** to view the full message in context.
 
-.. image:: ../../images/jump-to-message.png
+.. image:: ../images/jump-to-message.png
 
 .. tip::
   Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to switch between results.
@@ -27,7 +27,7 @@ Searching for File Contents
 
 Select the **Search** field, select **Files**, then type your search criteria. 
 
-.. image:: ../../images/search-files.png
+.. image:: ../images/search-files.png
 
 File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
 
@@ -42,19 +42,19 @@ File contents that match on file name, or contain matching text content within s
 
 To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
   
-.. image:: ../../images/file-search-filter.png
+.. image:: ../images/file-search-filter.png
 
 .. tip::
   Select the **Channel Files** icon below the channel name to access files recently shared in that channel. 
   
-  .. image:: ../../images/channel-files-icon.png
+  .. image:: ../images/channel-files-icon.png
 
 Search Modifiers
 ----------------
 
 You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below.
 
-.. image:: ../../images/search-modifiers.png
+.. image:: ../images/search-modifiers.png
 
 ``from:`` and ``in:``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +76,7 @@ Use both ``before:`` and ``after:`` together to search in a specified date range
 
 Use ``on:`` to find messages files posted on a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format. 
 
-.. image:: ../../images/calendar2.png
+.. image:: ../images/calendar2.png
   :width: 300 px
 
 Examples:
@@ -118,6 +118,7 @@ Valid hashtags:
 To search for messages containing hashtags, select a hashtag in an existing post, or type the hashtag (including the pound ``#`` symbol) into the search bar. 
 
 .. note::
+  
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
 Notes About All Searches

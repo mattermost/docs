@@ -201,7 +201,7 @@ What happens when the Enterprise Edition subscription expires?
 Sixty days prior to expiry, System Administrators receive notifications that the Enterprise Edition license key will expire on the anniversary of its purchase. After expiry, there is a 10-day grace period to upload a new license key. After the grace period, Enterprise features will be disabled. At any time, Enterprise Edition can be downgraded to the free Team Edition without data loss by switching off any Enterprise features enabled and then removing the license key.
 
 What are Mattermost's policies around licensing, terms of service, and privacy?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following outlines the licensing, terms of service and privacy policies across Mattermost software and services.
 
@@ -300,12 +300,12 @@ Mattermost Source Available License
 ------------------------------------
 
 What is the Mattermost Source Available License?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise E20 License in a production environment.
 
 How can I identify code licensed as source available?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the Mattermost Source Available ``LICENSE`` file appears at the root of a repository, the restrictions apply to all source code within the repository. A note in the ``README.md`` often identifies the use of this license and links to this FAQ.
 
@@ -328,7 +328,7 @@ How are repositories changing?
 As we add enterprise-only functionality, we will update the license on affected Mattermost authored plugin repositories. The intent is to work alongside the existing, open source functionality in our plugins while reserving certain enterprise functionality to customers who pay us for enterprise licenses.
 
 To which repositories does this apply?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Response <https://github.com/mattermost/mattermost-plugin-incident-response>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and as part of any release notes. 
 
@@ -379,12 +379,12 @@ Can I publish my own plugin and rely on enterprise specific functionality?
 As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise E20 license regardless of how you license your plugin.
 
 Can’t someone compile out any license restrictions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We trust our community to honor the Mattermost Source Available License and work alongside us to develop features across our free and paid offerings. Our support team does not provide support to unlicensed, enterprise-only functionality.
 
 If I make my own plugin using your source available code, can I remove the license restriction?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, the Mattermost Source Available License continues to apply to modifications.
 
@@ -633,7 +633,7 @@ Design Decisions
 ----------------
 
 Why does Mattermost disclose whether or not an account exists when a user enters an incorrect password?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`__ and, telling users that they made a mistake in entering their password, is in service of our principle of prioritizing user interests.
 

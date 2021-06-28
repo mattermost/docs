@@ -1,19 +1,14 @@
 Advanced Permissions (E10/E20)
 ==============================
 
-Mattermost Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
+Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
 Two permission schemes are provided in Mattermost: 
 
 * System Scheme: Applies permissions universally across all teams and channels.
 * Team Override Schemes: Allow admins to customize permissions for each team.
 
-This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/deployment/permissions-backend.html>`_ provides additional technical details around permissions.
-
-.. note::
-
-  This document applies to Mattermost Server version 5.0 and later. For previous versions, see `permission settings available in the System Console > Policy page <https://docs.mattermost.com/administration/config-settings.html#policy>`__.
-
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`_ provides additional technical details around permissions.
 
 .. contents::
   :backlinks: top

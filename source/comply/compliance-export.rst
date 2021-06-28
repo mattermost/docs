@@ -20,7 +20,7 @@ Enterprise deployments with a requirement to archive history beyond the data ret
 
 .. note::
   
-   This feature will replace the existing :doc:`Compliance feature <compliance>` in a future release. Compliance exports to CSV will continue to be available in Mattermost Enterprise E20.
+   This feature will replace the existing :doc:`Compliance Reporting Oversight <compliance-reporting-oversight>` in a future release. Compliance exports to CSV will continue to be available in Mattermost Enterprise E20.
 
 Set Up Guide
 ------------
@@ -29,7 +29,7 @@ Use the following guides to configure exports for CSV, Actiance XML, or Global R
 
 .. note::
    
-   The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+   The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
 
 CSV
 ~~~~
@@ -84,7 +84,7 @@ Frequently Asked Questions (FAQ)
 How do I export past history?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specify an ``exportFrom`` option to export data from a specified timestamp. All posts that were made after this timestamp will be exported.
+Run the ``export`` :doc:`command line tool <../manage/command-line-tools>`. You can specify an ``exportFrom`` option to export data from a specified timestamp. All posts that were made after this timestamp will be exported.
 
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

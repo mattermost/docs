@@ -26,7 +26,6 @@ Work with Messages
    /messaging/sending-receiving-messages.rst
    /messaging/formatting-text.rst
    /messaging/using-emoji.rst
-   /messaging/using-custom-emoji.rst
    /messaging/mentioning-teammates.rst
    /messaging/sharing-files.rst
    /messaging/executing-slash-commands.rst

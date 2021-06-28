@@ -2,6 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
+
    - The deprecations `listed here <https://docs.mattermost.com/administration/changelog.html#upcoming-deprecations-in-mattermost-v6-0>`_ are planned for the Mattermost v6.0 release, which is scheduled for September 15, 2021. This list is subject to change prior to the release.
    - Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
    - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
@@ -408,7 +409,7 @@ Important Upgrade Notes
 | v4.0.0                                             | (High Availability only)                                                                                                                                         |
 |                                                    |                                                                                                                                                                  |
 |                                                    | You must manually add new items to the ``ClusterSettings`` section of your existing ``config.json``.                                                             |
-|                                                    | See the *Upgrading to Version 4.0 and Later* section of :doc:`../deployment/cluster` for details.                                                                |
+|                                                    | See the *Upgrading to Version 4.0 and Later* section of :doc:`../scale/high-availability-cluster` for details.                                                   |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v3.9.0                                             | Old email invitation links, password reset links, and email verification links will no longer work due to a security change.                                     |
 |                                                    | Team invite links copied from the Team Invite Link dialog are not affected and are still valid.                                                                  |

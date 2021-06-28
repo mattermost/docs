@@ -35,8 +35,9 @@ Do I need to compile the mobile apps to host my own push notification server?
 Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ to learn how to compile your own mobile apps.
 
 .. _push-faq:
+
 How do push notifications work?
--------------------------------
+--------------------------------
 
 Your Mattermost server sends push notifications to a hosted push proxy server, which relays them via mobile push notification services provided by Apple and Google.
 
@@ -105,7 +106,7 @@ What are my options for securing push notifications?
 The following options are available for securing your push notification service:
 
 1.  Protecting notification contents
-  - You can `choose what type of information to include in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
+  - You can `choose what type of information to include in push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
 
 2. Disabling push notifications
   - Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled.
@@ -118,13 +119,15 @@ The following options are available for securing your push notification service:
     - MPNS and your Mattermost server
 
 4. Securing the Mattermost Apple App Store and Google Play apps:
-  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise Edition E10 or higher, which offers a :doc:`Hosted Push Notification Service (HPNS) <mobile-hpns>`.
+  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise Edition E10 or higher, which offers a `Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__.
 
-.. Note:: For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`. 
+.. note:: 
+
+  For configuration details, see guides for `deploying the Mattermost App Store and Google Play apps <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ and `deploying your own version of the apps <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__. 
 
 
 Why do I sometimes see a delay in receiving a push notification?
---------------------------------------------------------------------------
+---------------------------------------------------------------------
 
 `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ determine when your device receives a push notification from Mattermost. Thus, a delay is usually as a result of those services.
 
@@ -138,7 +141,7 @@ The technical flow for the device to receive a push notification is as follows:
 6. Mattermost processes the notification and displays it on the user's device.
 
 How do I deploy Mattermost with Enterprise Mobility Management (EMM) providers?
---------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Mattermost enables customers with high privacy and custom security requirements to deploy mobile app and push notification services using keys that they alone control.
 
@@ -154,7 +157,7 @@ First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) 
 3. Repackage the mobile apps with BlueCedar or AppDome (both of which are not officially supported but have been successfully deployed by some organizations).
 
 How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server?
--------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 See our `developer documentation about the Mattermost Push Notification Service with Corporate Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/>`_.
 
@@ -211,6 +214,7 @@ The app checks for platform-specific configuration on app install. If no configu
 
 1. Create an ``apple-app-site-association`` file in the ``.well-known`` directory at the root of your server. It should be accessible by navigating to ``https://<your-site-name>/.well-known/apple-app-site-association``. There should not be a file extension.
 2. In order to handle deep links, paste the following ``JSON`` into the ``apple-app-site-association`` file. Make sure to place your app ID in the ``appID`` property:
+
 ::
     {
         "applinks": {

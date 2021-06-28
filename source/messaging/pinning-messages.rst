@@ -7,19 +7,19 @@ All members of a channel can pin important or useful messages to that channel. T
 
 Pinned messages are marked with the pinned icon. For example:
 
-.. image:: ../../images/pinned-example-channel.png
+.. image:: ../images/pinned-example-channel.png
   :alt: Enter slash commands in the message field.
 
 **To view the list of pinned messages:**
 
 To view the complete list of pinned messages, select the Pin icon in the channel header. 
 
-.. image:: ../../images/pinned-posts.png
+.. image:: ../images/pinned-posts.png
   :alt: Open pinned messages in the right-hand sidebar.
 
 The right-hand sidebar opens to show the list of pinned messages. For example:
 
-.. image:: ../../images/pinned-example-rhs.png
+.. image:: ../images/pinned-example-rhs.png
   :alt: Review the list of pinned messages.
 
 Pin a Message

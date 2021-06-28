@@ -10,13 +10,13 @@ of the Mattermost cluster, all transports rely on TLS encryption.
 requires additional setup steps. Enhancing the core product to include automatic
 encryption between cluster nodes is in progress and planned for a later release.
 
-.. figure:: ../../images/transport-encryption.png
+.. image:: ../images/transport-encryption.png
 
 The configuration guides are split up into the following documents:
 
 .. toctree::
   :titlesonly:
 
-  config-mattermost.rst
-  config-database.rst
-  config-cluster.rst
+  proxy-to-mattermost-transport-encryption.rst
+  database-transport-encryption.rst
+  cluster-transport-encryption.rst

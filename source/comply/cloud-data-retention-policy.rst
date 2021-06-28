@@ -74,7 +74,7 @@ What happens when the data retention period is changed?
 Data retention runs once a day at the time specified in the settings. Changing the retention period does not automatically schedule any additional run of the data retention job - it only updates how long data is kept in Mattermost.
 
 Does the System Administrator get any notification when the data retention period is changed?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, the setting is updated, but the System Admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
 
@@ -84,7 +84,7 @@ Does the data retention job include archived channels?
 Posts and attachments in archived channels are affected by the data retention job. If a post exceeds the age configured for the data retention job it will be deleted from the database.
 
 How long does it take to run a deletion query and does it affect server performance?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Data retention runs the actual deletion query in batches, deleting data in blocks of 1,000 records per query. This is so the database won’t be locked up for extended periods of time with long-running queries. Keeping to this limit keeps the query down to a few milliseconds' execution time on the database itself.
 

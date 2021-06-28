@@ -10,19 +10,19 @@ Saving a Message
 
 To try it out, hover over a message to show the **Save** icon. Click the icon to save the message for follow up.
 
-.. image:: ../../images/save-message.png
+.. image:: ../images/save-message.png
 
 Viewing Saved Messages
 ----------------------
 
 To view a list of your **Saved Posts**, select the **Save** icon at the top of the channel.
 
-.. image:: ../../images/saved-posts.png
+.. image:: ../images/saved-posts.png
 
 Unsaving Messages
 -----------------
 
 To remove an item from the **Saved Posts** list, select the **Save** icon next to message to clear it.
 
-.. image:: ../../images/remove-from-saved-posts.png
+.. image:: ../images/remove-from-saved-posts.png
    

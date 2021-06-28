@@ -8,7 +8,7 @@ Mattermost supports webhooks to easily integrate external applications into the 
 
 Use incoming webhooks to post messages to Mattermost public channels, private channels and direct messages. Messages are sent via an HTTP POST request to a Mattermost URL generated for each application and contain a specifically formatted JSON payload in the request body.
 
-.. image:: ../../images/incoming_webhooks_sample.png
+.. image:: ../images/incoming_webhooks_sample.png
   :width: 500 px
 *An example of a GitHub integration that posts updates to a Developers channel*
 
@@ -25,7 +25,7 @@ Simple Incoming Webhook
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
 
-.. image:: ../../images/incoming_webhooks_create_simple.png
+.. image:: ../images/incoming_webhooks_create_simple.png
   :width: 400 px
   
 1. Go to **Main Menu > Integrations > Incoming Webhooks**. If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled or may be disabled for non-admins. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so.
@@ -64,15 +64,16 @@ See `developer documentation <https://developers.mattermost.com/integrate/incomi
 
 This content will be displayed in the Town Square channel.
 
-.. image:: ../../images/incoming_webhooks_full_example.png
+.. image:: ../images/incoming_webhooks_full_example.png
   :width: 500 px
 
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
+
+  `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
   
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override profile picture icons. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override profile picture icons. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
@@ -81,7 +82,7 @@ Tips and Best Practices
 
 2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Posts up to 16383 characters are supported.
 
-3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
+3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings#restrict-managing-integrations-to-admins>`__.
 
 4. Mattermost incoming webhooks are Slack-compatible. You can copy and paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 

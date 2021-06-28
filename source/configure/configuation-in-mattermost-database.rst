@@ -3,7 +3,7 @@ Configuration in the Mattermost Database
 
 A new configuration option was added in the `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
-Mattermost has been running our `community server <https://community.mattermost.com>`_ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <cluster>`.
+Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 
 Benefits to using this option:
 

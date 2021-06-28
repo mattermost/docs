@@ -4,19 +4,19 @@ Desktop Application Install Guides
 
 Mattermost desktop applications are available for Windows, Mac, and Linux operating systems. They support all the features of the web experience, plus:
 
- - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
- - Auto-start Mattermost when a user logs into their machine.
- - (Windows) Add Mattermost to Start menu, Taskbar, and System Tray.
- - (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if app is already installed.
- - (Mac) Add Mattermost to the Dock.
- - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
+- Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
+- Auto-start Mattermost when a user logs into their machine.
+- (Windows) Add Mattermost to Start menu, Taskbar, and System Tray.
+- (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if app is already installed.
+- (Mac) Add Mattermost to the Dock.
+- (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
 
 Below is a list of additional resources:
 
- - `Guide for configuring your desktop app experience <https://docs.mattermost.com/help/apps/desktop-guide.html>`__
- - `Changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__
- - `Source code <https://github.com/mattermost/desktop>`__
- - Contributor’s guide (coming soon)
+- `Guide for configuring your desktop app experience <https://docs.mattermost.com/help/apps/desktop-guide.html>`__
+- `Changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__
+- `Source code <https://github.com/mattermost/desktop>`__
+- Contributor’s guide (coming soon)
 
 You can `download the apps directly from our downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
 
@@ -28,7 +28,7 @@ Windows 10+, Windows 8.1+
 
 1. Download the latest version of the Mattermost desktop app:
 
-   - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-setup-4.7.0-win.exe>`__
+  - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-setup-4.7.0-win.exe>`__
 
 2. From the **\Downloads** folder right-click on the file ``mattermost-desktop-setup-4.7.0-win.exe`` and select **Open**.
 
@@ -39,8 +39,8 @@ MSI Installer and Group Policies (Beta)
 
 Download the latest version of the Mattermost desktop app MSI installer (Beta):
 
-   - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-x64.msi>`__
-   - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-x86.msi>`__
+- MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-x64.msi>`__
+- MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-x86.msi>`__
 
 `See here <https://docs.mattermost.com/install/desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies.
 
@@ -89,17 +89,17 @@ Unofficial, community-driven ``.deb`` packages are available.
 
 1. Download the latest version of the Mattermost Desktop App:
 
- - 64-bit systems
-   `mattermost-desktop-4.7.0-linux-amd64.deb <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-amd64.deb>`__
- - 32-bit systems
-   `mattermost-desktop-4.7.0-linux-i386.deb <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-i386.deb>`__
+- 64-bit systems
+  `mattermost-desktop-4.7.0-linux-amd64.deb <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-amd64.deb>`__
+- 32-bit systems
+  `mattermost-desktop-4.7.0-linux-i386.deb <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
- - 64-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.7.0-linux-amd64.deb``
- - 32-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.7.0-linux-i386.deb``
+- 64-bit systems
+  ``sudo dpkg -i mattermost-desktop-4.7.0-linux-amd64.deb``
+- 32-bit systems
+  ``sudo dpkg -i mattermost-desktop-4.7.0-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
@@ -110,17 +110,17 @@ Unofficial, community-driven ``.rpm`` packages are available.
 
 1. Download the latest version of the Mattermost Desktop App:
 
- - 32-bit systems
-   `mattermost-desktop-4.7.0-linux-i686.rpm <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-i686.rpm>`__
- - 64-bit systems
-   `mattermost-desktop-4.7.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-x86_64.rpm>`__
+- 32-bit systems
+  `mattermost-desktop-4.7.0-linux-i686.rpm <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-i686.rpm>`__
+- 64-bit systems
+  `mattermost-desktop-4.7.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/4.7.0/mattermost-desktop-4.7.0-linux-x86_64.rpm>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
- - 32-bit systems
-    ``sudo rpm -i mattermost-desktop-4.7.0-linux-i686.rpm``
- - 64-bit systems
-    ``sudo rpm -i mattermost-desktop-4.7.0-linux-x86_64.rpm``
+- 32-bit systems
+  ``sudo rpm -i mattermost-desktop-4.7.0-linux-i686.rpm``
+- 64-bit systems
+  ``sudo rpm -i mattermost-desktop-4.7.0-linux-x86_64.rpm``
 
 3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
@@ -151,7 +151,7 @@ The app data might be corrupted. Remove all the files in ``%LOCALAPPDATA%\matter
 "The application "Mattermost" can't be opened" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as `Keka <https://www.keka.io>`_ or `Unarchiver <https://macpaw.com/the-unarchiver>`_ may resolve the problem.
+On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as `Keka <https://www.keka.io>`__ or `Unarchiver <https://macpaw.com/the-unarchiver>`__ may resolve the problem.
 
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,7 +196,7 @@ This issue can occur after a crash or unexpected shutdown of the desktop app tha
 - Linux: Open the file manager, navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 
 "Internal error: BrowserWindow 'unresponsive' event has been emitted"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clicking **Show Details** on the dialog provides logs. Ways to resolve the issue:
 
@@ -208,7 +208,7 @@ Desktop app not responsive within Citrix Virtual Apps or Desktop Environment
 
 Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\Services\CtxUvi\UviProcessExcludes`` and reboot the system.
 
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`__.
 
 Reporting Issues
 ----------------

@@ -106,8 +106,8 @@ Customize your theme colors and share them with others by copying and pasting th
 GitHub Theme
 ^^^^^^^^^^^^
 
-.. image:: ../../images/theme2.png
-  :alt: theme2
+.. image:: ../images/theme2.png
+  :alt: GitHub Theme
 
 .. code-block:: none
 
@@ -116,8 +116,8 @@ GitHub Theme
 Monokai Theme
 ^^^^^^^^^^^^^
 
-.. image:: ../../images/theme3.png
-  :alt: theme3
+.. image:: ../images/theme3.png
+  :alt: Monokai Theme
 
 .. code-block:: none
 
@@ -126,8 +126,8 @@ Monokai Theme
 Solarized Dark Theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeSolarizedDark.png
-  :alt: themeSolarizedDark
+.. image:: ../images/themeSolarizedDark.png
+  :alt: Solarized Dark Theme
 
 .. code-block:: none
 
@@ -136,8 +136,8 @@ Solarized Dark Theme
 Gruvbox Dark Theme
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeGruvboxDark.png
-  :alt: themeGruvboxDark
+.. image:: ../images/themeGruvboxDark.png
+  :alt: Gruvbox Dark Theme
 
 .. code-block:: none
 
@@ -146,8 +146,8 @@ Gruvbox Dark Theme
 One Dark Theme
 ^^^^^^^^^^^^^^
 
-.. image:: ../../images/themeOneDark.png
-  :alt: themeOneDark
+.. image:: ../images/themeOneDark.png
+  :alt: One Dark Theme
 
 `GitHub <https://github.com/georgewitteman/one-dark-mattermost>`_
 
@@ -158,7 +158,7 @@ One Dark Theme
 Discord Dark Theme
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/discordDarkTheme.png
+.. image:: ../images/discordDarkTheme.png
   :alt: Discord Dark Theme
 
 `GitHub <https://github.com/danger89/mattermost-discord-dark>`_
@@ -170,8 +170,8 @@ Discord Dark Theme
 Night Owl Dark Theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../../images/nightOwlDark.png
-  :alt: nightOwlDark
+.. image:: ../images/nightOwlDark.png
+  :alt: Night Owl Dark Theme
 
 .. code-block:: none
 

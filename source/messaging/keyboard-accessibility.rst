@@ -3,7 +3,7 @@ Keyboard Accessibility
 
 Navigational keyboard shortcuts help you use Mattermost without requiring a mouse. Below is a list of supported shortcuts. Elements in focus have a colored outline, as shown here:
 
-.. image:: ../../images/focus.png
+.. image:: ../images/focus.png
   :alt: Navigate Mattermost using a keyboard.
 
 +----------------------------------------+----------------------------------------------------------------------------------+
@@ -36,7 +36,7 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (Des
 7. Channel header region
 8. Search
 
-.. image:: ../../images/navigation.gif
+.. image:: ../images/navigation.gif
   :alt: Navigate through the sections of Mattermost using a keyboard.
 
 Message Navigation
@@ -44,7 +44,7 @@ Message Navigation
 
 When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages. Press **TAB** to navigate through message actions.
 
-.. image:: ../../images/message-navigation.gif
+.. image:: ../images/message-navigation.gif
   :alt: Navigate through Mattermost messages using a keyboard.
 
 Message Composition
@@ -69,5 +69,5 @@ Channel Sidebar Navigation
 
 When the channel sidebar region is focused, use the **UP** or **DOWN** arrow keys to focus individual sidebar sections, such as Favorites, Public Channels, Private Channels and Direct Messages. Press **TAB** to navigate through channels or other buttons within a sidebar section.
 
-.. image:: ../../images/channel-sidebar-navigation.gif
+.. image:: ../images/channel-sidebar-navigation.gif
   :alt: Navigate the Mattermost channel sidebar using a keyboard.

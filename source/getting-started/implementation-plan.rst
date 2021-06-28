@@ -11,18 +11,16 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 
 .. _`editions:`: https://mattermost.com/product/
 
- - Team Edition
+- Team Edition
 
- - Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/deployment/sso-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/deployment/auth.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/administration/branding.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/administration/config-settings.html#policy>`__, and next business day support.
- - Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/administration/compliance.html>`__, `High Availability <https://docs.mattermost.com/deployment/cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/deployment/metrics.html>`__, `Data Retention Policy <https://docs.mattermost.com/administration/data-retention.html>`__, and enterprise class support.
+- Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/deployment/sso-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/deployment/auth.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/administration/branding.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/administration/config-settings.html#policy>`__, and next business day support.
+- Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/administration/compliance.html>`__, `High Availability <https://docs.mattermost.com/deployment/cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/deployment/metrics.html>`__, `Data Retention Policy <https://docs.mattermost.com/administration/data-retention.html>`__, and enterprise class support.
 
 The purpose of this Implementation Plan is to:
 
- - Describe the solution to be deployed;
-
- - Outline the process for implementing the solution (key personnel, tasks, schedule, etc.);
-
- - Identify support required during the implementation process.
+- Describe the solution to be deployed;
+- Outline the process for implementing the solution (key personnel, tasks, schedule, etc.);
+- Identify support required during the implementation process.
 
 2 System Overview
 -----------------
@@ -35,17 +33,13 @@ This section provides a brief overview of the system to be implemented, includin
 Mattermost is a messaging solution designed to remove friction for inter-organizational communications. You are implementing Mattermost in order to:
 
 1. **[STATE REASON]**
-
 2. **[STATE REASON]**
-
 3. **[STATE REASON]**
 
 In this implementation, you are planning to deploy Mattermost to **[NUMBER OF USERS]** users on the following teams:
 
 1. **[TEAM 1]**
-
 2. **[TEAM 2]**
-
 3. **[TEAM 3]**
 
 
@@ -54,22 +48,23 @@ In this implementation, you are planning to deploy Mattermost to **[NUMBER OF US
 
 A Mattermost Enterprise E20 implementation consists of the following system components:
 
- - **Mattermost Server**
-   - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
- - **Mattermost Database**
-   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ is most appropriate for your deployment.
- - **Mattermost Push Notification Service**
-   - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
- - **Mattermost Client Applications**
-   - Client applications are available for Mattermost for the following platforms: Android, iOS, Windows, OSX, and Linux (Beta).
- - **Mattermost Web Client**
-   - Mattermost users can use their favorite Web browser to connect to their Mattermost server in place of the Mattermost mobile and desktop applications.
- - **Proxy Server**
-   - The use of a proxy server (NGINX, Apache, HAProxy, ELB, etc.) is recommended with Mattermost to obtain the benefits of: SSL termination, HTTP to HTTPS redirection, port mapping :80 to :8065, and the creation of standard request logs.
+- **Mattermost Server**
+  - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
+- **Mattermost Database**
+  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ is most appropriate for your deployment.
+- **Mattermost Push Notification Service**
+  - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
+- **Mattermost Client Applications**
+  - Client applications are available for Mattermost for the following platforms: Android, iOS, Windows, OSX, and Linux (Beta).
+- **Mattermost Web Client**
+  - Mattermost users can use their favorite Web browser to connect to their Mattermost server in place of the Mattermost mobile and desktop applications.
+- **Proxy Server**
+  - The use of a proxy server (NGINX, Apache, HAProxy, ELB, etc.) is recommended with Mattermost to obtain the benefits of: SSL termination, HTTP to HTTPS redirection, port mapping :80 to :8065, and the creation of standard request logs.
 
 The following diagram is a high-level illustration of the Mattermost platform and how its various components interact with each other within a network:
 
-.. image:: ../images/network.png
+.. image:: ../images/network_diagram.png
+
 **Reference**: https://docs.mattermost.com/deployment/deployment.html
 
 A recommended installation of Mattermost Enterprise E20 configured with a redundant, highly available, highly scalable mode, with application (Mattermost Server) and database high availability features enabled, will require the following physical, or virtual, servers:
@@ -92,11 +87,11 @@ A recommended installation of Mattermost Enterprise E20 configured with a redund
 
 This section provides a bibliography of key project references and deliverables that have been produced before this point in the project development.
 
- - Mattermost Product Overview: https://docs.mattermost.com/overview/index.html
- - Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/requirements.html 
- - Mattermost Security Features: https://docs.mattermost.com/overview/security.html 
- - Mattermost Administrator Guide: https://docs.mattermost.com/guides/administrator.html
- - Mattermost User Guide: https://docs.mattermost.com/guides/user.html
+- Mattermost Product Overview: https://docs.mattermost.com/overview/index.html
+- Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/requirements.html 
+- Mattermost Security Features: https://docs.mattermost.com/overview/security.html 
+- Mattermost Administrator Guide: https://docs.mattermost.com/guides/administrator.html
+- Mattermost User Guide: https://docs.mattermost.com/guides/user.html
 
 2.4 Glossary
 ~~~~~~~~~~~~
@@ -139,10 +134,10 @@ This section provides a brief description of each major task required for the im
 
 The System Architecture Document is used to document the environments that Mattermost will be deployed to including:
 
- - The environment (development, staging, production, etc.)
- - Server, or virtual machine, specifications
- - IP addresses and DNS
- - Network diagram
+- The environment (development, staging, production, etc.)
+- Server, or virtual machine, specifications
+- IP addresses and DNS
+- Network diagram
 
 **Reference**: https://docs.mattermost.com/deployment/deployment.html
 
@@ -181,15 +176,15 @@ Large quantities of data can be imported from a JSON file into Mattermost at the
 
 You can import the following data types:
 
- - Teams
- - Channels (Public and Private)
- - Users
- - Users’ Team memberships
- - Users’ Channel memberships
- - Users’ notification preferences
- - Posts (regular, non-reply posts)
- - Direct Message and Group Message channels
- - Direct Messages and Group Messages
+- Teams
+- Channels (Public and Private)
+- Users
+- Users’ Team memberships
+- Users’ Channel memberships
+- Users’ notification preferences
+- Posts (regular, non-reply posts)
+- Direct Message and Group Message channels
+- Direct Messages and Group Messages
 
 **Reference**: https://docs.mattermost.com/deployment/bulk-loading.html 
 
@@ -249,8 +244,8 @@ Mattermost has configuration settings for the terms of service, privacy policy, 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.
 
 **References**: 
- - Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
- - User Guides: https://docs.mattermost.com/guides/user.html 
+- Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
+- User Guides: https://docs.mattermost.com/guides/user.html 
 
 3.4 Implementation Schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -291,13 +286,13 @@ If appropriate for the system to be implemented, include an overview of the syst
 
 The Mattermost platform will be secured in the following ways:
 
- - Mattermost will be hosted entirely on-premises behind your company firewall with access restricted to VPN connections;
- - Mobile access to Mattermost will be further restricted by the use of multi-factor authorization;
- - Transmissions to and from Mattermost will be encrypted using TLS;
- - Encryption-at-rest will be applied using your company's standards;
- - Mattermost’s integrity and audit controls store a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for “deleting” messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users’ ability to edit and delete their messages after they are posted.
- - Mattermost will be protected against brute force attacks by its rate limiting API;
- - Authentication to Mattermost will be controlled using your company's Active Directory/LDAP/SAML directory server. 
+- Mattermost will be hosted entirely on-premises behind your company firewall with access restricted to VPN connections;
+- Mobile access to Mattermost will be further restricted by the use of multi-factor authorization;
+- Transmissions to and from Mattermost will be encrypted using TLS;
+- Encryption-at-rest will be applied using your company's standards;
+- Mattermost’s integrity and audit controls store a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for “deleting” messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users’ ability to edit and delete their messages after they are posted.
+- Mattermost will be protected against brute force attacks by its rate limiting API;
+- Authentication to Mattermost will be controlled using your company's Active Directory/LDAP/SAML directory server. 
 
 **Reference**: https://docs.mattermost.com/overview/security.html
 
@@ -351,9 +346,9 @@ In this section, describe the number of personnel, length of time needed, types 
 
 This section addresses the training, if any, necessary to prepare staff for implementing and maintaining the system; it does not address user training, which is the subject of the Training Plan.  Describe the type and amount of training required for each of the following areas, if appropriate, for the system:
  
- - System hardware/software installation
- - System support
- - System maintenance and modification
+- System hardware/software installation
+- System support
+- System maintenance and modification
 
 Present a training curriculum listing the courses that will be provided, a course sequence. and a proposed schedule.  If appropriate, identify which courses particular types of staff should attend by job position description.
  

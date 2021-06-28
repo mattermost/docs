@@ -5,10 +5,11 @@ You can create Custom Emojis which are available to everyone on your Mattermost 
 
 To create and find Custom Emojis, open the **Main Menu** at the top right of the channels sidebar and select **Custom Emoji**.
 
-  .. note::
-    If you cannot see the **Custom Emoji** option in the menu, then your Mattermost System Admin may have restricted access to certain users. Contact your Mattermost System Admin for help.
+.. note::
     
-    For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+  If you cannot see the **Custom Emoji** option in the menu, then your Mattermost System Admin may have restricted access to certain users. Contact your Mattermost System Admin for help.
+    
+  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Creating Custom Emojis
 ----------------------
@@ -22,7 +23,7 @@ Small, square pictures work best when selecting an image. The file can be any JP
 5. Choose **Select**, and choose what image to use for the emoji. 
 6. Choose **Save**.
 
-.. image:: ../../images/add_custom_emoji.png
+.. image:: ../images/add_custom_emoji.png
 
 Once saved, your emoji will be added to the list of Custom Emoji. 
 
@@ -39,4 +40,4 @@ You can delete Custom Emojis that you created.
 4. Under **Actions** select **Delete**. 
 5. Choose **Delete** to confirm. 
 
-.. image:: ../../images/delete_custom_emoji.png
+.. image:: ../images/delete_custom_emoji.png

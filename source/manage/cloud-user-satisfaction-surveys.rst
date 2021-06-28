@@ -14,7 +14,7 @@ Administration
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ disabled, meaning no surveys or data collection occurs.
+The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`__ disabled, meaning no surveys or data collection occurs.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ How will I be notified a survey is scheduled?
 
 System Admins will receive an email notification and in-product Direct Message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
-.. image:: ../../images/nps-admin.png
+.. image:: ../images/nps-admin.png
 
 Survey Data
 -----------
@@ -50,12 +50,12 @@ Once the survey is triggered on the workspace, all users will receive an in-prod
 
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their experience. Selecting a score and providing feedback are optional, and the survey can be ignored without interrupting usage of Mattermost.
 
-.. image:: ../../images/nps-survey.png
+.. image:: ../images/nps-survey.png
 
 What data is collected?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Data is only collected when a user selects a score or provides written feedback in response to survey questions. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for more information on the collection and use of information received through our services. The following **non-personally identifiable information** is collected:
+Data is only collected when a user selects a score or provides written feedback in response to survey questions. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through our services. The following **non-personally identifiable information** is collected:
 
 - Survey information:
    - Score (0-10) submitted by the user

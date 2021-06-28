@@ -40,7 +40,7 @@ Before you proceed, ensure that the authentication method you wish to use is cor
 Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to Direct Message/Group Message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
 
 Inviting Guests to the Mattermost Workspace via Email
----------------------------------------------------
+------------------------------------------------------
 
 Guests can be invited into one or more Mattermost channels within a team by System Admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.
 
@@ -88,12 +88,12 @@ When a guest logs in without having any channels assigned to their account, they
 Guest Permission Settings
 -------------------------
 
-By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_ that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:
+By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`__ that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:
 
- - Edit posts
- - Delete posts
- - Post reactions
- - Create private channels with members they are allowed to collaborate with
+- Edit posts
+- Delete posts
+- Post reactions
+- Create private channels with members they are allowed to collaborate with
 
 Guest Identification
 ---------------------
@@ -168,7 +168,7 @@ Why doesn’t Mattermost have single-channel guests?
 We wanted to support collaboration with external guests for the broadest use cases without limiting guests' access to channels. In the future, we may consider adding single-channel guests.
 
 Can I set an expiration date for guests?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currently, you cannot. This feature may be added at a later stage.
 
@@ -178,21 +178,21 @@ Can MFA be applied selectively?
 If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in **Account Settings > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
 
 Why is the Guest Account feature in Beta?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Guest Account feature is in beta while we address feedback from our customers on the feature.
 
 Has the Guest Accounts feature been reviewed by an external security firm?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Guest Account feature was reviewed by the Mattermost security team. We do not have an external firm review scheduled but will include this feature in future reviews.
 
 How can I validate my guests' identity?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Guest Access > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is not currently possible to selectively disable upload/download functionality as it is a system-wide configuration.

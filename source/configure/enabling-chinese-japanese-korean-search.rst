@@ -1,7 +1,7 @@
 ..  _i18n:
 
 Chinese, Japanese, and Korean Search
-====================================
+======================================
 
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
@@ -13,7 +13,7 @@ Enabling search for Chinese, Japanese and Korean (CJK) requires special configur
 Below is additional information on how to configure the database for different languages.
 
 中文 / Chinese
--------------
+--------------
 
 数据库版本请参考： `配置要求 <https://docs.mattermost.com/install/requirements.html#database-software>`__ 。
 其中MySQL的ngram配置可以参考 `Cannot search CJK contents <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-182336690>`__ 。
@@ -50,7 +50,7 @@ Below is additional information on how to configure the database for different l
     apk add wget tar gcc git postgresql-dev 
 
 创建extension以及增加解析配置
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -60,7 +60,7 @@ Below is additional information on how to configure the database for different l
    psql mattermost -c 'ALTER TEXT SEARCH CONFIGURATION simple_zh_cfg ADD MAPPING FOR n,v,a,i,e,l WITH simple;'
 
 设置postgresql
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config 的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart
 
@@ -76,12 +76,12 @@ Below is additional information on how to configure the database for different l
     SELECT * FROM Posts WHERE Message @@ to_tsquery('simple_zh_cfg', '全面');
 
 日本語 / Japanese
-----------------
+-----------------
 
 日本語翻訳の改善は大歓迎です。自由に変更していただいて結構です。
 
 検索設定
-~~~~~~
+~~~~~~~~~
 
 Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
 
@@ -92,26 +92,26 @@ Mattermost で日本語検索をするためにはデータベースの設定変
 日本語(CJK)検索設定のドキュメントの改善にご協力ください
 
 ガイド
-~~~~~
+~~~~~~
 
 Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <http://qiita.com/tags/Mattermost>`_ をご覧ください。
 
 한국어 / Korean
---------------
+---------------
 
 이 문제에 대한 논의는 이 `이슈 <https://github.com/mattermost/mattermost-server/issues/2033>`_ 에서 시작되었습니다.
 
 한국어 버전 이용 시 문제점을 발견하면 `Localization 채널 <https://community.mattermost.com/core/channels/localization>`__ 또는 `한국어 채널 <https://community.mattermost.com/core/channels/i18n-korean>`__ 에서 의견을 제시할 수 있습니다.
 
 검색을 위한 데이터베이스 설정
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PostgreSQL: PostgreSQL 데이터베이스에서는 따로 설정이 필요하지 않습니다.
 
 MySQL: MySQL에서는 전문 검색(Full-text search) 기능에 제한이 있기 때문에 추가적인 작업이 필요합니다.
 
 MySQL 해결 방법
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 1. `n-gram parser <https://mysqlserverteam.com/innodb-%EC%A0%84%EB%AC%B8-%EA%B2%80%EC%83%89-n-gram-parser/>`__ 를 이용하기 위해서는 MySQL의 버전이 5.7.6 이상이어야 합니다.
 

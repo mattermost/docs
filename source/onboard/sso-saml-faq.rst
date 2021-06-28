@@ -10,14 +10,16 @@ Configuring with an Id Attribute allows you to reuse an email address for a new 
 
 This process was designed with backwards compatibility to email binding. Here is the process applied to new account creations and to accounts logging in after the configuration:
 
- - A user authenticated with SAML is bound to the SAML service user using the Id Attribute (as long as it has been configured) or bound by email using the email received from SAML. 
- - When the user tries to login and the SAML server responds with a valid authentication, then the server uses the "Id" field of the SAML authentication to search the user. 
- - If a user bound to that ID already exists, it logs in as that user. 
- - If a user bound to that ID does not exist, it will search base on the email. 
- - If a user bound to the email exists, it logs in with email and updates the autentication data to the ID, instead of the email. 
- - If a user bound to the ID or email does not exist, it will create a new Mattermost account bound to the SAML account by ID and will allow the user to log in. 
+- A user authenticated with SAML is bound to the SAML service user using the Id Attribute (as long as it has been configured) or bound by email using the email received from SAML. 
+- When the user tries to login and the SAML server responds with a valid authentication, then the server uses the "Id" field of the SAML authentication to search the user. 
+- If a user bound to that ID already exists, it logs in as that user. 
+- If a user bound to that ID does not exist, it will search base on the email. 
+- If a user bound to the email exists, it logs in with email and updates the autentication data to the ID, instead of the email. 
+- If a user bound to the ID or email does not exist, it will create a new Mattermost account bound to the SAML account by ID and will allow the user to log in. 
 
- Note:  Existing accounts will not update until they log in to the server. 
+
+.. note::
+    Existing accounts won't update until they log in to the server. 
  
 Can SAML via Microsoft ADFS be configured with Integrated Windows Authentication (IWA)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +31,7 @@ However, IWA is not supported on the Mattermost Desktop Apps due to a limitation
 How do I migrate users from one authentication method (e.g. email) to SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the :doc:`mattermost user migrate_auth CLI command <cli-user-migrate-auth>`.
+See the `Mattermost user migrate_auth CLI command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ documentation for details.
 
 How is SAML different from OAuth 2.0 and OpenId Connect?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

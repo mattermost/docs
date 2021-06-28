@@ -23,19 +23,19 @@ Reply to Messages
 
 When replying to a message, hover over message and select the **Reply** link to organize the conversation into a thread.
 
-.. image:: ../../images/reply-to-message.png
+.. image:: ../images/reply-to-message.png
    :alt: Reply to Mattermost messages
 
 Threaded conversations are easy to follow and allow multiple parallel conversations to occur at the same time without confusion. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
 Selecting the reply link opens a sidebar in the right-hand sidebar. To expand the right-hand sidebar to its full width, select the **Expand** icon with two arrows at the top of the sidebar.
 
-.. image:: ../../images/expand-sidebar.png
+.. image:: ../images/expand-sidebar.png
    :alt: Expand right-hand sidebar to its full width
 
 To shrink the right-hand sidebar to its original width, select the same **Collapse** icon.
 
-.. image:: ../../images/collapse-sidebar.png
+.. image:: ../images/collapse-sidebar.png
    :alt: Collapse the right-hand sidebar to its original width
 
 Edit or Delete Messages
@@ -43,7 +43,7 @@ Edit or Delete Messages
 
 Select the **More Actions** link next to a message that you've sent.
 
-.. image:: ../../images/more-actions.png
+.. image:: ../images/more-actions.png
    :alt: More actions you can take on Mattermost messages
 
 Select **Edit** to edit your own messages. Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
@@ -58,7 +58,6 @@ Select the **More Actions** link next to a message, then select **Copy Link**. P
 If the link is to a message in a Public Channel, any member of the team can see the message. If the link is to a message in a Private Channel, only members in that channel can see the message.
 
 .. tip::
-   
    The timestamp next to the username of any message also functionas as a permanent link to that conversation.
 
 Mark Messages as Unread

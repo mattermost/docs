@@ -5,7 +5,9 @@ Production Install on Windows Server (Unofficial)
 
 Install Mattermost in production mode on one, two or three machines.
 
-.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`__
+.. important:: 
+
+   This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`__
  
 .. contents::
   :backlinks: top
@@ -348,9 +350,8 @@ Finish Mattermost Server Setup
    
 4. Update **Environment > Web Server** to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**.
 
- .. attention:: 
-    
-    Failure to properly set the Site URL properly will result in unexpected behavior.
+.. important::
+   Failure to properly set the Site URL properly will result in unexpected behavior.
 
 5. Update **Authentication > SMTP** to set up an SMTP email service. The example below assumes AmazonSES.
 

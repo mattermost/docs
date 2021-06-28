@@ -46,7 +46,7 @@ You can customize your sidebar in the following ways:
 - `Filter your sidebar to view unread channels only <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#group-unread-channels-separately>`_, or choose to group unread messages into an **Unreads** category.
 - `Manage your Direct Messages <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#managing-direct-messages>`_ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
 
-  .. image:: ../../images/channel_sidebar_updates.gif
+  .. image:: ../images/channel_sidebar_updates.gif
 
 Creating custom categories
 --------------------------
@@ -107,14 +107,14 @@ Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Me
 
   Multi-selected channels and Direct Messages move together as a group in the order they originally appeared. 
 
-.. image:: ../../images/multi-select-drag.gif
+.. image:: ../images/multi-select-drag.gif
 
 Moving selections
 ~~~~~~~~~~~~~~~~~
 
 In addition to selecting and dragging, you can also specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
 
-    .. image:: ../../images/multi-select-move.gif
+    .. image:: ../images/multi-select-move.gif
 
 Muting and unmuting categories
 ------------------------------
@@ -131,14 +131,14 @@ Once a category is muted:
 
 To unmute the category, select the **Category options** icon in the sidebar, then select **Unmute Category**.
 
-    .. image:: ../../images/mute-categories.gif
+    .. image:: ../images/mute-categories.gif
 
 Sorting channels in categories
 ------------------------------
 
 Select the **Category options** icon in the sidebar, then select **Sort** and choose from **Alphabetically**, **Recent Activity**, or **Manually**.
 
-    .. image:: ../../images/sort-categories.gif
+    .. image:: ../images/sort-categories.gif
 
 Group unread channels separately
 --------------------------------
@@ -152,7 +152,7 @@ Go to **Main Menu > Account Settings > Sidebar**, set **Group unread channels se
 
 When enabled, unread channels with mentions will sort to the top of the category.
 
-    .. image:: ../../images/unreads.gif
+    .. image:: ../images/unreads.gif
 
 .. tip::
   
@@ -172,7 +172,7 @@ To configure the number of Direct Messages to display, go to **Main Menu > Accou
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
 
-  .. image:: ../../images/dm-display.gif
+  .. image:: ../images/dm-display.gif
 
 .. note::
   Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
