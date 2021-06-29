@@ -98,7 +98,7 @@ Within a specific Public or Private channel, use the following slash command to 
 
 You can extend an invitation that permits remote members to participate in the channel based on their channel and member permissions. 
 
-Alternatively, you can extend a read-only invitation to a secure connection by appending the optional --readonly parameter to this command. Remote members can’t post or reply to messages within shared read-only channels.
+Alternatively, you can extend a read-only invitation to a secure connection by appending the optional ``--readonly`` parameter to this command. Remote members can’t post or reply to messages within shared read-only channels.
 
 .. tip:: 
 
@@ -106,9 +106,9 @@ Alternatively, you can extend a read-only invitation to a secure connection by a
 
 For example:
 
-``/share-channel invite --connectionID "AcmeUS"``
+``/share-channel invite --connectionID``
  
-This slash command invites AcmeUS to the current channel.
+This slash command invites the shared connection to the current channel based on its Connection ID.
 
 .. tip:: 
     See `Reviewing Secure Connection Status <#reviewing-secure-connection-status>`_ to find the connectionID for a shared connection.
