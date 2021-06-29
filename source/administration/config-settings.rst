@@ -4638,7 +4638,7 @@ Enable Shared Channels (Experimental)
 Enable Shared Channels to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` settings are ``"ExperimentalSettings:EnableSharedChannels": false ""`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false ""`` with options ``true`` or ``false``. Both configuration settings must be enable in order to share channels with secure connections.       |
+| This feature's ``config.json`` settings are ``"ExperimentalSettings:EnableSharedChannels": false ""`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false ""`` with options ``true`` or ``false``. Both configuration settings must be enabled in order to share channels with secure connections.       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
