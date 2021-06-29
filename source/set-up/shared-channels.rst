@@ -16,7 +16,7 @@ The process of sharing channels involves the following three steps:
 
 1. System Admins must enable Shared Channel functionality for their Mattermost instance. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#enable-shared-channels-experimental>`__ documentation for details.
 
-2. System Admins `use a slash command <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ to establish a secure and trusted relationship between other Mattermost E20 instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. 
+2. System Admins `use a slash command <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ to establish a secure and trusted relationship between other Mattermost E20 instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share the details of the secure connection invitation using a communication channel other than Mattermost, such as by email.
 
 3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accepting-a-secure-connection-invitation>`_. 
 
@@ -39,7 +39,7 @@ For example:
 
 ``/secure-connection create --name “AcmeUS” --displayname “AcmeUSA” --password examplepassword``
 
-This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity called ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays as **AcmeUSA**.
+This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity called ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local System Admin based on the ``name`` and ``displayname`` provided, displays as the cluster name to the remote System Admin. 
 
 Extending the Invitation
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,14 +57,9 @@ Use the following slash command to remove a secure connection from your Mattermo
 
 For example:
 
-``/secure-connection remove --connectionID AcmeUS``
+``/secure-connection remove --connectionID``
 
-This slash command severs the trust relationship between the local Mattermost server and a remote Mattermost server, and removes the secure connection, AcmeUS, from all shared Mattermost channels.
-
-.. tip:: 
-
-    If AcmeUS was the only secure connection established, a System message would notify System Admins that the last secure connection has been removed, and the current channel is no longer shared.
-
+This slash command severs the trust relationship between the local Mattermost server and a remote Mattermost server based on its ``connectionID``, and removes the secure connection from all shared Mattermost channels.
 
 Reviewing Secure Connection Status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,7 +102,7 @@ Alternatively, you can extend a read-only invitation to a secure connection by a
 
 .. tip:: 
 
-    You can re-extend an invitation to a secure connection by omitting the optional ``--readonly`` parameter that also enables remote member participation in that channel.
+    To convert a read-only shared channel to an participation channel, remove the original secured connection from the channel, then re-extend an invitation to that secure connection while omitting the optional ``--readonly`` parameter.
 
 For example:
 
@@ -168,7 +163,7 @@ This feature is in beta while we recruit customer testing partners. This feature
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. ``--name`` can include periods, hyphens, and/or underscores. You must surround ``--name`` and ``--displayname`` values using quotation marks (“ “) when the values contain spaces.
+No. ``--name`` can include periods, hyphens, and/or underscores. You must surround ``--name`` using quotation marks (“ “) when the value contains spaces.
 
 What happens if two Mattermost instances contain different emojis?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,11 +178,11 @@ No. ``--displayname`` is optional. When omitted, ``--name`` is displayed and use
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. Both System Admins and users are notified when a connection interruption is preventing message synchronization. System Admins and users are also notified connections are restored between shared Mattermost instances.
+Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than five minutes. 
 
 What happens if two secure connections share the same usernames?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In cases where members share the same usernames across Mattermost secure connections, usernames on the local server instance are appended with the secure connection ID of the remote server.
+In cases where members share the same usernames across Mattermost secure connections, usernames on the local server instance are appended with the secure connection name of the remote server.
 
 For example, if multiple members named John Smith exist after two Mattermost instances establish a secure connection with one another, all remote John Smith members include their Secure Connection ID following their username to help differentiate members across multiple Mattermost instances.
