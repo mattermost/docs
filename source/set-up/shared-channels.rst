@@ -125,7 +125,7 @@ Within a specific channel, use the following slash command to uninvite a secure 
 
 ``/share-channel uninvite --connectionID``
 
-This slash command removes a secure connection from the current channel based on its Connection ID. The channel continues to function for local users as expected., and the secure connection may continue to be invited to other shared channels.  
+This slash command removes a secure connection from the current channel based on its Connection ID. The channel continues to function for local users as expected, and the secure connection may continue to be invited to other shared channels.  
 
 Removing All Secure Connections from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
