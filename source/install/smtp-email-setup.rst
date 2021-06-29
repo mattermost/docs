@@ -38,6 +38,9 @@ To enable email, configure an SMTP email service as follows:
          4. Choose a sender address like ``mattermost@example.com`` and
             click ``Send a Test Email`` to verify setup is working
             correctly.
+	    
+   * Local ``sendmail`` can be used by using **Server Name** ``127.0.0.1``
+     with **Port** ``25``
 
 2. **Configure SMTP settings**
 
