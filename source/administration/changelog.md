@@ -145,11 +145,13 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
 
-6. [DisablePostMetaData](https://docs.mattermost.com/administration/config-settings.html#disable-post-metadata) configuration setting.
+6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/administration/config-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+7. [DisablePostMetaData](https://docs.mattermost.com/administration/config-settings.html#disable-post-metadata) configuration setting.
 
-8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+8. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+
+9. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
 
    - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
    - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
@@ -159,9 +161,9 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
    - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
    - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
 
-9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+10. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
 
-10. Plugin API changes:
+11. Plugin API changes:
 
     - Remove deprecated ``model.CommandArgs.Session``.
     - Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to enterprise licenced instances only.
