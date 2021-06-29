@@ -189,13 +189,13 @@ Once you've uploaded your license key to your Mattermost server it's stored in y
 
 **Using the System Console**
 
-1. Open **System Console > About > Edition and License** (or **System Console > OTHER > Edition and License** in versions prior to 5.12).
-2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
+1. Go go **System Console > About > Edition and License**.
+2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 
-Removing an E20 or E10 license key will not remove the configuration for Enterprise settings, however these features will not function until an E10 or E20 license key is applied. 
+Removing an E20 or E10 license key will not remove the configuration for Enterprise settings; however, these features will not function until an E10 or E20 license key is applied. 
 
-When you're using High Availability it's critical to ensure that all servers in the cluster have the E20 license properly installed to prevent multi-node clusters from failing. An E20 license is required for High Availability to work.
+When you're using High Availability, it's critical to ensure that all servers in the cluster have the E20 license properly installed to prevent multi-node clusters from failing. An E20 license is required for High Availability to work.
 
 .. note::
 
