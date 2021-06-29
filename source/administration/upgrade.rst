@@ -1,7 +1,7 @@
 Upgrading Mattermost Server
 ===========================
 
-In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
+In most cases, you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 .. important::
 
@@ -88,35 +88,41 @@ Location of your local storage directory
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
 #. Remove all files *except data and custom directories* from within the current mattermost directory.
+   
+    a. Run ``ls`` on your Mattermost install directory to identify what folders exist. If your folders match the structure below you can jump to step c.
 
-  .. important::
+        - By default, your data directories will be preserved with the below commands. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*).
+        - Custom directories are directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+        
+        |
+        .. note::
+         **A default Mattermost install has the below files/directories**:
 
-    - Data directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). 
-    - Custom directories are directories that you have added to Mattermost. Generally these are TLS keys or other custom information. If you're running a stock Mattermost install you may not have these and can skip to step #12 below.
-   
-9. Run ``ls`` on your Mattermost install directory to identify what folders exist. 
-   
-10. Identify if any custom directories need to be preserved. With the default command data directories will be preserved within mattermost (see above for these directories). 
-   
-11. For each custom directory within the mattermost folder add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved. For example:
-   
-  .. code-block:: sh
+          .. code-block:: sh
 
-    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
-   
-12. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command be sure to add those to this below command. For example:
-   
-   .. code-block:: sh
-
-     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
-   
-13. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command. For example:
-
-   .. code-block:: sh
-
-     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
+            $ ls /opt/mattermost
+            ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
+            NOTICE.txt                      bin        config  fonts  logs  plugins       templates
+          
+    b. Identify if any custom directories from the above step need to be preserved. For each custom directory within the Mattermost folder that you wish to preserve add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved by adding ``-o -path  mattermost/yourFolderHere``.
     
-14. Change ownership of the new files before copying them. For example:
+      .. code-block:: sh
+
+        sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
+    
+    c. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command in step b then add those to the below command. For example:
+    
+      .. code-block:: sh
+
+        sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
+    
+    d. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command. For example:
+
+      .. code-block:: sh
+
+        sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
+      
+#. Change ownership of the new files before copying them. For example:
 
    .. code-block:: sh
 
@@ -127,7 +133,7 @@ Location of your local storage directory
 
      If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
 
-15. Copy the new files to your install directory and remove the temporary files. Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important. For example:
+#. Copy the new files to your install directory and remove the temporary files. Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important. For example:
 
    .. code-block:: sh
 
@@ -135,33 +141,33 @@ Location of your local storage directory
      sudo rm -r /tmp/mattermost-upgrade/
      sudo rm -i /tmp/mattermost*.gz
 
-16. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports. For example:
+#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports. For example:
 
    .. code-block:: sh
 
      cd {install-path}/mattermost
      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
-17. Start your Mattermost server.
+#. Start your Mattermost server.
 
    .. code-block:: sh
 
      sudo systemctl start mattermost
 
-18. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+#. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
 If they still show yellow, then you need to trigger a config propagation across the cluster:
 
    a. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
    b. Click **Save**.
 
-   This will not change any config, but sends the existing config to all nodes in the cluster.
+   This will not change any config but sends the existing config to all nodes in the cluster.
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
 .. note::
 
-  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
+  We only support one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
