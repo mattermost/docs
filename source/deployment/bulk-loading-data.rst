@@ -27,7 +27,8 @@ Before running the bulk loading command, you must first create a `JSONL
 
   ``sudo -u mattermost bin/mattermost import bulk data.jsonl --apply``
 
-5. When the bulk load command completes, clear all caches. Open the System Console, and click **General > Configuration > Purge All Caches** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12.
+5. When the bulk load command completes, clear all caches by going to **System Console > Environment > Web Server**.
 
 .. important::
+
   Owner for ``data`` directory and all its content has to change to Mattermost user for it to work correctly. Otherwise, Mattermost cannot fetch the files created in ``data`` dir after the import tool has run, since all files created in ``data`` dir are owned by ``root`` as the tool was run as ``sudo``.
