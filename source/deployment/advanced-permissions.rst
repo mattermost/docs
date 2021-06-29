@@ -12,8 +12,7 @@ This document describes the types of permissions that can be given to users of M
 
 .. note::
 
-  This document applies to Mattermost Server version 5.0 and later. For previous versions, see `permission settings available in the System Console > Policy page <https://docs.mattermost.com/administration/config-settings.html#policy>`__.
-
+  This document applies to Mattermost Server v5.0 and later. For previous versions, see `permission settings available in the System Console > Policy page <https://docs.mattermost.com/administration/config-settings.html#policy>`__.
 
 .. contents::
   :backlinks: top
@@ -38,7 +37,7 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 
-You can access the System Scheme interface in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
+You can access the System Scheme interface by going to **System Console > User Management > Permissions > System Scheme**.
 
 .. image:: ../images/system-scheme.png
 
@@ -55,7 +54,7 @@ When you use this permission scheme:
 - The System Scheme does not apply to teams that are added to a Team Override Scheme.
 - Teams can only belong to one Team Override Scheme.
 
-You can access the Team Override Scheme interface in **System Console > User Management > Permissions > Team Override Schemes** (or **System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme** in versions prior to 5.12).
+You can access the Team Override Scheme interface by going to **System Console > User Management > Permissions > Team Override Schemes**.
 
 .. image:: ../images/team-scheme.png
 
@@ -88,17 +87,17 @@ Team Management
 
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members > Teams** panel, check the box for **Add Team Members**. This sets the system default for all teams.
-4. Choose **Save**.
+4. Select **Save**.
 5. Select the back arrow to return to the **Permission Schemes** menu.
 6. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
+  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
   iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
-7. Choose **Save**. 
+7. Select **Save**. 
 8. Select the back arrow to return to the **Permission Schemes** menu. 
 
 Public and Private Channel Management
@@ -108,7 +107,7 @@ Public and Private Channel Management
 
 Example: As the default for the entire system, restrict renaming channels and editing headers and purposes to Admins only.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, uncheck the box for **Manage Public Channels > Manage Channel Settings**.
 
@@ -122,14 +121,14 @@ The **Manage Channel Settings** option is now only available to **Channel Admini
 
 Example: In Team C, restrict public channel creation to Admins. As the default for all other teams, allow everyone to create public channels.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, in the **Manage Public Channels** menu, check the box for **Create Channels**. This sets the system default to allow creation of public channels on all teams.
-4. Choose **Save**.
+4. Select **Save**.
 5. Select the arrow to return to the **Permission Schemes** interface.
 6. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
+  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
   
@@ -140,7 +139,7 @@ Convert Public channels to Private channels
 
 Example: Set the default setting to allow all members, Team Admins, and Channel Admins to convert Public channels to Private.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, uncheck the box for **Manage Public Channels > Convert Channels**.
 
@@ -151,11 +150,11 @@ Read only channels
 
 **Configure a channel so that members can post/reply/react but guests can only read and react.**
 
-1. Navigate to **System Console > User Management > Channels**.
+1. Go to **System Console > User Management > Channels**.
 2. Select **Edit** next to the name of the channel you want to configure.
 3. In the **Create Posts** panel, uncheck **Guests**.
 4. In the **Post Reactions** panel, uncheck **Guests** if required.
-5. Choose **Save**.
+5. Select **Save**.
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
@@ -166,7 +165,7 @@ The channel is available for all members and guests to access, but guests can on
 3. Select **Edit** next to the name of the channel you just created (you may need to search for it).
 4. In the **Create Posts** panel, uncheck **Guests** and **Members**.
 5. In the **Post Reactions** panel, uncheck **Guests** and **Members**.
-6. Choose **Save**.
+6. Select **Save**.
 
 The channel is available for all members and guests to access but only admins can post.
 
@@ -177,7 +176,7 @@ Post Management
 
 Example: As the default for the entire system, restrict deleting posts to only Team and System Admins.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** and **Channel Admininistrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 4. In the **Channel Administrators** and **Team Administrators** panels, in the **Delete Posts** section, check the boxes for **Delete Own Posts** and **Delete Others' Posts**.
@@ -186,7 +185,7 @@ Example: As the default for the entire system, restrict deleting posts to only T
 
 Example: As the default for the entire system, only allow users to edit their own posts for five minutes after posting.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members**, **Channel Administrators**, and **Team Administrators** panels, in the **Manage Posts** section, check the box for **Edit Posts**.
 4. From any panel, select the gear button to set the global time limit to ``300`` seconds.
@@ -202,7 +201,7 @@ Integration Management
 
 Example: As the default for the entire system, only allow System Admins to create, edit and delete integrations.
 
-1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
+1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** and **Team Administrators** panels, in the **Integrations & Customizations** section, uncheck the boxes for **Manage Incoming Webhooks**, **Manage Outgoing Webhooks**, and **Manage Slash Commands**.
 
