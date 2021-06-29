@@ -1,7 +1,7 @@
 Shared Channels (Experimental) (E20)
 ====================================
 
-Shared Channels bring people together from multiple Mattermost, such as teams collaborating with external partners, and customers using multiple Mattermost instances in a federated architecture. 
+Shared Channels bring people together from multiple Mattermost installations, such as teams collaborating with external partners, and customers using multiple Mattermost instances in a federated architecture. 
 
 Mattermost System Admins use slash commands to establish secure connections between Mattermost instances, then invite secured connections to shared channels.
 
