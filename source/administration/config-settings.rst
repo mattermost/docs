@@ -4643,7 +4643,7 @@ Enable Shared Channels to establish secure connections between Mattermost instan
 
 .. note::
 
-   - Enabling Shared Channels functionality doesn’t require a server restart.
+   - Enabling Shared Channels functionality requires a server restart.
    - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
 
 SAML Settings
