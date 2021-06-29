@@ -63,3 +63,8 @@ Select **Unreads** to filter your followed threads by only those with unread rep
 
 .. image:: ../../images/crt-thread-view.png
   :alt: Select Threads in the channel sidebar to see all thread updates in your Threads View.
+
+Tutorial Video
+---------------
+
+For additional details about working with the Beta release of Collapsed Reply Threads, see our `tutorial video <https://youtu.be/hnD0Zj-mIbs>`__. 
