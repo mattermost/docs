@@ -1,8 +1,12 @@
 Desktop Application Changelog
 ========================================
 
+.. contents::
+   :depth: 1
+   :local:
+
 Release v4.7
-----------------------------
+--------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 

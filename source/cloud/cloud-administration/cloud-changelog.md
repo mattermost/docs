@@ -2,6 +2,24 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+- [Mattermost Cloud Changelog](#mattermost-cloud-changelog)
+  - [Release 2021-06-16](#release-2021-06-16)
+  - [Release 2021-06-02](#release-2021-06-02)
+  - [Release 2021-05-21](#release-2021-05-21)
+  - [Release 2021-05-05](#release-2021-05-05)
+  - [Release 2021-04-22](#release-2021-04-22)
+  - [Release 2021-04-07](#release-2021-04-07)
+  - [Release 2021-03-24](#release-2021-03-24)
+  - [Release 2021-03-12](#release-2021-03-12)
+  - [Release 2021-02-25](#release-2021-02-25)
+  - [Release 2021-02-10](#release-2021-02-10)
+  - [Release 2021-01-26](#release-2021-01-26)
+  - [Release 2021-01-12](#release-2021-01-12)
+  - [Release 2020-12-18](#release-2020-12-18)
+  - [Release 2020-12-09](#release-2020-12-09)
+  - [Release 2020-12-03](#release-2020-12-03)
+  - [Release 2020-11-24](#release-2020-11-24)
+
 ## Release 2021-06-16
 
 ### Improvements
