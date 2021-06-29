@@ -1,4 +1,4 @@
-==================
+
 Security Overview
 ==================
 
@@ -112,7 +112,7 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
-     - `Integrity Controls <https://docs.mattermost.com/overview/security.html#integrity-audit-controls>`__
+     - `Integrity Controls <https://docs.mattermost.com/overview/security.html#integrity-and-audit-controls>`__
      - `Access Control <https://docs.mattermost.com/overview/security.html#access-control-policy>`__
      - `Transmission Security <https://docs.mattermost.com/overview/security.html#transmission-security>`__
      - `Audit Controls <https://docs.mattermost.com/overview/security.html#integrity-audit-controls>`__

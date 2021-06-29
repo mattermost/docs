@@ -1,12 +1,12 @@
 Incident Response and Monitoring Tools
-============================================
+======================================
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect incident response and monitoring tools in Mattermost.
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
 AWS CloudWatch SNS
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
  - Two-way integration between Mattermost and Amazon AWS SNS, developed by Carlos Tadeu Panato Junior, supported by Mattermost.
  - Receive SNS notifications from Alerts created by Amazon AWS CloudWatch and sent via AWS SNS.
@@ -14,28 +14,28 @@ AWS CloudWatch SNS
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-aws-SNS
 
 Nagios
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
 
  - Send notifications from a Nagios monitoring instance to any Mattermost channel for troubleshooting, developed by NDrive.
  - Can be used for other compatible software such as Icinga.
  - Source code + docs: https://github.com/NDrive/nagios-mattermost
 
 Splunk
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
 
  - Monitor a Mattermost environment.
  - Send application performance insights to any Mattermost channel for better troubleshooting and monitoring, and to increase system uptime.
  - Docs: http://datatomix.com/?p=433, written by Christian Johannsen.
 
 PagerDuty
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
  - Get automatic information regarding the state of an incident to Mattermost, developed by PagerDuty.
  - Send incident updates for any PagerDuty Service to any Mattermost channel to optimize incident resolution time and process.
  - Docs: https://www.pagerduty.com/docs/guides/mattermost-integration-guide/
 
 Opsgenie
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
  - Two-way integration between Opsgenie and Mattermost, developed by Opsgenie.
  - Send alert notifications from your Opsgenie incident boards to Mattermost channels.

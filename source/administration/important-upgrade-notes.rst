@@ -2,6 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
+   - The deprecations `listed here <https://docs.mattermost.com/administration/changelog.html#upcoming-deprecations-in-mattermost-v6-0>`_ are planned for the Mattermost v6.0 release, which is scheduled for September 15, 2021. This list is subject to change prior to the release.
    - Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
    - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
    - The ``platform`` binary and “--platform” flag will be deprecated in a future release. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the ``mattermost`` binary.
@@ -9,6 +10,15 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.36.0                                            | Gossip clustering mode is now in General Availability and is no longer available as an option. All cluster traffic will always use the gossip protocol. The      |
+|                                                    | config setting ``UseExperimentalGossip`` has no effect and has only been kept for compatibility purposes. The setting to use gossip has been removed from the    |
+|                                                    | System Console. **Note:** For High Availability upgrades, all nodes in the cluster must use a single protocol. If an existing system is not currently using      |
+|                                                    | gossip, one node in a cluster can't be upgraded while other nodes in the cluster use an older version. Customers must either use gossip for their High           |
+|                                                    | Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.                                              |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | To enable Focalboard, open the Marketplace from the sidebar menu, install the Focalboard plugin, then click on **Configure**, enable it, and save. Update your   |
+|                                                    | NGINX or Apache web proxy config following `these steps <https://github.com/mattermost/focalboard/discussions/566>`_.                                            |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.35.0                                            | Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the |
 |                                                    | migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual |
 |                                                    | upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike   |

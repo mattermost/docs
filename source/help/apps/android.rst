@@ -1,10 +1,10 @@
 Android
--------
+=======
 
 The Mattermost Android app lets you connect to your Mattermost server and switch among teams. You can also receive push notifications on mentions in Mattermost when your mobile app is closed or running in the background. 
 
 Getting Started 
-===============
+---------------
 
 1. Download the `Mattermost Android app from Google Play. <https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en>`__
 2. Open the app and enter the web address of your server (for example: https://mattermost.company.com).

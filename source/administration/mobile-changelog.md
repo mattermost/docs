@@ -1,5 +1,63 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.44.1 Release
+- Release Date: June 28, 2021
+- Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Added a fix to prevent a crash when message attachments or app bindings were ``null``.
+ - Fixed an issue where the app crashed when bringing the app from the background after tapping on a deep link.
+ - Added back the permalink view from search, recent mentions, pinned and saved posts.
+ - Fixed an issue where the custom status did not get reflected on the Mobile App until closing and reopening the app when changing the custom status from the webapp while the Mobile App was in the background.
+
+#### iOS specific
+ - Fixed an issue where the keyboard covered the messages on the channel screen.
+ - Fixed an issue where a YouTube playback error could appear when clicking the thumbnail of a linked YouTube video.
+ - Fixed an issue where the badge count on the app icon for iOS was incorrect.
+
+## 1.44.0 Release
+- Release Date: June 16, 2021
+- Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+**Note:** Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Custom Statuses
+ - Added the custom status feature support for mobile apps. Mattermost server v5.36+ is required to access custom statuses on mobile.
+ 
+#### Shared Channels
+ - Added support for Shared Channels feature (Experimental, Enterprise Edition E20) by displaying information and icons for the shared channels and remote users. Also added shared channel filter for browser channels. This feature is available in Mattermost server versions v5.35.0+.
+
+#### Hungarian Language (Beta)
+ - Added a new language, Hungarian (beta).
+
+### Improvements
+ - Added support for localization with country variants.
+ - The "swipe up to refresh" functionality was removed to fix an issue where the app performed slowly on Android devices.
+
+### Bug Fixes
+
+#### Android specific
+ - Fixed an issue where the app performed slowly on Android devices that ran at 120fps instead of the normal 60fps.
+
+### Known Issues
+ - When changing the custom status from the webapp while the Mobile App is in the background, the custom status does not get reflected on the Mobile App until you close and re-open the Mobile App.
+ - Users will need to be on v5.31.3 for the "Unsupported server version" in-app notice to go away as [5.31.3 fixes an issue](https://docs.mattermost.com/administration/changelog.html#release-v5-31-esr) where the server version was reported as v5.30.0.
+ - On iOS, a YouTube playback error may appear when clicking the thumbnail of a linked YouTube video. A workaround is to tap on the link to open the video in YouTube.
+
 ## 1.43.0 Release
 - Release Date: May 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device

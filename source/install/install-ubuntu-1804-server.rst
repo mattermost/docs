@@ -1,7 +1,7 @@
 .. _install-ubuntu-1804-server:
 
 Installing Ubuntu Server 18.04 LTS
-==================================
+----------------------------------
 
 Install the 64-bit version of Ubuntu Server on each machine that hosts one or more of the components.
 

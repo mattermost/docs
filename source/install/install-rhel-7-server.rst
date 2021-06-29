@@ -1,7 +1,7 @@
 ..  _install-rhel-7-server:
 
 Installing Red Hat Enterprise Linux 7
-=======================================
+-------------------------------------
 
 Install the 64-bit version of RHEL 7 on each machine that hosts one or more of the components.
 

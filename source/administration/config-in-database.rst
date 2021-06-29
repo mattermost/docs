@@ -20,7 +20,7 @@ These instructions cover migrating the Mattermost configuration to the database 
   These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory you'll have to modify the paths to match your environment.
 
 Get your database connection string
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first step is to get your master database connection string. There are several ways to do this, but the easiest is to use the ``mattermost config get`` command:
 
@@ -34,7 +34,7 @@ Example output:
 
 .. code-block:: text
 
-   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"
+   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
 
 .. note::
    Be sure to run this command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
@@ -49,7 +49,7 @@ Here are two example connection strings:
 
 .. code-block:: text
 
-   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s
+   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s
 
 **PostgreSQL**
 
@@ -58,10 +58,11 @@ Here are two example connection strings:
    postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
 
 Create an environment file
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-  If you're running Mattermost in a High Availability cluster this step must be done on all servers in the cluster.
+   
+   If you're running Mattermost in a High Availability cluster this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
@@ -69,7 +70,7 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
 
 .. code-block:: text
 
-   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'
+   MM_CONFIG='mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 **PostgreSQL**
 
@@ -78,11 +79,11 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
    MM_CONFIG='postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10'
 
 .. note::
-  Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'``
+  Be sure to escape any single quotes in the database connection string by placing a ``\`` in front of them like this ``\'``. For example: ``MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'``
 
 .. code-block:: text
 
-   MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'
+   MM_CONFIG='mysql://mmuser:it\'s-a-password!@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 Finally, run this command to verify the permissions on your Mattermost directory:
 
@@ -91,7 +92,7 @@ Finally, run this command to verify the permissions on your Mattermost directory
    sudo chown -R mattermost:mattermost /opt/mattermost
 
 Modify the Mattermost ``systemd`` file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, find the ``mattermost.service`` file using:
 
@@ -140,10 +141,11 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
   If you're using PostgreSQL as your database, the ``mysql.service`` must be replaced with ``postgresql.service``. The easiest way to avoid making a mistake is to add only the ``EnvironmentFile`` line and not copy the entire example.
 
 Migrate configuration from ``config.json``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-  If you're using a High Availability cluster you only need to run this on a single server in the cluster.
+ 
+   If you're using a High Availability cluster you only need to run this on a single server in the cluster.
 
 The command to migrate the config to the database should always be run as the *mattermost* user.
 
@@ -151,7 +153,7 @@ The command to migrate the config to the database should always be run as the *m
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s'
+   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
    When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/administration/config-settings.html#configuration-settings>`_
@@ -163,7 +165,7 @@ With configuration in the database enabled, any changes to the configuration are
 If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
 
 Verify that the configuration was migrated correctly
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configurations are stored in the ``Configurations`` table in the database. To verify that you've migrated the configuration successfully run this query:
 
@@ -174,7 +176,7 @@ Configurations are stored in the ``Configurations`` table in the database. To ve
 There should be exactly one line returned, and the ``Value`` field for that line should match your ``config.json`` file.
 
 Reload ``systemd`` files and restart Mattermost
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
   If you're running Mattermost in High Availability this step must be run on all servers in the cluster.
@@ -187,7 +189,7 @@ Finally, run these commands to reload the daemon and restart Mattermost using th
    sudo systemctl restart mattermost
 
 Rolling back
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mattermost.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
 

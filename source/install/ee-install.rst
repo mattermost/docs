@@ -1,6 +1,5 @@
 ..  _ee-install:
 
-===============================
 Enterprise Install and Upgrade
 ===============================
 

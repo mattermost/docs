@@ -1,7 +1,7 @@
 .. _install-debian-postgresql:
 
 Installing PostgreSQL Database Server
-=====================================
+-------------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
