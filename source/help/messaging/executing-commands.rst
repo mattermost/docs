@@ -57,4 +57,4 @@ Custom Commands
 
 Custom slash commands integrate with external applications. For example, a team might configure a custom slash command to check internal health records with `/patient joe smith` or check the weekly weather forecast in a city with `/weather toronto week`. Check with your System Admin or open the autocomplete list by typing `/` to determine if your team configured any custom slash commands.
 
-Custom slash commands are disabled by default and can be enabled by the System Admin in the **System Console > Integrations > Webhooks and Commands** in prior versions or **System Console** > **Integrations** > **Integration Management** in versions after 5.12. Learn about configuring custom slash commands on the `developer slash command documentation page <../../developer/slash-commands.html>`__.
+Custom slash commands are disabled by default and can be enabled by the System Admin by going to **System Console** > **Integrations** > **Integration Management**. Learn about configuring custom slash commands on the `developer slash command documentation page <../../developer/slash-commands.html>`__.
