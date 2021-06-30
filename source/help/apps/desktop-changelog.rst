@@ -8,7 +8,7 @@ Latest Mattermost Desktop App releases:
 - `Release v4.5 <#id17>`_
 - `Release v4.4 <#id33>`_
 - `Release v4.3 <#id52>`_
-- `Release v4.2.3 <#id69>`_
+- `Release v4.2.3 <#id68>`_
 
 Release v4.7
 --------------
