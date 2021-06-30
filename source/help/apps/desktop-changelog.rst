@@ -1,9 +1,15 @@
 Desktop Application Changelog
 ========================================
 
-.. contents::
-   :depth: 1
-   :local:
+Latest Mattermost Desktop App releases:
+
+- `Release v4.7 <#release-v4-7>`_
+- `Release v4.6 <#release-v4-6>`_
+- `Release v4.5 <#release-v4-5>`_
+- `Release v4.4 <#release-v4-4>`_
+- `Release v4.4 <#release-v4-4>`_
+- `Release v4.3 <#release-v4-3>`_
+- `Release v4.2.3 <#release-v4-2-3>`_
 
 Release v4.7
 --------------
