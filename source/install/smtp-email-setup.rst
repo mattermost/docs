@@ -13,43 +13,41 @@ To enable email, configure an SMTP email service as follows:
 1. **Set up an SMTP email sending service** (if you don't yet have an
    SMTP service with credentials)
 
-   * Any SMTP email service can be used, you just need the following
+    * Any SMTP email service can be used, you just need the following
       information: ``Server Name``, ``Port``, ``SMTP Username``, and
       ``SMTP Password``.
 
-      * If you don't have an SMTP service, here are simple instructions
-         to set one up with `Amazon Simple Email Service
-         (SES) <https://aws.amazon.com/ses/>`__:
+    * If you don't have an SMTP service you can set one up with:
 
-         1. Go to `Amazon SES
-            console <https://console.aws.amazon.com/ses>`__ then
-            ``SMTP Settings > Create My SMTP Credentials``
-         2. Copy the ``Server Name``, ``Port``, ``SMTP Username``, and
-            ``SMTP Password`` for Step 2 below.
-         3. From the ``Domains`` menu set up and verify a new domain,
-            then enable ``Generate DKIM Settings`` for the domain.
+        - `Amazon Simple Email Service (SES) <https://aws.amazon.com/ses/>`__:
 
-            1. We recommend you set up `Sender Policy
-               Framework <https://en.wikipedia.org/wiki/Sender_Policy_Framework>`__
-               (SPF) and/or `Domain Keys Identified
-               Mail <https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail>`__
-               (DKIM) for your email domain.
+            1. Go to `Amazon SES
+                console <https://console.aws.amazon.com/ses>`__ then
+                ``SMTP Settings > Create My SMTP Credentials``
+            2. Copy the ``Server Name``, ``Port``, ``SMTP Username``, and
+                ``SMTP Password`` for Step 2 below.
+            3. From the ``Domains`` menu set up and verify a new domain,
+                then enable ``Generate DKIM Settings`` for the domain.
 
-         4. Choose a sender address like ``mattermost@example.com`` and
-            click ``Send a Test Email`` to verify setup is working
-            correctly.
+                1. We recommend you set up `Sender Policy
+                Framework <https://en.wikipedia.org/wiki/Sender_Policy_Framework>`__
+                (SPF) and/or `Domain Keys Identified
+                Mail <https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail>`__
+                (DKIM) for your email domain.
+
+            4. Choose a sender address like ``mattermost@example.com`` and
+                click ``Send a Test Email`` to verify setup is working
+                correctly.
 	    
-   * Local ``sendmail`` can be used by using **Server Name** ``127.0.0.1``
-     with **Port** ``25``
+        - By local ``sendmail`` can be used by using **Server Name** ``127.0.0.1`` with **Port** ``25``
+	- Or by using one of the services listed below in the **Sample SMTP Settings**
 
 2. **Configure SMTP settings**
 
    1. Open the **System Console** by logging into an existing team and
       accessing "System Console" from the main menu.
 
-      * Alternatively, if a team doesn't yet exist, go to
-         ``http://dockerhost:8065/`` in your browser, create a team,
-         then from the main menu click **System Console**
+      * Alternatively, if a team doesn't yet exist navigate to your ``serverURL`` click **Go To System Console**.
 
    2. Go to the **Authentication** > **Email** tab and configure the following:
 
