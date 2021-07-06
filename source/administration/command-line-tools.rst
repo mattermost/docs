@@ -831,7 +831,9 @@ mattermost export bulk
   Options
     .. code-block:: none
 
-	--all-teams bool [REQUIRED]  Export all teams from the server.
+      --all-teams bool   [REQUIRED] Export all teams from the server.
+      --attachments bool Also export file attachments.
+      --archive bool     Outputs a single archive file.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
