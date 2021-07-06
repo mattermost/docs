@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
-## Release v5.37 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 **Release Day: 2021-07-16**
 
