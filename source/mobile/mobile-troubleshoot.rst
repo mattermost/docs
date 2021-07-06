@@ -68,6 +68,20 @@ A server running Linux has this file located in ``/etc/mime.types``. This might 
 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
 
+Messages with emojis aren't being sent from the mobile app
+----------------------------------------------------------
+
+This can happen if the server running Mattermost is configured with an incorrect character set. To correct this issue, in the ``config.json`` file under ``SqlSettings``, ensure that the ``DataSource`` key has the ``charset`` configured as ``utf8mb4,utf8``, then restart the Mattermost Server.
+
+For example:
+
+.. code-block:: none
+
+"SqlSettings": {
+    "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
+    [...]
+  }
+
 None of these solve my problem!
 -------------------------------
 
