@@ -26,7 +26,12 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 Clearing a Custom Status
 ------------------------
 
-To clear a custom status, select your avatar at the top of the channel sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
+By default, new custom statuses aren't removed until they are replaced or cleared manually. When creating a custom status, you can set when it expires by selecting from available options, or by specifying the date and time to clear the status.
+
+.. image:: ../../images/custom-status-expiry.png
+   :alt: Set your custom status to expire at a specific time.
+
+To manually clear a custom status, select your avatar at the top of the channel sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
 
 .. image:: ../../images/clear-custom-status.png
   :alt: Clear your custom status.
