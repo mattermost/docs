@@ -87,7 +87,7 @@ Select **Save** to apply your changes.
 Localization
 ------------
 
-Mattermost is translated into 19 languages. Users can set their default language by going to **Account Settings > Display > Language**, then selecting **Save**.
+Mattermost is translated into 20 languages. Users can set their default language by going to **Account Settings > Display > Language**, then selecting **Save**.
 
 New languages are added automatically by default. Users can add new languages using the dropdown menu manually as they become available. When manually adding new languages, the Default Client Language must be added before saving the setting.
 
