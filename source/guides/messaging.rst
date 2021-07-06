@@ -23,6 +23,7 @@ Work with Messages
    :maxdepth: 2
 
    /help/messaging/sending-messages.rst
+   /help/messaging/organizing-conversations.rst
    /help/messaging/formatting-text.rst
    /help/messaging/emoji.rst
    /help/settings/custom-emoji.rst
