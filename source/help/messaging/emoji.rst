@@ -17,6 +17,9 @@ Select the **Smile** icon inside the Mattermost message input box to open the Em
 
 Select the **Skin Tone** icon in the top right corner of the Emoji Picker to specify a preferred skin tone for people-based emojis. 
 
+.. image:: ../../images/emoji-skin-tone.png
+  :alt: Select a default skin tone for emojis.
+
 **Type an Emoji**
 
 Alternatively, open the emoji autocomplete by typing ``:`` followed by at least two characters of the word describing the emoji. Descriptions can include skin tone details for people-based emojis.
