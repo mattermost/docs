@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   - Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
+   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
    - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
