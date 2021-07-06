@@ -28,7 +28,7 @@ Alternatively, open the emoji autocomplete by typing ``:`` followed by at least 
    :alt: Emoji Autocomplete
    :scale: 80
    
-It's also possible to create your own `Custom Emoji <https://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
+It's also possible to `create your own custom emoji <#custom-emoji>`_ if the emoji you want to use doesn't exist.
 
 Custom Emoji
 -------------
