@@ -77,10 +77,10 @@ For example:
 
 .. code-block:: none
 
-"SqlSettings": {
-    "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
-    [...]
-  }
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
+      [...]
+    }
 
 None of these solve my problem!
 -------------------------------
