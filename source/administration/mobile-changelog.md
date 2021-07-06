@@ -1,5 +1,45 @@
 # Mattermost Mobile Apps Changelog
 
+## 1.45.0 Release
+- Release Date: July 16, 2021
+- Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+**Note: Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.
+
+### Highlights
+
+#### Emoji Enhancements with Skin Tone Selection
+ - Added support for emoji standard v13.0 with Mattermost server v5.37.
+
+#### English-Australian Language Support
+ - Mattermost is now available in English-Australian.
+
+### Improvements
+ - Added the ability to reply to individual messages from push notifications.
+ - Included message sender's user icon in push notifications.
+ - Apps can now add arbitrary markdown in between fields on forms.
+ - Removed the nickname from the user autocomplete when the item is the current user.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the progress Indicator did not display for all attachments in the post draft when adding multiple images at once.
+ - Fixed an issue where tapping a channel link from a reply thread did not open the channel.
+ - Fixed an issue that caused the reply from a push notification to fail when the message belonged to a thread.
+ - Fixed an issue where at-sign was not ignored when searching for users.
+ - Fixes the post draft to correctly detect if the channel being viewed is read only, including when the thread view is from a different channel than the current channel.
+
+#### Android specific
+ - Fixed Android not being hidden when going back in the thread screen when the keyboard was opened.
+
+#### iOS specific
+ - Fixed an animation transition when displaying the options menu on iOS.
+
 ## 1.44.1 Release
 - Release Date: June 28, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
