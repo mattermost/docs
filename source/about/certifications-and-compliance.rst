@@ -172,12 +172,12 @@ Based on our interpretation of GDPR, it is not required to hide message contents
 
 1. Every user has the ability to disable email notifications in their Account Settings. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
 2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server.
-3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to :ref:`disable notifications completely <email-notification-config>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <email-preview-mode-banner-config>`.
+3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to `disable notifications completely <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ on your Mattermost server. To use Mattermost in production with no email notifications, you also need to `disable a "preview mode" notice banner <https://docs.mattermost.com/configure/configuration-settings.html#enable-preview-mode-banner>`__.
 
 What information is shared when I click **Contact us** on a Mattermost Admin Advisor notification?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Clicking **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
+Selecting **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
 .. note::
     `Mattermost Admin Advisor notices are disabled <https://docs.mattermost.com/administration/notices.html#admin-advisor-notices>`__ in v5.35 and later.

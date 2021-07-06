@@ -1,3 +1,5 @@
+:orphan:
+
 ..  _docker-local-machine:
 
 Deploy Mattermost on Docker

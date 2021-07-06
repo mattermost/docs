@@ -1,3 +1,5 @@
+:orphan:
+
 OpenID Connect Single Sign-On
 =============================
 

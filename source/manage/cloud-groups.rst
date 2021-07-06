@@ -1,3 +1,5 @@
+:orphan:
+
 AD/LDAP Groups
 ==============
 

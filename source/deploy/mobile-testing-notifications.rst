@@ -1,7 +1,9 @@
+:orphan:
+
 Testing Push Notifications
 ==========================
 
-Make sure to configure push notifications for your `pre-built mobile apps <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`__. 
+Make sure to configure push notifications for your `pre-built mobile apps <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__. 
 
 Then use the following instructions to confirm push notifications are working properly.
 
@@ -22,6 +24,7 @@ Then use the following instructions to confirm push notifications are working pr
 
   .. image:: ../images/mobile_push_send_for.png
     :width: 300 px
+
   .. image:: ../images/mobile_push_send_when.png
     :width: 300 px
 

@@ -28,11 +28,11 @@ To replace the logo in email notifications, change the file located in the ``/im
 Mattermost Server
 -----------------
 
-There are a few things that can be customized in the Mattermost server without forking. 
+There are a few things you can customize in the Mattermost server without forking:
 
-1. Modify text in the Mattermost interface by modifying the ``en.json`` file 
-2. Customize or hide help and support links by modifying your :ref:`configuration settings <legal-support-links>`
-3. Customize the email notifications by editing the HTML files in ``/templates``
+1. Modify text in the Mattermost interface by modifying the ``en.json`` file.
+2. Customize or hide help and support links by modifying your `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
+3. Customize the email notifications by editing the HTML files in ``/templates``.
 
 Mattermost Mobile Applications
 ------------------------------

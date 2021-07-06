@@ -8,7 +8,7 @@ Two permission schemes are provided in Mattermost:
 * System Scheme: Applies permissions universally across all teams and channels.
 * Team Override Schemes: Allow admins to customize permissions for each team.
 
-This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`_ provides additional technical details around permissions.
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
 
 .. contents::
   :backlinks: top
@@ -217,7 +217,7 @@ There are a number of CLI tools available for Admins to help in configuring and 
 Backend Infrastructure
 ----------------------
 
-Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
+Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__.
 
 Glossary
 --------

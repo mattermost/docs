@@ -1,3 +1,5 @@
+:orphan:
+
 .. _install-ubuntu-1604-server:
 
 Installing Ubuntu Server 16.04 LTS

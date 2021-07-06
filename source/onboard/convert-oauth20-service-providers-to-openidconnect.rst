@@ -3,7 +3,7 @@ Converting OAuth 2.0 Service Providers to OpenID Connect (E20)
 
 Available in `Enterprise Edition E20 <https://mattermost.com/pricing-self-managed/>`__.
 
-.. include:: ../cloud/cloud-administration/common-converting-oauth-to-openidconnect.rst
+.. include:: common-converting-oauth-to-openidconnect.rst
 
 Configuring OpenID Connect Single Sign-On
 -----------------------------------------

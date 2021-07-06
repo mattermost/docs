@@ -52,7 +52,7 @@ A single audit record is emitted for each event (``add``, ``delete``, ``login``,
     "Event", "string", "e.g. ``add``, ``delete``, ``login``, ``...``"
     "Status", "string", "e.g. ``attempt``, ``success``, ``fail``, ``...``"
     "UserId", "string", "ID of user calling the API"
-    "SessionId". "string", "ID of session used to call the API"
+    "SessionId", "string", "ID of session used to call the API"
     "Client", "string", "e.g. webapp, mmctl, user-agent"
     "IPAddress", "string", "IP address of client"
     "Meta", "map[string]interface{}", "API-specific info (e.g. user id being deleted)"
