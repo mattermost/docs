@@ -9,12 +9,10 @@
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 11+ is required.
 
-**Note: Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.
-
 ### Highlights
 
 #### Emoji Enhancements with Skin Tone Selection
- - Added support for emoji standard v13.0 with Mattermost server v5.37.
+ - Added support for emoji standard v13.0 with Mattermost server v5.37. **Note: Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.**
 
 #### English-Australian Language Support
  - Mattermost is now available in English-Australian.
