@@ -23,11 +23,11 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 #### Emoji Enhancements with Skin Tone Selection
  - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is included in v1.45 Mobile App release (July 16th).
 
-#### Improved Enterprise trial experience (Enterprise Editions E0, E10, E20)
+#### Improved Enterprise Trial Experience (Enterprise Editions E0, E10, E20)
  - After a Self-Managed trial ends, admins can optionally contact sales or make a purchase in a single click.
 
-#### Updated Focalboard builtin plugin version to v0.7
- - 
+#### Focalboard: Grouped Table view, New properties, and More (Beta)
+ - Focalboard tables can now be grouped by a property, for example allowing you to quickly see tasks per epic or owner.
 
 #### Incident Collaboration Updates
  - Availability on all editions, playbook keyword monitoring, retrospective report, playbook dashboard
