@@ -32,6 +32,7 @@
  - Fixed an issue where at-sign was not ignored when searching for users.
  - Fixed the post draft to correctly detect if the channel being viewed is read only, including when the thread view is from a different channel than the current channel.
  - Fixed the render of auto-responder posts.
+ - Fixed an issue where the option to join another team was not present after deleting cache & data.
 
 #### Android specific
  - Fixed Android not being hidden when going back in the thread screen when the keyboard was opened.
