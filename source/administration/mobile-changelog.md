@@ -32,7 +32,8 @@
  - Fixed an issue where tapping a channel link from a reply thread did not open the channel.
  - Fixed an issue that caused the reply from a push notification to fail when the message belonged to a thread.
  - Fixed an issue where at-sign was not ignored when searching for users.
- - Fixes the post draft to correctly detect if the channel being viewed is read only, including when the thread view is from a different channel than the current channel.
+ - Fixed the post draft to correctly detect if the channel being viewed is read only, including when the thread view is from a different channel than the current channel.
+ - Fixed the render of auto-responder posts.
 
 #### Android specific
  - Fixed Android not being hidden when going back in the thread screen when the keyboard was opened.
