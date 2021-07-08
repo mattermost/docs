@@ -16,7 +16,7 @@ If you're upgrading a server that's already running a supported version, See [Up
     - Go to **System Console > Environment > Logging**, then select **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
 3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
-    1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
+    1. Open the NGINX configuration file as *root*. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
     2. Locate the following line:
      `location /api/v3/users/websocket {`
     3. Replace the  line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``.
