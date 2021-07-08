@@ -19,9 +19,9 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud Deployment with Secure Mobile Apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   - Mattermost can run entirely behind your firewall as a single Linux binary with MySQL or PostgreSQL.
-   - Mattermost mobile apps can be deployed to an `internal Enterprise App Store <https://docs.mattermost.com/deployment/push.html#enterprise-app-store-easy>`__ by using source code available for Mattermost mobile apps and push notification service. Optionally `VPN clients on PC and mobile devices <https://docs.mattermost.com/deployment/deployment.html#vpn-setup>`__ can be used outside your private network.
-   - Optionally, Mattermost mobile apps can run without a VPN by opening standard ports on your Mattermost server, such as 80 or 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. <https://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns>`__ (E10, E20), as well as enabling `multi-factor authentication <https://docs.mattermost.com/administration/config-settings.html#enable-multi-factor-authentication>`__ (E10, E20).
+   - Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices <https://docs.mattermost.com/deployment/deployment.html#vpn-setup>`__ so that Mattermost can be used outside your private network.
+   - Mattermost mobile apps can be deployed to an `internal Enterprise App Store <https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas>`__ by using source code available for Mattermost mobile apps and push notification service. 
+   - Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled `iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. <https://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns>`__ (Enterprise Edition E10 and Enterprise Edition E20).
    - User sessions across web, PC, and mobile can be `remotely revoked through account settings <https://docs.mattermost.com/help/settings/account-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
    - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 
@@ -29,6 +29,8 @@ Centralized Security and Administration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    - Manage users, teams, access control, and system settings in a web-based `System Console user interface <https://docs.mattermost.com/administration/config-settings.html>`__.
+   - Centralized authentication through AD/LDAP (Enterprise Edition E10 and Enterprise Edition E20) and SAML (Enterprise Edition E20).
+   - Synchronize users and groups through the built-in `AD/LDAP integration <https://docs.mattermost.com/deployment/sso-ldap.html>` (Enterprise Edition E20).
 
 Transmission Security
 ~~~~~~~~~~~~~~~~~~~~~~

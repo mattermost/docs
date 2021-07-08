@@ -2,7 +2,7 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-## Release 2021-06-30
+## Release 2021-07-01
 
 ### Highlights
 
