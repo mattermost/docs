@@ -3,12 +3,48 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
 - [Release 2021-06-02](#release-2021-06-02)
 - [Release 2021-05-21](#release-2021-05-21)
 - [Release 2021-05-05](#release-2021-05-05)
 - [Release 2021-04-22](#release-2021-04-22)
 - [Release 2021-04-07](#release-2021-04-07)
+
+## Release 2021-07-01
+
+### Highlights
+
+#### Collapsed Reply Threads (Early Beta Access)
+
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/help/messaging/organizing-conversations.html).
+
+#### Emoji Enhancements with Skin Tone Selection
+ - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is planned for v1.45 Mobile App release (July 16th), so some emojis selected on desktop won't be visible on mobile apps.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added English-Australian language variation.
+ - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
+ - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency in the channel switcher. The number of channels shown in the channel switcher in the default state are capped to maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
+ - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
+ - Added the ability in the custom status tooltips, status dropdown and profile popover to select an expiry time for custom statuses. Also added new components ``ExpiryMenu`` and ``DateTimeInput`` to the custom status modal.
+
+#### Administration
+ - Optimized the bulk import process by no longer requiring the server to write the incoming archive to the filesystem when unzipping it.
+ - Added channel restore and channel privacy change endpoints to the local mode using the System bot.
+
+### Bug Fixes
+ - Fixed an issue where sidebar icons were not aligned with the navigator area icons.
+ - Fixed an issue where using CTRL+F in a **Direct Message** channel added the user ID rather than the user's name into the search field.
+ - Fixed an issue where user icons were displayed at full opacity in muted channels.
+ - Fixed an issue where a redundant ``user_update`` websocket event was generated for bot users.
+
+### Known Issues
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-06-16
 

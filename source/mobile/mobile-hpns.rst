@@ -22,7 +22,7 @@ To use the Mattermost TPNS, go to **System Console > Environment > Push Notifica
 See our `Testing Push Notifications <https://docs.mattermost.com/mobile/mobile-testing-notifications.html>`__ documentation to learn more about testing mobile push notifications.
 
 .. note::
-  - The TPNS only works with the pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#id4>`_.  
+  - The TPNS only works with the pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.  
   - You must ensure that the push proxy can be reached on the correct port. For TPNS, it's port 80 from the Mattermost server.
 
 Hosted Push Notifications Service (HPNS)
