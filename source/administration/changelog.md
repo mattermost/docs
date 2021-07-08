@@ -8,10 +8,13 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2021-07-16**
 
+### Deprecations
+ - The ``platform`` binary and “--platform” flag have been deprecated. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.
+
 ### Important Upgrade Notes
- - The platform binary file is removed from the distribution files. It should be replaced by mattermost binary file if it is being used in scripts etc.
- - Emoji notes
- - IC min. 5.37
+ - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](https://docs.mattermost.com/help/messaging/organizing-conversations.html#known-issues).
+ - v5.37 adds support for emoji standard v13.0. If you have added a custom emoji in the past that uses one of the new system names, then it is going to get overwritten by the system emoji. The workaround is to change the custom emoji name.
+ - Parts of Incident Collaboration are now available to all Mattermost editions. As part of this update, Incident Collaboration will require a minimum server version of v5.37. To learn more about what is available in each edition, visit [our pricing page](https://mattermost.com/pricing-self-managed/).
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.36, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
@@ -30,7 +33,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Focalboard tables can now be grouped by a property, for example allowing you to quickly see tasks per epic or owner.
 
 #### Incident Collaboration Updates
- - Availability on all editions, playbook keyword monitoring, retrospective report, playbook dashboard
+ - The update includes availability on all editions, playbook keyword monitoring, retrospective report, and playbook dashboard.
 
 #### English-Australian Language Support
  - Mattermost is now available in English-Australian.
