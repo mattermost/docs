@@ -25,19 +25,19 @@ To run a playbook use the ``/playbook start`` slash command from any channel. Yo
 
 Running a playbook opens an interactive dialog. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the run owner.
 
-When the playbook run is created, it's announced in the configured channel. If that channel is archived or deleted, the bot posts a notification in the incident channel.
+When the playbook run is created, it's announced in the configured channel. If that channel is archived or deleted, the Playbook bot posts a notification in the incident channel.
 
 Joining a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Join a playbook run by joining the incident channel. If the incident channel is public, you may join the channel without permission. Search for and join the channel via **Browse Channels**.
+Select the **Playbook** icon in the top menu bar to see a list of runs in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
-If the incident channel is private, an existing member of the incident channel must invite you. System Admins may join private incident channels without permission.
+If the channel is private, an existing member must invite you. System Admins may join private playbook runs without permission.
 
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active incident. Any member of the incident channel can work with tasks:
+Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
@@ -46,23 +46,23 @@ Tasks can be part of pre-configured task templates in playbooks and they can als
 
 .. image:: ../images/IC-ad-hoc-tasks.gif
 
-Changing commanders
-~~~~~~~~~~~~~~~~~~~
+Changing owners
+~~~~~~~~~~~~~~~
 
-To change commanders you can run the ``/incident commander @username`` slash command from the incident channel. You can also use the desktop or browser to:
+To change playbook owners you can run the ``/playbook owner @username`` slash command from the playbook's channel. You can also use the desktop or browser to:
 
-1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
+1. Select the **Playbooks** icon in the channel header to open the right-hand sidebar.
 2. Select the **Summary** tab.
-3. Within the **Summary** tab, select the current commander's name in the right-hand sidebar, then select the new commander.
-  * To change the commander to a user who is not in the channel, first add the user to the channel.
+3. Within the **Summary** tab, select the current owner's name in the right-hand sidebar, then select the new owner.
+  * To change the owner to a user who is not in the channel, first add the user to the channel.
 
 Providing a status update
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Incident status updates ensure that stakeholders remain informed about the progress toward incident resolution. To post a status update:
+Status updates ensure that stakeholders remain informed about the playbook run's progress. To post a status update:
 
-1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-2. Find the incident you're looking for and select **Go to Incident Channel**.
+1. Select the **Playbook** icon in the channel header to open the right-hand sidebar.
+2. Find the playbook you're looking for and select **Go to Playbook**.
 3. Select the **Summary** tab.
 4. Within the **Summary** tab, select **Update Status**.
 5. Add a Markdown-formatted message.
@@ -75,29 +75,29 @@ Incident status updates ensure that stakeholders remain informed about the progr
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
-The most recent status post will also appear in the right-hand sidebar of the incident channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
+The most recent status post will also appear in the right-hand sidebar of the playbook channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
-Ending an incident
-~~~~~~~~~~~~~~~~~~
+Ending playbook run
+~~~~~~~~~~~~~~~~~~~
 
-Incident members can end an incident using the ``/incident end`` slash command. Incidents can also be ended from the desktop or browser:
+Playbook run members can end an incident using the ``/playbook end`` slash command. Playbook runs can also be ended from the desktop or browser:
 
-1. Select the **Incidents** icon in the channel header to open the right-hand sidebar.
-2. Find the incident you're looking for and select **Go to Incident Channel**.
+1. Select the **Playbook** icon in the channel header to open the RHS.
+2. Find the incident you're looking for and select **Go to channel**.
 3. Select **Update Status**.
 4. From the **Status** drop-down menu, select **Resolved**.
 5. Enter a message with additional details.
 6. Select **Update Status**.
 
-Ending an incident signals to all members of the channel that the incident is no longer ongoing. Members of the team can continue to post in the channel, mark tasks as complete, and change the commander if needed.
+Ending a playbook run signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
 
-Restarting an incident
-~~~~~~~~~~~~~~~~~~~~~~
+Restarting playbook run
+~~~~~~~~~~~~~~~~~~~~~~~
 
-If an incident was ended prematurely, it can be restarted within the incident channel using the ``/incident restart`` slash command. Incidents can also be restarted from the desktop or browser:
+If playbook run was ended prematurely, it can be restarted within the channel using the ``/playbook restart`` slash command. Runs can also be restarted from the desktop or browser:
 
-1. Select the **Incidents** icon in the channel header to open the RHS.
-2. Find the incident you're looking for and select **Go to Incident Channel**.
+1. Select the **Playbook** icon in the channel header to open the RHS.
+2. Find the playbook run you're looking for and select **Go to channel**.
 3. Select **Update Status**.
 4. From the **Status** drop-down menu, select **Active**.
 5. Enter a message with additional details.
