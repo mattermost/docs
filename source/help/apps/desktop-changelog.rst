@@ -1,8 +1,17 @@
 Desktop Application Changelog
 ========================================
 
+Latest Mattermost Desktop App releases:
+
+- `Release v4.7 <#id1>`_
+- `Release v4.6 <#id4>`_
+- `Release v4.5 <#id16>`_
+- `Release v4.4 <#id32>`_
+- `Release v4.3 <#id51>`_
+- `Release v4.2.3 <#id68>`_
+
 Release v4.7
-----------------------------
+--------------
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
