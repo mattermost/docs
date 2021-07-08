@@ -12,14 +12,14 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 ### Improvements
 
 #### User Interface (UI)
- - Added a **Do Not Disturb** status submenu with the options to disable notifications for 30min, 1h, 2h, Tomorrow, or Custom.
+ - Added a **Do Not Disturb** availability submenu with the options to disable notifications for 30min, 1h, 2h, Tomorrow, or Custom.
  - Markdown formatting is now stripped from push notifications.
  - Improved performance of components that show reactions on posts.
  - Improved performance of certain components when viewing non-Direct Message channels.
  - Added minor improvements to performance of messages posted in the right-hand side.
  - Added icons to apps in the Marketplace.
  - Apps can now add arbitrary markdown in between fields on forms.
- - Added support for markdown in apps forms and interactive dialogs field descriptions and errors, and slash commands.
+ - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
 
 ### Known Issues
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
