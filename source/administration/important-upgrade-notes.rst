@@ -8,7 +8,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v5.37.0                                            | The ``platform`` binary and “--platform” flag will be deprecated in a future release. If you are using the “--platform” flag or are using the ``platform`` binary|
+| v5.37.0                                            | The ``platform`` binary and “--platform” flag have been deprecated. If you are using the “--platform” flag or are using the ``platform`` binary                  |
 |                                                    | directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the ``mattermost`` binary.               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | `Collapsed Reply Threads <https://mattermost.com/blog/collapsed-reply-threads-beta/>`_ are available as beta in Mattermost Server                                |
