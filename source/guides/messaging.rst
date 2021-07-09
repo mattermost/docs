@@ -25,7 +25,6 @@ Work with Messages
    /help/messaging/sending-messages.rst
    /help/messaging/formatting-text.rst
    /help/messaging/emoji.rst
-   /help/settings/custom-emoji.rst
    /help/messaging/mentioning-teammates.rst
    /help/messaging/attaching-files.rst
    /help/messaging/executing-commands.rst
