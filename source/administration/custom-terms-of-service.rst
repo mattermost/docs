@@ -21,6 +21,7 @@ To enable custom terms of service:
 Once saved, all users must accept the terms of service by clicking **I Agree** next time they log in, or on the next page refresh. If they do not accept, they will be logged out.
 
 .. note::
+ 
  If you make an update to your Terms of Service, make sure to update your terms of service link at **System Console > Site Configuration > Customization > Terms of Service link**. This link is presented to all users when they log in, and it's easily accessible to end users after accepting the terms.
 
 Frequently Asked Questions
@@ -42,7 +43,7 @@ Each time a user agrees to the terms of service, the agreement is recorded in th
 Why isn't this feature in Team Edition for GDPR compliance?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Terms of service is presented to users on login and account creation, and available to users at all times in the link specified at **System Console > Customization > Legal and Support > Terms of Service link** in prior versions or **System Console > Site Configuration > Customization** in versions after 5.12.
+Terms of service is presented to users on login and account creation, and available to users at all times in the link available by going to **System Console > Site Configuration > Customization**.
 
 This feature is intended to meet compliance requirements for large Enterprise companies.
 
