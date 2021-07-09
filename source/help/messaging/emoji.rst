@@ -55,7 +55,7 @@ Once saved, your emoji is added to the list of Custom Emoji.
 Using Custom Emojis
 ~~~~~~~~~~~~~~~~~~~
 
-To use your Custom Emoji in a message, simply type ":" followed by your emoji name to bring it up in the emoji autocomplete. Other users on the site will also be able to see your emoji in the autocomplete, and will be able to use it in their own messages.
+To use your Custom Emoji in a message, simply type ``:`` followed by your emoji name to bring it up in the emoji autocomplete. Other users on the site will also be able to see your emoji in the autocomplete, and will be able to use it in their own messages.
   
 Deleting Custom Emojis
 ~~~~~~~~~~~~~~~~~~~~~~
