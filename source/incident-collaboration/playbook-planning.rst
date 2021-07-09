@@ -45,7 +45,7 @@ You can customize actions associated with your playbook by setting up keyword tr
 
 Select the **Actions** tab.
 
-  * **Keywords**: Enable the toggle, and enter comma-separated keywords that, when included in a message, will prompt a playbook run.
+  * **Keywords**: Enable the toggle, and enter comma-separated keywords that, when included in a message, will prompt the posting user to run the playbook.
   * **Invite members**: Enable the toggle, and select members who will automatically be invited to the channel when the playbook run starts.
   * **Assign the owner role**: Enable the toggle and select a member. This member is automatically assigned as the owner of the playbook run.
   * **Announce in another channel**: Enable the toggle and select a channel. When the playbook run is started, an announcement is made in the selected channel.
