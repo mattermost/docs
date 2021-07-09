@@ -11,7 +11,7 @@ When enabled, the image proxy needs to be publicly accessible to both the Matter
 
 Mattermost clients will use the image proxy to load all external images. The Mattermost server will use the image proxy when possible, but will not use it when requesting content that may not be an image, such as for `image previews of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
 
-An image proxy can be configured in **System Console > Environment > Image Proxy** (or **System Console < Files > Storage** in versions prior to 5.12).
+Configure an image proxy by going to **System Console > Environment > Image Proxy**.
 
 Local Image Proxy
 -----------------
@@ -19,7 +19,8 @@ Local Image Proxy
 The local image proxy is available as part of the Mattermost server deployment. When using the local image proxy, images are served to clients through the server which helps anonymize users. If SSL is enabled on the server, it provides a secure connection. This method does not offer any caching behavior.
 
 .. note:: 
-   With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See `documentation <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ for more information or if you are seeing unintentionally blocked images.
+  
+  With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See `documentation <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ for more information or if you are seeing unintentionally blocked images.
 
 .. _atmos-camo:
 

@@ -4,6 +4,14 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+Lastest Mattermost Releases:
+- [Release v5.36 - Feature Release](#release-v5-36-feature-release)
+- [Release v5.35 - Feature Release](#release-v5-35-feature-release)
+- [Release v5.34 - Feature Release](#release-v5-34-feature-release)
+- [Release v5.33 - Feature Release](#release-v5-33-feature-release)
+- [Release v5.32 - Feature Release](#release-v5-32-feature-release)
+- [Release v5.31 - ESR](#release-v5-31-esr)
+
 ## Release v5.36 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.36.1, released 2021-06-21**
