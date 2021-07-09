@@ -38,7 +38,7 @@ Profile Picture
 
 Profile pictures appear next to all posts and at the top of the channel sidebar next to your name. 
 
-To change your profile picture, select **Select**, then choose an image. For best results, choose an image that is at least 128 x 128 pixels in size. Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported.
+To change your profile picture, select **Select**, then choose an image. For best results, choose an image that's at least 128 x 128 pixels in size. Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported.
 
 Security
 --------
