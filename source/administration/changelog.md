@@ -4,6 +4,14 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+Lastest Mattermost Releases:
+- [Release v5.36 - Feature Release](#release-v5-36-feature-release)
+- [Release v5.35 - Feature Release](#release-v5-35-feature-release)
+- [Release v5.34 - Feature Release](#release-v5-34-feature-release)
+- [Release v5.33 - Feature Release](#release-v5-33-feature-release)
+- [Release v5.32 - Feature Release](#release-v5-32-feature-release)
+- [Release v5.31 - ESR](#release-v5-31-esr)
+
 ## Release v5.36 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v5.36.1, released 2021-06-21**
@@ -130,6 +138,42 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Open Source Components
  - Added ``lodash``, ``memoize-one``, and ``sass`` to https://github.com/mattermost/mattermost-webapp.
  - Added ``react-native-startup-time`` and removed ``react-native-status-bar-size`` from https://github.com/mattermost/mattermost-mobile.
+
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/09/15. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the web app](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+
+3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.8. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
+
+6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/administration/config-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+
+7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+
+   - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
+
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+
+10. Plugin API changes:
+
+    - Remove deprecated ``model.CommandArgs.Session``.
+    - Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to enterprise licenced instances only.
+    - Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
  - Batched email notifications from a single post have incorrect title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).

@@ -3088,10 +3088,10 @@ The signature algorithm used to sign the request. Supported options are `RSAwith
 CanonicalAlgorithm
 ^^^^^^^^^^^^^^^^^^^
 
-The canonicalization algorithm. Supported options are `Exclusive XML Canonicalization 1.0 <https://www.w3.org/2001/10/xml-exc-c14n#>`_ and `Canonical XML 1.1 <https://www.w3.org/2006/12/xml-c14n11>`_.
+The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`_ (``http://www.w3.org/2001/10/xml-exc-c14n#``) and ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`_ (``http://www.w3.org/2006/12/xml-c14n11``).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": ""`` with string input.                                                                            |
+| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": "Canonical1.0"`` with string input.                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Encryption
@@ -4295,6 +4295,21 @@ Experimental
 
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
+Collapsed Reply Threads (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from Self-Managed Mattermost v5.37 as an early access beta, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+
+System Admins can set the default appearance of collapsed reply threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
+
+**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**.
+
+**Disabled**: Disable Collapsed Reply Threads functionality.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default-off``.                        |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
 
@@ -4753,6 +4768,10 @@ Town Square is Read-Only (Experimental)
 **True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react, or pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
 
 **False**: Anyone can post in Town Square.
+
+.. note::
+
+  This feature will be deprecated in a future release in favor of `channel moderation settings <https://docs.mattermost.com/deployment/advanced-permissions.html#read-only-channels>`_ which allow you to set any channel as read-only, including Town Square 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``.                                                 |
