@@ -51,4 +51,4 @@ On Ubuntu 16.04, Debian Stretch, and RHEL 7:
 
   sudo systemctl restart mattermost
 
-4. Go to https://example.mattermost.com and try to log in. The server should require the x.509 cert to have an ``emailAddress`` equal to the Mattermost user's email.
+4. Go to ``https://example.mattermost.com`` and try to log in. The server should require the x.509 cert to have an ``emailAddress`` equal to the Mattermost user's email.

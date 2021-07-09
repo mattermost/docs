@@ -5741,17 +5741,6 @@ Experimental Settings
 
 *Available in Enterprise Edition E20*
 
-Disable Post Metadata
-^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
-
-**False**: Load channels with more accurate scroll positioning by loading post metadata.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false``.                                                      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~
 
