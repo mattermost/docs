@@ -224,7 +224,8 @@ Language
 Select what language Mattermost displays in the user interface. Options include:
 
 - Deutsch - German
-- English
+- English (U.S.)
+- English Australian
 - Español - Spanish
 - Français - French
 - Italiano - Italian

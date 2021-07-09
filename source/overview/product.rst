@@ -4,7 +4,7 @@ Product Overview
 
 **Mattermost** provides high trust collaboration and messaging solutions through an open source, community-powered approach. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers.
 
-Thousands of organizations use Mattermost around the world in 16 languages for its unmatched benefits:
+Thousands of organizations use Mattermost around the world in 20 languages for its unmatched benefits:
 
 - **Security.** Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`__ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
 
@@ -41,7 +41,7 @@ Features include:
 - Easily scalable to dozens of users per team
 - `Runtime profiling data and system monitoring reports <https://docs.mattermost.com/deployment/metrics.html#standard-go-metrics>`__
 - New features and improvements released regularly
-- Multiple languages including U.S. English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
+- Multiple languages including U.S. English, Australian English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
 
 To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
