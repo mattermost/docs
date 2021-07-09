@@ -155,7 +155,7 @@ Status details include:
 Frequently Asked Questions
 ---------------------------
 
-Why is this feature in Beta?
+Why is this feature in beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature is in beta while we recruit customer testing partners. This feature has been tested by Mattermost QA, but as we build the interface for managing shared channels, we want to work with System Admins to build the most optimal experience.
