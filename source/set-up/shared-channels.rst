@@ -108,7 +108,7 @@ For example:
 
 ``/share-channel invite --connectionID``
  
-This slash command invites the shared connection to the current channel based on its Connection ID.
+This slash command invites the shared connection to the current channel based on its connection ID.
 
 .. tip:: 
     See `Reviewing Secure Connection Status <#reviewing-secure-connection-status>`_ to find the connectionID for a shared connection.
