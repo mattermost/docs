@@ -44,9 +44,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
  - Updated the help text on the **Add Users** channel modal.
  - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
- - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency in the channel switcher. The number of channels shown in the channel switcher in the default state are capped to a maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
+ - The **Channel Switcher** now displays recently viewed channels when launched.
  - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
- - Added the ability in the custom status tooltips, status dropdown, and profile popover to select an expiry time for custom statuses. Also added new components ``ExpiryMenu`` and ``DateTimeInput`` to the custom status modal.
+ - Custom statuses can now be set to expire after common time intervals or custom selected dates and times.
 
 #### Performance
  - Added some improvements to typing performance.
@@ -91,6 +91,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Removed ``reselect`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/help/messaging/organizing-conversations.html#known-issues).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
