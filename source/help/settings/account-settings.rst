@@ -121,7 +121,7 @@ Email Notifications
 
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
 
-If your System Administrator has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
+If your System Admin has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
 
 Mobile Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,6 +212,13 @@ Message Display
 ~~~~~~~~~~~~~~~
 
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
+
+Collapsed Reply Threads (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from Self-Managed Mattermost v5.37 as an early access beta, and are disabled by default. If your System Admin has enabled **Collapsed Reply Threads** for your workspace, you can enable them in your Mattermost instance to start being notified about threads you're following in a new **Threads** option at the top of the channel sidebar
+
+See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
 Channel Display
 ~~~~~~~~~~~~~~~
@@ -313,8 +320,8 @@ Deactivate Account
 
 Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
 
-Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Administrator.
+Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Admin.
 
-Only available for accounts with email login, and if your System Administrator has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
+Only available for accounts with email login, and if your System Admin has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
 
-For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Administrator to deactivate your account.
+For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Admin to deactivate your account.

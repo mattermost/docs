@@ -4,6 +4,9 @@ Command Line Tools
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
 .. note::
+   This CLI will be replaced in a future release with the `mmctl CLI <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__.
+
+.. note::
   The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
@@ -831,7 +834,9 @@ mattermost export bulk
   Options
     .. code-block:: none
 
-	--all-teams bool [REQUIRED]  Export all teams from the server.
+      --all-teams bool   [REQUIRED] Export all teams from the server.
+      --attachments bool Also export file attachments.
+      --archive bool     Outputs a single archive file.
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
