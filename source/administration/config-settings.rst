@@ -4295,6 +4295,21 @@ Experimental
 
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
+Collapsed Reply Threads (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from Self-Managed Mattermost v5.37 as an early access beta, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+
+System Admins can set the default appearance of collapsed reply threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
+
+**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**.
+
+**Disabled**: Disable Collapsed Reply Threads functionality.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default-off``.                        |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
 
@@ -5741,17 +5756,6 @@ Experimental Settings
 ~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
-
-Disable Post Metadata
-^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
-
-**False**: Load channels with more accurate scroll positioning by loading post metadata.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false``.                                                      |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~
