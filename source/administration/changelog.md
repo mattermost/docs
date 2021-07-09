@@ -13,7 +13,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 ### Important Upgrade Notes
  - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](https://docs.mattermost.com/help/messaging/organizing-conversations.html#known-issues).
- - v5.37 adds support for emoji standard v13.0. If you have added a custom emoji in the past that uses one of the new system names, then it is going to get overwritten by the system emoji. The workaround is to change the custom emoji name.
+ - v5.37 adds support for emoji standard v13.0. If you have added a custom emoji in the past that uses one of the new system names, then that custom emoji is going to get overwritten by the system emoji. The workaround is to change the custom emoji name.
  - Parts of Incident Collaboration are now available to all Mattermost editions. As part of this update, Incident Collaboration will require a minimum server version of v5.37. To learn more about what is available in each edition, visit [our pricing page](https://mattermost.com/pricing-self-managed/).
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.36, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
@@ -44,9 +44,9 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
  - Updated the help text on the **Add Users** channel modal.
  - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
- - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency in the channel switcher. The number of channels shown in the channel switcher in the default state are capped to maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
+ - Before anything is typed, a list of channels you are a member of is now shown and sorted by recency in the channel switcher. The number of channels shown in the channel switcher in the default state are capped to a maximum of 20. If there is no recent channel activity (in the case of new users), an alphabetical list of channels is shown displaying **My Channels** first and other **Public Channels** next, capped at a maximum of 20 by default.
  - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
- - Added the ability in the custom status tooltips, status dropdown and profile popover to select an expiry time for custom statuses. Also added new components ``ExpiryMenu`` and ``DateTimeInput`` to the custom status modal.
+ - Added the ability in the custom status tooltips, status dropdown, and profile popover to select an expiry time for custom statuses. Also added new components ``ExpiryMenu`` and ``DateTimeInput`` to the custom status modal.
 
 #### Performance
  - Added some improvements to typing performance.
@@ -57,7 +57,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added channel restore and channel privacy change endpoints to the local mode using the System bot.
 
 ### Bug Fixes
- - Fixed an issue where users were unable to set a custom status emoji via slash command by adding the logic for detecting unicode emoji and setting it as custom status emoji via slash commands.
+ - Fixed an issue where users were unable to set a custom status emoji via slash command. Added the logic for detecting unicode emoji and setting it as a custom status emoji via slash commands.
  - Fixed an issue where messages with fallback text were repeated.
  - Fixed an issue where a persistent unread badge showed on the **Main Menu** when **Enable Marketplace** or **Enable Plugins** was disabled.
  - Fixed an issue where sidebar icons were not aligned with the navigator area icons.
