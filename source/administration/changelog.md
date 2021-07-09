@@ -77,9 +77,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### API Changes
  - Added a new field, team_id, to the response of ``POST api/v4/groups/{group_id}/channels/{channel_id}/link`` to add a team ID to the response when linking a channel to a group.
- - Added an optional `collapsed_threads_supported` parameter to /channels/members/{userId}/view to indicate that the client supports collapsed threads.
- - Added an optional `collapsed_threads_supported` parameter to /users/{userId}/posts/{postId}/set_unread to indicate that the client supports collapsed threads.
- - Updated the webapp to pass `collapsed_threads_supported` parameters to the server to indicate that the webapp supports collapsed reply threads.
+ - Added an optional ``collapsed_threads_supported`` parameter to /channels/members/{userId}/view to indicate that the client supports collapsed threads.
+ - Added an optional ``collapsed_threads_supported`` parameter to /users/{userId}/posts/{postId}/set_unread to indicate that the client supports collapsed threads.
+ - Updated the webapp to pass ``collapsed_threads_supported`` parameters to the server to indicate that the webapp supports collapsed reply threads.
  - Updated the webapp to correctly mark channels and threads as unread/read when marking root and reply posts as unread/read.
  - Added a new endpoint ``GET /trial-license/prev`` for fetching last used trial license.
  - Added two new fields in ``CustomStatus`` struct and modified the APIs to validate and handle them.
