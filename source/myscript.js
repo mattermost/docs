@@ -10,7 +10,7 @@ $(document).ready(function () {
 			<div class='c-thermometer-popup__close'>×</div> \
 			<svg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='9.5' cy='9.5' r='9.5' fill='#166DE0' fill-opacity='0.08'/><g clip-path='url(#clip0)'><path d='M15.0172 6.43306L7.81719 13.6331L4.51959 10.3211L5.36919 9.48586L7.81719 11.9339L14.1676 5.58346L15.0172 6.43306Z' fill='#166DE0'/></g><defs><clipPath id='clip0'><rect width='13.4118' height='11.1765' fill='white' transform='translate(2.79395 3.35303)'/></clipPath></defs></svg> \
 			<h5>Thank you!</h5> \
-			<p>We appreciate your feedback on this page.</p> \
+			<p>We appreciate your feedback.</p> \
 		</div> \
 		<div class='c-thermometer-modal__container'> \
 			<div> \
