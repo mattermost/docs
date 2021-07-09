@@ -16,7 +16,7 @@ $(document).ready(function () {
 			<div> \
 				<div class='c-thermometer-modal__content'> \
 					<h3>Share your thoughts</h3> \
-					<p>Your feedback helps us improve. Let us know your thoughts about this page.</p> \
+					<p>Your feedback helps us improve. Share your thoughts with us here or join the Documentation channel on our Community server.</p> \
 					<textarea maxlength='186' rows='4' placeholder='Leave your feedback here'></textarea> \
 					<div class='c-thermometer-modal__textarea-footer'> \
 						<div></div> \
