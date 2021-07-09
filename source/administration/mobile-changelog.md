@@ -1,12 +1,12 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.44.1 Release](#release)
-- [1.44.0 Release](#id1)
-- [1.43.0 Release](#id4)
-- [1.42.1 Release](#id13)
-- [1.42.0 Release](#id18)
-- [1.41.1 Release](#id26)
+- [1.45.0 Release](#release)
+- [1.44.1 Release](#id1)
+- [1.44.0 Release](#id6)
+- [1.43.0 Release](#id12)
+- [1.42.1 Release](#id21)
+- [1.42.0 Release](#id26)
 
 ## 1.45.0 Release
 - Release Date: July 16, 2021
