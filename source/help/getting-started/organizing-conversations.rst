@@ -36,7 +36,7 @@ To join a Private channel, you need to be added to the channel by a member of th
 Adding members to a channel
 ---------------------------
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. Any member of a channel can add new members by choosing **Add** next to a user's name. Users already added to the channel will not appear in this list.
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. Any member of a channel can add up to 20 new members at a time by choosing **Add** next to a user's name. Users already added to the channel will not appear in this list.
 
     .. image:: ../../images/add-member-to-channel.png
 
