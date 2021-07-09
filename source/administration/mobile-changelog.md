@@ -10,7 +10,7 @@ Latest Mattermost Mobile Apps releases:
 
 ## 1.45.0 Release
 - Release Date: July 16, 2021
-- Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
+- Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
  - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
@@ -35,10 +35,10 @@ Latest Mattermost Mobile Apps releases:
 ### Bug Fixes
 
 #### All apps
- - Fixed an issue where the progress Indicator did not display for all attachments in the post draft when adding multiple images at once.
+ - Fixed an issue where the progress indicator did not display for all attachments in the post draft when adding multiple images at once.
  - Fixed an issue where tapping a channel link from a reply thread did not open the channel.
  - Fixed an issue that caused the reply from a push notification to fail when the message belonged to a thread.
- - Fixed an issue where at-sign was not ignored when searching for users.
+ - Fixed an issue where the at-sign ``@`` was not ignored when searching for users.
  - Fixed the post draft to correctly detect if the channel being viewed is read only, including when the thread view is from a different channel than the current channel.
  - Fixed the render of auto-responder posts.
  - Fixed an issue where the option to join another team was not present after deleting cache & data.
