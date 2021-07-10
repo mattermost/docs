@@ -46,7 +46,7 @@ Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
  - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
  - The **Channel Switcher** now displays recently viewed channels when launched.
  - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
- - Custom statuses can now be set to expire after common time intervals or custom selected dates and times.
+ - Custom statuses can now be set to expire after common time intervals or custom selected dates and times. Mobile App support will be added in a future release.
 
 #### Performance
  - Added some improvements to typing performance.
