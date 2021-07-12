@@ -4645,6 +4645,22 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
 +-----------------------------------------------------------------------------------------------------------------+
 
+Enable Shared Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Available in Enterprise Edition E20*
+
+Enable Shared Channels to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` settings are ``"ExperimentalSettings:EnableSharedChannels": false ""`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false ""`` with options ``true`` or ``false``. Both configuration settings must be enabled in order to share channels with secure connections.       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   - Enabling Shared Channels functionality requires a server restart.
+   - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
+
 SAML Settings
 ~~~~~~~~~~~~~
 
