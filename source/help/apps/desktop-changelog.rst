@@ -84,7 +84,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Notification badge does not get cleared when reading a channel with unread messages until navigating away from the channel `MM-35946 <https://mattermost.atlassian.net/browse/MM-35946>`_.
-- The top bar menu, and the minimize, maximize and close icons do not work on 4.7.0 on Windows 10 `MM-36938 <https://mattermost.atlassian.net/browse/MM-36938>`_.
+- The top bar menu, and the minimize, maximize and close icons do not work on 4.7.0 on Windows 10 if GPU acceleration is disabled. `MM-36938 <https://mattermost.atlassian.net/browse/MM-36938>`_.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
 - Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
 - Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
