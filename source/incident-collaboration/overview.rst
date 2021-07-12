@@ -3,7 +3,7 @@ Overview
 
 Mattermost Playbooks are a collaboration tool for teams. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration.
 
-Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. For the participants, it prescribes processes such as task checklists, status updates, and retrospective reports. For the integrated tools, it configures the triggers to perform automate actions. And for stakeholders, it provides a single pane of glass for visibility into each run as well as aggregate insights over time.
+Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. For the participants, it prescribes processes such as task checklists, status updates, and retrospective reports. For the integrated tools, it configures the triggers to perform automated actions. And for stakeholders, it provides a single pane of glass for visibility into each run as well as aggregate insights over time.
 
 Every reported incident or new checklist results in a newly-created, public or private incident channel exposing a custom user interface for collaboration, resolution, and feedback.
 
