@@ -169,11 +169,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
 
-10. Plugin API changes:
-
-    - Remove deprecated ``model.CommandArgs.Session``.
-    - Restrict ``UserWillLogIn``, ``FileWillBeUploaded``, and ``MessageWillBe[Posted|Updated]`` hooks to enterprise licenced instances only.
-    - Changes to ``mattermost-server/model`` for naming consistency.
+10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
  - Batched email notifications from a single post have incorrect title text [MM-36559](https://mattermost.atlassian.net/browse/MM-36559).
