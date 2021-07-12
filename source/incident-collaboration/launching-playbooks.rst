@@ -8,7 +8,7 @@ Slash commands
 
 The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile for:
 
-- ``/playbook run`` - Start a playbook run.
+- ``/playbook start`` - Start a playbook run.
 - ``/playbook end`` - End a playbook run.
 - ``/playbook update`` - Update the current playbook run's status.
 - ``/playbook restart`` - Restart an ended playbook run.
