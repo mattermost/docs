@@ -1,7 +1,7 @@
 Getting Started 
 ===============
 
-Mattermost Playbooks is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
+Mattermost Incident Collaboration is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
 
 *For self-managed deployments*
 
