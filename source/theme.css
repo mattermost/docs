@@ -331,7 +331,20 @@ footer {
 	position: relative;
     border-top: 1px solid #dedede;
     margin-top: 24px;
-	padding: 32px 0 48px;
+	padding: 24px 0 40px;
+}
+
+.rst-footer-buttons {
+	padding-bottom: 16px;
+	width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.rst-footer-buttons a:last-child {
+	margin-right: 16px;
 }
 
 footer hr {
