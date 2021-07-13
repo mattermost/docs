@@ -350,7 +350,7 @@ This section addresses the training, if any, necessary to prepare staff for impl
 - System support
 - System maintenance and modification
 
-Present a training curriculum listing the courses that will be provided, a course sequence. and a proposed schedule.  If appropriate, identify which courses particular types of staff should attend by job position description.
+Present a training curriculum listing the courses that will be provided, a course sequence. and a proposed schedule. If appropriate, identify which courses particular types of staff should attend by job position description.
  
 If training will be provided by one or more commercial vendors, identify them, the course name(s), and a brief description of the course content.
  
