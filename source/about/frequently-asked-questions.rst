@@ -381,7 +381,7 @@ As before, you are free to license your own code as you see fit. Note that some 
 Can’t someone compile out any license restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We trust our community to honor the Mattermost Source Available License and work alongside us to develop features across our free and paid offerings. Our support team does not provide support to unlicensed, enterprise-only functionality.
+We trust our community to honor the Mattermost Source Available License and work alongside us to develop features across our free and paid offerings. Our Support team does not provide support to unlicensed, enterprise-only functionality.
 
 If I make my own plugin using your source available code, can I remove the license restriction?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
