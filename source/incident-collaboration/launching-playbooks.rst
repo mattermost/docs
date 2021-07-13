@@ -91,7 +91,7 @@ Playbook run members can end an incident using the ``/playbook end`` slash comma
 
 Ending a playbook run signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
 
-Restarting playbook run
+Restarting a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 If playbook run was ended prematurely, it can be restarted within the channel using the ``/playbook restart`` slash command. Runs can also be restarted from the desktop or browser:
