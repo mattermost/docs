@@ -365,7 +365,11 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Data Source
 ^^^^^^^^^^^
 
-This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
+This is the connection string to the master database. 
+
+When **DriverName** is set to ``mysql``, using ``collation`` is recommended over ``charset``. Alternatively, configure this setting so the library uses the default collation of ``utf8mb4_general_ci`` for supported versions of MySQL except MySQL 8.0, where the default has changed. See our `Database Software Requirements <https://docs.mattermost.com/install/requirements.html#database-software>`__ documentation for details on MySQL 8.0 support.
+
+When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
 
 .. note::
   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
