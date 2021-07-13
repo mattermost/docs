@@ -8,7 +8,7 @@ AppConfig is a standard approach for app configuration and management introduced
 
 AppConfig provides an easy way to configure enterprise mobile applications with any of the EMM providers listed on the `AppConfig website <https://www.appconfig.org/members/>`__.
 
-Mattermost mobile apps can be configured in your EMM solution using AppConfig with the `pre-built apps available on the public app stores (including Google Play and Apple App Store) <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__, or as an `in-house app you compile yourself <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`.
+Mattermost mobile apps can be configured in your EMM solution using AppConfig with the `pre-built apps available on the public app stores (including Google Play and Apple App Store) <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__, or as an `in-house app you compile yourself <https://docs.mattermost.com/mobile/build-custom-mobile-apps.html>`_.
 
 .. _appconfig-table:
 
