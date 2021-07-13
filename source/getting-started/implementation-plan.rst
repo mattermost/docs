@@ -344,7 +344,7 @@ In this section, describe the number of personnel, length of time needed, types 
 4.2.2 Training of Implementation Staff
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This section addresses the training, if any, necessary to prepare staff for implementing and maintaining the system; it does not address user training, which is the subject of the Training Plan.  Describe the type and amount of training required for each of the following areas, if appropriate, for the system:
+This section addresses the training, if any, necessary to prepare staff for implementing and maintaining the system; it does not address user training, which is the subject of the Training Plan. Describe the type and amount of training required for each of the following areas, if appropriate, for the system:
  
 - System hardware/software installation
 - System support
