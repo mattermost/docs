@@ -325,7 +325,7 @@ Our plugin framework delivers substantial value to our enterprise customers, but
 How are repositories changing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As we add enterprise-only functionality, we will update the license on affected Mattermost authored plugin repositories. The intent is to work alongside the existing, open source functionality in our plugins while reserving certain enterprise functionality to customers who pay us for enterprise licenses.
+As we add enterprise-only functionality, we will update the license on affected Mattermost-authored plugin repositories. The intent is to work alongside the existing, open source functionality in our plugins while reserving certain enterprise functionality to customers who pay us for enterprise licenses.
 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
