@@ -682,7 +682,7 @@ header .header__searchbar {
 .notification-bar {
 	color: #0058cc;
     text-align: center;
-    display: flex;
+    display: none;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -692,6 +692,10 @@ header .header__searchbar {
     background-image: linear-gradient(90deg,#f0f6ff 0,#d7e7ff 100%);
     position: fixed;
     z-index: 6;
+}
+
+.notification-bar.flex {
+	display: flex;
 }
 
 .notification-bar.closed {
