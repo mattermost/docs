@@ -21,7 +21,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.35.0                                            | Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the |
 |                                                    | migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual |
-|                                                    | upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL 5.x only). A moderate to significant spike   |
+|                                                    | upgrade times should be expected. This can vary from a couple of minutes (average case) to hours (worst case, MySQL only). A moderate to significant spike   |
 |                                                    | in database CPU usage should also be expected during this process. `More details on the performance impact of the migration and possible mitigation strategies   | 
 |                                                    | are provided here <https://gist.github.com/streamer45/9aee4906639a49ebde68b2f3c0f924c1>`_.                                                                       |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
