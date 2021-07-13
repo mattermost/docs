@@ -76,7 +76,7 @@ How do personal access tokens differ from regular session tokens?
 
 - Personal access tokens do not expire. As a result, you can more easily integrate with Mattermost, bypassing the `session length limits set in the System Console <https://docs.mattermost.com/configure/configuration-settings.html#sessions>`__.
 - Personal access tokens can be used to authenticate against the API more easily, including with AD/LDAP and SAML accounts.
-- You can optionally assign additional roles for the account creating personal access tokens. This lets the account post to any channel in Mattermost, including direct messages.
+- You can optionally assign additional roles for the account creating personal access tokens. This lets the account post to any channel in Mattermost, including Direct Messages.
 
 Additionally, personal access tokens are exactly the same as regular session tokens. They are cryptic random IDs and are not different from a user's regular session token created after logging in to Mattermost.
 
