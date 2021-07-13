@@ -2,7 +2,7 @@ $(document).ready(function(){
 	// Init GTM dataLayer for Analytics
 	var dataLayer = window.dataLayer || [];
 
-	var thermometerHtml = 
+	var thermometerHtml =
 		"<div class='c-thermometer'> \
 			<div class='c-thermometer__trigger'> \
 				<div>🙂</div> \
@@ -52,6 +52,12 @@ $(document).ready(function(){
 		$(this).parent().hide();
 	});
 
+	$('body').on('click', '.notification-bar__close', function(){
+		$(this).parents('.notification-bar').remove();
+		$('header').removeClass('with-notification');
+		$('.wy-grid-for-nav').addClass('no-notification');
+	});
+
 	$('body').on('click', function(){
 		$('.c-thermometer__popup').hide();
 	});
@@ -80,7 +86,7 @@ $(document).ready(function(){
 				$('.c-thermometer').remove();
 			});
 		}, 3000);
-		
+
 		// Prepare DataLayer Vars
 		var rating = click_elem.attr('data-rating');
 		var event_value = 0;
