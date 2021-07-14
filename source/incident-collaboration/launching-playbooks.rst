@@ -62,7 +62,7 @@ Providing a status update
 Status updates ensure that stakeholders remain informed about the playbook run's progress. To post a status update:
 
 1. Select the **Playbook** icon in the channel header to open the right-hand sidebar.
-2. Find the playbook you're looking for and select **Go to Playbook**.
+2. Find the playbook you're looking for and select **Go to channel**.
 3. Select the **Summary** tab.
 4. Within the **Summary** tab, select **Update Status**.
 5. Add a Markdown-formatted message.
