@@ -75,7 +75,7 @@ Status updates ensure that stakeholders remain informed about the playbook run's
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
-The most recent status post will also appear in the right-hand sidebar of the playbook channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
+The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
 Ending playbook run
 ~~~~~~~~~~~~~~~~~~~
