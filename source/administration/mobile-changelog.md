@@ -28,7 +28,6 @@ Latest Mattermost Mobile Apps releases:
 ### Improvements
  - Added the ability to reply to individual messages from push notifications on Android.
  - Included message sender's user icon in push notifications.
- - Apps can now add arbitrary markdown in between fields on forms.
  - Removed the nickname from the user autocomplete when the item is the current user.
  - The "swipe up to refresh" functionality was added back.
 
