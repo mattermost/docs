@@ -1,3 +1,5 @@
+:orphan:
+
 .. _deploy-cloudron:
 
 Deploy Mattermost on Cloudron (Unofficial)

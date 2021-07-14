@@ -1,3 +1,5 @@
+:orphan:
+
 ..  _troubleshooting:
 
 Troubleshooting Mattermost Issues

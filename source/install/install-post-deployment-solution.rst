@@ -1,3 +1,5 @@
+:orphan:
+
 .. _config-proxy-nginx:
 
 Customizing your Mattermost Install
