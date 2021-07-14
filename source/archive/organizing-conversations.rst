@@ -68,4 +68,10 @@ Select **Unreads** to filter your followed threads by only those with unread rep
 Tutorial Video
 ---------------
 
-For additional details about working with the Beta release of Collapsed Reply Threads, see our `tutorial video <https://youtu.be/hnD0Zj-mIbs>`__. 
+For additional details about working with the Beta release of Collapsed Reply Threads, see our `tutorial video on YouTube <https://www.youtube.com/watch?v=hnD0Zj-mIbs>`_. 
+
+.. raw:: html
+
+   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <iframe src="https://www.youtube.com/embed/hnD0Zj-mIbs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+   </div>
