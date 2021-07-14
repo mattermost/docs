@@ -30,7 +30,7 @@ Joining a playbook run
 
 Select the **Playbook** icon in the top menu bar to see a list of runs in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
-If the channel is private, an existing member must invite you. System Admins may join private playbook runs without permission.
+If the channel is private, an existing member must invite you.
 
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
