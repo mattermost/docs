@@ -4,6 +4,110 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
+
+**Release Day: 2021-07-16**
+
+### Deprecations
+ - The ``platform`` binary and “--platform” flag have been deprecated. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.
+
+### Important Upgrade Notes
+ - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - v5.37 adds support for emoji standard v13.0. If you have added a custom emoji in the past that uses one of the new system names, then that custom emoji is going to get overwritten by the system emoji. The workaround is to change the custom emoji name.
+ - Parts of Incident Collaboration are now available to all Mattermost editions. As part of this update, Incident Collaboration will require a minimum server version of v5.37. To learn more about what is available in each edition, visit [our pricing page](https://mattermost.com/pricing-self-managed/).
+ - Support for Mattermost Server v5.31 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.36, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Collapsed Reply Threads (Beta)
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/help/messaging/organizing-conversations.html).
+
+#### Emoji Enhancements with Skin Tone Selection
+ - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is included in v1.45 Mobile App release (July 16th).
+
+#### Improved Enterprise Trial Experience (Enterprise Editions E0, E10, E20)
+ - After a Self-Managed trial ends, admins can optionally contact sales or make a purchase in a single click.
+
+#### Focalboard: Grouped Table view, New properties, and More (Beta)
+ - Focalboard tables can now be grouped by a property, for example allowing you to quickly see tasks per epic or owner.
+
+#### Incident Collaboration Updates
+ - The update includes availability on all editions, playbook keyword monitoring, retrospective report, and playbook dashboard.
+
+#### English-Australian Language Support
+ - Mattermost is now available in English-Australian.
+
+### Improvements
+
+#### User Interface (UI)
+ - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
+ - Updated the help text on the **Add Users** channel modal.
+ - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
+ - The **Channel Switcher** now displays recently viewed channels when launched.
+ - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
+ - Custom statuses can now be set to expire after common time intervals or custom selected dates and times. Mobile App support will be added in a future release.
+
+#### Performance
+ - Added some improvements to typing performance.
+
+#### Administration
+ - Improved memory performance for large image uploads, particularly PNGs with transparency.
+ - Optimized the bulk import process by no longer requiring the server to write the incoming archive to the filesystem when unzipping it.
+ - Added channel restore and channel privacy change endpoints to the local mode using the System bot.
+
+### Bug Fixes
+ - Fixed an issue where users were unable to set a custom status emoji via slash command. Added the logic for detecting unicode emoji and setting it as a custom status emoji via slash commands.
+ - Fixed an issue where messages with fallback text were repeated.
+ - Fixed an issue where a persistent unread badge showed on the **Main Menu** when **Enable Marketplace** or **Enable Plugins** was disabled.
+ - Fixed an issue where sidebar icons were not aligned with the navigator area icons.
+ - Fixed an issue where using CTRL+F in a **Direct Message** channel added the user ID rather than the user's name into the search field.
+ - Fixed an issue where user icons were displayed at full opacity in muted channels.
+ - Fixed an issue where a redundant ``user_update`` websocket event was generated for bot users.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``CollapsedThreads`` to add support for Collapsed Reply Threads (Beta).
+
+#### Database Changes
+ - Removed several redundant Database indexes.
+
+### API Changes
+ - Added a new field, team_id, to the response of ``POST api/v4/groups/{group_id}/channels/{channel_id}/link`` to add a team ID to the response when linking a channel to a group.
+ - Added an optional ``collapsed_threads_supported`` parameter to /channels/members/{userId}/view to indicate that the client supports collapsed threads.
+ - Added an optional ``collapsed_threads_supported`` parameter to /users/{userId}/posts/{postId}/set_unread to indicate that the client supports collapsed threads.
+ - Updated the webapp to pass ``collapsed_threads_supported`` parameters to the server to indicate that the webapp supports collapsed reply threads.
+ - Updated the webapp to correctly mark channels and threads as unread/read when marking root and reply posts as unread/read.
+ - Added a new endpoint ``GET /trial-license/prev`` for fetching last used trial license.
+ - Added two new fields in ``CustomStatus`` struct and modified the APIs to validate and handle them.
+
+### Go Version
+ - v5.37 is built with Go ``1.15.5``.
+
+### Open Source Components
+ - Removed ``reselect`` from https://github.com/mattermost/mattermost-webapp/.
+
+### Known Issues
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
+ - Pinned posts are no longer highlighted.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [aaronrothschild](https://github.com/aaronrothschild), [Aashimalik](https://github.com/Aashimalik), [Adovenmuehle](https://github.com/Adovenmuehle), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [ahmadkarlam](https://github.com/ahmadkarlam), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arvinDarmawan](https://github.com/arvinDarmawan), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [aspleenic](https://github.com/aspleenic), [balan2010](https://github.com/balan2010), [BenCookie95](https://github.com/BenCookie95), [berkeka](https://github.com/berkeka), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [cedricziel](https://github.com/cedricziel), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [cognvn](https://github.com/cognvn), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielsischy](https://github.com/danielsischy), [darkLord19](https://github.com/darkLord19), [dbpolito](https://github.com/dbpolito), [devinbinnie](https://github.com/devinbinnie), [elsiehupp](https://github.com/elsiehupp), [elyscape](https://github.com/elyscape), [emilyacook](https://github.com/emilyacook), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [EugenMayer](https://github.com/EugenMayer), [ewwollesen](https://github.com/ewwollesen), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hason](https://github.com/hason), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [itao](https://github.com/itao), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [JoelRummel](https://github.com/JoelRummel), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jplda23](https://github.com/jplda23), [jprusch](https://github.com/jprusch), [jufab](https://github.com/jufab), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [koox00](https://github.com/koox00), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [madhavhugar](https://github.com/madhavhugar), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [manojmalik20](https://github.com/manojmalik20), [matheusmosca](https://github.com/matheusmosca), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [moussetc](https://github.com/moussetc), [MrLemur](https://github.com/MrLemur), [msal4](https://github.com/msal4), [MusiCode1](https://github.com/MusiCode1), [naderm11](https://github.com/naderm11), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [ogi-m](https://github.com/ogi-m), [pablovelezvidal](https://github.com/pablovelezvidal), [parsaakbari1209](https://github.com/parsaakbari1209), [prakharporwal](https://github.com/prakharporwal), [prathers](https://github.com/prathers), [rbradleyhaas](https://github.com/rbradleyhaas), [rodcorsi](https://github.com/rodcorsi), [rohit1101](https://github.com/rohit1101), [sadohert](https://github.com/sadohert), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [sbishel](https://github.com/sbishel), [senylove1403](https://github.com/senylove1403), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [teresa-novoa](https://github.com/teresa-novoa), [thePanz](https://github.com/thePanz), [tsabi](https://translate.mattermost.com/user/tsabi), [txeli](https://github.com/txeli), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yulyanaR](https://github.com/yulyanaR)
+
 ## Release v5.36 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 **Release Day: 2021-06-16**
@@ -131,6 +235,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
  - Pinned posts are no longer highlighted.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -267,6 +372,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
  - Pinned posts are no longer highlighted.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -368,6 +474,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Posts created by bots containing attachments sometimes appear as repeated until the user refreshes the page [MM-30980](https://mattermost.atlassian.net/browse/MM-30980).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Reddit link previews no longer work in Mattermost. This affects older versions too [MM-31899](https://mattermost.atlassian.net/browse/MM-31899).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
