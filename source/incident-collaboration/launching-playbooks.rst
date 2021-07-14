@@ -23,9 +23,7 @@ To run a playbook use the ``/playbook start`` slash command from any channel. Yo
  * Select the **Playbook** icon in the channel header, and select **Run playbook** from the right-hand sidebar.
  * Use the context menu of a post and select **Run playbook**.
 
-Running a playbook opens an interactive dialog. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the run owner.
-
-When the playbook run is created, it's announced in the configured channel. If that channel is archived or deleted, the Playbook bot posts a notification in the incident channel.
+Running a playbook opens an interactive dialog. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
 
 Joining a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~
