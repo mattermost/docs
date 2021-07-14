@@ -12,6 +12,9 @@ First, configure the retrospective's settings in the relevant playbook via the *
 
 This sets a reminder to fill out the retrospective, which is broadcast to the channel. The template is then pre-populated in the report. Once the report is written, it's saved and is listed in the run's detailed view.
 
+.. image:: ../images/Retro.gif
+   :alt: Create and publish retrospective reports.
+
 Channel export
 ~~~~~~~~~~~~~~
 
