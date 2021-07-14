@@ -49,7 +49,7 @@ Tasks can be part of pre-configured task templates in playbooks and they can als
 Changing owners
 ~~~~~~~~~~~~~~~
 
-To change playbook owners you can run the ``/playbook owner @username`` slash command from the playbook's channel. You can also use the desktop or browser to:
+To change playbook owners you can run the ``/playbook owner @username`` slash command from the run's channel. You can also use the desktop or browser to:
 
 1. Select the **Playbooks** icon in the channel header to open the right-hand sidebar.
 2. Select the **Summary** tab.
