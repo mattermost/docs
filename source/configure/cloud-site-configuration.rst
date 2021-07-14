@@ -6,7 +6,7 @@ Announcement Banner
 
 You can display an announcement banner notification that's visible to all users on the system.
 
-.. image:: ../../images/announcement-banner-1106x272.png
+.. image:: ../images/announcement-banner-1106x272.png
   :width: 1106
   :height: 272
   :alt: Shows the announcement banner at the top of the user's screen.
@@ -51,7 +51,7 @@ Mattermost in-product notices keep users and administrators informed of the newe
 
 Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
 
-.. image:: ../../images/notices.png
+.. image:: ../images/notices.png
 
 Administrator Notices
 ^^^^^^^^^^^^^^^^^^^^^
