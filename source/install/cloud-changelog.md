@@ -20,7 +20,6 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added a **Do Not Disturb** availability submenu with the options to disable notifications for 30min, 1h, 2h, Tomorrow, or Custom.
  - Markdown formatting is now stripped from push notifications.
  - Improved performance of components that show reactions on posts.
  - Improved performance of certain components when viewing non-Direct Message channels.
