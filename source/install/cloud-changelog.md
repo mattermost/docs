@@ -30,7 +30,7 @@ Latest Mattermost Cloud releases:
  - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
 
 ### Known Issues
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/help/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
