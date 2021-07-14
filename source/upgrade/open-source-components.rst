@@ -6,6 +6,7 @@ The following open source components are used to provide the full benefits of Ma
 Desktop
 --------
 
+ - Mattermost Desktop v4.7.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.7/NOTICE.txt>`_.
  - Mattermost Desktop v4.6.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.6/NOTICE.txt>`_.
  - Mattermost Desktop v4.5.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.5/NOTICE.txt>`_.
  - Mattermost Desktop v4.4.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.4/NOTICE.txt>`_.

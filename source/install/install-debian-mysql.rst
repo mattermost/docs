@@ -1,3 +1,5 @@
+:orphan:
+
 .. _install-debian-mysql:
 
 Installing MySQL Database Server

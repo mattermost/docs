@@ -1,3 +1,5 @@
+:orphan:
+
 .. _install-debian-postgresql:
 
 Installing PostgreSQL Database Server

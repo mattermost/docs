@@ -1,3 +1,5 @@
+:orphan:
+
 ..  _install-rhel-6-server:
 
 Installing Red Hat Enterprise Linux 6

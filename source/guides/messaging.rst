@@ -9,12 +9,12 @@ Access Your Workspace
 .. toctree::
    :maxdepth: 2
    
-   /help/getting-started/welcome-to-mattermost.rst
-   /help/getting-started/access-your-workspace.rst
-   /help/getting-started/signing-in.rst
-   /help/getting-started/switch-between-teams.rst
-   /help/getting-started/about-teams-channels-messages.rst
-   /help/getting-started/log-out.rst
+   /messaging/welcome-to-mattermost-messaging.rst
+   /messaging/accessing-your-workspace.rst
+   /messaging/signing-in.rst
+   /messaging/switching-between-teams.rst
+   /messaging/about-teams-channels-messages.rst
+   /messaging/logging-out.rst
 
 Work with Messages
 ------------------
@@ -22,15 +22,17 @@ Work with Messages
 .. toctree::
    :maxdepth: 2
 
-   /help/messaging/sending-messages.rst
-   /help/messaging/formatting-text.rst
-   /help/messaging/emoji.rst
-   /help/messaging/mentioning-teammates.rst
-   /help/messaging/attaching-files.rst
-   /help/messaging/executing-commands.rst
-   /help/messaging/flagging-messages.rst
-   /help/messaging/pinning-messages.rst
-   /help/getting-started/searching.rst
+   /messaging/messaging-basics.rst
+   /messaging/sending-receiving-messages.rst
+   /messaging/organizing-conversations.rst
+   /messaging/formatting-text.rst
+   /messaging/using-emoji.rst
+   /messaging/mentioning-teammates.rst
+   /messaging/sharing-files.rst
+   /messaging/executing-slash-commands.rst
+   /messaging/saving-messages.rst
+   /messaging/pinning-messages.rst
+   /messaging/searching-in-mattermost.rst
 
 Manage Teams, Channels, and Members
 -----------------------------------
@@ -38,12 +40,12 @@ Manage Teams, Channels, and Members
 .. toctree::
    :maxdepth: 2
 
-   /help/getting-started/creating-teams.rst
-   /help/settings/team-settings.rst   
-   /help/getting-started/organizing-conversations.rst
-   /help/getting-started/organizing.rst
-   /help/settings/channel-settings.rst
-   /help/getting-started/managing-members.rst
+   /messaging/creating-teams.rst
+   /messaging/team-settings.rst   
+   /messaging/managing-channels.rst
+   /messaging/organizing-mattermost.rst
+   /messaging/channel-settings.rst
+   /messaging/managing-members.rst
 
 Customize Mattermost Messaging
 ------------------------------
@@ -51,13 +53,13 @@ Customize Mattermost Messaging
 .. toctree::
    :maxdepth: 2
       
-   /help/getting-started/setting-your-status-availability.rst
-   /help/getting-started/configuring-notifications.rst
-   /help/getting-started/organizing-your-sidebar.rst
-   /help/settings/account-settings.rst
-   /help/settings/theme-colors.rst
-   /help/settings/desktop-app-options.rst
-   /help/settings/manage-servers.rst
+   /messaging/setting-your-status-availability.rst
+   /messaging/configuring-notifications.rst
+   /messaging/organizing-your-sidebar.rst
+   /messaging/managing-account-settings.rst
+   /messaging/customizing-theme-colors.rst
+   /messaging/managing-desktop-app-options.rst
+   /messaging/managing-desktop-app-servers.rst
 
 Navigate Mattermost Messaging
 -----------------------------
@@ -65,8 +67,8 @@ Navigate Mattermost Messaging
 .. toctree::
    :maxdepth: 2
       
-   /help/getting-started/accessibility.rst
-   /help/messaging/keyboard-shortcuts.rst
+   /messaging/keyboard-accessibility.rst
+   /messaging/keyboard-shortcuts.rst
 
 Extend Mattermost Messaging
 ---------------------------
@@ -74,4 +76,4 @@ Extend Mattermost Messaging
 .. toctree::
    :maxdepth: 2
       
-   /help/settings/integration-settings.md
+   /messaging/extending-messaging-with-integrations.md

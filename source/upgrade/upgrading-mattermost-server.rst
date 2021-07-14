@@ -10,7 +10,7 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 Upgrading to the Latest Version
 -------------------------------
 
-If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
+If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first upgrade to version 3.0.3.
 
 .. _before-you-begin:
 
@@ -32,7 +32,7 @@ Existing install directory - *{install-path}*
   If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command. The output should be similar to */opt/mattermost/bin/mattermost*. The install directory is everything before the first occurrence of the string */mattermost*. In this example, the *{install-path}* is ``/opt``.
   If that command does not produce any results because your version is older, try ``whereis platform`` instead.
 Location of your local storage directory
-  The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage** (or **Files > Storage** in versions prior to 5.12) and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
+  The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 
 **To upgrade Mattermost Server**
 
@@ -54,13 +54,17 @@ Location of your local storage directory
 
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
-#. Extract the Mattermost Server files.
+#. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 
    .. code-block:: sh
-
-     tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
+     
+     ls -- mattermost*.gz
   
-   The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
+   If anything except the new release is returned above, rename this file or delete it completely.
+
+#. Extract the Mattermost Server files.
+
+   .. code-block:: sh     
 
 #. Stop your Mattermost server.
 
@@ -79,18 +83,42 @@ Location of your local storage directory
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-#. Remove all files *except special directories* from within the current mattermost directory.
+#. Remove all files *except data and custom directories* from within the current mattermost directory.
+   
+    a. Run ``ls`` on your Mattermost install directory to identify what folders exist. If your folders match the structure below you can jump to step c.
 
-   The special directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
-   You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
+        - By default, your data directories will be preserved with the below commands. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*).
+        - Custom directories are directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+        
+        |
+        .. note::
+         **A default Mattermost install has the below files/directories**:
 
-   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should add ``-o -path mattermost/yourFolderHere`` to the below command or you will have to manually copy the TLSCert/TLSKey files from the backup into the new install.
+          .. code-block:: sh
 
-   .. code-block:: sh
-
-     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
+            $ ls /opt/mattermost
+            ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
+            NOTICE.txt                      bin        config  fonts  logs  plugins       templates
+          
+    b. Identify if any custom directories from the above step need to be preserved. For each custom directory within the Mattermost folder that you wish to preserve add ``-o -path  mattermost/yourFolderHere`` to the below commands. See the example below where the folder ``yourFolderHere`` is preserved by adding ``-o -path  mattermost/yourFolderHere``.
     
-#. Change ownership of the new files before copying them.
+      .. code-block:: sh
+
+        sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
+    
+    c. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command in step b then add those to the below command. For example:
+    
+      .. code-block:: sh
+
+        sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
+    
+    d. Clear the contents of this directory. If you've added custom directories to the command be sure to add those to this below command. For example:
+
+      .. code-block:: sh
+
+        sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
+      
+#. Change ownership of the new files before copying them. For example:
 
    .. code-block:: sh
 
@@ -109,8 +137,9 @@ Location of your local storage directory
 
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
      sudo rm -r /tmp/mattermost-upgrade/
+     sudo rm -i /tmp/mattermost*.gz
 
-#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports. For example:
 
    .. code-block:: sh
 
@@ -118,7 +147,6 @@ Location of your local storage directory
      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 #. Start your Mattermost server.
-
 
    .. code-block:: sh
 
@@ -137,7 +165,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 .. note::
 
-  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
+  We only support one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------

@@ -52,6 +52,7 @@ Mattermost in-product notices keep users and administrators informed of the newe
 Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
 
 .. image:: ../images/notices.png
+  :alt: Shows in-product notices for users and administrators.
 
 Administrator Notices
 ^^^^^^^^^^^^^^^^^^^^^
