@@ -215,6 +215,8 @@ redirects = {
      "help/getting-started/about-teams-channels-messages": "https://docs.mattermost.com/messaging/about-teams-channels-messages.html",
      "help/getting-started/log-out": "https://docs.mattermost.com/messaging/logging-out.html",
      "help/messaging/sending-messages": "https://docs.mattermost.com/messaging/sending-receiving-messages.html",
+     "help/messaging/organizing-conversations": "https://docs.mattermost.com/messaging/organizing-conversations.html",
+     "help/messaging/organizing-conversations#known-issues": "https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues",
      "help/messaging/formatting-text": "https://docs.mattermost.com/messaging/formatting-text.html",
      "help/messaging/emoji": "https://docs.mattermost.com/messaging/using-emoji.html",
      "help/settings/custom-emoji": "https://docs.mattermost.com/messaging/using-custom-emoji.html",
