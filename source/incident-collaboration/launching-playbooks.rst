@@ -61,8 +61,8 @@ Status updates ensure that stakeholders remain informed about the playbook run's
 
 1. Select the **Playbook** icon in the channel header to open the right-hand sidebar.
 2. Find the playbook you're looking for and select **Go to channel**.
-3. Select the **Summary** tab.
-4. Within the **Summary** tab, select **Update Status**.
+3. Select the **About** tab.
+4. Within the **About** tab, select **Update status**.
 5. Add a Markdown-formatted message.
  * If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
  * If this is a subsequent status update, the message from the last status update will be pre-populated here.
