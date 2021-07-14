@@ -3,10 +3,10 @@ Planning a Playbook
 
 Playbooks are made up of:
 
-- Checklists: The list of tasks to be completed for the run.
-- Templates: Templates for frequently-used actions such as updates and reminders. 
-- Actions: Automation options for inviting members, webhooks, welcome messages and more.
-- Permissions: Manage permissions at a channel and a playbook level.
+- **Checklists:** The list of tasks to be completed for the run.
+- **Templates:** Templates for frequently-used actions such as updates and reminders. 
+- **Actions:** Automation options for inviting members, webhooks, welcome messages and more.
+- **Permissions:** Manage permissions at a channel and a playbook level.
 
 Creating checklists
 -------------------
@@ -66,7 +66,7 @@ When a status update is posted
 When a new member joins the channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* **Send a welcome message**: Enable the toggle and enter text that new channel members will see when they join the channel.
+ * **Send a welcome message**: Enable the toggle and enter text that new channel members will see when they join the channel.
 
 Setting permissions
 -------------------
