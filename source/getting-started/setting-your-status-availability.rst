@@ -10,12 +10,12 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 
 1. To set a custom status, select your avatar at the top of the channel sidebar, then select **Set a Custom Status**.
 
-.. image:: ../../images/set-custom-status.png
+.. image:: ../images/set-custom-status.png
   :alt: Set a custom status.
 
 2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
 
-.. image:: ../../images/Custom-Status-Marketing-Animation.gif
+.. image:: ../images/Custom-Status-Marketing-Animation.gif
   :alt: Set a custom status that includes an optional emoji and a descriptive message.
 
 .. note::
@@ -28,12 +28,12 @@ Clearing a Custom Status
 
 New custom statuses display until midnight the day they're set by default. You can configure a custom status to clear after a preferred period of time, clear at a specific date and time, or to continue to display until manually cleared.
 
-.. image:: ../../images/custom-status-expiry.png
+.. image:: ../images/custom-status-expiry.png
    :alt: Set your custom status to expire after a period of time.
 
 To manually clear a custom status at any time, select your avatar at the top of the channel sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
 
-.. image:: ../../images/clear-custom-status.png
+.. image:: ../images/clear-custom-status.png
   :alt: Clear your custom status.
 
 Setting Your Availability
@@ -41,7 +41,7 @@ Setting Your Availability
 
 To set your availability, select your avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
 
-.. image:: ../../images/set-your-availability.png
+.. image:: ../images/set-your-availability.png
   :alt: Set your availability to online, away, do not disturb, or offline.
 
 When you set your availability, an availability icon displays next to your name. Setting your availability as **Do Not Disturb** automatically disables desktop, email, and push notifications.
