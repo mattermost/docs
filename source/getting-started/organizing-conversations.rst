@@ -8,7 +8,7 @@ Creating a channel
 
 To create a new Public or Private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
-    .. image:: ../../images/create-new-channel.png
+    .. image:: ../images/create-new-channel.png
         :alt: Create a channel.
     
 Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
@@ -18,12 +18,12 @@ Creating a Direct or Group Message
 
 To start a Direct or Group Message, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. Or select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
-    .. image:: ../../images/write-dm.png
+    .. image:: ../images/write-dm.png
         :alt: Access recent Direct Messages and Group Messages.
     
 In the **Direct Messages** popup, identify your most recent conversations by relative timestamps.     
 
-    .. image:: ../../images/recent-direct-group-messages.png
+    .. image:: ../images/recent-direct-group-messages.png
         :alt: Write a Direct Message or Group Message.
 
 Joining a channel
@@ -38,11 +38,11 @@ Adding members to a channel
 
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. Any member of a channel can add up to 20 new members at a time by choosing **Add** next to a user's name. Users already added to the channel will not appear in this list.
 
-    .. image:: ../../images/add-member-to-channel.png
+    .. image:: ../images/add-member-to-channel.png
 
 You can also add users to channels within their profile pop-over by choosing **Add to a Channel** and selecting the channel you want them to join.
 
-    .. image:: ../../images/add-member-pop.png
+    .. image:: ../images/add-member-pop.png
         :alt: Add a member to a channel.
 
 Removing members from a channel
@@ -50,7 +50,7 @@ Removing members from a channel
 
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Any member of a channel can remove other members by selecting the member’s channel role, then selecting **Remove from Channel**.
 
-    .. image:: ../../images/remove-member-from-channel.png
+    .. image:: ../images/remove-member-from-channel.png
         :alt: Remove a member from a channel.
 
 Naming a channel
@@ -90,7 +90,7 @@ Unarchiving a channel
 
 Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. System Admins and Team Admins can unarchive Public channels or Private channels they belonged to when it was archived.
 
-    .. image:: ../../images/unarchive-channel.png
+    .. image:: ../images/unarchive-channel.png
         :alt: Unarchive a channel.
 
 When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/administration/config-settings.html#data-retention-policy>`__.
@@ -117,12 +117,12 @@ To mark a channel as a favorite, open the channel:
 
 **On desktop:** At the top of the page, select on the star icon next to the channel name.
 
-    .. image:: ../../images/favorite-channel-desktop.png
+    .. image:: ../images/favorite-channel-desktop.png
         :alt: Mark a channel as a favorite.
        
 This adds the channel to a **Favorites** list at the top of the channel sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
-    .. image:: ../../images/favorites-list-sidebar.png
+    .. image:: ../images/favorites-list-sidebar.png
         :alt: Favorite channels in the channel sidebar.
        
 **On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
@@ -145,7 +145,7 @@ Switching channels
 
 Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to find other channels, visit recently reviewed channels, or review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance. 
 
-.. image:: ../../images/switch-channels.png
+.. image:: ../images/switch-channels.png
     :alt: Switch channels and review member availability.
 
 Navigating recently viewed channels
