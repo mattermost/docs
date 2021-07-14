@@ -100,3 +100,8 @@ If a playbook run was ended prematurely, it can be restarted within the channel 
 4. From the **Status** drop-down menu, select **Active**.
 5. Enter a message with additional details.
 6. Select **Update Status**.
+
+Playbook dashboard
+------------------
+
+Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
