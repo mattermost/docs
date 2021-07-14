@@ -15,7 +15,7 @@ Mattermost Playbooks is available in the Plugin Marketplace:
 
 To access Mattermost Playbooks:
 
-* From the Main Menu, select **Playbooks** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
+* From the Main Menu, select **Incident Collaboration** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
 * From the channel header, select the **Playbooks** icon to open the right-hand sidebar. From there, create a new incident or collaborate on active incidents of which you are a member.
 
 API Documentation
