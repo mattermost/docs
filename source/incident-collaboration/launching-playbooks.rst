@@ -94,7 +94,7 @@ Ending a playbook run signals to all members of the channel that the playbook ru
 Restarting a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-If playbook run was ended prematurely, it can be restarted within the channel using the ``/playbook restart`` slash command. Runs can also be restarted from the desktop or browser:
+If a playbook run was ended prematurely, it can be restarted within the channel using the ``/playbook restart`` slash command. Runs can also be restarted from the desktop or browser:
 
 1. Select the **Playbook** icon in the channel header to open the RHS.
 2. Find the playbook run you're looking for and select **Go to channel**.
