@@ -5,10 +5,10 @@ Mattermost Incident Collaboration is included in the Mattermost Cloud workspace,
 
 *For self-managed deployments*
 
-Mattermost Playbooks is available in the Plugin Marketplace:
+Mattermost Incident Collaboration is available in the Plugin Marketplace:
 
 1. As a System Admin, go to **Main Menu > Plugin Marketplace**.
-2. Search for **Playbooks**.
+2. Search for **Incident Collaboration**.
 3. Select **Install** if not yet installed, then select **Configure** to enable.
 4. From the plugin configuration page, set **Enable Plugin** to **true**.
 5. Select **Save** to enable the plugin.
