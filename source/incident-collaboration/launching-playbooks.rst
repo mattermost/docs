@@ -83,7 +83,7 @@ Ending playbook run
 Playbook run members can end an incident using the ``/playbook end`` slash command. Playbook runs can also be ended from the desktop or browser:
 
 1. Select the **Playbook** icon in the channel header to open the RHS.
-2. Find the incident you're looking for and select **Go to channel**.
+2. Find the playbook run you're looking for and select **Go to channel**.
 3. Select **Update Status**.
 4. From the **Status** drop-down menu, select **Resolved**.
 5. Enter a message with additional details.
