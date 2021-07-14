@@ -18,7 +18,7 @@ Planning
 .. toctree::
    :maxdepth: 2
 
-   /incident-collaboration/playbook-planning.rst
+   /incident-collaboration/setting-up-playbooks.rst
 
 Launching
 ---------
@@ -26,7 +26,7 @@ Launching
 .. toctree::
    :maxdepth: 2
 
-   /incident-collaboration/launching-playbooks.rst
+   /incident-collaboration/running-playbooks.rst
    
 Learning
 --------
@@ -34,4 +34,4 @@ Learning
 .. toctree::
    :maxdepth: 2
 
-   /incident-collaboration/review-and-refine.rst
+   /incident-collaboration/refining-and-improving.rst

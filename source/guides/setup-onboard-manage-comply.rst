@@ -13,16 +13,16 @@ Self-Managed Deployments
    :maxdepth: 1
    :glob:
 
-   /administration/config-settings.rst
-   /administration/config-in-database.rst
-   /deployment/customize-mattermost.rst
-   /deployment/customize-email.rst
-   /administration/branding.rst
-   /install/smtp-email-setup.rst
-   /install/config-cloudfront.rst
-   /install/outbound-proxy.rst
-   /install/i18n.rst
-   /install/config-apache2.rst
+   /configure/configuration-settings.rst
+   /configure/configuation-in-mattermost-database.rst
+   /configure/customizing-mattermost.rst
+   /configure/email-templates.rst
+   /configure/custom-branding-tools.rst
+   /configure/smtp-email.rst
+   /configure/configuring-cloudfront-to-host-mattermost-static-assets.rst
+   /configure/using-outbound-proxy.rst
+   /configure/enabling-chinese-japanese-korean-search.rst
+   /configure/configuring-apache2.rst
 
 Cloud Workspaces
 ^^^^^^^^^^^^^^^^
@@ -32,7 +32,7 @@ Cloud Workspaces
    :titlesonly:
    :glob:
  
-   /cloud/cloud-administration/site-configuration.rst
+   /configure/cloud-site-configuration.rst
 
 Onboard Users
 -------------
@@ -44,17 +44,17 @@ All Mattermost Instances
    :maxdepth: 1
    :glob:
 
-   /deployment/advanced-permissions.rst
-   /deployment/permissions-backend.rst
-   /deployment/admin-roles.rst
-   /deployment/guest-accounts.rst
-   /deployment/sso-ldap.md
-   /deployment/auth.rst
-   /deployment/sso-openidconnect.rst
-   /deployment/sso-gitlab.rst
-   /deployment/sso-google.rst
-   /deployment/sso-office.rst
-   /deployment/converting-oauth20-service-providers-to-openidconnect.rst
+   /onboard/advanced-permissions.rst
+   /onboard/advanced-permissions-backend-infrastructure.rst
+   /onboard/system-admin-roles.rst
+   /onboard/guest-accounts.rst
+   /onboard/ad-ldap.md
+   /onboard/multi-factor-authentication.rst
+   /onboard/sso-openidconnect.rst
+   /onboard/sso-gitlab.rst
+   /onboard/sso-google.rst
+   /onboard/sso-office.rst
+   /onboard/convert-oauth20-service-providers-to-openidconnect.rst
 
 Self-Managed Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,17 +63,19 @@ Self-Managed Deployments
    :maxdepth: 1
    :glob:
 
-   /administration/user-provisioning.rst
-   /deployment/bulk-loading.rst
-   /deployment/ldap-group-sync.rst
-   /deployment/ldap-group-constrained-team-channel.rst
-   /deployment/sso-saml.rst
-   /deployment/sso-saml-technical.rst
-   /deployment/ssl-client-certificate.rst
-   /deployment/certificate-based-authentication.rst
-   /administration/migrating.rst
-   /administration/hipchat-migration-guidelines.rst
-   /administration/migration-announcement-email-template.rst
+   /onboard/user-provisioning-workflows.rst
+   /onboard/bulk-loading-data.rst
+   /onboard/ad-ldap-groups-synchronization.rst
+   /onboard/managing-team-channel-membership-using-ad-ldap-sync-groups.rst
+   /onboard/sso-saml.rst
+   /onboard/sso-saml-technical.rst
+   /onboard/sso-saml-onelogin.rst
+   /onboard/sso-saml-okta.rst
+   /onboard/ssl-client-certificate.rst
+   /onboard/certificate-based-authentication.rst
+   /onboard/migrating-to-mattermost.rst
+   /onboard/migrating-from-hipchat-to-mattermost.rst
+   /onboard/migration-announcement-email.rst
 
 Cloud Workspaces
 ^^^^^^^^^^^^^^^^
@@ -82,8 +84,8 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
 
-   /cloud/cloud-administration/sso-saml.rst
-   /cloud/cloud-administration/saml-technical.rst
+   /onboard/cloud-sso-saml.rst
+   /onboard/cloud-sso-saml-technical.rst
 
 Manage Mattermost
 -----------------
@@ -95,10 +97,10 @@ All Mattermost Instances
    :maxdepth: 1
    :glob:
 
-   /administration/generating-support-packet.rst
-   /deployment/team-channel-management.rst
-   /administration/mmctl-cli-tool.rst
-   /integrations/net-promoter-score.rst
+   /manage/generating-support-packet.rst
+   /manage/team-channel-members.rst
+   /manage/mmctl-command-line-tool.rst
+   /manage/user-satisfaction-surveys.rst
 
 Self-Managed Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,13 +109,13 @@ Self-Managed Deployments
    :maxdepth: 1
    :glob:
  
-   /administration/command-line-tools.rst
-   /administration/scripts.rst
-   /administration/statistics.rst
-   /administration/notices.rst
-   /administration/health-check.rst
-   /administration/announcement-banner.rst
-   /administration/bulk-export.rst
+   /manage/command-line-tools.rst
+   /manage/scripts.rst
+   /manage/statistics.rst
+   /manage/in-product-notices.rst
+   /manage/health-checks.rst
+   /manage/announcement-banner.rst
+   /manage/bulk-export-tool.rst
 
 Cloud Workspaces
 ^^^^^^^^^^^^^^^^
@@ -122,9 +124,8 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
  
-   /cloud/cloud-billing/cloud-billing.rst
-   /cloud/cloud-reporting.rst
-   /cloud/cloud-administration/cloud-changelog.md
+   /manage/cloud-billing.rst
+   /manage/cloud-reporting.rst
 
 Mattermost Compliance
 ---------------------
@@ -136,12 +137,12 @@ Self-Managed Deployments
    :maxdepth: 1
    :glob:
 
-   /administration/ediscovery.rst
-   /administration/compliance.rst
-   /administration/compliance-export.rst
-   /administration/audit-log.rst
-   /administration/data-retention.rst
-   /administration/custom-terms-of-service.rst
+   /comply/electronic-discovery.rst
+   /comply/compliance-reporting-oversight.rst
+   /comply/compliance-export.rst
+   /comply/audit-log.rst
+   /comply/data-retention-policy.rst
+   /comply/custom-terms-of-service.rst
 
 Cloud Workspaces
 ^^^^^^^^^^^^^^^^
@@ -150,7 +151,7 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
 
-   /cloud/cloud-administration/cloud-compliance.rst
-   /cloud/cloud-administration/compliance-export.rst
-   /cloud/cloud-administration/data-retention-policy.rst
-   /cloud/cloud-administration/custom-terms-of-service.rst
+   /comply/cloud-compliance-and-oversight.rst
+   /comply/cloud-compliance-export.rst
+   /comply/cloud-data-retention-policy.rst
+   /comply/cloud-custom-terms-of-service.rst
