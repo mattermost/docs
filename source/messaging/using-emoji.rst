@@ -11,7 +11,7 @@ Selecting an Emoji
 
 Select the **Smile** icon inside the Mattermost message input box to open the Emoji Picker.
 
-.. image:: ../../images/selectemoji.png
+.. image:: ../images/selectemoji.png
   :alt: Open the Mattermost Emoji Picker.
 
 Selecting a Default Skin Tone
@@ -19,7 +19,7 @@ Selecting a Default Skin Tone
 
 Select the **Skin Tone** icon in the top right corner of the Emoji Picker to specify a preferred skin tone for people-based emojis. 
 
-.. image:: ../../images/emoji-skin-tone.png
+.. image:: ../images/emoji-skin-tone.png
   :alt: Select a default skin tone for people-based emojis.
 
 Typing an Emoji
@@ -27,7 +27,7 @@ Typing an Emoji
 
 Alternatively, open the emoji autocomplete by typing ``:`` followed by at least two characters of the word describing the emoji. Descriptions include skin tone details for people-based emojis, where supported.
 
-.. image:: ../../images/emojiautocomplete.png
+.. image:: ../images/emojiautocomplete.png
    :alt: Emoji Autocomplete
    :scale: 80
    
@@ -42,7 +42,7 @@ You can create Custom Emojis which are available to everyone on your Mattermost 
 2. Choose **Select**, then select the image to use for the emoji. 
 3. Select **Save**.
   
-.. image:: ../../images/add_custom_emoji.png
+.. image:: ../images/add_custom_emoji.png
   
 Once saved, your emoji is added to the list of Custom Emoji. 
 
@@ -66,5 +66,5 @@ You can delete Custom Emojis that you created.
 2. Under **Actions** select **Delete**. 
 3. Select **Delete** to confirm. 
   
-.. image:: ../../images/delete_custom_emoji.png
+.. image:: ../images/delete_custom_emoji.png
   
