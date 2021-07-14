@@ -5,7 +5,7 @@ Threads are a key part of the messaging experience in Mattermost. Threads organi
 
 Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Our goal is to improve users’ ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
 
-.. image:: ../../images/collapsed-reply-threads.gif
+.. image:: ../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
 
 Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
@@ -36,7 +36,7 @@ Replies are collapsed under the first message of a thread. To reply to a thread,
     - Select anywhere on a message in a channel to view it, or reply to it, on the right-hand side.
     - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
 
-.. image:: ../../images/crt-new-unread-threads.png
+.. image:: ../images/crt-new-unread-threads.png
    :alt: A dot on threads in a channel indicates unread replies.
 
 Follow Threads and Messages
@@ -44,12 +44,12 @@ Follow Threads and Messages
 
 You can follow particular messages and threads so that any reply activity triggers notifications. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or by accessing the **More Actions** menu. 
 
-.. image:: ../../images/crt-following-thread.png
+.. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies.
 
 You'll automatically follow every thread you participate or are mentioned in. If you’re no longer interested in a or message thread, you can unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
-.. image:: ../../images/crt-more-actions.png
+.. image:: ../images/crt-more-actions.png
    :alt: Follow, unfollow, and mark threads as unread from More Actions.
    
 .. tip::
@@ -62,7 +62,7 @@ Select **Threads** at the top of the channel sidebar to see all your followed th
 
 Select **Unreads** to filter your followed threads by only those with unread replies.
 
-.. image:: ../../images/crt-thread-view.png
+.. image:: ../images/crt-thread-view.png
   :alt: Select Threads in the channel sidebar to see all thread updates in your Threads View.
 
 Tutorial Video
