@@ -14,7 +14,7 @@ The ``/playbook`` slash command allows interaction with incidents via the post t
 - ``/playbook restart`` - Restart an ended playbook run.
 - ``/playbook check [checklist item]`` - Check/uncheck the specified task.
 - ``/playbook announce ~[channels]`` - Announce the current playbook run in other channels.
-- ``/playbook list`` - List all your running playbooks.
+- ``/playbook list`` - List all your ongoing playbook runs.
 - ``/playbook owner [@username]`` - Show or change the current playbook run owner.
 - ``/playbook info`` - Show a summary of the current playbook's activities.
 
