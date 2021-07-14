@@ -1,3 +1,5 @@
+:orphan:
+
 .. _install-debian-mattermost:
 
 Installing Mattermost Server
