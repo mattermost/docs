@@ -134,6 +134,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
+ - On Team Edition servers, panic logs are shown due to a ``getPrevTrialLicense`` API request when loading the System Console [MM-37108](https://mattermost.atlassian.net/browse/MM-37108).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
