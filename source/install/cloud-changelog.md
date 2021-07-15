@@ -3,14 +3,14 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
-- [Release 2021-07-14](#release-2021-07-14)
+- [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
 - [Release 2021-06-02](#release-2021-06-02)
 - [Release 2021-05-21](#release-2021-05-21)
 - [Release 2021-05-05](#release-2021-05-05)
 
-## Release 2021-07-14
+## Release 2021-07-15
 
 ### Highlights
 
