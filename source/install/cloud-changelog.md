@@ -3,13 +3,36 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
 - [Release 2021-06-02](#release-2021-06-02)
 - [Release 2021-05-21](#release-2021-05-21)
 - [Release 2021-05-05](#release-2021-05-05)
-- [Release 2021-04-22](#release-2021-04-22)
-- [Release 2021-04-07](#release-2021-04-07)
+
+## Release 2021-07-15
+
+### Highlights
+
+#### Granular Data Retention Policies
+ - A ``data_retention`` type job can now be run even if the global policy is disabled. The granular (i.e. team and channel-specific) policies will be executed when the data retention job is run. Please note there is a known issue where deleted posts get displayed in channels without new activity after the retention job is run.  This issue is tracked with [this ticket](https://mattermost.atlassian.net/browse/MM-36574).
+
+### Improvements
+
+#### User Interface (UI)
+ - Markdown formatting is now stripped from push notifications.
+ - Improved performance of components that show reactions on posts.
+ - Improved performance of certain components when viewing non-Direct Message channels.
+ - Added minor improvements to performance of messages posted in the right-hand side.
+ - Added icons to apps in the Marketplace.
+ - Apps can now add arbitrary markdown in between fields on forms.
+ - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
+
+### Known Issues
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-07-01
 
