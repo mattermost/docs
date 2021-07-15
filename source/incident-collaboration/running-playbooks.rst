@@ -101,3 +101,6 @@ Playbook dashboard
 ------------------
 
 Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
+
+.. image:: ../images/Playbook-dashboard.png
+   :alt: View and track playbook information.
