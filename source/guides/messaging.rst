@@ -24,6 +24,7 @@ Work with Messages
 
    /messaging/messaging-basics.rst
    /messaging/sending-receiving-messages.rst
+   /messaging/organizing-conversations.rst
    /messaging/formatting-text.rst
    /messaging/using-emoji.rst
    /messaging/mentioning-teammates.rst
