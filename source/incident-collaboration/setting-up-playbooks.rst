@@ -50,6 +50,9 @@ Prompt to run the playbook when a user posts a message
 
   * **Keywords**: Enable the toggle, and enter comma-separated keywords that, when included in a message, will prompt the posting user to run the playbook.
 
+.. image:: ../images/Playbook-keyword-monitoring.png
+   :alt: Keyword notification.
+
 When a run starts
 ~~~~~~~~~~~~~~~~~
 
