@@ -74,6 +74,7 @@ Lastest Mattermost Releases:
  - Fixed an issue where using CTRL+F in a **Direct Message** channel added the user ID rather than the user's name into the search field.
  - Fixed an issue where user icons were displayed at full opacity in muted channels.
  - Fixed an issue where a redundant ``user_update`` websocket event was generated for bot users.
+ - Fixed an issue where a Self-Managed Enterprise Edition E20 trial could be activated more than once without contacting the Mattermost support team.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
