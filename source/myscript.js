@@ -86,6 +86,12 @@ $(document).ready(function () {
 
 			if (eventValue > 0) {
 				// Submit DataLayer Event
+				dataLayer.push({
+					event: 'rateThisPage',
+					eventLabel: rating,
+					eventValue: eventValue,
+					eventFeedback: currentString
+				});
 
 				if (typeof(rudderanalytics) !== 'undefined') {
 					rudderanalytics.track("feedback_submitted", { label: rating, rating: eventValue, feedback: currentString});
