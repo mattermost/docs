@@ -1,29 +1,29 @@
 .. _bot-accounts:
 
 Bot Accounts
-========================================
+=================
 
 Use Bot accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the :doc:`personal access tokens feature <personal-access-tokens>`.
 
 Bot accounts are just like user accounts, except they:
 
-  - Can't be logged into.
-  - Can't be used to create other bot accounts.
-  - Don't count as a registered user and therefore don't count towards the total number of users for an Enterprise Edition license.
+- Can't be logged into.
+- Can't be used to create other bot accounts.
+- Don't count as a registered user and therefore don't count towards the total number of users for an Enterprise Edition license.
 
 Additional benefits include:
 
-  - System Admins can enable Bot accounts to post to any channel in the system, including private teams, private channels, or Direct Message channels.
-  - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
-  - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
-  - Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
-  - A ``BOT`` tag is used throughout Mattermost where bot accounts are referenced, including messages and user lists.
+- System Admins can enable Bot accounts to post to any channel in the system, including private teams, private channels, or Direct Message channels.
+- Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
+- Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
+- Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
+- A ``BOT`` tag is used throughout Mattermost where bot accounts are referenced, including messages and user lists.
 
 Note that currently:
 
-  - Only System Admins or plugins can create or manage bot accounts.
-  - Only user accounts can create and configure webhooks and slash commands.
-  - In Mattermost Enterprise Edition, service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
+- Only System Admins or plugins can create or manage bot accounts.
+- Only user accounts can create and configure webhooks and slash commands.
+- In Mattermost Enterprise Edition, service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
 
 If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com>`_.
 
@@ -200,13 +200,13 @@ If you find yourself unable to edit posts as a bot, check the following:
 If neither of the above help resolve your issue, you also have the option to choose what role the bot account has. If System Admin is chosen, then the bot can update any posts in the system. Note that giving the System Admin role to a bot account enables the bot with other System Admin privileges so this should be done with care.
 
 If AD/LDAP or SAML synchronization is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When AD/LDAP or SAML synchronization is enabled, you can create bot accounts using the steps outlined above. These bot accounts won't require an email address.
 
 If you need to sync service accounts from AD/LDAP or SAML to Mattermost and use them as bot accounts, `please reach out to us <https://mattermost.com/contact-us>`_ to discuss in detail. You may not need to sync service accounts and use them as bot accounts to meet your use case.
 
 How are bot accounts identified in compliance exports?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As of v5.14, a field named ``UserType`` is added to Compliance Exports, including Global Relay, Actiance, and CSV. The field identifies whether a message was posted by a ``user`` or by a ``bot`` account.  

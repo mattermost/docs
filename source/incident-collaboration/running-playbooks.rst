@@ -96,10 +96,6 @@ If a playbook run was ended prematurely, it can be restarted within the channel 
 
 1. Select the **Playbook** icon in the channel header to open the RHS.
 2. Find the playbook run you're looking for and select **Go to channel**.
-3. Select **Update Status**.
-4. From the **Status** drop-down menu, select **Active**.
-5. Enter a message with additional details.
-6. Select **Update Status**.
 
 Playbook dashboard
 ------------------

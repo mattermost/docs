@@ -29,4 +29,4 @@ To view active and past runs in your team from the desktop or browser:
 2. Select **Runs**.
 3. Select the specified run from the list provided.
 4. The run's details are provided in the **Overview** tab, and the retrospective is in the **Retrospective** tab.
-5. Optionally export the contents of the incident channel to review during a post-mortem.
+5. Optionally export the contents of the incident channel to review.

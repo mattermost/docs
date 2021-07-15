@@ -37,7 +37,7 @@ Templates are standardized sets of content that are used for communicating remin
   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
   * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
   * Optionally configure a template to use for the first status update. Subsequent status updates will start with the text of the most recent update.
-  
+
 Defining actions
 ----------------
 

@@ -1,3 +1,5 @@
+:orphan:
+
 ..  _install-rhel-6-mysql:
 
 Installing MySQL Database Server
