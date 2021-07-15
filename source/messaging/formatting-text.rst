@@ -132,7 +132,7 @@ This can be accomplished by placing three backticks :kbd:`\`\`\`` on the line di
 
 .. tip::
 
-  Type three backticks ``\\\``, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type three more backticks ``\\\``.
+  Type three backticks ```````, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type three more backticks ```````.
 
 
 Or by indenting each line by four spaces:
