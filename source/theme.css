@@ -375,6 +375,7 @@ footer hr {
 }
 
 
+
 .features__table {
 	margin-bottom: 50px;
 }
@@ -876,6 +877,10 @@ header .header__searchbar {
     background-image: linear-gradient(90deg,#f0f6ff 0,#d7e7ff 100%);
     position: fixed;
     z-index: 9999;
+}
+
+.notification-bar.flex {
+	display: flex;
 }
 
 .notification-bar.flex {
