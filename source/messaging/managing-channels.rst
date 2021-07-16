@@ -145,7 +145,7 @@ Switching channels
 
 Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance.
 
-    .. image:: ../../images/switch-channels.png
+    .. image:: ../images/switch-channels.png
         :alt: Switch channels and review member availability.
 
 Navigating recently viewed channels
