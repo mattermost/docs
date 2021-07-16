@@ -48,6 +48,9 @@ Latest Mattermost Mobile Apps releases:
 #### iOS specific
  - Fixed an animation transition when displaying the options menu on iOS.
 
+### Known Issues
+ - Android app doesn't group notifications properly [MM-37134](https://mattermost.atlassian.net/browse/MM-37134).
+
 ## 1.44.1 Release
 - Release Date: June 28, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
