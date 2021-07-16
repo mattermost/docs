@@ -1,0 +1,22 @@
+ 
+# This is workflow for spell checking using PySpelling lib (https://pypi.org/project/pyspelling/)
+
+name: Spellcheck
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+  
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Spellcheck
+      - uses: actions/checkout@v2
+      - uses: igsekor/pyspelling-any@v1.0.3
+        name: Spellcheck
