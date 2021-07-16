@@ -53,7 +53,7 @@ Actiance XML
 4. Set the export file format to **Actiance XML**.
 5. Select **Save**.
 
-The daily compliance export job creates a ``.zip`` file with a unique job identifier of all messages posted in the last 24 hours. Once you've selected Actiance XML as your file format, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actianceworks.com/Vantage.asp/>`__. For a sample Actiance output, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__.
+The daily compliance export job creates a ``.zip`` file with a unique job identifier of all messages posted in the last 24 hours. Once you've selected Actiance XML as your file format, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actianceworks.com/Vantage.asp>`__. For a sample Actiance output, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__.
 
 .. note::
   
