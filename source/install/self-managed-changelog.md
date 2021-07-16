@@ -18,7 +18,7 @@ Lastest Mattermost Releases:
 **Release Day: 2021-07-16**
 
 ### Deprecations
- - The ``platform`` binary and “--platform” flag have been deprecated.
+ - The ``platform`` binary and “--platform” flag have been removed. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.
 
 ### Important Upgrade Notes
  - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
