@@ -623,9 +623,9 @@ Maximum file size for message attachments entered in megabytes in the System Con
 Enable Document Search by Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This configuration setting enables users to search the contents of documents attached to messages.
+Enable users to search the contents of documents attached to messages. 
 
-**True**: Documents are searchable by their content. Install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include additional file formats, including DOCX, RTF, and PAGES files. 
+**True**: Documents are searchable by their content.  
 
 .. note::
    Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
@@ -655,7 +655,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This configuration setting enables users to search the contents of compressed ZIP files attached to messages. 
+This configuration setting enables users to search the contents of compressed ZIP files attached to messages.
 
 **True**: Contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
 
@@ -666,7 +666,7 @@ This configuration setting enables users to search the contents of compressed ZI
 +---------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
+  - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
   - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
@@ -785,7 +785,7 @@ Enable Image Proxy
 
 When ``true``, enables an image proxy for loading external images. The image proxy is used by the Mattermost apps to prevent them from connecting directly to remote servers. This anonymizes their connections and prevents them from accessing insecure content.
 
-See the :doc:`Image Proxy documentation <../deploy/image-proxy>` to learn more.
+See the :doc:`documentation <image-proxy>` to learn more.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
@@ -4824,11 +4824,11 @@ Service Settings
 Automatically Follow Threads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245>`_ (releasing in beta in Q1 2021) and may affect server performance. It is recommended to review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.
+This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`_, and may affect server performance. It is recommended to review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.   
 
-**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled (releasing in beta in Q1 2021).
+**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
@@ -4988,6 +4988,7 @@ If this setting is enabled, users can search messages. Disabling search can resu
 
 Enable User Status Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Turn status updates off to improve performance. When status updates are off, users appear online only for brief periods when posting a message, and only to members of the channel in which the message is posted.
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -5756,6 +5757,17 @@ Experimental Settings
 ~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
+
+Disable Post Metadata
+^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
+
+**False**: Load channels with more accurate scroll positioning by loading post metadata.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false``.                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~

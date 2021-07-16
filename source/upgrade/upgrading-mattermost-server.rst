@@ -1,11 +1,11 @@
 Upgrading Mattermost Server
 ===========================
 
-In most cases, you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
+In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 .. important::
 
-  Support for Mattermost Server v5.25 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ has come to the end of its life cycle as of April 15, 2021. Upgrading to Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ or later is required.
+  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
 
 Upgrading to the Latest Version
 -------------------------------
@@ -64,11 +64,7 @@ Location of your local storage directory
 
 #. Extract the Mattermost Server files.
 
-   .. code-block:: sh
-     
-     tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
-  
-   The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
+   .. code-block:: sh     
 
 #. Stop your Mattermost server.
 
@@ -78,9 +74,9 @@ Location of your local storage directory
 
 #. Back up your data and application.
 
-   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
+   #. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
 
-   b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
+   #. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
       .. code-block:: sh
 
@@ -133,7 +129,9 @@ Location of your local storage directory
 
      If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
 
-#. Copy the new files to your install directory and remove the temporary files. Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important. For example:
+#. Copy the new files to your install directory and remove the temporary files.
+
+   Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
 
    .. code-block:: sh
 
@@ -158,10 +156,10 @@ Location of your local storage directory
 
 If they still show yellow, then you need to trigger a config propagation across the cluster:
 
-   a. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
-   b. Click **Save**.
+   #. Open the System Console and change a setting, then revert it. This will enable the **Save** button for that page.
+   #. Click **Save**.
 
-   This will not change any config but sends the existing config to all nodes in the cluster.
+   This will not change any config, but sends the existing config to all nodes in the cluster.
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
