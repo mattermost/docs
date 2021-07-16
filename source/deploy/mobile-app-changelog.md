@@ -1,12 +1,52 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.44.1 Release](#release)
-- [1.44.0 Release](#id1)
-- [1.43.0 Release](#id4)
-- [1.42.1 Release](#id13)
-- [1.42.0 Release](#id18)
-- [1.41.1 Release](#id26)
+- [1.45.0 Release](#release)
+- [1.44.1 Release](#id1)
+- [1.44.0 Release](#id6)
+- [1.43.0 Release](#id12)
+- [1.42.1 Release](#id21)
+- [1.42.0 Release](#id26)
+
+## 1.45.0 Release
+- Release Date: July 16, 2021
+- Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Highlights
+
+#### Emoji Enhancements with Skin Tone Selection
+ - Added support for emoji standard v13.0 with Mattermost server v5.37. **Note: Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older than 11 and iOS older than 14.2.**
+
+#### English-Australian Language Support
+ - Mattermost is now available in English-Australian.
+
+### Improvements
+ - Added the ability to reply to individual messages from push notifications on Android.
+ - Included message sender's user icon in push notifications.
+ - Removed the nickname from the user autocomplete when the item is the current user.
+ - The "swipe up to refresh" functionality was added back.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the progress indicator did not display for all attachments in the post draft when adding multiple images at once.
+ - Fixed an issue where tapping a channel link from a reply thread did not open the channel.
+ - Fixed an issue that caused the reply from a push notification to fail when the message belonged to a thread.
+ - Fixed an issue where the at-sign ``@`` was not ignored when searching for users.
+ - Fixed the post draft to correctly detect if the channel being viewed is read only, including when the thread view is from a different channel than the current channel.
+ - Fixed the render of auto-responder posts.
+ - Fixed an issue where the option to join another team was not present after deleting cache & data.
+
+#### Android specific
+ - Fixed Android not being hidden when going back in the thread screen when the keyboard was opened.
+
+#### iOS specific
+ - Fixed an animation transition when displaying the options menu on iOS.
 
 ## 1.44.1 Release
 - Release Date: June 28, 2021
