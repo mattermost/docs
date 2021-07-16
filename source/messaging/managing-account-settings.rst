@@ -36,7 +36,9 @@ Email is used for signing in, notifications, and password reset. Email requires 
 Profile Picture
 ~~~~~~~~~~~~~~~
 
-Profile pictures appear next to all posts and in the top of the channels pane next to your name. Change your profile picture by selecting **Select** and then choosing a picture. For best results, choose an image that is at least 128 x 128 pixels in size. The GIF format is not supported.
+Profile pictures appear next to all posts and at the top of the channel sidebar next to your name. 
+
+To change your profile picture, select **Select**, then choose an image. For best results, choose an image that's at least 128 x 128 pixels in size. Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported.
 
 Security
 --------
@@ -121,7 +123,7 @@ Email Notifications
 
 Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
 
-If your System Admin has enabled **Email Batching**, you will have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
+If your System Admin has enabled **Email Batching**, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
 
 Mobile Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,7 +233,8 @@ Language
 Select what language Mattermost displays in the user interface. Options include:
 
 - Deutsch - German
-- English
+- English (U.S.)
+- English Australian
 - Español - Spanish
 - Français - French
 - Italiano - Italian
