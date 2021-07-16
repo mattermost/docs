@@ -1,7 +1,7 @@
 Overview
 ========
 
-Mattermost Playbooks are a collaboration tool for teams. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. For the participants, it prescribes processes such as task checklists, status updates, and retrospective reports. For the integrated tools, it configures the triggers to perform automated actions. And for stakeholders, it provides a single pane of glass for visibility into each run as well as aggregate insights over time.
+Mattermost Playbooks are a collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. For the participants, it prescribes processes such as task checklists, status updates, and retrospective reports. For the integrated tools, it configures the triggers to perform automated actions. And for stakeholders, it provides a single pane of glass for visibility into each run as well as aggregate insights over time.
 
 Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration.
 
