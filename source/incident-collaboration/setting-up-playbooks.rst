@@ -17,10 +17,10 @@ Creating checklists
 4. Name your playbook and provide a description.
 5. Select the **Checklists** tab.
 
-You can start with the default checklist and edit it or you can delete it and select **+ New checklist**. Each new section of a checklist is called a stage.
+You can start with the default checklist and edit it or you can delete it and select **+ New checklist**.
 
-    * Within each stage, select **+ New task** to add tasks that are meant to be completed together.
-    * Drag and drop to reorganize stages and tasks.
+    * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+    * Drag and drop to reorganize checklists and tasks.
     * Optionally add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
     * Optionally add a slash command to the task that can be executed by members of the playbook as needed.
 6. Choose **Save**.
