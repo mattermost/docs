@@ -15,7 +15,7 @@ Mattermost Incident Collaboration is available in the Plugin Marketplace:
 
 To access playbooks:
 
-* From the Main Menu, select **Incident Collaboration** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
+* From the Main Menu, select **Incident Collaboration** to view stats, review incidents of a member, and configure playbooks. System Admins have unrestricted access.
 * From the channel header, select the **Playbooks** icon to open the right-hand sidebar. From there, you can start a new playbook run or view runs you belong to.
 
 API Documentation
