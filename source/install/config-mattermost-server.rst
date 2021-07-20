@@ -40,8 +40,8 @@ Create the System Admin user and set up Mattermost for general use.
  
 .. note::
 
-    * Files and images that users attach to their messages are not stored in the database. Instead, they're stored in a location that you specify. You can store the files on the local file system or in Amazon S3.
-    * Make sure that the location has enough free space. The amount of storage that's required depends on the number of users and on the number and size of files that users attach to messages.
+    * Files and images that users attach to their messages are not stored in the database. Instead, they're stored in a location that you specify. You can keep the files on the local file system or in Amazon S3.
+    * Make sure that the location has enough free space. The amount of storage required depends on the number of users and the number and size of files that users attach to messages.
  
 7. Select **Save** to apply the configuration.
 
