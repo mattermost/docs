@@ -15,26 +15,26 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
+ - Improved typing performance in affected environments by reducing the frequency in which drafts are saved.
  - Improved user and channel selector for app commands.
  - Added a **Set Status** button if the custom status hasn't changed from currently set status.
  - Added plugin API methods for user access tokens and OAuth apps.
  - Improved default rendering of images inserted via the GIF picker.
  - Small text changes were added to Direct and Group Message menus: 'Mute channel' and 'Edit Channel Header' now reads 'Mute Conversation' and 'Edit Conversation Header'.
- - Added support for `react-intl` and `<Timestamp/>` usage in plugins.
+ - Added support for ``react-intl`` and ``<Timestamp/>`` usage in plugins.
 
 #### Administration
- - Fixed some of the incorrect mention counts and unreads around threads and channels since the introduction of collapsed reply threads (Beta). This fix is done through a SQL migration and it may take several minutes to complete for large databases.
+ - Fixed some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases.
  - Upgraded the builder image to use Go v1.16.
  - Added a new feature to archive and unarchive teams through **System Console** > **Teams**.
 
 ### Bug Fixes
- - Fixed an issue where the "Find channel" channel switcher text overflowed out of the button in some languages.
+ - Fixed an issue where the "Find channel" channel switcher text overflowed beyond the button for some languages.
  - Fixed an issue where inter-plugin requests without a body didn't work.
  - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
 
 ### Known Issues
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
