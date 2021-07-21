@@ -38,13 +38,22 @@ Docker Setup on Ubuntu
 
 3. **Deploy the Mattermost Docker** 
 
-You can get the :code:`uid` (user ID) and :code:`gid` (group ID) of the Docker user by running:
+Mattermost by default uses :code:`uid=2000` (user ID) and :code:`gid=2000` to access :code:`./volumes/app/`.
 
-.. code:: bash
-   
-   id <username>
+If you need to use another group or user IDs you can uncomment following lines in :code:`docker-compose.yml` (also change :code:`chown -R 2000:2000` in set-up commands to your :code:`uid:gid`)
 
-Replace :code:`<username>` with the actual username. The following setup assumes the result above is :code:`uid=1000` and :code:`gid=1000`.
+.. code:: yaml
+
+  mattermost-app:
+    build:
+      context: app
+      # uncomment following lines for team edition or change UID/GID
+      args:
+        - edition=team
+        - PUID=1000
+        - PGID=1000
+        - MM_VERSION=5.31
+    restart: unless-stopped
 
 Set up using:
 
@@ -55,7 +64,7 @@ Set up using:
    cd mattermost-docker
    docker-compose build
    mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-   sudo chown -R 1000:1000 ./volumes/app/mattermost/
+   sudo chown -R 2000:2000 ./volumes/app/mattermost/
    docker-compose up -d
 
 The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.
