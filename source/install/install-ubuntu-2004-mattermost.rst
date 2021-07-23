@@ -26,7 +26,7 @@ Assume that the IP address of this server is 10.10.10.2.
 7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
   -  If you are using PostgreSQL:
     a.  Set ``"DriverName"`` to ``"postgres"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+    b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
   -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
