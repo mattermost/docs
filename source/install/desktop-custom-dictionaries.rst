@@ -2,7 +2,6 @@ Desktop App Custom Dictionaries
 =====================================
 
 Mattermost Desktop App users running Windows or Linux can download dictionary definitions from a custom URL. If custom dictionaries aren't specified, default dictionary definitions are obtained automatically from Chromium's CDNs.
-such a service, dictionaries definitions will be automatically obtained from Chromium's CDNs.
 
 This feature is available in the Mattermost Desktop App from v4.7.1 on Windows and Linux. Custom dictionaries are not supported in the Mattermost Desktop App on macOS.
 
