@@ -1,5 +1,5 @@
 Desktop App Custom Dictionaries
-=====================================
+===============================
 
 Mattermost Desktop App users running Windows or Linux can download dictionary definitions from a custom URL. If custom dictionaries aren't specified, default dictionary definitions are obtained automatically from Chromium's CDNs.
 
@@ -24,7 +24,7 @@ Open the Mattermost Desktop App, go to **… > File > Settings**. Under **App Op
 named **Use and alternative dictionary URL**. Use this option to specify the URL to the root folder of the dictionaries, then select `Save`.
 
 Removing customized dictionaries
-------------------------------------
+--------------------------------
 
 To stop using the specified dictionary definitions, select the **Revert to default** preference option under the input box in the **App Options** to 
 use Chromium's CDNs instead.
