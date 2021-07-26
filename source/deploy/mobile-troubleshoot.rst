@@ -82,7 +82,7 @@ For example:
       [...]
     }
 
-See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#data-source>`__ documentation for details on configuring the connection string to the master database.
+See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#data-source>`__ documentation for details on configuring the connection string to the master database.
 
 None of these solve my problem!
 -------------------------------
