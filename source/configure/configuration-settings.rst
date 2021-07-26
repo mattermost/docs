@@ -4307,7 +4307,7 @@ System Admins can set the default appearance of collapsed reply threads for thei
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default-off``.                        |
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``.                        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
