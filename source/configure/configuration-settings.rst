@@ -4307,7 +4307,7 @@ System Admins can set the default appearance of collapsed reply threads for thei
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default-off``.                        |
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``.                        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
@@ -4650,14 +4650,15 @@ Enable Shared Channels (Experimental)
 
 *Available in Enterprise Edition E20*
 
-Enable Shared Channels to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
+Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` settings are ``"ExperimentalSettings:EnableSharedChannels": false ""`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false ""`` with options ``true`` or ``false``. Both configuration settings must be enabled in order to share channels with secure connections.       |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
+   - Both configuration settings must be enabled in order to share channels with secure connections.
    - Enabling Shared Channels functionality requires a server restart.
    - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
 
