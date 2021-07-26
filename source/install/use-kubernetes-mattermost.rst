@@ -6,7 +6,7 @@ Using Mattermost Operator Functionality
 Rolling Upgrades
 ~~~~~~~~~~~~~~~~
 
-The Mattermost Kubernetes Operator supports rolling upgrades so you can upgrade
+The Mattermost Kubernetes Operator supports rolling upgrades, so you can upgrade
 your Mattermost deployment with zero downtime. This process
 requires at least two replicas as a rolling upgrade cannot be performed if there is only one pod.
 Replicas are created when a user count is selected and exceeds 100.
