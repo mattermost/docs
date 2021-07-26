@@ -1,9 +1,13 @@
+:orphan:
+
 ..  _docker-local-machine:
 
 Deploy Mattermost on Docker
 ============================
 
-.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback and improvements are welcome and greatly appreciated. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst>`__.
+.. important:: 
+
+   This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. Community testing, feedback, and improvements are welcome and greatly appreciated. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/prod-docker.rst>`__.
 
 Deploy Mattermost using a multi-node configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
 
@@ -36,35 +40,35 @@ Docker Setup on Ubuntu
 
 You can get the :code:`uid` (user ID) and :code:`gid` (group ID) of the Docker user by running:
 
-   .. code:: bash
+.. code:: bash
    
-       id <username>
+   id <username>
 
 Replace :code:`<username>` with the actual username. The following setup assumes the result above is :code:`uid=1000` and :code:`gid=1000`.
 
 Set up using:
 
-   .. code:: bash
+.. code:: bash
    
-       sudo apt-get install git
-       git clone https://github.com/mattermost/mattermost-docker.git
-       cd mattermost-docker
-       docker-compose build
-       mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-       sudo chown -R 1000:1000 ./volumes/app/mattermost/
-       docker-compose up -d
+   sudo apt-get install git
+   git clone https://github.com/mattermost/mattermost-docker.git
+   cd mattermost-docker
+   docker-compose build
+   mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
+   sudo chown -R 1000:1000 ./volumes/app/mattermost/
+   docker-compose up -d
 
 The ``docker-compose`` network that is created defaults to 172.18.0.0/16.  If you need to change the default network this `link <https://success.docker.com/article/how-do-i-configure-the-default-bridge-docker0-network-for-docker-engine-to-a-different-subnet>`__ provides guidelines on how to do that. If the network is already set up with the default, you need to run the following command to remove it. Then, run the command again to regenerate the default network to include the new network setting.
    
-   .. code:: bash
+.. code:: bash
  
-       docker network rm mattermost-server_mm-test
+   docker network rm mattermost-server_mm-test
 	   
 To verify the current Docker network use the following command to list it (you can access information about the options `here <https://docs.docker.com/engine/reference/commandline/network_ls/>`__):
    
-   .. code:: bash
+.. code:: bash
    
-       docker network ls [OPTIONS]
+   docker network ls [OPTIONS]
 
 4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__.
 
@@ -97,7 +101,7 @@ Other Options
 
 To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and uncomment the following lines:
 
-  .. code-block:: text
+.. code-block:: text
 
-      # args:
-      #   - edition=team
+   # args:
+   #   - edition=team
