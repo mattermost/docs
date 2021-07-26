@@ -17,7 +17,7 @@ Serve the files from a web server, and write down the URL to the root folder of 
 Configuring the Desktop App
 ---------------------------
 
-Open the Mattermost Desktop App, go to **… > File > Settings**. Under **App Options**, and ensure that the **Check Spelling** option is enabled. Below this setting there is a link named **Use and alternative dictionary URL**. Use this option to specify the URL to the root folder of the dictionaries, then select `Save`.
+Open the Mattermost Desktop App, go to **… > File > Settings**. Under **App Options**, ensure that the **Check Spelling** option is enabled. Below this setting there is a link named **Use an alternative dictionary URL**. Use this option to specify the URL to the root folder of the dictionaries, then select **Save**.
 
 Removing customized dictionaries
 --------------------------------
