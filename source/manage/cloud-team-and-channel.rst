@@ -1,5 +1,3 @@
-:orphan:
-
 Managing Team and Channel Members
 =================================
 
