@@ -19,10 +19,9 @@ To enable email, configure an SMTP email service as follows:
 
     * If you don't have an SMTP service you can set one up with:
 
-        - `Amazon Simple Email Service (SES) <https://aws.amazon.com/ses/>`__:
+        - `Amazon Simple Email Service (SES) <https://aws.amazon.com/ses/>`_:
 
-            1. Go to `Amazon SES
-                console <https://console.aws.amazon.com/ses>`__ then
+            1. Go to `Amazon SES console <https://console.aws.amazon.com/ses>`__ then
                 ``SMTP Settings > Create My SMTP Credentials``
             2. Copy the ``Server Name``, ``Port``, ``SMTP Username``, and
                 ``SMTP Password`` for Step 2 below.
@@ -51,7 +50,7 @@ To enable email, configure an SMTP email service as follows:
 
    2. Go to the **Authentication** > **Email** tab and configure the following:
 
-      1.  **Allow Sign Up With Email:** ``true``
+      1. **Allow Sign Up With Email:** ``true``
       
    3. Go to the **Notifications** > **Email** tab and configure the following:
    
