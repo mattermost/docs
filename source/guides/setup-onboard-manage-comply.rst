@@ -48,6 +48,7 @@ All Mattermost Instances
    /onboard/advanced-permissions-backend-infrastructure.rst
    /onboard/system-admin-roles.rst
    /onboard/guest-accounts.rst
+   /onboard/shared-channels.rst
    /onboard/ad-ldap.md
    /onboard/multi-factor-authentication.rst
    /onboard/sso-openidconnect.rst

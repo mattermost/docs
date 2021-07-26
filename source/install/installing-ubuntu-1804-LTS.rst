@@ -13,7 +13,7 @@ Install a production-ready Mattermost system on 1 to 3 machines.
 .. include:: install-ubuntu-1804-server.rst
 .. include:: install-ubuntu-1804-mysql.rst
 .. include:: install-ubuntu-1804-postgresql.rst
-.. include:: install-ubuntu-1604-mattermost.rst
+.. include:: install-ubuntu-1804-mattermost.rst
 .. include:: config-mattermost-server.rst
 .. include:: config-tls-mattermost.rst
 .. include:: install-nginx.rst

@@ -64,7 +64,11 @@ Location of your local storage directory
 
 #. Extract the Mattermost Server files.
 
-   .. code-block:: sh     
+   .. code-block:: sh
+     
+     tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
+  
+   The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
 #. Stop your Mattermost server.
 
