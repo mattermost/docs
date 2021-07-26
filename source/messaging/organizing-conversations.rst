@@ -7,8 +7,13 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 
 .. image:: ../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
+  
+Enable Collapsed Reply Threads
+------------------------------
 
-Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
+Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#collapsed-reply-threads-beta>`__ documentation for details. 
+
+Once this feature is enabled in the System Console, you can `enable this feature for your Mattermost account <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
 
 Known Issues
 ------------
@@ -17,8 +22,9 @@ Known Issues
 
     Collapsed Reply Threads are available as an early beta in Mattermost Cloud and Mattermost Server v5.37 and later. It's expected that you may experience bugs as we stabilize the feature. In particular, please be aware of these known issues: 
     
-    - When enabling Collapsed Reply Threads for the first time, you may see channels or threads you’ve seen before appear as unread. To resolve this,
-    
+    - Preferences for mobile, desktop, and email notifications may not be respected when threads are followed or unfollowed. Work in-progress tickets: `MM-37030 <https://mattermost.atlassian.net/browse/MM-37030>`__, `MM-37031 <https://mattermost.atlassian.net/browse/MM-37031>`__, `MM-36234 <https://mattermost.atlassian.net/browse/MM-36234>`__
+    - When enabling Collapsed Reply Threads for the first time, you may see channels or threads you’ve seen before appear as unread. To resolve this:
+      
       - View any unread channels or use ALT+SHIFT+UP/DOWN to switch to unread channels with the keyboard. Work in-progress ticket: `MM-35494 <https://mattermost.atlassian.net/browse/MM-35494>`__
       - Use the **Mark all as read** button in the **Threads** view to mark your threads as read. Work in-progress ticket: `MM-35345 <https://mattermost.atlassian.net/browse/MM-35345>`__
        

@@ -177,6 +177,7 @@ redirects = {
      "cloud/cloud-administration/saml-technical": "https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
      "cloud/cloud-reporting": "https://docs.mattermost.com/manage/cloud-reporting.html",
      "cloud/cloud-administration/site-configuration": "https://docs.mattermost.com/configure/cloud-site-configuration.html",
+     "cloud/cloud-mobile/cloud-app-config": "https://docs.mattermost.com/deploy/mobile-appconfig.html",
      "help/apps/desktop-changelog": "https://docs.mattermost.com/install/desktop-app-changelog.html",
      "help/getting-started/welcome-to-mattermost": "https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html",
      "help/getting-started/access-your-workspace": "https://docs.mattermost.com/messaging/accessing-your-workspace.html",
