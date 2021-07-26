@@ -93,7 +93,7 @@ Upgrading Mattermost Server
    
     a. Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the note below, you can jump to step c.
 
-        - By default, your data directories will be preserved with the commands below, including ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per `<https://docs.mattermost.com/administration/upgrade.html#before-you-begin>`__).
+        - By default, your data directories will be preserved with the commands below, including ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per `<https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__).
         - Custom directories are directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
         - If using `Bleve Search <https://docs.mattermost.com/deployment/bleve.html#bleve-search-experimental>`__, the index directory path won't be preserved with the commands below if the directory exists within the ``mattermost`` directory. You can either move the bleve index directory out from the ``mattermost`` directory before upgrading, or following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory, then store that directory or re-index. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
         
