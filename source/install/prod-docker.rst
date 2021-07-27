@@ -40,7 +40,7 @@ Docker Setup on Ubuntu
 
 Mattermost by default uses :code:`uid=2000` (user ID) and :code:`gid=2000` to access :code:`./volumes/app/`.
 
-If you need to use another group or user IDs you can uncomment following lines in :code:`docker-compose.yml` (also change :code:`chown -R 2000:2000` in set-up commands to your :code:`uid:gid`)
+If you need to use another group or user IDs you can uncomment following lines in `docker-compose.yml` (also change `chown -R 2000:2000` in set-up commands to your `uid:gid`)
 
 .. code:: yaml
 
