@@ -4307,7 +4307,7 @@ System Admins can set the default appearance of collapsed reply threads for thei
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default-off``.                        |
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``.                        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
@@ -4650,14 +4650,15 @@ Enable Shared Channels (Experimental)
 
 *Available in Enterprise Edition E20*
 
-Enable Shared Channels to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
+Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` settings are ``"ExperimentalSettings:EnableSharedChannels": false ""`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false ""`` with options ``true`` or ``false``. Both configuration settings must be enabled in order to share channels with secure connections.       |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
+   - Both configuration settings must be enabled in order to share channels with secure connections.
    - Enabling Shared Channels functionality requires a server restart.
    - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
 
@@ -4694,7 +4695,8 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
+.. note::
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ product documentation for details on customizing the sidebar. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 

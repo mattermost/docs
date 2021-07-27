@@ -5,13 +5,13 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 Lastest Mattermost Releases:
-- [Release v5.37 - Feature Release](#release-v5-37-extended-support-release)
+- [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
 - [Release v5.36 - Feature Release](#release-v5-36-feature-release)
 - [Release v5.35 - Feature Release](#release-v5-35-feature-release)
 - [Release v5.34 - Feature Release](#release-v5-34-feature-release)
 - [Release v5.33 - Feature Release](#release-v5-33-feature-release)
 - [Release v5.32 - Feature Release](#release-v5-32-feature-release)
-- [Release v5.31 - ESR](#release-v5-31-esr)
+- [Release v5.31 - Extended Support Release](#release-v5-31-esr)
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
@@ -136,6 +136,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Known Issues
  - On Team Edition servers, panic logs are shown due to a ``getPrevTrialLicense`` API request when loading the System Console [MM-37108](https://mattermost.atlassian.net/browse/MM-37108).
  - When upgrading to 5.37.0, the Incident Collaboration plugin may not be automatically installed in some cases.
+ - Add Members modal is incorrectly themed on the Mattermost Dark theme [MM-37220](https://mattermost.atlassian.net/browse/MM-37220).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -831,6 +832,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.31.8, released 2021-07-21**
+  - Fixed an issue in clustering where a mutex would fail to be unlocked when a timeout happened. [MM-37246](https://mattermost.atlassian.net/browse/MM-37246)
 - **v5.31.7, released 2021-06-21**
   - Fixed an issue with an infinite recursion during message export for Hitachi HCP file backends. [MM-36440](https://mattermost.atlassian.net/browse/MM-36440)
 - **v5.31.6, released 2021-06-11**
