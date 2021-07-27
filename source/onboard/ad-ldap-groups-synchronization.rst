@@ -28,7 +28,7 @@ Pre-installation Notes
 
 If you have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console > User Management > Groups**.
 
-The group filter is an optional configuration setting available under **System Console > AD/LDAP** and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter. However, it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure searching of group objects in your AD/LDAP tree.
+The group filter is an optional configuration setting available under **System Console > AD/LDAP** and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter, however, it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
