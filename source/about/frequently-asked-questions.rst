@@ -376,7 +376,7 @@ You are free to license your own code as you see fit. We will not apply the Matt
 Can I publish my own plugin and rely on enterprise specific functionality?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As before, you are free to license your code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise Edition E20 license regardless of how you license your plugin.
+As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise Edition E20 license regardless of how you license your plugin.
 
 Can’t someone compile out any license restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
