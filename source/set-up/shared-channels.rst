@@ -24,7 +24,7 @@ Once a trusted relationship is established between Mattermost servers, System Ad
 
 .. note:: 
 
-    - System Admins can only create secure connections with other Mattermost Enterprise Edition E20 instances. They can only share channels with secured connections by typing slash commands into the Message box of any channel.
+    - System Admins can only create secure connections with other Mattermost Enterprise Edition E20 instances, and can only share channels with secured connections by typing slash commands into the Message box of any channel.
     - System Admins must use Mattermost to generate a password-protected encrypted invitation code. However, sending secure connection invitations is not completed using Mattermost. System Admins must have an independent way to extend the secure connection invitation, such as by email.
     - A channel shared by a host organization cannot be shared from the receiving organization to another organization. Organizations are prevented from sharing a channel originating from another organization. 
 
