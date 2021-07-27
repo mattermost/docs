@@ -49,7 +49,7 @@ the system domain, ``https://domain.com/teamurl/``.
 -  Teams may contain only lowercase letters, numbers and dashes.
 -  Teams must start with a letter and cannot end in a dash.
 -  Teams must be 2–15 characters in length.
--  Team names cannot start with the following restricted words: ``admin``, ``api``, ``channel``, ``claim``, ``error``, ``files``, ``help``, ``landing``, ``login``, ``mfa``, ``oauth``, ``plug``, ``plugins``, ``post``, or ``signup``.
+-  Team names cannot start with the following restricted words: ``admin``, ``api``, ``channel``, ``claim``, ``error``, ``files``, ``help``, ``landing``, ``login``, ``mfa``, ``oauth``, ``plug``, ``plugins``, ``post``, ``signup``, ``playbooks``, or ``boards``.
    
 Best Practices for Using a Single Team vs. Multiple Teams
 ---------------------------------------------------------
