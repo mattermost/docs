@@ -17,7 +17,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Improved typing performance in affected environments by reducing the frequency in which drafts are saved.
  - Improved user and channel selector for app commands.
- - Added a **Set Status** button if the custom status hasn't changed from currently set status.
+ - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
  - Added plugin API methods for user access tokens and OAuth apps.
  - Improved default rendering of images inserted via the GIF picker.
  - Small text changes were added to Direct and Group Message menus: 'Mute channel' and 'Edit Channel Header' now reads 'Mute Conversation' and 'Edit Conversation Header'.
