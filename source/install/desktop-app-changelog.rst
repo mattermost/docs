@@ -15,7 +15,15 @@ Release v4.7
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
-**Released 2021-06-23**
+- **v4.7.1, release ?**
+ - Security fix.
+ - Added support to allow users to specify a different download location for Hunspell dictionaries.
+ - Fixed an issue where the notification badge did not get cleared when reading a channel with unread messages until navigating away from the channel.
+ - Fixed an issue where the top bar menu, and the minimize, maximize and close icons did not work on 4.7.0 on Windows 10 if GPU acceleration was disabled.
+ - Reverted to Electron v12.0.1 to fix an issue where clicking in the searchbox to highlight search terms dragged the desktop window.
+ - Fixed an issue to prevent a crash on malformed default download locations.
+- **v4.7.0, released 2021-06-23**
+ - Original v4.7.0 release
 
 **Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
 
@@ -83,8 +91,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Notification badge does not get cleared when reading a channel with unread messages until navigating away from the channel `MM-35946 <https://mattermost.atlassian.net/browse/MM-35946>`_.
-- The top bar menu, and the minimize, maximize and close icons do not work on 4.7.0 on Windows 10 if GPU acceleration is disabled `MM-36938 <https://mattermost.atlassian.net/browse/MM-36938>`_.
+- The new spellchecker connects to Google servers for downloading updated dictionaries.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
 - Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
 - Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
