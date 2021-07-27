@@ -23,7 +23,7 @@ See our `Mattermost AppConfig Values <https://docs.mattermost.com/mobile/mobile-
 
 .. important::
     
-    Mattermost only supports the AppConfig standard for securing Mattermost Mobile apps via an EMM provider due to app wrapping and React Native applications incompatibilities. React Native is the technology used to develop the Mattermost Mobile apps. Different EMM vendors refer to “wrapping” in different ways, but it ultimately comes down to unpacking the mobile client bundle, injecting additional SDKs, and re-packaging/re-signing. 
+    Mattermost only supports the AppConfig standard for securing Mattermost Mobile apps via an EMM provider due to incompatibilities with app wrapping and React Native applications. Different EMM vendors refer to “wrapping” in different ways, but it ultimately comes down to unpacking the mobile client bundle, injecting additional SDKs, and re-packaging/re-signing. React Native is the technology used to develop the Mattermost Mobile apps.
 
     Mattermost doesn’t support app wrapping, and Mattermost Mobile apps won't function properly when using app wrapping (e.g., Websockets for real-time messaging will break). Use app wrapping/containerization technology at your own risk.
 
