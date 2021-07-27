@@ -366,7 +366,7 @@ At this time, we have no plans to distribute more than one version of each of ou
 Can I continue to use the existing open source repositories without restriction?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Mattermost Source Available License will only apply from the date it is added and the versions in which it is included.
+Yes, the Mattermost Source Available License will only apply from the date it is added and to the versions in which it is included.
 
 Do I need to use the Mattermost Source Available License for plugins I create?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
