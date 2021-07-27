@@ -162,7 +162,7 @@ Once a group has been configured, the default teams and channels can be changed 
 Deleting Groups
 ---------------
 
-Mattermost groups can be deleted by adjusting your AD/LDAP group filter to remove the group or unlinking the group's listing page. Suppose you add the group back by re-adjusting the AD/LDAP group filter and link the group again on the group configuration page. In that case, the previous team and channel configurations will be available.
+Mattermost groups can be deleted by adjusting your AD/LDAP group filter to remove the group or by unlinking the group on the Groups listing page. If you add the group back by re-adjusting the AD/LDAP group filter and link the group again on the group configuration page, the previous team and channel configurations will be available.
 
 Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership
 -------------------------------------------------------------------------------
