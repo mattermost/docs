@@ -444,7 +444,7 @@ Yes, the Guest Account feature allows organizations to collaborate with external
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your solution.
+You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution.
 
 Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It is not recommended to provide customer service or customer support primarily and does not currently offer a licensing model or technical advice for this use case.
 
