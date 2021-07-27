@@ -371,7 +371,7 @@ Yes, the Mattermost Source Available License will only apply from the date it is
 Do I need to use the Mattermost Source Available License for plugins I create?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You are free to license your code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`_ plugins, leaving them under a permissive open source license to give you the freedom to develop your plugins.
+You are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`_ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
 
 Can I publish my own plugin and rely on enterprise specific functionality?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
