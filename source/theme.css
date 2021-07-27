@@ -879,14 +879,6 @@ header .header__searchbar {
     z-index: 9999;
 }
 
-.notification-bar.flex {
-	display: flex;
-}
-
-.notification-bar.flex {
-	display: flex;
-}
-
 .notification-bar.closed {
     display: none;
 }
@@ -923,14 +915,18 @@ header .header__searchbar {
     opacity: .5;
 }
 
-header.with-notification {
+.with-notification .wy-side-scroll {
+	padding-top: 62px;
+}
+
+.with-notification .notification-bar {
+	display: flex;
+}
+
+.with-notification header {
 	top: 64px;
 }
 
-.wy-grid-for-nav {
+.with-notification .wy-grid-for-nav {
 	padding-top: 134px;
-}
-
-.wy-grid-for-nav.no-notification {
-	padding-top: 70px;
 }
