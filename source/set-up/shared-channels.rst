@@ -7,7 +7,7 @@ Mattermost System Admins use slash commands to establish secure connections betw
 
 Shared Channels behave like regular channels, offering the same user experience and functionality as Public and Private channels. All members using secure connections, including local members and remote members, can `send and receive messages <https://docs.mattermost.com/help/messaging/sending-messages.html#sending-and-receiving-messages>`__, `use emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ to react to messages, `share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__, and `search message history <https://docs.mattermost.com/help/getting-started/searching.html#searching-for-message-contents>`__. Content is synchronized in real-time across all participating Mattermost instances. 
 
-A channel’s permissions and access continue to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
+A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Setting Up Shared Channels
 --------------------------
