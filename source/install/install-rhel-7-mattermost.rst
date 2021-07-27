@@ -89,9 +89,9 @@ Assume that the IP address of this server is 10.10.10.2
     .. note::
       If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
 
-  c. Make the service executable.
+  c. Set the file permissions.
 
-    ``sudo chmod 664 /etc/systemd/system/mattermost.service``
+    ``sudo chmod 644 /etc/systemd/system/mattermost.service``
 
   d. Reload the systemd services.
 
