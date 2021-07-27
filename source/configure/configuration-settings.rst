@@ -4726,7 +4726,8 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
+.. note::
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ product documentation for details on customizing the sidebar. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
