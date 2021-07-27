@@ -16,7 +16,7 @@ Release v4.7
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 - **v4.7.1, release ?**
- - Security fix.
+ - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
  - Added support to allow users to specify a different download location for Hunspell dictionaries.
  - Fixed an issue where the notification badge did not get cleared when reading a channel with unread messages until navigating away from the channel.
  - Fixed an issue where the top bar menu, and the minimize, maximize and close icons did not work on 4.7.0 on Windows 10 if GPU acceleration was disabled.
