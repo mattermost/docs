@@ -46,6 +46,7 @@ Latest Mattermost Cloud releases:
    - Unread threads are now correctly displayed on app load for teams in the sidebar when Collapsed Reply Threads feature is enabled.
    - Fixed an issue where "Thread" in the thread viewer was displayed vertically in some languages.
    - Fixed an issue where opening global threads containing a root post markdown image crashed the app.
+   - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
 
 ### Known Issues
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
