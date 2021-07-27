@@ -259,7 +259,7 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 
 .. note:: 
 
-   Members who have been synced as part of a group cannot change their role via **View Members** in Mattermost.
+   Members who have been synced as part of a group cannot have their role changed via **View Members** in Mattermost.
 
 Add or Remove Groups from Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
