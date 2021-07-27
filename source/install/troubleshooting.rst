@@ -1,5 +1,3 @@
-:orphan:
-
 ..  _troubleshooting:
 
 Troubleshooting Mattermost Issues
@@ -9,7 +7,7 @@ This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__.
 
 Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
 
@@ -28,7 +26,7 @@ Some of these suggestions can be done directly, and others may need consultation
 Review Mattermost Logs
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`_.
+You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`__.
 
 **Mattermost Server**
 
@@ -42,7 +40,7 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`_.
+You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`__.
 
 **Mattermost Desktop App**
 
@@ -74,7 +72,7 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ can often be found and applied.
+You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ can often be found and applied.
 
 Connect to Another Server
 -------------------------
@@ -102,7 +100,7 @@ When opening a Support ticket, it's important that you provide us with as much i
 
 C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
 
 General Guidelines for Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -357,15 +355,15 @@ Press CMD+SHIFT+5 to open the screen recording tool and select the region of the
 
 **Windows**
 
-Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as `OBS <https://obsproject.com/>`_.
+Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as `OBS <https://obsproject.com/>`__.
 
 **iOS**
 
-Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios>`_.
+Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios>`__.
 
 **Android**
 
-Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`_.
+Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`__.
 
 Appendix
 --------
