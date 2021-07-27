@@ -264,7 +264,7 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 Add or Remove Groups from Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the team's management is converted to be managed by synchronized groups, a Team or System Admin can add additional groups from **Main Menu > Add Groups to Team**. This will add users to the next AD/LDAP synchronization, and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from changing the team to the public by enabling **Team Settings > Allow any user with an account on this server to join this team**.
+Once team management is converted to use synchronized groups, a Team or System Admin can add additional groups from **Main Menu > Add Groups to Team**. This will add users to the next AD/LDAP synchronization, and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from converting the team to a public space by enabling **Team Settings > Allow any user with an account on this server to join this team**.
 
 Team or System Admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
