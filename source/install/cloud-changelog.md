@@ -24,6 +24,7 @@ Latest Mattermost Cloud releases:
  - Added support for ``react-intl`` and ``<Timestamp/>`` usage in plugins.
 
 #### Administration
+ - The “config watcher” (the mechanism that automatically reloads the config.json file) has been deprecated in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
  - Fixed some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases.
  - Upgraded the builder image to use Go v1.16.
  - Added a new feature to archive and unarchive teams through **System Console** > **Teams**.
@@ -32,6 +33,19 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the "Find channel" channel switcher text overflowed beyond the button for some languages.
  - Fixed an issue where inter-plugin requests without a body didn't work.
  - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
+ - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark theme.
+ - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where an error occurred while following a thread with no replies.
+   - Fixed an issue where ``reply_count`` of 0 was always returned for GET single Post on ``/posts/<postid>`` API.
+   - Fixed an issue where following a single message returned a status 500.
+   - Fixed an issue where when replying in a thread after unfollowing it, the thread was not auto-followed again.
+   - Fixed an issue where when enabling Collapsed Reply Threads, channels that had no new activity were showing as unread.
+   - Fixed an issue with thread unreads when the feature was enabled by a user.
+   - Fixed an issue where self replies were marking threads as unread.
+   - Unread threads are now correctly displayed on app load for teams in the sidebar when Collapsed Reply Threads feature is enabled.
+   - Fixed an issue where "Thread" in the thread viewer was displayed vertically in some languages.
+   - Fixed an issue where opening global threads containing a root post markdown image crashed the app.
 
 ### Known Issues
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
