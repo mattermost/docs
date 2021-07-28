@@ -69,7 +69,9 @@ For example, for the following channel, ``https://community.mattermost.com/core/
 Leaving a channel
 -----------------
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. For Mattermost Desktop, you can also do that without entering the channel. If you wish to leave a channel, simply move your cursor on the top of the channel name at the sidebar. There, you can see the three dots icon (channel options) beside the channel name. Click the icon to access the drop down menu, then select **Leave Channel**. Any team member who leaves a Private channel must be re-added by another channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members. 
+From within the channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. For Mattermost Desktop, you can hover over the channel name in the sidebar. Select **Channel Options** (the three dots), then select **Leave channel**. 
+
+Any team member who leaves a Private channel must be re-added by another channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
 
 Archiving a channel
 -------------------
