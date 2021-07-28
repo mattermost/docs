@@ -3,18 +3,18 @@ Install, Deploy, Upgrade, and Scale Mattermost
 
 Install, host, and grow with Mattermost.
 
-Before You Begin
-----------------
+Getting Started
+---------------
 
 .. toctree::
    :maxdepth: 1
 
-   /overview/architecture.rst
-   /help/getting-started/light-install.rst
+   /getting-started/architecture-overview.rst
+   /getting-started/light-install.rst
    /getting-started/enterprise-roll-out-checklist.rst
-   /deployment/on-boarding.rst
-   /getting-started/implementation_plan.rst
-   /getting-started/welcome_email.rst
+   /getting-started/admin-onboarding-tasks.rst
+   /getting-started/implementation-plan.rst
+   /getting-started/welcome-email-to-end-users.rst
 
 Install Mattermost
 ------------------
@@ -25,23 +25,30 @@ Mattermost Server
 .. toctree::
    :maxdepth: 1
     
-   /install/requirements.rst
-   Installing on Ubuntu 20.04 LTS </install/install-ubuntu-2004.rst>
-   Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
-   Installing Mattermost Omnibus </install/mattermost-omnibus.rst>
+   /install/software-hardware-requirements.rst
+   Installing on Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS.rst>
+   Installing on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS.rst>
+   Installing Mattermost Omnibus </install/installing-mattermost-omnibus.rst>
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
-   Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on RHEL 8 </install/install-rhel-8.rst>
+   Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
-   Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
-   /install/ee-install.rst
-   /install/transport-encryption/config.rst
-   /install/deploy-bitnami.rst
-   /install/docker-local-machine.rst
-   /install/docker-ebs.rst
-   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
-   /administration/changelog.md
+   Instructions On Setting Up a Socket-based Mattermost Database </install/setting-up-socket-based-mattermost-database.rst>
+   /install/trouble_mysql.rst
+   /install/enterprise-install-upgrade.rst
+   /install/transport-encryption.rst
+   /install/proxy-to-mattermost-transport-encryption.rst
+   /install/database-transport-encryption.rst
+   /install/cluster-transport-encryption.rst
+   /install/deploying-team-edition-on-bitnami.rst
+   /install/setting-up-local-machine-using-docker.rst
+   /install/setting-up-aws-elastic-beanstalk-docker.rst
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart.rst>
+   /install/troubleshooting.rst
+   /install/self-managed-changelog.md
+   /install/cloud-changelog.md
+
 
 Desktop App
 ^^^^^^^^^^^
@@ -49,11 +56,11 @@ Desktop App
 .. toctree::
    :maxdepth: 1
 
-   /help/getting-started/install-desktop-app.rst
-   /install/desktop.rst
-   /install/desktop-managed-resources.rst
-   /install/desktop-msi-gpo.rst
-   /help/apps/desktop-changelog.rst
+   /install/installing-mattermost-desktop-app.rst
+   /install/desktop-app-install.rst
+   /install/desktop-app-managed-resources.rst
+   /install/desktop-msi-installer-and-group-policy-install.rst
+   /install/desktop-app-changelog.rst
 
 Mobile App
 ^^^^^^^^^^
@@ -61,9 +68,9 @@ Mobile App
 .. toctree::
    :maxdepth: 1
 
-   /help/getting-started/install-ios-app.rst
-   /help/getting-started/install-android-app.rst
-   /administration/mobile-changelog.md 
+   /install/install-ios-app.rst
+   /install/install-android-app.rst
+   /deploy/mobile-app-changelog.md 
 
 Deploy Mattermost
 -----------------
@@ -74,11 +81,11 @@ Mattermost Server
 .. toctree::
    :maxdepth: 1
 
-   /deployment/deployment.md
-   /administration/image-proxy.rst
-   /administration/encryption.rst
-   /administration/backup.rst
-   /deployment/bleve.rst
+   /deploy/deployment-overview.md
+   /deploy/image-proxy.rst
+   /deploy/encryption-options.rst
+   /deploy/backup-disaster-recovery.rst
+   /deploy/bleve-search.rst
 
 Desktop App
 ^^^^^^^^^^^
@@ -86,7 +93,7 @@ Desktop App
 .. toctree::
    :maxdepth: 1
 
-   /deployment/desktop-app-deployment.rst
+   /deploy/desktop-app.rst
 
 Mobile Apps
 ^^^^^^^^^^^
@@ -94,16 +101,16 @@ Mobile Apps
 .. toctree::
    :maxdepth: 1
 
-   /mobile/mobile-overview.rst
-   /mobile/use-prebuilt-mobile-apps.rst
-   /mobile/build-custom-mobile-apps.rst
-   /mobile/deploy-mobile-apps-using-emm-provider.rst
-   /mobile/mobile-appconfig.rst
-   /mobile/consider-mobile-vpn-options.rst
-   /mobile/mobile-hpns.rst
-   /mobile/mobile-faq.rst
-   /mobile/mobile-troubleshoot.rst
-   /deployment/client-side-data.rst
+   /deploy/mobile-overview.rst
+   /deploy/use-prebuilt-mobile-apps.rst
+   /deploy/build-custom-mobile-apps.rst
+   /deploy/deploy-mobile-apps-using-emm-provider.rst
+   /deploy/mobile-appconfig.rst
+   /deploy/consider-mobile-vpn-options.rst
+   /deploy/mobile-hpns.rst
+   /deploy/mobile-faq.rst
+   /deploy/mobile-troubleshoot.rst
+   /deploy/client-side-data.rst
 
 Upgrade Mattermost
 ------------------
@@ -111,14 +118,14 @@ Upgrade Mattermost
 .. toctree::
    :maxdepth: 1
 
-   /administration/upgrade.rst
-   /administration/important-upgrade-notes.rst
-   /administration/version-archive.rst
-   /administration/extended-support-release.rst
-   /administration//release-lifecycle.rst
-   /administration/downgrade.rst
-   /administration/open-source-components.rst
-   /administration/release-definitions.rst
+   /upgrade/upgrading-mattermost-server.rst
+   /upgrade/important-upgrade-notes.rst
+   /upgrade/version-archive.rst
+   /upgrade/extended-support-release.rst
+   /upgrade//release-lifecycle.rst
+   /upgrade/downgrading-mattermost-server.rst
+   /upgrade/open-source-components.rst
+   /upgrade/release-definitions.rst
 
 Scale Mattermost
 ----------------
@@ -126,8 +133,8 @@ Scale Mattermost
 .. toctree::
    :maxdepth: 1
 
-   /deployment/scaling.rst
-   /deployment/cluster.rst
-   /deployment/elasticsearch.rst
-   /deployment/metrics.rst
-   /administration/performance-alerting-guide.rst
+   /scale/scaling-for-enterprise.rst
+   /scale/high-availability-cluster.rst
+   /scale/elasticsearch.rst
+   /scale/performance-monitoring.rst
+   /scale/peformance-alerting.rst

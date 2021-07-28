@@ -1,3 +1,5 @@
+:orphan:
+
 ..  _prod-rhel-6:
 
 Production Install on RHEL 6.6
