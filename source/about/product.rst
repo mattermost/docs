@@ -5,7 +5,7 @@ Product Overview
 
 Thousands of organizations use Mattermost around the world in 20 languages for its unmatched benefits:
 
-- **Security.** Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`__ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
+- **Security.** Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/about/security.html>`__ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
 
 - **Configurability.** Adapt your deployment to your needs, preferences, policies and existing systems. Mattermost integrates with your evolving security, compliance and monitoring infrastructure and offers a host of app integrations, webhooks, APIs, and drivers to bring all your communication and workflow into one place.
 
@@ -35,14 +35,14 @@ Features include:
 - Tools for custom branding
 - Continuous archiving
 - Multi-factor authentication
-- Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
+- Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/command-line-tools.html>`__
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
 - Easily scalable to dozens of users per team
-- `Runtime profiling data and system monitoring reports <https://docs.mattermost.com/deployment/metrics.html#standard-go-metrics>`__
+- `Runtime profiling data and system monitoring reports <https://docs.mattermost.com/scale/performance-monitoring.html>`__
 - New features and improvements released regularly
 - Multiple languages including U.S. English, Australian English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, and Ukrainian
 
-To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
+To get started, `download the open source Mattermost Team Edition server <https://docs.mattermost.com/upgrade/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
 Mattermost Enterprise Edition
 -----------------------------
