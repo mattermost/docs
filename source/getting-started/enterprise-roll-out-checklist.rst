@@ -44,7 +44,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Resource: https://mattermost.com/blog/27-things-enterprises-can-learn-startups-increase-productivity/
  
 - Define success criteria, goals and metrics to measure success
- - Resource: https://docs.mattermost.com/getting-started/implementation_plan.html
+ - Resource: https://docs.mattermost.com/getting-started/implementation-plan.html
   
 - Create a Project Charter to document goals, tasks, deliverables, and decisions 
  - Get buy-in from project team members and key stakeholders on the project charter 
@@ -63,33 +63,33 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Network access, physical access, group controlled access
 
 - Determine encryption policies
- - Resource: https://docs.mattermost.com/administration/encryption.html
- - Resource: https://docs.mattermost.com/install/transport-encryption/config.html
+ - Resource: https://docs.mattermost.com/deploy/encryption-options.html
+ - Resource: https://docs.mattermost.com/install/transport-encryption.html
 
 - Determine System Administration access policies
  - Identify list of users or groups who need administrative access for Mattermost System Console, Command Line Tools and API privileges
 
 - Define and configure authentication policies
- - Resource: https://docs.mattermost.com/overview/auth.html 
+ - Resource: https://docs.mattermost.com/about/corporate-directory-integration.html 
 - Determine requirements for multi-factor authentication
- - Resource: https://docs.mattermost.com/deployment/auth.html
+ - Resource: https://docs.mattermost.com/onboard/multi-factor-authentication.html
 
 - Configure and test SSO or Corporate Directory integration (SAML or AD/LDAP)
- - Resource: https://docs.mattermost.com/deployment/sso-saml.html
- - Resource: https://docs.mattermost.com/deployment/sso-ldap.html
+ - Resource: https://docs.mattermost.com/onboard/sso-saml.html
+ - Resource: https://docs.mattermost.com/onboard/ad-ldap.html
 
 - Define your mobile usage policy
- - Resource: https://docs.mattermost.com/mobile/mobile-overview.html 
+ - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
  - Resource: https://docs.mattermost.com/deployment/mobile-app-deployment.html
 
 3. Create Development, Staging, and Production Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
- - Resource: https://docs.mattermost.com/overview/architecture.html
+ - Resource: https://docs.mattermost.com/getting-started/architecture-overview.html
  - Resource: https://docs.mattermost.com/deployment/deployment.html 
- - Resource: https://docs.mattermost.com/deployment/scaling.html 
- - Resource: https://docs.mattermost.com/deployment/cluster.html
+ - Resource: https://docs.mattermost.com/scale/scaling-for-enterprise.html 
+ - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html
 
 - Create development and staging environments 
  - Recommend using to test early configurations for database, authentication, file storage, Elasticsearch, prior to setting up high availability and load balancing 
@@ -258,7 +258,7 @@ Now that you have an environment in place, we recommend working through the foll
 Review the Roll Out 
 ~~~~~~~~~~~~~~~~~~~
 
-We recommend that you review your roll out on a cadence that matches your iterative approach to rolling out to users.  Below are some areas to consider.  
+We recommend that you review your rollout on a cadence that matches your iterative approach to rolling out to users. Below are some areas to consider.  
 
 1. Review Project Charter Success Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
