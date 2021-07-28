@@ -156,4 +156,4 @@ Navigating recently viewed channels
 Use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
 
 - Select the left arrow to go back one page. 
-- Select the right arrow to go forward one page. 
+- Select the right arrow to go forward one page.
