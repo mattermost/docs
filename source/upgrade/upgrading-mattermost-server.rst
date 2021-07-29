@@ -14,7 +14,8 @@ If you are upgrading from version 3.0 or later, these instructions apply to you.
 
 .. _before-you-begin:
 
-**Before you begin**
+Before you Begin
+----------------
 
 Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
 
@@ -34,7 +35,8 @@ Existing install directory - *{install-path}*
 Location of your local storage directory
   The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 
-**To upgrade Mattermost Server**
+Upgrading Mattermost Server
+----------------------------
 
 .. note::
 
@@ -89,14 +91,14 @@ Location of your local storage directory
 
 #. Remove all files *except data and custom directories* from within the current mattermost directory.
    
-    a. Run ``ls`` on your Mattermost install directory to identify what folders exist. If your folders match the structure below you can jump to step c.
+    a. Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the note below, you can jump to step c.
 
-        - By default, your data directories will be preserved with the below commands. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*).
+        - By default, your data directories will be preserved with the commands below, including ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per `<https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__).
         - Custom directories are directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+        - If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, the index directory path won't be preserved with the commands below if the directory exists within the ``mattermost`` directory. You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. You can then store that directory or re-index. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
         
-        |
         .. note::
-         **A default Mattermost install has the below files/directories**:
+         **A default Mattermost installation has the following files and directories**:
 
           .. code-block:: sh
 
