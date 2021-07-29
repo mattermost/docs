@@ -86,6 +86,7 @@ Assume that the IP address of this server is ``10.10.10.2``.
       ExecStart=/opt/mattermost/bin/mattermost
       PIDFile=/var/spool/mattermost/pid/master.pid
       TimeoutStartSec=3600
+      KillMode=mixed
       LimitNOFILE=49152
 
       [Install]
