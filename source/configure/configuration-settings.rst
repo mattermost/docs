@@ -5885,7 +5885,11 @@ Bleve Settings (Experimental)
 Index Dir
 ^^^^^^^^^^
 
-Directory path to use for storing bleve indexes.
+Directory path to use for storing bleve indexes. 
+
+.. tip::
+   
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
