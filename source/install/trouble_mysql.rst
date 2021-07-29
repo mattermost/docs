@@ -1,5 +1,3 @@
-:orphan:
-
 MySQL Installation Troubleshooting
 ==================================
 

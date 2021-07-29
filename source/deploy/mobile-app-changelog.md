@@ -1,12 +1,29 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.45.0 Release](#release)
-- [1.44.1 Release](#id1)
-- [1.44.0 Release](#id6)
-- [1.43.0 Release](#id12)
-- [1.42.1 Release](#id21)
-- [1.42.0 Release](#id26)
+- [1.45.1 Release](#release)
+- [1.45.0 Release](#id1)
+- [1.44.1 Release](#id6)
+- [1.44.0 Release](#id11)
+- [1.43.0 Release](#id18)
+- [1.42.1 Release](#id27)
+
+## 1.45.1 Release
+- Release Date: July 20, 2021
+- Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the app crashed when a message with only emojis included a hard break.
+
+#### Android specific
+ - Fixed Android push notifications so that they are now grouped by channel.
 
 ## 1.45.0 Release
 - Release Date: July 16, 2021
