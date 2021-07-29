@@ -16,7 +16,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 2. Set **Enable Bleve Indexing** to **true** to enable the other settings on the page.
 3. Set the directory path to use for storing bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__  documentation for details.
 4. Save the configuration.
-5. Select the **Index Now** button. All users, channels, and posts in the database will be indexed oldest to newest.
+5. Select **Index Now**. All users, channels, and posts in the database will be indexed oldest to newest.
 6. Set **Enable Bleve for search queries** to **true**.
 7. Set **Enable Bleve for autocomplete queries** to **true**.
 
