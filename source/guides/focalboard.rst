@@ -1,4 +1,4 @@
-Incident Collaboration 
+Mattermost Focalboard
 =======================
 
 Product documentation for Mattermost Focalboard.
