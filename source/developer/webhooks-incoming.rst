@@ -176,7 +176,7 @@ To send a message to a Direct Message channel, add an "@" symbol followed by the
 
 This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a Direct Message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
 
-To send a message to a different Direct Mssage channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-search>`__.
+To send a message to a different Direct Message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use ``mmctl user search``- see details `here <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
 
 .. code-block:: text
 
