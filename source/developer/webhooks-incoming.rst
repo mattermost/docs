@@ -160,7 +160,7 @@ Some common error messages include:
 
 If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
 
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/ask-mattermost-community/>`_.
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Frequently Asked Questions
 --------------------------
