@@ -10,6 +10,7 @@ Before You Begin
    :maxdepth: 2
 
    /focalboard/overview.rst
+   /focalboard/getting-started.rst
       
 Planning
 --------
@@ -17,7 +18,8 @@ Planning
 .. toctree::
    :maxdepth: 2
 
-   
+  /focalboard/working-with-boards.rst
+  /focalboard/working-with-views.rst
 
 Building
 ---------
