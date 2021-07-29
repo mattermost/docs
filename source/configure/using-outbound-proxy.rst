@@ -46,6 +46,7 @@ To set these environment variables while running the Mattermost server via ``sys
     Type=notify
     ExecStart=/opt/mattermost/bin/mattermost
     TimeoutStartSec=3600
+    KillMode=mixed
     Restart=always
     RestartSec=10
     WorkingDirectory=/opt/mattermost
