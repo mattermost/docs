@@ -14,15 +14,15 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
 1. Open **System Console > Experimental > Bleve**.
 2. Set **Enable Bleve Indexing** to **true** to enable the other settings on the page.
-3. Set the directory path to use for storing bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory.
+3. Set the directory path to use for storing bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__  documentation for details.
 4. Save the configuration.
-5. Click the **Index Now** button. All users, channels, and posts in the database will be indexed oldest to newest.
+5. Select **Index Now**. All users, channels, and posts in the database will be indexed oldest to newest.
 6. Set **Enable Bleve for search queries** to **true**.
 7. Set **Enable Bleve for autocomplete queries** to **true**.
 
 .. note::
 
-  Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+  Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
 
 Using Bleve Search
 ------------------
