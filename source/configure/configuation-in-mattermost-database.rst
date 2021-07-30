@@ -127,6 +127,7 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
    EnvironmentFile=/opt/mattermost/config/mattermost.environment
    ExecStart=/opt/mattermost/bin/mattermost
    TimeoutStartSec=3600
+   KillMode=mixed
    Restart=always
    RestartSec=10
    WorkingDirectory=/opt/mattermost
