@@ -41,12 +41,17 @@ Assume that the IP address of this server is 10.10.10.2
 7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
 
   -  If you are using PostgreSQL:
+
     1.  Set ``"DriverName"`` to ``"postgres"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
+
   -  If you are using MySQL:
+
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"``
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
@@ -54,7 +59,9 @@ Assume that the IP address of this server is 10.10.10.2
 9. Test the Mattermost server to make sure everything works.
 
     a. Change to the ``mattermost`` directory:
+
       ``cd /opt/mattermost``
+
     b. Start the Mattermost server as the user *mattermost*:
 
       ``sudo -u mattermost ./bin/mattermost``
