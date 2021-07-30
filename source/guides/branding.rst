@@ -49,7 +49,7 @@ Alternatively, community projects may concatenate names containing Mattermost, f
 
 Exception: Please don’t use the name “matterbot”, as that is an internal service under development.
 
-When there are multiple open source projects for similar Mattermost integrations we ask our community to include the owner of the repo, for example:
+When there are multiple open source projects for similar Mattermost integrations, we ask our community to include the owner of the repo, for example:
 
 - `Hubot Adapter for Mattermost by Heitor Lessa <https://github.com/renanvicente/hubot-mattermost>`__
 - `Hubot Adapter for Mattermost by Andy Lo-A-Foe <https://github.com/loafoe/hubot-matteruser>`__
@@ -64,14 +64,14 @@ General Mattermost Description
 
 When developing a Mattermost integration, the following description can be used to describe Mattermost:
 
-  Mattermost is an open source Slack-alternative built for enterprise. Thousands of companies use Mattermost for secure, compliant workplace messaging across web, PC and phones with archiving, search, corporate SSO, and integration with hundreds of third-party applications. Available under MIT license in 16 languages, Mattermost offers peace-of-mind, value, control, and freedom from lock-in for organizations around the world. Learn more at https://mattermost.com/.
+  Mattermost is an open source Slack-alternative built for the enterprise. Thousands of companies use Mattermost for secure, compliant workplace messaging across the web, PC and phones with archiving, search, corporate SSO, and integration with hundreds of third-party applications. Available under MIT license in 16 languages, Mattermost offers peace-of-mind, value, control, and freedom from lock-in for organizations worldwide. Learn more at https://mattermost.com/.
 
 Mattermost Team Edition Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When redistributing the open source Mattermost Team Edition binary, the following description may be used:
 
-  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`__.
+  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as a single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`__.
 
 
 Mattermost Enterprise Edition Description
@@ -81,7 +81,7 @@ When redistributing the commercial Mattermost Enterprise Edition binary, the fol
 
   Mattermost Enterprise Edition is a secure, configurable, highly scalable enterprise messaging for private clouds offering corporate directory integration, advanced access control, performance monitoring, multi-factor authentication, compliance and auditing support, and sophisticated configurations for horizontal scaling and high availability deployments.
 
-  Mattermost Enterprise Edition is free to use in "team mode" and is functionally equivalent to the open source Mattermost Team Edition, with the added benefit of being able to enable advanced enterprise features with purchase of an annual subscription.
+  Mattermost Enterprise Edition is free to use in "team mode" and is functionally equivalent to the open source Mattermost Team Edition, with the added benefit of enabling advanced enterprise features with the purchase of an annual subscription.
 
 -------------------------------
 Mattermost Trademark Policy
