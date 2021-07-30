@@ -48,4 +48,4 @@ To fix this issue, configure an appropriate buffer size (8k or 16k should be suf
       nginx.ingress.kubernetes.io/proxy-buffer-size: 16k
   ...
 
-Use caution when changing the buffer size as it may slightly impact Nginx performance. Exact values are machine dependant.
+Use caution when changing the buffer size as it may slightly impact NGINX performance. Exact values are machine-dependent.
