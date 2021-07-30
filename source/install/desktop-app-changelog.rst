@@ -22,7 +22,7 @@ Release v4.7
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Server version v5.31 or later is required. Desktop Apps are required to be used with any `supported Extended Support Release or a newer version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
 
 Highlights
 ~~~~~~~~~~~~~~~
