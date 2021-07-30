@@ -19,6 +19,11 @@ Release v4.7
 
 **Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
 
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Server version v5.31 or later is required. Desktop Apps are required to be used with any `supported Extended Support Release or a newer version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
 Highlights
 ~~~~~~~~~~~~~~~
 
