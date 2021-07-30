@@ -1,12 +1,55 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
+- [1.46.0 Release](#release)
 - [1.45.1 Release](#release)
 - [1.45.0 Release](#id1)
 - [1.44.1 Release](#id6)
 - [1.44.0 Release](#id11)
 - [1.43.0 Release](#id18)
-- [1.42.1 Release](#id27)
+
+## 1.46.0 Release
+- Release Date: August 16, 2021
+- Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Highlights
+
+#### Collapsed Reply Threads
+ - Added support for Collapsed Reply Threads for the mobile apps.
+
+#### Custom Status Expiry
+ - Added a feature to choose expiry time when setting a custom status. Requires server version 5.37 or later. Also added new screens such as **Clear** and new components such as ``DateTime`` picker.
+
+#### Granular Data Retention Policies 
+ - Added support for Granular Data Retention Policies for the mobile apps. Requires server version 5.37 or later.
+
+### Improvements
+ - Added the custom statuses to the mention autocomplete.
+ - Changed the default behavior of autocomplete user interface for cases of long display names. Long display names will be truncated to show the username.
+ - Added support for showing plugin slash command icons.
+ - Added support for apps to add arbitrary markdown in between fields on forms.
+ - Implemented a new style for app submit buttons.
+ - Added markdown support for app fields descriptions and errors.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where boolean fields did not get disabled on dialogs when they should have.
+ - Fixed an issue with displaying the current user when multiple users were part of the System join / leave messages.
+
+#### Android specific
+ - 
+
+#### iOS specific
+ - 
+
+### Known Issues
+ - 
 
 ## 1.45.1 Release
 - Release Date: July 20, 2021
