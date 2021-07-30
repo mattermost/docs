@@ -5,13 +5,152 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 Lastest Mattermost Releases:
-- [Release v5.37 - Feature Release](#release-v5-37-extended-support-release)
+- [Release v5.38 - Feature Release](#release-v5-38-feature-release)
+- [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
 - [Release v5.36 - Feature Release](#release-v5-36-feature-release)
 - [Release v5.35 - Feature Release](#release-v5-35-feature-release)
 - [Release v5.34 - Feature Release](#release-v5-34-feature-release)
-- [Release v5.33 - Feature Release](#release-v5-33-feature-release)
-- [Release v5.32 - Feature Release](#release-v5-32-feature-release)
 - [Release v5.31 - ESR](#release-v5-31-esr)
+
+## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2021-08-16**
+
+### Deprecations
+ - The “config watcher” (the mechanism that automatically reloads the config.json file) has been deprecated in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
+
+### Important Upgrade Notes
+ - Fixed some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MYSQL v5.6.51.
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Granular Data Retention Policies (Enterprise E20)
+ - A ``data_retention`` type job can now be run even if the global policy is disabled. The granular (i.e. team and channel-specific) policies will be executed when the data retention job is run. Please note there is a known issue where deleted posts get displayed in channels without new activity after the retention job is run.  This issue is tracked with [this ticket](https://mattermost.atlassian.net/browse/MM-36574).
+
+#### Enhanced User Onboarding Experience
+ - To help new users get started with Mattermost, new Getting Started steps have been added to the onboarding experience. These steps help users to complete their profile, name their teams, configure desktop notifications and invite others to join their team. Additionally, once the onboarding is complete, users are provided with helpful tips to get started with channels, plugins, and more.
+
+#### Focalboard Update
+ - Focalboard 0.8.0 requires Mattermost v5.37 due to the new database connection system.
+
+#### Playbooks Update
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Markdown formatting is now stripped from push notifications.
+ - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
+ - Improved default rendering of images inserted via the GIF picker.
+ - Small text changes were added to Direct and Group Message menus: 'Mute channel' and 'Edit Channel Header' now reads 'Mute Conversation' and 'Edit Conversation Header'.
+
+#### Performance
+ - Improved performance of components that show reactions on posts.
+ - Improved performance of certain components when viewing non-Direct Message channels.
+ - Added minor improvements to performance of messages posted in the right-hand side.
+ - Improved typing performance in affected environments by reducing the frequency in which drafts are saved.
+
+#### Integrations
+ - Added icons to apps in the Marketplace.
+ - Apps can now add arbitrary markdown in between fields on forms.
+ - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
+ - Improved user and channel selector for app commands.
+ - Added support for ``react-intl`` and ``<Timestamp/>`` usage in plugins.
+ - Added plugin API methods for user access tokens and OAuth apps.
+
+#### Administration
+ - Added a new feature to archive and unarchive teams through **System Console** > **Teams**.
+
+### Bug Fixes
+ - Fixed an issue where the "Find channel" channel switcher text overflowed beyond the button for some languages.
+ - Fixed an issue where inter-plugin requests without a body didn't work.
+ - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
+ - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark theme.
+ - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where an error occurred while following a thread with no replies.
+   - Fixed an issue where ``reply_count`` of 0 was always returned for GET single Post on ``/posts/<postid>`` API.
+   - Fixed an issue where following a single message returned a status 500.
+   - Fixed an issue where when replying in a thread after unfollowing it, the thread was not auto-followed again.
+   - Fixed an issue where when enabling Collapsed Reply Threads, channels that had no new activity were showing as unread.
+   - Fixed an issue with thread unreads when the feature was enabled by a user.
+   - Fixed an issue where self replies were marking threads as unread.
+   - Unread threads are now correctly displayed on app load for teams in the sidebar when Collapsed Reply Threads feature is enabled.
+   - Fixed an issue where "Thread" in the thread viewer was displayed vertically in some languages.
+   - Fixed an issue where opening global threads containing a root post markdown image crashed the app.
+   - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
+   - Fixed an issue where replying to a thread from the global threads screen marked the channel as read.
+   - The "Mark all as unread" button is now no longer disabled for collapsed reply threads.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``PluginSettings`` in ``config.json``:
+    - Added ``ChimeraOAuthProxyURL`` to allow specifying Chimera URL that can be used by plugins to connect with pre-created OAuth applications.
+ - The config setting ``EnableReliableWebSockets`` now defaults to ``true``.
+
+### API Changes
+ - Added ``CreateChannelSidebarCategory``, ``GetChannelSidebarCategories`` and ``UpdateChannelSidebarCategories`` to the Plugin API.
+ - Add a new Plugin API method that allows files to register dropdown menu actions.
+
+### Go Version
+ - v5.38 is built with Go ``1.16.0``.
+
+### Open Source Components
+ - Added ``classnames`` and ``react-window`` to https://github.com/mattermost/mattermost-webapp/.
+ - Added ``@react-native-community/datetimepicker``, ``array.prototype.flat``, and ``base-64`` to https://github.com/mattermost/mattermost-mobile/.
+
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/09/15. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the web app](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+
+3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
+
+6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/administration/config-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+
+7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+
+   - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
+
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+
+10. Changes to ``mattermost-server/model`` for naming consistency.
+
+### Known Issues
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
+ - Pinned posts are no longer highlighted.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - 
+
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
