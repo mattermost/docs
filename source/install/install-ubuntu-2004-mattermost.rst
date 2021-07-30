@@ -86,16 +86,19 @@ Assume that the IP address of this server is 10.10.10.2.
   After=network.target
   After=postgresql.service
   BindsTo=postgresql.service
+
   [Service]
   Type=notify
   ExecStart=/opt/mattermost/bin/mattermost
   TimeoutStartSec=3600
+  KillMode=mixed
   Restart=always
   RestartSec=10
   WorkingDirectory=/opt/mattermost
   User=mattermost
   Group=mattermost
   LimitNOFILE=49152
+  
   [Install]
   WantedBy=postgresql.service
 
