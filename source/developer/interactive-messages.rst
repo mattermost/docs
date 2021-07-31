@@ -77,6 +77,47 @@ The integration can respond with an update to the original post, or with an ephe
 
 .. image:: ../../source/images/interactive_message.gif
 
+Button actions support a style parameter to change the color of the button. The possible values for style are: ``good``, ``warning``, ``danger``, ``default``, ``primary`` and ``success``. It is possible to pass also a theme variable or a hex color, but we discourage this option because it will be not resilient against theme changes.
+
+.. image:: ../../source/images/interactive_button_style.png
+
+The actions used for the previous example are the following:
+
+.. code:: json
+
+  [
+    {
+      "id": "vote0",
+      "type": "button",
+      "name": "Yes",
+      "style": "default"
+    },
+    {
+      "id": "vote1",
+      "type": "button",
+      "name": "No",
+      "style": "primary"
+    },
+    {
+      "id": "addOption",
+      "type": "button",
+      "name": "Add Option",
+      "style": "warning"
+    },
+    {
+      "id": "deletePoll",
+      "type": "button",
+      "name": "Delete Poll",
+      "style": "success"
+    },
+    {
+      "id": "endPoll",
+      "type": "button",
+      "name": "End Poll",
+      "style": "danger"
+    }
+  ]
+
 Message Menus
 ----------------
 
