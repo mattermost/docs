@@ -76,9 +76,9 @@ ID-Only Push Notifications
 
 Mattermost Cloud and Enterprise Edition E20 customers can limit the data sent to Apple and Google through a configuration setting. 
 
-When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deployment/deployment.html#push-notification-service>`__.
+When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deploy/deployment-overview.html#push-notification-service>`__.
 
-See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__ documentation to learn more about the ID-only push notifications configuration setting. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/mobile/mobile-faq.html#how-can-i-use-id-only-push-notifications-to-protect-notification-content-from-being-exposed-to-third-party-services>`__ for details on using ID-only push notifications for data privacy.
+See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ documentation to learn more about the ID-only push notifications configuration setting. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-can-i-use-id-only-push-notifications-to-protect-notification-content-from-being-exposed-to-third-party-services>`__ for details on using ID-only push notifications for data privacy.
 
 Host Your Own Push Proxy Service
 --------------------------------
