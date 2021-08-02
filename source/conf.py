@@ -56,16 +56,11 @@ source_suffix = ['.rst', '.md']
 # source_encoding = 'utf-8-sig'
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
-url_gitbook = "https://mattermost.gitbook.io"
-url_docs = "https://docs.mattermost.com"
-url_handbook = "https://handbook.mattermost.com"
 redirects = {
-    "integrations/jira": url_gitbook + "/plugin-jira/",
+    "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
-
-    "integrations/net-promoter-score": url_docs + "/manage/user-satisfaction-surveys.html",
-    "developer/localization": url_handbook + "/contributors/contributors/localization",
-
+    "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
+    "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
