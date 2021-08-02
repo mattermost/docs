@@ -125,7 +125,7 @@ Do bot access tokens expire?
 
 No, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
 
-For more information about access tokens, see `the personal access tokens documentation <https://docs.mattermost.com/cloud/cloud-integrations/cloud-personal-access-tokens.html>`_.
+For more information about access tokens, see `the personal access tokens documentation <https://docs.mattermost.com/developer/integration-faq.html?highlight=cloud%20personal%20access>`_.
 
 Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,7 +151,7 @@ Yes. By default, bot accounts can update their own posts.
 
 If you find yourself unable to edit posts as a bot, check the following:
 1. Instead of using a slash command to respond directly, use an API call for the initial interaction with a user to enable message edits.
-2. If your system is using `advanced permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_, then post edits could be disabled for users.
+2. If your system is using `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`_, then post edits could be disabled for users.
 
 If neither of the above help resolves your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
 
