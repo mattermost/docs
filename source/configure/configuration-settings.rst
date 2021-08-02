@@ -13,7 +13,7 @@ On new installations starting from v5.14, the ``default.json`` file used to crea
 Configuration in Database
 --------------------------
 
-Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
 
 Environment Variables
 ---------------------
@@ -34,7 +34,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
 
 .. warning::
-   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/administration/config-in-database.html>`_.
+   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
    
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
@@ -85,7 +85,7 @@ View subscription details including the number of users and expiry date of your 
 License Key
 ^^^^^^^^^^^
 
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html>`_.
 
 Reporting
 ---------
@@ -122,28 +122,28 @@ Teams (Experimental)
 
 *Available in Enterprise Edition E20*
 
-Manage group synchronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+Manage group synchronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/onboard/cloud-groups.html>`__ for more details.
 
 Channels (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
-Manage group synchronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+Manage group synchronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/onboard/cloud-groups.html>`__ for more details.
 
 Groups
 ~~~~~~
 
 *Available in Enterprise Edition E20*
 
-Groups offer admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
+Groups offer admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more details.
 
 Permissions
 ~~~~~~~~~~~
 
 *Available in Enterprise Edition E10 and higher*
 
-Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
+Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ for more details.
 
 Environment
 -----------
