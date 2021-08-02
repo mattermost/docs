@@ -69,6 +69,7 @@ To add yourself to the `Mattermost page on LinkedIn <https://www.linkedin.com/co
 1. Log in to `LinkedIn <https://www.linkedin.com/>`__ or create an account.
 2. Go to **Me > View profile**.
 3. Under **Experience**, click on the **plus** symbol and edit the following:
+
   - Title: Enter **Developer**, if you contributed code to the open source project or created a plugin, integration, or other enhancement; **Contributor**,  if you've contributed without writing code (e.g., filed bug report, updated documentation, supported troubleshooting questions, proposed a feature, etc.); **Translator**, if you've `helped translate <https://translate.mattermost.com>`__ Mattermost.
   - Company: Find **Mattermost** (you’ll see the Mattermost logo).
   - Location: Enter where you live.
