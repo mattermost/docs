@@ -320,9 +320,9 @@ redirects = {
 master_doc = 'index'
 
 # General information about the project.
-project = u'Mattermost'
-copyright = u'2015-2021 Mattermost'
-author = u'Mattermost'
+project = 'Mattermost'
+copyright = '2015-2021 Mattermost'
+author = 'Mattermost'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -410,7 +410,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'collapse_navigation': False,
     'sticky_navigation': True,
-    'navigation_depth': -1,
+    'navigation_depth': -1,  # Allow unlimited depth in navigation
     'includehidden': False,
     'titles_only': False
 }

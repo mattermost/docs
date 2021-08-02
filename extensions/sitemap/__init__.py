@@ -1,3 +1,6 @@
+#
+# sitemap - A fork of the sphinx_sitemap extension with parallel read and write support enabled.
+#
 # Copyright (c) 2013 Michael Dowling <mtdowling@gmail.com>
 # Copyright (c) 2017 Jared Dillard <jared.dillard@gmail.com>
 #

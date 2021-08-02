@@ -1,3 +1,6 @@
+#
+# reredirects - A fork of the sphinx_reredirects extension with parallel read and write support enabled
+#
 import re
 from fnmatch import fnmatch
 from pathlib import Path
