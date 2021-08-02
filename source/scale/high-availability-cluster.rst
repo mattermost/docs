@@ -437,6 +437,7 @@ Starting with Mattermost Server v4.0, when a server starts up it can automatical
     },
 
   For more information about these settings, see :ref:`high-availability`.
+
 4. Stop NGINX.
 5. Upgrade each Mattermost instance.
 6. On each server, replace the new ``config.json`` file with your modified version.

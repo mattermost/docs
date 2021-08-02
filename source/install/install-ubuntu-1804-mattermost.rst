@@ -46,14 +46,17 @@ Assume that the IP address of this server is 10.10.10.2.
 7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
    
   -  If you are using PostgreSQL:
-  -  
+
     a.  Set ``"DriverName"`` to ``"postgres"``
     b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
 
   -  If you are using MySQL:
+
     a.  Set ``"DriverName"`` to ``"mysql"``
     b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
@@ -109,8 +112,8 @@ Assume that the IP address of this server is 10.10.10.2.
 
     If you have installed MySQL or PostgreSQL on a dedicated server, then you need to
 
-      - remove ``After=postgresql.service`` and ``BindsTo=postgresql.service`` or ``After=mysql.service`` and ``BindsTo=mysql.service`` lines in the ``[Unit]`` section, and
-      - replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service`` line in the ``[Install]`` section with ``WantedBy=multi-user.target``
+      - Remove ``After=postgresql.service`` and ``BindsTo=postgresql.service`` or ``After=mysql.service`` and ``BindsTo=mysql.service`` lines in the ``[Unit]`` section, and
+      - Replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service`` line in the ``[Install]`` section with ``WantedBy=multi-user.target``
   
     or the Mattermost service will not start.
 
