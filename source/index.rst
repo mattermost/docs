@@ -22,5 +22,5 @@ Mattermost Product Documentation
    Incident Collaboration <guides/incident-collaboration>
    Focalboard <https://www.focalboard.com/guide/user/>
    Mattermost for Developers <https://developers.mattermost.com/>
-   Get Help With Mattermost </guides/get-help>
-   Community Chat </guides/community-chat>
+   Get Help With Mattermost <guides/get-help>
+   Community Chat <guides/community-chat>
