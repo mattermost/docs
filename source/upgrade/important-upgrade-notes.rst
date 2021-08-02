@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
+   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
    - In the v5.38 release (August 16, 2021), we will deprecate "config watcher" (the mechanism that automatically reloads the ``config.json file``), in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
    - The deprecations `listed here <https://docs.mattermost.com/administration/changelog.html#upcoming-deprecations-in-mattermost-v6-0>`_ are planned for the Mattermost v6.0 release, which is scheduled for September 15, 2021. This list is subject to change prior to the release.
 
@@ -47,6 +47,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.34.1                                            | v5.34.1 fixes an issue where upgrading to v5.34.0 runs a migration that can cause timeouts on MySQL installations. Upgrading to v5.34.1 may also execute missing |
 |                                                    | migrations that were scheduled for v5.32.0. These additions can be lengthy on very big MySQL (version 5.x) installations.                                        |
+|                                                    |                                                                                                                                                                  |
 |                                                    |       - Altering of ``Posts.FileIds`` type (PostgreSQL only)                                                                                                     |
 |                                                    |       - Added new column ``ThreadMemberships.UnreadMentions``                                                                                                    |
 |                                                    |       - Added new column ``Channels.Shared``                                                                                                                     |
@@ -158,7 +159,7 @@ Important Upgrade Notes
 |                                                    | part of an LDAP group. However, the group mention keyword will not be highlighted.                                                                               |  
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled. Follow instructions at                                                                  |
-|                                                    | https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                        |
+|                                                    | https://docs.mattermost.com/onboard/sso-saml.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.22.0                                            | Due to fixing performance issues related to emoji reactions, the performance of the upgrade has been affected in that the schema upgrade now takes more time in  |
 |                                                    | environments with lots of reactions in their database. These environments are recommended to perform the schema migration during low usage times and potentially |
@@ -181,17 +182,17 @@ Important Upgrade Notes
 |                                                    | used. Also, direct copy of the ``model.Post`` structure must be avoided in favor of the provided ``Clone()`` method.                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled. Follow instructions at                                                                  |
-|                                                    | https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                        |
+|                                                    | https://docs.mattermost.com/onboard/sso-saml.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.21.0                                            | Honour key value expiry in KVCompareAndSet, KVCompareAndDelete, and KVList. We also improved handling of plugin key value race conditions and deleted keys in    |
 |                                                    | Postgres.                                                                                                                                                        |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled. Follow instructions at                                                                  |
-|                                                    | https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                        |
+|                                                    | https://docs.mattermost.com/onboard/sso-saml.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v5.20.0                                            | Any `pre-packaged plugin <https://docs.mattermost.com/administration/plugins.html#pre-packaged-plugins>`_ that is not enabled in the ``config.json`` will no     |
-|                                                    | longer install automatically, but can continue to be installed via the                                                                                           |
-|                                                    | `Plugin Marketplace <https://docs.mattermost.com/administration/plugins.html#plugin-marketplace>`_.                                                              | 
+| v5.20.0                                            | Any `pre-packaged plugin <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/#pre-packaged-plugins>`_                                    |
+|                                                    | that is not enabled in the ``config.json`` will no longer install automatically, but can continue to be installed via the                                        |
+|                                                    | `Plugin Marketplace <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/#plugin-marketplace>`_.                                          | 
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Boolean elements from interactive dialogs are no longer serialized as strings. While we try to avoid breaking changes, this change was necessary to allow        |
 |                                                    | both the web and mobile apps to work with the boolean elements introduced with v5.16.                                                                            |
@@ -427,9 +428,11 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v3.8.0                                             | A change is required in the proxy configuration.                                                                                                                 |
 |                                                    | If you’re using NGINX:                                                                                                                                           |
+|                                                    |                                                                                                                                                                  |
 |                                                    |   1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.             |
 |                                                    |   2. Locate the line: ``location /api/v3/users/websocket {``                                                                                                     |
 |                                                    |   3. Replace the line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``                                                                                     |
+|                                                    |                                                                                                                                                                  |
 |                                                    | If you are using a proxy other than NGINX, make the equivalent change to that proxy's configuration.                                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | You need to verify settings in the System Console due to a security-related change.                                                                              |

@@ -19,7 +19,7 @@ If you add new users in the middle of a billing cycle, you'll only be charged fo
 
 Here's an example:
 
-Your organization has a Mattermost Cloud workspace and you're on a monthly subscription at the rate of $10 USD per user per month. You add a new user on the 11th day of a 30-day billing period and that user remains registered for the remainder of the billing period.
+Your organization has a Mattermost Cloud workspace, and you're on a monthly subscription at the rate of $10 USD per user per month. You add a new user on the 11th day of a 30-day billing period, and that user remains registered for the remainder of the billing period.
 
 The prorated subscription cost for this user is determined by multiplying the monthly amount ($10 USD) by the number of days they are actively registered in the billing period (20) and dividing by the number of days in the month (30).
 
@@ -42,14 +42,14 @@ Billing history
 
 The Billing History screen contains a list of all your monthly invoices and payments. Invoices appear immediately after the billing period ends.
 
-Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
+Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated, and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
 
 If you have a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
 
 Company information
 ~~~~~~~~~~~~~~~~~~~
 
-The **Company Information** screen contains an area to add your company address where you are physically located. The company address will appear on your invoice if specified. Otherwise the billing address associated with the credit card on file will be used.
+The **Company Information** screen contains an area to add your company address where you are physically located. The company address will appear on your invoice if specified. Otherwise, the billing address associated with the credit card on file will be used.
 
 Payment information
 ~~~~~~~~~~~~~~~~~~~

@@ -49,12 +49,14 @@ Assume that the IP address of this server is 10.10.10.2.
  
     a.  Set ``"DriverName"`` to ``"postgres"``
     b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
  
  -  If you are using MySQL:
  
     a.  Set ``"DriverName"`` to ``"mysql"``
     b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
@@ -86,16 +88,19 @@ Assume that the IP address of this server is 10.10.10.2.
   After=network.target
   After=postgresql.service
   BindsTo=postgresql.service
+
   [Service]
   Type=notify
   ExecStart=/opt/mattermost/bin/mattermost
   TimeoutStartSec=3600
+  KillMode=mixed
   Restart=always
   RestartSec=10
   WorkingDirectory=/opt/mattermost
   User=mattermost
   Group=mattermost
   LimitNOFILE=49152
+  
   [Install]
   WantedBy=postgresql.service
 

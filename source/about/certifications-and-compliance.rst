@@ -1,5 +1,5 @@
 
-Certifications and Compliance Overview*
+Certifications and Compliance Overview
 ========================================
 
 This overview summarizes how Mattermost can help users in support of their internal compliance initiatives, including:
