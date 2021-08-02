@@ -11,6 +11,7 @@ Sending information from Mattermost
 
 Mattermost's :doc:`interactive message buttons <../developer/interactive-messages>` send information using a parameter called "context." The easiest way to get all the information from Mattermost is to use the following configuration, which will pass the entire payload to your script as a string:
 
+.. code-block:: json
 
   {
   	"source": "entire-payload"
@@ -31,6 +32,7 @@ Authenticating Requests
 
 Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration:
 
+.. code-block:: json
 
     "trigger-rule":
     {
