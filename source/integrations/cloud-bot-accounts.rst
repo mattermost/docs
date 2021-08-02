@@ -125,7 +125,7 @@ Do bot access tokens expire?
 
 No, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
 
-For more information about access tokens, see `the personal access tokens documentation <https://docs.mattermost.com/developer/personal-access-tokens.html>`_.
+For more information about access tokens, see `the personal access tokens documentation <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`_.
 
 Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
