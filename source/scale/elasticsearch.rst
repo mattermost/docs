@@ -10,7 +10,7 @@ The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elastics
 Deployment Guide
 ----------------
 
-Elasticsearch allows you to search large volumes of data quickly, in near real time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
+Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
 .. important::
     The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
@@ -65,7 +65,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 .. note::
 
    - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
-   - If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
+   - If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases, estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
    - Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
     
 Limitations
@@ -82,7 +82,7 @@ Frequently Asked Questions (FAQ)
 Do I need to use Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Elasticsearch engine is designed for large Enterprise deployments wanting to run highly efficient database searches in a cluster environment. The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
+The Elasticsearch engine is designed for large Enterprise deployments to run highly efficient database searches in a cluster environment. The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
 
 What types of indexes are created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,4 +142,4 @@ Failures are returned in the server logs. The error log begins with the string `
 My Elasticsearch indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, please contact Mattermost support.
+If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server, you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, please contact Mattermost support.

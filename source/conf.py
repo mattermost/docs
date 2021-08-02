@@ -103,7 +103,7 @@ redirects = {
      "administration/image-proxy": "https://docs.mattermost.com/deploy/image-proxy.html",
      "administration/encryption": "https://docs.mattermost.com/deploy/encryption-options.html",
      "administration/backup": "https://docs.mattermost.com/deploy/backup-disaster-recovery.html",
-     "administration/upgrade": "https://docs.mattermost.com/deploy/upgrading-mattermost-server.html",
+     "administration/upgrade": "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
      "administration/important-upgrade-notes": "https://docs.mattermost.com/upgrade/important-upgrade-notes.html",
      "administration/version-archive": "https://docs.mattermost.com/upgrade/version-archive.html",
      "administration/extended-support-release": "https://docs.mattermost.com/upgrade/extended-support-release.html",
