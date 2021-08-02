@@ -6,30 +6,30 @@ Use bot accounts to integrate with Mattermost through `plugins <https://develope
 
 Bot accounts are just like user accounts, except they:
 
-  - Cannot be logged into.
-  - Cannot be used to create other bot accounts.
-  - Do not count as a registered user and therefore do not count towards your subscription.
+  - Cannot be logged into.
+  - Cannot be used to create other bot accounts.
+  - Do not count as a registered user and therefore do not count towards your subscription.
 
 Additional benefits include:
 
-  - Bot accounts can be enabled to post to any channel in the system by System Administrators, including private teams, Private Channels, or Direct Messages.
-  - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
-  - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
-  - Bot accounts are a safe way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
-  - A ``BOT`` tag is used everywhere in the user interface where bot accounts are referenced, including Direct Messages and user lists.
+  - Bot accounts can be enabled to post to any channel in the system by System Administrators, including private teams, Private Channels, or Direct Messages.
+  - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
+  - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
+  - Bot accounts are a safe way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
+  - A ``BOT`` tag is used everywhere in the user interface where bot accounts are referenced, including Direct Messages and user lists.
 
 Note that currently:
 
-  - Bot accounts can only be created or managed by plugins or System Administrators.
-  - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
-  - Service accounts without an email address pulled from LDAP or SAML systems is not yet supported.
+  - Bot accounts can only be created or managed by plugins or System Administrators.
+  - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
+  - Service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
 
 If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com>`_.
 
 .. contents::
-  :backlinks: top
-  :depth: 1
-  :local:
+  :backlinks: top
+  :depth: 1
+  :local:
 
 Configuration Settings
 ------------------------
@@ -57,8 +57,8 @@ User Interface (UI)
 3. Set the **Username** of the bot. The username must begin with a letter, and contain between 3 and 22 lowercase characters made up of numbers, letters, and the symbols ".", "-", and "_".
 4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout the Mattermost user interface.
 5. (Optional) Set a **Display Name** and **Description**.
-6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any public channels, private channels and direct messages.
-7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or all Mattermost Public channels.
+6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any public channels, private channels, and direct messages.
+7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels or all Mattermost Public channels.
 
 RESTful API
 ~~~~~~~~~~~
@@ -82,7 +82,7 @@ Frequently Asked Questions
 Should I migrate all my integrations to use bot accounts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For your integrations using RESTful API and plugins, yes. To do so, you can either convert an existing account to a bot, or create a new bot account using the steps outlined above.
+For your integrations using RESTful API and plugins, yes. To do so, you can either convert an existing account to a bot or create a new bot account using the steps outlined above.
 
 Once you create a bot account, use the generated token to access the RESTful API on behalf of a bot and interact in Mattermost.
 
@@ -91,19 +91,19 @@ For your webhook and slash command integrations, you cannot migrate them to use 
 What happens if a plugin is using a bot account that already exists as a user account?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For a concrete example, suppose you enable the `Mattermost GitHub plugin <https://github.com/mattermost/mattermost-plugin-github>`_, which uses a ``github`` bot account, while an existing ``github`` user account was created for webhook integrations.
+For a concrete example, suppose you enable the `Mattermost GitHub plugin <https://github.com/mattermost/mattermost-plugin-github>`_, which uses a ``GitHub`` bot account, while an existing ``GitHub`` user account was created for webhook integrations.
 
-Once the plugin is enabled, the plugin posts as the ``github`` account but without a `BOT` tag. A System Administrator can convert the ``github`` user to a bot account by using ``mmctl``:
+Once the plugin is enabled, the plugin posts as the ``GitHub`` account but without a `BOT` tag. A System Administrator can convert the ``GitHub`` user to a bot account by using ``mmctl``:
 
 .. code-block:: text
 
-  mmctl user convert (--bot [emails] [usernames] [userIds] | --user <username> --password PASSWORD [--email EMAIL]) [flags]
+  mmctl user convert (--bot [emails] [usernames] [userIds] | --user <username> --password PASSWORD [--email EMAIL]) [flags]
 
-If the user is an existing user account you want to preserve, change its username. The plugin will create a bot account with the name ``github``.
+If the user is an existing user account you want to preserve, change its username. The plugin will create a bot account with the name ``GitHub``.
 
 .. note::
 
-   A bot account and a user account cannot share the same username in the same Mattermost instance.
+   A bot account and a user account cannot share the same username in the same Mattermost instance.
 
 How can I quickly test if my bot account is working?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ Add the bot to a team and channel you belong to, then use the following curl com
 
 .. code-block:: text
 
-  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<channel-id>", "message":"This is a message from a bot", "props":{"attachments": [{"pretext": "Look some text","text": "This is text"}]}}' -H 'Authorization: Bearer <bot-access-token>' <mattermost-url>/api/v4/posts
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<channel-id>", "message":"This is a message from a bot", "props":{"attachments": [{"pretext": "Look some text","text": "This is text"}]}}' -H 'Authorization: Bearer <bot-access-token>' <mattermost-url>/api/v4/posts
 
 replacing the following parameters:
 
@@ -130,7 +130,7 @@ For more information about access tokens, see `the personal access tokens docume
 Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
+Possibly yes. Currently, a System Admin can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
 
 Mitigations:
 
@@ -150,10 +150,10 @@ Can bot accounts edit messages through the RESTful API?
 Yes. By default, bot accounts can update their own posts.
 
 If you find yourself unable to edit posts as a bot, check the following:
-1. Instead of using a slash command to respond directly, use an an API call for the initial interaction with a user to enable message edits.
+1. Instead of using a slash command to respond directly, use an API call for the initial interaction with a user to enable message edits.
 2. If your system is using `advanced permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_, then post edits could be disabled for users.
 
-If neither of the above help resolve your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
+If neither of the above help resolves your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
 
 If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
