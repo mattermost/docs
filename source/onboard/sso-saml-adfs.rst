@@ -84,6 +84,7 @@ Create Claim Rules
 	.. image:: ../../source/images/adfs_15_choose_rule_type.png
 
 3. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, select **Active Directory** as the **Attribute Store**, then complete the following:
+
   - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Email``.
   - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Name ID``.
   - From the **LDAP Attribute column**, select ``Given-Name``. From the **Outgoing Claim Type**, type ``FirstName``.
@@ -105,6 +106,7 @@ Note that the entries in the **Outgoing Claim Type** column can be chosen to be 
 	.. image:: ../../source/images/adfs_17_transformation_of_incoming_claim.png
 
 6. On the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, then:
+
   - Select **Name ID** for the **Incoming claim type**.
   - Select **Unspecified** for the **Incoming name ID format**.
   - Select **E-Mail Address** for the **Outgoing claim type**.
