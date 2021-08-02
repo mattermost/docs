@@ -165,7 +165,6 @@ Example: Noticing a design issue and influencing a change in UX guidelines to co
 Design Guidelines
 *****************
 
-|
 Display: Alignment
 ------------------
 
@@ -245,7 +244,6 @@ The color of the on_hover state should be the same as in active state, with opac
     ..  image:: ../images/buttonDesign.png
         :alt: Button design
 
-|
 ---------------------------
 
 Display: Icons
@@ -265,7 +263,6 @@ Display: Icons
     a. File a bug if the icon is difficult to understand or has cosmetic defects (size, blur, etc.).
     b. File a bug when an icon doesn’t obviously indicate the underlying feature.
 
-|
 ---------------------------
 
 
@@ -305,7 +302,6 @@ Tooltip text may be title case or sentence case depending on its context.
 - Tooltips should be title case if the tooltip is a noun, e.g. "Pinned Posts", or "Flagged Posts".
 - Tooltips should be sentence case if they are declaring an action, e.g. "Flag for follow up", or "Create new private channel".
 
-|
 ---------------------------
 
 Display: Username display
@@ -620,6 +616,7 @@ There are several modes for this element:
         - Includes “x” button to dismiss.
         - No timeout.
         - Removed when system admin cancels.
+
         | Examples:
         | “Try our new Windows App. Click here to download.”,
         | “Scheduled maintenance 2:00am to 2:30am starts in 20 minutes, 3 seconds.”
@@ -630,6 +627,7 @@ There are several modes for this element:
         - No “x” button to dismiss.
         - No timeout.
         - Dismissed when action completed.
+
         | Examples:
         | “We’re evolving. Please review and accept our new terms of service.”
 
@@ -638,6 +636,7 @@ There are several modes for this element:
         - Triggered on issue.
         - No “x” button to dismiss.
         - Dismissed when issue no longer persists.
+
         | Examples:
         | “You are not connected to the internet.”
 
