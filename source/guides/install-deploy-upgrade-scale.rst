@@ -137,4 +137,4 @@ Scale Mattermost
    /scale/high-availability-cluster.rst
    /scale/elasticsearch.rst
    /scale/performance-monitoring.rst
-   /scale/peformance-alerting.rst
+   /scale/performance-alerting.rst
