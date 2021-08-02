@@ -12,6 +12,7 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
 
 .. image:: ../images/incoming_webhooks_sample.png
   :width: 500 px
+
 *An example of a GitHub integration that posts updates to a Developers channel*
 
 Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTTP requests in the examples that follow.
@@ -30,8 +31,10 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 .. image:: ../images/incoming_webhooks_create_simple.png
   :width: 400 px
   
-1. First, go to **Main Menu > Integrations > Incoming Webhook**. 
+1. First, go to **Main Menu > Integrations > Incoming Webhook**.
+
   - If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. They can be enabled by a System Admin from **System Console > Integrations > Integration Management**. Then continue with the steps below.
+
 2. Select **Add Incoming Webhook** and add name and description for the webhook. The description can be up to 500 characters.
 3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
@@ -155,6 +158,7 @@ Some common error messages include:
 2. ``Couldn't find the user``: Indicates that the user doesn't exist or is invalid. Please modify the ``channel`` parameter before sending another request.
 3. ``Unable to parse incoming data``: Indicates that the request received is malformed. Try reviewing that the JSON payload is in a correct format and doesn't have typos such as extra `"`.
 4. ``curl: (3) [globbing] unmatched close brace/bracket in column N``: Typically an error when using cURL on Windows, when:
+
   1. You have space around JSON separator colons, ``payload={"Hello" : "test"}`` or  
   2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``
 
