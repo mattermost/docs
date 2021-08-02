@@ -100,7 +100,7 @@ View statistics on active users, teams, channels, sessions, webhooks, and connec
 Team Statistics
 ~~~~~~~~~~~~~~~~
 
-View statistics per team on number of active users, as well as Public and Private channels.
+View statistics per team on number of the active users, as well as Public and Private channels.
 
 Server Logs
 ~~~~~~~~~~~~
@@ -122,21 +122,21 @@ Teams (Experimental)
 
 *Available in Enterprise Edition E20*
 
-Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+Manage group synchronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Channels (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
-Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+Manage group synchronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
 
 Groups
 ~~~~~~
 
 *Available in Enterprise Edition E20*
 
-Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
+Groups offer admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
 
 Permissions
 ~~~~~~~~~~~
@@ -206,7 +206,7 @@ Forward port 80 to 443
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^
 
-**None**: Mattermost will connect over an unsecure connection.
+**None**: Mattermost will connect over an unsecured connection.
 
 **TLS**: Encrypts the communication between Mattermost clients and your server. See `documentation <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ for more details.
 
@@ -324,7 +324,7 @@ Enable Insecure Outgoing Connections
 Managed Resource Paths
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A comma-separated list of paths within the Mattermost domain that are managed by a third party service instead of Mattermost itself. Links to these paths will be opened in a new tab/window by Mattermost apps. For example, if Mattermost is running on ``https://mymattermost.com``, setting this to ``conference`` will cause links such as ``https://mymattermost.com/conference`` to be opened in a new window.
+A comma-separated list of paths within the Mattermost domain that are managed by a third-party service instead of Mattermost itself. Links to these paths will be opened in a new tab/window by Mattermost apps. For example, if Mattermost is running on ``https://mymattermost.com``, setting this to ``conference`` will cause links such as ``https://mymattermost.com/conference`` to be opened in a new window.
 
 When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of in a browser. See `here <https://docs.mattermost.com/install/desktop-managed-resources.html>`_ for more information.
 
@@ -342,7 +342,7 @@ The workflow for failover without downing the server is to change the database l
 Purge All Caches
 ^^^^^^^^^^^^^^^^
 
-This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
+This button purges all the in-memory caches for sessions, accounts, and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
 
 Database
 ~~~~~~~~
@@ -377,7 +377,7 @@ This is the connection string to the master database. When **DriverName** is set
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum number of idle connections held open to the database.
+The maximum number of idle connections held open to the database.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input.                                                                               |
@@ -386,7 +386,7 @@ Maximum number of idle connections held open to the database.
 Maximum Connection Idle Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum time a database connection can remain idle.
+The maximum time a database connection can remain idle.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input.                                                                 |
@@ -395,7 +395,7 @@ Maximum time a database connection can remain idle.
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum number of open connections held open to the database.
+The maximum number of open connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxOpenConns": 300`` with numerical input.                                                                               |
@@ -433,7 +433,7 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
+The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
@@ -542,7 +542,7 @@ Enable Cluster Sniffing
 Bulk Indexing
 ^^^^^^^^^^^^^
 
-This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
+This button starts a bulk index of all existing posts in the database. If the indexing process is canceled the index and search results will be incomplete.
 
 Purge Indexes
 ^^^^^^^^^^^^^
@@ -593,7 +593,7 @@ This selects which file storage system is used: Local File System or Amazon S3.
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
-**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``"amazons3"`` driver is compatible with MinIO (Beta) and Digital Ocean Spaces based on the provided access key, bucket, and region fields.
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket, and region fields. The ``"amazons3"`` driver is compatible with MinIO (Beta) and Digital Ocean Spaces based on the provided access key, bucket, and region fields.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -630,7 +630,7 @@ Enable users to search the contents of documents attached to messages.
 .. note::
    Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
 
-**False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+**False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
 You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
 
@@ -649,8 +649,8 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 
 .. note::
   - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
-  - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - Searching document contents add load to your server. 
+  - For large deployments or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
   
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -667,8 +667,8 @@ This configuration setting enables users to search the contents of compressed ZI
 
 .. note::
   - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
-  - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - Searching document contents add load to your server. 
+  - For large deployments or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
@@ -706,7 +706,7 @@ This is required for access unless you are using an `Amazon S3 IAM Role <https:/
 Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^
 
-Hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
+The hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
 
 .. note::
   For Digital Ocean Spaces, the hostname should be set to ``"<region>.digitaloceanspaces.com"``, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
