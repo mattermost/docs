@@ -33,10 +33,12 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
+md %BUILDDIR%
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O% 2>%ERRORSFILE%
 goto end
 
 :livehtml
+md %BUILDDIR%
 %SPHINXAUTOBUILD% %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
