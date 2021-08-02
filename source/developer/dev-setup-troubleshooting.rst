@@ -7,7 +7,7 @@ Build Errors
 ------------
 
 macOS: I get the following error when running ``make run``: "Cannot connect to the Docker daemon"
-  If you have Docker Tools installed (as opposed to Docker for Mac), make sure docker-machine is running.
+  If you have Docker Tools installed (as opposed to Docker for Mac), make sure the docker-machine is running.
 
   ``docker-machine start dev``
 
@@ -50,7 +50,7 @@ macOS: I get the following error or something similar when running ``make run``:
 Testing Errors
 --------------
 
-I get the following error when running ``make test``: t.Run undefined (type \*testing.T has no field or method Run)
+I get the following error when running ``make test``: t. Run undefined (type \*testing.T has no field or method Run)
   You need to upgrade to Go 1.9. We don't support earlier versions than that.
 
 Other Errors
