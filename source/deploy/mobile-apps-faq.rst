@@ -219,6 +219,7 @@ The app checks for platform-specific configuration on app install. If no configu
 2. In order to handle deep links, paste the following ``JSON`` into the ``apple-app-site-association`` file. Make sure to place your app ID in the ``appID`` property:
 
 ::
+
     {
         "applinks": {
             "apps": [],
