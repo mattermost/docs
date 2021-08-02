@@ -18,24 +18,24 @@ The ``/playbook`` slash command allows interaction with incidents via the post t
 - ``/playbook owner [@username]`` - Show or change the current playbook run owner.
 - ``/playbook info`` - Show a summary of the current playbook's activities.
 
-To run a playbook use the ``/playbook start`` slash command from any channel. You can also use the desktop or browser to:
+To run a playbook, use the ``/playbook start`` slash command from any channel. You can also use the desktop or browser to:
 
  * Select the **Playbook** icon in the channel header, and select **Run playbook** from the right-hand sidebar.
  * Use the context menu of a post and select **Run playbook**.
 
-Running a playbook opens an interactive dialog. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
+Running a playbook opens an interactive dialogue. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
 
 Joining a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Select the **Playbook** icon in the top menu bar to see a list of runs, to which you have access, in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
+Select the **Playbook** icon in the top menu bar to see a list of runs to which you have access in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
 If the channel is private, an existing member must invite you.
 
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
+Tasks can be part of pre-configured task templates in playbooks, and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
@@ -73,7 +73,7 @@ Status updates ensure that stakeholders remain informed about the playbook run's
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
-The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
+The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcasted to another channel will not be edited or deleted.
 
 Ending a playbook run
 ~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +87,7 @@ Playbook run members can end an incident using the ``/playbook end`` slash comma
 5. Enter a message with additional details.
 6. Select **Update Status**.
 
-Ending a playbook run signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
+Ending a playbook runs signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
 
 Restarting a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ If a playbook run was ended prematurely, it can be restarted within the channel 
 Playbook dashboard
 ------------------
 
-Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
+Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants and tasks finished.
 
 .. image:: ../images/Playbook-dashboard.png
    :alt: View and track playbook information.
