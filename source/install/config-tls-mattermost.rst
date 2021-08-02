@@ -59,4 +59,4 @@ The certificate is retrieved the first time that a client tries to connect to th
 Other helpful resources:
 
 - `NGINX's SSL blog <https://www.nginx.com/blog/nginx-ssl/>`__
-- `NGINX's SSLguide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
+- `NGINX's SSL guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
