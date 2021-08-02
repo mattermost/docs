@@ -21,17 +21,17 @@ More about settings available in **Customization**:
 Site Name
 ~~~~~~~~~
 
-Choose the name of your Mattermost site to be shown in the UI. The site name appears in the header and footer of the site login page, team selection page, team creation page, account creation page, email invitations, and replaces "Mattermost" on the **About** page. Note that the site name applies to the entire site and not just a specific team on the site. The site name is limited to 30 characters or less.
+Choose the name of your Mattermost site to be shown in the UI. The site name appears in the header and footer of the site login page, team selection page, team creation page, account creation page, email invitations and replaces "Mattermost" on the **About** page. Note that the site name applies to the entire site and not just a specific team. The site name is limited to 30 characters or less.
 
 Custom Branding Image
 ~~~~~~~~~~~~~~~~~~~~~
 
-Upload a company logo or custom image representative of your site that is displayed on the left side of the site login page. Supported image formats are JPG, PNG, TIFF, and BMP. The recommended image size is 200-500px in width and height, and less than 2 MB since it's loaded for every user who logs in on desktop.
+Upload a company logo or custom image representative of your site displayed on the left side of the site login page. Supported image formats are JPG, PNG, TIFF, and BMP. The recommended image size is 200-500px in width and height, and less than 2 MB since it's loaded for every user who logs in on desktop.
 
 Custom Brand Text
 ~~~~~~~~~~~~~~~~~
 
-Write custom text to display your company tagline or a welcome prompt. Custom text will be shown below the custom brand image on the left side of site login page on desktop. You can format this text to a maximum of 500 characters using the same `Markdown formatting syntax <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as used in Mattermost messages.
+Write custom text to display your company tagline or a welcome prompt. Custom text will be shown below the custom brand image on the left side of the site login page on the desktop. You can format this text to a maximum of 500 characters using the same `Markdown formatting syntax <https://docs.mattermost.com/messaging/formatting-text.html>`__ as used in Mattermost messages.
 
 Site Description
 ~~~~~~~~~~~~~~~~
