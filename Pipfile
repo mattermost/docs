@@ -32,3 +32,6 @@ sphinx-rtd-theme = "==0.5.2"
 # Release notes: https://myst-parser.readthedocs.io/en/latest/develop/_changelog.html
 # Repo: https://github.com/executablebooks/myst-parser
 myst-parser = "==0.15.1"
+#
+# Python extension required by markdown-it-py, part of myst-parser
+typing-extensions = "==3.10.0.0"
