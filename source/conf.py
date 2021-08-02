@@ -111,7 +111,7 @@ redirects = {
      "administration/downgrade": "https://docs.mattermost.com/upgrade/downgrading-mattermost-server.html",
      "administration/open-source-components": "https://docs.mattermost.com/upgrade/open-source-components.html",
      "administration/release-definitions": "https://docs.mattermost.com/upgrade/release-definitions.html",
-     "administration/performance-alerting-guide": "https://docs.mattermost.com/scale/peformance-alerting.html",
+     "administration/performance-alerting-guide": "https://docs.mattermost.com/scale/performance-alerting.html",
      "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
      "administration/config-in-database": "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
      "administration/branding": "https://docs.mattermost.com/configure/custom-branding-tools.html",
