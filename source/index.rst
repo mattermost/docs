@@ -7,10 +7,6 @@
 Mattermost Product Documentation
 --------------------------------
 
-.. _`mattermost.org/download`: https://mattermost.com/download/
-.. _contacting Mattermost, Inc.: https://mattermost.com/contact-us/
-.. _download and try it today.: https://docs.mattermost.com/install/ee-install.html
-
 .. toctree::
    :maxdepth: 1
    :glob:
