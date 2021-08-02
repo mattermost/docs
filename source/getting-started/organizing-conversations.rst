@@ -11,7 +11,7 @@ To create a new Public or Private channel, select the **+** symbol at the top of
     .. image:: ../images/create-new-channel.png
         :alt: Create a channel.
     
-Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
+Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for>`__.
 
 Creating a Direct or Group Message
 ----------------------------------
@@ -58,7 +58,7 @@ Naming a channel
 
 Channels can be identified in two ways:
 
-1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for>`__.
 2. **Channel handle:** This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.
 
 For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``:
@@ -83,7 +83,7 @@ In addition to this, when a channel is archived, by default the contents cannot 
 1. Ask your System Admin to set ``ExperimentalViewArchivedChannels`` to ``true`` in ``config.json`` to allow users to view, share, and search for content of channels that have been archived; or
 2. Leave the channel open, but post a message in the channel saying it's considered archived: such as ``# This channel is archived.``
 
-System Admins `can archive channels in the System Console <https://docs.mattermost.com/deployment/team-channel-management.html#profile>`_ without needing to be a channel member.
+System Admins `can archive channels in the System Console <https://docs.mattermost.com/manage/team-channel-members.html#team-profile>`_ without needing to be a channel member.
 
 Unarchiving a channel
 ---------------------
@@ -93,9 +93,9 @@ Search for the channel if required. Then, open the channel, select the channel n
     .. image:: ../images/unarchive-channel.png
         :alt: Unarchive a channel.
 
-When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/administration/config-settings.html#data-retention-policy>`__.
+When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/configure/configuration-settings.html#data-retention-policy>`__.
 
-In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
+In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
 
 Converting Public channels to Private channels (and vice versa)
 ---------------------------------------------------------------
@@ -106,7 +106,7 @@ When a channel is converted, its history and membership are preserved. Membershi
 
 .. note::
  
-   Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
+   Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-modify>`__.
 
 Favoriting a channel
 --------------------
@@ -143,7 +143,7 @@ To unmute the channel, select the channel name again to access the drop-down men
 Switching channels
 ------------------
 
-Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to find other channels, visit recently reviewed channels, or review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance. 
+Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to find other channels, visit recently reviewed channels, or review `member availability <https://docs.mattermost.com/messaging/setting-your-status-availability.html#setting-your-availability>`__ at a glance. 
 
 .. image:: ../images/switch-channels.png
     :alt: Switch channels and review member availability.
