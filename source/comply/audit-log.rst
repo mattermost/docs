@@ -12,7 +12,7 @@ Configuring the Mattermost server to use the new audit log requires editing the 
 
 **Accessing configuration options for audit log**
 
-Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/administration/config-settings.html#audit-settings>`_ are available:
+Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/configure/configuration-settings.html#audit-settings>`_ are available:
 
 - Syslog configuration options:
 
@@ -26,7 +26,7 @@ Open ``config.json`` and navigate to the audit settings. The following `configur
 
     - Enable settings to write audit files locally
     - Specify file size
-    - Specify backup interval
+    - Specify the backup interval
     - Add compression
     - Set maximum age to manage file rotation
 
