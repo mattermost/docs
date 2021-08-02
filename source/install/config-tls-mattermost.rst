@@ -15,9 +15,11 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 **Configure TLS on the Mattermost Server**:
 
 1. In **System Console > Environment > Web Server** (or **System Console > General > Configuration** in versions prior to 5.12).
+
   a. Change the **Listen Address** setting to ``:443``.
   b. Change the **Connection Security** setting to ``TLS``.
   c. Change the **Forward port 80 to 443** setting to ``true``.
+
 2. Activate the ``CAP_NET_BIND_SERVICE`` capability to allow Mattermost to bind to low ports.
 
   ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost``
