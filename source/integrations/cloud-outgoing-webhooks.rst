@@ -76,7 +76,7 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
       user_id=rnina9994bde8mua79zqcg5hmo&
       user_name=somename
 
-If your integration sends back a JSON response, make sure it returns the ``application/json`` content-type.
+If your integration sends back a JSON response, make sure it returns the ``application/json`` content type.
 
 9. Add a configurable *MATTERMOST_TOKEN* variable to your application and set it to the **Token** value from step 7. This value will be used by your application to confirm the HTTP POST request came from Mattermost.
 10. To have your application post a message back to ``town-square``, it can respond to the HTTP POST request with a JSON response such as:
@@ -111,15 +111,15 @@ Tips and Best Practices
 2. If the text in the JSON response is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Posts up to 16383 characters are supported. 
 3. Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`__ instead.
 4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings.html#restrict-managing-integrations-to-admins>`__.
-5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON response format <https://docs.mattermost.com/integrations/cloud-incoming-webhooks.html#translate-slack-s-data-format-to-mattermost>`__.
-6. The external application may be written in any programming language. It needs to provide a URL which reacts to the request sent by your Mattermost server, and send an HTTP POST in the required JSON format as a response.
+5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's proprietary JSON response format <https://docs.mattermost.com/integrations/cloud-incoming-webhooks.html#translate-slack-s-data-format-to-mattermost>`__.
+6. The external application may be written in any programming language. It needs to provide a URL that reacts to the request sent by your Mattermost server and send an HTTP POST in the required JSON format as a response.
  
 Share Your Integration
 -----------------------
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
 
-The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization, and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://integrations.mattermost.com/>`__ lists open-source integrations developed by the Mattermost community and are available for download, customization, and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------
@@ -138,14 +138,14 @@ Mattermost automatically translates the data coming from Slack:
    - ``<userid>``  to trigger a mention to a user, such as ``{"text": "<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification."}``
    - ``<!channel>``, ``<!here>`` or ``<!all>`` to trigger a mention to a channel, such as ``{"text": "<!channel> this is a notification."}``
 
-2. The HTTP POST request body sent to a web service is formatted the same as Slack's. This means your Slack integration's receiving function does not need change to be compatible with Mattermost.
+2. The HTTP POST request body sent to a web service is formatted the same as Slack. This means your Slack integration's receiving function does not need change to be compatible with Mattermost.
 3. Slack attachments are supported with Slack-compatible outgoing webhooks. They also add support for mentions with `<@userid>` and announcement tokens (eg. `<!here>`) in the outgoing webhook responses.
   
 Known Slack compatibility issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Using ``icon_emoji`` to override the username is not supported.
-2. Referencing  channels using ``<#CHANNEL_ID>`` does not link to the channel.
+2. Referencing channels using ``<#CHANNEL_ID>`` does not link to the channel.
 3. ``<!everyone>`` and ``<!group>`` are not supported.
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions).
 5. Bold formatting supplied as ``*bold*`` is not supported (must be done as ``**bold**``).
@@ -159,4 +159,4 @@ For assistance, review the `Troubleshooting forum <https://forum.mattermost.org/
 My integration prints the JSON data in a Mattermost channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost handles multiple content types for integrations, including plain text content type. If your integration prints the JSON data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
+Mattermost handles multiple content types for integrations, including plain text content type. If your integration prints the JSON data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content type.
