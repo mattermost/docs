@@ -247,7 +247,11 @@ redirects = {
      "process/pm-faq": "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
      "process/product-manager": "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring",
      "process/partner-programs": "https://handbook.mattermost.com/operations/sales/partner-programs",
-     "process/overview": "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
+     "process/overview": "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
+     "mobile/mobile-faq.rst#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server": "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server",
+     "mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment": "https://docs.mattermost.com/deploy/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment",
+     "mobile/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server": "https://docs.mattermost.com/deploy/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server",
+     "mobile/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps": "https://docs.mattermost.com/deploy/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps"
 }
 
 # The master toctree document.
