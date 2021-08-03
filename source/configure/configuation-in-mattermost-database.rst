@@ -1,7 +1,7 @@
 Configuration in the Mattermost Database
 ========================================
 
-A new configuration option was added in the `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+A new configuration option was added in the `5.10 release <https://docs.mattermost.com/install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 
@@ -157,11 +157,11 @@ The command to migrate the config to the database should always be run as the *m
    bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/administration/config-settings.html#configuration-settings>`_
+   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
    
-As with the environment file you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
+As with the environment file, you'll have to escape any single quote in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 
-With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
+With the configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
 If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
 
