@@ -16,14 +16,14 @@ Your users can download the Mattermost Mobile app as an `iOS app <https://about.
 Using an EMM Provider
 ~~~~~~~~~~~~~~~~~~~~~
 
-See our `Deploying Using an EMM Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ documentation to learn more about deploying Mattermost Mobile apps through an EMM provider.
+See our `Deploying Using an EMM Provider <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html#using-an-emm-provider>`__ documentation to learn more about deploying Mattermost Mobile apps through an EMM provider.
 
 Setting Up Push Notifications
 -----------------------------
 
-See our `Mobile Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ documentation to learn about setting up push notifications for Mattermost pre-built mobile apps.
+See our `Mobile Push Notifications <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`__ documentation to learn about setting up push notifications for Mattermost pre-built mobile apps.
 
 Success! Your Public App Store Deployment is Complete
 -----------------------------------------------------
 
-If you don't need the additional security provided via an EMM provider, your deployment is complete! Feel free to point your users to our `Mattermost user documentation <https://docs.mattermost.com/guides/user.html>`__ to learn more about using Mattermost.
+If you don't need the additional security provided via an EMM provider, your deployment is complete! Feel free to point your users to our `Mattermost user documentation <https://docs.mattermost.com/guides/developer.html>`__ to learn more about using Mattermost.
