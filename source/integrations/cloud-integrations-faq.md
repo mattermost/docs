@@ -13,7 +13,7 @@ Outgoing webhooks take data from Mattermost, and send it to an external applicat
 
 ## What's a slash command?
 
-A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. This means if you type in a slash command it will not be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
+A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. This means, if you type in a slash command, it will not be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
 
 ## What does Slack-compatible mean?
 
@@ -23,7 +23,7 @@ If you have a Slack integration, you should be able to set it up in Mattermost w
 
 ## What if I have a webhook from somewhere other than Slack?
 
-If you have an integration that outputs a payload in a different format you need to write an intermediate application to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
+If you have an integration that outputs a payload in a different format, you need to write an intermediate application to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
 
 If there's no translation layer, Mattermost won't understand the data you're sending.
 
@@ -35,7 +35,7 @@ We currently don't support the ability to attach files to a post made by an inte
 
 ## Where can I find existing integrations?
 
-[Visit our app directory](https://about.mattermost.com/default-app-directory/) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
+[Visit our app directory](https://mattermost.com/marketplace/#privateApps) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
 ## Where should I install my integrations? 
 
@@ -49,7 +49,7 @@ See [bot accounts documentation](https://docs.mattermost.com/developer/bot-accou
 
 ## How do I create a bot account without personal access tokens or webhooks?
 
-Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html) with no expiry time, can use the following approach:
+Deployments that cannot create bot accounts via webhooks due to security reasons and do not want to use [personal access tokens](https://docs.mattermost.com/developer/personal-access-tokens.html#personal-access-tokens) with no expiry time, can use the following approach:
 
 1. Create a bot account using a secure email and strong password.
 2. Manually add the account to all teams and channels it needs access to. If your deployment has a lot of teams or channels, you may create a script to automate the process.
