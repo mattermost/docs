@@ -159,4 +159,4 @@ For assistance, review the `Troubleshooting forum <https://forum.mattermost.org/
 My integration prints the JSON data in a Mattermost channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost handles multiple content types for integrations, including plain text content type. If your integration prints the JSON data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content type.
+Mattermost handles multiple content types for integrations, including plain text content type. If your integration prints the JSON data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
