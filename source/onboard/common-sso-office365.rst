@@ -1,7 +1,7 @@
 Migrating from OAuth to OpenID Connect
 --------------------------------------
 
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to `convert your existing OAuth 2.0 service provider configuration <https://docs.mattermost.com/cloud/cloud-administration/converting-oauth-2.0-to-openid-connect.html>`__ for Office 365 to the OpenID Connect standard.
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to `convert your existing OAuth 2.0 service provider configuration <https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html#converting-oauth-2-0-service-providers-to-openid-connect-e20>`__ for Office 365 to the OpenID Connect standard.
 
 Configuring Office 365 as a Single Sign-On (SSO) service
 --------------------------------------------------------
@@ -67,9 +67,9 @@ Step 3: Configure Mattermost for Office 365 SSO
 Note about Microsoft Active Directory Tenants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service such as Azure or Office 365. Tenants are commonly used by organizations who want to store information about their users such as passwords, user profile data, and permissions. You can learn more about `getting an Azure AD tenant here <https://docs.microsoft.com/en-us/azure/active-directory/active-directory-howto-tenant>`__.
+A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Office 365. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. You can learn more about `getting an Azure AD tenant here <https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`__.
 
-To allow your Azure AD users to sign in to Mattermost using Office 365 SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the `Microsoft Azure portal <https://manage.windowsazure.com/>`__. The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about `integrating apps with Azure AD here <https://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/>`__.
+To allow your Azure AD users to sign in to Mattermost using Office 365 SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the `Microsoft Azure portal <https://portal.azure.com>`__. The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about `integrating apps with Azure AD here <https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`__.
 
 If you don't register Mattermost in the Microsoft Azure AD tenant your organization uses, Office 365 SSO will likely fail for your users.
 
