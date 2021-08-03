@@ -4,7 +4,7 @@ Integrations Overview
 
   .. note::
     
-    To see a list of open source integrations please see the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`__.
+    To see a list of open source integrations please see the `Mattermost Integrations Directory <https://mattermost.com/marketplace/>`__.
 
 Mattermost offers a host of options for connecting to systems on your private network as well as services hosted on hybrid and public clouds.
 
@@ -72,9 +72,9 @@ Custom applications using APIs and drivers (private and public cloud)
 
 Mattermost provides complete access to `server APIs <https://api.mattermost.com/>`__, along with language-specific drivers to integrate into your own applications. You can also draw from dozens of open source applications to build your own.
 
-- Learn about `Mattermost REST APIs <https://api.mattermost.com/>`__.
-- Learn about `Mattermost drivers, webhooks, and slash commands <https://docs.mattermost.com/developer/api.html>`__.
-- Learn about `Mattermost open source apps and integrations <https://integrations.mattermost.com/>`__.
+- Learn about `Mattermost REST APIs <https://docs.mattermost.com/developer/api.html>`__.
+- Learn about `Mattermost drivers, webhooks, and slash commands <https://docs.mattermost.com/developer/slash-commands.html>`__.
+- Learn about `Mattermost open source apps and integrations <https://mattermost.com/marketplace/>`__.
 - Learn about the `Mattermost Golang Bot sample <https://github.com/mattermost/mattermost-bot-sample-golang>`__.
 
 Slack-compatible slash commands (private and public cloud)
