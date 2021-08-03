@@ -89,10 +89,12 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 4. Select **Save**.
 5. Select the back arrow to return to the **Permission Schemes** menu.
 6. Select **New Team Override Scheme**.
+
   i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
   ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
   iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
+
 7. Select **Save**. 
 8. Select the back arrow to return to the **Permission Schemes** menu. 
 
@@ -123,6 +125,7 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
 4. Select **Save**.
 5. Select the arrow to return to the **Permission Schemes** interface.
 6. Select **New Team Override Scheme**.
+
   i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
   ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
