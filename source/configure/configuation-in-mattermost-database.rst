@@ -1,7 +1,7 @@
 Configuration in the Mattermost Database
 ========================================
 
-A new configuration option was added in the `5.10 release <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+A new configuration option was added in the `5.10 release <https://docs.mattermost.com/install/self-managed-changelog.html#configuration-in-database>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 
@@ -17,7 +17,7 @@ How to Migrate Configuration to the Database
 These instructions cover migrating the Mattermost configuration to the database and updating your ``systemd`` configuration to load it from the database.
 
 .. note::
-  These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory you'll have to modify the paths to match your environment.
+  These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory, you'll have to modify the paths to match your environment.
 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,7 +41,7 @@ Example output:
 
 Another way is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
-If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026`` replace it with ``&``.
+If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026``, replace it with ``&``.
 
 Here are two example connection strings:
 
@@ -146,7 +146,7 @@ Migrate configuration from ``config.json``
 
 .. note::
  
-   If you're using a High Availability cluster you only need to run this on a single server in the cluster.
+   If you're using a High Availability cluster, you only need to run this on a single server in the cluster.
 
 The command to migrate the config to the database should always be run as the *mattermost* user.
 
@@ -157,13 +157,13 @@ The command to migrate the config to the database should always be run as the *m
    bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/administration/config-settings.html#configuration-settings>`_
+   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html#configuration-settings>`_
    
-As with the environment file you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
+As with the environment file, you'll have to escape any single quote in the database connection string. Also, any existing SAML certificates will be migrated into the database as well, so they are available for all servers in the cluster.
 
-With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
+With the configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
+If you have configuration settings that must be set on a per-server basis, you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
 
 Verify that the configuration was migrated correctly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +180,7 @@ Reload ``systemd`` files and restart Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-  If you're running Mattermost in High Availability this step must be run on all servers in the cluster.
+  If you're running Mattermost in High Availability, this step must be run on all servers in the cluster.
 
 Finally, run these commands to reload the daemon and restart Mattermost using the new ``MM_CONFIG`` environment variable.
 
@@ -192,7 +192,7 @@ Finally, run these commands to reload the daemon and restart Mattermost using th
 Rolling back
 ~~~~~~~~~~~~
 
-If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mattermost.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
+If you run into issues with your configuration in the database, you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mattermost.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
 
 Troubleshooting
 -----------------
