@@ -143,7 +143,7 @@ Permissions
 
 *Available in Enterprise Edition E10 and higher*
 
-Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ for more details.
+Advanced permissions offer System Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ for more details.
 
 Environment
 -----------
