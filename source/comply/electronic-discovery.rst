@@ -7,9 +7,9 @@ Electronic discovery (also known as eDiscovery) refers to a process where where 
 
 This page describes how to extract data from Mattermost for eDiscovery. There are three primary methods that can be used to accomplish the goal of extracting user post data from Mattermost:
 
-- `Mattermost Compliance Exports <https://docs.mattermost.com/administration/compliance-export.html>`__
-- `Mattermost RESTful API <https://docs.mattermost.com/administration/ediscovery.html#mattermost-restful-api>`__
-- `Mattermost database using standard SQL queries <https://docs.mattermost.com/administration/ediscovery.html#mattermost-database>`__
+- `Mattermost Compliance Exports <https://docs.mattermost.com/comply/compliance-export.html>`__
+- `Mattermost RESTful API <https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-restful-api>`__
+- `Mattermost database using standard SQL queries <https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-database>`__
 
 Each of the options is discussed in detail below.
 
@@ -23,7 +23,7 @@ Mattermost Enterprise E20 has compliance report export capabilities.
 
 Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML, and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
-For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/administration/compliance-export.html>`__.
+For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/comply/compliance-export.html>`__.
 
 Mattermost RESTful API
 ----------------------
