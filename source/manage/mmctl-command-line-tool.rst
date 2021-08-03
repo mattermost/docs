@@ -2998,10 +2998,10 @@ mmctl ldap idmigrate
 
 Migrate LDAP ``IdAttribute`` to a new value. Run this utility to change the value of your ID Attribute without your users losing their accounts. After running the command you can change the ID Attribute to the new value in the System Console. For example, if your current ID Attribute was ``sAMAccountName`` and you wanted to change it to ``objectGUID``, you would:
 
-- Wait for an off-peak time when your users won’t be impacted by a server restart.
-- Run the command ``mmctl ldap idmigrate objectGUID``.
-- Update the config within the System Console to the new value ``objectGUID``
-- Restart the Mattermost server.
+1. Wait for an off-peak time when your users won’t be impacted by a server restart.
+2. Run the command ``mmctl ldap idmigrate objectGUID``.
+3. Update the config within the System Console to the new value ``objectGUID``.
+4. Restart the Mattermost server.
 
 **Format**
 
