@@ -35,7 +35,7 @@ The certificate is retrieved the first time that a client tries to connect to th
 
 .. note::
    
-   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
+   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
 
 **To use your own certificate**:
 
@@ -62,3 +62,4 @@ Other helpful resources:
 
 - `NGINX's SSL blog <https://www.nginx.com/blog/nginx-ssl/>`__
 - `NGINX's SSL guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
+- `All about Nginx’s SSL <http://nginx.org/en/docs/http/ngx_http_ssl_module.html>`__
