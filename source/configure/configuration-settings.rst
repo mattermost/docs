@@ -136,7 +136,7 @@ Groups
 
 *Available in Enterprise Edition E20*
 
-Groups offer admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more details.
+Groups offer System Admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more details.
 
 Permissions
 ~~~~~~~~~~~
