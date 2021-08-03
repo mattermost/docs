@@ -55,22 +55,22 @@ Mattermost supports features that ensure data management and data portability.
 Data Management
 ^^^^^^^^^^^^^^^^
 
-- **Data Retention:** Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
-- **Profile Deletion:** Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`__. The command permanently deletes all user information including messages created by the user.
+- **Data Retention:** Use `data retention <https://docs.mattermost.com/comply/data-retention-policy.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
+- **Profile Deletion:** Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/manage/command-line-tools.html>`__. The command permanently deletes all user information including messages created by the user.
 - **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`__ to learn more.
 
 Data Portability
 ^^^^^^^^^^^^^^^^^
 
-- **Data Import:** Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
-- **Data Export:** Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
+- **Data Import:** Use the `bulk loading tool <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
+- **Data Export:** Use `compliance exports <https://docs.mattermost.com/comply/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
 
 Accessibility Compliance
 -------------------------
 
 Adherence with accessibility standards is assisted in the following ways:
 
-- **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
+- **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/about/vpat.html>`__.
 - **WCAG 2.0L:** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a third-party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://mattermost.org/filing-issues/>`__ so that it may be resolved.
