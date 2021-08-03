@@ -95,7 +95,7 @@ Search for the channel if required. Then, open the channel, select the channel n
 
 When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/administration/config-settings.html#data-retention-policy>`__.
 
-In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
+In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#operation/RestoreChannel>`_.
 
 Converting Public channels to Private channels (and vice versa)
 ---------------------------------------------------------------
