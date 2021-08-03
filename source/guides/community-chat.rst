@@ -1,9 +1,9 @@
-Mattermost Community Chat Server
+Mattermost Community Collaboration Server
 ================================
 
-Mattermost hosts a chat server at `community.mattermost.com <https://community.mattermost.com/login>`__ to connect our team with our larger contributor and user community. This server is open to everyone, and we welcome anyone who wants to participate in our community to sign up.
+Mattermost hosts a collaboration and chat server at `community.mattermost.com <https://community.mattermost.com/login>`__ to connect our team with our larger contributor and user community. This server is open to everyone, and we welcome anyone who wants to participate in our community to sign up.
 
-We have many channels on our community chat server you can join. Here are some of the more popular channels.
+We have many channels on our community server you can join. Here are some of the more popular channels.
 
 **General purpose channels**
 
