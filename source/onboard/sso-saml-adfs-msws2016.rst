@@ -84,6 +84,7 @@ Create Claim Rules
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_002.png
 
 3. On the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, select **Active Directory** as the **Attribute Store**, then add the following mapping:
+
   - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Email``.
   - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Name ID``.
   - From the **LDAP Attribute column**, select ``Given-Name``. From the **Outgoing Claim Type**, type ``FirstName``.
@@ -105,6 +106,7 @@ The entries in the **Outgoing Claim Type** column can be modified. The entries m
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_004.png
 
 6. On the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, then:
+
   - Select **Name ID** for the **Incoming claim type**
   - Select **Unspecified** for the **Incoming name ID format**
   - Select **E-Mail Address** for the **Outgoing claim type**
@@ -176,12 +178,14 @@ If you don't plan to use a metadata URL, you can manually enter the following fi
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_001.png
 
 2. Configure Mattermost to verify the signature.
+
   - Set **Verify Signature** to ``true``.
   - For **Service Provider Login URL** use the ``SAML 2.0 SSO service URL`` you specified in ADFS.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_002.png
 
 3. Enable encryption.
+
   - Set **Enable Encryption** to ``true``.
   - For **Service Provider Private Key** use the Service Provider Private Key generated at the start of this process.
   - For **Service Provider Public Certificate** use the Service Provider Public Certificate you generated at the start of this process.
