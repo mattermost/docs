@@ -4695,7 +4695,8 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
+.. note::
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ product documentation for details on customizing the sidebar. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
@@ -5884,7 +5885,11 @@ Bleve Settings (Experimental)
 Index Dir
 ^^^^^^^^^^
 
-Directory path to use for storing bleve indexes.
+Directory path to use for storing bleve indexes. 
+
+.. tip::
+   
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |

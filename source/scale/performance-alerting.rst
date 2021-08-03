@@ -12,10 +12,12 @@ Set up performance monitoring for Mattermost. See our `documentation <https://do
 To get alerts, first set up a Notification Channel in Grafana. Here’s how you can set it up to automatically post alerts in Mattermost:
 
 1. In Mattermost:
+
   a. Create an Alerts channel
   b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL
 
 2. In Grafana:
+
   a. Under the alert icon in the sidebar, click **Notification channels**
   b. Click **Add channel**
   c. Enter **Mattermost Alerts Channel** as the name
