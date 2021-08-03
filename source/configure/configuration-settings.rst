@@ -100,7 +100,7 @@ View statistics on active users, teams, channels, sessions, webhooks, and connec
 Team Statistics
 ~~~~~~~~~~~~~~~~
 
-View statistics per team on number of the active users, as well as Public and Private channels.
+View statistics per team on the number of active users, as well as Public and Private channels.
 
 Server Logs
 ~~~~~~~~~~~~
