@@ -28,7 +28,7 @@ Running a playbook opens an interactive dialog. You can create a new playbook or
 Joining a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Select the **Playbook** icon in the top menu bar to see a list of runs to which you have access in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
+Select the **Playbook** icon in the top menu bar to see a list of runs, to which you have access, in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
 If the channel is private, an existing member must invite you.
 
