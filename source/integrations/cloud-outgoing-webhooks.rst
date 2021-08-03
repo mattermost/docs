@@ -76,7 +76,7 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
       user_id=rnina9994bde8mua79zqcg5hmo&
       user_name=somename
 
-If your integration sends back a JSON response, make sure it returns the ``application/json`` content type.
+If your integration sends back a JSON response, make sure it returns the ``application/json`` content-type.
 
 9. Add a configurable *MATTERMOST_TOKEN* variable to your application and set it to the **Token** value from step 7. This value will be used by your application to confirm the HTTP POST request came from Mattermost.
 10. To have your application post a message back to ``town-square``, it can respond to the HTTP POST request with a JSON response such as:
