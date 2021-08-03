@@ -60,7 +60,7 @@ This means if you use the Mattermost apps from the Apple App Store or Google Pla
 
 4. Either APNS or FCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android device to be displayed.
 
-.. Note:: The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an `option to omit the contents of Mattermost messages from push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_, or `to configure message content to be fetched from the server <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ when the notification reaches the device (*available in Enterprise Edition E20*) in order to meet certain compliance requirements.
+.. Note:: The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an `option to omit the contents of Mattermost messages from push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_, or `to configure message content to be fetched from the server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ when the notification reaches the device (*available in Enterprise Edition E20*) in order to meet certain compliance requirements.
 
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------
@@ -77,7 +77,7 @@ The following post metadata is sent in all push notifications:
 - ``Category`` (iOS only, determines if the notifications can be replied to)
 - ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
-Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__:
+Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__:
 
 - **Generic description with sender and channel names**: ``Channel name`` metadata will be included.
 - **Full message content sent in the notification payload**: ``Post content`` and ``Channel name`` metadata will be included.
@@ -86,7 +86,7 @@ Additional metadata may be sent depending on the System Console setting for `Pus
 How can I use ID-Only Push Notifications to protect notification content from being exposed to third-party services?
 ---------------------------------------------------------------------------------------------------------------------
 
-When it comes to mobile data privacy, many organizations prioritize secure handling of messaging data, particularly when it may contain mission-critical or proprietary information. These organizations may have concerns about using mobile notifications because data must pass through third-party entities like Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before it reaches a device. This poses a potential risk for organizations that operate under strict compliance requirements and cannot expose message data to external entities. To solve this, in Mattermost v5.18 and later, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data (*available in Enterprise Edition E20*). Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
+When it comes to mobile data privacy, many organizations prioritize secure handling of messaging data, particularly when it may contain mission-critical or proprietary information. These organizations may have concerns about using mobile notifications because data must pass through third-party entities like Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before it reaches a device. This poses a potential risk for organizations that operate under strict compliance requirements and cannot expose message data to external entities. To solve this, in Mattermost v5.18 and later, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data (*available in Enterprise Edition E20*). Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
 
 What are my options for securing the mobile apps?
 -------------------------------------------------
@@ -202,7 +202,7 @@ After the above, your ``/assets/override/config.json`` file would look something
         "ExperimentalUsernamePressIsMention": true
     }
 
-7. Finally, `compile your own version <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ of the Mattermost mobile app and Mattermost push proxy server.
+7. Finally, `compile your own version <https://developers.mattermost.com/contribute/mobile/build-your-own/>`__ of the Mattermost mobile app and Mattermost push proxy server.
 
 How can I get Google SSO to work with the Mattermost mobile app?
 -----------------------------------------------------------------
