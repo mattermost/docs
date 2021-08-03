@@ -35,28 +35,41 @@ Assume that the IP address of this server is 10.10.10.2.
 6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
 
   a. Create the Mattermost user and group:
+
     ``sudo useradd --system --user-group mattermost``
+
   b. Set the user and group *mattermost* as the owner of the Mattermost files:
+
     ``sudo chown -R mattermost:mattermost /opt/mattermost``
+
   c. Give write permissions to the *mattermost* group:
+
     ``sudo chmod -R g+w /opt/mattermost``
 
 7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
 
   -  If you are using PostgreSQL:
+
     1.  Set ``"DriverName"`` to ``"postgres"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10",``.
+
   -  If you are using MySQL:
+
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
 
 8. Test the Mattermost server to make sure everything works.
 
     a. Change to the Mattermost directory:
+
       ``cd /opt/mattermost``
+
     b. Start the Mattermost server as the user mattermost:
+
       ``sudo -u mattermost bin/mattermost``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
@@ -64,7 +77,9 @@ Assume that the IP address of this server is 10.10.10.2.
 9. Setup Mattermost to use *systemd* for starting and stopping.
 
   a. Create a *systemd* unit file:
+
     ``sudo touch /lib/systemd/system/mattermost.service``
+
   b. Open the unit file as root in a text editor, and copy the following lines into the file:
 
   .. code-block:: none
@@ -79,6 +94,7 @@ Assume that the IP address of this server is 10.10.10.2.
     Type=notify
     ExecStart=/opt/mattermost/bin/mattermost
     TimeoutStartSec=3600
+    KillMode=mixed
     Restart=always
     RestartSec=10
     WorkingDirectory=/opt/mattermost

@@ -12,7 +12,7 @@ Before you get started you'll need:
 Installation
 -------------
 
-Install Mattermost using `Mattermost Omnibus <https://docs.mattermost.com/install/mattermost-omnibus.html>`_.
+Install Mattermost using `Mattermost Omnibus <https://docs.mattermost.com/install/installing-mattermost-omnibus.html>`_.
 
 Open a terminal window and enter:
 
@@ -47,7 +47,7 @@ Next, add people to your team by sending them an invitation:
 2. Click **Invite People** and enter the email addresses of the people you want to add.
 3. Click **Invite Members**.
 
-When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here <https://docs.mattermost.com/help/getting-started/managing-members.html#managing-members>`_. 
+When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here <https://docs.mattermost.com/messaging/managing-members.html#managing-members>`_. 
 
 Create a Notifications Hub
 --------------------------
@@ -59,7 +59,7 @@ You can find and install integrations and plugins via **Main Menu > Plugin Marke
 Get started with GitHub, Jira, and Jenkins:
 
 * Connect your GitHub organization to Mattermost using a slash command, to manage your reviews, pull requests, comments, and merges. GitHub is pre-packaged in Mattermost. Follow the `configuration steps <https://github.com/mattermost/mattermost-plugin-github#configuration>`_, and then let your team know to run /github connect so they can receive notifications.
-* Connect your Jira account to Mattermost and set up a channel for the bot to post issues so your team is always up to date. Visit the `configuration guide <https://mattermost.gitbook.io/plugin-jira/setup/configuration>`_ to get started. Once configured, share the `end user documentation <https://mattermost.gitbook.io/plugin-jira/end-user-guide/getting-started>`_ with your team so they can start receiving notifications.
+* Connect your Jira account to Mattermost and set up a channel for the bot to post issues so your team is always up to date. Visit the `configuration guide <https://mattermost.gitbook.io/plugin-jira/setting-up/configuration>`_ to get started. Once configured, share the `end user documentation <https://mattermost.gitbook.io/plugin-jira/end-user-guide/getting-started>`_ with your team so they can start receiving notifications.
 * Connect your Jenkins server to Mattermost to centralize your workflows and manage builds. Visit the `installation guide <https://github.com/mattermost/mattermost-plugin-jenkins#installation>`_ to get started. Share the `features list <https://github.com/mattermost/mattermost-plugin-jenkins#features>`_ with your team so they can ramp up quickly.
 
-**Next:** `Learn more about organizing conversations <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_ and setting up `Mattermost on your mobile device <https://docs.mattermost.com/mobile/mobile-overview.html>`_.
+**Next:** `Learn more about organizing conversations <https://docs.mattermost.com/messaging/organizing-conversations.html>`_ and setting up `Mattermost on your mobile device <https://docs.mattermost.com/deploy/mobile-overview.html>`_.
