@@ -52,6 +52,7 @@ To change playbook owners you can run the ``/playbook owner @username`` slash co
 1. Select the **Playbooks** icon in the channel header to open the right-hand sidebar.
 2. Select the **Summary** tab.
 3. Within the **Summary** tab, select the current owner's name in the right-hand sidebar, then select the new owner.
+
   * To change the owner to a user who is not in the channel, first add the user to the channel.
 
 Providing a status update
@@ -64,12 +65,17 @@ Status updates ensure that stakeholders remain informed about the playbook run's
 3. Select the **About** tab.
 4. Within the **About** tab, select **Update status**.
 5. Add a Markdown-formatted message.
+
  * If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
  * If this is a subsequent status update, the message from the last status update will be pre-populated here.
+
 6. Optionally set a reminder to prompt for the next status update.
+
  * If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
  * If this is a subsequent status update, the last reminder timer will be pre-populated here.
+
 7. Select **Update Status** to post your status update.
+
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
 
