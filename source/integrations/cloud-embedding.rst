@@ -16,24 +16,21 @@ Mattermost Launch Button Example in HTML
 
 Save the below HTML code in a file called ``mattermost-button-example.html`` then open the file in a browser as an example.
 
-  <script>
+.. code-block:: html
 
+  <script>
       var myWindow = null;
 
       function openMMWindow() {
           myWindow = window.open("https://community.mattermost.com/core/channels/developer", "Mattermost", "top=0,left=0,width=400,height=600,status=no,toolbar=no,location=no,menubar=no,titlebar=no");
       }
 
-
       function closeMMWindow() {
           if (myWindow) {
               myWindow.close();
           }
       }
-
-
   </script>
-
 
   <html>
       <br/>

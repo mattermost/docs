@@ -61,6 +61,7 @@ Desktop App
    /install/desktop-app-managed-resources.rst
    /install/desktop-msi-installer-and-group-policy-install.rst
    /install/desktop-app-changelog.rst
+   /install/desktop-custom-dictionaries.rst
 
 Mobile App
 ^^^^^^^^^^
@@ -137,4 +138,4 @@ Scale Mattermost
    /scale/high-availability-cluster.rst
    /scale/elasticsearch.rst
    /scale/performance-monitoring.rst
-   /scale/peformance-alerting.rst
+   /scale/performance-alerting.rst
