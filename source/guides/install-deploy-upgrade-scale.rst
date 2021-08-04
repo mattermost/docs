@@ -61,6 +61,7 @@ Desktop App
    /install/desktop-app-managed-resources.rst
    /install/desktop-msi-installer-and-group-policy-install.rst
    /install/desktop-app-changelog.rst
+   /install/desktop-custom-dictionaries.rst
 
 Mobile App
 ^^^^^^^^^^
