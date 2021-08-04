@@ -1,7 +1,7 @@
 Keyboard Shortcuts
 ==================
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
 To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
 
@@ -47,7 +47,7 @@ Navigation
 
 .. note::
 
-  Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
+  Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/messaging/keyboard-accessibility.html>`_.
 
 Files
 -----
