@@ -3,7 +3,7 @@ Licensing and Subscription
 
 Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`_ where you can easily purchase and manage your Mattermost Enterprise subscriptions.
 
-When you purchase a subscription, a license is generated. This license gives you access to Mattermost's Enterprise features. Subscriptions purchased via the Customer Portal are stored and listed in the portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history  making it easier to manage purchases and renewal dates.
+When you purchase a subscription, a license is generated. This license gives you access to Mattermost's Enterprise features. Subscriptions purchased via the Customer Portal are stored and listed in the portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history, making it easier to manage purchases and renewal dates.
 
 You can access your Customer Portal account to view information about your:
 
@@ -42,17 +42,17 @@ Your Mattermost Enterprise license is ready to use and be applied via the Matter
 
 .. image:: ../images/mattermost_enterprise_license.png
 
-System Admin access is required in order to apply the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin.
+System Admin access is required to apply for the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin.
 
 **If you already have Mattermost installed**
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can also use the `CLI <https://docs.mattermost.com/install/ee-install.html#changing-a-license-key>`__ to apply the license.
+You can also use the `CLI <https://docs.mattermost.com/install/enterprise-install-upgrade.html>`__ to apply for the license.
 
 **If you don't have Mattermost installed**
 
-If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deployment/deployment.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/deployment/on-boarding.html>`_ documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deploy/deployment-overview.html>`_ to get started. For information on creating a System Admin account visit the `Administrator Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html>`_ documentation.
 
 Viewing license information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +79,7 @@ If you're a Mattermost Cloud customer, your subscription auto-renews so you don'
 
 If you are a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
 
-System Admins will be alerted 60 days prior to the license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
+System Admins will be alerted 60 days before the license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
 
 Once you click **Renew license now**, you are taken to the renewal page in the Customer Portal, which lists your license information and account details. These are pre-populated based on the email address associated with your existing license subscription. 
 
@@ -119,9 +119,9 @@ Why do I need to provide my name and physical address when purchasing a license?
 
 Mattermost is a U.S. corporation and therefore all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
 
-The United States has a number of export control regulations it has implemented to protect national security interests and to promote its foreign policy objectives. Based on these regulations, U.S. companies are prohibited from doing business with specific countries which have been embargoed by the U.S. government. They are also prohibited from exporting certain items to certain countries that have been sanctioned by the U.S. government. In addition, U.S. companies are prohibited from doing business with specific people and/or companies that have been named and listed by the U.S. government. 
+The United States has many export control regulations it has implemented to protect national security interests and to promote its foreign policy objectives. Based on these regulations, U.S. companies are prohibited from doing business with specific countries which have been embargoed by the U.S. government. They are also prohibited from exporting certain items to certain countries that have been sanctioned by the U.S. government. In addition, U.S. companies are prohibited from doing business with specific people and/or companies that have been named and listed by the U.S. government. 
 
-In order to comply with these requirements, Mattermost must collect the name and physical address of all individuals and companies it does business with so that it can comply with the U.S. export controls regulations.
+To comply with these requirements, Mattermost must collect the name and physical address of all individuals and companies it does business with so that it can comply with the U.S. export controls regulations.
 
 What does Mattermost do with this information?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,7 +141,7 @@ The Office of Foreign Assets Control (OFAC) maintains a list of sanctioned entit
 - Companies or people that have been involved in human or drug trafficking
 - Organizations that have been sanctioned for human rights violations
 
-This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and Companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
+This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
 
 What does “physical address” mean for software that will be used in many places?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -158,7 +158,7 @@ I'm a Mattermost Cloud customer, how do I renew?
 
 Your Mattermost Cloud subscription auto-renews so you don't need to follow this process.
 
-How is user defined for Enterprise Edition subscriptions?
+How is the user defined for Enterprise Edition subscriptions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See our `frequently asked questions about licensing <https://mattermost.com/pricing-self-managed/#faq>`__.
@@ -185,7 +185,7 @@ Yes, once your payment is successfully processed your license is immediately ava
 How will I know when to renew my license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You will be notified 60 days prior to your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
+You will be notified 60 days before your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
 
 You can select **Renew license now** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser is refreshed or you reload the desktop app.
 
@@ -220,20 +220,20 @@ The affected Enterprise features include, but are not limited to, the following:
     "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO", "Login options are no longer provided on the sign-in page. Users who previously signed in with one of these methods are no longer able to.
     
     Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
-    "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in state for group synced teams/channels.
+    "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in the state for group synced teams/channels.
     
     Mentions for AD/LDAP groups are not shown in the autocomplete menu.
     
-    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
+    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
     "High Availability", "High Availability is disabled. If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
     "Performance monitoring", "Monitoring is disabled and Grafana will no longer update with new data.", "None needed."
     "Compliance exports", "Jobs are no longer scheduled in the job server. Data is not exported.", "None needed."
     "Data retention", "Jobs are no longer scheduled in the job server. Data is not deleted.", "None needed."
-    "Custom terms", "Custom terms no longer displayed to end users on login. Data is retained in the Terms of Service database table.", "None needed."
+    "Custom terms", "Custom terms no longer displayed to end-users on login. Data is retained in the Terms of Service database table.", "None needed."
     "Custom announcement banners", "No longer visible and is replaced by the default announcement banner.", "None needed."
     "Multi-factor authentication (MFA)", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
-    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the the System Console.", "Use the `CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`_ to reset permissions to default."
-    "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
+    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use the `CLI https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions>`_ to reset permissions to default."
+    "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in can use Mattermost until their session expires or they log out.", "None needed."
     
 Why can't I dismiss the expiry notification banner?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,7 +244,7 @@ Once a new license is applied, the banner will no longer be visible.
 
 If you don't plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
 
-Do you have a program for official non-profits, open source projects, and charities?
+Do you have a program for official non-profits, open-source projects, and charities?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, please see the `Mattermost Monday License program <https://mattermost.com/nonprofit/>`_.
@@ -252,7 +252,7 @@ Yes, please see the `Mattermost Monday License program <https://mattermost.com/n
 Do you have discounted licenses for academic institutions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`_ for no charge to students (staff members pay regular price). You need to pay for at least 10 staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`_ for more information.
+Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`_ for no charge to students (staff members pay the regular price). You need to pay for at least 10 staff members to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`_ for more information.
 
 Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -284,4 +284,4 @@ Please contact Mattermost Support for assistance with deleting your Customer Por
 What happens to my license when I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an account is deleted, the license remains valid. When the license is close to expiring, you will need to create a new profile in order to purchase a new license.
+When an account is deleted, the license remains valid. When the license is close to expiring, you will need to create a new profile to purchase a new license.
