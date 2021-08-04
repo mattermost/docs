@@ -84,6 +84,7 @@ Lastest Mattermost Releases:
    - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
    - Fixed an issue where replying to a thread from the global threads screen marked the channel as read.
    - The "Mark all as unread" button is now no longer disabled for collapsed reply threads.
+   - Fixed root posts not being shown as followed for the post creator after receiving the first reply that affected servers with Collapsed Reply Threads enabled and database read replicas configured.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
