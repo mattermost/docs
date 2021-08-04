@@ -35,4 +35,4 @@ Use GPU hardware acceleration
 Dark Theme
 ----------
 
-The Mattermost desktop app respects the System Preferences appearance setting of the operating system to set the theme of the title bar.
+The Mattermost Desktop App respects the System Preferences appearance setting of the operating system to set the theme of the title bar.
