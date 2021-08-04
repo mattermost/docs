@@ -82,7 +82,7 @@ Frequently Asked Questions
 Should I migrate all my integrations to use bot accounts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For your integrations using RESTful API and plugins, yes. To do so, you can either convert an existing account to a bot or create a new bot account using the steps outlined above.
+For your integrations using RESTful API and plugins, yes. To do so, you can either convert an existing account to a bot, or create a new bot account using the steps outlined above.
 
 Once you create a bot account, use the generated token to access the RESTful API on behalf of a bot and interact in Mattermost.
 
@@ -125,7 +125,7 @@ Do bot access tokens expire?
 
 No, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
 
-For more information about access tokens, see `the personal access tokens documentation <https://docs.mattermost.com/developer/integration-faq.html?highlight=cloud%20personal%20access>`_.
+For more information about access tokens, see `the personal access tokens documentation <https://docs.mattermost.com/integrations/cloud-personal-access-tokens.html>`_.
 
 Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ If you find yourself unable to edit posts as a bot, check the following:
 1. Instead of using a slash command to respond directly, use an API call for the initial interaction with a user to enable message edits.
 2. If your system is using `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`_, then post edits could be disabled for users.
 
-If neither of the above help resolves your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
+If the documentation above doesn't resolve your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
 
 If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
