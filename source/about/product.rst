@@ -93,7 +93,7 @@ Mattermost Cloud is built on open-source software powered by a thriving develope
 Mattermost Cloud Professional
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud Professional includes the complete set of collaboration and DevOps features, available from the Mattermost.com website. Signing up requires creating an account with an email and specifying a domain for the workspace. Once you sign up and create your workspace, you're guided through a quick setup including invitating team members and integrating with developer tools. You can trial Mattermost Cloud Professional for free for 14 days.
+Mattermost Cloud Professional includes the complete set of collaboration and DevOps features, available from the Mattermost.com website. Signing up requires creating an account with an email and specifying a domain for the workspace. Once you sign up and create your workspace, you're guided through a quick setup including inviting team members and integrating with developer tools. You can trial Mattermost Cloud Professional for free for 14 days.
 
 Mattermost Cloud Professional offers all enterprise-grade administration features, including:
 
