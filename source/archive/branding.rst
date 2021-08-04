@@ -16,12 +16,12 @@ Mattermost Visual Design Guidelines
 Mattermost Logo
 -------------------------------
 
-For details on Mattermost logo usage guidelines please visit: https://mattermost.org/brand-guidelines/
+For details on Mattermost logo usage guidelines please visit: https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines
 
 Mattermost User Experience
 -------------------------------
 
-For details on the visual design of the Mattermost user experience, please see: https://docs.mattermost.com/developer/fx-guidelines.html.
+For details on the visual design of the Mattermost user experience, please see: https://docs.mattermost.com/developer/fx-guidelines.html
 
 Naming Usage Guidelines
 -------------------------------
