@@ -174,7 +174,7 @@ mattermost channel
 .. note::
     **{channel} value**
 
-    For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+    For the *add*, *archive*, *delete*, *remove*, and *restore* commands, you can specify the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
     For example, in the following URL the *{channels}* value is *myteam:mychannel*:
     
@@ -331,7 +331,7 @@ mattermost channel move
    This command will be replaced in a future release with the mmctl command `mmctl channel move <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-move>`__.
 
 Description
-    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
     
   Format
     .. code-block:: none
