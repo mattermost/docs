@@ -1,7 +1,7 @@
 Bots
 ====
 
-Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect bots in Mattermost.
+Our `Integrations Directory <https://mattermost.com/marketplace/>`_ has several integrations to connect bots in Mattermost.
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
@@ -45,4 +45,4 @@ Python Chatbot
 
 Have a proposal for a bot? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.
 
-Have built an integration? `Let us know <https://integrations.mattermost.com/submit-an-integration/>`_ and we'll share in our `Integrations Directory <https://integrations.mattermost.com>`_.
+Have built an integration? `Let us know <https://developers.mattermost.com/integrate/getting-started/>`_ and we'll share in our `Integrations Directory <https://mattermost.com/marketplace/>`_.
