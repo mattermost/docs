@@ -1,7 +1,7 @@
 Atlassian Tools
 ================
 
-Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect Atlassian tools in Mattermost.
+Our `Integrations Directory <https://mattermost.com/marketplace/>`_ has several integrations to connect Atlassian tools in Mattermost.
 
 Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
@@ -46,7 +46,7 @@ Opsgenie
 - Two-way integration between Opsgenie and Mattermost, developed by Opsgenie.
 - Send alert notifications from your Opsgenie incident boards to Mattermost channels.
 - Use slash commands to take quick actions such as acknowledging, assigning, creating and closing alerts in the Mattermost user interface.
-- Docs: https://docs.opsgenie.com/docs/mattermost-integration
+- Docs: https://support.atlassian.com/opsgenie/docs/integrate-opsgenie-with-mattermost/
 
 Statuspage
 ~~~~~~~~~~
@@ -64,4 +64,4 @@ Trello
 
 Have a proposal for an Atlassian integration? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.
 
-Have built an integration? `Let us know <https://integrations.mattermost.com/submit-an-integration/>`_ and we'll share in our `Integrations Directory <https://integrations.mattermost.com>`_.
+Have built an integration? `Let us know <https://developers.mattermost.com/integrate/getting-started/>`_ and we'll share in our `Integrations Directory <https://integrations.mattermost.com>`_.
