@@ -81,27 +81,25 @@ Upgrading Mattermost Server
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-7. Remove all files *except data and custom directories* from within the current ``mattermost`` directory.
-
-   a. Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step c.
-
-   .. note::
+7. Remove all files *except data and custom directories* from within the current ``mattermost`` directory. Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step c.
       
-      **A default Mattermost installation has the following files and directories**:
+  **A default Mattermost installation has the following files and directories**:
 
-        .. code-block:: sh
+    .. code-block:: sh
 
-        $ ls /opt/mattermost
-        ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
-        NOTICE.txt                      bin        config  fonts  logs  plugins       templates
+      $ ls /opt/mattermost
+      ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
+      NOTICE.txt                      bin        config  fonts  logs  plugins       templates
 
-  - By default, your data directories will be preserved with the following commands, including ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage).
-  - Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
-  - If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, the index directory path won't be preserved with the commands below if the directory exists *within* the ``mattermost`` directory. 
+  By default, your data directories will be preserved with the following commands, including ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage).
+
+Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+
+If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, the index directory path won't be preserved with the commands below if the directory exists *within* the ``mattermost`` directory. 
   
-    - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
-    - You can then store that directory or re-index as preferred. 
-    - The Bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
+  - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
+  - You can then store that directory or re-index as preferred. 
+  - The Bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
 
 8. Identify if any custom directories from the above step need to be preserved. For each custom directory within the Mattermost folder that you wish to preserve, ensure you add ``-o -path  mattermost/yourFolderHere`` to the following command. See the example below where the folder ``yourFolderHere`` is preserved by adding ``-o -path  mattermost/yourFolderHere``.
 
