@@ -840,6 +840,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.9, released 2021-08-04**
+  - Mattermost v5.31.9 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
 - **v5.31.8, released 2021-07-21**
   - Fixed an issue in clustering where a mutex would fail to be unlocked when a timeout happened. [MM-37246](https://mattermost.atlassian.net/browse/MM-37246)
