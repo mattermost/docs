@@ -31,3 +31,21 @@ Can you use blue-green deployments with different database schemas?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently this is not supported as it introduces the possiblilty of missing a data entry in the database.
+
+Issues configuring Login with SAML on Kubernetes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For some SAML authentication configurations, ``502`` status code response can appear during login attempts due to requests being too large.
+This can be caused by the default ``proxy-buffer-size`` setting for NGINX Ingress being too low.
+To fix this issue, configure an appropriate buffer size (8k or 16k should be sufficient for most cases) with NGINX annotation by adding it to the Mattermost manifest under ``spec.ingressAnnotations``:
+
+.. code-block:: yaml
+
+  ...
+  spec:
+  ...
+    ingressAnnotations:
+      nginx.ingress.kubernetes.io/proxy-buffer-size: 16k
+  ...
+
+Use caution when changing the buffer size as it may slightly impact NGINX performance. Exact values are machine-dependent.
