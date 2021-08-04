@@ -650,7 +650,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 .. note::
   - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
   
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -668,7 +668,7 @@ This configuration setting enables users to search the contents of compressed ZI
 .. note::
   - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
