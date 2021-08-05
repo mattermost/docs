@@ -21,7 +21,7 @@ When you decide to build your own Mattermost Mobile apps, you have multiple ways
 Setting Up Push Notifications
 -----------------------------
 
-See our `Mobile Push Notifications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html#setting-up-push-notifications>`__ documentation to learn about setting up push notifications for custom built mobile apps.
+See our `Mobile Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom built mobile apps.
 
 Developing and Maintaining Your Custom App
 ------------------------------------------
@@ -90,4 +90,3 @@ Using Another Distribution Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an alternate distribution method to deploy your custom app, such as a file sharing platform.
-
