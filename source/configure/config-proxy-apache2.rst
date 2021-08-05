@@ -31,9 +31,9 @@ On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration i
 
 		  # Set web sockets
 		  RewriteEngine On
-		  RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
-		  RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
-		  RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
+		  RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC]
+		  RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC]
+		  RewriteCond %{HTTP:CONNECTION} \bUpgrade\b [NC]
 		  RewriteRule .* ws://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
 
 		  <Location />
