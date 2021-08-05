@@ -1,7 +1,8 @@
 .. _bulk-loading-common-issues:
 
 Common Issues
----------------
+-------------
+
 
 Run the bulk import command as the *mattermost* user. Running it as *root* or any other user will cause issues with file permissions on imported attachments.
 
