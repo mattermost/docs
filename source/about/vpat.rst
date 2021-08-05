@@ -1,5 +1,3 @@
-:orphan:
-
 Voluntary Product Accessibility Template (VPAT) 
 ===============================================
 
