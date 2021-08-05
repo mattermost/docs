@@ -19,7 +19,7 @@ AppConfig is our recommended approach for app configuration and management. It w
 
 AppConfig provides an easy way to configure enterprise mobile apps with any EMM providers listed on the `AppConfig website <https://www.appconfig.org/members/>`__. Using AppConfig, you can manage default settings and security controls on public app stores and custom-built mobile clients. For example, you can pre-configure your Mattermost server URL and username.
 
-See our `Mattermost AppConfig Values <https://docs.mattermost.com/mobile/mobile-appconfig.html#mattermost-appconfig-values>`__ documentation for details on the configuration options that can be sent from the EMM provider to Mattermost Mobile apps. 
+See our `Mattermost AppConfig Values <https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values>`__ documentation for details on the configuration options that can be sent from the EMM provider to Mattermost Mobile apps. 
 
 .. important::
     
