@@ -35,6 +35,8 @@ Unarchiving a Team
 
 Select **Unarchive Team**, then select **Save**.
 
+Alternatively, System Admins can use the mmctl ``mmctl team restore`` to unarchive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-restore>`__ for details.
+
 Team Management
 ~~~~~~~~~~~~~~~
 
