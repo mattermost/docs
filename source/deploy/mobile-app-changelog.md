@@ -60,6 +60,7 @@ Latest Mattermost Mobile Apps releases:
    - Turning the feature on and off does not push an update to the Mobile client.
    - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item is lost when clearing search in the channel sideabar.
+   - Previously viewed Thread is auto-followed after new replies come in.
 
 ## 1.45.1 Release
 - Release Date: July 20, 2021
