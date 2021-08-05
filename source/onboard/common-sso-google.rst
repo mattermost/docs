@@ -1,7 +1,7 @@
 Migrating from OAuth 2.0 to OpenID Connect
 ------------------------------------------
 
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to `convert your existing OAuth service provider configuration <https://docs.mattermost.com/onboard/cloud-converting-oauth-2.0-to-openid-connect.html>`__ for Google Apps to the OpenID Connect standard.
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to `convert your existing OAuth service provider configuration <https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html>`__ for Google Apps to the OpenID Connect standard.
 
 Configuring Google Apps as a Single Sign-On (SSO) service
 ---------------------------------------------------------
