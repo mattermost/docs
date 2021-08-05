@@ -63,7 +63,6 @@ source_suffix = ['.rst', '.md']
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
      "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
-     
      "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
      "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
      "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
@@ -77,6 +76,8 @@ redirects = {
      "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
      "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
      "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
+     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
+     "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
      "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
      "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
      "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
@@ -99,6 +100,7 @@ redirects = {
      "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
      "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
      "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
      "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
      "administration/image-proxy": "https://docs.mattermost.com/deploy/image-proxy.html",
      "administration/encryption": "https://docs.mattermost.com/deploy/encryption-options.html",
@@ -115,6 +117,7 @@ redirects = {
      "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
      "administration/config-in-database": "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
      "administration/branding": "https://docs.mattermost.com/configure/custom-branding-tools.html",
+     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
      "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
      "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
      "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
@@ -144,9 +147,12 @@ redirects = {
      "deployment/sso-saml": "https://docs.mattermost.com/onboard/sso-saml.html",
      "deployment/sso-saml-okta": "https://docs.mattermost.com/onboard/sso-saml-okta.html",
      "deployment/sso-saml-technical": "https://docs.mattermost.com/onboard/sso-saml-technical.html",
+     "deployment/sso-saml-adfs-msws2016": "https://docs.mattermost.com/onboard/sso-saml-adfs-msws2016.html",
      "deployment/ssl-client-certificate": "https://docs.mattermost.com/onboard/ssl-client-certificate.html",
      "deployment/team-channel-management": "https://docs.mattermost.com/manage/team-channel-members.html",
      "deployment/certificate-based-authentication": "https://docs.mattermost.com/onboard/certificate-based-authentication.html",
+     "administration/devops-command-center": "https://docs.mattermost.com/guides/incident-collaboration.html",
+     "administration/plugins": "https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/", 
      "administration/migrating": "https://docs.mattermost.com/onboard/migrating-to-mattermost.html",
      "administration/user-provisioning": "https://docs.mattermost.com/onboard/user-provisioning-workflows.html",
      "administration/hipchat-migration-guidelines": "https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html",
@@ -247,7 +253,8 @@ redirects = {
      "process/pm-faq": "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
      "process/product-manager": "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring",
      "process/partner-programs": "https://handbook.mattermost.com/operations/sales/partner-programs",
-     "process/overview": "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
+     "process/overview": "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
+     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html"
 }
 
 # The master toctree document.
