@@ -7,10 +7,10 @@ Deploy your Mattermost Team Edition server in the cloud with one simple click us
 
 Deployment options include:
 
-- `Amazon Web Services <https://about.mattermost.com/deploy-aws>`__
-- `Microsoft Azure <https://about.mattermost.com/deploy-azure>`__
-- `Google Cloud Platform <https://about.mattermost.com/deploy-googlecloud>`__
+- `Amazon Web Services <https://aws.amazon.com/marketplace/pp/prodview-smvm2q422uo6c>`__
+- `Microsoft Azure <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.mattermost>`__
+- `Google Cloud Platform <https://console.cloud.google.com/marketplace/product/bitnami-launchpad/mattermost>`__
 
-Alternatively, you may also deploy to `Debian 9 VMware virtual machines <https://about.mattermost.com/deploy-debianvirtualmachine>`__.
+Alternatively, you may also deploy to `Debian 9 VMware virtual machines <https://bitnami.com/stack/mattermost/virtual-machine>`__.
 
-If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide: `Migrating from Bitnami <../administration/migrating.html#migrating-from-bitnami>`__.
+If you migrate from Bitnami to a self-hosted installation with MySQL database, read these notes in our migration guide: `Migrating from Bitnami <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-bitnami>`__.
