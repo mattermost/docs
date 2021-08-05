@@ -19,7 +19,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Highlights
 
-#### Collapsed Reply Threads
+#### Collapsed Reply Threads (Beta)
  - Added support for Collapsed Reply Threads for the mobile apps.
 
 #### Custom Status Expiry
@@ -49,7 +49,13 @@ Latest Mattermost Mobile Apps releases:
  - 
 
 ### Known Issues
- - 
+ - Various known issue with Collapsed Reply Threads (Beta) feature:
+   - Mobile app top bar disappears after resuming app from screen lock.
+   - New messages banner should only count root posts.
+   - Clicking Jump to on mobile shows a different highlighted channel list than the sidebar highlighted channel list.
+   - Only the last 6 threads are visible in the Threads view.
+   - Some unread channels with leave/join system messages are doubled in search results.
+   - Tapping on the push notification for new reply should open the thread with the post.
 
 ## 1.45.1 Release
 - Release Date: July 20, 2021
