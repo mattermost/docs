@@ -3817,6 +3817,7 @@ Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Ma
 +-------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
+
    This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Autolink
