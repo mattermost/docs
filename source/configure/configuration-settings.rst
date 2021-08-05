@@ -3810,7 +3810,7 @@ In addition to the Mattermost plugin signing key built into the server, each pub
 Chimera OAuth Proxy URL
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Mattermost Plugins to connect with pre-created OAuth applications.
+Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Mattermost plugins to connect with pre-created OAuth applications.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
