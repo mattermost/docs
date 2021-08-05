@@ -99,7 +99,7 @@ If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__
   
   - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
   - You can then store that directory or re-index as preferred. 
-  - The Bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
+  - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
 
 8. Identify if any custom directories from the above step need to be preserved. For each custom directory within the Mattermost folder that you wish to preserve, ensure you add ``-o -path  mattermost/yourFolderHere`` to the following command. See the example below where the folder ``yourFolderHere`` is preserved by adding ``-o -path  mattermost/yourFolderHere``.
 
