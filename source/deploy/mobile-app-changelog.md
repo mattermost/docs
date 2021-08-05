@@ -49,6 +49,7 @@ Latest Mattermost Mobile Apps releases:
  - 
 
 ### Known Issues
+ - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issue with Collapsed Reply Threads (Beta) feature:
    - Mobile app top bar disappears after resuming app from screen lock.
    - New messages banner should only count root posts.
@@ -57,6 +58,8 @@ Latest Mattermost Mobile Apps releases:
    - Some unread channels with leave/join system messages are doubled in search results.
    - Tapping on the push notification for new reply should open the thread with the post.
    - Turning the feature on and off does not push an update to the Mobile client.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item is lost when clearing search in the channel sideabar.
 
 ## 1.45.1 Release
 - Release Date: July 20, 2021
