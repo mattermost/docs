@@ -1,5 +1,3 @@
-:orphan:
-
 Managing Team and Channel Members
 =================================
 
@@ -22,6 +20,20 @@ Team Profile
 ~~~~~~~~~~~~
 
 The name and description of the team.
+
+Within a Team Profile, System Admins can archive or unarchive the team. Archiving a team makes its contents inaccessible for all users. All related information is archived, including posts from the database. Before archiving a team, we recommend that you perform a database backup.
+
+Archiving a Team
+^^^^^^^^^^^^^^^^
+
+Select **Archive Team**, then select **Save**. Select **Archive** when prompted to confirm the team archive.
+
+Alternatively, System Admins can use the mmctl ``mmctl team archive`` to archive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__ for details.
+
+Unarchiving a Team
+^^^^^^^^^^^^^^^^^^
+
+Select **Unarchive Team**, then select **Save**.
 
 Team Management
 ~~~~~~~~~~~~~~~
