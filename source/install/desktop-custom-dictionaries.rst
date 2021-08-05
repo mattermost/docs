@@ -8,7 +8,7 @@ This feature is available in the Mattermost Desktop App from v4.7.1 on Windows a
 Setting up the dictionaries
 ---------------------------
 
-The Mattermost Desktop App uses [Hunspell Dictionary definitions](https://hunspell.github.io/) for Windows and Linux. For macOS, dictionary definitions are provided by Apple within the operating system itself. A quick way to access default dictionary definitions is to obtain a copy of `hunspell_dictionaries.zip` from the [latest electron release](https://github.com/electron/electron/releases/latest).
+The Mattermost Desktop App uses `Hunspell Dictionary definitions <https://hunspell.github.io/>`_ for Windows and Linux. For macOS, dictionary definitions are provided by Apple within the operating system itself. A quick way to access default dictionary definitions is to obtain a copy of `hunspell_dictionaries.zip` from the `latest electron release <https://github.com/electron/electron/releases/latest>`_.
 
 Once downloaded, the dictionary definitions need to be extracted and converted to lowercase because chromium expects `en-us` rather than `en-US...`. These defitions are ready to use and would match the usage of using Chromium's CDN ones without accesing it, but they could also be modified to fit specific needs.
 
