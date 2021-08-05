@@ -217,7 +217,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
       - "80"
       - "443"
 
-Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?
+Why does NGINX fail when installing GitLab CE with Mattermost on Azure?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may need to update the callback URLs for the Application entry of Mattermost inside your GitLab instance.
