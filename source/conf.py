@@ -100,7 +100,7 @@ redirects = {
      "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
      "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
      "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
-     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html"
+     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
      "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
      "administration/image-proxy": "https://docs.mattermost.com/deploy/image-proxy.html",
      "administration/encryption": "https://docs.mattermost.com/deploy/encryption-options.html",
