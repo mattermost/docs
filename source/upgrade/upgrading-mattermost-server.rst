@@ -91,7 +91,7 @@ Upgrading Mattermost Server
       ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
       NOTICE.txt                      bin        config  fonts  logs  plugins       templates
 
-  By default, your data directories will be preserved with the following commands, including ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage).
+  By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage).
 
 Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
