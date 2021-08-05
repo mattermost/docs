@@ -32,11 +32,11 @@ Lastest Mattermost Releases:
 #### Enhanced User Onboarding Experience
  - To help new users get started with Mattermost, new Getting Started steps have been added to the onboarding experience. These steps help users to complete their profile, name their teams, configure desktop notifications and invite others to join their team. Additionally, once the onboarding is complete, users are provided with helpful tips to get started with channels, plugins, and more.
 
-#### Focalboard Update
- - Focalboard 0.8.0 requires Mattermost v5.37 due to the new database connection system.
+#### Playbooks Updates
+ - ``Incident Collaboration`` was rebranded to ``Playbooks``. Also the channel right-hand sidebar is redesigned, our own playbooks are shared as templates, and more triggers and actions were added.
 
-#### Playbooks Update
- - 
+#### Focalboard Updates
+ - Added created-by property and improved performance with shared database connections. Focalboard 0.8.0 requires Mattermost v5.37+ due to a new database connection system.
 
 ### Improvements
 
@@ -138,6 +138,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
+ - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
