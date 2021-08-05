@@ -56,6 +56,7 @@ Latest Mattermost Mobile Apps releases:
    - Only the last 6 threads are visible in the Threads view.
    - Some unread channels with leave/join system messages are doubled in search results.
    - Tapping on the push notification for new reply should open the thread with the post.
+   - Turning the feature on and off does not push an update to the Mobile client.
 
 ## 1.45.1 Release
 - Release Date: July 20, 2021
