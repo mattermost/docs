@@ -2,7 +2,9 @@
 
 Common Issues
 ---------------
-Run the bulk import command as the mattermost user. Running it as root or some other user will cause issues with file permissions on imported attachments.
+
+Run the bulk import command as the *mattermost* user. Running it as *root* or any other user will cause issues with file permissions on imported attachments.
+
 
 Ensure that `file attachments are enabled <https://docs.mattermost.com/configure/configuration-settings.html#allow-file-sharing>`__, that you have enough free space in your `file storage system <https://docs.mattermost.com/configure/configuration-settings.html#file-storage-system>`__ to support the incoming attachments, and that your `maximum file size <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__ is appropriate.
 
