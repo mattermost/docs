@@ -16,15 +16,18 @@ You can use any certificate that you want, but these instructions show you how t
 
 **To configure NGINX as a proxy with SSL and HTTP/2**
 
-If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation `here <https://certbot.eff.org>`_ .
+See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
-2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor and update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (ex: ``127.0.0.1:8065``, and the ``server_name`` to be your domain for Mattermost.
+2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor, then update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (such as ``127.0.0.1:8065``), and update the ``server_name`` to be your domain for Mattermost.
 
 .. note::
-   On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file run ``sudo touch /etc/nginx/sites-available/mattermost``.
-   On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file run ``sudo touch /etc/nginx/conf.d/mattermost``.
+   
+   - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
+   - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
+   - Examples in this documentation are using a private IP address, which may not match your network configuration. 
+   - In cases where the local machine resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``. 
    
 .. code-block:: none
 
