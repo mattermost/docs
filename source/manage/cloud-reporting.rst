@@ -76,7 +76,7 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Administrators can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/onboard/system-admin-roles.html#additional-system-admin-roles-e20>`__ to enable Team Administrators to see team statistics.
+System Administrators can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ to enable Team Administrators to see team statistics.
 
 Once Team Admins are assigned to the **Viewer** role, they can access all statistics for all teams.
 
