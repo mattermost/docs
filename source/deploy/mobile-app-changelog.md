@@ -43,6 +43,9 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with displaying the current user when multiple users were part of the System join / leave messages.
  - Fixed a race condition when bringing the app to the foreground by tapping in a notification that belongs to a channel other than the current channel that caused the current channel to miss any mentions if it had any.
 
+#### Android specific
+ - Fixed a silent crash that could happen for some users when receiving a push notification on Android.
+
 ### Known Issues
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issue with Collapsed Reply Threads (Beta) feature:
