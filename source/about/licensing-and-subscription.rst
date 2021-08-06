@@ -158,7 +158,7 @@ I'm a Mattermost Cloud customer, how do I renew?
 
 Your Mattermost Cloud subscription auto-renews so you don't need to follow this process.
 
-How is the user defined for Enterprise Edition subscriptions?
+How is user defined for Enterprise Edition subscriptions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See our `frequently asked questions about licensing <https://mattermost.com/pricing-self-managed/#faq>`__.
