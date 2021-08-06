@@ -20,7 +20,7 @@ Latest Mattermost Mobile Apps releases:
 ### Highlights
 
 #### Collapsed Reply Threads (Beta)
- - Added support for Collapsed Reply Threads for the mobile apps.
+ - Added support for [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) for the mobile apps.
 
 #### Custom Status Expiry
  - Added a feature to choose expiry time when setting a custom status. Requires server version 5.37 or later. Also added new screens such as **Clear** and new components such as ``DateTime`` picker.
@@ -42,6 +42,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where boolean fields did not get disabled on dialogs when they should have.
  - Fixed an issue with displaying the current user when multiple users were part of the System join / leave messages.
  - Fixed a race condition when bringing the app to the foreground by tapping in a notification that belongs to a channel other than the current channel that caused the current channel to miss any mentions if it had any.
+ - Fixed an issue with attaching files to the correct post.
 
 #### Android specific
  - Fixed a silent crash that could happen for some users when receiving a push notification on Android.
