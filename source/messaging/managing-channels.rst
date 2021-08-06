@@ -1,157 +1,160 @@
-Managing Channels
-==================
+.. tabs::
 
-Channels can be created, joined, renamed, left, marked as a favorite, muted, unmuted, and archived.
+   .. tab:: Managing Channels
 
-Creating a channel
-------------------
+      Channels can be created, joined, renamed, left, marked as a favorite, muted, unmuted, and archived.
 
-To create a new Public or Private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+   .. tab:: Creating a channel
 
-    .. image:: ../images/create-new-channel.png
-        :alt: Create a channel.
+      To create a new Public or Private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+
+        .. image:: ../images/create-new-channel.png
+            :alt: Create a channel.
     
-Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
+       Anyone can create Public channels or Private channels, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
 
-Creating a Direct or Group Message
-----------------------------------
+   .. tab:: Creating a Direct or Group Message
 
-To start a Direct or Group Message, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. Or select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
+      To start a Direct or Group Message, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. Or select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
-    .. image:: ../images/write-dm.png
-        :alt: Access recent Direct Messages and Group Messages.
+        .. image:: ../images/write-dm.png
+            :alt: Access recent Direct Messages and Group Messages.
     
-In the **Direct Messages** popup, identify your most recent conversations by relative timestamps.     
+      In the **Direct Messages** popup, identify your most recent conversations by relative timestamps.     
 
-    .. image:: ../images/recent-direct-group-messages.png
-        :alt: Write a Direct Message or Group Message.
+        .. image:: ../images/recent-direct-group-messages.png
+            :alt: Write a Direct Message or Group Message.
 
-Joining a channel
------------------
+   .. tab:: Joining a channel
 
-To join a Public channel, select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
+      To join a Public channel, select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. Search through the list of Public channels you can join, then select **Join**.
 
-To join a Private channel, you need to be added to the channel by a member of that channel.
+      To join a Private channel, you need to be added to the channel by a member of that channel.
 
-Adding members to a channel
----------------------------
+   .. tab:: Adding members to a channel
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. Any member of a channel can add new members by choosing **Add** next to a user's name. Users already added to the channel will not appear in this list.
+      Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. Any member of a channel can add new members by choosing **Add** next to a user's name. Users already added to the channel will not appear in this list.
 
-    .. image:: ../images/add-member-to-channel.png
+        .. image:: ../images/add-member-to-channel.png
 
-You can also add users to channels within their profile pop-over by choosing **Add to a Channel** and selecting the channel you want them to join.
+      You can also add users to channels within their profile pop-over by choosing **Add to a Channel** and selecting the channel you want them to join.
 
-    .. image:: ../images/add-member-pop.png
-        :alt: Add a member to a channel.
+        .. image:: ../images/add-member-pop.png
+            :alt: Add a member to a channel.
 
-Removing members from a channel
--------------------------------
+   .. tab:: Removing members from a channel
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Any member of a channel can remove other members by selecting the member’s channel role, then selecting **Remove from Channel**.
+      Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Any member of a channel can remove other members by selecting the member’s channel role, then selecting **Remove from Channel**.
 
-    .. image:: ../images/remove-member-from-channel.png
-        :alt: Remove a member from a channel.
+        .. image:: ../images/remove-member-from-channel.png
+            :alt: Remove a member from a channel.
 
-Naming a channel
-----------------
+   .. tabs:: Naming a channel
 
-Channels can be identified in two ways:
+      Channels can be identified in two ways:
 
-1. **Channel display name:** This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
-2. **Channel handle:** This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.
+      .. tab:: Channel display name
 
-For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``:
+         This appears in the Mattermost user interface. On Desktop, select the channel name at the top of the center pane to access the drop-down menu, then choose **Rename Channel**. Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+      
+      .. tab:: Channel handle
 
-- Channel display name: ``UX Design``
-- Channel handle: ``ux-design`` 
+         This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.
 
-Leaving a channel
------------------
+      .. tabs:: For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``:
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. Any team member who leaves a Private channel must be re-added by another channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
+         .. tab:: Channel display name
 
-Archiving a channel
--------------------
+            ``UX Design``
+          
+         .. tab:: Channel handle
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. Anyone can archive the Public channels or Private channels they belong to, unless the System Admin has restricted the permissions.
+            ``ux-design`` 
 
-When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons at a later stage. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
+   .. tab:: Leaving a channel
 
-In addition to this, when a channel is archived, by default the contents cannot be viewed, shared, or searched. If you want to be able to view or search the channel later, either:
+      Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. Any team member who leaves a Private channel must be re-added by another channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
 
-1. Ask your System Admin to set ``ExperimentalViewArchivedChannels`` to ``true`` in ``config.json`` to allow users to view, share, and search for content of channels that have been archived; or
-2. Leave the channel open, but post a message in the channel saying it's considered archived: such as ``# This channel is archived.``
+   .. tabs:: Archiving a channel
 
-System Admins `can archive channels in the System Console <https://docs.mattermost.com/deployment/team-channel-management.html#profile>`_ without needing to be a channel member.
+      Select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. Anyone can archive the Public channels or Private channels they belong to, unless the System Admin has restricted the permissions.
 
-Unarchiving a channel
----------------------
+      When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons at a later stage. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
-Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. System Admins and Team Admins can unarchive Public channels or Private channels they belonged to when it was archived.
+      .. tab:: In addition to this, when a channel is archived, by default the contents cannot be viewed, shared, or searched. If you want to be able to view or search the channel later, either:
 
-    .. image:: ../images/unarchive-channel.png
-        :alt: Unarchive a channel.
+         Ask your System Admin to set ``ExperimentalViewArchivedChannels`` to ``true`` in ``config.json`` to allow users to view, share, and search for content of channels that have been archived; or
+         Leave the channel open, but post a message in the channel saying it's considered archived: such as ``# This channel is archived.``
 
-When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/administration/config-settings.html#data-retention-policy>`__.
+      System Admins `can archive channels in the System Console <https://docs.mattermost.com/deployment/team-channel-management.html#profile>`_ without needing to be a channel member.
 
-In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
+   .. tab:: Unarchiving a channel
 
-Converting Public channels to Private channels (and vice versa)
----------------------------------------------------------------
+      Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. System Admins and Team Admins can unarchive Public channels or Private channels they belonged to when it was archived.
 
-Select the Public channel name at the top of the center pane to access the drop-down menu, then select **Convert to Private Channel**. Team and System Admins can convert Public channels to Private channels. Please note that default channels such as ``Town Square`` and ``Off-Topic`` cannot be converted to Private channels.
+         .. image:: ../images/unarchive-channel.png
+             :alt: Unarchive a channel.
 
-When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly-shared files remain accessible to anyone with the link. 
+      When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/administration/config-settings.html#data-retention-policy>`__.
 
-.. note::
+      In addition to this, System Admins can also unarchive channels `via the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore>`_ and Team Admins can unarchive them `via the API <https://api.mattermost.com/#tag/channels/paths/~1channels~1%7Bchannel_id%7D~1restore/post>`_.
+
+   .. tab:: Converting Public channels to Private channels (and vice versa)
+
+      Select the Public channel name at the top of the center pane to access the drop-down menu, then select **Convert to Private Channel**. Team and System Admins can convert Public channels to Private channels. Please note that default channels such as ``Town Square`` and ``Off-Topic`` cannot be converted to Private channels.
+
+      When a channel is converted, its history and membership are preserved. Membership in a Private channel is by invitation only. Publicly-shared files remain accessible to anyone with the link. 
+
+         .. note::
  
-   Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
+            Due to security concerns with sharing Private channel history, only System Admins can convert Private channels to Public channels via **System Console > Channels > Edit (Channel Configuration)**. Alternatively, perform this action using the `mmctl channel modify command <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-modify>`__.
 
-Favoriting a channel
---------------------
+   .. tabs:: Favoriting a channel
 
-Favorite channels are a great way to organize your channel sidebar by choosing which Public channels, Private channels, and Direct Messages are most important to you.
+      Favorite channels are a great way to organize your channel sidebar by choosing which Public channels, Private channels, and Direct Messages are most important to you.
 
-To mark a channel as a favorite, open the channel:
+         .. tabs:: To mark a channel as a favorite, open the channel
 
-**On desktop:** At the top of the page, select on the star icon next to the channel name.
+            .. tab:: On desktop 
 
-    .. image:: ../images/favorite-channel-desktop.png
-        :alt: Mark a channel as a favorite.
+               At the top of the page, select on the star icon next to the channel name.
+
+                   .. image:: ../images/favorite-channel-desktop.png
+                       :alt: Mark a channel as a favorite.
        
-This adds the channel to a **Favorites** list at the top of the channel sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
+               This adds the channel to a **Favorites** list at the top of the channel sidebar, so it's easy to access. To remove a channel from the **Favorites** list, select the star again.
 
-    .. image:: ../images/favorites-list-sidebar.png
-        :alt: Favorite channels in the channel sidebar.
+                   .. image:: ../images/favorites-list-sidebar.png
+                       :alt: Favorite channels in the channel sidebar.
        
-**On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
+            .. tab:: On mobile
 
-Muting and unmuting a channel
------------------------------
+               Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorite**. To remove a channel from the **Favorites** list, select **Favorite** again.
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
+   .. tab:: Muting and unmuting a channel
 
-Once a channel is muted:
+      Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
 
-- Email, desktop, and push notifications are disabled.
-- A mute icon displays next to the channel name.
-- The channel appears at reduced opacity in the channel sidebar, and the channel isn't marked as unread unless you're mentioned directly.
+         .. tab:: Once a channel is muted:
 
-To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
+            - Email, desktop, and push notifications are disabled.
+            - A mute icon displays next to the channel name.
+            - The channel appears at reduced opacity in the channel sidebar, and the channel isn't marked as unread unless you're mentioned directly.
 
-Switching channels
-------------------
+      To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
-Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance.
+   .. tab:: Switching channels
 
-    .. image:: ../images/switch-channels.png
-        :alt: Switch channels and review member availability.
+      Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html#setting-your-availability>`__ at a glance.
 
-Navigating recently viewed channels
------------------------------------
+          .. image:: ../images/switch-channels.png
+              :alt: Switch channels and review member availability.
 
-Use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
+   .. tab:: Navigating recently viewed channels
 
-- Select the left arrow to go back one page. 
-- Select the right arrow to go forward one page.
+      Use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
+
+      .. tab:: Left and Right arrow
+       
+         - Select the left arrow to go back one page. 
+         - Select the right arrow to go forward one page.
