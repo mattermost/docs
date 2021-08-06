@@ -365,10 +365,41 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Data Source
 ^^^^^^^^^^^
 
-This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
+This is the connection string to the master database. This setting can only be changed from the ``config.json`` file. 
 
 .. note::
-  To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
+   
+   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
+
+**MySQL Database**
+
+When **DriverName** is set to ``mysql``, using ``collation`` is recommended over using ``charset``. 
+
+To specify collation:
+
+.. code-block:: none
+
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",
+      [...]
+    }
+
+If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:
+
+.. code-block:: none
+
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
+      [...]
+    }
+
+.. note::
+   
+   If you're using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software Requirements <https://docs.mattermost.com/install/requirements.html#database-software>`__ documentation for details on MySQL 8.0 support.
+   
+**PostgreSQL Database**
+
+When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
