@@ -17,6 +17,7 @@ The main benefits of using a proxy are as follows:
 1. Log in to the server that will host the proxy, and open a terminal window.
 
 2. Create the file /etc/yum.repos.d/nginx.repo.
+
   ``sudo touch /etc/yum.repos.d/nginx.repo``
 
   If you are on RHEL 8 you can skip to **Step 4. Install NGINX**.

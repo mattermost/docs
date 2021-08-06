@@ -13,7 +13,7 @@ On new installations starting from v5.14, the ``default.json`` file used to crea
 Configuration in Database
 --------------------------
 
-Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
 
 Environment Variables
 ---------------------
@@ -34,7 +34,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
 
 .. warning::
-   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/administration/config-in-database.html>`_.
+   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
    
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
@@ -85,7 +85,7 @@ View subscription details including the number of users and expiry date of your 
 License Key
 ^^^^^^^^^^^
 
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html>`_.
 
 Reporting
 ---------
@@ -365,10 +365,41 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Data Source
 ^^^^^^^^^^^
 
-This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
+This is the connection string to the master database. This setting can only be changed from the ``config.json`` file. 
 
 .. note::
-  To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
+   
+   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
+
+**MySQL Database**
+
+When **DriverName** is set to ``mysql``, using ``collation`` is recommended over using ``charset``. 
+
+To specify collation:
+
+.. code-block:: none
+
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",
+      [...]
+    }
+
+If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:
+
+.. code-block:: none
+
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
+      [...]
+    }
+
+.. note::
+   
+   If you're using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software Requirements <https://docs.mattermost.com/install/requirements.html#database-software>`__ documentation for details on MySQL 8.0 support.
+   
+**PostgreSQL Database**
+
+When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
@@ -482,7 +513,7 @@ Changes to properties in this section require a server restart before taking eff
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
+**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
 
 **False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results.
 
@@ -493,7 +524,7 @@ Enable Elasticsearch Indexing
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
@@ -577,7 +608,7 @@ File Storage
 Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
 
 .. note::
-  We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
+  We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
 
 File Storage System
 ^^^^^^^^^^^^^^^^^^^^
@@ -628,7 +659,7 @@ Enable users to search the contents of documents attached to messages.
 **True**: Documents are searchable by their content.  
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
 
@@ -641,7 +672,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 - ``Justtext``: Used to search HTML documents.
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older documents based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older documents based on file name only.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
@@ -650,7 +681,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 .. note::
   - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
   
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -668,7 +699,7 @@ This configuration setting enables users to search the contents of compressed ZI
 .. note::
   - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
@@ -695,7 +726,7 @@ The AWS region you selected when creating your S3 bucket. If no region is set, M
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the Access Key ID.
+This is required for access unless you are using an `Amazon S3 IAM Role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`__ with Amazon S3. Your EC2 administrator can supply you with the Access Key ID.
 
 +-------------------------+----------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                              |
@@ -746,7 +777,7 @@ Enable Server-Side Encryption for Amazon S3
 
 *Available in Enterprise Edition E20*
 
-**True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html>`__.
+**True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html>`__.
 
 **False**: Doesn't encrypt files in Amazon S3.
 
@@ -995,7 +1026,7 @@ Changes to properties in this section require a server restart before taking eff
 
 When High Availability mode is enabled, the System Console is set to read-only and settings can only be changed by editing the configuration file directly. However, for testing and validating a High Availability setup, you can set ``ReadOnlyConfig`` to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
 
-To learn more about configuring High Availability, see `High Availability Cluster <https://docs.mattermost.com/deployment/cluster.html>`_.
+To learn more about configuring High Availability, see `High Availability Cluster <https://docs.mattermost.com/scale/high-availability-cluster.html>`_.
 
 Enable High Availability Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1020,7 +1051,7 @@ The cluster to join by name. Only nodes with the same cluster name will join tog
 Override Hostname
 ^^^^^^^^^^^^^^^^^
 
-If blank, Mattermost attempts to get the hostname from the OS or use the IP address. You can override the hostname of this server with this property. It is not recommended to override the hostname unless needed. This property can also be set to a specific IP address if needed. Also see `cluster discovery <https://docs.mattermost.com/deployment/cluster.html#cluster-discovery>`_ for more details.
+If blank, Mattermost attempts to get the hostname from the OS or use the IP address. You can override the hostname of this server with this property. It is not recommended to override the hostname unless needed. This property can also be set to a specific IP address if needed. Also see `cluster discovery <https://docs.mattermost.com/scale/high-availability-cluster.html>`_ for more details.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"OverrideHostname": ""`` with string input. |

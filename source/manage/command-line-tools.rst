@@ -174,8 +174,10 @@ mattermost channel
 .. note::
     **{channel} value**
 
-    For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. For example, in the following URL the *{channels}* value is *myteam:mychannel*:
-
+    For the *add*, *archive*, *delete*, *remove*, and *restore* commands, you can specify the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+    
+    For example, in the following URL the *{channels}* value is *myteam:mychannel*:
+    
     ``https://example.com/myteam/channels/mychannel``
 
     Also, the team and channel names in the URL should be written in lowercase.
@@ -211,8 +213,8 @@ mattermost channel archive
 
 
 Description
-    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
-
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+    
   Format
     .. code-block:: none
 
@@ -264,7 +266,7 @@ mattermost channel delete
    This command will be replaced in a future release with the mmctl command `mmctl channel delete <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-delete>`__.
 
 Description
-    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+    Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
 
   Format
     .. code-block:: none
@@ -329,8 +331,8 @@ mattermost channel move
    This command will be replaced in a future release with the mmctl command `mmctl channel move <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-move>`__.
 
 Description
-    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs.
-
+    Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+    
   Format
     .. code-block:: none
 
@@ -383,7 +385,7 @@ mattermost channel rename
    This command will be replaced in a future release with the mmctl command `mmctl channel rename <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-rename>`__.
 
 Description
-    Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs.
+    Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
 
   Format
     .. code-block:: none
@@ -409,8 +411,8 @@ mattermost channel restore
    This command will be replaced in a future release with the mmctl command `mmctl channel restore <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-restore>`__.
 
 Description
-    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
-
+    Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
+  
   Format
     .. code-block:: none
 
