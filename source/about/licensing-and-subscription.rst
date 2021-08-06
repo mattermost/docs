@@ -229,7 +229,7 @@ The affected Enterprise features include, but are not limited to, the following:
     "Performance monitoring", "Monitoring is disabled and Grafana will no longer update with new data.", "None needed."
     "Compliance exports", "Jobs are no longer scheduled in the job server. Data is not exported.", "None needed."
     "Data retention", "Jobs are no longer scheduled in the job server. Data is not deleted.", "None needed."
-    "Custom terms", "Custom terms no longer displayed to end-users on login. Data is retained in the Terms of Service database table.", "None needed."
+    "Custom terms", "Custom terms no longer displayed to end users on login. Data is retained in the Terms of Service database table.", "None needed."
     "Custom announcement banners", "No longer visible and is replaced by the default announcement banner.", "None needed."
     "Multi-factor authentication (MFA)", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
     "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use the `CLI https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions>`_ to reset permissions to default."
