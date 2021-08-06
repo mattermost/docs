@@ -244,7 +244,7 @@ Once a new license is applied, the banner will no longer be visible.
 
 If you don't plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
 
-Do you have a program for official non-profits, open-source projects, and charities?
+Do you have a program for official non-profits, open source projects, and charities?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, please see the `Mattermost Monday License program <https://mattermost.com/nonprofit/>`_.
