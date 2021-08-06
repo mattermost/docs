@@ -24,3 +24,4 @@ Mattermost Product Documentation
    Mattermost for Developers <https://developers.mattermost.com/>
    Get Help With Mattermost <guides/get-help>
    Community Chat <guides/community-chat>
+  Integration <guides/integration>
