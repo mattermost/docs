@@ -3,7 +3,7 @@
 Using an Outbound Proxy
 =======================
 
-In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use a proxy for images, the `image proxy <https://docs.mattermost.com/administration/image-proxy.html>`__ is also an option.
+In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use a proxy for images, the `image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__ is also an option.
 
 Configuration
 -------------
@@ -46,6 +46,7 @@ To set these environment variables while running the Mattermost server via ``sys
     Type=notify
     ExecStart=/opt/mattermost/bin/mattermost
     TimeoutStartSec=3600
+    KillMode=mixed
     Restart=always
     RestartSec=10
     WorkingDirectory=/opt/mattermost
