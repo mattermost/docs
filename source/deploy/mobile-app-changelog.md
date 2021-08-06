@@ -42,12 +42,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where boolean fields did not get disabled on dialogs when they should have.
  - Fixed an issue with displaying the current user when multiple users were part of the System join / leave messages.
 
-#### Android specific
- - 
-
-#### iOS specific
- - 
-
 ### Known Issues
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issue with Collapsed Reply Threads (Beta) feature:
