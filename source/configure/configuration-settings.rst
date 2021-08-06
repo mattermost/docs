@@ -573,7 +573,7 @@ Enable Cluster Sniffing
 Bulk Indexing
 ^^^^^^^^^^^^^
 
-This button starts a bulk index of all existing posts in the database. If the indexing process is canceled the index and search results will be incomplete.
+This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
 
 Purge Indexes
 ^^^^^^^^^^^^^
