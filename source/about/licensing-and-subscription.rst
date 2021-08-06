@@ -48,7 +48,7 @@ System Admin access is required to apply the license. If you are not a Mattermos
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can also use the `CLI <https://docs.mattermost.com/install/enterprise-install-upgrade.html>`__ to apply for the license.
+You can also use the `CLI <https://docs.mattermost.com/install/enterprise-install-upgrade.html>`__ to apply the license.
 
 **If you don't have Mattermost installed**
 
