@@ -41,6 +41,7 @@ Latest Mattermost Mobile Apps releases:
 #### All apps
  - Fixed an issue where boolean fields did not get disabled on dialogs when they should have.
  - Fixed an issue with displaying the current user when multiple users were part of the System join / leave messages.
+ - Fixed a race condition when bringing the app to the foreground by tapping in a notification that belongs to a channel other than the current channel that caused the current channel to miss any mentions if it had any.
 
 ### Known Issues
  - Posts sometimes get stuck behind the post textbox on iPad.
