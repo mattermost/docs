@@ -3,7 +3,7 @@
 Chinese, Japanese, and Korean Search
 ======================================
 
-Enabling search for Chinese, Japanese and Korean (CJK) requires a special configuration, since these languages do not contain spaces.
+Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
 - See `database requirements documentation <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ for how to setup up search for these languages.
 
