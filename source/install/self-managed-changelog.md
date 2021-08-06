@@ -46,7 +46,6 @@ Lastest Mattermost Releases:
  - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
  - Improved default rendering of images inserted via the GIF picker.
  - Small text changes were added to Direct and Group Message menus: 'Mute channel' and 'Edit Channel Header' now reads 'Mute Conversation' and 'Edit Conversation Header'.
- - Changed the icon from a globe to a lock for private channels.
 
 #### Performance
  - Improved performance of components that show reactions on posts.
