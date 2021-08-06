@@ -161,7 +161,7 @@ The command to migrate the config to the database should always be run as the *m
    
 As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 
-With the configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
+When configuration in the database is enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
 If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
 
