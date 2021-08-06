@@ -180,4 +180,4 @@ Checking your SMTP server is reachable
 
 .. note::
    
-   For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/ask-mattermost-community>`_. To submit an improvement or correction to this page, click **Edit** in the top-right corner of the page.
+   For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/ask-mattermost-community>`__. To submit an improvement or correction to this page, select **Edit** in the top-right corner of the page.
