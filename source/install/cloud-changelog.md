@@ -14,9 +14,6 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Added a global product launcher
- - 
-
 #### Beta features promoted from Beta to General Availability
    - Archived channels
    - Compliance exports
