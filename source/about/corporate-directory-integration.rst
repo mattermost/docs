@@ -19,7 +19,7 @@ Security features for authentication
 
 A core set of features is available with all authentication options to help increase security:
 
-- Ability to `set session length <https://docs.mattermost.com/configure/configuration-settings.html>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
+- Ability to `set session length <https://docs.mattermost.com/configure/configuration-settings.html#id33>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
 - Ability for users to remotely sign out of devices.
 - Ability for IT admin to force sign out of a user from devices.
 - Ability to set rate limits on authentication API calls to deter password-guessing attacks.
@@ -40,7 +40,7 @@ AD/LDAP is the most popular corporate directory integration option for deploying
 
 .. note:: 
    - New user accounts are created when new users sign-in with their AD/LDAP credentials. You can optionally pre-create user accounts using the `bulk loading <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__ tool.
-   - If you're using email or username and password authentication `users can switch to AD/LDAP manually <https://docs.mattermost.com/onboard/ad-ldap.html>`__, and the `conversion to AD/LDAP can also be done using the command line interface <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ by an IT admin.
+   - If you're using email or username and password authentication `users can switch to AD/LDAP manually <https://docs.mattermost.com/onboard/ad-ldap.html#getting-started>`__, and the `conversion to AD/LDAP can also be done using the command line interface <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ by an IT admin.
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not overtax the authentication server when synchronizing.
 
