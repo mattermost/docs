@@ -10,18 +10,35 @@ In Mattermost Enterprise E20, you can set a custom policy to manage how long mes
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up a custom data retention policy.
 
-Configuring a Data Retention Policy
-------------------------------------
+Configuring a Global Data Retention Policy
+-------------------------------------------
 
 To set a custom data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policy**.
-2. Select a **Message Retention** option. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
-3. Select a **File Retention** option. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** at the specified time. The minimum retention period is one day.
-4. Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+2. Select edit from the menu presented to the right of the **Global retention policy** table. 
+3. Select a **Channel & direct message retention** option from the dropdown. Specify the number of days or years to keep channel and direct messages. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
+3. Select a **File retention** option from the dropdown. Specify the number of days or ears to keep files. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** at the specified time. The minimum retention period is one day.
+4. Set the start time of the daily scheduled data retention job under the **Policy log** section. Choose a time when fewer people are using your system. 
 
-Save the settings and restart your server. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
+Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
 
+Configuring a Custom Data Retention Policy
+-------------------------------------------
+
+To set a custom data retention policy:
+
+1. Go to **System Console > Compliance > Data Retention Policy**.
+2. Select **Add policy** from the menu presented to the right of the **Custom retention policy** table. 
+3. Create a name for your policy. 
+4. Select a **Channel & direct message retention** option from the dropdown. Specify the number of days or years to keep channel and direct messages. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
+5. Assign teams and channels to this policy by selecting **Add teams** and searching for a specific team or by selecting **Add channels** and searching for a specific channel. All channels will be included in the a policy assigned to a team only. 
+6. Set the start time of the daily scheduled data retention job under the **Policy log** section. Choose a time when fewer people are using your system. If there is already a time set for global retention policies then this time will apply also to custom data retention policies. 
+
+Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
+
+Running a Deletion Job Manually
+--------------------------------
 You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
 .. note::
@@ -33,12 +50,14 @@ Frequently Asked Questions (FAQs)
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or saved posts lists.
+The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or saved posts lists. 
 
 Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 
-What happens when a file is deleted?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If there was a file attached to the message, it will be removed from the user interface only.  
+
+What happens when a file is deleted by the file retention policy?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The file attachment is removed from the Mattermost user interface, deleted from the ``FileInfo`` table, and from your local disk or Amazon S3 service as specified in **System Console > Environment > File Storage**.
 
@@ -61,12 +80,6 @@ This usually means another data retention job is in progress. You can verify thi
 
 If no jobs are in progress and the job has stayed ``Pending`` for more than 2 minutes, then you may not have restarted your server after enabling the data retention policy. Restart your server and try again.
 
-How do I set a custom policy per team or channel?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Setting custom policies for each team and channel are in the roadmap but not yet supported.
-
-If you are interested in this feature, consider upvoting the `existing feature proposal <https://mattermost.uservoice.com/forums/306457-general/suggestions/31731844-ee-data-retention-policy-for-individual-teams-and>`__ and share your feedback in the comments.
 
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
