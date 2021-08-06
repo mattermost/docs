@@ -119,7 +119,7 @@ Why do I need to provide my name and physical address when purchasing a license?
 
 Mattermost is a U.S. corporation and therefore all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
 
-The United States has many export control regulations it has implemented to protect national security interests and to promote its foreign policy objectives. Based on these regulations, U.S. companies are prohibited from doing business with specific countries which have been embargoed by the U.S. government. They are also prohibited from exporting certain items to certain countries that have been sanctioned by the U.S. government. In addition, U.S. companies are prohibited from doing business with specific people and/or companies that have been named and listed by the U.S. government. 
+The United States has a number of export control regulations it has implemented to protect national security interests and to promote its foreign policy objectives. Based on these regulations, U.S. companies are prohibited from doing business with specific countries which have been embargoed by the U.S. government. They are also prohibited from exporting certain items to certain countries that have been sanctioned by the U.S. government. In addition, U.S. companies are prohibited from doing business with specific people and/or companies that have been named and listed by the U.S. government. 
 
 To comply with these requirements, Mattermost must collect the name and physical address of all individuals and companies it does business with so that it can comply with the U.S. export controls regulations.
 
