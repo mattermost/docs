@@ -109,47 +109,50 @@ If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__
 
 9. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command in step b, then add those to the following command. For example:
     
-      .. code-block:: sh
-         sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
+.. code-block:: sh
+
+  sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | xargs echo rm -r
 
 10. Clear the contents of this directory. If you've added custom directories to the command, be sure to add those to the following command. For example:
 
-      .. code-block:: sh
-         sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
+.. code-block:: sh
+
+  sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
       
 11. Change ownership of the new files before copying them. For example:
 
-      .. code-block:: sh
-         sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
+.. code-block:: sh
+         
+  sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
      
-  .. note::
+.. note::
     
-    - If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
-    - If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
+  - If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
+  - If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
 
 12. Copy the new files to your install directory and remove the temporary files.
 
+.. code-block:: sh
+
+  sudo cp -an /tmp/mattermost-upgrade/. mattermost/
+  sudo rm -r /tmp/mattermost-upgrade/
+  sudo rm -i /tmp/mattermost*.gz
+
 .. note::
-
   The ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
-
-   .. code-block:: sh
-
-     sudo cp -an /tmp/mattermost-upgrade/. mattermost/
-     sudo rm -r /tmp/mattermost-upgrade/
-     sudo rm -i /tmp/mattermost*.gz
 
 13. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports. For example:
 
-      .. code-block:: sh
+.. code-block:: sh
 
-         cd {install-path}/mattermost
-         sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+  cd {install-path}/mattermost
+  sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 14. Start your Mattermost server.
 
-      .. code-block:: sh
-         sudo systemctl start mattermost
+.. code-block:: sh
+
+  sudo systemctl start mattermost
 
 15. If you're using a High Availability deployment you need to apply the steps above on all the nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
