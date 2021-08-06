@@ -79,7 +79,7 @@ If you're a Mattermost Cloud customer, your subscription auto-renews so you don'
 
 If you are a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
 
-System Admins will be alerted 60 days before the license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
+System Admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
 
 Once you click **Renew license now**, you are taken to the renewal page in the Customer Portal, which lists your license information and account details. These are pre-populated based on the email address associated with your existing license subscription. 
 
