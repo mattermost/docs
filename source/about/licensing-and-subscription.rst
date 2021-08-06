@@ -42,7 +42,7 @@ Your Mattermost Enterprise license is ready to use and be applied via the Matter
 
 .. image:: ../images/mattermost_enterprise_license.png
 
-System Admin access is required to apply for the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin.
+System Admin access is required to apply the license. If you are not a Mattermost System Admin, contact your organization's Mattermost System Admin.
 
 **If you already have Mattermost installed**
 
