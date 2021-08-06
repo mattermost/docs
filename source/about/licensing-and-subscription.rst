@@ -141,7 +141,7 @@ The Office of Foreign Assets Control (OFAC) maintains a list of sanctioned entit
 - Companies or people that have been involved in human or drug trafficking
 - Organizations that have been sanctioned for human rights violations
 
-This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
+This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and Companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
 
 What does “physical address” mean for software that will be used in many places?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
