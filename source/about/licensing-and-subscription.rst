@@ -284,4 +284,4 @@ Please contact Mattermost Support for assistance with deleting your Customer Por
 What happens to my license when I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an account is deleted, the license remains valid. When the license is close to expiring, you will need to create a new profile to purchase a new license.
+When an account is deleted, the license remains valid. When the license is close to expiring, you'll need to create a new profile in order to purchase a new license.
