@@ -17,10 +17,11 @@ Lastest Mattermost Releases:
 **Release Day: 2021-08-16**
 
 ### Deprecations
- - The “config watcher” (the mechanism that automatically reloads the config.json file) has been deprecated in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
+ - The “config watcher” (the mechanism that automatically reloads the config.json file) has been removed in favor of the ``mmctl config`` command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
 
 ### Important Upgrade Notes
- - Fixed some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MYSQL v5.6.51.
+ - v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MYSQL v5.6.51.
+ - Focalboard v0.8.0 (released with Mattermost v5.38.0) requires Mattermost v5.37 due to the new database connection system.
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
