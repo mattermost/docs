@@ -103,8 +103,9 @@ If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__
 
 8. Identify if any custom directories from the above step need to be preserved. For each custom directory within the Mattermost folder that you wish to preserve, ensure you add ``-o -path  mattermost/yourFolderHere`` to the following command. See the example below where the folder ``yourFolderHere`` is preserved by adding ``-o -path  mattermost/yourFolderHere``.
 
-      .. code-block:: sh
-         sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
+.. code-block:: sh
+
+  sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | xargs echo rm -r
 
 9. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed. If you've added custom directories to the command in step b, then add those to the following command. For example:
     
