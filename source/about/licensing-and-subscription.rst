@@ -233,7 +233,7 @@ The affected Enterprise features include, but are not limited to, the following:
     "Custom announcement banners", "No longer visible and is replaced by the default announcement banner.", "None needed."
     "Multi-factor authentication (MFA)", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
     "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use the `CLI https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions>`_ to reset permissions to default."
-    "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in can use Mattermost until their session expires or they log out.", "None needed."
+    "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
 Why can't I dismiss the expiry notification banner?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
