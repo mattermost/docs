@@ -220,7 +220,7 @@ The affected Enterprise features include, but are not limited to, the following:
     "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO", "Login options are no longer provided on the sign-in page. Users who previously signed in with one of these methods are no longer able to.
     
     Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
-    "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in the state for group synced teams/channels.
+    "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in state for group synced teams/channels.
     
     Mentions for AD/LDAP groups are not shown in the autocomplete menu.
     
