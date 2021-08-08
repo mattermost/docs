@@ -7,7 +7,7 @@ Mattermost Enterprise Edition offers advanced security and authentication option
 Basic authentication 
 ---------------------
 
-By default Mattermost offers authentication via email and password, which offers basic features including:
+By default, Mattermost offers authentication via email and password, which offers basic features including:
 
 - Account sign up using email and password.
 - Password reset via email.
@@ -19,7 +19,7 @@ Security features for authentication
 
 A core set of features is available with all authentication options to help increase security:
 
-- Ability to `set session length <https://docs.mattermost.com/configure/configuration-settings.html>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
+- Ability to `set session length <https://docs.mattermost.com/configure/configuration-settings.html#session-lengths>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
 - Ability for users to remotely sign out of devices.
 - Ability for IT admin to force sign out of a user from devices.
 - Ability to set rate limits on authentication API calls to deter password-guessing attacks.
@@ -61,4 +61,4 @@ Generic OAuth and OpenID are not currently supported.
 Future authentication methods
 -----------------------------
 
-Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documenation, please contact sales@mattermost.com to start a discussion.
+Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, please contact sales@mattermost.com to start a discussion.
