@@ -19,7 +19,7 @@ Security features for authentication
 
 A core set of features is available with all authentication options to help increase security:
 
-- Ability to `set session length <https://docs.mattermost.com/configure/configuration-settings.html#id33>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
+- Ability to `set session length <https://docs.mattermost.com/configure/configuration-settings.html>`__ to define how long a user can use Mattermost before needing to re-enter credentials.
 - Ability for users to remotely sign out of devices.
 - Ability for IT admin to force sign out of a user from devices.
 - Ability to set rate limits on authentication API calls to deter password-guessing attacks.
