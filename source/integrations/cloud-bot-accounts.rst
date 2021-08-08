@@ -22,7 +22,7 @@ Note that currently:
 
   - Bot accounts can only be created or managed by plugins or System Administrators.
   - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
-  - Service accounts without an email address pulled from LDAP or SAML systems is not yet supported.
+  - Service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
 
 If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com/forums/306457-general>`_.
 
@@ -58,7 +58,7 @@ User Interface (UI)
 4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout the Mattermost user interface.
 5. (Optional) Set a **Display Name** and **Description**.
 6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any public channels, private channels and direct messages.
-7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or all Mattermost Public channels.
+7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels or all Mattermost Public channels.
 
 RESTful API
 ~~~~~~~~~~~
@@ -150,10 +150,11 @@ Can bot accounts edit messages through the RESTful API?
 Yes. By default, bot accounts can update their own posts.
 
 If you find yourself unable to edit posts as a bot, check the following:
-1. Instead of using a slash command to respond directly, use an an API call for the initial interaction with a user to enable message edits.
-2. If your system is using `advanced permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_, then post edits could be disabled for users.
+1. Instead of using a slash command to respond directly, use an API call for the initial interaction with a user to enable message edits.
+2. If your system is using `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`_, then post edits could be disabled for users.
 
 You also have the option to choose what role the bot account has. If the **System Admin** role is chosen, they can update any posts in the system and other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges, so this should be done with care.
+
 
 If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
