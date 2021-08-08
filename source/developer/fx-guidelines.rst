@@ -124,11 +124,11 @@ At this time, the mobile app only supports an equivalent of mobile view. In that
 UX Feedback Guidelines
 ****************************
 
-User experience design is a discipline drawing from ergonomics, ethnography, human factors research and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs, and quantitatively through telemetry, anonymous usage data and other automated diagnostics.
+User experience design is a discipline drawing from ergonomics, ethnography, human factors research and cognitive psychology. It's evaluated qualitatively with tools like heuristic evaluation and cognitive walkthroughs and quantitatively through telemetry, anonymous usage data and other automated diagnostics.
 
-As with any design process, iteration, prototyping, informed critique and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our product.
+As with any design process, iteration, prototyping, informed critique, and evaluation is vital to doing our best work. Developing the skill of informed critique in our community increases the quality of our designs and of our products.
 
-This guide outlines the levels of UX feedback in the order of positive impact in order to guide contributors towards the behaviors that best advance a fast-moving, asychronously-developed open source product.
+This guide outlines the levels of UX feedback in the order of positive impact in order to guide contributors towards the behaviors that best advance a fast-moving, asynchronously-developed open source product.
 
 **Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
@@ -144,7 +144,7 @@ Example 2: Attempt to help provide "input" in a design discussion, but instead o
 
 While it's important to welcome people sharing entry-level feedback, and to extract from it useful ideas where possible, if entry-level feedback begins to unintentionally shut out more constructive feedback, a private note might be sent to the contributor with something like: "Highly appreciate your good intentions to share UX feedback. May I ask your help to review Mattermost's UX Feedback Guidelines (link)?"
 
-**Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project, and patterns from other products.
+**Intermediate UX feedback:** - Comments, critique or questions about design with thoughtful consideration--including trade-offs--of the goal and principles of a design, along with UX principles of the project and patterns from other products.
 
 Feedback speaks for itself, with relevant references to principles, audience, research and other objective criteria. May include descriptions of experience using the feature or similar features that can be generalized to the intended audience:
 
@@ -152,13 +152,13 @@ Example: Thoughtful suggestion listing trade-offs that reference principles.
 
    What if we used a reply icon, similar to replies in email, for the comment function? Screenshots below. Pros: a) More familiar to email users. b) More distinct than the word balloon icon typically used for "Comment", which is too easily confused for "Message".  Cons: i) We use the symbol of "Reply" for "Comment" (the UI has an "Add Comment" button in the UI), which could be confusing. ii) When we add a "Forward" icon later to move a message to a different channel, the "Reply" and "Forward" metaphors may get muddled".
 
-UX feedback at intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
+UX feedback at an intermediate level or higher is highly appreciated. It should be encouraged and recognized as a substantial contribution to the design process.
 
-**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design, and potentially design guidelines. Analysis naturally considers variations needed across web, PC and mobile experiences.
+**Advanced UX feedback:** - Constructive feedback that enlightens a design discussion, shares fact-based heuristics, helps clear blindspots and inconsistencies, and significantly improves a design and potentially design guidelines. Analysis naturally considers variations needed across web, PC and mobile experiences.
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide.
 
-   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as a number most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile experience, where ungrouped 10-item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
+   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as a number most people can comfortably store mentally (link), and looking through other products; I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help the mobile experience, where ungrouped 10-item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
 
 -----
 
