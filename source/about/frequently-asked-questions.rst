@@ -10,7 +10,7 @@ General Questions
 Why was Mattermost created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we made Mattermost <https://mattermost.com/about-us/>`__.
+Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we built Mattermost <https://mattermost.com/about-us/>`__.
 
 Why does the open source repository contain code specific to the commercial version of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
