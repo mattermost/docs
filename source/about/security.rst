@@ -82,7 +82,7 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
    - Choose whether to restrict or enable `cross-origin requests <https://docs.mattermost.com/configure/configuration-settings.html#enable-cross-origin-requests-from>`__.
    - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/configure/configuration-settings.html#public-link-salt>`__.
    - Optionally add `advanced passwords requirements <https://docs.mattermost.com/configure/configuration-settings.html#password-requirements>`__ with minimum numbers of symbols, numbers, lower, and uppercase letters.
-   - Optionally restrict `creation, renaming, archiving of channels, private channels and integrations to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (E10).
+   - Optionally restrict `creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (E10).
    - Optionally restrict `sending team invites to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (E10).
 
 Security Updates
