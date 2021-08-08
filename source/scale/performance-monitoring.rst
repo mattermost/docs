@@ -5,7 +5,7 @@ Performance Monitoring (E20)
 
 Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__.
 
-The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/deployment/cluster.html>`__.
+The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 
 Deployment Guide
 ----------------
@@ -54,7 +54,7 @@ Installing Prometheus
 
 Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
-3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring>`__ for details.
+3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `configuration settings documentation <https://docs.mattermost.com/configure/configuration-settings.html#performance-monitoring>`__ for details.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
@@ -75,9 +75,9 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 Installing Grafana
 -------------------
 
-1. `Download a precompiled binary for Grafana <https://docs.grafana.org/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <https://docs.grafana.org/installation/debian/>`__
+1. `Download a precompiled binary for Grafana <https://grafana.com/docs/grafana/latest/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`__
 
-2. The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <https://docs.grafana.org/installation/debian/>`__ to learn more.
+2. The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`__ to learn more.
 
 3. The default HTTP port is ``3000`` and default username and password are ``admin``.
 
@@ -96,11 +96,11 @@ Getting Started
 
 To help you get started, you can download three sample dashboards shared in Grafana:
 
-- `Mattermost Performance KPI Metrics <https://grafana.com/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
-- `Mattermost Performance Monitoring <https://grafana.com/dashboards/2542>`__, which contains detailed charts for performance monitoring.
-- `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
+- `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
+- `Mattermost Performance Monitoring <https://grafana.com/grafana/dashboards/2542>`__, which contains detailed charts for performance monitoring.
+- `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 
-See `this guide <https://docs.grafana.org/reference/export_import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+See `this guide <https://grafana.com/docs/grafana/v7.5/dashboards/export-import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
 
 Statistics
 ----------
@@ -248,7 +248,7 @@ The performance monitoring feature provides standard Go metrics for HTTP server 
 .. note::
   Profile reports are available to Team Edition and Enterprise Edition users.
 
-To learn how to set up runtime profiling, see the `pprof package Go documentation <https://golang.org/pkg/net/http/pprof/>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
+To learn how to set up runtime profiling, see the `pprof package Go documentation <https://pkg.go.dev/net/http/pprof>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
 .. note::
    A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
