@@ -84,7 +84,7 @@ You can enable plugins and integrations to connect your team's workflows and too
 
 **Install and manage plugins**
 
-To enable and manage plugins, go to **System Console > Plugins**. Next, install plugins with a single click from the **Main Menu > Plugin Marketplace**. See the `Plugin Marketplace  <https://docs.mattermost.com/administration/plugins.html#plugin-marketplace>`__ documentation for details.
+To enable and manage plugins, go to **System Console > Plugins**. Next, install plugins with a single click from the **Main Menu > Plugin Marketplace**. See the `Plugin Marketplace  <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/#plugin-marketplace>`__ documentation for details.
 
 Consider installing and enabling the following productivity plugins for your users:   
   - Enable audio/video calling and screen sharing with `Jitsi <https://mattermost.com/blog/mattermost-and-jitsi/>`__ or `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__.
