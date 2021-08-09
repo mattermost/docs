@@ -5392,7 +5392,7 @@ Enable Reliable Websockets
 Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": false`` with options ``true`` and ``false``.                                              |
+| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``.                                               |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Remote Clusters
