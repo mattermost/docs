@@ -3803,9 +3803,22 @@ Signature Public Key Files
 
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Chimera OAuth Proxy URL
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Mattermost plugins to connect with pre-created OAuth applications.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
++-------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Autolink
 ~~~~~~~~
