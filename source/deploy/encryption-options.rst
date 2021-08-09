@@ -14,7 +14,7 @@ Encryption-in-transit
 
 Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or install a proxy such as NGINX and set up TLS on the proxy. Refer to our `configuration guide for more details <https://docs.mattermost.com/install/config-tls-mattermost.html>`__.
 
-Connections to Active Directory/LDAP can `optionally be secured with TLS or stunnel <https://docs.mattermost.com/administration/config-settings.html#id9>`__.
+Connections to Active Directory/LDAP can `optionally be secured with TLS or stunnel <https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap-port>`__.
 
 Gossip Encryption (Experimental)
 --------------------------------
@@ -36,4 +36,4 @@ File Storage
 
 For local storage or storage via Minio, encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server.
 
-For Amazon’s proprietary S3 system, encryption-at-rest is available via `server-side encryption with Amazon S3-managed keys <https://docs.mattermost.com/administration/config-settings.html#enable-server-side-encryption-for-amazon-s3>`__ in Enterprise Edition E20.
+For Amazon’s proprietary S3 system, encryption-at-rest is available via `server-side encryption with Amazon S3-managed keys <https://docs.mattermost.com/configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__ in Enterprise Edition E20.
