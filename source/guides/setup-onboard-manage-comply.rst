@@ -98,7 +98,6 @@ All Mattermost Instances
    :glob:
 
    /manage/generating-support-packet.rst
-   /manage/team-channel-members.rst
    /manage/mmctl-command-line-tool.rst
    /manage/user-satisfaction-surveys.rst
 
@@ -109,6 +108,7 @@ Self-Managed Deployments
    :maxdepth: 1
    :glob:
  
+   /manage/team-channel-members.rst
    /manage/command-line-tools.rst
    /manage/scripts.rst
    /manage/statistics.rst
@@ -124,6 +124,7 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
  
+   /manage/cloud-team-channel.rst
    /manage/cloud-billing.rst
    /manage/cloud-reporting.rst
 
