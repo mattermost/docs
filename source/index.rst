@@ -15,7 +15,7 @@ Mattermost Product Documentation
    :maxdepth: 1
    :glob:
 
-   About Mattermost <overview/index>
+   About Mattermost <guides/about-mattermost>
    Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
    Messaging <guides/messaging>
@@ -24,3 +24,4 @@ Mattermost Product Documentation
    Mattermost for Developers <https://developers.mattermost.com/>
    Get Help With Mattermost <guides/get-help>
    Community Chat <guides/community-chat>
+   Integration <guides/integration>
