@@ -13,7 +13,7 @@ In Mattermost Enterprise E20, you can set a custom policy to manage how long mes
 Configuring a Global Data Retention Policy
 -------------------------------------------
 
-To set a custom data retention policy:
+To set a global data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policy**.
 2. Select edit from the menu presented to the right of the **Global retention policy** table. 
@@ -26,7 +26,7 @@ Save the settings. Messages and files older than the duration you set will be de
 Configuring a Custom Data Retention Policy
 -------------------------------------------
 
-To set a custom data retention policy:
+To set a custom data retention policy in Mattermost versions 5.38+:
 
 1. Go to **System Console > Compliance > Data Retention Policy**.
 2. Select **Add policy** from the menu presented to the right of the **Custom retention policy** table. 
