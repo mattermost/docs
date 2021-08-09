@@ -17,13 +17,13 @@ Lastest Mattermost Releases:
 **Release Day: 2021-08-16**
 
 ### Deprecations
- - The “config watcher” (the mechanism that automatically reloads the config.json file) has been removed in favor of the ``mmctl config`` command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
+ - The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config`` command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
 
 ### Important Upgrade Notes
- - v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MYSQL v5.6.51.
+ - v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL v5.6.51.
  - Focalboard v0.8.0 (released with Mattermost v5.38.0) requires Mattermost v5.37 due to the new database connection system.
 
-**IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -31,7 +31,7 @@ Lastest Mattermost Releases:
  - A ``data_retention`` type job can now be run even if the global policy is disabled. The granular (i.e. team and channel-specific) policies will be executed when the data retention job is run. Please note there is a known issue where deleted posts get displayed in channels without new activity after the retention job is run.  This issue is tracked with [this ticket](https://mattermost.atlassian.net/browse/MM-36574).
 
 #### Enhanced User Onboarding Experience
- - To help new users get started with Mattermost, new Getting Started steps have been added to the onboarding experience. These steps help users to complete their profile, name their teams, configure desktop notifications and invite others to join their team. Additionally, once the onboarding is complete, users are provided with helpful tips to get started with channels, plugins, and more.
+ - To help new users get started with Mattermost, new Getting Started steps have been added to the onboarding experience. These steps help users to complete their profile, name their teams, configure desktop notifications, and invite others to join their team. Additionally, once the onboarding is complete, users are provided with helpful tips to get started with channels, plugins, and more.
 
 #### Playbooks Updates
  - ``Incident Collaboration`` was rebranded to ``Playbooks``. Also the channel right-hand sidebar is redesigned, our own playbooks are shared as templates, and more triggers and actions were added.
@@ -45,7 +45,7 @@ Lastest Mattermost Releases:
  - Markdown formatting is now stripped from push notifications.
  - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
  - Improved default rendering of images inserted via the GIF picker.
- - Small text changes were added to Direct and Group Message menus: 'Mute channel' and 'Edit Channel Header' now reads 'Mute Conversation' and 'Edit Conversation Header'.
+ - Small text changes were added to Direct and Group Message menus: **Mute channel** and **Edit Channel Header** now reads as **Mute Conversation** and **Edit Conversation Header**.
 
 #### Performance
  - Improved performance of components that show reactions on posts.
@@ -68,7 +68,7 @@ Lastest Mattermost Releases:
  - Fixed an issue where the "Find channel" channel switcher text overflowed beyond the button for some languages.
  - Fixed an issue where inter-plugin requests without a body didn't work.
  - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
- - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark theme.
+ - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark Theme.
  - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
    - Fixed an issue where an error occurred while following a thread with no replies.
@@ -83,7 +83,7 @@ Lastest Mattermost Releases:
    - Fixed an issue where opening global threads containing a root post markdown image crashed the app.
    - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
    - Fixed an issue where replying to a thread from the global threads screen marked the channel as read.
-   - The "Mark all as unread" button is now no longer disabled for collapsed reply threads.
+   - The **Mark all as unread** button is now no longer disabled for Collapsed Reply Threads.
    - Fixed root posts not being shown as followed for the post creator after receiving the first reply that affected servers with Collapsed Reply Threads enabled and database read replicas configured.
 
 ### config.json
@@ -109,31 +109,31 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/09/15. This list is subject to change prior to the release.
 
-1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
 
-2. [Slack Import via the web app](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
 
 3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
 4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
 
-5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
 
-6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/administration/config-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [Experimental Timezone](https://docs.mattermost.com/administration/config-settings.html#timezone) configuration setting.
+7. [Experimental Timezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
 
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
 
-   - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
-   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
-   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
-   - [CloseUnusedDirectMessages](https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
-   - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
-   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
+   - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features)
 
-9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
 
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
