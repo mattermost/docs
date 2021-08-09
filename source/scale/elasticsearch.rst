@@ -34,19 +34,32 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 1. Go to **System Console > Environment > Elasticsearch**.
 2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
 3. Set the Elasticsearch server connection details:
+
   a) Enter **Server Connection Address** for the Elasticsearch server you set up earlier.
   b) (Optional) Enter **Server Username** used to access the Elasticsearch server.
+
     - Note: For AWS Elasticsearch leave this field blank.
+
   c) (Optional) Enter **Server Password** associated with the username.
+
     - Note: For AWS Elasticsearch leave this field blank.
+
   d) Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
+
     - Note: For AWS Elasticsearch this field should be set to ``false``.
+
 4. Select **Test Connection** and **Save** the configuration.
+
   - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch.
+
 5. Select **Build Index** to build the post index of existing posts.
+
   - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
+
 6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``.
+
   - **Note:** Complete bulk indexing before enabling Elasticsearch. Otherwise, search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
+
 7. Restart the Mattermost server.
 
 .. note::

@@ -309,6 +309,7 @@ redirects = {
         "https://handbook.mattermost.com/operations/sales/partner-programs",
     "process/overview":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
+
 }
 
 # The master toctree document.
