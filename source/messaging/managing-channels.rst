@@ -25,6 +25,10 @@ In the **Direct Messages** popup, identify your most recent conversations by rel
 
     .. image:: ../images/recent-direct-group-messages.png
         :alt: Write a Direct Message or Group Message.
+        
+Modify the header of any Direct or Group Message by selecting **Edit Conversation Header** from the channel name drop-down menu. 
+
+Mute or unmute a conversation by selecting **Mute Conversation** or **Unmute Conversation** from the channel name drop-down menu. 
 
 Joining a channel
 -----------------
