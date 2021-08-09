@@ -81,7 +81,7 @@ Upgrading Mattermost Server
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-7. Remove all files *except data and custom directories* from within the current ``mattermost`` directory. Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step c.
+7. Remove all files *except data and custom directories* from within the current ``mattermost`` directory by running ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step 9 below.
       
   **A default Mattermost installation has the following files and directories**:
 
@@ -91,9 +91,7 @@ Upgrading Mattermost Server
       ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
       NOTICE.txt                      bin        config  fonts  logs  plugins       templates
 
-  By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage).
-
-Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+  By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
 If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, the index directory path won't be preserved with the commands below if the directory exists *within* the ``mattermost`` directory. 
   
