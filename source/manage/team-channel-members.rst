@@ -21,7 +21,7 @@ Team Profile
 
 The name and description of the team. 
 
-Within a Team Profile, System Admins can archive or unarchive the team. Archiving a team makes its contents inaccessible for all users. All related information is archived, including posts from the database. Before archiving a team, we recommend that you perform a database backup.
+System Admins can archive or unarchive the team from within **User Management > Teams > Team Management**. Archiving a team makes its contents inaccessible for all users. All related information is archived, including posts from the database. Before archiving a team, we recommend that you perform a database backup.
 
 Archiving a Team
 ^^^^^^^^^^^^^^^^
