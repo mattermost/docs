@@ -8,7 +8,7 @@ You need to set up a way to connect to your private network Mattermost instance,
 
 Depending on your security policies, we recommend deploying Mattermost behind a VPN and using a `per-app VPN <#id3>`_ with your EMM provider, or a mobile VPN client.
 
-Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ enabled.
+Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ enabled.
 
 Mobile VPN Options
 ------------------
@@ -22,10 +22,10 @@ We recommend one of two options: `per-app VPN <#id3>`_ or a `device VPN <#id4>`_
 
 We also recommend following our `recommended steps to secure your deployment <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`__ and to review the following commonly-asked questions about data security on mobile devices:
 
-- `How data is handled on a device after an account is deleted? <https://docs.mattermost.com/mobile/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`__
-- `What post metadata is sent in mobile push notifications? <https://docs.mattermost.com/mobile/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`__
-- `What are my options for securing the Mobile apps? <https://docs.mattermost.com/mobile/mobile-faq.html#what-are-my-options-for-securing-the-mobile-apps>`__
-- `What are my options for securing push notifications? <https://docs.mattermost.com/mobile/mobile-faq.html#what-are-my-options-for-securing-push-notifications>`__
+- `How data is handled on a device after an account is deleted? <https://docs.mattermost.com/deploy/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`__
+- `What post metadata is sent in mobile push notifications? <https://docs.mattermost.com/deploy/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`__
+- `What are my options for securing the Mobile apps? <https://docs.mattermost.com/deploy/mobile-faq.html#what-are-my-options-for-securing-the-mobile-apps>`__
+- `What are my options for securing push notifications? <https://docs.mattermost.com/deploy/mobile-faq.html#what-are-my-options-for-securing-push-notifications>`__
 
 Per-app VPN
 ~~~~~~~~~~~
