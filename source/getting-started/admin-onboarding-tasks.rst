@@ -88,14 +88,14 @@ To enable and manage plugins, go to **System Console > Plugins**. Next, install 
 
 Consider installing and enabling the following productivity plugins for your users:   
   - Enable audio/video calling and screen sharing with `Jitsi <https://mattermost.com/blog/mattermost-and-jitsi/>`__ or `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__.
-  - Create polls with `Matterpoll <https://mattermost.com/marketplace/?s=Matterpoll%20Plugin>`__.
-  - Share GIFs with `GIF Commands <https://mattermost.com/marketplace/?s=Memes%20Plugin>`__.
-  - Create and share memes with `Memes <https://mattermost.com/marketplace/?s=Memes%20Plugin>`__.
-  - Set personal reminders with `Remind <https://mattermost.com/marketplace/?s=Remind%20Plugin>`__.
+  - Create polls with `Matterpoll <https://mattermost.com/marketplace/matterpoll/>`__.
+  - Share GIFs with `GIF Commands <https://mattermost.com/marketplace/giphy-plugin/>`__.
+  - Create and share memes with `Memes <https://mattermost.com/marketplace/memes-plugin/>`__.
+  - Set personal reminders with `Remind <https://mattermost.com/marketplace/remind-plugin/>`__.
   - Create and share to do items with `Todo <https://github.com/mattermost/mattermost-plugin-todo>`__.
-  - Customize welcome messages for new users with `WelcomeBot <https://mattermost.com/marketplace/?s=WelcomeBot%20Plugin>`__.
+  - Customize welcome messages for new users with `WelcomeBot <https://mattermost.com/marketplace/welcomebot-plugin/>`__.
 
-Explore all plugins and integrations available in the `Mattermost Plugin Marketplace <https://integrations.mattermost.com/>`__.
+Explore all plugins and integrations available in the `Mattermost Plugin Marketplace <https://mattermost.com/marketplace/>`__.
 
 **Enable and manage integrations**
 
