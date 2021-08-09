@@ -154,7 +154,7 @@ Search for ``554 5.7.1 error`` and
 Checking your SMTP server is reachable 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Attempt to telnet to the email service to make sure the server is reachable.For reference checkout https://docs.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019 
+-  Attempt to Telnet to the email service to make sure the server is reachable. For additional information, visit https://docs.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019. If you're using an earlier version than Exchange Server 2019, select your version from the left-hand navigation menu.
 -  You must run the following commands from the same machine or virtual instance where ``mattermost/bin/mattermost`` is located.
 -  Telnet to the email server with ``telnet mail.example.com 25``. If the command works you should see something like:
 
