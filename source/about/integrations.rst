@@ -72,7 +72,7 @@ Custom applications using APIs and drivers (private and public cloud)
 
 Mattermost provides complete access to `server APIs <https://api.mattermost.com/>`__, along with language-specific drivers to integrate into your own applications. You can also draw from dozens of open source applications to build your own.
 
-- Learn about `Mattermost REST APIs <https://docs.mattermost.com/developer/api.html>`__.
+- Learn about `Mattermost REST APIs <https://api.mattermost.com/>`__.
 - Learn about `Mattermost drivers, webhooks, and slash commands <https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/>`__.
 - Learn about `Mattermost open source apps and integrations <https://mattermost.com/marketplace/>`__.
 - Learn about the `Mattermost Golang Bot sample <https://github.com/mattermost/mattermost-bot-sample-golang>`__.
