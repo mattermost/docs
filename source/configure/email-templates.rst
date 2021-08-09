@@ -10,7 +10,7 @@ The email templates are located in the Mattermost server directory in the ``temp
 The corresponding strings for each prop can be found in the ``i18n`` folder. 
 
 .. note::
-  The props between different email templates are not interchangable without additional server code changes.  
+  The props between different email templates are not interchangeable without additional server code changes.  
 
 .. warning::
   Changes made inside of the ``templates`` or ``i18n`` folder might get overwritten during a server update. 
@@ -70,7 +70,7 @@ SendEmailChangeVerifyEmail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
-Sent to the user when email change has been requested. Contains verification link and button.
+Sent to the user when an email change has been requested. Contains verification link and button.
 
 **Body Props**:
 
@@ -93,7 +93,7 @@ SendEmailChangeEmail
 ~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
-Sent to the user when email has been changed succesfully.
+Sent to the user when the email has been changed successfully.
 
 **Body Props**:
 
@@ -158,7 +158,7 @@ SendWelcomeEmail
 ~~~~~~~~~~~~~~~~
 
 **Purpose**:
-Sent to the user when account has been created. May also contain download links to Apps as well as email verification links.
+Sent to the user when the account has been created. May also contain download links to Apps as well as email verification links.
 
 **Body Props**:
 
@@ -362,7 +362,7 @@ Sent to the user as a notification for new messages or mentions.
 +----------+------------------------------+---------------------------------+
 
 
-This email can change depending on settings and type of channel the notification is sent for.
+This email can change depending on the settings and type of channel the notification is sent for.
 
 **For group channels**:
 
