@@ -1,7 +1,7 @@
 Building and Distributing Your Own Custom Mattermost Mobile Apps
 ================================================================
 
-You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/mobile/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/mobile/mobile-hpns.html#mobile-push-notifications>`__.
+You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__.
 
 This approach is recommended for:
 
@@ -21,7 +21,7 @@ When you decide to build your own Mattermost Mobile apps, you have multiple ways
 Setting Up Push Notifications
 -----------------------------
 
-See our `Mobile Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom built mobile apps.
+See our `Mobile Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ documentation to learn about setting up push notifications for custom built mobile apps.
 
 Developing and Maintaining Your Custom App
 ------------------------------------------
@@ -63,8 +63,8 @@ Alternatively, you can use an EMM provider to push the application to the userâ€
 
 For additional details, see the following documentation:
 
-- `Deployment Using an EMM Provider <https://docs.mattermost.com/mobile/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
-- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/mobile/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost Mobile apps.
+- `Deployment Using an EMM Provider <https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html>`__ to learn more about deploying your custom Mattermost Mobile apps through an EMM provider.
+- `Manage App Configuration Using AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__  to learn more about managing your app configuration using App Config, and the configuration options that can be sent from the EMM provider to Mattermost Mobile apps.
 
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ This update strategy should include:
 - Updating Mattermost Server.
 - Updating Mattermost Mobile apps.
 
-We highly recommend you update your custom Mattermost Mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the Mobile apps and the Mattermost server. Consult the `Mattermost Mobile App Changelog <https://docs.mattermost.com/administration/mobile-changelog.html>`__ and the `Mattermost Server Changelog <https://docs.mattermost.com/administration/changelog.html>`__ for details.
+We highly recommend you update your custom Mattermost Mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the Mobile apps and the Mattermost server. Consult the `Mattermost Mobile App Changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`__ and the `Mattermost Server Changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`__ for details.
 
 .. important::
 
@@ -90,4 +90,3 @@ Using Another Distribution Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an alternate distribution method to deploy your custom app, such as a file sharing platform.
-
