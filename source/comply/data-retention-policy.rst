@@ -19,7 +19,7 @@ To set a global data retention policy:
 2. Select edit from the menu presented to the right of the **Global retention policy** table. 
 3. Select a **Channel & direct message retention** option from the dropdown. Specify the number of days or years to keep channel and direct messages. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
 3. Select a **File retention** option from the dropdown. Specify the number of days or ears to keep files. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** at the specified time. The minimum retention period is one day.
-4. Set the start time of the daily scheduled data retention job under the **Policy log** section. Choose a time when fewer people are using your system. 
+4. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. 
 
 Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
 
