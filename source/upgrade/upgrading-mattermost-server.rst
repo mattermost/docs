@@ -100,7 +100,7 @@ Upgrading Mattermost Server
 
   **Clear Mattermost Contents**
 
-  The following command clears the contents of mattermost, preserving only those directories and their contents. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
+  The following command clears the contents of the ``mattermost`` folder, preserving only the specified directories and their contents. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
 
   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should add ``-o -path mattermost/yourFolderHere`` to the below command or you will have to manually copy the TLSCert/TLSKey files from the backup into the new install. 
 
