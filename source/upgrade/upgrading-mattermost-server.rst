@@ -12,7 +12,9 @@ Upgrading to the Latest Version
 
 If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first upgrade to version 3.0.3.
 
-We only support one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
+Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. However, we strongly recommend that you review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you're aware of the possible migrations that could affect your upgrade.
+
+For `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ deployments, we only support one minor version difference between  server versions when performing a rolling upgrade. For example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported. Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. In some upgrade scenarios, it won't be possible to run different versions, and such cases are clearly noted in the :doc:`important-upgrade-notes` product documentation.
 
 .. _before-you-begin:
 
