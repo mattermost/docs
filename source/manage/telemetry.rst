@@ -134,6 +134,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Integration Discovery Diagnostics:* Created or triggered a webhook or slash command; created, authroized or deleted an OAuth 2.0 app; created, posted, or deleted a custom emoji
   - *Plugin Discovery Diagnostics:* Number of installed plugins containing either server or webapp portions, or both; number of those plugins being activated
   - *Plugin Marketplace Diagnostics:* Plugin ID, current version, and target version for all install and update events. Only sent when the default Marketplace is configured
+  - *Plugin telemetry:* Search terms used in Marketplace on cloud workspaces will be recorded
   - *Commercial License Diagnostics (Enterprise Edition Only):* Uploaded an Enterprise license key to the server
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; Team user permissions; Channel Admin permissions; Channel user permissions; Number of teams the scheme is associated with
