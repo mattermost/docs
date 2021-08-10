@@ -31,7 +31,6 @@ Latest Mattermost Cloud releases:
  - Changed H1-H3 heading font from Open Sans to Metropolis.
 
 #### Administration
- - Minimum required MySQL version is now v5.7.12.
  - Added ``playbooks`` and ``boards`` to restricted team URLs list.
  - Mattermost is now built with Go v1.16.6.
  - Added the ability for Team Edition to edit role permissions.
