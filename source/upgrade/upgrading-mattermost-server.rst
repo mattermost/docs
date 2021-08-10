@@ -84,7 +84,7 @@ Upgrading Mattermost Server
 
 7. Remove all files **except** data and custom directories from within the current ``mattermost`` directory. 
 
-  **What's Preserved?**
+  **What's preserved?**
   
   By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
