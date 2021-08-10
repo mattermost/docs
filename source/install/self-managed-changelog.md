@@ -42,6 +42,7 @@ Lastest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Upgraded German language back to an official language.
  - Markdown formatting is now stripped from push notifications.
  - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
  - Improved default rendering of images inserted via the GIF picker.
@@ -70,6 +71,7 @@ Lastest Mattermost Releases:
  - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
  - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark Theme.
  - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition.
+ - Fixed an issue where admin advisor notifications were accidentally re-enabled in a previous release.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
    - Fixed an issue where an error occurred while following a thread with no replies.
    - Fixed an issue where ``reply_count`` of 0 was always returned for GET single Post on ``/posts/<postid>`` API.
