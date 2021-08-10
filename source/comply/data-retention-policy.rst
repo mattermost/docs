@@ -15,7 +15,7 @@ Configuring a Global Data Retention Policy
 
 To set a global data retention policy:
 
-1. Go to **System Console > Compliance > Data Retention Policy**.
+1. Go to **System Console > Compliance > Data Retention Policies**.
 2. Select edit from the menu presented to the right of the **Global retention policy** table. 
 3. Select a **Channel & direct message retention** option from the dropdown. Specify the number of days or years to keep channel and direct messages. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
 3. Select a **File retention** option from the dropdown. Specify the number of days or ears to keep files. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** at the specified time. The minimum retention period is one day.
