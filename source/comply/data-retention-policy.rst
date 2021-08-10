@@ -33,7 +33,7 @@ To set a custom data retention policy in Mattermost versions 5.38+:
 3. Create a name for your policy. 
 4. Select a **Channel & direct message retention** option from the dropdown. Specify the number of days or years to keep channel and direct messages. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
 5. Assign teams and channels to this policy by selecting **Add teams** and searching for a specific team, or by selecting **Add channels** and searching for a specific channel. If only teams are specified, all channels for selected teams will be included in the a policy. 
-6. Set the start time of the daily scheduled data retention job under the **Policy log** section. Choose a time when fewer people are using your system. If there is already a time set for global retention policies then this time will apply also to custom data retention policies. 
+6. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. If a time is already set for a global retention policy, then the same time applies to custom data retention policies. 
 
 Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
 
