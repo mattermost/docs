@@ -21,7 +21,7 @@ To set a global data retention policy in Mattermost v5.38 and later:
 3. Select a **File retention** option from the dropdown. Specify the number of days or ears to keep files. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** at the specified time. The minimum retention period is one day.
 4. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. 
 
-Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
+Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
 Configuring a Custom Data Retention Policy
 -------------------------------------------
