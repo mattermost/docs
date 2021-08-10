@@ -151,7 +151,7 @@ Upgrading Mattermost Server
 
     sudo systemctl start mattermost
 
-12. If you're using a High Availability deployment, you need to apply the steps above on every nodes in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the system console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+12. If you're using a High Availability deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
     If they continue to display as yellow, trigger a configuration propagation across the cluster by opening the System Console, changing a setting, and reverting it. This will enable the **Save** button for that page. Then, select **Save**. This will not change any configuration, but sends the existing configuration to all nodes in the cluster. 
 
