@@ -98,7 +98,7 @@ Upgrading Mattermost Server
     ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
     NOTICE.txt                      bin        config  fonts  logs  plugins       templates
 
-  **Clear Mattermost Contents**
+  **Clear Mattermost contents**
 
   The following command clears the contents of the ``mattermost`` folder, preserving only the specified directories and their contents. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
 
