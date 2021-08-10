@@ -26,7 +26,7 @@ Select **Save**. Messages and files older than the duration you set will be dele
 Configuring a Custom Data Retention Policy
 -------------------------------------------
 
-To set a custom data retention policy in Mattermost versions 5.38+:
+To set a custom data retention policy in Mattermost v5.38 and later:
 
 1. Go to **System Console > Compliance > Data Retention Policy**.
 2. Select **Add policy** from the menu presented to the right of the **Custom retention policy** table. 
