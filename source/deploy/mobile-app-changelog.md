@@ -61,6 +61,9 @@ Latest Mattermost Mobile Apps releases:
    - Threads item is lost when clearing search in the channel sideabar.
    - Previously viewed Thread is auto-followed after new replies come in.
 
+### Contributors
+ - [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [enahum](https://github.com/enahum), [larkox](https://github.com/larkox), [manojmalik20](https://github.com/manojmalik20)
+
 ## 1.45.1 Release
 - Release Date: July 20, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
