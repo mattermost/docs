@@ -110,7 +110,7 @@ Upgrading Mattermost Server
   
   **Using Bleve Search**
 
-  If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, the index directory path won't be preserved with the commands below if the directory exists *within* the ``mattermost`` directory. 
+  If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved with the commands below. 
   
   - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
   - You can then store that directory or re-index as preferred. 
