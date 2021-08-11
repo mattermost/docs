@@ -1,6 +1,7 @@
 version: 2.1
+
 orbs:
-  aws-s3: circleci/aws-s3@1.0.11
+  aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
   build:
@@ -34,8 +35,9 @@ jobs:
       - aws-s3/sync:
           from: build/html
           to: 's3://docs.mattermost.com/'
-          arguments: '--acl public-read'
-          overwrite: true
+          arguments: |
+            --acl public-read \
+            --cache-control "no-cache"
 
   deploy_staging:
     docker:
@@ -46,8 +48,9 @@ jobs:
       - aws-s3/sync:
           from: build/html
           to: 's3://docs-stagging.mattermost.com/'
-          arguments: '--acl public-read'
-          overwrite: true
+          arguments: |
+            --acl public-read \
+            --cache-control "no-cache"
 
 workflows:
   version: 2
