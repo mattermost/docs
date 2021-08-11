@@ -102,34 +102,25 @@ Upgrading Mattermost Server
 
   **Clear Mattermost contents**
 
-  The following command clears the contents of the ``mattermost`` folder, preserving only the specified directories and their contents. You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
-
-  If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should add ``-o -path mattermost/yourFolderHere`` to the below command or you'll have to manually copy the TLSCert/TLSKey files from the backup into the new install.
-
+  The following command clears the contents of the ``mattermost`` folder, preserving only the specified directories and their contents: 
+  
   .. code-block:: sh
+    
+    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \)
+  
+  We recommend that you append ``xargs echo rm -r`` to the command above to verify what will be executed first.
 
-    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r  
+  Also, if you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should append ``-o -path mattermost/{yourFolderHere}`` to the command above, or you'll have to manually copy the TLSCert/TLSKey files from the backup into the new install.
   
   **Using Bleve Search**
 
-  If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved with the commands below. 
+  If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
   
   - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
   - You can then store that directory or re-index as preferred. 
-  - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on setting the bleve index directory.
-      
-8. Change ownership of the new files before copying them. For example:
+  - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
 
-  .. code-block:: sh
-         
-    sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
-     
-.. note::
-    
-  - If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
-  - If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
-
-9. Copy the new files to your install directory and remove the temporary files.
+8. Copy the new files to your install directory and remove the temporary files.
 
   .. code-block:: sh
 
@@ -138,14 +129,26 @@ Upgrading Mattermost Server
    sudo rm -i /tmp/mattermost*.gz
 
   .. note::
-    The ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
+    
+    The ``n`` (no-clobber) flag and trailing ``.`` on source are very important. The ``n`` (no-clobber) flag preserves existing configurations and logs in your installation path. The trailing ``.`` on source ensures all installation files are copied.
 
-10. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you **must** activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports. For example:
+9. If you want to use port 80 or 443 to serve your server, and/or if you have TLS set up on your Mattermost server, you **must** activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to ports lower than 1024. For example:
 
   .. code-block:: sh
 
     cd {install-path}/mattermost
     sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+
+10. Change ownership of the new files before copying them. For example:
+
+  .. code-block:: sh
+         
+    sudo chown -R mattermost:mattermost {install-path}
+     
+.. note::
+    
+  - If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
+  - If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
 
 11. Start your Mattermost server.
 
@@ -153,7 +156,7 @@ Upgrading Mattermost Server
 
     sudo systemctl start mattermost
 
-12. If you're using a High Availability deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+12. If you're using a `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
     If they continue to display as yellow, trigger a configuration propagation across the cluster by opening the System Console, changing a setting, and reverting it. This will enable the **Save** button for that page. Then, select **Save**. This will not change any configuration, but sends the existing configuration to all nodes in the cluster. 
 
@@ -162,7 +165,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
 
-To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions provided above, making sure that you download the Enterprise Edition in Step 3.
+To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions provided above, making sure that you download the Enterprise Edition of Mattermost Server in Step 2.
 
 Uploading a License Key
 -----------------------
