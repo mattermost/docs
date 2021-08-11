@@ -78,8 +78,6 @@ Why do I see ``Pending`` in the deletion job table with no details?
 
 This usually means another data retention job is in progress. You can verify this in the deletion job table in  **System Console > Compliance > Data Retention Policy**.
 
-If no jobs are in progress and the job has stayed ``Pending`` for more than 2 minutes, then you may not have restarted your server after enabling the data retention policy. Restart your server and try again.
-
 
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
