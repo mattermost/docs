@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6
+      - image: circleci/python:3.7
     steps:
       - checkout
       - restore_cache:
@@ -27,7 +27,7 @@ jobs:
 
   deploy_prod:
     docker:
-      - image: circleci/python:3.6
+      - image: circleci/python:3.7
     steps:
       - attach_workspace:
           at: .
@@ -39,7 +39,7 @@ jobs:
 
   deploy_staging:
     docker:
-      - image: circleci/python:3.6
+      - image: circleci/python:3.7
     steps:
       - attach_workspace:
           at: .
