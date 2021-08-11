@@ -1,5 +1,6 @@
 #
 # sitemap - A fork of the sphinx_sitemap extension with parallel read and write support enabled.
+# Based on a sphinx_sitemap PR: https://github.com/jdillard/sphinx-sitemap/pull/29
 #
 # Copyright (c) 2013 Michael Dowling <mtdowling@gmail.com>
 # Copyright (c) 2017 Jared Dillard <jared.dillard@gmail.com>
@@ -14,8 +15,39 @@
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
 
+import queue
 import os
 import xml.etree.ElementTree as ET
+
+from multiprocessing import Manager
+
+try:
+    from sphinx.util.logging import getLogger
+
+    logger = getLogger(__name__)
+
+
+    def error(_, message):
+        logger.error(message)
+
+
+    def warn(_, message):
+        logger.warning(message)
+
+
+    def info(_, message):
+        logger.info(message)
+except ImportError:
+    def error(app, message):
+        app.warn(message, prefix='ERROR: ')
+
+
+    def warn(app, message):
+        app.warn(message)
+
+
+    def info(app, message):
+        app.info(message)
 
 
 def setup(app):
@@ -35,7 +67,6 @@ def setup(app):
         default=None,
         rebuild=''
     )
-
     app.add_config_value(
         'sitemap_filename',
         default="sitemap.xml",
@@ -54,24 +85,11 @@ def setup(app):
     app.connect('builder-inited', record_builder_type)
     app.connect('html-page-context', add_html_link)
     app.connect('build-finished', create_sitemap)
-    app.connect('env-purge-doc', env_purge_doc)
-    app.connect('env-merge-info', env_merge_info)
-    app.sitemap_links = []
-    app.locales = []
 
     return {
-        'version': '2.2.0',
         'parallel_read_safe': True,
         'parallel_write_safe': True
     }
-
-
-def env_purge_doc(app, env, docname):
-    return
-
-
-def env_merge_info(app, env, docnames, other):
-    return
 
 
 def get_locales(app, exception):
@@ -80,29 +98,34 @@ def get_locales(app, exception):
     if sitemap_locales:
         # special value to add nothing -> use primary language only
         if sitemap_locales == [None]:
-            return
+            return []
 
-        # otherwise, add each locale
-        for locale in sitemap_locales:
+        return [
+            locale for locale in sitemap_locales
             # skip primary language
-            if locale != app.builder.config.language:
-                app.locales.append(locale)
-        return
+            if locale != app.builder.config.language
+        ]
 
     # Or autodetect
+    locales = []
     for locale_dir in app.builder.config.locale_dirs:
         locale_dir = os.path.join(app.confdir, locale_dir)
         if os.path.isdir(locale_dir):
             for locale in os.listdir(locale_dir):
                 if os.path.isdir(os.path.join(locale_dir, locale)):
-                    app.locales.append(locale)
+                    locales.append(locale)
+    return locales
 
 
 def record_builder_type(app):
     # builder isn't initialized in the setup so we do it here
     # we rely on the class name, not the actual class, as it was moved 2.0.0
-    builder_class_name = getattr(app, "builder", None).__class__.__name__
-    app.is_dictionary_builder = (builder_class_name == 'DirectoryHTMLBuilder')
+    builder = getattr(app, 'builder', None)
+    if builder is None:
+        return
+    builder.env.is_dictionary_builder = \
+        type(builder).__name__ == 'DirectoryHTMLBuilder'
+    builder.env.sitemap_links = Manager().Queue()
 
 
 def hreflang_formatter(lang):
@@ -119,7 +142,8 @@ def hreflang_formatter(lang):
 
 def add_html_link(app, pagename, templatename, context, doctree):
     """As each page is built, collect page names for the sitemap"""
-    if app.is_dictionary_builder:
+    env = app.builder.env
+    if env.is_dictionary_builder:
         if pagename == "index":
             # root of the entire website, a special case
             directory_pagename = ""
@@ -128,37 +152,45 @@ def add_html_link(app, pagename, templatename, context, doctree):
             directory_pagename = pagename[:-6] + "/"
         else:
             directory_pagename = pagename + "/"
-        app.sitemap_links.append(directory_pagename)
+        env.sitemap_links.put(directory_pagename)
     else:
-        app.sitemap_links.append(pagename + ".html")
+        env.sitemap_links.put(pagename + ".html")
 
 
 def create_sitemap(app, exception):
     """Generates the sitemap.xml from the collected HTML page links"""
     site_url = app.builder.config.site_url or app.builder.config.html_baseurl
-    site_url = site_url.rstrip('/') + '/'
     if not site_url:
-        print("sphinx-sitemap error: neither html_baseurl nor site_url "
-              "are set in conf.py. Sitemap not built.")
+        error(app, "sphinx-sitemap: Neither html_baseurl nor site_url "
+                   "are set in conf.py. Sitemap not built.")
         return
-    if (not app.sitemap_links):
-        print("sphinx-sitemap warning: No pages generated for %s" %
-              app.config.sitemap_filename)
+    site_url = site_url.rstrip('/') + '/'
+
+    env = app.builder.env
+    if env.sitemap_links.empty():
+        warn(app, "sphinx-sitemap: No pages generated for %s" %
+             app.config.sitemap_filename)
         return
 
     ET.register_namespace('xhtml', "http://www.w3.org/1999/xhtml")
 
-    root = ET.Element("urlset")
-    root.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
+    root = ET.Element(
+        "urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    )
 
-    get_locales(app, exception)
+    locales = get_locales(app, exception)
 
     if app.builder.config.version:
         version = app.builder.config.version + '/'
     else:
         version = ""
 
-    for link in app.sitemap_links:
+    while True:
+        try:
+            link = env.sitemap_links.get_nowait()
+        except queue.Empty:
+            break
+
         url = ET.SubElement(root, "url")
         scheme = app.config.sitemap_url_scheme
         if app.builder.config.language:
@@ -170,23 +202,21 @@ def create_sitemap(app, exception):
             lang=lang, version=version, link=link
         )
 
-        if len(app.locales) > 0:
-            for lang in app.locales:
-                lang = lang + '/'
-                linktag = ET.SubElement(
-                    url,
-                    "{http://www.w3.org/1999/xhtml}link"
-                )
-                linktag.set("rel", "alternate")
-                linktag.set("hreflang",  hreflang_formatter(lang.rstrip('/')))
-                linktag.set("href", site_url + scheme.format(
+        for lang in locales:
+            lang = lang + '/'
+            ET.SubElement(
+                url, "{http://www.w3.org/1999/xhtml}link",
+                rel="alternate",
+                hreflang=hreflang_formatter(lang.rstrip('/')),
+                href=site_url + scheme.format(
                     lang=lang, version=version, link=link
-                ))
+                )
+            )
 
     filename = app.outdir + "/" + app.config.sitemap_filename
     ET.ElementTree(root).write(filename,
                                xml_declaration=True,
                                encoding='utf-8',
                                method="xml")
-    print("%s was generated for URL %s in %s" % (app.config.sitemap_filename,
-                                                 site_url, filename))
+    info(app, "sphinx-sitemap: %s was generated for URL %s in %s" % (
+        app.config.sitemap_filename, site_url, filename))
