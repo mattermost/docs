@@ -35,7 +35,7 @@ To set a custom data retention policy in Mattermost v5.38 and later:
 5. Assign teams and channels to this policy by selecting **Add teams** and searching for a specific team, or by selecting **Add channels** and searching for a specific channel. If only teams are specified, all channels for selected teams will be included in the a policy. 
 6. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. If a time is already set for a global retention policy, then the same time applies to custom data retention policies. 
 
-Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
+Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
 Running a Deletion Job Manually
 --------------------------------
