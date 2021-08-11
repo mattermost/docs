@@ -1,14 +1,15 @@
 Configuration Settings
 ======================
 
-.. note::
-   The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
-
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+.. important::
 
-On new installations starting from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+   Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+
+   On new installations from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+
+   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the mmctl command `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
 
 Configuration in Database
 --------------------------
