@@ -16,6 +16,8 @@ Lastest Mattermost Releases:
 
 **Release Day: 2021-08-16**
 
+Mattermost v5.38.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
 ### Deprecations
  - The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config`` command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
 
