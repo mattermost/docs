@@ -7,15 +7,17 @@ Mattermost recommends using Prometheus and Grafana to track performance metrics 
 
 **Prerequisites**
 
-Set up performance monitoring for Mattermost. See our `documentation <https://docs.mattermost.com/deployment/metrics.html>`__ to learn more.
+Set up performance monitoring for Mattermost. See our `documentation <https://docs.mattermost.com/scale/performance-monitoring.html>`__ to learn more.
 
 To get alerts, first set up a Notification Channel in Grafana. Here’s how you can set it up to automatically post alerts in Mattermost:
 
 1. In Mattermost:
+
   a. Create an Alerts channel
   b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL
 
 2. In Grafana:
+
   a. Under the alert icon in the sidebar, click **Notification channels**
   b. Click **Add channel**
   c. Enter **Mattermost Alerts Channel** as the name
@@ -152,4 +154,4 @@ You can trace hooks and plugin API calls with Prometheus. Below are some example
 Other Alerts
 -------------
 
-If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/deployment/metrics.html#statistics>`_.
+If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/scale/performance-monitoring.html#statistics>`_.
