@@ -59,7 +59,7 @@ def setup(app):
     )
     app.add_config_value(
         'sitemap_url_scheme',
-        default="{lang}{version}{link}",
+        default="{lang}{link}",
         rebuild=''
     )
     app.add_config_value(
