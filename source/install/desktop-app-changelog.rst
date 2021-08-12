@@ -52,6 +52,7 @@ All Platforms
 - Shortened the maximum length (width) for server tab names to 224px.
 - Updated the menu bar and system tray icons for improved contrast.
 - Removed ``libappnotify1`` as a dependency requirement in Debian installers as it's no longer shipped in Debian's Bullseye. It's still recommended to install where available.
+- "Minimize to tray" setting was removed.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,9 +95,11 @@ Known Issues
 - The new spellchecker connects to Google servers for downloading updated dictionaries.
 - Unread messages icon is missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
 - Taskbar icon flashes on new message arrival on Windows despite setting being disabled `MM-37797 <https://mattermost.atlassian.net/browse/MM-37797>`_.
+- "Add Server" appears on each startup on servers with GPO `MM-37863 <https://mattermost.atlassian.net/browse/MM-37863>`_.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
 - Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
 - Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
+- The app crashes when downloading a zip file. **Ticket?**
 - The ``create_desktop_file.sh`` script is removed from the .tar.gz release. As a workaround, it can be downloaded from `GitHub here <https://github.com/mattermost/desktop/blob/master/src/assets/linux/create_desktop_file.sh>`_.
 - An error may occur when installing the MSI Installer on any Windows version.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
