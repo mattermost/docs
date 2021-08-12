@@ -86,31 +86,39 @@ Upgrading Mattermost Server
 
 7. Remove all files **except** data and custom directories from within the current ``mattermost`` directory. 
 
-  **What's preserved?**
+   **What's preserved on upgrade?**
   
-  By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+   By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
-  Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step 8 below.
+   Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step 8 below.
       
-  **A default Mattermost installation has the following files and directories**:
+   **A default Mattermost installation has the following files and directories**:
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    $ ls /opt/mattermost
-    ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
-    NOTICE.txt                      bin        config  fonts  logs  plugins       templates
+     $ ls /opt/mattermost
+     ENTERPRISE-EDITION-LICENSE.txt README.md  client  data   i18n  manifest.txt  prepackaged_plugins
+     NOTICE.txt                      bin        config  fonts  logs  plugins       templates
 
-  **Clear Mattermost contents**
+   **Clear the Mattermost folder**
 
-  The following command clears the contents of the ``mattermost`` folder, preserving only the specified directories and their contents: 
+   Dry-run the following command to delete the contents of the ``mattermost`` folder, preserving only the specified directories and their contents: 
   
-  .. code-block:: sh
+   .. code-block:: sh
     
-    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \)
+     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort
+    
+   If you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you need to append ``-o -path mattermost/yourFolderHere`` to the command above to avoid having to manually copy the TLSCert/TLSKey files from the backup into the new install.
+ 
+  .. code-block:: sh
+ 
+    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
+    
+  When you're ready to execute the command, append ``xargs echo rm -r`` to the command above to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
   
-  We recommend that you append ``xargs echo rm -r`` to the command above to verify what will be executed first.
-
-  Also, if you store TLSCert/TLSKey files or other information within your ``/opt/mattermost`` folder, you should append ``-o -path mattermost/{yourFolderHere}`` to the command above, or you'll have to manually copy the TLSCert/TLSKey files from the backup into the new install.
+  .. code-block:: sh
+  
+    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs echo rm -r
   
   **Using Bleve Search**
 
