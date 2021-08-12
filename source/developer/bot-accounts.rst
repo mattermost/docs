@@ -136,11 +136,11 @@ If the user is an existing user account you want to preserve, change its usernam
 How do I convert an existing account to a bot account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the following CLI command to convert an existing user account to a bot:
+To use `mmctl`<https://docs.mattermost.com/manage/mmctl-command-line-tool.html> to convert a user to a bot use this command:
 
 .. code-block:: text
 
-  user convert user@example.com --bot
+  mmctl user convert user@example.com --bot
 
 In addition to email, you may identify the user by its username or user ID.
 
