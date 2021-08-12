@@ -2,7 +2,7 @@
 Bot Accounts
 =============
 
-Use bot accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the `personal access tokens feature <https://docs.mattermost.com/cloud/cloud-integrations/cloud-personal-access-tokens.html>`_.
+Use bot accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the `personal access tokens feature <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`_.
 
 Bot accounts are just like user accounts, except they:
 
@@ -22,9 +22,9 @@ Note that currently:
 
   - Bot accounts can only be created or managed by plugins or System Administrators.
   - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
-  - Service accounts without an email address pulled from LDAP or SAML systems is not yet supported.
+  - Service accounts without an email address pulled from LDAP or SAML systems are not yet supported.
 
-If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com>`_.
+If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com/forums/306457-general>`_.
 
 .. contents::
   :backlinks: top
@@ -58,7 +58,7 @@ User Interface (UI)
 4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout the Mattermost user interface.
 5. (Optional) Set a **Display Name** and **Description**.
 6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any public channels, private channels and direct messages.
-7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or all Mattermost Public channels.
+7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels or all Mattermost Public channels.
 
 RESTful API
 ~~~~~~~~~~~
@@ -74,7 +74,7 @@ Plugins
 
 Plugins can create bot accounts through an ``EnsureBot`` helper function. For an example, see `the Demo Plugin <https://github.com/mattermost/mattermost-plugin-demo/blob/master/server/configuration.go#L210-L217>`_.
 
-Bots created by a plugin use the plugin's ID as the creator, unless otherwise specified by the plugin.
+Bots created by a plugin use the plugin's ID as the creator unless otherwise specified by the plugin.
 
 Frequently Asked Questions
 -----------------------------
@@ -125,12 +125,12 @@ Do bot access tokens expire?
 
 No, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
 
-For more information about access tokens, see `the personal access tokens documentation <https://docs.mattermost.com/cloud/cloud-integrations/cloud-personal-access-tokens.html>`_.
+For more information about access tokens, see `the personal access tokens documentation <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`_.
 
 Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
+Possibly yes. Currently, a System Admin can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
 
 Mitigations:
 
@@ -140,7 +140,7 @@ Mitigations:
 What happens when a user who owns bot accounts is disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, bot accounts managed by the deactivated user are disabled for enhanced security. Those with permissions to manage bot accounts can re-enable them in **Main Menu > Integrations > Bot Accounts**. We strongly recommend creating new tokens for the bot, to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
+By default, bot accounts managed by the deactivated user are disabled for enhanced security. Those with permissions to manage bot accounts can re-enable them in **Main Menu > Integrations > Bot Accounts**. We strongly recommend creating new tokens for the bot to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
 
 If you prefer to have bot accounts remain enabled after user deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
 
@@ -150,10 +150,11 @@ Can bot accounts edit messages through the RESTful API?
 Yes. By default, bot accounts can update their own posts.
 
 If you find yourself unable to edit posts as a bot, check the following:
-1. Instead of using a slash command to respond directly, use an an API call for the initial interaction with a user to enable message edits.
-2. If your system is using `advanced permissions <https://docs.mattermost.com/cloud/cloud-user-management/advanced-permissions.html>`_, then post edits could be disabled for users.
+1. Instead of using a slash command to respond directly, use an API call for the initial interaction with a user to enable message edits.
+2. If your system is using `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`_, then post edits could be disabled for users.
 
-If neither of the above help resolve your concern, you also have the option to choose what role the bot account has. If the **System Admin** role is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges so this should be done with care.
+You also have the option to choose what role the bot account has. If the **System Admin** role is chosen, they can update any posts in the system and other System Admin permissions. Note that giving the **System Admin** role to a bot account enables them with other System Admin privileges, so this should be done with care.
+
 
 If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

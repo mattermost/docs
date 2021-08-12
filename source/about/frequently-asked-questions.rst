@@ -10,7 +10,7 @@ General Questions
 Why was Mattermost created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we made Mattermost <https://mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__.
+Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we built Mattermost <https://mattermost.com/about-us/>`__.
 
 Why does the open source repository contain code specific to the commercial version of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,7 +20,7 @@ The commercial version of Mattermost is designed to never lock-in your data. Por
 Does Mattermost support 508 Compliance?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, please see our `VPAT <https://docs.mattermost.com/overview/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
+Yes, please see our `VPAT <https://docs.mattermost.com/about/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
 
 What's the largest Mattermost deployment you have?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`_, and follow our standard install guides. The same applies to server upgrades.
+To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/upgrade/version-archive.html>`_, and follow our standard install guides. The same applies to server upgrades.
 
 Community Questions
 -------------------
@@ -159,7 +159,7 @@ Growing your Mattermost installation from supporting a team to supporting an ent
 
 **Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition as well as downgrade without data loss, should their needs change.
 
-For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`__.
+For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
 
 What does it take to manage a Mattermost deployment?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
