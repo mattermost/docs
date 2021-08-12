@@ -1,7 +1,7 @@
 Message Attachments
 ===================
 
-A wide range of rich text formatting options, including bold, italic, headings, in-line images, and tables, can be used in integrations. For more information about formatting, see :doc:`../help/messaging/formatting-text`.
+A wide range of rich text formatting options, including bold, italic, headings, in-line images, and tables, can be used in integrations. For more information about formatting, see :doc:`../messaging/formatting-text`.
 
 For additional formatting options, and for compatibility with Slack non-markdown integrations, an ``attachments`` array can be sent by integrations and rendered by Mattermost.
 
@@ -22,7 +22,7 @@ When sending an attachment, you can use any of the following to format how you w
 
 .. image:: ../images/attachments-pretext.png
 
-``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`. For long texts, the message is collapsed and a “Show More” link is added to expand the message.
+``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../messaging/formatting-text>`. For long texts, the message is collapsed and a “Show More” link is added to expand the message.
 
 .. image:: ../images/attachments-text.png
 
@@ -53,7 +53,7 @@ Fields can be included as an optional array within ``attachments``, and are used
 
 ``title``: A title shown in the table above the ``value``.  As of v5.14 a title will render emojis properly.
 
-``value``: The text value of the field. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`.
+``value``: The text value of the field. It can be formatted using :doc:`Markdown <../messaging/formatting-text>`.
 
 ``short``: Optionally set to true or false (boolean) to indicate whether the ``value`` is short enough to be displayed beside other values.
 
