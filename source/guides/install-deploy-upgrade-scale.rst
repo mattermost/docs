@@ -31,10 +31,11 @@ Mattermost Server
    Installing Mattermost Omnibus </install/installing-mattermost-omnibus.rst>
    Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Buster </install/install-debian.rst>
-   Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on RHEL 8 </install/install-rhel-8.rst>
+   Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Instructions On Setting Up a Socket-based Mattermost Database </install/setting-up-socket-based-mattermost-database.rst>
+   /install/trouble_mysql.rst
    /install/enterprise-install-upgrade.rst
    /install/transport-encryption.rst
    /install/proxy-to-mattermost-transport-encryption.rst
@@ -44,6 +45,7 @@ Mattermost Server
    /install/setting-up-local-machine-using-docker.rst
    /install/setting-up-aws-elastic-beanstalk-docker.rst
    Installing Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart.rst>
+   /install/troubleshooting.rst
    /install/self-managed-changelog.md
    /install/cloud-changelog.md
 
@@ -59,6 +61,7 @@ Desktop App
    /install/desktop-app-managed-resources.rst
    /install/desktop-msi-installer-and-group-policy-install.rst
    /install/desktop-app-changelog.rst
+   /install/desktop-custom-dictionaries.rst
 
 Mobile App
 ^^^^^^^^^^
@@ -135,4 +138,4 @@ Scale Mattermost
    /scale/high-availability-cluster.rst
    /scale/elasticsearch.rst
    /scale/performance-monitoring.rst
-   /scale/peformance-alerting.rst
+   /scale/performance-alerting.rst

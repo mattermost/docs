@@ -121,7 +121,7 @@ Code Block
 
 Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files.
 
-This can be accomplished by placing three backticks :kbd:`\`\`\`` on the line directly above and directly below your code:
+This can be accomplished by placing three backticks ``````` on the line directly above and directly below your code:
 
 .. code-block:: none
 
@@ -132,7 +132,7 @@ This can be accomplished by placing three backticks :kbd:`\`\`\`` on the line di
 
 .. tip::
 
-  Type three backticks ``\\\``, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type three more backticks ``\\\``.
+  Type three backticks ```````, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type three more backticks ```````.
 
 
 Or by indenting each line by four spaces:
@@ -149,24 +149,9 @@ Or by indenting each line by four spaces:
 
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, and Monokai) that can be changed in **Account Settings > Display > Theme > Custom Theme > Center Channel Styles**.
 
-Supported languages include:
-``applescript``, ``as``, ``atom``, ``bas``, ``bash``, ``boot``, ``_coffee``, ``c++``, 
-``c``, ``cake``, ``cc``, ``cl2``, ``clj``, ``cljc``, ``cljs``, ``cljs.hl``,
-``cljscm``, ``cljx``, ``cjsx``, ``cson``, ``coffee``, ``cpp``, ``cs``, ``csharp``, 
-``css``, ``d``, ``dart``, ``dfm``, ``di``, ``delphi``, ``diff``, ``django``, ``docker``, 
-``dockerfile``, ``dpr``, ``erl``, ``fortran``, ``freepascal``,  ``fs``, ``fsharp``, 
-``gcode``, ``gemspec``, ``go``, ``groovy``, ``gyp``, ``h++``, ``h``, 
-``handlebars``, ``hbs``, ``hic``,  ``hpp``, ``html``, ``html.handlebars``, 
-``html.hbs``, ``hs``, ``hx``, ``iced``, ``irb``,
-``java``, ``jinja``, ``jl``, ``js``, ``json``, ``jsp``, ``jsx``, ``kt``,
-``ktm``, ``kts``, ``latexcode``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
-``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
-``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
-``perl``, ``pgsql``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
-``podspec``, ``postgres``, ``postgresql``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
-``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
-``sql``, ``swift``, ``tex``, ``texcode``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
-``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, and ``zsh``.
+Supported languages and their aliases include:
+
+.. include:: syntax-highlighting.rst
 
 Example:
 

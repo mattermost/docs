@@ -1,19 +1,20 @@
 Configuration Settings
 ======================
 
-.. note::
-   The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
-
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+.. important::
 
-On new installations starting from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+   Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+
+   On new installations from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+
+   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the mmctl command `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
 
 Configuration in Database
 --------------------------
 
-Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
 
 Environment Variables
 ---------------------
@@ -34,7 +35,7 @@ For any setting that is not set in ``config.json`` or in environment variables, 
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
 
 .. warning::
-   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/administration/config-in-database.html>`_.
+   Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
    
 .. warning::
    Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
@@ -85,7 +86,7 @@ View subscription details including the number of users and expiry date of your 
 License Key
 ^^^^^^^^^^^
 
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html>`_.
 
 Reporting
 ---------
@@ -100,7 +101,7 @@ View statistics on active users, teams, channels, sessions, webhooks, and connec
 Team Statistics
 ~~~~~~~~~~~~~~~~
 
-View statistics per team on number of active users, as well as Public and Private channels.
+View statistics per team on the number of active users, as well as Public and Private channels.
 
 Server Logs
 ~~~~~~~~~~~~
@@ -122,28 +123,28 @@ Teams (Experimental)
 
 *Available in Enterprise Edition E20*
 
-Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+Manage group synchronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization>`__ for more details.
 
 Channels (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
 
-Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+Manage group synchronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization>`__ for more details.
 
 Groups
 ~~~~~~
 
 *Available in Enterprise Edition E20*
 
-Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details.
+Groups offer System Admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more details.
 
 Permissions
 ~~~~~~~~~~~
 
 *Available in Enterprise Edition E10 and higher*
 
-Advanced permissions offer Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
+Advanced permissions offer System Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ for more details.
 
 Environment
 -----------
@@ -206,7 +207,7 @@ Forward port 80 to 443
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^
 
-**None**: Mattermost will connect over an unsecure connection.
+**None**: Mattermost will connect over an unsecured connection.
 
 **TLS**: Encrypts the communication between Mattermost clients and your server. See `documentation <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ for more details.
 
@@ -324,7 +325,7 @@ Enable Insecure Outgoing Connections
 Managed Resource Paths
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A comma-separated list of paths within the Mattermost domain that are managed by a third party service instead of Mattermost itself. Links to these paths will be opened in a new tab/window by Mattermost apps. For example, if Mattermost is running on ``https://mymattermost.com``, setting this to ``conference`` will cause links such as ``https://mymattermost.com/conference`` to be opened in a new window.
+A comma-separated list of paths within the Mattermost domain that are managed by a third-party service instead of Mattermost itself. Links to these paths will be opened in a new tab/window by Mattermost apps. For example, if Mattermost is running on ``https://mymattermost.com``, setting this to ``conference`` will cause links such as ``https://mymattermost.com/conference`` to be opened in a new window.
 
 When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of in a browser. See `here <https://docs.mattermost.com/install/desktop-managed-resources.html>`_ for more information.
 
@@ -342,7 +343,7 @@ The workflow for failover without downing the server is to change the database l
 Purge All Caches
 ^^^^^^^^^^^^^^^^
 
-This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
+This button purges all the in-memory caches for sessions, accounts, and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
 
 Database
 ~~~~~~~~
@@ -365,10 +366,41 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Data Source
 ^^^^^^^^^^^
 
-This is the connection string to the master database. When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. This setting can only be changed from ``config.json`` file.
+This is the connection string to the master database. This setting can only be changed from the ``config.json`` file. 
 
 .. note::
-  To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
+   
+   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
+
+**MySQL Database**
+
+When **DriverName** is set to ``mysql``, using ``collation`` is recommended over using ``charset``. 
+
+To specify collation:
+
+.. code-block:: none
+
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",
+      [...]
+    }
+
+If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:
+
+.. code-block:: none
+
+  "SqlSettings": {
+      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
+      [...]
+    }
+
+.. note::
+   
+   If you're using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software Requirements <https://docs.mattermost.com/install/requirements.html#database-software>`__ documentation for details on MySQL 8.0 support.
+   
+**PostgreSQL Database**
+
+When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSource": ""`` with string input.                                                                                    |
@@ -377,7 +409,7 @@ This is the connection string to the master database. When **DriverName** is set
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum number of idle connections held open to the database.
+The maximum number of idle connections held open to the database.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input.                                                                               |
@@ -386,7 +418,7 @@ Maximum number of idle connections held open to the database.
 Maximum Connection Idle Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum time a database connection can remain idle.
+The maximum time a database connection can remain idle.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input.                                                                 |
@@ -395,7 +427,7 @@ Maximum time a database connection can remain idle.
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Maximum number of open connections held open to the database.
+The maximum number of open connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxOpenConns": 300`` with numerical input.                                                                               |
@@ -433,7 +465,7 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
+The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
@@ -482,7 +514,7 @@ Changes to properties in this section require a server restart before taking eff
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
+**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
 
 **False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results.
 
@@ -493,7 +525,7 @@ Enable Elasticsearch Indexing
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`__.
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
@@ -577,7 +609,7 @@ File Storage
 Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
 
 .. note::
-  We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
+  We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
 
 File Storage System
 ^^^^^^^^^^^^^^^^^^^^
@@ -593,7 +625,7 @@ This selects which file storage system is used: Local File System or Amazon S3.
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
-**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``"amazons3"`` driver is compatible with MinIO (Beta) and Digital Ocean Spaces based on the provided access key, bucket, and region fields.
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket, and region fields. The ``"amazons3"`` driver is compatible with MinIO (Beta) and Digital Ocean Spaces based on the provided access key, bucket, and region fields.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -628,9 +660,9 @@ Enable users to search the contents of documents attached to messages.
 **True**: Documents are searchable by their content.  
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
 
-**False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by file name only.
+**False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
 You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
 
@@ -641,7 +673,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 - ``Justtext``: Used to search HTML documents.
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older documents based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older documents based on file name only.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
@@ -650,7 +682,7 @@ You can optionally install `these dependencies <https://github.com/sajari/doccon
 .. note::
   - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
   
 Enable Searching Content of Documents within ZIP Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -668,7 +700,7 @@ This configuration setting enables users to search the contents of compressed ZI
 .. note::
   - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
   - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
+  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^
@@ -695,7 +727,7 @@ The AWS region you selected when creating your S3 bucket. If no region is set, M
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the Access Key ID.
+This is required for access unless you are using an `Amazon S3 IAM Role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`__ with Amazon S3. Your EC2 administrator can supply you with the Access Key ID.
 
 +-------------------------+----------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                              |
@@ -706,7 +738,7 @@ This is required for access unless you are using an `Amazon S3 IAM Role <https:/
 Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^
 
-Hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
+The hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
 
 .. note::
   For Digital Ocean Spaces, the hostname should be set to ``"<region>.digitaloceanspaces.com"``, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
@@ -746,7 +778,7 @@ Enable Server-Side Encryption for Amazon S3
 
 *Available in Enterprise Edition E20*
 
-**True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html>`__.
+**True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html>`__.
 
 **False**: Doesn't encrypt files in Amazon S3.
 
@@ -995,7 +1027,7 @@ Changes to properties in this section require a server restart before taking eff
 
 When High Availability mode is enabled, the System Console is set to read-only and settings can only be changed by editing the configuration file directly. However, for testing and validating a High Availability setup, you can set ``ReadOnlyConfig`` to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
 
-To learn more about configuring High Availability, see `High Availability Cluster <https://docs.mattermost.com/deployment/cluster.html>`_.
+To learn more about configuring High Availability, see `High Availability Cluster <https://docs.mattermost.com/scale/high-availability-cluster.html>`_.
 
 Enable High Availability Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1020,7 +1052,7 @@ The cluster to join by name. Only nodes with the same cluster name will join tog
 Override Hostname
 ^^^^^^^^^^^^^^^^^
 
-If blank, Mattermost attempts to get the hostname from the OS or use the IP address. You can override the hostname of this server with this property. It is not recommended to override the hostname unless needed. This property can also be set to a specific IP address if needed. Also see `cluster discovery <https://docs.mattermost.com/deployment/cluster.html#cluster-discovery>`_ for more details.
+If blank, Mattermost attempts to get the hostname from the OS or use the IP address. You can override the hostname of this server with this property. It is not recommended to override the hostname unless needed. This property can also be set to a specific IP address if needed. Also see `cluster discovery <https://docs.mattermost.com/scale/high-availability-cluster.html>`_ for more details.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"OverrideHostname": ""`` with string input. |
@@ -1243,7 +1275,7 @@ Where:
   - Advanced logging supports hot-reloading of logger configuration.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
+| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
@@ -1349,7 +1381,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 .. Note::
     Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
 
-See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
+See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
 
 Standard Logging 
 ~~~~~~~~~~~~~~~~
@@ -1405,7 +1437,7 @@ Changes to this setting require a server restart before taking effect.
 Colorize plain text console logs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
 **True**: When logged events are output to the console as plain text, colorize log levels details.
 
@@ -3803,9 +3835,22 @@ Signature Public Key Files
 
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Chimera OAuth Proxy URL
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Mattermost plugins to connect with pre-created OAuth applications.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
++-------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Autolink
 ~~~~~~~~
@@ -4307,7 +4352,7 @@ System Admins can set the default appearance of collapsed reply threads for thei
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default-off``.                        |
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``.                        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP Settings
@@ -4650,14 +4695,15 @@ Enable Shared Channels (Experimental)
 
 *Available in Enterprise Edition E20*
 
-Enable Shared Channels to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
+Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` settings are ``"ExperimentalSettings:EnableSharedChannels": false ""`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false ""`` with options ``true`` or ``false``. Both configuration settings must be enabled in order to share channels with secure connections.       |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
+   - Both configuration settings must be enabled in order to share channels with secure connections.
    - Enabling Shared Channels functionality requires a server restart.
    - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
 
@@ -4694,7 +4740,8 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Experimental Sidebar Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This configuration setting has been deprecated in favor of `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__. 
+.. note::
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ product documentation for details on customizing the sidebar. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
@@ -5153,7 +5200,7 @@ Replica Lag Settings
 Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
 
 +-------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
+| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
 +-------------------------------------------------------------------------------------------------------+
 
 String array input consists of:
@@ -5379,7 +5426,7 @@ Enable Reliable Websockets
 Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": false`` with options ``true`` and ``false``.                                              |
+| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``.                                               |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Remote Clusters
@@ -5883,7 +5930,11 @@ Bleve Settings (Experimental)
 Index Dir
 ^^^^^^^^^^
 
-Directory path to use for storing bleve indexes.
+Directory path to use for storing bleve indexes. 
+
+.. tip::
+   
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
