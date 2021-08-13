@@ -316,7 +316,7 @@ redirects = {
     "process/partner-programs":
         "https://handbook.mattermost.com/operations/sales/partner-programs",
     "process/overview":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html"
 
 }
