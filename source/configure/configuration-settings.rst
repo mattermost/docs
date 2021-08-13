@@ -9,7 +9,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
    On new installations from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
 
-   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the mmctl command `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
+   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the mmctl command `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
 
 Configuration in Database
 --------------------------
