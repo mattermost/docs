@@ -49,7 +49,8 @@ Latest Mattermost Mobile Apps releases:
 
 ### Known Issues
  - Posts sometimes get stuck behind the post textbox on iPad.
- - Various known issue with Collapsed Reply Threads (Beta) feature:
+ - User may need to log out and back in from the app to see data retention results on the app.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
    - Mobile app top bar disappears after resuming app from screen lock.
    - New messages banner should only count root posts.
    - Clicking Jump to on mobile shows a different highlighted channel list than the sidebar highlighted channel list.
@@ -60,6 +61,7 @@ Latest Mattermost Mobile Apps releases:
    - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item is lost when clearing search in the channel sideabar.
    - Previously viewed Thread is auto-followed after new replies come in.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ### Contributors
  - [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [enahum](https://github.com/enahum), [larkox](https://github.com/larkox), [manojmalik20](https://github.com/manojmalik20)
