@@ -15,7 +15,7 @@ SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile livehtml
+.PHONY: help Makefile livehtml clean
 
 # Run `make livehtml` to start sphinx-autobuild
 livehtml:
@@ -27,3 +27,6 @@ livehtml:
 %: Makefile
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(ERRORSFILE)"
+
+clean: # clean the build directory
+	rm -rf build/
