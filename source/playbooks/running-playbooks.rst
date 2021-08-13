@@ -67,7 +67,7 @@ Status updates ensure that stakeholders remain informed about the playbook run's
  * If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
  * If this is a subsequent status update, the last reminder timer will be pre-populated here.
 
-7. Select **Update Status** to post your status update.
+6. Select **Update Status** to post your status update.
 
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
