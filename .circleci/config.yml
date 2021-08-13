@@ -12,6 +12,7 @@ jobs:
   build:
     executor:
       name: default
+    resource_class: large
     steps:
       - checkout
       - restore_cache:
