@@ -1,5 +1,3 @@
-:orphan:
-
 User Satisfaction Surveys
 ==========================
 

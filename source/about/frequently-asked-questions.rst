@@ -10,7 +10,7 @@ General Questions
 Why was Mattermost created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we made Mattermost <https://mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__.
+Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we built Mattermost <https://mattermost.com/about-us/>`__.
 
 Why does the open source repository contain code specific to the commercial version of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,25 +20,25 @@ The commercial version of Mattermost is designed to never lock-in your data. Por
 Does Mattermost support 508 Compliance?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, please see our `VPAT <https://docs.mattermost.com/overview/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
+Yes, please see our `VPAT <https://docs.mattermost.com/about/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
 
 What's the largest Mattermost deployment you have?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Our largest contractual obligation is for over a quarter of a million registered users. Our most typical large enterprise deployment size is between 10,000 and 40,000 users in Dev and Ops organizations who use Mattermost for DevOps workflows, remote work, mission-critical and rapid response, and to address email overload.
 
-We have done performance testing of 60,000 concurrent users and 60 million posts in the database, with a peak concurrent utilization safety factor of between 10 to 1 and 3 to 1, depending on the distribution of an organization across time zones. Peak concurrent usage in a single timezone is generally around start of day, probably 9am, and lunch time when people are messaging to meet for a meal.  Our monthly releases are tested at 20 million posts in the database.
+We have done performance testing of 60,000 concurrent users and 60 million posts in the database, with a peak concurrent utilization safety factor of between 10 to 1 and 3 to 1, depending on the distribution of an organization across time zones. Peak concurrent usage in a single timezone is generally around the start of the day, probably 9am, and lunchtime when people are messaging to meet for a meal. Our monthly releases are tested at 20 million posts in the database.
 
 Mattermost provides an open source, well-documented `load test simulator <https://github.com/mattermost/mattermost-load-test>`_ to verify that your Mattermost deployment can achieve the stated scale benchmarks ahead of production deployment.
 
 How do I deploy the open source Mattermost Team Edition under an MIT license?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
+The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
 
-We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
+We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`_, and follow our standard install guides. The same applies to server upgrades.
+To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/upgrade/version-archive.html>`_, and follow our standard install guides. The same applies to server upgrades.
 
 Community Questions
 -------------------
@@ -69,6 +69,7 @@ To add yourself to the `Mattermost page on LinkedIn <https://www.linkedin.com/co
 1. Log in to `LinkedIn <https://www.linkedin.com/>`__ or create an account.
 2. Go to **Me > View profile**.
 3. Under **Experience**, click on the **plus** symbol and edit the following:
+
   - Title: Enter **Developer**, if you contributed code to the open source project or created a plugin, integration, or other enhancement; **Contributor**,  if you've contributed without writing code (e.g., filed bug report, updated documentation, supported troubleshooting questions, proposed a feature, etc.); **Translator**, if you've `helped translate <https://translate.mattermost.com>`__ Mattermost.
   - Company: Find **Mattermost** (you’ll see the Mattermost logo).
   - Location: Enter where you live.
@@ -139,7 +140,7 @@ Enterprise Edition
 What is Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Enterprise Edition is a commercial workplace messaging solution for large organizations operating under compliance and security requirements that is built on top of the open source Mattermost Team Edition.
+Mattermost Enterprise Edition is a commercial workplace messaging solution for large organizations operating under compliance and security requirements built on top of the open source Mattermost Team Edition.
 
 How can I be assured that my data will not be locked in to commercial software?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,14 +157,14 @@ Growing your Mattermost installation from supporting a team to supporting an ent
 
 **Technical Scaling:** Whether used for teams or enterprises, the Mattermost server is designed to support tens of thousands of users on a single server with appropriate hardware. The server is built using Golang, the language developed by Google to create internet-scale applications, and supports highly scalable databases like MySQL, which is `used extensively by Facebook <https://www.facebook.com/notes/facebook-engineering/mysql-and-database-engineering-mark-callaghan/10150599729938920/>`__. Beyond tens of thousands of users, Mattermost Enterprise Edition can offer high availability/horizontal scaling configurations using multiple servers to support even larger organizations.
 
-**Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition, as well as downgrade without data loss, should their needs change.
+**Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition as well as downgrade without data loss, should their needs change.
 
-For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`__.
+For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
 
 What does it take to manage a Mattermost deployment?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For a small deployment of Mattermost up to a few hundred users, we'd recommend a part-time, mid-level IT admin, with a senior IT admin for supervision and as a backup resource. They should have the ability to administer a basic Linux server, a MySQL or PostgreSQL database, and web proxy configuration with web sockets.
+For a small deployment of Mattermost up to a few hundred users, we'd recommend a part-time, mid-level IT admin with a senior IT admin for supervision and as a backup resource. They should have the ability to administer a basic Linux server, a MySQL or PostgreSQL database, and web proxy configuration with web sockets.
 
 For a medium deployment of 500 to 2000 users, we'd recommend a senior IT administrator who has the capability to configure Mattermost in a High Availability cluster with redundant database and application servers. They should also be able to activate performance monitoring and health check features in Prometheus and Grafana.
 
@@ -174,9 +175,9 @@ Our customers address multiple collaboration solutions in different ways dependi
 
 **For top-down, customers want to simplify and leverage investments in a central, flexible, innovative solution that can scale.** There's generally a lot of pain with different teams and departments running their own messaging tools, creating silos, redundancy, and significant productivity loss. They'll roll out Mattermost as an official solution and centralize communication there. For an example of this, see our `Uber case study <https://mattermost.com/customers/>`__.
 
-**For bottom-up, customers want to supplement for strategic advantage.** We've seen teams flock to Mattermost because of its productivity benefits for DevOps, remote work, rapid response, and scaling large teams where people are overloaded with email. Those organizations, which can have hundreds to thousands of users, will use Mattermost in parallel with general purpose messaging that doesn't meet their specific needs.
+**For bottom-up, customers want to supplement for strategic advantage.** We've seen teams flock to Mattermost because of its productivity benefits for DevOps, remote work, rapid response, and scaling large teams where people are overloaded with email. Those organizations, which can have hundreds to thousands of users, will use Mattermost in parallel with general-purpose messaging that doesn't meet their specific needs.
 
-One example is Wargaming, one of the world's largest operators of real-time online video games, with over a 150 million players on their system. They've moved their DevOps, design, analytics. and support teams to Mattermost as a supplement to Skype for Business. This is their company-wide, general purpose messenger, that isn't optimized for large DevOps organizations and the degree of integration and flexibility that they need - specifically for DevOps. People want support for Linux and Mac desktops, lots of APIs and hooks to integrate, plugins to embed certain types of reports and interactive controls into messages, friendly keyboard shortcuts, and dozens of other enhancements that provide a distinct advantage to their counterparts at other companies.
+One example is Wargaming, one of the world's largest real-time online video game operators, with over 150 million players on their system. They've moved their DevOps, design, analytics and support teams to Mattermost to supplement Skype for Business. This is their company-wide, general-purpose messenger that isn't optimized for large DevOps organizations and the degree of integration and flexibility they need - specifically for DevOps. People want support for Linux and Mac desktops, lots of APIs and hooks to integrate. They also need help for plugins to embed certain types of reports and interactive controls into messages, friendly keyboard shortcuts, and dozens of other enhancements that provide a distinct advantage to their counterparts at other companies.
 
 What are the options to purchase a subscription to Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -320,7 +321,7 @@ An example directory layout is shown below:
 Why are you changing the licensing model?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our plugin framework delivers substantial value to our enterprise customers, but requires significant development and support resources. This change to the licensing model allows us to continue developing open source features while selectively charging for features.
+Our plugin framework delivers substantial value to our enterprise customers but requires significant development and support resources. This change to the licensing model allows us to continue developing open source features while selectively charging for features.
 
 How are repositories changing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -330,7 +331,7 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Collaboration <https://github.com/mattermost/mattermost-plugin-incident-collaboration>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and as part of any release notes.
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Collaboration <https://github.com/mattermost/mattermost-plugin-incident-collaboration>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
 We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`_ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
@@ -446,9 +447,9 @@ Can I use Mattermost for customer service?
 
 You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution.
 
-Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
+Mattermost Enterprise Edition is designed for self-managed, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
 
-If you'd like to create an open source derivative version of Mattermost using the ``/mattermost-server`` source code to support your use case please see below.
+If you'd like to create an open source derivative version of Mattermost using the ``/mattermost-server`` source code to support your use case, please see below.
 
 Does Mattermost have an official website-based plugin to offer anonymous chat to visitors?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -538,9 +539,9 @@ What feature quality levels does Mattermost have?
 
 We strive to release viable features. This means that we put in a significant amount of effort to ensure we solve a use case with a high bar for quality. A feature that's viable and meets our criteria for our production quality levels will be released to production.
 
-However, when we're working on large and complex features or new products we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as experimental or beta and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release.
+However, when working on large and complex features or new products, we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as experimental or beta and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release.
 
-We dog food our own features on our community server and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
+We dogfood our features on our community server and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
 
 This list describes the quality levels of Mattermost features, and what can be expected at each level.
 
@@ -581,7 +582,7 @@ If it’s unclear from the vendor’s documentation whether or not your data can
 
 *Privacy* means a third-party service cannot monitor the identity, IP address, location, or access patterns of your employees, nor their activity on your system, nor provide that information either intentionally through a court order (which you may never be informed about) or unintentionally through a data breach.
 
-*Total data ownership* means a third party cannot prevent you from accessing your data at any time. It means no third party can read your data, analyze it or monetize it. It means should you end your commercial relationship you maintain your records with any and all backups. It also means you can delete your data at any time and verify that no additional copies remain.
+*Total data ownership* means a third party cannot prevent you from accessing your data at any time. It means no third party can read your data, analyze it or monetize it. It means that should you end your commercial relationship, you maintain your records with any backups. It also means you can delete your data at any time and verify that no additional copies remain.
 
 *Audibility* means being able to fully observe, monitor, and trace the operations of your systems.
 
@@ -622,7 +623,7 @@ As an example, when `OneLogin reported a security breach that allowed the attack
 
 In contrast, an open source, self-hosted collaboration solution remains within the layers of physical security and network security enterprises use to protect their most valuable assets, with full access to logging and system histories to know when, where and how an attack might have occurred.
 
-Moreover, as a single-tenant solution, the strength of cyber attacks is typically limited to the breach value of just your confidential data, and not the aggregate breach value of all customer data held by an MMTA. Plus, the sum of security investments your company makes to protect systems in its private networks accrues to your collaboration system - and for banks, this could be hundreds of millions of dollars a year.
+Moreover, as a single-tenant solution, the strength of cyberattacks is typically limited to the breach value of just your confidential data and not the aggregate breach value of all customer data held by an MMTA. Plus, the sum of security investments your company makes to protect systems in its private networks accrues to your collaboration system - and for banks, this could be hundreds of millions of dollars a year.
 
 4) MMTA systems risk cross-bleeding your data
 
@@ -641,7 +642,7 @@ When using username-password authentication, especially with AD/LDAP, there's th
 
 We believe this design increases productivity, speeds up user adoption, and reduces help desk tickets and support costs - and that these benefits outweigh the trade-offs.
 
-The trade-off with this design is that if physical security is not in effect, and network security is not in effect (i.e., no VPN, or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`__.
+The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`__.
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 
@@ -657,14 +658,14 @@ Business Questions
 How can I create an open source derivative work of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`__. For advanced customization, the user experience of the system is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated with either Mattermost Team Edition or Mattermost Enterprise Edition via the system APIs and drivers.
+If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`__. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated with either Mattermost Team Edition or Mattermost Enterprise Edition via the system APIs and drivers.
 
 If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost-server``, there are a number of factors to consider:
 
 Security
 ^^^^^^^^
 
-- If you run a fork of the Mattermost server we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <https://mattermost.com/security-updates/>`__. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature, so that users and customers can upgrade before the security vulnerability is widely known. A malicous user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
+- If you run a fork of the Mattermost server, we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <https://mattermost.com/security-updates/>`__. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature so that users and customers can upgrade before the security vulnerability is widely known. A malicious user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
 
 Rebranding
 ^^^^^^^^^^
@@ -693,7 +694,7 @@ No, Mattermost will not complete questionnaires requiring confidential data with
 Why does Mattermost have a discount for certain kinds of non-profits but not for others?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion as well as public promotion of solutions, among many other factors.
+While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion and public promotion of solutions, among many other factors.
 
 Learn more about our non-profit discount program at https://about.mattermost.com/mattermost-mondays/.
 
@@ -711,9 +712,9 @@ Will Mattermost, Inc. offer the ability to resell Mattermost software without a 
 
 No.
 
-If there is a case where the reseller agreement is under review and an order is urgently needed by a customer, Mattermost may, with internal approvals, accept a reseller purchase order with the following language:
+If there is a case where the reseller agreement is under review and a customer urgently needs an order, Mattermost may, with internal approvals, accept a reseller purchase order with the following language:
 
-"Any statements, clauses, or conditions included on or referenced by buyer's purchase order forms, which forms modify, add to, or are inconsistent with Mattermost’s standard terms and condtions are expressly rejected. Such orders will only be accepted by Mattermost upon the condition and with the express understanding that despite any such statements,clauses, or conditions contained in any order forms of the buyer are void and have no effect.
+"Any statements, clauses, or conditions included on or referenced by buyer's purchase order forms, which forms modify, add to, or are inconsistent with Mattermost’s standard terms and conditions are expressly rejected. Such orders will only be accepted by Mattermost upon the condition and with the express understanding that despite any such statements, clauses, or conditions contained in any order forms of the buyer are void and have no effect.
 
 EXCEPT AS OTHERWISE EXPRESSLY AGREED BY THE PARTIES IN WRITING, MATTERMOST MAKES NO WARRANTIES OR REPRESENTATIONS WITH RESPECT TO ANY MATTERMOST PRODUCTS, DOCUMENTATION OR SUPPORT, AND HEREBY DISCLAIMS ALL OTHER EXPRESS AND ALL IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT."
 
@@ -730,6 +731,6 @@ How do I report illicit use of Mattermost software?
 
 Illicit use of Mattermost software to harm others, infringe on their rights, break laws or policies is explicitly against our `Conditions of Use <https://about.mattermost.com/default-terms/>`_.
 
-If the illicit use is happening on a web address ending in ``“mattermost.com”`` it means the suspected perpetrators are using Mattermost software controlled by our company, Mattermost, Inc. In this case, please contact us at ``support@mattermost.com`` to report the issue for us to investigate.
+If the illicit use is happening on a web address ending in ``“mattermost.com”``, it means the suspected perpetrators are using Mattermost software controlled by our company, Mattermost, Inc. In this case, please get in touch with us at ``support@mattermost.com`` to report the issue for us to investigate.
 
-If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.net/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our  `Conditions of Use <https://about.mattermost.com/default-terms/>`_ policy for Mattermost software.
+If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case, you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.net/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our `Conditions of Use <https://about.mattermost.com/default-terms/>`_ policy for Mattermost software.

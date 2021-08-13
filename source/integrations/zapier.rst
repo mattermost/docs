@@ -37,12 +37,14 @@ Register Zapier as an OAuth 2.0 Application
 
 1. Go to **Main Menu** > **Integrations**.
 2. Select **OAuth 2.0 Applications > Add OAuth 2.0 Application** and enter the following fields:
+
   a. **Is Trusted**: No
   b. **Display Name**: ``Zapier``
   c. **Description**: ``Application for Zapier integrations``
   d. **Homepage**: ``https://zapier.com/``
   e. **Icon URL**: ``https://cdn.zapier.com/zapier/images/logos/zapier-logomark.png``
   f. **Callback URLs**: ``https://zapier.com/dashboard/auth/oauth/return/MattermostDevAPI/``
+
 3. Click **Save** to create the application.
 
 You'll be provided with a **Client ID** and **Client Secret**. Save these values, or share them with your team to connect Zapier in the steps below.
@@ -55,21 +57,29 @@ Create a Zap
 1. `Sign up <https://zapier.com/sign-up/>`__ for a free Zapier account or `log in <https://zapier.com/app/login>`__ if you already have one.
 2. On your `Zapier dashboard <https://zapier.com/app/dashboard>`__ click **Make a Zap!**.
 3. **Trigger App**: Events in this app will trigger new messages in Mattermost.
+
   a. **Select a Trigger App**. This will trigger new messages in Mattermost. If the app you’re looking to connect isn’t supported on Zapier, consider firing in-app events to a Gmail account and then connecting Gmail to Mattermost using Zapier.
   b. **Select the Trigger Event**. New messages in Mattermost will fire depending on these selected events in conjunction with any filters you apply.
   c. **Connect the Trigger Account**. Connect the account from which you’d like to trigger events and **Test** it to ensure Zapier can connect successfully.
+
 4. **Filtering** (Optional): Exclude certain events from triggering new messages. Learn more about using `Zapier custom filtering <https://zapier.com/learn/how-to-use-zapier/custom-filters/>`__.
+
   a. Add a filter by clicking the small **+** icon before the **Action** step.
   b. Zapier supports **AND** and **OR** filters. Use the dropdown selectors to choose what events will allow the trigger to send a Mattermost message.
+
 5. **Mattermost Action**: Connect your Mattermost Account and then specify posting details.
+
   a. **Select the Action App**. Search for “Mattermost”.
   b. **Select the Action Event**. Select **Post a Message**. The Mattermost team plans to expand the actions available here.
   c. **Connect the Action Account**. Click **Connect a New Account** and enter the following fields:
+
     1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Don't include a slash at the end of the URL and don't append a team to the end of the server URL. For example, ``https://community.mattermost.com/core`` is the entire URL to the Contributors team on our community server. The **Mattermost URL** entered here would be ``https://community.mattermost.com``.
     2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu > Integrations > OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret.
     3. **Log in to Mattermost**. After completing the above fields you will be prompted to log in to your Mattermost account if you're not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`__.
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
+
   d. **Message Post Details**: Specify the formatting of the messages and the team/channel where messages will be posted.
+
     1. **Team**: Choose the team where new messages will post. The dropdown should contain all teams you have access to on Mattermost.
     2. **Channel**: Choose the channel where new messages will post. The dropdown contains all channels that you belong to. Zapier cannot post into Direct Message channels.
     3. **Message Text**: Enter the message text that will post to Mattermost. This text can be formatted using `Markdown <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ and include the dynamic fields offered by your selected trigger app. Read our `message formatting tips <https://docs.mattermost.com/integrations/zapier.html#id4>`__ below.
@@ -78,6 +88,7 @@ Create a Zap
 
     4. **Username**: This is the username that Zapier will post as. Zapier integrations will always appear with a ``BOT`` tag next to the username. In order for bots to override the username of the authorized user, your System Admin must set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ to **True**.
     5. **Icon URL**: This is the profile picture of the bot that Zapier will post as. In order for bots to override the profile picture of the authorized user, your System Admin must set `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
+
   e. **Test the Zap**: You may want to test your zap formatting in a Private Channel before posting in a channel that is visible to your entire team.
 
 Message Formatting Tips
@@ -126,30 +137,37 @@ Cannot connect a Mattermost account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. ``"Token named access_token was not found in oauth response!"``
+
   a. Possible Solution: Try removing any trailing ``/``'s on the end of your **Mattermost URL**.
+
     - Correct: ``https://community.mattermost.com``
     - Incorrect: ``https://community.mattermost.com/``
 
     .. image:: ../images/zapier-error1.png
 
 2. ``"[Server URL] returned (404)"``
+
   a. Possible Solution: The **Mattermost URL** cannot have a team appended to the end of the server URL.
+
     - Correct: ``https://community.mattermost.com``
     - Incorrect: ``https://community.mattermost.com/core``
 
   .. image:: ../images/zapier-error2.png
 
 3. ``"[Server URL] returned (500) Internal Server Error"``
+
   a. Possible Solution: The **Client Secret** might be incorrect. Verify this value in **Main Menu > Integrations > OAuth 2.0 Applications**, or check with your System Admin.
 
   .. image:: ../images/zapier-error4.png
 
 4. ``"Error Invalid client id"``
+
   a. Possible Solution: The **Client ID** and/or **Client Secret** might have trailing spaces in them when copied and pasted into the form. Verify there are no trailing spaces in the **Client ID** and **Client Secret** fields then try again.
 
   .. image:: ../images/zapier-trailing-space-error.png
 
 5. ``"Mattermost needs your help: We couldn't find the requested app"``
+
   a. Possible Solution: The **Client ID** might be incorrect. Verify this value in **Main Menu > Integrations > OAuth 2.0 Applications**, or check with your System Admin.
 
   .. image:: ../images/zapier-error3.png

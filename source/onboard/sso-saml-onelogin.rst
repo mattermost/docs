@@ -13,6 +13,7 @@ Create a OneLogin Connection App for Mattermost SSO
 ---------------------------------------------------
 
 1. Add a SAML test connector app.
+
   a. Sign in to OneLogin as an administrator.
   b. Go to **Apps > Add Apps**.
   c. Search for "SAML Test Connector", then select **SAML Test Connector (Advanced)**.
@@ -27,7 +28,9 @@ Create a OneLogin Connection App for Mattermost SSO
   f. Select **Save**.
 
 2. Configure the app.
+
   a. Select the **Configuration** tab, then enter the following values:
+
     - **RelayState**: leave blank
     - **Audience**: leave blank
     - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
@@ -87,6 +90,7 @@ Create a OneLogin Connection App for Mattermost SSO
     .. image:: ../../source/images/onelogin_8_parameters_add_4.png
 
 4. Copy the SSO information.
+
   a. Select the **SSO** tab.
   b. Copy the values in the **Issuer URL** and **SAML 2.0 Endpoint (HTTP)** fields, then save them for later use.
 
@@ -98,16 +102,19 @@ Create a OneLogin Connection App for Mattermost SSO
   .. image:: ../../source/images/onelogin_10_sso_certificate.png
 
   e. Select **DOWNLOAD**, then save the file in a convenient location for later use.
+
 5. Save all your changes.
 
 Configure SAML Sign-in for Mattermost
 --------------------------------------
 
 1. Start the Mattermost server, then sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
+
   a. Enter the **OneLogin Issuer URL** into the **Identity Provider Metadata URL** field.
   b. Select **Get SAML Metadata from IdP** to download the metadata.
 
 2. Configure Mattermost to verify the signature.
+
   a. In the **Verify Signature** field, select **True**.
   b. In the **Service Provider Login URL**, enter ``https//<your-mattermost-url>/login/sso/saml``.
 
@@ -116,6 +123,7 @@ Configure SAML Sign-in for Mattermost
 3. Configure Mattermost to sign SAML requests using the Service Provider Private Key.
 
 4. Enable encryption.
+
   a. In the **Enable Encryption** field, select **True**.
   b. In the **Service Provider Private Key** field, upload the private key that you generated earlier.
   c. In the **Service Provider Public Certificate** field, upload the public key that you generated earlier.

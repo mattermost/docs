@@ -1,22 +1,22 @@
 Shared Channels (Experimental) (E20)
 ====================================
 
-Shared Channels bring people together from multiple Mattermost installations, such as teams collaborating with external partners, and customers using multiple Mattermost instances in a federated architecture. 
+Shared Channels bring people together from multiple Mattermost installations, such as teams collaborating with external partners and customers using multiple Mattermost instances in a federated architecture. 
 
 Mattermost System Admins use slash commands to establish secure connections between Mattermost instances, then invite secured connections to shared channels.
 
 Shared Channels behave like regular channels, offering the same user experience and functionality as Public and Private channels. All members using secure connections, including local members and remote members, can `send and receive messages <https://docs.mattermost.com/help/messaging/sending-messages.html#sending-and-receiving-messages>`__, `use emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ to react to messages, `share files <https://docs.mattermost.com/help/messaging/attaching-files.html>`__, and `search message history <https://docs.mattermost.com/help/getting-started/searching.html#searching-for-message-contents>`__. Content is synchronized in real-time across all participating Mattermost instances. 
 
-A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel, and be in effect on the local Mattermost server, while not being in effect on a remote Mattermost server.
+A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Setting Up Shared Channels
 --------------------------
 
 The process of sharing channels involves the following three steps:
 
-1. System Admins must enable Shared Channels functionality for their Mattermost instance. See our `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html#enable-shared-channels-experimental>`__ documentation for details.
+1. System Admins must enable Shared Channels functionality for their Mattermost instance. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#enable-shared-channels-experimental>`__ documentation for details.
 
-2. System Admins `use a slash command <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise Edition E20 instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that, if the message were compromised, someone doesn't have all of the data necessary to take action.
+2. System Admins `use a slash command <https://docs.mattermost.com/help/messaging/executing-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise Edition E20 instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 
 3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accepting-a-secure-connection-invitation>`_. 
 
@@ -59,7 +59,7 @@ For example:
 
 ``/secure-connection remove --connectionID``
 
-This slash command severs the trust relationship between the local Mattermost server and a remote Mattermost server based on its ``connectionID``, and removes the secure connection from all shared Mattermost channels.
+This slash command severs the trust relationship between the local Mattermost server and a remote Mattermost server based on its ``connectionID`` and removes the secure connection from all shared Mattermost channels.
 
 Reviewing Secure Connection Status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,6 +69,7 @@ Use the following slash command to review the current status of all secure conne
 ``/secure-connection status``
 
 Status details include:
+
 - Connection ID
 - Connection URL
 - Description
@@ -158,7 +159,7 @@ Frequently Asked Questions
 Why is this feature in beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This feature is in beta while we recruit customer testing partners. This feature has been tested by Mattermost QA, but as we build the interface for managing shared channels, we want to work with System Admins to build the most optimal experience.
+This feature is in beta while we recruit customer testing partners. Mattermost QA has tested this feature, but as we build the interface for managing shared channels, we want to work with System Admins to build the most optimal experience.
 
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
