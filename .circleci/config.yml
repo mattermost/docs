@@ -30,6 +30,9 @@ jobs:
           root: .
           paths:
             - build/html
+      - store_artifacts:
+          path: build/*.log
+          destination: docs-logs
 
   deploy_prod:
     executor:
