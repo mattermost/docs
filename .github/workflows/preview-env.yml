@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         if: github.event.pull_request.head.repo.full_name == github.repository
-        run: make html
+        run: make
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload Preview Env

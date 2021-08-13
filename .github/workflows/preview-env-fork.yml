@@ -79,7 +79,7 @@ jobs:
 
       - name: Build
         if: ${{ github.event.workflow_run.conclusion == 'success' && steps.label-checker.outputs.result == 'true' }}
-        run: make html
+        run: make
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload Preview Env
