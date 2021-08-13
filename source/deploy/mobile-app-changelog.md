@@ -62,6 +62,7 @@ Latest Mattermost Mobile Apps releases:
    - Threads item is lost when clearing search in the channel sideabar.
    - Previously viewed Thread is auto-followed after new replies come in.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
+   - Clicking Jump to on mobile shows different highlighted channels list than the sidebar unread channels list.
 
 ### Contributors
  - [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [enahum](https://github.com/enahum), [larkox](https://github.com/larkox), [manojmalik20](https://github.com/manojmalik20)
