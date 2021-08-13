@@ -73,7 +73,7 @@ redirects = {
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
-     "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
     "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
     "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
     "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
@@ -242,12 +242,18 @@ redirects = {
     "help/getting-started/install-desktop-app":
         "https://docs.mattermost.com/install/installing-mattermost-desktop-app.html",
     "help/getting-started/light-install": "https://docs.mattermost.com/getting-started/light-install.html",
-    "incident-collaboration/playbook-planning":
+     "incident-collaboration/playbook-planning": 
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
-    "incident-collaboration/launching-playbooks":
+     "incident-collaboration/launching-playbooks": 
         "https://docs.mattermost.com/incident-collaboration/running-playbooks.html",
-    "incident-collaboration/review-and-refine":
+     "incident-collaboration/review-and-refine": 
         "https://docs.mattermost.com/incident-collaboration/refining-and-improving.html",
+     "incident-collaboration/overview": "https://docs.mattermost.com/playbooks/refining-and-improving.html",
+     "incident-collaboration/getting-started": "https://docs.mattermost.com/playbooks/getting-started.html",
+     "incident-collaboration/setting-up-playbooks": "https://docs.mattermost.com/playbooks/setting-up-playbooks.html",
+     "incident-collaboration/running-playbooks": "https://docs.mattermost.com/playbooks/running-playbooks.html",
+     "incident-collaboration/refining-and-improving": 
+         "https://docs.mattermost.com/playbooks/refining-and-improving.html",
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
     "process/sg_rest_markup":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"

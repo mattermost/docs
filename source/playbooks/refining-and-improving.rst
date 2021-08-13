@@ -18,14 +18,14 @@ This sets a reminder to fill out the retrospective, which is broadcast to the ch
 Channel export
 ~~~~~~~~~~~~~~
 
-Exporting the contents of an incident channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
+Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
 
 Reviewing past runs
 ~~~~~~~~~~~~~~~~~~~
 
 To view active and past runs in your team from the desktop or browser:
 
-1. Navigate to **Main Menu > Incident Collaboration**.
+1. Navigate to **Main Menu > Playbooks**.
 2. Select **Runs**.
 3. Select the specified run from the list provided.
 4. The run's details are provided in the **Overview** tab, and the retrospective is in the **Retrospective** tab.
