@@ -142,7 +142,7 @@ To use `mmctl`<https://docs.mattermost.com/manage/mmctl-command-line-tool.html> 
 
   mmctl user convert user@example.com --bot
 
-In addition to email, you may identify the user by its username or user ID.
+In addition to an email address, users can be identified by their Mattermost username or user ID.
 
 Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synchronized from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML synchronization performs correctly.
 
