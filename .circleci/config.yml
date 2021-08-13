@@ -25,7 +25,7 @@ jobs:
           key: dependencies-{{ checksum "Pipfile.lock" }}
           paths:
             - ~/.local/share/virtualenvs
-      - run: make
+      - run: make html
       - persist_to_workspace:
           root: .
           paths:
