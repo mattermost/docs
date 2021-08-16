@@ -116,7 +116,7 @@ You can do the same for the proxy server.
 Cluster Discovery
 ^^^^^^^^^^^^^^^^^
 
-If you have non-standard (i.e. complex) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. complex) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/configure/configuration-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/configure/configuration-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
 If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
 
@@ -314,7 +314,7 @@ The process is based on a widely used `bully leader election algorithm <https://
 Job Server
 ^^^^^^^^^^^
 
-Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`__. These tasks include:
+Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/configure/configuration-settings.html#jobs>`__. These tasks include:
 
 - LDAP sync
 - Data retention
@@ -341,9 +341,9 @@ Note a slight behavior change from Mattermost v5.15: When you reinstall a plugin
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/deployment/cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/administration/command-line-tools.html>`__ in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
+The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
 
-We recommend using `mmctl <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__ in a High Availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
+We recommend using `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__ in a High Availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
 
 Upgrade Guide
 -------------
@@ -437,6 +437,7 @@ Starting with Mattermost Server v4.0, when a server starts up it can automatical
     },
 
   For more information about these settings, see :ref:`high-availability`.
+
 4. Stop NGINX.
 5. Upgrade each Mattermost instance.
 6. On each server, replace the new ``config.json`` file with your modified version.
@@ -447,7 +448,7 @@ Starting with Mattermost Server v4.0, when a server starts up it can automatical
 All Cluster Nodes Must Use a Single Protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All cluster traffic uses the gossip protocol. From Mattermost Server v5.36, `gossip clustering can no longer be disabled <https://docs.mattermost.com/administration/config-settings.html#use-gossip>`__.
+All cluster traffic uses the gossip protocol. From Mattermost Server v5.36, `gossip clustering can no longer be disabled <https://docs.mattermost.com/configure/configuration-settings.html#use-gossip>`__.
 
 When upgrading a High Availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a High Availability upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
@@ -503,7 +504,7 @@ App Refreshes Continuously
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a High Availability cluster.
 
-Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
+Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/scale/high-availability-cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
 Messages Do Not Post Until After Reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

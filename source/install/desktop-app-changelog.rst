@@ -15,7 +15,15 @@ Release v4.7
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
-**Released 2021-06-23**
+- **v4.7.1, released 2021-08-03**
+ - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+ - Added support to allow users to specify a different download location for Hunspell dictionaries.
+ - Fixed an issue where the notification badge did not get cleared when reading a channel with unread messages until navigating away from the channel.
+ - Fixed an issue where the top bar menu, and the minimize, maximize and close icons did not work on 4.7.0 on Windows 10 if GPU acceleration was disabled.
+ - Reverted to Electron v12.0.1 to fix an issue where clicking in the searchbox to highlight search terms dragged the desktop window.
+ - Fixed an issue to prevent a crash on malformed default download locations.
+- **v4.7.0, released 2021-06-23**
+ - Original v4.7.0 release
 
 **Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
 
@@ -88,8 +96,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Notification badge does not get cleared when reading a channel with unread messages until navigating away from the channel `MM-35946 <https://mattermost.atlassian.net/browse/MM-35946>`_.
-- The top bar menu, and the minimize, maximize and close icons do not work on 4.7.0 on Windows 10 if GPU acceleration is disabled `MM-36938 <https://mattermost.atlassian.net/browse/MM-36938>`_.
+- The new spellchecker connects to Google servers for downloading updated dictionaries.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
 - Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
 - Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
@@ -110,11 +117,16 @@ Release v4.6
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 - **v4.6.2, released 2021-01-25**
+
  - Fixed an issue where logging in to ``gitlab.com`` did not work on the Desktop App. `MM-31626 <https://mattermost.atlassian.net/browse/MM-31626>`_
  - Fixed an issue where macOS entitlements had not been enabled for using camera and microphone on the Desktop App for third-party plugins such as Jitsi. `MM-31987 <https://mattermost.atlassian.net/browse/MM-31987>`_
+
 - **v4.6.1, released 2020-10-26**
+
  - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. `MM-29921 <https://mattermost.atlassian.net/browse/MM-29921>`_
+
 - **v4.6.0, released 2020-10-16**
+
  - Original v4.6.0 release
 
 Improvements
@@ -165,14 +177,23 @@ Release v4.5
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.4>`_
 
 - **v4.5.4, released 2020-09-11**
+
  - Fixed an issue where Help and Report a Problem website links configured to point to Mattermost channels didn't work. `MM-28595 <https://mattermost.atlassian.net/browse/MM-28595>`_
+
 - **v4.5.3, released 2020-08-25**
+
  - Fixed an issue where users were unable to log in to the desktop app when users had to select a certificate for authentication that requires a pin even when there was only one option to manage a certificate login. `MM-27331 <https://mattermost.atlassian.net/browse/MM-27331>`_
+
 - **v4.5.2, released 2020-07-20**
+
  - Fixed an issue on Linux app started as a blank screen when both “Show icon in the notification area" and "Start app on login" were enabled. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
+
 - **v4.5.1, released 2020-07-13**
+
  - Mattermost v4.5.1 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+
 - **v4.5.0, released 2020-06-16**
+
  - Original v4.5.0 release
 
 Improvements
@@ -249,15 +270,20 @@ Release v4.4
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.2>`_
 
 - **v4.4.2, released 2020-05-11**
+
  - Fixed an issue on Windows where a channel was marked as read if the app was closed on a channel where the message was posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
+
 - **v4.4.1, released 2020-04-22**
+
  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
  - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
  - Fixed an issue where Windows Desktop notifications were delayed. `MM-22552 <https://mattermost.atlassian.net/browse/MM-22552>`_
  - Fixed an issue where the app sometimes didn't restore to the right position but "jumped" to a different place in the display when minimizing the app and then maximizing it. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
  - Fixed an issue where users were not able to paste text into the login screen. `MM-23784 <https://mattermost.atlassian.net/browse/MM-23784>`_
  - Fixed an issue where back/forward navigation on the OAuth window caused the app to crash. `MM-23153 <https://mattermost.atlassian.net/browse/MM-23153>`_
+
 - **v4.4.0, released 2020-02-16**
+
  - Original v4.4.0 release
 
 **Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
@@ -333,15 +359,20 @@ Release v4.3
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__
 
 - **v4.3.2, released 2019-11-29**
+
  - Mattermost v4.3.0 contains a low level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`_.
  - Fixed an issue where the app started into white screen after a system reboot on Windows. `MM-19649 <https://mattermost.atlassian.net/browse/MM-19649>`_
  - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
  - Fixed an issue where users were unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
  - Fixed an issue where right-click + "Copy" did not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
  - Fixed an issue where email links in profile popovers didn't work. `MM-19596 <https://mattermost.atlassian.net/browse/MM-19596>`_
+
 - **v4.3.1, released 2019-10-22**
+
  - Fixed an issue where Mac desktop app was not notarized correctly for installing on MacOS Catalina. `MM-19555 <https://mattermost.atlassian.net/browse/MM-19555>`_
+
 - **v4.3.0, released 2019-10-17**
+
  - Original v4.3.0 release
 
 **Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
@@ -583,11 +614,13 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Improved stability and performance
+
   - Reduced memory usage by periodically clearing cache.
   - Fixed app crashing when a server tab was drag-and-dropped to the message view.
   - Added an option to disable GPU hardware acceleration in App Settings to improve stability in some systems.
   - Fixed Windows crash issues during installation.
   - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
+
 - Updated design for loading animation icon.
 - Improved appearance of server tabs.
 - Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`__ verification in HTTPS.

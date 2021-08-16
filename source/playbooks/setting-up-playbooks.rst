@@ -11,28 +11,27 @@ Playbooks are made up of:
 Creating checklists
 -------------------
 
-1. Go to **Main Menu > Incident Collaboration**.
-2. Select **Playbooks**.
-3. Start a **Blank Playbook**, or use the built-in template.
-4. Name your playbook and provide a description.
-5. Select the **Checklists** tab.
+1. Go to **Main Menu > Playbooks**.
+2. Start a **Blank Playbook**, or use the built-in template.
+3. Name your playbook and provide a description.
+4. Select the **Checklists** tab.
 
-You can start with the default checklist and edit it or you can delete it and select **+ New checklist**.
+  You can start with the default checklist and edit it or you can delete it and select **+ New checklist**.
 
     * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
     * Drag and drop to reorganize checklists and tasks.
     * Optionally add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
     * Optionally add a slash command to the task that can be executed by members of the playbook as needed.
-6. Choose **Save**.
+
+5. Choose **Save**.
   
 Configuring templates
 ---------------------
 
 Templates are standardized sets of content that are used for communicating reminders and updates.
 
-1. Go to **Main Menu > Incident Collaboration**.
-2. Select **Playbooks**.
-3. Select the **Templates** tab.
+1. Go to **Main Menu > Playbooks**.
+2. Select the **Templates** tab.
 
   * Optionally configure a broadcast channel to which status updates will be copied. If you are not a member of the configured broadcast channel, **Unknown Channel** is displayed instead of the channel name.
   * Optionally configure the default reminder timer used to prompt for regular updates. The reminder timer may be changed when a status update is written.
@@ -74,9 +73,8 @@ When a new member joins the channel
 Setting permissions
 -------------------
 
-1. Go to **Main Menu > Incident Collaboration**.
-2. Select **Playbooks**.
-3. Select **Permissions**.
+1. Go to **Main Menu > Playbooks**, and then select **Permissions**.
+
  * **Channel access**: Decide whether the automatically-created channel should be Public or Private within the team.
  * **Playbook access**: Share this playbook with other members of the team to allow them to use the playbook to start a run, as well as edit the playbook.
 
@@ -85,11 +83,14 @@ Editing a playbook
 
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **Main Menu > Incident Collaboration**.
-2. Select **Playbooks**.
-3. Find the playbook to be edited.
+1. Go to **Main Menu > Playbooks**.
+2. Find the playbook to be edited.
+
  * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
-4. Select the name of the playbook.
+
+3. Select the name of the playbook.
+
  * To edit the playbook directly select the **Actions** menu next to the playbook name, then select **Edit**.
  * To access the playbook dashboard, select the hyperlinked playbook name.
-5. Configure the playbook the same way a playbook is created or edited.
+
+4. Configure the playbook the same way a playbook is created or edited.

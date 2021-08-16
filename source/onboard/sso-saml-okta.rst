@@ -27,6 +27,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 	.. image:: ../../source/images/okta_2_general_settings.png
 
 6. Enter **SAML Settings**, including:
+
  - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
  - **Audience URI:** For instance, ``mattermost``
  - **Name ID format:** ``unspecified``
@@ -47,6 +48,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 	.. image:: ../../source/images/okta_6_attribute_statements.png
 
 10. Select **Next**. Then, set Okta support parameters for the application. Recommended settings:
+
  - **I’m an Okta customer adding an internal app**
  - **This is an internal app that we have created**
 
