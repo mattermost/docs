@@ -29,7 +29,7 @@ A core set of features is available with all authentication options to help incr
 Active Directory/LDAP authentication
 ------------------------------------
 
-`AD/LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`_ is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
+`AD/LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
 
 - Account creation using AD/LDAP credentials.
 - AD/LDAP user filters to define which users get access to Mattermost in the form of a query.
