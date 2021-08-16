@@ -55,7 +55,7 @@ When deploying Mattermost to a DMZ location outside the security of a private ne
 - `SAML 2.0 authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__
 - `Google Apps <https://docs.mattermost.com/onboard/sso-google.html>`__
 - `Office 365 <https://docs.mattermost.com/onboard/sso-office.html>`__
-- OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`_
+- `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__
 
 Generic OAuth is not currently supported.
 
