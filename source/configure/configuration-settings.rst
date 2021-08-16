@@ -1,14 +1,15 @@
 Configuration Settings
 ======================
 
-.. note::
-   The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
-
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
-Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+.. important::
 
-On new installations starting from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+   Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+
+   On new installations from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+
+   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the mmctl command `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
 
 Configuration in Database
 --------------------------
@@ -1274,7 +1275,7 @@ Where:
   - Advanced logging supports hot-reloading of logger configuration.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
+| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
@@ -1380,7 +1381,7 @@ Options outlined in `this text file <https://github.com/mattermost/docs/files/50
 .. Note::
     Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
 
-See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
+See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
 
 Standard Logging 
 ~~~~~~~~~~~~~~~~
@@ -1436,7 +1437,7 @@ Changes to this setting require a server restart before taking effect.
 Colorize plain text console logs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
 **True**: When logged events are output to the console as plain text, colorize log levels details.
 
@@ -3834,9 +3835,22 @@ Signature Public Key Files
 
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Chimera OAuth Proxy URL
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Mattermost plugins to connect with pre-created OAuth applications.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
++-------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Autolink
 ~~~~~~~~
@@ -5186,7 +5200,7 @@ Replica Lag Settings
 Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
 
 +-------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
+| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
 +-------------------------------------------------------------------------------------------------------+
 
 String array input consists of:
@@ -5412,7 +5426,7 @@ Enable Reliable Websockets
 Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": false`` with options ``true`` and ``false``.                                              |
+| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``.                                               |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Remote Clusters
