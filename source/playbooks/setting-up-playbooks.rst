@@ -69,6 +69,12 @@ When a new member joins the channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  * **Send a welcome message**: Enable the toggle and enter text that new channel members will see when they join the channel.
+ * **Add the channel to a sidebar category**: Enable the toggle so that the channel will be automatically categorized and listed under **Playbook runs** in the left-hand sidebar.
+ 
+When a run is archived
+~~~~~~~~~~~~~~~~~~~~~~
+
+ * **Export channel**: (E20 and Cloud only) When a run finishes, this triggers the playbook to automatically save a copy of all channel messages in CSV format. This provides a record of the discussion for future reference or other use such as audits.
 
 Setting permissions
 -------------------
