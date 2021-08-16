@@ -170,10 +170,10 @@ No. If you deactivate a user that user is not counted as an active user during y
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
-Can I use the same license key on multiple self-managed Enterprise Edition servers?
+Can I use the same license key on multiple self-managed servers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
+License keys for unlocking the advanced commercial features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
 
 Customers who purchase the Premier Support add-on are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
 
@@ -285,3 +285,19 @@ What happens to my license when I delete my account?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When an account is deleted, the license remains valid. When the license is close to expiring, you'll need to create a new profile in order to purchase a new license.
+
+How am I billed for my Cloud monthly subscription?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users. All monthly charges will be in arrears on the first day of each month .e.g June billing will be done on 7/1 for the period 6/1 - 6/30.
+
+If you begin your subscription in the middle of a billing period, you will be charged pro rata. For example, if you signed up 6/15 we will charge you on 7/1 for the period 6/15 - 6/30. 
+
+Similarly, if you end your subscription in the middle of a billing period, you will be charged pro rata. For example, if you cancel your account on 6/15 we will charge you on 7/1 for the period 6/1 - 6/15.
+
+If you upgrade in the middle of a billing persiod, you will also be charged pro rata. For example, if a you upgrade from Starter to Professional on 6/15 we will charge you 7/1, with a single charge for Starter for the period 6/1 - 6/14 and Professional for the period 6/15 - 6/30. 
+
+Can I purchase an annual subscription to Mattermost Cloud deployments?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Yes. Annual cloud orders need to be processed by our sales team, as we do not currently support an annual term using the self-service Customer Portal or Cloud workspace.
+
+If you upgrade during a monthly billing cycle, you will be charged pro rata. For example, if you upgrade from Starter to an annual term of Mattermost Professional on 6/15 we will charge you on 7/1 for starter for the period 6/1 - 6/14. Separately, an invoice will be provided for an annual period starting 6/15.
