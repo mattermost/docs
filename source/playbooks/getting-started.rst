@@ -18,6 +18,23 @@ To access playbooks:
 * From the Main Menu, select **Playbooks** to view stats, review incidents of which you are a member, and configure playbooks. System Admins have unrestricted access.
 * From the channel header, select the **Playbook** icon to open the right-hand sidebar. From there, you can start a new playbook run or view runs you belong to.
 
+Navigating playbooks
+--------------------
+
+Active runs 
+~~~~~~~~~~~
+
+When you're in a channel with an active run, the channel right-hand sidebar enables teams to have their conversation and procedure checklist side-by-side to effectively work towards the desired outcome. We’ve simplified the experience to help teams run playbooks faster, and focus better on the process at hand.
+
+When opening the right-hand sidebar from a channel that is not running a playbook, it will now show the list of playbooks for that team that can be run with one-click.
+
+Alternatively, if the current channel is already running a playbook, the right-hand sidebar will instead show the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status. 
+
+Playbooks 
+~~~~~~~~~
+
+Playbooks are accessed via **Main Menu > Playbooks** in Mattermost, where you can also view a list of templates.
+
 API Documentation
 ~~~~~~~~~~~~~~~~~~
 
