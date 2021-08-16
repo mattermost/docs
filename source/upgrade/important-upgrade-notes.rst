@@ -17,7 +17,7 @@ Important Upgrade Notes
 |                                                    | and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes  |
 |                                                    | about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL v5.6.51.   | 
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Focalboard v0.8.2 (released with Mattermost v5.38.0) requires Mattermost v5.37 due to the new database connection system.                                        |
+|                                                    | Focalboard v0.8.2 (released with Mattermost v5.38.0) requires Mattermost v5.37+ due to the new database connection system.                                       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.37.0                                            | The ``platform`` binary and “--platform” flag have been removed. If you are using the “--platform” flag or are using the ``platform`` binary directly to run     |
 |                                                    | the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.                                   |
