@@ -1,12 +1,71 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
+- [1.46.0 Release](#release)
 - [1.45.1 Release](#release)
 - [1.45.0 Release](#id1)
 - [1.44.1 Release](#id6)
 - [1.44.0 Release](#id11)
 - [1.43.0 Release](#id18)
-- [1.42.1 Release](#id27)
+
+## 1.46.0 Release
+- Release Date: August 16, 2021
+- Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.31.3 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.25 has ended and upgrading to server ESR v5.31.3 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 11+ is required.
+
+### Highlights
+
+#### Collapsed Reply Threads (Beta)
+ - Added support for [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) for the mobile apps.
+
+#### Custom Status Expiry
+ - Added a feature to choose expiry time when setting a custom status. Requires server version 5.37 or later. Also added new screens such as **Clear** and new components such as ``DateTime`` picker.
+
+#### Granular Data Retention Policies 
+ - Added support for Granular Data Retention Policies for the mobile apps. Requires server version 5.37 or later.
+
+### Improvements
+ - Added the custom statuses to the mention autocomplete.
+ - Changed the default behavior of autocomplete user interface for cases of long display names. Long display names will be truncated to show the username.
+ - Added support for showing plugin slash command icons.
+ - Added support for apps to add arbitrary markdown in between fields on forms.
+ - Implemented a new style for app submit buttons.
+ - Added markdown support for app fields descriptions and errors.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where boolean fields did not get disabled on dialogs when they should have.
+ - Fixed an issue with displaying the current user when multiple users were part of the System join / leave messages.
+ - Fixed a race condition when bringing the app to the foreground by tapping in a notification that belongs to a channel other than the current channel that caused the current channel to miss any mentions if it had any.
+ - Fixed an issue with attaching files to the correct post.
+
+#### Android specific
+ - Fixed a silent crash that could happen for some users when receiving a push notification on Android.
+
+### Known Issues
+ - Posts sometimes get stuck behind the post textbox on iPad.
+ - User may need to log out and back in from the app to see data retention results on the app.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
+   - Mobile app top bar disappears after resuming app from screen lock.
+   - New messages banner should only count root posts.
+   - Clicking Jump to on mobile shows a different highlighted channel list than the sidebar highlighted channel list.
+   - Only the last 6 threads are visible in the Threads view.
+   - Some unread channels with leave/join system messages are doubled in search results.
+   - Tapping on the push notification for new reply should open the thread with the post.
+   - Turning the feature on and off does not push an update to the Mobile client.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item is lost when clearing search in the channel sideabar.
+   - Previously viewed Thread is auto-followed after new replies come in.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
+   - Clicking Jump to on mobile shows different highlighted channels list than the sidebar unread channels list.
+
+### Contributors
+ - [anurag6713](https://github.com/anurag6713), [ashishbhate](https://github.com/ashishbhate), [enahum](https://github.com/enahum), [larkox](https://github.com/larkox), [manojmalik20](https://github.com/manojmalik20)
 
 ## 1.45.1 Release
 - Release Date: July 20, 2021
