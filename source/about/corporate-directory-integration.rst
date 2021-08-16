@@ -2,7 +2,7 @@
 Corporate Directory Integration 
 ================================
 
-Mattermost Enterprise Edition offers advanced security and authentication options for integrating with corporate directories. This guide outlines the options available.
+Mattermost offers advanced security and authentication options for integrating with corporate directories. This guide outlines the options available.
 
 Basic authentication 
 ---------------------
@@ -29,7 +29,7 @@ A core set of features is available with all authentication options to help incr
 Active Directory/LDAP authentication
 ------------------------------------
 
-AD/LDAP is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
+`AD/LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`_ is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
 
 - Account creation using AD/LDAP credentials.
 - AD/LDAP user filters to define which users get access to Mattermost in the form of a query.
@@ -55,10 +55,11 @@ When deploying Mattermost to a DMZ location outside the security of a private ne
 - `SAML 2.0 authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__
 - `Google Apps <https://docs.mattermost.com/onboard/sso-google.html>`__
 - `Office 365 <https://docs.mattermost.com/onboard/sso-office.html>`__
+- OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`_
 
-Generic OAuth and OpenID are not currently supported.
+Generic OAuth is not currently supported.
 
 Future authentication methods
 -----------------------------
 
-Mattermost Enterprise Edition releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, please contact sales@mattermost.com to start a discussion.
+Mattermost releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, please contact sales@mattermost.com to start a discussion.
