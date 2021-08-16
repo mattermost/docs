@@ -92,10 +92,12 @@ What are my options for securing the mobile apps?
 The following options for secure mobile app deployments are available:
 
 1. Securing network connection to mobile apps
+
   - Use HTTPS and WSS network connections to encrypt transport.
   - Use of a mobile VPN client on mobile devices to establish secure connection to Mattermost server within private network.
 
 2. Use multifactor authentication options
+
   - If a VPN client with multifactor authentication is not in use, it's highly recommended that MFA is required on authenticating into Mattermost, either within Mattermost itself or via your SSO provider.
 
 What are my options for securing push notifications?
@@ -104,12 +106,15 @@ What are my options for securing push notifications?
 The following options are available for securing your push notification service:
 
 1.  Protecting notification contents
+
   - You can `choose what type of information to include in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
 
 2. Disabling push notifications
+
   - Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled.
 
 3. Encrypting connections for apps you compile yourself:
+
   - When using a privately-hosted Mattermost Push Notification Service (MPNS), use encrypted TLS connections between:
 
     - MNPS and Apple Push Notification Service (APNS)
@@ -117,6 +122,7 @@ The following options are available for securing your push notification service:
     - MPNS and your Mattermost server
 
 4. Securing the Mattermost Apple App Store and Google Play apps:
+
   - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise Edition E10 or higher, which offers a `Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/mobile/mobile-hpns.html#hosted-push-notifications-service-hpns>`__.
 
 .. Note:: 
@@ -213,6 +219,7 @@ The app checks for platform-specific configuration on app install. If no configu
 2. In order to handle deep links, paste the following ``JSON`` into the ``apple-app-site-association`` file. Make sure to place your app ID in the ``appID`` property:
 
 ::
+
     {
         "applinks": {
             "apps": [],
