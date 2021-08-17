@@ -63,7 +63,7 @@ When a run starts
 When a status update is posted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  * **Send outgoing webhook**: Enable the toggle and enter the webhook you want to use for status updates. For information about the webhook payload, see the `playbook_run.go file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/app/playbook_run.go>`_.
+  * **Send outgoing webhook**: Enable the toggle and enter the webhook you want to use for status updates. For information about the webhook payload, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_.
   
 When a new member joins the channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
