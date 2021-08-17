@@ -288,7 +288,7 @@ When an account is deleted, the license remains valid. When the license is close
 
 How am I billed for my Cloud monthly subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users. All monthly charges will be in arrears on the first day of each month .e.g June billing will be done on 7/1 for the period 6/1 - 6/30.
+After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users. All monthly charges will be in arrears on the first day of each month, e.g., June billing will be done on 7/1 for the period 6/1 - 6/30.
 
 If you begin your subscription in the middle of a billing period, you will be charged pro rata. For example, if you signed up 6/15 we will charge you on 7/1 for the period 6/15 - 6/30. 
 
