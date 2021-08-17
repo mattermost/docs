@@ -5,23 +5,40 @@ Data Retention Policy (E20)
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users.
 
-In Mattermost Enterprise E20, you can set a custom policy to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
+In Mattermost Enterprise E20, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and Direct Messages
 
 .. warning:: 
-  Once a message or a file is deleted, the action is irreversible. Please use caution when setting up a custom data retention policy.
+  Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
 
-Configuring a Data Retention Policy
-------------------------------------
+Configuring a Global Data Retention Policy
+-------------------------------------------
 
-To set a custom data retention policy:
+To set a global data retention policy in Mattermost v5.38 and later:
 
-1. Go to **System Console > Compliance > Data Retention Policy**.
-2. Select a **Message Retention** option. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
-3. Select a **File Retention** option. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** at the specified time. The minimum retention period is one day.
-4. Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+1. Go to **System Console > Compliance > Data Retention Policies**.
+2. Select **Edit** from the menu located to the right of the **Global retention policy** table. 
+3. Specify a global retention policy for channel messages and Direct Messages by selecting a **Channel & direct message retention** option from the dropdown, then set how long to keep those messages. When a time is set, messages and file attachments older than the duration you set will be deleted. The minimum retention period is one day.
+4. Select a **File retention** option from the dropdown. Set the number of days or ears to keep files. When a time is set, uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage**. The minimum retention period is one day. The global file policy deletes all files regardless of whether they're in a direct message, private, or public channel.
+5. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. 
 
-Save the settings and restart your server. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
+Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
+Configuring a Custom Data Retention Policy
+-------------------------------------------
+
+To set a custom data retention policy in Mattermost v5.38 and later:
+
+1. Go to **System Console > Compliance > Data Retention Policies**.
+2. Select **Add policy** to the right of the **Custom retention policies** table. 
+3. Specify a name for your policy. 
+4. Specify a custom retention policy for channel and Direct Messages by selecting a **Channel & direct message retention** option from the dropdown, then set how long to keep uploaded files. When a time is set, messages and file attachments older than the duration you set will be deleted. The minimum retention period is one day.
+5. Assign teams and channels to this policy by selecting **Add teams** and searching for a specific team, or by selecting **Add channels** and searching for a specific channel. If only teams are specified, all channels for selected teams will be included in the a policy. 
+6. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. If a time is already set for a global retention policy, then the same time applies to custom data retention policies. 
+
+Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
+
+Running a Deletion Job Manually
+--------------------------------
 You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
 .. note::
@@ -33,12 +50,14 @@ Frequently Asked Questions (FAQs)
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or saved posts lists.
+The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or saved posts lists. 
 
 Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 
-What happens when a file is deleted?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If there was a file attached to the message, it will be removed from the user interface only.  
+
+What happens when a file is deleted by the file retention policy?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The file attachment is removed from the Mattermost user interface, deleted from the ``FileInfo`` table, and from your local disk or Amazon S3 service as specified in **System Console > Environment > File Storage**.
 
@@ -59,14 +78,6 @@ Why do I see ``Pending`` in the deletion job table with no details?
 
 This usually means another data retention job is in progress. You can verify this in the deletion job table in  **System Console > Compliance > Data Retention Policy**.
 
-If no jobs are in progress and the job has stayed ``Pending`` for more than 2 minutes, then you may not have restarted your server after enabling the data retention policy. Restart your server and try again.
-
-How do I set a custom policy per team or channel?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Setting custom policies for each team and channel are in the roadmap but not yet supported.
-
-If you are interested in this feature, consider upvoting the `existing feature proposal <https://mattermost.uservoice.com/forums/306457-general/suggestions/31731844-ee-data-retention-policy-for-individual-teams-and>`__ and share your feedback in the comments.
 
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
