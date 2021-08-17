@@ -26,7 +26,7 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 
 1. Log in to your `Customer Portal <https://customers.mattermost.com>`_ account.
 2. Choose a subscription type and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`_.
-3. (Optional for E20 or Enterprise Edition) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
+3. (Optional for Enterprise Edition or E20) You can add `Premier Support <https://mattermost.com/support/>`_, the cost of which is automatically added to your order total.
 4. Select **Next Step**.
 5. Enter your billing and payment information.
 6. Accept the **Terms**.
