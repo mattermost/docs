@@ -92,7 +92,7 @@ Database Software
 
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
--  Amazon Aurora MySQL 5.6+
+-  Amazon Aurora MySQL 5.7.12
 
 Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
 
