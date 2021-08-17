@@ -39,7 +39,7 @@ Replies are collapsed under the first message of a thread. To reply to a thread,
 
 .. tip:: 
     
-    - Select anywhere on a message in a channel to view it, or reply to it, on the right-hand side.
+    - Select anywhere on a message in a channel in the center pane to view it, or reply to it, on the right-hand side.
     - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
 
 .. image:: ../images/crt-new-unread-threads.png

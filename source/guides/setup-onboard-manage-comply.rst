@@ -127,6 +127,7 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
  
+   /manage/cloud-team-channel.rst
    /manage/cloud-billing.rst
    /manage/cloud-reporting.rst
    /manage/cloud-user-satisfaction-surveys.rst
