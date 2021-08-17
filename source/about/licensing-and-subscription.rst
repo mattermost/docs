@@ -175,7 +175,7 @@ Can I use the same license key on multiple self-managed servers?
 
 License keys for unlocking the advanced commercial features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
 
-Customers who purchase the Premier Support add-on are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
+Customers who purchase the Premier Support add-on are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, or user acceptance testing.)
 
 Is my license available immediately?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
