@@ -90,7 +90,7 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database Software
 ^^^^^^^^^^^^^^^^^
 
--  MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
+-  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
 -  Amazon Aurora MySQL 5.6+
 
