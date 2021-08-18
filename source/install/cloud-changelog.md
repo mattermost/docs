@@ -3,12 +3,70 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-08-25](#release-2021-08-25)
 - [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
-- [Release 2021-06-02](#release-2021-06-02)
+
+## Release 2021-08-25
+
+### Highlights
+
+#### Permalink Previews
+ - Added support for permalink previews for posts in Mattermost.
+
+#### Tutorial Updates
+ - Added a tip for downloading desktop apps to the **Getting Started** page.
+ - Added a tip for the product switcher. The tip is skipped if not applicable.
+ - Updated tutorial icons and changed text content in tutorial tips.
+ - Added a tutorial tip for new settings and status buttons.
+
+#### Branding Changes
+ - Added a new default brand theme "Denim".
+ - The existing Mattermost, Organization, Mattermost Dark and Windows Dark theme names and colours have been updated to the new Sapphire, Quartz, Indigo & Onyx theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing Mattermost, Organization, Mattermost Dark and Windows Dark themes will still be accessible in our docs, so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Updated email templates to the new branding.
+
+#### Packaging
+ - Updated in-product strings referencing E10 & E20 to new packaging.
+ - SAML has been moved from the highest level tier (Enterprise E20) to mid-level (Professional) while Certificate-based authentication feature had no change.
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved typing performance when the emoji autocomplete is open.
+ - Renamed the “View image” modal to “File preview” modal.
+ - Added “Invite People” to the main "+" button below the hamburger menu.
+ - Dropped support for left-hand side-specific bot icons.
+ - Add a "rest field" to the app command parser.
+ - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
+ - Updated **Account Settings > Display > Timezone** to be more user friendly.
+ - Updated feature discovery images.
+ - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
+ - Removed the Slack importer from the user interface.
+
+#### Administration
+ - Upgraded Go to v1.16.7.
+ - Migrated the extraction command to MMCTL.
+ - Remove a deprecated "Backend" field from plugin manifest.
+ - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
+ - Converted the "Executables" field in the plugin manifest to a map.
+
+### Bug Fixes
+ - Fixed an issue with loading of emojis in message attachment titles.
+ - Fixed an issue where email invites were not sent when clicking the **Next** button during onboarding.
+ - Fixed an error with app locations and binding filtering.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where the thread unread state would not be updated on reconnect of the websocket.
+   - Fixed an issue with a gap between first and second consecutive message from the same user.
+   - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side.
+
+### Known Issues
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-08-12
 
