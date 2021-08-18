@@ -44,6 +44,7 @@ Latest Mattermost Cloud releases:
  - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
  - Removed the Slack importer from the user interface.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
+ - Removed the legacy channel sidebar.
 
 #### Administration
  - Upgraded Go to v1.16.7.
