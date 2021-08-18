@@ -43,6 +43,7 @@ Latest Mattermost Cloud releases:
  - Updated feature discovery images.
  - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
  - Removed the Slack importer from the user interface.
+ - Increased the limit of uploaded file attachments per post from 5 to 10.
 
 #### Administration
  - Upgraded Go to v1.16.7.
@@ -50,6 +51,28 @@ Latest Mattermost Cloud releases:
  - Removed a deprecated "Backend" field from the plugin manifest.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
  - Converted the "Executables" field in the plugin manifest to a map.
+ - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
+ - Added support for React components in channel header tooltips registered by plugins.
+ - Removed the following deprecated CLI commands:
+   - channel
+   - command
+   - config
+   - extract
+   - group
+   - import
+   - integrity
+   - jobserver
+   - ldap
+   - license
+   - logs
+   - permissions
+   - plugin
+   - reset
+   - roles
+   - sampledata
+   - team
+   - user
+   - webhook
 
 ### Bug Fixes
  - Fixed an issue with loading of emojis in message attachment titles.
