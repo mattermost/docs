@@ -59,7 +59,7 @@ Latest Mattermost Cloud releases:
  - Fixed an error with app locations and binding filtering.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
    - Fixed an issue where the thread unread state would not be updated on reconnect of the websocket.
-   - Fixed an issue with a gap between first and second consecutive message from the same user.
+   - Fixed an issue where a gap was displayed between the first and second consecutive message from the same user.
    - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side.
 
 ### Known Issues
