@@ -90,7 +90,7 @@ Upgrading Mattermost Server
   
    By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
-   Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step 8 below.
+   Run ``ls`` on your Mattermost install directory to identify what default folders exist.
       
    **A default Mattermost installation has the following files and directories**:
 
@@ -147,7 +147,7 @@ Upgrading Mattermost Server
     cd {install-path}/mattermost
     sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
-10. Change ownership of the new files before copying them. For example:
+10. Change ownership of the new files after copying them. For example:
 
   .. code-block:: sh
          
