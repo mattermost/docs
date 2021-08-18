@@ -91,10 +91,12 @@ Database Software
 ^^^^^^^^^^^^^^^^^
 
 For Mattermost v6.0:
+
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
 
 For Mattermost v5.38 and previous releases:
+
 - MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
 - PostgreSQL 10.0+
 
