@@ -7,6 +7,7 @@ Elasticsearch
   :scale: 25
   :target: ../about/product.html#mattermost-enterprise-edition
   :alt: Available in the Mattermost Enterprise subscription plan.
+  :abbr: `is this linkified text (tooltip text)`
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 25
