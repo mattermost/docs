@@ -12,32 +12,40 @@ Before You Begin
    /boards/overview.rst
    /boards/getting-started.rst
       
-Planning
---------
+
+Access your Workspace
+---------------------
+
+.. toctree::
+   :maxdepth: 2
+
+
+Work with Boards
+----------------
 
 .. toctree::
    :maxdepth: 2
 
   /boards/working-with-boards.rst
   /boards/working-with-views.rst
-
-Building
----------
-
-.. toctree::
-   :maxdepth: 2
-
    
-   
-Releasing
----------
+
+Manage your Boards
+------------------
 
 .. toctree::
    :maxdepth: 2
    
 
-Operating
----------
+Customize your Boards
+---------------------
+
+.. toctree::
+   :maxdepth: 2
+   
+   
+Navigate your Boards
+---------------------
 
 .. toctree::
    :maxdepth: 2
