@@ -10,6 +10,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.38.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-38-feature-release>`__ - `Download <https://releases.mattermost.com/5.38.1/mattermost-5.38.1-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.38.1/mattermost-5.38.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``c8f72ef5a219b7663662987418c581635863def1865b07da7a3033e26375c693``
+  - GPG Signature: https://releases.mattermost.com/5.38.1/mattermost-5.38.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.37.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-37-extended-support-release>`__ - `Download <https://releases.mattermost.com/5.37.1/mattermost-5.37.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.37.1/mattermost-5.37.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``acd0b2ead09f289a7920ea9a37fde76155f599775102016ad3463cf1bcf54405``
@@ -243,6 +247,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v5.38.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-38-feature-release>`__ - `Download <https://releases.mattermost.com/5.38.1/mattermost-team-5.38.1-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.38.1/mattermost-team-5.38.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``9c3613d8f735a13a55451b46b1ce222c619890f2ac9bef1cf48b22d442b932ce``
+  - GPG Signature: https://releases.mattermost.com/5.38.1/mattermost-team-5.38.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.37.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-37-extended-support-release>`__ - `Download <https://releases.mattermost.com/5.37.1/mattermost-team-5.37.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.37.1/mattermost-team-5.37.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a70e829180ed5d3b3e688f1d264bafae93a7ecf80970e16b673c5473beaf137f``

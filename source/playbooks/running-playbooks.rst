@@ -28,7 +28,7 @@ Running a playbook opens an interactive dialog. You can create a new playbook or
 Joining a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Select the **Playbook** icon in the top menu bar to see a list of runs, to which you have access, in progress. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
+Open **Main Menu > Playbooks** to see a list of runs, to which you have access. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
 If the channel is private, an existing member must invite you.
 
@@ -47,34 +47,27 @@ Tasks can be part of pre-configured task templates in playbooks and they can als
 Changing owners
 ~~~~~~~~~~~~~~~
 
-To change playbook owners you can run the ``/playbook owner @username`` slash command from the run's channel. You can also use the desktop or browser to:
-
-1. Select the **Playbooks** icon in the channel header to open the right-hand sidebar.
-2. Select the **Summary** tab.
-3. Within the **Summary** tab, select the current owner's name in the right-hand sidebar, then select the new owner.
-
-  * To change the owner to a user who is not in the channel, first add the user to the channel.
+To change playbook owners you can run the ``/playbook owner @username`` slash command from within the run's channel. To change the owner to a user who is not in the channel, first add the user to the channel.
 
 Providing a status update
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Status updates ensure that stakeholders remain informed about the playbook run's progress. To post a status update:
 
-1. Select the **Playbook** icon in the channel header to open the right-hand sidebar.
-2. Find the playbook you're looking for and select **Go to channel**.
-3. Select the **About** tab.
-4. Within the **About** tab, select **Update status**.
-5. Add a Markdown-formatted message.
+1. Go to **Main Menu > Playbooks**.
+2. Open the run you want to update and select **Go to channel**.
+3. Select **Post update**.
 
  * If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
  * If this is a subsequent status update, the message from the last status update will be pre-populated here.
 
-6. Optionally set a reminder to prompt for the next status update.
+4. Select a status and add a Markdown-formatted message.
+5. Optionally set a reminder to prompt for the next status update.
 
  * If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
  * If this is a subsequent status update, the last reminder timer will be pre-populated here.
 
-7. Select **Update Status** to post your status update.
+6. Select **Update Status** to post your status update.
 
  * Status updates are posted to the incident channel as a message from the user providing the status update.
  * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
