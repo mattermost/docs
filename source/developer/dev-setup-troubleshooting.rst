@@ -34,7 +34,7 @@ I get the following error when running ``make run``: "Error starting server, err
 
   If there isn't another copy of Mattermost running and you need to change the port that Mattermost is running on, you can do so by changing the ``ListenAddress`` setting in the *ServiceSettings* section of ``config/config.json``.
 
-macOS: I get the following error or something similar when running ``make run``: [EROR] Failed to ping DB retrying in 10 seconds err=Error 1045: Access denied for user ‘mmuser’@’localhost’ (using password: YES) 
+macOS: I get the following error or something similar when running ``make run``: [ERROR] Failed to ping DB retrying in 10 seconds err=Error 1045: Access denied for user ‘mmuser’@’localhost’ (using password: YES)
   It appears that 'mmuser' is not created as a user in your MySQL database. Hence create the new user by using the following command:
   ``CREATE USER 'mmuser'@'localhost' IDENTIFIED BY 'mostest';``
 
@@ -50,7 +50,7 @@ macOS: I get the following error or something similar when running ``make run``:
 Testing Errors
 --------------
 
-I get the following error when running ``make test``: t.Run undefined (type *testing.T has no field or method Run)
+I get the following error when running ``make test``: t.Run undefined (type \*testing.T has no field or method Run)
   You need to upgrade to Go 1.9. We don't support earlier versions than that.
 
 Other Errors

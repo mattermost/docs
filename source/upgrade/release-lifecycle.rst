@@ -4,15 +4,17 @@ Release Lifecycle
 What is a Release Lifecycle?
 -----------------------------
 
-During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/administration/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
 
 .. important::
 
-  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
+  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 5.38        | Feature               |  2021-08-16              | 2021-11-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.37        | Feature               |  2021-07-16              | 2022-04-15               | Yes                      |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.36        | Feature               |  2021-06-16              | 2021-09-15               |                          |
@@ -111,3 +113,10 @@ During each monthly release, Mattermost backports high severity or high impact s
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+
+Desktop and Mobile App Server Compatibility
+-------------------------------------------
+
+Desktop and mobile apps are required to be used with the `latest Extended Support Release or a newer version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_. Also, certain features that involve the operating system require a specific desktop or mobile app version. E.g., in Desktop App 4.6 we added a setting for choosing desktop notification sounds which requires server v5.28+. Please review `the Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`_ and `the Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`_ notes for any specific Self-Managed version requirements for features and functionalities, as well as notes on security fixes.
+
+Bug fixes are not normally backported to previous desktop or mobile app versions. It is also recommended to upgrade to the latest desktop and mobile app versions to stay up to date with security fixes.

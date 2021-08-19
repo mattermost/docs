@@ -47,7 +47,7 @@ All Mattermost Instances
    /onboard/advanced-permissions.rst
    /onboard/advanced-permissions-backend-infrastructure.rst
    /onboard/system-admin-roles.rst
-   /onboard/guest-accounts.rst
+   /onboard/shared-channels.rst
    /onboard/ad-ldap.md
    /onboard/multi-factor-authentication.rst
    /onboard/sso-openidconnect.rst
@@ -65,6 +65,7 @@ Self-Managed Deployments
 
    /onboard/user-provisioning-workflows.rst
    /onboard/bulk-loading-data.rst
+   /onboard/guest-accounts.rst
    /onboard/ad-ldap-groups-synchronization.rst
    /onboard/managing-team-channel-membership-using-ad-ldap-sync-groups.rst
    /onboard/sso-saml.rst
@@ -84,8 +85,10 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
 
+   /onboard/cloud-guest-accounts.rst
    /onboard/cloud-sso-saml.rst
    /onboard/cloud-sso-saml-technical.rst
+   /onboard/cloud-groups.rst
 
 Manage Mattermost
 -----------------
@@ -98,9 +101,7 @@ All Mattermost Instances
    :glob:
 
    /manage/generating-support-packet.rst
-   /manage/team-channel-members.rst
    /manage/mmctl-command-line-tool.rst
-   /manage/user-satisfaction-surveys.rst
 
 Self-Managed Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,10 +110,12 @@ Self-Managed Deployments
    :maxdepth: 1
    :glob:
  
+   /manage/team-channel-members.rst
    /manage/command-line-tools.rst
    /manage/scripts.rst
    /manage/statistics.rst
    /manage/in-product-notices.rst
+   /manage/user-satisfaction-surveys.rst
    /manage/health-checks.rst
    /manage/announcement-banner.rst
    /manage/bulk-export-tool.rst
@@ -124,8 +127,11 @@ Cloud Workspaces
    :maxdepth: 1
    :glob:
  
+   /manage/cloud-team-channel.rst
    /manage/cloud-billing.rst
    /manage/cloud-reporting.rst
+   /manage/cloud-user-satisfaction-surveys.rst
+   /manage/cloud-team-and-channel.rst
 
 Mattermost Compliance
 ---------------------

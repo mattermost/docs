@@ -12,7 +12,7 @@ During each monthly release, Mattermost backports high severity or high impact s
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
 
-Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and those new features have had sufficient time to stabilize. A new ESR is released twice a year every January and July release. An ESR is supported for 9 months to provide customers enough time to test and upgrade to the next ESR.
+Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and have had sufficient time to stabilize. A new ESR is released twice a year, every January and July release. An ESR is supported for 9 months to provide customers with enough time to test and upgrade to the next ESR.
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. There will be a clear upgrade path provided between ESR versions. 
 
@@ -49,9 +49,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.0 <https://releases.mattermost.com/5.37.0/mattermost-5.37.0-linux-amd64.tar.gz>`_    |                                                     |
+| 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.1 <https://releases.mattermost.com/5.37.1/mattermost-5.37.1-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| 5.31        | Feature        | January 16, 2021 | October 15, 2021 | `5.31.7 <https://releases.mattermost.com/5.31.7/mattermost-5.31.7-linux-amd64.tar.gz>`_    |                                                     |
+| 5.31        | Feature        | January 16, 2021 | October 15, 2021 | `5.31.9 <https://releases.mattermost.com/5.31.9/mattermost-5.31.9-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.25        | Quality        | July 16, 2020    | April 15, 2021   | `5.25.7 <https://releases.mattermost.com/5.25.7/mattermost-5.25.7-linux-amd64.tar.gz>`_    | The xmlsec1-based SAML library was disabled in      |
 |             |                |                  |                  |                                                                                            | favor of the re-enabled and improved SAML library   |

@@ -3,12 +3,98 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-08-12](#release-2021-08-12)
+- [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
 - [Release 2021-06-02](#release-2021-06-02)
-- [Release 2021-05-21](#release-2021-05-21)
-- [Release 2021-05-05](#release-2021-05-05)
+
+## Release 2021-08-12
+
+### Highlights
+
+#### Beta features promoted from Beta to General Availability
+   - Archived channels
+   - Compliance exports
+   - Custom terms of service
+   - Guest Accounts
+   - System Roles
+   - Plugins
+
+#### Focalboard
+ - Added support for Focalboard for Mattermost Cloud.
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed H1-H3 heading font from Open Sans to Metropolis.
+
+#### Administration
+ - Added ``playbooks`` and ``boards`` to restricted team URLs list.
+ - Mattermost is now built with Go v1.16.6.
+ - Added the ability for Team Edition to edit role permissions.
+ - Removed hard-coded override of ``TeamSettings.MaxNotificationsPerChannel`` on unlicensed servers (e.g. Team Edition).
+ - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
+
+### Bug Fixes
+ - Fixed an issue where GitLab ``ButtonText`` and ``ButtonColor`` settings were not reflected on the login screen.
+ - Fixed an issue where Mattermost panicked on ``docx`` files uploaded with ``.doc`` extension.
+ - Prevented users from having the unreads filter enabled when the button to toggle it is not shown.
+ - Fixed an issue where the timestamp on deleted messages was not correctly positioned.
+ - Fixed an issue where a space was missing between sentences in the banner to refresh app.
+ - Fixed an issue where Mattermost's shortcut key CTRL+SHIFT+A to open **Account Settings** clashed with Chrome's CTRL+SHIFT+A that opens a "Search Tabs" pop-up.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a thread caused users to re-follow the previously unfollowed thread.
+
+### Known Issues
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2021-07-29
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved typing performance in affected environments by reducing the frequency in which drafts are saved.
+ - Improved user and channel selector for app commands.
+ - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
+ - Added plugin API methods for user access tokens and OAuth apps.
+ - Improved default rendering of images inserted via the GIF picker.
+ - Small text changes were added to Direct and Group Message menus: 'Mute channel' and 'Edit Channel Header' now reads 'Mute Conversation' and 'Edit Conversation Header'.
+ - Added support for ``react-intl`` and ``<Timestamp/>`` usage in plugins.
+
+#### Administration
+ - The “config watcher” (the mechanism that automatically reloads the config.json file) has been deprecated in favor of an mmctl command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
+ - Fixed some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases.
+ - Upgraded the builder image to use Go v1.16.
+ - Added a new feature to archive and unarchive teams through **System Console** > **Teams**.
+
+### Bug Fixes
+ - Fixed an issue where the "Find channel" channel switcher text overflowed beyond the button for some languages.
+ - Fixed an issue where inter-plugin requests without a body didn't work.
+ - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
+ - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark theme.
+ - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where an error occurred while following a thread with no replies.
+   - Fixed an issue where ``reply_count`` of 0 was always returned for GET single Post on ``/posts/<postid>`` API.
+   - Fixed an issue where following a single message returned a status 500.
+   - Fixed an issue where when replying in a thread after unfollowing it, the thread was not auto-followed again.
+   - Fixed an issue where when enabling Collapsed Reply Threads, channels that had no new activity were showing as unread.
+   - Fixed an issue with thread unreads when the feature was enabled by a user.
+   - Fixed an issue where self replies were marking threads as unread.
+   - Unread threads are now correctly displayed on app load for teams in the sidebar when Collapsed Reply Threads feature is enabled.
+   - Fixed an issue where "Thread" in the thread viewer was displayed vertically in some languages.
+   - Fixed an issue where opening global threads containing a root post markdown image crashed the app.
+   - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
+
+### Known Issues
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-07-15
 
