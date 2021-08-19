@@ -1,7 +1,7 @@
 Mattermost Boards
 =======================
 
-Product documentation for Mattermost Focalboard.
+Product documentation for Mattermost Boards.
 
 Before You Begin
 ----------------
