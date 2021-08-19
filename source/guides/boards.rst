@@ -1,5 +1,5 @@
 Mattermost Boards
-=======================
+=================
 
 Product documentation for Mattermost Boards.
 
