@@ -1,7 +1,24 @@
-Elasticsearch (E20)
-===================
+Elasticsearch
+=============
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |cloud| |self-managed|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 25
+  :target: ../about/product.html#mattermost-enterprise-edition
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 25
+  :target: ../about/product.html#mattermost-cloud
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-managed| image:: ../images/self-managed-badge.png
+  :scale: 25
+  :target: TBD
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts.
 
