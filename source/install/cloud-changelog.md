@@ -45,6 +45,7 @@ Latest Mattermost Cloud releases:
  - Removed the Slack importer from the user interface.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
  - Removed the legacy channel sidebar.
+ - Added desktop notifications for followed threads.
 
 #### Administration
  - Upgraded Go to v1.16.7.
@@ -62,7 +63,6 @@ Latest Mattermost Cloud releases:
    - group
    - import
    - integrity
-   - jobserver
    - ldap
    - license
    - logs
