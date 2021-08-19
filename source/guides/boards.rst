@@ -1,4 +1,4 @@
-Mattermost Focalboard
+Mattermost Boards
 =======================
 
 Product documentation for Mattermost Focalboard.
@@ -9,8 +9,8 @@ Before You Begin
 .. toctree::
    :maxdepth: 2
 
-   /focalboard/overview.rst
-   /focalboard/getting-started.rst
+   /boards/overview.rst
+   /boards/getting-started.rst
       
 Planning
 --------
@@ -18,8 +18,8 @@ Planning
 .. toctree::
    :maxdepth: 2
 
-  /focalboard/working-with-boards.rst
-  /focalboard/working-with-views.rst
+  /boards/working-with-boards.rst
+  /boards/working-with-views.rst
 
 Building
 ---------
