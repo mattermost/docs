@@ -20,6 +20,6 @@ Mattermost Product Documentation
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
    Messaging <guides/messaging>
    Incident Collaboration <guides/incident-collaboration>
-   Focalboard <https://www.focalboard.com/guide/user/>
+   Focalboard <guides/boards>
    Mattermost for Developers <https://developers.mattermost.com/>
    Support Knowledge Base <https://support.mattermost.com/hc/en-us/>
