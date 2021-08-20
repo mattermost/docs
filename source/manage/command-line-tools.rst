@@ -3,11 +3,9 @@ Command Line Tools
 
 From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
-.. important::
-   This CLI will be replaced in a future release with the `mmctl CLI <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
-
 .. note::
-  The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
+  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
 
