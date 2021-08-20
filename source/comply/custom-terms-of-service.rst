@@ -1,18 +1,18 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (Beta) (E20)
-====================================
+Custom Terms of Service (E20)
+=============================
 
 *Available in Mattermost Enterprise Edition E20*
 
-In Mattermost Enterprise, you can outline custom Terms of Service for your team members to accept before they can access Mattermost on web, desktop, or mobile.
+You can outline custom Terms of Service for your team members to accept before they can access Mattermost on web, desktop, or mobile.
 
 Configuring Terms of Service
 ----------------------------
 
 To enable custom terms of service:
 
-1. Go to **System Console > Compliance > Custom Terms of Service (Beta)**.
+1. Go to **System Console > Compliance > Custom Terms of Service**.
 2. Set **Enable Custom Terms of Service** to **true**.
 3. Set **Custom Terms of Service Text** which contains your terms. Markdown formatting is supported, including lists, headings, and bolding.
 4. Set **Re-Acceptance Period** to configure the number of days before Terms of Service acceptance expires, and when the terms must be re-accepted. Set to 0 if you don't want your terms to expire.
@@ -32,6 +32,11 @@ What happens if I update my terms of service text?
 
 There will be no impact to your end users. Users will simply be required to accept the new terms on next login or page refresh.
 
+What happens if a user does not accept the terms of service?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A user will not be able to log in if they do not accept the terms of service.
+
 How do I know if my users accepted the terms of service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -46,12 +51,3 @@ Why isn't this feature in Team Edition for GDPR compliance?
 Terms of service is presented to users on login and account creation, and available to users at all times in the link available by going to **System Console > Site Configuration > Customization**.
 
 This feature is intended to meet compliance requirements for large Enterprise companies.
-
-Why are custom terms of service beta?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This feature is labelled as beta while we verify the quality of the feature in various scenarios. Known issues include:
-
-- Login fails when custom terms of service is enabled and MFA is enforced.
-- Terms of service text disappears in the System Console on save until next refresh.
-- Terms of service loads immediately following an update to terms, instead of after login or a page refresh.
