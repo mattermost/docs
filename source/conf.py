@@ -70,6 +70,8 @@ redirects = {
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
+    "overview/license-and-subscription#frequently-asked-questions": 
+        "https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions",
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
@@ -120,6 +122,36 @@ redirects = {
     "administration/config-in-database":
         "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
     "administration/branding": "https://docs.mattermost.com/configure/custom-branding-tools.html",
+    "administration/config-settings#rate-limiting": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting",
+    "administration/config-settings#customization": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#customization",
+    "administration/config-settings#terms-of-service-link": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#terms-of-service-link",
+    "administration/config-settings#ad-ldap": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
+    "administration/config-settings#user-filter": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
+    "administration/command-line-tools#mattermost-ldap-idmigrate": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate",
+    "administration/config-settings#id-attribute": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#id-attribute",
+    "administration/config-settings#login-id-attribute": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#login-id-attribute",
+    "administration/config-settings#maximum-page-size": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#maximum-page-size",
+    "administration/config-settings#enable-local-mode": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode",
+    "administration/config-settings#enable-local-mode-socket-location": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location",
+    "administration/config-in-database#create-an-environment-file": 
+        "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file",
+    "configure/configuration-settings#compliance-export-beta": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
+    "configure/configuration-settings#custom-terms-of-service-beta": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
+    "configure/configuration-settings#guest-access-beta": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
@@ -158,6 +190,11 @@ redirects = {
     "deployment/team-channel-management": "https://docs.mattermost.com/manage/team-channel-members.html",
     "deployment/certificate-based-authentication":
         "https://docs.mattermost.com/onboard/certificate-based-authentication.html",
+    "deployment/push": "https://docs.mattermost.com/deploy/mobile-hpns.html",
+    "deployment/on-boarding#common-tasks": 
+        "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
+    "deployment/ldap-group-sync#add-default-teams-or-channels-for-the-group": 
+        "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
     "administration/devops-command-center": "https://docs.mattermost.com/guides/incident-collaboration.html",
     "administration/plugins": "https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/", 
     "administration/migrating": "https://docs.mattermost.com/onboard/migrating-to-mattermost.html",
@@ -182,6 +219,8 @@ redirects = {
     "administration/data-retention": "https://docs.mattermost.com/comply/data-retention-policy.html",
     "administration/custom-terms-of-service": "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/mobile-changelog": "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
+    "administration/config-settings.html#allow-users-to-view-archived-channels-beta": 
+        "https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
