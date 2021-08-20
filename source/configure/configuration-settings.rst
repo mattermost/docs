@@ -1966,8 +1966,8 @@ Specifies how names are displayed in the user interface by default. Please note 
 | This feature's ``config.json`` setting is ``"TeammateNameDisplay": "username"`` with options ``"username"``, ``"nickname_full_name"``, and ``"full_name"`` for the above settings, respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Users to View Archived Channels (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allow Users to View Archived Channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Allows users to view, share, and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
 
@@ -3704,8 +3704,8 @@ Specify the color of the OpenID login button for white labeling purposes. Use a 
 | This feature's ``config.json`` setting is ``"ButtonColor": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Guest Access (Beta)
-~~~~~~~~~~~~~~~~~~~~
+Guest Access
+~~~~~~~~~~~~
 
 Enable Guest Access
 ^^^^^^^^^^^^^^^^^^^
@@ -3740,8 +3740,8 @@ This setting defaults to false and is read-only if multi-factor authentication i
 | This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``.                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Plugins (Beta)
---------------
+Plugins
+--------
 
 Settings to configure plugins.
 
@@ -4169,15 +4169,15 @@ This button initiates a Data Retention deletion job immediately.
 
 You can monitor the status of the job in the data deletion job table below this button.
 
-Compliance Export (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compliance Export
+~~~~~~~~~~~~~~~~~
 
 *Available as an add-on to Enterprise Edition E20*
 
 Enable Compliance Export
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: When ``true``, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`__.
+**True**: When ``true``, Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://docs.mattermost.com/comply/compliance-export.html>`__.
 
 **False**: When ``false``, Mattermost doesn't generate a compliance export file.
 
@@ -4304,8 +4304,8 @@ This setting is currently not available in the System Console and can only be se
 | This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``. |
 +------------------------------------------------------------------------------------------------+
 
-Custom Terms of Service (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Custom Terms of Service
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Custom Terms of Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4319,7 +4319,7 @@ Enable Custom Terms of Service
 
   This page can only be modified using the System Console user interface.
 
-**True**: When ``true``, new users must accept the Terms of Service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh. To update the Terms of Service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
+**True**: New users must accept the Terms of Service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh. To update the Terms of Service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
 
 **False**: During account creation or login, users can review Terms of Service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
 
