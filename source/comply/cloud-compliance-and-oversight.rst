@@ -11,7 +11,7 @@ By default, all Mattermost Editions retain all messages, including edits and del
 
 .. note::
    
-   This feature is replaced by `Compliance Export (Beta) <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost in a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+   This feature is replaced by `Compliance Export <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_, and will be removed in Mattermost in a future release. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 Enabling Compliance Reporting
 -----------------------------
@@ -136,4 +136,4 @@ Mattermost daily compliance reports are compatible with Global Relay compliance 
 - This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
 - You can also contact your Global Relay account manager about a services project to establish this conversion.
 
-You may also use the new `Compliance Export (Beta) feature <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_ for Global Relay exports.
+You may also use the new `Compliance Export feature <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_ for Global Relay exports.
