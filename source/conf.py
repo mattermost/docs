@@ -152,6 +152,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
     "configure/configuration-settings#guest-access-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
+    "configure/configuration-settings#plugins-beta": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#plugins",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
