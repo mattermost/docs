@@ -79,6 +79,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue with loading of emojis in message attachment titles.
  - Fixed an issue where email invites were not sent when clicking the **Next** button during onboarding.
  - Fixed an error with app locations and binding filtering.
+ - Fixed a bug that kept message attachment fields unaligned.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
    - Fixed an issue where the thread unread state would not be updated on reconnect of the websocket.
    - Fixed an issue where a gap was displayed between the first and second consecutive message from the same user.
