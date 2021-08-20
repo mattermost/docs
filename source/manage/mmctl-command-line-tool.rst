@@ -1,49 +1,52 @@
-mmctl Command Line Tool (Beta)
-==============================
+mmctl Command Line Tool
+=======================
 
 The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token.
 
-Being installed locally enables System Admins for both self-managed and Cloud Mattermost instances to run CLI commands even in instances where there is no access to the server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be deprecated.
+Being installed locally enables System Admins for both self-managed and Cloud Mattermost instances to run CLI commands even in instances where there is no access to the server (e.g., via SSH). 
 
-This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
+.. note::
 
-**Notes**
+   - As of Mattermost v6.0, the `Mattermost CLI tools <https://docs.mattermost.com/manage/command-line-tools.html>`__ have been deprecated in favor of this mmctl tool. This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. 
+   - We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. 
+   - You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
+   - System Admins have two ways to run `mmctl` commands: they can downloading `mmctl` from the repository, or they can build it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
+   - ``mmctl`` comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
+   - Parameters in CLI commands are order-specific.
+   - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
+   - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` the team name would be ``core`` and channel name would be ``town-square``.
 
-- System Admins have two ways to run `mmctl` commands: by downloading `mmctl` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
-- `mmctl` comes bundled with the Mattermost distribution, and is located in the `bin` folder of the installation, next to the `CLI`.
-- Parameters in CLI commands are order-specific.
-- If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
-- Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
+mmctl Commands
+--------------
 
-**Commands**
-   - `mmctl auth`_ - Authentication Management
-   - `mmctl bot`_ - Bot Management
-   - `mmctl channel`_ - Channel Management
-   - `mmctl command`_ - Command Management
-   - `mmctl completion`_ - Generates autocompletion scripts for bash and zsh
-   - `mmctl config`_ - Configuration management
-   - `mmctl docs`_ - Generates mmctl documentation
-   - `mmctl export`_ - Exports management
-   - `mmctl group`_ - Group management
-   - `mmctl group channel`_ - Channel group management
-   - `mmctl group team`_ - Team group management
-   - `mmctl import`_ - Import Management
-   - `mmctl integrity`_ - Database record integrity
-   - `mmctl ldap`_ - LDAP management
-   - `mmctl license`_ - License Management
-   - `mmctl logs`_ - Log Management
-   - `mmctl permissions`_ - Permissions Management
-   - `mmctl plugin`_ - Plugin Management
-   - `mmctl post`_ - Post Management
-   - `mmctl roles`_ - Roles Management
-   - `mmctl system`_ - System Management
-   - `mmctl team`_ - Team Management
-   - `mmctl team users`_ - Team user management
-   - `mmctl token`_ - Token Management
-   - `mmctl user`_ - User Management
-   - `mmctl version`_ - Version Management
-   - `mmctl webhook`_ - Webhook Management
-   - `mmctl websocket`_ - Websocket Management
+- `mmctl auth`_ - Authentication Management
+- `mmctl bot`_ - Bot Management
+- `mmctl channel`_ - Channel Management
+- `mmctl command`_ - Command Management
+- `mmctl completion`_ - Generates autocompletion scripts for bash and zsh
+- `mmctl config`_ - Configuration management
+- `mmctl docs`_ - Generates mmctl documentation
+- `mmctl export`_ - Exports management
+- `mmctl group`_ - Group management
+- `mmctl group channel`_ - Channel group management
+- `mmctl group team`_ - Team group management
+- `mmctl import`_ - Import Management
+- `mmctl integrity`_ - Database record integrity
+- `mmctl ldap`_ - LDAP management
+- `mmctl license`_ - License Management
+- `mmctl logs`_ - Log Management
+- `mmctl permissions`_ - Permissions Management
+- `mmctl plugin`_ - Plugin Management
+- `mmctl post`_ - Post Management
+- `mmctl roles`_ - Roles Management
+- `mmctl system`_ - System Management
+- `mmctl team`_ - Team Management
+- `mmctl team users`_ - Team user management
+- `mmctl token`_ - Token Management
+- `mmctl user`_ - User Management
+- `mmctl version`_ - Version Management
+- `mmctl webhook`_ - Webhook Management
+- `mmctl websocket`_ - Websocket Management
 
 **Options**
 
@@ -103,14 +106,14 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location>`_.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location>`_.
 
-In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
+In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
 Running mmctl tests
 -------------------
@@ -1764,7 +1767,7 @@ Migrates a file-based configuration to (or from) a database-based configuration.
 
 .. note::
   
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable <https://docs.mattermost.com/administration/config-in-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
 
