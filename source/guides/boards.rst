@@ -20,6 +20,7 @@ Access your Workspace
 .. toctree::
    :maxdepth: 2
 
+  /boards/accessing-boards.rst
 
 Work with Boards
 ----------------
