@@ -11,6 +11,7 @@ Before You Begin
 
    /boards/overview.rst
    /boards/getting-started.rst
+   /boards/installing-boards.rst
       
 
 Access your Workspace
