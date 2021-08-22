@@ -11,8 +11,7 @@ Before You Begin
 
    /boards/overview.rst
    /boards/getting-started.rst
-   /boards/installing-boards.rst
-      
+       
 
 Access your Workspace
 ---------------------
@@ -20,6 +19,7 @@ Access your Workspace
 .. toctree::
    :maxdepth: 2
 
+  /boards/installing-boards.rst
   /boards/accessing-boards.rst
 
 Work with Boards
