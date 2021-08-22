@@ -11,6 +11,9 @@ Mattermost Boards is available in the Plugin Marketplace for self-managed deploy
 4. From the plugin configuration page, set **Enable Plugin** to **true**.
 5. Select **Save** to enable the plugin.
 
+Setting up websocket traffic
+----------------------------
+
 The Focalboard plugin requires websocket traffic to be passed by the proxy. Update your NGINX or Apache web proxy config following the steps below.
 
 With NGINX
