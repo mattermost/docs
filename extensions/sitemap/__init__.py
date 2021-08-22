@@ -15,42 +15,35 @@
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
 
-import queue
 import os
 import xml.etree.ElementTree as ET
+import sphinx.builders
+from sphinx.application import Sphinx, BuildEnvironment
+from sphinx.errors import SphinxError
+from sphinx.util import logging
+from sphinx.util.console import bold, colorize  # type: ignore
+from typing import Dict, List
 
-from multiprocessing import Manager
-
-try:
-    from sphinx.util.logging import getLogger
-
-    logger = getLogger(__name__)
-
-
-    def error(_, message):
-        logger.error(message)
+logger = logging.getLogger(__name__)
 
 
-    def warn(_, message):
-        logger.warning(message)
+def error(message: str):
+    logger.error(message)
 
 
-    def info(_, message):
-        logger.info(message)
-except ImportError:
-    def error(app, message):
-        app.warn(message, prefix='ERROR: ')
+def warning(message: str):
+    logger.warning(message)
 
 
-    def warn(app, message):
-        app.warn(message)
+def info(message: str):
+    logger.info(message)
 
 
-    def info(app, message):
-        app.info(message)
+def debug(message: str):
+    logger.debug(message)
 
 
-def setup(app):
+def setup(app: Sphinx):
     """Setup connects events to the sitemap builder"""
     app.add_config_value(
         'site_url',
@@ -79,12 +72,13 @@ def setup(app):
             default=None,
             rebuild=''
         )
-    except BaseException:
+    except SphinxError:
         pass
 
     app.connect('builder-inited', record_builder_type)
-    app.connect('html-page-context', add_html_link)
-    app.connect('build-finished', create_sitemap)
+    app.connect('env-merge-info', env_merge_info)
+    app.connect('env-purge-doc', env_purge_doc)
+    app.connect('html-collect-pages', create_sitemap)
 
     return {
         'parallel_read_safe': True,
@@ -92,9 +86,49 @@ def setup(app):
     }
 
 
-def get_locales(app, exception):
+def env_purge_doc(_: Sphinx, env: BuildEnvironment, docname: str):
+    debug('env_purge_doc: docname=%s' % docname)
+    if hasattr(env, 'sitemap_links'):
+        sitemap_links: Dict[str, str] = env.sitemap_links
+        if sitemap_links.get(docname) is not None:
+            debug('env_purge_doc: sitemap_links contains %s; removing it' % docname)
+            sitemap_links.pop(docname)
+
+
+def env_merge_info(app: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment):
+    if not hasattr(env, 'sitemap_links'):
+        env.sitemap_links = dict()
+    if hasattr(other, 'sitemap_links'):
+        other_links: Dict[str, str] = other.sitemap_links
+        for linkKey in other_links.keys():
+            env.sitemap_links[linkKey] = other_links[linkKey]
+    is_dictionary_builder: bool = False
+    if app.env is not None and hasattr(app.env, 'is_dictionary_builder'):
+        is_dictionary_builder = app.env.is_dictionary_builder
+    for docname in docnames:
+        link = calculate_link(is_dictionary_builder, docname)
+        debug('env_merge_info: docname=%s, link=%s' % (docname, link))
+        env.sitemap_links[docname] = link
+
+
+def calculate_link(is_dictionary_builder: bool, docname: str) -> str:
+    if is_dictionary_builder:
+        if docname == "index":
+            # root of the entire website, a special case
+            directory_pagename = ""
+        elif docname.endswith("/index"):
+            # checking until / to avoid false positives like /funds-index
+            directory_pagename = docname[:-6] + "/"
+        else:
+            directory_pagename = docname + "/"
+        return directory_pagename
+    return docname + ".html"
+
+
+def get_locales(app: Sphinx) -> List[str]:
     # Manually configured list of locales
-    sitemap_locales = app.builder.config.sitemap_locales
+    builder: sphinx.builders.Builder = app.builder
+    sitemap_locales = builder.config.sitemap_locales
     if sitemap_locales:
         # special value to add nothing -> use primary language only
         if sitemap_locales == [None]:
@@ -107,7 +141,7 @@ def get_locales(app, exception):
         ]
 
     # Or autodetect
-    locales = []
+    locales: List = list()
     for locale_dir in app.builder.config.locale_dirs:
         locale_dir = os.path.join(app.confdir, locale_dir)
         if os.path.isdir(locale_dir):
@@ -117,18 +151,17 @@ def get_locales(app, exception):
     return locales
 
 
-def record_builder_type(app):
+def record_builder_type(app: Sphinx):
     # builder isn't initialized in the setup so we do it here
     # we rely on the class name, not the actual class, as it was moved 2.0.0
     builder = getattr(app, 'builder', None)
     if builder is None:
         return
-    builder.env.is_dictionary_builder = \
+    app.env.is_dictionary_builder = \
         type(builder).__name__ == 'DirectoryHTMLBuilder'
-    builder.env.sitemap_links = Manager().Queue()
 
 
-def hreflang_formatter(lang):
+def hreflang_formatter(lang: str) -> str:
     """
     sitemap hreflang should follow correct format.
         Use hyphen instead of underscore in language and country value.
@@ -140,57 +173,38 @@ def hreflang_formatter(lang):
     return lang
 
 
-def add_html_link(app, pagename, templatename, context, doctree):
-    """As each page is built, collect page names for the sitemap"""
-    env = app.builder.env
-    if env.is_dictionary_builder:
-        if pagename == "index":
-            # root of the entire website, a special case
-            directory_pagename = ""
-        elif pagename.endswith("/index"):
-            # checking until / to avoid false positives like /funds-index
-            directory_pagename = pagename[:-6] + "/"
-        else:
-            directory_pagename = pagename + "/"
-        env.sitemap_links.put(directory_pagename)
-    else:
-        env.sitemap_links.put(pagename + ".html")
-
-
-def create_sitemap(app, exception):
+def create_sitemap(app: Sphinx):
     """Generates the sitemap.xml from the collected HTML page links"""
     site_url = app.builder.config.site_url or app.builder.config.html_baseurl
     if not site_url:
-        error(app, "sphinx-sitemap: Neither html_baseurl nor site_url "
-                   "are set in conf.py. Sitemap not built.")
+        error("sphinx-sitemap: Neither html_baseurl nor site_url "
+              "are set in conf.py. Sitemap not built.")
         return
     site_url = site_url.rstrip('/') + '/'
 
-    env = app.builder.env
-    if env.sitemap_links.empty():
-        warn(app, "sphinx-sitemap: No pages generated for %s" %
-             app.config.sitemap_filename)
+    if app.env is None:
+        error("sphinx-sitemap: environment is None; this is unexpected")
+        return
+    sitemap_links: Dict[str, str] = dict()
+    if hasattr(app.env, 'sitemap_links'):
+        sitemap_links = app.env.sitemap_links
+
+    # if env.sitemap_links.empty():
+    if len(sitemap_links) == 0:
+        warning("sphinx-sitemap: No pages generated for %s" % app.config.sitemap_filename)
         return
 
     ET.register_namespace('xhtml', "http://www.w3.org/1999/xhtml")
-
-    root = ET.Element(
-        "urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    )
-
-    locales = get_locales(app, exception)
+    root = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    locales = get_locales(app)
 
     if app.builder.config.version:
         version = app.builder.config.version + '/'
     else:
         version = ""
 
-    while True:
-        try:
-            link = env.sitemap_links.get_nowait()
-        except queue.Empty:
-            break
-
+    for linkKey in sitemap_links.keys():
+        link = sitemap_links[linkKey]
         url = ET.SubElement(root, "url")
         scheme = app.config.sitemap_url_scheme
         if app.builder.config.language:
@@ -214,9 +228,10 @@ def create_sitemap(app, exception):
             )
 
     filename = app.outdir + "/" + app.config.sitemap_filename
+    logger.info(bold('writing sitemap... '), nonl=True)
     ET.ElementTree(root).write(filename,
                                xml_declaration=True,
                                encoding='utf-8',
                                method="xml")
-    info(app, "sphinx-sitemap: %s was generated for URL %s in %s" % (
-        app.config.sitemap_filename, site_url, filename))
+    info("done; generated sitemap in %s" % filename)
+    return []

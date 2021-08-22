@@ -5,10 +5,11 @@ import re
 from fnmatch import fnmatch
 from pathlib import Path
 from string import Template
-from typing import Dict, Mapping
+from typing import Dict, Mapping, Tuple
 
 from sphinx.application import Sphinx
 from sphinx.util import logging
+from sphinx.util.console import bold, colorize, term_width_line  # type: ignore
 
 OPTION_REDIRECTS = "redirects"
 OPTION_REDIRECTS_DEFAULT: Dict[str, str] = {}
@@ -54,12 +55,45 @@ def init(app: Sphinx):
     return []
 
 
-def env_purge_doc(app, env, docname):
+def env_purge_doc(app: Sphinx, env, docname):
     return
 
 
-def env_merge_info(app, env, docnames, other):
+def env_merge_info(app: Sphinx, env, docnames, other):
     return
+
+
+def old_status_iterator(mapping: Mapping[str, str], summary: str, color: str = "darkgreen") -> Tuple[str, str]:
+    l = 0
+    for item in mapping.items():
+        if l == 0:
+            logger.info(bold(summary), nonl=True)
+            l = 1
+        logger.info(item[0], color=color, nonl=True)
+        logger.info(" ", nonl=True)
+        yield item
+    if l == 1:
+        logger.info('')
+
+
+def status_iterator(mapping: Mapping[str, str], summary: str, color: str = "darkgreen",
+                    length: int = 0, verbosity: int = 0) -> Tuple[str, str]:
+    if length == 0:
+        yield from old_status_iterator(mapping, summary, color)
+        return
+    l = 0
+    summary = bold(summary)
+    for item in mapping.items():
+        l += 1
+        s = '%s[%3d%%] %s' % (summary, 100 * l / length, colorize(color, item[0]))
+        if verbosity:
+            s += '\n'
+        else:
+            s = term_width_line(s)
+        logger.info(s, nonl=True)
+        yield item
+    if l > 0:
+        logger.info('')
 
 
 class Reredirects:
@@ -102,18 +136,21 @@ class Reredirects:
     def create_redirects(self, to_be_redirected: Mapping[str, str]):
         """Create actual redirect file for each pair in passed mapping of \
         docnames to targets."""
-        for doc, target in to_be_redirected.items():
+
+        # for doc, target in to_be_redirected.items():
+        for doc, target in status_iterator(to_be_redirected, 'writing redirects...', 'darkgreen',
+                                           len(to_be_redirected.items())):
             redirect_file_abs = Path(
                 self.app.outdir).joinpath(doc).with_suffix(".html")
-            redirect_file_rel = redirect_file_abs.relative_to(self.app.outdir)
+            # redirect_file_rel = redirect_file_abs.relative_to(self.app.outdir)
 
-            if redirect_file_abs.exists():
-                logger.info(f"Creating redirect file '{redirect_file_rel}' "
-                            f"pointing to '{target}' that replaces "
-                            f"document '{doc}'.")
-            else:
-                logger.info(f"Creating redirect file '{redirect_file_rel}' "
-                            f"pointing to '{target}'.")
+            # if redirect_file_abs.exists():
+            #     logger.info(f"Creating redirect file '{redirect_file_rel}' "
+            #                 f"pointing to '{target}' that replaces "
+            #                 f"document '{doc}'.")
+            # else:
+            #     logger.info(f"Creating redirect file '{redirect_file_rel}' "
+            #                 f"pointing to '{target}'.")
 
             self._create_redirect_file(redirect_file_abs, target)
 
