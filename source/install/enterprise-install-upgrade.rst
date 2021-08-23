@@ -172,15 +172,23 @@ Installing a New License Key
 
 **Using the command line interface (CLI)**
 
-Use this command to upload a new license or to replace an existing license with a new one.
+Use `this command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-license-upload>`__ to upload a new license or to replace an existing license with a new one.
 
 .. code-block:: none
 
   mattermost license upload {license}
+  
+**Using the mmctl tool**
+
+Use `this command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ to upload a new license or to replace an existing license with a new one.
+
+.. code-block:: none
+
+  mmctl license upload [license] [flags]
 
 .. note::
 
-  If you upload the license via the CLI using  ``mattermost license upload``, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See `our documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
+  If you upload the license via the CLI or the mmctl, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See the CLI or mmctl documentation for details.
   
 License key storage
 ^^^^^^^^^^^^^^^^^^^^
