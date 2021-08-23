@@ -11,7 +11,7 @@ User Provisioning
 There are currently three recommended user provisioning workflows in Mattermost:
 
 1. **On demand:** If user accounts are not pre-provisioned using one of the methods described below, then a new user account will be provisioned when the user first logs in. When the user logs in, they are asked to select a public team to join (all users must belong to at least one team) and then they are added automatically to Town Square and Off-Topic channels. Mattermost also has a default channel setting that allows everyone to be added to additional channels specified by the organization.
-2. **Pre-provisioned via bulk import:** Mattermost features a `bulk data loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ that can be used for pre-provisioning new users by adding them to teams and channels before their first login to Mattermost. This tool automates the creation of Teams, Channels, Users and Posts (with file attachments). It can also be used to migrate users and content from an existing system.
+2. **Pre-provisioned via bulk import:** Mattermost features a `bulk data loading tool <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__ that can be used for pre-provisioning new users by adding them to teams and channels before their first login to Mattermost. This tool automates the creation of Teams, Channels, Users and Posts (with file attachments). It can also be used to migrate users and content from an existing system.
 3. **Mattermost API:** The Mattermost `RESTful API <https://api.mattermost.com>`__ can be used to pre-provision new user accounts as well as add and remove them from teams and channels. This model is commonly used by enterprises that have central account provisioning applications.
 
 .. note::
@@ -32,12 +32,12 @@ User Deprovisioning
 
 Users in Mattermost can be deactivated in the following ways:
 
-- **AD/LDAP Synchronization**: AD/LDAP users can be deactivated in Mattermost based on their status in the directory server via synchronization. Learn more in `AD/LDAP documentation <https://docs.mattermost.com/deployment/sso-ldap.html#how-does-deactivating-users-work>`__.
+- **AD/LDAP Synchronization**: AD/LDAP users can be deactivated in Mattermost based on their status in the directory server via synchronization. Learn more in `AD/LDAP documentation <https://docs.mattermost.com/onboard/ad-ldap.html#how-do-i-deactivate-users>`__.
 - **System Console**: User management screen in **System Console > Users** allows administrators to deactiveate users with email/password login.
-- **RESTful API** The Mattermost API can be used to deactivate users. See `API documentation to learn more <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D%2Fdelete>`__.
-- **Command Line Interface**: The Mattermost CLI can be used to deactivate users. See `CLI documentation to learn more <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-deactivate>`__.
+- **RESTful API** The Mattermost API can be used to deactivate users. See `API documentation to learn more <https://api.mattermost.com/#operation/DeleteUser>`__.
+- **Command Line Interface**: You can use the Mattermost `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-deactivate>`__ and `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__ tools to deactivate users.
 
-Once deactivated, users still exist in the Mattermost database and their messages can still be viewed in Mattermost.  To delete a user and all of their content, you can use the Mattermost CLI tool `as described here <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-delete>`__.
+Once deactivated, users still exist in the Mattermost database and their messages can still be viewed in Mattermost. You can use the Mattermost `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete>`__, or the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ tools to delete a user and all of their content.
 
 .. note::
 
