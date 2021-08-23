@@ -318,27 +318,41 @@ Follow these steps to upgrade an existing Personal Server installation that was 
 
 Use the URL of the Ubuntu archive package, ``focalboard-server-linux-amd64.tar.gz``, from the appropriate `release in GitHub <https://github.com/mattermost/focalboard/releases>`_.
 
-Create and use a clean directory, or delete any existing packages first, then run:
+Create and use a clean directory, or delete any existing packages first. Download the new version (e.g. 0.7.0 here, check the release for the latest one) using:
 
 .. code-block:: sh
 
-# Download the new version (e.g. 0.7.0 here, check the release for the latest one)
    wget https://github.com/mattermost/focalboard/releases/download/v0.7.0/focalboard-server-linux-amd64.tar.gz
    tar -xvzf focalboard-server-linux-amd64.tar.gz
 
-# Stop the server
+Stop the server
+
+.. code-block:: sh
+   
    sudo systemctl stop focalboard.service
 
-# Back up the old version
+Back up the old version
+
+.. code-block:: sh
+   
    sudo mv /opt/focalboard /opt/focalboard-old
    sudo mv focalboard /opt
 
-# Copy config and move uploaded files over
+Copy config and move uploaded files over
+
+.. code-block:: sh
+   
    sudo mv /opt/focalboard-old/files /opt/focalboard
    sudo cp /opt/focalboard-old/config.json /opt/focalboard
 
-# Start the server
+Start the server
+
+.. code-block:: sh
+
    sudo systemctl start focalboard.service
 
-# (Optional) delete the backup after verifying
+(Optional) delete the backup after verifying
+
+.. code-block:: sh
+   
    sudo rm -rf /opt/focalboard-old
