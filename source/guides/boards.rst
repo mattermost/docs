@@ -17,7 +17,7 @@ Access your Workspace
 ---------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
   /boards/installing-boards.rst
   /boards/accessing-boards.rst
