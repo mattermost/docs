@@ -1,25 +1,22 @@
 Getting Started
 ===============
 
-Mattermost Boards is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
+Mattermost Focalboard is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
 
-Mattermost Boards is available in the Plugin Marketplace for self-managed deployments:
+For self-managed deployments, Focalboard is available in the Plugin Marketplace.
 
 1. As a System Admin, go to **Main Menu > Plugin Marketplace**.
-2. Search for **Boards**.
-3. Select Install if not yet installed, then select **Configure** to enable.
+2. Search for **Focalboard**.
+3. Select **Install** if not yet installed, then select **Configure** to enable.
 4. From the plugin configuration page, set **Enable Plugin** to **true**.
 5. Select **Save** to enable the plugin.
 
-Setting up websocket traffic
-----------------------------
+Once installed and configured, the Focalboard plugin requires websocket traffic to be passed by the proxy. Update your NGINX or Apache web proxy config following the steps below.
 
-The Focalboard plugin requires websocket traffic to be passed by the proxy. Update your NGINX or Apache web proxy config following the steps below.
+Updating the NGINX web proxy config
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With NGINX
-~~~~~~~~~~
-
-After following the standard [Mattermost install steps](https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server), edit `/etc/nginx/sites-available/mattermost` and add this section to it:
+After following the standard `Mattermost install steps <https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server>`_, edit ``/etc/nginx/sites-available/mattermost`` and add this section to it:
 
 .. codeblock:: bash
 
@@ -43,10 +40,10 @@ After following the standard [Mattermost install steps](https://docs.mattermost.
        proxy_pass http://backend;
    }
 
-Restart NGINX with `sudo systemctl restart nginx`.
+Restart NGINX with ``sudo systemctl restart nginx``.
 
-With Apache (unofficial)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Updating the Apache web proxy config (unofficial)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After following the `install guide for Apache and Mattermost <https://docs.mattermost.com/install/config-apache2.html#configuring-apache2-as-a-proxy-for-mattermost-server-unofficial>`_, modify the web sockets section in ``/etc/apache2/sites-available`` as follows:
 
