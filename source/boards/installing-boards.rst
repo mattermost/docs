@@ -22,16 +22,14 @@ Focalboard Personal Server allows your team to work together on shared project b
 
 Follow these steps to set it up on an Ubuntu server.
 
-Set up Ubuntu Server 18.04
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Set up Ubuntu Server 18.04**
 
 Popular hosted options include:
 
 * `Digital Ocean <https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04>`_
 * `Amazon EC2 <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html>`_
 
-Install Focalboard
-^^^^^^^^^^^^^^^^^^
+**Install Focalboard**
 
 Download the Ubuntu archive package from the appropriate `release in GitHub <https://github.com/mattermost/focalboard/releases>`_. E.g. this is the link for v0.7.0 (which may no longer be the latest one):
 
@@ -41,8 +39,7 @@ Download the Ubuntu archive package from the appropriate `release in GitHub <htt
    tar -xvzf focalboard-server-linux-amd64.tar.gz
    sudo mv focalboard /opt
 
-Install NGINX
-^^^^^^^^^^^^^
+**Install NGINX**
 
 By default, the Focalboard server runs on port 8000 (specified in ``config.json``). We recommend running NGINX as a web proxy to forward HTTP and websocket requests from port 80 to it. To install NGINX, run:
 
@@ -56,8 +53,7 @@ You may need to adjust your firewall settings depending on the host, e.g.
 * `Digital Ocean <https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04>`_
 * `EC2 <https://docs.nginx.com/nginx/deployment-guides/amazon-web-services/ec2-instances-for-nginx/>`_
 
-Configure NGINX
-'''''''''''''''
+**Configure NGINX**
 
 Create a new site config:
 
@@ -133,13 +129,11 @@ Enable the Focalboard site, test the config, and reload NGINX:
    sudo nginx -t
    sudo /etc/init.d/nginx reload
 
-Set up TLS on NGINX
-~~~~~~~~~~~~~~~~~~~~
+**Set up TLS on NGINX**
 
 For a production server, it's important to set up TLS to encrypt web traffic. Without this, your login passwords and data are unprotected. Refer to the `NGINX TLS guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`_ and `Let's Encrypt Certbot guide <https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx>`_ on setting this up.
 
-Install PostgreSQL (Recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Install PostgreSQL (Recommended)**
 
 Focalboard stores data in a SQLite database by default, but we recommend running against PostgreSQL in production (we've tested against PostgreSQL 10.15). To install, run:
 
@@ -181,8 +175,7 @@ Change the dbconfig setting to use the postgres database you created:
    "dbtype": "postgres",
    "dbconfig": "postgres://boardsuser:boardsuser-password@localhost/boards?sslmode=disable&connect_timeout=10",
 
-Install MySQL
-~~~~~~~~~~~~~
+**(Optional) Install MySQL**
 
 As an alternative to PostgreSQL, you also can store your data in a MySQL database. To install, run:
 
@@ -222,8 +215,7 @@ Change the dbconfig setting to use the MySQL database you created:
    "dbtype": "mysql",
    "dbconfig": "boardsuser:boardsuser-password@tcp(127.0.0.1:3306)/boards",
 
-Configure Focalboard to run as a service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Configure Focalboard to run as a service**
 
 This will keep the server running across reboots. First, create a new service config file:
 
@@ -256,8 +248,7 @@ Make systemd reload the new unit, and start it on machine reboot:
    sudo systemctl start focalboard.service
    sudo systemctl enable focalboard.service
 
-Test the server
-~~~~~~~~~~~~~~~~
+**Test the server**
 
 At this point, the Focalboard server should be running.
 
@@ -272,15 +263,14 @@ The first command checks that the server is running on port 8000 (default), and 
 
 To access the server remotely, open a browser to its IP address or domain.
 
-Set up the server
-~~~~~~~~~~~~~~~~~~
+**Set up the server**
 
 After installing the server, open a browser to the domain you used (or ``http://localhost:8000`` for local installs). You should be redirected to the login screen. Click the link to register a new user instead, and complete the registration.
 
 The first user registration will always be permitted, but **subsequent registrations will require an invite link which includes a code**. You can invite additional users by clicking on your username in the top left, then selecting "Invite users".
 
 Personal Server configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Personal Server settings are stored in ``config.json`` and are read when the server is launched. The contents are:
 
@@ -302,7 +292,7 @@ Personal Server settings are stored in ``config.json`` and are read when the ser
     "localModeSocketLocation", "Location of local Unix port", "``/var/tmp/focalboard_local.socket``"
 
 Resetting passwords
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 By default, Personal Server exposes admin APIs on a local Unix socket at ``/var/tmp/focalboard_local.socket``. This is configurable using the ``enableLocalMode`` and ``localModeSocketLocation`` settings in ``config.json``.
 
@@ -322,7 +312,7 @@ To reset a user's password, you can use the following ``reset-password.sh`` scri
 After resetting a user's password (e.g. if they forgot it), direct them to change it from the user menu, by clicking on their username at the top of the sidebar.
 
 Upgrading Personal Server
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow these steps to upgrade an existing Personal Server installation that was previously set up.
 
