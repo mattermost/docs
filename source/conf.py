@@ -146,6 +146,16 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location",
     "administration/config-in-database#create-an-environment-file": 
         "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file",
+    "administration/config-settings#enable-public-channel-creation-for": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
+    "administration/config-settings#enable-public-channel-renaming-for": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for",
+    "administration/config-settings#data-retention-policy": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#data-retention-policy",
+    "administration/command-line-tools.html#mattermost-channel-restore": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
+    "administration/mmctl-cli-tool.html#mmctl-channel-modify": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-modify",
     "configure/configuration-settings#compliance-export-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
     "configure/configuration-settings#custom-terms-of-service-beta": 
@@ -197,6 +207,7 @@ redirects = {
         "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ldap-group-sync#add-default-teams-or-channels-for-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
+    "deployment/team-channel-management#profile": "https://docs.mattermost.com/manage/team-channel-members.html#profile",
     "administration/devops-command-center": "https://docs.mattermost.com/guides/incident-collaboration.html",
     "administration/plugins": "https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/", 
     "administration/migrating": "https://docs.mattermost.com/onboard/migrating-to-mattermost.html",
