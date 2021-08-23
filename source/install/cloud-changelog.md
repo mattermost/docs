@@ -50,6 +50,7 @@ Latest Mattermost Cloud releases:
 #### Administration
  - Upgraded Go to v1.16.7.
  - Migrated the extraction command to mmctl.
+ - Dropped support for Elasticsearch versions earlier than v7.
  - Removed a deprecated "Backend" field from the plugin manifest.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
  - Converted the "Executables" field in the plugin manifest to a map.
