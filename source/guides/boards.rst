@@ -38,6 +38,7 @@ Manage your Boards
 .. toctree::
    :maxdepth: 2
    
+  /boards/sharing-boards.rst
 
 Customize your Boards
 ---------------------
@@ -45,6 +46,7 @@ Customize your Boards
 .. toctree::
    :maxdepth: 2
    
+  /boards/templates.rst 
    
 Navigate your Boards
 ---------------------
