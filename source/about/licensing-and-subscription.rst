@@ -1,7 +1,7 @@
 Licensing and Subscription
 --------------------------
 
-Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`_ where you can easily purchase and manage your Mattermost Enterprise subscriptions.
+Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can easily purchase and manage your Mattermost Enterprise subscriptions.
 
 When you purchase a subscription, a license is generated. This license gives you access to Mattermost's Enterprise features. Subscriptions purchased via the Customer Portal are stored and listed in the portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history, making it easier to manage purchases and renewal dates.
 
@@ -48,7 +48,7 @@ System Admin access is required in order to apply the license. If you're not a M
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can also use the `CLI <https://docs.mattermost.com/install/enterprise-install-upgrade.html>`__ to apply the license.
+Alternatively, you can use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-license-upload>`__ or the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ to apply the license.
 
 **If you don't have Mattermost installed**
 
@@ -71,7 +71,7 @@ You may incur retroactive charges for any unique users added that exceed the lic
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Server version 5.32 and later you can renew your self-managed Mattermost Enterprise license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+From Mattermost Server v5.32 and later you can renew your self-managed Mattermost Enterprise license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
 If you have not upgraded to v5.32 you can contact Support (support@mattermost.com) to renew your license.
 
@@ -166,7 +166,9 @@ See our `frequently asked questions about licensing <https://mattermost.com/pric
 Do I need to pay for deactivated users?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No. If you deactivate a user that user is not counted as an active user during your annual renewal process. You can deactivate users manually via System Console and also via Active Directory/LDAP synchronization, the CLI tool, and the server APIs.
+No. If you deactivate a user that user is not counted as an active user during your annual renewal process. 
+
+You can deactivate users via System Console, via Active Directory/LDAP synchronization, using the `CLI tool <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-deactivate>`__, using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__, and using the server `APIs <https://api.mattermost.com/#operation/DeleteUser>`__.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
@@ -224,7 +226,7 @@ The affected Enterprise features include, but are not limited to, the following:
     
     Mentions for AD/LDAP groups are not shown in the autocomplete menu.
     
-    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group>`_ to modify group sync settings for the team/channel."
+    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group>`__ or the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group>`__ to modify group sync settings for the team/channel."
     "High Availability", "High Availability is disabled. If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
     "Performance monitoring", "Monitoring is disabled and Grafana will no longer update with new data.", "None needed."
     "Compliance exports", "Jobs are no longer scheduled in the job server. Data is not exported.", "None needed."
@@ -232,7 +234,7 @@ The affected Enterprise features include, but are not limited to, the following:
     "Custom terms", "Custom terms no longer displayed to end users on login. Data is retained in the Terms of Service database table.", "None needed."
     "Custom announcement banners", "No longer visible and is replaced by the default announcement banner.", "None needed."
     "Multi-factor authentication (MFA)", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
-    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use the `CLI https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions>`_ to reset permissions to default."
+    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use the `CLI https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions>`__, or the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions>`__ to reset permissions to default."
     "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
 Why can't I dismiss the expiry notification banner?
