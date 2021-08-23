@@ -7,7 +7,7 @@ Before You Begin
 ----------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    /boards/overview.rst
    /boards/getting-started.rst
