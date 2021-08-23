@@ -1,13 +1,13 @@
-Installing Boards
------------------
+Installing the Focalboard App
+-----------------------------
 
-Boards is available as a fully-contained, standalone personal desktop app for a single user that can be installed on Mac, Windows, or Linux or as a self-hosted server-based app.
+Focalboard is also available as a fully-contained, standalone personal desktop app for a single user that can be installed on Mac, Windows, or Linux or as a self-hosted server-based app.
 
-Personal desktop
+Personal Desktop
 ~~~~~~~~~~~~~~~~
 
-- macOS: Download Boards from the `App Store <https://apps.apple.com/app/apple-store/id1556908618?pt=2114704&ct=website&mt=8>`_.
-- Windows: Download Boards from the `Microsoft App Store <https://www.microsoft.com/store/apps/9NLN2T0SX9VF?cid=website>`_.
+- macOS: Download Focalboard from the `App Store <https://apps.apple.com/app/apple-store/id1556908618?pt=2114704&ct=website&mt=8>`_.
+- Windows: Download Focalboard from the `Microsoft App Store <https://www.microsoft.com/store/apps/9NLN2T0SX9VF?cid=website>`_.
 
 To install Personal Desktop for Linux:
 
@@ -15,42 +15,44 @@ To install Personal Desktop for Linux:
 2. Unpack the ``.tar.gz`` archive.
 3. Open ``focalboard-app`` from within the ``focalboard-app`` folder.
 
-Personal server
+Personal Server
 ~~~~~~~~~~~~~~~
 
 Focalboard Personal Server allows your team to work together on shared project boards.
 
-Follow these steps it up on an Ubuntu server. To upgrade an existing installation, see [the upgrade guide](../ubuntu-upgrade).
+Follow these steps to set it up on an Ubuntu server.
 
 Set up Ubuntu Server 18.04
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Popular hosted options include:
+
 * `Digital Ocean <https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04>`_
 * `Amazon EC2 <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html>`_
 
 Install Focalboard
 ^^^^^^^^^^^^^^^^^^
 
-Download the Ubuntu archive package from the appropriate [release in GitHub](https://github.com/mattermost/focalboard/releases). E.g. this is the link for v0.7.0 (which may no longer be the latest one):
+Download the Ubuntu archive package from the appropriate `release in GitHub <https://github.com/mattermost/focalboard/releases>`_. E.g. this is the link for v0.7.0 (which may no longer be the latest one):
 
 .. codeblock:: bash
 
-wget https://github.com/mattermost/focalboard/releases/download/v0.7.0/focalboard-server-linux-amd64.tar.gz
-tar -xvzf focalboard-server-linux-amd64.tar.gz
-sudo mv focalboard /opt
+   wget https://github.com/mattermost/focalboard/releases/download/v0.7.0/focalboard-server-linux-amd64.tar.gz
+   tar -xvzf focalboard-server-linux-amd64.tar.gz
+   sudo mv focalboard /opt
 
 Install NGINX
 ^^^^^^^^^^^^^
 
-By default, the Focalboard server runs on port 8000 (specified in config.json). We recommend running NGINX as a web proxy to forward http and websocket requests from port 80 to it. To install NGINX, run:
+By default, the Focalboard server runs on port 8000 (specified in ``config.json``). We recommend running NGINX as a web proxy to forward HTTP and websocket requests from port 80 to it. To install NGINX, run:
 
 .. codeblock:: bash
 
-sudo apt update
-sudo apt install nginx
+   sudo apt update
+   sudo apt install nginx
 
 You may need to adjust your firewall settings depending on the host, e.g.
+
 * `Digital Ocean <https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04>`_
 * `EC2 <https://docs.nginx.com/nginx/deployment-guides/amazon-web-services/ec2-instances-for-nginx/>`_
 
@@ -61,212 +63,250 @@ Create a new site config:
 
 .. codeblock:: bash
 
-sudo nano /etc/nginx/sites-available/focalboard
+   sudo nano /etc/nginx/sites-available/focalboard
 
 Copy and paste this configuration:
 
 .. codeblock:: bash
 
-upstream focalboard {
-   server localhost:8000;
-   keepalive 32;
-}
-
-server {
-   listen 80 default_server;
-
-   server_name focalboard.example.com;
-
-   location ~ /ws/* {
-       proxy_set_header Upgrade $http_upgrade;
-       proxy_set_header Connection "upgrade";
-       client_max_body_size 50M;
-       proxy_set_header Host $http_host;
-       proxy_set_header X-Real-IP $remote_addr;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-       proxy_set_header X-Frame-Options SAMEORIGIN;
-       proxy_buffers 256 16k;
-       proxy_buffer_size 16k;
-       client_body_timeout 60;
-       send_timeout 300;
-       lingering_timeout 5;
-       proxy_connect_timeout 1d;
-       proxy_send_timeout 1d;
-       proxy_read_timeout 1d;
-       proxy_pass http://focalboard;
+   upstream focalboard {
+      server localhost:8000;
+      keepalive 32;
    }
 
-   location / {
-       client_max_body_size 50M;
-       proxy_set_header Connection "";
-       proxy_set_header Host $http_host;
-       proxy_set_header X-Real-IP $remote_addr;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-       proxy_set_header X-Frame-Options SAMEORIGIN;
-       proxy_buffers 256 16k;
-       proxy_buffer_size 16k;
-       proxy_read_timeout 600s;
-       proxy_cache_revalidate on;
-       proxy_cache_min_uses 2;
-       proxy_cache_use_stale timeout;
-       proxy_cache_lock on;
-       proxy_http_version 1.1;
-       proxy_pass http://focalboard;
-   }
-}
+   server {
+     listen 80 default_server;
+
+    server_name focalboard.example.com;
+
+     location ~ /ws/* {
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        client_max_body_size 50M;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Frame-Options SAMEORIGIN;
+        proxy_buffers 256 16k;
+        proxy_buffer_size 16k;
+        client_body_timeout 60;
+        send_timeout 300;
+        lingering_timeout 5;
+        proxy_connect_timeout 1d;
+        proxy_send_timeout 1d;
+        proxy_read_timeout 1d;
+        proxy_pass http://focalboard;
+    }
+
+    location / {
+        client_max_body_size 50M;
+        proxy_set_header Connection "";
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Frame-Options SAMEORIGIN;
+        proxy_buffers 256 16k;
+        proxy_buffer_size 16k;
+        proxy_read_timeout 600s;
+        proxy_cache_revalidate on;
+        proxy_cache_min_uses 2;
+        proxy_cache_use_stale timeout;
+        proxy_cache_lock on;
+        proxy_http_version 1.1;
+        proxy_pass http://focalboard;
+    }
+ }
 
 If there is a default site, you may need to delete it
 
 .. codeblock:: bash
 
-sudo rm /etc/nginx/sites-enabled/default
+   sudo rm /etc/nginx/sites-enabled/default
 
 Enable the Focalboard site, test the config, and reload NGINX:
 
 .. codeblock:: bash
 
-sudo ln -s /etc/nginx/sites-available/focalboard /etc/nginx/sites-enabled/focalboard
-sudo nginx -t
-sudo /etc/init.d/nginx reload
+   sudo ln -s /etc/nginx/sites-available/focalboard /etc/nginx/sites-enabled/focalboard
+   sudo nginx -t
+   sudo /etc/init.d/nginx reload
 
 Set up TLS on NGINX
 ~~~~~~~~~~~~~~~~~~~~
 
-For a production server, it's important to set up TLS to encrypt web traffic. Without this, your login passwords and data are unprotected. Refer to the [NGINX TLS guide](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/) and [Let's Encrypt Certbot guide](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx) on setting this up.
+For a production server, it's important to set up TLS to encrypt web traffic. Without this, your login passwords and data are unprotected. Refer to the `NGINX TLS guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`_ and `Let's Encrypt Certbot guide <https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx>`_ on setting this up.
 
-Install Postgresql (Recommended)
+Install PostgreSQL (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Focalboard stores data in a SQLite database by default, but we recommend running against Postgres in production (we've tested against Postgres 10.15). To install, run:
+Focalboard stores data in a SQLite database by default, but we recommend running against PostgreSQL in production (we've tested against PostgreSQL 10.15). To install, run:
 
-```
-sudo apt install postgresql postgresql-contrib
-```
+.. codeblock:: bash
 
-Then run as the postgres user to create a new database:
+   sudo apt install postgresql postgresql-contrib
 
-```
-sudo --login --user postgres
-psql
-```
+Then run as the *postgres* user to create a new database:
 
-On the psql prompt, run the following commands (**change the user/password** to your own values):
+.. codeblock:: bash
 
-```
-CREATE DATABASE boards;
-CREATE USER <b>boardsuser</b> WITH PASSWORD '<b>boardsuser-password</b>';
-\q
-```
+   sudo --login --user postgres
+   psql
 
-Exit the postgres user session:
+On the ``psql`` prompt, run the following commands (**change the user/password** to your own values):
 
-```
-exit
-```
+.. codeblock:: bash
 
-Edit the Focalboard config.json:
+   CREATE DATABASE boards;
+   CREATE USER <b>boardsuser</b> WITH PASSWORD '<b>boardsuser-password</b>';
+   \q
 
-```
-nano /opt/focalboard/config.json
-```
+Exit the *postgres* user session:
+
+.. codeblock:: bash
+
+   exit
+
+Edit the Focalboard ``config.json``:
+
+.. codeblock:: bash
+
+   nano /opt/focalboard/config.json
 
 Change the dbconfig setting to use the postgres database you created:
 
-```
-"dbtype": "postgres",
-"dbconfig": "postgres://boardsuser:boardsuser-password@localhost/boards?sslmode=disable&connect_timeout=10",
-```
+.. codeblock:: bash
 
-## Install MySQL
+   "dbtype": "postgres",
+   "dbconfig": "postgres://boardsuser:boardsuser-password@localhost/boards?sslmode=disable&connect_timeout=10",
 
-As an alternative to Postgres, you also can store your data in a MySQL database. To install, run:
+Install MySQL
+~~~~~~~~~~~~~
 
-```
-sudo apt-get install mysql-server
-```
+As an alternative to PostgreSQL, you also can store your data in a MySQL database. To install, run:
 
-Log in as `root` in your database:
+.. codeblock:: bash
 
-```
-sudo mysql
-```
+   sudo apt-get install mysql-server
 
-At the MySQL prompt, run the following commands (change `user/password` to your own values):
+Log in as *root* in your database:
 
-```
-CREATE DATABASE boards;
-GRANT ALL on boards.* to 'boardsuser'@'localhost' identified by 'boardsuser-password';
-```
+.. codeblock:: bash
+
+   sudo mysql
+
+At the MySQL prompt, run the following commands (change `user/password`` to your own values):
+
+.. codeblock:: bash
+
+   CREATE DATABASE boards;
+   GRANT ALL on boards.* to 'boardsuser'@'localhost' identified by 'boardsuser-password';
 
 Exit the mysql-prompt:
 
-```
-exit
-```
+.. codeblock:: bash
 
-Edit the Focalboard `config.json`:
+   exit
 
-```
-nano /opt/focalboard/config.json
-```
+Edit the Focalboard ``config.json``:
+
+.. codeblock:: bash
+
+   nano /opt/focalboard/config.json
 
 Change the dbconfig setting to use the MySQL database you created:
 
-```
-"dbtype": "mysql",
-"dbconfig": "boardsuser:boardsuser-password@tcp(127.0.0.1:3306)/boards",
-```
+.. codeblock:: bash
 
-## Configure Focalboard to run as a service
+   "dbtype": "mysql",
+   "dbconfig": "boardsuser:boardsuser-password@tcp(127.0.0.1:3306)/boards",
+
+Configure Focalboard to run as a service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This will keep the server running across reboots. First, create a new service config file:
 
-```
-sudo nano /lib/systemd/system/focalboard.service
-```
+.. codeblock:: bash
+
+   sudo nano /lib/systemd/system/focalboard.service
 
 Paste in the following:
 
-```
-[Unit]
-Description=Focalboard server
+.. codeblock:: bash
 
-[Service]
-Type=simple
-Restart=always
-RestartSec=5s
-ExecStart=/opt/focalboard/bin/focalboard-server
-WorkingDirectory=/opt/focalboard
+   [Unit]
+   Description=Focalboard server
 
-[Install]
-WantedBy=multi-user.target
-```
+   [Service]
+   Type=simple
+   Restart=always
+   RestartSec=5s
+   ExecStart=/opt/focalboard/bin/focalboard-server
+   WorkingDirectory=/opt/focalboard
+
+   [Install]
+   WantedBy=multi-user.target
 
 Make systemd reload the new unit, and start it on machine reboot:
 
-```
-sudo systemctl daemon-reload
-sudo systemctl start focalboard.service
-sudo systemctl enable focalboard.service
-```
+.. codeblock:: bash
 
-## Test the server
+   sudo systemctl daemon-reload
+   sudo systemctl start focalboard.service
+   sudo systemctl enable focalboard.service
+
+Test the server
+~~~~~~~~~~~~~~~~
 
 At this point, the Focalboard server should be running.
 
 Test that it's running locally with:
 
-```
-curl localhost:8000
-curl localhost
-```
+.. codeblock:: bash
+
+   curl localhost:8000
+   curl localhost
 
 The first command checks that the server is running on port 8000 (default), and the second checks that NGINX is proxying requests successfully. Both commands should return the same snippet of HTML.
 
 To access the server remotely, open a browser to its IP address or domain.
 
-## Set up the server
+Set up the server
+~~~~~~~~~~~~~~~~~~
 
-Refer to the [server setup guide](/guide/server-setup/) to complete server setup.
+After installing the server, open a browser to the domain you used (or ``http://localhost:8000`` for local installs). You should be redirected to the login screen. Click the link to register a new user instead, and complete the registration.
+
+The first user registration will always be permitted, but **subsequent registrations will require an invite link which includes a code**. You can invite additional users by clicking on your username in the top left, then selecting "Invite users".
+
+Upgrading Personal Server
+------------------------
+
+Follow these steps to upgrade an existing Personal Server installation that was previously set up.
+
+Use the URL of the Ubuntu archive package, ``focalboard-server-linux-amd64.tar.gz``, from the appropriate `release in GitHub <https://github.com/mattermost/focalboard/releases>`_.
+
+Create and use a clean directory, or delete any existing packages first, then run:
+
+.. codeblock:: bash
+
+# Download the new version (e.g. 0.7.0 here, check the release for the latest one)
+   wget https://github.com/mattermost/focalboard/releases/download/v0.7.0/focalboard-server-linux-amd64.tar.gz
+   tar -xvzf focalboard-server-linux-amd64.tar.gz
+
+# Stop the server
+   sudo systemctl stop focalboard.service
+
+# Back up the old version
+   sudo mv /opt/focalboard /opt/focalboard-old
+   sudo mv focalboard /opt
+
+# Copy config and move uploaded files over
+   sudo mv /opt/focalboard-old/files /opt/focalboard
+   sudo cp /opt/focalboard-old/config.json /opt/focalboard
+
+# Start the server
+   sudo systemctl start focalboard.service
+
+# (Optional) delete the backup after verifying
+   sudo rm -rf /opt/focalboard-old
