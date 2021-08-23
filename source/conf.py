@@ -61,6 +61,15 @@ redirects = {
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
+    "developer/interactive-dialogs": "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/",
+    "developer/interactive-message-buttons": "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/",
+    "developer/message-attachments": "https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/",
+    "developer/oauth-2-0-applications": "https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/",
+    "developer/personal-access-token": "https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/",
+    "developer/slash-commands": "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
+    "developer/webhook-outgoing": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
+    "developer/webhook-incoming": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
+    "developer/bot-accounts": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
@@ -74,6 +83,11 @@ redirects = {
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
     "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/developer": "https://developers.mattermost.com/integrate/admin-guide/",
+    "guides/integration": "https://developers.mattermost.com/integrate/getting-started/",
+    "guides/user": "https://docs.mattermost.com/guides/messaging.html",
+    "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
     "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
     "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
     "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
@@ -104,8 +118,31 @@ redirects = {
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
+    "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
+    "administration/compliance-export": "https://docs.mattermost.com/comply/compliance-export.html",
+    "administration/config-settings#allow-users-to-view-archived-channels-beta": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels-beta",
+    "administration/config-settings#timezone": "https://docs.mattermost.com/configure/configuration-settings.html#timezone",
+    "administration/config-settings#enable-legacy-sidebar": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
+    "administration/config-settings#town-square-is-read-only-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental",
+    "administration/config-settings#town-square-is-hidden-in-left-hand-sidebar-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental",
+    "administration/config-settings#enable-x-to-leave-channels-from-left-hand-sidebar-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental",
+    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
+    "administration/config-settings#sidebar-organization": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization",
+    "administration/config-settings#experimental-sidebar-features": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features",
+    "administration/config-settings#deprecated-configuration-settings": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings",
+    "administration/custom-terms-of-service": "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/image-proxy": "https://docs.mattermost.com/deploy/image-proxy.html",
     "administration/encryption": "https://docs.mattermost.com/deploy/encryption-options.html",
+    "administration/extended-support-release": "https://docs.mattermost.com/upgrade/extended-support-release.html",
     "administration/backup": "https://docs.mattermost.com/deploy/backup-disaster-recovery.html",
     "administration/upgrade": "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
     "administration/important-upgrade-notes": "https://docs.mattermost.com/upgrade/important-upgrade-notes.html",
@@ -114,14 +151,21 @@ redirects = {
     "administration/release-lifecycle": "https://docs.mattermost.com/upgrade/release-lifecycle.html",
     "administration/downgrade": "https://docs.mattermost.com/upgrade/downgrading-mattermost-server.html",
     "administration/open-source-components": "https://docs.mattermost.com/upgrade/open-source-components.html",
+    "administration/mmctl-cli-tool": "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
+    "administration/migrating#migrating-from-slack-using-the-mattermost-web-app": 
+        "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app",
+    "administration/migrating#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import": 
+        "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
     "administration/release-definitions": "https://docs.mattermost.com/upgrade/release-definitions.html",
     "administration/performance-alerting-guide": "https://docs.mattermost.com/scale/peformance-alerting.html",
     "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
     "administration/config-in-database":
         "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
     "administration/branding": "https://docs.mattermost.com/configure/custom-branding-tools.html",
+    "deployment/admin-roles": "https://docs.mattermost.com/deploy/admin-roles.html",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
+    "deployment/guest-accounts": "https://docs.mattermost.com/deploy/guest-accounts.html",
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",

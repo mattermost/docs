@@ -14,12 +14,15 @@ Lastest Mattermost Releases:
 
 ## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-08-16**
+- **v5.38.1, released 2021-08-18**
+  - Fixed an issue where Playbooks v1.16.0 could not be installed as a pre-packaged plugin [MM-37928](https://mattermost.atlassian.net/browse/MM-37928).
+- **v5.38.0, released 2021-08-16**
+  - Original 5.38.0 release
 
 Mattermost v5.38.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Deprecations
- - The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config`` command that will need to be run to apply configuration changes after they are made. This change improves configuration performance and robustness.
+ - The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config reload`` command, which must be run to apply configuration changes after they are made on disk. This change improves configuration performance and robustness.
 
 ### Important Upgrade Notes
  - v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL v5.6.51.
@@ -142,7 +145,6 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - Playbooks 1.16.0+ fail to upgrade on v5.38.0 servers [MM-37928](https://mattermost.atlassian.net/browse/MM-37928).
  - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -161,6 +163,11 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.37.2, release day TBD**
+  - Fixing a server panic issue. [MM-37574](https://mattermost.atlassian.net/browse/MM-37574)
+  - Fixing an issue where saving or updating user statuses caused the logs to be filled with multiple key insertion errors. [MM-37202](https://mattermost.atlassian.net/browse/MM-37202).
+  - Fixing a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition. [MM-37108](https://mattermost.atlassian.net/browse/MM-37108)
+  - Fixing an issue where screen readers read “user object” instead of reading the username or channel in the **Switch Channels** modal.
 - **v5.37.1, released 2021-08-04**
   - Mattermost v5.37.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
@@ -285,7 +292,6 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - On Team Edition servers, panic logs are shown due to a ``getPrevTrialLicense`` API request when loading the System Console [MM-37108](https://mattermost.atlassian.net/browse/MM-37108).
  - When upgrading to 5.37.0, the Incident Collaboration plugin may not be automatically installed in some cases.
  - Add Members modal is incorrectly themed on the Mattermost Dark theme [MM-37220](https://mattermost.atlassian.net/browse/MM-37220).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
