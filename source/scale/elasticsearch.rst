@@ -4,17 +4,17 @@ Elasticsearch
 |enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
+  :scale: 40
   :target: https://mattermost.com/pricing-self-managed/
   :alt: Available in the Mattermost Enterprise subscription plan.
 
 .. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
+  :scale: 40
   :target: https://mattermost.com/pricing-cloud/
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
+  :scale: 40
   :target: https://mattermost.com/pricing-self-managed/
   :alt: Available for Mattermost Self-Hosted deployments.
 
