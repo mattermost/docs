@@ -97,6 +97,9 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - The new spellchecker connects to Google servers for downloading updated dictionaries.
+- Unread messages icon is missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
+- Taskbar icon flashes on new message arrival on Windows despite setting being disabled `MM-37797 <https://mattermost.atlassian.net/browse/MM-37797>`_.
+- "Add Server" appears on each startup on servers with GPO `MM-37863 <https://mattermost.atlassian.net/browse/MM-37863>`_.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
 - Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
 - Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
