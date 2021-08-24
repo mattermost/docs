@@ -54,4 +54,4 @@ Attachment Limits and Sizes
 
 Up to five files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin.
 
-Image files can be a maximum size of 6048 pixels x 4032 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 36 MB. System Admins can customize the maximum image resolution size within the ``conf.json`` file. See our `Configuration Settings <URL>`__ product documentation for details.
+Image files can be a maximum size of 6048 pixels x 4032 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 36 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings <URL>`__ product documentation for details.
