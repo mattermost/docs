@@ -1,6 +1,21 @@
 Templates
 =========
 
+Templates provide you with a predefined structure so that you can get started quickly.
+
+Board templates 
+---------------
+
+Board templates include:
+
+* Meeting Notes
+* Personal Goals
+* Project Tasks
+* Roadmap
+* Empty Board
+
+If none of those boards fit your use case, you can use a blank template and customize it as needed. To create a board template select **+ Add Board**, then select **+ New template**. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
+
 Card templates
 ---------------
 
@@ -14,9 +29,3 @@ Alternatively, you can turn any card into a template:
 2. Click on the options menu (… at the top right)
 3. Select “New template from card”
 
-Board templates 
-----------------
-
-Similarly, you can create board templates from the “+ Add board” menu. To turn an existing board into a template:
-
-Hover over the board title in the sidebar. Click on the options menu (…) and select “New template from board”
