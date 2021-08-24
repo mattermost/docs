@@ -3,11 +3,11 @@
 Sending and Receiving Messages
 ==============================
  
-Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message in Mattermost.
+Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message with other Mattermost users.
 
 .. note::
   
-  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__, available in `Mattermost Enterprise Edition E10 or later <https://docs.mattermost.com/overview/product.html#mattermost-enterprise-edition-e10>`__.
+  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise Edition E10 or later <https://docs.mattermost.com/about/product.html#mattermost-enterprise-edition-e10>`__.
 
 Send a Message
 ---------------
@@ -23,7 +23,7 @@ Reply to Messages
 
 .. tip::
 
-   An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost Self-Managed customers from v5.37 offering a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more. 
+   An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost Self-Managed customers from v5.37 offering a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more. 
 
 You can reply to a message by hovering over a message and selecting the **Reply** link to organize the conversation into a thread.
 
@@ -48,7 +48,7 @@ Edit or Delete Messages
 Select the **More Actions** link next to a message that you've sent.
 
 .. image:: ../images/more-actions.png
-   :alt: More actions you can take on Mattermost messages
+   :alt: More actions you can take with your messages
 
 Select **Edit** to edit your own messages. Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
