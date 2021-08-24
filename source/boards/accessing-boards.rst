@@ -9,4 +9,4 @@ You can use this to create private boards:
 2. Select the **Focalboard Workspace** icon in the channel header.
 3. Create a board.
 
-Only members of channel you created/joined can access the board. However, you can use the share board feature to share a read-only board with anyone (incuding unauthenticated users) who has the generated link.
+Only members of channel you created/joined can access the board. However, you can share a read-only version of any board with anyone (including unauthenticated users) who has the generated link.
