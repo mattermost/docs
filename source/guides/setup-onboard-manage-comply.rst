@@ -14,6 +14,7 @@ Self-Managed Deployments
    :glob:
 
    /configure/configuration-settings.rst
+   /configure/deprecated-configuration.settings.rst
    /configure/configuation-in-mattermost-database.rst
    /configure/customizing-mattermost.rst
    /configure/email-templates.rst
