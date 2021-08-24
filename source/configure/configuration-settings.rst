@@ -4877,6 +4877,10 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 
 **False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled.
 
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for older actions taken prior to the setting being enabled. For example, if a user comments on an old thread, they automatically follow the thread if this setting is enabled regardless of whether the thread existed when this setting was disabled.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
