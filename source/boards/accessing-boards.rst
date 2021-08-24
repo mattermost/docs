@@ -1,5 +1,5 @@
 Accessing your Boards
-=====================================
+=====================
 
 Focalboard currently uses channel-based permissions, meaning that only members of the associated channel can access (read/write) the boards for that channel.
 
