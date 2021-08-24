@@ -26,7 +26,8 @@ mmctl Commands
 - `mmctl completion`_ - Generates autocompletion scripts for bash and zsh
 - `mmctl config`_ - Configuration management
 - `mmctl docs`_ - Generates mmctl documentation
-- `mmctl export`_ - Exports management
+- `mmctl export`_ - Exports Management
+- `mmctl extract`_ - Content Extraction Job Management
 - `mmctl group`_ - Group management
 - `mmctl group channel`_ - Channel group management
 - `mmctl group team`_ - Team group management
@@ -2276,6 +2277,135 @@ List export files.
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --local                        allows communicating with the server through a unix socket
    --strict                       will only run commands if the mmctl version matches the server one
+
+mmctl extract
+-------------
+
+Management of content extraction jobs.
+
+   Child Commands
+      - `mmctl extract job list`_ - List content extract jobs
+      - `mmctl extract job show`_ - Show extract job
+      - `mmctl extract run`_ - Start a content extraction job
+
+mmctl extract job list
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List content extraction jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract job list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   extract job list
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for disable
+   --all            Fetch all extract jobs. --page flag will be ignore if provided
+   --page int       Page number to fetch for the list of extract jobs
+   --per-page int   Number of extract jobs to be fetched (default 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract job show
+~~~~~~~~~~~~~~~~~~~~~~
+   
+**Description**
+   
+Show extraction job.
+   
+**Format**
+   
+.. code-block:: sh
+   
+   mmctl extract job show [extractJobID] [flags]
+   
+**Examples**
+   
+.. code-block:: sh
+   
+   extract job show f3d68qkkm7n8xgsfxwuo498rah
+   
+**Options**
+   
+.. code-block:: sh
+   
+   -h, --help       help for disable
+   
+**Options inherited from parent commands**
+   
+.. code-block:: sh
+   
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract run
+~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Start a content extraction job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract run [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   extract run
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for disable
+   --from int   The timestamp of the earliest file to extract, expressed in seconds since the unix epoch.
+   --to int     The timestamp of the latest file to extract, expressed in seconds since the unix epoch. Defaults to the current time.
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
 
 mmctl group
 -----------
