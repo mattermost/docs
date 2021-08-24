@@ -5,8 +5,8 @@ Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 c
 
 Two permission schemes are provided in Mattermost: 
 
-* System Scheme: Applies permissions universally across all teams and channels.
-* Team Override Schemes: Allow admins to customize permissions for each team.
+* System Scheme: Applies permissions universally across all teams and channels  
+* Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise E10 or later)
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
 
@@ -19,10 +19,8 @@ Permissions Structure
 
 The Mattermost System Console provides a number of elements for Admins to control the permissions in their system. 
 
-System Scheme (E10)
-~~~~~~~~~~~~~~~~~~~~~
-
-*Available in Enterprise Edition E10 and higher*
+System Scheme
+~~~~~~~~~~~~~~
 
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
 
@@ -37,12 +35,12 @@ You can access the System Scheme interface by going to **System Console > User M
 
 .. image:: ../images/system-scheme.png
 
-Team Override Schemes (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Team Override Schemes (E10/E20)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E20*
+*Available in Enterprise Edition E10 and higher*
 
-On systems with multiple `Mattermost teams <https://docs.mattermost.com/help/getting-started/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
+On systems with multiple `Mattermost teams <https://docs.mattermost.com/messaging/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
@@ -60,9 +58,9 @@ Channel Permissions
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
 Channel Moderation (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-This content has moved to `Team and Channel Management <https://docs.mattermost.com/deployment/team-channel-management.html>`_.
+This content has moved to `Team and Channel Management <https://docs.mattermost.com/manage/team-channel-members.html>`_.
 
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,7 +189,7 @@ Example: As the default for the entire system, only allow users to edit their ow
 
 .. note::
 
-  The post edit time limit is a `global config variable <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
+  The post edit time limit is a `global config variable <https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
 
 Integration Management
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,9 +211,9 @@ Administration Tools
 
 There are a number of CLI tools available for Admins to help in configuring and troubleshooting the permissions system:
 
-1. `Reset to default permissions <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`__: Resets all permissions to the default on new installs.
-2. `Export permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a jsonl file.
-3. `Import permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
+1. `Reset to default permissions <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-reset>`__: Resets all permissions to the default on new installs.
+2. `Export permission schemes <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a jsonl file.
+3. `Import permission schemes <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
 
 Backend Infrastructure
 ----------------------
