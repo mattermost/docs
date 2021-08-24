@@ -156,6 +156,14 @@ redirects = {
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
     "administration/mmctl-cli-tool.html#mmctl-channel-modify": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-modify",
+    "administration/config-settings#post-edit-time-limit": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit",
+    "administration/command-line-tools#mattermost-permissions-reset": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-reset",
+    "administration/command-line-tools#mattermost-permissions-export": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-export",
+    "administration/command-line-tools#mattermost-permissions-import": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-import",
     "configure/configuration-settings#compliance-export-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
     "configure/configuration-settings#custom-terms-of-service-beta": 
