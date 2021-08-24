@@ -22,7 +22,8 @@ Focalboard Personal Server allows your team to work together on shared project b
 
 Follow these steps to set it up on an Ubuntu server.
 
-**Set up Ubuntu Server 18.04**
+Set up Ubuntu Server 18.04
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Popular hosted options include:
 
@@ -356,3 +357,20 @@ Start the server
 .. code-block:: sh
    
    sudo rm -rf /opt/focalboard-old
+   
+Personal Server (Docker)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can download and run the latest version of Focalboard Personal Server with a `single-line Docker command <https://www.docker.com>`__:
+
+.. code-block:: sh
+
+   docker run -it -p 80:8000 mattermost/focalboard
+
+Then open a browser to ``http://localhost``. To specify a port number:
+
+.. code-block:: sh
+
+   docker run -it -p <port>:8000 mattermost/focalboard
+
+You can access the Focalboard Docker README `here <https://github.com/mattermost/focalboard/blob/main/docker/README.md>`_.
