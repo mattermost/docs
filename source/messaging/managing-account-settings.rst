@@ -195,7 +195,11 @@ Online availability icons display on user profile avatars in the center channel 
 Timezone
 ~~~~~~~~~
 
-Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in config.json.
+Select the timezone used for timestamps in the user interface and for email notifications. 
+
+.. note::
+  
+  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in ``config.json``. Timezone is enabled by default in from Mattermost v.6.0.
 
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~
