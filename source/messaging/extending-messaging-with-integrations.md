@@ -20,7 +20,7 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 - Start and join voice calls, video calls, and use screen-sharing with your team members. Developed by kosgrz and maintained by Mattermost.
 - Selecting a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
-- Visit the Marketplace to install, configure, and use this integration.
+- Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
 - Source code: https://github.com/mattermost/mattermost-plugin-skype4business
 
 #### Office 365 SSO (E20)
@@ -28,11 +28,11 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 - Configure Mattermost to use your Office 365 credentials and Azure Active Directory account as a single sign-on (SSO) service, developed by Mattermost.
 - Supports Microsoft Active Directory Tenants for team creation, account creation, and Single Sign-On (SSO).
 - Receive a daily summary of calendar events, and accept or decline new events.
-- Visit the Marketplace to install, configure, and use this integration.
+- Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
 
 ### CI/CD integrations
 
-There are several ways to connect your CI/CD tools to Mattermost. Take a look at the tools recommended below, or visit the Marketplace to find others.
+There are several ways to connect your CI/CD tools to Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
 
 #### GitHub
 
