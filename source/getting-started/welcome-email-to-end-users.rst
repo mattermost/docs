@@ -17,7 +17,7 @@ Subject: New Communication Platform - Mattermost
 
 Hi all,
  
-As some of you already know, we are moving to Mattermost as our communication platform. Mattermost is a messaging app where you can talk, share files, and collaborate on projects or initiatives. Mattermost also integrates with many of the apps that you use every day, like **[add apps]**.  
+As some of you already know, we are moving to Mattermost as our communication platform. Mattermost is collaboration software you can use to talk, share files, and collaborate on projects or initiatives. Mattermost also integrates with many of the apps that you use every day, like **[add apps]**.  
 
 We are moving to Mattermost because it will host all our communication in one place, is instantly searchable and available from all your devices.
 
@@ -39,7 +39,7 @@ To get started:
 
 1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL so you can use it to log in next time.
 
-2. `Download <https://mattermost.com/download/#mattermostApps>`__ the Mattermost apps for desktop and mobile. Refer to the `Mattermost Welcome Guide <https://docs.mattermost.com/help/getting-started/welcome-to-mattermost.html>`__ on how to get up and running quickly.
+2. `Download <https://mattermost.com/download/#mattermostApps>`__ the Mattermost apps for desktop and mobile. See the `Channels documentation <https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html>`__ for details on how to get up and running quickly.
 
 
 3. Start messaging! 
