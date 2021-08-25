@@ -18,7 +18,7 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 #### Skype for Business
 
 - Start and join voice calls, video calls, and use screen-sharing with your team members. Developed by kosgrz and maintained by Mattermost.
-- Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
+- Selecting a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
 - Visit the Marketplace to install, configure, and use this integration.
 - Source code: https://github.com/mattermost/mattermost-plugin-skype4business
