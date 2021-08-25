@@ -6,7 +6,7 @@ Mattermost Channels are communication workflows that offer channel-based real-ti
 Some of the major benefits of using Channels include:
 
 - All your team communication is in one place with channels for topic-based, group-based, or meeting-based project collaboration
-- Integrated voice, video, file, and link sharing
+- Integrated voice, video, file, and link sharing.
 - Removes information and organizational silos with Direct 1:1, Group Messaging, as well as site-wide search
 - Markdown and code syntax highlighting
 - Persistent communication history
