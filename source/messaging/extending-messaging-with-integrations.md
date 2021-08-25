@@ -13,21 +13,22 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 - Two-way integration between Mattermost and Office 365 Calendar, developed by Mattermost.
 - Receive a daily summary of calendar events, and accept or decline new events.
 - Reflect user status as "Do Not Disturb" when in a meeting scheduled via Outlook Calendar.
-- Docs: https://mattermost.gitbook.io/plugin-mscalendar
+- Visit the Marketplace to install, configure, and use this integration.
 
 #### Skype for Business
 
 - Start and join voice calls, video calls, and use screen-sharing with your team members. Developed by kosgrz and maintained by Mattermost.
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
-- Source code + docs: https://github.com/mattermost/mattermost-plugin-skype4business
+- Visit the Marketplace to install, configure, and use this integration.
+- Source code: https://github.com/mattermost/mattermost-plugin-skype4business
 
 #### Office 365 SSO (E20)
 
 - Configure Mattermost to use your Office 365 credentials and Azure Active Directory account as a single sign-on (SSO) service, developed by Mattermost.
 - Supports Microsoft Active Directory Tenants for team creation, account creation, and SSO.
 - Receive a daily summary of calendar events, and accept or decline new events.
-- Docs: https://docs.mattermost.com/deployment/sso-office.html
+- Visit the Marketplace to install, configure, and use this integration.
 
 ### CI/CD integrations
 
@@ -39,7 +40,8 @@ There are several ways to connect your CI/CD tools to Mattermost. Take a look at
  - Get reminders on issues and pull requests that need your attention.
  - Get notifications in Mattermost about mentions, review requests, and comments.
  - Supports GitHub Enterprise, works with SaaS and Enterprise versions of GitHub.
- - Source code + docs: https://github.com/mattermost/mattermost-plugin-github 
+ - Visit the Marketplace to install, configure, and use this integration.
+ - Source code: https://github.com/mattermost/mattermost-plugin-github
 
 #### GitLab
 
@@ -47,7 +49,8 @@ There are several ways to connect your CI/CD tools to Mattermost. Take a look at
  - Get reminders on issues and merge requests that need your attention.
  - Get notifications in Mattermost about mentions, review requests, and comments.
  - Supports SaaS and on-prem versions of GitLab.
- - Source code + docs: https://github.com/mattermost/mattermost-plugin-gitlab
+ - Visit the Marketplace to install, configure, and use this integration.
+ - Source code: https://github.com/mattermost/mattermost-plugin-gitlab
 
 ### Atlassian integrations
 
