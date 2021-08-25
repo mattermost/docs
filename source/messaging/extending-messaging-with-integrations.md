@@ -13,7 +13,7 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 - Two-way integration between Mattermost and Office 365 Calendar, developed by Mattermost.
 - Receive a daily summary of calendar events, and accept or decline new events.
 - Reflect user status as "Do Not Disturb" when in a meeting scheduled via Outlook Calendar.
-- Visit the Marketplace to install, configure, and use this integration.
+- Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
 
 #### Skype for Business
 
