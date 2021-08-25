@@ -69,7 +69,7 @@ There are several ways to connect Atlassian tools to Mattermost. Take a look at 
 - Two-way integration between Mattermost and Jira, developed by Mattermost.
 - Send event notifications from your Jira projects to Mattermost channels, with full JQL filtering support.
 - Create and transition Jira issues, and attach Mattermost messages to Jira in the Mattermost user interface.
-- Supports Jira Core and Jira Software products, for Cloud, Server and Data Center platforms.
+- Supports Jira Core and Jira Software products, for Cloud, Server, and Data Center platforms.
 - Source code + documentation: https://github.com/mattermost/mattermost-plugin-jira
 
 ### Productivity integrations
