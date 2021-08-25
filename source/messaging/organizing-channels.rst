@@ -10,7 +10,7 @@ The importance of organizing your conversations increases as Channels spreads to
 The importance of channel names
 -------------------------------
 
-Channels organize communication in Mattermost Channels. When naming or renaming channels, consider the following recommendations:
+You can name and rename your conversations in Mattermost Channels. When you're choosing names, consider the following recommendations:
 
 Basic Structure
 ~~~~~~~~~~~~~~~
