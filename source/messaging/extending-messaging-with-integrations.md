@@ -111,7 +111,7 @@ There are several ways to work with voice, video, and screensharing in Mattermos
 
 ## Incoming Webhooks
 
-Incoming webhooks from external integrations can post messages to Mattermost in public and private channels. Learn more about setting up incoming webhooks on our [documentation page](https://docs.mattermost.com/developer/webhooks-incoming.html).
+Incoming webhooks from external integrations can post messages to Mattermost in Public and Private channels. Learn more about setting up incoming webhooks in our [documentation](https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/).
 
 ## Outgoing Webhooks
 
