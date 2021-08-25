@@ -23,7 +23,7 @@ Reply to Messages
 
 .. tip::
 
-   An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost Self-Managed customers from v5.37 offering a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more. 
+   An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost self-hosted customers from v5.37 offering a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more.
 
 You can reply to a message by hovering over a message and selecting the **Reply** link to organize the conversation into a thread.
 
