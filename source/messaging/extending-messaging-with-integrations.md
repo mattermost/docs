@@ -61,7 +61,7 @@ There are several ways to connect Atlassian tools to Mattermost. Take a look at 
 - Atlassian Marketplace application for Confluence and Mattermost, developed by codefortynine.
 - Send notifications about page, blogpost, question, or comment updates from your Confluence spaces to Mattermost channels.
 - Configure notifications for a specific space, and also user notifications for tasks and mentions.
-- Supports Confluence Cloud, Server and Data Center platforms.
+- Supports Confluence Cloud, Server, and Data Center platforms.
 - Marketplace download + docs: https://marketplace.atlassian.com/apps/1215055/slack-for-confluence
 
 #### Jira Plugin
