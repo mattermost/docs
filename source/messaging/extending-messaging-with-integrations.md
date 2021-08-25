@@ -49,12 +49,12 @@ There are several ways to connect your CI/CD tools to Mattermost. Take a look at
  - Get reminders on issues and merge requests that need your attention.
  - Get notifications in Mattermost about mentions, review requests, and comments.
  - Supports SaaS and on-prem versions of GitLab.
- - Visit the Marketplace to install, configure, and use this integration.
+ - Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
  - Source code: https://github.com/mattermost/mattermost-plugin-gitlab
 
 ### Atlassian integrations
 
-There are several ways to connect Atlassian tools to Mattermost. Take a look at the tools recommended below, or visit the Marketplace to find others.
+There are several ways to connect Atlassian tools to Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
 
 #### Confluence
 
@@ -74,7 +74,7 @@ There are several ways to connect Atlassian tools to Mattermost. Take a look at 
 
 ### Productivity integrations
 
-There are several ways to connect your productivity tools to Mattermost. Take a look at the tools recommended below, or visit the Marketplace to find others.
+There are several ways to connect your productivity tools to Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
 
 #### Google Calendar
 
