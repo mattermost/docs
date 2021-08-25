@@ -34,7 +34,7 @@ The Mattermost server and client apps can run on all of the most popular platfor
 * :doc:`Debian Buster </install/install-debian>`
 * :doc:`RHEL 8 </install/install-rhel-8>`
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
-* More server install guides ref:`other-resources`_
+* More server install guides :ref:`Other Resources`
 
 **Desktop/Mobile App Installation**
 
@@ -123,7 +123,6 @@ Changelogs
 * :doc:`Mobile Apps </deploy/mobile-app-changelog>`
 * :doc:`Desktop Apps </install/desktop-app-changelog>`
 
-.. _other-resources:
 Other Resources
 ---------------
 
