@@ -11,4 +11,4 @@ Some of the major benefits of using Channels include:
 - Markdown and code syntax highlighting.
 - Persistent communication history.
 
-Feel free to view our `Mattermost demo video  <https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ and browse through our `channel documentation <https://docs.mattermost.com/guides/messaging.html>`__ for more information on how to use Mattermost Channels!
+Take a look at the `Mattermost demo video  <https://www.youtube.com/watch?v=FuDvrkrqRzg>`__ and browse through our `channel documentation <https://docs.mattermost.com/guides/messaging.html>`__ for more information on how to use Mattermost Channels!
