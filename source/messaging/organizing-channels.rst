@@ -1,7 +1,7 @@
 Organizing Channels
 ====================
 
-The importance of organizing channels increases as Channels spreads to thousands of users. This document shares best practices from various Mattermost deployments including:
+The importance of organizing your conversations increases as Channels spreads to thousands of users. This document shares best practices from various Mattermost deployments including:
 
 1. `The importance of channel names`_
 2. `How to navigate and organize channels`_
