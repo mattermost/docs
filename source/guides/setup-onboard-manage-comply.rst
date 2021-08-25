@@ -147,7 +147,7 @@ All Mattermost Instances
    /comply/custom-terms-of-service.rst
 
 
-Self-Managed Deployments
+Self-Hosted Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
