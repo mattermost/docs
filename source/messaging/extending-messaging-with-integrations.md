@@ -40,7 +40,7 @@ There are several ways to connect your CI/CD tools to Mattermost. Take a look at
  - Get reminders on issues and pull requests that need your attention.
  - Get notifications in Mattermost about mentions, review requests, and comments.
  - Supports GitHub Enterprise, works with SaaS and Enterprise versions of GitHub.
- - Visit the Marketplace to install, configure, and use this integration.
+ - Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
  - Source code: https://github.com/mattermost/mattermost-plugin-github
 
 #### GitLab
@@ -80,34 +80,34 @@ There are several ways to connect your productivity tools to Mattermost. Take a 
 
  - Time management tool for Google Calendar, developed by Wasim Thabraze.
  - Get reminders about appointments and meetings from a configured Google Calendar to any Mattermost channel.
- - Source code + docs: https://github.com/waseem18/mattermost-plugin-google-calendar
+ - Source code + documentation: https://github.com/waseem18/mattermost-plugin-google-calendar
 
 #### Remind Plugin
 
  - A Mattermost plugin that sets reminders for users and channels, developed by Scott Lee Davis.
  - Set reminders for one-time or recurring events and tasks in any Mattermost channel.
- - Source code + docs: https://github.com/scottleedavis/mattermost-plugin-remind
+ - Source code + documentation: https://github.com/scottleedavis/mattermost-plugin-remind
 
 ### Voice, video, and screensharing integrations
 
-There are several ways to work with voice, video, and screensharing in Mattermost. Take a look at the tools recommended below, or visit the Marketplace to find others.
+There are several ways to work with voice, video, and screensharing in Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
 
 #### Zoom
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
 - Click a video icon in a Mattermost channel to invite team members to join a Zoom call, hosted using the credentials of the user who initiated the call.
-- Requires one paid `Zoom Pro, Business, Education, or API plan, <https://zoom.us/pricing>`_ to generate an API key and secret.
+- Requires one paid `Zoom Pro, Business, Education, or API plan <https://zoom.us/pricing>`_ to generate an API key and secret.
 - Supports a self-hosted cloud solution and a vendor-hosted cloud solution.
-- Docs available at: https://docs.mattermost.com/integrations/zoom.html.
+- Documentation available at: https://mattermost.gitbook.io/plugin-zoom/.
 - Source code available at: https://github.com/mattermost/mattermost-plugin-zoom.
 
 #### Microsoft Teams Meetings
 
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
-- Click a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
+- Select a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
 - Requires a Microsoft Teams account.
 - Requires Mattermost Enterprise Edition E20.
-- Source code and docs available at: https://github.com/mattermost/mattermost-plugin-msteams-meetings.
+- Source code and documentation available at: https://github.com/mattermost/mattermost-plugin-msteams-meetings.
 
 ## Incoming Webhooks
 
