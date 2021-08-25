@@ -6,7 +6,7 @@ Settings for integrations are accessible from the **Main Menu**. Select **Integr
 
 ### Microsoft integrations
 
-There are several ways to connect your Microsoft tools to Mattermost. Take a look at the tools recommended below, or visit the Marketplace to find others.
+There are several ways to connect your Microsoft tools to Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
 
 #### Office 365 Calendar (E20)
 
