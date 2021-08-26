@@ -14,9 +14,9 @@ Lastest Mattermost Releases:
 
 ## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.38.1, released 2021-08-26**
+- **v5.38.2, released 2021-08-26**
   - Upgraded Go version to 1.16.7 to fix an application crash issue.
-  - Fixed an issue where mmctl ``config reload`` command was missing local-mode server-side implementation [MM-38082](https://mattermost.atlassian.net/browse/MM-38082)
+  - Fixed an issue where mmctl ``config reload`` command was missing local-mode server-side implementation. [MM-38082](https://mattermost.atlassian.net/browse/MM-38082)
 - **v5.38.1, released 2021-08-18**
   - Fixed an issue where Playbooks v1.16.0 could not be installed as a pre-packaged plugin [MM-37928](https://mattermost.atlassian.net/browse/MM-37928).
 - **v5.38.0, released 2021-08-16**
@@ -148,7 +148,6 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - mmctl ``config reload`` command is missing local-mode server-side implementation [MM-38082](https://mattermost.atlassian.net/browse/MM-38082).
  - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
