@@ -7,7 +7,46 @@ Being installed locally enables System Admins for both self-managed and Cloud Ma
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
-**Notes**
+What's new in Mattermost v6.0?
+------------------------------
+
+The following new mmctl functionality is available from Mattermost v6.0:
+
+- Output streaming that includes a progress indicator, easy navigation via paged output, output to file support, and basic piped output search support.
+- It's easy to reporting mmctl issues to Mattermost using the link provided when unhandled errors and exceptions are encountered.
+- Interactive user confirmations.
+
+For more information on what's new in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl Demo video <https://www.youtube.com/watch?v=hnD0Zj-mIbs>`_.
+
+.. raw:: html
+
+   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <iframe src="https://www.youtube.com/embed/hnD0Zj-mIbs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+   </div>
+
+What's changed in Mattermost v6.0?
+----------------------------------
+
+The following mmctl changes are available from Mattermost v6.0:
+
+- The inherited option ``config-path`` has changed to ``config``.
+- The option``password`` has changed to ``password-file``.
+- Option names that contained underscores have been updated to use hyphens for consistency.
+
+For more information on what's changed in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl Changes video <https://www.youtube.com/watch?v=hnD0Zj-mIbs>`_.
+
+.. raw:: html
+
+   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <iframe src="https://www.youtube.com/embed/hnD0Zj-mIbs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+   </div>
+
+.. note::
+   
+   You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v.6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
+
+mmctl Usage notes
+-----------------
 
 - System Admins have two ways to run `mmctl` commands: by downloading `mmctl` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
 - `mmctl` comes bundled with the Mattermost distribution, and is located in the `bin` folder of the installation, next to the `CLI`.
@@ -15,7 +54,9 @@ This feature was developed to a large extent by community contributions and we'd
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
-**Commands**
+mmctl Commands
+--------------
+
    - `mmctl auth`_ - Authentication Management
    - `mmctl bot`_ - Bot Management
    - `mmctl channel`_ - Channel Management
