@@ -21,7 +21,7 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 - Selecting a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
 - Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
-- Source code: https://github.com/mattermost/mattermost-plugin-skype4business
+- [Source code](https://github.com/mattermost/mattermost-plugin-skype4business)
 
 #### Office 365 SSO (E20)
 
@@ -41,7 +41,7 @@ There are several ways to connect your CI/CD tools to Mattermost. Take a look at
  - Get notifications in Mattermost about mentions, review requests, and comments.
  - Supports GitHub Enterprise, works with SaaS and Enterprise versions of GitHub.
  - Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
- - Source code: https://github.com/mattermost/mattermost-plugin-github
+ - [Source code](https://github.com/mattermost/mattermost-plugin-github)
 
 #### GitLab
 
@@ -50,7 +50,7 @@ There are several ways to connect your CI/CD tools to Mattermost. Take a look at
  - Get notifications in Mattermost about mentions, review requests, and comments.
  - Supports SaaS and on-prem versions of GitLab.
  - Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
- - Source code: https://github.com/mattermost/mattermost-plugin-gitlab
+ - [Source code](https://github.com/mattermost/mattermost-plugin-gitlab)
 
 ### Atlassian integrations
 
@@ -62,7 +62,7 @@ There are several ways to connect Atlassian tools to Mattermost. Take a look at 
 - Send notifications about page, blogpost, question, or comment updates from your Confluence spaces to Mattermost channels.
 - Configure notifications for a specific space, and also user notifications for tasks and mentions.
 - Supports Confluence Cloud, Server, and Data Center platforms.
-- Marketplace download + docs: https://marketplace.atlassian.com/apps/1222417/mattermost-connector-for-confluence
+- [Marketplace download and documentation](https://marketplace.atlassian.com/apps/1222417/mattermost-connector-for-confluence)
 
 #### Jira Plugin
 
@@ -70,7 +70,7 @@ There are several ways to connect Atlassian tools to Mattermost. Take a look at 
 - Send event notifications from your Jira projects to Mattermost channels, with full JQL filtering support.
 - Create and transition Jira issues, and attach Mattermost messages to Jira in the Mattermost user interface.
 - Supports Jira Core and Jira Software products, for Cloud, Server, and Data Center platforms.
-- Source code + documentation: https://github.com/mattermost/mattermost-plugin-jira
+- [Source code and documentation](https://github.com/mattermost/mattermost-plugin-jira)
 
 ### Productivity integrations
 
@@ -80,13 +80,13 @@ There are several ways to connect your productivity tools to Mattermost. Take a 
 
  - Time management tool for Google Calendar, developed by Wasim Thabraze.
  - Get reminders about appointments and meetings from a configured Google Calendar to any Mattermost channel.
- - Source code + documentation: https://github.com/waseem18/mattermost-plugin-google-calendar
+ - [Source code and documentation](https://github.com/waseem18/mattermost-plugin-google-calendar)
 
 #### Remind Plugin
 
  - A Mattermost plugin that sets reminders for users and channels, developed by Scott Lee Davis.
  - Set reminders for one-time or recurring events and tasks in any Mattermost channel.
- - Source code + documentation: https://github.com/scottleedavis/mattermost-plugin-remind
+ - [Source code and documentation](https://github.com/scottleedavis/mattermost-plugin-remind)
 
 ### Voice, video, and screensharing integrations
 
@@ -98,8 +98,8 @@ There are several ways to work with voice, video, and screensharing in Mattermos
 - Click a video icon in a Mattermost channel to invite team members to join a Zoom call, hosted using the credentials of the user who initiated the call.
 - Requires one paid `Zoom Pro, Business, Education, or API plan <https://zoom.us/pricing>`_ to generate an API key and secret.
 - Supports a self-hosted cloud solution and a vendor-hosted cloud solution.
-- Documentation available at: https://mattermost.gitbook.io/plugin-zoom/.
-- Source code available at: https://github.com/mattermost/mattermost-plugin-zoom.
+- [Documentation](https://mattermost.gitbook.io/plugin-zoom/)
+- [Source code](https://github.com/mattermost/mattermost-plugin-zoom)
 
 #### Microsoft Teams Meetings
 
@@ -107,7 +107,7 @@ There are several ways to work with voice, video, and screensharing in Mattermos
 - Select a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
 - Requires a Microsoft Teams account.
 - Requires Mattermost Enterprise Edition E20.
-- Source code and documentation available at: https://github.com/mattermost/mattermost-plugin-msteams-meetings.
+- [Source code and documentation](https://github.com/mattermost/mattermost-plugin-msteams-meetings)
 
 ## Incoming Webhooks
 
