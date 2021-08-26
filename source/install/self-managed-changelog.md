@@ -14,6 +14,9 @@ Lastest Mattermost Releases:
 
 ## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v5.38.1, released 2021-08-26**
+  - Upgraded Go version to 1.16.7 to fix an application crash issue.
+  - Fixed an issue where mmctl ``config reload`` command was missing local-mode server-side implementation [MM-38082](https://mattermost.atlassian.net/browse/MM-38082)
 - **v5.38.1, released 2021-08-18**
   - Fixed an issue where Playbooks v1.16.0 could not be installed as a pre-packaged plugin [MM-37928](https://mattermost.atlassian.net/browse/MM-37928).
 - **v5.38.0, released 2021-08-16**
@@ -164,11 +167,11 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
-- **v5.37.2, release day TBD**
-  - Fixing a server panic issue. [MM-37574](https://mattermost.atlassian.net/browse/MM-37574)
-  - Fixing an issue where saving or updating user statuses caused the logs to be filled with multiple key insertion errors. [MM-37202](https://mattermost.atlassian.net/browse/MM-37202).
-  - Fixing a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition. [MM-37108](https://mattermost.atlassian.net/browse/MM-37108)
-  - Fixing an issue where screen readers read “user object” instead of reading the username or channel in the **Switch Channels** modal.
+- **v5.37.2, released 2021-08-26**
+  - Fixed a server panic issue. [MM-37574](https://mattermost.atlassian.net/browse/MM-37574)
+  - Fixed an issue where saving or updating user statuses caused the logs to be filled with multiple key insertion errors. [MM-37202](https://mattermost.atlassian.net/browse/MM-37202).
+  - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition. [MM-37108](https://mattermost.atlassian.net/browse/MM-37108)
+  - Fixed an issue where screen readers read “user object” instead of reading the username or channel in the **Switch Channels** modal.
 - **v5.37.1, released 2021-08-04**
   - Mattermost v5.37.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
