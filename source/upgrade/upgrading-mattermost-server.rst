@@ -114,11 +114,11 @@ Upgrading Mattermost Server
  
     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
     
-  When you're ready to execute the command, append ``xargs echo rm -r`` to the command above to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
+  When you're ready to execute the command, append ``xargs rm -r`` to the command above to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
   
   .. code-block:: sh
   
-    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs echo rm -r
+    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs rm -r
   
   **Using Bleve Search**
 
