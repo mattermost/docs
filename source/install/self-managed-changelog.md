@@ -167,6 +167,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.37.2, released 2021-08-26**
+  - Upgraded Go version to 1.16.7 to fix an application crash issue. 
   - Fixed a server panic issue. [MM-37574](https://mattermost.atlassian.net/browse/MM-37574)
   - Fixed an issue where saving or updating user statuses caused the logs to be filled with multiple key insertion errors. [MM-37202](https://mattermost.atlassian.net/browse/MM-37202).
   - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition. [MM-37108](https://mattermost.atlassian.net/browse/MM-37108)
