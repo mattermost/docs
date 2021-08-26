@@ -4640,6 +4640,17 @@ Enable Tutorial (Experimental)
 | This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Onboarding (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
+
+**False**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableOnboarding": true`` with options ``true`` and ``false``.                                |
++--------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
