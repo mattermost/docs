@@ -74,6 +74,9 @@ redirects = {
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
     "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/administrator#upgrade-mattermost": "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
+    "guides/administrator#installing-mattermost": 
+        "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost",
     "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
     "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
     "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
@@ -120,7 +123,15 @@ redirects = {
     "administration/config-in-database":
         "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
     "administration/branding": "https://docs.mattermost.com/configure/custom-branding-tools.html",
+    "administration/upgrade#upgrade-team-edition-to-enterprise-edition": 
+        "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition",
+    "administration/migrating#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import": 
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
+    "administration/config-settings#enable-legacy-sidebar": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
+    "deployment/advanced-permissions#read-only-channels": 
+        "https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels-e20",
     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
