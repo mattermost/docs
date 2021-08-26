@@ -87,7 +87,7 @@ redirects = {
     "guides/developer": "https://developers.mattermost.com/integrate/admin-guide/",
     "guides/integration": "https://developers.mattermost.com/integrate/getting-started/",
     "guides/user": "https://docs.mattermost.com/guides/messaging.html",
-    "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/deployment.html",
     "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
     "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
     "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
@@ -467,7 +467,7 @@ html_theme_options = {
     'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': -1,  # Allow unlimited depth in navigation
-    'includehidden': False,
+    'includehidden': True,
     'titles_only': False
 }
 
