@@ -5,7 +5,10 @@ Elasticsearch (E20)
 
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts.
 
-The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__. Elasticsearch v5.x, v6.x, and v7.x are supported. 
+The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__. 
+
+For Mattermost v6.0, a minimum of Elasticsearch v7.x is supported. 
+Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
     
 Deployment Guide
 ----------------
