@@ -105,7 +105,7 @@ To get started with Mattermost Cloud Professional, visit https://mattermost.com/
 Mattermost Cloud Enterprise
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud Enterprise offers the isolation, security, and control of self-managed editions but without the burden of managing deployment, maintaining uptime, or applying upgrades. Mattermost Cloud Enterprise offers all chat and administration features, integrated DevOps workflows, and provides 99.0% financially-backed guaranteed uptime and enterprise-grade support.
+Mattermost Cloud Enterprise offers the isolation, security, and control of self-hosted editions but without the burden of managing deployment, maintaining uptime, or applying upgrades. Mattermost Cloud Enterprise offers all chat and administration features, integrated DevOps workflows, and provides 99.0% financially-backed guaranteed uptime and enterprise-grade support.
   
 Every Mattermost Cloud Enterprise instance is deployed in a private environment within an AWS VPC dedicated to a single customer. Within that VPC, all the required resources to run, monitor, and administer Mattermost are deployed in isolation. These resources include a dedicated RDS Aurora database cluster and a dedicated Kubernetes cluster, deployed across multiple Availability Zones and managed by Kubernetes experts.
 
