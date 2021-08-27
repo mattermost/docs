@@ -222,7 +222,7 @@ Select the formatting for messages in the center channel. "Compact" mode decreas
 Collapsed Reply Threads (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from Self-Managed Mattermost v5.37 as an early access beta, and are disabled by default. If your System Admin has enabled **Collapsed Reply Threads** for your workspace, you can enable them in your Mattermost instance to start being notified about threads you're following in a new **Threads** option at the top of the channel sidebar
+Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from Self-Hosted Mattermost v5.37 as an early access beta, and are disabled by default. If your System Admin has enabled **Collapsed Reply Threads** for your workspace, you can enable them in your Mattermost instance to start being notified about threads you're following in a new **Threads** option at the top of the channel sidebar
 
 See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
