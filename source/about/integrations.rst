@@ -36,7 +36,7 @@ You can deploy interactive bots to help users with processes and tasks with Matt
 
 Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own <https://docs.mattermost.com/integrations/cloud-bot-accounts.html>`_.
 
-Slash Commands
+Custom Slash Commands
 --------------
 Slash commands bring the power of developer command-line tools, to channels in Mattermost. Enable your users to trigger custom actions such as creating a Jira ticket or GitHub PR directly from within Mattermost.  . The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack.
 
