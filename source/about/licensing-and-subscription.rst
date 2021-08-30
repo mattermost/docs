@@ -255,7 +255,6 @@ For greater than 1,000 users, please contact us at community[at]mattermost.com t
 
 An eligible organization needs to be an official nonprofit or charity, and also non-government, non-academic and non-commercial in nature, with no religious affiliation and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing-self-managed/>`_ instead.
 
-
 There is currently no official program for Mattermost Cloud. Please contact us at community[at]mattermost.com for inquiries on using Mattermost Cloud for your non-profit, open-source porject or charity.
 
 Do you have discounted licenses for academic institutions?
