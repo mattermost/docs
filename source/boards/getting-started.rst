@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-Mattermost Focalboard is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
+Mattermost Boards (formerly known as Focalboard) is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
 
 For self-managed deployments, Focalboard is available in the Plugin Marketplace.
 
