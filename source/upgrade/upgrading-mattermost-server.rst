@@ -140,14 +140,8 @@ Upgrading Mattermost Server
     
     The ``n`` (no-clobber) flag and trailing ``.`` on source are very important. The ``n`` (no-clobber) flag preserves existing configurations and logs in your installation path. The trailing ``.`` on source ensures all installation files are copied.
 
-9. If you want to use port 80 or 443 to serve your server, and/or if you have TLS set up on your Mattermost server, you **must** activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to ports lower than 1024. For example:
 
-  .. code-block:: sh
-
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
-
-10. Change ownership of the new files after copying them. For example:
+9. Change ownership of the new files after copying them. For example:
 
   .. code-block:: sh
          
@@ -157,6 +151,13 @@ Upgrading Mattermost Server
     
   - If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
   - If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
+  
+10. If you want to use port 80 or 443 to serve your server, and/or if you have TLS set up on your Mattermost server, you **must** activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to ports lower than 1024. For example:
+
+  .. code-block:: sh
+
+    cd {install-path}/mattermost
+    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 11. Start your Mattermost server.
 
