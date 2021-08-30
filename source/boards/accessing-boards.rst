@@ -9,4 +9,6 @@ You can use this to create private boards:
 2. Select the **Boards** icon in the channel header.
 3. Create a board.
 
-Only members of channel you created/joined can access the board. However, you can share a read-only version of any board with anyone (including unauthenticated users) who has the generated link.
+Select the Boards icon in the channel header or App Switcher to open the Boards workspace for the current channel, Direct Message, or Group Message - which can only be accessed by members of the channel or message. 
+
+You can share a read-only version of any board with anyone who has the link.
