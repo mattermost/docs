@@ -82,12 +82,12 @@ redirects = {
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
-    "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
-    "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/administrator": "https://docs.mattermost.com/guides/deployment.html",
+    "guides/administrator": "https://docs.mattermost.com/guides/deployment.html",
     "guides/developer": "https://developers.mattermost.com/integrate/admin-guide/",
     "guides/integration": "https://developers.mattermost.com/integrate/getting-started/",
     "guides/user": "https://docs.mattermost.com/guides/messaging.html",
-    "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/deployment.html",
     "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
     "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
     "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
@@ -467,7 +467,7 @@ html_theme_options = {
     'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': -1,  # Allow unlimited depth in navigation
-    'includehidden': False,
+    'includehidden': True,
     'titles_only': False
 }
 
