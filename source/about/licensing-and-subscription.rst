@@ -247,7 +247,7 @@ If you don't plan to renew your Enterprise Edition subscription, revoke the expi
 Do you have a program for official non-profits, open source projects, and charities?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes. The Mattermost Nonprofit License enables foundations and other non-profit organizations that support open-source projects or other technology initiatives to apply the benefits of Mattermost Enterprise Edition to advancing their missions with special non-profit pricing.
+Yes. The Mattermost Nonprofit License enables foundations and other nonprofit organizations that support open source projects or other technology initiatives to apply the benefits of Mattermost Enterprise Edition to advancing their missions with special nonprofit pricing.
 
 An eligible organization needs to be an official nonprofit or charity, and also non-government, non-academic and non-commercial in nature, with no religious affiliation and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing-self-managed/>`_ instead.
 
