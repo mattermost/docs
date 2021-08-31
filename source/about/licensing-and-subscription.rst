@@ -244,18 +244,12 @@ Once a new license is applied, the banner will no longer be visible.
 
 If you don't plan to renew your Enterprise Edition subscription, revoke the expired license in **System Console > Edition and License**.
 
-Do you have a program for official non-profits, open-source projects, and charities?
+Do you have a program for official non-profits, open source projects, and charities?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes. The Mattermost Nonprofit License enables eligible charities, open-source projects and non-profit organizations to apply the benefits of Mattermost E10 to advancing their missions with special non-profit pricing. 
+Yes, Mattermost offers a free E10 license to foundations and other non-profit organizations that support open source projects or other technology initiatives. An eligible organization needs to be an official nonprofit or charity, and also non-government, non-academic and non-commercial in nature, with no religious affiliation and that would otherwise be unable to afford the commercial version of Mattermost software. This offer is available for both self-hosted and cloud workspaces If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing-self-managed/>`_ instead.
 
-The Mattermost Nonprofit License includes a three-year Mattermost E10 Enterprise Edition subscription for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website. Following the three-year free license, the institution can renew the license every three years for an additional $250 USD subscription fee.
-
-For greater than 1,000 users, please contact us at community[at]mattermost.com to learn more about your options.
-
-An eligible organization needs to be an official nonprofit or charity, and also non-government, non-academic and non-commercial in nature, with no religious affiliation and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing-self-managed/>`_ instead.
-
-There is currently no official program for Mattermost Cloud. Please contact us at community[at]mattermost.com for inquiries on using Mattermost Cloud for your non-profit, open-source porject or charity.
+Organizations that receive a Mattermost non-proft license must make their server publically accessible for anyone to sign up and join. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website. Please contact us at community[at]mattermost.com to inquire about the non-profit license; please include your name, the name of your organization, and the estimated size of your community.
 
 Do you have discounted licenses for academic institutions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
