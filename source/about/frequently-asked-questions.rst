@@ -290,12 +290,12 @@ See our `frequently asked questions about licensing <https://docs.mattermost.com
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have discounted licenses for academic institutions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Mattermost Source Available License
 ------------------------------------
