@@ -639,9 +639,9 @@ The local directory to which files are written when the File Storage System is s
 +-------------------------+------------------------------------------------------------------------------------------+
 
 Maximum File Size
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
+Maximum file size for message attachments and plugins entered in megabytes in the System Console. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                                                                         |
