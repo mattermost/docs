@@ -253,7 +253,7 @@ An eligible organization needs to be an official nonprofit or charity, and also 
 
 Organizations that receive a Mattermost non-proft license must make their server publically accessible for anyone to sign up and join. Mattermost will also have the right to place the name and logo of the nonprofit or charitable institution on our website.
 
-Please contact us at community[at]mattermost.com to inquire about the Mattermost Nonprofit License.
+To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/spreadsheets/d/1aEpjFLHcrSpJF3wfi2NItevXtYpZUOSbge9o_pLagXU/edit#gid=446002361>`_, or contact us at community[at]mattermost.com.
 
 Do you have discounted licenses for academic institutions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
