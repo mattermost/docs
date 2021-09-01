@@ -5,12 +5,101 @@ This changelog summarizes updates to [Mattermost Team Edition](https://mattermos
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 Lastest Mattermost Releases:
+- [Release v5.39 - Quality Release](#release-v5-39-quality-release)
 - [Release v5.38 - Feature Release](#release-v5-38-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
 - [Release v5.36 - Feature Release](#release-v5-36-feature-release)
 - [Release v5.35 - Feature Release](#release-v5-35-feature-release)
-- [Release v5.34 - Feature Release](#release-v5-34-feature-release)
 - [Release v5.31 - ESR](#release-v5-31-esr)
+
+## Release v5.39 - [Quality Release](https://docs.mattermost.com/upgrade/release-definitions.html#quality-release)
+
+**Release Day: 2021-09-16**
+
+Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated in-product help documentation to fix broken links and to correct outdated information.
+
+### Bug Fixes
+ - Fixed an issue with loading of emojis in message attachment titles.
+ - Fixed an issue where the timestamp in deleted messages was not correctly positioned.
+ - Changed the whitespace in the refresh bar so that it always displays to the user.
+ - Fixed an issue where email invites were not sent when clicking the **Next** button during onboarding.
+ - Fixed an issue where clicking "View Message" in an email did not navigate to the post or remember the user's preference to "View in App".
+ - Fixed an issue with the detection of certain collapsible images.
+ - Prevented users from having the unreads filter enabled when the button to toggle it was not shown.
+ - Fixed an issue where Mattermost's shortcut key CTRL+SHIFT+A to open the **Account Settings** clashed with Chrome's CTRL+SHIFT+A that opens a "Search Tabs" pop-up.
+ - Fixed a crash when markdown images were present on the message attachments and embedded bindings.
+ - Fixed an issue that kept message attachment fields unaligned.
+ - Fixed an issue with right-hand side ``SuggestionList`` positioning.
+ - Fixed an issue where Mattermost panicked on ``docx`` files uploaded with ``.doc`` extension.
+ - Fixed a bug with the auto-responder where it would incorrectly calculate the time interval and never send the message.
+ - Fixed a decoding problem for OpenID integration. The requests are now decoded against ``RawURLEncoding``.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where a gap appeared between the first and second consecutive message from the same user.
+   - Fixed an issue where the thread unread state would not update on websocket reconnect.
+   - Fixed an issue where the main channel view root post timestamp added a horizontal scrollbar on hover.
+   - The ``ThreadAutoFollow`` setting is now set to true to enable ``CollapsedThreads``. Previously, this was stated in [the Mattermost documentation](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) but was not enforced.
+   - Fixed issue with users re-following a previously unfollowed thread when other users replied to the thread.
+   - Removed the Click to open for code blocks and in-line codes.
+   - Fixed an issue where two scrollbars appeared in the threads view.
+   - Fixed an issue where the quick channel switcher mention counts did not follow collapsed threads logic.
+   - Fixed an issue where threads started by webhooks/integrations were being auto-followed by the webhook/integration creator when collapsed threads was enabled.
+   - Fixed an issue where re-connecting to the websocket caused thread mentions to be cleared in the user interface with collapsed reply threads enabled.
+
+### Go Version
+ - v5.38 is built with Go ``1.16.7``.
+
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/15. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+
+3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
+
+6. [DisableLegacyMFA](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+
+7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
+
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+
+   - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features)
+
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
+
+10. Changes to ``mattermost-server/model`` for naming consistency.
+
+### Known Issues
+ - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Pinned posts are no longer highlighted.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - 
+
 
 ## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
