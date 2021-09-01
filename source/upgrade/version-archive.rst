@@ -244,7 +244,7 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
   - SHA-256 Checksum: ``9454c3daacae602025b03950590e3f1ecd540b85a4bb7ad73bdca212ba85cf7a``
 
 Mattermost Team Edition
----------------------------------------
+-----------------------
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
 
