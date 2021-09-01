@@ -48,6 +48,8 @@ The desktop app log file can be found in the user directory:
 
 - **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
 - **Linux:** ``~/.local/share/Mattermost/logs``
+- **MacOS:** ``~/Library/Logs/Mattermost``
+
 
 **Mattermost Browser App**
 
