@@ -15,6 +15,11 @@ Release v4.7
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
+- **v4.7.2, released 2021-09-02**
+ - Upgraded to Electron v12.0.16 to fix an issue where grabbing the horizontal scrollbar dragged the app window.
+ - Fixed an issue where the **Add Server** screen appeared on each startup on servers with GPO.
+ - Fixed an issue where the window would flash on Windows and Linux when a new mention arrived regardless of the setting to turn it on/off.
+ - Added desktop notifications for followed threads.
 - **v4.7.1, released 2021-08-03**
  - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
  - Added support to allow users to specify a different download location for Hunspell dictionaries.
@@ -97,9 +102,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - The new spellchecker connects to Google servers for downloading updated dictionaries.
-- Unread messages icon is missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
-- Taskbar icon flashes on new message arrival on Windows despite setting being disabled `MM-37797 <https://mattermost.atlassian.net/browse/MM-37797>`_.
-- "Add Server" appears on each startup on servers with GPO `MM-37863 <https://mattermost.atlassian.net/browse/MM-37863>`_.
+- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
 - Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
 - Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
 - Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
