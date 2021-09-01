@@ -1,5 +1,3 @@
-:orphan:
-
 Deploy Mattermost
 =================
 
@@ -7,11 +5,22 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 
 Get Started
 -----------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Quick Install Guide </getting-started/light-install>
+    Run Mattermost via Docker </install/setting-up-local-machine-using-docker>
+    Administrator Tasks </getting-started/admin-onboarding-tasks>
+    Architecture </getting-started/architecture-overview>
+    Implement Mattermost </getting-started/implementation-plan>
+    Enterprise Roll Out Checklist </getting-started/enterprise-roll-out-checklist>
+    Welcome Email Template </getting-started/welcome-email-to-end-users>
 
 These guides will get you up and running with Mattermost in minutes.
 
-* :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
 * :doc:`Quick Install Guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
+* :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
 * :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -23,7 +32,22 @@ Install Guides
 
 The Mattermost server and client apps can run on all of the most popular platforms. Here’s a list of the most popular installation methods.
 
-**Server Installation**
+Server Installation
+^^^^^^^^^^^^^^^^^^^
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Software and Hardware Requirements </install/software-hardware-requirements>
+    Local Docker Setup </install/setting-up-local-machine-using-docker>
+    Mattermost Omnibus </install/installing-mattermost-omnibus>
+    Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
+    Kubernetes </install/install-kubernetes>
+    Helm <https://docs.mattermost.com/install/install-kubernetes.html#installing-the-operators-via-helm>__
+    Debian Buster </install/install-debian>
+    RHEL 8 </install/install-rhel-8>
+    CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>
+
 
 * :doc:`Software and Hardware Requirements </install/software-hardware-requirements>`
 * :doc:`Local Docker Setup </install/setting-up-local-machine-using-docker>`
@@ -36,7 +60,16 @@ The Mattermost server and client apps can run on all of the most popular platfor
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
 * More server install guides :ref:`Other Resources`
 
-**Desktop/Mobile App Installation**
+Desktop/Mobile App Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Install the Mattermost Desktop App </install/installing-mattermost-desktop-app>
+    Desktop Application Install Guides </install/desktop-app-install>
+    iOS Setup </install/install-ios-app>
+    Android Setup </install/install-android-app>
 
 * :doc:`Install the Mattermost Desktop App </install/installing-mattermost-desktop-app>`
 * :doc:`Desktop Application Install Guides </install/desktop-app-install>`
@@ -45,11 +78,21 @@ The Mattermost server and client apps can run on all of the most popular platfor
 
 Deployment Guide
 ----------------
-
 The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure. 
 
 Server Deployment
 ^^^^^^^^^^^^^^^^^
+.. toctree::
+    :titlesonly:
+    :hidden:
+
+    Deployment Overview </deploy/deployment-overview>
+    Set Up a Socket-based Mattermost Database </install/setting-up-socket-based-mattermost-database>
+    Image Proxy </deploy/image-proxy>
+    Backup and Disaster Recovery </deploy/backup-disaster-recovery>
+    Encryption Options </deploy/encryption-options>
+    Configure Transport Encryption </install/transport-encryption>
+    Bleve Search (Experimental) </deploy/bleve-search>
 
 * :doc:`Deployment Overview </deploy/deployment-overview>` - Learn the basics of the Mattermost user experience, communication protocols, network access, data storage, and deployment options.
 * :doc:`Set Up a Socket-based Mattermost Database </install/setting-up-socket-based-mattermost-database>` - Connect your Mattermost server to your database service.
@@ -61,6 +104,22 @@ Server Deployment
 
 Desktop & Mobile App Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Desktop App Deployment Guide </deploy/desktop-app>
+    Desktop MSI Installer and Group Policy Installation Guides (Beta) </install/desktop-msi-installer-and-group-policy-install>
+    Desktop App Custom Dictionaries </install/desktop-custom-dictionaries>
+    Desktop Managed Resources </install/desktop-app-managed-resources>
+    Using Mattermost’s Pre-Built Mobile Apps </deploy/use-prebuilt-mobile-apps>
+    Deploy Mattermost Mobile Apps </deploy/mobile-overview>
+    Mobile Push Notifications </deploy/mobile-hpns>
+    Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>
+    Deploying Mobile Apps Using an EMM Provider </deploy/deploy-mobile-apps-using-emm-provider>
+    Mobile VPN Options </deploy/consider-mobile-vpn-options>
+    Mobile Apps FAQ </deploy/mobile-faq>
+    Client-side Data Storage FAQ </deploy/client-side-data>
 
 Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
@@ -84,6 +143,19 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
 Upgrade Mattermost
 ------------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
+    Enterprise Install and Upgrade </install/enterprise-install-upgrade>
+    Release Definitions </upgrade/release-definitions>
+    Important Upgrade Notes </upgrade/important-upgrade-notes>
+    Release Lifecycle </upgrade/release-lifecycle>
+    Extended Support Release </upgrade/extended-support-release>
+    Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>
+    Version Archive </upgrade/version-archive>
+
 
 Stay up to date with the latest features and improvements.
 
@@ -99,6 +171,15 @@ Stay up to date with the latest features and improvements.
 
 Scale Mattermost
 ----------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Scale for Enterprise </scale/scaling-for-enterprise>
+    High Availability Cluster (E20) </scale/high-availability-cluster>
+    Elasticsearch (E20) </scale/elasticsearch>
+    Performance Monitoring (E20) </scale/performance-monitoring>
+    Mattermost Performance Alerting Guide </scale/performance-alerting>
 
 Scale and monitor your Mattermost deployment.
 
@@ -110,6 +191,14 @@ Scale and monitor your Mattermost deployment.
 
 Troubleshooting Guides
 ----------------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    General Troubleshooting </install/troubleshooting>
+    Troubleshooting Mobile Applications </deploy/mobile-troubleshoot>
+    MySQL Installation Troubleshooting </install/trouble_mysql>
+
 
 * :doc:`General Troubleshooting </install/troubleshooting>`
 * :doc:`Troubleshooting Mobile Applications </deploy/mobile-troubleshoot>`
@@ -117,6 +206,14 @@ Troubleshooting Guides
 
 Changelogs
 ----------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Mattermost </install/self-managed-changelog>
+    Mattermost Cloud </install/cloud-changelog>
+    Mobile Apps </deploy/mobile-app-changelog>
+    Desktop Apps </install/desktop-app-changelog>
 
 * :doc:`Mattermost </install/self-managed-changelog>`
 * :doc:`Mattermost Cloud </install/cloud-changelog>`
@@ -125,10 +222,21 @@ Changelogs
 
 Other Resources
 ---------------
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>
+    Install on RHEL 7 </install/install-rhel-7>
+    Deploy Mattermost on Bitnami </install/deploying-team-edition-on-bitnami>
+    AWS Elastic Beanstalk Docker Setup </install/setting-up-aws-elastic-beanstalk-docker>
+    Install Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart>
+    Open Source Components </upgrade/open-source-components>
+
 
 * :doc:`Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>`
 * :doc:`Install on RHEL 7 </install/install-rhel-7>`
 * :doc:`Deploy Mattermost on Bitnami </install/deploying-team-edition-on-bitnami>`
 * :doc:`AWS Elastic Beanstalk Docker Setup </install/setting-up-aws-elastic-beanstalk-docker>`
-* :doc:`Install Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart>`
+* :doc:`Install on GitLab Helm Chart </install/installing-team-edition-helm-chart>`
 * :doc:`Open Source Components </upgrade/open-source-components>`

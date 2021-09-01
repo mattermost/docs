@@ -16,7 +16,7 @@ Mattermost Product Documentation
    :glob:
 
    About Mattermost <overview/index>
-   Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
+   Deploy Mattermost <guides/deployment>
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
    Messaging <guides/messaging>
    Playbooks <guides/playbooks>
