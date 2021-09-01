@@ -5,7 +5,7 @@ Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 c
 
 Two permission schemes are provided in Mattermost: 
 
-* System Scheme: Applies permissions universally across all teams and channels  
+* System Scheme: Applies permissions universally across all teams and channels
 * Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise E10 or later)
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
