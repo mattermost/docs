@@ -16,7 +16,7 @@ Release v4.7
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
 - **v4.7.2, released 2021-09-02**
- - Upgraded to Electron v12.0.16 to fix an issue where grabbing the horizontal scrollbar dragged the app window.
+ - Upgraded to Electron v12.0.16.
  - Fixed an issue where the **Add Server** screen appeared on each startup on servers with GPO.
  - Fixed an issue where the window would flash on Windows and Linux when a new mention arrived regardless of the setting to turn it on/off.
  - Added desktop notifications for followed threads.
