@@ -95,15 +95,14 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     }
 
 
-def env_purge_doc(_: Sphinx, env: BuildEnvironment, docname: str):
+def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str):
     """
     Purge an existing document from the pickled document list.
     This function is called when the Sphinx `env-purge-doc` event is fired.
 
-    :param _: The Sphinx instance; unused
+    :param app: The Sphinx instance; unused
     :param env: The Sphinx BuildEnvironment
     :param docname: The name of the document to purge
-    :return: None
     """
     logger.debug('env_purge_doc: docname=%s' % docname)
     if hasattr(env, 'sitemap_links'):
@@ -122,7 +121,6 @@ def env_merge_info(app: Sphinx, env: BuildEnvironment, docnames: List[str], othe
     :param env: The master Sphinx BuildEnvironment
     :param docnames: A list of the document names to merge
     :param other: The Sphinx BuildEnvironment from the reader worker
-    :return: None
     """
     # Create a `sitemap_links` attribute in the environment if it doesn't already exist
     if not hasattr(env, 'sitemap_links'):
@@ -203,7 +201,6 @@ def record_builder_type(app: Sphinx):
     application environment.
 
     :param app: The Sphinx Application instance
-    :return: None
     """
     # builder isn't initialized in the setup so we do it here
     # we rely on the class name, not the actual class, as it was moved 2.0.0

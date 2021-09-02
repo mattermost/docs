@@ -70,14 +70,14 @@ def write_redirect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
     return list()
 
 
-def env_purge_doc(_: Sphinx, __: BuildEnvironment, ___: str):
+def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str):
     """
     Stub function for the `env-purge-doc` event; does nothing
     """
     return
 
 
-def env_merge_info(_: Sphinx, __: BuildEnvironment, ___: List[str], ____: BuildEnvironment):
+def env_merge_info(app: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment):
     """
     Stub function for the `env-merge-info` event; does nothing
     """
@@ -85,6 +85,14 @@ def env_merge_info(_: Sphinx, __: BuildEnvironment, ___: List[str], ____: BuildE
 
 
 def old_status_iterator(mapping: Mapping[str, str], summary: str, color: str = "darkgreen") -> Tuple[str, str]:
+    """
+    Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
+
+    :param mapping: The iterable to iterate through
+    :param summary: A description of the action or operation
+    :param color: The color of the status text; defaults to `darkgreen`
+    :return: A tuple containing the next key-value pair from the iterable
+    """
     line_count = 0
     for item in mapping.items():
         if line_count == 0:
@@ -99,6 +107,17 @@ def old_status_iterator(mapping: Mapping[str, str], summary: str, color: str = "
 
 def status_iterator(mapping: Mapping[str, str], summary: str, color: str = "darkgreen",
                     length: int = 0, verbosity: int = 0) -> Tuple[str, str]:
+    """
+    Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
+    Status includes percent of records in the iterable that have been iterated through.
+
+    :param mapping: The iterable to iterate through
+    :param summary: A description of the action or operation
+    :param color:  The color of the status text; defaults to `darkgreen`
+    :param length: The number of records in the iterable
+    :param verbosity: Flag which writes a newline after each status message
+    :return: A tuple containing the next key-value pair from the iterable
+    """
     if length == 0:
         yield from old_status_iterator(mapping, summary, color)
         return
@@ -119,6 +138,12 @@ def status_iterator(mapping: Mapping[str, str], summary: str, color: str = "dark
 
 class Reredirects:
     def __init__(self, app: Sphinx):
+        """
+        Class constructor.
+        Retrieves configuration values from the supplied Sphinx Application instance.
+
+        :param app: The Sphinx Application instance
+        """
         self.app = app
         self.redirects_option: Dict[str,
                                     str] = getattr(app.config,
@@ -159,8 +184,9 @@ class Reredirects:
 
     def create_redirects(self, to_be_redirected: Mapping[str, str]):
         """
-        Create actual redirect file for each pair in passed mapping of
-        docnames to targets.
+        Create a redirect file for each pair in passed mapping of docnames to targets.
+
+        :param to_be_redirected: A mapping of docnames to targets to create redirect files for
         """
         for doc, target in status_iterator(to_be_redirected, 'writing redirects...', 'darkgreen',
                                            len(to_be_redirected.items())):
@@ -179,20 +205,34 @@ class Reredirects:
 
     @staticmethod
     def _apply_placeholders(source: str, target: str) -> str:
-        """Expand "source" placeholder in target and return it"""
+        """
+        Expand `source` placeholder in target and return it
+
+        :param source: The string value of the `source` parameter to render
+        :param target: The template to render
+        :return: The rendered template
+        """
         return Template(target).substitute({"source": source})
 
     def _create_redirect_file(self, at_path: Path, to_uri: str):
-        """Actually create a redirect file according to redirect template"""
+        """
+        Create a redirect file according to the redirect template
 
+        :param at_path: The Path in which to write the redirect file
+        :param to_uri: The value of the `to_uri` parameter to render in the redirect template
+        """
         content = self._render_redirect_template(to_uri)
-
         # create any missing parent folders
         at_path.parent.mkdir(parents=True, exist_ok=True)
-
         at_path.write_text(content)
 
-    def _render_redirect_template(self, to_uri) -> str:
+    def _render_redirect_template(self, to_uri: Any) -> str:
+        """
+        Render the redirect template by substituting the `to_uri` parameter
+
+        :param to_uri: The value of the `to_uri` parameter to render
+        :return: The rendered redirect template
+        """
         # HTML used as redirect file content
         redirect_template = REDIRECT_FILE_DEFAULT_TEMPLATE
         if self.template_file_option:
