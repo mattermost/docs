@@ -19,7 +19,7 @@ A summary of Mattermost's support of 508 compliance standards is as follows:
 
 Section 1194.21 Software Applications and Operating Systems                     
 
-- **Level of Support and Supporting Features**: SUPPORTS for ten criteria, NOT APPLICABLE for one criteria, SUPPORTS THROUGH EQUIVALENT FACILITATION for one criteria.  
+- **Level of Support and Supporting Features**: SUPPORTS for 10 criteria, NOT APPLICABLE for one criteria, SUPPORTS THROUGH EQUIVALENT FACILITATION for one criteria.  
 
 - **Remarks and Explanations**: NOT APPLICABLE criteria references requirements for animations, which are not used in the product. SUPPORTS THROUGH EQUIVALENT FACILITATION references the use of a user's contrast and color settings at as an equivalent Mattermost can reproduce contrast and color settings in its web interface, though--like any web application--it does not draw them from a user's PC settings. 
 
@@ -428,7 +428,7 @@ Section 1194.25 Self-Contained, Closed Products - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(j)(3) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Where any operable control is more than ten inches and not more than 24 inches behind the reference plane, the height shall be 46 inches maximum and 15 inches minimum above the floor.
+(j)(3) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Where any operable control is more than 10 inches and not more than 24 inches behind the reference plane, the height shall be 46 inches maximum and 15 inches minimum above the floor.
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
@@ -443,13 +443,13 @@ Section 1194.25 Self-Contained, Closed Products - Detail
 Section 1194.26 Desktop and Portable Computers - Detail 
 -------------------------------------------------------
 
-(a) All mechanically operated controls and keys shall comply with 1194.23 (k) (one) through (four).
+(a) All mechanically operated controls and keys shall comply with 1194.23 (k) (1) through (4).
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(b) If a product utilizes touchscreens or touch-operated controls, an input method shall be provided that complies with 1194.23 (k) (one) through (four).
+(b) If a product utilizes touchscreens or touch-operated controls, an input method shall be provided that complies with 1194.23 (k) (1) through (4).
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
