@@ -163,7 +163,7 @@ How is user defined for Enterprise Edition subscriptions?
 
 See our `frequently asked questions about licensing <https://mattermost.com/pricing-self-managed/#faq>`__.
 
-Do I need to pay for deactivated users?
+Do I need to pay for deactivated users? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No. If you deactivate a user that user is not counted as an active user during your annual renewal process. You can deactivate users manually via System Console and also via Active Directory/LDAP synchronization, the CLI tool, and the server APIs.
@@ -175,7 +175,7 @@ Can I use the same license key on multiple self-managed Enterprise Edition serve
 
 License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
 
-Customers who purchase the Premier Support add-on to E20 are licensed to run with a single deployment of Mattermost license key in production and up to 4 non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
+Customers who purchase the Premier Support add-on to E20 are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.).
 
 Is my license available immediately?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -197,7 +197,7 @@ Once you’ve started the renewal process, we'll be in contact with you to confi
 What happens to my license if I don't renew in time?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. During the grace period, the notification banner is not dismissable.
+If you don't renew within the 60-day renewal period, a ten-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to Enterprise features. During the grace period, the notification banner is not dismissable.
 
 When the grace period expires, your Enterprise version is downgraded to Team Edition. Enterprise features are disabled.
  
@@ -247,12 +247,18 @@ If you don't plan to renew your Enterprise Edition subscription, revoke the expi
 Do you have a program for official non-profits, open source projects, and charities?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, please see the `Mattermost Monday License program <https://mattermost.com/nonprofit/>`_.
+Yes. The Mattermost Nonprofit License enables foundations and other nonprofit organizations that support open source projects or other technology initiatives to apply the benefits of Mattermost Enterprise Edition to advancing their missions with special nonprofit pricing.
+
+To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing-self-managed/>`_ instead.
+
+Organizations that receive a Mattermost Nonprofit License must make their server publicly-accessible for anyone to sign up and join. Mattermost will also have the right to place the name and logo of the nonprofit or charitable institution on our website.
+
+To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/spreadsheets/d/1aEpjFLHcrSpJF3wfi2NItevXtYpZUOSbge9o_pLagXU/edit#gid=446002361>`_, or contact us at community[at]mattermost.com.
 
 Do you have discounted licenses for academic institutions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`_ for no charge to students (staff members pay the regular price). You need to pay for at least 10 staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`_ for more information.
+Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`_ for no charge to students (staff members pay the regular price). You need to pay for at least ten staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`_ for more information.
 
 Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
