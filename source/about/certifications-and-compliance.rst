@@ -127,7 +127,7 @@ Export Classification and Licensing
 
 Although what is subject to the Export Administration Regulations is quite broad, that does not mean an export license
 is required for every transaction. The foundation of understanding export controls related to hardware, software and
-technology can be found within the `Commerce Control List <https://www.bis.doc.gov/index.php/regulations/commerce-control-list-ccl>`__ (CCL), which has 10 categories, 0-9, and is set up as a positive list. The first step is determining if the item to be exported is subject to the EAR.
+technology can be found within the `Commerce Control List <https://www.bis.doc.gov/index.php/regulations/commerce-control-list-ccl>`__ (CCL), which has ten categories, 0-9, and is set up as a positive list. The first step is determining if the item to be exported is subject to the EAR.
 
 At Mattermost, our Team Edition software is `outside the scope of the EAR <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1-encryption-items-not-subject-to-the-ear>`__, as it is derived from publicly available encryption source code and the complete software package for both the source code (https://github.com/mattermost/) and binary versions are publicly available. Mattermost enterprise software is found in `Category 5, Part 2 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__ of the CCL as Telecommunications and Information Security items (hardware, software and technology). Most items in this category have encryption.
 

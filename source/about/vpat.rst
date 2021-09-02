@@ -19,13 +19,13 @@ A summary of Mattermost's support of 508 compliance standards is as follows:
 
 Section 1194.21 Software Applications and Operating Systems                     
 
-- **Level of Support and Supporting Features**: SUPPORTS for 10 criteria, NOT APPLICABLE for 1 criteria, SUPPORTS THROUGH EQUIVALENT FACILITATION for 1 criteria.  
+- **Level of Support and Supporting Features**: SUPPORTS for ten criteria, NOT APPLICABLE for one criteria, SUPPORTS THROUGH EQUIVALENT FACILITATION for one criteria.  
 
 - **Remarks and Explanations**: NOT APPLICABLE criteria references requirements for animations, which are not used in the product. SUPPORTS THROUGH EQUIVALENT FACILITATION references the use of a user's contrast and color settings at as an equivalent Mattermost can reproduce contrast and color settings in its web interface, though--like any web application--it does not draw them from a user's PC settings. 
 
 Section 1194.22 Web-based Intranet and Internet information and Applications 
 
-- **Level of Support and Supporting Features**: SUPPORTS for 5 criteria, NOT APPLICABLE for 9 criteria, SUPPORTS WITH EXCEPTION for 1 criteria, DOES NOT SUPPORT for 1 criteria. 
+- **Level of Support and Supporting Features**: SUPPORTS for five criteria, NOT APPLICABLE for nine criteria, SUPPORTS WITH EXCEPTION for one criteria, DOES NOT SUPPORT for one criteria. 
 
 - **Remarks and Explanations**: SUPPORTS WITH EXCEPTION refers to having 80-90% coverage of text equivalents for every non-text element, with plans to increase coverage in 2018 release. DOES NOT SUPPORT refers to readability without associated style sheet with plan to address this issue in 2018 release. 
 
@@ -37,7 +37,7 @@ Section 1194.23 Telecommunications Products
 
 Section 1194.24 Video and Multi-media Products 
 
-- **Level of Support and Supporting Features**: NOT APPLICABLE for 5 criteria.
+- **Level of Support and Supporting Features**: NOT APPLICABLE for five criteria.
 
 - **Remarks and Explanations**: Mattermost is not a video or multi-media product. 
 
@@ -49,19 +49,19 @@ Section 1194.25 Self-Contained, Closed Products
 
 Section 1194.26 Desktop and Portable Computers 
 
-- **Level of Support and Supporting Features**: NOT APPLICABLE for 4 criteria.
+- **Level of Support and Supporting Features**: NOT APPLICABLE for four criteria.
 
 - **Remarks and Explanations**: Mattermost is not a desktop or portable computer. 
 
 Section 1194.31 Functional Performance Criteria 
 
-- **Level of Support and Supporting Features**: SUPPORTS for 4 criteria, NOT APPLICABLE for 2 criteria.
+- **Level of Support and Supporting Features**: SUPPORTS for four criteria, NOT APPLICABLE for two criteria.
 
 - **Remarks and Explanations**: NOT APPLICABLE due to no audio-entry for Mattermost.
 
 Section 1194.41 Information, Documentation and Support 
 
-- **Level of Support and Supporting Features**: SUPPORTS for 3 criteria.
+- **Level of Support and Supporting Features**: SUPPORTS for three criteria.
 
 - **Remarks and Explanations**: No additional comments. 
 
@@ -314,7 +314,7 @@ Section 1194.23 Telecommunications Products - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(k)(3) Products which have mechanically operated controls or keys shall comply with the following: If key repeat is supported, the delay before repeat shall be adjustable to at least 2 seconds. Key repeat rate shall be adjustable to 2 seconds per character.
+(k)(3) Products which have mechanically operated controls or keys shall comply with the following: If key repeat is supported, the delay before repeat shall be adjustable to at least 2 seconds. Key repeat rate shall be adjustable to two seconds per character.
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
@@ -428,7 +428,7 @@ Section 1194.25 Self-Contained, Closed Products - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(j)(3) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Where any operable control is more than 10 inches and not more than 24 inches behind the reference plane, the height shall be 46 inches maximum and 15 inches minimum above the floor.
+(j)(3) Products which are freestanding, non-portable, and intended to be used in one location and which have operable controls shall comply with the following: Where any operable control is more than ten inches and not more than 24 inches behind the reference plane, the height shall be 46 inches maximum and 15 inches minimum above the floor.
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
@@ -443,13 +443,13 @@ Section 1194.25 Self-Contained, Closed Products - Detail
 Section 1194.26 Desktop and Portable Computers - Detail 
 -------------------------------------------------------
 
-(a) All mechanically operated controls and keys shall comply with 1194.23 (k) (1) through (4).
+(a) All mechanically operated controls and keys shall comply with 1194.23 (k) (one) through (four).
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(b) If a product utilizes touchscreens or touch-operated controls, an input method shall be provided that complies with 1194.23 (k) (1) through (4).
+(b) If a product utilizes touchscreens or touch-operated controls, an input method shall be provided that complies with 1194.23 (k) (one) through (four).
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
