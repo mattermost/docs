@@ -176,7 +176,7 @@ The following list details the types of Playbooks metadata we collect:
 - ``NewState``: ``null`` if the task is uncompleted, ``done`` if the task was marked completed.
 - ``Action``: The type of action performed against the task: ``add_task``, ``remove_task``, ``rename_task``, ``modify_task_state``, ``move_task``, ``set_assignee_for_task``, ``run_task_slash_command``.
 - ``NewState``: When modifying a task state, ``true`` if the task is now checked, ``false`` if the task is now unchecked.
-- ``WasOwner``: When modifying a task state, ``true`` if the userId who initiated the event was also the owner of the run, and ``false`` otherwise.
+- ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the owner of the run, and ``false`` otherwise.
 - ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the run was also the assignee of the event, and ``false`` otherwise.
 
 **Data collected in playbook events**
