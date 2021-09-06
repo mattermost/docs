@@ -126,7 +126,7 @@ We recommend you create a new team in Mattermost to hold the imported Slack data
 
 **2. Generate a Slack import**
 
-The first step is to generate a Slack export: https://slack.com/help/articles/201658943-Export-your-workspace-data.
+The first step is to generate a `Slack export <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_.
 
 Next, follow these steps to create a bot token:
 
