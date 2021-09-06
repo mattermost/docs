@@ -20,7 +20,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on the App Store and Google Play, or deploy to an [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) on your organization's private network. A [Test Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns) is available for use while evaluating options.
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on the App Store and Google Play, or deploy to an Enterprise App Store on your organization's private network. A [Test Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns) is available for use while evaluating options.
 
 ### Mobile Web Experience
 
@@ -174,16 +174,16 @@ Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advice 
 
 Mattermost can be deployed behind your company firewall on a private network with access from the outside via a Virtual Private Network (VPN). This means running a VPN client on the mobile devices and desktop computers that need to access Mattermost.
 
-The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/deployment-overview.html#push-notification-service) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for the App Store or Google Play, or to mobile apps within an Enterprise App Store.
+The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for the App Store or Google Play, or to mobile apps within an Enterprise App Store.
 
 ### Mobile Devices without VPN Clients
 
 If Mattermost is available on the internet, we recommend Mattermost Enterprise Edition featuring SAML-based Single Sign-on and multi-factor authentication (MFA) using Google Authenticator.
 
-The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/deployment-overview.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
+The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
 For support for certificate-based authentication for mobile devices, [contact the Enterprise Sales team for more information](https://mattermost.com/contact-us/).
 
 ### Mobile Devices with an EMM Provider
 
-Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/deploy/mobile-appconfig.html) such as Blackberry UEM, Mobileiron, and Airwatch. EMM solutions typically offer "App Tunnel" or per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.
+Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html). EMM solutions typically offer per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.
