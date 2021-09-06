@@ -191,7 +191,7 @@ The following list details the types of Playbooks metadata we collect:
 - ``ReminderTimerDefaultSeconds``: The default timer for the reminder to update the status, in seconds.
 - ``BroadcastChannelID``: Unique identifier of the channel where the status updates will be broadcasted.
 - ``UsesReminderMessageTemplate``: ``true`` if the playbook has a template for the reminder message, ``false`` otherwise.
-- ``Action``: The type of action performed against this playbook: ``start``, ``update``, ``delete``.
+- ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
   
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging**.
 
