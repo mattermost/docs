@@ -172,7 +172,7 @@ The following list details the types of Playbooks metadata we collect:
 
 **Data collected in tasks events**
 
-- ``runID``: Unique identifier of the run.
+- ``IncidentID``: Unique identifier of the run.
 - ``NewState``: ``null`` if the task is uncompleted, ``done`` if the task was marked completed.
 - ``Action``: The type of action performed against the task: ``add_task``, ``remove_task``, ``rename_task``, ``modify_task_state``, ``move_task``, ``set_assignee_for_task``, ``run_task_slash_command``.
 - ``NewState``: When modifying a task state, ``true`` if the task is now checked, ``false`` if the task is now unchecked.
