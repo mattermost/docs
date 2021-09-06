@@ -216,7 +216,7 @@ The following list details the types of Apps Framework metadata we collect:
 - ``type``: Call type. Right now only submit calls are tracked.
 
 **Data collected in ``oauthComplete`` events**
-- ``UserActualID``: User ID of the user completing the oauth flow.
+  - ``UserActualID``: User ID of the user completing the OAuth flow.
 
 Android Mobile App Performance Monitoring
 -----------------------------------------
