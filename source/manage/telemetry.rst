@@ -166,7 +166,7 @@ The following list details the types of Playbooks metadata we collect:
 - ``NumChecklists``: Number of stages in this run.
 - ``TotalChecklistItems``: Number of tasks in this run.
 - ``ActiveStage``: A number indicating the stage of the run (0-based).
-- ``Action``: The type of action performed against the run: ``start``, ``end``, ``restart``, ``change_stage``, ``change_owner``, ``update_status``.
+- ``Action``: The type of action performed against the run: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``, ``add_timeline_event_from_post``, ``update_retrospective``, ``publish_retrospective``, ``remove_timeline_event``.
 - ``Public``: When starting a run, ``true`` if it is public, and ``false`` if it is private.
 - ``ReminderTimerSeconds``: The next timer for the reminder to update the status, in seconds. It's tracked only when ``Action`` equals ``update_status``.
 
