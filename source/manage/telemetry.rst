@@ -152,7 +152,7 @@ The following list details the types of Playbooks metadata we collect:
 - ``PluginVersion``: Version of the plugin.
 - ``ServerVersion``: Version of the server the plugin is running on.
 - ``UserID``: Unique identifier of the server.
-- ``Event``: Type of the event. There are three event types that are tracked: ``run``, ``tasks``, ``playbook``.
+- ``Event``: Type of the event. There are three event types that are tracked: ``incident``, ``tasks``, ``playbook``.
 - ``UserActualID``: Unique identifier of the user who initiated the action.
 
 **Data collected in run events**
