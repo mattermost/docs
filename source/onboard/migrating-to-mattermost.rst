@@ -133,7 +133,7 @@ Next, follow these steps to create a bot token:
 1. Go to https://api.slack.com/apps.
 2. Select **Create New App**.
 3. Select **From scratch**.
-4. Name the app something like "Slack Advanced Expoter" and select the workspace. You'll have to do this for every workspace. Then create the app.
+4. Name the app something like "Slack Advanced Exporter" and select the workspace. You'll have to do this for every workspace. Then create the app.
 5. Select **OAuth & Permissions** and scroll down to **Scopes**.
 6. Under **Bot Token Scopes** select ``users:read`` and ``users:read.email``.
 7. Scroll up and select **Install to Workspace**.
@@ -142,13 +142,13 @@ Next, follow these steps to create a bot token:
 
 **3. Download file attachments and email addresses**
 
-The Slack export does not include file attachments and email addresses, so you must use ``slack-advanced-exporter`` to download them `Download the latest release of ``slack-advanced-exporter`` for your OS and architecture here <https://github.com/icelander/slack-advanced-exporter/releases/>`__ and extract it.
+The Slack export does not include file attachments and email addresses, so you must use ``slack-advanced-exporter`` to download them. Download the latest release of ``slack-advanced-exporter`` for your OS and architecture `here <https://github.com/icelander/slack-advanced-exporter/releases/>`__ and extract it.
 
 Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slack token you generated earlier and ``<SLACK EXPORT FILE>`` with the `path <https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/>`__ to your file.
 
 .. note::
 
-    - You'll end up with two files. The file `export-with-attachments.zip` will not have user emails and cannot be imported.
+    - You'll end up with two files. The file ``export-with-attachments.zip`` will not have user emails and cannot be imported.
     - The first command can take a long time if you have a large number of file uploads. If it's interrupted delete the file generated (if any) and start again.
 
 .. code:: bash
@@ -160,7 +160,7 @@ The file ``export-with-emails-and-attachments.zip`` now contains all the informa
 
 **3. Convert Slack Import to Mattermost Bulk Export Format**
 
-Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. `Download the latest release of ``mmetl`` for your OS and architecture here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. The same caveat applies.
+Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. Download the latest release of ``mmetl`` for your OS and architecture `here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. The same caveat applies.
 
 Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the name of your team:
 
