@@ -19,7 +19,7 @@ You can use either ``_`` or ``*`` for italics and bold text. See the table below
 
 **Quickly add emojis** by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji <https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis>`__.
 
-**Attach files** by dragging and dropping them into Channels, or by selecting the **Attachment** icon next within the text input box.
+**Attach files** by dragging and dropping them into Channels, or by selecting the **Attachment** icon within the text input box.
 
 **Save messages for follow up** using the **Save** icon next to the message.
 
