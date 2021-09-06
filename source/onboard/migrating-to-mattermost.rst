@@ -120,44 +120,36 @@ Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
   
   This method is the recommended way to import Slack's corporate export file. It can be used with Mattermost v5.0 and onwards.
 
-1. Prepare your Mattermost Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**1. Prepare your Mattermost Server**
 
 We recommend you create a new team in Mattermost to hold the imported Slack data. You can import this into an existing team, but ensure there are no channel name collisions. Also, make sure that all users in Mattermost have the same username as in Slack, otherwise the import will fail. Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
-2. Generate a Slack Import
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+**2. Generate a Slack import**
 
-The first step is to generate a Slack export: https://slack.com/help/articles/201658943-Export-your-workspace-data
+The first step is to generate a Slack export: https://slack.com/help/articles/201658943-Export-your-workspace-data.
 
 Next, follow these steps to create a bot token:
 
-1. Go to https://api.slack.com/apps
-2. Click "Create New App"
-3. Click "From scratch"
-4. Name the app something like "Slack Advanced Expoter" and select the
-   workspace. (You will have to do this for every workspace.) Then
-   create the app
-5. Click "Oauth & Permissions" and then scroll down to "Scopes"
-6. Under "Bot Token Scopes" select ``users:read`` and
-   ``users:read.email``
-7. Scroll up and click the button labeled "Install to Workspace"
-8. Grant the app permissions
-9. Copy the Bot User OAuth Token and save it somewhere convenient
+1. Go to https://api.slack.com/apps.
+2. Select **Create New App**.
+3. Select **From scratch**.
+4. Name the app something like "Slack Advanced Expoter" and select the workspace. You'll have to do this for every workspace. Then create the app.
+5. Select **OAuth & Permissions** and scroll down to **Scopes**.
+6. Under **Bot Token Scopes** select ``users:read`` and ``users:read.email``.
+7. Scroll up and select **Install to Workspace**.
+8. Grant the app permissions.
+9. Copy the Bot User OAuth Token and save it somewhere convenient.
 
-3. Download file attachments and email addresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**3. Download file attachments and email addresses**
 
 The Slack export does not include file attachments and email addresses, so you must use ``slack-advanced-exporter`` to download them `Download the latest release of ``slack-advanced-exporter`` for your OS and architecture here <https://github.com/icelander/slack-advanced-exporter/releases/>`__ and extract it.
 
 Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slack token you generated earlier and ``<SLACK EXPORT FILE>`` with the `path <https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/>`__ to your file.
 
-**NOTE**
+.. note::
 
-::
-
-    - You will end up with two files. The file `export-with-attachments.zip` will not have user emails and cannot be imported
-    - The first command can take a long time if you have a large number of file uploads. If it is interrupted delete the file generated (if any) and start again
+    - You'll end up with two files. The file `export-with-attachments.zip` will not have user emails and cannot be imported.
+    - The first command can take a long time if you have a large number of file uploads. If it's interrupted delete the file generated (if any) and start again.
 
 .. code:: bash
 
@@ -166,12 +158,11 @@ Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slac
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
 
-3. Convert Slack Import to Mattermost Bulk Export Format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**3. Convert Slack Import to Mattermost Bulk Export Format**
 
-Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. `Download the latest release of ``mmetl`` for your OS and architecture here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. (The same caveat applies.)
+Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. `Download the latest release of ``mmetl`` for your OS and architecture here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. The same caveat applies.
 
-Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the name of the team you chose in step 0:
+Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the name of your team:
 
 .. code:: bash
 
@@ -185,8 +176,7 @@ Next you have to create a zip file with the ``mattermost_import.jsonl`` file and
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
-4. Import into Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~
+**4. Import into Mattermost**
 
 Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-export.zip``:
 
@@ -212,7 +202,7 @@ Debugging Imports
 If you run into problems your best bet is to use the ``mattermost bulk import`` command, since the ``mmctl`` import process does not give you any debugging information, even in the Mattermost server logs.
 
 Migrating from Slack using the Mattermost Web App
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
   
