@@ -18,7 +18,7 @@ Mattermost Product Documentation
    About Mattermost <overview/index>
    Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
    Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
-   Messaging <guides/messaging>
+   Channels <guides/channels>
    Playbooks <guides/playbooks>
    Focalboard <https://www.focalboard.com/guide/user/>
    Mattermost for Developers <https://developers.mattermost.com/>

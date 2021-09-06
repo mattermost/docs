@@ -1,7 +1,7 @@
-Mattermost Messaging
+Mattermost Channels
 ====================
 
-Product documentation for Mattermost Messaging.
+Product documentation for Mattermost Channels.
 
 Access Your Workspace
 ---------------------
@@ -9,7 +9,7 @@ Access Your Workspace
 .. toctree::
    :maxdepth: 2
    
-   /messaging/welcome-to-mattermost-messaging.rst
+   /messaging/welcome-to-mattermost-channels.rst
    /messaging/accessing-your-workspace.rst
    /messaging/signing-in.rst
    /messaging/switching-between-teams.rst
@@ -22,7 +22,7 @@ Work with Messages
 .. toctree::
    :maxdepth: 2
 
-   /messaging/messaging-basics.rst
+   /messaging/channels-basics.rst
    /messaging/sending-receiving-messages.rst
    /messaging/organizing-conversations.rst
    /messaging/formatting-text.rst
@@ -43,11 +43,11 @@ Manage Teams, Channels, and Members
    /messaging/creating-teams.rst
    /messaging/team-settings.rst   
    /messaging/managing-channels.rst
-   /messaging/organizing-mattermost.rst
+   /messaging/organizing-channels.rst
    /messaging/channel-settings.rst
    /messaging/managing-members.rst
 
-Customize Mattermost Messaging
+Customize Mattermost Channels
 ------------------------------
       
 .. toctree::
@@ -61,7 +61,7 @@ Customize Mattermost Messaging
    /messaging/managing-desktop-app-options.rst
    /messaging/managing-desktop-app-servers.rst
 
-Navigate Mattermost Messaging
+Navigate Mattermost Channels
 -----------------------------
       
 .. toctree::
@@ -70,10 +70,10 @@ Navigate Mattermost Messaging
    /messaging/keyboard-accessibility.rst
    /messaging/keyboard-shortcuts.rst
 
-Extend Mattermost Messaging
+Extend Mattermost Channels
 ---------------------------
       
 .. toctree::
    :maxdepth: 2
       
-   /messaging/extending-messaging-with-integrations.md
+   /messaging/extending-channels-with-integrations.md

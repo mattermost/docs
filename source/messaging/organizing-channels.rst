@@ -1,9 +1,7 @@
-Organizing Mattermost
-=====================
+Organizing Channels
+====================
 
-The importance of organizing channels increases as Mattermost spreads to thousands of users.
-
-This document shares best practices from various Mattermost deployments including:
+The importance of organizing your conversations increases as Channels spreads to thousands of users. This document shares best practices from various Mattermost deployments including:
 
 1. `The importance of channel names`_
 2. `How to navigate and organize channels`_
@@ -12,9 +10,7 @@ This document shares best practices from various Mattermost deployments includin
 The importance of channel names
 -------------------------------
 
-Channels organize communication in Mattermost.
-
-When naming or renaming channels, consider the following:
+You can name and rename your conversations in Mattermost Channels. When you're choosing names, consider the following recommendations:
 
 Basic Structure
 ~~~~~~~~~~~~~~~
@@ -82,7 +78,7 @@ Meeting Channels
 
 Meeting channels are often used to organize regular meetings. Members can add topics as messages to be discussed during the regular meeting time. Examples: Monday Sales Update, All Hands Meeting.
 
-There are three built-in features to make meetings in Mattermost easier:
+There are three built-in features to make meetings in Channels easier:
 
 1. Numbered agenda items in title text
 
@@ -101,7 +97,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3. Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the `channel header <https://docs.mattermost.com/help/settings/channel-settings.html#channel-header>`__.
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the `channel header <https://docs.mattermost.com/messaging/channel-settings.html#channel-header>`__.
 
 When it's time to meet, your team can click the conference link to connect.
 

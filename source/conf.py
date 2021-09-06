@@ -70,10 +70,13 @@ redirects = {
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
+    "overview/product#mattermost-enterprise-edition-e10": 
+        "https://docs.mattermost.com/about/product.html#mattermost-enterprise-edition-e10",
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
     "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
     "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
+    "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "guides/administrator#upgrade-mattermost": "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
     "guides/administrator#installing-mattermost": 
         "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost",
@@ -253,18 +256,26 @@ redirects = {
     "help/getting-started/install-desktop-app":
         "https://docs.mattermost.com/install/installing-mattermost-desktop-app.html",
     "help/getting-started/light-install": "https://docs.mattermost.com/getting-started/light-install.html",
-     "incident-collaboration/playbook-planning": 
+    "incident-collaboration/playbook-planning": 
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
-     "incident-collaboration/launching-playbooks": 
+    "help/settings/custom-emoji": "https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis",
+    "incident-collaboration/launching-playbooks": 
         "https://docs.mattermost.com/incident-collaboration/running-playbooks.html",
-     "incident-collaboration/review-and-refine": 
+    "incident-collaboration/review-and-refine": 
         "https://docs.mattermost.com/incident-collaboration/refining-and-improving.html",
-     "incident-collaboration/overview": "https://docs.mattermost.com/playbooks/refining-and-improving.html",
-     "incident-collaboration/getting-started": "https://docs.mattermost.com/playbooks/getting-started.html",
-     "incident-collaboration/setting-up-playbooks": "https://docs.mattermost.com/playbooks/setting-up-playbooks.html",
-     "incident-collaboration/running-playbooks": "https://docs.mattermost.com/playbooks/running-playbooks.html",
-     "incident-collaboration/refining-and-improving": 
+    "incident-collaboration/overview": "https://docs.mattermost.com/playbooks/refining-and-improving.html",
+    "incident-collaboration/getting-started": "https://docs.mattermost.com/playbooks/getting-started.html",
+    "incident-collaboration/setting-up-playbooks": "https://docs.mattermost.com/playbooks/setting-up-playbooks.html",
+    "incident-collaboration/running-playbooks": "https://docs.mattermost.com/playbooks/running-playbooks.html",
+    "incident-collaboration/refining-and-improving": 
          "https://docs.mattermost.com/playbooks/refining-and-improving.html",
+    "messaging/welcome-to-mattermost-messaging": 
+        "https://docs.mattermost.com/messaging/welcome-to-mattermost-channels.html",
+    "messaging/messaging-basics": "https://docs.mattermost.com/messaging/channels-basics.html",
+    "messaging/organizing-mattermost": "https://docs.mattermost.com/messaging/organizing-channels.html",
+    "messaging/channel-settings": "https://docs.mattermost.com/messaging/channel-settings.html#channel-header",
+    "messaging/extending-messaging-with-integrations": 
+        "https://docs.mattermost.com/messaging/extending-channels-with-integrations.html",
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
     "process/sg_rest_markup":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
