@@ -157,7 +157,7 @@ The following list details the types of Playbooks metadata we collect:
 
 **Data collected in run events**
 
-- ``runID``: Unique identifier of the run.
+- ``IncidentID``: Unique identifier of the run.
 - ``IsActive``: Boolean value indicating if the incident is active.
 - ``OwnerUserID``: Unique identifier of the owner of the run.
 - ``TeamID``: Unique identifier of the team where the channel is created.
