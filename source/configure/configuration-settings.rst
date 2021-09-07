@@ -4316,7 +4316,7 @@ Collapsed Reply Threads (Beta)
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from Self-Hosted Mattermost v5.37 as an early access beta, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/help/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
-System Admins can set the default appearance of collapsed reply threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
+System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
 
 **Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/help/settings/account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**.
 
