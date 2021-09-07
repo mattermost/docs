@@ -1,6 +1,6 @@
 # Mattermost Changelog
 
-This changelog summarizes updates to [Mattermost Team Edition](https://mattermost.org/), an open source team messaging solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://mattermost.com/pricing-self-managed/), a commercial upgrade offering enterprise messaging for large organizations.
+This changelog summarizes updates to [Mattermost Team Edition](https://mattermost.org/), an open source collaboration solution released monthly under an MIT license, and [Mattermost Enterprise Edition](https://mattermost.com/pricing-self-managed/), a commercial upgrade offering enterprise collaboration for large organizations.
 
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 

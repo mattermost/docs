@@ -1,9 +1,9 @@
 Migration Guide
 ===============
 
-Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace messaging. Mattermost deploys as a single Linux binary with MySQL or PostgreSQL and can scale from dozens to tens of thousands of users in a single channel.
+Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with MySQL or PostgreSQL, and can scale from dozens to tens of thousands of users in a single channel.
 
-This guide summarizes different approaches to migrating from one Mattermost deployment to another and migrating from other messengers (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
+This guide summarizes different approaches to migrating from one Mattermost deployment to another, and migrating from other tools (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
 
 .. contents::
   :backlinks: top

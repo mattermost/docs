@@ -44,7 +44,7 @@ In general, building your own Mobile apps will present some challenges, includin
 Custom Mobile App Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Messaging". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
+Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Collaboration". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
 
 Deploying Your Custom App
 -------------------------
