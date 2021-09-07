@@ -191,7 +191,7 @@ You can import the following data types:
 3.3.7 Implement Backup
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Implement backup procedures to protect data stored within the Mattermost database, files uploaded by users, and the Mattermost config.json file.
+Implement backup procedures to protect data stored within the Mattermost database, files uploaded by users, and the Mattermost ``config.json`` file.
 
 **Reference**: https://docs.mattermost.com/deploy/backup-disaster-recovery.html
 
