@@ -298,7 +298,7 @@ redirects = {
      "incident-collaboration/running-playbooks": "https://docs.mattermost.com/playbooks/running-playbooks.html",
      "incident-collaboration/refining-and-improving": 
          "https://docs.mattermost.com/playbooks/refining-and-improving.html",
-    "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
+    "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute/help-wanted",
     "process/sg_rest_markup":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
         "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
