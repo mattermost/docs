@@ -212,7 +212,7 @@ Mattermost supports AD/LDAP integration for user authentication and user attribu
 3.3.10 Multi-Factor Authentication (E10, E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configure multi-factor authentication (“MFA”) if required as part of your IT security policy. Compatible with Google Authenticator
+Configure multi-factor authentication (“MFA”) if required as part of your IT security policy. Compatible with Google Authenticator.
 
 **Reference**: https://docs.mattermost.com/onboard/multi-factor-authentication.html
 
