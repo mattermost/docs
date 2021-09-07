@@ -31,7 +31,7 @@ For self-managed deployments, compliance exports are written to the ``exports`` 
 
 .. note::
    
-   The compliance exports do not contain posts sent before the feature was enabled. For self-managed deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. However, posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+   The compliance exports do not contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. However, posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
 
 CSV
 ~~~~
