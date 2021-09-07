@@ -57,6 +57,65 @@ source_suffix = ['.rst', '.md']
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
+
+    "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
+    "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
+    "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
+    "developer/interactive-dialogs": "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/",
+    "developer/interactive-message-buttons": "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/",
+    "developer/message-attachments": "https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/",
+    "developer/oauth-2-0-applications": "https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/",
+    "developer/personal-access-token": "https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/",
+    "developer/slash-commands": "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
+    "developer/webhook-outgoing": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
+    "developer/webhook-incoming": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
+    "developer/bot-accounts": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
+    "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
+    "overview/product": "https://docs.mattermost.com/about/product.html",
+    "overview/security": "https://docs.mattermost.com/about/security.html",
+    "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
+    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
+    "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
+    "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
+    "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
+    "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
+    "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
+    "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
+    "guides/orchestration": "https://docs.mattermost.com/about/orchestration.html",
+    "guides/administrator": "https://docs.mattermost.com/guides/deployment.html",
+    "guides/administrator": "https://docs.mattermost.com/guides/deployment.html",
+    "guides/developer": "https://developers.mattermost.com/integrate/admin-guide/",
+    "guides/integration": "https://developers.mattermost.com/integrate/getting-started/",
+    "guides/user": "https://docs.mattermost.com/guides/messaging.html",
+    "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/deployment.html",
+    "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
+    "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
+    "install/install-ubuntu-1804": "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
+    "install/mattermost-omnibus": "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
+    "install/sockets-db": "https://docs.mattermost.com/install/setting-up-socket-based-mattermost-database.html",
+    "install/ee-install": "https://docs.mattermost.com/install/enterprise-install-upgrade.html",
+    "install/transport-encryption/config": "https://docs.mattermost.com/install/transport-encryption.html",
+    "install/transport-encryption/config-mattermost":
+        "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
+    "install/transport-encryption/config-database":
+        "https://docs.mattermost.com/install/database-transport-encryption.html",
+    "install/transport-encryption/config-cluster":
+        "https://docs.mattermost.com/install/cluster-transport-encryption.html",
+    "install/deploy-bitnami": "https://docs.mattermost.com/install/deploying-team-edition-on-bitnami.html",
+    "install/docker-local-machine": "https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html",
+    "install/docker-ebs": "https://docs.mattermost.com/install/setting-up-aws-elastic-beanstalk-docker.html",
+    "install/install-mmte-helm-gitlab-helm":
+        "https://docs.mattermost.com/install/installing-team-edition-helm-chart.html",
+    "install/desktop": "https://docs.mattermost.com/install/desktop-app-install.html",
+    "install/desktop-managed-resources": "https://docs.mattermost.com/install/desktop-app-managed-resources.html",
+    "install/desktop-msi-gpo":
+        "https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html",
+    "install/smtp-email-setup": "https://docs.mattermost.com/configure/smtp-email.html",
+    "install/config-cloudfront":
+        "https://docs.mattermost.com/configure/configuring-cloudfront-to-host-mattermost-static-assets.html",
+    "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
+    "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
+    "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
     "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
@@ -317,6 +376,7 @@ redirects = {
     "overview/architecture#reference-architectures": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html#reference-architectures",
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
+    "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute/help-wanted",
     "process/sg_rest_markup":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
         "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
@@ -385,6 +445,9 @@ redirects = {
         "https://handbook.mattermost.com/operations/sales/partner-programs",
     "process/overview":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
+    "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
+    "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html"  
 }
 
 # The master toctree document.
@@ -482,7 +545,7 @@ html_theme_options = {
     'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': -1,  # Allow unlimited depth in navigation
-    'includehidden': False,
+    'includehidden': True,
     'titles_only': False
 }
 
