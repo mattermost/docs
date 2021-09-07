@@ -94,7 +94,7 @@ Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP Singl
 
 ### Private Cloud Integrations
 
-Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your self-managed systems.
+Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your self-hosted systems.
 
 [Visit our app directory](https://mattermost.com/marketplace/#privateApps) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and SVN, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 

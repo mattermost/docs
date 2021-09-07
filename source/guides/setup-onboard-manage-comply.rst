@@ -6,7 +6,7 @@ Set up and manage Mattermost based on your business needs.
 Set Up Mattermost
 ------------------
 
-Self-Managed Deployments
+Self-Hosted Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
@@ -57,7 +57,7 @@ All Mattermost Instances
    /onboard/sso-office.rst
    /onboard/convert-oauth20-service-providers-to-openidconnect.rst
 
-Self-Managed Deployments
+Self-Hosted Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
@@ -104,7 +104,7 @@ All Mattermost Instances
    /manage/generating-support-packet.rst
    /manage/mmctl-command-line-tool.rst
 
-Self-Managed Deployments
+Self-Hosted Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
@@ -137,7 +137,7 @@ Cloud Workspaces
 Mattermost Compliance
 ---------------------
 
-Self-Managed Deployments
+Self-Hosted Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::

@@ -71,7 +71,7 @@ You may incur retroactive charges for any unique users added that exceed the lic
 Renewing an Enterprise license
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Server version 5.32 and later you can renew your self-managed Mattermost Enterprise license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
+From Mattermost Server version 5.32 and later you can renew your self-hosted Mattermost Enterprise license with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
 If you have not upgraded to v5.32 you can contact Support (support@mattermost.com) to renew your license.
 
@@ -170,7 +170,7 @@ No. If you deactivate a user that user is not counted as an active user during y
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
-Can I use the same license key on multiple self-managed Enterprise Edition servers?
+Can I use the same license key on multiple self-hosted Enterprise Edition servers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 License keys for unlocking the advanced features in Mattermost Enterprise Edition can only be applied to a single deployment. A deployment consists of either a single Mattermost application server or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.

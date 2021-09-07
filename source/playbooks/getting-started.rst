@@ -3,7 +3,7 @@ Getting Started
 
 Mattermost Playbooks is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
 
-*For self-managed deployments*
+*For self-hosted deployments*
 
 Mattermost Playbooks is available in the Plugin Marketplace:
 
