@@ -7,7 +7,7 @@ Implementation Plan
 1.1 Purpose
 ~~~~~~~~~~~
 
-Mattermost is an open source, private cloud alternative to proprietary SaaS collaboration solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You have chosen to implement Mattermost in our supported `editions:`_
+Mattermost is an open source, private cloud alternative to proprietary SaaS collaboration solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You've chosen to implement Mattermost in our supported `editions:`_
 
 .. _`editions:`: https://mattermost.com/product/
 
