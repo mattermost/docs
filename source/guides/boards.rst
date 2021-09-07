@@ -47,10 +47,4 @@ Customize your Boards
    :maxdepth: 2
    
   /boards/templates.rst 
-   
-Navigate your Boards
----------------------
-
-.. toctree::
-   :maxdepth: 2
 
