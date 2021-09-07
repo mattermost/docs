@@ -3,12 +3,54 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
 - [Release 2021-06-02](#release-2021-06-02)
-- [Release 2021-05-21](#release-2021-05-21)
+
+## Release 2021-08-12
+
+### Highlights
+
+#### Beta features promoted from Beta to General Availability
+   - Archived channels
+   - Compliance exports
+   - Custom terms of service
+   - Guest Accounts
+   - System Roles
+   - Plugins
+
+#### Focalboard
+ - Added support for Focalboard for Mattermost Cloud.
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed H1-H3 heading font from Open Sans to Metropolis.
+
+#### Administration
+ - Added ``playbooks`` and ``boards`` to restricted team URLs list.
+ - Mattermost is now built with Go v1.16.6.
+ - Added the ability for Team Edition to edit role permissions.
+ - Removed hard-coded override of ``TeamSettings.MaxNotificationsPerChannel`` on unlicensed servers (e.g. Team Edition).
+ - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
+
+### Bug Fixes
+ - Fixed an issue where GitLab ``ButtonText`` and ``ButtonColor`` settings were not reflected on the login screen.
+ - Fixed an issue where Mattermost panicked on ``docx`` files uploaded with ``.doc`` extension.
+ - Prevented users from having the unreads filter enabled when the button to toggle it is not shown.
+ - Fixed an issue where the timestamp on deleted messages was not correctly positioned.
+ - Fixed an issue where a space was missing between sentences in the banner to refresh app.
+ - Fixed an issue where Mattermost's shortcut key CTRL+SHIFT+A to open **Account Settings** clashed with Chrome's CTRL+SHIFT+A that opens a "Search Tabs" pop-up.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a thread caused users to re-follow the previously unfollowed thread.
+
+### Known Issues
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-07-29
 

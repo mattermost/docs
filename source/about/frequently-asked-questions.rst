@@ -10,7 +10,7 @@ General Questions
 Why was Mattermost created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we made Mattermost <https://mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__.
+Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we built Mattermost <https://mattermost.com/about-us/>`__.
 
 Why does the open source repository contain code specific to the commercial version of Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,7 +20,7 @@ The commercial version of Mattermost is designed to never lock-in your data. Por
 Does Mattermost support 508 Compliance?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, please see our `VPAT <https://docs.mattermost.com/overview/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
+Yes, please see our `VPAT <https://docs.mattermost.com/about/vpat.html>`__ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
 
 What's the largest Mattermost deployment you have?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`_, and follow our standard install guides. The same applies to server upgrades.
+To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/upgrade/version-archive.html>`_, and follow our standard install guides. The same applies to server upgrades.
 
 Community Questions
 -------------------
@@ -159,7 +159,7 @@ Growing your Mattermost installation from supporting a team to supporting an ent
 
 **Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition as well as downgrade without data loss, should their needs change.
 
-For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/deployment/scaling.html>`__.
+For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
 
 What does it take to manage a Mattermost deployment?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,12 +290,12 @@ See our `frequently asked questions about licensing <https://docs.mattermost.com
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have discounted licenses for academic institutions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Mattermost Source Available License
 ------------------------------------
@@ -303,7 +303,7 @@ Mattermost Source Available License
 What is the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise E20 License in a production environment.
+A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise Edition License in a production environment.
 
 How can I identify code licensed as source available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -314,7 +314,7 @@ When the Mattermost Source Available ``LICENSE`` file appears in a specific dire
 
 In all cases, any third party components remain licensed under their original license.
 
-An example directory layout is shown below:
+An example directory layout, using an Enterprise Edition E20 license, is shown below:
 
 .. image:: ../images/source-available-license.png
 
@@ -355,14 +355,14 @@ No, if you have already signed the `Mattermost CLA <https://mattermost.org/matte
 Can I compile your plugins by myself?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. If you have a Mattermost Enterprise E20 license, you are free to compile and use a plugin under the Mattermost Source Available License. Furthermore, if you are developing against or testing with such a plugin, you are free to compile and test a plugin even without a Mattermost Enterprise E20 license. Without an Enterprise E20 license, source available plugins may have reduced functionality or refuse to start altogether. Request a `trial license <https://mattermost.com/trial/>`_ if your testing requires access to enterprise functionality.
+Yes. If you have a Mattermost Enterprise Edition license, you are free to compile and use a plugin under the Mattermost Source Available License. Furthermore, if you are developing against or testing with such a plugin, you are free to compile and test a plugin even without a Mattermost Enterprise Edition license. Without an Enterprise Edition license, source available plugins may have reduced functionality or refuse to start altogether. Request a `trial license <https://mattermost.com/trial/>`_ if your testing requires access to enterprise functionality.
 
 Several of our customers value complete access to our source code and compile our plugins from source before deploying to their production servers. By adopting the Mattermost Source Available License, we can develop enterprise-only features in public without impacting this workflow.
 
 Will you distribute open source plugin binaries without any licensing restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At this time, we have no plans to distribute more than one version of each of our plugins. Without a Mattermost Enterprise E20 License, plugins may have reduced functionality or refuse to start altogether.
+At this time, we have no plans to distribute more than one version of each of our plugins. Without a Mattermost Enterprise Edition License, plugins may have reduced functionality or refuse to start altogether.
 
 Can I continue to use the existing open source repositories without restriction?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,14 +403,32 @@ What is the full text of the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "The Mattermost Source Available License license (the “Source Available License”)
-
 Copyright (c) 2015-present Mattermost
 
 With regard to the Mattermost Software:
 
-This software and associated documentation files (the "Software") may only be used in production, if you (and any entity that you represent) have agreed to, and are in compliance with, the Mattermost Terms of Service, available at https://mattermost.com/terms-of-service/ (the “EE Terms”), or other agreement governing the use of the Software, as agreed by you and Mattermost, and otherwise have a valid Mattermost Enterprise E20 subscription for the correct number of user seats. Subject to the foregoing sentence, you are free to modify this Software and publish patches to the Software. You agree that Mattermost and/or its licensors (as applicable) retain all right, title and interest in and to all such modifications and/or patches, and all such modifications and/or patches may only be used, copied, modified, displayed, distributed, or otherwise exploited with a valid Mattermost Enterprise E20 Edition subscription for the  correct number of user seats.  Notwithstanding the foregoing, you may copy and modify the Software for development and testing purposes, without requiring a subscription.  You agree that Mattermost and/or its licensors (as applicable) retain all right, title and interest in and to all such modifications.  You are not granted any other rights beyond what is expressly stated herein.  Subject to the foregoing, it is forbidden to copy, merge, publish, distribute, sublicense, and/or sell the Software.
+This software and associated documentation files (the "Software") may only be
+used in production, if you (and any entity that you represent) have agreed to,
+and are in compliance with all of the following: (a) the Mattermost Terms of Service, available at
+https://mattermost.com/enterprise-edition-terms/ (the “EE Terms”), (b) any other
+agreement(s) governing the use of the Software, as agreed upon by you and Mattermost,
+and (c) you otherwise have a valid license or Subscription for the
+correct number of Registered Authorized Users of the Software. Subject to the foregoing, you are free
+to modify this Software and publish patches to the Software. You agree that
+Mattermost and/or its licensors (as applicable) retain all right, title and
+interest in and to all such modifications and/or patches, and all such
+modifications and/or patches may only be used, copied, modified, displayed,
+distributed, or otherwise exploited with a valid license or Subscription for the correct number of 
+Registered Authorized Users of the Software.  Notwithstanding
+the foregoing, you may copy and modify the Software for development and testing
+purposes, without requiring a valid license or Subscription.  You agree that Mattermost and/or
+its licensors (as applicable) retain all right, title and interest in and to
+all such modifications.  You are not granted any other rights beyond what is
+expressly stated herein.  Subject to the foregoing, it is forbidden to copy,
+merge, publish, distribute, sublicense, and/or sell the Software.
 
-The full text of this EE License shall be included in all copies or substantial portions of the Software.
+The full text of this EE License shall be included in all copies or substantial
+portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -420,7 +438,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-For all third party components incorporated into the Mattermost Software, those components are licensed under the original license provided by the owner of the applicable component."
+For all third party components incorporated into the Mattermost Software, those
+components are licensed under the original license provided by the owner of the
+applicable component."
 
 Integration
 -----------
