@@ -259,7 +259,7 @@ redirects = {
     "deployment/cluster#proxy-server-configuration": 
         "https://docs.mattermost.com/scale/high-availability-cluster.html#proxy-server-configuration",
     "deployment/cluster#upgrade-guide": "https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide",
-    "deployment/mobile-app-deployment": "https://docs.mattermost.com/deploy/mobile-overview.html"
+    "deployment/mobile-app-deployment": "https://docs.mattermost.com/deploy/mobile-overview.html",
     "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
