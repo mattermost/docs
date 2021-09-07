@@ -165,8 +165,8 @@ Login and Session Metrics
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
 - ``mattermost_login_logins_total``: The total number of successful logins.
 
-Messaging Metrics
-^^^^^^^^^^^^^^^^^
+Mattermost Channels Metrics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
 - ``mattermost_post_emails_sent_total``: The total number of emails sent because a post was created.

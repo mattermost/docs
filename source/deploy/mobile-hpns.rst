@@ -8,7 +8,7 @@ Mattermost offers a `Mattermost Push Notification Service (MPNS) <https://docs.m
 Test Push Notifications Service (TPNS)
 --------------------------------------
 
-Self-managed customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
+Self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
 
 .. note::
   - The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs). 

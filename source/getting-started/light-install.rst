@@ -1,7 +1,7 @@
 Light Install Guide
 ===================
 
-Mattermost is a messaging and collaboration platform. With Mattermost, you can integrate the tools you use every day into one place and never miss a notification or task. 
+Mattermost is a collaboration platform. With Mattermost, you can integrate the tools you use every day into one place and never miss a notification or task. 
 
 Before you get started you'll need:
 

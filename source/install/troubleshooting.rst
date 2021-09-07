@@ -87,7 +87,7 @@ Connect with Another Device
 - If you have another mobile device available, try connecting with that to see if your issue still reproduces.
 - If you don’t have another device available, check with other teammates to see if they are having the same issue.
 
-Opening a Support Ticket for Self-Managed Deployments
+Opening a Support Ticket for Self-Hosted Deployments
 -----------------------------------------------------
 
 When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
