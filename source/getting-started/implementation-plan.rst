@@ -219,7 +219,7 @@ Configure multi-factor authentication (“MFA”) if required as part of your IT
 3.3.11 SAML Single-Sign-On (E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs).
+Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identity providers (IDPs).
 
 **Reference**: https://docs.mattermost.com/onboard/sso-saml.html
 
