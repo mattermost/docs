@@ -1,7 +1,7 @@
 Accessing your Boards
 =====================
 
-Focalboard currently uses channel-based permissions, meaning that only members of the associated channel can access (read/write) the boards for that channel.
+Boards currently uses channel-based permissions, meaning that only members of the associated channel can access (read/write) the boards for that channel.
 
 You can use this to create private boards:
 
