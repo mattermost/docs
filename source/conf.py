@@ -369,7 +369,6 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
     "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html"  
-
 }
 
 # The master toctree document.
