@@ -66,7 +66,7 @@ The following diagram is a high-level illustration of the Mattermost platform an
 
 **Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
 
-A recommended installation of Mattermost Enterprise E20 configured with a redundant, highly available, highly scalable mode, with application (Mattermost Server) and database high availability features enabled, will require the following physical, or virtual, servers:
+A recommended installation of Mattermost Enterprise E20 configured with a redundant, highly available, highly scalable mode, with application (Mattermost Server) and database High Availability features enabled, will require the following physical, or virtual, servers:
 
 +-------------------+---------+---------------+--------+----------+
 | Task              | Qty     | CPU           | Memory | Storage  |
