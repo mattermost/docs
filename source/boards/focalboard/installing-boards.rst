@@ -1,7 +1,7 @@
 Installing the Focalboard App
 -----------------------------
 
-Focalboard is also available as a fully-contained, standalone personal desktop app for a single user that can be installed on Mac, Windows, or Linux or as a self-hosted server-based app.
+Focalboard is a fully-contained, standalone personal desktop app for a single user that can be installed on Mac, Windows, or Linux or as a self-hosted server-based app.
 
 Personal Desktop
 ~~~~~~~~~~~~~~~~
