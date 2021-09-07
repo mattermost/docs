@@ -634,15 +634,15 @@ Maximum File Size
 
 Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                                                                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                  |
++---------------------------------------------------------------------------------------------------------------+
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
 .. note::
   If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
-
+  
 Enable Document Search by Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4928,7 +4928,7 @@ mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDelet
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable API User Deletion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
 
@@ -5067,6 +5067,18 @@ For MySQL Group Replication, the absolute lag can be measured from the number of
 .. code-block:: sh
 
    select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
+
+Image Settings
+~~~~~~~~~~~~~~
+
+Maximum Image Resolution
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maxiumum image resolution size for message attachments in megapixels. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33177600`` with numerical input.     |
++---------------------------------------------------------------------------------------------------------------+
 
 File Settings
 ~~~~~~~~~~~~~~
