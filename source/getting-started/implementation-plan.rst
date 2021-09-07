@@ -29,7 +29,7 @@ This section provides a brief overview of the system to be implemented, includin
 2.1 System Description
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost is a collaboration solution designed to remove organization friction. You are implementing Mattermost in order to:
+Mattermost is a collaboration solution designed to remove organizational friction. You're implementing Mattermost in order to:
 
 1. **[STATE REASON]**
 2. **[STATE REASON]**
