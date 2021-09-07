@@ -5238,7 +5238,7 @@ Maximum Image Resolution
 Maxiumum image resolution size for message attachments in megapixels. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
 +---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33`` with numerical input.     |
+| This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33177600`` with numerical input.     |
 +---------------------------------------------------------------------------------------------------------------+
 
 File Settings
