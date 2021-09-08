@@ -1,3 +1,5 @@
+:orphan:
+
 Mattermost Preview using Heroku
 ===============================
 
@@ -14,7 +16,9 @@ Heroku Installation
 
 .. |HerokuDeploy| image:: https://www.herokucdn.com/deploy/button.svg
 .. _HerokuDeploy: https://heroku.com/deploy?template=https://github.com/mattermost/mattermost-heroku
+
 3. (Optional) Customize the default settings in Heroku
+
   - ``App Name``: Optionally select a name for your application (this will be used in the app URL)
   - ``Runtime Selection``: Select which region your app should run in (United States or Europe)
   - ``Config Variables``:
@@ -25,6 +29,7 @@ Heroku Installation
     - ``FILE_SETTINGS__AMAZON_S3_SECRET_ACCESS_KEY``: The secret access key for your Amazon S3. Only required for driver name amazons3.
     - ``FILE_SETTINGS__AMAZON_S3_BUCKET``: The name you selected for your S3 bucket in AWS. Only required for driver name amazons3.
     - ``FILE_SETTINGS__AMAZON_S3_REGION``: The AWS region you selected when creating your S3 bucket. Refer to `AWS Reference Documentation <https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`__ and choose this variable from the Region column.
+
 4. Click **"Deploy for Free"**
 
 

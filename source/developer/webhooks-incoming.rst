@@ -12,6 +12,7 @@ Use incoming webhooks to post messages to Mattermost public channels, private ch
 
 .. image:: ../images/incoming_webhooks_sample.png
   :width: 500 px
+
 *An example of a GitHub integration that posts updates to a Developers channel*
 
 Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTTP requests in the examples that follow.
@@ -30,8 +31,10 @@ Let's learn how to create a simple incoming webhook that posts the following mes
 .. image:: ../images/incoming_webhooks_create_simple.png
   :width: 400 px
   
-1. First, go to **Main Menu > Integrations > Incoming Webhook**. 
+1. First, go to **Main Menu > Integrations > Incoming Webhook**.
+
   - If you don't have the **Integrations** option in your Main Menu, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. They can be enabled by a System Admin from **System Console > Integrations > Integration Management**. Then continue with the steps below.
+
 2. Select **Add Incoming Webhook** and add name and description for the webhook. The description can be up to 500 characters.
 3. Select the channel to receive webhook payloads, then click **Add** to create the webhook.
 4. Use a curl command from your terminal or commandline to send the following JSON payload in a HTTP POST request:
@@ -84,7 +87,7 @@ Tips and Best Practices
 
 2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__.
 
-3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
+3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings.html#enable-incoming-webhooks>`__.
 
 4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 
@@ -101,9 +104,9 @@ Tips and Best Practices
 Share Your Integration
 ----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://developers.mattermost.com/integrate/getting-started/>`__ in our `app directory <https://mattermost.com/marketplace/>`__.
 
-The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://mattermost.com/marketplace/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------
@@ -155,12 +158,13 @@ Some common error messages include:
 2. ``Couldn't find the user``: Indicates that the user doesn't exist or is invalid. Please modify the ``channel`` parameter before sending another request.
 3. ``Unable to parse incoming data``: Indicates that the request received is malformed. Try reviewing that the JSON payload is in a correct format and doesn't have typos such as extra `"`.
 4. ``curl: (3) [globbing] unmatched close brace/bracket in column N``: Typically an error when using cURL on Windows, when:
+
   1. You have space around JSON separator colons, ``payload={"Hello" : "test"}`` or  
   2. You are using single quotes to wrap the ``-d`` data, ``-d 'payload={"Hello":"test"}'``
 
 If your integration prints the JSON payload data instead of rendering the generated message, make sure your integration is returning the ``application/json`` content-type.
 
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Frequently Asked Questions
 --------------------------
@@ -176,7 +180,7 @@ To send a message to a Direct Message channel, add an "@" symbol followed by the
 
 This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a Direct Message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
 
-To send a message to a different Direct Mssage channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search>`__.
+To send a message to a different Direct Message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use ``mmctl user search``- see details `here <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
 
 .. code-block:: text
 
