@@ -17,7 +17,7 @@ Mattermost Product Documentation
 
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
-   Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
+   Mattermost Administration <guides/administration>
    Messaging <guides/messaging>
    Playbooks <guides/playbooks>
    Boards <guides/boards>

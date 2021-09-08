@@ -447,7 +447,8 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
-    "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html"  
+    "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html",
+    "guides/setup-onboard-manage-comply.html": "https://docs.mattermost.com/guides/administration.html"  
 }
 
 # The master toctree document.
@@ -544,7 +545,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'collapse_navigation': False,
     'sticky_navigation': True,
-    'navigation_depth': -1,  # Allow unlimited depth in navigation
+    'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False
 }
