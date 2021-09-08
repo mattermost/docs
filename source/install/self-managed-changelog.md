@@ -24,6 +24,7 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
  - Updated in-product help documentation to fix broken links and to correct outdated information.
 
 ### Bug Fixes
+ - Fixed a possible panic during license validation.
  - Fixed an issue with loading of emojis in message attachment titles.
  - Fixed an issue where the timestamp in deleted messages was not correctly positioned.
  - Changed the whitespace in the refresh bar so that it always displays to the user.
@@ -49,6 +50,7 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
    - Fixed an issue where the quick channel switcher mention counts did not follow collapsed threads logic.
    - Fixed an issue where threads started by webhooks/integrations were being auto-followed by the webhook/integration creator when collapsed threads was enabled.
    - Fixed an issue where re-connecting to the websocket caused thread mentions to be cleared in the user interface with collapsed reply threads enabled.
+   - Fixed an issue where the **New messages** line and date separators overlapped text in a thread.
 
 ### Go Version
  - v5.38 is built with Go ``1.16.7``.
