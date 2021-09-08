@@ -90,9 +90,9 @@ This section provides a bibliography of key project references and deliverables 
 - Mattermost Product Overview: https://docs.mattermost.com/about/product.html
 - Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/software-hardware-requirements.html 
 - Mattermost Security Features: https://docs.mattermost.com/about/security.html 
-- Mattermost Installation Guide: https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost
-- Mattermost Deployment Guide: https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#deploy-mattermost
-- Mattermost Upgrade Guide: https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#upgrade-mattermost
+- Mattermost Installation Guides: https://docs.mattermost.com/guides/deployment.html#install-guides
+- Mattermost Deployment Guide: https://docs.mattermost.com/guides/deployment.html#deployment-guide
+- Mattermost Upgrade Guide: https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost
 
 2.4 Glossary
 ~~~~~~~~~~~~
