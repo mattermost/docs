@@ -4,7 +4,7 @@ Mattermost Administration Guide
 This guide is for people who administer an existing Mattermost server. It’s divided into three parts:
 
 
-* `The Basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__- An overview of standard configurations and features.
+* `The Basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__ - An overview of standard configurations and features.
 * `Cloud Admin <https://docs.mattermost.com/guides/administration.html#cloud-admin>`__ - Detailed information about admin capabilities of Mattermost cloud workspaces.
 * `Self-Hosted Admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
 
