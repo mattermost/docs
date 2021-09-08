@@ -229,7 +229,7 @@ Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost o
 
 Train administrators on the tasks required to manage Mattermost.
 
-**Reference**: https://docs.mattermost.com/guides/setup-onboard-manage-comply.html#manage-mattermost
+**Reference**: https://docs.mattermost.com/guides/administration.html
 
 3.3.13 Update Legal and Support Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
