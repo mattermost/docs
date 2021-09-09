@@ -22,6 +22,7 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
 
 #### User Interface (UI)
  - Updated in-product help documentation to fix broken links and to correct outdated information.
+ - Italian, Polish, Korean, and Ukrainian languages have been downgraded to alpha. Korean and Ukrainian are [no longer actively maintained](https://handbook.mattermost.com/contributors/join-us/localization#translation-quality).
 
 ### Bug Fixes
  - Fixed a possible panic during license validation.
@@ -46,7 +47,7 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
    - The ``ThreadAutoFollow`` setting is now set to true to enable ``CollapsedThreads``. Previously, this was stated in [the Mattermost documentation](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) but was not enforced.
    - Fixed issue with users re-following a previously unfollowed thread when other users replied to the thread.
    - Removed the Click to open for code blocks and in-line codes.
-   - Fixed an issue where two scrollbars appeared in the threads view.
+   - Fixed an issue where two scrollbars appeared in the Threads view.
    - Fixed an issue where the quick channel switcher mention counts did not follow collapsed threads logic.
    - Fixed an issue where threads started by webhooks/integrations were being auto-followed by the webhook/integration creator when collapsed threads was enabled.
    - Fixed an issue where re-connecting to the websocket caused thread mentions to be cleared in the user interface with collapsed reply threads enabled.
@@ -88,7 +89,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Pinned posts are no longer highlighted.
