@@ -44,10 +44,10 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
    - Fixed an issue where a gap appeared between the first and second consecutive message from the same user.
    - Fixed an issue where the thread unread state would not update on websocket reconnect.
    - Fixed an issue where the main channel view root post timestamp added a horizontal scrollbar on hover.
-   - The ``ThreadAutoFollow`` setting is now set to true to enable ``CollapsedThreads``. Previously, this was stated in [the Mattermost documentation](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) but was not enforced.
+   -  The ``ThreadAutoFollow`` setting must now be enabled in order to enable ``CollapsedThreads``.
    - Fixed issue with users re-following a previously unfollowed thread when other users replied to the thread.
-   - Removed the Click to open for code blocks and in-line codes.
-   - Fixed an issue where two scrollbars appeared in the Threads view.
+   - Clicking code blocks and in-line code no longer open the associated thread.
+   - Fixed an issue where two scrollbars appeared in the Threads view on high resolution monitors using zoom.
    - Fixed an issue where the quick channel switcher mention counts did not follow collapsed threads logic.
    - Fixed an issue where threads started by webhooks/integrations were being auto-followed by the webhook/integration creator when collapsed threads was enabled.
    - Fixed an issue where re-connecting to the websocket caused thread mentions to be cleared in the user interface with collapsed reply threads enabled.
