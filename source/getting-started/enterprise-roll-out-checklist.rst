@@ -63,7 +63,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Review Mattermost security features
 
- - Resource: https://docs.mattermost.com/overview/security.html#security-features
+ - Resource: https://docs.mattermost.com/about/security.html
  
 - Determine monitoring requirements
 
@@ -99,7 +99,6 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Define your mobile usage policy
 
  - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
- - Resource: https://docs.mattermost.com/deployment/mobile-app-deployment.html
 
 3. Create Development, Staging, and Production Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,7 +106,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
 
  - Resource: https://docs.mattermost.com/getting-started/architecture-overview.html
- - Resource: https://docs.mattermost.com/deployment/deployment.html 
+ - Resource: https://docs.mattermost.com/deploy/deployment-overview.html 
  - Resource: https://docs.mattermost.com/scale/scaling-for-enterprise.html 
  - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html
 
@@ -129,27 +128,27 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
 
-   - Resource: https://docs.mattermost.com/overview/architecture.html#database-with-vips
+   - Resource: https://docs.mattermost.com/getting-started/architecture-overview.html#database-with-vips
 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
 
-   - Resource: https://docs.mattermost.com/administration/config-in-database.html
+   - Resource: https://docs.mattermost.com/configure/configuation-in-mattermost-database.html
 
  - Install and configure File Storage
 
-  - Resource: https://docs.mattermost.com/deployment/deployment.html#file-store
+  - Resource: https://docs.mattermost.com/deploy/deployment-overview.html#file-store
 
  - Install and configure proxy or load balancers
 
   - Note: If running Kubernetes and the Mattermost Operator, proxies will be created automatically. 
   - Add SSL Cert
 
-   - Resource: https://docs.mattermost.com/deployment/ssl-client-certificate.html
-   - Resource: https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration
+   - Resource: https://docs.mattermost.com/onboard/ssl-client-certificate.html
+   - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html#proxy-server-configuration
 
   - (Optional) Set up certificate-based authentication (CBA) for user or device-based authentication with a digital certificate
 
-   - Resource: https://docs.mattermost.com/deployment/certificate-based-authentication.html
+   - Resource: https://docs.mattermost.com/onboard/certificate-based-authentication.html
 
  - Configure SMTP for email notifications
 
@@ -157,18 +156,18 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Set up Elasticsearch (highly recommended if your organization anticipates over 2 million posts)
 
-  - Resource: https://docs.mattermost.com/deployment/elasticsearch.html
+  - Resource: https://docs.mattermost.com/scale/elasticsearch.html
 
 - Document network configuration
 
- - Example: https://docs.mattermost.com/overview/architecture.html#reference-architectures  
+ - Example: https://docs.mattermost.com/getting-started/architecture-overview.html#reference-architectures 
 
 4. Configure and Customize Your Mattermost Site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Login to Mattermost and access the System Console to connect your environment to Mattermost
 
- - Resource: https://docs.mattermost.com/administration/config-settings.html#environment
+ - Resource: https://docs.mattermost.com/configure/configuration-settings.html#environment-variables
  - Upload your valid Enterprise License under Edition and License
  - Ensure site URL is set appropriately for your production, dev and staging environments
  - Add your database configuration to **System Console > Environment > Database**
@@ -181,12 +180,12 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Configure your site within the System Console
 
- - Resource: https://docs.mattermost.com/administration/config-settings.html#site-configuration
+ - Resource: https://docs.mattermost.com/configure/configuration-settings.html#site-configuration
 
 - Set site access policies including permissions for roles and guest access
 
- - Permissions Resource: https://docs.mattermost.com/deployment/advanced-permissions.html
- - Guest Access Resource: https://docs.mattermost.com/deployment/guest-accounts.html
+ - Permissions Resource: https://docs.mattermost.com/onboard/advanced-permissions.html
+ - Guest Access Resource: https://docs.mattermost.com/onboard/guest-accounts.html
 
 5. Test Production Performance and Redundancy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -194,7 +193,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Define and test disaster recovery policy and processes
 
  - Resource: https://docs.mattermost.com/install/install-kubernetes.html#using-mattermost-operator-functionality
- - Resource: https://docs.mattermost.com/deployment/cluster.html#upgrade-guide 
+ - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide 
 
 - Performance test production environment
 
@@ -204,11 +203,11 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Set up Prometheus and Grafana to monitor performance
 
-  - Resource: https://docs.mattermost.com/deployment/metrics.html 
+  - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
 
  - Set up alerts in Grafana
 
-  - Resource: https://docs.mattermost.com/administration/performance-alerting-guide.html 
+  - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
 
 Roll Out Mattermost
 ~~~~~~~~~~~~~~~~~~~
@@ -228,22 +227,22 @@ Now that you have an environment in place, we recommend working through the foll
 
 - (Optional) Migrate messages and channels from legacy systems
 
- - Resource: https://docs.mattermost.com/administration/migrating.html
+ - Resource: https://docs.mattermost.com/onboard/migrating-to-mattermost.html
 
 2. Enable Key Integrations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Build list of key integrations and tools used by your teams
 
- - Resource: https://docs.mattermost.com/guides/administrator.html#mattermost-integrations
+ - Resource: https://developers.mattermost.com/integrate/getting-started/
 
 - Define use cases and requirements for plugins, bots, webhooks, slash commands 
 
- - Resource: https://docs.mattermost.com/guides/integration.html
+ - Resource: https://developers.mattermost.com/integrate/other-integrations/
 
 - Set up key integrations (or migrate from POC environments)
 
- - Resource: https://integrations.mattermost.com/
+ - Resource: https://mattermost.com/marketplace/
 
 - Understand Mattermost API capabilities
 
@@ -258,7 +257,6 @@ Now that you have an environment in place, we recommend working through the foll
 - Create a training plan
 
  - Resource: https://academy.mattermost.com/
- - Resource: End User Guide https://docs.mattermost.com/guides/user.html  
 
 - Define user escalation and support processes
 
@@ -266,42 +264,42 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Notify users in advance of roll out
 
- - Sample email: https://docs.mattermost.com/getting-started/welcome_email.html
+ - Sample email: https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html
 
 4. Deploy Client Apps
 ^^^^^^^^^^^^^^^^^^^^^
 
 - Roll out Desktop App 
 
- - Resource: https://docs.mattermost.com/install/desktop.html
- - Resource: https://docs.mattermost.com/deployment/desktop-app-deployment.html
+ - Resource: https://docs.mattermost.com/install/desktop-app-install.html
+ - Resource: https://docs.mattermost.com/deploy/desktop-app.html
  - (Optional) Use the MSI installer to install on Windows machines
 
-  - Resource: https://docs.mattermost.com/install/desktop-msi-gpo.html
+  - Resource: https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html
 
 - Roll out Mobile App
 
- - Resource: https://docs.mattermost.com/deployment/mobile-app-deployment.html
+ - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
  - (Optional) Use an EMM provider
 
-  - Resource: https://docs.mattermost.com/mobile/mobile-overview.html#use-an-emm-provider-with-managed-app-configuration 
+  - Resource: https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html 
 
 5. Roll Out to Groups of Users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Provision user accounts
 
- - Resource: https://docs.mattermost.com/administration/user-provisioning.html 
+ - Resource: https://docs.mattermost.com/onboard/user-provisioning-workflows.html 
 
 - (Optional) Bulk Load users
 
- - Resource: https://docs.mattermost.com/deployment/bulk-loading.html 
+ - Resource: https://docs.mattermost.com/onboard/bulk-loading-data.html 
 
 - Onboard users to teams and channels
 
  - Recommendation: Use LDAP Group Sync to automate this process
 
-  - Resource: https://docs.mattermost.com/deployment/ldap-group-sync.html
+  - Resource: https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html
 
 - Implement your training plan to end users on how to use Mattermost
 
@@ -326,8 +324,8 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Understand management tools available to support users
 
- - Command Line Tools Resource: https://docs.mattermost.com/administration/command-line-tools.html
- - Database Scripts Resource: https://docs.mattermost.com/administration/scripts.html 
+ - Command Line Tools Resource: https://docs.mattermost.com/manage/command-line-tools.html
+ - Database Scripts Resource: https://docs.mattermost.com/manage/scripts.html 
 
 Review the Roll Out 
 ~~~~~~~~~~~~~~~~~~~
@@ -339,7 +337,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Perform end-user surveys and measure satisfaction
 
- - Optional resource within Mattermost: https://integrations.mattermost.com/matterpoll/
+ - Optional resource within Mattermost: https://mattermost.com/marketplace/matterpoll/
 
 - Verify use case fulfillment from original requirements gathering
 
@@ -354,12 +352,12 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Monitor site and team statistics
 
- - Resource: https://docs.mattermost.com/administration/statistics.html 
+ - Resource: https://docs.mattermost.com/manage/statistics.html 
  - Review: Total posts, total teams, total channels, total group chats, total direct chats, top channels, top teams
 
 - Analyze usage by lines of business and peak usage times
 
- - Resources: https://docs.mattermost.com/administration/scripts.html
+ - Resources: https://docs.mattermost.com/manage/scripts.html
 
 3. Analyze System Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -384,7 +382,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
  - Identify additional tests and scans
  - (Optional) Enable Compliance Reporting
 
-  - Resource: https://docs.mattermost.com/administration/compliance-export.html
+  - Resource: https://docs.mattermost.com/comply/compliance-export.html
 
 5. Perform Maintenance Tasks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -394,10 +392,10 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Perform first upgrade
 
- - Resource: https://docs.mattermost.com/administration/upgrade.html
+ - Resource: https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html
 
 - Determine upgrade schedule based on Mattermost release schedules and lifecycle
 
- - Resource: https://docs.mattermost.com/administration/release-lifecycle.html
+ - Resource: https://docs.mattermost.com/upgrade/release-lifecycle.html
 
 - Run System checks and either address or set address-by date	

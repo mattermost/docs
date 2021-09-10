@@ -13,8 +13,8 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 
 - Team Edition
 
-- Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/deployment/sso-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/deployment/auth.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/administration/branding.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/administration/config-settings.html#policy>`__, and next business day support.
-- Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/administration/compliance.html>`__, `High Availability <https://docs.mattermost.com/deployment/cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/deployment/metrics.html>`__, `Data Retention Policy <https://docs.mattermost.com/administration/data-retention.html>`__, and enterprise class support.
+- Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/onboard/ad-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/configure/configuration-settings.html#policy>`__, and next business day support.
+- Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__, `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__, `Data Retention Policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__, and enterprise class support.
 
 The purpose of this Implementation Plan is to:
 
@@ -51,7 +51,7 @@ A Mattermost Enterprise E20 implementation consists of the following system comp
 - **Mattermost Server**
   - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
 - **Mattermost Database**
-  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ is most appropriate for your deployment.
+  - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ is most appropriate for your deployment.
 - **Mattermost Push Notification Service**
   - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
 - **Mattermost Client Applications**
@@ -65,7 +65,7 @@ The following diagram is a high-level illustration of the Mattermost platform an
 
 .. image:: ../images/network_diagram.png
 
-**Reference**: https://docs.mattermost.com/deployment/deployment.html
+**Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
 
 A recommended installation of Mattermost Enterprise E20 configured with a redundant, highly available, highly scalable mode, with application (Mattermost Server) and database high availability features enabled, will require the following physical, or virtual, servers:
 
@@ -87,11 +87,12 @@ A recommended installation of Mattermost Enterprise E20 configured with a redund
 
 This section provides a bibliography of key project references and deliverables that have been produced before this point in the project development.
 
-- Mattermost Product Overview: https://docs.mattermost.com/overview/index.html
-- Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/requirements.html 
-- Mattermost Security Features: https://docs.mattermost.com/overview/security.html 
-- Mattermost Administrator Guide: https://docs.mattermost.com/guides/administrator.html
-- Mattermost User Guide: https://docs.mattermost.com/guides/user.html
+- Mattermost Product Overview: https://docs.mattermost.com/about/product.html
+- Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/software-hardware-requirements.html 
+- Mattermost Security Features: https://docs.mattermost.com/about/security.html 
+- Mattermost Installation Guides: https://docs.mattermost.com/guides/deployment.html#install-guides
+- Mattermost Deployment Guide: https://docs.mattermost.com/guides/deployment.html#deployment-guide
+- Mattermost Upgrade Guide: https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost
 
 2.4 Glossary
 ~~~~~~~~~~~~
@@ -139,7 +140,7 @@ The System Architecture Document is used to document the environments that Matte
 - IP addresses and DNS
 - Network diagram
 
-**Reference**: https://docs.mattermost.com/deployment/deployment.html
+**Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
 
 3.3.2 Gather Required Software and Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -151,23 +152,23 @@ Gather all of the software and documentation required for a successful implement
 
 Build out the required deployment environments (development, staging, production, etc.) and implement configuration management (using a tool like Chef, Puppet, Salt, etc.)
 
-**Reference**: https://docs.mattermost.com/install/requirements.html
+**Reference**: https://docs.mattermost.com/install/software-hardware-requirements.html
 
 3.3.4 Install Software
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Install and configure Mattermost and its component software (MySQL or PostgreSQL, Nginx or another proxy, etc.)
 
-**Reference**: https://docs.mattermost.com/guides/administrator.html#installing-mattermost
+**Reference**: https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html
 
-Install in High Availability (E20): https://docs.mattermost.com/deployment/cluster.html 
+Install in High Availability (E20): https://docs.mattermost.com/scale/high-availability-cluster.html 
 
 3.3.5 Test Deployment
 ^^^^^^^^^^^^^^^^^^^^^
 
 Verify that the software has been deployed successfully in each environment. Create, or update, automated tests to verify deployments.
 
-**Reference**: https://docs.mattermost.com/administration/health-check.html
+**Reference**: https://docs.mattermost.com/manage/health-checks.html
 
 3.3.6 Bulk Load Data
 ^^^^^^^^^^^^^^^^^^^^
@@ -186,49 +187,49 @@ You can import the following data types:
 - Direct Message and Group Message channels
 - Direct Messages and Group Messages
 
-**Reference**: https://docs.mattermost.com/deployment/bulk-loading.html 
+**Reference**: https://docs.mattermost.com/onboard/bulk-loading-data.html 
 
 3.3.7 Implement Backup
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Implement backup procedures to protect data stored within the Mattermost database, files uploaded by users, and the Mattermost config.json file.
 
-**Reference**: https://docs.mattermost.com/administration/backup.html
+**Reference**: https://docs.mattermost.com/deploy/backup-disaster-recovery.html
 
 3.3.8 Implement Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost E20 supports integrated health and performance monitoring with Prometheus and Grafana. A guide to the statistics collected and reported on is available in the reference below:
 
-**Reference**: https://docs.mattermost.com/deployment/metrics.html
+**Reference**: https://docs.mattermost.com/scale/performance-monitoring.html
 
 3.3.9 AD/LDAP Setup (E10, E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost supports AD/LDAP integration for user authentication and user attribute syncing. 
 
-**Reference**: https://docs.mattermost.com/deployment/sso-ldap.html 
+**Reference**: https://docs.mattermost.com/onboard/ad-ldap.html 
 
 3.3.10 Multi-Factor Authentication (E10, E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure multi-factor authentication (“MFA”) if required as part of your IT security policy. Compatible with Google Authenticator
 
-**Reference**: https://docs.mattermost.com/deployment/auth.html 
+**Reference**: https://docs.mattermost.com/onboard/multi-factor-authentication.html 
 
 3.3.11 SAML Single-Sign-On (E20)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs).
 
-**Reference**: https://docs.mattermost.com/deployment/sso-saml.html
+**Reference**: https://docs.mattermost.com/onboard/sso-saml.html
 
 3.3.12 Train Administrators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Train administrators on the tasks required to manage Mattermost.
 
-**Reference**: https://docs.mattermost.com/guides/administrator.html
+**Reference**: https://docs.mattermost.com/guides/setup-onboard-manage-comply.html#manage-mattermost
 
 3.3.13 Update Legal and Support Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -245,7 +246,7 @@ Send all users a welcome email with instructions on how to get started using Mat
 
 **References**: 
 - Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
-- User Guides: https://docs.mattermost.com/guides/user.html 
+- Messaging Guide: https://docs.mattermost.com/guides/messaging.html 
 
 3.4 Implementation Schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -294,7 +295,7 @@ The Mattermost platform will be secured in the following ways:
 - Mattermost will be protected against brute force attacks by its rate limiting API;
 - Authentication to Mattermost will be controlled using your company's Active Directory/LDAP/SAML directory server. 
 
-**Reference**: https://docs.mattermost.com/overview/security.html
+**Reference**: https://docs.mattermost.com/about/security.html
 
 3.5.2 Security During Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -359,7 +360,7 @@ If the training will be provided by State staff, provide the course name(s) and 
 4.3 Performance Monitoring (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/deployment/metrics.html
+This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/scale/performance-monitoring.html
 
 4.4 Configuration Management Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
