@@ -28,8 +28,6 @@ Work with Boards
    :maxdepth: 2
 
   /boards/working-with-boards.rst
-  /boards/working-with-views.rst
-   
 
 Manage your Boards
 ------------------
