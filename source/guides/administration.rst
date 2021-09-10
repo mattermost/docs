@@ -4,7 +4,7 @@ Mattermost Administration Guide
 This guide is for people who administer an existing Mattermost server. It’s divided into three parts:
 
 * `The Basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__ - An overview of standard configurations and features.
-* `Cloud Admin <https://docs.mattermost.com/guides/administration.html#cloud-admin>`__ - Detailed information about admin capabilities of Mattermost cloud workspaces.
+* `Cloud Admin <https://docs.mattermost.com/guides/administration.html#cloud-admin>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
 * `Self-Hosted Admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, refer to the :doc:`Mattermost Deployment Guide </guides/deployment>`.
@@ -35,7 +35,7 @@ These resources will help you get started with your Mattermost server.
 Cloud Admin
 -----------
 
-This section of the guide is for administrators of Mattermost cloud workspaces. If you are the administrator for a self-hosted Mattermost server, please refer to the self-hosted section.
+This section of the guide is for administrators of Mattermost Cloud workspaces. If you are the administrator for a self-hosted Mattermost server, please refer to the self-hosted section.
 
 Workspace Setup and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -49,7 +49,7 @@ Workspace Setup and Configuration
     Guest Accounts </onboard/cloud-guest-accounts>
     Shared Channels </onboard/shared-channels>
 
-* :doc:`Site Configuration </configure/cloud-site-configuration>` - Setup and configure your Mattermost cloud workspace.
+* :doc:`Site Configuration </configure/cloud-site-configuration>` - Set up and configure your Mattermost Cloud workspace.
 * :doc:`SAML Single Sign-On </onboard/cloud-sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider. Refer to the :doc:`SAML reference documentation </onboard/cloud-sso-saml-technical>` for technical implementation details.
 * :doc:`AD/LDAP Groups </onboard/cloud-groups>` - Sync AD/LDAP groups with Mattermost roles and teams.
 * :doc:`Guest Accounts </onboard/cloud-guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
@@ -66,7 +66,7 @@ Workspace Management
     User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>
     Managing Team and Channel Members </manage/cloud-team-and-channel>
 
-* :doc:`Mattermost Cloud Billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost cloud workspace.
+* :doc:`Mattermost Cloud Billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
 * :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
 * :doc:`User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
 * :doc:`Managing Team and Channel Members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
@@ -88,9 +88,9 @@ Workspace Compliance
 Self-Hosted Admin
 -----------------
 
-This section of the guide is for administrators of self-hosted Mattermost servers. If you are the administrator for a Mattermost cloud workspace, please refer to the cloud section of this page.
+This section of the guide is for administrators of self-hosted Mattermost servers. If you are the administrator for a Mattermost Cloud workspace, please refer to the Cloud section of this page.
 
-Self-Hosted Setup & Configuration
+Self-Hosted Setup and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Initial Setup
@@ -104,7 +104,7 @@ Initial Setup
     Customize Mattermost </configure/customizing-mattermost>
     SMTP Email Setup </configure/smtp-email>
 
-* :doc:`Configuration Overview </configure/configuration-settings>` - Setup and configure your Mattermost cloud workspace.
+* :doc:`Configuration Overview </configure/configuration-settings>` - Set up and configure your Mattermost Cloud workspace.
 * :doc:`Custom Branding Tools </configure/custom-branding-tools>` - Change Mattermost branding, site name, and description. 
 * :doc:`Customize Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
 * :doc:`SMTP Email Setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
@@ -123,7 +123,7 @@ Advanced Configurations
     Chinese, Japanese, and Korean Search </configure/enabling-chinese-japanese-korean-search>
 
 * :doc:`Shared Channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
-* :doc:`Include Configuration in the Mattermost Database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for high-availability environments.
+* :doc:`Include Configuration in the Mattermost Database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Email Templates </configure/email-templates>` - Alter the transactional emails Mattermost sends to your users.
 * :doc:`Configuring CloudFront to host Mattermost static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>` - Improve caching performance to reduce content load times.
 * :doc:`Using an Outbound Proxy </configure/using-outbound-proxy>` - Monitor outbound traffic and control the websites that can appear in embedded content.
@@ -201,7 +201,7 @@ Self-Hosted Compliance
 
 * :doc:`Electronic Discovery </comply/electronic-discovery>` - Extract data from Mattermost for eDiscovery use in legal cases.
 * :doc:`Compliance Export Beta </comply/compliance-export>` - Create compliance reports from the Mattermost System Console. 
-* :doc:`Audit Log v2 (Experimental) </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost Server
+* :doc:`Audit Log v2 (Experimental) </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
 * :doc:`Data Retention Policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
 * :doc:`Custom Terms of Service (Beta) </comply/custom-terms-of-service>` - Define custom terms of service for users to accept before joining your Mattermost server.
 
