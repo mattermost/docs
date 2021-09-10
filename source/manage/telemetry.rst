@@ -208,14 +208,14 @@ The following list details the types of Apps Framework metadata we collect:
 - ``appID``: ID of the App that triggers the event.
 - ``Event``: Type of the event. There are three event types that are tracked: ``install``, ``uninstall``, ``call``, ``oauthComplete``.
 
-**Data collected in ``install`` and ``uninstall`` events**
-- ``appType``: Type of the App installed (e.g., HTTP, AWS)
+**Data collected in install and uninstall events**
+  - ``appType``: Type of the App installed (e.g., HTTP, AWS)
 
-**Data collected in ``call`` events**
-- ``location``: Call location
-- ``type``: Call type. Right now only submit calls are tracked.
+**Data collected in call events**
+  - ``location``: Call location
+  - ``type``: Call type. Right now only submit calls are tracked.
 
-**Data collected in ``oauthComplete`` events**
+**Data collected in oauthComplete events**
   - ``UserActualID``: User ID of the user completing the OAuth flow.
 
 Android Mobile App Performance Monitoring
