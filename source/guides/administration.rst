@@ -35,7 +35,7 @@ These resources will help you get started with your Mattermost server.
 Cloud Admin
 -----------
 
-This section of the guide is for administrators of Mattermost Cloud workspaces. If you are the administrator for a self-hosted Mattermost server, please refer to the self-hosted section.
+This section of the guide is for admins of Mattermost Cloud workspaces. If you're the admin for a self-hosted Mattermost server, please refer to the self-hosted section.
 
 Workspace Setup and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,7 +88,7 @@ Workspace Compliance
 Self-Hosted Admin
 -----------------
 
-This section of the guide is for administrators of self-hosted Mattermost servers. If you are the administrator for a Mattermost Cloud workspace, please refer to the Cloud section of this page.
+This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the Cloud section of this page.
 
 Self-Hosted Setup and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
