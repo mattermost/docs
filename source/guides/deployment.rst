@@ -43,7 +43,7 @@ Server Installation
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
-    Helm <https://docs.mattermost.com/install/install-kubernetes.html#installing-the-operators-via-helm>__
+    Helm </install/install-kubernetes.html#installing-the-operators-via-helm>
     Debian Buster </install/install-debian>
     RHEL 8 </install/install-rhel-8>
     CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>
