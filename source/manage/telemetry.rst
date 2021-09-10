@@ -142,10 +142,10 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
 
-Incident Collaboration Telemetry
---------------------------------
+Playbooks Telemetry
+-------------------
 
-The following list details the types of Incident Collaboration metadata we collect:
+The following list details the types of Playbooks metadata we collect:
 
 **Data collected for all event types**
 
@@ -155,36 +155,36 @@ The following list details the types of Incident Collaboration metadata we colle
 - ``Event``: Type of the event. There are three event types that are tracked: ``incident``, ``tasks``, ``playbook``.
 - ``UserActualID``: Unique identifier of the user who initiated the action.
 
-**Data collected in incident events**
+**Data collected in run events**
 
-- ``IncidentID``: Unique identifier of the incident.
+- ``IncidentID``: Unique identifier of the run.
 - ``IsActive``: Boolean value indicating if the incident is active.
-- ``CommanderUserID``: Unique identifier of the commander of the incident.
-- ``TeamID``: Unique identifier of the team where the incident channel is created.
-- ``CreatedAt``: Timestamp of the incident creation.
-- ``PostID``: Unique identifier of the post from which the incident was created (if relevant).
-- ``NumChecklists``: Number of stages in this incident.
-- ``TotalChecklistItems``: Number of tasks in this incident.
-- ``ActiveStage``: A number indicating the stage of the incident (0-based).
-- ``Action``: The type of action performed against the incident: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``.
-- ``Public``: When creating an incident, ``true`` if it is public, and ``false`` if it is private.
+- ``CommanderUserID``: Unique identifier of the owner of the run.
+- ``TeamID``: Unique identifier of the team where the channel is created.
+- ``CreatedAt``: Timestamp of the run start.
+- ``PostID``: Unique identifier of the post from which the run was started (if relevant).
+- ``NumChecklists``: Number of stages in this run.
+- ``TotalChecklistItems``: Number of tasks in this run.
+- ``ActiveStage``: A number indicating the stage of the run (0-based).
+- ``Action``: The type of action performed against the run: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``, ``add_timeline_event_from_post``, ``update_retrospective``, ``publish_retrospective``, ``remove_timeline_event``.
+- ``Public``: When starting a run, ``true`` if it is public, and ``false`` if it is private.
 - ``ReminderTimerSeconds``: The next timer for the reminder to update the status, in seconds. It's tracked only when ``Action`` equals ``update_status``.
 
 **Data collected in tasks events**
 
-- ``IncidentID``: Unique identifier of the incident.
+- ``IncidentID``: Unique identifier of the run.
 - ``NewState``: ``null`` if the task is uncompleted, ``done`` if the task was marked completed.
 - ``Action``: The type of action performed against the task: ``add_task``, ``remove_task``, ``rename_task``, ``modify_task_state``, ``move_task``, ``set_assignee_for_task``, ``run_task_slash_command``.
 - ``NewState``: When modifying a task state, ``true`` if the task is now checked, ``false`` if the task is now unchecked.
-- ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the commander of the event, and ``false`` otherwise.
-- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the event was also the assignee of the event, and ``false`` otherwise.
+- ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the owner of the run, and ``false`` otherwise.
+- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the run was also the assignee of the event, and ``false`` otherwise.
 
 **Data collected in playbook events**
 
 - ``PlaybookID``: Unique identifier of the playbook.
 - ``TeamID``: Unique identifier of the team associated with this playbook.
 - ``NumChecklists``: Number of stages in this playbook.
-- ``TotalChecklistItems``: Number of tasks in this incident.
+- ``TotalChecklistItems``: Number of tasks in this run.
 - ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
 - ``NumMembers``: The number of members with access to this playbook.
 - ``NumSlashCommands``: The number of tasks with slash commands in this playbook.
@@ -208,15 +208,18 @@ The following list details the types of Apps Framework metadata we collect:
 - ``appID``: ID of the App that triggers the event.
 - ``Event``: Type of the event. There are three event types that are tracked: ``install``, ``uninstall``, ``call``, ``oauthComplete``.
 
-**Data collected in ``install`` and ``uninstall`` events**
-- ``appType``: Type of the App installed (e.g., HTTP, AWS)
+**Data collected in install and uninstall events**
 
-**Data collected in ``call`` events**
-- ``location``: Call location
+- ``appType``: Type of the App installed (e.g., HTTP, AWS).
+
+**Data collected in call events**
+
+- ``location``: Call location.
 - ``type``: Call type. Right now only submit calls are tracked.
 
-**Data collected in ``oauthComplete`` events**
-  - ``UserActualID``: User ID of the user completing the OAuth flow.
+**Data collected in oauthComplete events**
+
+- ``UserActualID``: User ID of the user completing the OAuth flow.
 
 Android Mobile App Performance Monitoring
 -----------------------------------------
