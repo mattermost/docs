@@ -1,12 +1,24 @@
 Mobile Push Notifications
 =========================
 
-A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
+A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
 
-Mattermost offers a `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deployment/deployment.html#push-notification-service>`__ for Team Edition, Cloud, and Enterprise deployments.
+Mattermost offers a `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deploy/deployment-overview.html>`__ for Team Edition, Cloud, and Enterprise deployments.
 
 Test Push Notifications Service (TPNS)
 --------------------------------------
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
 
 Self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
 
@@ -19,16 +31,33 @@ Enable TPNS
 
 To use the Mattermost TPNS, go to **System Console > Environment > Push Notification Server > Enable Push Notifications**, then select **Use TPNS connection to send notifications to iOS and Android apps**.
 
-See our `Testing Push Notifications <https://docs.mattermost.com/mobile/mobile-testing-notifications.html>`__ documentation to learn more about testing mobile push notifications.
+See our `Testing Push Notifications <https://docs.mattermost.com/deploy/mobile-testing-notifications.html>`__ documentation to learn more about testing mobile push notifications.
 
 .. note::
-  - The TPNS only works with the pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.  
+  - The TPNS only works with the pre-built mobile apps Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.  
   - You must ensure that the push proxy can be reached on the correct port. For TPNS, it's port 80 from the Mattermost server.
 
 Hosted Push Notifications Service (HPNS)
 ----------------------------------------
 
-Mattermost Cloud and Enterprise Edition E10 and E20 customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
+|enterprise| |professional| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+Mattermost Professional, Enterprise, and Cloud, customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
 
 - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) `available on GitHub. <https://github.com/mattermost/mattermost-push-proxy>`__
 - An explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ for the contents of unencrypted messages.
@@ -74,7 +103,19 @@ After setup, test push notifications to confirm they are working.
 ID-Only Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud and Enterprise Edition E20 customers can limit the data sent to Apple and Google through a configuration setting. 
+|enterprise| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+Mattermost Enterprise and Cloud customers can limit the data sent to Apple and Google through a configuration setting. 
 
 When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deploy/deployment-overview.html#push-notification-service>`__.
 

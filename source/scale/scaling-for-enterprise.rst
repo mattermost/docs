@@ -11,7 +11,7 @@ Single Machine Deployment
 
 Organizations can typically run Mattermost on a single server with up to 2,000 users, though more users have been observed based on different usage and server configurations.
 
-- See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__.
+- See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/deployment.html>`__.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/software-hardware-requirements.html>`__.
 
 Multi Machine Deployment
@@ -19,13 +19,25 @@ Multi Machine Deployment
 
 Deployments between 2,000 and 10,000 registered users with moderate usage can run on a standard three-machine Mattermost deployment with a proxy, an application server and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration.
 
-- See `install guides for step-by-step configuration instructions for multi-machine setup <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__.
+- See `install guides for step-by-step configuration instructions for multi-machine setup <https://docs.mattermost.com/guides/deployment.html#install-guides>`__.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/software-hardware-requirements.html>`__.
 
 Cluster-based Deployment
 ------------------------
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Deployments over 10,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, High Availability configuration. To date, the largest simulation included `70,000 concurrent users on a single Mattermost instance <https://mattermost.com/blog/performance-scale-mattermost/>`__.
 
@@ -63,7 +75,7 @@ Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 .. image:: ../images/scaling-3.png
    :alt: Hardware needed for a 10,000 user deployment
 
-For more information, check out our `Administrator's Guide <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#administrator-tasks>`__.
+For more information, check out our `Administrator Onboarding Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#administrator-tasks>`__ documentation.
 
 Hosting Recommendation for 100,000+ users
 -----------------------------------------

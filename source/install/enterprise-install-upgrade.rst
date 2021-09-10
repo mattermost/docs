@@ -3,9 +3,9 @@
 Enterprise Install and Upgrade
 ===============================
 
-Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. There are two variants of Enterprise Edition: E10 and E20, and you can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
+Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
 
-Once you've downloaded and installed Mattermost, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a `license key online <https://customers.mattermost.com/login/>`__.
+Once you've downloaded and installed Mattermost, start an Enterprise trial via **Main Menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a `license key online <https://customers.mattermost.com/login/>`__.
 
 Installing Enterprise Edition
 -----------------------------
@@ -27,9 +27,9 @@ Checking your Mattermost Edition and Version
 
 If you're already running Mattermost, you can check the Mattermost edition and version from the command line using:
 
-  `mattermost version`
+``mattermost version``
 
-To check your edition and version from the web interface, open **Main Menu > About Mattermost**.
+To check your edition and version from the web or desktop interface, open **Main Menu > About Mattermost**.
 
 - **Mattermost Enterprise Edition** indicates you can apply a license key to enable Enterprise features.
 - **Mattermost Team Edition** indicates you're using the open source version and need to upgrade (per upgrade instructions below) before a license key can be applied.
@@ -76,7 +76,7 @@ Upgrade a previous version of Mattermost Enterprise Edition to a later version b
 Converting Team Edition to Enterprise Edition
 ----------------------------------------------
 
-From Mattermost v5.27 on, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise Edition in the System Console using a built-in conversion utility. This tool is recommended if you'd like to run an Enterprise trial or upgrade to Enterprise E10 or E20 on standalone servers.
+From Mattermost v5.27 on, if you're running a Linux system with x86-64 architecture, you can convert Team Edition to Enterprise in the System Console using a built-in conversion utility. This tool is recommended if you'd like to run an Enterprise trial or want to upgrade to Enterprise or Professional on standalone servers.
 
 .. note::
 
@@ -193,13 +193,13 @@ Once you've uploaded your license key to your Mattermost server it's stored in y
 2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 
-Removing an Enterprise Edition E10 or E20 license key will not remove the configuration for Enterprise settings; however, these features will not function until an Enterprise Edition E10 or E20 license key is applied.
+Removing an Enterprise or Professional license key will not remove the configuration for Enterprise or Professional settings; however, these features will not function until an Enterprise or Professional license key is applied.
 
-When you're using High Availability, it's critical to ensure that all servers in the cluster have the Enterprise Edition E20 license properly installed to prevent multi-node clusters from failing. An Enterprise Edition E20 license is required for High Availability to work.
+When you're using High Availability, it's critical to ensure that all servers in the cluster have the Enterprise Edition license properly installed to prevent multi-node clusters from failing. An Enterprise Edition license is required for High Availability to work.
 
 .. note::
 
-  - When you apply an E20 license key to a previously E10-licensed server, the E10 features will retain their configuration settings in E20. 
-  - When you apply an E10 license to a previously E20-licensed server, the E20 features will retain their configuration but will no longer be accessible for use.
+  - When you apply an Enterprise license key to a previously Professional or E10-licensed server, the Professional features will retain their configuration settings in Enterprise. 
+  - When you apply a Professional license to a previously Enterprise or E20-licensed server, the Enterprise features will retain their configuration but will no longer be accessible for use.
 
 Once the key is uploaded and installed, the details of your license are displayed.

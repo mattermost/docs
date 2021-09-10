@@ -1,7 +1,19 @@
-High Availability Cluster (E20)
-===============================
+High Availability Cluster
+=========================
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 A High Availability cluster enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
@@ -22,7 +34,7 @@ Redundancy at anticipated scale
 Update sequence for continuous operation
   You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `Upgrade Guide`_ for instructions on how to do this.
 
-  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema require a short period of downtime. Downtime for a server restart is around 5 seconds. For a database schema update, downtime can be up to 30 seconds.
+  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around 5 seconds. For a database schema update, downtime can be up to 30 seconds.
 
 Deployment Guide
 ----------------
@@ -204,7 +216,7 @@ File Storage Configuration
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
   3. If you’re using Amazon S3 or MinIO for file storage then no other configuration is required.
 
-If you’re using the Compliance Reports feature in Mattermost Enterprise Edition E20, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
+If you’re using the Compliance Reports feature in Mattermost Enterprise Edition, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
 

@@ -1,6 +1,18 @@
 Configuration Settings
 ======================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
 .. important::
@@ -16,7 +28,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 Configuration in Database
 --------------------------
 
-Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
+Storing configuration in the database is supported from v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`_.
 
 Environment Variables
 ---------------------
@@ -144,7 +156,19 @@ Groups offer System Admins a way to manage default teams and channels by linking
 Permissions
 ~~~~~~~~~~~
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Advanced permissions offer System Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ for more details.
 
@@ -1685,7 +1709,7 @@ Description of service shown in login screens and UI. When not specified, "All t
 Enable Custom Branding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. In previous versions, this feature is available in Enterprise Edition E10 and higher.*
+*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
 **True**: Enables custom branding to show a JPG image some custom text on the server login page.
 
@@ -2186,9 +2210,21 @@ Enable Custom Emoji
 Restrict Custom Emoji Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This permission has been migrated to the database and changing the ``config.json`` value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+|enterprise| |professional|
 
-*Available in Enterprise Edition E10 and higher*
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
+
+*After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.*
 
 **Allow everyone to create custom emoji**: Allows everyone to create Custom Emoji from the **Main Menu > Custom Emoji**.
 
@@ -2502,7 +2538,7 @@ Password
 Minimum Password Length
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. In previous versions, this feature is available in Enterprise Edition E10 and higher.*
+*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
@@ -2513,7 +2549,7 @@ Minimum number of characters required for a valid password. Must be a whole numb
 Password Requirements
 ^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. In previous versions, this feature is available in Enterprise Edition E10 and higher.*
+*This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
 Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error messasage previewed in the System Console will appear on the account creation page if a user enters an invalid password.
 
@@ -2565,9 +2601,21 @@ Enable Multi-factor Authentication
 Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
 
-**True**: When true, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
+
+**True**: `Multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
 
 **False**: Multi-factor authentication is optional.
 
@@ -2578,7 +2626,19 @@ Enforce Multi-factor Authentication
 AD/LDAP
 ~~~~~~~~
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Enable sign-in with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3262,21 +3322,21 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 OAuth 2.0
-~~~~~~~~~~
+---------
 
 Settings to configure OAuth login for account creation and login.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Team Edition and Enterprise Edition E10*
+*Available in legacy Enterprise Edition E10*
 
 Choose whether OAuth can be used for account creation and login. Options include:
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
     - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#gitlab>`__ for more detail)
-    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google>`__ for more detail)
-    - **Office 365** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365>`__ for more detail)
+    - **Google Apps** (available in Enterprise Edition, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google>`__ for more detail)
+    - **Office 365** (available in Enterprise Edition, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -4359,7 +4419,19 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
 
@@ -4545,7 +4617,19 @@ Enable Preview Features (Experimental)
 Enable Theme Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 **True**: Enables the **Display > Theme** tab in Account Settings so users can select their theme.
 
@@ -4558,7 +4642,19 @@ Enable Theme Selection
 Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 **True**: Enables the **Display > Theme > Custom Theme** section in Account Settings.
 
@@ -4571,7 +4667,19 @@ Allow Custom Themes
 Default Theme
 ^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Set a default theme that applies to all new users on the system.
 
@@ -5008,7 +5116,19 @@ SQL Settings
 Read Replicas
 ^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
 
@@ -5021,7 +5141,19 @@ Changes to this setting require a server restart before taking effect.
 Search Replicas
 ^^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
 
@@ -5627,7 +5759,19 @@ Theme Settings (Experimental)
 Allowed Themes
 ^^^^^^^^^^^^^^^
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
 
@@ -5670,7 +5814,19 @@ Disable Post Metadata
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Maximum Users for Statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
