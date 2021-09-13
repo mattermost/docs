@@ -5,6 +5,38 @@ Deprecated Configuration Settings
     :backlinks: top
     :local:
 
+Users and Teams
+---------------
+
+Enable Team Directory
+^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in May 16th, 2016 release*
+
+**True**: Teams that are configured to appear in the team directory will appear on the system main page. Teams can configure this setting from **Team Settings > Include this team in the Team Directory**.
+
+**False**: Team directory on the system main page is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+SAML 2.0
+--------
+
+Use New SAML Library
+^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in December 16, 2020 release*
+
+**True**: Enable an updated SAML Library, which does not require the XML Security Library (xmlsec1) to be installed.
+
+**False**: Continue using the existing implementation which uses the XML Security Library (xmlsec1).
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Legacy Sidebar
 --------------
 
@@ -16,7 +48,7 @@ Enable Legacy Sidebar
 
 This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
-**False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
+**False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
 **True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
@@ -54,7 +86,7 @@ This setting applies to the legacy sidebar only. You must enable the `Enable Leg
 
   This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`__ for more information about these features.
+We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
 
 **True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
 
@@ -70,7 +102,7 @@ Enable X to Leave Channels from Left-Hand Sidebar
 *Not available in Mattermost Cloud.*
 *Deprecated. Not used in Mattermost v6.0 and later*
 
-This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
+This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
 
 .. note::
 
@@ -123,7 +155,7 @@ This setting applies to the legacy sidebar only. You must enable the `Enable Leg
 
   This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html>`_ for more information about these features.
+We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
 **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
 
