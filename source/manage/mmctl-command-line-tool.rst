@@ -38,7 +38,7 @@ For more information on what's changed in mmctl for Mattermost v6.0, see the `Ma
 .. raw:: html
 
    <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/hnD0Zj-mIbs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+      <iframe src="https://www.youtube.com/embed/hmbSfSeWo4Y" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
    </div>
 
 .. note::
