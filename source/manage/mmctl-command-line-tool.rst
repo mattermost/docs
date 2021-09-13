@@ -16,7 +16,7 @@ The following new mmctl functionality is available from Mattermost v6.0:
 - It's easy to reporting mmctl issues to Mattermost using the link provided when unhandled errors and exceptions are encountered.
 - Interactive user confirmations.
 
-For more information on what's new in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl Demo video <https://www.youtube.com/watch?v=hnD0Zj-mIbs>`_.
+For more information on what's new in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl Demo video <https://www.youtube.com/watch?v=zITNaPWP-80>`_.
 
 .. raw:: html
 
