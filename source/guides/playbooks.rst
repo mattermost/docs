@@ -12,24 +12,24 @@ Before You Begin
    /playbooks/overview.rst
    /playbooks/getting-started.rst
    
-Planning
---------
+Work with Playbooks
+-------------------
 
 .. toctree::
    :maxdepth: 2
 
    /playbooks/setting-up-playbooks.rst
 
-Launching
----------
+Manage Runs
+-----------
 
 .. toctree::
    :maxdepth: 2
 
    /playbooks/running-playbooks.rst
    
-Learning
---------
+Customizing Retrospectives
+--------------------------
 
 .. toctree::
    :maxdepth: 2
