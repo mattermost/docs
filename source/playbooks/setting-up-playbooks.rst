@@ -58,12 +58,12 @@ When a run starts
   * **Invite members**: Enable the toggle, and select members who will automatically be invited to the channel when the playbook run starts.
   * **Assign the owner role**: Enable the toggle and select a member. This member is automatically assigned as the owner of the playbook run.
   * **Announce in another channel**: Enable the toggle and select a channel. When the playbook run is started, an announcement is made in the selected channel.
-  * **Send outgoing webhook**: Enable the toggle and enter the webhook you want to use for when the run starts. For information about the webhook payload, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_.
+  * **Send outgoing webhook**: Enable the toggle and enter the webhook you want to use for when the run starts. For information about the webhook payload, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_. An example of the JSON payload for a run start `is available here <https://gist.github.com/icelander/b68f2bf2b4ffefec93400cb050211cf1>`_.
 
 When a status update is posted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  * **Send outgoing webhook**: Enable the toggle and enter the webhook you want to use for status updates. For information about the webhook payload, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_.
+  * **Send outgoing webhook**: Enable the toggle and enter the webhook you want to use for status updates. For information about the webhook payload, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_. An example JSON payload for a status update `is available here <https://gist.github.com/icelander/2f9938ad68d1e0aa656f97969895d080>`_.
   
 When a new member joins the channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
