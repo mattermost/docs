@@ -45,7 +45,7 @@ For more information on what's changed in mmctl for Mattermost v6.0, see the `Ma
    
    You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v.6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
 
-mmctl Usage notes
+mmctl Usage Notes
 -----------------
 
 - System Admins have two ways to run `mmctl` commands: by downloading `mmctl` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
