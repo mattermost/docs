@@ -91,7 +91,6 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Known Issues
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
- - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Pinned posts are no longer highlighted.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
