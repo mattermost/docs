@@ -48,7 +48,7 @@ For more information on what's changed in mmctl for Mattermost v6.0, see the `Ma
 mmctl Usage Notes
 -----------------
 
-- System Admins have two ways to run `mmctl` commands: by downloading `mmctl` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
+- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
 - `mmctl` comes bundled with the Mattermost distribution, and is located in the `bin` folder of the installation, next to the `CLI`.
 - Parameters in CLI commands are order-specific.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
