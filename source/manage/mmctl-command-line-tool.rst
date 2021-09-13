@@ -33,7 +33,7 @@ The following mmctl changes are available from Mattermost v6.0:
 - The option``password`` has changed to ``password-file``.
 - Option names that contained underscores have been updated to use hyphens for consistency.
 
-For more information on what's changed in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl Changes video <https://www.youtube.com/watch?v=hmbSfSeWo4Y>`_.
+For more information on what's changed in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl changes video <https://www.youtube.com/watch?v=hmbSfSeWo4Y>`_.
 
 .. raw:: html
 
