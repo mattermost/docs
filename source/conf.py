@@ -86,7 +86,7 @@ redirects = {
     "guides/administrator": "https://docs.mattermost.com/guides/deployment.html",
     "guides/developer": "https://developers.mattermost.com/integrate/admin-guide/",
     "guides/integration": "https://developers.mattermost.com/integrate/getting-started/",
-    "guides/user": "https://docs.mattermost.com/guides/messaging.html",
+    "guides/user": "https://docs.mattermost.com/guides/channels.html",
     "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/deployment.html",
     "install/requirements": "https://docs.mattermost.com/install/software-hardware-requirements.html",
     "install/install-ubuntu-2004": "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
@@ -268,7 +268,7 @@ redirects = {
     "guides/administrator": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
     "guides/developer": "https://developers.mattermost.com/integrate/admin-guide/",
     "guides/integration": "https://developers.mattermost.com/integrate/getting-started/",
-    "guides/user": "https://docs.mattermost.com/guides/messaging.html",
+    "guides/user": "https://docs.mattermost.com/guides/channels.html",
     "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
     "guides/administrator#mattermost-integrations": "https://developers.mattermost.com/integrate/getting-started/",
     "guides/integration": "https://developers.mattermost.com/integrate/other-integrations/",
@@ -448,7 +448,11 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
     "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html",
-    "guides/setup-onboard-manage-comply.html": "https://docs.mattermost.com/guides/administration.html"  
+    "guides/setup-onboard-manage-comply.html": "https://docs.mattermost.com/guides/administration.html",
+    "messaging/welcome-to-mattermost-messaging.html": "https://docs.mattermost.com/overview/index.html",
+    "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
+    "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
+    "/focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html"  
 }
 
 # The master toctree document.
