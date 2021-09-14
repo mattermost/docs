@@ -378,8 +378,7 @@ redirects = {
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute/help-wanted",
     "process/sg_rest_markup":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/security-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/security-release",
     "process/community-overview": "https://handbook.mattermost.com/contributors/contributors/community",
@@ -389,62 +388,49 @@ redirects = {
     "process/release-tips":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-tips",
     "process/sg_general-guidelines":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/community-guidelines":
         "https://handbook.mattermost.com/contributors/contributors/community-playbook/",
     "process/feature-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/feature-release",
     "process/security": "https://handbook.mattermost.com/operations/operations/company-policies/security-policies",
     "process/engineer-expectations":
-        "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer"
-        "-onboarding",
+        "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
     "process/product-manager-hiring":
         "https://handbook.mattermost.com/contributors/join-us/recruiting-cadences/product-manager-hiring",
     "process/new-bug-tickets":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug"
-        "-tickets",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets",
     "process/sg_grammar-spelling-mechanics":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/sg_document-structure":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/release-scorecard-definitions":
-        "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release"
-        "-scorecard-definitions",
+        "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-scorecard-definitions",
     "process/software-requirements":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software"
-        "-requirements",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
     "process/mobile-release-process":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/mobile-release",
     "process/documentation-UItext-guidelines":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/user"
-        "-interface-text-guidelines",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/user-interface-text-guidelines",
     "process/bug-fix-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/bug-fix-release",
     "process/deprecated-features":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated"
-        "-features",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
     "process/dot-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/dot-release",
     "process/end-user-documentation":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/bug-severity-guidelines":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug"
-        "-tickets/bug-severity-guidelines",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets/bug-severity-guidelines",
     "process/accepting-pull-request":
         "https://handbook.mattermost.com/contributors/contributors/help-wanted",
     "process/pm-faq":
-        "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook"
-        "#frequently-asked-questions-faq",
+        "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
     "process/product-manager":
         "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring",
     "process/partner-programs":
         "https://handbook.mattermost.com/operations/sales/partner-programs",
     "process/overview":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
     "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html",
