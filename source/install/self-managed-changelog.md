@@ -54,7 +54,7 @@ Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.m
    - Fixed an issue where the **New messages** line and date separators overlapped text in a thread.
 
 ### Go Version
- - v5.38 is built with Go ``1.16.7``.
+ - v5.39 is built with Go ``1.16.7``.
 
 ### Upcoming Deprecations in Mattermost v6.0
 
@@ -91,7 +91,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 ### Known Issues
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
- - Pinned posts are no longer highlighted.
+ - Pinned posts are no longer highlighted [MM-34870](https://mattermost.atlassian.net/browse/MM-34870).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
