@@ -5,6 +5,33 @@ Deprecated Configuration Settings
     :backlinks: top
     :local:
 
+Service Settings
+----------------
+
+Data Prefetch
+^^^^^^^^^^^^^^
+
+*Removed in February 16, 2021 release*
+
+**True**: Messages in all unread channels are pre-loaded from the server whenever the client reconnects to the network to eliminate loading time when users switch to unread channels.
+
+**False**: Messages are fetched on-demand from the server when users switch channels.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalDataPrefetch": true`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------+
+
+Segment Write Key
+^^^^^^^^^^^^^^^^^^^
+
+*Removed in March 16, 2017 release*
+
+For deployments seeking additional tracking of system behavior using Segment.com, you can enter a Segment ``WRITE_KEY`` using this field. This value works like a tracking code and is used in client-side JavaScript and will send events to Segment.com attributed to the account you used to generate the ``WRITE_KEY``.
+
++--------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input. |
++--------------------------------------------------------------------------------------------+
+
 Users and Teams
 ---------------
 
@@ -17,9 +44,9 @@ Enable Team Directory
 
 **False**: Team directory on the system main page is disabled.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``.                                                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
 
 SAML 2.0
 --------
@@ -33,9 +60,9 @@ Use New SAML Library
 
 **False**: Continue using the existing implementation which uses the XML Security Library (xmlsec1).
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``.                                                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
 
 Legacy Sidebar
 --------------
@@ -52,9 +79,9 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 
 **True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``.                                                                                |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``. |
++----------------------------------------------------------------------------------------------------------------+
 
 Experimental Sidebar Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,9 +97,9 @@ Experimental Sidebar Features
 
 **Enabled (Default Off)**: Users must enable the experimental sidebar features in **Account Settings**.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``.                                         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization
 ^^^^^^^^^^^^^^^^^^^^
@@ -92,9 +119,9 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 
 **False**: Hides the channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``.                                         |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,9 +141,9 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 
 **False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false``.                                               |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------------+
 
 Autoclose Direct Messages in Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,9 +163,9 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 
 **False**: Conversations remain in the sidebar until they are manually closed.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false``.                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------+
 
 Town Square
 -----------
@@ -161,9 +188,9 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 
 **False**: Town Square is always visible in the left-hand sidebar even if all messages have been read.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false``.                                                  |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Read-Only
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,9 +206,9 @@ Town Square is Read-Only
 
   In Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation settings <https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels-e20>`_ which allow you to set any channel as read-only, including Town Square 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``.                                                 |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------------+
 
 Timezone
 --------
@@ -488,9 +515,9 @@ Attachment Thumbnail Width
 
 Width of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThumbnailWidth": 120`` with numerical input.                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThumbnailWidth": 120`` with numerical input. |
++-------------------------------------------------------------------------------------------+
 
 Attachment Thumbnail Height
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -499,9 +526,9 @@ Attachment Thumbnail Height
 
 Height of thumbnails generated from uploaded images. Updating this value changes how thumbnail images render in future, but does not change images created in the past.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThumbnailHeight": 100`` with numerical input.                                                                           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThumbnailHeight": 100`` with numerical input. |
++--------------------------------------------------------------------------------------------+
 
 Image Preview Width
 ^^^^^^^^^^^^^^^^^^^^^
@@ -510,9 +537,9 @@ Image Preview Width
 
 Maximum width of preview image. Updating this value changes how preview images render in future, but does not change images created in the past.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PreviewWidth": 1024`` with numerical input.                                                                             |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PreviewWidth": 1024`` with numerical input. |
++------------------------------------------------------------------------------------------+
 
 Image Preview Height
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -521,9 +548,9 @@ Image Preview Height
 
 Maximum height of preview image. Setting this value to ``0`` instructs Mattermost to auto-size the preview image height based on the source image aspect ratio and the preview image width. Updating this value changes how preview images render in future, but does not change images created in the past.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PreviewHeight": 0`` with numerical input.                                                                               |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PreviewHeight": 0`` with numerical input. |
++----------------------------------------------------------------------------------------+
 
 Profile Picture Width
 ^^^^^^^^^^^^^^^^^^^^^
@@ -532,9 +559,9 @@ Profile Picture Width
 
 The width to which profile pictures are resized after being uploaded via Account Settings.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ProfileWidth": 128`` with numerical input.                                                                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ProfileWidth": 128`` with numerical input. |
++-----------------------------------------------------------------------------------------+
 
 Profile Picture Height
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -543,6 +570,6 @@ Profile Picture Height
 
 The height to which profile pictures are resized after being uploaded via Account Settings.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input.                                                                             |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
++------------------------------------------------------------------------------------------+
