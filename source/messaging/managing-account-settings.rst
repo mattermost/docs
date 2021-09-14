@@ -1,7 +1,25 @@
 Account Settings
 ================
 
-Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the channel sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+Account Settings enable you to customize Mattermost based on your preferences.
+
+.. tabs::
+
+  .. tab:: v5.39 and Earlier
+
+      In Mattermost v5.39 and earlier releases, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar. 
+
+  .. tab:: v6.0 and Later
+
+      In Mattermost v6.0 and later releases, **Account Settings** have moved.
+      
+      - Access Profile and Security settings from your avatar in the global header.
+      - Access Notifications, Display, Sidebar, and Advanced Settings by selecting the **Gear** |gear-icon| icon in the global header.
+
+.. |gear-icon| image:: ../images/gear-icon.png
+  :alt: Select the Gear icon to access Mattermost settings.
+
+
 
 General
 -------
