@@ -7,6 +7,9 @@ If you want to check that the version of Mattermost you are installing is the of
    
    Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
 
+.. contents::
+    :backlinks: top
+
 Mattermost Enterprise Edition
 ------------------------------
 
@@ -240,8 +243,8 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
   - ``https://releases.mattermost.com/2.1.0/mattermost-enterprise-2.1.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``9454c3daacae602025b03950590e3f1ecd540b85a4bb7ad73bdca212ba85cf7a``
 
-Mattermost Team Edition Server Archive
----------------------------------------
+Mattermost Team Edition
+-----------------------
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as single Linux binary with MySQL or PostgreSQL under an MIT license.
 
