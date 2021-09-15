@@ -5,12 +5,11 @@ Mattermost Playbooks are pre-built, configurable checklists that define a repeat
     
 .. image:: ../images/Playbooks_Hero.png
    
-   
 This Mattermost Playbooks User Guide is for anyone who needs help using Mattermost workflow capabilities.
-   
    
 The Basics
 ----------
+
 .. toctree::
    :hidden:
 
@@ -21,7 +20,6 @@ The Basics
    Work With Views </boards/working-with-views>
    Share Boards </boards/sharing-boards>
    Templates </boards/templates>
-   
    
 * :doc:`Playbooks Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
 * :doc:`Get Started </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
