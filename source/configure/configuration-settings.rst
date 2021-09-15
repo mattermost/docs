@@ -4188,12 +4188,12 @@ This setting defaults to false and is read-only if multi-factor authentication i
 Plugins
 --------
 
-Settings to configure plugins.
+Settings to configure Mattermost plugins.
 
 Plugin Management
 ~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+|all-plans|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
@@ -4205,8 +4205,20 @@ Plugin Management
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 Enable Plugins
 ^^^^^^^^^^^^^^^
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
@@ -4219,9 +4231,16 @@ Enable Plugins
 Require Plugin Signature
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
-**False**: Do not require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+**False**: Don't require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.   |
@@ -4230,9 +4249,16 @@ Require Plugin Signature
 Automatic Prepackaged Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
 
-**False**: Pre-packaged plugins are not installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
+**False**: Pre-packaged plugins aren't installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``. |
@@ -4240,6 +4266,13 @@ Automatic Prepackaged Plugins
 
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Enables Plugin Marketplace on your Mattermost server for all System Admins.
 
@@ -4252,9 +4285,16 @@ Enable Marketplace
 Enable Remote Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
 
-**False**: The server will not attempt to connect to a remote marketplace, instead showing only pre-packaged and already installed plugins. Use this setting if your server cannot connect to the internet.
+**False**: The server won't attempt to connect to a remote marketplace, and will show only pre-packaged and already installed plugins. Use this setting if your server can't connect to the internet.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``. |
@@ -4262,6 +4302,13 @@ Enable Remote Marketplace
 
 Marketplace URL
 ^^^^^^^^^^^^^^^^
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 If the Marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins.
 
@@ -4272,12 +4319,17 @@ If the Marketplace is enabled, this setting specifies which URL should be used t
 Installed Plugin State
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|cloud|
+|cloud| |self-hosted|
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Lists installed plugins on your Mattermost server and whether they are enabled. Pre-packaged plugins are installed by default and can be deactivated, but not removed.
 
@@ -4288,14 +4340,19 @@ Lists installed plugins on your Mattermost server and whether they are enabled. 
 Plugin Settings
 ^^^^^^^^^^^^^^^^
 
-|cloud|
+|cloud| |self-hosted|
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
-Settings specific to each plugin.
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Settings specific to each Mattermost plugin.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Plugins": {}`` with object input mapping plugin IDs as keys to objects containing plugin-specific data. |
@@ -4304,116 +4361,48 @@ Settings specific to each plugin.
 Agenda
 ~~~~~~~
 
-Enable Agenda plugin - T/F (F)
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the Agenda plugin on your Mattermost server.
+
+**False**: Disables the Agenda plugin on your Mattermost server.
 
 Antivirus
 ~~~~~~~~~~
 
-Enable ClamAV antivirus plugin - T/F (F)
-docs: https://github.com/mattermost/mattermost-plugin-antivirus
-ClamAV - Host and Port - The hostname and port to connect to clamd
-Scan Timeout (seconds) - How long the virus scan can take before giving up.
+|self-hosted|
 
-Autolink
-~~~~~~~~~
-
-Configure this plugin directly in the config.json file, or using the /autolink command. 
-Enable Autolink plugin - T/F (F)
-docs: https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md
-Enable administration with /autolink command - T/F (F)
-Apply plugin to updated posts as well as new posts - T/F (F)
-Admin User IDs - Comma-separated list of userIDs authorized to administer the plugin in addition to the System Admins. User IDs can be found by navigating to System Console > Users.
-
-AWS SNS
-~~~~~~~~
-
-This plugin is used to receive alert notifications from Amazon AWS CloudWatch to Mattermost channels via AWS SNS.
-Enable AWS SNS plugin - T/F (F)
-Channel to send notifications to - The channel to send notifications to, specified in the format teamname,channelname. If the specified channel does not exist, the plugin will create the channel for you. Must be the team and channel handle used in the URL. For example, in the following URL, set the value to myteam,mychannel: https://example.com/myteam/channels/mychannel.
-Authorized User IDs - List of users authorized to accept AWS SNS subscriptions to a Mattermost channel. Must be a comma-separated list of user IDs. Use the mattermost user search CLI command to determine a user ID.
-Token - Generate token to validate incoming requests from AWS SNS. 
-
-Channel Export
-~~~~~~~~~~~~~~
-
-|cloud|
-
-.. |cloud| image:: ../images/cloud-badge.png
+.. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
+  :alt: Available for Mattermost Self-Hosted deployments.
 
-Enable Channel Export plugin - T/F (F)
+This plugin allows the forwarding of uploaded files to an antivirus scanning application, `ClamAV anti-virus software <https://www.clamav.net/>`__, and prevents the upload from completing if there is a virus detected in the file. Use this plugin to prevent users from inadvertently spreading malware or viruses via your Mattermost server. See the `Mattermost Antivirus Plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ documentation for details.
 
-Demo Plugin
-~~~~~~~~~~~
+Enable Plugin
+^^^^^^^^^^^^^
 
-Enable Demo plugin - T/F (F)
-Channel Name - The channel to use as part of the demo plugin, created for each team automatically if it does not exist.
-Username - The user to use as part of the demo plugin, created automatically if it does not exist.
+**True**: Enables the Antivirus plugin on your Mattermost server.
 
-GIF commands
-~~~~~~~~~~~~
+**False**: Disables the Antivirus plugin on your Mattermost server.
 
-Enable GIF commands - T/F (F)
-Display the GIF as an - Embedded image (the GIF cannot be collapsed) OR Collapsable image preview (the full URL is displayed, requires links preview to be activated). It is not yet possible to collapse an embedded image in Mattermost: use the Full URL option if preferred and keep an eye on this issue.To activate links preview, go to System Console > Posts > Enable Link Previews.
-GIF Provider - Gfycat (No API Key required), GIPHY (API Key required below), or Tenor (API Key required below)
-Giphy/Tenor API Key - Configure your own API Key (not required for Gfycat). To get your own API key, follow these instructions for Giphy or these for Tenor.
-Content Rating (GIPHY&Tenor only) - Choose the MPAA-style rating or leave empty to disable filtering.
-Gfycat display style - Select the style to display GIFs from Gfycat; docs: https://developers.gfycat.com/api/#best-format-to-use
-GIPHY display style - Select the style to display GIFs from GIPHY; docs: https://developers.giphy.com/docs/optional-settings/#rendition-guide
-Tenor display style - Select the style to display GIFs from Tenor; docs: https://tenor.com/gifapi/documentation#responseobjects-gifformat
-Language - Select the language used to search GIFs; docs: https://developers.giphy.com/docs/optional-settings/#language-support
-Force GIF preview before posting (force /gifs) - T/F (T); If deactivated, both /gif (no preview before posting) and /gifs (preview) will be available. This option is activated by default to prevent the accidental posting of inappropriate GIFs from a provider that does not allow content rating.
+ClamAV - Host and Port
+^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Boards
-~~~~~~~~~~~~~~~~~
+Specify the hostname and port to connect to the ClamAV server.
 
-Enable Mattermost Boards plugin - T/F (T)
-Enable Publicly-Shared Boards - T/F (F)
+Scan Timeout (seconds)
+^^^^^^^^^^^^^^^^^^^^^^
 
-Playbooks
-~~~~~~~~~
-
-Enable Playbooks plugin - T/F (T)
-Enabled Teams - Enable for every team OR Enable for selected teams only.
-Enable Experimental Features - T/F (F); Enable experimental features that come with in-progress UI, bugs, and cool stuff.
-
-User Satisfaction Surveys
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|cloud|
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-Mattermost sends user satisfaction surveys to gather feedback and improve product quality. 
-Docs: https://docs.mattermost.com/manage/user-satisfaction-surveys.html
-Privacy Policy: https://mattermost.com/privacy-policy/
-Enable User Satisfaction Surveys plugin - T/F (T)
-Enable User Satisfaction Survey - T/F (T) When true, a user satisfaction survey will be sent to all users quarterly. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to our privacy policy for more information on the collection and use of information received through our services.
-
-
-Zoom
-~~~~
-
-To set up this plugin you first need to create a Zoom App using a Zoom Administrator account. Visit the documentation for configuration steps.
-
-Enable Zoom plugin - T/F (F)
-Zoom URL - The URL for a self-hosted private cloud or on-premise Zoom server. For example, https://yourzoom.com. Leave blank if you're using Zoom's vendor-hosted SaaS service.
-Zoom API URL - The API URL for a self-hosted private cloud or on-premise Zoom server. For example, https://api.yourzoom.com/v2. Leave blank if you're using Zoom's vendor-hosted SaaS service.
-Enable OAuth - T/F (F) When true, OAuth will be used as the authentication means with Zoom.
-When false, JWT will be used as the authentication means with Zoom.
-If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. Docs: https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration
-OAuth by Account Level App (Beta) - T/F (F) When true, only an account administrator has to log in. The rest of the users will use their e-mail to log in.
-Zoom OAuth Client ID - The Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth
-Zoom OAuth Client Secret - The Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth
-At Rest Token Encryption Key - The AES encryption key used to encrypt stored access tokens. Regenerates the encryption key for Zoom OAuth Token. Regenerating the key invalidates your existing Zoom OAuth.
-API Key - The API Key generated by Zoom, used to create meetings and pull user data.
-API Secret - The API Secret generated by Zoom for your API key.
-Webhook Secret - The secret used to authenticate the webhook to Mattermost. Regenerates the secret for the webhook URL endpoint. Regenerating the secret invalidates your existing Zoom plugin.
+Specify how long the virus scan can take before timing out.
 
 Apps
 ~~~~
@@ -4425,35 +4414,380 @@ Apps
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
-To create your own Mattermost App, see docs: https://developers.mattermost.com/integrate/apps/
-Enable Apps plugin - T/F (T)
+Enable Plugin
+^^^^^^^^^^^^^
 
-Focalboard
-~~~~~~~~~~
+**True**: Enables the Apps plugin on your Mattermost server.
 
-|cloud|
+**False**: Disables the Apps plugin on your Mattermost server.
+
+To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
+
+Autolink
+~~~~~~~~~
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This plugin creates regular expression (regexp) patterns that are reformatted into a Markdown link before the message is saved into the database. System Admins can configure this plugin in the ``config.json`` file, using the ``/autolink`` slash command (when enabled), or through using the System Console. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the Autolink plugin on your Mattermost server.
+
+**False**: Disables the Autolink plugin on your Mattermost server.
+
+Enable administration with /autolink command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
+
+**False**: Disables the ability to use the slash command to configure the plugin.
+
+Apply plugin to updated posts as well as new posts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Applies the plugin to updated posts as well as new posts. 
+
+**False**: Applies the plugin to new posts only.
+
+Admin User IDs
+^^^^^^^^^^^^^^
+
+Specify users authorized to administer the plugin in addition to System Admins. Separate multiple user IDs with commas.
+
+.. tip::
+  Find user IDs by going to **System Console > User Management > Users**.
+
+AWS SNS
+~~~~~~~~
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This plugin is used to receive alert notifications from `Amazon AWS CloudWatch <https://aws.amazon.com/cloudwatch/>`__ to Mattermost channels via `AWS Simple Notification Server (SNS) <https://docs.aws.amazon.com/sns/latest/dg/welcome.html>`__.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the AWS SNS plugin on your Mattermost server.
+
+**False**: Disables the AWS SNS plugin on your Mattermost server.
+
+Channel to send notifications to
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Specify the channel to send notifications to in the format ``teamname,channelname``. For example, for a channel with a URL of ``https://example.com/myteam/channels/mychannel``, set the value to ``myteam,mychannel``. If the specified channel does not exist, the plugin creates the channel for you.
+
+Authorized User IDs
+^^^^^^^^^^^^^^^^^^^
+
+Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
+
+.. tip::
+  Find user IDs by going to **System Console > User Management > Users**.
+
+Token
+^^^^^
+
+Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
+
+Channel Export
+~~~~~~~~~~~~~~
+
+|cloud| |self-hosted|
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
-docs: https://www.focalboard.com/download/mattermost/
-Enable Focalboard plugin - T/F (T)
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
-Incident Collaboration
-~~~~~~~~~~~~~~~~~~~~~~
+Enable Plugin
+^^^^^^^^^^^^^
 
-|cloud|
+**True**: Enables the Channel Export plugin on your Mattermost workspace.
+
+**False**: Disables the Channel Export plugin on your Mattermost workspace.
+
+Demo Plugin
+~~~~~~~~~~~
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the Demo plugin on your Mattermost workspace.
+
+**False**: Disables the Demo plugin on your Mattermost workspace.
+
+Channel Name
+^^^^^^^^^^^^
+
+Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
+
+
+Username
+^^^^^^^^
+
+Specify the user to use as part of the demo plugin. If the specified user does not exist, the plugin creates the user for you.
+
+GIF commands
+~~~~~~~~~~~~
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash commands.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the GIF commands plugin on your Mattermost server.
+
+**False**: Disables the GIF commands plugin on your Mattermost server.
+
+Display the GIF as
+^^^^^^^^^^^^^^^^^^^
+
+Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. 
+
+.. note::
+   `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
+
+GIF Provider
+^^^^^^^^^^^^^
+
+Specify the GIF provider as GIPHY, Tenor, or Gfycat.
+
+.. note::
+  Selecting GIPHY or Tenor requires an API Key for this feature to work. An API key is not required for Gfycat.
+
+Giphy/Tenor API Key
+^^^^^^^^^^^^^^^^^^^
+
+Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat. 
+
+To get your own API key, see the `GIPHY Developers Quick Start <https://developers.giphy.com/docs/api/#quick-start-guide>`__ documentation, or the `Tenor Developer <https://tenor.com/developer/keyregistration>`__ documentation for details.
+
+Content Rating (GIPHY & Tenor only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.
+
+Gfycat display style
+^^^^^^^^^^^^^^^^^^^^
+
+Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <Gfycat display style>`__ documentation for details.
+
+
+GIPHY display style
+^^^^^^^^^^^^^^^^^^^
+
+Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details.
+
+Tenor display style
+^^^^^^^^^^^^^^^^^^^^
+
+Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details.
+
+Language
+^^^^^^^^
+
+Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__ documentation for details.
+
+Force GIF preview before posting (force /gifs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enabled by default to prevent accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
+
+**False**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
+
+Mattermost Boards
+~~~~~~~~~~~~~~~~~
+
+|cloud| |self-hosted|
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
-Enable Incident Collaboration plugin - T/F (T)
-Enabled Teams - Enable for every team OR Enable for selected teams only.
-Enable Experimental Features - T/F (F) Enable experimental features that come with in-progress UI, bugs, and cool stuff.
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Mattermost Boards is an open source alternative to Trello, Notion, and Asana that's integrated from Mattermost v5.36. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
+
+**True**: Enables the Mattermost Boards plugin on your Mattermost workspace.
+
+**False**: Disables the Mattermost Boards plugin on your Mattermost workspace.
+
+Mattermost Playbooks
+~~~~~~~~~~~~~~~~~~~~
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ documentation for details.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
+
+**False**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
+
+Enabled Teams
+^^^^^^^^^^^^^
+
+Enable Playbooks for all Mattermost teams, or for only selected teams.
+
+Enable Experimental Features
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables exeprimental Playbooks features on your Mattermost workspace.
+
+**False**: Disables experimental Playbooks features on your Mattermost workspace.
+
+User Satisfaction Surveys
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|cloud| |self-hosted|
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This plugin enables Mattermost to send user satisfaction surveys to gather feedback and improve product quality directly from your Mattermost users. Please refer to the 'Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
+
+Enable Plugin
+^^^^^^^^^^^^^^
+
+**True**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
+
+**False**: Disables the Mattermost Playbooks plugin on your Mattermost workspace.
+
+Enable User Satisfaction Survey
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: A user satisfaction survey will be sent out to all users on a quarterly basis. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to the 'Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
+
+**False**: User satisfaction surveys are disabled. 
+
+Zoom
+~~~~
+
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Conferencing Plugin <https://mattermost.gitbook.io/plugin-zoom/>`__ product documentation for details.
+
+.. note::
+  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details. 
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+**True**: Enables the Zoom plugin on your Mattermost server.
+
+**False**: Disables the Zoom plugin on your Mattermost server.
+
+Zoom URL
+^^^^^^^^
+
+Specify the URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://yourzoom.com``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
+
+Zoom API URL
+^^^^^^^^^^^^^
+
+Specify the API URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://api.yourzoom.com/v2``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
+
+Enable OAuth
+^^^^^^^^^^^^
+
+**True**: OAuth will be used as the authentication means with Zoom.
+
+**False**: JWT will be used as the authentication means with Zoom.
+
+.. note::
+
+  If you are currently using a JWT Zoom application and switch to OAuth, all users will need to connect their Zoom account using OAuth the next time they try to start a meeting. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details.
+
+OAuth by Account Level App (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in.
+
+**False**: All users must use their e-mail to log in.
+
+Zoom OAuth Client ID
+^^^^^^^^^^^^^^^^^^^^^
+
+Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
+
+Zoom OAuth Client Secret
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
+
+At Rest Token Encryption Key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Generate an AES encryption key for Zoom OAuth Token used to encrypt stored access tokens by selecting ``Regenerate``. Regenerating the key invalidates your existing Zoom OAuth.
+
+API Key
+^^^^^^^
+
+Specify the API Key generated by Zoom used to create meetings and pull user data.
+
+API Secret
+^^^^^^^^^^
+
+Specify the API Secret generated by Zoom for your API key.
+
+Webhook Secret
+^^^^^^^^^^^^^^
+
+Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. Regenerating the secret invalidates your existing Zoom plugin.
 
 Integrations
 -------------
@@ -4462,6 +4796,23 @@ Settings to configure webhooks, slash commands, and external integration service
 
 Integration Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Incoming Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4539,7 +4890,7 @@ Enable integrations to override usernames
 
 **True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
-**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://mattermost.org/webhooks for more details.
+**False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false``. |
@@ -4550,7 +4901,7 @@ Enable integrations to override profile picture icons
 
 **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
-**False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://mattermost.org/webhooks for more details.
+**False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``. |
@@ -4571,6 +4922,23 @@ To manage who can create personal access tokens or to search users by token ID, 
 
 Bot Accounts
 ~~~~~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Bot Account Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4596,6 +4964,23 @@ Disable bot accounts when owner is deactivated
 
 GIF (Beta)
 ~~~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^
@@ -4631,6 +5016,18 @@ The API secret generated by Gfycat for your API key. When blank, uses the defaul
 
 CORS
 ~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable cross-origin requests from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4681,7 +5078,7 @@ Compliance
 Data Retention Policies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -4693,6 +5090,11 @@ Data Retention Policies
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E20*
 
 Changes to properties in this section require a server restart before taking effect.
@@ -4700,12 +5102,12 @@ Changes to properties in this section require a server restart before taking eff
 .. warning:: 
    Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
 
-Message Retention
-^^^^^^^^^^^^^^^^^^
+Global retention policy for messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set how long Mattermost keeps messages in channels and direct messages.
+Set how long Mattermost keeps messages and files across all teams and channels. Doesn't apply to custom retention policies.
 
-If **Keep messages for a set amount of time** is chosen, set how many days messages are kept in Mattermost. Messages, including file attachments older than the duration you set, will be deleted nightly. The minimum time is one day.
+If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
@@ -4717,12 +5119,12 @@ and
 | This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with numerical input. |
 +-------------------------------------------------------------------------------------------------+
 
-File Retention
-^^^^^^^^^^^^^^^^^^
+Global retention policy for files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set how long Mattermost keeps file uploads in channels and direct messages.
+Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies.
 
-If **Keep files for a set amount of time** is chosen, set how many days file uploads are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
+If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
 
 +----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
@@ -4733,6 +5135,11 @@ and
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with numerical input. |
 +----------------------------------------------------------------------------------------------+
+
+Custom retention policy
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Set how long Mattermost keeps messages and files across specific teams and channels by specifing a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
 
 Data Deletion Time
 ^^^^^^^^^^^^^^^^^^^
@@ -4748,14 +5155,12 @@ This setting is based on the local time of the server.
 Run Deletion Job Now
 ^^^^^^^^^^^^^^^^^^^^^
 
-This button initiates a Data Retention deletion job immediately.
-
-You can monitor the status of the job in the data deletion job table below this button.
+Start a Data Retention deletion job immediately. You can monitor the status of the job in the data deletion job table within the Policy Log section.
 
 Compliance Export
 ~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -4766,6 +5171,11 @@ Compliance Export
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4839,7 +5249,7 @@ The email address your Global Relay server monitors for incoming compliance expo
 Global Relay SMTP Server Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds.
+The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds. This setting is currently not available in the System Console and can only be set in ``config.json``.
 
 +-------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SMTPServerTimeout": "1800"`` with numerical input. |
@@ -4848,12 +5258,12 @@ The number of seconds that can elapse before the connection attempt to the SMTP 
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This button initiates a compliance export job immediately. You can monitor the status of the job in the compliance export job table below this button.
+This button initiates a compliance export job immediately. You can monitor the status of the job in the compliance export job table.
 
 Compliance Monitoring
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -4865,9 +5275,14 @@ Compliance Monitoring
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E20*
 
-Settings used to enable and configure Mattermost compliance reports.
+Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <configure/configuration-settings.html#compliance-export>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
 
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4903,21 +5318,16 @@ Enable Daily Report
 Batch Size
 ^^^^^^^^^^
 
-Set the size of the batches in which posts will be read from the database to generate the compliance report.
-
-This setting is currently not available in the System Console and can only be set in ``config.json``.
+Set the size of the batches in which posts will be read from the database to generate the compliance report. This setting is currently not available in the System Console and can only be set in ``config.json``.
 
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``. |
 +------------------------------------------------------------------------------------------------+
 
-Custom Terms of Service (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Custom Terms of Service
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -4929,13 +5339,18 @@ Custom Terms of Service
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E20*
 
 Enable Custom Terms of Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  This page can only be modified using the System Console user interface.
+  This configuration setting can only be modified using the System Console user interface.
 
 **True**: New users must accept the Terms of Service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh. To update the Terms of Service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
 
@@ -4958,26 +5373,29 @@ Experimental
 
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
-Collapsed Reply Threads (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
-
-System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
-
-**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**.
-
-**Disabled**: Disable Collapsed Reply Threads functionality.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
 
 AD/LDAP Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 
 Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4988,6 +5406,24 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 AD/LDAP Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+
 Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -4997,16 +5433,33 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 AD/LDAP Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Authentication Transfer (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allow Authentication Transfer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5023,6 +5476,11 @@ Allow Authentication Transfer (Experimental)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E10 and E20*
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
@@ -5036,6 +5494,23 @@ Allow Authentication Transfer (Experimental)
 Link Metadata Timeout
 ^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -5048,6 +5523,23 @@ Email Settings
 Email Batching Buffer Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Specify the maximum number of notifications batched into a single email.
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -5056,6 +5548,23 @@ Specify the maximum number of notifications batched into a single email.
 
 Email Batching Interval
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
 
@@ -5066,6 +5575,23 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 Email Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -5074,6 +5600,23 @@ Specify the color of the email login button for white labeling purposes. Use a h
 
 Email Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -5084,6 +5627,23 @@ Specify the color of the email login button border for white labeling purposes. 
 Email Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -5093,6 +5653,23 @@ Specify the color of the email login button text for white labeling purposes. Us
 Enable Account Deactivation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Ability for users to deactivate their own account from **Account Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
 
 **False**: Ability for users to deactivate their own account is disabled.
@@ -5101,8 +5678,25 @@ Enable Account Deactivation
 | This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-Enable Automatic Replies (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable Automatic Replies
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Users can enable Automatic Replies in **Account Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
 
@@ -5115,6 +5709,23 @@ Enable Automatic Replies (Experimental)
 Enable Channel Viewed WebSocket Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -5124,7 +5735,7 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
 Enable Client-Side Certification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5135,6 +5746,11 @@ Enable Client-Side Certification
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5149,7 +5765,7 @@ Enable Client-Side Certification
 Client-Side Certification Login Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5160,6 +5776,11 @@ Client-Side Certification Login Method
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5176,6 +5797,23 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 Enable Default Channel Leave/Join System Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
 **True**: Enables leave/join system messages in the default ``town-square`` channel.
@@ -5188,6 +5826,23 @@ This setting determines whether team leave/join system messages are posted in th
 
 Enable Hardened Mode (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
 
@@ -5236,8 +5891,25 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 | This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------+
 
-Enable Preview Features (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable Preview Features
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Preview features can be enabled from **Account Settings > Advanced > Preview pre-release features**.
 
@@ -5248,9 +5920,9 @@ Enable Preview Features (Experimental)
 +------------------------------------------------------------------------------------------------------------------+
 
 Enable Theme Selection
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5266,6 +5938,11 @@ Enable Theme Selection
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -5280,7 +5957,7 @@ Enable Theme Selection
 Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5296,6 +5973,11 @@ Allow Custom Themes
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -5310,7 +5992,7 @@ Allow Custom Themes
 Default Theme
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5327,6 +6009,11 @@ Default Theme
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E10 and E20*
 
 Set a default theme that applies to all new users on the system.
@@ -5338,6 +6025,23 @@ Set a default theme that applies to all new users on the system.
 Enable Tutorial (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
 
 **False**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
@@ -5346,8 +6050,20 @@ Enable Tutorial (Experimental)
 | This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Onboarding (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable Onboarding 
+^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
 
@@ -5360,6 +6076,23 @@ Enable Onboarding (Experimental)
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -5368,6 +6101,23 @@ This setting determines whether "user is typing..." messages are displayed below
 
 Time Between User Typing Updates (User Typing Timeout)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
 
@@ -5378,6 +6128,23 @@ This setting defines how frequently "user is typing..." messages are updated, me
 Primary Team (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
 If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
@@ -5386,10 +6153,177 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
 +-----------------------------------------------------------------------------------------------------------------+
 
-Enable Shared Channels (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SAML Settings
+~~~~~~~~~~~~~
 
-|enterprise| |cloud|
+SAML Login Button Color
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+SAML Login Button Border Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+SAML Login Button Text Color
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+Collapsed Reply Threads (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+
+System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
+
+**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**.
+
+**Disabled**: Disable Collapsed Reply Threads functionality.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
+Use Channel Name in Email Notifications (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+**True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
+
+**False**: Only team name appears in email notification subject line.
+
++----------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------------------+
+
+User Status Away Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
+
++--------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
++--------------------------------------------------------------------------------------------------+
+
+Enable Shared Channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -5400,6 +6334,11 @@ Enable Shared Channels (Experimental)
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5415,56 +6354,6 @@ Shared Channels enables the ability to establish secure connections between Matt
    - Enabling Shared Channels functionality requires a server restart.
    - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
 
-SAML Settings
-~~~~~~~~~~~~~
-
-SAML Login Button Color
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
-+-------------------------------------------------------------------------------------------------------------------------------+
-
-SAML Login Button Border Color
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
-+-------------------------------------------------------------------------------------------------------------------------------+
-
-SAML Login Button Text Color
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
-+-------------------------------------------------------------------------------------------------------------------------------+
-
-Use Channel Name in Email Notifications (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
-
-**False**: Only team name appears in email notification subject line.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------+
-
-User Status Away Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
-+--------------------------------------------------------------------------------------------------+
-
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
@@ -5472,6 +6361,18 @@ There are a number of settings customizable in ``config.json`` unavailable in th
 
 Service Settings
 ~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Automatically Follow Threads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5747,6 +6648,13 @@ The number of days to retain the exported files before deleting them.
 SQL Settings
 ~~~~~~~~~~~~
 
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Read Replicas
 ^^^^^^^^^^^^^^
 
@@ -5847,6 +6755,13 @@ Image Settings
 Maximum Image Resolution
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
 Maxiumum image resolution size for message attachments in megapixels. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -5856,6 +6771,18 @@ Maxiumum image resolution size for message attachments in megapixels. This setti
 File Settings
 ~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Initial Font
 ^^^^^^^^^^^^^^
 
@@ -5864,43 +6791,6 @@ Font used in auto-generated profile pics with colored backgrounds.
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input. |
 +-----------------------------------------------------------------------------------------------+
-
-Amazon S3 Bucket Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Set an endpoint URL for Amazon S3 buckets.
-
-*Removed in November 16th, 2016 release*
-
-+-----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3BucketEndpoint": ""`` with string input. |
-+-----------------------------------------------------------------------------------------------+
-
-Amazon S3 Location Constraint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: S3 region is location constrained.
-
-**False**: S3 region is not location constrained.
-
-*Removed in November 16th, 2016 release*
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------+
-
-Amazon S3 Lowercase Bucket
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: S3 bucket names are fully lowercase.
-
-**False**: S3 bucket names may contain uppercase and lowercase letters.
-
-*Removed in November 16th, 2016 release*
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Signature V2
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -5924,9 +6814,20 @@ Allows using the same S3 bucket for multiple deployments.
 | This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix: ""`` with string input.                   |
 +------------------------------------------------------------------------------------------------------------+
 
-
 GitLab Settings
 ~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Scope
 ^^^^^^
@@ -5940,6 +6841,18 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 Google Settings
 ~~~~~~~~~~~~~~~
 
+|professional| |self-hosted|
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Scope
 ^^^^^^
 
@@ -5952,6 +6865,18 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 Office 365 Settings
 ~~~~~~~~~~~~~~~~~~~~
 
+|professional| |self-hosted|
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Scope
 ^^^^^^
 
@@ -5963,6 +6888,18 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 
 Cluster Settings
 ~~~~~~~~~~~~~~~~
+
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6021,6 +6958,18 @@ The IP address used to access the server from other nodes. This settings is used
 Metrics Settings
 ~~~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Block Profile Rate
 ^^^^^^^^^^^^^^^^^^
 
@@ -6039,6 +6988,18 @@ Changes to this setting require a server restart before taking effect.
 Plugin Settings
 ~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Signature Public Key Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6056,11 +7017,6 @@ Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Ma
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
 +-------------------------------------------------------------------------------------------------------------------------+
-
-Autolink
-^^^^^^^^^
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`_.
 
 Custom User Attributes
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -6087,16 +7043,23 @@ Welcome Bot
 
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`_.
 
-Zoom
-^^^^^
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`_.
-
 Experimental Settings only in ``config.json``
 ---------------------------------------------
 
 Audit settings
 ~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
@@ -6112,12 +7075,17 @@ Enable this setting to make websocket messages more reliable by buffering messag
 Remote Clusters
 ~~~~~~~~~~~~~~~
 
-|enterprise|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6133,6 +7101,18 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 
 Syslog configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
 
@@ -6275,12 +7255,17 @@ This setting can be left as default unless you are seeing audit write failures i
 Advanced Audit Logging Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6306,6 +7291,18 @@ Options are outlined in this text file: `Log Settings Options <https://github.co
 Service Settings
 ~~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6330,19 +7327,6 @@ Strict CSRF Token Enforcement (Experimental)
 | This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Limit Access to Config Settings Prior to Login
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*Removed in December 16, 2018 release*
-
-Enable this setting to limit the number of config settings sent to users prior to login.
-
-Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.10.0 and later.
-
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
-
 Disable Legacy MFA API Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6354,8 +7338,8 @@ Disable Legacy MFA API Endpoint
 | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-Restrict System Admin (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restrict System Admin
+^^^^^^^^^^^^^^^^^^^^^^
 
 **True**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Admins.
 
@@ -6371,17 +7355,17 @@ Team Settings
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
-.. |cloud| image:: ../images/cloud-badge.png
+.. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6397,6 +7381,18 @@ Control Teammate Name Display at the system level.
 
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server.
 
@@ -6414,6 +7410,18 @@ Email Settings
 
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Latest Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6484,7 +7492,7 @@ Theme Settings (Experimental)
 Allowed Themes
 ^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -6496,10 +7504,10 @@ Allowed Themes
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
 
-.. |cloud| image:: ../images/cloud-badge.png
+.. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -6509,31 +7517,20 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``. |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Display Settings (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Supported Timezones Path
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*Removed in April 16, 2019 release*
-
-Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to ``true``.
-
-The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
-+-----------------------------------------------------------------------------------------------------------------+
-
 Experimental Settings
 ~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6551,7 +7548,7 @@ Disable Post Metadata
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -6563,10 +7560,27 @@ Analytics Settings
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
 
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E10 and E20*
 
 Maximum Users for Statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
 
@@ -6578,6 +7592,18 @@ This setting is used to maximize performance for large Enterprise deployments.
 
 Elasticsearch Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Post Index Replicas
 ^^^^^^^^^^^^^^^^^^^^^
@@ -6671,6 +7697,18 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 Bleve Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Index Dir
 ^^^^^^^^^^
 
@@ -6729,6 +7767,18 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Export From Timestamp
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6760,6 +7810,18 @@ Determines how many new posts are batched together to a compliance export file.
 
 Plugin Settings (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^
@@ -6816,6 +7878,18 @@ The location of client plugin files. If blank, they are stored in the ``./client
 
 Jobs
 ~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Settings to configure how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues the tasks at the correct times, and as a Worker, a server that completes the given tasks.
 

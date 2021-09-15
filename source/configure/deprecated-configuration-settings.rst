@@ -32,6 +32,59 @@ For deployments seeking additional tracking of system behavior using Segment.com
 | This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input. |
 +--------------------------------------------------------------------------------------------+
 
+Limit Access to Config Settings Prior to Login
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in December 16, 2018 release*
+
+Enable this setting to limit the number of config settings sent to users prior to login.
+
+Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.10.0 and later.
+
++-----------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------+
+
+SQL Settings
+-------------
+
+Amazon S3 Bucket Endpoint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set an endpoint URL for Amazon S3 buckets.
+
+*Removed in November 16th, 2016 release*
+
++-----------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3BucketEndpoint": ""`` with string input. |
++-----------------------------------------------------------------------------------------------+
+
+Amazon S3 Location Constraint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: S3 region is location constrained.
+
+**False**: S3 region is not location constrained.
+
+*Removed in November 16th, 2016 release*
+
++------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------+
+
+Amazon S3 Lowercase Bucket
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: S3 bucket names are fully lowercase.
+
+**False**: S3 bucket names may contain uppercase and lowercase letters.
+
+*Removed in November 16th, 2016 release*
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------+
+
 Users and Teams
 ---------------
 
@@ -573,3 +626,19 @@ The height to which profile pictures are resized after being uploaded via Accoun
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
 +------------------------------------------------------------------------------------------+
+
+Display Settings (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Supported Timezones Path
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in April 16, 2019 release*
+
+Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to ``true``.
+
+The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
++-----------------------------------------------------------------------------------------------------------------+
