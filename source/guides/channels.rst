@@ -1,6 +1,5 @@
 Mattermost Channels
-====================
-
+===================
 
 Mattermost Channels provide 1:1 and group messaging that features integrated voice/video conferencing, file, image, and link sharing, rich markdown formatting, and a fully searchable message history. Keep all of your team’s communications in one place and remove information and organizational silos.
 
@@ -8,23 +7,22 @@ Mattermost Channels provide 1:1 and group messaging that features integrated voi
 
 This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
 
-
 Access Your Workspace
 ---------------------
+
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Login to Your Workspace </messaging/signing-in>
+   Log In to Your Workspace </messaging/signing-in>
    About Teams, Channels, and Messages </messaging/about-teams-channels-messages>
    Switch Between Teams </messaging/switching-between-teams>
    Log Out of Mattermost </messaging/logging-out>
 
-* :doc:`Login to Your Workspace </messaging/signing-in>` - Sign into a Mattermost server and navigate teams, channels, and messages to connect with your teammates. 
+* :doc:`Log In to Your Workspace </messaging/signing-in>` - Sign into a Mattermost server and navigate teams, channels, and messages to connect with your teammates. 
 * :doc:`About Teams, Channels, and Messages </messaging/about-teams-channels-messages>` - Find out how to access all of the Mattermost Channels capabilities.
-* :doc:`Switch Between Teams </messaging/switching-between-teams>` - Learn how to navigate between Mattermost Teams
+* :doc:`Switch Between Teams </messaging/switching-between-teams>` - Learn how to navigate between Mattermost Teams.
 * :doc:`Log Out of Mattermost </messaging/logging-out>` - Look here if you get stuck trying to log out.
-
 
 Work With Messages
 ------------------
@@ -43,8 +41,6 @@ Work With Messages
    Save Messages </messaging/saving-messages>
    Pin Messages </messaging/pinning-messages>
    Search </messaging/searching-in-mattermost>
-   
-
 
 * :doc:`Messaging Basics </messaging/messaging-basics>` - Learn about the basic functionality of Mattermost Channels.
 * :doc:`Send and Receive Messages </messaging/sending-receiving-messages>` - Communicate with your team.
@@ -54,13 +50,13 @@ Work With Messages
 * :doc:`Mention Teammates </messaging/mentioning-teammates>` - Use mentions to get the attention of specific people.
 * :doc:`Share Files </messaging/sharing-files>` - Share videos, voice recordings, and images in your Mattermost messages.
 * :doc:`Execute Commands </messaging/executing-slash-commands>` - Use slash commands to execute Mattermost functionality.
-* :doc:`Save Messages </messaging/saving-messages>` - Save messages to follow up later
+* :doc:`Save Messages </messaging/saving-messages>` - Save messages to follow up later.
 * :doc:`Pin Messages </messaging/pinning-messages>` - Pin useful messages to the top of a channel.
 * :doc:`Search </messaging/searching-in-mattermost>` - Use search to find messages, replies, and contents of files across Mattermost Channels.
 
-
 Manage Teams, Channels, and Members
 -----------------------------------
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -72,19 +68,16 @@ Manage Teams, Channels, and Members
    Channel Settings </messaging/channel-settings>
    Organize Channels </messaging/organizing-mattermost>
 
-   
-
-
 * :doc:`Create Teams </messaging/creating-teams>` - Create teams to group your organization’s users together.
 * :doc:`Team Settings </messaging/team-settings>` - Configure team names, descriptions, icons, and invite settings.
 * :doc:`Manage Team Members </messaging/managing-members>` - Invite users to teams, configure user roles, and disable user access.
 * :doc:`Manage Channels </messaging/managing-channels>` - Create, join, rename, leave, favorite, mute, and archive Channels.
 * :doc:`Channel Settings </messaging/channel-settings>` - Customize notification, headers, names, and descriptions of Channels.
-* :doc:`Organize Channels </messaging/organizing-mattermost>` - Organize and navigate Channels
-
+* :doc:`Organize Channels </messaging/organizing-mattermost>` - Organize and navigate Channels.
 
 Customize Mattermost
 --------------------
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -96,9 +89,6 @@ Customize Mattermost
    Theme Colors </messaging/customizing-theme-colors>
    Desktop App Configurations </messaging/managing-desktop-app-options>
    Manage Server Connections </messaging/managing-desktop-app-servers>
-
-   
-
 
 * :doc:`Set Status and Availability </messaging/setting-your-status-availability>` - Indicate your availability and set custom statuses.
 * :doc:`Configure Notifications </messaging/configuring-notifications>` - Configure message alerts and desktop, email, and push notifications.
